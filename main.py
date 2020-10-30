@@ -83,12 +83,12 @@ def run_astrea():
 
 def main():
 
-    # create_folders(clean=True)  # input clean value = True to erase previous ontology and shapes folders
+    create_folders(clean=True)  # input clean value = True to erase previous ontology and shapes folders
     # before creating the new ones
 
-    # divide('lov.nq')  # input filename to divide = "lov.nq" or "test.nq"...
+    divide('lov.nq')  # input filename to divide = "lov.nq" or "test.nq"...
 
-    run_astrea()  # automatically generate shape files from all vocabularies with Astrea
+    # run_astrea()  # automatically generate shape files from all vocabularies with Astrea
     # not implemented yet
 
 
