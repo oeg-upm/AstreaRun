@@ -127,7 +127,7 @@ def main():
     # run_astrea(ontofile='<http:aims.fao.orgaosgeopolitical.owl>.nt')
 # automatically generate shape files from filename or 'all' vocabularies with Astrea (same folder logic as above)
 
-    # TODO run_astrea(), save shapes files automatically with names, fix triples
+    # TODO run_astrea(), save shapes files automatically with names
 
 
 if __name__ == '__main__':
