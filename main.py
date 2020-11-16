@@ -26,8 +26,8 @@ def divide(filename):
 
     with open(filename, 'r') as fid:
         fid_content = fid.read()
-        fid_content = fid_content.replace("\\", "\\\\")  # escape \
-        fid_content = fid_content.replace("\"", "\\\"")  # escape "
+        # fid_content = fid_content.replace("\\", "\\\\")  # escape \
+        # fid_content = fid_content.replace("\"", "\\\"")  # escape "
 
     statements = fid_content.split('> .\n')  # list of statements without '> .' at the end
     graph_labels = []
@@ -88,22 +88,30 @@ def convert_triple(filename):
 
 def run_astrea(ontofile):
 
-    url = 'https://astrea.linkeddata.es/api/shacl/document'
+    url = 'https://astrea.linkeddata.es/api/shacl/file'
 
     if ontofile != 'all':
-        with open(ontofile, 'r') as file:
-            content = file.read()
-        input_file = {'ontology': content, 'serialisation': 'N-Triples'}
-        x = requests.post(url, json=input_file)
+        # with open(ontofile, 'r') as file:
+        #    content = file.read()
+        # input_file = {'ontology': content, 'serialisation': 'N-Triples'}
+        headers = {"access-control-allow-origin": "*",
+        "connection": "Keep-Alive",
+        "content-length": "75160",
+        "content-type": "text/rdf+turtle;charset=UTF-8",
+        "date": "Mon, 16 Nov 2020 13:28:25 GMT",
+        "keep-alive": "timeout=5, max=100",
+        "server": "Astrea Service"}
+        input_file = {"Content-Type": "multipart/form-data", "accept": "text/rdf+turtle", "file": ontofile, "format": "n-triple"}
+        x = requests.post(url, json=input_file, headers=headers)
         print(x)
 
     if ontofile == 'all':
         for filename in os.listdir(onto_dir):
             os.chdir(onto_dir)
-            with open(filename, 'r') as file:
-                content = file.read()
-            print(content)
-            input_file = {'ontology': content, 'serialisation': 'N-quads'}
+            # with open(filename, 'r') as file:
+            #    content = file.read()
+            # print(content)
+            input_file = {filename}
             print(input_file)
             x = requests.post(url, json=input_file)
             print(x)
@@ -115,17 +123,17 @@ def run_astrea(ontofile):
 
 def main():
 
-    create_folders(clean=True)
-# input clean value = True to erase previous ontology and shapes folder before creating the new ones
+    # create_folders(clean=True)
+    # input clean value = True to erase previous ontology and shapes folder before creating the new ones
 
-    divide('lov.nq')
-# input filename to divide = "lov.nq" or "test.nq"...
+    # divide('lov.nq')
+    # input filename to divide = "lov.nq" or "test.nq"...
 
-    convert_triple(filename='all')
-# converts input file .nq to .nt (main.py folder level) or all files with ='all' (Ontologies folder)
+    # convert_triple(filename='all')
+    # converts input file .nq to .nt (main.py folder level) or all files with ='all' (Ontologies folder)
 
-    # run_astrea(ontofile='<http:aims.fao.orgaosgeopolitical.owl>.nt')
-# automatically generate shape files from filename or 'all' vocabularies with Astrea (same folder logic as above)
+    run_astrea(ontofile='<http:aims.fao.orgaosgeopolitical.owl>.nt')
+    # automatically generate shape files from filename or 'all' vocabularies with Astrea (same folder logic as above)
 
     # TODO run_astrea(), save shapes files automatically with names
 
