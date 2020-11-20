@@ -1,0 +1,39 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#82c210d8ba84cd87b5865d931e773114>
+        a               sh:PropertyShape ;
+        rdfs:label      "Conceptual Depth" , "A measure of how universal/accepted/popular a URI is." ;
+        rdfs:seeAlso    <http://purl.org/twc/vocab/conversion/conceptual_depth> ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "A measure of how universal/accepted/popular a URI is." ;
+        sh:name         "Conceptual Depth" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/twc/ontology/conceptual_depth> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#a8d85c4d601c3da464d7280f3db53fea>
+        a               sh:PropertyShape ;
+        rdfs:label      "URI Length" , "A naive measure of conceptual depth: the length of the URI." ;
+        sh:description  "A naive measure of conceptual depth: the length of the URI." ;
+        sh:name         "URI Length" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/twc/ontology/uri_length> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#82c210d8ba84cd87b5865d931e773114> , <https://astrea.linkeddata.es/shapes#a8d85c4d601c3da464d7280f3db53fea> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .

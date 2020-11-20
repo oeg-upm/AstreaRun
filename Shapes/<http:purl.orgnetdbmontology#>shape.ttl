@@ -1,0 +1,278 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#5edd8c8809380d38d1c1d09ee929c921>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property represents the price of the drug in Macedonian Denars (MKD), with no VAT calculated." ;
+        sh:datatype     xsd:float ;
+        sh:description  "This property represents the price of the drug in Macedonian Denars (MKD), with no VAT calculated." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/dbm/ontology#priceWithoutVAT> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#cd4a0b942ad0c99b803e8e9f25a71e0c>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property represents the company which holds the approval by the Macedonian Drug Bureau for the drug." ;
+        sh:datatype     xsd:string ;
+        sh:description  "This property represents the company which holds the approval by the Macedonian Drug Bureau for the drug." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/dbm/ontology#approvedFor> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#ec17d8c0073f1d915f15a74d2a973e0a>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property represents the generic name of the drug." ;
+        sh:datatype     xsd:string ;
+        sh:description  "This property represents the generic name of the drug." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/genericName> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#c7a34540397f45953530631c3bb9c6d9>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property represents a manufacturer of a drug." ;
+        sh:datatype     xsd:string ;
+        sh:description  "This property represents a manufacturer of a drug." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/dbm/ontology#manufacturer> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#cf088a1f3e63c7cbf496c2eb68895a89>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property is used to represent that the drugs in question are similar in their purpose, i.e. contain the same active substance." ;
+        sh:class        <http://purl.org/net/dbm/ontology#Drug> ;
+        sh:description  "This property is used to represent that the drugs in question are similar in their purpose, i.e. contain the same active substance." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/net/dbm/ontology#similarTo> .
+
+<https://astrea.linkeddata.es/shapes#08a7b0313788569ddc631323ba35e50b>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property holds the URL to the usage guidelines for the drug, published by the Macedonian Drug Bureau." ;
+        sh:datatype     xsd:string ;
+        sh:description  "This property holds the URL to the usage guidelines for the drug, published by the Macedonian Drug Bureau." ;
+        sh:maxCount     1 ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://purl.org/net/dbm/ontology#usageGuidelines> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#5d763aa4f359c8aec8820a1860cef590>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property represents the extended ATC code for the drug, assigned by the Ministry of Health, of the Republic of Macedonia." ;
+        sh:datatype     xsd:string ;
+        sh:description  "This property represents the extended ATC code for the drug, assigned by the Ministry of Health, of the Republic of Macedonia." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/dbm/ontology#atcCodeExtended> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#a545e9aeaf17d0242ae410474b327d04>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property holds the URL of the drug information page on the Macedonian Drug Bureau website." ;
+        sh:datatype     xsd:string ;
+        sh:description  "This property holds the URL of the drug information page on the Macedonian Drug Bureau website." ;
+        sh:maxCount     1 ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://xmlns.com/foaf/0.1/page> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#045e9d54e841979f8761a5701cfe5e17>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property represents the packaging information of the drug." ;
+        sh:datatype     xsd:string ;
+        sh:description  "This property represents the packaging information of the drug." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/dbm/ontology#packaging> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#2c6521b4a10fae716a8546b114e38b1b>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property represents the brand name of the drug, in cyrillic alphabet." ;
+        sh:datatype     xsd:string ;
+        sh:description  "This property represents the brand name of the drug, in cyrillic alphabet." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/dbm/ontology#brandNameCyrillic> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#dfd0f73f7a4203de32147cf6a3e4fd1a>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property represents the brand name of the drug." ;
+        sh:datatype     xsd:string ;
+        sh:description  "This property represents the brand name of the drug." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/brandName> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#5954030866bb7da5ebd1f9dd4bc48745>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property represents the price of the drug in Macedonian Denars (MKD), with VAT calculated." ;
+        sh:datatype     xsd:float ;
+        sh:description  "This property represents the price of the drug in Macedonian Denars (MKD), with VAT calculated." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/dbm/ontology#priceWithVAT> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#cc3f9983127f6a418690d0fc2fa59dac>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property represents the reference price for the drug, as assigned by the Ministry of Health of the Republic of Macedonia." ;
+        sh:datatype     xsd:float ;
+        sh:description  "This property represents the reference price for the drug, as assigned by the Ministry of Health of the Republic of Macedonia." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/dbm/ontology#referencePrice> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#32952aaf68c392f82aadcfc64c47d9b7> , <https://astrea.linkeddata.es/shapes#c7a34540397f45953530631c3bb9c6d9> , <https://astrea.linkeddata.es/shapes#dfd0f73f7a4203de32147cf6a3e4fd1a> , <https://astrea.linkeddata.es/shapes#a545e9aeaf17d0242ae410474b327d04> , <https://astrea.linkeddata.es/shapes#ec17d8c0073f1d915f15a74d2a973e0a> , <https://astrea.linkeddata.es/shapes#1bf219c11aecd01688820c39dc62f109> , <https://astrea.linkeddata.es/shapes#08a7b0313788569ddc631323ba35e50b> , <https://astrea.linkeddata.es/shapes#b73952d580dd600f5d75292b6439c683> , <https://astrea.linkeddata.es/shapes#045e9d54e841979f8761a5701cfe5e17> , <https://astrea.linkeddata.es/shapes#14a536df82b4492e06ea91a1484a78d7> , <https://astrea.linkeddata.es/shapes#c742cf864191ea6eb44b886a277d7c85> , <https://astrea.linkeddata.es/shapes#cf088a1f3e63c7cbf496c2eb68895a89> , <https://astrea.linkeddata.es/shapes#00512e187fa01ff596ee5ba4cab332b5> , <https://astrea.linkeddata.es/shapes#7e72e214b08c0478192cb924f8fdd396> , <https://astrea.linkeddata.es/shapes#4f75ce12336ab89a4edebd807cd62265> , <https://astrea.linkeddata.es/shapes#bc4ea2dd8435623af9c59c1bb3f4e41b> , <https://astrea.linkeddata.es/shapes#ca790eef3683c779a48f9ff478570d68> , <https://astrea.linkeddata.es/shapes#8843b9bfc2291dc5136129f842167f30> , <https://astrea.linkeddata.es/shapes#a00a458efb04962e7b82926339da6835> , <https://astrea.linkeddata.es/shapes#cd4a0b942ad0c99b803e8e9f25a71e0c> , <https://astrea.linkeddata.es/shapes#5edd8c8809380d38d1c1d09ee929c921> , <https://astrea.linkeddata.es/shapes#2c6521b4a10fae716a8546b114e38b1b> , <https://astrea.linkeddata.es/shapes#5954030866bb7da5ebd1f9dd4bc48745> , <https://astrea.linkeddata.es/shapes#0109b2edf72eb348ba77476804ab0759> , <https://astrea.linkeddata.es/shapes#ef35a8c1b00db15238a3bd23860d3cc7> , <https://astrea.linkeddata.es/shapes#cc3f9983127f6a418690d0fc2fa59dac> , <https://astrea.linkeddata.es/shapes#b5ee478e8d91e1f05c111cceb3cf0de0> , <https://astrea.linkeddata.es/shapes#b6e012f793fcae39b44f9bea126b7824> , <https://astrea.linkeddata.es/shapes#5d763aa4f359c8aec8820a1860cef590> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#b5ee478e8d91e1f05c111cceb3cf0de0>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property represents the strength of the drug." ;
+        sh:datatype     xsd:string ;
+        sh:description  "This property represents the strength of the drug." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/dbm/ontology#strength> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#32952aaf68c392f82aadcfc64c47d9b7>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property represents the date the company was given the approval by the Macedonian Drug Bureau for the drug." ;
+        sh:datatype     xsd:dateTime ;
+        sh:description  "This property represents the date the company was given the approval by the Macedonian Drug Bureau for the drug." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/dbm/ontology#approvedOn> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#8843b9bfc2291dc5136129f842167f30>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property represents the ATC code of the drug." ;
+        sh:datatype     xsd:string ;
+        sh:description  "This property represents the ATC code of the drug." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/atcCode> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#0109b2edf72eb348ba77476804ab0759>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property represents the approval number assigned by the Macedonian Drug Bureau, for the company." ;
+        sh:datatype     xsd:string ;
+        sh:description  "This property represents the approval number assigned by the Macedonian Drug Bureau, for the company." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/dbm/ontology#approvalNumber> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#14a536df82b4492e06ea91a1484a78d7>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property represents the date the drug data has been updated." ;
+        sh:datatype     xsd:dateTime ;
+        sh:description  "This property represents the date the drug data has been updated." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/dbm/ontology#updateDate> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#bc4ea2dd8435623af9c59c1bb3f4e41b>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property tells if the drug is featured on the positive list of drugs, or not." ;
+        sh:datatype     xsd:string ;
+        sh:description  "This property tells if the drug is featured on the positive list of drugs, or not." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/dbm/ontology#positiveList> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#00512e187fa01ff596ee5ba4cab332b5>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property represents the EAN code of the drug." ;
+        sh:datatype     xsd:string ;
+        sh:description  "This property represents the EAN code of the drug." ;
+        sh:maxCount     1 ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://purl.org/net/dbm/ontology#eanCode> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#ca790eef3683c779a48f9ff478570d68>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property holds the URL to the summary report for the drug, published by the Macedonian Drug Bureau." ;
+        sh:datatype     xsd:string ;
+        sh:description  "This property holds the URL to the summary report for the drug, published by the Macedonian Drug Bureau." ;
+        sh:maxCount     1 ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://purl.org/net/dbm/ontology#summaryReport> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#7e72e214b08c0478192cb924f8fdd396>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property links a drug from the Macedonian Drug Bureau with a drug from DrugBank, based on the ATC code." ;
+        sh:class        <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/drugs> ;
+        sh:description  "This property links a drug from the Macedonian Drug Bureau with a drug from DrugBank, based on the ATC code." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         rdfs:seeAlso .
+
+<https://astrea.linkeddata.es/shapes#b6e012f793fcae39b44f9bea126b7824>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property represents the dosage information for the drug." ;
+        sh:datatype     xsd:string ;
+        sh:description  "This property represents the dosage information for the drug." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/dbm/ontology#dosage> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#c742cf864191ea6eb44b886a277d7c85>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property indicates wether the drug packaging has Braille support or not." ;
+        sh:datatype     xsd:string ;
+        sh:description  "This property indicates wether the drug packaging has Braille support or not." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/dbm/ontology#brailleSupport> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#ef35a8c1b00db15238a3bd23860d3cc7>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/drugs> .
+
+<https://astrea.linkeddata.es/shapes#a00a458efb04962e7b82926339da6835>
+        a               sh:NodeShape ;
+        sh:description  "This class represents a Drug entity from the Macedonian Drug Bureau." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#bc4ea2dd8435623af9c59c1bb3f4e41b> , <https://astrea.linkeddata.es/shapes#32952aaf68c392f82aadcfc64c47d9b7> , <https://astrea.linkeddata.es/shapes#ec17d8c0073f1d915f15a74d2a973e0a> , <https://astrea.linkeddata.es/shapes#0109b2edf72eb348ba77476804ab0759> , <https://astrea.linkeddata.es/shapes#cf088a1f3e63c7cbf496c2eb68895a89> , <https://astrea.linkeddata.es/shapes#045e9d54e841979f8761a5701cfe5e17> , <https://astrea.linkeddata.es/shapes#a545e9aeaf17d0242ae410474b327d04> , <https://astrea.linkeddata.es/shapes#cc3f9983127f6a418690d0fc2fa59dac> , <https://astrea.linkeddata.es/shapes#4f75ce12336ab89a4edebd807cd62265> , <https://astrea.linkeddata.es/shapes#dfd0f73f7a4203de32147cf6a3e4fd1a> , <https://astrea.linkeddata.es/shapes#c742cf864191ea6eb44b886a277d7c85> , <https://astrea.linkeddata.es/shapes#00512e187fa01ff596ee5ba4cab332b5> , <https://astrea.linkeddata.es/shapes#b5ee478e8d91e1f05c111cceb3cf0de0> , <https://astrea.linkeddata.es/shapes#08a7b0313788569ddc631323ba35e50b> , <https://astrea.linkeddata.es/shapes#14a536df82b4492e06ea91a1484a78d7> , <https://astrea.linkeddata.es/shapes#ca790eef3683c779a48f9ff478570d68> , <https://astrea.linkeddata.es/shapes#c7a34540397f45953530631c3bb9c6d9> , <https://astrea.linkeddata.es/shapes#2c6521b4a10fae716a8546b114e38b1b> , <https://astrea.linkeddata.es/shapes#cd4a0b942ad0c99b803e8e9f25a71e0c> , <https://astrea.linkeddata.es/shapes#b6e012f793fcae39b44f9bea126b7824> , <https://astrea.linkeddata.es/shapes#1bf219c11aecd01688820c39dc62f109> , <https://astrea.linkeddata.es/shapes#5d763aa4f359c8aec8820a1860cef590> , <https://astrea.linkeddata.es/shapes#5edd8c8809380d38d1c1d09ee929c921> , <https://astrea.linkeddata.es/shapes#5954030866bb7da5ebd1f9dd4bc48745> , <https://astrea.linkeddata.es/shapes#8843b9bfc2291dc5136129f842167f30> , <https://astrea.linkeddata.es/shapes#b73952d580dd600f5d75292b6439c683> , <https://astrea.linkeddata.es/shapes#7e72e214b08c0478192cb924f8fdd396> ;
+        sh:targetClass  <http://purl.org/net/dbm/ontology#Drug> .
+
+<https://astrea.linkeddata.es/shapes#b73952d580dd600f5d75292b6439c683>
+        a               sh:PropertyShape ;
+        rdfs:label      "This is the code that the drug instance has in the local system of the Health Insurance Fund of Macedonia." ;
+        sh:datatype     xsd:string ;
+        sh:description  "This is the code that the drug instance has in the local system of the Health Insurance Fund of Macedonia." ;
+        sh:maxCount     1 ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://purl.org/net/dbm/ontology#hifmCode> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#1bf219c11aecd01688820c39dc62f109>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property represents the expiry date of the approval which the company was given by the Macedonian Drug Bureau for the drug." ;
+        sh:datatype     xsd:dateTime ;
+        sh:description  "This property represents the expiry date of the approval which the company was given by the Macedonian Drug Bureau for the drug." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/dbm/ontology#approvedUntil> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#4f75ce12336ab89a4edebd807cd62265>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property holds the brand name of the drug, as a label." ;
+        sh:datatype     xsd:string ;
+        sh:description  "This property holds the brand name of the drug, as a label." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         rdfs:label ;
+        sh:pattern      ".*" .

@@ -1,0 +1,435 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#b61ea819edd5ec1325048a7c1d4cc10e>
+        a               sh:NodeShape ;
+        rdfs:label      "SoftwareService" ;
+        sh:description  "A service published by a piece of software, either by an operating system or an application. Examples of such services may include calendar, addressbook and mailbox managed by a PIM application. This category is introduced to distinguish between data available directly from the applications (Via some Interprocess Communication Mechanisms) and data available from files on a disk. In either case both DataObjects would receive a similar interpretation (e.g. a Mailbox) and wouldn't differ on the content level." ;
+        sh:name         "SoftwareService" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#SoftwareService> .
+
+<https://astrea.linkeddata.es/shapes#e0cf226e0508ab8e68660cb16f7dcb58>
+        a               sh:NodeShape ;
+        rdfs:label      "Video" ;
+        sh:description  "A video file." ;
+        sh:name         "Video" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Video> .
+
+<https://astrea.linkeddata.es/shapes#1f3fb290b7f7e1729c6be6281cf94183>
+        a               sh:NodeShape ;
+        rdfs:label      "DataContainer" ;
+        sh:description  "A superclass for all entities, whose primary purpose is to serve as containers for other data object. They usually don't have any \"meaning\" by themselves. Examples include folders, archives and optical disc images." ;
+        sh:name         "DataContainer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer> .
+
+<https://astrea.linkeddata.es/shapes#6604415bc113812ee672ba2ef547b705>
+        a               sh:NodeShape ;
+        rdfs:label      "Bookmark Folder" ;
+        sh:description  "A folder with bookmarks of a webbrowser. Use nfo:containsBookmark to relate Bookmarks. Folders can contain subfolders, use containsBookmarkFolder to relate them." ;
+        sh:name         "Bookmark Folder" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#BookmarkFolder> .
+
+<https://astrea.linkeddata.es/shapes#419e109e46f090f496db7eff723afaee>
+        a               sh:NodeShape ;
+        rdfs:label      "Placemark" ;
+        sh:description  "One placemark within a placemark container/file. Use nie:title for the name/label, nao:creator for defining the creator." ;
+        sh:name         "Placemark" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Placemark> .
+
+<https://astrea.linkeddata.es/shapes#6d0c81ba8090d484d057a109085e5c73>
+        a               sh:NodeShape ;
+        rdfs:label      "OperatingSystem" ;
+        sh:description  "An OperatingSystem" ;
+        sh:name         "OperatingSystem" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#OperatingSystem> .
+
+<https://astrea.linkeddata.es/shapes#f38d65f7fcefb2566597ff1883ba5c3b>
+        a               sh:NodeShape ;
+        rdfs:label      "SourceCode" ;
+        sh:description  "Code in a compilable or interpreted programming language." ;
+        sh:name         "SourceCode" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#SourceCode> .
+
+<https://astrea.linkeddata.es/shapes#afdfc20b56e16bdc91e6c4d6a8e59813>
+        a               sh:NodeShape ;
+        rdfs:label      "RemotePortAddress" ;
+        sh:description  "An address specifying a remote host and port. Such an address can be interpreted in many ways (examples of such interpretations include mailboxes, websites, remote calendars or filesystems), depending on an interpretation, various kinds of data may be extracted from such an address." ;
+        sh:name         "RemotePortAddress" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemotePortAddress> .
+
+<https://astrea.linkeddata.es/shapes#50b971527d99f48451aa9f9864e38a29>
+        a               sh:NodeShape ;
+        rdfs:label      "MediaStream" ;
+        sh:description  "A stream of multimedia content, usually contained within a media container such as a movie (containing both audio and video) or a DVD (possibly containing many streams of audio and video). Most common interpretations for such a DataObject include Audio and Video." ;
+        sh:name         "MediaStream" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#MediaStream> .
+
+<https://astrea.linkeddata.es/report/0>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#4d18f7e98a79ec7aa1df204bfbae5bfa>
+        a               sh:NodeShape ;
+        rdfs:label      "VectorImage" ;
+        sh:name         "VectorImage" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#VectorImage> .
+
+<https://astrea.linkeddata.es/shapes#664bbb23f0c9528f4fecaf5711dc4109>
+        a               sh:NodeShape ;
+        rdfs:label      "Folder" ;
+        sh:description  "A folder/directory. Examples of folders include folders on a filesystem and message folders in a mailbox." ;
+        sh:name         "Folder" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Folder> .
+
+<https://astrea.linkeddata.es/shapes#97f1f15a486a3075720ace6dd348cd87>
+        a               sh:NodeShape ;
+        rdfs:label      "Archive" ;
+        sh:description  "A compressed file. May contain other files or folder inside. " ;
+        sh:name         "Archive" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Archive> .
+
+<https://astrea.linkeddata.es/shapes#050396f63d39b591e2d64296a8231e84>
+        a               sh:NodeShape ;
+        rdfs:label      "file" ;
+        sh:description  "A resource containing a finite sequence of bytes with arbitrary information, that is available to a computer program and is usually based on some kind of durable storage. A file is durable in the sense that it remains available for programs to use after the current program has finished." ;
+        sh:name         "file" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject> .
+
+<https://astrea.linkeddata.es/shapes#332b828b39ee12158e32f43eaf73b826>
+        a               sh:NodeShape ;
+        rdfs:label      "web data object" ;
+        sh:description  "An information resources of which representations (files, streams) can be retrieved through a web server. They may be generated at retrieval time. Typical examples are pages served by PHP or AJAX or mp3 streams." ;
+        sh:name         "web data object" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#WebDataObject> .
+
+<https://astrea.linkeddata.es/shapes#a077eddedf4d315b4197a347c87140e0>
+        a               sh:NodeShape ;
+        rdfs:label      "Trash" ;
+        sh:description  "Represents a container for deleted files, a feature common in modern operating systems." ;
+        sh:name         "Trash" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Trash> .
+
+<https://astrea.linkeddata.es/shapes#1548fdc7ee7391e84c3200b5a77d9637>
+        a               sh:NodeShape ;
+        rdfs:label      "Font" ;
+        sh:description  "A font." ;
+        sh:name         "Font" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Font> .
+
+<https://astrea.linkeddata.es/shapes#e966ae5d67a0e010432612d83d9630e7>
+        a               sh:NodeShape ;
+        rdfs:label      "PaginatedTextDocument" ;
+        sh:description  "A file containing a text document, that is unambiguously divided into pages. Examples might include PDF, DOC, PS, DVI etc." ;
+        sh:name         "PaginatedTextDocument" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#PaginatedTextDocument> .
+
+<https://astrea.linkeddata.es/shapes#a172e5cbb60e400950c01a7c482a721c>
+        a               sh:NodeShape ;
+        rdfs:label      "DeletedResource" ;
+        sh:description  "A file entity that has been deleted from the original source. Usually such entities are stored within various kinds of 'Trash' or 'Recycle Bin' folders." ;
+        sh:name         "DeletedResource" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DeletedResource> .
+
+<https://astrea.linkeddata.es/shapes#7c5d2dfbcd30e4f9630b6205d622a355>
+        a               sh:NodeShape ;
+        rdfs:label      "Media" ;
+        sh:description  "A piece of media content. This class may be used to express complex media containers with many streams of various media content (both aural and visual)." ;
+        sh:name         "Media" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Media> .
+
+<https://astrea.linkeddata.es/shapes#a4e225927fd8f120f116f6cab8cbea6a>
+        a               sh:NodeShape ;
+        rdfs:label      "RasterImage" ;
+        sh:description  "A raster image." ;
+        sh:name         "RasterImage" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RasterImage> .
+
+<https://astrea.linkeddata.es/shapes#ec33c753f647c66e4a689c1e040d676a>
+        a               sh:NodeShape ;
+        rdfs:label      "Icon" ;
+        sh:description  "An Icon (regardless of whether it's a raster or a vector icon. A resource representing an icon could have two types (Icon and Raster, or Icon and Vector) if required." ;
+        sh:name         "Icon" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Icon> .
+
+<https://astrea.linkeddata.es/shapes#72f932ca8d9b83b6b286b813ddea7f05>
+        a               sh:NodeShape ;
+        rdfs:label      "Application" ;
+        sh:description  "An application" ;
+        sh:name         "Application" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Application> .
+
+<https://astrea.linkeddata.es/shapes#c3adcb0c569c0a6154a6072137f41f0b>
+        a               sh:NodeShape ;
+        rdfs:label      "HardDiskPartition" ;
+        sh:description  "A partition on a hard disk" ;
+        sh:name         "HardDiskPartition" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#HardDiskPartition> .
+
+<https://astrea.linkeddata.es/shapes#635a45c85ea920e7d210e19b064b8689>
+        a               sh:NodeShape ;
+        rdfs:label      "Website" ;
+        sh:description  "A website, usually a container for remote resources, that may be interpreted as HTMLDocuments, images or other types of content." ;
+        sh:name         "Website" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Website> .
+
+<https://astrea.linkeddata.es/shapes#0ba452035c5cdc0d632749fbab467597>
+        a               sh:NodeShape ;
+        rdfs:label      "RemoteDataObject" ;
+        sh:description  "A file data object stored at a remote location. Don't confuse this class with a RemotePortAddress. This one applies to a particular resource, RemotePortAddress applies to an address, that can have various interpretations." ;
+        sh:name         "RemoteDataObject" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject> .
+
+<https://astrea.linkeddata.es/shapes#5d15caeeac4dcc999c8fc5f9e3c5fd47>
+        a               sh:NodeShape ;
+        rdfs:label      "CompressionType" ;
+        sh:description  "Type of compression. Instances of this class represent the limited set of values allowed for the nfo:compressionType property." ;
+        sh:name         "CompressionType" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#CompressionType> .
+
+<https://astrea.linkeddata.es/shapes#2413655f970e461d61749c7f6ce93610>
+        a               sh:NodeShape ;
+        rdfs:label      "MediaList" ;
+        sh:description  "A file containing a list of media files.e.g. a playlist" ;
+        sh:name         "MediaList" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#MediaList> .
+
+<https://astrea.linkeddata.es/shapes#91ba9524acbe8a78203f7c63718e3265>
+        a               sh:NodeShape ;
+        rdfs:label      "FileHash" ;
+        sh:description  "A fingerprint of the file, generated by some hashing function." ;
+        sh:name         "FileHash" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileHash> .
+
+<https://astrea.linkeddata.es/shapes#0275890947041b985d7750371b126b4e>
+        a               sh:NodeShape ;
+        rdfs:label      "Cursor" ;
+        sh:description  "A Cursor." ;
+        sh:name         "Cursor" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Cursor> .
+
+<https://astrea.linkeddata.es/shapes#c7432fb6ba920e6fb170627aca63436f>
+        a               sh:NodeShape ;
+        rdfs:label      "Document" ;
+        sh:description  "A generic document. A common superclass for all documents on the desktop." ;
+        sh:name         "Document" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Document> .
+
+<https://astrea.linkeddata.es/shapes#c9fa1bd1014e14ebb88599178d1bbd49>
+        a               sh:NodeShape ;
+        rdfs:label      "Presentation" ;
+        sh:description  "A Presentation made by some presentation software (Corel Presentations, OpenOffice Impress, MS Powerpoint etc.)" ;
+        sh:name         "Presentation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Presentation> .
+
+<https://astrea.linkeddata.es/shapes#ef2dc31d76d381fbe550541381653b04>
+        a               sh:NodeShape ;
+        rdfs:label      "Executable" ;
+        sh:description  "An executable file." ;
+        sh:name         "Executable" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Executable> .
+
+<https://astrea.linkeddata.es/shapes#31ed3bb35b2316a5dfc112399b0fb612>
+        a               sh:NodeShape ;
+        rdfs:label      "Audio" ;
+        sh:description  "A file containing audio content" ;
+        sh:name         "Audio" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Audio> .
+
+<https://astrea.linkeddata.es/shapes#41ec8a3b169c7d07fac20d911fe83878>
+        a               sh:NodeShape ;
+        rdfs:label      "Software" ;
+        sh:description  "A piece of software. Examples may include applications and the operating system. This interpretation most commonly applies to SoftwareItems." ;
+        sh:name         "Software" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Software> .
+
+<https://astrea.linkeddata.es/shapes#4837ba7fa1632709affc5c933ba2002d>
+        a               sh:NodeShape ;
+        rdfs:label      "ArchiveItem" ;
+        sh:description  "A file entity inside an archive." ;
+        sh:name         "ArchiveItem" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#ArchiveItem> .
+
+<https://astrea.linkeddata.es/shapes#2ea4af09ded5dea575cecf05123f3a31>
+        a               sh:NodeShape ;
+        rdfs:label      "MediaFileListEntry" ;
+        sh:description  "A single node in the list of media files contained within an MediaList instance. This class is intended to provide a type all those links have. In valid NRL untyped resources cannot be linked. There are no properties defined for this class but the application may expect rdf:first and rdf:last links. The former points to the DataObject instance, interpreted as Media the latter points at another MediaFileListEntr. At the end of the list there is a link to rdf:nil." ;
+        sh:name         "MediaFileListEntry" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#MediaFileListEntry> .
+
+<https://astrea.linkeddata.es/shapes#6d09d889894fa4877fde5835e9c3b789>
+        a               sh:NodeShape ;
+        rdfs:label      "EmbeddedFileDataObject" ;
+        sh:description  "A file embedded in another data object. There are many ways in which a file may be embedded in another one. Use this class directly only in cases if none of the subclasses gives a better description of your case." ;
+        sh:name         "EmbeddedFileDataObject" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#EmbeddedFileDataObject> .
+
+<https://astrea.linkeddata.es/shapes#3395078881f3f515b114bcaa62aae413>
+        a               sh:NodeShape ;
+        rdfs:label      "Image" ;
+        sh:description  "A file containing an image." ;
+        sh:name         "Image" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Image> .
+
+<https://astrea.linkeddata.es/shapes#423df8a80474b9e4c509c4bf7e42ad36>
+        a               sh:NodeShape ;
+        rdfs:label      "HtmlDocument" ;
+        sh:description  "A HTML document, may contain links to other files." ;
+        sh:name         "HtmlDocument" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#HtmlDocument> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#3ae776de5fc0cc9a0a80e2065388fbd3> , <https://astrea.linkeddata.es/shapes#c3adcb0c569c0a6154a6072137f41f0b> , <https://astrea.linkeddata.es/shapes#41ec8a3b169c7d07fac20d911fe83878> , <https://astrea.linkeddata.es/shapes#f38d65f7fcefb2566597ff1883ba5c3b> , <https://astrea.linkeddata.es/shapes#e2e84b029cc8796af505f31733b7828b> , <https://astrea.linkeddata.es/shapes#050396f63d39b591e2d64296a8231e84> , <https://astrea.linkeddata.es/shapes#1548fdc7ee7391e84c3200b5a77d9637> , <https://astrea.linkeddata.es/shapes#91ba9524acbe8a78203f7c63718e3265> , <https://astrea.linkeddata.es/shapes#635a45c85ea920e7d210e19b064b8689> , <https://astrea.linkeddata.es/shapes#4d18f7e98a79ec7aa1df204bfbae5bfa> , <https://astrea.linkeddata.es/shapes#b61ea819edd5ec1325048a7c1d4cc10e> , <https://astrea.linkeddata.es/shapes#6d09d889894fa4877fde5835e9c3b789> , <https://astrea.linkeddata.es/shapes#423df8a80474b9e4c509c4bf7e42ad36> , <https://astrea.linkeddata.es/shapes#ec33c753f647c66e4a689c1e040d676a> , <https://astrea.linkeddata.es/shapes#86b7b0ef698a0c5c4c3c265383c40dd5> , <https://astrea.linkeddata.es/shapes#3395078881f3f515b114bcaa62aae413> , <https://astrea.linkeddata.es/shapes#9713cb7641d26ef2e79d6049a576ff0a> , <https://astrea.linkeddata.es/shapes#b7c731ef4758e8c486e693fb13153fb8> , <https://astrea.linkeddata.es/shapes#72f932ca8d9b83b6b286b813ddea7f05> , <https://astrea.linkeddata.es/shapes#40a61979c404addea2cab1605af423dc> , <https://astrea.linkeddata.es/shapes#03fea2f638f8391f2e5e833b0e99f788> , <https://astrea.linkeddata.es/shapes#311e1db497ed2903dd0854e521e3c6cf> , <https://astrea.linkeddata.es/shapes#e0cf226e0508ab8e68660cb16f7dcb58> , <https://astrea.linkeddata.es/shapes#5c9d7cbe986587c603b8f4e19979a08e> , <https://astrea.linkeddata.es/shapes#a4e225927fd8f120f116f6cab8cbea6a> , <https://astrea.linkeddata.es/shapes#2413655f970e461d61749c7f6ce93610> , <https://astrea.linkeddata.es/shapes#f43454eab2daf5dbc35e4072a825a807> , <https://astrea.linkeddata.es/shapes#eaef0514f8f2024018d267dfca3e3c19> , <https://astrea.linkeddata.es/shapes#6604415bc113812ee672ba2ef547b705> , <https://astrea.linkeddata.es/shapes#6d0c81ba8090d484d057a109085e5c73> , <https://astrea.linkeddata.es/shapes#0ba452035c5cdc0d632749fbab467597> , <https://astrea.linkeddata.es/shapes#2b3a3698c1dfe04feff4f4db5606df4a> , <https://astrea.linkeddata.es/shapes#1f3fb290b7f7e1729c6be6281cf94183> , <https://astrea.linkeddata.es/shapes#419e109e46f090f496db7eff723afaee> , <https://astrea.linkeddata.es/shapes#31ed3bb35b2316a5dfc112399b0fb612> , <https://astrea.linkeddata.es/shapes#afdfc20b56e16bdc91e6c4d6a8e59813> , <https://astrea.linkeddata.es/shapes#0275890947041b985d7750371b126b4e> , <https://astrea.linkeddata.es/shapes#664bbb23f0c9528f4fecaf5711dc4109> , <https://astrea.linkeddata.es/shapes#c7432fb6ba920e6fb170627aca63436f> , <https://astrea.linkeddata.es/shapes#e966ae5d67a0e010432612d83d9630e7> , <https://astrea.linkeddata.es/shapes#4837ba7fa1632709affc5c933ba2002d> , <https://astrea.linkeddata.es/shapes#97f1f15a486a3075720ace6dd348cd87> , <https://astrea.linkeddata.es/shapes#a077eddedf4d315b4197a347c87140e0> , <https://astrea.linkeddata.es/shapes#2ea4af09ded5dea575cecf05123f3a31> , <https://astrea.linkeddata.es/shapes#7c5d2dfbcd30e4f9630b6205d622a355> , <https://astrea.linkeddata.es/shapes#cb8fa7d25c6d94e28a008c8df961e57d> , <https://astrea.linkeddata.es/shapes#50b971527d99f48451aa9f9864e38a29> , <https://astrea.linkeddata.es/shapes#5d15caeeac4dcc999c8fc5f9e3c5fd47> , <https://astrea.linkeddata.es/shapes#ef2dc31d76d381fbe550541381653b04> , <https://astrea.linkeddata.es/shapes#332b828b39ee12158e32f43eaf73b826> , <https://astrea.linkeddata.es/shapes#c9fa1bd1014e14ebb88599178d1bbd49> , <https://astrea.linkeddata.es/shapes#a172e5cbb60e400950c01a7c482a721c> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0> .
+
+<https://astrea.linkeddata.es/shapes#03fea2f638f8391f2e5e833b0e99f788>
+        a               sh:NodeShape ;
+        rdfs:label      "Placemark Container" ;
+        sh:description  "A data object containing placemark(s). Use nie:contentCreated to represent the date when the user created the dataobject, nao:creator for defining the creator, nie:contentLastModified for modifications. nfo:containsPlacemark to refer to individual placemarks within." ;
+        sh:name         "Placemark Container" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#PlacemarkContainer> .
+
+<https://astrea.linkeddata.es/shapes#2b3a3698c1dfe04feff4f4db5606df4a>
+        a               sh:NodeShape ;
+        rdfs:label      "MindMap" ;
+        sh:description  "A MindMap, created by a mind-mapping utility. Examples might include FreeMind or mind mapper." ;
+        sh:name         "MindMap" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#MindMap> .
+
+<https://astrea.linkeddata.es/shapes#f43454eab2daf5dbc35e4072a825a807>
+        a               sh:NodeShape ;
+        rdfs:label      "Bookmark" ;
+        sh:description  "A bookmark of a webbrowser. Use nie:title for the name/label, nie:contentCreated to represent the date when the user added the bookmark, and nie:contentLastModified for modifications. nfo:bookmarks to store the link." ;
+        sh:name         "Bookmark" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Bookmark> .
+
+<https://astrea.linkeddata.es/shapes#5c9d7cbe986587c603b8f4e19979a08e>
+        a               sh:NodeShape ;
+        rdfs:label      "SoftwareItem" ;
+        sh:description  "A DataObject representing a piece of software. Examples of interpretations of a SoftwareItem include an Application and an OperatingSystem." ;
+        sh:name         "SoftwareItem" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#SoftwareItem> .
+
+<https://astrea.linkeddata.es/shapes#3ae776de5fc0cc9a0a80e2065388fbd3>
+        a               sh:NodeShape ;
+        rdfs:label      "PlainTextDocument" ;
+        sh:description  "A file containing plain text (ASCII, Unicode or other encodings). Examples may include TXT, HTML, XML, program source code etc." ;
+        sh:name         "PlainTextDocument" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#PlainTextDocument> .
+
+<https://astrea.linkeddata.es/shapes#eaef0514f8f2024018d267dfca3e3c19>
+        a               sh:NodeShape ;
+        rdfs:label      "Visual" ;
+        sh:description  "File containing visual content." ;
+        sh:name         "Visual" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Visual> .
+
+<https://astrea.linkeddata.es/shapes#311e1db497ed2903dd0854e521e3c6cf>
+        a               sh:NodeShape ;
+        rdfs:label      "TextDocument" ;
+        sh:description  "A text document" ;
+        sh:name         "TextDocument" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#TextDocument> .
+
+<https://astrea.linkeddata.es/shapes#86b7b0ef698a0c5c4c3c265383c40dd5>
+        a               sh:NodeShape ;
+        rdfs:label      "EncryptionStatus" ;
+        sh:description  "The status of the encryption of an InformationElement. nfo:encryptedStatus means that the InformationElement has been encrypted and couldn't be decrypted by the extraction software, thus no content is available. nfo:decryptedStatus means that decryption was successfull and the content is available." ;
+        sh:name         "EncryptionStatus" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#EncryptionStatus> .
+
+<https://astrea.linkeddata.es/shapes#cb8fa7d25c6d94e28a008c8df961e57d>
+        a               sh:NodeShape ;
+        rdfs:label      "Spreadsheet" ;
+        sh:description  "A spreadsheet, created by a spreadsheet application. Examples might include Gnumeric, OpenOffice Calc or MS Excel." ;
+        sh:name         "Spreadsheet" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Spreadsheet> .
+
+<https://astrea.linkeddata.es/shapes#e2e84b029cc8796af505f31733b7828b>
+        a               sh:NodeShape ;
+        rdfs:label      "Attachment" ;
+        sh:description  "A file attached to another data object. Many data formats allow for attachments: emails, vcards, ical events, id3 and exif..." ;
+        sh:name         "Attachment" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Attachment> .
+
+<https://astrea.linkeddata.es/shapes#40a61979c404addea2cab1605af423dc>
+        a               sh:NodeShape ;
+        rdfs:label      "local file" ;
+        sh:description  "A local file data object which is stored on a local file system. Its nie:url always uses the file:/ protocol. The main use of this class is to distinguish local and non-local files." ;
+        sh:name         "local file" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#LocalFileDataObject> .
+
+<https://astrea.linkeddata.es/shapes#b7c731ef4758e8c486e693fb13153fb8>
+        a               sh:NodeShape ;
+        rdfs:label      "Filesystem" ;
+        sh:description  "A filesystem. Examples of filesystems include hard disk partitions, removable media, but also images thereof stored in files such as ISO." ;
+        sh:name         "Filesystem" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Filesystem> .
+
+<https://astrea.linkeddata.es/shapes#9713cb7641d26ef2e79d6049a576ff0a>
+        a               sh:NodeShape ;
+        rdfs:label      "FilesystemImage" ;
+        sh:description  "An image of a filesystem. Instances of this class may include CD images, DVD images or hard disk partition images created by various pieces of software (e.g. Norton Ghost). Deprecated in favor of nfo:Filesystem." ;
+        sh:name         "FilesystemImage" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FilesystemImage> .

@@ -1,0 +1,90 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#caa7c01cc25e687da21b91381261c80a>
+        a               sh:NodeShape ;
+        rdfs:label      "Boolean expression" ;
+        sh:description  "A Boolean expression." ;
+        sh:name         "Boolean expression" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://vocab.deri.ie/csp#BoolExpr> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#bf422e3bfc9ce3e43262e26ff762a9ae> , <https://astrea.linkeddata.es/shapes#dd4a333d4b0263cfb06787f5a40e5fe0> , <https://astrea.linkeddata.es/shapes#96891f4bfe27d36fad6de1737bb6d381> , <https://astrea.linkeddata.es/shapes#9d44a17624cbb61adc125589ee095b58> , <https://astrea.linkeddata.es/shapes#f405bd9a718995dab0b1fb839b08286d> , <https://astrea.linkeddata.es/shapes#caa7c01cc25e687da21b91381261c80a> , <https://astrea.linkeddata.es/shapes#deb03759c5fb727e5dad176eb00319bb> , <https://astrea.linkeddata.es/shapes#5ca2ad4c836c94287229fef5f3a535b3> , <https://astrea.linkeddata.es/shapes#74691ab76356db83b1fd08cdec20e746> , <https://astrea.linkeddata.es/shapes#170e2159957f9bc4cc8d8e91db7aaaa9> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#5ca2ad4c836c94287229fef5f3a535b3>
+        a               sh:NodeShape ;
+        rdfs:label      "And" ;
+        sh:description  "Models a conjunctive logical sub-expression AND (BoolExpr1 BoolExpr2 ... BoolExprn)." ;
+        sh:name         "And" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://vocab.deri.ie/csp#And> .
+
+<https://astrea.linkeddata.es/shapes#170e2159957f9bc4cc8d8e91db7aaaa9>
+        a         sh:PropertyShape ;
+        sh:class  <http://vocab.deri.ie/csp#And> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#74691ab76356db83b1fd08cdec20e746>
+        a               sh:NodeShape ;
+        rdfs:label      "Solution" ;
+        sh:description  "A solution of the constraint satisfaction problem." ;
+        sh:name         "Solution" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://vocab.deri.ie/csp#Solution> .
+
+<https://astrea.linkeddata.es/shapes#f405bd9a718995dab0b1fb839b08286d>
+        a               sh:NodeShape ;
+        rdfs:label      "Not" ;
+        sh:description  "Models the negation of a logical sub-expression NOT(BoolExpr)." ;
+        sh:name         "Not" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#dd4a333d4b0263cfb06787f5a40e5fe0> , <https://astrea.linkeddata.es/shapes#170e2159957f9bc4cc8d8e91db7aaaa9> ;
+        sh:targetClass  <http://vocab.deri.ie/csp#Not> .
+
+<https://astrea.linkeddata.es/shapes#96891f4bfe27d36fad6de1737bb6d381>
+        a               sh:NodeShape ;
+        rdfs:label      "Relation" ;
+        sh:description  "The list of all valid combinations of values of a set of variables." ;
+        sh:name         "Relation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://vocab.deri.ie/csp#Relation> .
+
+<https://astrea.linkeddata.es/shapes#9d44a17624cbb61adc125589ee095b58>
+        a               sh:NodeShape ;
+        rdfs:label      "Fluent" ;
+        sh:description  "A fluent is the association of a variable name and a subset of its domain of values." ;
+        sh:name         "Fluent" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://vocab.deri.ie/csp#Fluent> .
+
+<https://astrea.linkeddata.es/shapes#bf422e3bfc9ce3e43262e26ff762a9ae>
+        a               sh:NodeShape ;
+        rdfs:label      "Or" ;
+        sh:description  "Models a disjunctive logical sub-expression OR (BoolExpr1 BoolExpr2 ... BoolExprn)." ;
+        sh:name         "Or" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#deb03759c5fb727e5dad176eb00319bb> , <https://astrea.linkeddata.es/shapes#170e2159957f9bc4cc8d8e91db7aaaa9> ;
+        sh:targetClass  <http://vocab.deri.ie/csp#Or> .
+
+<https://astrea.linkeddata.es/shapes#deb03759c5fb727e5dad176eb00319bb>
+        a         sh:PropertyShape ;
+        sh:class  <http://vocab.deri.ie/csp#Not> .
+
+<https://astrea.linkeddata.es/shapes#dd4a333d4b0263cfb06787f5a40e5fe0>
+        a         sh:PropertyShape ;
+        sh:class  <http://vocab.deri.ie/csp#Or> .

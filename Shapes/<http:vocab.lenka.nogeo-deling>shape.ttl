@@ -1,0 +1,117 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#45edbbf9463adeff785208e4340b26a7> , <https://astrea.linkeddata.es/shapes#51c20616ac948c9af52eff8081dea52e> , <https://astrea.linkeddata.es/shapes#ab462da80f546fa9a8d6adac4417ef7d> , <https://astrea.linkeddata.es/shapes#f913f9e354c6bee65b4768526362f00e> , <https://astrea.linkeddata.es/shapes#55f251b03f02f81a047c350020453d2e> , <https://astrea.linkeddata.es/shapes#9743406a662a2d139f97822bd6ec091b> , <https://astrea.linkeddata.es/shapes#357073215aad953aa6f48315dd7106f5> , <https://astrea.linkeddata.es/shapes#a04b3e7321284376a24241e925fd1381> , <https://astrea.linkeddata.es/shapes#5fdf804b84cd80c3a96ab0bb2cb78882> , <https://astrea.linkeddata.es/shapes#2024c48ac5643d4b2e3a75d96a321750> , <https://astrea.linkeddata.es/shapes#07601157c8002895074d2efa86e8aadd> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#07601157c8002895074d2efa86e8aadd>
+        a               sh:NodeShape ;
+        rdfs:label      "Fylke" ;
+        sh:description  "Et fylke er et område som utgjør en førsteordens politisk og administrativ enhet." ;
+        sh:name         "Fylke" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ab462da80f546fa9a8d6adac4417ef7d> ;
+        sh:targetClass  <http://vocab.lenka.no/geo-deling#Fylke> .
+
+<https://astrea.linkeddata.es/shapes#2024c48ac5643d4b2e3a75d96a321750>
+        a               sh:PropertyShape ;
+        rdfs:label      "Festenummer" , "Festenummeret er et nummer på et leid grunneiendom i matrikkelen." ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "Festenummeret er et nummer på et leid grunneiendom i matrikkelen." ;
+        sh:name         "Festenummer" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://vocab.lenka.no/geo-deling#fnr> .
+
+<https://astrea.linkeddata.es/shapes#45edbbf9463adeff785208e4340b26a7>
+        a               sh:PropertyShape ;
+        rdfs:label      "Kommunenummer " , "Kommunenummer er et firesifret nummer (eks.: 0101) som er unikt for hver kommune i Norge. " ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "Kommunenummer er et firesifret nummer (eks.: 0101) som er unikt for hver kommune i Norge. " ;
+        sh:name         "Kommunenummer " ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://vocab.lenka.no/geo-deling#kommunenr> .
+
+<https://astrea.linkeddata.es/shapes#a04b3e7321284376a24241e925fd1381>
+        a               sh:NodeShape ;
+        rdfs:label      "Kommunesenter" ;
+        sh:description  "Et kommunesenter er et sted som tjener som administrativt senter for en kommune." ;
+        sh:name         "Kommunesenter" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://vocab.lenka.no/geo-deling#Kommunesenter> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#5fdf804b84cd80c3a96ab0bb2cb78882>
+        a               sh:NodeShape ;
+        rdfs:label      "Grunneiendom" ;
+        sh:description  "Grunneiendom er en geografisk del av landet som har et eget eierforhold." ;
+        sh:name         "Grunneiendom" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2024c48ac5643d4b2e3a75d96a321750> , <https://astrea.linkeddata.es/shapes#51c20616ac948c9af52eff8081dea52e> , <https://astrea.linkeddata.es/shapes#357073215aad953aa6f48315dd7106f5> , <https://astrea.linkeddata.es/shapes#9743406a662a2d139f97822bd6ec091b> ;
+        sh:targetClass  <http://vocab.lenka.no/geo-deling#Grunneiendom> .
+
+<https://astrea.linkeddata.es/shapes#51c20616ac948c9af52eff8081dea52e>
+        a               sh:PropertyShape ;
+        rdfs:label      "Bruksnummer" , "Et bruksnummer er en del av en enhet i det norske eiendomsregisteret, matrikkelen." ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "Et bruksnummer er en del av en enhet i det norske eiendomsregisteret, matrikkelen." ;
+        sh:name         "Bruksnummer" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://vocab.lenka.no/geo-deling#bnr> .
+
+<https://astrea.linkeddata.es/shapes#9743406a662a2d139f97822bd6ec091b>
+        a               sh:PropertyShape ;
+        rdfs:label      "Gårdsnummer" , "Gårdsnummer er nummeret på en gårdsenhet i matrikkelen og er unikt innenfor hver kommune. " ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "Gårdsnummer er nummeret på en gårdsenhet i matrikkelen og er unikt innenfor hver kommune. " ;
+        sh:name         "Gårdsnummer" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://vocab.lenka.no/geo-deling#gnr> .
+
+<https://astrea.linkeddata.es/shapes#ab462da80f546fa9a8d6adac4417ef7d>
+        a               sh:PropertyShape ;
+        rdfs:label      "Fylkenummer" , "Fylkenummer er et tosifret nummer (eks.: 01) som er unikt for hvert fylke i Norge. " ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "Fylkenummer er et tosifret nummer (eks.: 01) som er unikt for hvert fylke i Norge. " ;
+        sh:name         "Fylkenummer" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://vocab.lenka.no/geo-deling#fylkenr> .
+
+<https://astrea.linkeddata.es/shapes#55f251b03f02f81a047c350020453d2e>
+        a               sh:NodeShape ;
+        rdfs:label      "Kommune" ;
+        sh:description  "En kommune er et område som utgjør en andreordens politisk og administrativ enhet." ;
+        sh:name         "Kommune" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#45edbbf9463adeff785208e4340b26a7> ;
+        sh:targetClass  <http://vocab.lenka.no/geo-deling#Kommune> .
+
+<https://astrea.linkeddata.es/shapes#357073215aad953aa6f48315dd7106f5>
+        a               sh:PropertyShape ;
+        rdfs:label      "Seksjonsnummer" , "Et seksjonsnummer er et nummer i matrikkelen som benyttes der en eiendom består av flere selvstendige eierenheter som skal selges og pantsettes hver for seg." ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "Et seksjonsnummer er et nummer i matrikkelen som benyttes der en eiendom består av flere selvstendige eierenheter som skal selges og pantsettes hver for seg." ;
+        sh:name         "Seksjonsnummer" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://vocab.lenka.no/geo-deling#snr> .
+
+<https://astrea.linkeddata.es/shapes#f913f9e354c6bee65b4768526362f00e>
+        a               sh:NodeShape ;
+        rdfs:label      "Sted" ;
+        sh:description  "Et sted er et avgrenset område." ;
+        sh:name         "Sted" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://vocab.lenka.no/geo-deling#Sted> .

@@ -1,0 +1,401 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#4fbc4b438b31b9df95edcccc2d37e7fb>
+        a               sh:PropertyShape ;
+        rdfs:label      "A specific authentification information for the management system"@en ;
+        rdfs:seeAlso    "GENI Slice X.509 certificates"@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "A specific authentification information for the management system"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://open-multinet.info/ontology/omn-lifecycle#hasAuthenticationInformation> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#293d88872c9ec15696b82b6a2c00e9ab>
+        a               sh:NodeShape ;
+        rdfs:label      "Allocated"@en ;
+        rdfs:seeAlso    "GENI geni_allocated allocation state"@en ;
+        sh:description  "The related resources/services are reserved"@en ;
+        sh:name         "Allocated"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Allocated> .
+
+<https://astrea.linkeddata.es/shapes#120f34aa000fe040ba7875640dec6308>
+        a               sh:NodeShape ;
+        rdfs:label      "Reservation State"@en ;
+        sh:description  "The current state of a reservation"@en ;
+        sh:name         "Reservation State"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#38ef6fac2a9960802f5bc60343a332fe> ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#ReservationState> .
+
+<https://astrea.linkeddata.es/shapes#06bde3b85fe8324cfb01b2c26ca9457f>
+        a               sh:NodeShape ;
+        rdfs:label      "Installed"@en ;
+        sh:description  "The related resource/service has been installed"@en ;
+        sh:name         "Installed"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Installed> .
+
+<https://astrea.linkeddata.es/shapes#b24c1dad2e5a9ace4e69711118c9fc7b>
+        a               sh:NodeShape ;
+        rdfs:label      "Pending"@en ;
+        rdfs:seeAlso    "GENI geni_pending_allocation operational state"@en ;
+        sh:description  "The related resource/service is not yet provisioned"@en ;
+        sh:name         "Pending"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Pending> .
+
+<https://astrea.linkeddata.es/shapes#bccde680b4220f11c538186df6ce220a>
+        a               sh:NodeShape ;
+        rdfs:label      "Active"@en ;
+        rdfs:seeAlso    "GENI geni_ready_busy operational state"@en ;
+        sh:description  "The related resource/service is actively performing an action"@en ;
+        sh:name         "Active"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Active> .
+
+<https://astrea.linkeddata.es/shapes#38ef6fac2a9960802f5bc60343a332fe>
+        a            sh:PropertyShape ;
+        sh:class     <http://open-multinet.info/ontology/omn#Reservation> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://open-multinet.info/ontology/omn-lifecycle#isReservationStateOf> .
+
+<https://astrea.linkeddata.es/shapes#901736a336b0e544f13221cc1bdcb52d>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:or        ( [ sh:class  <http://open-multinet.info/ontology/omn#Component> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#isStateOf>
+                       ]
+                       [ sh:class  <http://open-multinet.info/ontology/omn#Group> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#isStateOf>
+                       ]
+                       [ sh:class  <http://open-multinet.info/ontology/omn#Resource> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#isStateOf>
+                       ]
+                       [ sh:class  <http://open-multinet.info/ontology/omn#Service> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#isStateOf>
+                       ]
+                     ) .
+
+<https://astrea.linkeddata.es/shapes#234620b468ec325d5b0dd8322fc89110>
+        a            sh:PropertyShape ;
+        sh:class     <http://open-multinet.info/ontology/omn-lifecycle#State> ;
+        sh:maxCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path      <http://open-multinet.info/ontology/omn-lifecycle#hasState> .
+
+<https://astrea.linkeddata.es/shapes#1fdbfdc0bb66ac59e50a159bff728eb2>
+        a               sh:NodeShape ;
+        rdfs:label      "Cleaned"@en ;
+        sh:description  "The related resource/service has been cleaned"@en ;
+        sh:name         "Cleaned"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Cleaned> .
+
+<https://astrea.linkeddata.es/shapes#0382db2ee6961d680c3bc392b5573aac>
+        a               sh:NodeShape ;
+        rdfs:label      "Error"@en ;
+        rdfs:seeAlso    "GENI geni_failed operational state"@en ;
+        sh:description  "The related resource/service is in an error state"@en ;
+        sh:name         "Error"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Error> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#f757aa6adb348171a15fb6be89c99161>
+        a               sh:NodeShape ;
+        sh:description  "A collection (group) of resources/services/groups allocated for the user."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Manifest> .
+
+<https://astrea.linkeddata.es/shapes#fee099bf0e4281475c1834557a6994d7>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b96eeaa545e469f34138cf9ec5cc8fe4> ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn#Reservation> .
+
+<https://astrea.linkeddata.es/shapes#ef1326dccff462aff97fde3e0f8c5f7c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:or        ( [ sh:class  <http://open-multinet.info/ontology/omn#Component> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#implementedBy>
+                       ]
+                       [ sh:class  <http://open-multinet.info/ontology/omn#Group> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#implementedBy>
+                       ]
+                       [ sh:class  <http://open-multinet.info/ontology/omn#Resource> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#implementedBy>
+                       ]
+                       [ sh:class  <http://open-multinet.info/ontology/omn#Service> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#implementedBy>
+                       ]
+                     ) .
+
+<https://astrea.linkeddata.es/shapes#85e0d7a03276f60afcf1d32ecaa95191>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn#Topology> .
+
+<https://astrea.linkeddata.es/shapes#5cbcbc344f42ebb52696124bc78ad357>
+        a               sh:NodeShape ;
+        rdfs:label      "Ready"@en ;
+        rdfs:seeAlso    "GENI geni_ready operational state"@en ;
+        sh:description  "The related resource/service is ready"@en ;
+        sh:name         "Ready"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Ready> .
+
+<https://astrea.linkeddata.es/shapes#cf74a163bc4c99637ce577d00bae687f>
+        a               sh:NodeShape ;
+        rdfs:label      "Stopping"@en ;
+        rdfs:seeAlso    "GENI geni_stopping operational state"@en ;
+        sh:description  "The related resource/service is stopping"@en ;
+        sh:name         "Stopping"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Stopping> .
+
+<https://astrea.linkeddata.es/shapes#f9fb788d7b9febf09874aa640513a9e4>
+        a               sh:NodeShape ;
+        rdfs:label      "Unallocated"@en ;
+        rdfs:seeAlso    "GENI geni_unallocated allocation state"@en ;
+        sh:description  "The related resources/services are not reserved"@en ;
+        sh:name         "Unallocated"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Unallocated> .
+
+<https://astrea.linkeddata.es/shapes#41e0d28b473eac523ef8098c9ae4f945>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:or        ( [ sh:class  <http://open-multinet.info/ontology/omn#Component> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#parentTo>
+                       ]
+                       [ sh:class  <http://open-multinet.info/ontology/omn#Group> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#parentTo>
+                       ]
+                       [ sh:class  <http://open-multinet.info/ontology/omn#Resource> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#parentTo>
+                       ]
+                       [ sh:class  <http://open-multinet.info/ontology/omn#Service> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#parentTo>
+                       ]
+                     ) .
+
+<https://astrea.linkeddata.es/shapes#6d8c030ccaf625bcbad26a78f88ce36f>
+        a               sh:NodeShape ;
+        sh:description  "A collection (group) of resources/services/groups requested by the user"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Request> .
+
+<https://astrea.linkeddata.es/shapes#cbe4e0b06518ac91b600c954e79c58c8>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5dec25e38f07ea0c454090335a058bcf> , <https://astrea.linkeddata.es/shapes#4fbc4b438b31b9df95edcccc2d37e7fb> , <https://astrea.linkeddata.es/shapes#234620b468ec325d5b0dd8322fc89110> , <https://astrea.linkeddata.es/shapes#6926bb41bd7f82050b5e480bc7a371d3> ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn#Resource> .
+
+<https://astrea.linkeddata.es/shapes#a8bb89a22f784301645352ed059f2f68>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:or        ( [ sh:class  <http://open-multinet.info/ontology/omn#Component> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#implements>
+                       ]
+                       [ sh:class  <http://open-multinet.info/ontology/omn#Group> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#implements>
+                       ]
+                       [ sh:class  <http://open-multinet.info/ontology/omn#Resource> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#implements>
+                       ]
+                       [ sh:class  <http://open-multinet.info/ontology/omn#Service> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#implements>
+                       ]
+                     ) .
+
+<https://astrea.linkeddata.es/shapes#92021b93d72aee76e10b54fa01f0cdf4>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5dec25e38f07ea0c454090335a058bcf> , <https://astrea.linkeddata.es/shapes#4fbc4b438b31b9df95edcccc2d37e7fb> , <https://astrea.linkeddata.es/shapes#234620b468ec325d5b0dd8322fc89110> , <https://astrea.linkeddata.es/shapes#6926bb41bd7f82050b5e480bc7a371d3> ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn#Service> .
+
+<https://astrea.linkeddata.es/shapes#bb70ba4af84eba77e76cf90374b5e869>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  owl:NamedIndividual .
+
+<https://astrea.linkeddata.es/shapes#5876b1f531e6b22761c87d13d13bb547>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn#Attribute> .
+
+<https://astrea.linkeddata.es/shapes#75857c1ccd9e46cab4a11f0549a97dcc>
+        a               sh:NodeShape ;
+        rdfs:label      "NotYetInitialized"@en ;
+        rdfs:seeAlso    "GENI geni_instantiating operational state"@en ;
+        sh:description  "The related resource/service are not yet active/ready"@en ;
+        sh:name         "NotYetInitialized"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#NotYetInitialized> .
+
+<https://astrea.linkeddata.es/shapes#5dec25e38f07ea0c454090335a058bcf>
+        a               sh:PropertyShape ;
+        rdfs:label      "A unique identifier set by the management system"@en ;
+        rdfs:seeAlso    "GENI Manifest RSpec v3: component_id"@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "A unique identifier set by the management system"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://open-multinet.info/ontology/omn-lifecycle#hasID> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#24d5b40c7f2b7ad53d2407abef025741>
+        a               sh:NodeShape ;
+        rdfs:label      "Stopped"@en ;
+        sh:description  "The related resource/service is stopped"@en ;
+        sh:name         "Stopped"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Stopped> .
+
+<https://astrea.linkeddata.es/shapes#1c5caf17d2cc3540b7d3d2c55402d482>
+        a               sh:NodeShape ;
+        sh:description  "A collection (group) of services and resources provided by an Infrastructure. The collection is the result of the application of Policies."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Offering> .
+
+<https://astrea.linkeddata.es/shapes#71946e992b05569e1575804b068389a4>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#234620b468ec325d5b0dd8322fc89110> , <https://astrea.linkeddata.es/shapes#6926bb41bd7f82050b5e480bc7a371d3> ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn#Group> .
+
+<https://astrea.linkeddata.es/shapes#3f4437d86993986684821116b85aec7e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:or        ( [ sh:class  <http://open-multinet.info/ontology/omn#Component> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#parentOf>
+                       ]
+                       [ sh:class  <http://open-multinet.info/ontology/omn#Group> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#parentOf>
+                       ]
+                       [ sh:class  <http://open-multinet.info/ontology/omn#Resource> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#parentOf>
+                       ]
+                       [ sh:class  <http://open-multinet.info/ontology/omn#Service> ;
+                         sh:path   <http://open-multinet.info/ontology/omn-lifecycle#parentOf>
+                       ]
+                     ) .
+
+<https://astrea.linkeddata.es/shapes#6926bb41bd7f82050b5e480bc7a371d3>
+        a            sh:PropertyShape ;
+        sh:class     <http://open-multinet.info/ontology/omn#Service> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://open-multinet.info/ontology/omn-lifecycle#usesService> .
+
+<https://astrea.linkeddata.es/shapes#c7a452773d3d9c0a99a91ea93c274935>
+        a               sh:NodeShape ;
+        rdfs:label      "Removing"@en ;
+        sh:description  "The related resource/service gets removed"@en ;
+        sh:name         "Removing"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Removing> .
+
+<https://astrea.linkeddata.es/shapes#6af144280a0e6dbff69e7f2008f77474>
+        a               sh:NodeShape ;
+        rdfs:label      "State"@en ;
+        sh:description  "The current state of the resource, service or group"@en ;
+        sh:name         "State"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#State> .
+
+<https://astrea.linkeddata.es/shapes#4c7e1d98f9b557728d77169534cf9251>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  owl:AllDisjointClasses .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#644e3b6cc629c32beebbb897e225c615> , <https://astrea.linkeddata.es/shapes#120f34aa000fe040ba7875640dec6308> , <https://astrea.linkeddata.es/shapes#48ed32b24428f0acf2d714cba289a35b> , <https://astrea.linkeddata.es/shapes#0382db2ee6961d680c3bc392b5573aac> , <https://astrea.linkeddata.es/shapes#b96eeaa545e469f34138cf9ec5cc8fe4> , <https://astrea.linkeddata.es/shapes#ead0fe2d049fd8d4c2a34d50ba9f9128> , <https://astrea.linkeddata.es/shapes#a8bb89a22f784301645352ed059f2f68> , <https://astrea.linkeddata.es/shapes#4c7e1d98f9b557728d77169534cf9251> , <https://astrea.linkeddata.es/shapes#995eca288efeb9255b201d32391fd5ef> , <https://astrea.linkeddata.es/shapes#cbe4e0b06518ac91b600c954e79c58c8> , <https://astrea.linkeddata.es/shapes#901736a336b0e544f13221cc1bdcb52d> , <https://astrea.linkeddata.es/shapes#75857c1ccd9e46cab4a11f0549a97dcc> , <https://astrea.linkeddata.es/shapes#41e0d28b473eac523ef8098c9ae4f945> , <https://astrea.linkeddata.es/shapes#f757aa6adb348171a15fb6be89c99161> , <https://astrea.linkeddata.es/shapes#1c5caf17d2cc3540b7d3d2c55402d482> , <https://astrea.linkeddata.es/shapes#92021b93d72aee76e10b54fa01f0cdf4> , <https://astrea.linkeddata.es/shapes#5876b1f531e6b22761c87d13d13bb547> , <https://astrea.linkeddata.es/shapes#24d5b40c7f2b7ad53d2407abef025741> , <https://astrea.linkeddata.es/shapes#dfdfe240ba2733a7d5dadb18558f3133> , <https://astrea.linkeddata.es/shapes#06bde3b85fe8324cfb01b2c26ca9457f> , <https://astrea.linkeddata.es/shapes#85e0d7a03276f60afcf1d32ecaa95191> , <https://astrea.linkeddata.es/shapes#a471f690fef913244fc154e472508fe7> , <https://astrea.linkeddata.es/shapes#6d8c030ccaf625bcbad26a78f88ce36f> , <https://astrea.linkeddata.es/shapes#5dec25e38f07ea0c454090335a058bcf> , <https://astrea.linkeddata.es/shapes#f9fb788d7b9febf09874aa640513a9e4> , <https://astrea.linkeddata.es/shapes#38ef6fac2a9960802f5bc60343a332fe> , <https://astrea.linkeddata.es/shapes#6926bb41bd7f82050b5e480bc7a371d3> , <https://astrea.linkeddata.es/shapes#bb70ba4af84eba77e76cf90374b5e869> , <https://astrea.linkeddata.es/shapes#234620b468ec325d5b0dd8322fc89110> , <https://astrea.linkeddata.es/shapes#293d88872c9ec15696b82b6a2c00e9ab> , <https://astrea.linkeddata.es/shapes#fee099bf0e4281475c1834557a6994d7> , <https://astrea.linkeddata.es/shapes#14a6cdbce1b4d98cbff1e782a05b6881> , <https://astrea.linkeddata.es/shapes#1fdbfdc0bb66ac59e50a159bff728eb2> , <https://astrea.linkeddata.es/shapes#71946e992b05569e1575804b068389a4> , <https://astrea.linkeddata.es/shapes#ef1326dccff462aff97fde3e0f8c5f7c> , <https://astrea.linkeddata.es/shapes#b24c1dad2e5a9ace4e69711118c9fc7b> , <https://astrea.linkeddata.es/shapes#bccde680b4220f11c538186df6ce220a> , <https://astrea.linkeddata.es/shapes#cf74a163bc4c99637ce577d00bae687f> , <https://astrea.linkeddata.es/shapes#4fbc4b438b31b9df95edcccc2d37e7fb> , <https://astrea.linkeddata.es/shapes#c7a452773d3d9c0a99a91ea93c274935> , <https://astrea.linkeddata.es/shapes#4e9783a6a6baef43137c183889767269> , <https://astrea.linkeddata.es/shapes#6af144280a0e6dbff69e7f2008f77474> , <https://astrea.linkeddata.es/shapes#5cbcbc344f42ebb52696124bc78ad357> , <https://astrea.linkeddata.es/shapes#1f5c6a8ff39c0f3ab34419ed2b4d3d71> , <https://astrea.linkeddata.es/shapes#3f4437d86993986684821116b85aec7e> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#a471f690fef913244fc154e472508fe7>
+        a               sh:NodeShape ;
+        sh:description  "A collection (group) of resources/services/groups confirmed to be allocated for the user."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Confirmation> .
+
+<https://astrea.linkeddata.es/shapes#dfdfe240ba2733a7d5dadb18558f3133>
+        a               sh:NodeShape ;
+        rdfs:label      "Started"@en ;
+        sh:description  "The related resource/service has been started"@en ;
+        sh:name         "Started"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Started> .
+
+<https://astrea.linkeddata.es/shapes#995eca288efeb9255b201d32391fd5ef>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#234620b468ec325d5b0dd8322fc89110> , <https://astrea.linkeddata.es/shapes#6926bb41bd7f82050b5e480bc7a371d3> ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn#Component> .
+
+<https://astrea.linkeddata.es/shapes#14a6cdbce1b4d98cbff1e782a05b6881>
+        a               sh:NodeShape ;
+        rdfs:label      "Preinit"@en ;
+        rdfs:seeAlso    "GENI geni_configuring operational state"@en ;
+        sh:description  "The related resource/service is currently configuring"@en ;
+        sh:name         "Preinit"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Preinit> .
+
+<https://astrea.linkeddata.es/shapes#ead0fe2d049fd8d4c2a34d50ba9f9128>
+        a               sh:NodeShape ;
+        rdfs:label      "Uncompleted"@en ;
+        sh:description  "The related resource/service is not complete"@en ;
+        sh:name         "Uncompleted"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Uncompleted> .
+
+<https://astrea.linkeddata.es/shapes#4e9783a6a6baef43137c183889767269>
+        a               sh:NodeShape ;
+        rdfs:label      "Initialized"@en ;
+        sh:description  "The related resource/service has been initialized"@en ;
+        sh:name         "Initialized"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Initialized> .
+
+<https://astrea.linkeddata.es/shapes#644e3b6cc629c32beebbb897e225c615>
+        a               sh:NodeShape ;
+        rdfs:label      "Provisioned"@en ;
+        rdfs:seeAlso    "GENI geni_provisioned allocation state"@en ;
+        sh:description  "The related resources/services are provisioned"@en ;
+        sh:name         "Provisioned"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Provisioned> .
+
+<https://astrea.linkeddata.es/shapes#48ed32b24428f0acf2d714cba289a35b>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  owl:IrreflexiveProperty .
+
+<https://astrea.linkeddata.es/shapes#1f5c6a8ff39c0f3ab34419ed2b4d3d71>
+        a               sh:NodeShape ;
+        rdfs:label      "Updating"@en ;
+        sh:description  "The related resource/service is getting updated"@en ;
+        sh:name         "Updating"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://open-multinet.info/ontology/omn-lifecycle#Updating> .
+
+<https://astrea.linkeddata.es/shapes#b96eeaa545e469f34138cf9ec5cc8fe4>
+        a            sh:PropertyShape ;
+        sh:class     <http://open-multinet.info/ontology/omn-lifecycle#ReservationState> ;
+        sh:maxCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path      <http://open-multinet.info/ontology/omn-lifecycle#hasReservationState> .

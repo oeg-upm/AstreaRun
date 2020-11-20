@@ -1,0 +1,1678 @@
+@prefix :      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix dc11:  <http://purl.org/dc/elements/1.1/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann:  <http://purl.org/vocab/vann/> .
+@prefix vs:    <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<https://astrea.linkeddata.es/shapes#0e30d071723196d7da099894222eaf61>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "The date when a Thing was created."@en-gb , "created"@en-gb ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "The date when a Thing was created."@en-gb ;
+        sh:name           "created"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/created> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#1e2f8ef8bba7efc6b52b2fc88eb2e29c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "openid" , "An OpenID for an Agent." ;
+        sh:class          foaf:Document ;
+        sh:description    "An OpenID for an Agent." ;
+        sh:inversePath    foaf:openid ;
+        sh:maxCount       1 ;
+        sh:name           "openid" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           foaf:openid .
+
+<https://astrea.linkeddata.es/shapes#777153e8d91b40482d43d1da4fd16b2e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "ecozone"@en-gb , "indicates that a habitat or a taxon rank can be found within an ecozone"@en-gb ;
+        sh:class          <http://purl.org/ontology/wo/Ecozone> ;
+        sh:description    "indicates that a habitat or a taxon rank can be found within an ecozone"@en-gb ;
+        sh:name           "ecozone"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/wo/ecozone> .
+
+<https://astrea.linkeddata.es/shapes#2a0cf70f2fcbd4c2224419be49e7de32>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "provided"@en-gb , "The date and time at which the data was provided to the triplestore."@en-gb ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "The date and time at which the data was provided to the triplestore."@en-gb ;
+        sh:name           "provided"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/provided> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/report/1255511723>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://xmlns.com/foaf/0.1/" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#243fcfd6594e978871b743a5ffe3b681>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "thumbnail" , "A derived thumbnail image." ;
+        sh:class          foaf:Image ;
+        sh:description    "A derived thumbnail image." ;
+        sh:name           "thumbnail" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:thumbnail .
+
+<https://astrea.linkeddata.es/shapes#229cc1c09aa1c5a9c9919376b6545188>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "scientific name"@en-gb , "associates a taxon name with its formal scientific name. This may be a binomial name (e.g. Panthera leo) in the case of a species name, or a uninomial (e.g. Panthera) name in the case of a name associated with another taxon rank. In formal taxonomic naming conventions, the scientific name is often qualified with the source of the name, e.g. Panthera leo (Linnaeus, 1758)."@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "associates a taxon name with its formal scientific name. This may be a binomial name (e.g. Panthera leo) in the case of a species name, or a uninomial (e.g. Panthera) name in the case of a name associated with another taxon rank. In formal taxonomic naming conventions, the scientific name is often qualified with the source of the name, e.g. Panthera leo (Linnaeus, 1758)."@en-gb ;
+        sh:name           "scientific name"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/wo/scientificName> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#fd7653ba9a62527d8598e36f22b52215>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "depicts" , "A thing depicted in this representation." ;
+        sh:class          owl:Thing ;
+        sh:description    "A thing depicted in this representation." ;
+        sh:name           "depicts" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:depicts .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Person" ;
+        sh:description    "A person." ;
+        sh:name           "Person" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#95367c1d6b9f60d610de8a964de33047> , <https://astrea.linkeddata.es/shapes#d3cf88afd3b47ef599e18cd4ba20545a> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#2d8eedd9b02f19a40d4a52bcdaf187a2> , <https://astrea.linkeddata.es/shapes#fabc187d844000bd2477a93073025e1e> , <https://astrea.linkeddata.es/shapes#113c70fb8cba2ec4fb119517d75b54a6> , <https://astrea.linkeddata.es/shapes#29c3a5d12df8ba4f3bb0b250a29218a8> , <https://astrea.linkeddata.es/shapes#e1dd1953b136ea1319d434ce544b2729> , <https://astrea.linkeddata.es/shapes#1587962e0259e2a60d349d9159fb1092> , <https://astrea.linkeddata.es/shapes#be47af1901102236631604d5826744a4> , <https://astrea.linkeddata.es/shapes#203c6db8a73c7732f2bbe00ba1273a34> , <https://astrea.linkeddata.es/shapes#20562318a3a0957169b89d17cce6fd27> , <https://astrea.linkeddata.es/shapes#355d8af2ce795629e39cfeb1c4e27b8f> , <https://astrea.linkeddata.es/shapes#8982f7fbd50cbab5e5087e737fc7d2c3> , <https://astrea.linkeddata.es/shapes#93bbf795a4f06b82b4eb704cb6ff65d0> , <https://astrea.linkeddata.es/shapes#f5f736a9ac622bbacd776f127d4ee1af> , <https://astrea.linkeddata.es/shapes#b112e59eaa72312800a314d0e78b9d6b> , <https://astrea.linkeddata.es/shapes#40d9dd7e4adcea147cede3616667a475> , <https://astrea.linkeddata.es/shapes#7d5b4ad77e51e9bb70f173aa1aea8a92> ;
+        sh:targetClass    foaf:Person .
+
+<https://astrea.linkeddata.es/shapes#21ddcd1406ba873d28fafc724fdb6de9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "sha1sum (hex)" , "A sha1sum hash, in hex." ;
+        sh:description    "A sha1sum hash, in hex." ;
+        sh:name           "sha1sum (hex)" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:sha1 .
+
+<https://astrea.linkeddata.es/shapes#ce58cd7c6ad061be9b9bc7f1779eb9f3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "population trend"@en-gb , "provides some indication of the population trend associated with an assessment of a taxon's conversation status. The value of this property is a simple literal, and is recommended to be one of: Decreasing, Increasing, Stable, Unknown."@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "provides some indication of the population trend associated with an assessment of a taxon's conversation status. The value of this property is a simple literal, and is recommended to be one of: Decreasing, Increasing, Stable, Unknown."@en-gb ;
+        sh:name           "population trend"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/wo/populationTrend> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#0d30180e88607a9b9f3e7efdf6a5a920>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "A homepage for some thing." , "homepage" ;
+        sh:class          foaf:Document ;
+        sh:description    "A homepage for some thing." ;
+        sh:inversePath    foaf:homepage ;
+        sh:maxCount       1 ;
+        sh:name           "homepage" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           foaf:homepage .
+
+<https://astrea.linkeddata.es/shapes#40d9dd7e4adcea147cede3616667a475>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "image" , "An image that can be used to represent some thing (ie. those depictions which are particularly representative of something, eg. one's photo on a homepage)." ;
+        sh:class          foaf:Image ;
+        sh:description    "An image that can be used to represent some thing (ie. those depictions which are particularly representative of something, eg. one's photo on a homepage)." ;
+        sh:name           "image" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:img .
+
+<https://astrea.linkeddata.es/shapes#9bc50a682723d7594990a2a7a657eb3b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "weblog" , "A weblog of some thing (whether person, group, company etc.)." ;
+        sh:class          foaf:Document ;
+        sh:description    "A weblog of some thing (whether person, group, company etc.)." ;
+        sh:inversePath    foaf:weblog ;
+        sh:maxCount       1 ;
+        sh:name           "weblog" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           foaf:weblog .
+
+<https://astrea.linkeddata.es/shapes#07fe8d090dee52aa25cacf9ba01c537d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "depiction" , "A depiction of some thing." ;
+        sh:class          foaf:Image ;
+        sh:description    "A depiction of some thing." ;
+        sh:name           "depiction" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:depiction .
+
+<https://astrea.linkeddata.es/shapes#e45d71d97f2781bb3f696838cfe7436c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "species"@en-gb , "associates a taxon rank with a species"@en-gb ;
+        sh:class          <http://purl.org/ontology/wo/Species> ;
+        sh:description    "associates a taxon rank with a species"@en-gb ;
+        sh:name           "species"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/wo/species> .
+
+<https://astrea.linkeddata.es/shapes#2d8eedd9b02f19a40d4a52bcdaf187a2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "work info homepage" , "A work info homepage of some person; a page about their work for some organization." ;
+        sh:class          foaf:Document ;
+        sh:description    "A work info homepage of some person; a page about their work for some organization." ;
+        sh:name           "work info homepage" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:workInfoHomepage .
+
+<https://astrea.linkeddata.es/shapes#fabc187d844000bd2477a93073025e1e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "lastName" , "The last name of a person." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The last name of a person." ;
+        sh:name           "lastName" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:lastName .
+
+<https://astrea.linkeddata.es/shapes#754bf685634357d4bd86f1f862a7c52f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Online E-commerce Account" ;
+        sh:description    "An online e-commerce account." ;
+        sh:name           "Online E-commerce Account" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    foaf:OnlineEcommerceAccount .
+
+<https://astrea.linkeddata.es/shapes#bfb0b506165ca8e85929f23bb6842800>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Online Account" ;
+        sh:description    "An online account." ;
+        sh:name           "Online Account" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#fcee61b84a3073edc28dbd46f9ef23e3> , <https://astrea.linkeddata.es/shapes#3ff72c89256c1921ca6727c5aac88714> ;
+        sh:targetClass    foaf:OnlineAccount .
+
+<https://astrea.linkeddata.es/shapes#1849d2cdd7d07570c087ad1ef520a285>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "topic_interest" , "A thing of interest to this person." ;
+        sh:class          owl:Thing ;
+        sh:description    "A thing of interest to this person." ;
+        sh:name           "topic_interest" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:topic_interest .
+
+<https://astrea.linkeddata.es/shapes#ac2267fa2136eaf58fe5c06b75a2f153>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "topic" , "A topic of some page or document." ;
+        sh:class          owl:Thing ;
+        sh:description    "A topic of some page or document." ;
+        sh:name           "topic" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:topic .
+
+<https://astrea.linkeddata.es/shapes#86342d19ac8bba3cc22386b499dc9a29>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "a naming property, associating a formal taxonomic name with a Taxon Name instance. This property is a parent of a number of sub-properties that provide more specific terms for denoting names of families, phyla, species, etc."@en-gb , "taxonomic name"@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "a naming property, associating a formal taxonomic name with a Taxon Name instance. This property is a parent of a number of sub-properties that provide more specific terms for denoting names of families, phyla, species, etc."@en-gb ;
+        sh:name           "taxonomic name"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/wo/taxonomicName> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#34bdf5930c6edb6fdb1d16d232c918a4>
+        a         sh:PropertyShape ;
+        sh:class  foaf:Document .
+
+<https://astrea.linkeddata.es/report/1218829496>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/vocab/vann/" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#be47af1901102236631604d5826744a4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "family_name" , "The family name of some person." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The family name of some person." ;
+        sh:name           "family_name" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:family_name .
+
+<https://astrea.linkeddata.es/shapes#5c646644580e6bf8bc192059badc5919>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "habitat"@en-gb , "associates a taxon rank with a habitat in which it may typically be found"@en-gb ;
+        sh:class          <http://purl.org/ontology/wo/Habitat> ;
+        sh:description    "associates a taxon rank with a habitat in which it may typically be found"@en-gb ;
+        sh:name           "habitat"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/wo/habitat> .
+
+<https://astrea.linkeddata.es/report/02113868144>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/dc/terms/" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#48ac2f3c9a245050c4bf1277170bbf0b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "kingdom"@en-gb , "associates a taxon rank with a kingdom"@en-gb ;
+        sh:class          <http://purl.org/ontology/wo/Kingdom> ;
+        sh:description    "associates a taxon rank with a kingdom"@en-gb ;
+        sh:name           "kingdom"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/wo/kingdom> .
+
+<https://astrea.linkeddata.es/shapes#d11dcd6bf65ac8f3a8ba70dceaf23477>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "made" , "Something that was made by this agent." ;
+        sh:class          owl:Thing ;
+        sh:description    "Something that was made by this agent." ;
+        sh:name           "made" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:made .
+
+<https://astrea.linkeddata.es/shapes#f5f736a9ac622bbacd776f127d4ee1af>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "schoolHomepage" , "A homepage of a school attended by the person." ;
+        sh:class          foaf:Document ;
+        sh:description    "A homepage of a school attended by the person." ;
+        sh:name           "schoolHomepage" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:schoolHomepage .
+
+<https://astrea.linkeddata.es/shapes#2e9493b9956fc5ce781c0d2d605ff922>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Habitat"@en-gb ;
+        rdfs:seeAlso      <http://www.bbc.co.uk/nature/habitats> , <http://en.wikipedia.org/wiki/Habitat> ;
+        sh:description    "A habitat, or biome, is the type of environment in which plant and animals live. Habitat is dictated by what kinds of plants grow there, the climate and the geography. Rainforest, coral reefs and the tundra are all habitats where particular kinds of plants and animals might be found."@en-gb ;
+        sh:name           "Habitat"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/Habitat> .
+
+<https://astrea.linkeddata.es/shapes#7558699cc735bf805d7ea5605349caa6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "The reason for the most recent change applied to the graph."@en-gb , "changeReason"@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "The reason for the most recent change applied to the graph."@en-gb ;
+        sh:name           "changeReason"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/changeReason> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#d2f8266016471287c06e1eeadff929dc>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Marine Habitat"@en-gb ;
+        sh:description    "Approximately 71% of the Earth's surface is covered by the oceans, an area of some 223698816km/sq. Although marine life evolved around three billion years before life on land, marine habitats are relatively poorly studied and much of the ocean's depths remains unexplored." ;
+        sh:name           "Marine Habitat"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/MarineHabitat> .
+
+<https://astrea.linkeddata.es/shapes#da257107220fc1d56fb8eebd56f01e2e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Survival Strategy"@en-gb ;
+        sh:description    "Survival strategies include adaptations to changes in the organisms environment, including: hibernation, abscission and migration."@en-gb ;
+        sh:name           "Survival Strategy"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/SurvivalStrategy> .
+
+<https://astrea.linkeddata.es/shapes#f3c4b4fb2e3f5b084b50cec33ce32d92>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Collection" ;
+        sh:description    "A collection of resources, including documents, multimedia files, programme clips and their associated taxa, which aims to showcase a particular aspect of natural history film-making, or illustrate aspects of the natural world. A collection provides an alternate way to organize content over and above the basic taxonomic hierarchy." ;
+        sh:name           "Collection" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/Collection> .
+
+<https://astrea.linkeddata.es/shapes#8fb49b6a24a7179a5434ab5122c3f5ee>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Kingdom"@en-gb ;
+        rdfs:seeAlso      <http://www.bbc.co.uk/nature/kingdom> , <http://en.wikipedia.org/wiki/Kingdom_%28biology%29> ;
+        sh:description    "Kingdoms are the major categories into which scientists divide up all living things. The main kingdoms are animals, plants, fungi and bacteria, although there are others. Each kingdom has its own suite of defining characteristics - for instance plants have rigid cell walls, whilst animals do not."@en-gb ;
+        sh:name           "Kingdom"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/Kingdom> .
+
+<https://astrea.linkeddata.es/shapes#6ace7559c09873d57bb26d2909a563c6>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c882664618b695f2904264820a0c87a9> ;
+        sh:targetClass  <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+<https://astrea.linkeddata.es/shapes#373eeb0386eded369fd547d81780aa20>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Predation Strategy"@en-gb ;
+        sh:description    "Predation is catching and killing an animal in order to eat it. The prey can be chased, ambushed or caught in a trap such as a spider's web."@en-gb ;
+        sh:name           "Predation Strategy"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/PredationStrategy> .
+
+<https://astrea.linkeddata.es/shapes#a0a1b20d2fffb49af882535b54f99030>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Skype ID" , "A Skype ID" ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "A Skype ID" ;
+        sh:name           "Skype ID" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:skypeID .
+
+<https://astrea.linkeddata.es/shapes#20562318a3a0957169b89d17cce6fd27>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "familyName" , "The family name of some person." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The family name of some person." ;
+        sh:name           "familyName" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:familyName .
+
+<https://astrea.linkeddata.es/shapes#bef93efc004fe1bdb3ecf03472336d7a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "interest" , "A page about a topic of interest to this person." ;
+        sh:class          foaf:Document ;
+        sh:description    "A page about a topic of interest to this person." ;
+        sh:name           "interest" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:interest .
+
+<https://astrea.linkeddata.es/report/1730027736>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.bbc.co.uk/ontologies/provenance" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#a368f10daf802e366aeff763e2685b0c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Freshwater Habitat"@en-gb ;
+        sh:description    "Freshwater habitats include bogs, ponds, lakes, rivers and streams. About 3% of Earth's water is freshwater, but this includes the water locked up in the ice caps and trapped in rocks and soil as groundwater. Only a tiny fraction (0.014%) is surface water in the form of rivers, lakes and swamps." ;
+        sh:name           "Freshwater Habitat"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/FreshwaterHabitat> .
+
+<https://astrea.linkeddata.es/shapes#04601be35c7c14db95ba3030ca69bba4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "MSN chat ID" , "An MSN chat ID" ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "An MSN chat ID" ;
+        sh:inversePath    foaf:msnChatID ;
+        sh:maxCount       1 ;
+        sh:name           "MSN chat ID" ;
+        sh:nodeKind       sh:Literal , sh:IRIOrLiteral ;
+        sh:path           foaf:msnChatID .
+
+<https://astrea.linkeddata.es/shapes#4187688e2ff894b9172d6888cf45278a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Genus"@en-gb ;
+        rdfs:seeAlso      <http://www.bbc.co.uk/nature/genus> , <http://en.wikipedia.org/wiki/Genus> ;
+        sh:description    "A genus is a scientific way of showing that species are very closed related to each other. In fact the first word of the species' scientific name is its genus. So for lions (Panthera leo), Panthera is the genus and tells us that they are closely related to tigers (Panthera tigris), because they share the name"@en-gb ;
+        sh:name           "Genus"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/Genus> .
+
+<https://astrea.linkeddata.es/shapes#c0584d098250c27d5bb40c0810ef60fe>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Red List Status"@en-gb ;
+        rdfs:seeAlso      <http://www.iucnredlist.org/technical-documents/categories-and-criteria/2001-categories-criteria> ;
+        sh:description    "A category in the IUCN red list, 2001."@en-gb ;
+        sh:name           "Red List Status"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/RedListStatus> .
+
+<https://astrea.linkeddata.es/shapes#113c70fb8cba2ec4fb119517d75b54a6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "publications" , "A link to the publications of this person." ;
+        sh:class          foaf:Document ;
+        sh:description    "A link to the publications of this person." ;
+        sh:name           "publications" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:publications .
+
+<https://astrea.linkeddata.es/shapes#60112837591ec920a076ba3a2e713d2f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "common name"@en-gb , "associates a formal taxon name with a common version. E.g. Panthera leo might be associated with a common name of 'Lion'. A given taxon name may have several common names"@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "associates a formal taxon name with a common version. E.g. Panthera leo might be associated with a common name of 'Lion'. A given taxon name may have several common names"@en-gb ;
+        sh:name           "common name"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/wo/commonName> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#98dd6a3d61ab4170db0a03df04a650f5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "associates a short description with a Collection."@en-gb , "short description"@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "associates a short description with a Collection."@en-gb ;
+        sh:name           "short description"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/wo/shortDescription> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#eb84234443a847e03ffecc79a926aac2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "name"@en-gb , "associates a taxon rank with a taxon name"@en-gb ;
+        sh:class          <http://purl.org/ontology/wo/TaxonName> ;
+        sh:description    "associates a taxon rank with a taxon name"@en-gb ;
+        sh:name           "name"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/wo/name> .
+
+<https://astrea.linkeddata.es/shapes#04b3f78711c12bf06d7853d11d40da9c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Project" ;
+        sh:description    "A project (a collective endeavour of some kind)." ;
+        sh:name           "Project" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#1b029595b6c9f13e6782755fc4355c3e> , <https://astrea.linkeddata.es/shapes#34bdf5930c6edb6fdb1d16d232c918a4> ;
+        sh:targetClass    foaf:Project .
+
+<https://astrea.linkeddata.es/shapes#dc7b27d0e5f224b802f0b7b175e0a4b3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "maker" , "An agent that made this thing." ;
+        sh:class          foaf:Agent ;
+        sh:description    "An agent that made this thing." ;
+        sh:equals         dcterms:creator ;
+        sh:name           "maker" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:maker .
+
+<https://astrea.linkeddata.es/shapes#f916ec82c7f195a468b0f73d548712d5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "An AIM chat ID" , "AIM chat ID" ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "An AIM chat ID" ;
+        sh:inversePath    foaf:aimChatID ;
+        sh:maxCount       1 ;
+        sh:name           "AIM chat ID" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
+        sh:path           foaf:aimChatID .
+
+<https://astrea.linkeddata.es/shapes#6ef7cd7673b0f4cde3fd88c84e850357>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Given name" , "The given name of some person." ;
+        sh:description    "The given name of some person." ;
+        sh:name           "Given name" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:givenName .
+
+<https://astrea.linkeddata.es/shapes#580659d3d4d3c9974e9dc36d00e6e6e8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "member" , "Indicates a member of a Group" ;
+        sh:class          foaf:Agent ;
+        sh:description    "Indicates a member of a Group" ;
+        sh:name           "member" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:member .
+
+<https://astrea.linkeddata.es/shapes#5a80473276142dccb098aa3cc2d0b838>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "distribution map"@en-gb , "associates a habitat, ecozone, or taxon rank with a map depicting its distribution or location"@en-gb ;
+        sh:class          foaf:Image ;
+        sh:description    "associates a habitat, ecozone, or taxon rank with a map depicting its distribution or location"@en-gb ;
+        sh:name           "distribution map"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/wo/distributionMap> .
+
+<https://astrea.linkeddata.es/shapes#aa8e358c44ef5b5b198a7f8abb7fd343>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "managedBy"@en-gb , "Associates the thing graph of a cms:ManagedThing with its managing system. This is needed to solve cases where different systems can manage metadata about a shared thing. E.g., one thing graph from BBC News may have all the politics related metadata for David Cameron, while another thing graph managed by Knowledge and Learning may contain information about the historical role David Cameron has played as a conservative leader in British politics. Separating metadata into thing graphs is useful for managing information about shared things."@en-gb ;
+        sh:class          <http://www.bbc.co.uk/ontologies/cms/System> ;
+        sh:description    "Associates the thing graph of a cms:ManagedThing with its managing system. This is needed to solve cases where different systems can manage metadata about a shared thing. E.g., one thing graph from BBC News may have all the politics related metadata for David Cameron, while another thing graph managed by Knowledge and Learning may contain information about the historical role David Cameron has played as a conservative leader in British politics. Separating metadata into thing graphs is useful for managing information about shared things."@en-gb ;
+        sh:name           "managedBy"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/managedBy> .
+
+<https://astrea.linkeddata.es/shapes#beb583112d2644bc809c5044905d3110>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "DNA checksum" , "A checksum for the DNA of some thing. Joke." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "A checksum for the DNA of some thing. Joke." ;
+        sh:name           "DNA checksum" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:dnaChecksum .
+
+<https://astrea.linkeddata.es/shapes#fcee61b84a3073edc28dbd46f9ef23e3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "account service homepage" , "Indicates a homepage of the service provide for this online account." ;
+        sh:class          foaf:Document ;
+        sh:description    "Indicates a homepage of the service provide for this online account." ;
+        sh:name           "account service homepage" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:accountServiceHomepage .
+
+<https://astrea.linkeddata.es/shapes#953b687f55f4ad6f443b4b40b5f16b9d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "slug"@en-gb , "This is a short human readable identifier for the ontology."@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "This is a short human readable identifier for the ontology."@en-gb ;
+        sh:name           "slug"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/slug> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#05e1dc08494ca575258e7d6b458c0207>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5694afa0f053a50de40e59e74dc9b0de> ;
+        sh:targetClass  rdfs:Property .
+
+<https://astrea.linkeddata.es/shapes#95367c1d6b9f60d610de8a964de33047>
+        a         sh:PropertyShape ;
+        sh:class  foaf:Project .
+
+<https://astrea.linkeddata.es/shapes#d4968806bf0822fd09502f7ab2e96f31>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "grows in"@en-gb , "associates a taxon rank with a habitat in which it grows. Sub-property of wo:habitat to be used for plants, fungi, etc"@en-gb ;
+        sh:class          <http://purl.org/ontology/wo/Habitat> ;
+        sh:description    "associates a taxon rank with a habitat in which it grows. Sub-property of wo:habitat to be used for plants, fungi, etc"@en-gb ;
+        sh:name           "grows in"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/wo/growsIn> .
+
+<https://astrea.linkeddata.es/shapes#babfcfb6122a5c6e76b0340506699655>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "The birthday of this Agent, represented in mm-dd string form, eg. '12-31'." , "birthday" ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The birthday of this Agent, represented in mm-dd string form, eg. '12-31'." ;
+        sh:maxCount       1 ;
+        sh:name           "birthday" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
+        sh:path           foaf:birthday .
+
+<https://astrea.linkeddata.es/shapes#44e48c092aada3b171ce899ffc6943a8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "The primary topic of some page or document." , "primary topic" ;
+        sh:class          owl:Thing ;
+        sh:description    "The primary topic of some page or document." ;
+        sh:maxCount       1 ;
+        sh:name           "primary topic" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           foaf:primaryTopic .
+
+<https://astrea.linkeddata.es/shapes#4853172f0bd44ec41fff520b21a4e65e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "theme" , "A theme." ;
+        sh:class          owl:Thing ;
+        sh:description    "A theme." ;
+        sh:name           "theme" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:theme .
+
+<https://astrea.linkeddata.es/shapes#40d1fb17142b50b679282e83eaa0dcce>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "A logo representing some thing." , "logo" ;
+        sh:class          owl:Thing ;
+        sh:description    "A logo representing some thing." ;
+        sh:inversePath    foaf:logo ;
+        sh:maxCount       1 ;
+        sh:name           "logo" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           foaf:logo .
+
+<https://astrea.linkeddata.es/shapes#818cee1f541c807678bcbbcd16d31498>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Terrestrial Habitat"@en-gb ;
+        sh:description    "Terrestrial habitats include forests, grasslands, deserts and rainforests. They are typically defined by factors such as plant structure (trees and grasses), leaf types (eg broadleaf and needleleaf), plant spacing (forest, woodland, savanna) and climate." ;
+        sh:name           "Terrestrial Habitat"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/TerrestrialHabitat> .
+
+<https://astrea.linkeddata.es/shapes#f7e08ecbaf9ca2078e549f8ba072064c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "genus name"@en-gb , "specifies the genus part of a binomial name, allowing this portion of the name to be explicitly described. Therefore this property will typically only be used in TaxonNames associated with species. The property is largely provided as a convenience to avoid applications having to parse the binomial name."@en-gb ;
+        sh:description    "specifies the genus part of a binomial name, allowing this portion of the name to be explicitly described. Therefore this property will typically only be used in TaxonNames associated with species. The property is largely provided as a convenience to avoid applications having to parse the binomial name."@en-gb ;
+        sh:name           "genus name"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/wo/genusName> .
+
+<https://astrea.linkeddata.es/shapes#d5f2de5b785100a881c10730ea06d640>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Online Chat Account" ;
+        sh:description    "An online chat account." ;
+        sh:name           "Online Chat Account" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    foaf:OnlineChatAccount .
+
+<https://astrea.linkeddata.es/shapes#a1fe964e03ec04fda2b847bb3fe2bf33>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "phylum name"@en-gb , "Used to specify the name of a phylum as part of a Taxon Name"@en-gb ;
+        sh:description    "Used to specify the name of a phylum as part of a Taxon Name"@en-gb ;
+        sh:name           "phylum name"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/wo/phylumName> .
+
+<https://astrea.linkeddata.es/shapes#0aa707aade0e3fd7e94280c3cee3ec6c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "ThingGraph"@en-gb ;
+        sh:description    "Thing graphs hold metadata about a single thing. Note the difference with Datasets, which hold metadata about many things. Thing graphs are usually exposed to user friendly tools which allow users with little on no RDF skills to specifically edit a metadata about a thing in a form. For example a thing graph can contain metadata about a football team such as its various names, LOD links for the team, a short disambiguation hint, e.t.c. Thing graphs are also used to store metadata about things obtained from a feed, for example store metadata about locations obtained from a Location Services feed."@en-gb ;
+        sh:name           "ThingGraph"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#aa8e358c44ef5b5b198a7f8abb7fd343> ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/provenance/ThingGraph> .
+
+<https://astrea.linkeddata.es/shapes#41f296df5f6894a91e17cb8a47c8ec62>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Taxonomic Rank"@en-gb ;
+        rdfs:seeAlso      <http://en.wikipedia.org/wiki/Taxonomic_rank> ;
+        sh:description    "Generic concept for a taxonomic rank such as a Genus or Species."@en-gb ;
+        sh:name           "Taxonomic Rank"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#5c646644580e6bf8bc192059badc5919> , <https://astrea.linkeddata.es/shapes#48ac2f3c9a245050c4bf1277170bbf0b> , <https://astrea.linkeddata.es/shapes#c7b0c5194c1792d9cfaa603e2e1904fc> , <https://astrea.linkeddata.es/shapes#d4968806bf0822fd09502f7ab2e96f31> , <https://astrea.linkeddata.es/shapes#a7fcdc3ec05530b1705372b439cb81db> , <https://astrea.linkeddata.es/shapes#e45d71d97f2781bb3f696838cfe7436c> , <https://astrea.linkeddata.es/shapes#cf6b74a0ace46133dab13fc7ee61b12c> , <https://astrea.linkeddata.es/shapes#65991e210fc00a6f54a8fb63a5317d73> , <https://astrea.linkeddata.es/shapes#978fc23d5efcf02d673600baaed2a178> , <https://astrea.linkeddata.es/shapes#4e4d38c5372533eb786110402fe55299> , <https://astrea.linkeddata.es/shapes#170c2dd677390be4b2d53b5e77d71208> , <https://astrea.linkeddata.es/shapes#d4710453441923d65eb28327c417b6bf> , <https://astrea.linkeddata.es/shapes#eb84234443a847e03ffecc79a926aac2> ;
+        sh:targetClass    <http://purl.org/ontology/wo/TaxonRank> .
+
+<https://astrea.linkeddata.es/shapes#f261e4284859ee052913244bf04cb23a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "focus" , "The underlying or 'focal' entity associated with some SKOS-described concept." ;
+        sh:class          owl:Thing ;
+        sh:description    "The underlying or 'focal' entity associated with some SKOS-described concept." ;
+        sh:name           "focus" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:focus .
+
+<https://astrea.linkeddata.es/shapes#0bd7a13f14d5a48d549846d558057283>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "funded by" , "An organization funding a project or person." ;
+        sh:class          owl:Thing ;
+        sh:description    "An organization funding a project or person." ;
+        sh:name           "funded by" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:fundedBy .
+
+<https://astrea.linkeddata.es/shapes#c7b0c5194c1792d9cfaa603e2e1904fc>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "class"@en-gb , "associates a taxon rank with a class"@en-gb ;
+        sh:class          <http://purl.org/ontology/wo/Class> ;
+        sh:description    "associates a taxon rank with a class"@en-gb ;
+        sh:name           "class"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/wo/class> .
+
+<https://astrea.linkeddata.es/shapes#1b029595b6c9f13e6782755fc4355c3e>
+        a         sh:PropertyShape ;
+        sh:class  foaf:Person .
+
+<https://astrea.linkeddata.es/shapes#1fae42385bbb65bf26cf1c2f772eb29b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "product"@en-gb , "The reference to the product from which the dataset, graph was created. This is needed for dataset management permissions. Not to be confused with bbc:product."@en-gb ;
+        sh:class          <http://www.bbc.co.uk/ontologies/bbc/Product> ;
+        sh:description    "The reference to the product from which the dataset, graph was created. This is needed for dataset management permissions. Not to be confused with bbc:product."@en-gb ;
+        sh:name           "product"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/product> .
+
+<https://astrea.linkeddata.es/shapes#d3cf88afd3b47ef599e18cd4ba20545a>
+        a         sh:PropertyShape ;
+        sh:class  foaf:Organization .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#07fe8d090dee52aa25cacf9ba01c537d> , <https://astrea.linkeddata.es/shapes#0bd7a13f14d5a48d549846d558057283> , <https://astrea.linkeddata.es/shapes#dc7b27d0e5f224b802f0b7b175e0a4b3> , <https://astrea.linkeddata.es/shapes#4853172f0bd44ec41fff520b21a4e65e> , <https://astrea.linkeddata.es/shapes#a545e9aeaf17d0242ae410474b327d04> , <https://astrea.linkeddata.es/shapes#893797ba8898177df5b817ba86554a38> ;
+        sh:targetClass  owl:Thing .
+
+<https://astrea.linkeddata.es/shapes#93bbf795a4f06b82b4eb704cb6ff65d0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "geekcode" , "A textual geekcode for this person, see http://www.geekcode.com/geek.html" ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "A textual geekcode for this person, see http://www.geekcode.com/geek.html" ;
+        sh:name           "geekcode" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:geekcode .
+
+<https://astrea.linkeddata.es/shapes#5192bd4012546876e17387cec79301a1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Organization" ;
+        sh:description    "An organization." ;
+        sh:name           "Organization" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#1b029595b6c9f13e6782755fc4355c3e> , <https://astrea.linkeddata.es/shapes#34bdf5930c6edb6fdb1d16d232c918a4> ;
+        sh:targetClass    foaf:Organization .
+
+<https://astrea.linkeddata.es/shapes#cf6b74a0ace46133dab13fc7ee61b12c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "adaptation"@en-gb , "associates a taxon rank with an adaptation which it displays"@en-gb ;
+        sh:class          <http://purl.org/ontology/wo/Adaptation> ;
+        sh:description    "associates a taxon rank with an adaptation which it displays"@en-gb ;
+        sh:name           "adaptation"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/wo/adaptation> .
+
+<https://astrea.linkeddata.es/shapes#9edd74afb06fdfda435327a1143238ce>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Animal Intelligence"@en-gb ;
+        sh:description    "Animal Intelligence or animal cognition is the title given to a modern approach to the mental capacities of non-human animals. It has developed out of comparative psychology, but has also been strongly influenced by the approach of ethology, behavioral ecology, and evolutionary psychology."@en-gb ;
+        sh:name           "Animal Intelligence"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/AnimalIntelligence> .
+
+<https://astrea.linkeddata.es/shapes#65578aa1a75c6636c1d8699fc24dc146>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "species"@en-gb ;
+        rdfs:seeAlso      <http://www.bbc.co.uk/nature/species> , <http://en.wikipedia.org/wiki/Species> ;
+        sh:description    "Generic class defining a biological species"@en-gb ;
+        sh:name           "species"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/Species> .
+
+<https://astrea.linkeddata.es/shapes#b086df60e1876dc2778d417a19745ad2>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#0e30d071723196d7da099894222eaf61> , <https://astrea.linkeddata.es/shapes#1883afe0cee837205de41653bb427baf> ;
+        sh:targetClass  <http://www.bbc.co.uk/ontologies/coreconcepts/Thing> .
+
+<https://astrea.linkeddata.es/shapes#0e5a01b85467fe09b1de26dea227d646>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "The age in years of some agent." , "age" ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The age in years of some agent." ;
+        sh:maxCount       1 ;
+        sh:name           "age" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
+        sh:path           foaf:age .
+
+<https://astrea.linkeddata.es/shapes#febd2c1781966d53f8c50918bc225cbf>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "The gender of this Agent (typically but not necessarily 'male' or 'female')." , "gender" ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The gender of this Agent (typically but not necessarily 'male' or 'female')." ;
+        sh:maxCount       1 ;
+        sh:name           "gender" ;
+        sh:nodeKind       sh:Literal , sh:IRIOrLiteral ;
+        sh:path           foaf:gender .
+
+<https://astrea.linkeddata.es/shapes#cb47ae4bdec3e4bc50afe12479911c32>
+        a               sh:PropertyShape ;
+        sh:inversePath  foaf:isPrimaryTopicOf ;
+        sh:maxCount     1 ;
+        sh:nodeKind     sh:IRIOrLiteral .
+
+<https://astrea.linkeddata.es/shapes#7b4f6af7fea7556ef25ce87b16960c73>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Adaptation"@en-gb ;
+        rdfs:seeAlso      <http://www.bbc.co.uk/nature/adaptations> , <http://en.wikipedia.org/wiki/Adaptation> ;
+        sh:description    "An adaptation is any feature of an animal or plant which makes it better suited for a particular habitat or to do a particular task. For instance, being streamlined is an adaptation to swimming fast and being able to survive on very little water is an adaptation to life in the desert."@en-gb ;
+        sh:name           "Adaptation"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/Adaptation> .
+
+<https://astrea.linkeddata.es/report/1708923933>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.w3.org/2003/06/sw-vocab-status/ns#" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#5e44922baf0205015615719684e7e66b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "phone" , "A phone, specified using fully qualified tel: URI scheme (refs: http://www.w3.org/Addressing/schemes.html#tel)." ;
+        sh:description    "A phone, specified using fully qualified tel: URI scheme (refs: http://www.w3.org/Addressing/schemes.html#tel)." ;
+        sh:name           "phone" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:phone .
+
+<https://astrea.linkeddata.es/shapes#657b6c5ed4e1a6d42c1de87b759c059d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "The email address extracted from the BBC SSL Certificate, indicating the person or system which directly interacted with the writer service to put the data in the store."@en-gb , "provider"@en-gb ;
+        sh:datatype       xsd:anyURI ;
+        sh:description    "The email address extracted from the BBC SSL Certificate, indicating the person or system which directly interacted with the writer service to put the data in the store."@en-gb ;
+        sh:name           "provider"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/provider> ;
+        sh:pattern        "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#bf0e2f8ef213cb6b7e2c15739316dc0f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Online Gaming Account" ;
+        sh:description    "An online gaming account." ;
+        sh:name           "Online Gaming Account" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    foaf:OnlineGamingAccount .
+
+<https://astrea.linkeddata.es/shapes#067014565ecdc68eef8ef4c8a6e47e33>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "Graph"@en-gb ;
+        sh:description    "The class of named graphs. All our data is stored in named graphs of different types depending on its provenance and management. These are specified by the subclasses of Graph."@en-gb ;
+        sh:name           "Graph"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7558699cc735bf805d7ea5605349caa6> , <https://astrea.linkeddata.es/shapes#ab26688bc19a35d7edbfa7c1cc6f5324> , <https://astrea.linkeddata.es/shapes#657b6c5ed4e1a6d42c1de87b759c059d> , <https://astrea.linkeddata.es/shapes#4fbefd9c1768a6cccae9b0736c9825ac> , <https://astrea.linkeddata.es/shapes#1fae42385bbb65bf26cf1c2f772eb29b> , <https://astrea.linkeddata.es/shapes#2a0cf70f2fcbd4c2224419be49e7de32> , <https://astrea.linkeddata.es/shapes#bc04698cc9893bf3e0631420cd9e72e7> , <https://astrea.linkeddata.es/shapes#b0dc527a1b574758bc9ac08320a2f090> ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/provenance/Graph> .
+
+<https://astrea.linkeddata.es/shapes#893797ba8898177df5b817ba86554a38>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "name" , "A name for some thing." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "A name for some thing." ;
+        sh:name           "name" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:name .
+
+<https://astrea.linkeddata.es/shapes#96fb6b14b90a6f79ed57ac40fba22919>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Family"@en-gb ;
+        rdfs:seeAlso      <http://www.bbc.co.uk/nature/family> , <http://en.wikipedia.org/wiki/Family_%28biology%29> ;
+        sh:description    "A family is a scientific grouping of closely related organisms. It has smaller groups, called genera and species, within it. A family can have a lot of members or only a few. Examples of families include the cats (Felidae), the gulls (Laridae) and the grasses (Poaceae)."@en-gb ;
+        sh:name           "Family"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/Family> .
+
+<https://astrea.linkeddata.es/shapes#a9557cbafb854e7ffcdc46ca0d24b6e8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Group" ;
+        sh:description    "A class of Agents." ;
+        sh:name           "Group" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#580659d3d4d3c9974e9dc36d00e6e6e8> ;
+        sh:targetClass    foaf:Group .
+
+<https://astrea.linkeddata.es/shapes#a3c5a181f7c19f7e4eabcccc5cc435ee>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "collection"@en-gb , "associates a taxon rank, habitat, species, clip with a collection of which it is a member"@en-gb ;
+        sh:class          <http://purl.org/ontology/wo/Collection> ;
+        sh:description    "associates a taxon rank, habitat, species, clip with a collection of which it is a member"@en-gb ;
+        sh:name           "collection"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/wo/collection> .
+
+<https://astrea.linkeddata.es/shapes#355d8af2ce795629e39cfeb1c4e27b8f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "plan" , "A .plan comment, in the tradition of finger and '.plan' files." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "A .plan comment, in the tradition of finger and '.plan' files." ;
+        sh:name           "plan" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:plan .
+
+<https://astrea.linkeddata.es/shapes#a8b7e725c5d4b329b630adaccdf39385>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "order name"@en-gb , "Used to specify the name of an order as part of a Taxon Name"@en-gb ;
+        sh:description    "Used to specify the name of an order as part of a Taxon Name"@en-gb ;
+        sh:name           "order name"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/wo/orderName> .
+
+<https://astrea.linkeddata.es/shapes#b0dc527a1b574758bc9ac08320a2f090>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "The canonical location where all the triples contained within the context (named graph) are stored in and can be referred to outside the triplestore."@en-gb , "canonicalLocation"@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "The canonical location where all the triples contained within the context (named graph) are stored in and can be referred to outside the triplestore."@en-gb ;
+        sh:name           "canonicalLocation"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/canonicalLocation> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#5694afa0f053a50de40e59e74dc9b0de>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "transitions"@en-gb , "The property that this transition property is providing a transition for."@en-gb ;
+        sh:class          rdfs:Property ;
+        sh:description    "The property that this transition property is providing a transition for."@en-gb ;
+        sh:name           "transitions"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/transitions> .
+
+<https://astrea.linkeddata.es/shapes#f1c39c4aefc4e8f4c767a7259dd1c5cb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "ICQ chat ID" , "An ICQ chat ID" ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "An ICQ chat ID" ;
+        sh:inversePath    foaf:icqChatID ;
+        sh:maxCount       1 ;
+        sh:name           "ICQ chat ID" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
+        sh:path           foaf:icqChatID .
+
+<https://astrea.linkeddata.es/shapes#059d76dc8615aa2cbe17328d57fffc60>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "red list status"@en-gb , "associates a Conservation Status with a category in the IUCN Red List"@en-gb ;
+        sh:class          <http://purl.org/ontology/wo/RedListStatus> ;
+        sh:description    "associates a Conservation Status with a category in the IUCN Red List"@en-gb ;
+        sh:name           "red list status"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/wo/redListStatus> .
+
+<https://astrea.linkeddata.es/shapes#7319538eddf9cf7aa0cf4f21e7cc167c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "Transition Ontology"@en-gb ;
+        sh:description    "An ontology that is used to provide a transition feature for a parent ontology" ;
+        sh:name           "Transition Ontology"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/provenance/TransitionOntology> .
+
+<https://astrea.linkeddata.es/shapes#6b1eef57db30e403cdb45e7e42b5ab1f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Taxon Name"@en-gb ;
+        sh:description    "A taxonomic name, describing the structure and provenance of a taxonomic name."@en-gb ;
+        sh:name           "Taxon Name"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#86342d19ac8bba3cc22386b499dc9a29> , <https://astrea.linkeddata.es/shapes#229cc1c09aa1c5a9c9919376b6545188> , <https://astrea.linkeddata.es/shapes#60112837591ec920a076ba3a2e713d2f> , <https://astrea.linkeddata.es/shapes#16c66d955d9e913eb3e3683f0ab1df84> ;
+        sh:targetClass    <http://purl.org/ontology/wo/TaxonName> .
+
+<https://astrea.linkeddata.es/shapes#978fc23d5efcf02d673600baaed2a178>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "lives in"@en-gb , "associates a taxon rank with a habitat in which it lives. Sub-property of wo:habitat to be used for members of the animal kingdom"@en-gb ;
+        sh:class          <http://purl.org/ontology/wo/Habitat> ;
+        sh:description    "associates a taxon rank with a habitat in which it lives. Sub-property of wo:habitat to be used for members of the animal kingdom"@en-gb ;
+        sh:name           "lives in"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/wo/livesIn> .
+
+<https://astrea.linkeddata.es/shapes#4c2452e1fd79d252bb94ad3ca839741d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "A jabber ID for something." , "jabber ID" ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "A jabber ID for something." ;
+        sh:inversePath    foaf:jabberID ;
+        sh:maxCount       1 ;
+        sh:name           "jabber ID" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
+        sh:path           foaf:jabberID .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#b938e5decb995ab650d843cc29725f91> , <https://astrea.linkeddata.es/shapes#a7fcdc3ec05530b1705372b439cb81db> , <https://astrea.linkeddata.es/shapes#44e48c092aada3b171ce899ffc6943a8> , <https://astrea.linkeddata.es/shapes#5c646644580e6bf8bc192059badc5919> , <https://astrea.linkeddata.es/shapes#953b687f55f4ad6f443b4b40b5f16b9d> , <https://astrea.linkeddata.es/shapes#34bdf5930c6edb6fdb1d16d232c918a4> , <https://astrea.linkeddata.es/shapes#b112e59eaa72312800a314d0e78b9d6b> , <https://astrea.linkeddata.es/shapes#5a80473276142dccb098aa3cc2d0b838> , <https://astrea.linkeddata.es/shapes#40d1fb17142b50b679282e83eaa0dcce> , <https://astrea.linkeddata.es/shapes#6b1eef57db30e403cdb45e7e42b5ab1f> , <https://astrea.linkeddata.es/shapes#5694afa0f053a50de40e59e74dc9b0de> , <https://astrea.linkeddata.es/shapes#147c715eadc8092c3ea626a8d4488d35> , <https://astrea.linkeddata.es/shapes#4e4d38c5372533eb786110402fe55299> , <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#f916ec82c7f195a468b0f73d548712d5> , <https://astrea.linkeddata.es/shapes#c882664618b695f2904264820a0c87a9> , <https://astrea.linkeddata.es/shapes#ab26688bc19a35d7edbfa7c1cc6f5324> , <https://astrea.linkeddata.es/shapes#60112837591ec920a076ba3a2e713d2f> , <https://astrea.linkeddata.es/shapes#fabc187d844000bd2477a93073025e1e> , <https://astrea.linkeddata.es/shapes#bc04698cc9893bf3e0631420cd9e72e7> , <https://astrea.linkeddata.es/shapes#f7e08ecbaf9ca2078e549f8ba072064c> , <https://astrea.linkeddata.es/shapes#f5f736a9ac622bbacd776f127d4ee1af> , <https://astrea.linkeddata.es/shapes#bef93efc004fe1bdb3ecf03472336d7a> , <https://astrea.linkeddata.es/shapes#48ac2f3c9a245050c4bf1277170bbf0b> , <https://astrea.linkeddata.es/shapes#5e44922baf0205015615719684e7e66b> , <https://astrea.linkeddata.es/shapes#a1fe964e03ec04fda2b847bb3fe2bf33> , <https://astrea.linkeddata.es/shapes#da257107220fc1d56fb8eebd56f01e2e> , <https://astrea.linkeddata.es/shapes#305a0852601532afb24a4ded40f05ee9> , <https://astrea.linkeddata.es/shapes#9ea62a999b0a7aa4acfb2da818a02563> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> , <https://astrea.linkeddata.es/shapes#98dd6a3d61ab4170db0a03df04a650f5> , <https://astrea.linkeddata.es/shapes#5e2de0d222b0dc81c7b81a00fe4b68b9> , <https://astrea.linkeddata.es/shapes#be47af1901102236631604d5826744a4> , <https://astrea.linkeddata.es/shapes#aa8e358c44ef5b5b198a7f8abb7fd343> , <https://astrea.linkeddata.es/shapes#4853172f0bd44ec41fff520b21a4e65e> , <https://astrea.linkeddata.es/shapes#e1dd1953b136ea1319d434ce544b2729> , <https://astrea.linkeddata.es/shapes#a368f10daf802e366aeff763e2685b0c> , <https://astrea.linkeddata.es/shapes#7d5b4ad77e51e9bb70f173aa1aea8a92> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#113c70fb8cba2ec4fb119517d75b54a6> , <https://astrea.linkeddata.es/shapes#0e30d071723196d7da099894222eaf61> , <https://astrea.linkeddata.es/shapes#47d8548f719f1b8503eceaba049b85ee> , <https://astrea.linkeddata.es/shapes#1b029595b6c9f13e6782755fc4355c3e> , <https://astrea.linkeddata.es/shapes#7319538eddf9cf7aa0cf4f21e7cc167c> , <https://astrea.linkeddata.es/shapes#02628b3e5127a427dee8fe500b66ed49> , <https://astrea.linkeddata.es/shapes#f293be338182cf10ef56505b70a20734> , <https://astrea.linkeddata.es/shapes#eafde67d0b032ef5bd71d0e5766c953f> , <https://astrea.linkeddata.es/shapes#4ba2e98f6afb7598e100b77538347922> , <https://astrea.linkeddata.es/shapes#b0dc527a1b574758bc9ac08320a2f090> , <https://astrea.linkeddata.es/shapes#667f916a18955e8bda14bec53a15c8c9> , <https://astrea.linkeddata.es/shapes#a8b7e725c5d4b329b630adaccdf39385> , <https://astrea.linkeddata.es/shapes#4c2452e1fd79d252bb94ad3ca839741d> , <https://astrea.linkeddata.es/shapes#934262a672115868b577a229676db0a2> , <https://astrea.linkeddata.es/shapes#a0a1b20d2fffb49af882535b54f99030> , <https://astrea.linkeddata.es/shapes#059d76dc8615aa2cbe17328d57fffc60> , <https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5> , <https://astrea.linkeddata.es/shapes#babfcfb6122a5c6e76b0340506699655> , <https://astrea.linkeddata.es/shapes#32168390c516969176ea3e8234e15da1> , <https://astrea.linkeddata.es/shapes#8982f7fbd50cbab5e5087e737fc7d2c3> , <https://astrea.linkeddata.es/shapes#7558699cc735bf805d7ea5605349caa6> , <https://astrea.linkeddata.es/shapes#2e2c7447c0329b8d856d6b1fc21b43ec> , <https://astrea.linkeddata.es/shapes#bf0e2f8ef213cb6b7e2c15739316dc0f> , <https://astrea.linkeddata.es/shapes#6ffd1ddc090195107bfadfe4594b0827> , <https://astrea.linkeddata.es/shapes#2d8eedd9b02f19a40d4a52bcdaf187a2> , <https://astrea.linkeddata.es/shapes#2a0cf70f2fcbd4c2224419be49e7de32> , <https://astrea.linkeddata.es/shapes#a3c5a181f7c19f7e4eabcccc5cc435ee> , <https://astrea.linkeddata.es/shapes#07fe8d090dee52aa25cacf9ba01c537d> , <https://astrea.linkeddata.es/shapes#30fe566b6c627831d35ed19d9b010c42> , <https://astrea.linkeddata.es/shapes#0e5a01b85467fe09b1de26dea227d646> , <https://astrea.linkeddata.es/shapes#a545e9aeaf17d0242ae410474b327d04> , <https://astrea.linkeddata.es/shapes#a9557cbafb854e7ffcdc46ca0d24b6e8> , <https://astrea.linkeddata.es/shapes#d11dcd6bf65ac8f3a8ba70dceaf23477> , <https://astrea.linkeddata.es/shapes#170c2dd677390be4b2d53b5e77d71208> , <https://astrea.linkeddata.es/shapes#65578aa1a75c6636c1d8699fc24dc146> , <https://astrea.linkeddata.es/shapes#93bbf795a4f06b82b4eb704cb6ff65d0> , <https://astrea.linkeddata.es/shapes#16c66d955d9e913eb3e3683f0ab1df84> , <https://astrea.linkeddata.es/shapes#e45d71d97f2781bb3f696838cfe7436c> , <https://astrea.linkeddata.es/shapes#0d30180e88607a9b9f3e7efdf6a5a920> , <https://astrea.linkeddata.es/shapes#891dee2ace0cedb719657b4cfe6e1324> , <https://astrea.linkeddata.es/shapes#bfb0b506165ca8e85929f23bb6842800> , <https://astrea.linkeddata.es/shapes#1e2f8ef8bba7efc6b52b2fc88eb2e29c> , <https://astrea.linkeddata.es/shapes#ce58cd7c6ad061be9b9bc7f1779eb9f3> , <https://astrea.linkeddata.es/shapes#f261e4284859ee052913244bf04cb23a> , <https://astrea.linkeddata.es/shapes#7c7d02660fbdfb116cf2bfa5108aca35> , <https://astrea.linkeddata.es/shapes#893797ba8898177df5b817ba86554a38> , <https://astrea.linkeddata.es/shapes#4282e8c6fd287afdd8eb924f2b2450e2> , <https://astrea.linkeddata.es/shapes#657b6c5ed4e1a6d42c1de87b759c059d> , <https://astrea.linkeddata.es/shapes#2e9493b9956fc5ce781c0d2d605ff922> , <https://astrea.linkeddata.es/shapes#837f0b1deab8c78681f856811a4fc7b1> , <https://astrea.linkeddata.es/shapes#86342d19ac8bba3cc22386b499dc9a29> , <https://astrea.linkeddata.es/shapes#067014565ecdc68eef8ef4c8a6e47e33> , <https://astrea.linkeddata.es/shapes#1587962e0259e2a60d349d9159fb1092> , <https://astrea.linkeddata.es/shapes#1de92a59d8137f06e500fe1429b10f2e> , <https://astrea.linkeddata.es/shapes#f3c4b4fb2e3f5b084b50cec33ce32d92> , <https://astrea.linkeddata.es/shapes#fd7653ba9a62527d8598e36f22b52215> , <https://astrea.linkeddata.es/shapes#dc7b27d0e5f224b802f0b7b175e0a4b3> , <https://astrea.linkeddata.es/shapes#55a05e88e2f1bdf8b52fa7d0eb1efeca> , <https://astrea.linkeddata.es/shapes#7f81e37eb6a61748d979a10325e5af8e> , <https://astrea.linkeddata.es/shapes#355d8af2ce795629e39cfeb1c4e27b8f> , <https://astrea.linkeddata.es/shapes#748aff34025f79d1660a94e439396721> , <https://astrea.linkeddata.es/shapes#05e1dc08494ca575258e7d6b458c0207> , <https://astrea.linkeddata.es/shapes#9bc50a682723d7594990a2a7a657eb3b> , <https://astrea.linkeddata.es/shapes#c2dc5756363b84e54d58dbb05652e61d> , <https://astrea.linkeddata.es/shapes#29c3a5d12df8ba4f3bb0b250a29218a8> , <https://astrea.linkeddata.es/shapes#41f296df5f6894a91e17cb8a47c8ec62> , <https://astrea.linkeddata.es/shapes#3ff72c89256c1921ca6727c5aac88714> , <https://astrea.linkeddata.es/shapes#1fae42385bbb65bf26cf1c2f772eb29b> , <https://astrea.linkeddata.es/shapes#d5f2de5b785100a881c10730ea06d640> , <https://astrea.linkeddata.es/shapes#d2f8266016471287c06e1eeadff929dc> , <https://astrea.linkeddata.es/shapes#96fb6b14b90a6f79ed57ac40fba22919> , <https://astrea.linkeddata.es/shapes#65991e210fc00a6f54a8fb63a5317d73> , <https://astrea.linkeddata.es/shapes#b71864117ec56114369f60966796fbb4> , <https://astrea.linkeddata.es/shapes#4eb43d9410145665da6b9c1af911e893> , <https://astrea.linkeddata.es/shapes#bd575c567510867c637ca5bccdd7d96e> , <https://astrea.linkeddata.es/shapes#e64e882c2db635c2e44116f847a4d734> , <https://astrea.linkeddata.es/shapes#58b6d07c89b62350922a186a3ca14452> , <https://astrea.linkeddata.es/shapes#21ddcd1406ba873d28fafc724fdb6de9> , <https://astrea.linkeddata.es/shapes#818cee1f541c807678bcbbcd16d31498> , <https://astrea.linkeddata.es/shapes#4187688e2ff894b9172d6888cf45278a> , <https://astrea.linkeddata.es/shapes#5192bd4012546876e17387cec79301a1> , <https://astrea.linkeddata.es/shapes#9edd74afb06fdfda435327a1143238ce> , <https://astrea.linkeddata.es/shapes#7b4f6af7fea7556ef25ce87b16960c73> , <https://astrea.linkeddata.es/shapes#8028e302c10c6d23142130afec4f239c> , <https://astrea.linkeddata.es/shapes#eb84234443a847e03ffecc79a926aac2> , <https://astrea.linkeddata.es/shapes#d4968806bf0822fd09502f7ab2e96f31> , <https://astrea.linkeddata.es/shapes#46944a442ada4103277ba1c557d6cfa4> , <https://astrea.linkeddata.es/shapes#c7b0c5194c1792d9cfaa603e2e1904fc> , <https://astrea.linkeddata.es/shapes#d4710453441923d65eb28327c417b6bf> , <https://astrea.linkeddata.es/shapes#d00463651ff06ce03378d63f5a3a481a> , <https://astrea.linkeddata.es/shapes#777153e8d91b40482d43d1da4fd16b2e> , <https://astrea.linkeddata.es/shapes#08476107b60e048b9f3d543a51d5918c> , <https://astrea.linkeddata.es/shapes#373eeb0386eded369fd547d81780aa20> , <https://astrea.linkeddata.es/shapes#243fcfd6594e978871b743a5ffe3b681> , <https://astrea.linkeddata.es/shapes#203c6db8a73c7732f2bbe00ba1273a34> , <https://astrea.linkeddata.es/shapes#25e2dc1fe192275ce28f9096130618a5> , <https://astrea.linkeddata.es/shapes#580659d3d4d3c9974e9dc36d00e6e6e8> , <https://astrea.linkeddata.es/shapes#beb583112d2644bc809c5044905d3110> , <https://astrea.linkeddata.es/shapes#1849d2cdd7d07570c087ad1ef520a285> , <https://astrea.linkeddata.es/shapes#04b3f78711c12bf06d7853d11d40da9c> , <https://astrea.linkeddata.es/shapes#20562318a3a0957169b89d17cce6fd27> , <https://astrea.linkeddata.es/shapes#cf6b74a0ace46133dab13fc7ee61b12c> , <https://astrea.linkeddata.es/shapes#6ef7cd7673b0f4cde3fd88c84e850357> , <https://astrea.linkeddata.es/shapes#0aa707aade0e3fd7e94280c3cee3ec6c> , <https://astrea.linkeddata.es/shapes#1883afe0cee837205de41653bb427baf> , <https://astrea.linkeddata.es/shapes#f1c39c4aefc4e8f4c767a7259dd1c5cb> , <https://astrea.linkeddata.es/shapes#40d9dd7e4adcea147cede3616667a475> , <https://astrea.linkeddata.es/shapes#8fb49b6a24a7179a5434ab5122c3f5ee> , <https://astrea.linkeddata.es/shapes#7a49f5dd0954737e0f7e916a39e41c59> , <https://astrea.linkeddata.es/shapes#c0584d098250c27d5bb40c0810ef60fe> , <https://astrea.linkeddata.es/shapes#b086df60e1876dc2778d417a19745ad2> , <https://astrea.linkeddata.es/shapes#cb47ae4bdec3e4bc50afe12479911c32> , <https://astrea.linkeddata.es/shapes#978fc23d5efcf02d673600baaed2a178> , <https://astrea.linkeddata.es/shapes#95367c1d6b9f60d610de8a964de33047> , <https://astrea.linkeddata.es/shapes#febd2c1781966d53f8c50918bc225cbf> , <https://astrea.linkeddata.es/shapes#229cc1c09aa1c5a9c9919376b6545188> , <https://astrea.linkeddata.es/shapes#d3cf88afd3b47ef599e18cd4ba20545a> , <https://astrea.linkeddata.es/shapes#b318c7a4946bc3e902d052a8ea3fc03c> , <https://astrea.linkeddata.es/shapes#0bd7a13f14d5a48d549846d558057283> , <https://astrea.linkeddata.es/shapes#6ace7559c09873d57bb26d2909a563c6> , <https://astrea.linkeddata.es/shapes#754bf685634357d4bd86f1f862a7c52f> , <https://astrea.linkeddata.es/shapes#04601be35c7c14db95ba3030ca69bba4> , <https://astrea.linkeddata.es/shapes#4fbefd9c1768a6cccae9b0736c9825ac> , <https://astrea.linkeddata.es/shapes#fcee61b84a3073edc28dbd46f9ef23e3> , <https://astrea.linkeddata.es/shapes#ac2267fa2136eaf58fe5c06b75a2f153> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/1730027736> , <https://astrea.linkeddata.es/report/1218829496> , <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/0455406837> , <https://astrea.linkeddata.es/report/02113868144> , <https://astrea.linkeddata.es/report/1255511723> , <https://astrea.linkeddata.es/report/1708923933> .
+
+<https://astrea.linkeddata.es/shapes#b71864117ec56114369f60966796fbb4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "the year in which the conservation status was assessed."@en-gb , "year assessed"@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "the year in which the conservation status was assessed."@en-gb ;
+        sh:name           "year assessed"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/wo/yearAssessed> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#203c6db8a73c7732f2bbe00ba1273a34>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Surname" , "The surname of some person." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The surname of some person." ;
+        sh:name           "Surname" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:surname .
+
+<https://astrea.linkeddata.es/shapes#d00463651ff06ce03378d63f5a3a481a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Communication Adaptation"@en-gb ;
+        sh:description    "Communication and senses are how an organism perceives the world - for instance through scent or sight - and how it sends messages or warnings to others."@en-gb ;
+        sh:name           "Communication Adaptation"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/CommunicationAdaptation> .
+
+<https://astrea.linkeddata.es/shapes#9ea62a999b0a7aa4acfb2da818a02563>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Ecozone"@en-gb ;
+        sh:description    "Ecozones are a method of dividing up the Earth's surface. Each ecozone is a large area that contains a number of habitats, which are linked by the evolutionary history of the animals and plants within them. For instance one ecozone is Australasia, because its marsupials evolved in isolation to mammals in the rest of the world."@en-gb ;
+        sh:name           "Ecozone"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/Ecozone> .
+
+<https://astrea.linkeddata.es/shapes#7d5b4ad77e51e9bb70f173aa1aea8a92>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "past project" , "A project this person has previously worked on." ;
+        sh:class          owl:Thing ;
+        sh:description    "A project this person has previously worked on." ;
+        sh:name           "past project" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:pastProject .
+
+<https://astrea.linkeddata.es/shapes#7c7d02660fbdfb116cf2bfa5108aca35>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "Ontology"@en-gb ;
+        sh:description    "Graphs that contain ontologies in the store are declared to be of type provenance:Ontology. The graph name in the store is identical to the ontology IRI."@en-gb ;
+        sh:name           "Ontology"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#953b687f55f4ad6f443b4b40b5f16b9d> ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/provenance/Ontology> .
+
+<https://astrea.linkeddata.es/shapes#7f81e37eb6a61748d979a10325e5af8e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Morphology"@en-gb ;
+        sh:description    "Morphology is anything to do with what a plant or animal looks like - its size, shape, colour or structure."@en-gb ;
+        sh:name           "Morphology"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/MorphologyAdaptation> .
+
+<https://astrea.linkeddata.es/shapes#4fbefd9c1768a6cccae9b0736c9825ac>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "public"@en-gb , "This predicate allows the distinction of ontologies that are appropriate for publishing from those ones that are currently kept internal, e.g., for testing purposes."@en-gb ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "This predicate allows the distinction of ontologies that are appropriate for publishing from those ones that are currently kept internal, e.g., for testing purposes."@en-gb ;
+        sh:name           "public"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/public> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#55a05e88e2f1bdf8b52fa7d0eb1efeca>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Document" ;
+        sh:description    "A document." ;
+        sh:name           "Document" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#d3cf88afd3b47ef599e18cd4ba20545a> , <https://astrea.linkeddata.es/shapes#95367c1d6b9f60d610de8a964de33047> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ac2267fa2136eaf58fe5c06b75a2f153> , <https://astrea.linkeddata.es/shapes#44e48c092aada3b171ce899ffc6943a8> ;
+        sh:targetClass    foaf:Document .
+
+<https://astrea.linkeddata.es/shapes#bc04698cc9893bf3e0631420cd9e72e7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "version"@en-gb , "The version of the graph."@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "The version of the graph."@en-gb ;
+        sh:name           "version"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/version> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#4282e8c6fd287afdd8eb924f2b2450e2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "class name"@en-gb , "Used to specify the name of a class as part of a Taxon Name"@en-gb ;
+        sh:description    "Used to specify the name of a class as part of a Taxon Name"@en-gb ;
+        sh:name           "class name"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/wo/className> .
+
+<https://astrea.linkeddata.es/shapes#b938e5decb995ab650d843cc29725f91>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "description of the threat(s) that have been identified as part of the assessment of the Conservation Status of a taxon"@en-gb , "threatDescription"@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "description of the threat(s) that have been identified as part of the assessment of the Conservation Status of a taxon"@en-gb ;
+        sh:name           "threatDescription"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/wo/threatDescription> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#32168390c516969176ea3e8234e15da1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "account" , "Indicates an account held by this agent." ;
+        sh:class          foaf:OnlineAccount ;
+        sh:description    "Indicates an account held by this agent." ;
+        sh:name           "account" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:holdsAccount .
+
+<https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f261e4284859ee052913244bf04cb23a> ;
+        sh:targetClass  <http://www.w3.org/2004/02/skos/core#Concept> .
+
+<https://astrea.linkeddata.es/shapes#891dee2ace0cedb719657b4cfe6e1324>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Social Behaviour"@en-gb ;
+        sh:description    "Social behaviour is all about how an animal interacts with members of its own species. For instance, does it live in a colony or on its own, does it fight to be top of the pecking order, or does it try to keep strangers away from its home?"@en-gb ;
+        sh:name           "Social Behaviour"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/SocialBehaviour> .
+
+<https://astrea.linkeddata.es/shapes#d4710453441923d65eb28327c417b6bf>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "family"@en-gb , "associates a taxon rank with a family"@en-gb ;
+        sh:class          <http://purl.org/ontology/wo/Family> ;
+        sh:description    "associates a taxon rank with a family"@en-gb ;
+        sh:name           "family"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/wo/family> .
+
+<https://astrea.linkeddata.es/shapes#47d8548f719f1b8503eceaba049b85ee>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Life Cycle"@en-gb ;
+        sh:description    "An organism's Life Cycle describes the stages in an organisms development including metamorphosis, courtship displays and parental care.."@en-gb ;
+        sh:name           "Life Cycle"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/LifeCycle> .
+
+<https://astrea.linkeddata.es/shapes#c2dc5756363b84e54d58dbb05652e61d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "CreativeWorkGraph"@en-gb ;
+        sh:description    "The class of named graphs which contain the metadata for the CreativeWorks. For example all the metadata for a news story provided by a CMS will be contained in a single CreativeWorkGraph instance."@en-gb ;
+        sh:name           "CreativeWorkGraph"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/provenance/CreativeWorkGraph> .
+
+<https://astrea.linkeddata.es/shapes#748aff34025f79d1660a94e439396721>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Ecosystem Role"@en-gb ;
+        sh:description    "Ecosystem roles are about the part an animal or plant plays in sustaining or maintaining the habitat around them. Bees, for example, pollinate flowers, without which those plants would not produce fruits or seeds. Other species, such as dung beetles, play a vital role in keeping grasslands clear of animal waste and recycling valuable resources."@en-gb ;
+        sh:name           "Ecosystem Role"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/EcosystemRole> .
+
+<https://astrea.linkeddata.es/shapes#1de92a59d8137f06e500fe1429b10f2e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "PersonalProfileDocument" ;
+        sh:description    "A personal profile RDF document." ;
+        sh:name           "PersonalProfileDocument" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    foaf:PersonalProfileDocument .
+
+<https://astrea.linkeddata.es/shapes#b112e59eaa72312800a314d0e78b9d6b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "knows" , "A person known by this person (indicating some level of reciprocated interaction between the parties)." ;
+        sh:class          foaf:Person ;
+        sh:description    "A person known by this person (indicating some level of reciprocated interaction between the parties)." ;
+        sh:name           "knows" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:knows .
+
+<https://astrea.linkeddata.es/shapes#934262a672115868b577a229676db0a2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Locomotion"@en-gb ;
+        sh:description    "Locomotion is how an animal gets around - for instance by swimming, flying or climbing."@en-gb ;
+        sh:name           "Locomotion"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/LocomotionAdaptation> .
+
+<https://astrea.linkeddata.es/shapes#147c715eadc8092c3ea626a8d4488d35>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "account" , "Indicates an account held by this agent." ;
+        sh:class          foaf:OnlineAccount ;
+        sh:description    "Indicates an account held by this agent." ;
+        sh:name           "account" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:account .
+
+<https://astrea.linkeddata.es/shapes#3ff72c89256c1921ca6727c5aac88714>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "account name" , "Indicates the name (identifier) associated with this online account." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "Indicates the name (identifier) associated with this online account." ;
+        sh:name           "account name" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:accountName .
+
+<https://astrea.linkeddata.es/shapes#29c3a5d12df8ba4f3bb0b250a29218a8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "firstName" , "The first name of a person." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The first name of a person." ;
+        sh:name           "firstName" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:firstName .
+
+<https://astrea.linkeddata.es/shapes#e1dd1953b136ea1319d434ce544b2729>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "current project" , "A current project this person works on." ;
+        sh:class          owl:Thing ;
+        sh:description    "A current project this person works on." ;
+        sh:name           "current project" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:currentProject .
+
+<https://astrea.linkeddata.es/shapes#16c66d955d9e913eb3e3683f0ab1df84>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "specifies the species part of a binomial name, allowing this portion of the name to be explicitly described. Therefore this property will typically only be used in TaxonNames associated with species. The property is largely provided as a convenience to avoid applications having to parse the binomial name."@en-gb , "species name"@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "specifies the species part of a binomial name, allowing this portion of the name to be explicitly described. Therefore this property will typically only be used in TaxonNames associated with species. The property is largely provided as a convenience to avoid applications having to parse the binomial name."@en-gb ;
+        sh:name           "species name"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/wo/speciesName> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#170c2dd677390be4b2d53b5e77d71208>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "conservation status"@en-gb , "associates a taxon rank with a description of a recent assessment of its conservation status"@en-gb ;
+        sh:class          <http://purl.org/ontology/wo/ConservationStatus> ;
+        sh:description    "associates a taxon rank with a description of a recent assessment of its conservation status"@en-gb ;
+        sh:name           "conservation status"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/wo/conservationStatus> .
+
+<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Agent" ;
+        sh:description    "An agent (eg. person, group, software or physical artifact)." ;
+        sh:name           "Agent" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#0e5a01b85467fe09b1de26dea227d646> , <https://astrea.linkeddata.es/shapes#bef93efc004fe1bdb3ecf03472336d7a> , <https://astrea.linkeddata.es/shapes#d11dcd6bf65ac8f3a8ba70dceaf23477> , <https://astrea.linkeddata.es/shapes#febd2c1781966d53f8c50918bc225cbf> , <https://astrea.linkeddata.es/shapes#babfcfb6122a5c6e76b0340506699655> , <https://astrea.linkeddata.es/shapes#1849d2cdd7d07570c087ad1ef520a285> , <https://astrea.linkeddata.es/shapes#147c715eadc8092c3ea626a8d4488d35> , <https://astrea.linkeddata.es/shapes#a0a1b20d2fffb49af882535b54f99030> , <https://astrea.linkeddata.es/shapes#32168390c516969176ea3e8234e15da1> , <https://astrea.linkeddata.es/shapes#b318c7a4946bc3e902d052a8ea3fc03c> , <https://astrea.linkeddata.es/shapes#4eb43d9410145665da6b9c1af911e893> ;
+        sh:targetClass    foaf:Agent , dcterms:Agent .
+
+<https://astrea.linkeddata.es/shapes#65991e210fc00a6f54a8fb63a5317d73>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "order"@en-gb , "associates a taxon rank with an order"@en-gb ;
+        sh:class          <http://purl.org/ontology/wo/Kingdom> ;
+        sh:description    "associates a taxon rank with an order"@en-gb ;
+        sh:name           "order"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/wo/order> .
+
+<https://astrea.linkeddata.es/shapes#8028e302c10c6d23142130afec4f239c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "kingdom name"@en-gb , "Used to specify the name of a kingdom as part of a Taxon Name"@en-gb ;
+        sh:description    "Used to specify the name of a kingdom as part of a Taxon Name"@en-gb ;
+        sh:name           "kingdom name"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/wo/kingdomName> .
+
+<https://astrea.linkeddata.es/shapes#5e2de0d222b0dc81c7b81a00fe4b68b9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Feeding Habit"@en-gb ;
+        sh:description    "Feeding habits describe the dominant diet of a particular species or group of species, and how they go about obtaining it."@en-gb ;
+        sh:name           "Feeding Habit"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/FeedingHabit> .
+
+<https://astrea.linkeddata.es/shapes#6ffd1ddc090195107bfadfe4594b0827>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "A personal mailbox, ie. an Internet mailbox associated with exactly one owner, the first owner of this mailbox. This is a 'static inverse functional property', in that there is (across time and change) at most one individual that ever has any particular value for foaf:mbox." , "personal mailbox" ;
+        sh:class          owl:Thing ;
+        sh:description    "A personal mailbox, ie. an Internet mailbox associated with exactly one owner, the first owner of this mailbox. This is a 'static inverse functional property', in that there is (across time and change) at most one individual that ever has any particular value for foaf:mbox." ;
+        sh:inversePath    foaf:mbox ;
+        sh:maxCount       1 ;
+        sh:name           "personal mailbox" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           foaf:mbox .
+
+<https://astrea.linkeddata.es/shapes#eafde67d0b032ef5bd71d0e5766c953f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Order"@en-gb ;
+        rdfs:seeAlso      <http://www.bbc.co.uk/nature/order> , <http://en.wikipedia.org/wiki/Order_%28biology%29> ;
+        sh:description    "An order is a scientific way to categorise related organisms. An order is a smaller grouping than a class, but bigger than a family or genus. Examples of orders are willows, cockroaches and primates."@en-gb ;
+        sh:name           "Order"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/Order> .
+
+<https://astrea.linkeddata.es/shapes#02628b3e5127a427dee8fe500b66ed49>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Label Property" ;
+        sh:description    "A foaf:LabelProperty is any RDF property with texual values that serve as labels." ;
+        sh:name           "Label Property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    foaf:LabelProperty .
+
+<https://astrea.linkeddata.es/shapes#bd575c567510867c637ca5bccdd7d96e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "Dataset"@en-gb ;
+        sh:description    "Dataset is a single graph which contains a collection of things that is managed together, e.g., \"the dataset of the BBC's News Regions\". The management of datasets involves editing RDF files and publishing them to the triplestore in a single action. This requires a good knowledge of semantic technologies therefore datasets are managed by experts."@en-gb ;
+        sh:name           "Dataset"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/provenance/Dataset> .
+
+<https://astrea.linkeddata.es/shapes#a7fcdc3ec05530b1705372b439cb81db>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "genus"@en-gb , "associates a taxon rank with a genus"@en-gb ;
+        sh:class          <http://purl.org/ontology/wo/Genus> ;
+        sh:description    "associates a taxon rank with a genus"@en-gb ;
+        sh:name           "genus"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/wo/genus> .
+
+<https://astrea.linkeddata.es/report/0455406837>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/dc/elements/1.1/" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#1883afe0cee837205de41653bb427baf>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "deprecated"@en-gb , "A predicate to allow hiding of Things so as to not delete them and lose the reference object."@en-gb ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "A predicate to allow hiding of Things so as to not delete them and lose the reference object."@en-gb ;
+        sh:name           "deprecated"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/deprecated> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#8982f7fbd50cbab5e5087e737fc7d2c3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "myersBriggs" , "A Myers Briggs (MBTI) personality classification." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "A Myers Briggs (MBTI) personality classification." ;
+        sh:name           "myersBriggs" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:myersBriggs .
+
+<https://astrea.linkeddata.es/shapes#305a0852601532afb24a4ded40f05ee9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Adapted to Extremes"@en-gb ;
+        sh:description    "Organisms that are adapted to extremes (known as Extremophiles) are organisms that thrives in and even may require physically or geochemically extreme conditions that are detrimental to the majority of life on Earth."@en-gb ;
+        sh:name           "Adapted to Extremes"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/ExtremesAdaptation> .
+
+<https://astrea.linkeddata.es/shapes#1587962e0259e2a60d349d9159fb1092>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "workplace homepage" , "A workplace homepage of some person; the homepage of an organization they work for." ;
+        sh:class          foaf:Document ;
+        sh:description    "A workplace homepage of some person; the homepage of an organization they work for." ;
+        sh:name           "workplace homepage" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:workplaceHomepage .
+
+<https://astrea.linkeddata.es/shapes#08476107b60e048b9f3d543a51d5918c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "A Yahoo chat ID" , "Yahoo chat ID" ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "A Yahoo chat ID" ;
+        sh:inversePath    foaf:yahooChatID ;
+        sh:maxCount       1 ;
+        sh:name           "Yahoo chat ID" ;
+        sh:nodeKind       sh:Literal , sh:IRIOrLiteral ;
+        sh:path           foaf:yahooChatID .
+
+<https://astrea.linkeddata.es/shapes#4e4d38c5372533eb786110402fe55299>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "phylum"@en-gb , "associates a taxon rank with a phylum"@en-gb ;
+        sh:class          <http://purl.org/ontology/wo/Phylum> ;
+        sh:description    "associates a taxon rank with a phylum"@en-gb ;
+        sh:name           "phylum"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/wo/phylum> .
+
+<https://astrea.linkeddata.es/shapes#30fe566b6c627831d35ed19d9b010c42>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Phylum"@en-gb ;
+        rdfs:seeAlso      <http://www.bbc.co.uk/nature/phylum> , <http://en.wikipedia.org/wiki/Phylum> ;
+        sh:description    "A phylum - also known as a division when referring to plants - is a scientfic way of grouping together related organisms. All the members of a phylum have a common ancestor and anatomical similarities. For instance, all the arthropods have external skeletons. Phlya are large groups and are further subdivided into classes, orders, families and so on."@en-gb ;
+        sh:name           "Phylum"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/Phylum> .
+
+<https://astrea.linkeddata.es/shapes#4eb43d9410145665da6b9c1af911e893>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "status" , "A string expressing what the user is happy for the general public (normally) to know about their current activity." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "A string expressing what the user is happy for the general public (normally) to know about their current activity." ;
+        sh:name           "status" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:status .
+
+<https://astrea.linkeddata.es/shapes#25e2dc1fe192275ce28f9096130618a5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Behavioural Pattern"@en-gb ;
+        sh:description    "Behavioural pattern describes an animal's dominant way of life. Arboreal animals, for example, live in trees and nocturnal animals are active at night."@en-gb ;
+        sh:name           "Behavioural Pattern"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/BehaviouralPattern> .
+
+<https://astrea.linkeddata.es/shapes#2e2c7447c0329b8d856d6b1fc21b43ec>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "family name"@en-gb , "Used to specify the name of a family as part of a Taxon Name"@en-gb ;
+        sh:description    "Used to specify the name of a family as part of a Taxon Name"@en-gb ;
+        sh:name           "family name"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/wo/familyName> .
+
+<https://astrea.linkeddata.es/shapes#58b6d07c89b62350922a186a3ca14452>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "title" , "Title (Mr, Mrs, Ms, Dr. etc)" ;
+        sh:description    "Title (Mr, Mrs, Ms, Dr. etc)" ;
+        sh:name           "title" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:title .
+
+<https://astrea.linkeddata.es/shapes#46944a442ada4103277ba1c557d6cfa4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "nickname" , "A short informal nickname characterising an agent (includes login identifiers, IRC and other chat nicknames)." ;
+        sh:description    "A short informal nickname characterising an agent (includes login identifiers, IRC and other chat nicknames)." ;
+        sh:name           "nickname" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:nick .
+
+<https://astrea.linkeddata.es/shapes#c882664618b695f2904264820a0c87a9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "based near" , "A location that something is based near, for some broadly human notion of near." ;
+        sh:class          <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+        sh:description    "A location that something is based near, for some broadly human notion of near." ;
+        sh:name           "based near" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:based_near .
+
+<https://astrea.linkeddata.es/shapes#e64e882c2db635c2e44116f847a4d734>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Class"@en-gb ;
+        rdfs:seeAlso      <http://www.bbc.co.uk/nature/class> , <http://en.wikipedia.org/wiki/Class_%28biology%29> ;
+        sh:description    "A class is a scientific way to group related organisms together, some examples of classes being jellyfish, reptiles and sea urchins. Classes are big groups and contain within them smaller groupings called orders, families, genera and species."@en-gb ;
+        sh:name           "Class"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/Class> .
+
+<https://astrea.linkeddata.es/shapes#a545e9aeaf17d0242ae410474b327d04>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "page" , "A page or document about this thing." ;
+        sh:class          foaf:Document ;
+        sh:description    "A page or document about this thing." ;
+        sh:name           "page" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:page .
+
+<https://astrea.linkeddata.es/shapes#4ba2e98f6afb7598e100b77538347922>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Conservation Status"@en-gb ;
+        sh:description    "Conservation status as described by the IUCN Red List. Will typically have a number of properties including an official IUCN status, population trend, and a year of assessment."@en-gb ;
+        sh:name           "Conservation Status"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#059d76dc8615aa2cbe17328d57fffc60> , <https://astrea.linkeddata.es/shapes#b938e5decb995ab650d843cc29725f91> , <https://astrea.linkeddata.es/shapes#b71864117ec56114369f60966796fbb4> , <https://astrea.linkeddata.es/shapes#ce58cd7c6ad061be9b9bc7f1779eb9f3> ;
+        sh:targetClass    <http://purl.org/ontology/wo/ConservationStatus> .
+
+<https://astrea.linkeddata.es/shapes#f293be338182cf10ef56505b70a20734>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wo/> ;
+        rdfs:label        "Reproduction Strategy"@en-gb ;
+        sh:description    "Reproduction covers all the tactics and behaviours involved in obtaining a mate, conceiving the next generation and successfully raising them. It includes everything from plants being pollinated, to stags fighting over hinds, to lionesses babysitting their sisters' cubs."@en-gb ;
+        sh:name           "Reproduction Strategy"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/wo/ReproductionStrategy> .
+
+<https://astrea.linkeddata.es/shapes#7a49f5dd0954737e0f7e916a39e41c59>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Image" ;
+        sh:description    "An image." ;
+        sh:name           "Image" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#fd7653ba9a62527d8598e36f22b52215> , <https://astrea.linkeddata.es/shapes#243fcfd6594e978871b743a5ffe3b681> ;
+        sh:targetClass    foaf:Image .
+
+<https://astrea.linkeddata.es/shapes#667f916a18955e8bda14bec53a15c8c9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "sha1sum of a personal mailbox URI name" , "The sha1sum of the URI of an Internet mailbox associated with exactly one owner, the first owner of the mailbox." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The sha1sum of the URI of an Internet mailbox associated with exactly one owner, the first owner of the mailbox." ;
+        sh:inversePath    foaf:mbox_sha1sum ;
+        sh:maxCount       1 ;
+        sh:name           "sha1sum of a personal mailbox URI name" ;
+        sh:nodeKind       sh:Literal , sh:IRIOrLiteral ;
+        sh:path           foaf:mbox_sha1sum .
+
+<https://astrea.linkeddata.es/shapes#837f0b1deab8c78681f856811a4fc7b1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Given name" , "The given name of some person." ;
+        sh:description    "The given name of some person." ;
+        sh:name           "Given name" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:givenname .
+
+<https://astrea.linkeddata.es/shapes#ab26688bc19a35d7edbfa7c1cc6f5324>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "This property indicates the owner of the data, i.e., the person or CMS who's responsible for managing and governing the data."@en-gb , "owner"@en-gb ;
+        sh:datatype       xsd:anyURI ;
+        sh:description    "This property indicates the owner of the data, i.e., the person or CMS who's responsible for managing and governing the data."@en-gb ;
+        sh:name           "owner"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/owner> ;
+        sh:pattern        "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#b318c7a4946bc3e902d052a8ea3fc03c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "tipjar" , "A tipjar document for this agent, describing means for payment and reward." ;
+        sh:class          foaf:Document ;
+        sh:description    "A tipjar document for this agent, describing means for payment and reward." ;
+        sh:name           "tipjar" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:tipjar .

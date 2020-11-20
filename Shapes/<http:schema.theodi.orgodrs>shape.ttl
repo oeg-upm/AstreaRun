@@ -1,0 +1,189 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#3c0db1b2870bf255ba13a1fc8c968540>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://schema.theodi.org/odrs> ;
+        rdfs:label        "License"@en ;
+        sh:description    "A legal document that describes the legal terms for re-use of some information. A licence might be applicable to content, data, or both. This definition of licence used here is deliberately loose, and is intended to also cover waiver documents that indicate that the owner waives all rights over some information, e.g. public domain dedications."@en ;
+        sh:name           "License"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#6dbce3b7d4d9f50d74a05ffb38812ce1> ;
+        sh:targetClass    <http://schema.theodi.org/odrs#License> , <http://creativecommons.org/ns#License> .
+
+<https://astrea.linkeddata.es/shapes#2c00cc66d4c7e95f8a738ed7ab9ab197>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.theodi.org/odrs> ;
+        rdfs:label        "copyright year"@en , "The year from which copyright over the content of the dataset is asserted."@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The year from which copyright over the content of the dataset is asserted."@en ;
+        sh:name           "copyright year"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://schema.theodi.org/odrs#copyrightYear> .
+
+<https://astrea.linkeddata.es/shapes#07be47608c0b5dd0d69573f26dfb32b2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.theodi.org/odrs> ;
+        rdfs:label        "copyright notice"@en , "The copyright notice associated with a rights statement. A notice must typically be preserved and displayed when acknowledging the source of some data. This property is expressed as a simple literal value and so is suitable for simple copyright notices. Where a data publisher needs to reference a larger copyright statement and/or related guidance then the copyrightStatement property should be used instead."@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The copyright notice associated with a rights statement. A notice must typically be preserved and displayed when acknowledging the source of some data. This property is expressed as a simple literal value and so is suitable for simple copyright notices. Where a data publisher needs to reference a larger copyright statement and/or related guidance then the copyrightStatement property should be used instead."@en ;
+        sh:name           "copyright notice"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://schema.theodi.org/odrs#copyrightNotice> .
+
+<https://astrea.linkeddata.es/shapes#6dbce3b7d4d9f50d74a05ffb38812ce1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.theodi.org/odrs> ;
+        rdfs:label        "compatible with"@en , "This property is used to indicates that one license is compatible with another. A re-use that meets the requirements, permissions and prohibitions of the first license should also meet the requirements, permissions and prohibitions of the second, compatible license. The inverse is not necessarily true: the compatible license might have stricter requirements. This statement can be used as an indicator that a re-user could publish a derivative dataset under the compatible license, e.g. to help drive automated selection and guidance licenses for publishers of derived data. However it is not a substitute for properly reading and understanding the text of either license."@en ;
+        sh:class          <http://schema.theodi.org/odrs#License> ;
+        sh:description    "This property is used to indicates that one license is compatible with another. A re-use that meets the requirements, permissions and prohibitions of the first license should also meet the requirements, permissions and prohibitions of the second, compatible license. The inverse is not necessarily true: the compatible license might have stricter requirements. This statement can be used as an indicator that a re-user could publish a derivative dataset under the compatible license, e.g. to help drive automated selection and guidance licenses for publishers of derived data. However it is not a substitute for properly reading and understanding the text of either license."@en ;
+        sh:name           "compatible with"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://schema.theodi.org/odrs#compatibleWith> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#6dbce3b7d4d9f50d74a05ffb38812ce1> , <https://astrea.linkeddata.es/shapes#07be47608c0b5dd0d69573f26dfb32b2> , <https://astrea.linkeddata.es/shapes#f8820ec6396f9b6167130f2ff4df38ad> , <https://astrea.linkeddata.es/shapes#48fc578e7f14070597fe310ae6bca68f> , <https://astrea.linkeddata.es/shapes#6fd17909f7449ccde74ee71ab0812aae> , <https://astrea.linkeddata.es/shapes#24a0cecaf02e7df5459bb843a00f152c> , <https://astrea.linkeddata.es/shapes#f9957fe28bf3e071587841ff0b97d61b> , <https://astrea.linkeddata.es/shapes#2c00cc66d4c7e95f8a738ed7ab9ab197> , <https://astrea.linkeddata.es/shapes#02f2893af43fbb8498cfcab91bdb19fa> , <https://astrea.linkeddata.es/shapes#74ea45fff0e129b28130f329977b1eec> , <https://astrea.linkeddata.es/shapes#e46bad5cb4f6a169578393a79bc6d2d0> , <https://astrea.linkeddata.es/shapes#06f265c3823aff0b02d598a0fb0941ba> , <https://astrea.linkeddata.es/shapes#82588be734d0d3b1d32c336591c189de> , <https://astrea.linkeddata.es/shapes#d3ef6ec0d91618141d0180c17fd603f9> , <https://astrea.linkeddata.es/shapes#05671bfca83bd5fe375689e3b48507e6> , <https://astrea.linkeddata.es/shapes#3c0db1b2870bf255ba13a1fc8c968540> , <https://astrea.linkeddata.es/shapes#359232f3199ad8f1e7f0a4032cbdcc72> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#74ea45fff0e129b28130f329977b1eec>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.theodi.org/odrs> ;
+        rdfs:label        "attribution url"@en , "The link which should be used when attributing a data source. The URL could be a reference to the dataset or publisher \nhomepage, but may also be a dedicated attribution page. This is useful when providing onward attribution to upstream sources."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Document> ;
+        sh:description    "The link which should be used when attributing a data source. The URL could be a reference to the dataset or publisher \nhomepage, but may also be a dedicated attribution page. This is useful when providing onward attribution to upstream sources."@en ;
+        sh:name           "attribution url"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://schema.theodi.org/odrs#attributionURL> .
+
+<https://astrea.linkeddata.es/shapes#e46bad5cb4f6a169578393a79bc6d2d0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.theodi.org/odrs> ;
+        rdfs:label        "data license"@en , "This property is used to indicate which license covers reuse of the dataset(s) associated with this rights statement object. Typically this license will refer to a standard open license, e.g. as published by Creative Commons or Open Data Commons. The value of the property will be the URI of the license that is being applied to the data"@en ;
+        sh:class          <http://schema.theodi.org/odrs#License> ;
+        sh:description    "This property is used to indicate which license covers reuse of the dataset(s) associated with this rights statement object. Typically this license will refer to a standard open license, e.g. as published by Creative Commons or Open Data Commons. The value of the property will be the URI of the license that is being applied to the data"@en ;
+        sh:name           "data license"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://schema.theodi.org/odrs#dataLicense> .
+
+<https://astrea.linkeddata.es/shapes#48fc578e7f14070597fe310ae6bca68f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.theodi.org/odrs> ;
+        rdfs:label        "content license"@en , "The contents of a database might be covered by a separate license, e.g. a database containing copyrightable material (e.g. text, images) might have different rights for the dataset and the contents. This property can be used to refer to a license that applies to the content of the dataset. In some cases the same license can be applied to both content and data, but in others a data publisher may choose to use a separate license for content. The value of the property will be the URI of the license that is being applied to the content."@en ;
+        sh:class          <http://schema.theodi.org/odrs#License> ;
+        sh:description    "The contents of a database might be covered by a separate license, e.g. a database containing copyrightable material (e.g. text, images) might have different rights for the dataset and the contents. This property can be used to refer to a license that applies to the content of the dataset. In some cases the same license can be applied to both content and data, but in others a data publisher may choose to use a separate license for content. The value of the property will be the URI of the license that is being applied to the content."@en ;
+        sh:name           "content license"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://schema.theodi.org/odrs#contentLicense> .
+
+<https://astrea.linkeddata.es/shapes#f8820ec6396f9b6167130f2ff4df38ad>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.theodi.org/odrs> ;
+        rdfs:label        "jurisdiction"@en , "A reference to the jurisdiction in which copyright and/or database rights have been asserts. It is recommended that this refer to the URI for a country or region."@en ;
+        sh:description    "A reference to the jurisdiction in which copyright and/or database rights have been asserts. It is recommended that this refer to the URI for a country or region."@en ;
+        sh:name           "jurisdiction"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#06f265c3823aff0b02d598a0fb0941ba>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.theodi.org/odrs> ;
+        rdfs:label        "database right statement"@en , "A link to a document that includes a statement about the database rights that apply to this dataset. The web page might include both a statement on the applicable rights and any relevant guidance for re-users."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Document> ;
+        sh:description    "A link to a document that includes a statement about the database rights that apply to this dataset. The web page might include both a statement on the applicable rights and any relevant guidance for re-users."@en ;
+        sh:name           "database right statement"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://schema.theodi.org/odrs#databaseRightStatement> .
+
+<https://astrea.linkeddata.es/shapes#359232f3199ad8f1e7f0a4032cbdcc72>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.theodi.org/odrs> ;
+        rdfs:label        "guidelines for re-users"@en , "Link to a document that provides guidelines for re-users of data that is covered by a specific rights statement. The guidelines \nmay include more detail on attribution guidelines, a fuller copyright statement, and general guidance on how the data might be re-used"@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Document> ;
+        sh:description    "Link to a document that provides guidelines for re-users of data that is covered by a specific rights statement. The guidelines \nmay include more detail on attribution guidelines, a fuller copyright statement, and general guidance on how the data might be re-used"@en ;
+        sh:name           "guidelines for re-users"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://schema.theodi.org/odrs#reuserGuidelines> .
+
+<https://astrea.linkeddata.es/shapes#f9957fe28bf3e071587841ff0b97d61b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.theodi.org/odrs> ;
+        rdfs:label        "database right year"@en , "The year from which a database right over the dataset is asserted."@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The year from which a database right over the dataset is asserted."@en ;
+        sh:name           "database right year"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://schema.theodi.org/odrs#databaseRightYear> .
+
+<https://astrea.linkeddata.es/shapes#24a0cecaf02e7df5459bb843a00f152c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://schema.theodi.org/odrs> ;
+        rdfs:label        "Rights Statement"@en ;
+        sh:description    "A description of the rights and terms of re-use for a dataset. A rights statement will include a reference to one or more licences copyright notices, and attribution requirements. Where a Rights Statement refers to several licences the intention is that these should separately apply to the data and content associated with the dataset. An individual Rights Statement may be specific to a dataset or could be applied to a \nnumber of datasets published by the same organisation or person, where the rights associated with each dataset are identical."@en ;
+        sh:name           "Rights Statement"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#359232f3199ad8f1e7f0a4032cbdcc72> , <https://astrea.linkeddata.es/shapes#06f265c3823aff0b02d598a0fb0941ba> , <https://astrea.linkeddata.es/shapes#07be47608c0b5dd0d69573f26dfb32b2> , <https://astrea.linkeddata.es/shapes#82588be734d0d3b1d32c336591c189de> , <https://astrea.linkeddata.es/shapes#6fd17909f7449ccde74ee71ab0812aae> , <https://astrea.linkeddata.es/shapes#05671bfca83bd5fe375689e3b48507e6> , <https://astrea.linkeddata.es/shapes#2c00cc66d4c7e95f8a738ed7ab9ab197> , <https://astrea.linkeddata.es/shapes#f9957fe28bf3e071587841ff0b97d61b> , <https://astrea.linkeddata.es/shapes#74ea45fff0e129b28130f329977b1eec> , <https://astrea.linkeddata.es/shapes#02f2893af43fbb8498cfcab91bdb19fa> , <https://astrea.linkeddata.es/shapes#e46bad5cb4f6a169578393a79bc6d2d0> , <https://astrea.linkeddata.es/shapes#48fc578e7f14070597fe310ae6bca68f> ;
+        sh:targetClass    <http://schema.theodi.org/odrs#RightsStatement> .
+
+<https://astrea.linkeddata.es/shapes#82588be734d0d3b1d32c336591c189de>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.theodi.org/odrs> ;
+        rdfs:label        "database right holder"@en , "A reference to the organization that holds database rights over the dataset"@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Organization> ;
+        sh:description    "A reference to the organization that holds database rights over the dataset"@en ;
+        sh:name           "database right holder"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://schema.theodi.org/odrs#databaseRightHolder> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#d3ef6ec0d91618141d0180c17fd603f9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.theodi.org/odrs> ;
+        rdfs:label        "Associates a rights statement with a dataset. This property is equivalent to the Dublin Core rights property"@en , "rights"@en ;
+        sh:class          <http://schema.theodi.org/odrs#RightsStatement> ;
+        sh:description    "Associates a rights statement with a dataset. This property is equivalent to the Dublin Core rights property"@en ;
+        sh:equals         <http://purl.org/dc/terms/rights> ;
+        sh:name           "rights"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://schema.theodi.org/odrs#rights> .
+
+<https://astrea.linkeddata.es/shapes#6fd17909f7449ccde74ee71ab0812aae>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.theodi.org/odrs> ;
+        rdfs:label        "copyright holder"@en , "A reference to the organization that holds copyright over the content of the dataset"@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Organization> ;
+        sh:description    "A reference to the organization that holds copyright over the content of the dataset"@en ;
+        sh:name           "copyright holder"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://schema.theodi.org/odrs#copyrightHolder> .
+
+<https://astrea.linkeddata.es/shapes#05671bfca83bd5fe375689e3b48507e6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.theodi.org/odrs> ;
+        rdfs:label        "attribution text"@en , "The text to use in an attribution link. This may be the name of the publisher or a reference to a community or group of contributors"@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The text to use in an attribution link. This may be the name of the publisher or a reference to a community or group of contributors"@en ;
+        sh:name           "attribution text"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://schema.theodi.org/odrs#attributionText> .
+
+<https://astrea.linkeddata.es/shapes#02f2893af43fbb8498cfcab91bdb19fa>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.theodi.org/odrs> ;
+        rdfs:label        "copyright statement"@en , "A link to a document that includes a statement about the copyright status of the content of a dataset. The web page might include both a copyright notice for a dataset, and any relevant guidance for re-users."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Document> ;
+        sh:description    "A link to a document that includes a statement about the copyright status of the content of a dataset. The web page might include both a copyright notice for a dataset, and any relevant guidance for re-users."@en ;
+        sh:name           "copyright statement"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://schema.theodi.org/odrs#copyrightStatement> .

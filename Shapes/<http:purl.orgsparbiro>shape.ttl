@@ -1,0 +1,998 @@
+@prefix :      <http://purl.org/co/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix swrl:  <http://www.w3.org/2003/11/swrl#> .
+@prefix skos:  <http://www.w3.org/2008/05/skos#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix error: <http://www.essepuntato.it/2009/10/error/> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<https://astrea.linkeddata.es/shapes#bb4d473081eae25f44db19cf69dae36e>
+        a               sh:PropertyShape ;
+        rdfs:label      "is reproduction of"@en , "It identifies the manifestation/item of a reproduced one."@en ;
+        sh:description  "It identifies the manifestation/item of a reproduced one."@en ;
+        sh:name         "is reproduction of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#reproductionOf> .
+
+<https://astrea.linkeddata.es/shapes#b1aa86cdfed32851c0104ebc55ff60bd>
+        a         sh:PropertyShape ;
+        sh:class  :Set .
+
+<https://astrea.linkeddata.es/shapes#cb111d79a05ae116a47267df156e407a>
+        a               sh:PropertyShape ;
+        rdfs:label      "has imitation"@en , "An work/expression imitated in another one.\n\nThis property describes works that are intended to be an imitation another original work that is sufficient in degree to warrant their being considered as new works, rather than simply different expressions of the same work. If there exists a relation of this kind among two different expressions, then they always refer to different works."@en ;
+        sh:description  "An work/expression imitated in another one.\n\nThis property describes works that are intended to be an imitation another original work that is sufficient in degree to warrant their being considered as new works, rather than simply different expressions of the same work. If there exists a relation of this kind among two different expressions, then they always refer to different works."@en ;
+        sh:name         "has imitation"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  <http://purl.org/vocab/frbr/core#Expression> ;
+                            sh:path   <http://purl.org/vocab/frbr/core#imitation>
+                          ]
+                          [ sh:class  <http://purl.org/vocab/frbr/core#Work> ;
+                            sh:path   <http://purl.org/vocab/frbr/core#imitation>
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/shapes#5164e79563d87f9072ef3bcea9829b50>
+        a               sh:PropertyShape ;
+        rdfs:label      "is revision of"@en , "It identifies the previous expression of a revised one."@en ;
+        sh:description  "It identifies the previous expression of a revised one."@en ;
+        sh:name         "is revision of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#revisionOf> .
+
+<https://astrea.linkeddata.es/shapes#caa6e6e8e1ee8d31738d21fb9ad21a7e>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/vocab/frbr/core#Person> .
+
+<https://astrea.linkeddata.es/shapes#33823b2c69e917c59810e8ef6db4db57>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :index .
+
+<https://astrea.linkeddata.es/shapes#613014d0cbdb5a6578250a2e56478376>
+        a                sh:PropertyShape ;
+        rdfs:label       "The number of item belonging to a collection."@en , "has size"@en ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "The number of item belonging to a collection."@en ;
+        sh:minInclusive  0 ;
+        sh:name          "has size"@en ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          :size ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#472ae04364175c6766c871e733dc8777>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/spar/biro/BibliographicRecord> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/vocab/frbr/core#realizationOf> .
+
+<https://astrea.linkeddata.es/shapes#e69843a1ef20ffa819f9780bd1e6da05>
+        a               sh:NodeShape ;
+        rdfs:label      "place"@en ;
+        sh:description  "A location.\n\nThe entity defined as place encompasses a comprehensive range of locations: terrestrial and extra-terrestrial; historical and contemporary; geographic features and geo-political jurisdictions. "@en ;
+        sh:name         "place"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/vocab/frbr/core#Place> .
+
+<https://astrea.linkeddata.es/shapes#80fcce3ead303d97328dc707a09bd0a2>
+        a               sh:PropertyShape ;
+        rdfs:label      "is referenced by"@en , "The relation between a publication and the bibliographic record or bibliographic reference describing it."@en ;
+        sh:description  "The relation between a publication and the bibliographic record or bibliographic reference describing it."@en ;
+        sh:name         "is referenced by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  <http://purl.org/spar/biro/BibliographicRecord> ;
+                            sh:path   <http://purl.org/spar/biro/isReferencedBy>
+                          ]
+                          [ sh:class  <http://purl.org/spar/biro/BibliographicReference> ;
+                            sh:path   <http://purl.org/spar/biro/isReferencedBy>
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/shapes#00359750a562bed3348aa20b7bce26b5>
+        a               sh:NodeShape ;
+        rdfs:label      "concept"@en ;
+        sh:description  "An abstract notion or idea.\n\nThe entity defined as concept encompasses a comprehensive range of abstractions that may be the subject of a work: fields of knowledge, disciplines, schools of thought (philosophies, religions, political ideologies, etc.), theories, processes, techniques, practices, etc.  A concept may be broad in nature or narrowly defined and precise. "@en ;
+        sh:name         "concept"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/vocab/frbr/core#Concept> .
+
+<https://astrea.linkeddata.es/shapes#7f8db138b2930f251cbb3d6ff3534dbc>
+        a               sh:NodeShape ;
+        rdfs:label      "bibliographic record"@en ;
+        sh:description  "A record that uniquely describes a particular textual or data publication (or a work in preparation for publication). Each bibliographic record is a set of entities describing aspects of the referenced work, including, for example, but not restricted to: authors, title, journal, publication year, DOI, ISSN, publisher and copyright information, or, in the case of a data publication: creators, title, version, archive, publication year, DOI or other identifier). The FRBR expression of a bibliographic record is a bibliographic reference, which usually contains only a sub-set of these entities, ordered in a particular way that corresponds to the house style of the publication in which it occurs."@en ;
+        sh:name         "bibliographic record"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b3a324cd2fed19cfa3585fde096c32b6> , <https://astrea.linkeddata.es/shapes#6722b87b8f294a79a53463df55b85f80> ;
+        sh:targetClass  <http://purl.org/spar/biro/BibliographicRecord> .
+
+<https://astrea.linkeddata.es/shapes#b3a324cd2fed19cfa3585fde096c32b6>
+        a               sh:PropertyShape ;
+        rdfs:label      "references"@en , "The relation between a bibliographic record or a bibliographic reference and the publication being referenced."@en ;
+        sh:class        <http://purl.org/vocab/frbr/core#Endeavour> ;
+        sh:description  "The relation between a bibliographic record or a bibliographic reference and the publication being referenced."@en ;
+        sh:name         "references"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/biro/references> .
+
+<https://astrea.linkeddata.es/shapes#6a723a221dbe5850e36097aebeb0da16>
+        a               sh:PropertyShape ;
+        rdfs:label      "is last item of"@en , "The link to a list in which the item is last item."@en ;
+        sh:description  "The link to a list in which the item is last item."@en ;
+        sh:name         "is last item of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :lastItemOf .
+
+<https://astrea.linkeddata.es/shapes#26387bd37e14bf446ecf36851eb78ec4>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      error:hasError .
+
+<https://astrea.linkeddata.es/shapes#e30f2cdf50194e7161bbbc2c8a4ce43f>
+        a               sh:NodeShape ;
+        rdfs:label      "list item"@en ;
+        sh:description  "element belonging to a list"@en ;
+        sh:name         "list item"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#fb5e681cb127eb11d03a1c70c0ce03d1> , <https://astrea.linkeddata.es/shapes#0be04ac945718f9bde22534462b572ae> , <https://astrea.linkeddata.es/shapes#33823b2c69e917c59810e8ef6db4db57> ;
+        sh:targetClass  :ListItem .
+
+<https://astrea.linkeddata.es/shapes#c9a57b29f8d07f1f63e56a861eb0433e>
+        a               sh:PropertyShape ;
+        rdfs:label      "has previous item"@en , "The link to the previous item in a list."@en ;
+        sh:description  "The link to the previous item in a list."@en ;
+        sh:maxCount     1 ;
+        sh:name         "has previous item"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         :previousItem .
+
+<https://astrea.linkeddata.es/shapes#45244b72f1155ef29c27cbb3cba189eb>
+        a               sh:PropertyShape ;
+        rdfs:label      "has responsible entity"@en , "Any endeavour having a particular entity that is responsible of it."@en ;
+        sh:class        <http://purl.org/vocab/frbr/core#ResponsibleEntity> ;
+        sh:description  "Any endeavour having a particular entity that is responsible of it."@en ;
+        sh:name         "has responsible entity"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#responsibleEntity> .
+
+<https://astrea.linkeddata.es/shapes#bf0d45e9e5d47d0ba121991f67b737b6>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/vocab/frbr/core#Item> .
+
+<https://astrea.linkeddata.es/shapes#e2fca6f9a7ee512d640cc28169ee92a7>
+        a               sh:PropertyShape ;
+        rdfs:label      "has translation"@en , "An expression translated in another one.\n\nIt allows to refer to a literal translation, in which the intent is to render the intellectual content of the previous expression as accurately as possible."@en ;
+        sh:class        <http://purl.org/vocab/frbr/core#Expression> ;
+        sh:description  "An expression translated in another one.\n\nIt allows to refer to a literal translation, in which the intent is to render the intellectual content of the previous expression as accurately as possible."@en ;
+        sh:name         "has translation"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#translation> .
+
+<https://astrea.linkeddata.es/shapes#b8db93e0ea3f2e95734ad698f84e17ce>
+        a               sh:NodeShape ;
+        rdfs:label      "object"@en ;
+        sh:description  "A material thing.\n\nThe entity defined as object encompasses a comprehensive range of material things that may be the subject of a work: animate and inanimate objects occurring in nature; fixed, movable, and moving objects that are the product of human creation; objects that no longer exist. "@en ;
+        sh:name         "object"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/vocab/frbr/core#Object> .
+
+<https://astrea.linkeddata.es/shapes#41ae80d63943fbd64bd555ea94b0aa00>
+        a            sh:PropertyShape ;
+        sh:class     owl:Thing ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :element .
+
+<https://astrea.linkeddata.es/shapes#8c879031827a23ff20de15e1cb97bc58>
+        a               sh:PropertyShape ;
+        rdfs:label      "is owner of"@en , "The owner of a particular item."@en ;
+        sh:description  "The owner of a particular item."@en ;
+        sh:name         "is owner of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#ownerOf> .
+
+<https://astrea.linkeddata.es/shapes#f4d11089679a1415a4279d01f25b10cc>
+        a               sh:PropertyShape ;
+        rdfs:label      "is element of"@en , "The link to a collection in which the object is member."@en ;
+        sh:description  "The link to a collection in which the object is member."@en ;
+        sh:name         "is element of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :elementOf .
+
+<https://astrea.linkeddata.es/shapes#b3e885550d48f44947db3c23a30cf92e>
+        a               sh:PropertyShape ;
+        rdfs:label      "is arrangement of"@en , "It identifies the original expression of an arranged one."@en ;
+        sh:description  "It identifies the original expression of an arranged one."@en ;
+        sh:name         "is arrangement of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#arrangementOf> .
+
+<https://astrea.linkeddata.es/report/0956153931>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "2020-11-20 16:09:28.652  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.org:80: The target server failed to respond2020-11-20 16:09:28.653  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.org:80\n" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/spar/frbr" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "206"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#c39b0483ad4baabfbf60ee1dc886f90f>
+        a               sh:NodeShape ;
+        rdfs:label      "endeavour"@en ;
+        sh:description  "It describes different aspects of user interests in the products of intellectual or artistic artifact."@en ;
+        sh:name         "endeavour"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b5fe5da6eeff0301988113adb6259219> , <https://astrea.linkeddata.es/shapes#45244b72f1155ef29c27cbb3cba189eb> ;
+        sh:targetClass  <http://purl.org/vocab/frbr/core#Expression> , <http://purl.org/vocab/frbr/core#Work> , <http://purl.org/vocab/frbr/core#Item> , <http://purl.org/vocab/frbr/core#Manifestation> , <http://purl.org/vocab/frbr/core#Endeavour> .
+
+<https://astrea.linkeddata.es/shapes#f0ae647b1b035ee98a568312d649c7fa>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/vocab/frbr/core#Manifestation> .
+
+<https://astrea.linkeddata.es/shapes#621efd94a620c1626b2f1d315bf975fd>
+        a               sh:PropertyShape ;
+        rdfs:label      "is part of"@en , "An endeavour incorporating another endeavour."@en ;
+        sh:description  "An endeavour incorporating another endeavour."@en ;
+        sh:name         "is part of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#partOf> .
+
+<https://astrea.linkeddata.es/shapes#46bbb14b2023fdc615ae213887b90b8d>
+        a               sh:PropertyShape ;
+        rdfs:label      "has owner"@en , "An item linked to its owner."@en ;
+        sh:description  "An item linked to its owner."@en ;
+        sh:name         "has owner"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#8359d00046f337561c59e3b42edc14be>
+        a               sh:PropertyShape ;
+        rdfs:label      "has summarization"@en , "A work/expression summarized in another one.\n\nThis property describe the summarization of an original work that is sufficient in degree to warrant their being considered as new works, rather than simply different expressions of the same work. If there exists a relation of this kind among two different expressions, they always refer to different works."@en ;
+        sh:description  "A work/expression summarized in another one.\n\nThis property describe the summarization of an original work that is sufficient in degree to warrant their being considered as new works, rather than simply different expressions of the same work. If there exists a relation of this kind among two different expressions, they always refer to different works."@en ;
+        sh:name         "has summarization"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  <http://purl.org/vocab/frbr/core#Expression> ;
+                            sh:path   <http://purl.org/vocab/frbr/core#summarization>
+                          ]
+                          [ sh:class  <http://purl.org/vocab/frbr/core#Work> ;
+                            sh:path   <http://purl.org/vocab/frbr/core#summarization>
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/shapes#2e25813f18565f312947bac9eb143301>
+        a               sh:NodeShape ;
+        rdfs:label      "list"@en ;
+        sh:description  "An ordered array of items, that can be present in multiple copies"@en ;
+        sh:name         "list"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#6d5660d180a762ceefe1af7258d27fd5> , <https://astrea.linkeddata.es/shapes#938d23a729292440904ae3c828cd8f35> ;
+        sh:targetClass  :List .
+
+<https://astrea.linkeddata.es/shapes#e58a9ea89064b6248e8ae0f31db7d177>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/vocab/frbr/core#part> .
+
+<https://astrea.linkeddata.es/shapes#d854af00c8be6ef1a37045b6c7e4fb22>
+        a               sh:PropertyShape ;
+        rdfs:label      "has last item"@en , "The link to the last item of the list."@en ;
+        sh:description  "The link to the last item of the list."@en ;
+        sh:maxCount     1 ;
+        sh:name         "has last item"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#e1f60f3d045a4ec00fe3add166d960cc>
+        a               sh:PropertyShape ;
+        rdfs:label      "is exemplar of"@en , "An item that exemplifies a manifestation."@en ;
+        sh:description  "An item that exemplifies a manifestation."@en ;
+        sh:maxCount     1 ;
+        sh:name         "is exemplar of"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#exemplarOf> .
+
+<https://astrea.linkeddata.es/shapes#c7bb3c29f6186eaeae791a3e5d1ab2ba>
+        a               sh:NodeShape ;
+        rdfs:label      "item"@en ;
+        sh:description  "Element belonging to a bag"@en ;
+        sh:name         "item"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :Item .
+
+<https://astrea.linkeddata.es/shapes#7afcb6659ae15f827de793b1fca67e57>
+        a               sh:PropertyShape ;
+        rdfs:label      "is supplement of"@en , "It identifies the work/expression of a particular supplement of it."@en ;
+        sh:description  "It identifies the work/expression of a particular supplement of it."@en ;
+        sh:name         "is supplement of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#supplementOf> .
+
+<https://astrea.linkeddata.es/shapes#a29c00abf711ab05e91ca658e57c6e2e>
+        a               sh:PropertyShape ;
+        rdfs:label      "has part"@en , "A part of an endeavour."@en ;
+        sh:description  "A part of an endeavour."@en ;
+        sh:name         "has part"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#part> .
+
+<https://astrea.linkeddata.es/shapes#26b65526cbf6b0380712fed2fc3fa288>
+        a               sh:PropertyShape ;
+        rdfs:label      "has reconfiguration"@en , "An item reconfigured in another one.\n\nThe reconfiguration relationship is one in which one or more items are changed in such a way that a new item or items result. Most commonly, an item of one manifestation is bound with an item of a different manifestation to make a new item. "@en ;
+        sh:class        <http://purl.org/vocab/frbr/core#Item> ;
+        sh:description  "An item reconfigured in another one.\n\nThe reconfiguration relationship is one in which one or more items are changed in such a way that a new item or items result. Most commonly, an item of one manifestation is bound with an item of a different manifestation to make a new item. "@en ;
+        sh:name         "has reconfiguration"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#reconfiguration> .
+
+<https://astrea.linkeddata.es/shapes#023786be01c315e0c2c62e5e32d74e1c>
+        a               sh:PropertyShape ;
+        rdfs:label      "has realizer"@en , "An expression linked to its realizer."@en ;
+        sh:description  "An expression linked to its realizer."@en ;
+        sh:name         "has realizer"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#d30277c3c1dd1763c4af1dff680042ac>
+        a               sh:PropertyShape ;
+        rdfs:label      "is preceded by"@en , "The link to the preceding item in a list."@en ;
+        sh:description  "The link to the preceding item in a list."@en ;
+        sh:name         "is preceded by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :precededBy .
+
+<https://astrea.linkeddata.es/shapes#be87dff7ab23ef052ab272dcd0cede8f>
+        a               sh:PropertyShape ;
+        rdfs:label      "has producer"@en , "A manifestation linked to its prodecer."@en ;
+        sh:description  "A manifestation linked to its prodecer."@en ;
+        sh:name         "has producer"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#496c72358a09f4b1de40243b80acbd90>
+        a               sh:PropertyShape ;
+        rdfs:label      "is adaption of"@en , "It identifies the work/expression of an adapted one."@en ;
+        sh:description  "It identifies the work/expression of an adapted one."@en ;
+        sh:name         "is adaption of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#adaptionOf> .
+
+<https://astrea.linkeddata.es/shapes#6cb054d0578730bb8ee8049271f59638>
+        a               sh:NodeShape ;
+        rdfs:label      "bibliographic reference"@en ;
+        sh:description  "An expression of a bibliographic record in a specific format, that references a particular textual or data publication (or a work in preparation for publication). Each bibliographic reference is a list of items containing entities that describe aspects of the referenced work - for example authors, title, journal, publication year - selected from the bibliographic record.  Note that because different journal styles may require omission of elements of the bibliographic record in references included in a paper's reference list (e.g. the title, the identifier, the names of the eighth and subsequent authors), and because errors can be introduced when an author creates a bibliographic reference, the bibliographic reference to a published work may not be a complete or fully accurate expression of the information contained within the authoritative bibliographic record for that work."@en ;
+        sh:name         "bibliographic reference"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b3a324cd2fed19cfa3585fde096c32b6> , <https://astrea.linkeddata.es/shapes#12f12b07055cf542483835e02fbb125d> , <https://astrea.linkeddata.es/shapes#472ae04364175c6766c871e733dc8777> ;
+        sh:targetClass  <http://purl.org/spar/biro/BibliographicReference> .
+
+<https://astrea.linkeddata.es/shapes#a991cd5c1b2a513f6cda3b52911fb19f>
+        a               sh:PropertyShape ;
+        rdfs:label      "is summarization of"@en , "It identifies the original work/expression of a summarized one."@en ;
+        sh:description  "It identifies the original work/expression of a summarized one."@en ;
+        sh:name         "is summarization of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#summarizationOf> .
+
+<https://astrea.linkeddata.es/shapes#8adb9847c806339a09e0cc8f37af22bc>
+        a               sh:PropertyShape ;
+        rdfs:label      "is item of"@en , "The link to a bag in which the item is member."@en ;
+        sh:description  "The link to a bag in which the item is member."@en ;
+        sh:name         "is item of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :itemOf .
+
+<https://astrea.linkeddata.es/shapes#b9b3bb6718edc71078cc5255932516f3>
+        a               sh:PropertyShape ;
+        rdfs:label      "has item content"@en , "The link to the actual resource to which the item refers."@en ;
+        sh:description  "The link to the actual resource to which the item refers."@en ;
+        sh:maxCount     1 ;
+        sh:name         "has item content"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#72e8d28cd2768744a250582d95fe17bc>
+        a               sh:NodeShape ;
+        rdfs:label      "item"@en ;
+        sh:description  "A single exemplar of a manifestation.\n\nThe entity defined as item is a concrete entity. It is in many instances a single physical object (e.g., a copy of a one-volume monograph, a single audio cassette, etc.). There are instances, however, where the entity defined as item comprises more than one physical object (e.g., a monograph issued as two separately bound volumes, a recording issued on three separate compact discs, etc.). "@en ;
+        sh:name         "item"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#f0ae647b1b035ee98a568312d649c7fa> , <https://astrea.linkeddata.es/shapes#0260b4c27275b198582c9617ac411dcb> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#26b65526cbf6b0380712fed2fc3fa288> ;
+        sh:targetClass  <http://purl.org/vocab/frbr/core#Item> .
+
+<https://astrea.linkeddata.es/shapes#6fa7dbc22a6ae8f247d76ce77fcb7c86>
+        a               sh:NodeShape ;
+        rdfs:label      "library catalogue"@en ;
+        sh:description  "A catalogue of the bibliographic holdings of a library."@en ;
+        sh:name         "library catalogue"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/spar/biro/LibraryCatalogue> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#556497dacb906c23891c5cf28b4dd548>
+        a               sh:PropertyShape ;
+        rdfs:label      "has creator"@en , "A work linked to its creator."@en ;
+        sh:description  "A work linked to its creator."@en ;
+        sh:name         "has creator"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#e47af6117ef295a415fbf7dcf3a641e8>
+        a               sh:NodeShape ;
+        rdfs:label      "bag"@en ;
+        sh:description  "Collection that can have a number of copies of each object"@en ;
+        sh:name         "bag"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#b1aa86cdfed32851c0104ebc55ff60bd> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#19d8a2d6bbe3f0ba83712919e0bf54f0> ;
+        sh:targetClass  :Bag .
+
+<https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  owl:Thing .
+
+<https://astrea.linkeddata.es/shapes#6e4769e326bda2767b2deebc42bfafc9>
+        a               sh:PropertyShape ;
+        rdfs:label      "is translation of"@en , "It identifies the original expression of a translated one."@en ;
+        sh:description  "It identifies the original expression of a translated one."@en ;
+        sh:name         "is translation of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#translationOf> .
+
+<https://astrea.linkeddata.es/shapes#fb5e681cb127eb11d03a1c70c0ce03d1>
+        a               sh:PropertyShape ;
+        rdfs:label      "is followed by"@en , "The link to the following item in a list."@en ;
+        sh:class        :ListItem ;
+        sh:description  "The link to the following item in a list."@en ;
+        sh:name         "is followed by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :followedBy .
+
+<https://astrea.linkeddata.es/shapes#263940dbfad82669ca5575642b895222>
+        a               sh:PropertyShape ;
+        rdfs:label      "is transformation of"@en , "It identifies the original work/expression of a trasformed one."@en ;
+        sh:description  "It identifies the original work/expression of a trasformed one."@en ;
+        sh:name         "is transformation of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#transformationOf> .
+
+<https://astrea.linkeddata.es/shapes#52a124168e1281dbf2cd93f5a16f7d7b>
+        a               sh:PropertyShape ;
+        rdfs:label      "is reconfiguration of"@en , "It identifies the manifestation of a reconfigured one."@en ;
+        sh:description  "It identifies the manifestation of a reconfigured one."@en ;
+        sh:name         "is reconfiguration of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#reconfigurationOf> .
+
+<https://astrea.linkeddata.es/shapes#0be04ac945718f9bde22534462b572ae>
+        a                sh:PropertyShape ;
+        rdfs:label       "has index"@en , "A number identifying the position, starting from 1, of a particular list item within a list."@en ;
+        sh:datatype      xsd:positiveInteger ;
+        sh:description   "A number identifying the position, starting from 1, of a particular list item within a list."@en ;
+        sh:minInclusive  1 ;
+        sh:name          "has index"@en ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          :index ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#8ff1765805883671613f96dd28649dc9>
+        a               sh:PropertyShape ;
+        rdfs:label      "is abridgement of"@en , "It identifies the entire expression of an abridged one."@en ;
+        sh:description  "It identifies the entire expression of an abridged one."@en ;
+        sh:name         "is abridgement of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#abridgementOf> .
+
+<https://astrea.linkeddata.es/shapes#bb2b63df5367f3632dad1cf8d66b98c4>
+        a               sh:NodeShape ;
+        rdfs:label      "expression"@en ;
+        sh:description  "The intellectual or artistic realization of a work in the form of alpha-numeric, musical, or choreographic notation, sound, image, object, movement, etc., or any combination of such forms.\n\nAn expression is the specific intellectual or artistic form that a work takes each time it is \"realized.\" Expression encompasses, for example, the specific words, sentences, paragraphs, etc. that result from the realization of a work in the form of a text, or the particular sounds, phrasing, etc. resulting from the realization of a musical work."@en ;
+        sh:name         "expression"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#bf0d45e9e5d47d0ba121991f67b737b6> , <https://astrea.linkeddata.es/shapes#0260b4c27275b198582c9617ac411dcb> , <https://astrea.linkeddata.es/shapes#f0ae647b1b035ee98a568312d649c7fa> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d461aed758039dd502d3e4569fda0fc8> , <https://astrea.linkeddata.es/shapes#ca4d26b91268d26f1baa29e3dca9eee6> , <https://astrea.linkeddata.es/shapes#e2fca6f9a7ee512d640cc28169ee92a7> , <https://astrea.linkeddata.es/shapes#059ee0398a3e6d7bbf3ec0d1d00fe72c> , <https://astrea.linkeddata.es/shapes#d30e8d6e74918cc7b963d514721c6467> ;
+        sh:targetClass  <http://purl.org/vocab/frbr/core#Expression> .
+
+<https://astrea.linkeddata.es/shapes#7c365fe7b97db26554942b84675223f6>
+        a               sh:PropertyShape ;
+        rdfs:label      "has alternate"@en , "A manifestation having another one as alternate.\n\nThe alternate relationship involves manifestations that effectively serve as alternates for each other. The alternate relationship obtains, for example, when a publication, sound recording, video, etc. is issued in more than one format or when it is released simultaneously by different publishers in different countries."@en ;
+        sh:class        <http://purl.org/vocab/frbr/core#Manifestation> ;
+        sh:description  "A manifestation having another one as alternate.\n\nThe alternate relationship involves manifestations that effectively serve as alternates for each other. The alternate relationship obtains, for example, when a publication, sound recording, video, etc. is issued in more than one format or when it is released simultaneously by different publishers in different countries."@en ;
+        sh:name         "has alternate"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#alternate> .
+
+<https://astrea.linkeddata.es/shapes#59aa2b47cbb83d33b24f4994b223c1d3>
+        a               sh:PropertyShape ;
+        rdfs:label      "is responsible entity of"@en , "An entity that is resposible for a particular endeavour."@en ;
+        sh:description  "An entity that is resposible for a particular endeavour."@en ;
+        sh:name         "is responsible entity of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#responsibleEntityOf> .
+
+<https://astrea.linkeddata.es/shapes#a2aedf9ebbc116d5435e57b5c6649354>
+        a         sh:PropertyShape ;
+        sh:class  :Item .
+
+<https://astrea.linkeddata.es/shapes#750c566e2feae6833630bee9059b75af>
+        a               sh:NodeShape ;
+        rdfs:label      "bibliographic list"@en ;
+        sh:description  "An ordered list of bibliographic items, each of which contains a bibliographic reference."@en ;
+        sh:name         "bibliographic list"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#6771f79ae869158bab5c1f08a6220ec6> , <https://astrea.linkeddata.es/shapes#c05c1b28f431873d67bd08fe90a94607> ;
+        sh:targetClass  <http://purl.org/spar/biro/BibliographicList> .
+
+<https://astrea.linkeddata.es/shapes#ad92b16ff1444282f7d4cadf3fe8b36f>
+        a               sh:PropertyShape ;
+        rdfs:label      "is creator of"@en , "The creator of a particular work."@en ;
+        sh:description  "The creator of a particular work."@en ;
+        sh:name         "is creator of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#creatorOf> .
+
+<https://astrea.linkeddata.es/shapes#c6e5645f44ce09c549be3c7c21f5c836>
+        a               sh:PropertyShape ;
+        rdfs:label      "is subject of"@en , "A subject a work talks abbout."@en ;
+        sh:description  "A subject a work talks abbout."@en ;
+        sh:name         "is subject of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#subjectOf> .
+
+<https://astrea.linkeddata.es/report/915706868>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/co" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#83b913d60f1625583c29a714e8911bab>
+        a               sh:NodeShape ;
+        rdfs:label      "collection"@en ;
+        sh:description  "A group of objects that can be considered as a whole."@en ;
+        sh:name         "collection"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#a2aedf9ebbc116d5435e57b5c6649354> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#613014d0cbdb5a6578250a2e56478376> , <https://astrea.linkeddata.es/shapes#41ae80d63943fbd64bd555ea94b0aa00> , <https://astrea.linkeddata.es/shapes#686f212ab840af72e7d32459eee84160> ;
+        sh:targetClass  :Collection .
+
+<https://astrea.linkeddata.es/shapes#e8d2be6faf36dc7f0d8d22e3225af7fd>
+        a               sh:NodeShape ;
+        rdfs:label      "corporate body"@en ;
+        sh:description  "An organization or group of individuals and/or organizations acting as a unit.\n\nThe entity defined as corporate body encompasses organizations and groups of individuals and/or organizations that are identified by a particular name, including occasional groups and groups that are constituted as meetings, conferences, congresses, expeditions, exhibitions, festivals, fairs, etc."@en ;
+        sh:name         "corporate body"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#caa6e6e8e1ee8d31738d21fb9ad21a7e> ;
+        sh:targetClass  <http://purl.org/vocab/frbr/core#CorporateBody> .
+
+<https://astrea.linkeddata.es/shapes#1a65a2a94c9bd4d123360890d53c9594>
+        a               sh:NodeShape ;
+        rdfs:label      "reference list"@en ;
+        sh:description  "A list used to describe the bibliography of a research paper, a journal article, a book, a book chapter or similar publication."@en ;
+        sh:name         "reference list"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/spar/biro/ReferenceList> .
+
+<https://astrea.linkeddata.es/shapes#c9b20bc0e8bfbce33965f52f7c0194ea>
+        a               sh:NodeShape ;
+        rdfs:label      "set"@en ;
+        sh:description  "A collection that cannot contain duplicate elements."@en ;
+        sh:name         "set"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :Set .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#c9b20bc0e8bfbce33965f52f7c0194ea> , <https://astrea.linkeddata.es/shapes#d2d43b0ae8cf657f5fa371abeec9f128> , <https://astrea.linkeddata.es/shapes#c9550a2ff5fbbb30d0e29ea4200f000d> , <https://astrea.linkeddata.es/shapes#938d23a729292440904ae3c828cd8f35> , <https://astrea.linkeddata.es/shapes#621efd94a620c1626b2f1d315bf975fd> , <https://astrea.linkeddata.es/shapes#496c72358a09f4b1de40243b80acbd90> , <https://astrea.linkeddata.es/shapes#52a124168e1281dbf2cd93f5a16f7d7b> , <https://astrea.linkeddata.es/shapes#e8d2be6faf36dc7f0d8d22e3225af7fd> , <https://astrea.linkeddata.es/shapes#0fdb26a6a125373431a857fadc9ea20d> , <https://astrea.linkeddata.es/shapes#b8db93e0ea3f2e95734ad698f84e17ce> , <https://astrea.linkeddata.es/shapes#26387bd37e14bf446ecf36851eb78ec4> , <https://astrea.linkeddata.es/shapes#e2fca6f9a7ee512d640cc28169ee92a7> , <https://astrea.linkeddata.es/shapes#e47af6117ef295a415fbf7dcf3a641e8> , <https://astrea.linkeddata.es/shapes#b2a536a8b66033162d74548c781fe574> , <https://astrea.linkeddata.es/shapes#e30f2cdf50194e7161bbbc2c8a4ce43f> , <https://astrea.linkeddata.es/shapes#bf0d45e9e5d47d0ba121991f67b737b6> , <https://astrea.linkeddata.es/shapes#8359d00046f337561c59e3b42edc14be> , <https://astrea.linkeddata.es/shapes#b9b3bb6718edc71078cc5255932516f3> , <https://astrea.linkeddata.es/shapes#7f8db138b2930f251cbb3d6ff3534dbc> , <https://astrea.linkeddata.es/shapes#0260b4c27275b198582c9617ac411dcb> , <https://astrea.linkeddata.es/shapes#f0ae647b1b035ee98a568312d649c7fa> , <https://astrea.linkeddata.es/shapes#26b65526cbf6b0380712fed2fc3fa288> , <https://astrea.linkeddata.es/shapes#cf1df1cca17e8742f57fe94be2452567> , <https://astrea.linkeddata.es/shapes#fb5e681cb127eb11d03a1c70c0ce03d1> , <https://astrea.linkeddata.es/shapes#8adb9847c806339a09e0cc8f37af22bc> , <https://astrea.linkeddata.es/shapes#b3e885550d48f44947db3c23a30cf92e> , <https://astrea.linkeddata.es/shapes#14d1b463a0aca3b27bf1aef1dab8167a> , <https://astrea.linkeddata.es/shapes#7c365fe7b97db26554942b84675223f6> , <https://astrea.linkeddata.es/shapes#92a5583f6cb7b0d9db8223beb985c642> , <https://astrea.linkeddata.es/shapes#5164e79563d87f9072ef3bcea9829b50> , <https://astrea.linkeddata.es/shapes#750c566e2feae6833630bee9059b75af> , <https://astrea.linkeddata.es/shapes#6d5660d180a762ceefe1af7258d27fd5> , <https://astrea.linkeddata.es/shapes#bb4d473081eae25f44db19cf69dae36e> , <https://astrea.linkeddata.es/shapes#46bbb14b2023fdc615ae213887b90b8d> , <https://astrea.linkeddata.es/shapes#d30e8d6e74918cc7b963d514721c6467> , <https://astrea.linkeddata.es/shapes#e58a9ea89064b6248e8ae0f31db7d177> , <https://astrea.linkeddata.es/shapes#f60349c32d741dfd442b424179d53597> , <https://astrea.linkeddata.es/shapes#d854af00c8be6ef1a37045b6c7e4fb22> , <https://astrea.linkeddata.es/shapes#c39b0483ad4baabfbf60ee1dc886f90f> , <https://astrea.linkeddata.es/shapes#73fbd509ea9408e51165a63dc31c9d4a> , <https://astrea.linkeddata.es/shapes#2f7c4289db576860c8ec2839185ff86a> , <https://astrea.linkeddata.es/shapes#7afcb6659ae15f827de793b1fca67e57> , <https://astrea.linkeddata.es/shapes#e69843a1ef20ffa819f9780bd1e6da05> , <https://astrea.linkeddata.es/shapes#e1f60f3d045a4ec00fe3add166d960cc> , <https://astrea.linkeddata.es/shapes#613014d0cbdb5a6578250a2e56478376> , <https://astrea.linkeddata.es/shapes#bb2b63df5367f3632dad1cf8d66b98c4> , <https://astrea.linkeddata.es/shapes#a991cd5c1b2a513f6cda3b52911fb19f> , <https://astrea.linkeddata.es/shapes#45244b72f1155ef29c27cbb3cba189eb> , <https://astrea.linkeddata.es/shapes#33823b2c69e917c59810e8ef6db4db57> , <https://astrea.linkeddata.es/shapes#ca4d26b91268d26f1baa29e3dca9eee6> , <https://astrea.linkeddata.es/shapes#143ff2dd6e182ef2645d4b2ba63a0efe> , <https://astrea.linkeddata.es/shapes#3b001f3519615ba49806c415259589de> , <https://astrea.linkeddata.es/shapes#83b913d60f1625583c29a714e8911bab> , <https://astrea.linkeddata.es/shapes#0be04ac945718f9bde22534462b572ae> , <https://astrea.linkeddata.es/shapes#c9a57b29f8d07f1f63e56a861eb0433e> , <https://astrea.linkeddata.es/shapes#c30c03381624eb8ecd76d08e76d8d4f9> , <https://astrea.linkeddata.es/shapes#023786be01c315e0c2c62e5e32d74e1c> , <https://astrea.linkeddata.es/shapes#8ff1765805883671613f96dd28649dc9> , <https://astrea.linkeddata.es/shapes#1a65a2a94c9bd4d123360890d53c9594> , <https://astrea.linkeddata.es/shapes#a29c00abf711ab05e91ca658e57c6e2e> , <https://astrea.linkeddata.es/shapes#376e9b238cd35dc52011d6ae5b5d1a39> , <https://astrea.linkeddata.es/shapes#f4d11089679a1415a4279d01f25b10cc> , <https://astrea.linkeddata.es/shapes#d38fac14b870bc65a9daa60bfb693f6c> , <https://astrea.linkeddata.es/shapes#6e4769e326bda2767b2deebc42bfafc9> , <https://astrea.linkeddata.es/shapes#472ae04364175c6766c871e733dc8777> , <https://astrea.linkeddata.es/shapes#d461aed758039dd502d3e4569fda0fc8> , <https://astrea.linkeddata.es/shapes#059ee0398a3e6d7bbf3ec0d1d00fe72c> , <https://astrea.linkeddata.es/shapes#556497dacb906c23891c5cf28b4dd548> , <https://astrea.linkeddata.es/shapes#c05c1b28f431873d67bd08fe90a94607> , <https://astrea.linkeddata.es/shapes#6a723a221dbe5850e36097aebeb0da16> , <https://astrea.linkeddata.es/shapes#a846a4145de1fc510b3a990fb8182f4f> , <https://astrea.linkeddata.es/shapes#6722b87b8f294a79a53463df55b85f80> , <https://astrea.linkeddata.es/shapes#2e25813f18565f312947bac9eb143301> , <https://astrea.linkeddata.es/shapes#19d8a2d6bbe3f0ba83712919e0bf54f0> , <https://astrea.linkeddata.es/shapes#72e8d28cd2768744a250582d95fe17bc> , <https://astrea.linkeddata.es/shapes#6cb054d0578730bb8ee8049271f59638> , <https://astrea.linkeddata.es/shapes#95e44c53e0991f66dd9153735e1ddd8c> , <https://astrea.linkeddata.es/shapes#b3a324cd2fed19cfa3585fde096c32b6> , <https://astrea.linkeddata.es/shapes#686f212ab840af72e7d32459eee84160> , <https://astrea.linkeddata.es/shapes#d8220cdfc21760cbcc1387d3c5d33778> , <https://astrea.linkeddata.es/shapes#59aa2b47cbb83d33b24f4994b223c1d3> , <https://astrea.linkeddata.es/shapes#b52246de95898443aa14bc94310ee53f> , <https://astrea.linkeddata.es/shapes#8c879031827a23ff20de15e1cb97bc58> , <https://astrea.linkeddata.es/shapes#41ae80d63943fbd64bd555ea94b0aa00> , <https://astrea.linkeddata.es/shapes#00359750a562bed3348aa20b7bce26b5> , <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#a2aedf9ebbc116d5435e57b5c6649354> , <https://astrea.linkeddata.es/shapes#12f12b07055cf542483835e02fbb125d> , <https://astrea.linkeddata.es/shapes#bb1f2802d78b5c6a179e05825d75be64> , <https://astrea.linkeddata.es/shapes#263940dbfad82669ca5575642b895222> , <https://astrea.linkeddata.es/shapes#be87dff7ab23ef052ab272dcd0cede8f> , <https://astrea.linkeddata.es/shapes#d30277c3c1dd1763c4af1dff680042ac> , <https://astrea.linkeddata.es/shapes#c7bb3c29f6186eaeae791a3e5d1ab2ba> , <https://astrea.linkeddata.es/shapes#0fcd3f5c0bd1322f65c8b1fd13883a54> , <https://astrea.linkeddata.es/shapes#6fa7dbc22a6ae8f247d76ce77fcb7c86> , <https://astrea.linkeddata.es/shapes#c2a86ce7b88ee222b4bd73263d7e88fc> , <https://astrea.linkeddata.es/shapes#1e43f9084f3c0c2e800346fd7c950a07> , <https://astrea.linkeddata.es/shapes#caa6e6e8e1ee8d31738d21fb9ad21a7e> , <https://astrea.linkeddata.es/shapes#cb111d79a05ae116a47267df156e407a> , <https://astrea.linkeddata.es/shapes#b1aa86cdfed32851c0104ebc55ff60bd> , <https://astrea.linkeddata.es/shapes#feeab59917f7d034620ccf5630ce4077> , <https://astrea.linkeddata.es/shapes#c688383e58e118a58f53c20b727b05ca> , <https://astrea.linkeddata.es/shapes#6771f79ae869158bab5c1f08a6220ec6> , <https://astrea.linkeddata.es/shapes#81613e758293ba2e6dc1ef2257bfe407> , <https://astrea.linkeddata.es/shapes#0136a2cb37206f183e09e9d33873fec4> , <https://astrea.linkeddata.es/shapes#c6e5645f44ce09c549be3c7c21f5c836> , <https://astrea.linkeddata.es/shapes#c782fdc31ff2bdb5b3e189035f157403> , <https://astrea.linkeddata.es/shapes#ad92b16ff1444282f7d4cadf3fe8b36f> , <https://astrea.linkeddata.es/shapes#e1b4192da98236eece2984d36e94aba8> , <https://astrea.linkeddata.es/shapes#059f6f4b34f6390e63e0e4a010489e3d> , <https://astrea.linkeddata.es/shapes#80fcce3ead303d97328dc707a09bd0a2> , <https://astrea.linkeddata.es/shapes#6bb54238577a56d525e2de8d030096d3> , <https://astrea.linkeddata.es/shapes#6df226ed902b525bd6e7e739271b8f4c> , <https://astrea.linkeddata.es/shapes#b5fe5da6eeff0301988113adb6259219> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0956153931> , <https://astrea.linkeddata.es/report/915706868> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#3b001f3519615ba49806c415259589de>
+        a               sh:PropertyShape ;
+        rdfs:label      "has element"@en , "The link to the members of a collection"@en ;
+        sh:description  "The link to the members of a collection"@en ;
+        sh:name         "has element"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#bb1f2802d78b5c6a179e05825d75be64>
+        a               sh:PropertyShape ;
+        rdfs:label      "has exemplar"@en , "A manifestation exemplified in an item."@en ;
+        sh:class        <http://purl.org/vocab/frbr/core#Item> ;
+        sh:description  "A manifestation exemplified in an item."@en ;
+        sh:name         "has exemplar"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#exemplar> .
+
+<https://astrea.linkeddata.es/shapes#0136a2cb37206f183e09e9d33873fec4>
+        a               sh:PropertyShape ;
+        rdfs:label      "has successor"@en , "An expression work/expression having another one as successor.\n\nThe successor type of relationship involves a kind of linear progression of content from one work/expression to the other. In some cases, the content of the successor may be closely connected to the content of the preceding work, which would result in a work that is referential. In others, such as with loosely connected parts of a trilogy, the successor will be autonomous. Serial publications that result from the merger or split of their predecessors and stand on their own without requiring reference to the predecessor are also examples of autonomous works that fall within the successor relationship type. If there exists a relation of this kind among two different expressions, then they always refer to different works."@en ;
+        sh:description  "An expression work/expression having another one as successor.\n\nThe successor type of relationship involves a kind of linear progression of content from one work/expression to the other. In some cases, the content of the successor may be closely connected to the content of the preceding work, which would result in a work that is referential. In others, such as with loosely connected parts of a trilogy, the successor will be autonomous. Serial publications that result from the merger or split of their predecessors and stand on their own without requiring reference to the predecessor are also examples of autonomous works that fall within the successor relationship type. If there exists a relation of this kind among two different expressions, then they always refer to different works."@en ;
+        sh:name         "has successor"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  <http://purl.org/vocab/frbr/core#Expression> ;
+                            sh:path   <http://purl.org/vocab/frbr/core#successor>
+                          ]
+                          [ sh:class  <http://purl.org/vocab/frbr/core#Work> ;
+                            sh:path   <http://purl.org/vocab/frbr/core#successor>
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/shapes#686f212ab840af72e7d32459eee84160>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :size .
+
+<https://astrea.linkeddata.es/shapes#e1b4192da98236eece2984d36e94aba8>
+        a               sh:NodeShape ;
+        rdfs:label      "work"@en ;
+        sh:description  "A distinct intellectual or artistic creation.\n\nA work is an abstract entity; there is no single material object one can point to as the work. We recognize the work through individual realizations or expressions of the work, but the work itself exists only in the commonality of content between and among the various expressions of the work. When we speak of Homer's Iliad as a work, our point of reference is not a particular recitation or text of the work, but the intellectual creation that lies behind all the various expressions of the work. "@en ;
+        sh:name         "work"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#6bb54238577a56d525e2de8d030096d3> ;
+        sh:targetClass  <http://purl.org/vocab/frbr/core#Work> .
+
+<https://astrea.linkeddata.es/shapes#d2d43b0ae8cf657f5fa371abeec9f128>
+        a               sh:PropertyShape ;
+        rdfs:label      "is realization of"@en , "An expression that realizes a work."@en ;
+        sh:description  "An expression that realizes a work."@en ;
+        sh:maxCount     1 ;
+        sh:name         "is realization of"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#realizationOf> .
+
+<https://astrea.linkeddata.es/shapes#6722b87b8f294a79a53463df55b85f80>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/spar/biro/BibliographicReference> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/vocab/frbr/core#realization> .
+
+<https://astrea.linkeddata.es/shapes#c05c1b28f431873d67bd08fe90a94607>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/spar/biro/BibliographicCollection> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/vocab/frbr/core#realizationOf> .
+
+<https://astrea.linkeddata.es/shapes#c9550a2ff5fbbb30d0e29ea4200f000d>
+        a               sh:PropertyShape ;
+        rdfs:label      "is embodiment of"@en , "A manifestation that embodies an expression."@en ;
+        sh:description  "A manifestation that embodies an expression."@en ;
+        sh:name         "is embodiment of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#embodimentOf> .
+
+<https://astrea.linkeddata.es/shapes#19d8a2d6bbe3f0ba83712919e0bf54f0>
+        a               sh:PropertyShape ;
+        rdfs:label      "has item"@en , "The link to every item of the bag"@en ;
+        sh:class        :Item ;
+        sh:description  "The link to every item of the bag"@en ;
+        sh:name         "has item"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :item .
+
+<https://astrea.linkeddata.es/shapes#059ee0398a3e6d7bbf3ec0d1d00fe72c>
+        a               sh:PropertyShape ;
+        rdfs:label      "has abridgement"@en , "An expression abridged in another one.\n\nIn the abridged expression some content of the previous expression is removed, but the result does not alter the content to the extent that it becomes a new work. The expressions resulting from such modification are generally autonomous in nature (i.e., they do not normally require reference to the prior expression in order to be used or understood). "@en ;
+        sh:class        <http://purl.org/vocab/frbr/core#Expression> ;
+        sh:description  "An expression abridged in another one.\n\nIn the abridged expression some content of the previous expression is removed, but the result does not alter the content to the extent that it becomes a new work. The expressions resulting from such modification are generally autonomous in nature (i.e., they do not normally require reference to the prior expression in order to be used or understood). "@en ;
+        sh:name         "has abridgement"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#abridgement> .
+
+<https://astrea.linkeddata.es/shapes#ca4d26b91268d26f1baa29e3dca9eee6>
+        a               sh:PropertyShape ;
+        rdfs:label      "has arrangement"@en , "An expression arranged in another one.\n\nIn the arranged expression some content of the previous expression is changed in some way, but the result does not alter the content to the extent that it becomes a new work. The expressions resulting from such modification are generally autonomous in nature (i.e., they do not normally require reference to the prior expression in order to be used or understood)."@en ;
+        sh:class        <http://purl.org/vocab/frbr/core#Expression> ;
+        sh:description  "An expression arranged in another one.\n\nIn the arranged expression some content of the previous expression is changed in some way, but the result does not alter the content to the extent that it becomes a new work. The expressions resulting from such modification are generally autonomous in nature (i.e., they do not normally require reference to the prior expression in order to be used or understood)."@en ;
+        sh:name         "has arrangement"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#arrangement> .
+
+<https://astrea.linkeddata.es/shapes#0fdb26a6a125373431a857fadc9ea20d>
+        a               sh:NodeShape ;
+        rdfs:label      "bibliographic collection"@en ;
+        sh:description  "A collection of bibliographic records, each of which references a publication (or a work in preparation for publication). Examples of bibliographic collections include a collection of the bibliographic records of all the publications that a single individual has authored, or a collection of those bibliographic records to be included in a research paper, where they are expressed as a reference list."@en ;
+        sh:name         "bibliographic collection"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e58a9ea89064b6248e8ae0f31db7d177> , <https://astrea.linkeddata.es/shapes#0fcd3f5c0bd1322f65c8b1fd13883a54> , <https://astrea.linkeddata.es/shapes#143ff2dd6e182ef2645d4b2ba63a0efe> ;
+        sh:targetClass  <http://purl.org/spar/biro/BibliographicCollection> .
+
+<https://astrea.linkeddata.es/shapes#c688383e58e118a58f53c20b727b05ca>
+        a               sh:NodeShape ;
+        rdfs:label      "event"@en ;
+        sh:description  "An action or occurrence.\n\nThe entity defined as event encompasses a comprehensive range of actions and occurrences that may be the subject of a work: historical events, epochs, periods of time, etc. "@en ;
+        sh:name         "event"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/vocab/frbr/core#Event> .
+
+<https://astrea.linkeddata.es/shapes#f60349c32d741dfd442b424179d53597>
+        a               sh:PropertyShape ;
+        rdfs:label      "has complement"@en , "An expression work/expression having another one as complement.\n\nThis property describes works that are intended to be combined with or inserted into the related work. In other words, they are intended to be integrated in some way with the other work, but were not part of the original conception of that prior work. If there exists a relation of this kind among two different expressions, then they always refer to different works."@en ;
+        sh:description  "An expression work/expression having another one as complement.\n\nThis property describes works that are intended to be combined with or inserted into the related work. In other words, they are intended to be integrated in some way with the other work, but were not part of the original conception of that prior work. If there exists a relation of this kind among two different expressions, then they always refer to different works."@en ;
+        sh:name         "has complement"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  <http://purl.org/vocab/frbr/core#Expression> ;
+                            sh:path   <http://purl.org/vocab/frbr/core#complement>
+                          ]
+                          [ sh:class  <http://purl.org/vocab/frbr/core#Work> ;
+                            sh:path   <http://purl.org/vocab/frbr/core#complement>
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/shapes#b5fe5da6eeff0301988113adb6259219>
+        a            sh:PropertyShape ;
+        rdfs:label   "has related endeavour"@en ;
+        sh:class     <http://purl.org/vocab/frbr/core#Endeavour> ;
+        sh:name      "has related endeavour"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/vocab/frbr/core#relatedEndeavour> .
+
+<https://astrea.linkeddata.es/shapes#1e43f9084f3c0c2e800346fd7c950a07>
+        a               sh:NodeShape ;
+        rdfs:label      "responsible entity"@en ;
+        sh:description  "It represents those responsible for the intellectual or artistic content, the physical production and dissemination, or the custodianship of any endeavour."@en ;
+        sh:name         "responsible entity"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/vocab/frbr/core#ResponsibleEntity> .
+
+<https://astrea.linkeddata.es/shapes#c782fdc31ff2bdb5b3e189035f157403>
+        a               sh:NodeShape ;
+        rdfs:label      "manifestation"@en ;
+        sh:description  "The physical embodiment of an expression of a work.\n\nThe entity defined as manifestation encompasses a wide range of materials and formats. As an entity, manifestation represents all the physical objects that bear the same characteristics, in respect to both intellectual content and physical form. "@en ;
+        sh:name         "manifestation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#0260b4c27275b198582c9617ac411dcb> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#bb1f2802d78b5c6a179e05825d75be64> , <https://astrea.linkeddata.es/shapes#7c365fe7b97db26554942b84675223f6> ;
+        sh:targetClass  <http://purl.org/vocab/frbr/core#Manifestation> .
+
+<https://astrea.linkeddata.es/shapes#0260b4c27275b198582c9617ac411dcb>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/vocab/frbr/core#Work> .
+
+<https://astrea.linkeddata.es/shapes#d38fac14b870bc65a9daa60bfb693f6c>
+        a               sh:PropertyShape ;
+        rdfs:label      "has transformation"@en , "An work/expression transformed in another one.\n\nThis property describes the transformation of an original work or expression into another work or expression that is sufficiently different in degree to warrant the product of the transformation being considered as a new work or expression, rather than simply a different expression of the original work. If there exists a frbr:transformation relation between two different expressions, then they always relate to different works."@en ;
+        sh:description  "An work/expression transformed in another one.\n\nThis property describes the transformation of an original work or expression into another work or expression that is sufficiently different in degree to warrant the product of the transformation being considered as a new work or expression, rather than simply a different expression of the original work. If there exists a frbr:transformation relation between two different expressions, then they always relate to different works."@en ;
+        sh:name         "has transformation"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  <http://purl.org/vocab/frbr/core#Expression> ;
+                            sh:path   <http://purl.org/vocab/frbr/core#transformation>
+                          ]
+                          [ sh:class  <http://purl.org/vocab/frbr/core#Work> ;
+                            sh:path   <http://purl.org/vocab/frbr/core#transformation>
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/shapes#143ff2dd6e182ef2645d4b2ba63a0efe>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/spar/biro/BibliographicList> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/vocab/frbr/core#realization> .
+
+<https://astrea.linkeddata.es/shapes#b52246de95898443aa14bc94310ee53f>
+        a               sh:PropertyShape ;
+        rdfs:label      "is successor of"@en , "It identifies the previous work/expression of a succeeded one."@en ;
+        sh:description  "It identifies the previous work/expression of a succeeded one."@en ;
+        sh:name         "is successor of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#successorOf> .
+
+<https://astrea.linkeddata.es/shapes#938d23a729292440904ae3c828cd8f35>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :firstItem .
+
+<https://astrea.linkeddata.es/shapes#feeab59917f7d034620ccf5630ce4077>
+        a               sh:PropertyShape ;
+        rdfs:label      "is realizer of"@en , "The realizer of a particular expression."@en ;
+        sh:description  "The realizer of a particular expression."@en ;
+        sh:name         "is realizer of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#realizerOf> .
+
+<https://astrea.linkeddata.es/shapes#95e44c53e0991f66dd9153735e1ddd8c>
+        a               sh:PropertyShape ;
+        rdfs:label      "has adaption"@en , "A work/expression adapted in another one.\n\nThis property describe the modification of an original work that is sufficient in degree to warrant their being considered as new works, rather than simply different expressions of the same work. If there exists a relation of this kind among two different expressions, they always refer to different works."@en ;
+        sh:description  "A work/expression adapted in another one.\n\nThis property describe the modification of an original work that is sufficient in degree to warrant their being considered as new works, rather than simply different expressions of the same work. If there exists a relation of this kind among two different expressions, they always refer to different works."@en ;
+        sh:name         "has adaption"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  <http://purl.org/vocab/frbr/core#Expression> ;
+                            sh:path   <http://purl.org/vocab/frbr/core#adaption>
+                          ]
+                          [ sh:class  <http://purl.org/vocab/frbr/core#Work> ;
+                            sh:path   <http://purl.org/vocab/frbr/core#adaption>
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/shapes#d461aed758039dd502d3e4569fda0fc8>
+        a               sh:PropertyShape ;
+        rdfs:label      "has embodiment"@en , "An expression embodied in a manifestation."@en ;
+        sh:class        <http://purl.org/vocab/frbr/core#Manifestation> ;
+        sh:description  "An expression embodied in a manifestation."@en ;
+        sh:name         "has embodiment"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#embodiment> .
+
+<https://astrea.linkeddata.es/shapes#92a5583f6cb7b0d9db8223beb985c642>
+        a               sh:PropertyShape ;
+        rdfs:label      "has subject"@en , "A work linked to a particular subject it is talking about."@en ;
+        sh:description  "A work linked to a particular subject it is talking about."@en ;
+        sh:name         "has subject"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  <http://purl.org/vocab/frbr/core#CorporateBody> ;
+                            sh:path   <http://purl.org/vocab/frbr/core#subject>
+                          ]
+                          [ sh:class  <http://purl.org/vocab/frbr/core#Endeavour> ;
+                            sh:path   <http://purl.org/vocab/frbr/core#subject>
+                          ]
+                          [ sh:class  <http://purl.org/vocab/frbr/core#Subject> ;
+                            sh:path   <http://purl.org/vocab/frbr/core#subject>
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/shapes#6d5660d180a762ceefe1af7258d27fd5>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :lastItem .
+
+<https://astrea.linkeddata.es/shapes#73fbd509ea9408e51165a63dc31c9d4a>
+        a               sh:PropertyShape ;
+        rdfs:label      "is first item of"@en , "The link to a list in which the item is first item."@en ;
+        sh:description  "The link to a list in which the item is first item."@en ;
+        sh:name         "is first item of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :firstItemOf .
+
+<https://astrea.linkeddata.es/shapes#6df226ed902b525bd6e7e739271b8f4c>
+        a               sh:PropertyShape ;
+        rdfs:label      "has first item"@en , "The link to the first item of the list."@en ;
+        sh:description  "The link to the first item of the list."@en ;
+        sh:maxCount     1 ;
+        sh:name         "has first item"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#81613e758293ba2e6dc1ef2257bfe407>
+        a               sh:PropertyShape ;
+        rdfs:label      "is imitation of"@en , "It identifies the work/expression of an imitated one."@en ;
+        sh:description  "It identifies the work/expression of an imitated one."@en ;
+        sh:name         "is imitation of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#imitationOf> .
+
+<https://astrea.linkeddata.es/shapes#c2a86ce7b88ee222b4bd73263d7e88fc>
+        a               sh:PropertyShape ;
+        rdfs:label      "is complement of"@en , "It identifies the work/expression of that is a complement of another one."@en ;
+        sh:description  "It identifies the work/expression of that is a complement of another one."@en ;
+        sh:name         "is complement of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#complementOf> .
+
+<https://astrea.linkeddata.es/shapes#059f6f4b34f6390e63e0e4a010489e3d>
+        a               sh:PropertyShape ;
+        rdfs:label      "is alternate of"@en , "It identifies the manifestation of an alternative one."@en ;
+        sh:description  "It identifies the manifestation of an alternative one."@en ;
+        sh:name         "is alternate of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#alternateOf> .
+
+<https://astrea.linkeddata.es/shapes#6bb54238577a56d525e2de8d030096d3>
+        a               sh:PropertyShape ;
+        rdfs:label      "has realization"@en , "A work realized through an expression."@en ;
+        sh:class        <http://purl.org/vocab/frbr/core#Expression> ;
+        sh:description  "A work realized through an expression."@en ;
+        sh:name         "has realization"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#realization> .
+
+<https://astrea.linkeddata.es/shapes#c30c03381624eb8ecd76d08e76d8d4f9>
+        a               sh:PropertyShape ;
+        rdfs:label      "has supplement"@en , "An expression work/expression having another one as supplement.\n\nThe supplement relationship type involves works/expressions that are intended to be used in conjunction with another work/expression. Some of these, such as indices, concordances, teachers' guides, glosses, and instruction manuals for electronic resources will be so closely associated with the content of the related work/expression that they are useless without the other work/expression."@en ;
+        sh:description  "An expression work/expression having another one as supplement.\n\nThe supplement relationship type involves works/expressions that are intended to be used in conjunction with another work/expression. Some of these, such as indices, concordances, teachers' guides, glosses, and instruction manuals for electronic resources will be so closely associated with the content of the related work/expression that they are useless without the other work/expression."@en ;
+        sh:name         "has supplement"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  <http://purl.org/vocab/frbr/core#Expression> ;
+                            sh:path   <http://purl.org/vocab/frbr/core#supplement>
+                          ]
+                          [ sh:class  <http://purl.org/vocab/frbr/core#Work> ;
+                            sh:path   <http://purl.org/vocab/frbr/core#supplement>
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/shapes#12f12b07055cf542483835e02fbb125d>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :element .
+
+<https://astrea.linkeddata.es/shapes#376e9b238cd35dc52011d6ae5b5d1a39>
+        a               sh:PropertyShape ;
+        rdfs:label      "has next item"@en , "The link to the next item in a list."@en ;
+        sh:description  "The link to the next item in a list."@en ;
+        sh:maxCount     1 ;
+        sh:name         "has next item"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         :nextItem .
+
+<https://astrea.linkeddata.es/shapes#14d1b463a0aca3b27bf1aef1dab8167a>
+        a               sh:PropertyShape ;
+        rdfs:label      "is producer of"@en , "The producer of a particular manifestation."@en ;
+        sh:description  "The producer of a particular manifestation."@en ;
+        sh:name         "is producer of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#producerOf> .
+
+<https://astrea.linkeddata.es/shapes#d30e8d6e74918cc7b963d514721c6467>
+        a               sh:PropertyShape ;
+        rdfs:label      "has revision"@en , "An expression revised in another one.\n\nA revision has the intent to alter or update the content of the prior expression, but without changing the content so much that it becomes a new work."@en ;
+        sh:class        <http://purl.org/vocab/frbr/core#Expression> ;
+        sh:description  "An expression revised in another one.\n\nA revision has the intent to alter or update the content of the prior expression, but without changing the content so much that it becomes a new work."@en ;
+        sh:name         "has revision"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/frbr/core#revision> .
+
+<https://astrea.linkeddata.es/shapes#cf1df1cca17e8742f57fe94be2452567>
+        a               sh:PropertyShape ;
+        rdfs:label      "is item content of"@en , "The link to the item that refers to the resource."@en ;
+        sh:description  "The link to the item that refers to the resource."@en ;
+        sh:name         "is item content of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :itemContentOf .
+
+<https://astrea.linkeddata.es/shapes#6771f79ae869158bab5c1f08a6220ec6>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/spar/biro/BibliographicReference> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :element .
+
+<https://astrea.linkeddata.es/shapes#b2a536a8b66033162d74548c781fe574>
+        a               sh:PropertyShape ;
+        rdfs:label      "has reproduction"@en , "A manifestation/item reproduced in another one.\n\nA reproduction indicates the relationship as it would be drawn from the first manifestation/item in the relationship to the second manifestation/item in the relationship."@en ;
+        sh:description  "A manifestation/item reproduced in another one.\n\nA reproduction indicates the relationship as it would be drawn from the first manifestation/item in the relationship to the second manifestation/item in the relationship."@en ;
+        sh:name         "has reproduction"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  <http://purl.org/vocab/frbr/core#Item> ;
+                            sh:path   <http://purl.org/vocab/frbr/core#reproduction>
+                          ]
+                          [ sh:class  <http://purl.org/vocab/frbr/core#Manifestation> ;
+                            sh:path   <http://purl.org/vocab/frbr/core#reproduction>
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/shapes#2f7c4289db576860c8ec2839185ff86a>
+        a               sh:NodeShape ;
+        rdfs:label      "subject"@en ;
+        sh:description  "It represents an additional set of entities that serve as the subjects of works."@en ;
+        sh:name         "subject"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/vocab/frbr/core#Subject> .
+
+<https://astrea.linkeddata.es/shapes#a846a4145de1fc510b3a990fb8182f4f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      owl:topObjectProperty .
+
+<https://astrea.linkeddata.es/shapes#d8220cdfc21760cbcc1387d3c5d33778>
+        a               sh:NodeShape ;
+        rdfs:label      "person"@en ;
+        sh:description  "An individual. The entity defined as person encompasses individuals that are deceased as well as those that are living."@en ;
+        sh:name         "person"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/vocab/frbr/core#Person> .
+
+<https://astrea.linkeddata.es/shapes#0fcd3f5c0bd1322f65c8b1fd13883a54>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/spar/biro/BibliographicRecord> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :element .

@@ -1,0 +1,170 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#5d5ca645b22056fa8ef5179ec114ffd2>
+        a               sh:PropertyShape ;
+        rdfs:label      "describes"@en , "A Thing which describes an Event. This could be a Media Fragment, an Image, etc."@en ;
+        sh:class        <http://purl.org/NET/c4dm/event.owl#Event> ;
+        sh:description  "A Thing which describes an Event. This could be a Media Fragment, an Image, etc."@en ;
+        sh:name         "describes"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/ontology/stories/describes> .
+
+<https://astrea.linkeddata.es/shapes#7a9a89fea424d02c052117fbb8913e8a>
+        a            sh:PropertyShape ;
+        rdfs:label   "slot"@en ;
+        sh:class     <http://purl.org/ontology/stories/EventSlot> ;
+        sh:name      "slot"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/ontology/stories/slot> .
+
+<https://astrea.linkeddata.es/shapes#133e1a1281e7f23bb84e3db0b61a0664>
+        a            sh:PropertyShape ;
+        rdfs:label   "item"@en ;
+        sh:class     <http://purl.org/NET/c4dm/event.owl#Event> ;
+        sh:name      "item"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/ontology/stories/item> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#2acf5460aaa3fd06d2095403f628d8de> , <https://astrea.linkeddata.es/shapes#133e1a1281e7f23bb84e3db0b61a0664> , <https://astrea.linkeddata.es/shapes#f0e3adb348908e62e6b2fd5088ea87ca> , <https://astrea.linkeddata.es/shapes#453cd185033acbf945ac0fb63b7f8b07> , <https://astrea.linkeddata.es/shapes#ba3118a828e7ed7e3866b6513f4570ba> , <https://astrea.linkeddata.es/shapes#6ab5d1276939839f157d31033207bf29> , <https://astrea.linkeddata.es/shapes#90014164f1eadfba69003fc5ffc37f0f> , <https://astrea.linkeddata.es/shapes#0103a3611beb2d2d5be9d284b1099a6c> , <https://astrea.linkeddata.es/shapes#c8e135aaef711c036879f883c6f569ab> , <https://astrea.linkeddata.es/shapes#286e10d0dd323c04762e22aa8916d814> , <https://astrea.linkeddata.es/shapes#0c16c0633c2b65cc4e2bd651aff3fc29> , <https://astrea.linkeddata.es/shapes#5d5ca645b22056fa8ef5179ec114ffd2> , <https://astrea.linkeddata.es/shapes#b2b41421cf49afcb06b267843d3ac916> , <https://astrea.linkeddata.es/shapes#9e2774967ddb566aa880dc8f71cf7ccf> , <https://astrea.linkeddata.es/shapes#e05f3d5ca8384676bfb942dabdd6d579> , <https://astrea.linkeddata.es/shapes#f59bbf61f7c23553823d1928167599c4> , <https://astrea.linkeddata.es/shapes#7a9a89fea424d02c052117fbb8913e8a> , <https://astrea.linkeddata.es/shapes#4a31a3b6a3b1d45b9a61366429db9b65> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#9e2774967ddb566aa880dc8f71cf7ccf>
+        a               sh:NodeShape ;
+        rdfs:label      "EventList"@en ;
+        sh:description  "Provides a means to create an ordered list of events that occur within a story - effectively a pairing of an Event and a numeric position."@en ;
+        sh:name         "EventList"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#7a9a89fea424d02c052117fbb8913e8a> ;
+        sh:targetClass  <http://purl.org/ontology/stories/EventList> .
+
+<https://astrea.linkeddata.es/shapes#c8e135aaef711c036879f883c6f569ab>
+        a            sh:PropertyShape ;
+        rdfs:label   "contextualises"@en ;
+        sh:class     <http://purl.org/ontology/stories/Interpretation> ;
+        sh:name      "contextualises"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/ontology/stories/contextualises> .
+
+<https://astrea.linkeddata.es/shapes#f59bbf61f7c23553823d1928167599c4>
+        a               sh:PropertyShape ;
+        rdfs:label      "supports"@en , "A Thing which supports an Interpretation (e.g. a supporting document, Event, etc)."@en ;
+        sh:class        <http://purl.org/ontology/stories/Interpretation> ;
+        sh:description  "A Thing which supports an Interpretation (e.g. a supporting document, Event, etc)."@en ;
+        sh:name         "supports"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/ontology/stories/supports> .
+
+<https://astrea.linkeddata.es/shapes#ba3118a828e7ed7e3866b6513f4570ba>
+        a               sh:NodeShape ;
+        rdfs:label      "Story"@en ;
+        sh:description  "A story that may be told, contain other stories, and have a sequence of events."@en ;
+        sh:name         "Story"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#286e10d0dd323c04762e22aa8916d814> , <https://astrea.linkeddata.es/shapes#c8e135aaef711c036879f883c6f569ab> , <https://astrea.linkeddata.es/shapes#b2b41421cf49afcb06b267843d3ac916> ;
+        sh:targetClass  <http://purl.org/ontology/stories/Story> .
+
+<https://astrea.linkeddata.es/shapes#b2b41421cf49afcb06b267843d3ac916>
+        a               sh:PropertyShape ;
+        rdfs:label      "event"@en , "An ordered list of Events within this story."@en ;
+        sh:class        <http://purl.org/ontology/stories/EventList> ;
+        sh:description  "An ordered list of Events within this story."@en ;
+        sh:name         "event"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/ontology/stories/events> .
+
+<https://astrea.linkeddata.es/shapes#453cd185033acbf945ac0fb63b7f8b07>
+        a               sh:NodeShape ;
+        rdfs:label      "Interpretation"@en ;
+        sh:description  "An interpretation of something in the context of a story, given some supporting material. This is the viewpoint of the interpretation's creator, and may assert statements about the item."@en ;
+        sh:name         "Interpretation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#90014164f1eadfba69003fc5ffc37f0f> ;
+        sh:targetClass  <http://purl.org/ontology/stories/Interpretation> .
+
+<https://astrea.linkeddata.es/shapes#90014164f1eadfba69003fc5ffc37f0f>
+        a               sh:PropertyShape ;
+        rdfs:label      "asserts"@en , "The Assertion which is asserted by this interpretation."@en ;
+        sh:class        <http://purl.org/ontology/stories/Assertion> ;
+        sh:description  "The Assertion which is asserted by this interpretation."@en ;
+        sh:name         "asserts"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/ontology/stories/asserts> .
+
+<https://astrea.linkeddata.es/shapes#f0e3adb348908e62e6b2fd5088ea87ca>
+        a               sh:PropertyShape ;
+        rdfs:label      "interprets"@en , "The thing which is interpreted by this interpretation."@en ;
+        sh:description  "The thing which is interpreted by this interpretation."@en ;
+        sh:name         "interprets"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#4a31a3b6a3b1d45b9a61366429db9b65>
+        a               sh:PropertyShape ;
+        rdfs:label      "tells"@en , "A story told by this Thing. The Thing could be a photograph which has a story attached to it, a person, a country, a monument, etc."@en ;
+        sh:class        <http://purl.org/ontology/stories/Story> ;
+        sh:description  "A story told by this Thing. The Thing could be a photograph which has a story attached to it, a person, a country, a monument, etc."@en ;
+        sh:name         "tells"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/ontology/stories/tells> .
+
+<https://astrea.linkeddata.es/shapes#286e10d0dd323c04762e22aa8916d814>
+        a               sh:PropertyShape ;
+        rdfs:label      "sub_story"@en , "A story which is contained within this story. For example, a TV episode may contain stories for different characters, or one overarching story may contain several other smaller stories."@en ;
+        sh:class        <http://purl.org/ontology/stories/Story> ;
+        sh:description  "A story which is contained within this story. For example, a TV episode may contain stories for different characters, or one overarching story may contain several other smaller stories."@en ;
+        sh:name         "sub_story"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/ontology/stories/sub_story> .
+
+<https://astrea.linkeddata.es/shapes#e05f3d5ca8384676bfb942dabdd6d579>
+        a               sh:NodeShape ;
+        rdfs:label      "Assertion"@en ;
+        sh:description  "Contains a set of statements in the form of an RDF graph, thus allowing for interpretations to assert beliefs about the state of the system."@en ;
+        sh:name         "Assertion"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/stories/Assertion> .
+
+<https://astrea.linkeddata.es/shapes#2acf5460aaa3fd06d2095403f628d8de>
+        a               sh:PropertyShape ;
+        rdfs:label      "facts" , "Facts asserted by this assertion, in the form of an RDF graph." ;
+        sh:description  "Facts asserted by this assertion, in the form of an RDF graph." ;
+        sh:name         "facts" ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#0103a3611beb2d2d5be9d284b1099a6c>
+        a               sh:NodeShape ;
+        rdfs:label      "EventSlot"@en ;
+        sh:description  "Places an Event in an EventList, with index and neighbouring Event information."@en ;
+        sh:name         "EventSlot"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#133e1a1281e7f23bb84e3db0b61a0664> ;
+        sh:targetClass  <http://purl.org/ontology/stories/EventSlot> .
+
+<https://astrea.linkeddata.es/shapes#0c16c0633c2b65cc4e2bd651aff3fc29>
+        a               sh:PropertyShape ;
+        rdfs:label      "subject"@en , "The subject(s) of the story. e.g. characters, events, skos concepts."@en ;
+        sh:description  "The subject(s) of the story. e.g. characters, events, skos concepts."@en ;
+        sh:name         "subject"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#6ab5d1276939839f157d31033207bf29>
+        a               sh:PropertyShape ;
+        rdfs:label      "describedBy"@en , "The inverse of describes, this is an Event describedBy a Thing (e.g. a programme, photo)"@en ;
+        sh:description  "The inverse of describes, this is an Event describedBy a Thing (e.g. a programme, photo)"@en ;
+        sh:name         "describedBy"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .

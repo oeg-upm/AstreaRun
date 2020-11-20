@@ -1,0 +1,92 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#397b9a91fdf349cf3b1d01378d26d948> , <https://astrea.linkeddata.es/shapes#d19eb4f1a0bd6593d1b185a0685c7cd0> , <https://astrea.linkeddata.es/shapes#badd9a81f742a54c98e3cac818785f82> , <https://astrea.linkeddata.es/shapes#23a6536985b6d09c08ee4b35d4682b66> , <https://astrea.linkeddata.es/shapes#f7ef767566716e234ddf2396928a35df> , <https://astrea.linkeddata.es/shapes#71a228694dc21fb9d051c274f521461b> , <https://astrea.linkeddata.es/shapes#1082a31de298ccb3bac7e5defca45750> , <https://astrea.linkeddata.es/shapes#668f5ed26a788d36f5b25bdc749e65ef> , <https://astrea.linkeddata.es/shapes#fd4e974ff90cdcb126ba0143d4c23f5f> , <https://astrea.linkeddata.es/shapes#bd5a9a16074a3f2e6eb56d4d947c7e9b> , <https://astrea.linkeddata.es/shapes#d2a0a2deb6d2504fd0402d47d71799e9> , <https://astrea.linkeddata.es/shapes#5835cb38a17f12dc1d66753090b37608> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0> .
+
+<https://astrea.linkeddata.es/shapes#fd4e974ff90cdcb126ba0143d4c23f5f>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2000/10/swap/pim/contact#Female> .
+
+<https://astrea.linkeddata.es/shapes#668f5ed26a788d36f5b25bdc749e65ef>
+        a               sh:NodeShape ;
+        rdfs:label      "tel."@fr , "phone"@en ;
+        sh:description  "\n    An end-point in the public swiitched telephone system.\n    Anything identified by a URI with tel: scheme is in this class.\n    " ;
+        sh:name         "tel."@fr , "phone"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2000/10/swap/pim/contact#Phone> .
+
+<https://astrea.linkeddata.es/shapes#23a6536985b6d09c08ee4b35d4682b66>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2000/10/swap/pim/contact#LanguageCode> .
+
+<https://astrea.linkeddata.es/shapes#bd5a9a16074a3f2e6eb56d4d947c7e9b>
+        a               sh:NodeShape ;
+        rdfs:label      "contact point" ;
+        sh:description  "A place, or mobile situation, with address, phone number, fax, etc. \n    Related to a person by home, office, etc.\n    Note one person's workplace may be another person's home.\n    A person may have more than one home and more than one workplace.\n    (In practice it sometimes maybe useful with restriucted datasets to\n    assume that this is not the case, when extracting data from other ontologies\n    with no concept of ContactLocation).  Strongly related to a person: \n    in some ways a role that a person can be in." ;
+        sh:name         "contact point" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2000/10/swap/pim/contact#ContactLocation> .
+
+<https://astrea.linkeddata.es/shapes#1082a31de298ccb3bac7e5defca45750>
+        a               sh:PropertyShape ;
+        sh:inversePath  <http://www.w3.org/2000/10/swap/pim/contact#homePage> ;
+        sh:maxCount     1 ;
+        sh:nodeKind     sh:IRIOrLiteral .
+
+<https://astrea.linkeddata.es/shapes#f7ef767566716e234ddf2396928a35df>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2000/10/swap/pim/contact#Male> .
+
+<https://astrea.linkeddata.es/shapes#d19eb4f1a0bd6593d1b185a0685c7cd0>
+        a               sh:PropertyShape ;
+        sh:inversePath  <http://www.w3.org/2000/10/swap/pim/contact#mailbox> ;
+        sh:maxCount     1 ;
+        sh:nodeKind     sh:IRIOrLiteral .
+
+<https://astrea.linkeddata.es/shapes#397b9a91fdf349cf3b1d01378d26d948>
+        a               sh:PropertyShape ;
+        sh:inversePath  <http://www.w3.org/2000/10/swap/pim/contact#homePageAddress> ;
+        sh:maxCount     1 ;
+        sh:nodeKind     sh:IRIOrLiteral .
+
+<https://astrea.linkeddata.es/report/0>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#71a228694dc21fb9d051c274f521461b>
+        a               sh:PropertyShape ;
+        sh:inversePath  <http://www.w3.org/2000/10/swap/pim/contact#mailboxURI> ;
+        sh:maxCount     1 ;
+        sh:nodeKind     sh:IRIOrLiteral .
+
+<https://astrea.linkeddata.es/shapes#5835cb38a17f12dc1d66753090b37608>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2000/10/swap/pim/contact#Address> .
+
+<https://astrea.linkeddata.es/shapes#d2a0a2deb6d2504fd0402d47d71799e9>
+        a               sh:PropertyShape ;
+        sh:inversePath  <http://www.w3.org/2000/10/swap/pim/contact#emailAddress> ;
+        sh:maxCount     1 ;
+        sh:nodeKind     sh:IRIOrLiteral .
+
+<https://astrea.linkeddata.es/shapes#badd9a81f742a54c98e3cac818785f82>
+        a               sh:NodeShape ;
+        sh:description  "The sort of thing which can have a phone number.\n    Typically a person or an incorporated company, or unincorporated group." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2000/10/swap/pim/contact#SocialEntity> .

@@ -1,0 +1,2526 @@
+@prefix :      <http://www.w3.org/2002/07/owl#> .
+@prefix physical-quality: <http://purl.oclc.org/NET/muo/ucum/physical-quality/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix muo:   <http://purl.oclc.org/NET/muo/muo#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dogont: <http://elite.polito.it/ontologies/dogont.owl#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ssn:   <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix lifecycle: <http://purl.org/vocab/lifecycle/schema#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix DUL:   <http://www.loa-cnr.it/ontologies/DUL.owl#> .
+@prefix power: <http://purl.oclc.org/NET/muo/ucum/unit/power/> .
+@prefix vann:  <http://purl.org/vocab/vann/> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix cc:    <http://creativecommons.org/ns#> .
+@prefix san:   <http://www.irit.fr/recherches/MELODI/ontologies/SAN#> .
+@prefix iot-lifecycle: <http://www.irit.fr/recherches/MELODI/ontologies/IoT-Lifecycle#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
+@prefix voaf:  <http://purl.org/vocommons/voaf#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dul:   <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix poweront: <http://elite.polito.it/ontologies/poweront.owl#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<https://astrea.linkeddata.es/shapes#2ac7373bdf7476d13cd72b7a82f46949>
+        a               sh:PropertyShape ;
+        rdfs:label      "has actuation capability" , "Relation between an Actuator and an ActuatingCapability, describing the actuating properties of an actuator." ;
+        sh:class        san:ActuatingCapability ;
+        sh:description  "Relation between an Actuator and an ActuatingCapability, describing the actuating properties of an actuator." ;
+        sh:name         "has actuation capability" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         san:hasActuatingCapability .
+
+<https://astrea.linkeddata.es/shapes#8672bd2fecaabef11153f1d4e09e0d7d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Deployment" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#Deployment" ;
+        sh:description    "The ongoing Process of Entities (for the purposes of this ontology, mainly sensors) deployed for a particular purpose.  For example, a particular Sensor deployed on a Platform, or a whole network of Sensors deployed for an observation campaign.  The deployment may have sub processes, such as installation, maintenance, addition, and decomissioning and removal." ;
+        sh:name           "Deployment" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#2726963d7dbf28e45acaa9d12810f4b3> , <https://astrea.linkeddata.es/shapes#6ef96739e734b8b554ef9a99d9c08af1> ;
+        sh:targetClass    ssn:Deployment .
+
+<https://astrea.linkeddata.es/shapes#791a116d23d891c2d699dafa8b80ec81>
+        a               sh:NodeShape ;
+        rdfs:label      "Controlled system" ;
+        sh:description  "System implementing a control feedback loop in order to control an actuator thanks to the feedback of some sensors." ;
+        sh:name         "Controlled system" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#9d13876d0fea10ff6d6d7adf0c130926> , <https://astrea.linkeddata.es/shapes#f7fa845f8a46ab1374ac5d7f034d9edd> ;
+        sh:targetClass  <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#ControlledSystem> .
+
+<https://astrea.linkeddata.es/report/01127076728>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Lexical form '2.0.0' not valid for datatype XSD decimal\n" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.irit.fr/recherches/MELODI/ontologies/SAN" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "206"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#4eaffb67c4bd43987456c20ea266de77>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "attached system" , "Relation between a Platform and any Systems (e.g., Sensors) that are attached to the Platform." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#PlatformSite" ;
+        sh:description    "Relation between a Platform and any Systems (e.g., Sensors) that are attached to the Platform." ;
+        sh:name           "attached system" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:attachedSystem .
+
+<https://astrea.linkeddata.es/shapes#25f34a0dc650a9a94b1223cd02f01698>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      DUL:isRegionFor .
+
+<https://astrea.linkeddata.es/shapes#5f030c91ad059acad7f899a352969cea>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Sensor Data Sheet" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Sensor#Measuring" ;
+        sh:description    "A data sheet records properties of a sensor.  A data sheet might describe for example the accuracy in various conditions, the power use, the types of connectors that the sensor has, etc.  \n\nGenerally a sensor's properties are recorded directly (with hasMeasurementCapability, for example), but the data sheet can be used for example to record the manufacturers specifications verses observed capabilites, or if more is known than the manufacturer specifies, etc.  The data sheet is an information object about the sensor's properties, rather than a direct link to the actual properties themselves." ;
+        sh:name           "Sensor Data Sheet" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:SensorDataSheet .
+
+<https://astrea.linkeddata.es/shapes#f86336ee4ab2d3a3a34eee0f857322b9>
+        a               sh:PropertyShape ;
+        rdfs:label      "is consumed by" , "Describes a relation between a consumer and a consumee" ;
+        sh:class        dul:Entity ;
+        sh:description  "Describes a relation between a consumer and a consumee" ;
+        sh:name         "is consumed by" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         san:isConsumedBy .
+
+<https://astrea.linkeddata.es/shapes#8de07f44fa6b4b35c4ed3a0f49b2228f>
+        a               sh:NodeShape ;
+        rdfs:label      "Power consumption value" ;
+        sh:name         "Power consumption value" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f45e977af9b86b53b5f7b87c66074c46> , <https://astrea.linkeddata.es/shapes#9248aca0c0ab7a856cacc642903f50b8> ;
+        sh:targetClass  poweront:PowerConsumptionValue .
+
+<https://astrea.linkeddata.es/shapes#c4979e698a87973b5f49101b85f6a4e2>
+        a               sh:NodeShape ;
+        rdfs:label      "Manager" ;
+        sh:description  "A manager is an application that offers management capabilities as described in the OneM2M norm." ;
+        sh:name         "Manager" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#Manager> .
+
+<https://astrea.linkeddata.es/shapes#69c9076e7daa3182c9562c7cec85a0bc>
+        a               sh:PropertyShape ;
+        rdfs:label      "triggers transition" , "Characterizes an entity able to trigger a transition : agent, software, condition..." ;
+        sh:class        lifecycle:Transition ;
+        sh:description  "Characterizes an entity able to trigger a transition : agent, software, condition..." ;
+        sh:name         "triggers transition" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         iot-lifecycle:triggersTransition .
+
+<https://astrea.linkeddata.es/shapes#6f434ec63fb48941145008d7d8f69d8c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      dul:includesEvent .
+
+<https://astrea.linkeddata.es/shapes#a015ad7ba1fe8a50b872e429f6a517ba>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:MovingStateValue .
+
+<https://astrea.linkeddata.es/shapes#2be585ce3b3130a3709b45d287584c49>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isRegionFor .
+
+<https://astrea.linkeddata.es/shapes#0844c04140442d3ee5baf29038e80e8a>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:Process .
+
+<https://astrea.linkeddata.es/report/1964147564>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.oclc.org/NET/ssnx/ssn" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#9075d3f64aa722759b977295dd48df2d>
+        a               sh:NodeShape ;
+        rdfs:label      "Service" ;
+        sh:description  "A Service is the abstract representation of a set of data and requests processing functionnalities, generally linked by common traits (domain, service provider...)" ;
+        sh:name         "Service" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#4f447b04922cec9ea93c7e8684653aa4> , <https://astrea.linkeddata.es/shapes#e3f07405eafba16919bedb37eaffebb1> ;
+        sh:targetClass  <http://www.wsmo.org/ns/wsmo-lite#Service> .
+
+<https://astrea.linkeddata.es/shapes#f5c6f9cb9bf33282e68b279bb17480ec>
+        a            sh:PropertyShape ;
+        sh:class     ssn:DeploymentRelatedProcess ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:deploymentProcessPart .
+
+<https://astrea.linkeddata.es/shapes#cf86f0c79b334c85a6b9bf9f7b618b3d>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:AlarmClock .
+
+<https://astrea.linkeddata.es/shapes#b0f306c1ca38f88579ae6664e3857fa0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "deployed system" , "Relation between a deployment and the deployed system." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#Deployment" ;
+        sh:description    "Relation between a deployment and the deployed system." ;
+        sh:name           "deployed system" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:deployedSystem .
+
+<https://astrea.linkeddata.es/shapes#7f8c2dd8cc6d7b06b57876edb46a4fba>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isSettingFor .
+
+<https://astrea.linkeddata.es/shapes#b5709a9c2eaa7805ed5f7e56a090d496>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      owl:topDataProperty .
+
+<https://astrea.linkeddata.es/shapes#2153432f1a818bf41a141ae878bfe103>
+        a               sh:NodeShape ;
+        rdfs:label      "Actuation" ;
+        sh:description  "An Actuation is the abstract representation of the command that will be translated into Effect by the Actuator (cf http://ontologydesignpatterns.org/wiki/Submissions:Actuation-Actuator-Effect for more information)." ;
+        sh:name         "Actuation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#7f069f8a8520567290fb169c336ab0b1> , <https://astrea.linkeddata.es/shapes#8b07de2523ac1424eb54d92312f8a616> , <https://astrea.linkeddata.es/shapes#d328bbfea00547549a292d7c50d06239> , <https://astrea.linkeddata.es/shapes#5782d36264e602f2f3aeac336415b4d3> , <https://astrea.linkeddata.es/shapes#6f434ec63fb48941145008d7d8f69d8c> , <https://astrea.linkeddata.es/shapes#17f8c42061fa64a9a5a9b3857599e63a> , <https://astrea.linkeddata.es/shapes#3712e2fb5430887365b64e4ceb4a9a53> ;
+        sh:targetClass  san:Actuation .
+
+<https://astrea.linkeddata.es/shapes#006da9af3b051a59685a4bdb4671e828>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      dul:isParametrizedBy .
+
+<https://astrea.linkeddata.es/shapes#3b04f6a636c65cbc3ed17a5b44314dc7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "has measurement property" , "Relation from a MeasurementCapability to a MeasurementProperty.  For example, to an accuracy (see notes at MeasurementCapability)." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Sensor#MeasuringCapability" ;
+        sh:description    "Relation from a MeasurementCapability to a MeasurementProperty.  For example, to an accuracy (see notes at MeasurementCapability)." ;
+        sh:name           "has measurement property" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:hasMeasurementProperty .
+
+<https://astrea.linkeddata.es/shapes#a3c488dfd5e6fcee97295b9ef5d077e9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Deployment-related Process" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#Deployment" ;
+        sh:description    "Place to group all the various Processes related to Deployment.  For example, as well as Deplyment, installation, maintenance, deployment of further sensors and the like would all be classified under DeploymentRelatedProcess." ;
+        sh:name           "Deployment-related Process" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#f5c6f9cb9bf33282e68b279bb17480ec> ;
+        sh:targetClass    ssn:DeploymentRelatedProcess .
+
+<https://astrea.linkeddata.es/shapes#e43616cc64427082ee448a8ca0941ede>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:AirConditioningSystem .
+
+<https://astrea.linkeddata.es/shapes#b0a23a67270fe5d3d3b15d70ab1c7407>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:GasHeater .
+
+<https://astrea.linkeddata.es/shapes#e74d3d65c534bf7ccd26954579a9bc51>
+        a            sh:PropertyShape ;
+        rdfs:label   "consumption of" ;
+        sh:class     dogont:Controllable ;
+        sh:name      "consumption of" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      poweront:consumptionOf .
+
+<https://astrea.linkeddata.es/shapes#79937d2ee17d67908643d50b9d8fee50>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:HeatingAndCoolingUnit .
+
+<https://astrea.linkeddata.es/shapes#e6541be2868843831f2d74ef277fca65>
+        a               sh:PropertyShape ;
+        rdfs:label      "has input message" , "Relationship between an Operation that requires some Message as its input" ;
+        sh:class        <http://www.wsmo.org/ns/wsmo-lite#Message> ;
+        sh:description  "Relationship between an Operation that requires some Message as its input" ;
+        sh:name         "has input message" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.wsmo.org/ns/wsmo-lite#hasInputMessage> .
+
+<https://astrea.linkeddata.es/shapes#4f447b04922cec9ea93c7e8684653aa4>
+        a               sh:PropertyShape ;
+        rdfs:label      "is service of" , "Relationship between a service and an entity that accesses it." ;
+        sh:class        DUL:Entity ;
+        sh:description  "Relationship between a service and an entity that accesses it." ;
+        sh:name         "is service of" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#isServiceOf> .
+
+<https://astrea.linkeddata.es/shapes#1a966c8448975a8ddfd731126ff83122>
+        a            sh:PropertyShape ;
+        sh:minCount  "0"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:qualityOfObservation .
+
+<https://astrea.linkeddata.es/shapes#9d13876d0fea10ff6d6d7adf0c130926>
+        a               sh:PropertyShape ;
+        rdfs:label      "gets feedback from" , "Relation between a controlled system and the entities that provide it with a feedback about its action, usually sensors." ;
+        sh:class        ssn:System ;
+        sh:description  "Relation between a controlled system and the entities that provide it with a feedback about its action, usually sensors." ;
+        sh:name         "gets feedback from" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#getsFeedbackFrom> .
+
+<https://astrea.linkeddata.es/shapes#bb8fab3764c75e81350e239bcda04aa7>
+        a            sh:PropertyShape ;
+        rdfs:label   "has consumption" ;
+        sh:class     poweront:PowerConsumption ;
+        sh:name      "has consumption" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      poweront:hasConsumption .
+
+<https://astrea.linkeddata.es/shapes#61b4836c234705ac7679876b071fc7fe>
+        a               sh:PropertyShape ;
+        rdfs:label      "is acted upon by" , "Relation between an entity that is acted upen by another acting entity" ;
+        sh:class        dul:Entity ;
+        sh:description  "Relation between an entity that is acted upen by another acting entity" ;
+        sh:name         "is acted upon by" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         san:isActedUponBy .
+
+<https://astrea.linkeddata.es/shapes#e2ffa4b42fc4df99cf6b1324379bb392>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Measurement Capability" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Sensor#MeasuringCapability" ;
+        sh:description    "Collects together measurement properties (accuracy, range, precision, etc) and the environmental conditions in which those properties hold, representing a specification of a sensor's capability in those conditions.\n\nThe conditions specified here are those that affect the measurement properties, while those in OperatingRange represent the sensor's standard operating conditions, including conditions that don't affect the observations." ;
+        sh:name           "Measurement Capability" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#56548f7374276d29843a5ba2738a3659> , <https://astrea.linkeddata.es/shapes#e81c6e23c4cacdd3d99dfc2ed66ae464> , <https://astrea.linkeddata.es/shapes#6b7414dafc160da6ad014f61784db8a3> ;
+        sh:targetClass    ssn:MeasurementCapability .
+
+<https://astrea.linkeddata.es/shapes#28deb73c781e6d7791cc91f384b84334>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:observedBy .
+
+<https://astrea.linkeddata.es/shapes#46f55f9e2c51f480510a4507fd3daa73>
+        a               sh:NodeShape ;
+        rdfs:label      "Actuating Time" ;
+        sh:description  "Time between the moment when the actuator receives an actuation command and the actual actuation." ;
+        sh:name         "Actuating Time" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  san:ActuatingTime .
+
+<https://astrea.linkeddata.es/shapes#f27cbf695804072ccedd67930763d8e5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:Pump .
+
+<https://astrea.linkeddata.es/shapes#0c0265e91af59c69ddecd3ff490b9624>
+        a            sh:PropertyShape ;
+        sh:class     ssn:Input ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:hasInput .
+
+<https://astrea.linkeddata.es/shapes#3b2e3e86e421c4221b1e49a5497479fc>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      DUL:includesEvent .
+
+<https://astrea.linkeddata.es/shapes#1d75c3aa8f34d3bcc8b8f9eddaaa04e6>
+        a                       sh:PropertyShape ;
+        sh:class                ssn:FeatureOfInterest ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 ssn:featureOfInterest ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  ssn:FeatureOfInterest ] .
+
+<https://astrea.linkeddata.es/shapes#4fb69b825ca9e9870bfb647efd231e46>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:Event .
+
+<https://astrea.linkeddata.es/shapes#b4baccb1fcd08aa83a885a036150af92>
+        a               sh:NodeShape ;
+        rdfs:label      "Effect" ;
+        sh:description  "Concept bound to the definition of an actuator as an agent havong an effect on the physical world. Therefore, an effect is any kind of physical modification induced by an actuator." ;
+        sh:name         "Effect" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#fa1c57d9101f50fea3c80b015c65ff6d> , <https://astrea.linkeddata.es/shapes#e20ea229fe255d51f3d9bdafb66d628e> ;
+        sh:targetClass  san:Effect .
+
+<https://astrea.linkeddata.es/shapes#a446950e94d3e54e6ecdeeaad9bdc6fe>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:Fridge .
+
+<https://astrea.linkeddata.es/shapes#b9f51d56a5da0cfe5e1802782ab1293d>
+        a               sh:PropertyShape ;
+        rdfs:label      "receives actuation" , "Relationship between an actuator and an Actuation it received in order to modify its action." ;
+        sh:class        san:Actuation ;
+        sh:description  "Relationship between an actuator and an Actuation it received in order to modify its action." ;
+        sh:name         "receives actuation" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         san:receivedActuation .
+
+<https://astrea.linkeddata.es/shapes#2ee1c0cbb6777243e3a7783f220fb83b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Precision" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Sensor#MeasuringCapability" ;
+        sh:description    "The closeness of agreement between replicate observations on an unchanged or similar quality value: i.e., a measure of a sensor's ability to consitently reproduce an observation." ;
+        sh:name           "Precision" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:Precision .
+
+<https://astrea.linkeddata.es/shapes#204b78ab7526018a6d8c6c42d1f64520>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:SingleScenarioControl .
+
+<https://astrea.linkeddata.es/shapes#95be18693798c9bec9086eaa1abc145b>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:CoffeeMaker .
+
+<https://astrea.linkeddata.es/shapes#86d0027a24fdac358da69a1d74cdb8cd>
+        a               sh:PropertyShape ;
+        rdfs:label      "updates state" , "This Update regards the provided ParametrizedState" ;
+        sh:class        iot-lifecycle:ParametrizedState ;
+        sh:description  "This Update regards the provided ParametrizedState" ;
+        sh:name         "updates state" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         iot-lifecycle:updatesState .
+
+<https://astrea.linkeddata.es/shapes#65c8287bd7139d7910afe364cc0188be>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      dul:includesEvent .
+
+<https://astrea.linkeddata.es/shapes#2190070491075f5f860a9675fa7ff952>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Process" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Model#Process" ;
+        sh:description    "A process has an output and possibly inputs and, for a composite process, describes the temporal and dataflow dependencies and relationships amongst its parts. [SSN XG]" ;
+        sh:name           "Process" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#0c0265e91af59c69ddecd3ff490b9624> , <https://astrea.linkeddata.es/shapes#c4f7d9dce362abfd4b0166aed2836b75> ;
+        sh:targetClass    ssn:Process .
+
+<https://astrea.linkeddata.es/shapes#a2d665d206d1312bab9cb2162b3e259e>
+        a               sh:PropertyShape ;
+        rdfs:label      "controlled by" , "Describes the relationship between a controlledentity and a controller  one. The controlled entity can be a situation (state of a system, property of an environment), a device, a piece of software..." ;
+        sh:class        dul:Entity ;
+        sh:description  "Describes the relationship between a controlledentity and a controller  one. The controlled entity can be a situation (state of a system, property of an environment), a device, a piece of software..." ;
+        sh:name         "controlled by" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         san:controlledBy .
+
+<https://astrea.linkeddata.es/shapes#ef2084375b89700a959043f3d9c3ff3b>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:hasLocation .
+
+<https://astrea.linkeddata.es/shapes#119fd79d22321592269af13447558bd7>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:Region .
+
+<https://astrea.linkeddata.es/shapes#1f64067a6193898ba567c3e6cf7688ca>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Observation" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "An Observation is a Situation in which a Sensing method has been used to estimate or calculate a value of a Property of a FeatureOfInterest.  Links to Sensing and Sensor describe what made the Observation and how; links to Property and Feature detail what was sensed; the result is the output of a Sensor; other metadata details times etc." ;
+        sh:name           "Observation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#1d75c3aa8f34d3bcc8b8f9eddaaa04e6> , <https://astrea.linkeddata.es/shapes#34bbedd74ac250f24b471ffcc6a1bf70> , <https://astrea.linkeddata.es/shapes#1a966c8448975a8ddfd731126ff83122> , <https://astrea.linkeddata.es/shapes#a6b9c0c9cae4b2188781b4f0ae2fffb1> , <https://astrea.linkeddata.es/shapes#6cfa9a289ba9044f1e2553e32dbe8097> , <https://astrea.linkeddata.es/shapes#e0956bafbc4cba415d0048f7e0bb41c9> , <https://astrea.linkeddata.es/shapes#76f7abbf1759f75524737f069fc9d0e8> , <https://astrea.linkeddata.es/shapes#3b2e3e86e421c4221b1e49a5497479fc> , <https://astrea.linkeddata.es/shapes#eff7c0ee58c790d982174bc00c9d9a8b> ;
+        sh:targetClass    ssn:Observation .
+
+<https://astrea.linkeddata.es/shapes#347b36b00bddff85ef88b7ae97d00fd3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "is property of" , "Relation between a FeatureOfInterest and a Property (a Quality observable by a sensor) of that feature." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "Relation between a FeatureOfInterest and a Property (a Quality observable by a sensor) of that feature." ;
+        sh:name           "is property of" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:isPropertyOf .
+
+<https://astrea.linkeddata.es/shapes#a0de15f51e854fd59e1288604ed0cb01>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Sensor Output" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "A sensor outputs a piece of information (an observed value), the value itself being represented by an ObservationValue." ;
+        sh:name           "Sensor Output" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#81b028c64f1dc05e258c1ded2d748787> , <https://astrea.linkeddata.es/shapes#1ab5415c2023979a571d3fedeaaa8047> ;
+        sh:targetClass    ssn:SensorOutput .
+
+<https://astrea.linkeddata.es/shapes#f2248cfda18d903c526a8eabcad5d33a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Sensitivity" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Sensor#MeasuringCapability" ;
+        sh:description    "Sensitivity is the quotient of the change in a result of sensor and the corresponding change in a value of a quality being observed." ;
+        sh:name           "Sensitivity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:Sensitivity .
+
+<https://astrea.linkeddata.es/shapes#e813fff67271cc89fc6c605e7ded6d87>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Survival Range" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#OperatingRestriction" ;
+        sh:description    "The conditions a sensor can be exposed to without damage: i.e., the sensor continues to operate as defined using MeasurementCapability.  If, however, the SurvivalRange is exceeded, the sensor is 'damaged' and MeasurementCapability specifications may no longer hold." ;
+        sh:name           "Survival Range" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ced4d704e175f1ffe4d2d5fa16108c0e> , <https://astrea.linkeddata.es/shapes#ab3d40b878e8d11d7732e17f880fbdb2> ;
+        sh:targetClass    ssn:SurvivalRange .
+
+<https://astrea.linkeddata.es/shapes#b5ef91c4407e49fa33721e957c70288c>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:LoweringStateValue .
+
+<https://astrea.linkeddata.es/shapes#8edc3bfb173f413628d6bc9e514d31f8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "has measurement  capability" , "Relation from a Sensor to a MeasurementCapability describing the measurement properties of the sensor." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Sensor#MeasuringCapability" ;
+        sh:description    "Relation from a Sensor to a MeasurementCapability describing the measurement properties of the sensor." ;
+        sh:name           "has measurement  capability" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:hasMeasurementCapability .
+
+<https://astrea.linkeddata.es/shapes#bb99bdaac39eae858eeefe30fa3e937e>
+        a            sh:PropertyShape ;
+        sh:class     ssn:MeasurementCapability ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:hasMeasurementCapability .
+
+<https://astrea.linkeddata.es/shapes#8c1ae6102d6cd01186f810b3b11538fc>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      iot-lifecycle:triggersTransition .
+
+<https://astrea.linkeddata.es/shapes#9fd74b7ffe634696557c0f5228992e65>
+        a            sh:PropertyShape ;
+        sh:class     ssn:SurvivalRange ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:hasSurvivalRange .
+
+<https://astrea.linkeddata.es/shapes#fa1c57d9101f50fea3c80b015c65ff6d>
+        a               sh:PropertyShape ;
+        rdfs:label      "impacts" , "Relationship between an effect and the property it impacts. Used in the Effect-Actuator-Actuation design pattern to describe the link between an actuator and the physical property it acts upon." ;
+        sh:class        ssn:Property ;
+        sh:description  "Relationship between an effect and the property it impacts. Used in the Effect-Actuator-Actuation design pattern to describe the link between an actuator and the physical property it acts upon." ;
+        sh:name         "impacts" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         san:impacts .
+
+<https://astrea.linkeddata.es/shapes#60c0e126d3b5574c795b20180cd4cd23>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Latency" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Sensor#MeasuringCapability" ;
+        sh:description    "The time between a request for an observation and the sensor providing a result." ;
+        sh:name           "Latency" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:Latency .
+
+<https://astrea.linkeddata.es/shapes#37b21b8c1a36c8c3ee6ddae77fb37bc2>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:ShutterActuator .
+
+<https://astrea.linkeddata.es/shapes#6b471156fb626eefc2af45cdeea9bcb6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "is produced by" , "Relation between a producer and a produced entity: for example, between a sensor and the produced output." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Model#Process" ;
+        sh:description    "Relation between a producer and a produced entity: for example, between a sensor and the produced output." ;
+        sh:name           "is produced by" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:isProducedBy .
+
+<https://astrea.linkeddata.es/report/01425427757>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.irit.fr/recherches/MELODI/ontologies/IoT-Lifecycle" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#aaf640294b81992c33fc64cb1783e4bb>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d967b70b3729fcff172fffd479ee5f6a> ;
+        sh:targetClass  dul:Region .
+
+<https://astrea.linkeddata.es/shapes#82f5ff921ec50a78a2255cf17d3292ac>
+        a               sh:PropertyShape ;
+        rdfs:label      "has id" , "Characterizes a unique identifier for a thing" ;
+        sh:datatype     xsd:string ;
+        sh:description  "Characterizes a unique identifier for a thing" ;
+        sh:name         "has id" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#hasId> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#3984c4760290cfadf3ae34d728cc1377>
+        a            sh:PropertyShape ;
+        sh:class     ssn:System ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:hasSubSystem .
+
+<https://astrea.linkeddata.es/shapes#63e35d3bd423f052edf6d2488bddda2c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:implements .
+
+<https://astrea.linkeddata.es/shapes#6823ce3caeedd66817d59148904f7eec>
+        a               sh:PropertyShape , sh:NodeShape ;
+        rdfs:label      "URI Template" , "Template providing information about the construction of the URI providing access to the service" ;
+        sh:description  "Template providing information about the construction of the URI providing access to the service" ;
+        sh:name         "URI Template" ;
+        sh:nodeKind     sh:IRI , sh:Literal ;
+        sh:targetClass  <http://www.wsmo.org/ns/hrests#URITemplate> .
+
+<https://astrea.linkeddata.es/shapes#a5c04f839615c2f7cbce190f69433b58>
+        a            sh:PropertyShape ;
+        sh:class     ssn:Property ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:isProxyFor .
+
+<https://astrea.linkeddata.es/shapes#7d6262ad7498ce7c0c4082606f4b4021>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Response time" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Sensor#MeasuringCapability" ;
+        sh:description    "The time between a (step) change inthe value of an observed quality and a sensor (possibly with specified error) 'settling' on an observed value." ;
+        sh:name           "Response time" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:ResponseTime .
+
+<https://astrea.linkeddata.es/shapes#9c9a7ac6464d089178f5f6c5b303ecce>
+        a               sh:PropertyShape ;
+        rdfs:label      "has impact" , "Relationship between an operation and its impact on a property" ;
+        sh:class        <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#ImpactOnProperty> ;
+        sh:description  "Relationship between an operation and its impact on a property" ;
+        sh:name         "has impact" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#hasImpact> .
+
+<https://astrea.linkeddata.es/shapes#82d366ea3f3f451b19f4291d2f0bee40>
+        a               sh:NodeShape ;
+        rdfs:label      "Parametrized State" ;
+        sh:description  "In the case of IoT, a continuous space will be associated with a numerical value and with a specific kind of Transition, an Update." ;
+        sh:name         "Parametrized State" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2b7b0365b2459d6670a837894e085edf> , <https://astrea.linkeddata.es/shapes#755f68b2bdc8631da153f9c7b1d7cdeb> , <https://astrea.linkeddata.es/shapes#62bfdacd91cd642e9e271cc62c9d3282> ;
+        sh:targetClass  iot-lifecycle:ParametrizedState .
+
+<https://astrea.linkeddata.es/shapes#f8d73be80f62532ee3b83a41c7f6745c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "end time" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Base#Time" ;
+        sh:name           "end time" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:endTime .
+
+<https://astrea.linkeddata.es/shapes#5782d36264e602f2f3aeac336415b4d3>
+        a               sh:PropertyShape ;
+        rdfs:label      "impacted property" , "Property on which an Actuation has an impact" ;
+        sh:class        ssn:Property ;
+        sh:description  "Property on which an Actuation has an impact" ;
+        sh:name         "impacted property" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         san:impactedProperty .
+
+<https://astrea.linkeddata.es/shapes#87863f53e596f6773e8e2f4b886eca46>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2bd8c496bfb133553800deb7394e33e9> ;
+        sh:targetClass  lifecycle:Transition .
+
+<https://astrea.linkeddata.es/shapes#f06d84a321ca3fca905d03e3950924a0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Device" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Device#Device" ;
+        sh:description    "A device is a physical piece of technology - a system in a box. Devices may of course be built of smaller devices and software components (i.e. systems have components)." ;
+        sh:name           "Device" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:Device .
+
+<https://astrea.linkeddata.es/shapes#59a67bd834b62c0533a3f98674278813>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:ToggleRelay .
+
+<https://astrea.linkeddata.es/shapes#6b8766f769054fdac90b9c2643f5f77b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "System" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Model#System" ;
+        sh:description    "System is a unit of abstraction for pieces of infrastructure (and we largely care that they are) for sensing. A system has components, its subsystems, which are other systems." ;
+        sh:name           "System" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3984c4760290cfadf3ae34d728cc1377> , <https://astrea.linkeddata.es/shapes#901ed461ffe32ad60ce6b3d32c095c33> , <https://astrea.linkeddata.es/shapes#9fd74b7ffe634696557c0f5228992e65> , <https://astrea.linkeddata.es/shapes#72c35da57a3f3347e3b8a22f65ebb0d8> , <https://astrea.linkeddata.es/shapes#270f64f51825d8fcc4d1de708e8c64cb> , <https://astrea.linkeddata.es/shapes#fc7936d130f8005827065cfc63428f99> ;
+        sh:targetClass    ssn:System .
+
+<https://astrea.linkeddata.es/shapes#bfb7cf51bb4c4b5b501bfb5136758237>
+        a            sh:PropertyShape ;
+        sh:class     ssn:OperatingProperty ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:hasOperatingProperty .
+
+<https://astrea.linkeddata.es/shapes#39041a527abb94d917945ca90207a971>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "feature of interest" , "A relation between an observation and the entity whose quality was observed.   For example, in an observation of the weight of a person, the feature of interest is the person and the quality is weight." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "A relation between an observation and the entity whose quality was observed.   For example, in an observation of the weight of a person, the feature of interest is the person and the quality is weight." ;
+        sh:name           "feature of interest" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:featureOfInterest .
+
+<https://astrea.linkeddata.es/shapes#13f863226b5529ef91a307745af52412>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "in deployment" , "Relation between a Platform and a Deployment, recording that the object was used as a platform for a system/sensor for a particular deployment: as in this PhysicalObject is acting as a Platform inDeployment Deployment." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#Deployment" ;
+        sh:description    "Relation between a Platform and a Deployment, recording that the object was used as a platform for a system/sensor for a particular deployment: as in this PhysicalObject is acting as a Platform inDeployment Deployment." ;
+        sh:name           "in deployment" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:inDeployment .
+
+<https://astrea.linkeddata.es/shapes#c1943d1cac706a2057c066199011b533>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:hasParticipant .
+
+<https://astrea.linkeddata.es/shapes#53e51b32b1f52d3c2ac21d2d913a2a15>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "detects" , "A relation from a sensor to the Stimulus that the sensor can detect.   \nThe Stimulus itself will be serving as a proxy for (see isProxyOf) some observable property." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "A relation from a sensor to the Stimulus that the sensor can detect.   \nThe Stimulus itself will be serving as a proxy for (see isProxyOf) some observable property." ;
+        sh:name           "detects" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:detects .
+
+<https://astrea.linkeddata.es/shapes#c50c2571816f7a5f5ccde7fec2197df7>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:Boiler .
+
+<https://astrea.linkeddata.es/shapes#0745a7a26c1f49b66264d909f6ef4143>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dul:PhysicalObject .
+
+<https://astrea.linkeddata.es/shapes#35b904f6bd03509f15cb24c685ae9718>
+        a               sh:NodeShape ;
+        rdfs:label      "Actuator Output" ;
+        sh:description  "Behaviour of an actuator after it has been given an input. To stick to its definition, an actuator output must have an effect on the physical world." ;
+        sh:name         "Actuator Output" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  san:ActuatorOutput , san:Effect .
+
+<https://astrea.linkeddata.es/shapes#5dbd206f926d56d7552b6ec74ae35cbe>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  muo:QualityValue .
+
+<https://astrea.linkeddata.es/shapes#1ab5415c2023979a571d3fedeaaa8047>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:hasValue .
+
+<https://astrea.linkeddata.es/shapes#126622024faa6ca68e09251ca08ccfb1>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:Radio .
+
+<https://astrea.linkeddata.es/shapes#480444367a0bb3022edc88ac3652207b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "isProxyFor" , "A relation from a Stimulus to the Property that the Stimulus is serving as a proxy for.  For example, the expansion of the quicksilver is a stimulus that serves as a proxy for temperature, or an increase or decrease in the spinning of cups on a wind sensor is serving as a proxy for wind speed." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "A relation from a Stimulus to the Property that the Stimulus is serving as a proxy for.  For example, the expansion of the quicksilver is a stimulus that serves as a proxy for temperature, or an increase or decrease in the spinning of cups on a wind sensor is serving as a proxy for wind speed." ;
+        sh:name           "isProxyFor" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:isProxyFor .
+
+<https://astrea.linkeddata.es/shapes#6ef96739e734b8b554ef9a99d9c08af1>
+        a            sh:PropertyShape ;
+        sh:class     ssn:Platform ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:deployedOnPlatform .
+
+<https://astrea.linkeddata.es/shapes#0a8a4d164fd7c36371ca947de3185991>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isQualityOf .
+
+<https://astrea.linkeddata.es/shapes#3606fa22f69722bdd155500089415206>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:Printer .
+
+<https://astrea.linkeddata.es/shapes#a08636dcb077e617b6d1c71262713632>
+        a               sh:PropertyShape ;
+        rdfs:label      "Associates an Instant individual with a timestamp" ;
+        sh:datatype     xsd:dateTimeStamp ;
+        sh:description  "Associates an Instant individual with a timestamp" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#hasTimeStamp> .
+
+<https://astrea.linkeddata.es/shapes#f030b7972aefb5f3b8b0cfa831c71f4f>
+        a               sh:NodeShape ;
+        rdfs:label      "Actuation Value" ;
+        sh:description  "Value of the command sent to an actuator" ;
+        sh:name         "Actuation Value" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#006da9af3b051a59685a4bdb4671e828> , <https://astrea.linkeddata.es/shapes#f25f25b422d44fbf4eba806f26fc0260> , <https://astrea.linkeddata.es/shapes#8c1ae6102d6cd01186f810b3b11538fc> ;
+        sh:targetClass  san:ActuationValue .
+
+<https://astrea.linkeddata.es/shapes#17f8c42061fa64a9a5a9b3857599e63a>
+        a               sh:PropertyShape ;
+        rdfs:label      "is actuation sent" , "Relationship between an actuation that was sent and the actuator that received it" ;
+        sh:class        san:Actuator ;
+        sh:description  "Relationship between an actuation that was sent and the actuator that received it" ;
+        sh:name         "is actuation sent" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         san:wasActuationSent .
+
+<https://astrea.linkeddata.es/shapes#7be539aad07971c8e9ec577cbf5f95c8>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:WindowActuator .
+
+<https://astrea.linkeddata.es/shapes#bc88beb99f36f88798810ac6a96d936a>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:Fan .
+
+<https://astrea.linkeddata.es/shapes#901ed461ffe32ad60ce6b3d32c095c33>
+        a            sh:PropertyShape ;
+        sh:class     ssn:Platform ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:onPlatform .
+
+<https://astrea.linkeddata.es/shapes#4a418c4124ba0353e5e93aa2fa85026c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.linkedmodel.org/schema/vaem#date> .
+
+<https://astrea.linkeddata.es/shapes#b83ff07a7c391707af020e8e3f92e6a3>
+        a            sh:PropertyShape ;
+        sh:class     ssn:Property ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:observes .
+
+<https://astrea.linkeddata.es/shapes#ffc2d030bd19d66c8a254e8b0691bada>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Accuracy" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Sensor#MeasuringCapability" ;
+        sh:description    "The closeness of agreement between the value of an observation and the true value of the observed quality." ;
+        sh:name           "Accuracy" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:Accuracy .
+
+<https://astrea.linkeddata.es/shapes#4352e7210c65c330b05ada9c5fcda24e>
+        a               sh:NodeShape ;
+        rdfs:label      "Actuating device" ;
+        sh:description  "A device that implements actuating" ;
+        sh:name         "Actuating device" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  san:ActuatingDevice .
+
+<https://astrea.linkeddata.es/shapes#bce4c8f01462b474f13d9df923bc262f>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:Quality .
+
+<https://astrea.linkeddata.es/shapes#81b028c64f1dc05e258c1ded2d748787>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:isProducedBy .
+
+<https://astrea.linkeddata.es/shapes#3517d16cd861998947752ed94179ebce>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dul:Method .
+
+<https://astrea.linkeddata.es/shapes#f752262e3d1b6701e24c7a0515483e7a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "has input" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Model#Process" ;
+        sh:name           "has input" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:hasInput .
+
+<https://astrea.linkeddata.es/shapes#7e815fb0e15d7db73b519f2e8325336d>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 poweront:actualConsumptionValue ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  poweront:PowerConsumptionValue ] .
+
+<https://astrea.linkeddata.es/shapes#a03bd8d0abc770f9e188f1ababd7667a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Feature of Interest" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "A feature is an abstraction of real world phenomena (thing, person, event, etc)." ;
+        sh:name           "Feature of Interest" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#253506fb03d334ef7788b6a1dab6c6ec> , <https://astrea.linkeddata.es/shapes#38c07c59484700becbfd2e4f0bc195ee> ;
+        sh:targetClass    ssn:FeatureOfInterest .
+
+<https://astrea.linkeddata.es/shapes#59eb33b48113ca2911459d06f1c412ad>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#69c9076e7daa3182c9562c7cec85a0bc> , <https://astrea.linkeddata.es/shapes#a2d665d206d1312bab9cb2162b3e259e> , <https://astrea.linkeddata.es/shapes#95e094b996e12959f411b1c5ba758ee1> , <https://astrea.linkeddata.es/shapes#5b964fbc3cbdc8acb0b8960bf47aba80> , <https://astrea.linkeddata.es/shapes#1bc4f5fb8099528953f84576ddff88c8> , <https://astrea.linkeddata.es/shapes#76d53e2ed4f86fcb5af51c70708e1180> , <https://astrea.linkeddata.es/shapes#61b4836c234705ac7679876b071fc7fe> , <https://astrea.linkeddata.es/shapes#f86336ee4ab2d3a3a34eee0f857322b9> ;
+        sh:targetClass  dul:Entity .
+
+<https://astrea.linkeddata.es/shapes#b1f2018c6f47f63c184a8d41bfce95e6>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isObjectIncludedIn .
+
+<https://astrea.linkeddata.es/shapes#3c0d29641a5d1f94b0f1847105822073>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      DUL:hasPart .
+
+<https://astrea.linkeddata.es/shapes#4ca6bdfd6fd9e28ee89c2ae7c9d54611>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isDescribedBy .
+
+<https://astrea.linkeddata.es/shapes#d8657096a7f9d8ddff8871b2cf3d057e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:hasRegion .
+
+<https://astrea.linkeddata.es/shapes#913817830a696cd07b81173863201953>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  san:Situation .
+
+<https://astrea.linkeddata.es/shapes#3f9b48775dc8f1f26c5ab3281b008a14>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "implements" , "A relation between an entity that implements a method in some executable way and the description of an algorithm, procedure or method.  For example, between a Sensor and the scientific measuring method that the Sensor uses to observe a Property." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "A relation between an entity that implements a method in some executable way and the description of an algorithm, procedure or method.  For example, between a Sensor and the scientific measuring method that the Sensor uses to observe a Property." ;
+        sh:name           "implements" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:implements .
+
+<https://astrea.linkeddata.es/shapes#417342813f8125bbb67fe7d68de047ad>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#bb8fab3764c75e81350e239bcda04aa7> ;
+        sh:targetClass  dogont:Controllable .
+
+<https://astrea.linkeddata.es/report/1984494030>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://elite.polito.it/ontologies/poweront.owl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#c220ef76b1758d02f8b374b7a8b45a25>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:RemoteControl .
+
+<https://astrea.linkeddata.es/shapes#b9a73c6f9ad93d60f27a6756b21e7dcc>
+        a               sh:NodeShape ;
+        rdfs:label      "Device management service" ;
+        sh:description  "This kind of service offers a set of operations regarding device management. That means it's not related to the functionnality of the object itsefl, but rather to its inner working : battery state, connectivity, firmware update..." ;
+        sh:name         "Device management service" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#DeviceManagementService> .
+
+<https://astrea.linkeddata.es/shapes#286b7fab183dc45146b9f344ad8ffae7>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:Tv .
+
+<https://astrea.linkeddata.es/shapes#bec364d9e5b8f1c1863a5554844add9c>
+        a            sh:PropertyShape ;
+        sh:class     ssn:Deployment ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:inDeployment .
+
+<https://astrea.linkeddata.es/shapes#bbb2e123b5389cc181df49fc24c2828d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Frequency" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Sensor#MeasuringCapability" ;
+        sh:description    "The smallest possible time between one observation and the next." ;
+        sh:name           "Frequency" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:Frequency .
+
+<https://astrea.linkeddata.es/shapes#8e39df849bdcf1dfd44e813bcb7ceced>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "has output" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Model#Process" ;
+        sh:name           "has output" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:hasOutput .
+
+<https://astrea.linkeddata.es/shapes#b2d0b8c85a7919b5e45812c53dba22af>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "of feature" , "A relation between some aspect of a sensing entity and a feature.  For example, from a sensor to the features it can observe properties of, or from a deployment to the features it was installed to observe.  Also from a measurement capability to the feature the capability is described for.  (Used in conjunction with forProperty)." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "A relation between some aspect of a sensing entity and a feature.  For example, from a sensor to the features it can observe properties of, or from a deployment to the features it was installed to observe.  Also from a measurement capability to the feature the capability is described for.  (Used in conjunction with forProperty)." ;
+        sh:name           "of feature" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:ofFeature .
+
+<https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a08636dcb077e617b6d1c71262713632> ;
+        sh:targetClass  <http://www.w3.org/2006/time#Instant> .
+
+<https://astrea.linkeddata.es/shapes#0ebd908471141c7505d26b27d1b5fede>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dul:Amount .
+
+<https://astrea.linkeddata.es/shapes#34bbedd74ac250f24b471ffcc6a1bf70>
+        a            sh:PropertyShape ;
+        sh:minCount  "0"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:observationSamplingTime .
+
+<https://astrea.linkeddata.es/shapes#3d80b2c696438cf810032d56f301dbb5>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      san:isConsumedBy .
+
+<https://astrea.linkeddata.es/shapes#38d990b814914f6ea6f4fd2cd0bfb753>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:LevelControlSwitch .
+
+<https://astrea.linkeddata.es/shapes#550c7e538f9f8668ff17d82072ccf354>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:WashingMachine .
+
+<https://astrea.linkeddata.es/shapes#04ab05e25d5f76eb6f68506e26ed9971>
+        a               sh:PropertyShape ;
+        rdfs:label      "has address" , "Associates a ressource to a URI in compliance with REST principles" ;
+        sh:class        <http://www.wsmo.org/ns/hrests#URITemplate> ;
+        sh:datatype     <http://www.wsmo.org/ns/hrests#URITemplate> ;
+        sh:description  "Associates a ressource to a URI in compliance with REST principles" ;
+        sh:name         "has address" ;
+        sh:nodeKind     sh:BlankNodeOrIRI , sh:Literal ;
+        sh:path         <http://www.wsmo.org/ns/hrests#hasAddress> .
+
+<https://astrea.linkeddata.es/shapes#b2bea065d8ce1e5fc3c13d974f1c4b00>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:describes .
+
+<https://astrea.linkeddata.es/shapes#c812148bf089338c91ce9b0a39bef433>
+        a               sh:NodeShape ;
+        rdfs:label      "Actuator" ;
+        sh:description  "An actuator is an entity which is able to act upon the physical world. Whether it is a light bulb or a servomotor, an actuator receives inputs represented by Actuations and produces an effect on the world." ;
+        sh:name         "Actuator" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#414be22e5e8c0479fe86c6b6746ce304> , <https://astrea.linkeddata.es/shapes#018123e63ed448bd4b9d67db99ffc3f4> , <https://astrea.linkeddata.es/shapes#2ac7373bdf7476d13cd72b7a82f46949> , <https://astrea.linkeddata.es/shapes#be6156b0fb4f266d83c40e27f81984fb> , <https://astrea.linkeddata.es/shapes#cca04bd278b641dd5c94d7f81d44e995> , <https://astrea.linkeddata.es/shapes#fb32cf708a3e4ff9aa266f8fc1192427> , <https://astrea.linkeddata.es/shapes#b9f51d56a5da0cfe5e1802782ab1293d> ;
+        sh:targetClass  san:Actuator .
+
+<https://astrea.linkeddata.es/shapes#0ddd905f6929ed2d63ed57bb20cee7bc>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:MicrowaveOven .
+
+<https://astrea.linkeddata.es/shapes#018123e63ed448bd4b9d67db99ffc3f4>
+        a               sh:PropertyShape ;
+        rdfs:label      "has effect" , "Relationship between an Actuator and the effect that it induces. The Effect will be linked to a physical property that the actuator impacts" ;
+        sh:class        san:Effect ;
+        sh:description  "Relationship between an Actuator and the effect that it induces. The Effect will be linked to a physical property that the actuator impacts" ;
+        sh:name         "has effect" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         san:hasEffect .
+
+<https://astrea.linkeddata.es/shapes#50d442e9fe8846f41ae5d3fae24d5ec8>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      DUL:hasDataValue .
+
+<https://astrea.linkeddata.es/shapes#498ae5ba78f1f624d18fa882b3e03ea4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "quality of observation" , "Relation linking an Observation to the adjudged quality of the result.  This is of course complimentary to the MeasurementCapability information recorded for the Sensor that made the Observation." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Observation#Observation" ;
+        sh:description    "Relation linking an Observation to the adjudged quality of the result.  This is of course complimentary to the MeasurementCapability information recorded for the Sensor that made the Observation." ;
+        sh:name           "quality of observation" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:qualityOfObservation .
+
+<https://astrea.linkeddata.es/shapes#253506fb03d334ef7788b6a1dab6c6ec>
+        a            sh:PropertyShape ;
+        sh:class     ssn:Property ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:hasProperty .
+
+<https://astrea.linkeddata.es/shapes#87f8da885368c5daa8613cfed6d7290a>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dul:Object .
+
+<https://astrea.linkeddata.es/shapes#6cfa9a289ba9044f1e2553e32dbe8097>
+        a            sh:PropertyShape ;
+        sh:class     ssn:SensorOutput ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:observationResult .
+
+<https://astrea.linkeddata.es/shapes#4758ad4c5cc4392df44413060e4d32da>
+        a               sh:NodeShape ;
+        rdfs:label      "Acting" ;
+        sh:description  "Acting is the process that results in an action on the physical world, might it be a motion, a display, the emission of a sound..." ;
+        sh:name         "Acting" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  san:Acting .
+
+<https://astrea.linkeddata.es/shapes#95e094b996e12959f411b1c5ba758ee1>
+        a               sh:PropertyShape ;
+        rdfs:label      "acts on" , "Relationship between an entity that acts upon a quantity or another entity" ;
+        sh:class        dul:Entity ;
+        sh:description  "Relationship between an entity that acts upon a quantity or another entity" ;
+        sh:name         "acts on" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         san:actsOn .
+
+<https://astrea.linkeddata.es/shapes#32b362d38bfd2c493b0cc5e752f46310>
+        a               sh:NodeShape ;
+        rdfs:label      "Device management operation" ;
+        sh:description  "Service operation that deals with device management" ;
+        sh:name         "Device management operation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#DeviceManagementOperation> .
+
+<https://astrea.linkeddata.es/shapes#e3f07405eafba16919bedb37eaffebb1>
+        a            sh:PropertyShape ;
+        rdfs:label   "has operation" ;
+        sh:class     <http://www.wsmo.org/ns/wsmo-lite#Operation> ;
+        sh:name      "has operation" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.wsmo.org/ns/wsmo-lite#hasOperation> .
+
+<https://astrea.linkeddata.es/shapes#e0ba891b75b4993a165f96c7ed30a8ee>
+        a               sh:PropertyShape ;
+        rdfs:label      "has relationship with property" , "Generic property that marks the relationship between some entity and some ssn:Property. Dependant on context, it can be sensing, acting or else. Useful to descrie a generic service offered by a complex system that aggregates both sensors and actuators." ;
+        sh:class        ssn:Property ;
+        sh:description  "Generic property that marks the relationship between some entity and some ssn:Property. Dependant on context, it can be sensing, acting or else. Useful to descrie a generic service offered by a complex system that aggregates both sensors and actuators." ;
+        sh:name         "has relationship with property" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#hasRelationshipWithProperty> .
+
+<https://astrea.linkeddata.es/shapes#e20ea229fe255d51f3d9bdafb66d628e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      san:impacts .
+
+<https://astrea.linkeddata.es/shapes#29d45f558650c4e131100acf970683be>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:hasValue .
+
+<https://astrea.linkeddata.es/shapes#a677d010a0c171bcc92d3b0df5dcac29>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:forProperty .
+
+<https://astrea.linkeddata.es/shapes#486e275f4072aa374b5c1559324a1a05>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:isPropertyOf .
+
+<https://astrea.linkeddata.es/shapes#44967b91b86e91de9856bad01e21da0e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "has survival range" , "A Relation from a System to a SurvivalRange." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#OperatingRestriction" ;
+        sh:description    "A Relation from a System to a SurvivalRange." ;
+        sh:name           "has survival range" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:hasSurvivalRange .
+
+<https://astrea.linkeddata.es/shapes#9b79bcc4b944ba6d7a54e3bcdb2db2fb>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:Thermostat .
+
+<https://astrea.linkeddata.es/shapes#a885d1cf820bc8480c5dae0bf7d359de>
+        a               sh:NodeShape ;
+        rdfs:label      "IoT-Thing" , "Thing" ;
+        sh:description  "Most general thing in an iot ontology, a Thing can either be a physical connected object, an application, an abstracted interface... The class Object of DUL, from whom it inherits, doen't only represent physical objects, and can cover a fonction for instance." ;
+        sh:name         "IoT-Thing" , "Thing" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#82f5ff921ec50a78a2255cf17d3292ac> , <https://astrea.linkeddata.es/shapes#c658fb7cf9778b9f9a157b221255aae8> , <https://astrea.linkeddata.es/shapes#2e68327a698264ce23a459d5c50b4c0c> ;
+        sh:targetClass  <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#IoT_Thing> .
+
+<https://astrea.linkeddata.es/shapes#8828cac1499f082ed5030081d066ae49>
+        a               sh:NodeShape ;
+        rdfs:label      "Actuating Range" ;
+        sh:description  "Range of commands that the actuator can receive and transduce into the physical world without damage to itself or security issues to its surrounding environment." ;
+        sh:name         "Actuating Range" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  san:ActuatingRange .
+
+<https://astrea.linkeddata.es/shapes#392812787e596582325beeb54c8cb12f>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:Ventilator .
+
+<https://astrea.linkeddata.es/shapes#ad0b646ab7c5ab5ed4235663da4e2851>
+        a            sh:PropertyShape ;
+        rdfs:label   "Consumption value" ;
+        sh:class     poweront:PowerConsumptionValue ;
+        sh:name      "Consumption value" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      poweront:consumptionValue .
+
+<https://astrea.linkeddata.es/shapes#e0956bafbc4cba415d0048f7e0bb41c9>
+        a                       sh:PropertyShape ;
+        sh:class                ssn:Sensing ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 ssn:sensingMethodUsed ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  ssn:Sensing ] .
+
+<https://astrea.linkeddata.es/shapes#ced4d704e175f1ffe4d2d5fa16108c0e>
+        a            sh:PropertyShape ;
+        sh:class     ssn:SurvivalProperty ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:hasSurvivalProperty .
+
+<https://astrea.linkeddata.es/shapes#7e7070b31982586d5c5df293e2ce00f6>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dul:Event .
+
+<https://astrea.linkeddata.es/shapes#e766408af6162bcebff8d33449945fb5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "detection limit" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Sensor#MeasuringCapability" ;
+        sh:description    "An observed value for which the probability of falsely claiming the absence of a component in a material is Î², given a probability Î± of falsely claiming its presence." ;
+        sh:name           "detection limit" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:DetectionLimit .
+
+<https://astrea.linkeddata.es/shapes#414be22e5e8c0479fe86c6b6746ce304>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      san:hasActuatingCapability .
+
+<https://astrea.linkeddata.es/shapes#b1d2fefdd268cfee5bcfcd6b5e8e4b95>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      dul:isParametrizedBy .
+
+<https://astrea.linkeddata.es/shapes#2190f91239b234929b4b13d8017b3e59>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      san:hasActuatingProperty .
+
+<https://astrea.linkeddata.es/shapes#76d53e2ed4f86fcb5af51c70708e1180>
+        a               sh:PropertyShape ;
+        rdfs:label      "impacts state" , "This relationships links an entity that impacts a Ressource State and said State. For instance, if an Actuator is updated by an Actuation, this Actuation impacts the Actuator's State." ;
+        sh:class        lifecycle:State ;
+        sh:description  "This relationships links an entity that impacts a Ressource State and said State. For instance, if an Actuator is updated by an Actuation, this Actuation impacts the Actuator's State." ;
+        sh:name         "impacts state" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         iot-lifecycle:impactsState .
+
+<https://astrea.linkeddata.es/shapes#3fdde3f60fb353f41b896ea9eaff225f>
+        a            sh:PropertyShape ;
+        sh:class     poweront:PowerConsumptionValue ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      poweront:typicalConsumptionValue .
+
+<https://astrea.linkeddata.es/shapes#950ad49b1095bad3f81219a84891e66d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Resolution" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Sensor#MeasuringCapability" ;
+        sh:description    "The smallest difference in the value of a quality being observed that would result in perceptably different values of observation results." ;
+        sh:name           "Resolution" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:Resolution .
+
+<https://astrea.linkeddata.es/shapes#77838a6ccac6863b371772af037c76c9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Survival Property" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#OperatingRestriction" ;
+        sh:description    "An identifiable characteristic that represents the extent of the sensors useful life.  Might include for example total battery life or number of recharges, or, for sensors that are used only a fixed number of times, the number of observations that can be made before the sensing capability is depleted." ;
+        sh:name           "Survival Property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:SurvivalProperty .
+
+<https://astrea.linkeddata.es/shapes#4f89d6a364695ad395b26758bf6dc1c3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Battery Lifetime" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Energy#EnergyRestriction" ;
+        sh:description    "Total useful life of a battery." ;
+        sh:name           "Battery Lifetime" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:BatteryLifetime .
+
+<https://astrea.linkeddata.es/shapes#b6a3b67982254e121e10b9569ca448f6>
+        a            sh:PropertyShape ;
+        rdfs:label   "is impact of" ;
+        sh:name      "is impact of" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#isImpactOf> .
+
+<https://astrea.linkeddata.es/shapes#2e68327a698264ce23a459d5c50b4c0c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#hasService> .
+
+<https://astrea.linkeddata.es/shapes#eff7c0ee58c790d982174bc00c9d9a8b>
+        a            sh:PropertyShape ;
+        sh:minCount  "0"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:observationResultTime .
+
+<https://astrea.linkeddata.es/shapes#ef16878e0499a7c6e2cdeb1f9d368699>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      DUL:isParametrizedBy .
+
+<https://astrea.linkeddata.es/report/01697815163>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://iserve.kmi.open.ac.uk/ns/msm/msm-2014-09-03.rdf" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#406669e8d4bd2da38817c672e2d90208>
+        a            sh:PropertyShape ;
+        sh:class     ssn:System ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:attachedSystem .
+
+<https://astrea.linkeddata.es/shapes#8e1f4c12f0745976d2ed974bca363bfe>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      DUL:hasDataValue .
+
+<https://astrea.linkeddata.es/shapes#65096d0ab6b42cea55b3449f1a6cf97a>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:OffStateValue .
+
+<https://astrea.linkeddata.es/shapes#7b7632d49a5b27028b96ed7e01748825>
+        a               sh:NodeShape ;
+        rdfs:label      "Actuator Input" ;
+        sh:description  "An actuator input is a piece of information provided to an actuator describing its expected behaviour, and it is described by an Actuation Value" ;
+        sh:name         "Actuator Input" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#29d45f558650c4e131100acf970683be> , <https://astrea.linkeddata.es/shapes#3d80b2c696438cf810032d56f301dbb5> ;
+        sh:targetClass  san:ActuatorInput .
+
+<https://astrea.linkeddata.es/shapes#7ea6f44dc95b82a9ad694e21366f06cf>
+        a               sh:NodeShape ;
+        rdfs:label      "State value" ;
+        sh:name         "State value" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:StateValue .
+
+<https://astrea.linkeddata.es/shapes#6b7414dafc160da6ad014f61784db8a3>
+        a            sh:PropertyShape ;
+        sh:class     ssn:Condition ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:inCondition .
+
+<https://astrea.linkeddata.es/shapes#cbbd01f59b78a23b75d439c7fb560ca3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Operating Power Range" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Energy#EnergyRestriction" ;
+        sh:description    "Power range in which system/sensor is expected to operate." ;
+        sh:name           "Operating Power Range" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:OperatingPowerRange .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#9075d3f64aa722759b977295dd48df2d> , <https://astrea.linkeddata.es/shapes#8d6c3b6f3adabea07167957874cd30f5> , <https://astrea.linkeddata.es/shapes#a3c488dfd5e6fcee97295b9ef5d077e9> , <https://astrea.linkeddata.es/shapes#ef16878e0499a7c6e2cdeb1f9d368699> , <https://astrea.linkeddata.es/shapes#f549a4170856affce41362b8f960e646> , <https://astrea.linkeddata.es/shapes#2bd8c496bfb133553800deb7394e33e9> , <https://astrea.linkeddata.es/shapes#3c0d29641a5d1f94b0f1847105822073> , <https://astrea.linkeddata.es/shapes#6f434ec63fb48941145008d7d8f69d8c> , <https://astrea.linkeddata.es/shapes#4352e7210c65c330b05ada9c5fcda24e> , <https://astrea.linkeddata.es/shapes#8de07f44fa6b4b35c4ed3a0f49b2228f> , <https://astrea.linkeddata.es/shapes#b1d2fefdd268cfee5bcfcd6b5e8e4b95> , <https://astrea.linkeddata.es/shapes#d52548db81570dd0215df24e1fa9885b> , <https://astrea.linkeddata.es/shapes#8edc3bfb173f413628d6bc9e514d31f8> , <https://astrea.linkeddata.es/shapes#e74d3d65c534bf7ccd26954579a9bc51> , <https://astrea.linkeddata.es/shapes#77deff50ce1ebf6543734a87f09188d4> , <https://astrea.linkeddata.es/shapes#550c7e538f9f8668ff17d82072ccf354> , <https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f> , <https://astrea.linkeddata.es/shapes#4f447b04922cec9ea93c7e8684653aa4> , <https://astrea.linkeddata.es/shapes#b5ef91c4407e49fa33721e957c70288c> , <https://astrea.linkeddata.es/shapes#e0956bafbc4cba415d0048f7e0bb41c9> , <https://astrea.linkeddata.es/shapes#f938c09039510907bfd199b831627d68> , <https://astrea.linkeddata.es/shapes#9d13876d0fea10ff6d6d7adf0c130926> , <https://astrea.linkeddata.es/shapes#2ee1c0cbb6777243e3a7783f220fb83b> , <https://astrea.linkeddata.es/shapes#b19817ab7a463d3fe9673d607fc732ca> , <https://astrea.linkeddata.es/shapes#82ac036f610813dbd95e641bd0c9db1b> , <https://astrea.linkeddata.es/shapes#bec364d9e5b8f1c1863a5554844add9c> , <https://astrea.linkeddata.es/shapes#a2d665d206d1312bab9cb2162b3e259e> , <https://astrea.linkeddata.es/shapes#913817830a696cd07b81173863201953> , <https://astrea.linkeddata.es/shapes#17f8c42061fa64a9a5a9b3857599e63a> , <https://astrea.linkeddata.es/shapes#ab3d40b878e8d11d7732e17f880fbdb2> , <https://astrea.linkeddata.es/shapes#7d6262ad7498ce7c0c4082606f4b4021> , <https://astrea.linkeddata.es/shapes#fa1c57d9101f50fea3c80b015c65ff6d> , <https://astrea.linkeddata.es/shapes#018123e63ed448bd4b9d67db99ffc3f4> , <https://astrea.linkeddata.es/shapes#1ab5415c2023979a571d3fedeaaa8047> , <https://astrea.linkeddata.es/shapes#a08636dcb077e617b6d1c71262713632> , <https://astrea.linkeddata.es/shapes#d8657096a7f9d8ddff8871b2cf3d057e> , <https://astrea.linkeddata.es/shapes#3ab5b5e5fd1284b540963f46b66f5518> , <https://astrea.linkeddata.es/shapes#b0f306c1ca38f88579ae6664e3857fa0> , <https://astrea.linkeddata.es/shapes#b5b0a28747e0171bf9107d73cfa7f537> , <https://astrea.linkeddata.es/shapes#7fd31f229628015478224f36f5feed48> , <https://astrea.linkeddata.es/shapes#356c6ee01ce700d6ec5b9f13ffe6e66c> , <https://astrea.linkeddata.es/shapes#b83ff07a7c391707af020e8e3f92e6a3> , <https://astrea.linkeddata.es/shapes#c4f7d9dce362abfd4b0166aed2836b75> , <https://astrea.linkeddata.es/shapes#ffc2d030bd19d66c8a254e8b0691bada> , <https://astrea.linkeddata.es/shapes#bff6009c657427a393a89e116933cfe6> , <https://astrea.linkeddata.es/shapes#a885d1cf820bc8480c5dae0bf7d359de> , <https://astrea.linkeddata.es/shapes#406669e8d4bd2da38817c672e2d90208> , <https://astrea.linkeddata.es/shapes#791a116d23d891c2d699dafa8b80ec81> , <https://astrea.linkeddata.es/shapes#fb32cf708a3e4ff9aa266f8fc1192427> , <https://astrea.linkeddata.es/shapes#87f8da885368c5daa8613cfed6d7290a> , <https://astrea.linkeddata.es/shapes#77838a6ccac6863b371772af037c76c9> , <https://astrea.linkeddata.es/shapes#af4cd402d12ada7908a40950e16f1b3a> , <https://astrea.linkeddata.es/shapes#cd4c3b57be38172bac8d6d197d22a418> , <https://astrea.linkeddata.es/shapes#119fd79d22321592269af13447558bd7> , <https://astrea.linkeddata.es/shapes#480444367a0bb3022edc88ac3652207b> , <https://astrea.linkeddata.es/shapes#e43616cc64427082ee448a8ca0941ede> , <https://astrea.linkeddata.es/shapes#fc7936d130f8005827065cfc63428f99> , <https://astrea.linkeddata.es/shapes#0c99b607f4d4689243439523cf4385ed> , <https://astrea.linkeddata.es/shapes#e813fff67271cc89fc6c605e7ded6d87> , <https://astrea.linkeddata.es/shapes#8e1f4c12f0745976d2ed974bca363bfe> , <https://astrea.linkeddata.es/shapes#7ea6f44dc95b82a9ad694e21366f06cf> , <https://astrea.linkeddata.es/shapes#76f7abbf1759f75524737f069fc9d0e8> , <https://astrea.linkeddata.es/shapes#7f069f8a8520567290fb169c336ab0b1> , <https://astrea.linkeddata.es/shapes#7e7070b31982586d5c5df293e2ce00f6> , <https://astrea.linkeddata.es/shapes#950ad49b1095bad3f81219a84891e66d> , <https://astrea.linkeddata.es/shapes#26e032f4564597193ba9589fa60d9e7e> , <https://astrea.linkeddata.es/shapes#a69eccdb1e2a60bd242bdaac9f3f1477> , <https://astrea.linkeddata.es/shapes#6ef96739e734b8b554ef9a99d9c08af1> , <https://astrea.linkeddata.es/shapes#a21d3d7a5659eb9978b77a413000050b> , <https://astrea.linkeddata.es/shapes#2190f91239b234929b4b13d8017b3e59> , <https://astrea.linkeddata.es/shapes#79884a301086f638d731af7901415093> , <https://astrea.linkeddata.es/shapes#5af32f9aeee83ce0418150c41043fc0a> , <https://astrea.linkeddata.es/shapes#3517d16cd861998947752ed94179ebce> , <https://astrea.linkeddata.es/shapes#3d6abbc9d95571424a65ed2ef48af4d7> , <https://astrea.linkeddata.es/shapes#bc7f118c022612f2b2d3695fe2bb0e3b> , <https://astrea.linkeddata.es/shapes#476965e3021498ef0ee28db1eaa6c8de> , <https://astrea.linkeddata.es/shapes#bb99bdaac39eae858eeefe30fa3e937e> , <https://astrea.linkeddata.es/shapes#a1f3042e70360ca9df7812e893c4f5fc> , <https://astrea.linkeddata.es/shapes#f2248cfda18d903c526a8eabcad5d33a> , <https://astrea.linkeddata.es/shapes#422b071a5da25e4e8f42658026292e68> , <https://astrea.linkeddata.es/shapes#0ddd905f6929ed2d63ed57bb20cee7bc> , <https://astrea.linkeddata.es/shapes#82d366ea3f3f451b19f4291d2f0bee40> , <https://astrea.linkeddata.es/shapes#79086df9647d53348d259ece7f786613> , <https://astrea.linkeddata.es/shapes#3984c4760290cfadf3ae34d728cc1377> , <https://astrea.linkeddata.es/shapes#451d2b669d2d94b3bf69b5171d2c618c> , <https://astrea.linkeddata.es/shapes#62bfdacd91cd642e9e271cc62c9d3282> , <https://astrea.linkeddata.es/shapes#f42339a16ae57b41ea2847e4212118a7> , <https://astrea.linkeddata.es/shapes#a0de15f51e854fd59e1288604ed0cb01> , <https://astrea.linkeddata.es/shapes#b0a23a67270fe5d3d3b15d70ab1c7407> , <https://astrea.linkeddata.es/shapes#f030b7972aefb5f3b8b0cfa831c71f4f> , <https://astrea.linkeddata.es/shapes#7f8c2dd8cc6d7b06b57876edb46a4fba> , <https://astrea.linkeddata.es/shapes#71aa82015ff4dc100be710d47f9b2c17> , <https://astrea.linkeddata.es/shapes#5b38dc3144efbec425c5cfe20af68017> , <https://astrea.linkeddata.es/shapes#b4baccb1fcd08aa83a885a036150af92> , <https://astrea.linkeddata.es/shapes#5e575dfd21363f3c57590af00f87ac80> , <https://astrea.linkeddata.es/shapes#c50c2571816f7a5f5ccde7fec2197df7> , <https://astrea.linkeddata.es/shapes#c658fb7cf9778b9f9a157b221255aae8> , <https://astrea.linkeddata.es/shapes#33fcae52658cb5d072e3c34e5e57d79a> , <https://astrea.linkeddata.es/shapes#486e275f4072aa374b5c1559324a1a05> , <https://astrea.linkeddata.es/shapes#3606fa22f69722bdd155500089415206> , <https://astrea.linkeddata.es/shapes#5dbd206f926d56d7552b6ec74ae35cbe> , <https://astrea.linkeddata.es/shapes#5f030c91ad059acad7f899a352969cea> , <https://astrea.linkeddata.es/shapes#80d53b347815294838f7c278f86624a0> , <https://astrea.linkeddata.es/shapes#1d75c3aa8f34d3bcc8b8f9eddaaa04e6> , <https://astrea.linkeddata.es/shapes#7dfb7a34297ed647a1cb9cebb5502a26> , <https://astrea.linkeddata.es/shapes#755f68b2bdc8631da153f9c7b1d7cdeb> , <https://astrea.linkeddata.es/shapes#718e031420852b33ddc402b6fce7c273> , <https://astrea.linkeddata.es/shapes#f8e319921ed70f32bce322f8b60342e0> , <https://astrea.linkeddata.es/shapes#8b07de2523ac1424eb54d92312f8a616> , <https://astrea.linkeddata.es/shapes#6b471156fb626eefc2af45cdeea9bcb6> , <https://astrea.linkeddata.es/shapes#bfb7cf51bb4c4b5b501bfb5136758237> , <https://astrea.linkeddata.es/shapes#bbb2e123b5389cc181df49fc24c2828d> , <https://astrea.linkeddata.es/shapes#347b36b00bddff85ef88b7ae97d00fd3> , <https://astrea.linkeddata.es/shapes#47657de7e332126eb137d9e9951c58b3> , <https://astrea.linkeddata.es/shapes#b2d0b8c85a7919b5e45812c53dba22af> , <https://astrea.linkeddata.es/shapes#a03bd8d0abc770f9e188f1ababd7667a> , <https://astrea.linkeddata.es/shapes#eff7c0ee58c790d982174bc00c9d9a8b> , <https://astrea.linkeddata.es/shapes#dbd9241f9e499d17ca2fe94b90ab3418> , <https://astrea.linkeddata.es/shapes#8db63b8959cf82efcf56f3476dc1f551> , <https://astrea.linkeddata.es/shapes#a677d010a0c171bcc92d3b0df5dcac29> , <https://astrea.linkeddata.es/shapes#32b362d38bfd2c493b0cc5e752f46310> , <https://astrea.linkeddata.es/shapes#f45e977af9b86b53b5f7b87c66074c46> , <https://astrea.linkeddata.es/shapes#a919aa3d2f4b492803b9c1d4e7225e17> , <https://astrea.linkeddata.es/shapes#56548f7374276d29843a5ba2738a3659> , <https://astrea.linkeddata.es/shapes#57d5d1f4d1cb772b4f1ab6e10b3964fa> , <https://astrea.linkeddata.es/shapes#64ab32de3f78abd74a94bf6be0c50c76> , <https://astrea.linkeddata.es/shapes#a5c04f839615c2f7cbce190f69433b58> , <https://astrea.linkeddata.es/shapes#0a8a4d164fd7c36371ca947de3185991> , <https://astrea.linkeddata.es/shapes#185b73ee1889609a9360fa4951878ffd> , <https://astrea.linkeddata.es/shapes#c137b7dc5aa09e86478fc24c9a4bece9> , <https://astrea.linkeddata.es/shapes#4a46ca10f7de9569146d8bffb7bdd012> , <https://astrea.linkeddata.es/shapes#1286927200820a071e804c7f37b35348> , <https://astrea.linkeddata.es/shapes#95e094b996e12959f411b1c5ba758ee1> , <https://astrea.linkeddata.es/shapes#75ddef112ad1fbd900b4a2fd0bb29663> , <https://astrea.linkeddata.es/shapes#c4979e698a87973b5f49101b85f6a4e2> , <https://astrea.linkeddata.es/shapes#72c35da57a3f3347e3b8a22f65ebb0d8> , <https://astrea.linkeddata.es/shapes#59eb33b48113ca2911459d06f1c412ad> , <https://astrea.linkeddata.es/shapes#f86336ee4ab2d3a3a34eee0f857322b9> , <https://astrea.linkeddata.es/shapes#115e6d8192bb749bdd27f5916d4acad9> , <https://astrea.linkeddata.es/shapes#006da9af3b051a59685a4bdb4671e828> , <https://astrea.linkeddata.es/shapes#e81c6e23c4cacdd3d99dfc2ed66ae464> , <https://astrea.linkeddata.es/shapes#de80cdc2a2f82dd3d37a742d02a6e4a2> , <https://astrea.linkeddata.es/shapes#9c9a7ac6464d089178f5f6c5b303ecce> , <https://astrea.linkeddata.es/shapes#ac7f524b7c182ac2c334f49bf7742d3c> , <https://astrea.linkeddata.es/shapes#87863f53e596f6773e8e2f4b886eca46> , <https://astrea.linkeddata.es/shapes#61b4836c234705ac7679876b071fc7fe> , <https://astrea.linkeddata.es/shapes#a446950e94d3e54e6ecdeeaad9bdc6fe> , <https://astrea.linkeddata.es/shapes#75bf9d9654f38073cd5b08a8520de7e9> , <https://astrea.linkeddata.es/shapes#be20327d8ed3c93c1e80036eaf24b709> , <https://astrea.linkeddata.es/shapes#8b3c7c6643cb529a9761421fd07be82e> , <https://astrea.linkeddata.es/shapes#253506fb03d334ef7788b6a1dab6c6ec> , <https://astrea.linkeddata.es/shapes#d1222abc0ce4e000b9b8fc56bc919d00> , <https://astrea.linkeddata.es/shapes#3f44028bdff336e291a9811dc259ca5b> , <https://astrea.linkeddata.es/shapes#cbbd01f59b78a23b75d439c7fb560ca3> , <https://astrea.linkeddata.es/shapes#39041a527abb94d917945ca90207a971> , <https://astrea.linkeddata.es/shapes#61e8c59b5aace275f0bb89d2959fd9c1> , <https://astrea.linkeddata.es/shapes#bb8fab3764c75e81350e239bcda04aa7> , <https://astrea.linkeddata.es/shapes#d8fa1fb8025a5f6a625760f2e161d986> , <https://astrea.linkeddata.es/shapes#22323b1504fa152fda5a3db2792f4e1e> , <https://astrea.linkeddata.es/shapes#a6b9c0c9cae4b2188781b4f0ae2fffb1> , <https://astrea.linkeddata.es/shapes#86d0027a24fdac358da69a1d74cdb8cd> , <https://astrea.linkeddata.es/shapes#37b21b8c1a36c8c3ee6ddae77fb37bc2> , <https://astrea.linkeddata.es/shapes#46f55f9e2c51f480510a4507fd3daa73> , <https://astrea.linkeddata.es/shapes#b5709a9c2eaa7805ed5f7e56a090d496> , <https://astrea.linkeddata.es/shapes#5b964fbc3cbdc8acb0b8960bf47aba80> , <https://astrea.linkeddata.es/shapes#28deb73c781e6d7791cc91f384b84334> , <https://astrea.linkeddata.es/shapes#54eedece323781fb830bfcb32b8f327b> , <https://astrea.linkeddata.es/shapes#417342813f8125bbb67fe7d68de047ad> , <https://astrea.linkeddata.es/shapes#4f89d6a364695ad395b26758bf6dc1c3> , <https://astrea.linkeddata.es/shapes#3311eba5551534273773f463d8d6efcf> , <https://astrea.linkeddata.es/shapes#e0ba891b75b4993a165f96c7ed30a8ee> , <https://astrea.linkeddata.es/shapes#3c142191e14e161eec2d2483985edbd2> , <https://astrea.linkeddata.es/shapes#1bc4f5fb8099528953f84576ddff88c8> , <https://astrea.linkeddata.es/shapes#f25f25b422d44fbf4eba806f26fc0260> , <https://astrea.linkeddata.es/shapes#29d45f558650c4e131100acf970683be> , <https://astrea.linkeddata.es/shapes#7a4005d4812c06c1500cdf4025dcbf08> , <https://astrea.linkeddata.es/shapes#b5bf1a0303f62da61393fe1c78fa692c> , <https://astrea.linkeddata.es/shapes#7b7632d49a5b27028b96ed7e01748825> , <https://astrea.linkeddata.es/shapes#76e61d44cddd7d72af4c8aa96cfe46cd> , <https://astrea.linkeddata.es/shapes#0c8dd9e6e7f9f515ff90b659294bcf7e> , <https://astrea.linkeddata.es/shapes#be6156b0fb4f266d83c40e27f81984fb> , <https://astrea.linkeddata.es/shapes#c1943d1cac706a2057c066199011b533> , <https://astrea.linkeddata.es/shapes#c6316bdc82b22e495c7055b5e914c071> , <https://astrea.linkeddata.es/shapes#6eba3af6240855abc0f8e146db968467> , <https://astrea.linkeddata.es/shapes#8c1ae6102d6cd01186f810b3b11538fc> , <https://astrea.linkeddata.es/shapes#e20ea229fe255d51f3d9bdafb66d628e> , <https://astrea.linkeddata.es/shapes#47b0018795969eae226ab00f70b6a2d5> , <https://astrea.linkeddata.es/shapes#655a3db685e6aab898bb4b5a74997a85> , <https://astrea.linkeddata.es/shapes#8e39df849bdcf1dfd44e813bcb7ceced> , <https://astrea.linkeddata.es/shapes#e71843c0bd907a3219b5bbcfb2c93543> , <https://astrea.linkeddata.es/shapes#69c9076e7daa3182c9562c7cec85a0bc> , <https://astrea.linkeddata.es/shapes#f06d84a321ca3fca905d03e3950924a0> , <https://astrea.linkeddata.es/shapes#d328bbfea00547549a292d7c50d06239> , <https://astrea.linkeddata.es/shapes#48fe59f049bce167b8e15537fe613c26> , <https://astrea.linkeddata.es/shapes#6f4c7ca110e1eda2d138fa45ee7d5b77> , <https://astrea.linkeddata.es/shapes#44967b91b86e91de9856bad01e21da0e> , <https://astrea.linkeddata.es/shapes#9f279692ef686c345e0975006bb1ac70> , <https://astrea.linkeddata.es/shapes#95be18693798c9bec9086eaa1abc145b> , <https://astrea.linkeddata.es/shapes#f4b17d8306cda012ce09cc0be4bc05bc> , <https://astrea.linkeddata.es/shapes#53e51b32b1f52d3c2ac21d2d913a2a15> , <https://astrea.linkeddata.es/shapes#59a67bd834b62c0533a3f98674278813> , <https://astrea.linkeddata.es/shapes#aaf640294b81992c33fc64cb1783e4bb> , <https://astrea.linkeddata.es/shapes#3fdde3f60fb353f41b896ea9eaff225f> , <https://astrea.linkeddata.es/shapes#e766408af6162bcebff8d33449945fb5> , <https://astrea.linkeddata.es/shapes#cdbaeadb973df6a13f7d60af1a778254> , <https://astrea.linkeddata.es/shapes#b2bea065d8ce1e5fc3c13d974f1c4b00> , <https://astrea.linkeddata.es/shapes#2190070491075f5f860a9675fa7ff952> , <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> , <https://astrea.linkeddata.es/shapes#2fa3451ae112d85c9c83b8e99b4076d2> , <https://astrea.linkeddata.es/shapes#2153432f1a818bf41a141ae878bfe103> , <https://astrea.linkeddata.es/shapes#0ebd908471141c7505d26b27d1b5fede> , <https://astrea.linkeddata.es/shapes#a894cbada6e106ed43414755a564dc18> , <https://astrea.linkeddata.es/shapes#f7fa845f8a46ab1374ac5d7f034d9edd> , <https://astrea.linkeddata.es/shapes#af0fb939cbbaafc261e0ebfad99f7f14> , <https://astrea.linkeddata.es/shapes#ad0b646ab7c5ab5ed4235663da4e2851> , <https://astrea.linkeddata.es/shapes#c3ad3723819927e1ae2389d0521f9dea> , <https://astrea.linkeddata.es/shapes#cca04bd278b641dd5c94d7f81d44e995> , <https://astrea.linkeddata.es/shapes#8672bd2fecaabef11153f1d4e09e0d7d> , <https://astrea.linkeddata.es/shapes#e82beec7ad2d9c53d65339ecd06f1971> , <https://astrea.linkeddata.es/shapes#7ecf3561cb0082c71a1b05665b4abeef> , <https://astrea.linkeddata.es/shapes#abbddcf836b49940197266930f96c1e1> , <https://astrea.linkeddata.es/shapes#79937d2ee17d67908643d50b9d8fee50> , <https://astrea.linkeddata.es/shapes#3b04f6a636c65cbc3ed17a5b44314dc7> , <https://astrea.linkeddata.es/shapes#498ae5ba78f1f624d18fa882b3e03ea4> , <https://astrea.linkeddata.es/shapes#35b904f6bd03509f15cb24c685ae9718> , <https://astrea.linkeddata.es/shapes#4eaffb67c4bd43987456c20ea266de77> , <https://astrea.linkeddata.es/shapes#2b540d313b29dd635de798fe2c3f6948> , <https://astrea.linkeddata.es/shapes#5e734096fe0337c0c7193e4a8acf890f> , <https://astrea.linkeddata.es/shapes#70378dc9ea0b258ee834666e1f26433e> , <https://astrea.linkeddata.es/shapes#6b8766f769054fdac90b9c2643f5f77b> , <https://astrea.linkeddata.es/shapes#f8d73be80f62532ee3b83a41c7f6745c> , <https://astrea.linkeddata.es/shapes#8828cac1499f082ed5030081d066ae49> , <https://astrea.linkeddata.es/shapes#888aa2770a19024ea0f153b79a9b23d6> , <https://astrea.linkeddata.es/shapes#995a8bb497667aa94f275b373322395d> , <https://astrea.linkeddata.es/shapes#62282510957ca7277f73593792f22db2> , <https://astrea.linkeddata.es/shapes#61ffb750bd94b6156580467715eff110> , <https://astrea.linkeddata.es/shapes#9248aca0c0ab7a856cacc642903f50b8> , <https://astrea.linkeddata.es/shapes#d131b7fa79d8b10e892df5639f2d3e63> , <https://astrea.linkeddata.es/shapes#38c07c59484700becbfd2e4f0bc195ee> , <https://astrea.linkeddata.es/shapes#0607015df93fee012a070eca6599e5b3> , <https://astrea.linkeddata.es/shapes#a48808eaf22b310bb3fd7885c78606f6> , <https://astrea.linkeddata.es/shapes#6af01f632055ac842c437cad37a3a3e0> , <https://astrea.linkeddata.es/shapes#c812148bf089338c91ce9b0a39bef433> , <https://astrea.linkeddata.es/shapes#76d53e2ed4f86fcb5af51c70708e1180> , <https://astrea.linkeddata.es/shapes#d967b70b3729fcff172fffd479ee5f6a> , <https://astrea.linkeddata.es/shapes#9404281c35da11230895e0cf5e80bf6b> , <https://astrea.linkeddata.es/shapes#38d990b814914f6ea6f4fd2cd0bfb753> , <https://astrea.linkeddata.es/shapes#f2c787f1bcb1e4c829b7d306e5ac8d7a> , <https://astrea.linkeddata.es/shapes#9fd74b7ffe634696557c0f5228992e65> , <https://astrea.linkeddata.es/shapes#2e68327a698264ce23a459d5c50b4c0c> , <https://astrea.linkeddata.es/shapes#e57608b5ac334a045947af76cf6ac917> , <https://astrea.linkeddata.es/shapes#1f64067a6193898ba567c3e6cf7688ca> , <https://astrea.linkeddata.es/shapes#37f8e2a795704bb1f8297bcdbb98c253> , <https://astrea.linkeddata.es/shapes#b9f51d56a5da0cfe5e1802782ab1293d> , <https://astrea.linkeddata.es/shapes#7f953cd8bfa8e1d17d85af59b5bfcfbf> , <https://astrea.linkeddata.es/shapes#0421bfe545b56969262108827efcfd99> , <https://astrea.linkeddata.es/shapes#30ce3add5fff8ea9eff128380059ed3a> , <https://astrea.linkeddata.es/shapes#0745a7a26c1f49b66264d909f6ef4143> , <https://astrea.linkeddata.es/shapes#9b79bcc4b944ba6d7a54e3bcdb2db2fb> , <https://astrea.linkeddata.es/shapes#f27cbf695804072ccedd67930763d8e5> , <https://astrea.linkeddata.es/shapes#dfd167f0d126f967f41d646d7b96e27b> , <https://astrea.linkeddata.es/shapes#25f34a0dc650a9a94b1223cd02f01698> , <https://astrea.linkeddata.es/shapes#0c0265e91af59c69ddecd3ff490b9624> , <https://astrea.linkeddata.es/shapes#2be585ce3b3130a3709b45d287584c49> , <https://astrea.linkeddata.es/shapes#1a966c8448975a8ddfd731126ff83122> , <https://astrea.linkeddata.es/shapes#b6a3b67982254e121e10b9569ca448f6> , <https://astrea.linkeddata.es/shapes#4fb69b825ca9e9870bfb647efd231e46> , <https://astrea.linkeddata.es/shapes#f752262e3d1b6701e24c7a0515483e7a> , <https://astrea.linkeddata.es/shapes#7e815fb0e15d7db73b519f2e8325336d> , <https://astrea.linkeddata.es/shapes#5421b08a036bba3a939ab131f0138f8d> , <https://astrea.linkeddata.es/shapes#50d442e9fe8846f41ae5d3fae24d5ec8> , <https://astrea.linkeddata.es/shapes#34bbedd74ac250f24b471ffcc6a1bf70> , <https://astrea.linkeddata.es/shapes#04ab05e25d5f76eb6f68506e26ed9971> , <https://astrea.linkeddata.es/shapes#65c8287bd7139d7910afe364cc0188be> , <https://astrea.linkeddata.es/shapes#cf86f0c79b334c85a6b9bf9f7b618b3d> , <https://astrea.linkeddata.es/shapes#fc25ef3a0f596853b38b54a7c8fd3e7e> , <https://astrea.linkeddata.es/shapes#4ca6bdfd6fd9e28ee89c2ae7c9d54611> , <https://astrea.linkeddata.es/shapes#e3f07405eafba16919bedb37eaffebb1> , <https://astrea.linkeddata.es/shapes#4758ad4c5cc4392df44413060e4d32da> , <https://astrea.linkeddata.es/shapes#b9a73c6f9ad93d60f27a6756b21e7dcc> , <https://astrea.linkeddata.es/shapes#204b78ab7526018a6d8c6c42d1f64520> , <https://astrea.linkeddata.es/shapes#a8d02b36c92e124d9fe4e44c88dc63a7> , <https://astrea.linkeddata.es/shapes#65096d0ab6b42cea55b3449f1a6cf97a> , <https://astrea.linkeddata.es/shapes#5782d36264e602f2f3aeac336415b4d3> , <https://astrea.linkeddata.es/shapes#684587da2ae6a4e0f3bbd4e667a27288> , <https://astrea.linkeddata.es/shapes#6b7414dafc160da6ad014f61784db8a3> , <https://astrea.linkeddata.es/shapes#a015ad7ba1fe8a50b872e429f6a517ba> , <https://astrea.linkeddata.es/shapes#7df1f23807fe9409605a611ce56b27eb> , <https://astrea.linkeddata.es/shapes#afe75248be7da7d7dc3a40e6d553567c> , <https://astrea.linkeddata.es/shapes#193fb0954d5061ccba1397956d2265eb> , <https://astrea.linkeddata.es/shapes#6cfa9a289ba9044f1e2553e32dbe8097> , <https://astrea.linkeddata.es/shapes#414be22e5e8c0479fe86c6b6746ce304> , <https://astrea.linkeddata.es/shapes#82a84d4fcf34ab7dff544dbb370d7112> , <https://astrea.linkeddata.es/shapes#737730e0870db7246c7e8c55205df2d7> , <https://astrea.linkeddata.es/shapes#a7779991cfa944f950c40b63174277d5> , <https://astrea.linkeddata.es/shapes#3b2e3e86e421c4221b1e49a5497479fc> , <https://astrea.linkeddata.es/shapes#7a7ab83afd12d4ff37e42903eb469487> , <https://astrea.linkeddata.es/shapes#2b7b0365b2459d6670a837894e085edf> , <https://astrea.linkeddata.es/shapes#392812787e596582325beeb54c8cb12f> , <https://astrea.linkeddata.es/shapes#bce4c8f01462b474f13d9df923bc262f> , <https://astrea.linkeddata.es/shapes#cfb85be4583af7af6f0c0bf8eed2d021> , <https://astrea.linkeddata.es/shapes#34a945c676f0968ec1d8e606efc5cde4> , <https://astrea.linkeddata.es/shapes#21d7f78167b8adbe31937c13d882b29b> , <https://astrea.linkeddata.es/shapes#d4657f8d29bb80da6eebd238a4ee0165> , <https://astrea.linkeddata.es/shapes#82f5ff921ec50a78a2255cf17d3292ac> , <https://astrea.linkeddata.es/shapes#0844c04140442d3ee5baf29038e80e8a> , <https://astrea.linkeddata.es/shapes#286b7fab183dc45146b9f344ad8ffae7> , <https://astrea.linkeddata.es/shapes#3f9b48775dc8f1f26c5ab3281b008a14> , <https://astrea.linkeddata.es/shapes#c220ef76b1758d02f8b374b7a8b45a25> , <https://astrea.linkeddata.es/shapes#60c0e126d3b5574c795b20180cd4cd23> , <https://astrea.linkeddata.es/shapes#f5c6f9cb9bf33282e68b279bb17480ec> , <https://astrea.linkeddata.es/shapes#63e35d3bd423f052edf6d2488bddda2c> , <https://astrea.linkeddata.es/shapes#2ac7373bdf7476d13cd72b7a82f46949> , <https://astrea.linkeddata.es/shapes#4a418c4124ba0353e5e93aa2fa85026c> , <https://astrea.linkeddata.es/shapes#55345d416dee66dc91a4d453d1b2e79c> , <https://astrea.linkeddata.es/shapes#864165d1e371cf121df58610ae9bbad5> , <https://astrea.linkeddata.es/shapes#bc88beb99f36f88798810ac6a96d936a> , <https://astrea.linkeddata.es/shapes#3d80b2c696438cf810032d56f301dbb5> , <https://astrea.linkeddata.es/shapes#13f863226b5529ef91a307745af52412> , <https://astrea.linkeddata.es/shapes#2726963d7dbf28e45acaa9d12810f4b3> , <https://astrea.linkeddata.es/shapes#126622024faa6ca68e09251ca08ccfb1> , <https://astrea.linkeddata.es/shapes#6524ba623ab14eae4985792d4742b6f0> , <https://astrea.linkeddata.es/shapes#2669847f9bf90c6e1e0ea04beea78ddd> , <https://astrea.linkeddata.es/shapes#ef2084375b89700a959043f3d9c3ff3b> , <https://astrea.linkeddata.es/shapes#3712e2fb5430887365b64e4ceb4a9a53> , <https://astrea.linkeddata.es/shapes#11e72866337d19772cb021136d49eb94> , <https://astrea.linkeddata.es/shapes#7be539aad07971c8e9ec577cbf5f95c8> , <https://astrea.linkeddata.es/shapes#e6541be2868843831f2d74ef277fca65> , <https://astrea.linkeddata.es/shapes#b1f2018c6f47f63c184a8d41bfce95e6> , <https://astrea.linkeddata.es/shapes#8054a71b3f6ba97c5bf7da4b3bb95007> , <https://astrea.linkeddata.es/shapes#ced4d704e175f1ffe4d2d5fa16108c0e> , <https://astrea.linkeddata.es/shapes#270f64f51825d8fcc4d1de708e8c64cb> , <https://astrea.linkeddata.es/shapes#e2ffa4b42fc4df99cf6b1324379bb392> , <https://astrea.linkeddata.es/shapes#901ed461ffe32ad60ce6b3d32c095c33> , <https://astrea.linkeddata.es/shapes#81b028c64f1dc05e258c1ded2d748787> , <https://astrea.linkeddata.es/shapes#a846a4145de1fc510b3a990fb8182f4f> , <https://astrea.linkeddata.es/shapes#6823ce3caeedd66817d59148904f7eec> , <https://astrea.linkeddata.es/shapes#facf040bedeb6a70dffc41d0cbb3a2b9> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/01697815163> , <https://astrea.linkeddata.es/report/01425427757> , <https://astrea.linkeddata.es/report/1984494030> , <https://astrea.linkeddata.es/report/1964147564> , <https://astrea.linkeddata.es/report/01127076728> .
+
+<https://astrea.linkeddata.es/shapes#61e8c59b5aace275f0bb89d2959fd9c1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Measurement  Property" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Sensor#MeasuringCapability" ;
+        sh:description    "An identifiable and observable characteristic of a sensor's observations or ability to make observations." ;
+        sh:name           "Measurement  Property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3d6abbc9d95571424a65ed2ef48af4d7> , <https://astrea.linkeddata.es/shapes#3f44028bdff336e291a9811dc259ca5b> ;
+        sh:targetClass    ssn:MeasurementProperty .
+
+<https://astrea.linkeddata.es/shapes#d4657f8d29bb80da6eebd238a4ee0165>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "has subsystem" , "Haspart relation between a system and its parts." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Model#System" ;
+        sh:description    "Haspart relation between a system and its parts." ;
+        sh:name           "has subsystem" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:hasSubSystem .
+
+<https://astrea.linkeddata.es/shapes#7df1f23807fe9409605a611ce56b27eb>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:hasPart .
+
+<https://astrea.linkeddata.es/shapes#3311eba5551534273773f463d8d6efcf>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "has operating property" , "Relation from an OperatingRange to a Property.  For example, to a battery lifetime." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#OperatingRestriction" ;
+        sh:description    "Relation from an OperatingRange to a Property.  For example, to a battery lifetime." ;
+        sh:name           "has operating property" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:hasOperatingProperty .
+
+<https://astrea.linkeddata.es/shapes#9f279692ef686c345e0975006bb1ac70>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Output" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Model#Process" ;
+        sh:description    "Any information that is reported from a process. [MMI OntDev]" ;
+        sh:name           "Output" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:Output .
+
+<https://astrea.linkeddata.es/shapes#71aa82015ff4dc100be710d47f9b2c17>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "made observation" , "Relation between a Sensor and Observations it has made." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Observation#Observation" ;
+        sh:description    "Relation between a Sensor and Observations it has made." ;
+        sh:name           "made observation" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:madeObservation .
+
+<https://astrea.linkeddata.es/shapes#7a7ab83afd12d4ff37e42903eb469487>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "deployed on platform" , "Relation between a deployment and the platform on which the system was deployed." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#Deployment" ;
+        sh:description    "Relation between a deployment and the platform on which the system was deployed." ;
+        sh:name           "deployed on platform" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:deployedOnPlatform .
+
+<https://astrea.linkeddata.es/shapes#33fcae52658cb5d072e3c34e5e57d79a>
+        a               sh:PropertyShape ;
+        rdfs:label      "has actuation property" , "Relation from an actuation capability to an actuation property." ;
+        sh:class        san:ActuatingProperty ;
+        sh:description  "Relation from an actuation capability to an actuation property." ;
+        sh:name         "has actuation property" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         san:hasActuatingProperty .
+
+<https://astrea.linkeddata.es/shapes#80d53b347815294838f7c278f86624a0>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:Dvd .
+
+<https://astrea.linkeddata.es/shapes#2b7b0365b2459d6670a837894e085edf>
+        a            sh:PropertyShape ;
+        rdfs:label   "state parametrized by" ;
+        sh:class     dul:Entity ;
+        sh:name      "state parametrized by" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      iot-lifecycle:stateParametrizedBy .
+
+<https://astrea.linkeddata.es/shapes#c658fb7cf9778b9f9a157b221255aae8>
+        a               sh:PropertyShape ;
+        rdfs:label      "has feature of interest" , "Relationship between a Thing and a property of the environment. In a cyber-physical system, devices and software agents may have one to many feature of interest from the environment. This feature can be a property, another device, a person..." ;
+        sh:class        ssn:FeatureOfInterest ;
+        sh:description  "Relationship between a Thing and a property of the environment. In a cyber-physical system, devices and software agents may have one to many feature of interest from the environment. This feature can be a property, another device, a person..." ;
+        sh:name         "has feature of interest" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#hasFeatureOfInterest> .
+
+<https://astrea.linkeddata.es/shapes#f2c787f1bcb1e4c829b7d306e5ac8d7a>
+        a            sh:PropertyShape ;
+        rdfs:label   "when in" ;
+        sh:class     dogont:StateValue ;
+        sh:name      "when in" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      poweront:whenIn .
+
+<https://astrea.linkeddata.es/shapes#8d6c3b6f3adabea07167957874cd30f5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:Computer .
+
+<https://astrea.linkeddata.es/shapes#72c35da57a3f3347e3b8a22f65ebb0d8>
+        a            sh:PropertyShape ;
+        sh:class     ssn:OperatingRange ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:hasOperatingRange .
+
+<https://astrea.linkeddata.es/shapes#f45e977af9b86b53b5f7b87c66074c46>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:double ;
+        sh:disjoint  <http://purl.org/goodrelations/v1#serialNumber> ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      poweront:powerValue ;
+        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#de80cdc2a2f82dd3d37a742d02a6e4a2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Sensing Device" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Sensor#Measuring" ;
+        sh:description    "A sensing device is a device that implements sensing." ;
+        sh:name           "Sensing Device" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:SensingDevice .
+
+<https://astrea.linkeddata.es/shapes#5af32f9aeee83ce0418150c41043fc0a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "observed property" , "Relation linking an Observation to the Property that was observed.  The observedProperty should be a Property (hasProperty) of the FeatureOfInterest (linked by featureOfInterest) of this observation." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "Relation linking an Observation to the Property that was observed.  The observedProperty should be a Property (hasProperty) of the FeatureOfInterest (linked by featureOfInterest) of this observation." ;
+        sh:name           "observed property" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:observedProperty .
+
+<https://astrea.linkeddata.es/shapes#f938c09039510907bfd199b831627d68>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:HeatingStateValue .
+
+<https://astrea.linkeddata.es/shapes#684587da2ae6a4e0f3bbd4e667a27288>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:ShadeActuator .
+
+<https://astrea.linkeddata.es/shapes#5e575dfd21363f3c57590af00f87ac80>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dul:Agent .
+
+<https://astrea.linkeddata.es/shapes#6eba3af6240855abc0f8e146db968467>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:OnStateValue .
+
+<https://astrea.linkeddata.es/shapes#0421bfe545b56969262108827efcfd99>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      muo:measuredIn .
+
+<https://astrea.linkeddata.es/shapes#be20327d8ed3c93c1e80036eaf24b709>
+        a            sh:PropertyShape ;
+        sh:class     poweront:PowerConsumptionValue ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      poweront:actualConsumptionValue .
+
+<https://astrea.linkeddata.es/shapes#3712e2fb5430887365b64e4ceb4a9a53>
+        a               sh:PropertyShape ;
+        rdfs:label      "actuation results" , "Relation between an actuation and an actuator input, its result. Implements the ODP Effect-Actuator-Observation" ;
+        sh:class        san:ActuatorInput ;
+        sh:description  "Relation between an actuation and an actuator input, its result. Implements the ODP Effect-Actuator-Observation" ;
+        sh:name         "actuation results" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         san:actuationResults .
+
+<https://astrea.linkeddata.es/shapes#8054a71b3f6ba97c5bf7da4b3bb95007>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:DeepFreezer .
+
+<https://astrea.linkeddata.es/shapes#0c99b607f4d4689243439523cf4385ed>
+        a            sh:PropertyShape ;
+        sh:class     ssn:Condition ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:inCondition .
+
+<https://astrea.linkeddata.es/shapes#54eedece323781fb830bfcb32b8f327b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "has survival property" , "Relation from a SurvivalRange to a Property describing the survial range of a system.  For example, to the temperature extreme that a system can withstand before being considered damaged." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#OperatingRestriction" ;
+        sh:description    "Relation from a SurvivalRange to a Property describing the survial range of a system.  For example, to the temperature extreme that a system can withstand before being considered damaged." ;
+        sh:name           "has survival property" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:hasSurvivalProperty .
+
+<https://astrea.linkeddata.es/shapes#abbddcf836b49940197266930f96c1e1>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 poweront:typicalConsumptionValue ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  poweront:PowerConsumptionValue ] .
+
+<https://astrea.linkeddata.es/shapes#be6156b0fb4f266d83c40e27f81984fb>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:implements .
+
+<https://astrea.linkeddata.es/shapes#8b07de2523ac1424eb54d92312f8a616>
+        a            sh:PropertyShape ;
+        sh:class     san:Acting ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      san:actuationMethodUsed .
+
+<https://astrea.linkeddata.es/shapes#79086df9647d53348d259ece7f786613>
+        a         sh:PropertyShape ;
+        sh:class  ssn:Output .
+
+<https://astrea.linkeddata.es/shapes#476965e3021498ef0ee28db1eaa6c8de>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:CoolingStateValue .
+
+<https://astrea.linkeddata.es/shapes#37f8e2a795704bb1f8297bcdbb98c253>
+        a            sh:PropertyShape ;
+        rdfs:label   "is input message of" ;
+        sh:name      "is input message of" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#isInputMessageOf> .
+
+<https://astrea.linkeddata.es/shapes#77deff50ce1ebf6543734a87f09188d4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "System Lifetime" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#OperatingRestriction" ;
+        sh:description    "Total useful life of a sensor/system (expressed as total life since manufacture, time in use, number of operations, etc.)." ;
+        sh:name           "System Lifetime" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:SystemLifetime .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#f25f25b422d44fbf4eba806f26fc0260>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 san:hasDateTime ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <http://www.w3.org/2006/time#Instant> ] .
+
+<https://astrea.linkeddata.es/shapes#e71843c0bd907a3219b5bbcfb2c93543>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:includesEvent .
+
+<https://astrea.linkeddata.es/shapes#0607015df93fee012a070eca6599e5b3>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:DoorActuator .
+
+<https://astrea.linkeddata.es/shapes#7dfb7a34297ed647a1cb9cebb5502a26>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:PumpController .
+
+<https://astrea.linkeddata.es/shapes#f8e319921ed70f32bce322f8b60342e0>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:GateActuator .
+
+<https://astrea.linkeddata.es/shapes#11e72866337d19772cb021136d49eb94>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:includesObject .
+
+<https://astrea.linkeddata.es/shapes#55345d416dee66dc91a4d453d1b2e79c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Sensing" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "Sensing is a process that results in the estimation, or calculation, of the value of a phenomenon." ;
+        sh:name           "Sensing" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:Sensing .
+
+<https://astrea.linkeddata.es/shapes#8b3c7c6643cb529a9761421fd07be82e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Sensor Input" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "An Event in the real world that 'triggers' the sensor.  The properties associated to the stimulus may be different to eventual observed property.  It is the event, not the object that triggers the sensor." ;
+        sh:name           "Sensor Input" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#a5c04f839615c2f7cbce190f69433b58> ;
+        sh:targetClass    ssn:Stimulus , ssn:SensorInput .
+
+<https://astrea.linkeddata.es/shapes#cfb85be4583af7af6f0c0bf8eed2d021>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Sensor" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "A sensor can do (implements) sensing: that is, a sensor is any entity that can follow a sensing method and thus observe some Property of a FeatureOfInterest.  Sensors may be physical devices, computational methods, a laboratory setup with a person following a method, or any other thing that can follow a Sensing Method to observe a Property." ;
+        sh:name           "Sensor" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#b83ff07a7c391707af020e8e3f92e6a3> , <https://astrea.linkeddata.es/shapes#bb99bdaac39eae858eeefe30fa3e937e> , <https://astrea.linkeddata.es/shapes#a21d3d7a5659eb9978b77a413000050b> , <https://astrea.linkeddata.es/shapes#63e35d3bd423f052edf6d2488bddda2c> ;
+        sh:targetClass    ssn:Sensor .
+
+<https://astrea.linkeddata.es/shapes#76f7abbf1759f75524737f069fc9d0e8>
+        a                       sh:PropertyShape ;
+        sh:class                ssn:Property ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 ssn:observedProperty ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  ssn:Property ] .
+
+<https://astrea.linkeddata.es/shapes#6af01f632055ac842c437cad37a3a3e0>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.linkedmodel.org/schema/vaem#dateUnion> .
+
+<https://astrea.linkeddata.es/shapes#9248aca0c0ab7a856cacc642903f50b8>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 muo:measuredIn ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  muo:UnitOfMeasurement ] .
+
+<https://astrea.linkeddata.es/shapes#9404281c35da11230895e0cf5e80bf6b>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://qudt.org/schema/qudt#QuantityKind> .
+
+<https://astrea.linkeddata.es/shapes#a919aa3d2f4b492803b9c1d4e7225e17>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:satisfies .
+
+<https://astrea.linkeddata.es/shapes#af0fb939cbbaafc261e0ebfad99f7f14>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Operating Range" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#OperatingRestriction" ;
+        sh:description    "The environmental conditions and characteristics of a system/sensor's normal operating environment.  Can be used to specify for example the standard environmental conditions in which the sensor is expected to operate (a Condition with no OperatingProperty), or how the environmental and other operating properties relate: i.e., that the maintenance schedule or power requirements differ according to the conditions." ;
+        sh:name           "Operating Range" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#bfb7cf51bb4c4b5b501bfb5136758237> , <https://astrea.linkeddata.es/shapes#0c99b607f4d4689243439523cf4385ed> ;
+        sh:targetClass    ssn:OperatingRange .
+
+<https://astrea.linkeddata.es/shapes#2726963d7dbf28e45acaa9d12810f4b3>
+        a            sh:PropertyShape ;
+        sh:class     ssn:System ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:deployedSystem .
+
+<https://astrea.linkeddata.es/shapes#a894cbada6e106ed43414755a564dc18>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Property" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "An observable Quality of an Event or Object.  That is, not a quality of an abstract entity as is also allowed by DUL's Quality, but rather an aspect of an entity that is intrinsic to and cannot exist without the entity and is observable by a sensor." ;
+        sh:name           "Property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#486e275f4072aa374b5c1559324a1a05> ;
+        sh:targetClass    ssn:Property .
+
+<https://astrea.linkeddata.es/shapes#e57608b5ac334a045947af76cf6ac917>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "observation sampling time" , "The sampling time is the time that the result applies to the feature-of-interest. This is the time usually required for geospatial analysis of the result." , "Rebadged as phenomenon time in [O&M]. The phenomenon time shall describe the time that the result applies to the property of the feature-of-interest. This is often the time of interaction by a sampling procedure or observation procedure with a real-world feature." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Observation#Observation" ;
+        sh:description    "The sampling time is the time that the result applies to the feature-of-interest. This is the time usually required for geospatial analysis of the result." , "Rebadged as phenomenon time in [O&M]. The phenomenon time shall describe the time that the result applies to the property of the feature-of-interest. This is often the time of interaction by a sampling procedure or observation procedure with a real-world feature." ;
+        sh:name           "observation sampling time" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:observationSamplingTime .
+
+<https://astrea.linkeddata.es/shapes#56548f7374276d29843a5ba2738a3659>
+        a            sh:PropertyShape ;
+        sh:class     ssn:Property ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:forProperty .
+
+<https://astrea.linkeddata.es/shapes#79884a301086f638d731af7901415093>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "has value" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Base#Data" ;
+        sh:name           "has value" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:hasValue .
+
+<https://astrea.linkeddata.es/shapes#ab3d40b878e8d11d7732e17f880fbdb2>
+        a            sh:PropertyShape ;
+        sh:class     ssn:Condition ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:inCondition .
+
+<https://astrea.linkeddata.es/shapes#ac7f524b7c182ac2c334f49bf7742d3c>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:Hotplate .
+
+<https://astrea.linkeddata.es/shapes#6524ba623ab14eae4985792d4742b6f0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Condition" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Base#ConstraintBlock" ;
+        sh:description    "Used to specify ranges for qualities that act as conditions on a system/sensor's operation.  For example, wind speed of 10-60m/s is expressed as a condition linking a quality, wind speed, a unit of measurement, metres per second, and a set of values, 10-60, and may be used as the condition on a MeasurementProperty, for example, to state that a sensor has a particular accuracy in that condition." ;
+        sh:name           "Condition" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:Condition .
+
+<https://astrea.linkeddata.es/shapes#dbd9241f9e499d17ca2fe94b90ab3418>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "in condition" , "Describes the prevailing environmental conditions for MeasurementCapabilites, OperatingConditions and SurvivalRanges.  Used for example to say that a sensor has a particular accuracy in particular conditions.  (see also MeasurementCapability)" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Base#ConstraintBlock" ;
+        sh:description    "Describes the prevailing environmental conditions for MeasurementCapabilites, OperatingConditions and SurvivalRanges.  Used for example to say that a sensor has a particular accuracy in particular conditions.  (see also MeasurementCapability)" ;
+        sh:name           "in condition" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:inCondition .
+
+<https://astrea.linkeddata.es/shapes#451d2b669d2d94b3bf69b5171d2c618c>
+        a               sh:NodeShape ;
+        rdfs:label      "Actuating Capability" ;
+        sh:description  "Represents actuation properties such as precision, latency, power consumption, and the environmental conditions in which these actuation can take place normally." ;
+        sh:name         "Actuating Capability" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#33fcae52658cb5d072e3c34e5e57d79a> , <https://astrea.linkeddata.es/shapes#a677d010a0c171bcc92d3b0df5dcac29> , <https://astrea.linkeddata.es/shapes#2190f91239b234929b4b13d8017b3e59> ;
+        sh:targetClass  san:ActuatingCapability .
+
+<https://astrea.linkeddata.es/shapes#4a46ca10f7de9569146d8bffb7bdd012>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isParticipantIn .
+
+<https://astrea.linkeddata.es/shapes#fc25ef3a0f596853b38b54a7c8fd3e7e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "on platform" , "Relation between a System (e.g., a Sensor) and a Platform.  The relation locates the sensor relative to other described entities entities: i.e., the Sensor s1's location is Platform p1.  More precise locations for sensors in space (relative to other entities, where attached to another entity, or in 3D space) are made using DOLCE's Regions (SpaceRegion)." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#PlatformSite" ;
+        sh:description    "Relation between a System (e.g., a Sensor) and a Platform.  The relation locates the sensor relative to other described entities entities: i.e., the Sensor s1's location is Platform p1.  More precise locations for sensors in space (relative to other entities, where attached to another entity, or in 3D space) are made using DOLCE's Regions (SpaceRegion)." ;
+        sh:name           "on platform" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:onPlatform .
+
+<https://astrea.linkeddata.es/shapes#422b071a5da25e4e8f42658026292e68>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Operating Property" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#OperatingRestriction" ;
+        sh:description    "An identifiable characteristic of the environmental and other conditions in which the sensor is intended to operate.  May include power ranges, power sources, standard configurations, attachments and the like." ;
+        sh:name           "Operating Property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#facf040bedeb6a70dffc41d0cbb3a2b9> ;
+        sh:targetClass    ssn:OperatingProperty .
+
+<https://astrea.linkeddata.es/shapes#193fb0954d5061ccba1397956d2265eb>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:DesignedArtifact .
+
+<https://astrea.linkeddata.es/shapes#3f44028bdff336e291a9811dc259ca5b>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:hasValue .
+
+<https://astrea.linkeddata.es/shapes#b5bf1a0303f62da61393fe1c78fa692c>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:Situation .
+
+<https://astrea.linkeddata.es/shapes#d131b7fa79d8b10e892df5639f2d3e63>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "has operating range" , "Relation from a System to an OperatingRange describing the normal operating environment of the System." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#OperatingRestriction" ;
+        sh:description    "Relation from a System to an OperatingRange describing the normal operating environment of the System." ;
+        sh:name           "has operating range" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:hasOperatingRange .
+
+<https://astrea.linkeddata.es/shapes#a48808eaf22b310bb3fd7885c78606f6>
+        a               sh:PropertyShape ;
+        rdfs:label      "has output message" , "Relashionship between an Operation and the Message that it will output as the result of its processing" ;
+        sh:class        <http://www.wsmo.org/ns/wsmo-lite#Message> ;
+        sh:description  "Relashionship between an Operation and the Message that it will output as the result of its processing" ;
+        sh:name         "has output message" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.wsmo.org/ns/wsmo-lite#hasOutputMessage> .
+
+<https://astrea.linkeddata.es/shapes#21d7f78167b8adbe31937c13d882b29b>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:WirelessPhone .
+
+<https://astrea.linkeddata.es/shapes#af4cd402d12ada7908a40950e16f1b3a>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a7779991cfa944f950c40b63174277d5> , <https://astrea.linkeddata.es/shapes#be20327d8ed3c93c1e80036eaf24b709> , <https://astrea.linkeddata.es/shapes#3fdde3f60fb353f41b896ea9eaff225f> , <https://astrea.linkeddata.es/shapes#cd4c3b57be38172bac8d6d197d22a418> , <https://astrea.linkeddata.es/shapes#abbddcf836b49940197266930f96c1e1> , <https://astrea.linkeddata.es/shapes#7e815fb0e15d7db73b519f2e8325336d> ;
+        sh:targetClass  poweront:ElectricPowerConsumption .
+
+<https://astrea.linkeddata.es/shapes#1286927200820a071e804c7f37b35348>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#9c9a7ac6464d089178f5f6c5b303ecce> ;
+        sh:targetClass  <http://iserve.kmi.open.ac.uk/ns/msm#Operation> .
+
+<https://astrea.linkeddata.es/shapes#26e032f4564597193ba9589fa60d9e7e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Input" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Model#Process" ;
+        sh:description    "Any information that is provided to a process for its use [MMI OntDev]" ;
+        sh:name           "Input" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#79086df9647d53348d259ece7f786613> ;
+        sh:targetClass    ssn:Input .
+
+<https://astrea.linkeddata.es/shapes#bff6009c657427a393a89e116933cfe6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Observation Value" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Base#Data" ;
+        sh:description    "The value of the result of an Observation.  An Observation has a result which is the output of some sensor, the result is an information object that encodes some value for a Feature." ;
+        sh:name           "Observation Value" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#50d442e9fe8846f41ae5d3fae24d5ec8> , <https://astrea.linkeddata.es/shapes#ef16878e0499a7c6e2cdeb1f9d368699> , <https://astrea.linkeddata.es/shapes#25f34a0dc650a9a94b1223cd02f01698> ;
+        sh:targetClass    ssn:ObservationValue .
+
+<https://astrea.linkeddata.es/shapes#d52548db81570dd0215df24e1fa9885b>
+        a               sh:NodeShape ;
+        rdfs:label      "Message" ;
+        sh:description  "A Message is a instance of data that is sent by a source and that is received by a target" ;
+        sh:name         "Message" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#3c0d29641a5d1f94b0f1847105822073> ;
+        sh:targetClass  <http://www.wsmo.org/ns/wsmo-lite#Message> .
+
+<https://astrea.linkeddata.es/shapes#2bd8c496bfb133553800deb7394e33e9>
+        a               sh:PropertyShape ;
+        rdfs:label      "is triggered by" , "Relation between a Transition and whatever Entity can trigger it" ;
+        sh:class        dul:Entity ;
+        sh:description  "Relation between a Transition and whatever Entity can trigger it" ;
+        sh:name         "is triggered by" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         iot-lifecycle:isTriggeredBy .
+
+<https://astrea.linkeddata.es/shapes#5b964fbc3cbdc8acb0b8960bf47aba80>
+        a               sh:PropertyShape ;
+        rdfs:label      "is controller" , "An entity is controller of another one when it has influence on its decision process or evolution in time." ;
+        sh:class        dul:Entity ;
+        sh:description  "An entity is controller of another one when it has influence on its decision process or evolution in time." ;
+        sh:name         "is controller" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         san:isController .
+
+<https://astrea.linkeddata.es/shapes#82a84d4fcf34ab7dff544dbb370d7112>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:AwningActuator .
+
+<https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  voaf:Vocabulary .
+
+<https://astrea.linkeddata.es/shapes#3c142191e14e161eec2d2483985edbd2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "has property" , "A relation between a FeatureOfInterest and a Property of that feature." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "A relation between a FeatureOfInterest and a Property of that feature." ;
+        sh:name           "has property" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:hasProperty .
+
+<https://astrea.linkeddata.es/shapes#2669847f9bf90c6e1e0ea04beea78ddd>
+        a               sh:NodeShape ;
+        rdfs:label      "Actuating Property" ;
+        sh:description  "A characteristic of an Actuator that gives information about the Actuations it is able to perform." ;
+        sh:name         "Actuating Property" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a1f3042e70360ca9df7812e893c4f5fc> ;
+        sh:targetClass  san:ActuatingProperty .
+
+<https://astrea.linkeddata.es/shapes#cca04bd278b641dd5c94d7f81d44e995>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      san:actsOn .
+
+<https://astrea.linkeddata.es/shapes#d8fa1fb8025a5f6a625760f2e161d986>
+        a            sh:PropertyShape ;
+        rdfs:label   "has method" ;
+        sh:class     xsd:string ;
+        sh:datatype  xsd:string ;
+        sh:name      "has method" ;
+        sh:nodeKind  sh:Literal , sh:BlankNodeOrIRI ;
+        sh:path      <http://www.wsmo.org/ns/hrests#hasMethod> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#48fe59f049bce167b8e15537fe613c26>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#7ecf3561cb0082c71a1b05665b4abeef> , <https://astrea.linkeddata.es/shapes#e0ba891b75b4993a165f96c7ed30a8ee> ;
+        sh:targetClass  DUL:Entity .
+
+<https://astrea.linkeddata.es/shapes#fc7936d130f8005827065cfc63428f99>
+        a            sh:PropertyShape ;
+        sh:class     ssn:Deployment ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:hasDeployment .
+
+<https://astrea.linkeddata.es/shapes#3ab5b5e5fd1284b540963f46b66f5518>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dul:UnitOfMeasure .
+
+<https://astrea.linkeddata.es/shapes#d328bbfea00547549a292d7c50d06239>
+        a               sh:PropertyShape ;
+        rdfs:label      "actuation method used" , "Process involved in the Actuation" ;
+        sh:class        dul:Process ;
+        sh:description  "Process involved in the Actuation" ;
+        sh:name         "actuation method used" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         san:actuationMethodUsed .
+
+<https://astrea.linkeddata.es/shapes#b5b0a28747e0171bf9107d73cfa7f537>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "The result time shall describe the time when the result became available, typically when the procedure associated with the observation was completed For some observations this is identical to the phenomenonTime. However, there are important cases where they differ.[O&M]" , "The result time is the time when the procedure associated with the observation act was applied." , "observation result time" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Observation#Observation" ;
+        sh:description    "The result time shall describe the time when the result became available, typically when the procedure associated with the observation was completed For some observations this is identical to the phenomenonTime. However, there are important cases where they differ.[O&M]" , "The result time is the time when the procedure associated with the observation act was applied." ;
+        sh:name           "observation result time" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:observationResultTime .
+
+<https://astrea.linkeddata.es/shapes#995a8bb497667aa94f275b373322395d>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dul:Process .
+
+<https://astrea.linkeddata.es/shapes#30ce3add5fff8ea9eff128380059ed3a>
+        a               sh:NodeShape ;
+        rdfs:label      "Business operation" ;
+        sh:description  "Service operation that is relevant to the business function of the service (and the object underneath in the case of IoT). This type of functions may be linked to a property the object deals with (monitoring or modification)" ;
+        sh:name         "Business operation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#BusinessOperation> .
+
+<https://astrea.linkeddata.es/shapes#d967b70b3729fcff172fffd479ee5f6a>
+        a               sh:PropertyShape ;
+        rdfs:label      "has date time" , "Relationship between an event (DUL:Region) and a point in time." ;
+        sh:class        <http://www.w3.org/2006/time#Instant> ;
+        sh:description  "Relationship between an event (DUL:Region) and a point in time." ;
+        sh:name         "has date time" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         san:hasDateTime .
+
+<https://astrea.linkeddata.es/shapes#d1222abc0ce4e000b9b8fc56bc919d00>
+        a               sh:NodeShape ;
+        rdfs:label      "Power consumption" ;
+        sh:name         "Power consumption" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ad0b646ab7c5ab5ed4235663da4e2851> , <https://astrea.linkeddata.es/shapes#f2c787f1bcb1e4c829b7d306e5ac8d7a> , <https://astrea.linkeddata.es/shapes#e74d3d65c534bf7ccd26954579a9bc51> , <https://astrea.linkeddata.es/shapes#57d5d1f4d1cb772b4f1ab6e10b3964fa> ;
+        sh:targetClass  poweront:PowerConsumption .
+
+<https://astrea.linkeddata.es/shapes#3d6abbc9d95571424a65ed2ef48af4d7>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      DUL:isParametrizedBy .
+
+<https://astrea.linkeddata.es/shapes#facf040bedeb6a70dffc41d0cbb3a2b9>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      DUL:hasDataValue .
+
+<https://astrea.linkeddata.es/shapes#270f64f51825d8fcc4d1de708e8c64cb>
+        a               sh:PropertyShape ;
+        rdfs:label      "provides feedback to" , "Relationship between an entity that provides informations to a system and this system, that interprets these informations as a feedback of its action." ;
+        sh:class        <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#ControlledSystem> ;
+        sh:description  "Relationship between an entity that provides informations to a system and this system, that interprets these informations as a feedback of its action." ;
+        sh:name         "provides feedback to" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#providesFeedbackTo> .
+
+<https://astrea.linkeddata.es/shapes#75bf9d9654f38073cd5b08a8520de7e9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "has deployment" , "Relation between a System and a Deployment, recording that the System/Sensor was deployed in that Deployment." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#Deployment" ;
+        sh:description    "Relation between a System and a Deployment, recording that the System/Sensor was deployed in that Deployment." ;
+        sh:name           "has deployment" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:hasDeployment .
+
+<https://astrea.linkeddata.es/shapes#61ffb750bd94b6156580467715eff110>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d8fa1fb8025a5f6a625760f2e161d986> , <https://astrea.linkeddata.es/shapes#a48808eaf22b310bb3fd7885c78606f6> , <https://astrea.linkeddata.es/shapes#e6541be2868843831f2d74ef277fca65> , <https://astrea.linkeddata.es/shapes#04ab05e25d5f76eb6f68506e26ed9971> ;
+        sh:targetClass  <http://www.wsmo.org/ns/wsmo-lite#Operation> .
+
+<https://astrea.linkeddata.es/shapes#655a3db685e6aab898bb4b5a74997a85>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "implemented by" , "A relation between the description of an algorithm, procedure or method and an entity that implements that method in some executable way.  For example, between a scientific measuring method and a sensor the senses via that method." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "A relation between the description of an algorithm, procedure or method and an entity that implements that method in some executable way.  For example, between a scientific measuring method and a sensor the senses via that method." ;
+        sh:name           "implemented by" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:implementedBy .
+
+<https://astrea.linkeddata.es/shapes#c6316bdc82b22e495c7055b5e914c071>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:RaisingStateValue .
+
+<https://astrea.linkeddata.es/shapes#bc7f118c022612f2b2d3695fe2bb0e3b>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:PhysicalObject .
+
+<https://astrea.linkeddata.es/shapes#7ecf3561cb0082c71a1b05665b4abeef>
+        a               sh:PropertyShape ;
+        rdfs:label      "has service" , "Relationship between an Entity and a service that is accessible through it." ;
+        sh:class        <http://www.wsmo.org/ns/wsmo-lite#Service> ;
+        sh:description  "Relationship between an Entity and a service that is accessible through it." ;
+        sh:name         "has service" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#hasService> .
+
+<https://astrea.linkeddata.es/shapes#76e61d44cddd7d72af4c8aa96cfe46cd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "observation result" , "Relation linking an Observation (i.e., a description of the context, the Situation, in which the observatioin was made) and a Result, which contains a value representing the value associated with the observed Property." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "Relation linking an Observation (i.e., a description of the context, the Situation, in which the observatioin was made) and a Result, which contains a value representing the value associated with the observed Property." ;
+        sh:name           "observation result" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:observationResult .
+
+<https://astrea.linkeddata.es/shapes#62282510957ca7277f73593792f22db2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Stimulus" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "An Event in the real world that 'triggers' the sensor.  The properties associated to the stimulus may be different to eventual observed property.  It is the event, not the object that triggers the sensor." ;
+        sh:name           "Stimulus" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:Stimulus .
+
+<https://astrea.linkeddata.es/shapes#5421b08a036bba3a939ab131f0138f8d>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:hasQuality .
+
+<https://astrea.linkeddata.es/shapes#7f953cd8bfa8e1d17d85af59b5bfcfbf>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "sensing method used" , "A (measurement) procedure is a detailed description of a measurement according to one or more measurement principles and to a given measurement method, based on a measurement model and including any calculation to obtain a measurement result [VIM 2.6]" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "A (measurement) procedure is a detailed description of a measurement according to one or more measurement principles and to a given measurement method, based on a measurement model and including any calculation to obtain a measurement result [VIM 2.6]" ;
+        sh:name           "sensing method used" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:sensingMethodUsed .
+
+<https://astrea.linkeddata.es/shapes#f4b17d8306cda012ce09cc0be4bc05bc>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#7f069f8a8520567290fb169c336ab0b1>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      san:wasActuationSent .
+
+<https://astrea.linkeddata.es/shapes#cdbaeadb973df6a13f7d60af1a778254>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Maintenance Schedule" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#OperatingRestriction" ;
+        sh:description    "Schedule of maintenance for a system/sensor in the specified conditions." ;
+        sh:name           "Maintenance Schedule" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:MaintenanceSchedule .
+
+<https://astrea.linkeddata.es/shapes#afe75248be7da7d7dc3a40e6d553567c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Drift" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Sensor#MeasuringCapability" ;
+        sh:description    "A, continuous or incremental, change in the reported values of observations over time for an unchanging quality." ;
+        sh:name           "Drift" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:Drift .
+
+<https://astrea.linkeddata.es/shapes#185b73ee1889609a9360fa4951878ffd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Measurement  Range" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Sensor#MeasuringCapability" ;
+        sh:description    "The set of values that the sensor can return as the result of an observation under the defined conditions with the defined measurement properties.  (If no conditions are specified or the conditions do not specify a range for the observed qualities, the measurement range is to be taken as the condition for the observed qualities.)" ;
+        sh:name           "Measurement  Range" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:MeasurementRange .
+
+<https://astrea.linkeddata.es/shapes#22323b1504fa152fda5a3db2792f4e1e>
+        a            sh:PropertyShape ;
+        sh:class     lifecycle:State ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      san:impactsState .
+
+<https://astrea.linkeddata.es/shapes#755f68b2bdc8631da153f9c7b1d7cdeb>
+        a               sh:PropertyShape ;
+        rdfs:label      "possible update" , "Indicates that an update is acessible for a ParametrizedState" ;
+        sh:class        iot-lifecycle:Update ;
+        sh:description  "Indicates that an update is acessible for a ParametrizedState" ;
+        sh:name         "possible update" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         iot-lifecycle:possibleUpdate .
+
+<https://astrea.linkeddata.es/shapes#5b38dc3144efbec425c5cfe20af68017>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isParametrizedBy .
+
+<https://astrea.linkeddata.es/shapes#cd4c3b57be38172bac8d6d197d22a418>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 poweront:nominalConsumptionValue ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  poweront:PowerConsumptionValue ] .
+
+<https://astrea.linkeddata.es/shapes#e82beec7ad2d9c53d65339ecd06f1971>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      dul:isSettingFor .
+
+<https://astrea.linkeddata.es/shapes#47b0018795969eae226ab00f70b6a2d5>
+        a               sh:NodeShape ;
+        rdfs:label      "Impact on property" ;
+        sh:description  "This class describes the impact an operation may have on a property. It makes sense in an IoT environement, where things can manage properties of their environment and modify them." ;
+        sh:name         "Impact on property" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#47657de7e332126eb137d9e9951c58b3> ;
+        sh:targetClass  <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#ImpactOnProperty> .
+
+<https://astrea.linkeddata.es/shapes#2b540d313b29dd635de798fe2c3f6948>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dul:InformationObject .
+
+<https://astrea.linkeddata.es/shapes#b19817ab7a463d3fe9673d607fc732ca>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:ElectricalOven .
+
+<https://astrea.linkeddata.es/shapes#7a4005d4812c06c1500cdf4025dcbf08>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://qudt.org/schema/qudt#Unit> .
+
+<https://astrea.linkeddata.es/shapes#737730e0870db7246c7e8c55205df2d7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Selectivity" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Sensor#MeasuringCapability" ;
+        sh:description    "Selectivity is a property of a sensor whereby it provides observed values for one or more qualities such that the values of each quality are independent of other qualities in the phenomenon, body, or substance being investigated." ;
+        sh:name           "Selectivity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ssn:Selectivity .
+
+<https://astrea.linkeddata.es/shapes#c137b7dc5aa09e86478fc24c9a4bece9>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dul:Quality .
+
+<https://astrea.linkeddata.es/shapes#c3ad3723819927e1ae2389d0521f9dea>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "deployment process part" , "Has part relation between a deployment process and its constituent processes." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#Deployment" ;
+        sh:description    "Has part relation between a deployment process and its constituent processes." ;
+        sh:name           "deployment process part" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:deploymentProcessPart .
+
+<https://astrea.linkeddata.es/shapes#f549a4170856affce41362b8f960e646>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#hasRelationshipWithProperty> .
+
+<https://astrea.linkeddata.es/shapes#864165d1e371cf121df58610ae9bbad5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:ShadeController .
+
+<https://astrea.linkeddata.es/shapes#718e031420852b33ddc402b6fce7c273>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:ElectricalCooker .
+
+<https://astrea.linkeddata.es/shapes#34a945c676f0968ec1d8e606efc5cde4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "for property" , "A relation between some aspect of a sensing entity and a property.  For example, from a sensor to the properties it can observe, or from a deployment to the properties it was installed to observe.  Also from a measurement capability to the property the capability is described for.  (Used in conjunction with ofFeature)." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Skeleton#Skeleton" ;
+        sh:description    "A relation between some aspect of a sensing entity and a property.  For example, from a sensor to the properties it can observe, or from a deployment to the properties it was installed to observe.  Also from a measurement capability to the property the capability is described for.  (Used in conjunction with ofFeature)." ;
+        sh:name           "for property" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:forProperty .
+
+<https://astrea.linkeddata.es/shapes#a7779991cfa944f950c40b63174277d5>
+        a            sh:PropertyShape ;
+        sh:class     poweront:PowerConsumptionValue ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      poweront:nominalConsumptionValue .
+
+<https://astrea.linkeddata.es/shapes#a1f3042e70360ca9df7812e893c4f5fc>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:hasValue .
+
+<https://astrea.linkeddata.es/shapes#38c07c59484700becbfd2e4f0bc195ee>
+        a               sh:PropertyShape ;
+        rdfs:label      "is feature of interest for" , "Indicates that the property is the feature of interest of some entity of an IoT system, that can measure it/act upon it." ;
+        sh:class        <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#IoT_Thing> ;
+        sh:description  "Indicates that the property is the feature of interest of some entity of an IoT system, that can measure it/act upon it." ;
+        sh:name         "is feature of interest for" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#isFeatureOfInterestOf> .
+
+<https://astrea.linkeddata.es/shapes#0c8dd9e6e7f9f515ff90b659294bcf7e>
+        a            sh:PropertyShape ;
+        rdfs:label   "property impacted by" ;
+        sh:name      "property impacted by" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#propertyIsImpactedBy> .
+
+<https://astrea.linkeddata.es/shapes#57d5d1f4d1cb772b4f1ab6e10b3964fa>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      poweront:consumptionValue .
+
+<https://astrea.linkeddata.es/shapes#2fa3451ae112d85c9c83b8e99b4076d2>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      muo:measuresQuality .
+
+<https://astrea.linkeddata.es/shapes#5e734096fe0337c0c7193e4a8acf890f>
+        a               sh:NodeShape ;
+        rdfs:label      "Update" ;
+        sh:description  "This special kind of Transition concerns Continuous states, and marks an update of the state value without having a \"real\" change of state." ;
+        sh:name         "Update" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#86d0027a24fdac358da69a1d74cdb8cd> ;
+        sh:targetClass  iot-lifecycle:Update .
+
+<https://astrea.linkeddata.es/shapes#47657de7e332126eb137d9e9951c58b3>
+        a               sh:PropertyShape ;
+        rdfs:label      "on property" , "Relationship between an impact and the impacted property" ;
+        sh:class        ssn:Property ;
+        sh:description  "Relationship between an impact and the impacted property" ;
+        sh:name         "on property" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#hasImpactonProperty> .
+
+<https://astrea.linkeddata.es/shapes#a6b9c0c9cae4b2188781b4f0ae2fffb1>
+        a                       sh:PropertyShape ;
+        sh:class                ssn:Sensor ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 ssn:observedBy ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  ssn:Sensor ] .
+
+<https://astrea.linkeddata.es/shapes#fb32cf708a3e4ff9aa266f8fc1192427>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      san:hasEffect .
+
+<https://astrea.linkeddata.es/shapes#7fd31f229628015478224f36f5feed48>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "Platform" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Deploy#PlatformSite" ;
+        sh:description    "An Entity to which other Entities can be attached - particuarly Sensors and other Platforms.  For example, a post might act as the Platform, a bouy might act as a Platform, or a fish might act as a Platform for an attached sensor." ;
+        sh:name           "Platform" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#bec364d9e5b8f1c1863a5554844add9c> , <https://astrea.linkeddata.es/shapes#406669e8d4bd2da38817c672e2d90208> ;
+        sh:targetClass    ssn:Platform .
+
+<https://astrea.linkeddata.es/shapes#a69eccdb1e2a60bd242bdaac9f3f1477>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:HiFi .
+
+<https://astrea.linkeddata.es/shapes#64ab32de3f78abd74a94bf6be0c50c76>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "observes" , "Relation between a Sensor and a Property that the sensor can observe.\n\nNote that, given the DUL modelling of Qualities, a sensor defined with 'observes only Windspeed' technically links the sensor to particular instances of Windspeed, not to the concept itself - OWL can't express concept-concept relations, only individual-individual.  The property composition ensures that if an observation is made of a particular quality then one can infer that the sensor observes that quality." ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Sensor#Measuring" ;
+        sh:description    "Relation between a Sensor and a Property that the sensor can observe.\n\nNote that, given the DUL modelling of Qualities, a sensor defined with 'observes only Windspeed' technically links the sensor to particular instances of Windspeed, not to the concept itself - OWL can't express concept-concept relations, only individual-individual.  The property composition ensures that if an observation is made of a particular quality then one can infer that the sensor observes that quality." ;
+        sh:name           "observes" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:observes .
+
+<https://astrea.linkeddata.es/shapes#c4f7d9dce362abfd4b0166aed2836b75>
+        a            sh:PropertyShape ;
+        sh:class     ssn:Output ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:hasOutput .
+
+<https://astrea.linkeddata.es/shapes#a21d3d7a5659eb9978b77a413000050b>
+        a            sh:PropertyShape ;
+        sh:class     ssn:Stimulus ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:detects .
+
+<https://astrea.linkeddata.es/shapes#a846a4145de1fc510b3a990fb8182f4f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      owl:topObjectProperty .
+
+<https://astrea.linkeddata.es/shapes#e81c6e23c4cacdd3d99dfc2ed66ae464>
+        a            sh:PropertyShape ;
+        sh:class     ssn:MeasurementProperty ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ssn:hasMeasurementProperty .
+
+<https://astrea.linkeddata.es/shapes#8db63b8959cf82efcf56f3476dc1f551>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:Lamp .
+
+<https://astrea.linkeddata.es/shapes#f7fa845f8a46ab1374ac5d7f034d9edd>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#getsFeedbackFrom> .
+
+<https://astrea.linkeddata.es/shapes#6f4c7ca110e1eda2d138fa45ee7d5b77>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:Dishwasher .
+
+<https://astrea.linkeddata.es/shapes#dfd167f0d126f967f41d646d7b96e27b>
+        a               sh:NodeShape ;
+        rdfs:label      "Defectuous System" ;
+        sh:description  "Controlled system that requires an operator attention, because it is not functionnig properly. Detected when the difference between the Observations and the Actuation made on the monitored property is out of its operating range." ;
+        sh:name         "Defectuous System" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#DefectuousSystem> .
+
+<https://astrea.linkeddata.es/shapes#70378dc9ea0b258ee834666e1f26433e>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:Method .
+
+<https://astrea.linkeddata.es/shapes#1bc4f5fb8099528953f84576ddff88c8>
+        a               sh:PropertyShape ;
+        rdfs:label      "consumes" , "Relation between an consumer entity and a consumee entity. Consumption can be destructive, transformative or neutral for the consumed entity." ;
+        sh:class        dul:Entity ;
+        sh:description  "Relation between an consumer entity and a consumee entity. Consumption can be destructive, transformative or neutral for the consumed entity." ;
+        sh:name         "consumes" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         san:consumes .
+
+<https://astrea.linkeddata.es/shapes#888aa2770a19024ea0f153b79a9b23d6>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:SceneSelector .
+
+<https://astrea.linkeddata.es/shapes#75ddef112ad1fbd900b4a2fd0bb29663>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:Object .
+
+<https://astrea.linkeddata.es/shapes#115e6d8192bb749bdd27f5916d4acad9>
+        a               sh:NodeShape ;
+        rdfs:label      "Business service" ;
+        sh:description  "Service intended to be an interface for the functionnalities the object was designed to perform : measure temperature for a temperature sensor, switch on/off for a switch..." ;
+        sh:name         "Business service" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f549a4170856affce41362b8f960e646> ;
+        sh:targetClass  <http://www.irit.fr/recherches/MELODI/ontologies/IoT-O#BusinessService> .
+
+<https://astrea.linkeddata.es/shapes#a8d02b36c92e124d9fe4e44c88dc63a7>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dogont:Buzzer .
+
+<https://astrea.linkeddata.es/shapes#82ac036f610813dbd95e641bd0c9db1b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "start time" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Base#Time" ;
+        sh:name           "start time" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:startTime .
+
+<https://astrea.linkeddata.es/shapes#356c6ee01ce700d6ec5b9f13ffe6e66c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isLocationOf .
+
+<https://astrea.linkeddata.es/shapes#f42339a16ae57b41ea2847e4212118a7>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:InformationObject .
+
+<https://astrea.linkeddata.es/shapes#62bfdacd91cd642e9e271cc62c9d3282>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      iot-lifecycle:stateParametrizedBy .

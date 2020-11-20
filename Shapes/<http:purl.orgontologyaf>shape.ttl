@@ -1,0 +1,562 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#4a75da064c3752046cb5e527896a5f9f>
+        a               sh:NodeShape ;
+        rdfs:label      "Pitched onset" ;
+        sh:description  "A pitched onset" ;
+        sh:name         "Pitched onset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/TonalOnset> .
+
+<https://astrea.linkeddata.es/shapes#6dc06a2852763c9818de6cb3861040f4>
+        a               sh:NodeShape ;
+        rdfs:label      "Amplitude" ;
+        sh:description  "\n\t\tResult of an amplitude following process\n\t" ;
+        sh:name         "Amplitude" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/Amplitude> .
+
+<https://astrea.linkeddata.es/shapes#b5b5eb46f47998db5016bf5ce9b771e5>
+        a               sh:NodeShape ;
+        rdfs:label      "Onset" ;
+        sh:description  "\n\t\tA classifier corresponding to the output of an onset detection process.\n\t\t" ;
+        sh:name         "Onset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/Onset> .
+
+<https://astrea.linkeddata.es/shapes#9b97f2cb3a2c4917f75025d111a16229>
+        a               sh:NodeShape ;
+        rdfs:label      "Tempo event" ;
+        sh:description  "Event holding a tempo value (120bpm...)" ;
+        sh:name         "Tempo event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/Tempo> .
+
+<https://astrea.linkeddata.es/shapes#e68f9e7a6af02b9b205dd668d3c13c69>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#aa3ea06bdb47bb5853582a598c65e707> ;
+        sh:targetClass  <http://purl.org/ontology/af/ModeChangeEvent> .
+
+<https://astrea.linkeddata.es/shapes#a28469d2ed9043cf77f0988d6708f7a2>
+        a               sh:NodeShape ;
+        rdfs:label      "Tonal content space" ;
+        sh:description  "\n\t\tA 6-D tonal content space\n\t" ;
+        sh:name         "Tonal content space" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/TonalContentSpace> .
+
+<https://astrea.linkeddata.es/shapes#d498c1dfdef40483fd2c09add17f3c6d>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#3ab27204436731b4e2e21911f46aac7d> ;
+        sh:targetClass  <http://purl.org/ontology/af/PersonSegment> .
+
+<https://astrea.linkeddata.es/shapes#5139dfb01152d070e7dff8b873fa9218>
+        a               sh:NodeShape ;
+        rdfs:label      "Beat event" ;
+        sh:description  "A beat event (instantaneous)" ;
+        sh:name         "Beat event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/Beat> .
+
+<https://astrea.linkeddata.es/shapes#19d7e79bc3fd13b89a9c70cffe4ebe68>
+        a               sh:NodeShape ;
+        rdfs:label      "Emotion segment" ;
+        sh:description  "\n\t\tA classifier for emotional content\n\t\t" ;
+        sh:name         "Emotion segment" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#81119bcabfd4323d5b53725176ef5857> ;
+        sh:targetClass  <http://purl.org/ontology/af/EmotionSegment> .
+
+<https://astrea.linkeddata.es/shapes#daa390e3159a7ed63e301ab018af70ce>
+        a               sh:NodeShape ;
+        rdfs:label      "Tonic event" ;
+        sh:description  "\n\t\tA classifier for tonics.\n\t\tIn case of a \"clean cut\", instances of such events have one\n\t\tfactor. In other cases, this event can have several factors, each associated\n\t\twith a particular confidence using event decomposition.\t\n\t" ;
+        sh:name         "Tonic event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c343b8909774260037376f4295abfeb1> ;
+        sh:targetClass  <http://purl.org/ontology/af/TonicSegment> .
+
+<https://astrea.linkeddata.es/shapes#95f65c70a2d1529aefe2d5199bb01fe4>
+        a               sh:NodeShape ;
+        rdfs:label      "Laugh" ;
+        sh:description  "\n\t\tA classifier for laugh content\n\t\t" ;
+        sh:name         "Laugh" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/Laugh> .
+
+<https://astrea.linkeddata.es/shapes#7d63d9fae068d9a574dd6dbb9c10ee24>
+        a               sh:NodeShape ;
+        rdfs:label      "Minor segment" ;
+        sh:description  "\n\t\tA classifier for a minor mode region.\n\t\tIn case of a \"clean cut\", instances of such events have one\n                factor. In other cases, this event can have several factors, each associated\n                with a particular confidence using event decomposition.\n\t" ;
+        sh:name         "Minor segment" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/Minor> .
+
+<https://astrea.linkeddata.es/shapes#dc95f174bbdd632286dc3ebf88ee7492>
+        a               sh:NodeShape ;
+        rdfs:label      "Ornament event" ;
+        sh:description  "Classifying a temporal region holding a musical ornament" ;
+        sh:name         "Ornament event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/Ornament> .
+
+<https://astrea.linkeddata.es/shapes#29d095d59d4bf389a3c61d6088002cb1>
+        a               sh:NodeShape ;
+        rdfs:label      "Loudness event" ;
+        sh:description  "Event holding a loudness value" ;
+        sh:name         "Loudness event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/Loudness> .
+
+<https://astrea.linkeddata.es/shapes#4558e9531b8717ad542a778728a47c54>
+        a               sh:NodeShape ;
+        rdfs:label      "Tempo detection function" ;
+        sh:description  "\n\t\tA tempo detection function\n\t" ;
+        sh:name         "Tempo detection function" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/TempoDetectionFunction> .
+
+<https://astrea.linkeddata.es/shapes#279b1e026f687bf2c816a550b4658e5d>
+        a               sh:PropertyShape ;
+        rdfs:label      "new key" , "Associates a key change event to the new key, holding after the change" ;
+        sh:class        owl:Thing ;
+        sh:description  "Associates a key change event to the new key, holding after the change" ;
+        sh:name         "new key" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/ontology/af/new_key> .
+
+<https://astrea.linkeddata.es/shapes#0eaad03d74c965f407363a8b0d860dfd>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/NET/c4dm/event.owl#time> .
+
+<https://astrea.linkeddata.es/shapes#e351a7dcb6e53125c79c284c864ba30e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/NET/c4dm/event.owl#time> .
+
+<https://astrea.linkeddata.es/shapes#322c07aba717e5881b84285292e14af5>
+        a               sh:PropertyShape ;
+        rdfs:label      "pitch" , "\n\t\tAssociates a pitch event to the corresponding pitch\n\t" ;
+        sh:description  "\n\t\tAssociates a pitch event to the corresponding pitch\n\t" ;
+        sh:name         "pitch" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/ontology/af/pitch> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#9674d34bfde67699e903b62b4656a6d5>
+        a               sh:NodeShape ;
+        rdfs:label      "Chromagram" ;
+        sh:description  "\n\t\tA chromagram feature.\n\t" ;
+        sh:name         "Chromagram" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/Chromagram> .
+
+<https://astrea.linkeddata.es/shapes#3dc401335ff46785234114270231698a>
+        a               sh:NodeShape ;
+        rdfs:label      "Hungarian idiom" ;
+        sh:description  "Hungarian idiom" ;
+        sh:name         "Hungarian idiom" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/HungarianIdiom> .
+
+<https://astrea.linkeddata.es/shapes#81971794a9c39f24d65241518ae30a90>
+        a               sh:NodeShape ;
+        rdfs:label      "Structural Segment" ;
+        sh:description  "\n\t\tA classifier trying to capture the notion of structure in an audio piece.\n\t\tThis classifier should be subsumed by more specific classifiers: speech/music\n\t\tsegmentation, structural music segmmentation (intro, verse, chorus, etc.).\n\t\t" ;
+        sh:name         "Structural Segment" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/StructuralSegment> .
+
+<https://astrea.linkeddata.es/shapes#1e5b3c44967f5dfef0c2a7acab0feaa4>
+        a               sh:NodeShape ;
+        rdfs:label      "Zero crossing" ;
+        sh:description  "Classifier for a zero-crossing point" ;
+        sh:name         "Zero crossing" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/ZeroCrossing> .
+
+<https://astrea.linkeddata.es/shapes#bd56bd490f4395f96915492e9e760401>
+        a               sh:NodeShape ;
+        rdfs:label      "Spectral centroid" ;
+        sh:description  "\n\t\tSpectral centroid\n\t" ;
+        sh:name         "Spectral centroid" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/SpectralCentroid> .
+
+<https://astrea.linkeddata.es/shapes#d3524b9af7b061a4bc20bb5f2b111b62>
+        a               sh:NodeShape ;
+        rdfs:label      "Speech" ;
+        sh:description  "\n\t\tA classifier capturing the notion of an audio segment holding speech\n\t\tcontent\n\t\t" ;
+        sh:name         "Speech" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/SpeechSegment> .
+
+<https://astrea.linkeddata.es/shapes#24a0b5feae5550b4f0bf64bc0bf26807>
+        a               sh:NodeShape ;
+        rdfs:label      "Music" ;
+        sh:description  "\n\t\tA classifier capturing the notion of an audio segment holding music.\n\t\tThis classifier can be subsumed with more specific classifiers.\n\t\t" ;
+        sh:name         "Music" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/MusicSegment> .
+
+<https://astrea.linkeddata.es/shapes#89751ce079ab651d03e1f4dc29977cc1>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#689c378fb56dffa505e0ebaed8cc1a8b> ;
+        sh:targetClass  <http://purl.org/ontology/af/TonicChangeEvent> .
+
+<https://astrea.linkeddata.es/shapes#83f06d6d0caf05fce12ffc3c11b8fc45>
+        a               sh:PropertyShape ;
+        rdfs:label      "feature" , "\n\t\tAssociates a segment classifying a feature to the actual feature---we should use mpeg7 sort-of datatypes here\n\t\t" ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "\n\t\tAssociates a segment classifying a feature to the actual feature---we should use mpeg7 sort-of datatypes here\n\t\t" ;
+        sh:name         "feature" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/ontology/af/feature> .
+
+<https://astrea.linkeddata.es/shapes#7d7a25e8716f0b4b13d4024ce6e428b5>
+        a               sh:NodeShape ;
+        rdfs:label      "Percussive onset" ;
+        sh:description  "A percussive onset" ;
+        sh:name         "Percussive onset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/NonTonalOnset> .
+
+<https://astrea.linkeddata.es/shapes#3ab27204436731b4e2e21911f46aac7d>
+        a               sh:PropertyShape ;
+        rdfs:label      "person" , "\n\t\tAssociates a segment classified as holding speech content to a FOAF\n\t\tprofile (maybe holding information about genre, recognized speaker URI, etc.)\n\t\t" ;
+        sh:class        <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description  "\n\t\tAssociates a segment classified as holding speech content to a FOAF\n\t\tprofile (maybe holding information about genre, recognized speaker URI, etc.)\n\t\t" ;
+        sh:name         "person" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/ontology/af/person> .
+
+<https://astrea.linkeddata.es/shapes#81119bcabfd4323d5b53725176ef5857>
+        a               sh:PropertyShape ;
+        rdfs:label      "emotional intensity" , "\n\t\tAssociates an \"emotional intensity\" value to a \n\t\tsegment detected as being \"emotional\"\n\t\t" ;
+        sh:class        rdfs:Literal ;
+        sh:description  "\n\t\tAssociates an \"emotional intensity\" value to a \n\t\tsegment detected as being \"emotional\"\n\t\t" ;
+        sh:name         "emotional intensity" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/ontology/af/emotional_intensity> .
+
+<https://astrea.linkeddata.es/shapes#fa44abdff426621af92312306b75de50>
+        a               sh:NodeShape ;
+        rdfs:label      "Signal-level feature" ;
+        sh:description  "\n\t\tA signal-like feature, holding dense data describing another signal.\n\t\tExamples of signal features include chromagrams, spectrograms, onset detection functions etc.\n\t" ;
+        sh:name         "Signal-level feature" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/Signal> .
+
+<https://astrea.linkeddata.es/shapes#33a7e5951b1e422127faed9e24e89f98>
+        a               sh:PropertyShape ;
+        rdfs:label      "\n\t\tAssociates a segment which classify an idiom (English with Irish accent, etc.) to an actual idiom\n\t\t" ;
+        sh:datatype     <http://purl.org/ontology/af/Idiom> ;
+        sh:description  "\n\t\tAssociates a segment which classify an idiom (English with Irish accent, etc.) to an actual idiom\n\t\t" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/ontology/af/idiom> .
+
+<https://astrea.linkeddata.es/shapes#e04a8ce1b72e2c2f4d9448fa762d9982>
+        a               sh:PropertyShape ;
+        rdfs:label      "value" , "\n\t\tAssociates a signal resource as defined in the Music Ontology to a literal: its actual value.\n\t\tFor example, it can be used to link an onset detection function to a list of values.\n\t" ;
+        sh:description  "\n\t\tAssociates a signal resource as defined in the Music Ontology to a literal: its actual value.\n\t\tFor example, it can be used to link an onset detection function to a list of values.\n\t" ;
+        sh:name         "value" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/ontology/af/value> .
+
+<https://astrea.linkeddata.es/shapes#1b633c8eb2e28899cc649766b8b9196c>
+        a               sh:NodeShape ;
+        rdfs:label      "Music structural segment" ;
+        sh:description  "\n\t\tClassifier capturing the notion of chorus, verse, intro, bridge, phrase, etc.\n\t\t" ;
+        sh:name         "Music structural segment" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/MusicStructuralSegment> .
+
+<https://astrea.linkeddata.es/shapes#94faf1f16b319d05801d07a3d74363e0>
+        a               sh:PropertyShape ;
+        rdfs:label      "key" , "Associates a key event to the corresponding key" ;
+        sh:class        owl:Thing ;
+        sh:description  "Associates a key event to the corresponding key" ;
+        sh:name         "key" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/ontology/af/key> .
+
+<https://astrea.linkeddata.es/shapes#ec033926eea798fc73564a8ddc3891f0>
+        a               sh:NodeShape ;
+        rdfs:label      "Zero-crossing counts" ;
+        sh:description  "\n\t\tZero-crossing counts\n\t" ;
+        sh:name         "Zero-crossing counts" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/ZeroCrossingCount> .
+
+<https://astrea.linkeddata.es/shapes#5796526047fc3f267eaed5b6575dc50c>
+        a               sh:NodeShape ;
+        rdfs:label      "Idiom" ;
+        sh:description  "\n\t\tIdiom (English with Irish accent, Austrian German, etc.)\n\t\t" ;
+        sh:name         "Idiom" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/Idiom> .
+
+<https://astrea.linkeddata.es/shapes#a363287398805bba5b4241c8ae4b4a8f>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#41c8afba41be57f3afae8d223bded160> ;
+        sh:targetClass  <http://purl.org/ontology/mo/Signal> .
+
+<https://astrea.linkeddata.es/shapes#deee763ad834c3e5ff10259231464e0c>
+        a               sh:NodeShape ;
+        rdfs:label      "Detection function" ;
+        sh:description  "\n\t\tA detection function.\n\t" ;
+        sh:name         "Detection function" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/DetectionFunction> .
+
+<https://astrea.linkeddata.es/shapes#4352a5c2babc7d9efad8908c091f6bf5>
+        a               sh:NodeShape ;
+        rdfs:label      "Point" ;
+        sh:description  "\n\t\tA classifier for instants corresponding to the output of an automatic process---an\n\t\tartificial cognitive agent (should be associated to a time:Instant---DL version).\n\t\t" ;
+        sh:name         "Point" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e351a7dcb6e53125c79c284c864ba30e> ;
+        sh:targetClass  <http://purl.org/ontology/af/Point> .
+
+<https://astrea.linkeddata.es/shapes#9f9a3474e467e846719ca3c1d615fdec>
+        a               sh:NodeShape ;
+        rdfs:label      "Linear-frequency spectral centroid" ;
+        sh:description  "\n\t\tLog-frequency spectral centroid\n\t" ;
+        sh:name         "Linear-frequency spectral centroid" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/LinearFrequencyCentroid> .
+
+<https://astrea.linkeddata.es/shapes#bf3718e8a0146e388d84f6b2e2bce830>
+        a               sh:PropertyShape ;
+        rdfs:label      "tempo" , "\n\t\tAssociates a tempo event to the corresponding tempo value.\n\t" ;
+        sh:description  "\n\t\tAssociates a tempo event to the corresponding tempo value.\n\t" ;
+        sh:name         "tempo" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/ontology/af/tempo> .
+
+<https://astrea.linkeddata.es/shapes#189dc86296d04c846102bfdd6489b692>
+        a               sh:NodeShape ;
+        rdfs:label      "Mode change event" ;
+        sh:description  "A mode change event. The factors of such events include the mode that holds after the event." ;
+        sh:name         "Mode change event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/ModeChange> .
+
+<https://astrea.linkeddata.es/shapes#0fb730590a1ecf2cae4bfb0bb2f6b05b>
+        a               sh:NodeShape ;
+        rdfs:label      "Idiom segment" ;
+        sh:description  "\n\t\tA classifier for recognized idiom (English with Irish accent, etc.)\n\t\t" ;
+        sh:name         "Idiom segment" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#33a7e5951b1e422127faed9e24e89f98> ;
+        sh:targetClass  <http://purl.org/ontology/af/IdiomSegment> .
+
+<https://astrea.linkeddata.es/shapes#77428a5c89f4047fb90a59bcd7d6d44f>
+        a               sh:PropertyShape ;
+        rdfs:label      "\n\t\tRelates a Text segment (classifying a time interval that can \n\t\tbe associated to some text) to a text string or other literals (number, etc.)\n\t\t" ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "\n\t\tRelates a Text segment (classifying a time interval that can \n\t\tbe associated to some text) to a text string or other literals (number, etc.)\n\t\t" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/ontology/af/text> .
+
+<https://astrea.linkeddata.es/shapes#477f39ccd77971a2549a235f6fbc77d5>
+        a               sh:NodeShape ;
+        rdfs:label      "Time signature" ;
+        sh:description  "Classifying a temporal region with a particular time signature (what? there is something else than 4/4?? :-)" ;
+        sh:name         "Time signature" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/TimeSignature> .
+
+<https://astrea.linkeddata.es/shapes#7dba1b02d0a48f1d7f4b06efd3fd34b0>
+        a               sh:NodeShape ;
+        sh:description  "\n\t\tA classifier for chords. Equivalent concept as the one\n\t\tin the Chord ontology.\n\t" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/ChordSegment> , <http://purl.org/ontology/chord/ChordEvent> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#acf237ad4ca0a37c456722206e75acb8> , <https://astrea.linkeddata.es/shapes#f2d9101bebaa0cc2d4fcf4a10fd6f4b7> , <https://astrea.linkeddata.es/shapes#da49120cf3a90fce39296451d2764d51> , <https://astrea.linkeddata.es/shapes#c343b8909774260037376f4295abfeb1> , <https://astrea.linkeddata.es/shapes#b5315aac30e7051d262aaeade9862c0c> , <https://astrea.linkeddata.es/shapes#4a75da064c3752046cb5e527896a5f9f> , <https://astrea.linkeddata.es/shapes#4b6053e795376b09f6eec28ad7dc76d4> , <https://astrea.linkeddata.es/shapes#deee763ad834c3e5ff10259231464e0c> , <https://astrea.linkeddata.es/shapes#89751ce079ab651d03e1f4dc29977cc1> , <https://astrea.linkeddata.es/shapes#7d63d9fae068d9a574dd6dbb9c10ee24> , <https://astrea.linkeddata.es/shapes#0684d4bbf6871688cf8d8c1867497421> , <https://astrea.linkeddata.es/shapes#1345100a9113cdf1810c59519b01398d> , <https://astrea.linkeddata.es/shapes#3ab27204436731b4e2e21911f46aac7d> , <https://astrea.linkeddata.es/shapes#8fc0d903971b71c5b59d320f6b8796cd> , <https://astrea.linkeddata.es/shapes#1e5b3c44967f5dfef0c2a7acab0feaa4> , <https://astrea.linkeddata.es/shapes#b5b5eb46f47998db5016bf5ce9b771e5> , <https://astrea.linkeddata.es/shapes#fa44abdff426621af92312306b75de50> , <https://astrea.linkeddata.es/shapes#279b1e026f687bf2c816a550b4658e5d> , <https://astrea.linkeddata.es/shapes#83f06d6d0caf05fce12ffc3c11b8fc45> , <https://astrea.linkeddata.es/shapes#5796526047fc3f267eaed5b6575dc50c> , <https://astrea.linkeddata.es/shapes#94faf1f16b319d05801d07a3d74363e0> , <https://astrea.linkeddata.es/shapes#ec033926eea798fc73564a8ddc3891f0> , <https://astrea.linkeddata.es/shapes#0fb730590a1ecf2cae4bfb0bb2f6b05b> , <https://astrea.linkeddata.es/shapes#5139dfb01152d070e7dff8b873fa9218> , <https://astrea.linkeddata.es/shapes#dc95f174bbdd632286dc3ebf88ee7492> , <https://astrea.linkeddata.es/shapes#aa3ea06bdb47bb5853582a598c65e707> , <https://astrea.linkeddata.es/shapes#19d7e79bc3fd13b89a9c70cffe4ebe68> , <https://astrea.linkeddata.es/shapes#81119bcabfd4323d5b53725176ef5857> , <https://astrea.linkeddata.es/shapes#4352a5c2babc7d9efad8908c091f6bf5> , <https://astrea.linkeddata.es/shapes#41c8afba41be57f3afae8d223bded160> , <https://astrea.linkeddata.es/shapes#9f9a3474e467e846719ca3c1d615fdec> , <https://astrea.linkeddata.es/shapes#7d7a25e8716f0b4b13d4024ce6e428b5> , <https://astrea.linkeddata.es/shapes#bd56bd490f4395f96915492e9e760401> , <https://astrea.linkeddata.es/shapes#e68f9e7a6af02b9b205dd668d3c13c69> , <https://astrea.linkeddata.es/shapes#5dc055a3999b74e65013e284572b90a6> , <https://astrea.linkeddata.es/shapes#3dc401335ff46785234114270231698a> , <https://astrea.linkeddata.es/shapes#95f65c70a2d1529aefe2d5199bb01fe4> , <https://astrea.linkeddata.es/shapes#9674d34bfde67699e903b62b4656a6d5> , <https://astrea.linkeddata.es/shapes#daa390e3159a7ed63e301ab018af70ce> , <https://astrea.linkeddata.es/shapes#d498c1dfdef40483fd2c09add17f3c6d> , <https://astrea.linkeddata.es/shapes#477f39ccd77971a2549a235f6fbc77d5> , <https://astrea.linkeddata.es/shapes#2d345dcae1454aa98b50a01b32c792e0> , <https://astrea.linkeddata.es/shapes#24a0b5feae5550b4f0bf64bc0bf26807> , <https://astrea.linkeddata.es/shapes#3dc797320a86372d84b5779f6933dfc4> , <https://astrea.linkeddata.es/shapes#9b97f2cb3a2c4917f75025d111a16229> , <https://astrea.linkeddata.es/shapes#e351a7dcb6e53125c79c284c864ba30e> , <https://astrea.linkeddata.es/shapes#6dc06a2852763c9818de6cb3861040f4> , <https://astrea.linkeddata.es/shapes#c1fe2fd4ea9f4661e97816b6b2ffe490> , <https://astrea.linkeddata.es/shapes#322c07aba717e5881b84285292e14af5> , <https://astrea.linkeddata.es/shapes#81971794a9c39f24d65241518ae30a90> , <https://astrea.linkeddata.es/shapes#cd141711213c2dfaf6fb4673c3a7f58e> , <https://astrea.linkeddata.es/shapes#0eaad03d74c965f407363a8b0d860dfd> , <https://astrea.linkeddata.es/shapes#7dba1b02d0a48f1d7f4b06efd3fd34b0> , <https://astrea.linkeddata.es/shapes#a363287398805bba5b4241c8ae4b4a8f> , <https://astrea.linkeddata.es/shapes#77428a5c89f4047fb90a59bcd7d6d44f> , <https://astrea.linkeddata.es/shapes#689c378fb56dffa505e0ebaed8cc1a8b> , <https://astrea.linkeddata.es/shapes#33a7e5951b1e422127faed9e24e89f98> , <https://astrea.linkeddata.es/shapes#189dc86296d04c846102bfdd6489b692> , <https://astrea.linkeddata.es/shapes#633f94bd642fcffcd4b93f8901e699cc> , <https://astrea.linkeddata.es/shapes#e04a8ce1b72e2c2f4d9448fa762d9982> , <https://astrea.linkeddata.es/shapes#bf3718e8a0146e388d84f6b2e2bce830> , <https://astrea.linkeddata.es/shapes#1b633c8eb2e28899cc649766b8b9196c> , <https://astrea.linkeddata.es/shapes#d3524b9af7b061a4bc20bb5f2b111b62> , <https://astrea.linkeddata.es/shapes#4558e9531b8717ad542a778728a47c54> , <https://astrea.linkeddata.es/shapes#29d095d59d4bf389a3c61d6088002cb1> , <https://astrea.linkeddata.es/shapes#a28469d2ed9043cf77f0988d6708f7a2> , <https://astrea.linkeddata.es/shapes#97cdbfe59c37e5e4885d6fc5cffff750> , <https://astrea.linkeddata.es/shapes#0bc53d1b4f6562b7de4d849e94b24d4a> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#c343b8909774260037376f4295abfeb1>
+        a               sh:PropertyShape ;
+        rdfs:label      "tonic" , "Associates a tonic event with the corresponding tonic" ;
+        sh:class        owl:Thing ;
+        sh:description  "Associates a tonic event with the corresponding tonic" ;
+        sh:name         "tonic" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/ontology/af/tonic> .
+
+<https://astrea.linkeddata.es/shapes#97cdbfe59c37e5e4885d6fc5cffff750>
+        a               sh:NodeShape ;
+        rdfs:label      "Key change event" ;
+        sh:description  "A key change event. The factor of such an event captures the key that holds after that event." ;
+        sh:name         "Key change event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#279b1e026f687bf2c816a550b4658e5d> ;
+        sh:targetClass  <http://purl.org/ontology/af/KeyChange> .
+
+<https://astrea.linkeddata.es/shapes#cd141711213c2dfaf6fb4673c3a7f58e>
+        a               sh:PropertyShape ;
+        rdfs:label      "dimensions" , "\n\t\tAssociates a signal with its dimensions, eg. \"12 3546\". Equivalent to the mpeg7:dim attribute of the mpeg7:Raw\n\t\telement.\n\t" ;
+        sh:description  "\n\t\tAssociates a signal with its dimensions, eg. \"12 3546\". Equivalent to the mpeg7:dim attribute of the mpeg7:Raw\n\t\telement.\n\t" ;
+        sh:name         "dimensions" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/ontology/af/dimensions> .
+
+<https://astrea.linkeddata.es/shapes#acf237ad4ca0a37c456722206e75acb8>
+        a               sh:NodeShape ;
+        rdfs:label      "Major segment" ;
+        sh:description  "\n\t\tA classifier for a major mode region.\n\t\tIn case of a \"clean cut\", instances of such events have one\n                factor. In other cases, this event can have several factors, each associated\n                with a particular confidence using event decomposition.\n\t" ;
+        sh:name         "Major segment" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/Major> .
+
+<https://astrea.linkeddata.es/shapes#f2d9101bebaa0cc2d4fcf4a10fd6f4b7>
+        a               sh:NodeShape ;
+        rdfs:label      "English idiom" ;
+        sh:description  "\n\t\tEnglish idiom\n\t\t" ;
+        sh:name         "English idiom" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/EnglishIdiom> .
+
+<https://astrea.linkeddata.es/shapes#2d345dcae1454aa98b50a01b32c792e0>
+        a               sh:NodeShape ;
+        rdfs:label      "Text" ;
+        sh:description  "\n\t\tA classifier allowing to associate some text to a segment\n\t\t" ;
+        sh:name         "Text" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#77428a5c89f4047fb90a59bcd7d6d44f> ;
+        sh:targetClass  <http://purl.org/ontology/af/Text> .
+
+<https://astrea.linkeddata.es/shapes#3dc797320a86372d84b5779f6933dfc4>
+        a               sh:NodeShape ;
+        rdfs:label      "Person speaking" ;
+        sh:description  "\n\t\t\tA classifier associating a FOAF description to a particular segment \n\t\t\t(to classify genre, recognized speaker, etc.)\n\t\t\t" ;
+        sh:name         "Person speaking" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/PersonSpeaking> .
+
+<https://astrea.linkeddata.es/shapes#41c8afba41be57f3afae8d223bded160>
+        a               sh:PropertyShape ;
+        rdfs:label      "signal-level feature" , "\n\t\tAssociates an audio signal with a track-level signal feature.\n\t\teg. a spectrogram, a chromagram, an onset detection function.\n\t" ;
+        sh:datatype     <http://purl.org/ontology/af/Signal> ;
+        sh:description  "\n\t\tAssociates an audio signal with a track-level signal feature.\n\t\teg. a spectrogram, a chromagram, an onset detection function.\n\t" ;
+        sh:name         "signal-level feature" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/ontology/af/signal_feature> .
+
+<https://astrea.linkeddata.es/shapes#4b6053e795376b09f6eec28ad7dc76d4>
+        a               sh:NodeShape ;
+        rdfs:label      "Tonal change event" ;
+        sh:description  "A tonal change event." ;
+        sh:name         "Tonal change event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/TonalChange> .
+
+<https://astrea.linkeddata.es/shapes#c1fe2fd4ea9f4661e97816b6b2ffe490>
+        a               sh:NodeShape ;
+        rdfs:label      "German idiom" ;
+        sh:description  "\n\t\tGerman idiom\n\t\t" ;
+        sh:name         "German idiom" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/GermanIdiom> .
+
+<https://astrea.linkeddata.es/shapes#0684d4bbf6871688cf8d8c1867497421>
+        a               sh:NodeShape ;
+        rdfs:label      "Tonic change event" ;
+        sh:description  "A tonic change event. The factors of such events include the tonic that holds after the event." ;
+        sh:name         "Tonic change event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/TonicChange> .
+
+<https://astrea.linkeddata.es/shapes#5dc055a3999b74e65013e284572b90a6>
+        a               sh:NodeShape ;
+        rdfs:label      "Key event" ;
+        sh:description  "\n\t\tA classifier for keys.\n\t\tIn case of a \"clean cut\", instances of such events\n\t\tshould have one factor: the detected key (perhaps using the\n\t\tkey ontology at http://purl.org/NET/c4dm/keys.owl).\n\t\tIn other cases, we can put several keys as a factor, maybe with different confidence\n\t\tfactors, using event decomposition.\n\t\t" ;
+        sh:name         "Key event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#94faf1f16b319d05801d07a3d74363e0> ;
+        sh:targetClass  <http://purl.org/ontology/af/KeySegment> .
+
+<https://astrea.linkeddata.es/shapes#633f94bd642fcffcd4b93f8901e699cc>
+        a               sh:NodeShape ;
+        rdfs:label      "Log-frequency spectral centroid" ;
+        sh:description  "\n\t\tLog-frequency spectral centroid\n\t" ;
+        sh:name         "Log-frequency spectral centroid" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/LogFrequencyCentroid> .
+
+<https://astrea.linkeddata.es/shapes#b5315aac30e7051d262aaeade9862c0c>
+        a               sh:NodeShape ;
+        rdfs:label      "Segment" ;
+        sh:description  "\n\t\tA classifier for a temporal region corresponding to the output\n\t\tof an automatic process---an artificial cognitive agent.\n\t\t" ;
+        sh:name         "Segment" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#83f06d6d0caf05fce12ffc3c11b8fc45> , <https://astrea.linkeddata.es/shapes#0eaad03d74c965f407363a8b0d860dfd> ;
+        sh:targetClass  <http://purl.org/ontology/af/Segment> .
+
+<https://astrea.linkeddata.es/shapes#1345100a9113cdf1810c59519b01398d>
+        a               sh:NodeShape ;
+        rdfs:label      "Onset detection function" ;
+        sh:description  "\n\t\tAn onset detection function\n\t" ;
+        sh:name         "Onset detection function" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/OnsetDetectionFunction> .
+
+<https://astrea.linkeddata.es/shapes#aa3ea06bdb47bb5853582a598c65e707>
+        a               sh:PropertyShape ;
+        rdfs:label      "new mode" , "Mode that holds after the mode change event" ;
+        sh:class        owl:Thing ;
+        sh:description  "Mode that holds after the mode change event" ;
+        sh:name         "new mode" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/ontology/af/new_mode> .
+
+<https://astrea.linkeddata.es/shapes#689c378fb56dffa505e0ebaed8cc1a8b>
+        a               sh:PropertyShape ;
+        rdfs:label      "new tonic" , "Tonic that holds after the tonic change event" ;
+        sh:class        owl:Thing ;
+        sh:description  "Tonic that holds after the tonic change event" ;
+        sh:name         "new tonic" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/ontology/af/new_tonic> .
+
+<https://astrea.linkeddata.es/shapes#0bc53d1b4f6562b7de4d849e94b24d4a>
+        a               sh:NodeShape ;
+        rdfs:label      "Pitch event" ;
+        sh:description  "Event holding a pitch value (for example coming from a monophonic transcription process)" , "Associate a point to a particular pitch" ;
+        sh:name         "Pitch event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/Pitch> .
+
+<https://astrea.linkeddata.es/shapes#da49120cf3a90fce39296451d2764d51>
+        a               sh:NodeShape ;
+        rdfs:label      "Tonal change detection function" ;
+        sh:description  "\n\t\tA tonal change detection function\n\t" ;
+        sh:name         "Tonal change detection function" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/af/TonalChangeDetectionFunction> .
+
+<https://astrea.linkeddata.es/shapes#8fc0d903971b71c5b59d320f6b8796cd>
+        a               sh:PropertyShape ;
+        rdfs:label      "confidence" , "\n\t\tA really generic property, allowing to associate a confidence to a document or to a particular\n\t\tresource (such as an automatically detected segment)\n\t\t" ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "\n\t\tA really generic property, allowing to associate a confidence to a document or to a particular\n\t\tresource (such as an automatically detected segment)\n\t\t" ;
+        sh:name         "confidence" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/ontology/af/confidence> .

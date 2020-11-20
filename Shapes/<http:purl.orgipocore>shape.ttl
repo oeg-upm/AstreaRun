@@ -1,0 +1,820 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#0d33e6374f9fe6b475d0f30db3b37b02>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Action"@en ;
+        sh:description    "Represents an action to be performed. An Action can only be a primitive action (Task) or a set of actions (CompoundAction).\nAn Action has a precondition that will enable the execution of the Action, and a postcondition (effect) which will be validated after running the Action."@en ;
+        sh:name           "Action"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#cc29d04da4399905bfd4a1c3b55d31a1> , <https://astrea.linkeddata.es/shapes#7fa5e07e12244c2c12eec509095d3eef> ;
+        sh:targetClass    <http://purl.org/ipo/core#Action> .
+
+<https://astrea.linkeddata.es/shapes#9fa8b73aac9bda8c15b6cc5611aa0170>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/2004/02/skos/core#broaderTransitive> .
+
+<https://astrea.linkeddata.es/shapes#832a914b71d123d0fafafa0a4378803f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ipo/core#hasGuardCondition> .
+
+<https://astrea.linkeddata.es/shapes#e5164ce5f77baeae1b61ebc40f18a702>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "hasDirectCategory"@en , "Indicates a category (skos: Concept) directly related to a IssueEntity."@en ;
+        sh:description    "Indicates a category (skos: Concept) directly related to a IssueEntity."@en ;
+        sh:name           "hasDirectCategory"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#hasDirectCategory> .
+
+<https://astrea.linkeddata.es/shapes#7beefa09bb70e12485346573078aa67d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Party"@en ;
+        sh:description    "A class representing a Person or an Organization, and it assumes a role of agent within the treated domain."@en ;
+        sh:name           "Party"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#964173fb2c62b7a576d4b1a056fc3662> ;
+        sh:targetClass    <http://purl.org/ipo/core#Person> , <http://purl.org/ipo/core#Party> , <http://purl.org/ipo/core#Organization> .
+
+<https://astrea.linkeddata.es/shapes#0b4fffd7c7bb788710d0bfd677be76bc>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/ipo/core#Task> .
+
+<https://astrea.linkeddata.es/shapes#1d4bc6d633cec04e5e3e2e1ff0cac9f8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "hasCategory"@en , "Indicates a category (skos: Concept) directly or indirectly related to a IssueEntity.\nThe Concept class of SKOS ontology has properties that allow you to create hierarchies of categories (Concepts), still allowing express transitivity between categories. This approach should be used as an alternative to classification by subclass of IssueEntity when it are not intrinsic classifications, just grouping. For example, in the field of medicine, disease can be grouped as viral diseases, bacterial diseases, etc."@en ;
+        sh:class          <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:description    "Indicates a category (skos: Concept) directly or indirectly related to a IssueEntity.\nThe Concept class of SKOS ontology has properties that allow you to create hierarchies of categories (Concepts), still allowing express transitivity between categories. This approach should be used as an alternative to classification by subclass of IssueEntity when it are not intrinsic classifications, just grouping. For example, in the field of medicine, disease can be grouped as viral diseases, bacterial diseases, etc."@en ;
+        sh:name           "hasCategory"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#hasCategory> .
+
+<https://astrea.linkeddata.es/shapes#369a70718088a9ff73119089aba11af7>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ipo/core#hasTarget> .
+
+<https://astrea.linkeddata.es/shapes#36906525a3d7078bf1305ef85c195890>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "canBeDirectDependenceOf"@en , "This property indicates an Issue that can be direct dependence of another Issue."@en ;
+        sh:description    "This property indicates an Issue that can be direct dependence of another Issue."@en ;
+        sh:name           "canBeDirectDependenceOf"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#canBeDirectDependenceOf> .
+
+<https://astrea.linkeddata.es/shapes#9be241d8aa1e33c5241cf9c19da5fb0a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Person"@en ;
+        sh:description    "This class represents a person.\nCan be used, for example, to represent a person who works in an Organization, produces some Asset or records an IssueEntity."@en ;
+        sh:name           "Person"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ipo/core#Person> , <http://xmlns.com/foaf/0.1/Person> .
+
+<https://astrea.linkeddata.es/shapes#3332eec7c53635356021f1c6841474d1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "dependsOn"@en , "This property indicates that an Issue depends on another Issue directly or indirectly.\nThis property expresses a dependence relationship between Issues and has the characteristic of transitivity, i.e. , if Issue \"A\" depends on the Issue \"B\", and the Issue \"B\" depends on Issue \"C\", then the Issue \"A\" depends on Issue \"C\"."@en ;
+        sh:class          <http://purl.org/ipo/core#Issue> ;
+        sh:description    "This property indicates that an Issue depends on another Issue directly or indirectly.\nThis property expresses a dependence relationship between Issues and has the characteristic of transitivity, i.e. , if Issue \"A\" depends on the Issue \"B\", and the Issue \"B\" depends on Issue \"C\", then the Issue \"A\" depends on Issue \"C\"."@en ;
+        sh:name           "dependsOn"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#dependsOn> .
+
+<https://astrea.linkeddata.es/shapes#2c6cc1326b8bc879686a424a5a9f5e8d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "categoryOf"@en , "Indicates a IssueEntity classified in a skos:Concept."@en ;
+        sh:description    "Indicates a IssueEntity classified in a skos:Concept."@en ;
+        sh:name           "categoryOf"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#categoryOf> .
+
+<https://astrea.linkeddata.es/shapes#9b9c29e229218da1315b5f5db04af42d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Activity"@en ;
+        sh:description    "A set of steps that perform an activity, but does not aim to solve a particular Issue.\nCan be used to group multiple steps that are repeated in various Procedures to facilitate reuse."@en ;
+        sh:name           "Activity"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#ee358d7a013225d458a10d1d5846ff19> ;
+        sh:targetClass    <http://purl.org/ipo/core#Activity> .
+
+<https://astrea.linkeddata.es/shapes#a9bb339001510a2ad432ba6bfdbe62ab>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ipo/core#hasStep> .
+
+<https://astrea.linkeddata.es/shapes#7aeae29574cef5c027a24738e3c024a0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "canBeDependenceOf"@en , "Indicates that an Issue can be a dependence of another Issue directly or indirectly.\nThis property is also transitive, i.e., if the issue \"A\" can be dependence of the issue \"B\" and the issue \"B\" can be dependence of the issue \"C\", then the issue \"A\" can be dependence of the issue \"C\"."@en ;
+        sh:description    "Indicates that an Issue can be a dependence of another Issue directly or indirectly.\nThis property is also transitive, i.e., if the issue \"A\" can be dependence of the issue \"B\" and the issue \"B\" can be dependence of the issue \"C\", then the issue \"A\" can be dependence of the issue \"C\"."@en ;
+        sh:name           "canBeDependenceOf"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#canBeDependenceOf> .
+
+<https://astrea.linkeddata.es/shapes#7b547b8ce61e8d142d7c91546a245776>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "IssueEntity"@en ;
+        sh:description    "A generic class representing the three main concepts within the domain of ontology: Symptom, Problem and Action."@en ;
+        sh:name           "IssueEntity"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#1d4bc6d633cec04e5e3e2e1ff0cac9f8> , <https://astrea.linkeddata.es/shapes#52b202db2af42b4331e8a6fe034193a9> , <https://astrea.linkeddata.es/shapes#3702587c3bc284f7f0800003d03c0e72> , <https://astrea.linkeddata.es/shapes#10c330096820de432c43e58ddcd19c7a> , <https://astrea.linkeddata.es/shapes#fd851b7c439f0147f1c96971751b5779> ;
+        sh:targetClass    <http://purl.org/ipo/core#IssueEntity> .
+
+<https://astrea.linkeddata.es/shapes#1036db8c178b92b34f1580782884c6ff>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Indicates the Step of destination of this Transition."@en , "hasTarget"@en ;
+        sh:description    "Indicates the Step of destination of this Transition."@en ;
+        sh:maxCount       1 ;
+        sh:name           "hasTarget"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#hasTarget> .
+
+<https://astrea.linkeddata.es/shapes#70715c4e4b669c26b6c70a8a2b4816a9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "memberOf"@en , "Indicates a organization that the Party is participant.\nThis property can be used to indicates that an employee is a member of an organization.\nAnother approach is to use this property to relate two organizations thus representing a department that is a member of his company."@en ;
+        sh:description    "Indicates a organization that the Party is participant.\nThis property can be used to indicates that an employee is a member of an organization.\nAnother approach is to use this property to relate two organizations thus representing a department that is a member of his company."@en ;
+        sh:name           "memberOf"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#memberOf> .
+
+<https://astrea.linkeddata.es/shapes#e8fffbe316421e5491c91464810be266>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Symptom"@en ;
+        sh:description    "Represents a sign or indication of one or more Issues. Something that is perceived when a problem occurs.\n"@en ;
+        sh:name           "Symptom"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e3d3e86746d411209a809af04a58e27b> , <https://astrea.linkeddata.es/shapes#a4f92a482b2c0977de5d8ad9a8facf7f> ;
+        sh:targetClass    <http://purl.org/ipo/core#Symptom> .
+
+<https://astrea.linkeddata.es/shapes#cced4ec11087ccae7f5da037a412f4b3>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ipo/core#indicatedBy> .
+
+<https://astrea.linkeddata.es/shapes#dc7b27d0e5f224b802f0b7b175e0a4b3>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://xmlns.com/foaf/0.1/maker> .
+
+<https://astrea.linkeddata.es/shapes#4ba2d1ef433143d2957dbc82a63a1b0b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Indicates the Transition that occurs after execution of this Step and that activates the next Step to be executed."@en , "hasOutcoming"@en ;
+        sh:class          <http://purl.org/ipo/core#Transition> ;
+        sh:description    "Indicates the Transition that occurs after execution of this Step and that activates the next Step to be executed."@en ;
+        sh:inversePath    <http://purl.org/ipo/core#hasOutcoming> ;
+        sh:maxCount       1 ;
+        sh:name           "hasOutcoming"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           <http://purl.org/ipo/core#hasOutcoming> .
+
+<https://astrea.linkeddata.es/shapes#31e85e3ca3d35c3765df1f87b8701c4d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Transition"@en ;
+        sh:description    "An Transition represents a transition (passage) between two Steps. Each Transition has a Step of origin (source) and a Step of destination (target). A Transition has a guard condition that specifies a boolean condition for that the Transition to occur.\nThrough the guard condition, can be implemented, in a simplified way, a workflow, establishing decision structures, repetition, choice, etc."@en ;
+        sh:name           "Transition"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#369a70718088a9ff73119089aba11af7> , <https://astrea.linkeddata.es/shapes#ec92c5a7aad539648a9e981c3094201e> , <https://astrea.linkeddata.es/shapes#b73f0785a96ea2bcae0e27d148c7fb95> , <https://astrea.linkeddata.es/shapes#832a914b71d123d0fafafa0a4378803f> ;
+        sh:targetClass    <http://purl.org/ipo/core#Transition> .
+
+<https://astrea.linkeddata.es/shapes#a96a5ac9853b24e58cb4a037dd2f35d7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "hasIncoming"@en , "Indicates the Transition that starts the execution of this Step."@en ;
+        sh:class          <http://purl.org/ipo/core#Transition> ;
+        sh:description    "Indicates the Transition that starts the execution of this Step."@en ;
+        sh:inversePath    <http://purl.org/ipo/core#hasIncoming> ;
+        sh:maxCount       1 ;
+        sh:name           "hasIncoming"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           <http://purl.org/ipo/core#hasIncoming> .
+
+<https://astrea.linkeddata.es/shapes#6379942a9042a3f1c6bfd95714f5f80d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "solvedBy"@en , "Indicates a solution (Procedure) for this Issue."@en ;
+        sh:description    "Indicates a solution (Procedure) for this Issue."@en ;
+        sh:name           "solvedBy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#solvedBy> .
+
+<https://astrea.linkeddata.es/shapes#761e3f9470f00d312894a08038f506b8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "dependenceOf"@en , "Indicates that an Issue is a dependence of another Issue directly or indirectly. \nThis property also has a transitive characteristic, i.e. , if Issue \"A\" is dependence of the Issue \"B\", and the Issue \"B\" is dependence of Issue \"C\", then the Issue \"A\" is dependence of Issue \"C\"."@en ;
+        sh:description    "Indicates that an Issue is a dependence of another Issue directly or indirectly. \nThis property also has a transitive characteristic, i.e. , if Issue \"A\" is dependence of the Issue \"B\", and the Issue \"B\" is dependence of Issue \"C\", then the Issue \"A\" is dependence of Issue \"C\"."@en ;
+        sh:name           "dependenceOf"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#dependenceOf> .
+
+<https://astrea.linkeddata.es/shapes#9b3c98a4cd3fc9fbe90361ac468a921d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "canCause"@en , "An Issue can cause another Issue directly or indirectly. \nThis property aims to express a possible causal relationship and has the characteristic of transitivity, i.e., the Issue \"A\" can cause the Issue \"B\" and the Issue \"B\" can cause the Issue \"C\", then the Issue \"A\" can cause the Issue \"C\"."@en ;
+        sh:class          <http://purl.org/ipo/core#Issue> ;
+        sh:description    "An Issue can cause another Issue directly or indirectly. \nThis property aims to express a possible causal relationship and has the characteristic of transitivity, i.e., the Issue \"A\" can cause the Issue \"B\" and the Issue \"B\" can cause the Issue \"C\", then the Issue \"A\" can cause the Issue \"C\"."@en ;
+        sh:name           "canCause"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#canCause> .
+
+<https://astrea.linkeddata.es/shapes#bc9031fa34768a3b0ca51e5b899da0ef>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "activates"@en , "Indicates the action to be activated by a Step."@en ;
+        sh:class          <http://purl.org/ipo/core#Action> ;
+        sh:description    "Indicates the action to be activated by a Step."@en ;
+        sh:maxCount       1 ;
+        sh:name           "activates"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           <http://purl.org/ipo/core#activates> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#5ee472df322ba3e53348f73770cad625>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "canBeCausedBy"@en , "The Issue can be caused by another Issue directly or indirectly.\nThis property is transitive, i.e., if the issue \"A\" can be caused by the issue \"B\" and the issue \"B\" can be caused by the issue \"C\", then the issue \"A\" can be caused by the issue \"C\"."@en ;
+        sh:description    "The Issue can be caused by another Issue directly or indirectly.\nThis property is transitive, i.e., if the issue \"A\" can be caused by the issue \"B\" and the issue \"B\" can be caused by the issue \"C\", then the issue \"A\" can be caused by the issue \"C\"."@en ;
+        sh:name           "canBeCausedBy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#canBeCausedBy> .
+
+<https://astrea.linkeddata.es/shapes#3a5d4b93a24527cb99ad7c9b47aaa16d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "causativeAssetOf"@en , "This property relates a Asset with a Issue caused by this Asset. For example, a virus associated with a disease caused by it."@en ;
+        sh:description    "This property relates a Asset with a Issue caused by this Asset. For example, a virus associated with a disease caused by it."@en ;
+        sh:name           "causativeAssetOf"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#causativeAssetOf> .
+
+<https://astrea.linkeddata.es/shapes#52e36a2bf222e30f7ecc7c61dd1304ba>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "hasStep"@en , "Indicates a Step that composes the compoundAction."@en ;
+        sh:class          <http://purl.org/ipo/core#Step> ;
+        sh:description    "Indicates a Step that composes the compoundAction."@en ;
+        sh:name           "hasStep"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#hasStep> .
+
+<https://astrea.linkeddata.es/shapes#7fa5e07e12244c2c12eec509095d3eef>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ipo/core#hasPreCondition> .
+
+<https://astrea.linkeddata.es/shapes#ad3fbb4120b758d68047e688200f047c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ipo/core#solves> .
+
+<https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/vocommons/voaf#Vocabulary> .
+
+<https://astrea.linkeddata.es/shapes#c3fe45e6d29a16fe892b8bf8cfca0fa8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Indicates the description of the goal to be reached after the execution of Procedure."@en , "goal"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "Indicates the description of the goal to be reached after the execution of Procedure."@en ;
+        sh:name           "goal"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ipo/core#goal> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#964173fb2c62b7a576d4b1a056fc3662>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ipo/core#name> .
+
+<https://astrea.linkeddata.es/shapes#b73f0785a96ea2bcae0e27d148c7fb95>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "hasGuardCondition"@en , "Indicates a BooleanExpression for that a Transition occurs.\nFor example, a Transition can have as guardCondition that the Step of origin be executed 10 times. So while this Step does is not executes 10 times, will not be started the Step of destination. This example illustrates a repeating structure within the workflow."@en ;
+        sh:class          <http://purl.org/ipo/core#BooleanExpression> ;
+        sh:description    "Indicates a BooleanExpression for that a Transition occurs.\nFor example, a Transition can have as guardCondition that the Step of origin be executed 10 times. So while this Step does is not executes 10 times, will not be started the Step of destination. This example illustrates a repeating structure within the workflow."@en ;
+        sh:maxCount       1 ;
+        sh:name           "hasGuardCondition"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           <http://purl.org/ipo/core#hasGuardCondition> .
+
+<https://astrea.linkeddata.es/shapes#94c3c9208fdbc676dea348d33d5c95b5>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ipo/core#description> .
+
+<https://astrea.linkeddata.es/shapes#2952074af5bd82814dab7260da289eab>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "BooleanExpression"@en ;
+        sh:description    "A logical expression whose value is true or false, aiming to validate a Transition between two Steps, or serve with a pre-condition for the execution of a Action or serve as a post-condition to validate the execution of an Action.\nThis class has a description of the expression and two possible values: true or false. For these values, two instances are designed to be reused."@en ;
+        sh:name           "BooleanExpression"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#94c3c9208fdbc676dea348d33d5c95b5> ;
+        sh:targetClass    <http://purl.org/ipo/core#BooleanExpression> .
+
+<https://astrea.linkeddata.es/shapes#3ec7a0b4f2713d32ec0b8d3b16d02e75>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ipo/core#hasFirstStep> .
+
+<https://astrea.linkeddata.es/shapes#0259d405a29faa3a88992c0f816551f3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "CompoundAction"@en ;
+        sh:description    "An action composed of several other actions. A CompoundAction may have the goal of solving one or more Issues, representing a Procedure or not having an explicit goal, just be a group of Actions to be reused, behaving as an Activity. A CompoundAction has one or more execution steps that activate one Action (Task or other CompoundAction), thus allowing, that a compoundAction reuse another.\nA CompoundAction can be used to create a workflow structure, aimed at better structuring of actions that compose it."@en ;
+        sh:name           "CompoundAction"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#0b4fffd7c7bb788710d0bfd677be76bc> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3ec7a0b4f2713d32ec0b8d3b16d02e75> , <https://astrea.linkeddata.es/shapes#a9bb339001510a2ad432ba6bfdbe62ab> , <https://astrea.linkeddata.es/shapes#52e36a2bf222e30f7ecc7c61dd1304ba> ;
+        sh:targetClass    <http://purl.org/ipo/core#CompoundAction> .
+
+<https://astrea.linkeddata.es/shapes#c9ac3ee8b650495e3724cf79fb7e4123>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "hasMember"@en , "Indicates a Person who is a member of this Organization or another Organization that is member of this Organization, representing here a department or business unit.\n"@en ;
+        sh:class          <http://purl.org/ipo/core#Party> ;
+        sh:description    "Indicates a Person who is a member of this Organization or another Organization that is member of this Organization, representing here a department or business unit.\n"@en ;
+        sh:name           "hasMember"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#hasMember> .
+
+<https://astrea.linkeddata.es/shapes#3702587c3bc284f7f0800003d03c0e72>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "hasAsset"@en , "Indicates an Asset to IssueEntity, i.e., any \"thing\" which is related to IssueEntity."@en ;
+        sh:class          <http://purl.org/ipo/core#Asset> ;
+        sh:description    "Indicates an Asset to IssueEntity, i.e., any \"thing\" which is related to IssueEntity."@en ;
+        sh:name           "hasAsset"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#hasAsset> .
+
+<https://astrea.linkeddata.es/shapes#39e6efa240388a032162af072c6d399f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Asset"@en ;
+        sh:description    "Any \"thing\" that a IssueEntity is related. \nFor example, a problem (disease) diagnosed in a patient, can have a virus and the patient as Asset, since the virus is the causative agent of the problem and the patient is the host in which the problem manifests itself.\nAn Asset can be a person, an object, a report, a document, etc."@en ;
+        sh:name           "Asset"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d0581002a7a363928817f4cf9fba507b> , <https://astrea.linkeddata.es/shapes#fd851b7c439f0147f1c96971751b5779> ;
+        sh:targetClass    <http://purl.org/ipo/core#Asset> .
+
+<https://astrea.linkeddata.es/shapes#11fca2b246070939d9cc2b02862a9118>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "directDependenceOf"@en , "Indicates that a Issue is direct dependence of another Issue."@en ;
+        sh:description    "Indicates that a Issue is direct dependence of another Issue."@en ;
+        sh:name           "directDependenceOf"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#directDependenceOf> .
+
+<https://astrea.linkeddata.es/shapes#07fe8d090dee52aa25cacf9ba01c537d>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://xmlns.com/foaf/0.1/depiction> .
+
+<https://astrea.linkeddata.es/shapes#9be446300ec948532d225483e1a546dc>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "directlyDependsOn"@en , "This relation indicates that a issue directly depends on another Issue."@en ;
+        sh:description    "This relation indicates that a issue directly depends on another Issue."@en ;
+        sh:name           "directlyDependsOn"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#directlyDependsOn> .
+
+<https://astrea.linkeddata.es/shapes#0759a9c2d545c412e014100eb977f0d1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Indicates a precondition for the Action be executed.\n\nA precondition may represent a prerequisite for execution of the Action, without which it is not guaranteed correct execution."@en , "hasPreCondition"@en ;
+        sh:class          <http://purl.org/ipo/core#BooleanExpression> ;
+        sh:description    "Indicates a precondition for the Action be executed.\n\nA precondition may represent a prerequisite for execution of the Action, without which it is not guaranteed correct execution."@en ;
+        sh:inversePath    <http://purl.org/ipo/core#hasPreCondition> ;
+        sh:maxCount       1 ;
+        sh:name           "hasPreCondition"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#hasPreCondition> .
+
+<https://astrea.linkeddata.es/shapes#fd851b7c439f0147f1c96971751b5779>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "hasMaker"@en , "Indicates a Person or Organization (Party) who created or registered the IssueEntity. This property is also used by Asset class to relate to its manufacturer, developer, inventor, etc."@en ;
+        sh:class          <http://purl.org/ipo/core#Party> ;
+        sh:description    "Indicates a Person or Organization (Party) who created or registered the IssueEntity. This property is also used by Asset class to relate to its manufacturer, developer, inventor, etc."@en ;
+        sh:name           "hasMaker"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#hasMaker> .
+
+<https://astrea.linkeddata.es/shapes#4b66b03df87dd74c9222d697c6241f42>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Issue"@en ;
+        sh:description    "A problem or issue to be resolved. For example, something that is not operating normally or a hindrance to performing some task.\nA Issue can be cause and/or caused, directly or indirectly, by another Issue, the same that the Issue A can depend on the Issue B, needing that the Issue B be solved before solving Issue A.\nThe Issue can have a set of Actions (Procedures) that will fix it and also a Issue can be indicated by several Symptoms, where a set of Symptoms can identify a Issue."@en ;
+        sh:name           "Issue"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3332eec7c53635356021f1c6841474d1> , <https://astrea.linkeddata.es/shapes#cced4ec11087ccae7f5da037a412f4b3> , <https://astrea.linkeddata.es/shapes#9b3c98a4cd3fc9fbe90361ac468a921d> , <https://astrea.linkeddata.es/shapes#5fc0aad9ae3679ac3170e0c4b8249a12> , <https://astrea.linkeddata.es/shapes#ba0e5055a3c7a0a9737f256b884a86f2> ;
+        sh:targetClass    <http://purl.org/ipo/core#Issue> .
+
+<https://astrea.linkeddata.es/shapes#9c04980330c37acd70365d3e6ed23701>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "assetOf"@en , "Indicates a IssueEntity that is related to the Asset.\nThis property can be used to facilitate retrieval records of problems related to the Asset."@en ;
+        sh:description    "Indicates a IssueEntity that is related to the Asset.\nThis property can be used to facilitate retrieval records of problems related to the Asset."@en ;
+        sh:name           "assetOf"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#assetOf> .
+
+<https://astrea.linkeddata.es/shapes#a4f92a482b2c0977de5d8ad9a8facf7f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ipo/core#indicates> .
+
+<https://astrea.linkeddata.es/shapes#b1e7e999313ddb1e62bb7b5a54e5f1bd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Procedure"@en ;
+        sh:description    "A sequence of steps which, after executed solve one or more Issues.\nA procedure has a number of steps that are executed in a specific sequence, one seeking to solve Issue."@en ;
+        sh:name           "Procedure"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c7f96ae35df2f67d988cd8f977946e3d> , <https://astrea.linkeddata.es/shapes#ad3fbb4120b758d68047e688200f047c> , <https://astrea.linkeddata.es/shapes#c3fe45e6d29a16fe892b8bf8cfca0fa8> ;
+        sh:targetClass    <http://purl.org/ipo/core#Procedure> .
+
+<https://astrea.linkeddata.es/shapes#d6a453eb36ad1b9fa1415585c345c986>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Step"@en ;
+        sh:description    "A step to be performed within a CompoundAction. Every Step has an Action to be performed and a Transition to another Step to be performed after completing the execution of the Action. \nWith Steps is possible to establish an order for the execution of Actions, as each Step has a Transition that sets the Step of origin and destination. Once a CompoundAction has an initial Step (IPO: hasFirstStep), from this Step can be run all other steps that composes the compoundAction following the Transition between them."@en ;
+        sh:name           "Step"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#bc9031fa34768a3b0ca51e5b899da0ef> ;
+        sh:targetClass    <http://purl.org/ipo/core#Step> .
+
+<https://astrea.linkeddata.es/shapes#90f4a056b34de103e0c53a2f96db8deb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "hasDepiction"@en , "Indicates an image that illustrates the IssueEntity.\nSeeking a better description of IssueEntity, one can make use of this property to relate an illustrative image. For example, an image of a software screen containing an error occurred can help describe the problem."@en ;
+        sh:class          <http://purl.org/ipo/core#Image> ;
+        sh:description    "Indicates an image that illustrates the IssueEntity.\nSeeking a better description of IssueEntity, one can make use of this property to relate an illustrative image. For example, an image of a software screen containing an error occurred can help describe the problem."@en ;
+        sh:inversePath    <http://purl.org/ipo/core#hasDepiction> ;
+        sh:maxCount       1 ;
+        sh:name           "hasDepiction"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#hasDepiction> .
+
+<https://astrea.linkeddata.es/shapes#d0581002a7a363928817f4cf9fba507b>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ipo/core#title> .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Person> .
+
+<https://astrea.linkeddata.es/shapes#5fc0aad9ae3679ac3170e0c4b8249a12>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "canDependOn"@en , "Indicates that an Issue can depend on another Issue directly or indirectly.\nThis property can express a dependency relationship between Issues and has the characteristic of transitivity, i.e., the Issue \"A\" can depend on the Issue \"B\" and the Issue \"B\" can depend on \"C\", then the Issue \"A\" can depend on the Issue \"C\"."@en ;
+        sh:class          <http://purl.org/ipo/core#Issue> ;
+        sh:description    "Indicates that an Issue can depend on another Issue directly or indirectly.\nThis property can express a dependency relationship between Issues and has the characteristic of transitivity, i.e., the Issue \"A\" can depend on the Issue \"B\" and the Issue \"B\" can depend on \"C\", then the Issue \"A\" can depend on the Issue \"C\"."@en ;
+        sh:name           "canDependOn"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#canDependOn> .
+
+<https://astrea.linkeddata.es/shapes#161431d3df0f54766d804ded47852c5b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Image"@en ;
+        sh:description    "An artifact that illustrates or records a visual perception.\n\nIt can be used to illustrate a IssueEntity seeking a better understanding of it."@en ;
+        sh:name           "Image"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ipo/core#Image> , <http://xmlns.com/foaf/0.1/Image> .
+
+<https://astrea.linkeddata.es/shapes#fd817f3de5392f1152bf659f99cf9b88>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "directlyCauses"@en , "This property indicates that an Issue directly causes another Issue."@en ;
+        sh:description    "This property indicates that an Issue directly causes another Issue."@en ;
+        sh:name           "directlyCauses"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#directlyCauses> .
+
+<https://astrea.linkeddata.es/shapes#ec92c5a7aad539648a9e981c3094201e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ipo/core#hasSource> .
+
+<https://astrea.linkeddata.es/shapes#5192bd4012546876e17387cec79301a1>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Organization> .
+
+<https://astrea.linkeddata.es/shapes#ba0e5055a3c7a0a9737f256b884a86f2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "causes"@en , "Indicates that an Issue causes another Issue directly or indirectly.\nThis property expresses a causal relationship between Issues and have the characteristic of transitivity, i.e., if the Issue \"A\" causes Issue \"B\" and the Issue \"B\" causes Issue \"C\", then the Issue \"A\" causes Issue \"C\"."@en ;
+        sh:class          <http://purl.org/ipo/core#Issue> ;
+        sh:description    "Indicates that an Issue causes another Issue directly or indirectly.\nThis property expresses a causal relationship between Issues and have the characteristic of transitivity, i.e., if the Issue \"A\" causes Issue \"B\" and the Issue \"B\" causes Issue \"C\", then the Issue \"A\" causes Issue \"C\"."@en ;
+        sh:name           "causes"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#causes> .
+
+<https://astrea.linkeddata.es/shapes#c154acdda4658c313769d66946e93690>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "directCategoryOf"@en , "Indicates a IssueEntity directly classified in a skos:Concept."@en ;
+        sh:description    "Indicates a IssueEntity directly classified in a skos:Concept."@en ;
+        sh:name           "directCategoryOf"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#directCategoryOf> .
+
+<https://astrea.linkeddata.es/shapes#a36a6a2f231eb4aeaf97076df76017b3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "canDirectlyCause"@en , "An Issue can directly cause another Issue.\nThis property aims to express a possible causal relationship, where an Issue can be direct cause of another Issue. For example, flu disease can cause pneumonia, i.e., in some cases, flu causes pneumonia and in another cases not."@en ;
+        sh:description    "An Issue can directly cause another Issue.\nThis property aims to express a possible causal relationship, where an Issue can be direct cause of another Issue. For example, flu disease can cause pneumonia, i.e., in some cases, flu causes pneumonia and in another cases not."@en ;
+        sh:name           "canDirectlyCause"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#canDirectlyCause> .
+
+<https://astrea.linkeddata.es/shapes#e3d3e86746d411209a809af04a58e27b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "indicates"@en , "This property relates a Issue indicated by this Symptom.\nA Symptom may indicate many Issues, such as a Symptom of fever can indicate many diseases."@en ;
+        sh:class          <http://purl.org/ipo/core#Issue> ;
+        sh:description    "This property relates a Issue indicated by this Symptom.\nA Symptom may indicate many Issues, such as a Symptom of fever can indicate many diseases."@en ;
+        sh:name           "indicates"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#indicates> .
+
+<https://astrea.linkeddata.es/shapes#52b202db2af42b4331e8a6fe034193a9>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ipo/core#title> .
+
+<https://astrea.linkeddata.es/shapes#276a38f48c22c82863ac28129762c364>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "canDirectlyDependOn"@en , "Indicates that an Issue can directly depend on another Issue.\nFor example, pneumonia can directly depend that the flu is cured to finally be treated."@en ;
+        sh:description    "Indicates that an Issue can directly depend on another Issue.\nFor example, pneumonia can directly depend that the flu is cured to finally be treated."@en ;
+        sh:name           "canDirectlyDependOn"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#canDirectlyDependOn> .
+
+<https://astrea.linkeddata.es/shapes#7a49f5dd0954737e0f7e916a39e41c59>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Image> .
+
+<https://astrea.linkeddata.es/shapes#48fb3676ddc874868732fad4dba50376>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "hasFirstStep"@en , "A CompoundAction has one or more steps, so this property indicates the first step should be executed."@en ;
+        sh:description    "A CompoundAction has one or more steps, so this property indicates the first step should be executed."@en ;
+        sh:inversePath    <http://purl.org/ipo/core#hasFirstStep> ;
+        sh:maxCount       1 ;
+        sh:name           "hasFirstStep"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#feda1d30c2a4aaf5aebe979e5a0810da>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/dc/terms/description> .
+
+<https://astrea.linkeddata.es/shapes#93f1d9147e1a0ab879c12fc9f292c159>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/ipo/core#Person> .
+
+<https://astrea.linkeddata.es/shapes#386c3d672b59b55729f06552db2b7a5a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Indicates text that describes something in detail."@en , "description"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "Indicates text that describes something in detail."@en ;
+        sh:name           "description"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ipo/core#description> ;
+        sh:pattern        ".*" .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#36906525a3d7078bf1305ef85c195890> , <https://astrea.linkeddata.es/shapes#6b19ef13e40ded9aec49e6e2ce62ccb1> , <https://astrea.linkeddata.es/shapes#9be446300ec948532d225483e1a546dc> , <https://astrea.linkeddata.es/shapes#1036db8c178b92b34f1580782884c6ff> , <https://astrea.linkeddata.es/shapes#b73f0785a96ea2bcae0e27d148c7fb95> , <https://astrea.linkeddata.es/shapes#52e36a2bf222e30f7ecc7c61dd1304ba> , <https://astrea.linkeddata.es/shapes#db39288382a47bf49cafe5a75a8f8fa5> , <https://astrea.linkeddata.es/shapes#94c3c9208fdbc676dea348d33d5c95b5> , <https://astrea.linkeddata.es/shapes#93b212c934488b64c5a9bd36bab6f7d4> , <https://astrea.linkeddata.es/shapes#0259d405a29faa3a88992c0f816551f3> , <https://astrea.linkeddata.es/shapes#7fa5e07e12244c2c12eec509095d3eef> , <https://astrea.linkeddata.es/shapes#c3fe45e6d29a16fe892b8bf8cfca0fa8> , <https://astrea.linkeddata.es/shapes#a96a5ac9853b24e58cb4a037dd2f35d7> , <https://astrea.linkeddata.es/shapes#fd817f3de5392f1152bf659f99cf9b88> , <https://astrea.linkeddata.es/shapes#5fc0aad9ae3679ac3170e0c4b8249a12> , <https://astrea.linkeddata.es/shapes#d0581002a7a363928817f4cf9fba507b> , <https://astrea.linkeddata.es/shapes#fd851b7c439f0147f1c96971751b5779> , <https://astrea.linkeddata.es/shapes#2c6cc1326b8bc879686a424a5a9f5e8d> , <https://astrea.linkeddata.es/shapes#a36a6a2f231eb4aeaf97076df76017b3> , <https://astrea.linkeddata.es/shapes#3332eec7c53635356021f1c6841474d1> , <https://astrea.linkeddata.es/shapes#d6a453eb36ad1b9fa1415585c345c986> , <https://astrea.linkeddata.es/shapes#4ba2d1ef433143d2957dbc82a63a1b0b> , <https://astrea.linkeddata.es/shapes#10c330096820de432c43e58ddcd19c7a> , <https://astrea.linkeddata.es/shapes#221856f6387e79594095fc78705f1484> , <https://astrea.linkeddata.es/shapes#9fa8b73aac9bda8c15b6cc5611aa0170> , <https://astrea.linkeddata.es/shapes#ad3fbb4120b758d68047e688200f047c> , <https://astrea.linkeddata.es/shapes#31e85e3ca3d35c3765df1f87b8701c4d> , <https://astrea.linkeddata.es/shapes#761e3f9470f00d312894a08038f506b8> , <https://astrea.linkeddata.es/shapes#07fe8d090dee52aa25cacf9ba01c537d> , <https://astrea.linkeddata.es/shapes#9be241d8aa1e33c5241cf9c19da5fb0a> , <https://astrea.linkeddata.es/shapes#7aeae29574cef5c027a24738e3c024a0> , <https://astrea.linkeddata.es/shapes#d11dcd6bf65ac8f3a8ba70dceaf23477> , <https://astrea.linkeddata.es/shapes#ec92c5a7aad539648a9e981c3094201e> , <https://astrea.linkeddata.es/shapes#6379942a9042a3f1c6bfd95714f5f80d> , <https://astrea.linkeddata.es/shapes#cc29d04da4399905bfd4a1c3b55d31a1> , <https://astrea.linkeddata.es/shapes#ba0e5055a3c7a0a9737f256b884a86f2> , <https://astrea.linkeddata.es/shapes#c154acdda4658c313769d66946e93690> , <https://astrea.linkeddata.es/shapes#386c3d672b59b55729f06552db2b7a5a> , <https://astrea.linkeddata.es/shapes#369a70718088a9ff73119089aba11af7> , <https://astrea.linkeddata.es/shapes#0d33e6374f9fe6b475d0f30db3b37b02> , <https://astrea.linkeddata.es/shapes#52b202db2af42b4331e8a6fe034193a9> , <https://astrea.linkeddata.es/shapes#832a914b71d123d0fafafa0a4378803f> , <https://astrea.linkeddata.es/shapes#f82379aace30be1c3f2f850b115792bf> , <https://astrea.linkeddata.es/shapes#cd1e79912c61d892acbd4c5e81e26d5f> , <https://astrea.linkeddata.es/shapes#93f1d9147e1a0ab879c12fc9f292c159> , <https://astrea.linkeddata.es/shapes#0759a9c2d545c412e014100eb977f0d1> , <https://astrea.linkeddata.es/shapes#c9ac3ee8b650495e3724cf79fb7e4123> , <https://astrea.linkeddata.es/shapes#7b547b8ce61e8d142d7c91546a245776> , <https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5> , <https://astrea.linkeddata.es/shapes#cced4ec11087ccae7f5da037a412f4b3> , <https://astrea.linkeddata.es/shapes#276a38f48c22c82863ac28129762c364> , <https://astrea.linkeddata.es/shapes#7beefa09bb70e12485346573078aa67d> , <https://astrea.linkeddata.es/shapes#7a49f5dd0954737e0f7e916a39e41c59> , <https://astrea.linkeddata.es/shapes#ee358d7a013225d458a10d1d5846ff19> , <https://astrea.linkeddata.es/shapes#e5164ce5f77baeae1b61ebc40f18a702> , <https://astrea.linkeddata.es/shapes#9c2bd9f8761718168301689a13c3a31e> , <https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f> , <https://astrea.linkeddata.es/shapes#0d8b12d6b45f550dc5dd27d9a3abf78f> , <https://astrea.linkeddata.es/shapes#3f2ae919e9c05cd1b735ab4f438ab19b> , <https://astrea.linkeddata.es/shapes#4b66b03df87dd74c9222d697c6241f42> , <https://astrea.linkeddata.es/shapes#9c04980330c37acd70365d3e6ed23701> , <https://astrea.linkeddata.es/shapes#39e6efa240388a032162af072c6d399f> , <https://astrea.linkeddata.es/shapes#b07b55a654067a3f23675086b0b26681> , <https://astrea.linkeddata.es/shapes#964173fb2c62b7a576d4b1a056fc3662> , <https://astrea.linkeddata.es/shapes#2952074af5bd82814dab7260da289eab> , <https://astrea.linkeddata.es/shapes#b1e7e999313ddb1e62bb7b5a54e5f1bd> , <https://astrea.linkeddata.es/shapes#e3d3e86746d411209a809af04a58e27b> , <https://astrea.linkeddata.es/shapes#0b4fffd7c7bb788710d0bfd677be76bc> , <https://astrea.linkeddata.es/shapes#c42940894d4baf138da61405a7e0ca5c> , <https://astrea.linkeddata.es/shapes#d792966ddfe0a86d4943374e4f5c8ee8> , <https://astrea.linkeddata.es/shapes#9b3c98a4cd3fc9fbe90361ac468a921d> , <https://astrea.linkeddata.es/shapes#90f4a056b34de103e0c53a2f96db8deb> , <https://astrea.linkeddata.es/shapes#5ee472df322ba3e53348f73770cad625> , <https://astrea.linkeddata.es/shapes#790f7031af9fe484300505e11d483d44> , <https://astrea.linkeddata.es/shapes#3ec7a0b4f2713d32ec0b8d3b16d02e75> , <https://astrea.linkeddata.es/shapes#c7c04f0d5d5a1b64520ca088fa9f26c0> , <https://astrea.linkeddata.es/shapes#bc9031fa34768a3b0ca51e5b899da0ef> , <https://astrea.linkeddata.es/shapes#70715c4e4b669c26b6c70a8a2b4816a9> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#161431d3df0f54766d804ded47852c5b> , <https://astrea.linkeddata.es/shapes#3a5d4b93a24527cb99ad7c9b47aaa16d> , <https://astrea.linkeddata.es/shapes#3702587c3bc284f7f0800003d03c0e72> , <https://astrea.linkeddata.es/shapes#48fb3676ddc874868732fad4dba50376> , <https://astrea.linkeddata.es/shapes#c7f96ae35df2f67d988cd8f977946e3d> , <https://astrea.linkeddata.es/shapes#5192bd4012546876e17387cec79301a1> , <https://astrea.linkeddata.es/shapes#dc7b27d0e5f224b802f0b7b175e0a4b3> , <https://astrea.linkeddata.es/shapes#9b9c29e229218da1315b5f5db04af42d> , <https://astrea.linkeddata.es/shapes#e9c37d978970d612a7d2f2ff2aba7a35> , <https://astrea.linkeddata.es/shapes#1d4bc6d633cec04e5e3e2e1ff0cac9f8> , <https://astrea.linkeddata.es/shapes#e8fffbe316421e5491c91464810be266> , <https://astrea.linkeddata.es/shapes#81d71f1f6c0d5208eb4b8fc78ba2b7ea> , <https://astrea.linkeddata.es/shapes#feda1d30c2a4aaf5aebe979e5a0810da> , <https://astrea.linkeddata.es/shapes#11fca2b246070939d9cc2b02862a9118> , <https://astrea.linkeddata.es/shapes#a4f92a482b2c0977de5d8ad9a8facf7f> , <https://astrea.linkeddata.es/shapes#fd7653ba9a62527d8598e36f22b52215> , <https://astrea.linkeddata.es/shapes#a9bb339001510a2ad432ba6bfdbe62ab> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#3f2ae919e9c05cd1b735ab4f438ab19b>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/dc/terms/title> .
+
+<https://astrea.linkeddata.es/shapes#fd7653ba9a62527d8598e36f22b52215>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://xmlns.com/foaf/0.1/depicts> .
+
+<https://astrea.linkeddata.es/shapes#790f7031af9fe484300505e11d483d44>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Organization"@en ;
+        sh:description    "Represents a group of people organized aiming at a common goal: social, commercial or political.\nCan be used, for example, to represent a company that manufactures an Asset."@en ;
+        sh:name           "Organization"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#93f1d9147e1a0ab879c12fc9f292c159> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c9ac3ee8b650495e3724cf79fb7e4123> ;
+        sh:targetClass    <http://xmlns.com/foaf/0.1/Organization> , <http://purl.org/ipo/core#Organization> .
+
+<https://astrea.linkeddata.es/shapes#c42940894d4baf138da61405a7e0ca5c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Indicates a postcondition (effect) will be reached after executing the Action."@en , "hasPostCondition"@en ;
+        sh:class          <http://purl.org/ipo/core#BooleanExpression> ;
+        sh:description    "Indicates a postcondition (effect) will be reached after executing the Action."@en ;
+        sh:inversePath    <http://purl.org/ipo/core#hasPostCondition> ;
+        sh:maxCount       1 ;
+        sh:name           "hasPostCondition"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#hasPostCondition> .
+
+<https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2004/02/skos/core#Concept> .
+
+<https://astrea.linkeddata.es/shapes#b07b55a654067a3f23675086b0b26681>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "title"@en , "Title (word or phrase) that briefly describes something."@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "Title (word or phrase) that briefly describes something."@en ;
+        sh:name           "title"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ipo/core#title> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#9c2bd9f8761718168301689a13c3a31e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "depictionOf"@en , "Indicates a IssueEntity illustrated by the image.\nThis property is functional, i.e., an Image is related by this property with only one IssueEntity."@en ;
+        sh:description    "Indicates a IssueEntity illustrated by the image.\nThis property is functional, i.e., an Image is related by this property with only one IssueEntity."@en ;
+        sh:name           "depictionOf"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#depictionOf> .
+
+<https://astrea.linkeddata.es/shapes#221856f6387e79594095fc78705f1484>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Indicates a name to identify something."@en , "name"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "Indicates a name to identify something."@en ;
+        sh:name           "name"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ipo/core#name> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#81d71f1f6c0d5208eb4b8fc78ba2b7ea>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "hostAssetOf"@en , "Relates an Asset with a Issue that occurs in it.\nThis property can be used to relate a person with a disease whose the person is where the disease occurs."@en ;
+        sh:description    "Relates an Asset with a Issue that occurs in it.\nThis property can be used to relate a person with a disease whose the person is where the disease occurs."@en ;
+        sh:name           "hostAssetOf"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#hostAssetOf> .
+
+<https://astrea.linkeddata.es/shapes#cc29d04da4399905bfd4a1c3b55d31a1>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ipo/core#hasPostCondition> .
+
+<https://astrea.linkeddata.es/shapes#c7f96ae35df2f67d988cd8f977946e3d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "solves"@en , "Indicates a Issue that this Procedure solves."@en ;
+        sh:class          <http://purl.org/ipo/core#Issue> ;
+        sh:description    "Indicates a Issue that this Procedure solves."@en ;
+        sh:name           "solves"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#solves> .
+
+<https://astrea.linkeddata.es/shapes#d11dcd6bf65ac8f3a8ba70dceaf23477>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://xmlns.com/foaf/0.1/made> .
+
+<https://astrea.linkeddata.es/shapes#cd1e79912c61d892acbd4c5e81e26d5f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "makerOf"@en , "This property can be used to indicates an Asset created/manufactured by Party or a IssueEntity created/registered by the Party."@en ;
+        sh:description    "This property can be used to indicates an Asset created/manufactured by Party or a IssueEntity created/registered by the Party."@en ;
+        sh:name           "makerOf"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#makerOf> .
+
+<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Agent> .
+
+<https://astrea.linkeddata.es/shapes#0d8b12d6b45f550dc5dd27d9a3abf78f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "hasSource"@en , "Indicates the Step of origin of this Transition."@en ;
+        sh:description    "Indicates the Step of origin of this Transition."@en ;
+        sh:maxCount       1 ;
+        sh:name           "hasSource"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           <http://purl.org/ipo/core#hasSource> .
+
+<https://astrea.linkeddata.es/shapes#d792966ddfe0a86d4943374e4f5c8ee8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "hasCausativeAsset"@en , "Indicates an Asset that is the causer of the Issue."@en ;
+        sh:description    "Indicates an Asset that is the causer of the Issue."@en ;
+        sh:name           "hasCausativeAsset"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#db39288382a47bf49cafe5a75a8f8fa5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "canBeDirectlyCausedBy"@en , "An Issue can be  directly caused by another Issue."@en ;
+        sh:description    "An Issue can be  directly caused by another Issue."@en ;
+        sh:name           "canBeDirectlyCausedBy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#canBeDirectlyCausedBy> .
+
+<https://astrea.linkeddata.es/shapes#ee358d7a013225d458a10d1d5846ff19>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/ipo/core#Procedure> .
+
+<https://astrea.linkeddata.es/shapes#93b212c934488b64c5a9bd36bab6f7d4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "directlyCausedBy"@en , "Indicates that an Issue is directly caused by another Issue."@en ;
+        sh:description    "Indicates that an Issue is directly caused by another Issue."@en ;
+        sh:name           "directlyCausedBy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#directlyCausedBy> .
+
+<https://astrea.linkeddata.es/shapes#e9c37d978970d612a7d2f2ff2aba7a35>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "indicatedBy"@en , "Indicates a Symptom of this Issue."@en ;
+        sh:description    "Indicates a Symptom of this Issue."@en ;
+        sh:name           "indicatedBy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#indicatedBy> .
+
+<https://astrea.linkeddata.es/shapes#6b19ef13e40ded9aec49e6e2ce62ccb1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "Task"@en ;
+        sh:description    "One elementary and single action.\nBeing an elementary task, it can not be decomposed into simpler actions."@en ;
+        sh:name           "Task"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ipo/core#Task> .
+
+<https://astrea.linkeddata.es/shapes#10c330096820de432c43e58ddcd19c7a>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ipo/core#description> .
+
+<https://astrea.linkeddata.es/shapes#f82379aace30be1c3f2f850b115792bf>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "causedBy"@en , "Indicates that an Issue is caused by another Issue directly or indirectly.\nThis property also has a transitive characteristic, i.e., if the Issue \"A\" is caused by Issue \"B\" and the Issue \"B\" is caused by Issue \"C\", then the Issue \"A\" is caused by Issue \"C\"."@en ;
+        sh:description    "Indicates that an Issue is caused by another Issue directly or indirectly.\nThis property also has a transitive characteristic, i.e., if the Issue \"A\" is caused by Issue \"B\" and the Issue \"B\" is caused by Issue \"C\", then the Issue \"A\" is caused by Issue \"C\"."@en ;
+        sh:name           "causedBy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ipo/core#causedBy> .
+
+<https://astrea.linkeddata.es/shapes#c7c04f0d5d5a1b64520ca088fa9f26c0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ipo/core> ;
+        rdfs:label        "hasHostAsset"@en , "Indicates an Asset that is the host (harbourer) of the Issue."@en ;
+        sh:description    "Indicates an Asset that is the host (harbourer) of the Issue."@en ;
+        sh:name           "hasHostAsset"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .

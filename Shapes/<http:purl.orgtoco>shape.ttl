@@ -1,0 +1,1371 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#44c5fa81dbd30f11df2854ffb80a3f2a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        sh:class          xsd:float ;
+        sh:datatype       xsd:float ;
+        sh:nodeKind       sh:Literal , sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/hasLinkProperty> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#05a4e8c5945ff1997e6eb07d7c078fe9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the time that a service ends." ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "the time that a service ends." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasServiceEndTime> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#6fba590721a8f3b4af35bac626d03614>
+        a               sh:NodeShape ;
+        sh:description  "wired link through twisted cable, optical fiber, etc." ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#66f72d78d0b67140bb10975907c8b806> ;
+        sh:targetClass  <http://purl.org/toco/WiredLink> .
+
+<https://astrea.linkeddata.es/shapes#3a985f8258720c369853c600a70429f9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the destination node of the link." ;
+        sh:class          <http://purl.org/toco/Interface> ;
+        sh:description    "the destination node of the link." ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/to> .
+
+<https://astrea.linkeddata.es/shapes#bc91a2793f24857e783b4f0e844eccdc>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "speed/velocity unit" ;
+        sh:name           "speed/velocity unit" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000060> .
+
+<https://astrea.linkeddata.es/shapes#dbda1a605b91b25693cfb791287acc16>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2003/01/geo/wgs84_pos#> ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#4496ce8f544702a6870f7a7ccf5f3a38> , <https://astrea.linkeddata.es/shapes#172382a059e61f60b739a6e8d904fff3> , <https://astrea.linkeddata.es/shapes#e7990c6dd6a3dca6de078b32328bc4ef> ;
+        sh:targetClass    <http://www.w3.org/2003/01/geo/wgs84_pos#SpartialThing> .
+
+<https://astrea.linkeddata.es/shapes#707615f655d6a4f5cb51798e0d0c8d66>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "turns per second" ;
+        sh:name           "turns per second" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000092> .
+
+<https://astrea.linkeddata.es/shapes#e7ae63d37c829718bbdae004d60caddf>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "kilowatt-hour" ;
+        sh:name           "kilowatt-hour" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000224> .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/foaf/0.1/> ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#febd2c1781966d53f8c50918bc225cbf> , <https://astrea.linkeddata.es/shapes#fabc187d844000bd2477a93073025e1e> , <https://astrea.linkeddata.es/shapes#29c3a5d12df8ba4f3bb0b250a29218a8> ;
+        sh:targetClass    <http://xmlns.com/foaf/0.1/Person> .
+
+<https://astrea.linkeddata.es/shapes#a8a2b067b776a7cbe9336c9ee39b4950>
+        a               sh:PropertyShape ;
+        rdfs:label      "network protocol. The nw_proto property of a flow." ;
+        sh:datatype     xsd:string ;
+        sh:description  "network protocol. The nw_proto property of a flow." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/toco/nwProtocol> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#b2905c7bd89fc2cc3823031a49303684>
+        a               sh:PropertyShape ;
+        rdfs:label      "The properties of the visiable light association between the LED on LiFi access point and LiFi user equipment." ;
+        sh:class        xsd:float ;
+        sh:datatype     xsd:float ;
+        sh:description  "The properties of the visiable light association between the LED on LiFi access point and LiFi user equipment." ;
+        sh:nodeKind     sh:Literal , sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/toco/hasLiFiAssociationProperty> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#395f523ac3d4c3295d3d6866e830def5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the port number of an interface" ;
+        sh:datatype       xsd:string ;
+        sh:description    "the port number of an interface" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasInterfaceName> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#7c897284611c98cc42d00ddc2a8bad21>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "second" ;
+        sh:name           "second" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000010> .
+
+<https://astrea.linkeddata.es/shapes#f09e8facb50f979b42d1efaded5a5c99>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hardTimeout> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#7bd01ff5592700bd77d606bcac64c38a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "byte" ;
+        sh:name           "byte" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000233> .
+
+<https://astrea.linkeddata.es/shapes#413b2156a35f5f3219e21351bb4af0c7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        sh:class          <http://purl.org/toco/Action> ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/hasFlowAction> .
+
+<https://astrea.linkeddata.es/shapes#2d8a366a12d74b696cf66040c675687c>
+        a               sh:NodeShape ;
+        sh:description  "The access point in Li-Fi network. Li-Fi is a wireless optical networking technology that uses light-emitting diodes (LEDs) for data transmission." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#18ea982d06040e5074c4aa678545a58c> , <https://astrea.linkeddata.es/shapes#f536b7b0b5133d59fae13d45bed3985b> , <https://astrea.linkeddata.es/shapes#14503499a42ba325245cabee3444ded5> , <https://astrea.linkeddata.es/shapes#9a5752b96425fdc61bbdeaf8316667c2> , <https://astrea.linkeddata.es/shapes#efc1ca34cbe4d31baf54830e77c7685e> ;
+        sh:targetClass  <http://purl.org/toco/LiFiAccessPoint> .
+
+<https://astrea.linkeddata.es/shapes#819b268e505afa45f7fa5d57741e12f5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "in wireless networks, the user equipments (mobile stations in another term, e.g., phones, laptops, tablets, etc.) that are associated to the access point." ;
+        sh:class          <http://purl.org/toco/UserDevice> ;
+        sh:description    "in wireless networks, the user equipments (mobile stations in another term, e.g., phones, laptops, tablets, etc.) that are associated to the access point." ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/hasAssociatedStations> .
+
+<https://astrea.linkeddata.es/shapes#2565f4b8ee7c5f76321320cb631ee6e4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "minute" ;
+        sh:name           "minute" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000031> .
+
+<https://astrea.linkeddata.es/shapes#e7a695a984e2424e86ae6731b9fd77df>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the relation that a interface belongs to a device. A device can have multiple interfaces, but a interface can be in one and only one device." ;
+        sh:class          <http://purl.org/toco/Device> ;
+        sh:description    "the relation that a interface belongs to a device. A device can have multiple interfaces, but a interface can be in one and only one device." ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/isIn> .
+
+<https://astrea.linkeddata.es/shapes#458b75ce28bcf52c62de1c981e908a69>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "The gain of the concentrator on the LiFi user equipment, usually equals to 1." ;
+        sh:datatype       xsd:float ;
+        sh:description    "The gain of the concentrator on the LiFi user equipment, usually equals to 1." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasGainOfConcentrator> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#27743327b4c0fdb219b1281dc3e636f5>
+        a               sh:NodeShape ;
+        sh:description  "An access point in a WiFi network" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/WiFiAccessPoint> .
+
+<https://astrea.linkeddata.es/shapes#0c20faef953f51f780c644e32bc9be0b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the Euclidean distance between the LiFi user equipment and access point." ;
+        sh:class          xsd:float ;
+        sh:datatype       xsd:float ;
+        sh:description    "the Euclidean distance between the LiFi user equipment and access point." ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:Literal ;
+        sh:path           <http://purl.org/toco/hasDistance> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#fabc187d844000bd2477a93073025e1e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/foaf/0.1/> ;
+        rdfs:label        "the last name of a person.\nReused from foaf" ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "the last name of a person.\nReused from foaf" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://xmlns.com/foaf/0.1/lastName> .
+
+<https://astrea.linkeddata.es/shapes#e993432f5ac663e6494bfb18e7813465>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "millimeters per day" ;
+        sh:name           "millimeters per day" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0010005> .
+
+<https://astrea.linkeddata.es/shapes#15220ce5b878fe6a670e9461cf5a708f>
+        a               sh:NodeShape ;
+        sh:description  "WLAN interface on the devices in LIFi network, e.g., LiFi user equipment, LiFi access point." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#23a19e69bc0a363e92e49aba18b4c63f> ;
+        sh:targetClass  <http://purl.org/toco/WiFiWLAN> .
+
+<https://astrea.linkeddata.es/shapes#ca424b7dc9b54265e287511f70553481>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the error code of a service." ;
+        sh:datatype       xsd:string ;
+        sh:description    "the error code of a service." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasErrorCode> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#c96fb1ae21777308cfd49627090dff48>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        sh:class          <http://purl.org/toco/AccessPoint> ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/apsInRange> .
+
+<https://astrea.linkeddata.es/shapes#14503499a42ba325245cabee3444ded5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the transmitted power of the LED on the LiFi access point" ;
+        sh:datatype       xsd:float ;
+        sh:description    "the transmitted power of the LED on the LiFi access point" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasOpticalTransmittedPower> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#ea710054ace15406c513a86a84932f18>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/AudioSession> .
+
+<https://astrea.linkeddata.es/shapes#ea608526a3df17370c3556e33eb56ce8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the bandwidth of the link" ;
+        sh:class          <http://purl.oclc.org/net/unis/ontology/sensordata.owl/ObervationAndMeasurement> ;
+        sh:description    "the bandwidth of the link" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/hasBandwidth> .
+
+<https://astrea.linkeddata.es/shapes#7adb6326e699b81384a3607c073ff409>
+        a               sh:NodeShape ;
+        sh:description  "WLAN interface on the devices in LIFi network, e.g., LiFi user equipment, LiFi access point." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d7f09c00a6184a5975d0da3e504b6e90> ;
+        sh:targetClass  <http://purl.org/toco/LiFiWLAN> .
+
+<https://astrea.linkeddata.es/shapes#6fa54f9c8a38a5532d8a894ab817fb02>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        sh:class          <http://purl.oclc.org/net/unis/ontology/sensordata.owl/ObervationAndMeasurement> ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/hasDatarate> .
+
+<https://astrea.linkeddata.es/shapes#9f3469699e38cefceec13b93b0d52a35>
+        a               sh:NodeShape ;
+        sh:description  "any device used directly by an end-user to communicate. It can be a hand-held telephone, a laptop computer equipped with a mobile broadband adapter, or any other device." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#75c22f4b75ba8f25f6d56cb473c5ebff> , <https://astrea.linkeddata.es/shapes#458b75ce28bcf52c62de1c981e908a69> , <https://astrea.linkeddata.es/shapes#3aaa30b67741de1b37f08ccf11fd3a96> ;
+        sh:targetClass  <http://purl.org/toco/LiFiUserEquipment> .
+
+<https://astrea.linkeddata.es/shapes#18ea982d06040e5074c4aa678545a58c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "The angle of half intensity of the LED light transmiting visible light signal in a LiFi access point. \n\nA fixed value. It is the angle where the radiated intensity will be half as intense as it would be at 0 degrees, or pointing straight ahead.\n\nFactors that contribute to the angle of half intensity include the amount of diffusing material in the epoxy, the shape of the reflector cup which surrounds the LED chip, the shape of the LED lens, the distance from the LED to the tip of the lens, and the type of emitter chip.\n\nThe most common value is Pi/3." ;
+        sh:datatype       xsd:float ;
+        sh:description    "The angle of half intensity of the LED light transmiting visible light signal in a LiFi access point. \n\nA fixed value. It is the angle where the radiated intensity will be half as intense as it would be at 0 degrees, or pointing straight ahead.\n\nFactors that contribute to the angle of half intensity include the amount of diffusing material in the epoxy, the shape of the reflector cup which surrounds the LED chip, the shape of the LED lens, the distance from the LED to the tip of the lens, and the type of emitter chip.\n\nThe most common value is Pi/3." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasHalfIntensityAngle> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#2b027421a5f804bd1942166984e1baaf>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/tableId> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#fb08bfdfcd440bbfd6bf907104e07b06>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/toco/WLAN> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/toco/hasWLAN> .
+
+<https://astrea.linkeddata.es/shapes#66f72d78d0b67140bb10975907c8b806>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/toco/WirelessAssociation> .
+
+<https://astrea.linkeddata.es/shapes#5597d3d4f9c9dd63289d61bde3486d5d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "gigabyte" ;
+        sh:name           "gigabyte" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000331> .
+
+<https://astrea.linkeddata.es/shapes#c2680eecd783c053d7839559b5447204>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "megabyte" ;
+        sh:name           "megabyte" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000235> .
+
+<https://astrea.linkeddata.es/shapes#ec8166b9f16c165794c59ccd77ad03b0>
+        a               sh:NodeShape ;
+        sh:description  "a \"land station in the land mobile service.\" -- according to the International Telecommunication Union's (ITU) Radio Regulations (RR).\n\nit is a transceiver connecting a number of other devices to one another and/or to a wider area. In LTE, it is also known as eNodeB." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/BaseStation> .
+
+<https://astrea.linkeddata.es/shapes#8a0548a1338f8d8ced0e81b641611db7>
+        a            sh:PropertyShape ;
+        sh:class     xsd:float ;
+        sh:datatype  xsd:float ;
+        sh:nodeKind  sh:Literal , sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/toco/hasWirelessLinkProperty> ;
+        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#b51a01fa2118fcb0e4c76b4f7bba3c5f>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/toco/WiFiWLAN> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/toco/hasWiFiWLAN> .
+
+<https://astrea.linkeddata.es/shapes#13effce3a9d47ab82141a194e937e6a4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the height of the antenna of a wireless interface" ;
+        sh:datatype       xsd:float ;
+        sh:description    "the height of the antenna of a wireless interface" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasAntennaHeight> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#89e1de3b32259c63d7855b3e64b55e47>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/toco/SatelliteAssociation> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/toco/hasSatelliteAssociation> .
+
+<https://astrea.linkeddata.es/shapes#b3024e1396381a9574c8b4b820a4ec72>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "length unit" ;
+        sh:name           "length unit" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000001> .
+
+<https://astrea.linkeddata.es/shapes#706ca3ea48325921443ca48250a2f074>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/cookie> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#53dc92d8d00720440a46fabdefb36c4c>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#901bb6c4c8223df17ef856b4d935617b> , <https://astrea.linkeddata.es/shapes#eb266760b8aecfa0ede88d330a454f41> , <https://astrea.linkeddata.es/shapes#395f523ac3d4c3295d3d6866e830def5> , <https://astrea.linkeddata.es/shapes#8db207f583dc54d01c86dbcacff5dc5c> , <https://astrea.linkeddata.es/shapes#3867995aa8f5011281dbd95c4e03f4f6> , <https://astrea.linkeddata.es/shapes#e7a695a984e2424e86ae6731b9fd77df> , <https://astrea.linkeddata.es/shapes#a957b9e64cd426dd9574d786fc961ed2> , <https://astrea.linkeddata.es/shapes#5f50c16c5c1d1a69d8914cd97d246f56> , <https://astrea.linkeddata.es/shapes#9a88acea47a8ee9ba0a06d78773309cd> , <https://astrea.linkeddata.es/shapes#2a332d0a84e4575d57e8bb7acc5be324> , <https://astrea.linkeddata.es/shapes#391a1239a5a1d64cb249419ab0a10845> ;
+        sh:targetClass  <http://purl.org/toco/Interface> .
+
+<https://astrea.linkeddata.es/shapes#d1c34f5291caef00a402146193da95b7>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#e1f6c9340773516c076bbe06f7bc60ea> ;
+        sh:targetClass  <http://purl.org/toco/ConceptEntities> .
+
+<https://astrea.linkeddata.es/shapes#0f8a2bb6bb2639164cae97197f7d0d7c>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/Text> .
+
+<https://astrea.linkeddata.es/shapes#b7a5d51d356c55a041abadc57ece8476>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "year" ;
+        sh:name           "year" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000036> .
+
+<https://astrea.linkeddata.es/shapes#6490e82ad7665342b6c71a9c6413eab8>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/net/unis/ontology/sensordata.owl/ObervationAndMeasurement> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/toco/hasThroughPut> .
+
+<https://astrea.linkeddata.es/shapes#72ac487746b438b1159d401988cf6973>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "time unit" ;
+        sh:name           "time unit" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000003> .
+
+<https://astrea.linkeddata.es/shapes#0a2570253fdd6224288a17813eba32b4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        sh:class          <http://purl.oclc.org/net/unis/ontology/sensordata.owl/ObervationAndMeasurement> ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/hasTxpower> .
+
+<https://astrea.linkeddata.es/shapes#403175ac4c4ca45f3e09ba5873988c28>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/AudioService> .
+
+<https://astrea.linkeddata.es/shapes#333e3991f50c4f6bd0e52f1dc23a1613>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "hour" ;
+        sh:name           "hour" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000032> .
+
+<https://astrea.linkeddata.es/shapes#4066fe7f8c62ca36315059b8ce8b58bb>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/Forward> .
+
+<https://astrea.linkeddata.es/shapes#6060c5439791ee47a0ba15deca5d6a33>
+        a               sh:NodeShape ;
+        sh:description  "the electromeganetic radio transmiting through wireless channels in wireless network, carring communication data. Depend on its frequency, it could be visiable light, micro waves, radio waves." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#8a0548a1338f8d8ced0e81b641611db7> ;
+        sh:targetClass  <http://purl.org/toco/WirelessAssociation> .
+
+<https://astrea.linkeddata.es/shapes#b206c062288326047bb409bbd74bde1e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "millisecond" ;
+        sh:name           "millisecond" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000028> .
+
+<https://astrea.linkeddata.es/shapes#bf9d56515dc8d1e44389640afd3d459c>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/toco/WirelessAssociation> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/toco/hasWirelessAssociation> .
+
+<https://astrea.linkeddata.es/shapes#2a332d0a84e4575d57e8bb7acc5be324>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the IP address of the interface." ;
+        sh:datatype       xsd:string ;
+        sh:description    "the IP address of the interface." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasIP> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#4496ce8f544702a6870f7a7ccf5f3a38>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2003/01/geo/wgs84_pos#> ;
+        rdfs:label        "the altitude of a spartial thing, i.e., a point." ;
+        sh:datatype       xsd:float ;
+        sh:description    "the altitude of a spartial thing, i.e., a point." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.w3.org/2003/01/geo/wgs84_pos#alt> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#f0c8f6c30605b6e23eb45a5ff336ea32>
+        a               sh:NodeShape ;
+        sh:description  "a user quipment in Wi-Fi network" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/WiFiUserEquipment> .
+
+<https://astrea.linkeddata.es/shapes#3867995aa8f5011281dbd95c4e03f4f6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the MAC address of the interface." ;
+        sh:datatype       xsd:string ;
+        sh:description    "the MAC address of the interface." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasMAC> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#d1d21936304d9120ed5ed185091486ea>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "terabyte" ;
+        sh:name           "terabyte" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000332> .
+
+<https://astrea.linkeddata.es/shapes#bb5aaf5c22319f1a757e34b3f16165bd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "watt" ;
+        sh:name           "watt" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000114> .
+
+<https://astrea.linkeddata.es/shapes#9cc0aba55980d7412364f2cfc61fbad9>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/Detached> .
+
+<https://astrea.linkeddata.es/shapes#e4579a0f0fa355e1babac03bda7e2adf>
+        a               sh:NodeShape ;
+        sh:description  "All the physical facilities in the telecommunication system that provide the communication service to uses. For example: base station towers, Wi-Fi access points, switches, servers, etc." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b120c38a28a58f02127c339af8fea9bf> ;
+        sh:targetClass  <http://purl.org/toco/SystemDevice> .
+
+<https://astrea.linkeddata.es/shapes#dd898f3ce56ca7cfd2b2ba0f24dcb35b>
+        a               sh:NodeShape ;
+        sh:description  "any device used directly by an end-user to communicate. It can be a hand-held telephone, a laptop computer equipped with a mobile broadband adapter, or any other device." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/UserEquipment> .
+
+<https://astrea.linkeddata.es/shapes#abec32c93109390c277784b6c908d634>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "meter" ;
+        sh:name           "meter" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000008> .
+
+<https://astrea.linkeddata.es/shapes#0a08b4aa5e58dc435d7a89335d216f8c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the radiance angle of the light ray transmitted from LED on LiFi access point." ;
+        sh:class          xsd:float ;
+        sh:datatype       xsd:float ;
+        sh:description    "the radiance angle of the light ray transmitted from LED on LiFi access point." ;
+        sh:nodeKind       sh:Literal , sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/hasRadianceAngle> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#9c679a7f855f60440f3a7b85b5bcee71>
+        a               sh:NodeShape ;
+        sh:description  "User Devices, requiring connectivity services, e.g., phones, tablets, laptops, wearable devices, etc." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#dc7dc17556a159a2911e87b2cd8198b4> , <https://astrea.linkeddata.es/shapes#289ed8437f6a1c3f499caf2ac4541a74> , <https://astrea.linkeddata.es/shapes#c0aaa5fca6f5d55b52954c2cdca22cde> , <https://astrea.linkeddata.es/shapes#c96fb1ae21777308cfd49627090dff48> , <https://astrea.linkeddata.es/shapes#a4bdf0911a03a1da9a41ded230b5daa2> ;
+        sh:targetClass  <http://purl.org/toco/UserDevice> .
+
+<https://astrea.linkeddata.es/shapes#ac379363f4990122b348621ac3fc78e5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the unit of an observation or measurement." ;
+        sh:class          <http://purl.obolibrary.org/obo/uo.owl/unit> ;
+        sh:description    "the unit of an observation or measurement." ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/net/unis/ontology/sensordata.owl/hasUnits> .
+
+<https://astrea.linkeddata.es/shapes#72978778e11d81165b0f5c802f299c97>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "week" ;
+        sh:name           "week" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000034> .
+
+<https://astrea.linkeddata.es/shapes#19031bf08b0c5cbe945a6f1d324b5f67>
+        a               sh:NodeShape ;
+        sh:description  "used in satellite network. Also known as earth station, or earth terminal, it is a terrestrial radio station designed for extraplanetary telecommunication with spacecraft (constituting part of the ground segment of the spacecraft system), or reception of radio waves from astronomical radio sources. Ground stations may be located either on the surface of the Earth, or in its atmosphere.[1] Earth stations communicate with spacecraft by transmitting and receiving radio waves in the super high frequency or extremely high frequency bands (e.g., microwaves). When a ground station successfully transmits radio waves to a spacecraft (or vice versa), it establishes a telecommunications link. A principal telecommunications device of the ground station is the parabolic antenna." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/SatelliteGroundStation> .
+
+<https://astrea.linkeddata.es/shapes#e7990c6dd6a3dca6de078b32328bc4ef>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "the longitude of a spartial thing, i.e., a point." ;
+        rdfs:isDefinedBy  <http://www.w3.org/2003/01/geo/wgs84_pos#> ;
+        sh:datatype       xsd:float ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.w3.org/2003/01/geo/wgs84_pos#long> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#2866f7650d62efdf75a4dd09200bd1ed>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "hertz" ;
+        sh:name           "hertz" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000106> .
+
+<https://astrea.linkeddata.es/shapes#f38d60d6bfc043cf9a7196944d9200f3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "micrometer" ;
+        sh:name           "micrometer" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000017> .
+
+<https://astrea.linkeddata.es/shapes#414a27b935d6951a7b93fd342e14adea>
+        a               sh:NodeShape ;
+        sh:description  "A network switch (also called switching hub, bridging hub, officially MAC bridge) is a computer networking device that connects devices together on a computer network by using packet switching to receive, process, and forward data to the destination device." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/Switch> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#cb980022323d3e76623ea74c378254f7>
+        a               sh:PropertyShape ;
+        rdfs:label      "the port number of the in port of the flow, or could be a keyword, such as \"LOCAL\"" ;
+        sh:datatype     xsd:string ;
+        sh:description  "the port number of the in port of the flow, or could be a keyword, such as \"LOCAL\"" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/toco/inPort> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#9890d14c6da292dc4d3ca587ec15ef64>
+        a               sh:PropertyShape ;
+        rdfs:label      "the Ethernet destination address of the flow. It should be an MAC address, with 6 pairs of hexadecimal digits." ;
+        sh:datatype     xsd:string ;
+        sh:description  "the Ethernet destination address of the flow. It should be an MAC address, with 6 pairs of hexadecimal digits." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/toco/dlDst> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#972d37a5863a5d80f885123651e689d4>
+        a               sh:NodeShape ;
+        sh:description  "User deivce in a Cellular network." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/CellularUserEquipment> .
+
+<https://astrea.linkeddata.es/shapes#93d272330fae1bcc8a1effad5bdaf757>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "watt-hour" ;
+        sh:name           "watt-hour" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000223> .
+
+<https://astrea.linkeddata.es/shapes#13c60040df3a4bf1220f4dc771655eb6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "rotational frequency unit" ;
+        sh:name           "rotational frequency unit" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000058> .
+
+<https://astrea.linkeddata.es/shapes#a2eb7a815b0dd4ccf6ad95e314588e8d>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/toco/Interface> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/toco/hasPort> .
+
+<https://astrea.linkeddata.es/shapes#392b402f1afcae6bce4b0cd36319b24a>
+        a               sh:NodeShape ;
+        rdfs:label      "frequency unit" ;
+        sh:name         "frequency unit" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.obolibrary.org/obo/UO_0000105> .
+
+<https://astrea.linkeddata.es/shapes#ffa627c90b2f93431bad38fc95750b9e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2003/01/geo/wgs84_pos#> ;
+        rdfs:label        "The relation between something and the point, \n or other geometrical thing in space, where it is.  For example, the realtionship between\n a radio tower and a Point with a given lat and long.\n Or a relationship between a park and its outline as a closed arc of points, or a road and\n its location as a arc (a sequence of points).\n Clearly in practice there will be limit to the accuracy of any such statement, but one would expect\n an accuracy appropriate for the size of the object and uses such as mapping ." ;
+        sh:class          <http://www.w3.org/2003/01/geo/wgs84_pos#SpartialThing> ;
+        sh:description    "The relation between something and the point, \n or other geometrical thing in space, where it is.  For example, the realtionship between\n a radio tower and a Point with a given lat and long.\n Or a relationship between a park and its outline as a closed arc of points, or a road and\n its location as a arc (a sequence of points).\n Clearly in practice there will be limit to the accuracy of any such statement, but one would expect\n an accuracy appropriate for the size of the object and uses such as mapping ." ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/2003/01/geo/wgs84_pos#location> .
+
+<https://astrea.linkeddata.es/shapes#3aaa30b67741de1b37f08ccf11fd3a96>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "Field of view (FOV) is the open observable area where a LiFi user equipment could receive visiable light signal. It is defined by let the incident angle of the LiFi user equipment equals to Pi/2.\n\nIf the incident angle larger than Pi/2, the light ray is out of the FOV, thus cannot be received by the LiFi user equipment." ;
+        sh:datatype       xsd:float ;
+        sh:description    "Field of view (FOV) is the open observable area where a LiFi user equipment could receive visiable light signal. It is defined by let the incident angle of the LiFi user equipment equals to Pi/2.\n\nIf the incident angle larger than Pi/2, the light ray is out of the FOV, thus cannot be received by the LiFi user equipment." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasFieldOfView> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#5ade69554f78c6c6c843f96d9a329bd2>
+        a               sh:NodeShape ;
+        sh:description  "reused from foaf (http://xmlns.com/foaf/0.1/). Represent a user in the telecommunication system." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#47bb12813b109ff5a0676ab375f44ca0> , <https://astrea.linkeddata.es/shapes#54ed1c77e50ad5228aed01f468b473fe> ;
+        sh:targetClass  <http://purl.org/toco/User> .
+
+<https://astrea.linkeddata.es/shapes#172382a059e61f60b739a6e8d904fff3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "the latitude of a point" ;
+        rdfs:isDefinedBy  <http://www.w3.org/2003/01/geo/wgs84_pos#> ;
+        sh:datatype       xsd:float ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#4bc11a7988db4245c437cd15f6339b93>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the source node that the link is transmit from." ;
+        sh:class          <http://purl.org/toco/Interface> ;
+        sh:description    "the source node that the link is transmit from." ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/from> .
+
+<https://astrea.linkeddata.es/shapes#5e7aebffe100526d264455ff792cc640>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "energy unit" ;
+        sh:name           "energy unit" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000111> .
+
+<https://astrea.linkeddata.es/shapes#10d303e3fce6f76906ca039339304fa0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the packet loss rate of a link, usually in percentage." ;
+        sh:datatype       xsd:float ;
+        sh:description    "the packet loss rate of a link, usually in percentage." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasPacketLoss> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#0217d7d29b73cee3b2a7b24a47e3c6c9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the type of communication services, e.g., video, audio, file transmit, text transmiting, etc." ;
+        sh:datatype       xsd:string ;
+        sh:description    "the type of communication services, e.g., video, audio, file transmit, text transmiting, etc." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasServiceType> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#febd2c1781966d53f8c50918bc225cbf>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/foaf/0.1/> ;
+        rdfs:label        "the gender of a user, reused from foaf" ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "the gender of a user, reused from foaf" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://xmlns.com/foaf/0.1/gender> .
+
+<https://astrea.linkeddata.es/shapes#e8a698b8c86c6afd880b2c73735ebaa9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "millimeter" ;
+        sh:name           "millimeter" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000016> .
+
+<https://astrea.linkeddata.es/shapes#eb266760b8aecfa0ede88d330a454f41>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the channel id of a interface." ;
+        sh:datatype       xsd:int ;
+        sh:description    "the channel id of a interface." ;
+        sh:maxInclusive   2147483647 ;
+        sh:minInclusive   -2147483648 ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/channel> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#f0a853b00981ec0db58ef413ba86ec66>
+        a               sh:NodeShape ;
+        sh:description  "the electromagnetic wave carring modulated signal between LTE base station, or eNodeB, and user equipment" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/LTEAssociation> .
+
+<https://astrea.linkeddata.es/shapes#c0b4b5fddcf9dab6ce39ca9f8b244561>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the signal range of wireless devices, such as WiFi access point, LiFi access point, WiFi mobile station, and LiFi mobile station." ;
+        sh:class          <http://purl.oclc.org/net/unis/ontology/sensordata.owl/ObervationAndMeasurement> ;
+        sh:description    "the signal range of wireless devices, such as WiFi access point, LiFi access point, WiFi mobile station, and LiFi mobile station." ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/range> .
+
+<https://astrea.linkeddata.es/shapes#b428404e10d27006337fd8a57eeb28fa>
+        a               sh:PropertyShape ;
+        rdfs:label      "After multiple round trip time tested on a link, the deviation of these test results." ;
+        sh:class        <http://purl.oclc.org/net/unis/ontology/sensordata.owl/ObervationAndMeasurement> ;
+        sh:description  "After multiple round trip time tested on a link, the deviation of these test results." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/toco/hasStandardDeviation> .
+
+<https://astrea.linkeddata.es/shapes#6fe7f5af1b3357ba3979d86885682e28>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "kilometer per hour" ;
+        sh:name           "kilometer per hour" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0010008> .
+
+<https://astrea.linkeddata.es/shapes#9a5752b96425fdc61bbdeaf8316667c2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        sh:datatype       xsd:float ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasRespansivity> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#d7f09c00a6184a5975d0da3e504b6e90>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/toco/LiFiAssociation> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/toco/hasLiFiAssociation> .
+
+<https://astrea.linkeddata.es/shapes#9e0d8e3d4b0460f3f9c90c20137433c0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the value of an observation or measurement." ;
+        sh:datatype       xsd:float ;
+        sh:description    "the value of an observation or measurement." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.oclc.org/net/unis/ontology/sensordata.owl/hasValue> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#b021342fda08aabc6be0853ff42ac343>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "The angle of incidence of the LED receiver on LiFi user equipment, which is the angle between the visiable light ray incident on a surface and the line perpendicular to the surface at the point of incidence, called the normal." ;
+        sh:class          xsd:float ;
+        sh:datatype       xsd:float ;
+        sh:description    "The angle of incidence of the LED receiver on LiFi user equipment, which is the angle between the visiable light ray incident on a surface and the line perpendicular to the surface at the point of incidence, called the normal." ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:Literal ;
+        sh:path           <http://purl.org/toco/hasIncidentAngle> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#d96a764fd921b7caf28560a60056db67>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "in wireless networks, the ssid of the network this device belongs to." ;
+        sh:datatype       xsd:string ;
+        sh:description    "in wireless networks, the ssid of the network this device belongs to." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/ssid> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#47bb12813b109ff5a0676ab375f44ca0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        sh:class          <http://purl.org/toco/UserDevice> ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/hasDevice> .
+
+<https://astrea.linkeddata.es/shapes#901bb6c4c8223df17ef856b4d935617b>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/toco/WiredLink> ;
+        sh:disjoint  <http://purl.org/toco/hasWirelessAssociation> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/toco/hasWiredLink> .
+
+<https://astrea.linkeddata.es/shapes#19bff56f3a929ad3fb750b2d06dbdda2>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/VideoSession> .
+
+<https://astrea.linkeddata.es/shapes#fa90fc9e6270ab842452318dfb8185d1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "megaHertz" ;
+        sh:name           "megaHertz" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000325> .
+
+<https://astrea.linkeddata.es/shapes#ac76d8e412cd489f4a574925a1735e34>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "bit" ;
+        sh:name           "bit" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000232> .
+
+<https://astrea.linkeddata.es/shapes#96539e7bd00914fe5cd11ac1a015fbcc>
+        a               sh:NodeShape ;
+        sh:description  "a wireless access point, or more generally just access point (AP), is a networking hardware device that allows a Wi-Fi/Li-Fi device to connect to a wired network. The AP usually connects to a router (via a wired network) as a standalone device, but it can also be an integral component of the router itself. An AP is differentiated from a hotspot, which is the physical location where Wi-Fi access to a WLAN is available." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2dca135c5137baffb632aeffb67e0aff> , <https://astrea.linkeddata.es/shapes#819b268e505afa45f7fa5d57741e12f5> , <https://astrea.linkeddata.es/shapes#1df1141de9564499f785fe87620ebf07> ;
+        sh:targetClass  <http://purl.org/toco/AccessPoint> .
+
+<https://astrea.linkeddata.es/shapes#1ba4f8242ad711398687c485e4b089c6>
+        a               sh:NodeShape ;
+        sh:description  "the action of a flow defined in OpenFlow protocol" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#cceafcc7400d92b6de551a8ee1f9dd64> ;
+        sh:targetClass  <http://purl.org/toco/Action> .
+
+<https://astrea.linkeddata.es/shapes#397b4d63e65428de8f67a703f6099727>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ea608526a3df17370c3556e33eb56ce8> , <https://astrea.linkeddata.es/shapes#10d303e3fce6f76906ca039339304fa0> , <https://astrea.linkeddata.es/shapes#6fa54f9c8a38a5532d8a894ab817fb02> , <https://astrea.linkeddata.es/shapes#6490e82ad7665342b6c71a9c6413eab8> , <https://astrea.linkeddata.es/shapes#3a985f8258720c369853c600a70429f9> , <https://astrea.linkeddata.es/shapes#4bc11a7988db4245c437cd15f6339b93> , <https://astrea.linkeddata.es/shapes#b428404e10d27006337fd8a57eeb28fa> , <https://astrea.linkeddata.es/shapes#f9e63646bb01b78b08e7e78f43b86740> , <https://astrea.linkeddata.es/shapes#0a2570253fdd6224288a17813eba32b4> , <https://astrea.linkeddata.es/shapes#44c5fa81dbd30f11df2854ffb80a3f2a> ;
+        sh:targetClass  <http://purl.org/toco/Link> .
+
+<https://astrea.linkeddata.es/shapes#bb9c53d82036348ce2c717830e322c28>
+        a               sh:NodeShape ;
+        sh:description  "the electromagnetic wave carring modulated signal between LTE base station, or eNodeB, and user equipment" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/WiFiAssociation> .
+
+<https://astrea.linkeddata.es/shapes#26469b316dd135c921649c19f6b57350>
+        a               sh:NodeShape ;
+        sh:description  "the flow entry in a flow table inside a switch or route. Defined by OpenFlow protocol." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2b027421a5f804bd1942166984e1baaf> , <https://astrea.linkeddata.es/shapes#ca3b4b51b2f168a8af3a6ffdb044bffe> , <https://astrea.linkeddata.es/shapes#a8a2b067b776a7cbe9336c9ee39b4950> , <https://astrea.linkeddata.es/shapes#cb980022323d3e76623ea74c378254f7> , <https://astrea.linkeddata.es/shapes#078d7813aec84f0fdf3cab67a9691b34> , <https://astrea.linkeddata.es/shapes#c1ca3d1917404609ae0658b95e4e0d17> , <https://astrea.linkeddata.es/shapes#706ca3ea48325921443ca48250a2f074> , <https://astrea.linkeddata.es/shapes#b8b180b88104c97386fc7f12fa5d0a3f> , <https://astrea.linkeddata.es/shapes#9890d14c6da292dc4d3ca587ec15ef64> , <https://astrea.linkeddata.es/shapes#413b2156a35f5f3219e21351bb4af0c7> , <https://astrea.linkeddata.es/shapes#3ffcbe8160a0606e214f0fea00b5ff68> , <https://astrea.linkeddata.es/shapes#f09e8facb50f979b42d1efaded5a5c99> ;
+        sh:targetClass  <http://purl.org/toco/Flow> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#e8a698b8c86c6afd880b2c73735ebaa9> , <https://astrea.linkeddata.es/shapes#18ea982d06040e5074c4aa678545a58c> , <https://astrea.linkeddata.es/shapes#9a5752b96425fdc61bbdeaf8316667c2> , <https://astrea.linkeddata.es/shapes#395f523ac3d4c3295d3d6866e830def5> , <https://astrea.linkeddata.es/shapes#fb08bfdfcd440bbfd6bf907104e07b06> , <https://astrea.linkeddata.es/shapes#bf9d56515dc8d1e44389640afd3d459c> , <https://astrea.linkeddata.es/shapes#13c60040df3a4bf1220f4dc771655eb6> , <https://astrea.linkeddata.es/shapes#b3024e1396381a9574c8b4b820a4ec72> , <https://astrea.linkeddata.es/shapes#3867995aa8f5011281dbd95c4e03f4f6> , <https://astrea.linkeddata.es/shapes#2dca135c5137baffb632aeffb67e0aff> , <https://astrea.linkeddata.es/shapes#bc91a2793f24857e783b4f0e844eccdc> , <https://astrea.linkeddata.es/shapes#59874f6ca18fa1f70db16723186c2497> , <https://astrea.linkeddata.es/shapes#bb5aaf5c22319f1a757e34b3f16165bd> , <https://astrea.linkeddata.es/shapes#b2905c7bd89fc2cc3823031a49303684> , <https://astrea.linkeddata.es/shapes#f09e8facb50f979b42d1efaded5a5c99> , <https://astrea.linkeddata.es/shapes#e7990c6dd6a3dca6de078b32328bc4ef> , <https://astrea.linkeddata.es/shapes#d1c34f5291caef00a402146193da95b7> , <https://astrea.linkeddata.es/shapes#fabc187d844000bd2477a93073025e1e> , <https://astrea.linkeddata.es/shapes#397b4d63e65428de8f67a703f6099727> , <https://astrea.linkeddata.es/shapes#0217d7d29b73cee3b2a7b24a47e3c6c9> , <https://astrea.linkeddata.es/shapes#19bff56f3a929ad3fb750b2d06dbdda2> , <https://astrea.linkeddata.es/shapes#71c5b8e92755c94231a06317ae4ec3b2> , <https://astrea.linkeddata.es/shapes#9cc0aba55980d7412364f2cfc61fbad9> , <https://astrea.linkeddata.es/shapes#e7a695a984e2424e86ae6731b9fd77df> , <https://astrea.linkeddata.es/shapes#458b75ce28bcf52c62de1c981e908a69> , <https://astrea.linkeddata.es/shapes#f38d60d6bfc043cf9a7196944d9200f3> , <https://astrea.linkeddata.es/shapes#f0a853b00981ec0db58ef413ba86ec66> , <https://astrea.linkeddata.es/shapes#732307d68ef8245e3e3a19bcda18adda> , <https://astrea.linkeddata.es/shapes#5ade69554f78c6c6c843f96d9a329bd2> , <https://astrea.linkeddata.es/shapes#b021342fda08aabc6be0853ff42ac343> , <https://astrea.linkeddata.es/shapes#eb266760b8aecfa0ede88d330a454f41> , <https://astrea.linkeddata.es/shapes#a0f5d079f0bea96a74b4a8ba6e729c29> , <https://astrea.linkeddata.es/shapes#5e7aebffe100526d264455ff792cc640> , <https://astrea.linkeddata.es/shapes#3aaa30b67741de1b37f08ccf11fd3a96> , <https://astrea.linkeddata.es/shapes#bb9c53d82036348ce2c717830e322c28> , <https://astrea.linkeddata.es/shapes#391a1239a5a1d64cb249419ab0a10845> , <https://astrea.linkeddata.es/shapes#706ca3ea48325921443ca48250a2f074> , <https://astrea.linkeddata.es/shapes#2a332d0a84e4575d57e8bb7acc5be324> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#fb8ef5195f781a528fe6763201315317> , <https://astrea.linkeddata.es/shapes#d1d21936304d9120ed5ed185091486ea> , <https://astrea.linkeddata.es/shapes#9a88acea47a8ee9ba0a06d78773309cd> , <https://astrea.linkeddata.es/shapes#6fa54f9c8a38a5532d8a894ab817fb02> , <https://astrea.linkeddata.es/shapes#078d7813aec84f0fdf3cab67a9691b34> , <https://astrea.linkeddata.es/shapes#14503499a42ba325245cabee3444ded5> , <https://astrea.linkeddata.es/shapes#0a08b4aa5e58dc435d7a89335d216f8c> , <https://astrea.linkeddata.es/shapes#f0c8f6c30605b6e23eb45a5ff336ea32> , <https://astrea.linkeddata.es/shapes#a8a2b067b776a7cbe9336c9ee39b4950> , <https://astrea.linkeddata.es/shapes#b8b180b88104c97386fc7f12fa5d0a3f> , <https://astrea.linkeddata.es/shapes#468d39818ff443e33d43813a44723fed> , <https://astrea.linkeddata.es/shapes#dd3f3de6a4c80178c4f8fe3a2c35340b> , <https://astrea.linkeddata.es/shapes#efc1ca34cbe4d31baf54830e77c7685e> , <https://astrea.linkeddata.es/shapes#75c22f4b75ba8f25f6d56cb473c5ebff> , <https://astrea.linkeddata.es/shapes#ffa627c90b2f93431bad38fc95750b9e> , <https://astrea.linkeddata.es/shapes#172382a059e61f60b739a6e8d904fff3> , <https://astrea.linkeddata.es/shapes#a4bdf0911a03a1da9a41ded230b5daa2> , <https://astrea.linkeddata.es/shapes#52fe2401355adeab8c3806d98b559232> , <https://astrea.linkeddata.es/shapes#88fe6ca4a77c69004c4dd0df4fdc5d1f> , <https://astrea.linkeddata.es/shapes#289ed8437f6a1c3f499caf2ac4541a74> , <https://astrea.linkeddata.es/shapes#b51a01fa2118fcb0e4c76b4f7bba3c5f> , <https://astrea.linkeddata.es/shapes#a2eb7a815b0dd4ccf6ad95e314588e8d> , <https://astrea.linkeddata.es/shapes#72ac487746b438b1159d401988cf6973> , <https://astrea.linkeddata.es/shapes#65cbccc55568429724b8f478534e412a> , <https://astrea.linkeddata.es/shapes#6f19c3d8d7a68490b3374c1e9750bc6e> , <https://astrea.linkeddata.es/shapes#96539e7bd00914fe5cd11ac1a015fbcc> , <https://astrea.linkeddata.es/shapes#6def6db4f6281ea9583f7aa33fc9f0a7> , <https://astrea.linkeddata.es/shapes#6fba590721a8f3b4af35bac626d03614> , <https://astrea.linkeddata.es/shapes#5597d3d4f9c9dd63289d61bde3486d5d> , <https://astrea.linkeddata.es/shapes#27743327b4c0fdb219b1281dc3e636f5> , <https://astrea.linkeddata.es/shapes#5c93d10f50a018e36ad1a8be5ce49e4b> , <https://astrea.linkeddata.es/shapes#2565f4b8ee7c5f76321320cb631ee6e4> , <https://astrea.linkeddata.es/shapes#26469b316dd135c921649c19f6b57350> , <https://astrea.linkeddata.es/shapes#e7ae63d37c829718bbdae004d60caddf> , <https://astrea.linkeddata.es/shapes#0a2570253fdd6224288a17813eba32b4> , <https://astrea.linkeddata.es/shapes#2d8a366a12d74b696cf66040c675687c> , <https://astrea.linkeddata.es/shapes#c96fb1ae21777308cfd49627090dff48> , <https://astrea.linkeddata.es/shapes#b7a5d51d356c55a041abadc57ece8476> , <https://astrea.linkeddata.es/shapes#0c20faef953f51f780c644e32bc9be0b> , <https://astrea.linkeddata.es/shapes#05a4e8c5945ff1997e6eb07d7c078fe9> , <https://astrea.linkeddata.es/shapes#d19dc7a2a677e371100ce6f7d3ab8a28> , <https://astrea.linkeddata.es/shapes#19031bf08b0c5cbe945a6f1d324b5f67> , <https://astrea.linkeddata.es/shapes#3ef793712378e097aac823894a277e63> , <https://astrea.linkeddata.es/shapes#333e3991f50c4f6bd0e52f1dc23a1613> , <https://astrea.linkeddata.es/shapes#d7f09c00a6184a5975d0da3e504b6e90> , <https://astrea.linkeddata.es/shapes#d96a764fd921b7caf28560a60056db67> , <https://astrea.linkeddata.es/shapes#e4579a0f0fa355e1babac03bda7e2adf> , <https://astrea.linkeddata.es/shapes#6a684426ac5b3992666a9bbc2b399736> , <https://astrea.linkeddata.es/shapes#dc9ce47fbb78dcb4ebfad93f008decd1> , <https://astrea.linkeddata.es/shapes#6ec604c1f275437588fcb6eecb5e6bf8> , <https://astrea.linkeddata.es/shapes#2b027421a5f804bd1942166984e1baaf> , <https://astrea.linkeddata.es/shapes#72978778e11d81165b0f5c802f299c97> , <https://astrea.linkeddata.es/shapes#9c679a7f855f60440f3a7b85b5bcee71> , <https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f> , <https://astrea.linkeddata.es/shapes#392b402f1afcae6bce4b0cd36319b24a> , <https://astrea.linkeddata.es/shapes#806a5c86e0907160067ad936a5157608> , <https://astrea.linkeddata.es/shapes#7bd01ff5592700bd77d606bcac64c38a> , <https://astrea.linkeddata.es/shapes#403175ac4c4ca45f3e09ba5873988c28> , <https://astrea.linkeddata.es/shapes#819b268e505afa45f7fa5d57741e12f5> , <https://astrea.linkeddata.es/shapes#a2e0868bb11d773d7da969e9c1b6c384> , <https://astrea.linkeddata.es/shapes#dcc9c7009987fe76f0ff9fd81c3b018e> , <https://astrea.linkeddata.es/shapes#dd898f3ce56ca7cfd2b2ba0f24dcb35b> , <https://astrea.linkeddata.es/shapes#8db207f583dc54d01c86dbcacff5dc5c> , <https://astrea.linkeddata.es/shapes#23a19e69bc0a363e92e49aba18b4c63f> , <https://astrea.linkeddata.es/shapes#ac379363f4990122b348621ac3fc78e5> , <https://astrea.linkeddata.es/shapes#6060c5439791ee47a0ba15deca5d6a33> , <https://astrea.linkeddata.es/shapes#a666a644865c186c6f2e141a70eb5465> , <https://astrea.linkeddata.es/shapes#ea710054ace15406c513a86a84932f18> , <https://astrea.linkeddata.es/shapes#3ffcbe8160a0606e214f0fea00b5ff68> , <https://astrea.linkeddata.es/shapes#a30ba0a0c040b2f8131fa014b2409bad> , <https://astrea.linkeddata.es/shapes#15220ce5b878fe6a670e9461cf5a708f> , <https://astrea.linkeddata.es/shapes#29c3a5d12df8ba4f3bb0b250a29218a8> , <https://astrea.linkeddata.es/shapes#54ed1c77e50ad5228aed01f468b473fe> , <https://astrea.linkeddata.es/shapes#f536b7b0b5133d59fae13d45bed3985b> , <https://astrea.linkeddata.es/shapes#6490e82ad7665342b6c71a9c6413eab8> , <https://astrea.linkeddata.es/shapes#4496ce8f544702a6870f7a7ccf5f3a38> , <https://astrea.linkeddata.es/shapes#413b2156a35f5f3219e21351bb4af0c7> , <https://astrea.linkeddata.es/shapes#13effce3a9d47ab82141a194e937e6a4> , <https://astrea.linkeddata.es/shapes#44c5fa81dbd30f11df2854ffb80a3f2a> , <https://astrea.linkeddata.es/shapes#b206c062288326047bb409bbd74bde1e> , <https://astrea.linkeddata.es/shapes#b428404e10d27006337fd8a57eeb28fa> , <https://astrea.linkeddata.es/shapes#8a0548a1338f8d8ced0e81b641611db7> , <https://astrea.linkeddata.es/shapes#414a27b935d6951a7b93fd342e14adea> , <https://astrea.linkeddata.es/shapes#ca3b4b51b2f168a8af3a6ffdb044bffe> , <https://astrea.linkeddata.es/shapes#66f72d78d0b67140bb10975907c8b806> , <https://astrea.linkeddata.es/shapes#5f50c16c5c1d1a69d8914cd97d246f56> , <https://astrea.linkeddata.es/shapes#2866f7650d62efdf75a4dd09200bd1ed> , <https://astrea.linkeddata.es/shapes#4066fe7f8c62ca36315059b8ce8b58bb> , <https://astrea.linkeddata.es/shapes#47bb12813b109ff5a0676ab375f44ca0> , <https://astrea.linkeddata.es/shapes#707615f655d6a4f5cb51798e0d0c8d66> , <https://astrea.linkeddata.es/shapes#cceafcc7400d92b6de551a8ee1f9dd64> , <https://astrea.linkeddata.es/shapes#972d37a5863a5d80f885123651e689d4> , <https://astrea.linkeddata.es/shapes#a24cbd7f855cc8c9ffab730128c0e917> , <https://astrea.linkeddata.es/shapes#e1f6c9340773516c076bbe06f7bc60ea> , <https://astrea.linkeddata.es/shapes#ca424b7dc9b54265e287511f70553481> , <https://astrea.linkeddata.es/shapes#d26bcbfbb4a6c9529cb7143a2a3a82c3> , <https://astrea.linkeddata.es/shapes#9f3469699e38cefceec13b93b0d52a35> , <https://astrea.linkeddata.es/shapes#0f8a2bb6bb2639164cae97197f7d0d7c> , <https://astrea.linkeddata.es/shapes#a51e785a1cb599a7e206fb1e9da6e977> , <https://astrea.linkeddata.es/shapes#89e1de3b32259c63d7855b3e64b55e47> , <https://astrea.linkeddata.es/shapes#dbda1a605b91b25693cfb791287acc16> , <https://astrea.linkeddata.es/shapes#e993432f5ac663e6494bfb18e7813465> , <https://astrea.linkeddata.es/shapes#9e0d8e3d4b0460f3f9c90c20137433c0> , <https://astrea.linkeddata.es/shapes#c1ca3d1917404609ae0658b95e4e0d17> , <https://astrea.linkeddata.es/shapes#53dc92d8d00720440a46fabdefb36c4c> , <https://astrea.linkeddata.es/shapes#6fe7f5af1b3357ba3979d86885682e28> , <https://astrea.linkeddata.es/shapes#1df1141de9564499f785fe87620ebf07> , <https://astrea.linkeddata.es/shapes#78188fda30396a6fddbbfd98e4f52afd> , <https://astrea.linkeddata.es/shapes#ec8166b9f16c165794c59ccd77ad03b0> , <https://astrea.linkeddata.es/shapes#dc7dc17556a159a2911e87b2cd8198b4> , <https://astrea.linkeddata.es/shapes#ac76d8e412cd489f4a574925a1735e34> , <https://astrea.linkeddata.es/shapes#cb980022323d3e76623ea74c378254f7> , <https://astrea.linkeddata.es/shapes#8fc7aba32fd97417ad088dd71ab09176> , <https://astrea.linkeddata.es/shapes#93d272330fae1bcc8a1effad5bdaf757> , <https://astrea.linkeddata.es/shapes#fa1236735fddc524a354392968bd80ea> , <https://astrea.linkeddata.es/shapes#4bc11a7988db4245c437cd15f6339b93> , <https://astrea.linkeddata.es/shapes#b120c38a28a58f02127c339af8fea9bf> , <https://astrea.linkeddata.es/shapes#a957b9e64cd426dd9574d786fc961ed2> , <https://astrea.linkeddata.es/shapes#7adb6326e699b81384a3607c073ff409> , <https://astrea.linkeddata.es/shapes#c0aaa5fca6f5d55b52954c2cdca22cde> , <https://astrea.linkeddata.es/shapes#fc352e43b5bdda03e02bfc9c2996a6a2> , <https://astrea.linkeddata.es/shapes#c0b4b5fddcf9dab6ce39ca9f8b244561> , <https://astrea.linkeddata.es/shapes#febd2c1781966d53f8c50918bc225cbf> , <https://astrea.linkeddata.es/shapes#f9e63646bb01b78b08e7e78f43b86740> , <https://astrea.linkeddata.es/shapes#7c897284611c98cc42d00ddc2a8bad21> , <https://astrea.linkeddata.es/shapes#9890d14c6da292dc4d3ca587ec15ef64> , <https://astrea.linkeddata.es/shapes#3a985f8258720c369853c600a70429f9> , <https://astrea.linkeddata.es/shapes#c2680eecd783c053d7839559b5447204> , <https://astrea.linkeddata.es/shapes#fa90fc9e6270ab842452318dfb8185d1> , <https://astrea.linkeddata.es/shapes#ea608526a3df17370c3556e33eb56ce8> , <https://astrea.linkeddata.es/shapes#abec32c93109390c277784b6c908d634> , <https://astrea.linkeddata.es/shapes#d07bd760ff354cf108524dba555530df> , <https://astrea.linkeddata.es/shapes#1ba4f8242ad711398687c485e4b089c6> , <https://astrea.linkeddata.es/shapes#901bb6c4c8223df17ef856b4d935617b> , <https://astrea.linkeddata.es/shapes#16f20a79c01f9a8cbf351112876a33a8> , <https://astrea.linkeddata.es/shapes#10d303e3fce6f76906ca039339304fa0> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#a957b9e64cd426dd9574d786fc961ed2>
+        a                sh:PropertyShape ;
+        sh:datatype      xsd:int ;
+        sh:maxInclusive  2147483647 ;
+        sh:minInclusive  -2147483648 ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://purl.org/toco/mode> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#806a5c86e0907160067ad936a5157608>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/UserDeviceStatus> .
+
+<https://astrea.linkeddata.es/shapes#6f19c3d8d7a68490b3374c1e9750bc6e>
+        a               sh:NodeShape ;
+        rdfs:label      "power unit" ;
+        sh:name         "power unit" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.obolibrary.org/obo/UO_0000113> .
+
+<https://astrea.linkeddata.es/shapes#cceafcc7400d92b6de551a8ee1f9dd64>
+        a               sh:PropertyShape ;
+        rdfs:label      "the port number of the port forward to defined by the to_port property of the flow action OUTPUT." ;
+        sh:datatype     xsd:string ;
+        sh:description  "the port number of the port forward to defined by the to_port property of the flow action OUTPUT." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/toco/toPort> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#a2e0868bb11d773d7da969e9c1b6c384>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/Attached> .
+
+<https://astrea.linkeddata.es/shapes#fb8ef5195f781a528fe6763201315317>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/toco/LiFiWLAN> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/toco/hasLiFiWLAN> .
+
+<https://astrea.linkeddata.es/shapes#23a19e69bc0a363e92e49aba18b4c63f>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/toco/WiFiAssociation> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/toco/hasWiFiAssociation> .
+
+<https://astrea.linkeddata.es/shapes#a51e785a1cb599a7e206fb1e9da6e977>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the status of the service." ;
+        sh:datatype       xsd:string ;
+        sh:description    "the status of the service." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasServiceStatus> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#468d39818ff443e33d43813a44723fed>
+        a               sh:NodeShape ;
+        sh:description  "the visiable light carring modulated signals in Li-Fi network. Transmited and received by LiFi user equipment and LiFi access point." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b2905c7bd89fc2cc3823031a49303684> , <https://astrea.linkeddata.es/shapes#0a08b4aa5e58dc435d7a89335d216f8c> , <https://astrea.linkeddata.es/shapes#b021342fda08aabc6be0853ff42ac343> , <https://astrea.linkeddata.es/shapes#0c20faef953f51f780c644e32bc9be0b> ;
+        sh:targetClass  <http://purl.org/toco/LiFiAssociation> .
+
+<https://astrea.linkeddata.es/shapes#732307d68ef8245e3e3a19bcda18adda>
+        a               sh:NodeShape ;
+        sh:description  "An artificial satellite, that relays and amplifies radio telecommunications signals via a transponder; it creates a communication channel between a source transmitter and a receiver at different locations on Earth. Communications satellites are used for television, telephone, radio, internet, and military applications." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/SatelliteRelayStation> .
+
+<https://astrea.linkeddata.es/shapes#1df1141de9564499f785fe87620ebf07>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/toco/driver> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#fc352e43b5bdda03e02bfc9c2996a6a2>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/Session> .
+
+<https://astrea.linkeddata.es/shapes#dc7dc17556a159a2911e87b2cd8198b4>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/toco/UserDeviceStatus> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/toco/hasUserDeviceStatus> .
+
+<https://astrea.linkeddata.es/shapes#78188fda30396a6fddbbfd98e4f52afd>
+        a               sh:NodeShape ;
+        sh:description  "Describe all the physical resources in a telecommunication network system, which is divided into three main modules, namely, device, interface, link. \n\nPlease be reminded the electromagnetic wave (which is the links of all wireless communication netwoks), even if it is invisable, physically exists. Thus, it is also described in the subclass of \"net;PhysicalInfrastructure\"." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/PhysicalInfrastructure> .
+
+<https://astrea.linkeddata.es/shapes#65cbccc55568429724b8f478534e412a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/net/unis/ontology/sensordata.owl/> ;
+        rdfs:label        "reused from SENSEI Observation and Measurement Ontology." ;
+        sh:datatype       xsd:string ;
+        sh:description    "reused from SENSEI Observation and Measurement Ontology." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.oclc.org/net/unis/ontology/sensordata.owl/hasUnit> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/vocommons/voaf#Vocabulary> .
+
+<https://astrea.linkeddata.es/shapes#9a88acea47a8ee9ba0a06d78773309cd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        sh:class          <http://purl.org/toco/Link> ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/hasLink> .
+
+<https://astrea.linkeddata.es/shapes#a4bdf0911a03a1da9a41ded230b5daa2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the join date of the user device" ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "the join date of the user device" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasJoinDate> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#59874f6ca18fa1f70db16723186c2497>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/FileTransferService> .
+
+<https://astrea.linkeddata.es/shapes#5c93d10f50a018e36ad1a8be5ce49e4b>
+        a               sh:NodeShape ;
+        sh:description  "represent all the devices in the physical infrastructure of telecommunciation system. \n\nAccording to its user, could be divided into UserDevice and SystemDevice." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#fb08bfdfcd440bbfd6bf907104e07b06> , <https://astrea.linkeddata.es/shapes#d26bcbfbb4a6c9529cb7143a2a3a82c3> , <https://astrea.linkeddata.es/shapes#fb8ef5195f781a528fe6763201315317> , <https://astrea.linkeddata.es/shapes#b51a01fa2118fcb0e4c76b4f7bba3c5f> , <https://astrea.linkeddata.es/shapes#a2eb7a815b0dd4ccf6ad95e314588e8d> , <https://astrea.linkeddata.es/shapes#ffa627c90b2f93431bad38fc95750b9e> , <https://astrea.linkeddata.es/shapes#d96a764fd921b7caf28560a60056db67> , <https://astrea.linkeddata.es/shapes#c0b4b5fddcf9dab6ce39ca9f8b244561> , <https://astrea.linkeddata.es/shapes#89e1de3b32259c63d7855b3e64b55e47> ;
+        sh:targetClass  <http://purl.org/toco/Device> .
+
+<https://astrea.linkeddata.es/shapes#8fc7aba32fd97417ad088dd71ab09176>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.oclc.org/net/unis/ontology/sensordata.owl> ;
+        sh:description    "reused from SenSei Observation And Measurement Ontology (http://purl.oclc.org/net/unis/ontology/sensordata.owl)." ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ac379363f4990122b348621ac3fc78e5> , <https://astrea.linkeddata.es/shapes#65cbccc55568429724b8f478534e412a> , <https://astrea.linkeddata.es/shapes#9e0d8e3d4b0460f3f9c90c20137433c0> ;
+        sh:targetClass    <http://purl.oclc.org/net/unis/ontology/sensordata.owl/ObervationAndMeasurement> .
+
+<https://astrea.linkeddata.es/shapes#289ed8437f6a1c3f499caf2ac4541a74>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        sh:class          <http://purl.org/toco/Service> ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/hasService> .
+
+<https://astrea.linkeddata.es/shapes#c1ca3d1917404609ae0658b95e4e0d17>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        sh:datatype       xsd:int ;
+        sh:maxInclusive   2147483647 ;
+        sh:minInclusive   -2147483648 ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/flags> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#29c3a5d12df8ba4f3bb0b250a29218a8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/foaf/0.1/> ;
+        rdfs:label        "the first name of a user." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "the first name of a user." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://xmlns.com/foaf/0.1/firstName> .
+
+<https://astrea.linkeddata.es/shapes#391a1239a5a1d64cb249419ab0a10845>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "indicate whether a interface is up or not." ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "indicate whether a interface is up or not." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/isUP> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#a666a644865c186c6f2e141a70eb5465>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/PathFlow> .
+
+<https://astrea.linkeddata.es/shapes#3ef793712378e097aac823894a277e63>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2003/01/geo/wgs84_pos#> ;
+        rdfs:label        "location" ;
+        sh:description    "The relation between something and the point, \n or other geometrical thing in space, where it is.  For example, the realtionship between\n a radio tower and a Point with a given lat and long.\n Or a relationship between a park and its outline as a closed arc of points, or a road and\n its location as a arc (a sequence of points).\n Clearly in practice there will be limit to the accuracy of any such statement, but one would expect\n an accuracy appropriate for the size of the object and uses such as mapping ." ;
+        sh:name           "location" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.w3.org/2003/01/geo/wgs84_pos#Point> .
+
+<https://astrea.linkeddata.es/shapes#d26bcbfbb4a6c9529cb7143a2a3a82c3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the fact that a device has a interface." ;
+        sh:class          <http://purl.org/toco/Interface> ;
+        sh:description    "the fact that a device has a interface." ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/hasInterface> .
+
+<https://astrea.linkeddata.es/shapes#fa1236735fddc524a354392968bd80ea>
+        a               sh:NodeShape ;
+        sh:description  "a communication service, e.g., voice, video, file uploading/downloading, etc." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ca424b7dc9b54265e287511f70553481> , <https://astrea.linkeddata.es/shapes#05a4e8c5945ff1997e6eb07d7c078fe9> , <https://astrea.linkeddata.es/shapes#0217d7d29b73cee3b2a7b24a47e3c6c9> , <https://astrea.linkeddata.es/shapes#dd3f3de6a4c80178c4f8fe3a2c35340b> , <https://astrea.linkeddata.es/shapes#a51e785a1cb599a7e206fb1e9da6e977> ;
+        sh:targetClass  <http://purl.org/toco/Service> .
+
+<https://astrea.linkeddata.es/shapes#d19dc7a2a677e371100ce6f7d3ab8a28>
+        a               sh:NodeShape ;
+        sh:description  "the milli-meter electromagnetic wave carring modulated signal between satellite base stations and ground station." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/SatelliteAssociation> .
+
+<https://astrea.linkeddata.es/shapes#d07bd760ff354cf108524dba555530df>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/Output> .
+
+<https://astrea.linkeddata.es/shapes#5f50c16c5c1d1a69d8914cd97d246f56>
+        a               sh:PropertyShape ;
+        rdfs:label      "the frequency of the radio wave transmitted by a wireless interface (WLAN)." ;
+        sh:datatype     xsd:float ;
+        sh:description  "the frequency of the radio wave transmitted by a wireless interface (WLAN)." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/toco/frequency> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#078d7813aec84f0fdf3cab67a9691b34>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/idleTimeout> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#52fe2401355adeab8c3806d98b559232>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/unReachable> .
+
+<https://astrea.linkeddata.es/shapes#f9e63646bb01b78b08e7e78f43b86740>
+        a               sh:PropertyShape ;
+        rdfs:label      "the round trip time of a link, which is the time taken for signal travel a round trip via this link." ;
+        sh:class        <http://purl.oclc.org/net/unis/ontology/sensordata.owl/ObervationAndMeasurement> ;
+        sh:description  "the round trip time of a link, which is the time taken for signal travel a round trip via this link." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/toco/hasRoundTripTime> .
+
+<https://astrea.linkeddata.es/shapes#f536b7b0b5133d59fae13d45bed3985b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "Gain of optical filter on LiFi access point." ;
+        sh:datatype       xsd:float ;
+        sh:description    "Gain of optical filter on LiFi access point." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasGainofOpticalFilter> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#efc1ca34cbe4d31baf54830e77c7685e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "datatype properties dedicated for LiFi access points" ;
+        sh:datatype       xsd:float ;
+        sh:description    "datatype properties dedicated for LiFi access points" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasLiFiAccessPointProperty> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#2dca135c5137baffb632aeffb67e0aff>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "in wireless networks (WiFi/LiFi), the mobile stations in the range of the access points." ;
+        sh:class          <http://purl.org/toco/UserEquipment> ;
+        sh:description    "in wireless networks (WiFi/LiFi), the mobile stations in the range of the access points." ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/stationsInRange> .
+
+<https://astrea.linkeddata.es/shapes#dd3f3de6a4c80178c4f8fe3a2c35340b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the start time of a service." ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "the start time of a service." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasServiceStartTime> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#88fe6ca4a77c69004c4dd0df4fdc5d1f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasFlowProperty> .
+
+<https://astrea.linkeddata.es/shapes#a0f5d079f0bea96a74b4a8ba6e729c29>
+        a               sh:NodeShape ;
+        sh:description  "A host is a computer or other device connected to a computer network. It is a network node that is assigned a network address." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/Host> .
+
+<https://astrea.linkeddata.es/shapes#6ec604c1f275437588fcb6eecb5e6bf8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "meter per second" ;
+        sh:name           "meter per second" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000094> .
+
+<https://astrea.linkeddata.es/shapes#16f20a79c01f9a8cbf351112876a33a8>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/toco/LTEAssociation> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/toco/hasLTEAssociation> .
+
+<https://astrea.linkeddata.es/shapes#a24cbd7f855cc8c9ffab730128c0e917>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "information unit" ;
+        sh:name           "information unit" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000231> .
+
+<https://astrea.linkeddata.es/shapes#6a684426ac5b3992666a9bbc2b399736>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        rdfs:label        "month" ;
+        sh:name           "month" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/UO_0000035> .
+
+<https://astrea.linkeddata.es/shapes#e1f6c9340773516c076bbe06f7bc60ea>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/toco/PhysicalInfrastructure> .
+
+<https://astrea.linkeddata.es/shapes#a30ba0a0c040b2f8131fa014b2409bad>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/Drop> .
+
+<https://astrea.linkeddata.es/shapes#71c5b8e92755c94231a06317ae4ec3b2>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/toco/VideoService> .
+
+<https://astrea.linkeddata.es/shapes#8db207f583dc54d01c86dbcacff5dc5c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        sh:class          <http://purl.oclc.org/net/unis/ontology/sensordata.owl/ObervationAndMeasurement> ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/hasTransmitPower> .
+
+<https://astrea.linkeddata.es/shapes#b120c38a28a58f02127c339af8fea9bf>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        sh:class          <http://purl.org/toco/Flow> ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/hasFlow> .
+
+<https://astrea.linkeddata.es/shapes#3ffcbe8160a0606e214f0fea00b5ff68>
+        a                sh:PropertyShape ;
+        rdfs:label       "network type of service. the nw_tos property of a flow. It should be a decimal number with the value between 0-255." ;
+        sh:datatype      xsd:int ;
+        sh:description   "network type of service. the nw_tos property of a flow. It should be a decimal number with the value between 0-255." ;
+        sh:maxInclusive  2147483647 ;
+        sh:minInclusive  -2147483648 ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://purl.org/toco/nwTos> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#dc9ce47fbb78dcb4ebfad93f008decd1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the gain of an antenna on the wireless interface." ;
+        sh:datatype       xsd:int ;
+        sh:description    "the gain of an antenna on the wireless interface." ;
+        sh:maxInclusive   2147483647 ;
+        sh:minInclusive   -2147483648 ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasAntennaGain> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#dcc9c7009987fe76f0ff9fd81c3b018e>
+        a               sh:NodeShape ;
+        sh:description  "A wireless local area network (WLAN) interface, also known as WLAN, is the interface of a wireless computer network that links two or more devices using wireless communication within a limited area such as a home, school, computer laboratory, or office building." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#bf9d56515dc8d1e44389640afd3d459c> , <https://astrea.linkeddata.es/shapes#dc9ce47fbb78dcb4ebfad93f008decd1> , <https://astrea.linkeddata.es/shapes#13effce3a9d47ab82141a194e937e6a4> ;
+        sh:targetClass  <http://purl.org/toco/WLAN> .
+
+<https://astrea.linkeddata.es/shapes#b8b180b88104c97386fc7f12fa5d0a3f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        sh:datatype       xsd:string ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/priority> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#ca3b4b51b2f168a8af3a6ffdb044bffe>
+        a               sh:PropertyShape ;
+        rdfs:label      "the Ethernet source address of the flow. It should be an MAC address with 6 pairs of hexadecimal digits" ;
+        sh:datatype     xsd:string ;
+        sh:description  "the Ethernet source address of the flow. It should be an MAC address with 6 pairs of hexadecimal digits" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/toco/dlSrc> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#54ed1c77e50ad5228aed01f468b473fe>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "the user ID of the user" ;
+        sh:datatype       xsd:string ;
+        sh:description    "the user ID of the user" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasUserID> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#6def6db4f6281ea9583f7aa33fc9f0a7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.obolibrary.org/obo/uo.owl> ;
+        sh:description    "reused from Units of measurement Ontology" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.obolibrary.org/obo/uo.owl/unit> .
+
+<https://astrea.linkeddata.es/shapes#c0aaa5fca6f5d55b52954c2cdca22cde>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        sh:class          <http://purl.org/toco/User> ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/toco/belongsTo> .
+
+<https://astrea.linkeddata.es/shapes#75c22f4b75ba8f25f6d56cb473c5ebff>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/toco/> ;
+        rdfs:label        "properties of LiFi user equipments." ;
+        sh:datatype       xsd:float ;
+        sh:description    "properties of LiFi user equipments." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/toco/hasLiFiUserEquipmentProperty> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .

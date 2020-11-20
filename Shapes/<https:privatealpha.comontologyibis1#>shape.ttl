@@ -1,0 +1,536 @@
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#7e30900cd66e483306065162e5bde569>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "has member list"@en , "For any resource, every item in the list given as the value of the\n      skos:memberList property is also a value of the skos:member property."@en ;
+        sh:class          rdf:List ;
+        sh:description    "For any resource, every item in the list given as the value of the\n      skos:memberList property is also a value of the skos:member property."@en ;
+        sh:maxCount       1 ;
+        sh:name           "has member list"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           skos:memberList .
+
+<https://astrea.linkeddata.es/shapes#9fa8b73aac9bda8c15b6cc5611aa0170>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "has broader transitive"@en ;
+        sh:name           "has broader transitive"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           skos:broaderTransitive .
+
+<https://astrea.linkeddata.es/shapes#1098e03eab00588b2f1b69f3783fb74e>
+        a            sh:PropertyShape ;
+        sh:class     <https://privatealpha.com/ontology/ibis/1#Issue> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      skos:narrowerTransitive .
+
+<https://astrea.linkeddata.es/shapes#5f2309c20ab1a08a94d6298b764d64f2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "has narrower transitive"@en ;
+        sh:name           "has narrower transitive"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           skos:narrowerTransitive .
+
+<https://astrea.linkeddata.es/report/1442703525>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.w3.org/2004/02/skos/core#" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#743cc5ea02c02e9a247fc90ee9e1bdd4>
+        a            sh:PropertyShape ;
+        sh:class     <https://privatealpha.com/ontology/ibis/1#Position> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      skos:narrowerTransitive .
+
+<https://astrea.linkeddata.es/shapes#4d93bbef654181e37c1dcfab95a714dd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "responds to"@en , "Indicates an issue to which the subject position responds."@en ;
+        sh:class          <https://privatealpha.com/ontology/ibis/1#Issue> ;
+        sh:description    "Indicates an issue to which the subject position responds."@en ;
+        sh:name           "responds to"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://privatealpha.com/ontology/ibis/1#responds-to> .
+
+<https://astrea.linkeddata.es/shapes#54e6285c86ebc0e129fa8fe20b189053>
+        a         sh:PropertyShape ;
+        sh:class  <https://privatealpha.com/ontology/ibis/1#Argument> .
+
+<https://astrea.linkeddata.es/shapes#8084617e97ec5c47b60fc346ce06be59>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "endorses"@en , "An Agent can endorse a concept without having initially mentioned or advanced it, and without any additional comment."@en ;
+        sh:class          skos:Concept ;
+        sh:description    "An Agent can endorse a concept without having initially mentioned or advanced it, and without any additional comment."@en ;
+        sh:name           "endorses"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://privatealpha.com/ontology/ibis/1#endorses> .
+
+<https://astrea.linkeddata.es/shapes#2533ee4a78ed76b70b7697d9feed8aef>
+        a         sh:PropertyShape ;
+        sh:class  <https://privatealpha.com/ontology/ibis/1#Position> .
+
+<https://astrea.linkeddata.es/shapes#731d5525f11f67d4a32ca085ab6a3dc5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "Network"@en ;
+        sh:description    "A network of issues, positions, and arguments."@en ;
+        sh:name           "Network"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://privatealpha.com/ontology/ibis/1#Network> .
+
+<https://astrea.linkeddata.es/shapes#8af1f278022db208873b50b764858fd1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "replaces"@en , "Indicates when a concept replaces another concept of the same type."@en ;
+        sh:class          skos:Concept ;
+        sh:description    "Indicates when a concept replaces another concept of the same type."@en ;
+        sh:name           "replaces"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://privatealpha.com/ontology/ibis/1#replaces> .
+
+<https://astrea.linkeddata.es/shapes#aac69a684d4956c5a41273c487ad3648>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "has broader match"@en ;
+        sh:name           "has broader match"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           skos:broadMatch .
+
+<https://astrea.linkeddata.es/shapes#b938d9474f42fd48cdaf478ba8cb0e4b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "response"@en , "Indicates a position that responds to the subject issue."@en ;
+        sh:class          <https://privatealpha.com/ontology/ibis/1#Position> ;
+        sh:description    "Indicates a position that responds to the subject issue."@en ;
+        sh:name           "response"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://privatealpha.com/ontology/ibis/1#response> .
+
+<https://astrea.linkeddata.es/shapes#fa70fa558e4095f44370cf48ce11fb80>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "has narrower match"@en ;
+        sh:name           "has narrower match"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           skos:narrowMatch .
+
+<https://astrea.linkeddata.es/shapes#ef3cf295a0f986786636227637182b5b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "suggested by"@en , "Indicates when the subject issue is suggested by the object belief."@en ;
+        sh:class          skos:Concept ;
+        sh:description    "Indicates when the subject issue is suggested by the object belief."@en ;
+        sh:name           "suggested by"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://privatealpha.com/ontology/ibis/1#suggested-by> .
+
+<https://astrea.linkeddata.es/shapes#7ade5b154c42fe05b02ae97bf13fd8d7>
+        a            sh:PropertyShape ;
+        sh:class     <https://privatealpha.com/ontology/ibis/1#Argument> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://privatealpha.com/ontology/ibis/1#replaces> .
+
+<https://astrea.linkeddata.es/shapes#8bba165b182061aaaf0e5db2b7e601bc>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "opposes"@en , "Indicates a subject argument that opposes an object position."@en ;
+        sh:class          <https://privatealpha.com/ontology/ibis/1#Position> ;
+        sh:description    "Indicates a subject argument that opposes an object position."@en ;
+        sh:name           "opposes"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://privatealpha.com/ontology/ibis/1#opposes> .
+
+<https://astrea.linkeddata.es/shapes#031b40a3076d7caf9541b7ac672850da>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "specializes"@en , "The subject is a more specific form of the object."@en ;
+        sh:description    "The subject is a more specific form of the object."@en ;
+        sh:equals         skos:broader ;
+        sh:name           "specializes"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://privatealpha.com/ontology/ibis/1#specializes> .
+
+<https://astrea.linkeddata.es/shapes#b9504d07f556208ff7deb7056904c1de>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "has related match"@en ;
+        sh:name           "has related match"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           skos:relatedMatch .
+
+<https://astrea.linkeddata.es/shapes#09f17fcc61f87f9692f33bab42323734>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "has broader"@en , "Broader concepts are typically rendered as parents in a concept hierarchy (tree)."@en ;
+        sh:description    "Broader concepts are typically rendered as parents in a concept hierarchy (tree)."@en ;
+        sh:name           "has broader"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           skos:broader .
+
+<https://astrea.linkeddata.es/shapes#8adb0afbaf8d488728b5bec0e9a38046>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "supports"@en , "Indicates a subject argument that supports an object position."@en ;
+        sh:class          <https://privatealpha.com/ontology/ibis/1#Position> ;
+        sh:description    "Indicates a subject argument that supports an object position."@en ;
+        sh:name           "supports"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://privatealpha.com/ontology/ibis/1#supports> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#bae7c04ffce4b46b3ee66327db34904d>
+        a            sh:PropertyShape ;
+        sh:class     <https://privatealpha.com/ontology/ibis/1#Position> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      skos:broaderTransitive .
+
+<https://astrea.linkeddata.es/shapes#baf2e500f0b9580cab6426c147fd8462>
+        a         sh:PropertyShape ;
+        sh:class  skos:Concept .
+
+<https://astrea.linkeddata.es/shapes#9070d8667054ef86a79903b4ceb54bfb>
+        a            sh:PropertyShape ;
+        sh:class     <https://privatealpha.com/ontology/ibis/1#Issue> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      skos:broaderTransitive .
+
+<https://astrea.linkeddata.es/shapes#4f934af5deead42437413380b392bb28>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "is in semantic relation with"@en ;
+        sh:class          skos:Concept ;
+        sh:name           "is in semantic relation with"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           skos:semanticRelation .
+
+<https://astrea.linkeddata.es/shapes#73364f473e9282b8e22319be3905e769>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "Collection"@en ;
+        sh:name           "Collection"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#baf2e500f0b9580cab6426c147fd8462> , <https://astrea.linkeddata.es/shapes#f5d3515f8cfa02fe182d61cb4248572c> ;
+        sh:targetClass    skos:Collection .
+
+<https://astrea.linkeddata.es/shapes#a9a665fcb5652e2448abd235b942bb69>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "generalizes"@en , "The subject is a more generic form of the object."@en ;
+        sh:description    "The subject is a more generic form of the object."@en ;
+        sh:equals         skos:narrower ;
+        sh:name           "generalizes"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://privatealpha.com/ontology/ibis/1#generalizes> .
+
+<https://astrea.linkeddata.es/shapes#44723dbcd017fbadae1e41cd5de7492d>
+        a            sh:PropertyShape ;
+        sh:class     <https://privatealpha.com/ontology/ibis/1#Position> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://privatealpha.com/ontology/ibis/1#replaces> .
+
+<https://astrea.linkeddata.es/shapes#41c7d8a08c7238d10c2188102fb1eddb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "concerns"@en , "The subject is an issue concerning the object, which can be any resource."@en ;
+        sh:class          owl:Thing ;
+        sh:description    "The subject is an issue concerning the object, which can be any resource."@en ;
+        sh:name           "concerns"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://privatealpha.com/ontology/ibis/1#concerns> .
+
+<https://astrea.linkeddata.es/shapes#f5d3515f8cfa02fe182d61cb4248572c>
+        a         sh:PropertyShape ;
+        sh:class  skos:ConceptScheme .
+
+<https://astrea.linkeddata.es/shapes#b314d2d6e3881d73a5a8f9292a04f7f1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "has narrower"@en , "Narrower concepts are typically rendered as children in a concept hierarchy (tree)."@en ;
+        sh:description    "Narrower concepts are typically rendered as children in a concept hierarchy (tree)."@en ;
+        sh:name           "has narrower"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           skos:narrower .
+
+<https://astrea.linkeddata.es/shapes#b11b29194f1beb940e3d6450ef59ee44>
+        a            sh:PropertyShape ;
+        sh:class     <https://privatealpha.com/ontology/ibis/1#Issue> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://privatealpha.com/ontology/ibis/1#replaced-by> .
+
+<https://astrea.linkeddata.es/shapes#5ecdb221c8d343443f467da650f2f267>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "Issue"@en ;
+        sh:description    "An Issue is a state of affairs, claimed by one or more Agents to either be a misfit itself, or affecting some other Issue or Position."@en ;
+        sh:name           "Issue"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#2533ee4a78ed76b70b7697d9feed8aef> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#9070d8667054ef86a79903b4ceb54bfb> , <https://astrea.linkeddata.es/shapes#1098e03eab00588b2f1b69f3783fb74e> , <https://astrea.linkeddata.es/shapes#41c7d8a08c7238d10c2188102fb1eddb> , <https://astrea.linkeddata.es/shapes#b938d9474f42fd48cdaf478ba8cb0e4b> , <https://astrea.linkeddata.es/shapes#ef3cf295a0f986786636227637182b5b> , <https://astrea.linkeddata.es/shapes#4cd69151b6ea4fa174b949ee8cbce961> , <https://astrea.linkeddata.es/shapes#b11b29194f1beb940e3d6450ef59ee44> , <https://astrea.linkeddata.es/shapes#472c2b56e9051e20fc7ca71ea418a1a3> ;
+        sh:targetClass    <https://privatealpha.com/ontology/ibis/1#Issue> .
+
+<https://astrea.linkeddata.es/shapes#472c2b56e9051e20fc7ca71ea418a1a3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "questions"@en , "Indicates an issue that raises doubt on a belief."@en ;
+        sh:class          skos:Concept ;
+        sh:description    "Indicates an issue that raises doubt on a belief."@en ;
+        sh:name           "questions"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://privatealpha.com/ontology/ibis/1#questions> .
+
+<https://astrea.linkeddata.es/shapes#2713d87881328ed18a6ad8c2753648e0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "suggests"@en , "Indicates when the subject belief suggests the object issue."@en ;
+        sh:class          <https://privatealpha.com/ontology/ibis/1#Issue> ;
+        sh:description    "Indicates when the subject belief suggests the object issue."@en ;
+        sh:name           "suggests"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://privatealpha.com/ontology/ibis/1#suggests> .
+
+<https://astrea.linkeddata.es/shapes#abec138ecffee0570cdf7c8ff135775d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "Position"@en ;
+        sh:description    "A Position asserts a moral, ethical, pragmatic, or similar kind of assertion, typically identifying what, if anything, should be done about an Issue."@en ;
+        sh:name           "Position"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#c6067b343870d1c2a804a30102aed98b> , <https://astrea.linkeddata.es/shapes#54e6285c86ebc0e129fa8fe20b189053> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e64149bb1708dc652917776e816a0b4d> , <https://astrea.linkeddata.es/shapes#3cb58649101935d727aedb8578ddb7fb> , <https://astrea.linkeddata.es/shapes#4d93bbef654181e37c1dcfab95a714dd> , <https://astrea.linkeddata.es/shapes#bae7c04ffce4b46b3ee66327db34904d> , <https://astrea.linkeddata.es/shapes#d8578e87477fea99bddc43392bc5038a> , <https://astrea.linkeddata.es/shapes#743cc5ea02c02e9a247fc90ee9e1bdd4> , <https://astrea.linkeddata.es/shapes#44723dbcd017fbadae1e41cd5de7492d> ;
+        sh:targetClass    <https://privatealpha.com/ontology/ibis/1#Position> .
+
+<https://astrea.linkeddata.es/shapes#c78cfe1192c0701bed0711ecdad3cbe4>
+        a            sh:PropertyShape ;
+        sh:class     <https://privatealpha.com/ontology/ibis/1#Argument> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://privatealpha.com/ontology/ibis/1#replaced-by> .
+
+<https://astrea.linkeddata.es/shapes#55f207c0f7de847e4ade2cd781a94e80>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "replaced by"@en , "Indicates when a concept is replaced by another concept of the same type."@en ;
+        sh:class          skos:Concept ;
+        sh:description    "Indicates when a concept is replaced by another concept of the same type."@en ;
+        sh:name           "replaced by"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://privatealpha.com/ontology/ibis/1#replaced-by> .
+
+<https://astrea.linkeddata.es/shapes#5033e55598667e53759e69f09b3bee19>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "questioned by"@en , "Indicates a belief called into question by an issue."@en ;
+        sh:class          <https://privatealpha.com/ontology/ibis/1#Issue> ;
+        sh:description    "Indicates a belief called into question by an issue."@en ;
+        sh:name           "questioned by"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://privatealpha.com/ontology/ibis/1#questioned-by> .
+
+<https://astrea.linkeddata.es/shapes#a21892535c4bbed9a2d4c28df481cbf0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "notation"@en ;
+        sh:name           "notation"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           skos:notation .
+
+<https://astrea.linkeddata.es/shapes#0505f27824e6216f6cefdbd4e005817d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "has related"@en , "skos:related is disjoint with skos:broaderTransitive"@en ;
+        sh:description    "skos:related is disjoint with skos:broaderTransitive"@en ;
+        sh:name           "has related"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           skos:related .
+
+<https://astrea.linkeddata.es/shapes#69bfc24827569ed9036ecae89a53d3c7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "is in scheme"@en ;
+        sh:class          skos:ConceptScheme ;
+        sh:name           "is in scheme"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           skos:inScheme .
+
+<https://astrea.linkeddata.es/shapes#eaf524439f1d42a9d796295cbd893baa>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "endorsed by"@en , "A concept can be endorsed by an Agent without said Agent having mentioned or advanced it initially, and without any additional comment."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description    "A concept can be endorsed by an Agent without said Agent having mentioned or advanced it initially, and without any additional comment."@en ;
+        sh:name           "endorsed by"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://privatealpha.com/ontology/ibis/1#endorsed-by> .
+
+<https://astrea.linkeddata.es/shapes#85d0d57456e6d4cdc7b70a5d33dad918>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "Ordered Collection"@en ;
+        sh:name           "Ordered Collection"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7e30900cd66e483306065162e5bde569> ;
+        sh:targetClass    skos:OrderedCollection .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#a5e03bb45868c95d9d6a8dec9d09e6b6> , <https://astrea.linkeddata.es/shapes#73364f473e9282b8e22319be3905e769> , <https://astrea.linkeddata.es/shapes#b1917877a610fa162b925e70f6448580> , <https://astrea.linkeddata.es/shapes#41c7d8a08c7238d10c2188102fb1eddb> , <https://astrea.linkeddata.es/shapes#93e393b777673f363631f2e489fb8e8b> , <https://astrea.linkeddata.es/shapes#2533ee4a78ed76b70b7697d9feed8aef> , <https://astrea.linkeddata.es/shapes#aef1a78016b3598e01dd7671934b50b4> , <https://astrea.linkeddata.es/shapes#9fa8b73aac9bda8c15b6cc5611aa0170> , <https://astrea.linkeddata.es/shapes#b938d9474f42fd48cdaf478ba8cb0e4b> , <https://astrea.linkeddata.es/shapes#8adb0afbaf8d488728b5bec0e9a38046> , <https://astrea.linkeddata.es/shapes#b314d2d6e3881d73a5a8f9292a04f7f1> , <https://astrea.linkeddata.es/shapes#3cb58649101935d727aedb8578ddb7fb> , <https://astrea.linkeddata.es/shapes#731d5525f11f67d4a32ca085ab6a3dc5> , <https://astrea.linkeddata.es/shapes#4f934af5deead42437413380b392bb28> , <https://astrea.linkeddata.es/shapes#9070d8667054ef86a79903b4ceb54bfb> , <https://astrea.linkeddata.es/shapes#fa70fa558e4095f44370cf48ce11fb80> , <https://astrea.linkeddata.es/shapes#abec138ecffee0570cdf7c8ff135775d> , <https://astrea.linkeddata.es/shapes#bae7c04ffce4b46b3ee66327db34904d> , <https://astrea.linkeddata.es/shapes#e64149bb1708dc652917776e816a0b4d> , <https://astrea.linkeddata.es/shapes#5ecdb221c8d343443f467da650f2f267> , <https://astrea.linkeddata.es/shapes#c6067b343870d1c2a804a30102aed98b> , <https://astrea.linkeddata.es/shapes#ef3cf295a0f986786636227637182b5b> , <https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5> , <https://astrea.linkeddata.es/shapes#b11b29194f1beb940e3d6450ef59ee44> , <https://astrea.linkeddata.es/shapes#aac69a684d4956c5a41273c487ad3648> , <https://astrea.linkeddata.es/shapes#0509b61f7a7ebedc081ee69f212b7fa0> , <https://astrea.linkeddata.es/shapes#55f207c0f7de847e4ade2cd781a94e80> , <https://astrea.linkeddata.es/shapes#1098e03eab00588b2f1b69f3783fb74e> , <https://astrea.linkeddata.es/shapes#a21892535c4bbed9a2d4c28df481cbf0> , <https://astrea.linkeddata.es/shapes#8bba165b182061aaaf0e5db2b7e601bc> , <https://astrea.linkeddata.es/shapes#c78cfe1192c0701bed0711ecdad3cbe4> , <https://astrea.linkeddata.es/shapes#5386cbf05d6332b27c10ccc2de4aa812> , <https://astrea.linkeddata.es/shapes#743cc5ea02c02e9a247fc90ee9e1bdd4> , <https://astrea.linkeddata.es/shapes#8af1f278022db208873b50b764858fd1> , <https://astrea.linkeddata.es/shapes#eaf524439f1d42a9d796295cbd893baa> , <https://astrea.linkeddata.es/shapes#472c2b56e9051e20fc7ca71ea418a1a3> , <https://astrea.linkeddata.es/shapes#4cd69151b6ea4fa174b949ee8cbce961> , <https://astrea.linkeddata.es/shapes#b9504d07f556208ff7deb7056904c1de> , <https://astrea.linkeddata.es/shapes#69bfc24827569ed9036ecae89a53d3c7> , <https://astrea.linkeddata.es/shapes#baf2e500f0b9580cab6426c147fd8462> , <https://astrea.linkeddata.es/shapes#4d93bbef654181e37c1dcfab95a714dd> , <https://astrea.linkeddata.es/shapes#2713d87881328ed18a6ad8c2753648e0> , <https://astrea.linkeddata.es/shapes#d8578e87477fea99bddc43392bc5038a> , <https://astrea.linkeddata.es/shapes#5f2309c20ab1a08a94d6298b764d64f2> , <https://astrea.linkeddata.es/shapes#7e30900cd66e483306065162e5bde569> , <https://astrea.linkeddata.es/shapes#44723dbcd017fbadae1e41cd5de7492d> , <https://astrea.linkeddata.es/shapes#f5d3515f8cfa02fe182d61cb4248572c> , <https://astrea.linkeddata.es/shapes#0505f27824e6216f6cefdbd4e005817d> , <https://astrea.linkeddata.es/shapes#8084617e97ec5c47b60fc346ce06be59> , <https://astrea.linkeddata.es/shapes#54e6285c86ebc0e129fa8fe20b189053> , <https://astrea.linkeddata.es/shapes#5033e55598667e53759e69f09b3bee19> , <https://astrea.linkeddata.es/shapes#7ade5b154c42fe05b02ae97bf13fd8d7> , <https://astrea.linkeddata.es/shapes#031b40a3076d7caf9541b7ac672850da> , <https://astrea.linkeddata.es/shapes#a9a665fcb5652e2448abd235b942bb69> , <https://astrea.linkeddata.es/shapes#061414c2f75686e9df4e437dd9bd8b9b> , <https://astrea.linkeddata.es/shapes#85d0d57456e6d4cdc7b70a5d33dad918> , <https://astrea.linkeddata.es/shapes#5a45f730f3f9e51407aa676783a619e5> , <https://astrea.linkeddata.es/shapes#e4cb9b05fdc517e6d47d17a4ecc33a90> , <https://astrea.linkeddata.es/shapes#09f17fcc61f87f9692f33bab42323734> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/1442703525> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#0509b61f7a7ebedc081ee69f212b7fa0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "has member"@en ;
+        sh:name           "has member"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:or             ( [ sh:class  skos:Concept ;
+                              sh:path   skos:member
+                            ]
+                            [ sh:class  skos:Collection ;
+                              sh:path   skos:member
+                            ]
+                          ) .
+
+<https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "Concept"@en ;
+        sh:name           "Concept"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#8af1f278022db208873b50b764858fd1> , <https://astrea.linkeddata.es/shapes#55f207c0f7de847e4ade2cd781a94e80> , <https://astrea.linkeddata.es/shapes#2713d87881328ed18a6ad8c2753648e0> , <https://astrea.linkeddata.es/shapes#5a45f730f3f9e51407aa676783a619e5> , <https://astrea.linkeddata.es/shapes#5033e55598667e53759e69f09b3bee19> , <https://astrea.linkeddata.es/shapes#eaf524439f1d42a9d796295cbd893baa> , <https://astrea.linkeddata.es/shapes#4f934af5deead42437413380b392bb28> ;
+        sh:targetClass    skos:Concept .
+
+<https://astrea.linkeddata.es/shapes#4cd69151b6ea4fa174b949ee8cbce961>
+        a            sh:PropertyShape ;
+        sh:class     <https://privatealpha.com/ontology/ibis/1#Issue> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://privatealpha.com/ontology/ibis/1#replaces> .
+
+<https://astrea.linkeddata.es/shapes#aef1a78016b3598e01dd7671934b50b4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "Concept Scheme"@en ;
+        sh:name           "Concept Scheme"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#baf2e500f0b9580cab6426c147fd8462> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e4cb9b05fdc517e6d47d17a4ecc33a90> ;
+        sh:targetClass    skos:ConceptScheme .
+
+<https://astrea.linkeddata.es/shapes#93e393b777673f363631f2e489fb8e8b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "has close match"@en ;
+        sh:name           "has close match"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           skos:closeMatch .
+
+<https://astrea.linkeddata.es/shapes#c6067b343870d1c2a804a30102aed98b>
+        a         sh:PropertyShape ;
+        sh:class  <https://privatealpha.com/ontology/ibis/1#Issue> .
+
+<https://astrea.linkeddata.es/shapes#061414c2f75686e9df4e437dd9bd8b9b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "has exact match"@en , "skos:exactMatch is disjoint with each of the properties skos:broadMatch and skos:relatedMatch."@en ;
+        sh:description    "skos:exactMatch is disjoint with each of the properties skos:broadMatch and skos:relatedMatch."@en ;
+        sh:name           "has exact match"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           skos:exactMatch .
+
+<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#8084617e97ec5c47b60fc346ce06be59> ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Agent> .
+
+<https://astrea.linkeddata.es/shapes#d8578e87477fea99bddc43392bc5038a>
+        a            sh:PropertyShape ;
+        sh:class     <https://privatealpha.com/ontology/ibis/1#Position> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://privatealpha.com/ontology/ibis/1#replaced-by> .
+
+<https://astrea.linkeddata.es/shapes#b1917877a610fa162b925e70f6448580>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "Invariant"@en ;
+        sh:description    "An Issue or Position can be marked Invariant to denote that it has been deemed outside of the influence of the Agents in the system, i.e., something to be steered around."@en ;
+        sh:name           "Invariant"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://privatealpha.com/ontology/ibis/1#Invariant> .
+
+<https://astrea.linkeddata.es/shapes#5a45f730f3f9e51407aa676783a619e5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "is top concept in scheme"@en ;
+        sh:class          skos:ConceptScheme ;
+        sh:name           "is top concept in scheme"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           skos:topConceptOf .
+
+<https://astrea.linkeddata.es/shapes#e64149bb1708dc652917776e816a0b4d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "opposed by"@en , "Indicates a subject position opposed by an object argument."@en ;
+        sh:class          <https://privatealpha.com/ontology/ibis/1#Argument> ;
+        sh:description    "Indicates a subject position opposed by an object argument."@en ;
+        sh:name           "opposed by"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://privatealpha.com/ontology/ibis/1#opposed-by> .
+
+<https://astrea.linkeddata.es/shapes#e4cb9b05fdc517e6d47d17a4ecc33a90>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "has top concept"@en ;
+        sh:class          skos:Concept ;
+        sh:name           "has top concept"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           skos:hasTopConcept .
+
+<https://astrea.linkeddata.es/shapes#a5e03bb45868c95d9d6a8dec9d09e6b6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "Argument"@en ;
+        sh:description    "An Argument is a type of Issue that explicitly supports or refutes a Position."@en ;
+        sh:name           "Argument"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#2533ee4a78ed76b70b7697d9feed8aef> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#8bba165b182061aaaf0e5db2b7e601bc> , <https://astrea.linkeddata.es/shapes#c78cfe1192c0701bed0711ecdad3cbe4> , <https://astrea.linkeddata.es/shapes#7ade5b154c42fe05b02ae97bf13fd8d7> , <https://astrea.linkeddata.es/shapes#8adb0afbaf8d488728b5bec0e9a38046> ;
+        sh:targetClass    <https://privatealpha.com/ontology/ibis/1#Argument> .
+
+<https://astrea.linkeddata.es/shapes#5386cbf05d6332b27c10ccc2de4aa812>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "is in mapping relation with"@en , "These concept mapping relations mirror semantic relations, and the data model defined below is similar (with the exception of skos:exactMatch) to the data model defined for semantic relations. A distinct vocabulary is provided for concept mapping relations, to provide a convenient way to differentiate links within a concept scheme from links between concept schemes. However, this pattern of usage is not a formal requirement of the SKOS data model, and relies on informal definitions of best practice."@en ;
+        sh:description    "These concept mapping relations mirror semantic relations, and the data model defined below is similar (with the exception of skos:exactMatch) to the data model defined for semantic relations. A distinct vocabulary is provided for concept mapping relations, to provide a convenient way to differentiate links within a concept scheme from links between concept schemes. However, this pattern of usage is not a formal requirement of the SKOS data model, and relies on informal definitions of best practice."@en ;
+        sh:name           "is in mapping relation with"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           skos:mappingRelation .
+
+<https://astrea.linkeddata.es/shapes#3cb58649101935d727aedb8578ddb7fb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://privatealpha.com/ontology/ibis/1#> ;
+        rdfs:label        "supported by"@en , "Indicates a subject position supported by an object argument."@en ;
+        sh:class          <https://privatealpha.com/ontology/ibis/1#Argument> ;
+        sh:description    "Indicates a subject position supported by an object argument."@en ;
+        sh:name           "supported by"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://privatealpha.com/ontology/ibis/1#supported-by> .

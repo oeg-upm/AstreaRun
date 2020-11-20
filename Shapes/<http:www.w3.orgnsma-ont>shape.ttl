@@ -1,0 +1,742 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#f038044e197398e512e1a0f44e52bda5>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'policy' in the Ontology for Media Resources with a  'policy.type' meaning \"permissions\"." ;
+        sh:description  "Corresponds to 'policy' in the Ontology for Media Resources with a  'policy.type' meaning \"permissions\"." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#hasPermissions> .
+
+<https://astrea.linkeddata.es/shapes#9c9babc92ffe01d2f62a6fa142fe9dd8>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'date.date' in the Ontology for Media Resources with a 'date.type' meaning \"editDate\"." ;
+        sh:description  "Corresponds to 'date.date' in the Ontology for Media Resources with a 'date.type' meaning \"editDate\"." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#editDate> .
+
+<https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  owl:Thing .
+
+<https://astrea.linkeddata.es/shapes#21039ea6093e1df55eefe6bd0ee91a1e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#playsIn> .
+
+<https://astrea.linkeddata.es/shapes#f4695d88c90debe8184bd2e98c6892df>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'fragment' in the Ontology for Media Resources with a 'fragment.role' meaning \"track\"." ;
+        sh:class        <http://www.w3.org/ns/ma-ont#Track> ;
+        sh:description  "Corresponds to 'fragment' in the Ontology for Media Resources with a 'fragment.role' meaning \"track\"." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#hasTrack> .
+
+<https://astrea.linkeddata.es/shapes#f55ed62da0cc55cdc21f987ca703cfb5>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'location.altitude' in the Ontology for Media Resources." ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "Corresponds to 'location.altitude' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#locationAltitude> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#96419981fa66f6a4a28bca2d8f77aa37>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#isChapterOf> .
+
+<https://astrea.linkeddata.es/shapes#253ae080d0e5873de21a2aa843f747ff>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#isFragmentOf> .
+
+<https://astrea.linkeddata.es/shapes#1c304eb65ede8f65365d2182026c91ba>
+        a               sh:NodeShape ;
+        sh:description  "A specialisation of MediaFragment for audiovisual content." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/ns/ma-ont#Track> .
+
+<https://astrea.linkeddata.es/shapes#dfecac9c86e72b94978551550a2cd829>
+        a               sh:NodeShape ;
+        sh:description  "A specialisation of Track for Audio to provide a link to specific data properties such as sampleRate, etc. Specialisation is defined through object properties." ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#540ad3e1f36ac1dc4d5d1303150726ab> , <https://astrea.linkeddata.es/shapes#01113f6361fa5857516d533792c987ab> ;
+        sh:targetClass  <http://www.w3.org/ns/ma-ont#AudioTrack> .
+
+<https://astrea.linkeddata.es/shapes#2955555f0d391aef7a9dd32fcb859627>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'frameRate' in the Ontology for Media Resources, in frame per second." ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "Corresponds to 'frameRate' in the Ontology for Media Resources, in frame per second." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#frameRate> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#fae3e8a0184348db88ae395e6c512e76>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#isRelatedTo> .
+
+<https://astrea.linkeddata.es/shapes#e1351f13c531561113648e595685df17>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.w3.org/ns/ma-ont#Location> .
+
+<https://astrea.linkeddata.es/shapes#4c0b26034ec577e3a8170c7970a1efeb>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'policy' in the Ontology for Media Resources with a 'policy.type' \"access conditions\"." ;
+        sh:description  "Corresponds to 'policy' in the Ontology for Media Resources with a 'policy.type' \"access conditions\"." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#hasAccessConditions> .
+
+<https://astrea.linkeddata.es/shapes#dcd13f32952eb6da307751828b8226c0>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'frameSize.width' in the Ontology for Media Resources measured in frameSizeUnit." ;
+        sh:datatype     xsd:integer ;
+        sh:description  "Corresponds to 'frameSize.width' in the Ontology for Media Resources measured in frameSizeUnit." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#frameWidth> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#94a01b3913934c253194371d41773ff8>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'date.date' in the Ontology for Media Resources with a 'date.type' meaning \"recordDate\"." ;
+        sh:description  "Corresponds to 'date.date' in the Ontology for Media Resources with a 'date.type' meaning \"recordDate\"." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#recordDate> .
+
+<https://astrea.linkeddata.es/shapes#c61047996742260a6c512ca0f72067cb>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#isTargetAudienceOf> .
+
+<https://astrea.linkeddata.es/shapes#ff12ff5cfdd2fa6c0bf673b49bdf546b>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'policy' in the Ontology for Media Resources. Subproperties can be used to distinguish different values of 'policy.type'." ;
+        sh:description  "Corresponds to 'policy' in the Ontology for Media Resources. Subproperties can be used to distinguish different values of 'policy.type'." ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#540ad3e1f36ac1dc4d5d1303150726ab>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.w3.org/ns/ma-ont#DataTrack> .
+
+<https://astrea.linkeddata.es/shapes#e9cbec65cf95ae48e3819e7ea5618f23>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'relation' and in the Ontology for Media Resources with a 'relation.type' meaning \"source\"." ;
+        sh:description  "Corresponds to 'relation' and in the Ontology for Media Resources with a 'relation.type' meaning \"source\"." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#hasSource> .
+
+<https://astrea.linkeddata.es/shapes#968627f4a7ad098bebdc6c30d6513a14>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'keyword' in the Ontology for Media Resources." ;
+        sh:description  "Corresponds to 'keyword' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#e5ca635fd9f7cfc152f8e5607a2cf853>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#isSourceOf> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#37eac0b1e114c7cd3428c987a834de73>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'rating.identifier' in the Ontology for Media Resources." ;
+        sh:class        <http://www.w3.org/ns/ma-ont#Agent> ;
+        sh:description  "Corresponds to 'rating.identifier' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#isProvidedBy> .
+
+<https://astrea.linkeddata.es/shapes#47a1cea1c781a82461c64c48884133f0>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'title.title' in the Ontology for Media Resources. Subproperties can be used to distinguish different values of 'title.type'." ;
+        sh:description  "Corresponds to 'title.title' in the Ontology for Media Resources. Subproperties can be used to distinguish different values of 'title.type'." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#title> .
+
+<https://astrea.linkeddata.es/shapes#9c5a5648d76ae815ddd882ffa7bfb2e2>
+        a               sh:NodeShape ;
+        sh:description  "A specialisation of Track for Video to provide a link to specific data properties such as frameRate, etc. Signing is another possible example of video track. Specialisation is defined through object properties." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/ns/ma-ont#VideoTrack> .
+
+<https://astrea.linkeddata.es/shapes#c96323031c237b612c9d3d2db4198357>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'rating.type' in the Ontology for Media Resources." ;
+        sh:description  "Corresponds to 'rating.type' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#33d469e4982c310953c055b2f363d3ea>
+        a               sh:NodeShape ;
+        sh:description  "A person or organisation contributing to the media resource." ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#969d568e8d0b2b646653e50e0bdf3ba3> , <https://astrea.linkeddata.es/shapes#e1351f13c531561113648e595685df17> , <https://astrea.linkeddata.es/shapes#7de9d7dcf348e9141f8998c4ec40dedc> , <https://astrea.linkeddata.es/shapes#b06f46e46d75c616a09c268f823822a4> , <https://astrea.linkeddata.es/shapes#256a8dec39259d92a323c82f1952ac84> ;
+        sh:targetClass  <http://www.w3.org/ns/ma-ont#Agent> .
+
+<https://astrea.linkeddata.es/shapes#0b7e7b391b548c65974751c66a65eeaf>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#isFictionalLocationDepictedIn> .
+
+<https://astrea.linkeddata.es/shapes#5f3288d30c6bc8e9e20637b3e08c7f5a>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#isSigningOf> .
+
+<https://astrea.linkeddata.es/shapes#6fc215c5168b2579b69d4e2f1194d8f2>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#provides> .
+
+<https://astrea.linkeddata.es/shapes#ba242766586f313146cee000a8680270>
+        a               sh:NodeShape ;
+        sh:description  "An organisation or moral agent." ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#a62142363fe0778c15f61bc7d97c57c0> ;
+        sh:targetClass  <http://www.w3.org/ns/ma-ont#Organisation> .
+
+<https://astrea.linkeddata.es/shapes#86ebaebd138e67bfe5d3f6d48ed496d6>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'contributor.contributor' in the Ontology for Media Resources. Subproperties can be used to distinguish different values of 'contributor.role'." ;
+        sh:class        <http://www.w3.org/ns/ma-ont#Agent> ;
+        sh:description  "Corresponds to 'contributor.contributor' in the Ontology for Media Resources. Subproperties can be used to distinguish different values of 'contributor.role'." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#hasContributor> .
+
+<https://astrea.linkeddata.es/shapes#d3de251cb8fbb40014a8f841c76762d8>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#isTrackOf> .
+
+<https://astrea.linkeddata.es/shapes#17160b954f00f5e4d25d291a4446121a>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'collection' in the Ontology for Media Resources." ;
+        sh:class        <http://www.w3.org/ns/ma-ont#Collection> ;
+        sh:description  "Corresponds to 'collection' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#isMemberOf> .
+
+<https://astrea.linkeddata.es/shapes#e35d09d146fd641c927438e75626f8ac>
+        a               sh:PropertyShape ;
+        rdfs:label      "The name by which a collection (e.g. series) is known." ;
+        sh:description  "The name by which a collection (e.g. series) is known." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#collectionName> .
+
+<https://astrea.linkeddata.es/shapes#bde5aaaa8c88f1aa5adf2ca19ececb46>
+        a               sh:NodeShape ;
+        sh:description  "Ancillary data track e.g. captioning  in addition to video and audio tracks. Specialisation is made through the use of appropriate object properties." ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#01113f6361fa5857516d533792c987ab> ;
+        sh:targetClass  <http://www.w3.org/ns/ma-ont#DataTrack> .
+
+<https://astrea.linkeddata.es/shapes#c668aaf0492b82e07747b8755951256d>
+        a               sh:NodeShape ;
+        sh:description  "A still image / thumbnail / key frame related to the media resource or being the media resource itself." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/ns/ma-ont#Image> .
+
+<https://astrea.linkeddata.es/shapes#0c081d9d8995717291080ba613b4b727>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'locator' in the Ontology for Media Resources." ;
+        sh:datatype     xsd:anyURI ;
+        sh:description  "Corresponds to 'locator' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#locator> ;
+        sh:pattern      "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#01113f6361fa5857516d533792c987ab>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.w3.org/ns/ma-ont#VideoTrack> .
+
+<https://astrea.linkeddata.es/shapes#f5c799e63136708b7558bf15a33b4627>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'title.title' in the Ontology for Media Resources with a 'title.type' meaning \"original\"." ;
+        sh:description  "Corresponds to 'title.title' in the Ontology for Media Resources with a 'title.type' meaning \"original\"." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#mainOriginalTitle> .
+
+<https://astrea.linkeddata.es/shapes#e12a45d87923b47554db402d8842d03f>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'averageBitRate' in the Ontology for Media Resources, expressed in kilobits/second." ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "Corresponds to 'averageBitRate' in the Ontology for Media Resources, expressed in kilobits/second." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#averageBitRate> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#7062e51efff60ca8c0c079bf74178ad8>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#isCreationLocationOf> .
+
+<https://astrea.linkeddata.es/shapes#9340d489ce581f2a3ea95a226a698d55>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'relation' and in the Ontology for Media Resources. Subproperties can be used to distinguish different values of 'relation.type'." ;
+        sh:description  "Corresponds to 'relation' and in the Ontology for Media Resources. Subproperties can be used to distinguish different values of 'relation.type'." ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#0125b17c13828e2dbd723d1a0adec3bd>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#hasContributedTo> .
+
+<https://astrea.linkeddata.es/shapes#a7d4da18b2e27cde9694b06f4b5545a9>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'fragment' in the Ontology for Media Resources with a 'fragment.role' meaning \"signing\". This property can for example point to a spatial fragment or a VideoTrack. The sign language of the captioning track can be expressed by attaching a 'hasLanguage' property to the specific track." ;
+        sh:description  "Corresponds to 'fragment' in the Ontology for Media Resources with a 'fragment.role' meaning \"signing\". This property can for example point to a spatial fragment or a VideoTrack. The sign language of the captioning track can be expressed by attaching a 'hasLanguage' property to the specific track." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#hasSigning> .
+
+<https://astrea.linkeddata.es/shapes#d0b095c8ced6d6417514e34cbd5f1fe1>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'location.longitude' in the Ontology for Media Resources." ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "Corresponds to 'location.longitude' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#locationLongitude> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#249dc57d8cc994ab6e9b3442cff87015>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'rating.max' in the Ontology for Media Resources." ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "Corresponds to 'rating.max' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#ratingScaleMax> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/report/43173147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://dublincore.org/2008/01/14/dcelements.rdf" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#b3b8c397d72c5fe413755bcafa6acfe2>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#isLocationRelatedTo> .
+
+<https://astrea.linkeddata.es/shapes#ac163bf8c990a0a677715e437e1dcc6e>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'targetAudience.classification' in the Ontology for Media Resources. This property is used to provide a value characterising the target audience." ;
+        sh:description  "Corresponds to 'targetAudience.classification' in the Ontology for Media Resources. This property is used to provide a value characterising the target audience." ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#2111fb05715108e16e934d437476aa86>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'contributor.contributor' in the Ontology for Media Resources with a 'contributor.role' meaning \"actor\"." ;
+        sh:class        <http://www.w3.org/ns/ma-ont#Person> ;
+        sh:description  "Corresponds to 'contributor.contributor' in the Ontology for Media Resources with a 'contributor.role' meaning \"actor\"." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#features> .
+
+<https://astrea.linkeddata.es/shapes#141307b89ea5bfd7a9a194d3b442a4ad>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'location' in the Ontology for Media Resources. Subproperties are provided to specify, when possible, the relation between the media resource and the location." ;
+        sh:class        <http://www.w3.org/ns/ma-ont#Location> ;
+        sh:description  "Corresponds to 'location' in the Ontology for Media Resources. Subproperties are provided to specify, when possible, the relation between the media resource and the location." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#hasRelatedLocation> .
+
+<https://astrea.linkeddata.es/shapes#969d568e8d0b2b646653e50e0bdf3ba3>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.w3.org/ns/ma-ont#Collection> .
+
+<https://astrea.linkeddata.es/shapes#b45ecb8eb8e7fb54e4a6690d76b7b3a2>
+        a               sh:NodeShape ;
+        sh:description  "A location related to the media resource, e.g. depicted in the resource (possibly fictional) or where the resource was created (shooting location), etc." ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#b06f46e46d75c616a09c268f823822a4> , <https://astrea.linkeddata.es/shapes#256a8dec39259d92a323c82f1952ac84> , <https://astrea.linkeddata.es/shapes#7de9d7dcf348e9141f8998c4ec40dedc> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#af1f8b2dfa8b7982ed66029cda2303cc> , <https://astrea.linkeddata.es/shapes#f55ed62da0cc55cdc21f987ca703cfb5> , <https://astrea.linkeddata.es/shapes#d0b095c8ced6d6417514e34cbd5f1fe1> ;
+        sh:targetClass  <http://www.w3.org/ns/ma-ont#Location> .
+
+<https://astrea.linkeddata.es/shapes#d0b3bc1cdc7ef4b0366ae3b0aa25e0ad>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#hasCreated> .
+
+<https://astrea.linkeddata.es/shapes#af58b4274c02b717dfba83da29445381>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'frameSize.height' in the Ontology for Media Resources, measured in frameSizeUnit." ;
+        sh:datatype     xsd:integer ;
+        sh:description  "Corresponds to 'frameSize.height' in the Ontology for Media Resources, measured in frameSizeUnit." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#frameHeight> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#af1f8b2dfa8b7982ed66029cda2303cc>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'location.latitude' in the Ontology for Media Resources." ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "Corresponds to 'location.latitude' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#locationLatitude> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#ea96b3c292080679739d645fc50ad6ff>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'compression' in the Ontology for Media Resources." ;
+        sh:description  "Corresponds to 'compression' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#eeeb7c5472e09010c79799c30a3c4b4f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#isImageRelatedTo> .
+
+<https://astrea.linkeddata.es/shapes#b06f46e46d75c616a09c268f823822a4>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.w3.org/ns/ma-ont#Rating> .
+
+<https://astrea.linkeddata.es/shapes#8d107335bea1a88b647ae418ec1b6885>
+        a               sh:NodeShape ;
+        sh:description  "Information about The target audience (target region, target audience category but also parental guidance recommendation) for which a media resource is intended." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/ns/ma-ont#TargetAudience> .
+
+<https://astrea.linkeddata.es/shapes#6ad1bebf350ac3efa4ea8c572847d04c>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'copyright.copyright' in the Ontology for Media Resources." ;
+        sh:description  "Corresponds to 'copyright.copyright' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#copyright> .
+
+<https://astrea.linkeddata.es/shapes#9820d37e9c7882cc605268600b30c2fa>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#isNamedFragmentOf> .
+
+<https://astrea.linkeddata.es/shapes#c7c53adba4ab2d23e615ba7c9c7714c1>
+        a               sh:NodeShape ;
+        sh:description  "Any group of media resource e.g. a series." ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#e1351f13c531561113648e595685df17> , <https://astrea.linkeddata.es/shapes#7de9d7dcf348e9141f8998c4ec40dedc> , <https://astrea.linkeddata.es/shapes#b06f46e46d75c616a09c268f823822a4> , <https://astrea.linkeddata.es/shapes#256a8dec39259d92a323c82f1952ac84> ;
+        sh:targetClass  <http://www.w3.org/ns/ma-ont#Collection> .
+
+<https://astrea.linkeddata.es/shapes#4acdbe4769fda5f0dfb961ed81e1b0a8>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'date.date' in the Ontology for Media Resources with a 'date.type' meaning \"creationDate\"." ;
+        sh:description  "Corresponds to 'date.date' in the Ontology for Media Resources with a 'date.type' meaning \"creationDate\"." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#creationDate> .
+
+<https://astrea.linkeddata.es/shapes#7de9d7dcf348e9141f8998c4ec40dedc>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.w3.org/ns/ma-ont#MediaResource> .
+
+<https://astrea.linkeddata.es/shapes#cac20248bd81b0e266e1088569459209>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'numTracks.number' in the Ontology for Media Resources. Subproperties can be used to distinguish different values of 'numTracks.type'." ;
+        sh:datatype     xsd:integer ;
+        sh:description  "Corresponds to 'numTracks.number' in the Ontology for Media Resources. Subproperties can be used to distinguish different values of 'numTracks.type'." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#numberOfTracks> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#06399ca6c8b7cbd13057a041839182ec>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'rating.value' in the Ontology for Media Resources." ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "Corresponds to 'rating.value' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#ratingValue> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#8c54372bf1bccf93a241c78b7fde7285>
+        a               sh:NodeShape ;
+        sh:description  "A physical person." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/ns/ma-ont#Person> .
+
+<https://astrea.linkeddata.es/shapes#556f1dbff049c94a94f518ac614a5557>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'creator.creator' in the Ontology for Media Resources. Subproperties can be used to distinguish different values of 'creator.role'. Note that this property is semantically a subproperty of 'hasContributor'." ;
+        sh:description  "Corresponds to 'creator.creator' in the Ontology for Media Resources. Subproperties can be used to distinguish different values of 'creator.role'. Note that this property is semantically a subproperty of 'hasContributor'." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#hasCreator> .
+
+<https://astrea.linkeddata.es/shapes#b4a7546c0821198dde18b2166d74282d>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#hasCopyrightOver> .
+
+<https://astrea.linkeddata.es/shapes#3269fc14a8134d24c6b3b6c096c2b71e>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'fragment' in the Ontology for Media Resources with a 'fragment.role' meaning \"captioning\". This property can for example point to a spatial fragment, a VideoTrack or a DataTrack. The language of the captioning track can be expressed by attaching a 'hasLanguage' property to the specific track." ;
+        sh:description  "Corresponds to 'fragment' in the Ontology for Media Resources with a 'fragment.role' meaning \"captioning\". This property can for example point to a spatial fragment, a VideoTrack or a DataTrack. The language of the captioning track can be expressed by attaching a 'hasLanguage' property to the specific track." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#hasCaptioning> .
+
+<https://astrea.linkeddata.es/shapes#f3b6de92a5ee3bb0662d55d3c8a084e3>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'publisher' in the Ontology for Media Resources." ;
+        sh:description  "Corresponds to 'publisher' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#hasPublisher> .
+
+<https://astrea.linkeddata.es/shapes#79d0ffb8e03602ec8eb1e5f854d55173>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'namedFragment.label' in the Ontology for Media Resources." ;
+        sh:description  "Corresponds to 'namedFragment.label' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#fragmentName> .
+
+<https://astrea.linkeddata.es/shapes#e7af1279f108c813ba76f3939802f55b>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'fragment' in the Ontology for Media Resources. Subproperties can be used to distinguish different values of 'fragment.role'." ;
+        sh:class        <http://www.w3.org/ns/ma-ont#MediaFragment> ;
+        sh:description  "Corresponds to 'fragment' in the Ontology for Media Resources. Subproperties can be used to distinguish different values of 'fragment.role'." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#hasFragment> .
+
+<https://astrea.linkeddata.es/shapes#e061256f9bb17d07a44a356e8a22a4a2>
+        a               sh:PropertyShape ;
+        rdfs:label      "A subproperty of 'hasRelatedLocation' used to specify where the action depicted in the media is supposed to take place, as opposed to the location where shooting actually took place (see 'createdIn')." ;
+        sh:description  "A subproperty of 'hasRelatedLocation' used to specify where the action depicted in the media is supposed to take place, as opposed to the location where shooting actually took place (see 'createdIn')." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#depictsFictionalLocation> .
+
+<https://astrea.linkeddata.es/shapes#a62142363fe0778c15f61bc7d97c57c0>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.w3.org/ns/ma-ont#Person> .
+
+<https://astrea.linkeddata.es/shapes#33b9adcb043ac8355255327345990f68>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'targetAudience' in the Ontology for Media Resources." ;
+        sh:class        <http://www.w3.org/ns/ma-ont#TargetAudience> ;
+        sh:description  "Corresponds to 'targetAudience' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#hasTargetAudience> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#9379dbe451fedfb5228ad8918ae1dae9> , <https://astrea.linkeddata.es/shapes#d0b095c8ced6d6417514e34cbd5f1fe1> , <https://astrea.linkeddata.es/shapes#6ad1bebf350ac3efa4ea8c572847d04c> , <https://astrea.linkeddata.es/shapes#e9cbec65cf95ae48e3819e7ea5618f23> , <https://astrea.linkeddata.es/shapes#3269fc14a8134d24c6b3b6c096c2b71e> , <https://astrea.linkeddata.es/shapes#c7c53adba4ab2d23e615ba7c9c7714c1> , <https://astrea.linkeddata.es/shapes#d0b3bc1cdc7ef4b0366ae3b0aa25e0ad> , <https://astrea.linkeddata.es/shapes#e1351f13c531561113648e595685df17> , <https://astrea.linkeddata.es/shapes#540ad3e1f36ac1dc4d5d1303150726ab> , <https://astrea.linkeddata.es/shapes#6fc215c5168b2579b69d4e2f1194d8f2> , <https://astrea.linkeddata.es/shapes#f3b6de92a5ee3bb0662d55d3c8a084e3> , <https://astrea.linkeddata.es/shapes#968627f4a7ad098bebdc6c30d6513a14> , <https://astrea.linkeddata.es/shapes#2955555f0d391aef7a9dd32fcb859627> , <https://astrea.linkeddata.es/shapes#1957fced05be6e628690446d59a023d9> , <https://astrea.linkeddata.es/shapes#2111fb05715108e16e934d437476aa86> , <https://astrea.linkeddata.es/shapes#249dc57d8cc994ab6e9b3442cff87015> , <https://astrea.linkeddata.es/shapes#37eac0b1e114c7cd3428c987a834de73> , <https://astrea.linkeddata.es/shapes#321b6873369a8963d04c2b08bb739cd4> , <https://astrea.linkeddata.es/shapes#f14d2a520ebe12b17298cfc982e1c5df> , <https://astrea.linkeddata.es/shapes#8f0f5e1edf253be278ac604d163cd6f6> , <https://astrea.linkeddata.es/shapes#c61047996742260a6c512ca0f72067cb> , <https://astrea.linkeddata.es/shapes#e061256f9bb17d07a44a356e8a22a4a2> , <https://astrea.linkeddata.es/shapes#9274f5a80c7edd59a4ec79e963d6e029> , <https://astrea.linkeddata.es/shapes#af1f8b2dfa8b7982ed66029cda2303cc> , <https://astrea.linkeddata.es/shapes#e5ca635fd9f7cfc152f8e5607a2cf853> , <https://astrea.linkeddata.es/shapes#9c5a5648d76ae815ddd882ffa7bfb2e2> , <https://astrea.linkeddata.es/shapes#a2251ee91fb5e6cc61fdd267f361eba0> , <https://astrea.linkeddata.es/shapes#8ee2697ea6677c22fa2703f209a04ca9> , <https://astrea.linkeddata.es/shapes#c668aaf0492b82e07747b8755951256d> , <https://astrea.linkeddata.es/shapes#2033256e3549ba441c0778b4c85fde6d> , <https://astrea.linkeddata.es/shapes#21039ea6093e1df55eefe6bd0ee91a1e> , <https://astrea.linkeddata.es/shapes#7de9d7dcf348e9141f8998c4ec40dedc> , <https://astrea.linkeddata.es/shapes#79d0ffb8e03602ec8eb1e5f854d55173> , <https://astrea.linkeddata.es/shapes#fae3e8a0184348db88ae395e6c512e76> , <https://astrea.linkeddata.es/shapes#4d2f88b4e73a98ea7d83b6eddda213c2> , <https://astrea.linkeddata.es/shapes#eeeb7c5472e09010c79799c30a3c4b4f> , <https://astrea.linkeddata.es/shapes#9340d489ce581f2a3ea95a226a698d55> , <https://astrea.linkeddata.es/shapes#a62142363fe0778c15f61bc7d97c57c0> , <https://astrea.linkeddata.es/shapes#e7af1279f108c813ba76f3939802f55b> , <https://astrea.linkeddata.es/shapes#19564230e674e61e82a9da190c52309d> , <https://astrea.linkeddata.es/shapes#f55ed62da0cc55cdc21f987ca703cfb5> , <https://astrea.linkeddata.es/shapes#86ebaebd138e67bfe5d3f6d48ed496d6> , <https://astrea.linkeddata.es/shapes#969d568e8d0b2b646653e50e0bdf3ba3> , <https://astrea.linkeddata.es/shapes#47a1cea1c781a82461c64c48884133f0> , <https://astrea.linkeddata.es/shapes#dfecac9c86e72b94978551550a2cd829> , <https://astrea.linkeddata.es/shapes#141307b89ea5bfd7a9a194d3b442a4ad> , <https://astrea.linkeddata.es/shapes#8d107335bea1a88b647ae418ec1b6885> , <https://astrea.linkeddata.es/shapes#0b7e7b391b548c65974751c66a65eeaf> , <https://astrea.linkeddata.es/shapes#ff12ff5cfdd2fa6c0bf673b49bdf546b> , <https://astrea.linkeddata.es/shapes#c312ae30b99a1ea427ce1bb2cc869ec9> , <https://astrea.linkeddata.es/shapes#f038044e197398e512e1a0f44e52bda5> , <https://astrea.linkeddata.es/shapes#0c081d9d8995717291080ba613b4b727> , <https://astrea.linkeddata.es/shapes#5dcca61269da852759345f4aa633ba44> , <https://astrea.linkeddata.es/shapes#ba242766586f313146cee000a8680270> , <https://astrea.linkeddata.es/shapes#5f3288d30c6bc8e9e20637b3e08c7f5a> , <https://astrea.linkeddata.es/shapes#af58b4274c02b717dfba83da29445381> , <https://astrea.linkeddata.es/shapes#06399ca6c8b7cbd13057a041839182ec> , <https://astrea.linkeddata.es/shapes#b4a7546c0821198dde18b2166d74282d> , <https://astrea.linkeddata.es/shapes#caa08218ec73e787bc740c952cd17024> , <https://astrea.linkeddata.es/shapes#b45ecb8eb8e7fb54e4a6690d76b7b3a2> , <https://astrea.linkeddata.es/shapes#96419981fa66f6a4a28bca2d8f77aa37> , <https://astrea.linkeddata.es/shapes#5bb9d35f6d4088f7387cbf4c525de3fe> , <https://astrea.linkeddata.es/shapes#17160b954f00f5e4d25d291a4446121a> , <https://astrea.linkeddata.es/shapes#e12a45d87923b47554db402d8842d03f> , <https://astrea.linkeddata.es/shapes#1c304eb65ede8f65365d2182026c91ba> , <https://astrea.linkeddata.es/shapes#52824d7da614d093dd1a300ea7601825> , <https://astrea.linkeddata.es/shapes#9820d37e9c7882cc605268600b30c2fa> , <https://astrea.linkeddata.es/shapes#256a8dec39259d92a323c82f1952ac84> , <https://astrea.linkeddata.es/shapes#e35d09d146fd641c927438e75626f8ac> , <https://astrea.linkeddata.es/shapes#253ae080d0e5873de21a2aa843f747ff> , <https://astrea.linkeddata.es/shapes#8c54372bf1bccf93a241c78b7fde7285> , <https://astrea.linkeddata.es/shapes#0125b17c13828e2dbd723d1a0adec3bd> , <https://astrea.linkeddata.es/shapes#d3de251cb8fbb40014a8f841c76762d8> , <https://astrea.linkeddata.es/shapes#f5c799e63136708b7558bf15a33b4627> , <https://astrea.linkeddata.es/shapes#567732dae9fa018049b1b3e5ae40f2c4> , <https://astrea.linkeddata.es/shapes#4acdbe4769fda5f0dfb961ed81e1b0a8> , <https://astrea.linkeddata.es/shapes#7062e51efff60ca8c0c079bf74178ad8> , <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#33b9adcb043ac8355255327345990f68> , <https://astrea.linkeddata.es/shapes#c5a66292334bf0a7e7dce2d0c3350e00> , <https://astrea.linkeddata.es/shapes#4a9c6ffaa479d9d1c81f76f096e65654> , <https://astrea.linkeddata.es/shapes#697d52f3cf0d94808e4f02e2aba932d2> , <https://astrea.linkeddata.es/shapes#263496df07b3b417f0cc89514b4fcab4> , <https://astrea.linkeddata.es/shapes#ea96b3c292080679739d645fc50ad6ff> , <https://astrea.linkeddata.es/shapes#a7d4da18b2e27cde9694b06f4b5545a9> , <https://astrea.linkeddata.es/shapes#dcd13f32952eb6da307751828b8226c0> , <https://astrea.linkeddata.es/shapes#ac163bf8c990a0a677715e437e1dcc6e> , <https://astrea.linkeddata.es/shapes#4c0b26034ec577e3a8170c7970a1efeb> , <https://astrea.linkeddata.es/shapes#c4ce0040d3982e74cc198ec2fbb5042d> , <https://astrea.linkeddata.es/shapes#ca26f5ea229fe6450540ccb831f64966> , <https://astrea.linkeddata.es/shapes#93884995e616095dfcb9116dddedeecc> , <https://astrea.linkeddata.es/shapes#25688f0be50e4f866b59575541d7a888> , <https://astrea.linkeddata.es/shapes#c96323031c237b612c9d3d2db4198357> , <https://astrea.linkeddata.es/shapes#bde5aaaa8c88f1aa5adf2ca19ececb46> , <https://astrea.linkeddata.es/shapes#7b05a05d8f3453e12d7788769c5117e6> , <https://astrea.linkeddata.es/shapes#b3b8c397d72c5fe413755bcafa6acfe2> , <https://astrea.linkeddata.es/shapes#94490edc6334ecdedbbf78498481f718> , <https://astrea.linkeddata.es/shapes#6f8cacb3994fa3598fa0f1d8224c5872> , <https://astrea.linkeddata.es/shapes#94a01b3913934c253194371d41773ff8> , <https://astrea.linkeddata.es/shapes#cac20248bd81b0e266e1088569459209> , <https://astrea.linkeddata.es/shapes#33d469e4982c310953c055b2f363d3ea> , <https://astrea.linkeddata.es/shapes#9c9babc92ffe01d2f62a6fa142fe9dd8> , <https://astrea.linkeddata.es/shapes#01113f6361fa5857516d533792c987ab> , <https://astrea.linkeddata.es/shapes#b06f46e46d75c616a09c268f823822a4> , <https://astrea.linkeddata.es/shapes#556f1dbff049c94a94f518ac614a5557> , <https://astrea.linkeddata.es/shapes#fc4b64a975ece4da25e173afeddabb47> , <https://astrea.linkeddata.es/shapes#f4695d88c90debe8184bd2e98c6892df> , <https://astrea.linkeddata.es/shapes#d8d18c2019cfd222278b83737b5548d6> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/43173147> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#4d2f88b4e73a98ea7d83b6eddda213c2>
+        a               sh:NodeShape ;
+        sh:description  "A media fragment (spatial, temporal, track...) composing a media resource. In other ontologies fragment is sometimes referred to as a 'part' or 'segment'." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/ns/ma-ont#MediaFragment> .
+
+<https://astrea.linkeddata.es/shapes#2033256e3549ba441c0778b4c85fde6d>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'fragment' in the Ontology for Media Resources with a 'fragment.role' meaning \"subtitling\"." ;
+        sh:description  "Corresponds to 'fragment' in the Ontology for Media Resources with a 'fragment.role' meaning \"subtitling\"." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#hasSubtitling> .
+
+<https://astrea.linkeddata.es/shapes#256a8dec39259d92a323c82f1952ac84>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.w3.org/ns/ma-ont#TargetAudience> .
+
+<https://astrea.linkeddata.es/shapes#567732dae9fa018049b1b3e5ae40f2c4>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'format' in the Ontology for Media Resources." ;
+        sh:description  "Corresponds to 'format' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#c5a66292334bf0a7e7dce2d0c3350e00>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'fragment.name' in the Ontology for Media Resources, for Track fragments." ;
+        sh:description  "Corresponds to 'fragment.name' in the Ontology for Media Resources, for Track fragments." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#trackName> .
+
+<https://astrea.linkeddata.es/shapes#7b05a05d8f3453e12d7788769c5117e6>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'location.name' in the Ontology for Media Resources." ;
+        sh:description  "Corresponds to 'location.name' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#locationName> .
+
+<https://astrea.linkeddata.es/shapes#5bb9d35f6d4088f7387cbf4c525de3fe>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'description' in the Ontology for Media Resources. This can be specialised by using sub-properties e.g. 'summary' or 'script'." ;
+        sh:description  "Corresponds to 'description' in the Ontology for Media Resources. This can be specialised by using sub-properties e.g. 'summary' or 'script'." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#description> .
+
+<https://astrea.linkeddata.es/shapes#8ee2697ea6677c22fa2703f209a04ca9>
+        a               sh:PropertyShape ;
+        rdfs:label      "A subproperty of 'hasRelatedLocation\" used to specify where material shooting took place." ;
+        sh:description  "A subproperty of 'hasRelatedLocation\" used to specify where material shooting took place." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#createdIn> .
+
+<https://astrea.linkeddata.es/shapes#ca26f5ea229fe6450540ccb831f64966>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'samplingRate' in the Ontology for Media Resources, in samples per second." ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "Corresponds to 'samplingRate' in the Ontology for Media Resources, in samples per second." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#samplingRate> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#52824d7da614d093dd1a300ea7601825>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'namedFragment' in the Ontology for Media Resources." ;
+        sh:description  "Corresponds to 'namedFragment' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#hasNamedFragment> .
+
+<https://astrea.linkeddata.es/shapes#6f8cacb3994fa3598fa0f1d8224c5872>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to date.date in the ontology for Media Resources. Subproperties can be used to distinguish different values of 'date.type'. The recommended range is 'xsd:dateTime' (for compliance with OWL2-QL and OWL2-RL) but other time-related datatypes may be used (e.g. 'xsd:gYear', 'xsd:date'...)." ;
+        sh:description  "Corresponds to date.date in the ontology for Media Resources. Subproperties can be used to distinguish different values of 'date.type'. The recommended range is 'xsd:dateTime' (for compliance with OWL2-QL and OWL2-RL) but other time-related datatypes may be used (e.g. 'xsd:gYear', 'xsd:date'...)." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#date> .
+
+<https://astrea.linkeddata.es/shapes#94490edc6334ecdedbbf78498481f718>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'targetAudience.identifier' in the Ontology for Media Resources. This is used to identify the reference sheme against which the target audience has been characterised." ;
+        sh:description  "Corresponds to 'targetAudience.identifier' in the Ontology for Media Resources. This is used to identify the reference sheme against which the target audience has been characterised." ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#a2251ee91fb5e6cc61fdd267f361eba0>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#isCaptioningOf> .
+
+<https://astrea.linkeddata.es/shapes#19564230e674e61e82a9da190c52309d>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'location.coordinateSystem' in the Ontology for Media Resources." ;
+        sh:description  "Corresponds to 'location.coordinateSystem' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#d8d18c2019cfd222278b83737b5548d6>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'fragment' in the Ontology for Media Resources with a 'fragment.role' meaning \"audio-description\"." ;
+        sh:description  "Corresponds to 'fragment' in the Ontology for Media Resources with a 'fragment.role' meaning \"audio-description\"." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#hasAudioDescription> .
+
+<https://astrea.linkeddata.es/shapes#321b6873369a8963d04c2b08bb739cd4>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'copyright.identifier' in the Ontology for Media Resources." ;
+        sh:class        <http://www.w3.org/ns/ma-ont#Agent> ;
+        sh:description  "Corresponds to 'copyright.identifier' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#isCopyrightedBy> .
+
+<https://astrea.linkeddata.es/shapes#9379dbe451fedfb5228ad8918ae1dae9>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'duration' in the Ontology for Media Resources." ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "Corresponds to 'duration' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#duration> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#c4ce0040d3982e74cc198ec2fbb5042d>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#hasPublished> .
+
+<https://astrea.linkeddata.es/shapes#697d52f3cf0d94808e4f02e2aba932d2>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'language' in the Ontology for Media Resources. The language used in the resource. A controlled vocabulary such as defined in BCP 47 SHOULD be used. This property can also be used to identify the presence of sign language (RFC 5646). By inheritance, the hasLanguage property applies indifferently at the media resource / fragment / track levels.  Best practice recommends to use to best possible level of granularity fo describe the usage of language within a media resource including at fragment and track levels." ;
+        sh:description  "Corresponds to 'language' in the Ontology for Media Resources. The language used in the resource. A controlled vocabulary such as defined in BCP 47 SHOULD be used. This property can also be used to identify the presence of sign language (RFC 5646). By inheritance, the hasLanguage property applies indifferently at the media resource / fragment / track levels.  Best practice recommends to use to best possible level of granularity fo describe the usage of language within a media resource including at fragment and track levels." ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#9274f5a80c7edd59a4ec79e963d6e029>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'rating' in the Ontology for Media Resources." ;
+        sh:class        <http://www.w3.org/ns/ma-ont#Rating> ;
+        sh:description  "Corresponds to 'rating' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#hasRating> .
+
+<https://astrea.linkeddata.es/shapes#4a9c6ffaa479d9d1c81f76f096e65654>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'rating.min' in the Ontology for Media Resources." ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "Corresponds to 'rating.min' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#ratingScaleMin> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#caa08218ec73e787bc740c952cd17024>
+        a               sh:NodeShape ;
+        sh:description  "An image or an audiovisual media resource, which can be composed of one or more fragment / track." ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#b06f46e46d75c616a09c268f823822a4> , <https://astrea.linkeddata.es/shapes#256a8dec39259d92a323c82f1952ac84> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#9274f5a80c7edd59a4ec79e963d6e029> , <https://astrea.linkeddata.es/shapes#af58b4274c02b717dfba83da29445381> , <https://astrea.linkeddata.es/shapes#33b9adcb043ac8355255327345990f68> , <https://astrea.linkeddata.es/shapes#e7af1279f108c813ba76f3939802f55b> , <https://astrea.linkeddata.es/shapes#dcd13f32952eb6da307751828b8226c0> , <https://astrea.linkeddata.es/shapes#2955555f0d391aef7a9dd32fcb859627> , <https://astrea.linkeddata.es/shapes#0c081d9d8995717291080ba613b4b727> , <https://astrea.linkeddata.es/shapes#ca26f5ea229fe6450540ccb831f64966> , <https://astrea.linkeddata.es/shapes#141307b89ea5bfd7a9a194d3b442a4ad> , <https://astrea.linkeddata.es/shapes#86ebaebd138e67bfe5d3f6d48ed496d6> , <https://astrea.linkeddata.es/shapes#321b6873369a8963d04c2b08bb739cd4> , <https://astrea.linkeddata.es/shapes#17160b954f00f5e4d25d291a4446121a> , <https://astrea.linkeddata.es/shapes#cac20248bd81b0e266e1088569459209> ;
+        sh:targetClass  <http://www.w3.org/ns/ma-ont#MediaResource> .
+
+<https://astrea.linkeddata.es/shapes#1957fced05be6e628690446d59a023d9>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'date.date' in the Ontology for Media Resources with a 'date.type' meaning \"releaseDate\"." ;
+        sh:description  "Corresponds to 'date.date' in the Ontology for Media Resources with a 'date.type' meaning \"releaseDate\"." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#releaseDate> .
+
+<https://astrea.linkeddata.es/shapes#8f0f5e1edf253be278ac604d163cd6f6>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'fragment' in the Ontology for Media Resources with a 'fragment.role' meaning \"chapter\"." ;
+        sh:description  "Corresponds to 'fragment' in the Ontology for Media Resources with a 'fragment.role' meaning \"chapter\"." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#hasChapter> .
+
+<https://astrea.linkeddata.es/shapes#93884995e616095dfcb9116dddedeecc>
+        a               sh:NodeShape ;
+        sh:description  "Information about the rating given to a media resource." ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#256a8dec39259d92a323c82f1952ac84> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#37eac0b1e114c7cd3428c987a834de73> , <https://astrea.linkeddata.es/shapes#06399ca6c8b7cbd13057a041839182ec> , <https://astrea.linkeddata.es/shapes#249dc57d8cc994ab6e9b3442cff87015> , <https://astrea.linkeddata.es/shapes#4a9c6ffaa479d9d1c81f76f096e65654> ;
+        sh:targetClass  <http://www.w3.org/ns/ma-ont#Rating> .
+
+<https://astrea.linkeddata.es/shapes#c312ae30b99a1ea427ce1bb2cc869ec9>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#isRatingOf> .
+
+<https://astrea.linkeddata.es/shapes#f14d2a520ebe12b17298cfc982e1c5df>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/ma-ont#hasMember> .
+
+<https://astrea.linkeddata.es/shapes#fc4b64a975ece4da25e173afeddabb47>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'title.title' in the Ontology for Media Resources with a 'title.type' meaning \"alternative\"." ;
+        sh:description  "Corresponds to 'title.title' in the Ontology for Media Resources with a 'title.type' meaning \"alternative\"." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#alternativeTitle> .
+
+<https://astrea.linkeddata.es/shapes#25688f0be50e4f866b59575541d7a888>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'frameSize.unit' in the Ontology for Media Resources." ;
+        sh:description  "Corresponds to 'frameSize.unit' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/ns/ma-ont#frameSizeUnit> .
+
+<https://astrea.linkeddata.es/shapes#5dcca61269da852759345f4aa633ba44>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'relation' and in the Ontology for Media Resources with a 'relation.type' meaning \"related image\"." ;
+        sh:class        <http://www.w3.org/ns/ma-ont#Image> ;
+        sh:description  "Corresponds to 'relation' and in the Ontology for Media Resources with a 'relation.type' meaning \"related image\"." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/ns/ma-ont#hasRelatedImage> .
+
+<https://astrea.linkeddata.es/shapes#263496df07b3b417f0cc89514b4fcab4>
+        a               sh:PropertyShape ;
+        rdfs:label      "Corresponds to 'genre' in the Ontology for Media Resources." ;
+        sh:description  "Corresponds to 'genre' in the Ontology for Media Resources." ;
+        sh:nodeKind     sh:BlankNodeOrIRI .

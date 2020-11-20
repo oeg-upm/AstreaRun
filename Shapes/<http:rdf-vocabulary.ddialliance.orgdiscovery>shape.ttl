@@ -1,0 +1,598 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#e504811cf55af0fcfb4a029fce940b89>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Produkt"@de , "Indicates the LogicalDataSets of a Studies."@en , "product"@en ;
+        sh:class          <http://purl.org/linked-data/cube#LogicalDataSet> ;
+        sh:description    "Indicates the LogicalDataSets of a Studies."@en ;
+        sh:name           "Produkt"@de , "product"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#product> .
+
+<https://astrea.linkeddata.es/shapes#63139d34d66b64d3d845458425c238b1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "concept"@en , "a pour concept"@fr , "points to the DDI concept of a RepresentedVariable, a Variable, or a Question"@en ;
+        sh:class          <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:description    "points to the DDI concept of a RepresentedVariable, a Variable, or a Question"@en ;
+        sh:name           "a pour concept"@fr , "concept"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#concept> .
+
+<https://astrea.linkeddata.es/shapes#4c334590a9bc694f0e36ea000d1853e2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Variable"@de , "Indicates the Variable of a Study."@en , "variable"@en ;
+        sh:class          <http://rdf-vocabulary.ddialliance.org/discovery#Variable> ;
+        sh:description    "Indicates the Variable of a Study."@en ;
+        sh:name           "variable"@en , "Variable"@de ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#variable> .
+
+<https://astrea.linkeddata.es/shapes#916e6a925bf1115b1048247901f2bfbb>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "LogicalDataSet"@en , "Ensemble de données"@fr ;
+        sh:description    "Each study has a set of logical metadata associated with the processing of data, at the time of collection or later during cleaning, and re-coding. LogicalDataSet represents the microdata dataset."@en ;
+        sh:name           "LogicalDataSet"@en , "Ensemble de données"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#f0b47fa941765a6b33ee959757ac37b7> , <https://astrea.linkeddata.es/shapes#ddb66ae1837e0f8fdc9bb81e5a5d191b> , <https://astrea.linkeddata.es/shapes#bc63d980c02bcecb278fa96967c3f095> , <https://astrea.linkeddata.es/shapes#ae78e90a9c867a728fb5ce6a9f0181e8> , <https://astrea.linkeddata.es/shapes#b3a072d67ed850cc92e9dde9389e7b39> , <https://astrea.linkeddata.es/shapes#ba070af56bf091abf86a22093c1f7cb1> ;
+        sh:targetClass    <http://rdf-vocabulary.ddialliance.org/discovery#LogicalDataSet> .
+
+<https://astrea.linkeddata.es/shapes#1a3f2998464d8ffd768210b3accc2014>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "responseDomain"@en , "The response domain of questions."@en ;
+        sh:class          <http://rdf-vocabulary.ddialliance.org/discovery#Representation> ;
+        sh:description    "The response domain of questions."@en ;
+        sh:name           "responseDomain"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#responseDomain> .
+
+<https://astrea.linkeddata.es/shapes#3d51b70f926fe2e4a1cd31d1c420dcea>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "end date"@en ;
+        sh:datatype       xsd:date ;
+        sh:description    "end date"@en ;
+        sh:name           "end date"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#endDate> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#25d58dbeb2c50bb95f3d87e869186495>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "nombre d'observations"@fr , "number of cases"@en , "case quantity of a DataFile."@en ;
+        sh:datatype       xsd:nonNegativeInteger ;
+        sh:description    "case quantity of a DataFile."@en ;
+        sh:minInclusive   0 ;
+        sh:name           "nombre d'observations"@fr , "number of cases"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#caseQuantity> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#c92b587bf44190ced655b153aa251eac>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "is valid"@en , "Indicates if the code (represented by skos:Concept) is valid or missing."@en ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "Indicates if the code (represented by skos:Concept) is valid or missing."@en ;
+        sh:name           "is valid"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#isValid> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#f9db0398cacafb5ce77cf1c0b73f573f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "utilise l'élément de donnée"@fr , "points to the RepresentedVariable the Variable is based on."@en , "based on"@en ;
+        sh:class          <http://rdf-vocabulary.ddialliance.org/discovery#RepresentedVariable> ;
+        sh:description    "points to the RepresentedVariable the Variable is based on."@en ;
+        sh:name           "utilise l'élément de donnée"@fr , "based on"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#basedOn> .
+
+<https://astrea.linkeddata.es/shapes#7ebe652472666890d45e1e49179503bf>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Data element"@en , "Élément de donnée"@fr ;
+        sh:description    "RepresentedVariables encompasse study-independent, re-usable parts of variables like occupation classification."@en ;
+        sh:name           "Data element"@en , "Élément de donnée"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ddb66ae1837e0f8fdc9bb81e5a5d191b> , <https://astrea.linkeddata.es/shapes#63139d34d66b64d3d845458425c238b1> ;
+        sh:targetClass    <http://rdf-vocabulary.ddialliance.org/discovery#RepresentedVariable> .
+
+<https://astrea.linkeddata.es/shapes#d75a13cbe1a287eb74b5ca354e431d86>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "in group"@en , "points from a Study to the StudyGroup which contains the Study."@en ;
+        sh:class          <http://rdf-vocabulary.ddialliance.org/discovery#StudyGroup> ;
+        sh:description    "points from a Study to the StudyGroup which contains the Study."@en ;
+        sh:name           "in group"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#inGroup> .
+
+<https://astrea.linkeddata.es/shapes#a1a2538051e43eeb02d1ae2f181ddfea>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Mapping"@en ;
+        sh:description    "Mappings betwenn DDI-RDF and DDI-XML"@en ;
+        sh:name           "Mapping"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#20185078a10f42fda7b982ceffada286> , <https://astrea.linkeddata.es/shapes#62ede7edca76626eadb9f99941ff0ae1> , <https://astrea.linkeddata.es/shapes#135ab992828204132786c29536ad8869> ;
+        sh:targetClass    <http://rdf-vocabulary.ddialliance.org/discovery#Mapping> .
+
+<https://astrea.linkeddata.es/shapes#ba070af56bf091abf86a22093c1f7cb1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "contient la variable"@fr , "contains variable"@en , "points to Variable contained in the LogicalDataSet"@en ;
+        sh:class          <http://rdf-vocabulary.ddialliance.org/discovery#Variable> ;
+        sh:description    "points to Variable contained in the LogicalDataSet"@en ;
+        sh:name           "contient la variable"@fr , "contains variable"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#containsVariable> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#1275c5adf54fac8aa20160db1f342409>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        ""@fr , "weighted by"@en , "SummaryStatistics or CategoryStatistics resources may be weighted by a specific Variable."@en ;
+        sh:class          <http://rdf-vocabulary.ddialliance.org/discovery#Variable> ;
+        sh:description    "SummaryStatistics or CategoryStatistics resources may be weighted by a specific Variable."@en ;
+        sh:name           "weighted by"@en , ""@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#weightedBy> .
+
+<https://astrea.linkeddata.es/shapes#135ab992828204132786c29536ad8869>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Mapping from and to DDI-L"@en ;
+        sh:datatype       rdf:langString ;
+        sh:description    "Mapping from and to DDI-L"@en ;
+        sh:name           "Mapping from and to DDI-L"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#mappingDDI-L> .
+
+<https://astrea.linkeddata.es/shapes#b9aabc026a665175aecfe735d0fe84c5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "mode of collection of a Questionnaire"@en , "collection mode"@en , "Datenerfassungsmodus"@de ;
+        sh:class          <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:description    "mode of collection of a Questionnaire"@en ;
+        sh:name           "Datenerfassungsmodus"@de , "collection mode"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#collectionMode> .
+
+<https://astrea.linkeddata.es/shapes#1b43e45edfdcbbd969714c911d97849e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "computation base"@en , "pourcentage"@fr ;
+        sh:datatype       rdf:langString ;
+        sh:description    "computation base"@en ;
+        sh:name           "computation base"@en , "pourcentage"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#computationBase> .
+
+<https://astrea.linkeddata.es/shapes#eb6b62c4d35dd01ad1277b6c3dd67f9a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "The sub-title of a Study of a StudyGroup."@en , "Untertitel"@de , "subtitle"@en ;
+        sh:datatype       rdf:langString ;
+        sh:description    "The sub-title of a Study of a StudyGroup."@en ;
+        sh:name           "subtitle"@en , "Untertitel"@de ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#subtitle> .
+
+<https://astrea.linkeddata.es/shapes#db74a843804fd257e66cd8e313aba919>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "a pour variable statistique"@fr , "Indicates the Variable of a specific SummaryStatistics individual."@en , "statistics variable"@en ;
+        sh:class          <http://rdf-vocabulary.ddialliance.org/discovery#Variable> ;
+        sh:description    "Indicates the Variable of a specific SummaryStatistics individual."@en ;
+        sh:name           "a pour variable statistique"@fr , "statistics variable"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#statisticsVariable> .
+
+<https://astrea.linkeddata.es/shapes#83b36f4a8d33776a75c6f6a823a33595>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "pourcentage"@fr , "percentage"@en ;
+        sh:datatype       xsd:decimal ;
+        sh:description    "percentage"@en ;
+        sh:name           "pourcentage"@fr , "percentage"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#percentage> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#62ede7edca76626eadb9f99941ff0ae1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Mapping from and to DDI-C"@en ;
+        sh:datatype       rdf:langString ;
+        sh:description    "Mapping from and to DDI-C"@en ;
+        sh:name           "Mapping from and to DDI-C"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#mappingDDI-C> .
+
+<https://astrea.linkeddata.es/shapes#45ac58583e103c7299ab53cc169bf85e>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#adf9b0dab0213dd4206ca5ff0929b127> ;
+        sh:targetClass  <http://purl.org/linked-data/cube#DataSet> .
+
+<https://astrea.linkeddata.es/shapes#091a9a82cbd13d2ab8f9311c370c5368>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "question text"@en , "Fragetext"@de ;
+        sh:datatype       rdf:langString ;
+        sh:description    "question text"@en ;
+        sh:name           "Fragetext"@de , "question text"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#questionText> .
+
+<https://astrea.linkeddata.es/shapes#9bafcfcf7e93bdeec89c8fb26ec1907d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Instrument de collecte"@fr , "Instrument"@en ;
+        sh:description    "The data for the study are collected by an Instrument. The purpose of an Instrument, i.e. an interview, a questionnaire or another entity used as a means of data collection, is in the case of a survey to record the flow of a questionnaire, its use of questions, and additional component parts. A questionnaire contains a flow of questions."@en ;
+        sh:name           "Instrument de collecte"@fr , "Instrument"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#da8ced72887b3480fef0f3b29736d954> ;
+        sh:targetClass    <http://rdf-vocabulary.ddialliance.org/discovery#Instrument> .
+
+<https://astrea.linkeddata.es/shapes#20185078a10f42fda7b982ceffada286>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "context specifies conditions which have to be fulfilled for specific mappings"@en ;
+        sh:datatype       rdf:langString ;
+        sh:description    "context specifies conditions which have to be fulfilled for specific mappings"@en ;
+        sh:name           "context specifies conditions which have to be fulfilled for specific mappings"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#context> .
+
+<https://astrea.linkeddata.es/shapes#4ade25efb822788c38f1b8d1434e883f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "purpose"@en , "The purpose of a Study of a StudyGroup."@en , "Grund"@de ;
+        sh:datatype       rdf:langString ;
+        sh:description    "The purpose of a Study of a StudyGroup."@en ;
+        sh:name           "purpose"@en , "Grund"@de ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#purpose> .
+
+<https://astrea.linkeddata.es/shapes#13e049a7cac42a6f354ce6f51d4cd396>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "cumulative percentage"@en ;
+        sh:datatype       xsd:decimal ;
+        sh:description    "cumulative percentage"@en ;
+        sh:name           "cumulative percentage"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#cumulativePercentage> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#5f394260dcfb6c59d5b02f6dafce09d2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "start date"@en ;
+        sh:datatype       xsd:date ;
+        sh:description    "start date"@en ;
+        sh:name           "start date"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#startDate> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#5aca4ec37dc2f5079574155ab3a9487f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Statistique descriptive"@fr , "Descriptive statistics"@en ;
+        sh:description    "SummaryStatistics pointing to variables and CategoryStatistics pointing to categories and codes are both DescriptiveStatistics."@en ;
+        sh:name           "Statistique descriptive"@fr , "Descriptive statistics"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#2b9bcae58c164d00d73933adace36e20> ;
+        sh:targetClass    <http://rdf-vocabulary.ddialliance.org/discovery#DescriptiveStatistics> .
+
+<https://astrea.linkeddata.es/shapes#ddb66ae1837e0f8fdc9bb81e5a5d191b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "universe"@en , "Indicates the Universe(s) of Studies, StudyGrous, RepresentedVariables, Variables, Questions, and LogicalDataSets."@en , "a comme univers"@fr ;
+        sh:class          <http://rdf-vocabulary.ddialliance.org/discovery#Universe> ;
+        sh:description    "Indicates the Universe(s) of Studies, StudyGrous, RepresentedVariables, Variables, Questions, and LogicalDataSets."@en ;
+        sh:name           "universe"@en , "a comme univers"@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#universe> .
+
+<https://astrea.linkeddata.es/shapes#583bd53b51e815deea563c6489902d66>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "summary statistics type"@en ;
+        sh:class          <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:description    "summary statistics type"@en ;
+        sh:name           "summary statistics type"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#summaryStatisticsType> .
+
+<https://astrea.linkeddata.es/shapes#adf9b0dab0213dd4206ca5ff0929b127>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Indicates the original Variable of an aggregated qb:DataSet."@en , "variable en entrée"@fr , "input variable"@en ;
+        sh:class          <http://rdf-vocabulary.ddialliance.org/discovery#Variable> ;
+        sh:description    "Indicates the original Variable of an aggregated qb:DataSet."@en ;
+        sh:name           "variable en entrée"@fr , "input variable"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#inputVariable> .
+
+<https://astrea.linkeddata.es/shapes#fa3fbc8d4dc233481b62fe940f466e57>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Analysis Unit"@en , "Analyseeinheit"@de ;
+        sh:description    "The process collecting data is focusing on the analysis of a particular type of subject. If, for example, the adult population of Finland is being studied, the AnalysisUnit would be individuals or persons."@en ;
+        sh:name           "Analysis Unit"@en , "Analyseeinheit"@de ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://rdf-vocabulary.ddialliance.org/discovery#AnalysisUnit> .
+
+<https://astrea.linkeddata.es/shapes#bc63d980c02bcecb278fa96967c3f095>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "data file"@en , "a pour fichier de données"@fr , "points to the DataFile of a Study or a LogicalDataSet."@en ;
+        sh:class          <http://rdf-vocabulary.ddialliance.org/discovery#DataFile> ;
+        sh:description    "points to the DataFile of a Study or a LogicalDataSet."@en ;
+        sh:name           "a pour fichier de données"@fr , "data file"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#dataFile> .
+
+<https://astrea.linkeddata.es/shapes#0e723d21d79815604b84ccb687bd68e7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "kind of data"@en , "The general kind of data (e.g. geospatial, register, survey) collected in this study, given either as a skos:Concept, or as a blank node with attached free-text rdfs:label." ;
+        sh:class          <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:description    "The general kind of data (e.g. geospatial, register, survey) collected in this study, given either as a skos:Concept, or as a blank node with attached free-text rdfs:label." ;
+        sh:name           "kind of data"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#kindOfData> .
+
+<https://astrea.linkeddata.es/shapes#b3a072d67ed850cc92e9dde9389e7b39>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "aggregation"@en , "points to the aggregated data set of a microdata data set."@en ;
+        sh:class          <http://purl.org/linked-data/cube#DataSet> ;
+        sh:description    "points to the aggregated data set of a microdata data set."@en ;
+        sh:name           "aggregation"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#aggregation> .
+
+<https://astrea.linkeddata.es/shapes#3bc2f8fe641668dca8a2789275853908>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Étude"@fr , "Study"@en ;
+        sh:description    "A Study represents the process by which a data set was generated or collected."@en ;
+        sh:name           "Étude"@fr , "Study"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#bb836c1e6e522c1a50c8b0fe299cff4e> , <https://astrea.linkeddata.es/shapes#d75a13cbe1a287eb74b5ca354e431d86> , <https://astrea.linkeddata.es/shapes#f0b47fa941765a6b33ee959757ac37b7> , <https://astrea.linkeddata.es/shapes#4ade25efb822788c38f1b8d1434e883f> , <https://astrea.linkeddata.es/shapes#eb6b62c4d35dd01ad1277b6c3dd67f9a> , <https://astrea.linkeddata.es/shapes#ddb66ae1837e0f8fdc9bb81e5a5d191b> , <https://astrea.linkeddata.es/shapes#129ce0c7bfa9f9f57ca9a28ed86e7a39> , <https://astrea.linkeddata.es/shapes#e504811cf55af0fcfb4a029fce940b89> , <https://astrea.linkeddata.es/shapes#0e723d21d79815604b84ccb687bd68e7> , <https://astrea.linkeddata.es/shapes#997cf3fdb726cdb95dcc399ebfc1e034> , <https://astrea.linkeddata.es/shapes#4c334590a9bc694f0e36ea000d1853e2> , <https://astrea.linkeddata.es/shapes#bc63d980c02bcecb278fa96967c3f095> ;
+        sh:targetClass    <http://rdf-vocabulary.ddialliance.org/discovery#Study> .
+
+<https://astrea.linkeddata.es/shapes#f0b47fa941765a6b33ee959757ac37b7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "instrument"@en , "a comme instrument"@fr , "Indicates the Instrument of a Study or a LogicalDataSet."@en ;
+        sh:class          <http://rdf-vocabulary.ddialliance.org/discovery#Instrument> ;
+        sh:description    "Indicates the Instrument of a Study or a LogicalDataSet."@en ;
+        sh:name           "instrument"@en , "a comme instrument"@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#instrument> .
+
+<https://astrea.linkeddata.es/shapes#5f3541c4151e1d2badd92f9253d8464a>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5f394260dcfb6c59d5b02f6dafce09d2> , <https://astrea.linkeddata.es/shapes#3d51b70f926fe2e4a1cd31d1c420dcea> ;
+        sh:targetClass  <http://purl.org/dc/terms/PeriodOfTime> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#635a78d333abfbabee5cb57f964bd344> , <https://astrea.linkeddata.es/shapes#4ade25efb822788c38f1b8d1434e883f> , <https://astrea.linkeddata.es/shapes#fa3fbc8d4dc233481b62fe940f466e57> , <https://astrea.linkeddata.es/shapes#9bafcfcf7e93bdeec89c8fb26ec1907d> , <https://astrea.linkeddata.es/shapes#e504811cf55af0fcfb4a029fce940b89> , <https://astrea.linkeddata.es/shapes#5aca4ec37dc2f5079574155ab3a9487f> , <https://astrea.linkeddata.es/shapes#7ebe652472666890d45e1e49179503bf> , <https://astrea.linkeddata.es/shapes#1275c5adf54fac8aa20160db1f342409> , <https://astrea.linkeddata.es/shapes#3bc2f8fe641668dca8a2789275853908> , <https://astrea.linkeddata.es/shapes#5f3541c4151e1d2badd92f9253d8464a> , <https://astrea.linkeddata.es/shapes#997cf3fdb726cdb95dcc399ebfc1e034> , <https://astrea.linkeddata.es/shapes#63139d34d66b64d3d845458425c238b1> , <https://astrea.linkeddata.es/shapes#45ac58583e103c7299ab53cc169bf85e> , <https://astrea.linkeddata.es/shapes#13e049a7cac42a6f354ce6f51d4cd396> , <https://astrea.linkeddata.es/shapes#54a9b3e03f94435aa077b52e258cacac> , <https://astrea.linkeddata.es/shapes#ba070af56bf091abf86a22093c1f7cb1> , <https://astrea.linkeddata.es/shapes#1b43e45edfdcbbd969714c911d97849e> , <https://astrea.linkeddata.es/shapes#b3a072d67ed850cc92e9dde9389e7b39> , <https://astrea.linkeddata.es/shapes#1cdeea4aea5d2464ff8bcdb1b184e4f1> , <https://astrea.linkeddata.es/shapes#25d58dbeb2c50bb95f3d87e869186495> , <https://astrea.linkeddata.es/shapes#fc149eea7df67837509075e5b123b58a> , <https://astrea.linkeddata.es/shapes#1a3f2998464d8ffd768210b3accc2014> , <https://astrea.linkeddata.es/shapes#b9aabc026a665175aecfe735d0fe84c5> , <https://astrea.linkeddata.es/shapes#2f94fde5b54ce42ddb2b77a04912d90c> , <https://astrea.linkeddata.es/shapes#adf9b0dab0213dd4206ca5ff0929b127> , <https://astrea.linkeddata.es/shapes#5f394260dcfb6c59d5b02f6dafce09d2> , <https://astrea.linkeddata.es/shapes#091a9a82cbd13d2ab8f9311c370c5368> , <https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5> , <https://astrea.linkeddata.es/shapes#62ede7edca76626eadb9f99941ff0ae1> , <https://astrea.linkeddata.es/shapes#2b9bcae58c164d00d73933adace36e20> , <https://astrea.linkeddata.es/shapes#ae78e90a9c867a728fb5ce6a9f0181e8> , <https://astrea.linkeddata.es/shapes#d2864f57a01a2967b40a3bf054786085> , <https://astrea.linkeddata.es/shapes#d0de4b7047cff86b2773b44d707f5534> , <https://astrea.linkeddata.es/shapes#1ef24cc0c2f570a36abac7029b478e87> , <https://astrea.linkeddata.es/shapes#916e6a925bf1115b1048247901f2bfbb> , <https://astrea.linkeddata.es/shapes#975d5e45bfa87c5b2c598b469b4c074b> , <https://astrea.linkeddata.es/shapes#bc63d980c02bcecb278fa96967c3f095> , <https://astrea.linkeddata.es/shapes#7b3633fc529aea9d3d960135df2febef> , <https://astrea.linkeddata.es/shapes#da8ced72887b3480fef0f3b29736d954> , <https://astrea.linkeddata.es/shapes#09cda4d6d7707055a755612637087f0c> , <https://astrea.linkeddata.es/shapes#eb6b62c4d35dd01ad1277b6c3dd67f9a> , <https://astrea.linkeddata.es/shapes#bb836c1e6e522c1a50c8b0fe299cff4e> , <https://astrea.linkeddata.es/shapes#4c334590a9bc694f0e36ea000d1853e2> , <https://astrea.linkeddata.es/shapes#db74a843804fd257e66cd8e313aba919> , <https://astrea.linkeddata.es/shapes#583bd53b51e815deea563c6489902d66> , <https://astrea.linkeddata.es/shapes#f9db0398cacafb5ce77cf1c0b73f573f> , <https://astrea.linkeddata.es/shapes#ddb66ae1837e0f8fdc9bb81e5a5d191b> , <https://astrea.linkeddata.es/shapes#f0b47fa941765a6b33ee959757ac37b7> , <https://astrea.linkeddata.es/shapes#cae4cbdd9c535b17eddf14cf31833cff> , <https://astrea.linkeddata.es/shapes#3d51b70f926fe2e4a1cd31d1c420dcea> , <https://astrea.linkeddata.es/shapes#0e723d21d79815604b84ccb687bd68e7> , <https://astrea.linkeddata.es/shapes#20185078a10f42fda7b982ceffada286> , <https://astrea.linkeddata.es/shapes#83b36f4a8d33776a75c6f6a823a33595> , <https://astrea.linkeddata.es/shapes#a1a2538051e43eeb02d1ae2f181ddfea> , <https://astrea.linkeddata.es/shapes#c92b587bf44190ced655b153aa251eac> , <https://astrea.linkeddata.es/shapes#d75a13cbe1a287eb74b5ca354e431d86> , <https://astrea.linkeddata.es/shapes#135ab992828204132786c29536ad8869> , <https://astrea.linkeddata.es/shapes#129ce0c7bfa9f9f57ca9a28ed86e7a39> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#129ce0c7bfa9f9f57ca9a28ed86e7a39>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "funded by"@en , "points from a Study or a StudyGroup to the funding foaf:Agent which is either a foaf:Person or a org:Organization."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description    "points from a Study or a StudyGroup to the funding foaf:Agent which is either a foaf:Person or a org:Organization."@en ;
+        sh:name           "funded by"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#fundedBy> .
+
+<https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c92b587bf44190ced655b153aa251eac> ;
+        sh:targetClass  <http://www.w3.org/2004/02/skos/core#Concept> .
+
+<https://astrea.linkeddata.es/shapes#ae78e90a9c867a728fb5ce6a9f0181e8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "is public"@en , "ist öffentlich"@de , "The value true indicates that the dataset can be accessed (usually downloaded) by anyone."@en ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "The value true indicates that the dataset can be accessed (usually downloaded) by anyone."@en ;
+        sh:name           "ist öffentlich"@de , "is public"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#isPublic> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#1cdeea4aea5d2464ff8bcdb1b184e4f1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Fragebogen"@de , "Questionnaire"@en ;
+        sh:description    "A questionnaire contains a flow of questions. "@en ;
+        sh:name           "Fragebogen"@de , "Questionnaire"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#b9aabc026a665175aecfe735d0fe84c5> , <https://astrea.linkeddata.es/shapes#d0de4b7047cff86b2773b44d707f5534> ;
+        sh:targetClass    <http://rdf-vocabulary.ddialliance.org/discovery#Questionnaire> .
+
+<https://astrea.linkeddata.es/shapes#975d5e45bfa87c5b2c598b469b4c074b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Summary statistics"@en ;
+        sh:description    "For SummaryStatistics, maximum values, minimum values, and standard deviations can be defined."@en ;
+        sh:name           "Summary statistics"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#db74a843804fd257e66cd8e313aba919> , <https://astrea.linkeddata.es/shapes#583bd53b51e815deea563c6489902d66> , <https://astrea.linkeddata.es/shapes#1275c5adf54fac8aa20160db1f342409> ;
+        sh:targetClass    <http://rdf-vocabulary.ddialliance.org/discovery#SummaryStatistics> .
+
+<https://astrea.linkeddata.es/shapes#2b9bcae58c164d00d73933adace36e20>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "statistics data file"@en , "a pour fichier statistique"@fr , "Indicates the DataFile of a specific DesciptiveStatistics individual."@en ;
+        sh:class          <http://rdf-vocabulary.ddialliance.org/discovery#DataFile> ;
+        sh:description    "Indicates the DataFile of a specific DesciptiveStatistics individual."@en ;
+        sh:name           "a pour fichier statistique"@fr , "statistics data file"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#statisticsDataFile> .
+
+<https://astrea.linkeddata.es/shapes#1ef24cc0c2f570a36abac7029b478e87>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Studiengruppe"@de , "Study Group"@en ;
+        sh:description    "In some cases, where data collection is cyclic or on-going, data sets may be released as a StudyGroup, where each cycle or wave of the data collection activity produces one or more data sets. This is typical for longitudinal studies, panel studies, and other types of series (to use the DDI term). In this case, a number of Study objects would be collected into a single StudyGroup."@en ;
+        sh:name           "Studiengruppe"@de , "Study Group"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#eb6b62c4d35dd01ad1277b6c3dd67f9a> , <https://astrea.linkeddata.es/shapes#129ce0c7bfa9f9f57ca9a28ed86e7a39> , <https://astrea.linkeddata.es/shapes#997cf3fdb726cdb95dcc399ebfc1e034> , <https://astrea.linkeddata.es/shapes#0e723d21d79815604b84ccb687bd68e7> , <https://astrea.linkeddata.es/shapes#ddb66ae1837e0f8fdc9bb81e5a5d191b> , <https://astrea.linkeddata.es/shapes#4ade25efb822788c38f1b8d1434e883f> , <https://astrea.linkeddata.es/shapes#bb836c1e6e522c1a50c8b0fe299cff4e> ;
+        sh:targetClass    <http://rdf-vocabulary.ddialliance.org/discovery#StudyGroup> .
+
+<https://astrea.linkeddata.es/shapes#635a78d333abfbabee5cb57f964bd344>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "RepresentedVariables and Variables can have a Representation whose individuals are either of the class rdfs:Datatype (to represent values) or skos:ConceptScheme (to represent code lists)."@en , "a pour représentation"@fr , "representation"@en ;
+        sh:description    "RepresentedVariables and Variables can have a Representation whose individuals are either of the class rdfs:Datatype (to represent values) or skos:ConceptScheme (to represent code lists)."@en ;
+        sh:name           "a pour représentation"@fr , "representation"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:or             ( [ sh:class  <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+                              sh:path   <http://rdf-vocabulary.ddialliance.org/discovery#representation>
+                            ]
+                            [ sh:class  rdfs:Datatype ;
+                              sh:path   <http://rdf-vocabulary.ddialliance.org/discovery#representation>
+                            ]
+                          ) .
+
+<https://astrea.linkeddata.es/shapes#d2864f57a01a2967b40a3bf054786085>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Variable"@en , "Variable"@fr ;
+        sh:description    "Variables provide a definition of the column in a rectangular data file. Variable is a characteristic of a unit being observed. A variable might be the answer of a question, have an administrative source, or be derived from other variables."@en ;
+        sh:name           "Variable"@en , "Variable"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#f9db0398cacafb5ce77cf1c0b73f573f> , <https://astrea.linkeddata.es/shapes#d0de4b7047cff86b2773b44d707f5534> , <https://astrea.linkeddata.es/shapes#63139d34d66b64d3d845458425c238b1> , <https://astrea.linkeddata.es/shapes#ddb66ae1837e0f8fdc9bb81e5a5d191b> , <https://astrea.linkeddata.es/shapes#bb836c1e6e522c1a50c8b0fe299cff4e> ;
+        sh:targetClass    <http://rdf-vocabulary.ddialliance.org/discovery#Variable> .
+
+<https://astrea.linkeddata.es/shapes#09cda4d6d7707055a755612637087f0c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Question"@en , "Question"@fr ;
+        sh:description    "A Question is designed to get information upon a subject, or sequence of subjects, from a respondent."@en ;
+        sh:name           "Question"@en , "Question"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#1a3f2998464d8ffd768210b3accc2014> , <https://astrea.linkeddata.es/shapes#63139d34d66b64d3d845458425c238b1> , <https://astrea.linkeddata.es/shapes#091a9a82cbd13d2ab8f9311c370c5368> , <https://astrea.linkeddata.es/shapes#ddb66ae1837e0f8fdc9bb81e5a5d191b> ;
+        sh:targetClass    <http://rdf-vocabulary.ddialliance.org/discovery#Question> .
+
+<https://astrea.linkeddata.es/shapes#bb836c1e6e522c1a50c8b0fe299cff4e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Analyseeinheit"@de , "analysis unit of a Study, a StudyGroup, or a Variable."@en , "analysis unit"@en ;
+        sh:class          <http://rdf-vocabulary.ddialliance.org/discovery#AnalysisUnit> ;
+        sh:description    "analysis unit of a Study, a StudyGroup, or a Variable."@en ;
+        sh:name           "Analyseeinheit"@de , "analysis unit"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#analysisUnit> .
+
+<https://astrea.linkeddata.es/shapes#54a9b3e03f94435aa077b52e258cacac>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Universe"@en , "Univers"@fr ;
+        sh:description    "A Universe is the total membership or population of a defined class of people, objects or events."@en ;
+        sh:name           "Universe"@en , "Univers"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://rdf-vocabulary.ddialliance.org/discovery#Universe> .
+
+<https://astrea.linkeddata.es/shapes#cae4cbdd9c535b17eddf14cf31833cff>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Category statistics"@en ;
+        sh:description    "For CategoryStatistics, frequencies, percentages, and weighted percentages can be defined."@en ;
+        sh:name           "Category statistics"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#83b36f4a8d33776a75c6f6a823a33595> , <https://astrea.linkeddata.es/shapes#fc149eea7df67837509075e5b123b58a> , <https://astrea.linkeddata.es/shapes#13e049a7cac42a6f354ce6f51d4cd396> , <https://astrea.linkeddata.es/shapes#1275c5adf54fac8aa20160db1f342409> , <https://astrea.linkeddata.es/shapes#7b3633fc529aea9d3d960135df2febef> , <https://astrea.linkeddata.es/shapes#1b43e45edfdcbbd969714c911d97849e> ;
+        sh:targetClass    <http://rdf-vocabulary.ddialliance.org/discovery#CategoryStatistics> .
+
+<https://astrea.linkeddata.es/shapes#da8ced72887b3480fef0f3b29736d954>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "external documentation"@en , "externe Dokumentation"@de , "points from an Instrument to a foaf:Document which is the external documentation of the Instrument."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Document> ;
+        sh:description    "points from an Instrument to a foaf:Document which is the external documentation of the Instrument."@en ;
+        sh:name           "externe Dokumentation"@de , "external documentation"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#externalDocumentation> .
+
+<https://astrea.linkeddata.es/shapes#d0de4b7047cff86b2773b44d707f5534>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "question"@en , "Indicates the Questions associated to Variables or contained in Questionnaires."@en , "a comme question"@fr ;
+        sh:class          <http://rdf-vocabulary.ddialliance.org/discovery#Question> ;
+        sh:description    "Indicates the Questions associated to Variables or contained in Questionnaires."@en ;
+        sh:name           "a comme question"@fr , "question"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#question> .
+
+<https://astrea.linkeddata.es/shapes#2f94fde5b54ce42ddb2b77a04912d90c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Fichier de données"@fr , "Data file"@en ;
+        sh:description    "The class DataFile, which is also a dcterms:Dataset, represents all the data files containing the microdata datasets."@en ;
+        sh:name           "Fichier de données"@fr , "Data file"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#25d58dbeb2c50bb95f3d87e869186495> ;
+        sh:targetClass    <http://rdf-vocabulary.ddialliance.org/discovery#DataFile> .
+
+<https://astrea.linkeddata.es/shapes#997cf3fdb726cdb95dcc399ebfc1e034>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "DDI-Datei"@de , "DDI file"@en , "points from a Study or a StudyGroup to the original DDI file which is a foaf:Document."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Document> ;
+        sh:description    "points from a Study or a StudyGroup to the original DDI file which is a foaf:Document."@en ;
+        sh:name           "DDI file"@en , "DDI-Datei"@de ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#ddifile> .
+
+<https://astrea.linkeddata.es/shapes#7b3633fc529aea9d3d960135df2febef>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "fréquence"@fr , "frequency"@en ;
+        sh:datatype       xsd:nonNegativeInteger ;
+        sh:description    "frequency"@en ;
+        sh:minInclusive   0 ;
+        sh:name           "frequency"@en , "fréquence"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#frequency> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#fc149eea7df67837509075e5b123b58a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf-vocabulary.ddialliance.org/discovery> ;
+        rdfs:label        "Indicates the skos:Concept (representing codes and categories) of a specific CategoryStatistics individual."@en , "a pour concept statistique"@fr , "statistics category"@en ;
+        sh:class          <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:description    "Indicates the skos:Concept (representing codes and categories) of a specific CategoryStatistics individual."@en ;
+        sh:name           "a pour concept statistique"@fr , "statistics category"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf-vocabulary.ddialliance.org/discovery#statisticsCategory> .

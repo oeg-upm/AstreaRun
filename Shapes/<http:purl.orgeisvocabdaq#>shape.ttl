@@ -1,0 +1,162 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#080cfb5ff5553899177edfefb5036e61>
+        a               sh:NodeShape ;
+        rdfs:label      "Category" ;
+        sh:description  "The highest level of quality metric is a category. A category groups a number of dimensions relevant to each other which aims at measuring the quality of a dataset from different aspects. Categories are provided as subclasses of this abstract class, which is not intended for direct usage." ;
+        sh:name         "Category" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#dfaccf369308cf0722a87f8fcef6a747> ;
+        sh:targetClass  <http://purl.org/eis/vocab/daq#Category> .
+
+<https://astrea.linkeddata.es/shapes#c3566a8caa4882c511a529910b132529>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#8133348579075f6f1d9c3b9b8bc24ea6> , <https://astrea.linkeddata.es/shapes#46c327d0ea35993d45f2eb4733ff036c> , <https://astrea.linkeddata.es/shapes#06e1ccd0ca2024ae791d63dc0c9c5b5c> ;
+        sh:targetClass  <http://purl.org/linked-data/cube#Observation> .
+
+<https://astrea.linkeddata.es/shapes#41203c20f8b632b50364df83273d243f>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasMetric" , "A dimension is an abstract concept which groups an number of more concrete metrics to measure quality of a dataset. This is an abstract property and should not be used directly. Specific sub-properties should be inherited for different metrics." ;
+        sh:class        <http://purl.org/eis/vocab/daq#Metric> ;
+        sh:description  "A dimension is an abstract concept which groups an number of more concrete metrics to measure quality of a dataset. This is an abstract property and should not be used directly. Specific sub-properties should be inherited for different metrics." ;
+        sh:name         "hasMetric" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/eis/vocab/daq#hasMetric> .
+
+<https://astrea.linkeddata.es/shapes#a7ba5d668fda846208eebe7df1dfe4b7>
+        a               sh:NodeShape ;
+        rdfs:label      "Quality Observation" ;
+        sh:description  "A quality observation represents the statistical and provenance information of the attached metric's assessment activity." ;
+        sh:name         "Quality Observation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/eis/vocab/daq#Observation> .
+
+<https://astrea.linkeddata.es/shapes#98262dda4138c5fa4fe8ada489855fd2>
+        a               sh:PropertyShape ;
+        rdfs:label      "requires" , "A metric might require a number of external resources (e.g. a gold standard) in order to be able to measure the quality. In order to cater for the most generic requirement, this property links a metric to the required resource (e.g. a URI to the gold standard dataset used)." ;
+        sh:class        rdfs:Resource ;
+        sh:description  "A metric might require a number of external resources (e.g. a gold standard) in order to be able to measure the quality. In order to cater for the most generic requirement, this property links a metric to the required resource (e.g. a URI to the gold standard dataset used)." ;
+        sh:name         "requires" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/eis/vocab/daq#requires> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#7be43fbbd8e01e7d9ff71011e58f700a> , <https://astrea.linkeddata.es/shapes#080cfb5ff5553899177edfefb5036e61> , <https://astrea.linkeddata.es/shapes#6bd8fd24c689466c64a49b832501864d> , <https://astrea.linkeddata.es/shapes#46c327d0ea35993d45f2eb4733ff036c> , <https://astrea.linkeddata.es/shapes#af5fdcfec3d80c794f826fc2bcf42110> , <https://astrea.linkeddata.es/shapes#70d77a89193a78fcf420cace39416587> , <https://astrea.linkeddata.es/shapes#8133348579075f6f1d9c3b9b8bc24ea6> , <https://astrea.linkeddata.es/shapes#8026f74d9ed906e15dfff6adb027ce78> , <https://astrea.linkeddata.es/shapes#c3566a8caa4882c511a529910b132529> , <https://astrea.linkeddata.es/shapes#06e1ccd0ca2024ae791d63dc0c9c5b5c> , <https://astrea.linkeddata.es/shapes#d1843d47d8a1f9bc21fce9cfbe503a1a> , <https://astrea.linkeddata.es/shapes#bc8571c9f7de9a7c87f377ba73689faf> , <https://astrea.linkeddata.es/shapes#a7ba5d668fda846208eebe7df1dfe4b7> , <https://astrea.linkeddata.es/shapes#41203c20f8b632b50364df83273d243f> , <https://astrea.linkeddata.es/shapes#3e91afe7cb72f8874dd24c2673899a89> , <https://astrea.linkeddata.es/shapes#98262dda4138c5fa4fe8ada489855fd2> , <https://astrea.linkeddata.es/shapes#dfaccf369308cf0722a87f8fcef6a747> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#46c327d0ea35993d45f2eb4733ff036c>
+        a               sh:PropertyShape ;
+        rdfs:label      "is estimate" , "This property flags true if an assessed observation of a metric gives an estimate result instead of a more accurate one." ;
+        sh:class        xsd:boolean ;
+        sh:description  "This property flags true if an assessed observation of a metric gives an estimate result instead of a more accurate one." ;
+        sh:name         "is estimate" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/eis/vocab/daq#isEstimate> .
+
+<https://astrea.linkeddata.es/shapes#6bd8fd24c689466c64a49b832501864d>
+        a            sh:PropertyShape ;
+        sh:hasValue  <http://purl.org/eis/vocab/daq#dsd> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/linked-data/cube#structure> .
+
+<https://astrea.linkeddata.es/shapes#dfaccf369308cf0722a87f8fcef6a747>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasDimension" , "The category concept classifies dimensions related to the measurement of quality for a specific criteria. This is an abstract property and should not be used directly. Specific sub-properties should be inherited for different dimensions." ;
+        sh:class        <http://purl.org/eis/vocab/daq#Dimension> ;
+        sh:description  "The category concept classifies dimensions related to the measurement of quality for a specific criteria. This is an abstract property and should not be used directly. Specific sub-properties should be inherited for different dimensions." ;
+        sh:name         "hasDimension" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/eis/vocab/daq#hasDimension> .
+
+<https://astrea.linkeddata.es/shapes#af5fdcfec3d80c794f826fc2bcf42110>
+        a               sh:PropertyShape ;
+        rdfs:label      "value" , "Each metric will have a value computed. In order to deal with the different return type of the metric computation, this property links a metric with a value object (e.g. boolean, double, Literal)." ;
+        sh:description  "Each metric will have a value computed. In order to deal with the different return type of the metric computation, this property links a metric with a value object (e.g. boolean, double, Literal)." ;
+        sh:name         "value" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/eis/vocab/daq#value> .
+
+<https://astrea.linkeddata.es/shapes#3e91afe7cb72f8874dd24c2673899a89>
+        a               sh:NodeShape ;
+        rdfs:label      "Quality Graph Statistics" ;
+        sh:description  "Defines a quality graph which will contain all metadata about quality metrics on the dataset." ;
+        sh:name         "Quality Graph Statistics" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#6bd8fd24c689466c64a49b832501864d> ;
+        sh:targetClass  <http://purl.org/eis/vocab/daq#QualityGraph> .
+
+<https://astrea.linkeddata.es/shapes#7be43fbbd8e01e7d9ff71011e58f700a>
+        a               sh:NodeShape ;
+        rdfs:label      "Dimension" ;
+        sh:description  "Each dimension is part of a larger group called category (See daq:Category). Each dimension has a number of metrics which are associated to it. A dimension is linked with a category using the daq:hasDimension property. Dimensions are provided as subclasses of this abstract class, which is not intended for direct usage." ;
+        sh:name         "Dimension" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#41203c20f8b632b50364df83273d243f> ;
+        sh:targetClass  <http://purl.org/eis/vocab/daq#Dimension> .
+
+<https://astrea.linkeddata.es/shapes#06e1ccd0ca2024ae791d63dc0c9c5b5c>
+        a               sh:PropertyShape ;
+        rdfs:label      "metric" , "Represents the metric being observed." ;
+        sh:datatype     <http://purl.org/eis/vocab/daq#Metric> ;
+        sh:description  "Represents the metric being observed." ;
+        sh:name         "metric" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/eis/vocab/daq#metric> .
+
+<https://astrea.linkeddata.es/shapes#bc8571c9f7de9a7c87f377ba73689faf>
+        a               sh:PropertyShape ;
+        rdfs:label      "expected data type" , "Each metric should have an expect data type for it's observed value (e.g. xsd:boolean, xsd:double etc...)" ;
+        sh:datatype     xsd:anySimpleType ;
+        sh:description  "Each metric should have an expect data type for it's observed value (e.g. xsd:boolean, xsd:double etc...)" ;
+        sh:name         "expected data type" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/eis/vocab/daq#expectedDataType> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#8026f74d9ed906e15dfff6adb027ce78>
+        a               sh:PropertyShape ;
+        rdfs:label      "computed by" , "TODO: Define properly" ;
+        sh:description  "TODO: Define properly" ;
+        sh:name         "computed by" ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#8133348579075f6f1d9c3b9b8bc24ea6>
+        a               sh:PropertyShape ;
+        rdfs:label      "computed on" , "Quality metrics can be (in principle) calculated on various forms of data (such as datasets, graphs, set of triples etc...). This vocabulary allow the owner/user of such RDF data to calculate metrics on multiple (and different) resources." ;
+        sh:class        rdfs:Resource ;
+        sh:description  "Quality metrics can be (in principle) calculated on various forms of data (such as datasets, graphs, set of triples etc...). This vocabulary allow the owner/user of such RDF data to calculate metrics on multiple (and different) resources." ;
+        sh:name         "computed on" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/eis/vocab/daq#computedOn> .
+
+<https://astrea.linkeddata.es/shapes#d1843d47d8a1f9bc21fce9cfbe503a1a>
+        a               sh:NodeShape ;
+        rdfs:label      "Metric" ;
+        sh:description  "The smallest unit of measuring a quality dimension is a metric. A metric belongs to exactly one dimension. Each metric has one or more observations (\texttt{daq:hasObservation}), which records data quality assessment value following a computation. Metrics are provided as subclasses of this abstract class, which is not intended for direct usage." ;
+        sh:name         "Metric" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#98262dda4138c5fa4fe8ada489855fd2> , <https://astrea.linkeddata.es/shapes#70d77a89193a78fcf420cace39416587> , <https://astrea.linkeddata.es/shapes#bc8571c9f7de9a7c87f377ba73689faf> ;
+        sh:targetClass  <http://purl.org/eis/vocab/daq#Metric> .
+
+<https://astrea.linkeddata.es/shapes#70d77a89193a78fcf420cace39416587>
+        a               sh:PropertyShape ;
+        rdfs:label      "has observation" , "Computed metrics can have 1 or more quality observations, where each computed resource has one observation." ;
+        sh:datatype     <http://purl.org/eis/vocab/daq#Observation> ;
+        sh:description  "Computed metrics can have 1 or more quality observations, where each computed resource has one observation." ;
+        sh:name         "has observation" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/eis/vocab/daq#hasObservation> .

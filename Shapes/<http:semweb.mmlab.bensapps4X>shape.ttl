@@ -1,0 +1,235 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#9d5a83926713077a216f63b58e549010>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://semweb.mmlab.be/ns/apps4X> ;
+        rdfs:label        "consists of"@en , "A submission consists of "@en ;
+        sh:class          <http://semweb.mmlab.be/ns/odapps#AppConcept> , <http://semweb.mmlab.be/ns/odapps#Application> ;
+        sh:description    "A submission consists of "@en ;
+        sh:name           "consists of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://semweb.mmlab.be/ns/apps4X#consistsOf> .
+
+<https://astrea.linkeddata.es/shapes#03bc9b168fc44d55802cf38f860b003c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://semweb.mmlab.be/ns/apps4X> ;
+        rdfs:label        "Award"@en ;
+        sh:description    "the award offered by the jury to a certain App Concept"@en ;
+        sh:name           "Award"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#117b4fe29aaea7f1693824fc01137eb3> , <https://astrea.linkeddata.es/shapes#01baadffc6fbd2ac38410c8b37eb33d3> ;
+        sh:targetClass    <http://semweb.mmlab.be/ns/apps4X#Award> .
+
+<https://astrea.linkeddata.es/shapes#696f09518115f0d706767ef05ee12955>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://semweb.mmlab.be/ns/apps4X> ;
+        rdfs:label        "Submission"@en ;
+        sh:description    "An App Concept idea as it was submitted to a certain competition."@en ;
+        sh:name           "Submission"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#9d5a83926713077a216f63b58e549010> , <https://astrea.linkeddata.es/shapes#f9197b625dd5bb08eea72c49f594c043> , <https://astrea.linkeddata.es/shapes#98839beb90c3ee7800a02d8a29c06828> , <https://astrea.linkeddata.es/shapes#c3ead788d9924afff47c4623fc2a70c6> , <https://astrea.linkeddata.es/shapes#0320f4d8bfa0d995165a6b3faa11976c> ;
+        sh:targetClass    <http://semweb.mmlab.be/ns/apps4X#Submission> .
+
+<https://astrea.linkeddata.es/shapes#00c7e6ceffdc6dd77dd63eb8ec862954>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://semweb.mmlab.be/ns/apps4X> ;
+        rdfs:label        "edition"@en , "The event edition. "@en ;
+        sh:datatype       xsd:int ;
+        sh:description    "The event edition. "@en ;
+        sh:maxInclusive   2147483647 ;
+        sh:minInclusive   -2147483648 ;
+        sh:name           "edition"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://semweb.mmlab.be/ns/apps4X#edition> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#dd085c5e28cd5746dbb5b142543e8054>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://semweb.mmlab.be/ns/apps4X> ;
+        rdfs:label        "sponsor"@en , " the event's sponsor "@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description    " the event's sponsor "@en ;
+        sh:name           "sponsor"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://semweb.mmlab.be/ns/apps4X#sponsor> .
+
+<https://astrea.linkeddata.es/shapes#f464e7a977f07ca879a2a68ffd80ede9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://semweb.mmlab.be/ns/apps4X> ;
+        rdfs:label        "the size of the event"@en , "The event's size in regard to its thematic area and/or locality. "@en ;
+        sh:description    "The event's size in regard to its thematic area and/or locality. "@en ;
+        sh:name           "the size of the event"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#7e51ff11b7ea54d5769d8282953c10fe>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://semweb.mmlab.be/ns/apps4X> ;
+        rdfs:label        "award offered"@en , "one or more awards offered at this co-creation event"@en ;
+        sh:class          <http://semweb.mmlab.be/ns/apps4X#Award> ;
+        sh:description    "one or more awards offered at this co-creation event"@en ;
+        sh:name           "award offered"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://semweb.mmlab.be/ns/apps4X#award> .
+
+<https://astrea.linkeddata.es/shapes#65fbd2e2eb8e7ca109f6394b094d31e2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://semweb.mmlab.be/ns/apps4X> ;
+        rdfs:label        "theme"@en , "The App Concept can be within a certain theme."@en ;
+        sh:class          <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+        sh:description    "The App Concept can be within a certain theme."@en ;
+        sh:name           "theme"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://semweb.mmlab.be/ns/apps4X#theme> .
+
+<https://astrea.linkeddata.es/shapes#10c6b19c16614e9f39b4aa458c170662>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://semweb.mmlab.be/ns/apps4X> ;
+        rdfs:label        "url to the registration"@en , "a link to the registration for the event"@en ;
+        sh:datatype       xsd:anyURI ;
+        sh:description    "a link to the registration for the event"@en ;
+        sh:name           "url to the registration"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://semweb.mmlab.be/ns/apps4X#registration> ;
+        sh:pattern        "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#117b4fe29aaea7f1693824fc01137eb3> , <https://astrea.linkeddata.es/shapes#10c6b19c16614e9f39b4aa458c170662> , <https://astrea.linkeddata.es/shapes#01baadffc6fbd2ac38410c8b37eb33d3> , <https://astrea.linkeddata.es/shapes#71863de29ea60bec099b34beb40ce601> , <https://astrea.linkeddata.es/shapes#ec6ab80ce334f56a71089bfde9e4b19e> , <https://astrea.linkeddata.es/shapes#dd085c5e28cd5746dbb5b142543e8054> , <https://astrea.linkeddata.es/shapes#98839beb90c3ee7800a02d8a29c06828> , <https://astrea.linkeddata.es/shapes#f464e7a977f07ca879a2a68ffd80ede9> , <https://astrea.linkeddata.es/shapes#296d67b13a3f591479411a2b660d42c0> , <https://astrea.linkeddata.es/shapes#03bc9b168fc44d55802cf38f860b003c> , <https://astrea.linkeddata.es/shapes#9d5a83926713077a216f63b58e549010> , <https://astrea.linkeddata.es/shapes#e3423efa992339668ddd29766c0f844d> , <https://astrea.linkeddata.es/shapes#c3ead788d9924afff47c4623fc2a70c6> , <https://astrea.linkeddata.es/shapes#696f09518115f0d706767ef05ee12955> , <https://astrea.linkeddata.es/shapes#74dd48ed9f1cec3e7c0b14ea15853679> , <https://astrea.linkeddata.es/shapes#75fecf04458f71a8bb620c289d28e64b> , <https://astrea.linkeddata.es/shapes#00c7e6ceffdc6dd77dd63eb8ec862954> , <https://astrea.linkeddata.es/shapes#58bb05c70df9f497ee08a19828caf7e2> , <https://astrea.linkeddata.es/shapes#f9197b625dd5bb08eea72c49f594c043> , <https://astrea.linkeddata.es/shapes#0320f4d8bfa0d995165a6b3faa11976c> , <https://astrea.linkeddata.es/shapes#7e51ff11b7ea54d5769d8282953c10fe> , <https://astrea.linkeddata.es/shapes#65fbd2e2eb8e7ca109f6394b094d31e2> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#ec6ab80ce334f56a71089bfde9e4b19e>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#65fbd2e2eb8e7ca109f6394b094d31e2> ;
+        sh:targetClass  <http://semweb.mmlab.be/ns/odapps#Application> .
+
+<https://astrea.linkeddata.es/shapes#71863de29ea60bec099b34beb40ce601>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://semweb.mmlab.be/ns/apps4X> ;
+        rdfs:label        "Co-creation event"@en ;
+        sh:description    "A co-creation event is a competition, a contest, a challenge etc. It's a subproperty as it is an event but with a certain scope"@en ;
+        sh:name           "Co-creation event"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#10c6b19c16614e9f39b4aa458c170662> , <https://astrea.linkeddata.es/shapes#58bb05c70df9f497ee08a19828caf7e2> , <https://astrea.linkeddata.es/shapes#296d67b13a3f591479411a2b660d42c0> , <https://astrea.linkeddata.es/shapes#00c7e6ceffdc6dd77dd63eb8ec862954> , <https://astrea.linkeddata.es/shapes#7e51ff11b7ea54d5769d8282953c10fe> , <https://astrea.linkeddata.es/shapes#65fbd2e2eb8e7ca109f6394b094d31e2> , <https://astrea.linkeddata.es/shapes#dd085c5e28cd5746dbb5b142543e8054> ;
+        sh:targetClass    <http://semweb.mmlab.be/ns/apps4X#CocreationEvent> .
+
+<https://astrea.linkeddata.es/shapes#01baadffc6fbd2ac38410c8b37eb33d3>
+        a               sh:PropertyShape ;
+        rdfs:label      "prize"@en , "The actual prize offered."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The actual prize offered."@en ;
+        sh:name         "prize"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://semweb.mmlab.be/ns/apps4X#prize> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#0320f4d8bfa0d995165a6b3faa11976c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://semweb.mmlab.be/ns/apps4X> ;
+        rdfs:label        "The rate given by the jury"@en , "Jury's rate"@en ;
+        sh:datatype       xsd:float ;
+        sh:description    "The rate given by the jury"@en ;
+        sh:name           "Jury's rate"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://semweb.mmlab.be/ns/apps4X#juryRate> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#c3ead788d9924afff47c4623fc2a70c6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://semweb.mmlab.be/ns/apps4X> ;
+        rdfs:label        "nominated for"@en , "An App Concept is nominated for the award."@en ;
+        sh:class          <http://semweb.mmlab.be/ns/apps4X#Award> ;
+        sh:description    "An App Concept is nominated for the award."@en ;
+        sh:name           "nominated for"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://semweb.mmlab.be/ns/apps4X#nominated> .
+
+<https://astrea.linkeddata.es/shapes#f9197b625dd5bb08eea72c49f594c043>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://semweb.mmlab.be/ns/apps4X> ;
+        rdfs:label        "Users' rate"@en , "The rate given by the users"@en ;
+        sh:datatype       xsd:float ;
+        sh:description    "The rate given by the users"@en ;
+        sh:name           "Users' rate"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://semweb.mmlab.be/ns/apps4X#usersRate> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#117b4fe29aaea7f1693824fc01137eb3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://semweb.mmlab.be/ns/apps4X> ;
+        rdfs:label        "The award ceremony"@en , "award's ceremnoy"@en ;
+        sh:class          <http://schema.org/Event> , <http://linkedevents.org/ontology/Event> ;
+        sh:description    "The award ceremony"@en ;
+        sh:name           "award's ceremnoy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://semweb.mmlab.be/ns/apps4X#awardCeremony> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#75fecf04458f71a8bb620c289d28e64b>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#65fbd2e2eb8e7ca109f6394b094d31e2> ;
+        sh:targetClass  <http://semweb.mmlab.be/ns/odapps#AppConcept> .
+
+<https://astrea.linkeddata.es/shapes#e3423efa992339668ddd29766c0f844d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://semweb.mmlab.be/ns/apps4X> ;
+        rdfs:label        "Jury"@en ;
+        sh:description    "A jury evaluating the submissions to a co-creation event."@en ;
+        sh:name           "Jury"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7e51ff11b7ea54d5769d8282953c10fe> , <https://astrea.linkeddata.es/shapes#74dd48ed9f1cec3e7c0b14ea15853679> ;
+        sh:targetClass    <http://semweb.mmlab.be/ns/apps4X#Jury> .
+
+<https://astrea.linkeddata.es/shapes#58bb05c70df9f497ee08a19828caf7e2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://semweb.mmlab.be/ns/apps4X> ;
+        rdfs:label        "organizer"@en , "the event's organizer"@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description    "the event's organizer"@en ;
+        sh:name           "organizer"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://semweb.mmlab.be/ns/apps4X#organizer> .
+
+<https://astrea.linkeddata.es/shapes#74dd48ed9f1cec3e7c0b14ea15853679>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://semweb.mmlab.be/ns/apps4X> ;
+        rdfs:label        "Jury Member"@en , "A jury consists of "@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description    "A jury consists of "@en ;
+        sh:name           "Jury Member"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://semweb.mmlab.be/ns/apps4X#juryMember> .
+
+<https://astrea.linkeddata.es/shapes#296d67b13a3f591479411a2b660d42c0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://semweb.mmlab.be/ns/apps4X> ;
+        rdfs:label        "short title"@en , "the event's short title and/or its abbreviation"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "the event's short title and/or its abbreviation"@en ;
+        sh:name           "short title"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://semweb.mmlab.be/ns/apps4X#shortTitle> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#98839beb90c3ee7800a02d8a29c06828>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://semweb.mmlab.be/ns/apps4X> ;
+        rdfs:label        "won award"@en , "links to the award that this App Concept won"@en ;
+        sh:class          <http://semweb.mmlab.be/ns/apps4X#Award> ;
+        sh:description    "links to the award that this App Concept won"@en ;
+        sh:name           "won award"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://semweb.mmlab.be/ns/apps4X#wonAward> .

@@ -1,0 +1,186 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#51af18ea41a2023ff4504e828d3f7925>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://moat-project.org/ns#> ;
+        rdfs:label        "tagging type" , "The type of the tagging, i.e. automatic or has been validated"@en ;
+        sh:class          <http://moat-project.org/ns#TagType> ;
+        sh:description    "The type of the tagging, i.e. automatic or has been validated"@en ;
+        sh:name           "tagging type" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://moat-project.org/ns#tagType> .
+
+<https://astrea.linkeddata.es/shapes#819795b0bb4423845101edcaa806f94c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://moat-project.org/ns#> ;
+        rdfs:label        "Tag URI" ;
+        sh:description    "A Tag URI, that provides an unique identifier for a label attached to a resource"@en ;
+        sh:name           "Tag URI" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#496628713055d1892ddef548948c89af> , <https://astrea.linkeddata.es/shapes#7d5c75407c53b97f6a2ee38b341c8ee2> , <https://astrea.linkeddata.es/shapes#f509a4788b84f30cf498778a78ed5543> ;
+        sh:targetClass    <http://moat-project.org/ns#Tag> .
+
+<https://astrea.linkeddata.es/shapes#c86e1300081580fd7066f7bfd3f7fc11>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/dc/terms/issued> .
+
+<https://astrea.linkeddata.es/shapes#a82aaff2ea69415cdee6c07b785ad3a3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://moat-project.org/ns#> ;
+        rdfs:label        "tag meaning URI - global context" , "The link between a reified Meaning object and the URI that defines a meaning"@en ;
+        sh:class          rdfs:Resource ;
+        sh:description    "The link between a reified Meaning object and the URI that defines a meaning"@en ;
+        sh:name           "tag meaning URI - global context" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://moat-project.org/ns#meaningURI> .
+
+<https://astrea.linkeddata.es/shapes#7d5c75407c53b97f6a2ee38b341c8ee2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://moat-project.org/ns#> ;
+        rdfs:label        "tag meaning object - global context" , "The link between a Tag and a Meaning object in a global context"@en ;
+        sh:class          <http://moat-project.org/ns#Meaning> ;
+        sh:description    "The link between a Tag and a Meaning object in a global context"@en ;
+        sh:name           "tag meaning object - global context" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://moat-project.org/ns#hasMeaning> .
+
+<https://astrea.linkeddata.es/shapes#a0005af2635b82beb671b40f25536d31>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  rdfs:Resource .
+
+<https://astrea.linkeddata.es/shapes#d6e76259618c0dae4d4a4dab7094fee4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://moat-project.org/ns#> ;
+        rdfs:label        "tag meaning - tagging context" , "The link between a Tagging and a meaning (URI) of a tag in a given context (i.e. blog post)"@en ;
+        sh:class          rdfs:Resource ;
+        sh:description    "The link between a Tagging and a meaning (URI) of a tag in a given context (i.e. blog post)"@en ;
+        sh:name           "tag meaning - tagging context" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://moat-project.org/ns#tagMeaning> .
+
+<https://astrea.linkeddata.es/shapes#10a2b68e090fc22a4421947526be1e64>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/dc/elements/1.1/title> .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Person> .
+
+<https://astrea.linkeddata.es/shapes#d8448f7de5238dcdf58a6a729dd44487>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/dc/elements/1.1/creator> .
+
+<https://astrea.linkeddata.es/shapes#218a5d127922dcd34f67b7d32cd68b62>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.holygoat.co.uk/owl/redwood/0.1/tags/name> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#7d5c75407c53b97f6a2ee38b341c8ee2> , <https://astrea.linkeddata.es/shapes#38e1536b72babc1a393bbfc37d7a86eb> , <https://astrea.linkeddata.es/shapes#c3956e756407572de26075b1036b0c72> , <https://astrea.linkeddata.es/shapes#496628713055d1892ddef548948c89af> , <https://astrea.linkeddata.es/shapes#d6e76259618c0dae4d4a4dab7094fee4> , <https://astrea.linkeddata.es/shapes#d8448f7de5238dcdf58a6a729dd44487> , <https://astrea.linkeddata.es/shapes#218a5d127922dcd34f67b7d32cd68b62> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#57915702333d3c4011eb3bfa935ff3e0> , <https://astrea.linkeddata.es/shapes#c86e1300081580fd7066f7bfd3f7fc11> , <https://astrea.linkeddata.es/shapes#f509a4788b84f30cf498778a78ed5543> , <https://astrea.linkeddata.es/shapes#819795b0bb4423845101edcaa806f94c> , <https://astrea.linkeddata.es/shapes#7d75fcba1e25ed0e1713fc08b35f1336> , <https://astrea.linkeddata.es/shapes#c60c9f6e8681d6cf4cc382ae92f0abd2> , <https://astrea.linkeddata.es/shapes#3458dd429cf3f0527b745cd4a1da1ecc> , <https://astrea.linkeddata.es/shapes#a0005af2635b82beb671b40f25536d31> , <https://astrea.linkeddata.es/shapes#f6f2459cf173c73a914e3aefb68f3766> , <https://astrea.linkeddata.es/shapes#5e23481d3557e50321efa143ca0ae276> , <https://astrea.linkeddata.es/shapes#10a2b68e090fc22a4421947526be1e64> , <https://astrea.linkeddata.es/shapes#dc7b27d0e5f224b802f0b7b175e0a4b3> , <https://astrea.linkeddata.es/shapes#e1d153e6c6bc06245f995f1a284d0b1c> , <https://astrea.linkeddata.es/shapes#51af18ea41a2023ff4504e828d3f7925> , <https://astrea.linkeddata.es/shapes#6044e6edd06df5584deaea0af209dd43> , <https://astrea.linkeddata.es/shapes#a82aaff2ea69415cdee6c07b785ad3a3> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#3458dd429cf3f0527b745cd4a1da1ecc>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://moat-project.org/ns#> ;
+        rdfs:label        "Tag Meaning" ;
+        sh:description    "A reified object to define a potential meaning for a Tag. The meaning is a unique and explicitely defined Semantic Web resource and is related to the agent that defined it with foaf:maker"@en ;
+        sh:name           "Tag Meaning" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c60c9f6e8681d6cf4cc382ae92f0abd2> , <https://astrea.linkeddata.es/shapes#c3956e756407572de26075b1036b0c72> , <https://astrea.linkeddata.es/shapes#a82aaff2ea69415cdee6c07b785ad3a3> ;
+        sh:targetClass    <http://moat-project.org/ns#Meaning> .
+
+<https://astrea.linkeddata.es/shapes#e1d153e6c6bc06245f995f1a284d0b1c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://moat-project.org/ns#> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://moat-project.org/ns#TagType> .
+
+<https://astrea.linkeddata.es/shapes#496628713055d1892ddef548948c89af>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://moat-project.org/ns#> ;
+        rdfs:label        "local Meaning" , "The URI used as a meaning for a local meaning of a Tag with MOAT"@en ;
+        sh:class          rdfs:Resource ;
+        sh:description    "The URI used as a meaning for a local meaning of a Tag with MOAT"@en ;
+        sh:name           "local Meaning" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://moat-project.org/ns#localMeaning> .
+
+<https://astrea.linkeddata.es/shapes#c3956e756407572de26075b1036b0c72>
+        a            sh:PropertyShape ;
+        sh:minCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://xmlns.com/foaf/0.1/maker> .
+
+<https://astrea.linkeddata.es/shapes#dc7b27d0e5f224b802f0b7b175e0a4b3>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://xmlns.com/foaf/0.1/maker> .
+
+<https://astrea.linkeddata.es/shapes#f509a4788b84f30cf498778a78ed5543>
+        a            sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.holygoat.co.uk/owl/redwood/0.1/tags/name> .
+
+<https://astrea.linkeddata.es/shapes#57915702333d3c4011eb3bfa935ff3e0>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#7d75fcba1e25ed0e1713fc08b35f1336> ;
+        sh:targetClass  <http://rdfs.org/sioc/ns#Item> .
+
+<https://astrea.linkeddata.es/shapes#6044e6edd06df5584deaea0af209dd43>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.holygoat.co.uk/owl/redwood/0.1/tags/Tag> .
+
+<https://astrea.linkeddata.es/shapes#38e1536b72babc1a393bbfc37d7a86eb>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/dc/elements/1.1/description> .
+
+<https://astrea.linkeddata.es/shapes#5e23481d3557e50321efa143ca0ae276>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/dc/elements/1.1/contributor> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#c60c9f6e8681d6cf4cc382ae92f0abd2>
+        a            sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://moat-project.org/ns#meaningURI> .
+
+<https://astrea.linkeddata.es/shapes#f6f2459cf173c73a914e3aefb68f3766>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#51af18ea41a2023ff4504e828d3f7925> , <https://astrea.linkeddata.es/shapes#d6e76259618c0dae4d4a4dab7094fee4> ;
+        sh:targetClass  <http://www.holygoat.co.uk/owl/redwood/0.1/tags/RestrictedTagging> .
+
+<https://astrea.linkeddata.es/shapes#7d75fcba1e25ed0e1713fc08b35f1336>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://moat-project.org/ns#> ;
+        rdfs:label        "tagged with" , "The URI ised to 'tag' an item with MOAT"@en ;
+        sh:class          rdfs:Resource ;
+        sh:description    "The URI ised to 'tag' an item with MOAT"@en ;
+        sh:name           "tagged with" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://moat-project.org/ns#taggedWith> .

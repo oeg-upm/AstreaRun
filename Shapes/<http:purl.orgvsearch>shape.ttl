@@ -1,0 +1,129 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#c0406cbd5377866165a512a2b4f0a238> , <https://astrea.linkeddata.es/shapes#fb330160eab7bb44437ece19c5c57e50> , <https://astrea.linkeddata.es/shapes#747649f8de6d8f24c929147017df8c50> , <https://astrea.linkeddata.es/shapes#82ef33486d184727e3c266d5968ef5ee> , <https://astrea.linkeddata.es/shapes#8cf3a66850a0da9d855e6c1909936e5d> , <https://astrea.linkeddata.es/shapes#1e578006f6f72612e7a996c2880bae25> , <https://astrea.linkeddata.es/shapes#503a7ec638770286f0986fc86a62c17f> , <https://astrea.linkeddata.es/shapes#260ddafa451d70008462e5d5502ff938> , <https://astrea.linkeddata.es/shapes#fff22f954c2f013bb17596f855827d9d> , <https://astrea.linkeddata.es/shapes#2974914146f8a867af119c75e458cba1> , <https://astrea.linkeddata.es/shapes#634d8ee1a6707f77ce98328dc9b1439f> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#fb330160eab7bb44437ece19c5c57e50>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/vsearch/> ;
+        rdfs:label        "language"@en , "The language of the query keyword." ;
+        sh:datatype       xsd:string ;
+        sh:description    "The language of the query keyword." ;
+        sh:name           "language"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/vsearch/language> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#c0406cbd5377866165a512a2b4f0a238>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/vsearch/> ;
+        rdfs:label        "term URI"@en , "The URI of the result term." ;
+        sh:datatype       xsd:string ;
+        sh:description    "The URI of the result term." ;
+        sh:name           "term URI"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/vsearch/termURI> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#634d8ee1a6707f77ce98328dc9b1439f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/vsearch/> ;
+        rdfs:label        "keyword"@en , "The keyword of the query." ;
+        sh:datatype       xsd:string ;
+        sh:description    "The keyword of the query." ;
+        sh:name           "keyword"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/vsearch/keyword> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#1e578006f6f72612e7a996c2880bae25>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#503a7ec638770286f0986fc86a62c17f> ;
+        sh:targetClass  <http://purl.org/ResultTerm> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#503a7ec638770286f0986fc86a62c17f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/vsearch/> ;
+        rdfs:label        "has rank"@en , "The rank for a result term." ;
+        sh:class          <http://purl.org/voc/vrank#Rank> ;
+        sh:description    "The rank for a result term." ;
+        sh:name           "has rank"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/vsearch/hasRank> .
+
+<https://astrea.linkeddata.es/shapes#260ddafa451d70008462e5d5502ff938>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/vsearch/> ;
+        rdfs:label        "do query"@en , "A query that an entity executes." ;
+        sh:class          <http://purl.org/vsearch/Query> ;
+        sh:description    "A query that an entity executes." ;
+        sh:name           "do query"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/vsearch/doQuery> .
+
+<https://astrea.linkeddata.es/shapes#2974914146f8a867af119c75e458cba1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/vsearch/> ;
+        rdfs:label        "result term"@en ;
+        sh:description    "A result term." ;
+        sh:name           "result term"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c0406cbd5377866165a512a2b4f0a238> ;
+        sh:targetClass    <http://purl.org/vsearch/ResultTerm> .
+
+<https://astrea.linkeddata.es/shapes#747649f8de6d8f24c929147017df8c50>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/vsearch/> ;
+        rdfs:label        "has result term"@en , "A result term for a query." ;
+        sh:class          <http://purl.org/vsearch/ResultTerm> ;
+        sh:description    "A result term for a query." ;
+        sh:name           "has result term"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/vsearch/hasResultTerm> .
+
+<https://astrea.linkeddata.es/shapes#8cf3a66850a0da9d855e6c1909936e5d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/voc/vrank/> ;
+        rdfs:label        "rank value"@en , "The rank value of a term's ranking." ;
+        sh:datatype       xsd:float ;
+        sh:description    "The rank value of a term's ranking." ;
+        sh:name           "rank value"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/vsearch/rankValue> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#82ef33486d184727e3c266d5968ef5ee>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/vsearch/> ;
+        rdfs:label        "query"@en ;
+        sh:description    "A query." ;
+        sh:name           "query"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#fb330160eab7bb44437ece19c5c57e50> , <https://astrea.linkeddata.es/shapes#747649f8de6d8f24c929147017df8c50> , <https://astrea.linkeddata.es/shapes#634d8ee1a6707f77ce98328dc9b1439f> ;
+        sh:targetClass    <http://purl.org/vsearch/Query> .
+
+<https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#260ddafa451d70008462e5d5502ff938> ;
+        sh:targetClass  owl:Thing .
+
+<https://astrea.linkeddata.es/shapes#fff22f954c2f013bb17596f855827d9d>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#8cf3a66850a0da9d855e6c1909936e5d> ;
+        sh:targetClass  <http://purl.org/voc/vrank#Rank> .

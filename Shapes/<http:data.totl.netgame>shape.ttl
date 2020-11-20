@@ -1,0 +1,428 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#3c49d94e71a6dfb1778cd494a1fbae32>
+        a               sh:NodeShape ;
+        rdfs:label      "Pieces count" ;
+        sh:description  "A number of pieces of the same type. In games where money (fake or real) is used, then it should be treated as one piece per dollar (or the currency it works in). One piece per cent if subdivisions are possible." ;
+        sh:name         "Pieces count" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1beb92c9b9d9cc07e1e822d2826d7774> , <https://astrea.linkeddata.es/shapes#5c076b59edf7345d5be5f80a8505bcd7> ;
+        sh:targetClass  <http://data.totl.net/game/PieceCount> .
+
+<https://astrea.linkeddata.es/shapes#8558de9bb4ac3b5f8724f7bf54e89ea0>
+        a               sh:PropertyShape ;
+        rdfs:label      "The piece(s) in a location of a location state, or nothing." , "contains" ;
+        sh:class        <http://data.totl.net/game/Pieces> ;
+        sh:description  "The piece(s) in a location of a location state, or nothing." ;
+        sh:name         "contains" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           _:b0 , _:b1 ;
+        sh:path         <http://data.totl.net/game/contains> .
+
+<https://astrea.linkeddata.es/shapes#357c36f10349d60c758535a8ad510de4>
+        a               sh:PropertyShape ;
+        rdfs:label      "pieces taken" , "The pieces taken in a move and removed from play." ;
+        sh:class        <http://data.totl.net/game/Pieces> ;
+        sh:description  "The pieces taken in a move and removed from play." ;
+        sh:name         "pieces taken" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           _:b1 , _:b0 ;
+        sh:path         <http://data.totl.net/game/takes> .
+
+<https://astrea.linkeddata.es/report/0>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#e5aae19a501478d2d9c60e7b69a6649f>
+        a               sh:NodeShape ;
+        rdfs:label      "Game" ;
+        sh:description  "A Game type, such as go or chess." ;
+        sh:name         "Game" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a3dd4b00a93aff81b676139288fc7657> ;
+        sh:targetClass  <http://data.totl.net/game/Game> .
+
+_:b1    rdf:first  <https://astrea.linkeddata.es/shapes#a15851744a4570f4b60fcbb46858ef83> ;
+        rdf:first  [ sh:class  <http://data.totl.net/game/PieceType> ;
+                     sh:path   <http://data.totl.net/game/removes>
+                   ] ;
+        rdf:first  [ sh:class  <http://data.totl.net/game/PieceType> ;
+                     sh:path   <http://data.totl.net/game/captures>
+                   ] ;
+        rdf:first  [ sh:class  <http://data.totl.net/game/PieceType> ;
+                     sh:path   <http://data.totl.net/game/takes>
+                   ] ;
+        rdf:first  [ sh:class  <http://data.totl.net/game/PieceType> ;
+                     sh:path   <http://data.totl.net/game/converts>
+                   ] ;
+        rdf:first  [ sh:class  <http://data.totl.net/game/PieceType> ;
+                     sh:path   <http://data.totl.net/game/contains>
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#3c49d94e71a6dfb1778cd494a1fbae32> ;
+                     rdf:first  [ sh:class  <http://data.totl.net/game/PieceCount> ;
+                                  sh:path   <http://data.totl.net/game/removes>
+                                ] ;
+                     rdf:first  [ sh:class  <http://data.totl.net/game/PieceCount> ;
+                                  sh:path   <http://data.totl.net/game/captures>
+                                ] ;
+                     rdf:first  [ sh:class  <http://data.totl.net/game/PieceCount> ;
+                                  sh:path   <http://data.totl.net/game/takes>
+                                ] ;
+                     rdf:first  [ sh:class  <http://data.totl.net/game/PieceCount> ;
+                                  sh:path   <http://data.totl.net/game/converts>
+                                ] ;
+                     rdf:first  [ sh:class  <http://data.totl.net/game/PieceCount> ;
+                                  sh:path   <http://data.totl.net/game/contains>
+                                ] ;
+                     rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#a4281e1873189c997b6d9dec7c922e1d> ;
+                                  rdf:first  [ sh:class  <http://data.totl.net/game/Nothing> ;
+                                               sh:path   <http://data.totl.net/game/removes>
+                                             ] ;
+                                  rdf:first  [ sh:class  <http://data.totl.net/game/Nothing> ;
+                                               sh:path   <http://data.totl.net/game/captures>
+                                             ] ;
+                                  rdf:first  [ sh:class  <http://data.totl.net/game/Nothing> ;
+                                               sh:path   <http://data.totl.net/game/takes>
+                                             ] ;
+                                  rdf:first  [ sh:class  <http://data.totl.net/game/Nothing> ;
+                                               sh:path   <http://data.totl.net/game/converts>
+                                             ] ;
+                                  rdf:first  [ sh:class  <http://data.totl.net/game/Nothing> ;
+                                               sh:path   <http://data.totl.net/game/contains>
+                                             ] ;
+                                  rdf:rest   ()
+                                ]
+                   ] .
+
+<https://astrea.linkeddata.es/shapes#c0be3fca95b49ad913686139e95c0ff7>
+        a               sh:PropertyShape ;
+        rdfs:label      "of game" , "The type of game of which this is a single state." ;
+        sh:class        <http://data.totl.net/game/Game> ;
+        sh:description  "The type of game of which this is a single state." ;
+        sh:name         "of game" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.totl.net/game/ofGame> .
+
+<https://astrea.linkeddata.es/shapes#e6d311203a05c4a8b5ae637751e740bd>
+        a               sh:NodeShape ;
+        rdfs:label      "Game State" ;
+        sh:description  "The state of a game." ;
+        sh:name         "Game State" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#637b94130e12d651d63b75cf25a1d107> , <https://astrea.linkeddata.es/shapes#c0be3fca95b49ad913686139e95c0ff7> , <https://astrea.linkeddata.es/shapes#4260167ab54dfacce025b12b93962d75> , <https://astrea.linkeddata.es/shapes#f12cc8c418d0dc3ede72d303f470fe99> , <https://astrea.linkeddata.es/shapes#a4c698f9fcd3a1eead0f349333ea3efb> ;
+        sh:targetClass  <http://data.totl.net/game/State> .
+
+<https://astrea.linkeddata.es/shapes#d5ed03779b2316d9d2eb85bf81fc17fc>
+        a               sh:PropertyShape ;
+        rdfs:label      "made by" , "The player making a move." ;
+        sh:class        <http://data.totl.net/game/Player> ;
+        sh:description  "The player making a move." ;
+        sh:name         "made by" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.totl.net/game/madeBy> .
+
+<https://astrea.linkeddata.es/shapes#a15851744a4570f4b60fcbb46858ef83>
+        a               sh:NodeShape ;
+        rdfs:label      "Type of Piece" ;
+        sh:description  "A distinct type of piece. Interchangable with any other piece of the same type." ;
+        sh:name         "Type of Piece" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b7f2b620991fbba530998860945ee6cc> , <https://astrea.linkeddata.es/shapes#32d5a0f3634ba1156995b4e4c98bf214> , <https://astrea.linkeddata.es/shapes#4d60de7de7720e39ab2a4c7c10888172> ;
+        sh:targetClass  <http://data.totl.net/game/PieceType> .
+
+<https://astrea.linkeddata.es/shapes#a62e64971e89d2522b76d3f32e5074f3>
+        a               sh:PropertyShape ;
+        rdfs:label      "pieces converted" , "The pieces converted to the players own side, in a move." ;
+        sh:class        <http://data.totl.net/game/Pieces> ;
+        sh:description  "The pieces converted to the players own side, in a move." ;
+        sh:name         "pieces converted" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           _:b0 , _:b1 ;
+        sh:path         <http://data.totl.net/game/converts> .
+
+<https://astrea.linkeddata.es/shapes#cf3c7b6e8a96aa66ff1ce255b57dda71>
+        a               sh:PropertyShape ;
+        rdfs:label      "pieces removed" , "The pieces removed completel from play in a move." ;
+        sh:class        <http://data.totl.net/game/Pieces> ;
+        sh:description  "The pieces removed completel from play in a move." ;
+        sh:name         "pieces removed" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           _:b0 , _:b1 ;
+        sh:path         <http://data.totl.net/game/removes> .
+
+<https://astrea.linkeddata.es/shapes#37e23bfe9a23da1c173a4643d3dbcc96>
+        a               sh:NodeShape ;
+        rdfs:label      "Location State" ;
+        sh:description  "The state of a location on a specific game state." ;
+        sh:name         "Location State" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#97febdfe91b7fb4ad055b1559e34b12a> , <https://astrea.linkeddata.es/shapes#8558de9bb4ac3b5f8724f7bf54e89ea0> ;
+        sh:targetClass  <http://data.totl.net/game/LocationState> .
+
+<https://astrea.linkeddata.es/shapes#d2bb47e0d2b70685d8c637328ea6687d>
+        a               sh:NodeShape ;
+        rdfs:label      "Game Location" ;
+        sh:description  "A location in a game, such as a square or the players hand." ;
+        sh:name         "Game Location" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.totl.net/game/Location> .
+
+<https://astrea.linkeddata.es/shapes#adf6febad435c5b16d60881de16606ba>
+        a               sh:NodeShape ;
+        rdfs:label      "Game Status" ;
+        sh:description  "A status of a game." ;
+        sh:name         "Game Status" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.totl.net/game/Status> .
+
+<https://astrea.linkeddata.es/shapes#637b94130e12d651d63b75cf25a1d107>
+        a               sh:PropertyShape ;
+        rdfs:label      "legal move" , "A possible move given the current game state." ;
+        sh:class        <http://data.totl.net/game/Move> ;
+        sh:description  "A possible move given the current game state." ;
+        sh:name         "legal move" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.totl.net/game/legalMove> .
+
+<https://astrea.linkeddata.es/shapes#a4281e1873189c997b6d9dec7c922e1d>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.totl.net/game/Nothing> .
+
+<https://astrea.linkeddata.es/shapes#a3dd4b00a93aff81b676139288fc7657>
+        a               sh:PropertyShape ;
+        rdfs:label      "initial state" , "The initial state of the game" ;
+        sh:class        <http://data.totl.net/game/State> ;
+        sh:description  "The initial state of the game" ;
+        sh:name         "initial state" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.totl.net/game/initialState> .
+
+<https://astrea.linkeddata.es/shapes#9eabedb87c8acf7d63e521671f94bc10>
+        a               sh:PropertyShape ;
+        rdfs:label      "pieces captured" , "The pieces captured in a move." ;
+        sh:class        <http://data.totl.net/game/Pieces> ;
+        sh:description  "The pieces captured in a move." ;
+        sh:name         "pieces captured" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           _:b1 , _:b0 ;
+        sh:path         <http://data.totl.net/game/captures> .
+
+<https://astrea.linkeddata.es/shapes#4260167ab54dfacce025b12b93962d75>
+        a               sh:PropertyShape ;
+        rdfs:label      "game won by" , "The player who has won." ;
+        sh:class        <http://data.totl.net/game/Player> ;
+        sh:description  "The player who has won." ;
+        sh:name         "game won by" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.totl.net/game/winner> .
+
+<https://astrea.linkeddata.es/shapes#97febdfe91b7fb4ad055b1559e34b12a>
+        a               sh:PropertyShape ;
+        rdfs:label      "of location" , "The location of something such as a move or a location state." ;
+        sh:class        <http://data.totl.net/game/Location> ;
+        sh:description  "The location of something such as a move or a location state." ;
+        sh:name         "of location" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.totl.net/game/ofLocation> .
+
+<https://astrea.linkeddata.es/shapes#ada0f69b6fa45f737d7c09417308f97d>
+        a               sh:PropertyShape ;
+        rdfs:label      "move captures location" , "A location which is captured by the player making the move. For example in reversi all pieces which change to their colour." ;
+        sh:class        <http://data.totl.net/game/Location> ;
+        sh:description  "A location which is captured by the player making the move. For example in reversi all pieces which change to their colour." ;
+        sh:name         "move captures location" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.totl.net/game/capturesLocation> .
+
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#a15851744a4570f4b60fcbb46858ef83> ;
+        rdf:first  [ sh:class  <http://data.totl.net/game/PieceType> ;
+                     sh:path   <http://data.totl.net/game/removes>
+                   ] ;
+        rdf:first  [ sh:class  <http://data.totl.net/game/PieceType> ;
+                     sh:path   <http://data.totl.net/game/captures>
+                   ] ;
+        rdf:first  [ sh:class  <http://data.totl.net/game/PieceType> ;
+                     sh:path   <http://data.totl.net/game/takes>
+                   ] ;
+        rdf:first  [ sh:class  <http://data.totl.net/game/PieceType> ;
+                     sh:path   <http://data.totl.net/game/converts>
+                   ] ;
+        rdf:first  [ sh:class  <http://data.totl.net/game/PieceType> ;
+                     sh:path   <http://data.totl.net/game/contains>
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#3c49d94e71a6dfb1778cd494a1fbae32> ;
+                     rdf:first  [ sh:class  <http://data.totl.net/game/PieceCount> ;
+                                  sh:path   <http://data.totl.net/game/removes>
+                                ] ;
+                     rdf:first  [ sh:class  <http://data.totl.net/game/PieceCount> ;
+                                  sh:path   <http://data.totl.net/game/captures>
+                                ] ;
+                     rdf:first  [ sh:class  <http://data.totl.net/game/PieceCount> ;
+                                  sh:path   <http://data.totl.net/game/takes>
+                                ] ;
+                     rdf:first  [ sh:class  <http://data.totl.net/game/PieceCount> ;
+                                  sh:path   <http://data.totl.net/game/converts>
+                                ] ;
+                     rdf:first  [ sh:class  <http://data.totl.net/game/PieceCount> ;
+                                  sh:path   <http://data.totl.net/game/contains>
+                                ] ;
+                     rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#a4281e1873189c997b6d9dec7c922e1d> ;
+                                  rdf:first  [ sh:class  <http://data.totl.net/game/Nothing> ;
+                                               sh:path   <http://data.totl.net/game/removes>
+                                             ] ;
+                                  rdf:first  [ sh:class  <http://data.totl.net/game/Nothing> ;
+                                               sh:path   <http://data.totl.net/game/captures>
+                                             ] ;
+                                  rdf:first  [ sh:class  <http://data.totl.net/game/Nothing> ;
+                                               sh:path   <http://data.totl.net/game/takes>
+                                             ] ;
+                                  rdf:first  [ sh:class  <http://data.totl.net/game/Nothing> ;
+                                               sh:path   <http://data.totl.net/game/converts>
+                                             ] ;
+                                  rdf:first  [ sh:class  <http://data.totl.net/game/Nothing> ;
+                                               sh:path   <http://data.totl.net/game/contains>
+                                             ] ;
+                                  rdf:rest   ()
+                                ]
+                   ] .
+
+<https://astrea.linkeddata.es/shapes#e771c6fb59730ed808eee2e5a2e1cc36>
+        a               sh:NodeShape ;
+        rdfs:label      "Move" ;
+        sh:description  "An action which creates a new game state." ;
+        sh:name         "Move" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#9eabedb87c8acf7d63e521671f94bc10> , <https://astrea.linkeddata.es/shapes#cf3c7b6e8a96aa66ff1ce255b57dda71> , <https://astrea.linkeddata.es/shapes#64155ebe6aa4ee8a953fe526ff10a91c> , <https://astrea.linkeddata.es/shapes#969106cd9b309b58a9880726ae8680ee> , <https://astrea.linkeddata.es/shapes#a62e64971e89d2522b76d3f32e5074f3> , <https://astrea.linkeddata.es/shapes#d5ed03779b2316d9d2eb85bf81fc17fc> , <https://astrea.linkeddata.es/shapes#357c36f10349d60c758535a8ad510de4> , <https://astrea.linkeddata.es/shapes#5ddffb0b5a20f8cdab2f267aa1d4d754> , <https://astrea.linkeddata.es/shapes#ada0f69b6fa45f737d7c09417308f97d> , <https://astrea.linkeddata.es/shapes#87a8c8d4633042f7ac12b0f0271e6c28> ;
+        sh:targetClass  <http://data.totl.net/game/Move> .
+
+<https://astrea.linkeddata.es/shapes#87a8c8d4633042f7ac12b0f0271e6c28>
+        a               sh:PropertyShape ;
+        rdfs:label      "move end location" , "A location involved in the end of the move." ;
+        sh:class        <http://data.totl.net/game/Location> ;
+        sh:description  "A location involved in the end of the move." ;
+        sh:name         "move end location" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.totl.net/game/moveEndLocation> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#e6d311203a05c4a8b5ae637751e740bd> , <https://astrea.linkeddata.es/shapes#5ddffb0b5a20f8cdab2f267aa1d4d754> , <https://astrea.linkeddata.es/shapes#d2bb47e0d2b70685d8c637328ea6687d> , <https://astrea.linkeddata.es/shapes#a4281e1873189c997b6d9dec7c922e1d> , <https://astrea.linkeddata.es/shapes#5c076b59edf7345d5be5f80a8505bcd7> , <https://astrea.linkeddata.es/shapes#87a8c8d4633042f7ac12b0f0271e6c28> , <https://astrea.linkeddata.es/shapes#37e23bfe9a23da1c173a4643d3dbcc96> , <https://astrea.linkeddata.es/shapes#b1b05e571a11240b6d77b742d18fee82> , <https://astrea.linkeddata.es/shapes#a4c698f9fcd3a1eead0f349333ea3efb> , <https://astrea.linkeddata.es/shapes#8558de9bb4ac3b5f8724f7bf54e89ea0> , <https://astrea.linkeddata.es/shapes#e5aae19a501478d2d9c60e7b69a6649f> , <https://astrea.linkeddata.es/shapes#357c36f10349d60c758535a8ad510de4> , <https://astrea.linkeddata.es/shapes#4260167ab54dfacce025b12b93962d75> , <https://astrea.linkeddata.es/shapes#ada0f69b6fa45f737d7c09417308f97d> , <https://astrea.linkeddata.es/shapes#a62e64971e89d2522b76d3f32e5074f3> , <https://astrea.linkeddata.es/shapes#64155ebe6aa4ee8a953fe526ff10a91c> , <https://astrea.linkeddata.es/shapes#a3dd4b00a93aff81b676139288fc7657> , <https://astrea.linkeddata.es/shapes#c0be3fca95b49ad913686139e95c0ff7> , <https://astrea.linkeddata.es/shapes#d5ed03779b2316d9d2eb85bf81fc17fc> , <https://astrea.linkeddata.es/shapes#32d5a0f3634ba1156995b4e4c98bf214> , <https://astrea.linkeddata.es/shapes#9eabedb87c8acf7d63e521671f94bc10> , <https://astrea.linkeddata.es/shapes#3c49d94e71a6dfb1778cd494a1fbae32> , <https://astrea.linkeddata.es/shapes#07a3c46a67378295766efd32fde5943f> , <https://astrea.linkeddata.es/shapes#97febdfe91b7fb4ad055b1559e34b12a> , <https://astrea.linkeddata.es/shapes#1beb92c9b9d9cc07e1e822d2826d7774> , <https://astrea.linkeddata.es/shapes#a15851744a4570f4b60fcbb46858ef83> , <https://astrea.linkeddata.es/shapes#e771c6fb59730ed808eee2e5a2e1cc36> , <https://astrea.linkeddata.es/shapes#cf3c7b6e8a96aa66ff1ce255b57dda71> , <https://astrea.linkeddata.es/shapes#969106cd9b309b58a9880726ae8680ee> , <https://astrea.linkeddata.es/shapes#4d60de7de7720e39ab2a4c7c10888172> , <https://astrea.linkeddata.es/shapes#adf6febad435c5b16d60881de16606ba> , <https://astrea.linkeddata.es/shapes#637b94130e12d651d63b75cf25a1d107> , <https://astrea.linkeddata.es/shapes#b7f2b620991fbba530998860945ee6cc> , <https://astrea.linkeddata.es/shapes#f12cc8c418d0dc3ede72d303f470fe99> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0> .
+
+<https://astrea.linkeddata.es/shapes#f12cc8c418d0dc3ede72d303f470fe99>
+        a               sh:PropertyShape ;
+        rdfs:label      "game status" , "The status of a given game state, win, ongoing or draw. Games may introduce additional statuses." ;
+        sh:class        <http://data.totl.net/game/Status> ;
+        sh:description  "The status of a given game state, win, ongoing or draw. Games may introduce additional statuses." ;
+        sh:name         "game status" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.totl.net/game/status> .
+
+<https://astrea.linkeddata.es/shapes#5c076b59edf7345d5be5f80a8505bcd7>
+        a               sh:PropertyShape ;
+        rdfs:label      "piece type" , "The type of piece in a piece count." ;
+        sh:class        <http://data.totl.net/game/PieceType> ;
+        sh:description  "The type of piece in a piece count." ;
+        sh:name         "piece type" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.totl.net/game/type> .
+
+<https://astrea.linkeddata.es/shapes#a4c698f9fcd3a1eead0f349333ea3efb>
+        a               sh:PropertyShape ;
+        rdfs:label      "player turn" , "The player who's turn it is in a given state." ;
+        sh:class        <http://data.totl.net/game/Player> ;
+        sh:description  "The player who's turn it is in a given state." ;
+        sh:name         "player turn" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.totl.net/game/turn> .
+
+<https://astrea.linkeddata.es/shapes#1beb92c9b9d9cc07e1e822d2826d7774>
+        a               sh:PropertyShape ;
+        rdfs:label      "piece count" , "The number of pieces, of the given type, in a piece count." ;
+        sh:class        xsd:positiveInteger ;
+        sh:description  "The number of pieces, of the given type, in a piece count." ;
+        sh:name         "piece count" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.totl.net/game/count> .
+
+<https://astrea.linkeddata.es/shapes#969106cd9b309b58a9880726ae8680ee>
+        a               sh:PropertyShape ;
+        rdfs:label      "move location" , "A location involved in the move." ;
+        sh:class        <http://data.totl.net/game/Location> ;
+        sh:description  "A location involved in the move." ;
+        sh:name         "move location" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.totl.net/game/moveLocation> .
+
+<https://astrea.linkeddata.es/shapes#b7f2b620991fbba530998860945ee6cc>
+        a               sh:PropertyShape ;
+        rdfs:label      "piece belongs to" , "The player this type of piece belongs to." ;
+        sh:class        <http://data.totl.net/game/Player> ;
+        sh:description  "The player this type of piece belongs to." ;
+        sh:name         "piece belongs to" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.totl.net/game/belongsTo> .
+
+<https://astrea.linkeddata.es/shapes#5ddffb0b5a20f8cdab2f267aa1d4d754>
+        a               sh:PropertyShape ;
+        rdfs:label      "move start location" , "A location involved in the start of the move." ;
+        sh:class        <http://data.totl.net/game/Location> ;
+        sh:description  "A location involved in the start of the move." ;
+        sh:name         "move start location" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.totl.net/game/moveStartLocation> .
+
+<https://astrea.linkeddata.es/shapes#4d60de7de7720e39ab2a4c7c10888172>
+        a               sh:PropertyShape ;
+        rdfs:label      "ASCII Symbol" , "A symbol in ASCII to represent this type of piece." ;
+        sh:class        xsd:string ;
+        sh:description  "A symbol in ASCII to represent this type of piece." ;
+        sh:name         "ASCII Symbol" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.totl.net/game/asciiSymbol> .
+
+<https://astrea.linkeddata.es/shapes#32d5a0f3634ba1156995b4e4c98bf214>
+        a               sh:PropertyShape ;
+        rdfs:label      "Unicode Symbol" , "A symbol in Unicode to represent this type of piece." ;
+        sh:class        xsd:string ;
+        sh:description  "A symbol in Unicode to represent this type of piece." ;
+        sh:name         "Unicode Symbol" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.totl.net/game/unicodeSymbol> .
+
+<https://astrea.linkeddata.es/shapes#07a3c46a67378295766efd32fde5943f>
+        a               sh:NodeShape ;
+        rdfs:label      "Player" ;
+        sh:description  "A player in a game. Only indicates an abstract side for the type of game, not a specific player in a single game." ;
+        sh:name         "Player" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.totl.net/game/Player> .
+
+<https://astrea.linkeddata.es/shapes#b1b05e571a11240b6d77b742d18fee82>
+        a               sh:NodeShape ;
+        rdfs:label      "Pieces" ;
+        sh:description  "Don't use piecetype and piececount interchangeably. If a location MAY contain multiple pieces of the same type, it should always use piececount." ;
+        sh:name         "Pieces" ;
+        sh:nodeKind     sh:IRI ;
+        sh:or           _:b1 , _:b0 ;
+        sh:targetClass  <http://data.totl.net/game/Pieces> .
+
+<https://astrea.linkeddata.es/shapes#64155ebe6aa4ee8a953fe526ff10a91c>
+        a               sh:PropertyShape ;
+        rdfs:label      "produces new state" , "The new state created by a move." ;
+        sh:class        <http://data.totl.net/game/State> ;
+        sh:description  "The new state created by a move." ;
+        sh:name         "produces new state" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.totl.net/game/newState> .

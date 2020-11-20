@@ -1,0 +1,199 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#0a4d67ad44348eff7ebe134ef6c4fb4b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/storyline> ;
+        rdfs:label        "contains"@en-gb , "Associates a Slot to a StorylineComponent contained therein. Can be a news event or another storyline"@en-gb ;
+        sh:class          <http://purl.org/ontology/storyline/StorylineComponent> ;
+        sh:description    "Associates a Slot to a StorylineComponent contained therein. Can be a news event or another storyline"@en-gb ;
+        sh:name           "contains"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/storyline/contains> .
+
+<https://astrea.linkeddata.es/shapes#02d8494392a2865b37476385b9d2d827>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/storyline> ;
+        rdfs:label        "hasDevelopment"@en-gb , "Associates a slot to a storyline as a development of an existing storyline."@en-gb ;
+        sh:class          <http://purl.org/ontology/storyline/StorylineSlot> ;
+        sh:description    "Associates a slot to a storyline as a development of an existing storyline."@en-gb ;
+        sh:name           "hasDevelopment"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/storyline/hasDevelopment> .
+
+<https://astrea.linkeddata.es/shapes#2be20166017ac7cbe43364a25b18e1ab>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/storyline> ;
+        rdfs:label        "Storyline"@en-gb ;
+        sh:description    "A news storyline."@en-gb ;
+        sh:name           "Storyline"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#02d8494392a2865b37476385b9d2d827> , <https://astrea.linkeddata.es/shapes#fc02e8186bb7f2f6041e9c4c9211be29> , <https://astrea.linkeddata.es/shapes#c48d17dc5b3cea1dcd97cbe5a4a6cc01> , <https://astrea.linkeddata.es/shapes#0cb6f1597b651620db2460efeb77d994> , <https://astrea.linkeddata.es/shapes#7f9a5bfdf62eea383fb17a077179bfce> , <https://astrea.linkeddata.es/shapes#d434bb861f4987c08aa5a21673191875> , <https://astrea.linkeddata.es/shapes#aeec6d89b315a2e8357dde9b11c63ba5> ;
+        sh:targetClass    <http://purl.org/ontology/storyline/Storyline> .
+
+<https://astrea.linkeddata.es/shapes#2f0cb9212d0a81fb330f4044f4833809>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/storyline> ;
+        rdfs:label        "StorylineComponent"@en-gb ;
+        sh:description    "An abstract parent class of storyline components."@en-gb ;
+        sh:name           "StorylineComponent"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#baacbb889078a1b44879497e2ea5c79c> ;
+        sh:targetClass    <http://purl.org/ontology/storyline/StorylineComponent> .
+
+<https://astrea.linkeddata.es/shapes#baacbb889078a1b44879497e2ea5c79c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/storyline> ;
+        rdfs:label        "dateCreated"@en-gb , "The date a storyline was created"@en-gb ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "The date a storyline was created"@en-gb ;
+        sh:name           "dateCreated"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/storyline/dateCreated> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#c48d17dc5b3cea1dcd97cbe5a4a6cc01>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/storyline> ;
+        rdfs:label        "hasChapter"@en-gb , "Associates a slot to a storyline as a chapter of an existing storyline."@en-gb ;
+        sh:class          <http://purl.org/ontology/storyline/StorylineSlot> ;
+        sh:description    "Associates a slot to a storyline as a chapter of an existing storyline."@en-gb ;
+        sh:name           "hasChapter"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/storyline/hasChapter> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#2be20166017ac7cbe43364a25b18e1ab> , <https://astrea.linkeddata.es/shapes#7f9a5bfdf62eea383fb17a077179bfce> , <https://astrea.linkeddata.es/shapes#eeea8da1649cc54c34b4bc9973d4fd8d> , <https://astrea.linkeddata.es/shapes#aeec6d89b315a2e8357dde9b11c63ba5> , <https://astrea.linkeddata.es/shapes#5311b0b97fa754905b721c642f67f628> , <https://astrea.linkeddata.es/shapes#db3ab1048752bcae4d5e3af07ca70b66> , <https://astrea.linkeddata.es/shapes#2f0cb9212d0a81fb330f4044f4833809> , <https://astrea.linkeddata.es/shapes#baacbb889078a1b44879497e2ea5c79c> , <https://astrea.linkeddata.es/shapes#c48d17dc5b3cea1dcd97cbe5a4a6cc01> , <https://astrea.linkeddata.es/shapes#02d8494392a2865b37476385b9d2d827> , <https://astrea.linkeddata.es/shapes#fc02e8186bb7f2f6041e9c4c9211be29> , <https://astrea.linkeddata.es/shapes#d434bb861f4987c08aa5a21673191875> , <https://astrea.linkeddata.es/shapes#9647263f45afd9e80903439afd7fe422> , <https://astrea.linkeddata.es/shapes#0a4d67ad44348eff7ebe134ef6c4fb4b> , <https://astrea.linkeddata.es/shapes#e89e6ee8f121233c8dbfb7be6b4c97df> , <https://astrea.linkeddata.es/shapes#0cb6f1597b651620db2460efeb77d994> , <https://astrea.linkeddata.es/shapes#b7e83c20ad51727adeae236d2aa642bd> , <https://astrea.linkeddata.es/shapes#ed3b3e52cf2ffa3ea021c7e64480593f> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#5311b0b97fa754905b721c642f67f628>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/storyline> ;
+        rdfs:label        "Topic"@en-gb ;
+        sh:description    "The topic of a storyline. An interface to some concept in a knowledge domain."@en-gb ;
+        sh:name           "Topic"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/storyline/Topic> .
+
+<https://astrea.linkeddata.es/shapes#b7e83c20ad51727adeae236d2aa642bd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/storyline> ;
+        rdfs:label        "A slot index. Allows slots to be ordered numerically"@en-gb , "index"@en-gb ;
+        sh:datatype       xsd:integer ;
+        sh:description    "A slot index. Allows slots to be ordered numerically"@en-gb ;
+        sh:name           "index"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/storyline/index> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#d434bb861f4987c08aa5a21673191875>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/storyline> ;
+        rdfs:label        "hasSlot"@en-gb , "Associates a slot to a storyline. A storyline can have many slots"@en-gb ;
+        sh:class          <http://purl.org/ontology/storyline/StorylineSlot> ;
+        sh:description    "Associates a slot to a storyline. A storyline can have many slots"@en-gb ;
+        sh:name           "hasSlot"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/storyline/hasSlot> .
+
+<https://astrea.linkeddata.es/shapes#ed3b3e52cf2ffa3ea021c7e64480593f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/storyline> ;
+        rdfs:label        "follows"@en-gb , "Allows one or more slots to be sequenced. Slot A follows Slot B."@en-gb ;
+        sh:class          <http://purl.org/ontology/storyline/StorylineSlot> ;
+        sh:description    "Allows one or more slots to be sequenced. Slot A follows Slot B."@en-gb ;
+        sh:name           "follows"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/storyline/follows> .
+
+<https://astrea.linkeddata.es/shapes#9647263f45afd9e80903439afd7fe422>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/storyline> ;
+        rdfs:label        "time"@en-gb , "The time of a slot. A Temporal entity, an interval. Allows slots to be ordered temporally."@en-gb ;
+        sh:class          <http://www.w3.org/2006/time#TemporalEntity> ;
+        sh:description    "The time of a slot. A Temporal entity, an interval. Allows slots to be ordered temporally."@en-gb ;
+        sh:name           "time"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/storyline/time> .
+
+<https://astrea.linkeddata.es/shapes#eeea8da1649cc54c34b4bc9973d4fd8d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/storyline> ;
+        rdfs:label        "StorylineSlot"@en-gb ;
+        sh:description    "A storyline slot, used as a container for storyline components."@en-gb ;
+        sh:name           "StorylineSlot"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ed3b3e52cf2ffa3ea021c7e64480593f> , <https://astrea.linkeddata.es/shapes#b7e83c20ad51727adeae236d2aa642bd> , <https://astrea.linkeddata.es/shapes#9647263f45afd9e80903439afd7fe422> , <https://astrea.linkeddata.es/shapes#0a4d67ad44348eff7ebe134ef6c4fb4b> ;
+        sh:targetClass    <http://purl.org/ontology/storyline/StorylineSlot> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#0cb6f1597b651620db2460efeb77d994>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/storyline> ;
+        rdfs:label        "attributedTo"@en-gb , "Associates a storyline to its attribution. Provides for interpretation provenance through attribution"@en-gb ;
+        sh:class          <http://purl.org/ontology/storyline/Attribution> ;
+        sh:description    "Associates a storyline to its attribution. Provides for interpretation provenance through attribution"@en-gb ;
+        sh:name           "attributedTo"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/storyline/attributedTo> .
+
+<https://astrea.linkeddata.es/shapes#e89e6ee8f121233c8dbfb7be6b4c97df>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/storyline> ;
+        rdfs:label        "Attribution"@en-gb ;
+        sh:description    "Attribution of a storyline used for attributing the interpretation of the storyline to some agent. An interface class, that doesn't restrict the implementation of an attribution."@en-gb ;
+        sh:name           "Attribution"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/storyline/Attribution> .
+
+<https://astrea.linkeddata.es/shapes#db3ab1048752bcae4d5e3af07ca70b66>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/storyline> ;
+        rdfs:label        "Event"@en-gb ;
+        sh:description    "A newsworthy event. An un-disputable real world event."@en-gb ;
+        sh:name           "Event"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/storyline/Event> .
+
+<https://astrea.linkeddata.es/shapes#fc02e8186bb7f2f6041e9c4c9211be29>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/storyline> ;
+        rdfs:label        "synopsis"@en-gb , "The synopsis of a storyline"@en-gb ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The synopsis of a storyline"@en-gb ;
+        sh:name           "synopsis"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/storyline/synopsis> .
+
+<https://astrea.linkeddata.es/shapes#aeec6d89b315a2e8357dde9b11c63ba5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/storyline> ;
+        rdfs:label        "topic"@en-gb , "Associates a slot to a topic"@en-gb ;
+        sh:class          <http://purl.org/ontology/storyline/Topic> ;
+        sh:description    "Associates a slot to a topic"@en-gb ;
+        sh:name           "topic"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/storyline/topic> .
+
+<https://astrea.linkeddata.es/shapes#7f9a5bfdf62eea383fb17a077179bfce>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/storyline> ;
+        rdfs:label        "hasUpdate"@en-gb , "Associates a slot to a storyline as an update to an existing storyline."@en-gb ;
+        sh:class          <http://purl.org/ontology/storyline/StorylineSlot> ;
+        sh:description    "Associates a slot to a storyline as an update to an existing storyline."@en-gb ;
+        sh:name           "hasUpdate"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/storyline/hasUpdate> .

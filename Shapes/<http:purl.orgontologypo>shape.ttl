@@ -1,0 +1,2121 @@
+@prefix :      <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix geo:   <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix daml:  <http://www.daml.org/2001/03/daml+oil#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix time:  <http://www.w3.org/2006/time#> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix vs:    <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<https://astrea.linkeddata.es/shapes#ae0503360421b9ed371b20ec58630c86>
+        a            sh:PropertyShape ;
+        sh:equals    time:intervalMetBy ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :metBy .
+
+<https://astrea.linkeddata.es/shapes#48ad251d7e6a17648785e6256d0855c9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Broadcaster" ;
+        sh:description    "\n\t\tAn organization responsible of some broadcasting services.\n        It can hold a set of services and outlets.\n\t" ;
+        sh:name           "Broadcaster" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/po/Broadcaster> .
+
+<https://astrea.linkeddata.es/shapes#0e30d071723196d7da099894222eaf61>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "The date when a Thing was created."@en-gb , "created"@en-gb ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "The date when a Thing was created."@en-gb ;
+        sh:name           "created"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/created> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/report/800486709>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/NET/c4dm/event.owl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#6c218ec144a7839ce0158647697c2749>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Outlet" ;
+        sh:description    "\n        Outlet of a particular service, e.g. Radio 4 LW and FM for Radio 4.\n        Outlets are services which do not have variations.\n        The criterion for an outlet is its timeline.\n        For example, Radio 4 LW broadcasts on Analogue Long Wave, but also on Digital Satellite.\n        It corresponds to just one outlet, as they are simulcasts.\n        The two physical channels for broadcasts correspond to po:Channel.\n    " ;
+        sh:name           "Outlet" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/po/Outlet> .
+
+<https://astrea.linkeddata.es/shapes#b883969949b06dba3b9b83ee08adf8ba>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Person" ;
+        sh:description    "A person" ;
+        sh:name           "Person" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/po/Person> , foaf:Person .
+
+<https://astrea.linkeddata.es/shapes#59d5b293329a31b9b899a6bc4b8e5921>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/ontology/po/Web> .
+
+<https://astrea.linkeddata.es/shapes#83a728666c32417278ee4fe52dcd1da1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "synopsis" , "\n\t\tThe synopsis of a series, brand or episode.\n\t" ;
+        sh:datatype       xsd:string ;
+        sh:description    "\n\t\tThe synopsis of a series, brand or episode.\n\t" ;
+        sh:name           "synopsis" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/po/synopsis> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#2a0cf70f2fcbd4c2224419be49e7de32>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "provided"@en-gb , "The date and time at which the data was provided to the triplestore."@en-gb ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "The date and time at which the data was provided to the triplestore."@en-gb ;
+        sh:name           "provided"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/provided> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#e06948bf71261f211e460227d40b5bf9>
+        a                sh:PropertyShape ;
+        rdfs:label       "window length, associated to a uniform windowing map" , "window length" ;
+        sh:datatype      xsd:int ;
+        sh:description   "window length, associated to a uniform windowing map" ;
+        sh:maxCount      1 ;
+        sh:maxInclusive  2147483647 ;
+        sh:minInclusive  -2147483648 ;
+        sh:name          "window length" ;
+        sh:nodeKind      sh:IRIOrLiteral , sh:Literal ;
+        sh:path          :windowLength ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#d142e9a2bd45751f91749b83ff5505f7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Radio" ;
+        sh:description    "\n\t\tServices that use a radio medium.\n\t" ;
+        sh:name           "Radio" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#424e114c46d16ea901b603aaec857139> , <https://astrea.linkeddata.es/shapes#59d5b293329a31b9b899a6bc4b8e5921> ;
+        sh:targetClass    <http://purl.org/ontology/po/Radio> .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  foaf:Person .
+
+<https://astrea.linkeddata.es/shapes#faeeb6444c2ed08c40ecc1880be289ca>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      dc:date .
+
+<https://astrea.linkeddata.es/shapes#44296187b356d6bf9f4b452e4ce1f46b>
+        a               sh:PropertyShape ;
+        rdfs:label      "begins at (xsd:duration)" , "A property enabling to adress a start time point P of an interval [P,E] through the duration of the interval [0,P] on a continuous timeline" ;
+        sh:datatype     xsd:duration ;
+        sh:description  "A property enabling to adress a start time point P of an interval [P,E] through the duration of the interval [0,P] on a continuous timeline" ;
+        sh:name         "begins at (xsd:duration)" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :beginsAtDuration ;
+        sh:pattern      "-?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S))))" .
+
+<https://astrea.linkeddata.es/shapes#16a9a2bc0f6331513e985360cb8bc55f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Brand" ;
+        sh:description    "\n\t\tA brand, e.g. `Top Gear'\n\t" ;
+        sh:name           "Brand" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#8e18777de8cc3d7588c950f10b219abb> , <https://astrea.linkeddata.es/shapes#3b521a534e21acc5a30fedfc4e1a8e9a> , <https://astrea.linkeddata.es/shapes#5099bfef468f98ebf6ecfe4ddd272d91> ;
+        sh:targetClass    <http://purl.org/ontology/po/Brand> .
+
+<https://astrea.linkeddata.es/shapes#4eacd4169bc31fa358a71d9b84c8e9d8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "location" , "\n\t\tAssociates a service to a geographic location,\n\t\taiming at capturing what this service aims at covering.\n\t" ;
+        sh:class          geo:SpatialThing ;
+        sh:description    "\n\t\tAssociates a service to a geographic location,\n\t\taiming at capturing what this service aims at covering.\n\t" ;
+        sh:name           "location" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/location> .
+
+<https://astrea.linkeddata.es/shapes#2df100945047ac5b813fe3646f6cf23c>
+        a                sh:PropertyShape ;
+        rdfs:label       "associates a sample rate value to a uniform sampling map" , "sample rate" ;
+        sh:datatype      xsd:int ;
+        sh:description   "associates a sample rate value to a uniform sampling map" ;
+        sh:maxCount      1 ;
+        sh:maxInclusive  2147483647 ;
+        sh:minInclusive  -2147483648 ;
+        sh:name          "sample rate" ;
+        sh:nodeKind      sh:Literal , sh:IRIOrLiteral ;
+        sh:path          :sampleRate ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#ae333e258443a78b737b150a28ff9515>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/ontology/po/RepeatBroadcast> .
+
+<https://astrea.linkeddata.es/shapes#ea2e306b661eb25874c5d8e24c19b318>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/ontology/po/FirstBroadcast> .
+
+<https://astrea.linkeddata.es/shapes#4635a42b00666f90e4b2900e0c98654e>
+        a            sh:PropertyShape ;
+        sh:equals    time:intervalDuring ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :during .
+
+<https://astrea.linkeddata.es/shapes#939b06a962aac3b00f2f76baed339737>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Format" ;
+        sh:description    "\n        Anchor point for format taxonomies, similar to po:Genre for genre taxonomies.\n        Instances of this concept include documentaries, talk shows, animation, etc.\n    " ;
+        sh:name           "Format" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/po/Format> .
+
+<https://astrea.linkeddata.es/shapes#93e0d2467ae9dacc6415492fc394dd9b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "masterbrand" , "Associates a programme with its masterbrand (its commissioner)" ;
+        sh:class          <http://purl.org/ontology/po/Service> ;
+        sh:description    "Associates a programme with its masterbrand (its commissioner)" ;
+        sh:name           "masterbrand" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/masterbrand> .
+
+<https://astrea.linkeddata.es/shapes#20e8e16a9001cf8b9ddffada139db08b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "LocalRadio" ;
+        sh:description    "\n\t\tRadio services aiming at a local coverage.\n\t" ;
+        sh:name           "LocalRadio" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#a738a8ba4a110998c5233f5befd7720a> , <https://astrea.linkeddata.es/shapes#814b6c977614745fb6acb21ac9b60b04> ;
+        sh:targetClass    <http://purl.org/ontology/po/LocalRadio> .
+
+<https://astrea.linkeddata.es/shapes#5f0e872634302cc9a7b5a6576942e75b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Channel" ;
+        sh:description    "\n        A physical channel on which a broadcast occurs.\n        A single outlet or service can be associated with multiple channels.\n        For example, Radio 4 LW broadcasts on Analogue Long Wave and on Digital\n        Satellite.\n    " ;
+        sh:name           "Channel" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#a20794a95f584e81f93d5ebbfcb3c3e2> ;
+        sh:targetClass    <http://purl.org/ontology/po/Channel> .
+
+<https://astrea.linkeddata.es/shapes#ad914b1baaae43cb01a818c1a8c9f003>
+        a               sh:PropertyShape ;
+        rdfs:label      "at" , "refers to a point or an interval on the time line, through an explicit datatype" ;
+        sh:description  "refers to a point or an interval on the time line, through an explicit datatype" ;
+        sh:maxCount     1 ;
+        sh:name         "at" ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         :at .
+
+<https://astrea.linkeddata.es/shapes#f38d11b05ae6426c0734876a81efe20f>
+        a               sh:NodeShape ;
+        rdfs:label      "uniform sampling map" ;
+        sh:description  "Describe the relation between a continuous time-line and its sampled equivalent" ;
+        sh:name         "uniform sampling map" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#d7948f09ab4cff0ef91c7d05ae2355ba> , <https://astrea.linkeddata.es/shapes#8a6b3c17bb3ff36fa2fe49388c3ec378> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f611a8cb977e8cd8a440c3a08bb1844b> , <https://astrea.linkeddata.es/shapes#2df100945047ac5b813fe3646f6cf23c> , <https://astrea.linkeddata.es/shapes#5688420055ed3fbb353808a0a050fed9> , <https://astrea.linkeddata.es/shapes#ad3d81a1d5c153dc6703db451160bd73> ;
+        sh:targetClass  :UniformSamplingMap .
+
+<https://astrea.linkeddata.es/shapes#b797a66be398e4da2fd31941bf87ca6d>
+        a               sh:PropertyShape ;
+        rdfs:label      "place" , "\n\t\tRelates an event to a spatial object.\n\t\t" ;
+        sh:class        geo:SpatialThing ;
+        sh:description  "\n\t\tRelates an event to a spatial object.\n\t\t" ;
+        sh:name         "place" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         event:place .
+
+<https://astrea.linkeddata.es/shapes#f032ba36da9bb6d47e019e00821a319b>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/ontology/po/OriginalVersion> .
+
+<https://astrea.linkeddata.es/shapes#5099bfef468f98ebf6ecfe4ddd272d91>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/ontology/po/Episode> .
+
+<https://astrea.linkeddata.es/shapes#c5769f2aff22af320683c59b4d444c09>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :rangeTimeLine .
+
+<https://astrea.linkeddata.es/shapes#62b0ff2adb380366aba593c46dae4c0b>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 event:factor_of ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  event:Event ] .
+
+<https://astrea.linkeddata.es/shapes#0505ca50e7baf40070149c0d06c704cd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Series" ;
+        sh:description    "\n\t\tA series, e.g. `Top Gear, first season'\n\t" ;
+        sh:name           "Series" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#25ac5eac46bebe87f3ca137d4a81657f> ;
+        sh:targetClass    <http://purl.org/ontology/po/Series> .
+
+<https://astrea.linkeddata.es/shapes#40c576b64e3f3ee63fcb6e2b3d9d480d>
+        a            sh:PropertyShape ;
+        sh:equals    time:intervalFinishes ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :finishes .
+
+<https://astrea.linkeddata.es/shapes#b7b1dee7d62b542a1bb2044241ae836c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:factor_of .
+
+<https://astrea.linkeddata.es/shapes#bb4a8b1b903a166c41049e0bbe5c1e59>
+        a               sh:NodeShape ;
+        rdfs:label      "relative instant" ;
+        sh:description  "An instant defined on a relative timeline" ;
+        sh:name         "relative instant" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#042aa38e6fcc0623de8a80d457f7e111> ;
+        sh:targetClass  :RelativeInstant .
+
+<https://astrea.linkeddata.es/report/02113868144>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/dc/terms/" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#43deb861964499543145cca5ab433a72>
+        a         sh:PropertyShape ;
+        sh:class  :PhysicalTimeLine .
+
+<https://astrea.linkeddata.es/shapes#0c878e2a0dc925b4dd7d0a1afacba93a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "FirstBroadcast" ;
+        sh:description    "\n\t\tSpecifies a broadcast as being the\n\t\tfirst one of a particular version.\n\t " ;
+        sh:name           "FirstBroadcast" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#ae333e258443a78b737b150a28ff9515> ;
+        sh:targetClass    <http://purl.org/ontology/po/FirstBroadcast> .
+
+<https://astrea.linkeddata.es/shapes#b96a644fff498cd555d8201e87f70bae>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :windowLength .
+
+<https://astrea.linkeddata.es/shapes#e99c608768d1a21143d8c4cb414661c6>
+        a         sh:PropertyShape ;
+        sh:class  :ContinuousTimeLine .
+
+<https://astrea.linkeddata.es/shapes#08e20b3b09ae50d502d0872a66950743>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "anchor" , "A television reporter who coordinates a programme" ;
+        sh:class          foaf:Agent ;
+        sh:description    "A television reporter who coordinates a programme" ;
+        sh:name           "anchor" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/anchor> .
+
+<https://astrea.linkeddata.es/shapes#47ef07b62d1973e509922536d72e2faa>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "channel" , "\n        Associates a service to a channel, e.g. Radio 4 LW to Radio 4 LW on Analogue Long Wave.\n    " ;
+        sh:class          <http://purl.org/ontology/po/Channel> ;
+        sh:description    "\n        Associates a service to a channel, e.g. Radio 4 LW to Radio 4 LW on Analogue Long Wave.\n    " ;
+        sh:name           "channel" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/channel> .
+
+<https://astrea.linkeddata.es/shapes#84c56759e12f3bfc0f40f8f735843a60>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "director" , "Relates a programme to its supervisor. Generally refers to the person responsible for all audience-visible components of a program, film, or show, whereas the producer is responsible for the financial and other behind-the-scenes aspects. A director's duties might also include casting, script editing, shot selection, shot composition, and editing" ;
+        sh:class          foaf:Agent ;
+        sh:description    "Relates a programme to its supervisor. Generally refers to the person responsible for all audience-visible components of a program, film, or show, whereas the producer is responsible for the financial and other behind-the-scenes aspects. A director's duties might also include casting, script editing, shot selection, shot composition, and editing" ;
+        sh:name           "director" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/director> .
+
+<https://astrea.linkeddata.es/shapes#cb4eadc3214391b7cf4a08db455356ec>
+        a               sh:PropertyShape ;
+        rdfs:label      "ends at (xsd:duration)" , "A property enabling to adress an end time point P of an interval [S,P] through the duration of the interval [0,P] on a continuous timeline" ;
+        sh:datatype     xsd:duration ;
+        sh:description  "A property enabling to adress an end time point P of an interval [S,P] through the duration of the interval [0,P] on a continuous timeline" ;
+        sh:name         "ends at (xsd:duration)" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :endsAtDuration ;
+        sh:pattern      "-?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S))))" .
+
+<https://astrea.linkeddata.es/shapes#7558699cc735bf805d7ea5605349caa6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "The reason for the most recent change applied to the graph."@en-gb , "changeReason"@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "The reason for the most recent change applied to the graph."@en-gb ;
+        sh:name           "changeReason"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/changeReason> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#f07724b32364b882211fd5e8411a4e0c>
+        a               sh:NodeShape ;
+        rdfs:label      "discrete instant" ;
+        sh:description  "An instant defined on a discrete timeline" ;
+        sh:name         "discrete instant" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#57fa74f2cee6dfae669fa9d7644f7fad> ;
+        sh:targetClass  :DiscreteInstant .
+
+<https://astrea.linkeddata.es/shapes#227089a02c79a74b415365ec484cebab>
+        a            sh:PropertyShape ;
+        sh:equals    time:intervalBefore ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :before .
+
+<https://astrea.linkeddata.es/shapes#44ba021dbc85d4374c9f187c109bffdb>
+        a            sh:PropertyShape ;
+        sh:equals    time:intervalAfter ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :after .
+
+<https://astrea.linkeddata.es/shapes#34681e75d022ca5e8d6fca0b353fcad7>
+        a               sh:NodeShape ;
+        rdfs:label      "instant" ;
+        sh:description  "An instant (same as in OWL-Time)" ;
+        sh:name         "instant" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ca42d1520ff5383f1761f4899e53a81d> ;
+        sh:targetClass  :Instant , time:Instant .
+
+<https://astrea.linkeddata.es/shapes#67f2dc80e351a1bb348cce27baa52420>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "OriginalVersion" ;
+        sh:description    "\n\t\tAn `original' version, the legacy version of\n\t\ta particular episode.\n\t" ;
+        sh:name           "OriginalVersion" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#6106feb258bb31526d3f7c16cfae92dd> ;
+        sh:targetClass    <http://purl.org/ontology/po/OriginalVersion> .
+
+<https://astrea.linkeddata.es/shapes#57fa74f2cee6dfae669fa9d7644f7fad>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :atInt .
+
+<https://astrea.linkeddata.es/shapes#bad5bc609a3861dd5cb2f3bbcf9f64dd>
+        a               sh:PropertyShape ;
+        rdfs:label      "product" , "\n\t\tRelates an event to something produced during the event---a sound, a pie, whatever...\n\t\t" ;
+        sh:description  "\n\t\tRelates an event to something produced during the event---a sound, a pie, whatever...\n\t\t" ;
+        sh:equals       event:hasProduct ;
+        sh:name         "product" ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#50dc5d82bf62062d17cc36bc786b05e3>
+        a               sh:NodeShape ;
+        rdfs:label      "continuous timeline" ;
+        sh:description  "A continuous timeline, like the universal one, or the one backing an analog signal" ;
+        sh:name         "continuous timeline" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#3bb597082dbd293b60b7270b0c71b8cf> ;
+        sh:targetClass  :PhysicalTimeLine , :RelativeTimeLine , :ContinuousTimeLine .
+
+<https://astrea.linkeddata.es/shapes#6ace7559c09873d57bb26d2909a563c6>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  geo:SpatialThing .
+
+<https://astrea.linkeddata.es/shapes#51480cf160c2cf736fc022fbc3955890>
+        a               sh:NodeShape ;
+        rdfs:label      "instant on the universal timeline" ;
+        sh:description  "This concept expresses that an instant defined on the universal timeline must be associated to a dateTime value" ;
+        sh:name         "instant on the universal timeline" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e729da3944f0a58fb5f4fec6126ca4e5> ;
+        sh:targetClass  :UTInstant .
+
+<https://astrea.linkeddata.es/shapes#3737bfb0a88b6a818bf6fa905f98d24a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "short synopsis" , "\n\t\tA short synopsis of a series, brand or episode.\n\t\tSub-property of po:synopsis.\n\t" ;
+        sh:description    "\n\t\tA short synopsis of a series, brand or episode.\n\t\tSub-property of po:synopsis.\n\t" ;
+        sh:name           "short synopsis" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/po/short_synopsis> .
+
+<https://astrea.linkeddata.es/shapes#09ce7e2467681ec8b429277fee94b517>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:produced_in .
+
+<https://astrea.linkeddata.es/shapes#d4c5eef94c7b82fe42214f5895a60e60>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "schedule date" , "\n\t\tThe schedule date of a broadcast event.\n\t" ;
+        sh:datatype       xsd:date ;
+        sh:description    "\n\t\tThe schedule date of a broadcast event.\n\t" ;
+        sh:name           "schedule date" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/po/schedule_date> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#451c451f5db847a26aacc0a44b6ddc88>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "IP stream" ;
+        sh:description    "\n\t\tIP stream\n\t" ;
+        sh:name           "IP stream" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/po/IPStream> .
+
+<https://astrea.linkeddata.es/shapes#3b521a534e21acc5a30fedfc4e1a8e9a>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/ontology/po/Series> .
+
+<https://astrea.linkeddata.es/report/1730027736>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.bbc.co.uk/ontologies/provenance" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#26eb2e1c9018ff0b3e60fd12beb5ade2>
+        a            sh:PropertyShape ;
+        sh:equals    time:intervalOverlaps ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :overlaps .
+
+<https://astrea.linkeddata.es/shapes#f4185dea8ba86563f6ac03fc788d5a2b>
+        a               sh:NodeShape ;
+        rdfs:label      "uniform windowing map" ;
+        sh:description  "Describes the relation between a discrete time line and its windowed equivalent" ;
+        sh:name         "uniform windowing map" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#1c26e8d28a4e9f1c65470cd5e4ebfdba> , <https://astrea.linkeddata.es/shapes#8a6b3c17bb3ff36fa2fe49388c3ec378> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#58433d8f995662e4f9f3cd11e99330c1> , <https://astrea.linkeddata.es/shapes#51e23a13c2af27a1ad641cea014477e2> , <https://astrea.linkeddata.es/shapes#fa3e86d505c7c032cef8f60e29a25533> , <https://astrea.linkeddata.es/shapes#e06948bf71261f211e460227d40b5bf9> , <https://astrea.linkeddata.es/shapes#c67af9b9c2f5f24408ff25e7c5b9e5f5> , <https://astrea.linkeddata.es/shapes#1811b6dc2fca973b00def14641c4564b> ;
+        sh:targetClass  :UniformWindowingMap .
+
+<https://astrea.linkeddata.es/shapes#d7948f09ab4cff0ef91c7d05ae2355ba>
+        a         sh:PropertyShape ;
+        sh:class  :UniformWindowingMap .
+
+<https://astrea.linkeddata.es/shapes#b0fd000cb074c2b8536f0d00d3e2d852>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "SignLanguage" ;
+        sh:description    "\n\t\tA version holding sign language.\n\t" ;
+        sh:name           "SignLanguage" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/po/SignedVersion> .
+
+<https://astrea.linkeddata.es/shapes#14af07d3c7d8da939663df65b19b6319>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Programme" ;
+        sh:description    "\n\t\tA programme, can either be a brand, a series or an episode\n\t" ;
+        sh:name           "Programme" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d81b2141560c9ae57176951663912471> , <https://astrea.linkeddata.es/shapes#83a728666c32417278ee4fe52dcd1da1> , <https://astrea.linkeddata.es/shapes#08e20b3b09ae50d502d0872a66950743> , <https://astrea.linkeddata.es/shapes#541a26accb47b4f6b417d0db2bd4b1a7> , <https://astrea.linkeddata.es/shapes#144956ced0d847e500901da16758ca1f> , <https://astrea.linkeddata.es/shapes#84c56759e12f3bfc0f40f8f735843a60> , <https://astrea.linkeddata.es/shapes#f2a292fe3d5f10de5262461f6507c80a> , <https://astrea.linkeddata.es/shapes#049e3ab0c9af760bc0c796da5d77e81f> , <https://astrea.linkeddata.es/shapes#a679ba76b567c2a2dbb7410c338335d6> , <https://astrea.linkeddata.es/shapes#6cf6e11580de8a23e477f1b5d452f96c> , <https://astrea.linkeddata.es/shapes#55d3267549f93a4d1f65f0163e405642> , <https://astrea.linkeddata.es/shapes#93e0d2467ae9dacc6415492fc394dd9b> , <https://astrea.linkeddata.es/shapes#9be47b0673e19d91aec8c87c2a425ec3> , <https://astrea.linkeddata.es/shapes#d6308c5f50c5ae918d70f1aa6ada2e3d> , <https://astrea.linkeddata.es/shapes#4b1f437da3c4e6ffa3c5f16e5dd22c02> , <https://astrea.linkeddata.es/shapes#870bef88febb805168fd329f7b7128ea> , <https://astrea.linkeddata.es/shapes#803087e7a079cbb35fa33f3cfefb1277> , <https://astrea.linkeddata.es/shapes#38804a457ccc3ab9401952992e98e43f> , <https://astrea.linkeddata.es/shapes#865bb7a6c1daf9f58b76e2a9371f02ec> , <https://astrea.linkeddata.es/shapes#f6ffb64e2fb8ba560a7e186c55c0a949> , <https://astrea.linkeddata.es/shapes#17668bd80869119d43d47f7aa5c29e5d> ;
+        sh:targetClass    <http://purl.org/ontology/po/Programme> .
+
+<https://astrea.linkeddata.es/shapes#32e2dd89c6b5519472585b01a6bfb179>
+        a               sh:NodeShape ;
+        rdfs:label      "universal timeline interval" ;
+        sh:description  "an interval defined on the universal time line" ;
+        sh:name         "universal timeline interval" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :UTInterval .
+
+<https://astrea.linkeddata.es/shapes#db9d3ce0173d76b1c0e835f5e15dadc1>
+        a         sh:PropertyShape ;
+        sh:class  :RelativeTimeLine .
+
+<https://astrea.linkeddata.es/shapes#24a8d25bea8b13e66ce7d76398ac116f>
+        a               sh:NodeShape ;
+        rdfs:label      "relative interval" ;
+        sh:description  "an interval defined on a relative timeline" ;
+        sh:name         "relative interval" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :RelativeInterval .
+
+<https://astrea.linkeddata.es/shapes#c2fa6e1ef089653c758068f1fc5e628c>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :sampleRate .
+
+<https://astrea.linkeddata.es/shapes#d81b2141560c9ae57176951663912471>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "microsite" , "Associates a programme to its microsite. For example http://www.bbc.co.uk/programmes/b00fm04s and http://www.bbc.co.uk/eastenders/" ;
+        sh:class          foaf:Document ;
+        sh:description    "Associates a programme to its microsite. For example http://www.bbc.co.uk/programmes/b00fm04s and http://www.bbc.co.uk/eastenders/" ;
+        sh:name           "microsite" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/microsite> .
+
+<https://astrea.linkeddata.es/shapes#1811b6dc2fca973b00def14641c4564b>
+        a                sh:PropertyShape ;
+        rdfs:label       "hop size" , "hop size, associated to a uniform windowing map" ;
+        sh:datatype      xsd:int ;
+        sh:description   "hop size, associated to a uniform windowing map" ;
+        sh:maxCount      1 ;
+        sh:maxInclusive  2147483647 ;
+        sh:minInclusive  -2147483648 ;
+        sh:name          "hop size" ;
+        sh:nodeKind      sh:IRIOrLiteral , sh:Literal ;
+        sh:path          :hopSize ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#67ddea7e967b4ac123491275f5e5b36e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Season" ;
+        sh:description    "\n\t\tA season is a group of broadcasts.\n\t" ;
+        sh:name           "Season" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#4159080dd378e86dec6e04569738ca9f> ;
+        sh:targetClass    <http://purl.org/ontology/po/Season> .
+
+<https://astrea.linkeddata.es/shapes#6106feb258bb31526d3f7c16cfae92dd>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/ontology/po/ShortenedVersion> .
+
+<https://astrea.linkeddata.es/shapes#fa3e86d505c7c032cef8f60e29a25533>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :domainTimeLine .
+
+<https://astrea.linkeddata.es/shapes#5b4481bc544bb6ff1a519065032c795c>
+        a               sh:PropertyShape ;
+        rdfs:label      "begins at (date/time)" , "A subproperty of :beginsAt, allowing to address the beginning of an interval as a date/time" ;
+        sh:datatype     xsd:dateTime ;
+        sh:description  "A subproperty of :beginsAt, allowing to address the beginning of an interval as a date/time" ;
+        sh:name         "begins at (date/time)" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :beginsAtDateTime ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#f9dca12d4b2c7d397549c08eb93e8826>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "medium synopsis" , "\n\t\tA medium synopsis of a series, brand or episode.\n\t\tSub-property of po:synopsis.\n\t" ;
+        sh:description    "\n\t\tA medium synopsis of a series, brand or episode.\n\t\tSub-property of po:synopsis.\n\t" ;
+        sh:name           "medium synopsis" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/po/medium_synopsis> .
+
+<https://astrea.linkeddata.es/shapes#d9891633922cc321135aca72b04860a0>
+        a               sh:NodeShape ;
+        rdfs:label      "Uniform sampling and windowing map" ;
+        sh:description  "Describes the relation between a continuous time-line, and a time-line that corresponds to its sampled and windowed equivalent" ;
+        sh:name         "Uniform sampling and windowing map" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#d7948f09ab4cff0ef91c7d05ae2355ba> , <https://astrea.linkeddata.es/shapes#1c26e8d28a4e9f1c65470cd5e4ebfdba> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#58ceab21b36063cb932ee19fe9ad7181> , <https://astrea.linkeddata.es/shapes#2df100945047ac5b813fe3646f6cf23c> , <https://astrea.linkeddata.es/shapes#d8d4768641291a62627ff989d12c5bc4> , <https://astrea.linkeddata.es/shapes#1811b6dc2fca973b00def14641c4564b> , <https://astrea.linkeddata.es/shapes#b96a644fff498cd555d8201e87f70bae> , <https://astrea.linkeddata.es/shapes#929b8277b0694de216373a5ca5952fbe> , <https://astrea.linkeddata.es/shapes#c2fa6e1ef089653c758068f1fc5e628c> , <https://astrea.linkeddata.es/shapes#e06948bf71261f211e460227d40b5bf9> ;
+        sh:targetClass  :UniformSamplingWindowingMap .
+
+<https://astrea.linkeddata.es/shapes#dc7b27d0e5f224b802f0b7b175e0a4b3>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      foaf:maker .
+
+<https://astrea.linkeddata.es/shapes#cfb88afd5e888abc2dabfeef10136248>
+        a                sh:PropertyShape ;
+        rdfs:label       "ends at (integer)" , "A subproperty of :endsAt, having xsd:int as a range" ;
+        sh:datatype      xsd:int ;
+        sh:description   "A subproperty of :endsAt, having xsd:int as a range" ;
+        sh:maxInclusive  2147483647 ;
+        sh:minInclusive  -2147483648 ;
+        sh:name          "ends at (integer)" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          :endsAtInt ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#7da1caa3e45b3d497bc85f336f9b6358>
+        a               sh:NodeShape ;
+        rdfs:label      "discrete time line" ;
+        sh:description  "A discrete time line (like the time line backing a digital signal" ;
+        sh:name         "discrete time line" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#e99c608768d1a21143d8c4cb414661c6> ;
+        sh:targetClass  :DiscreteTimeLine .
+
+<https://astrea.linkeddata.es/shapes#c67af9b9c2f5f24408ff25e7c5b9e5f5>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hopSize .
+
+<https://astrea.linkeddata.es/shapes#144fffe9ac46b0f52df471213997f639>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/ontology/po/Brand> .
+
+<https://astrea.linkeddata.es/shapes#3bb597082dbd293b60b7270b0c71b8cf>
+        a         sh:PropertyShape ;
+        sh:class  :DiscreteTimeLine .
+
+<https://astrea.linkeddata.es/shapes#aa8e358c44ef5b5b198a7f8abb7fd343>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "managedBy"@en-gb , "Associates the thing graph of a cms:ManagedThing with its managing system. This is needed to solve cases where different systems can manage metadata about a shared thing. E.g., one thing graph from BBC News may have all the politics related metadata for David Cameron, while another thing graph managed by Knowledge and Learning may contain information about the historical role David Cameron has played as a conservative leader in British politics. Separating metadata into thing graphs is useful for managing information about shared things."@en-gb ;
+        sh:class          <http://www.bbc.co.uk/ontologies/cms/System> ;
+        sh:description    "Associates the thing graph of a cms:ManagedThing with its managing system. This is needed to solve cases where different systems can manage metadata about a shared thing. E.g., one thing graph from BBC News may have all the politics related metadata for David Cameron, while another thing graph managed by Knowledge and Learning may contain information about the historical role David Cameron has played as a conservative leader in British politics. Separating metadata into thing graphs is useful for managing information about shared things."@en-gb ;
+        sh:name           "managedBy"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/managedBy> .
+
+<https://astrea.linkeddata.es/shapes#4159080dd378e86dec6e04569738ca9f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "broadcast" , "Associates a season to its constituent broadcasts" ;
+        sh:class          <http://purl.org/ontology/po/Broadcast> ;
+        sh:description    "Associates a season to its constituent broadcasts" ;
+        sh:name           "broadcast" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/season_broadcast> .
+
+<https://astrea.linkeddata.es/shapes#67806f993b4f2a2d6bae89cbe873ec59>
+        a               sh:NodeShape ;
+        rdfs:label      "abstract interval" ;
+        sh:description  "\n\tAn interval defined on an abstract time-line.\n    " ;
+        sh:name         "abstract interval" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#171e1170547d5a569b4ad6d585aa0a43> ;
+        sh:targetClass  :AbstractInterval .
+
+<https://astrea.linkeddata.es/shapes#042aa38e6fcc0623de8a80d457f7e111>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :atDuration .
+
+<https://astrea.linkeddata.es/shapes#953b687f55f4ad6f443b4b40b5f16b9d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "slug"@en-gb , "This is a short human readable identifier for the ontology."@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "This is a short human readable identifier for the ontology."@en-gb ;
+        sh:name           "slug"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/slug> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#05e1dc08494ca575258e7d6b458c0207>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5694afa0f053a50de40e59e74dc9b0de> ;
+        sh:targetClass  rdfs:Property .
+
+<https://astrea.linkeddata.es/shapes#be29a843e359e83e804afadfca514294>
+        a               sh:PropertyShape ;
+        rdfs:label      "associate an origin map to its origin on the domain physical timeline" , "origin" ;
+        sh:datatype     xsd:dateTime ;
+        sh:description  "associate an origin map to its origin on the domain physical timeline" ;
+        sh:maxCount     1 ;
+        sh:name         "origin" ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         :origin ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#21434c0c7d9e24de6b6e95555977b21b>
+        a               sh:PropertyShape ;
+        rdfs:label      "duration" , "the duration of a time interval" ;
+        sh:description  "the duration of a time interval" ;
+        sh:name         "duration" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :duration .
+
+<https://astrea.linkeddata.es/shapes#f611a8cb977e8cd8a440c3a08bb1844b>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :domainTimeLine .
+
+<https://astrea.linkeddata.es/shapes#d22300234d08af75e3e1b5c37972e483>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "RegionalRadio" ;
+        sh:description    "\n\t\tRadio services aiming at a regional coverage.\n\t" ;
+        sh:name           "RegionalRadio" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#a738a8ba4a110998c5233f5befd7720a> ;
+        sh:targetClass    <http://purl.org/ontology/po/RegionalRadio> .
+
+<https://astrea.linkeddata.es/shapes#7ef9988faf1dea4b0c5871aa2e8f0151>
+        a               sh:PropertyShape ;
+        rdfs:label      "duration (xsd:duration)" , "A subproperty of :duration, having xsd:duration as a range" ;
+        sh:datatype     xsd:duration ;
+        sh:description  "A subproperty of :duration, having xsd:duration as a range" ;
+        sh:name         "duration (xsd:duration)" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :durationXSD ;
+        sh:pattern      "-?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S))))" .
+
+<https://astrea.linkeddata.es/shapes#6019ec2eb6fb334f464b4a37658b1851>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "broadcaster" , "\n\t\tAssociates a service to a broadcaster\n\t" ;
+        sh:class          <http://purl.org/ontology/po/Broadcaster> ;
+        sh:description    "\n\t\tAssociates a service to a broadcaster\n\t" ;
+        sh:name           "broadcaster" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/broadcaster> .
+
+<https://astrea.linkeddata.es/shapes#29caf22bc9f55b93fc6b186f2be470ec>
+        a            sh:PropertyShape ;
+        sh:equals    :timeline ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :onTimeLine .
+
+<https://astrea.linkeddata.es/shapes#7bc3d33968fbf85a243a90c839683b36>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Repeat" ;
+        sh:description    "\n\t\tSpecifies a broadcast as being a\n\t\trepeat.\n\t" ;
+        sh:name           "Repeat" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#ea2e306b661eb25874c5d8e24c19b318> ;
+        sh:targetClass    <http://purl.org/ontology/po/RepeatBroadcast> .
+
+<https://astrea.linkeddata.es/shapes#c2bc6bfe31e781d8fbb8fb6c2de6ab09>
+        a            sh:PropertyShape ;
+        sh:equals    time:intervalStarts ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :starts .
+
+<https://astrea.linkeddata.es/shapes#0aa707aade0e3fd7e94280c3cee3ec6c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "ThingGraph"@en-gb ;
+        sh:description    "Thing graphs hold metadata about a single thing. Note the difference with Datasets, which hold metadata about many things. Thing graphs are usually exposed to user friendly tools which allow users with little on no RDF skills to specifically edit a metadata about a thing in a form. For example a thing graph can contain metadata about a football team such as its various names, LOD links for the team, a short disambiguation hint, e.t.c. Thing graphs are also used to store metadata about things obtained from a feed, for example store metadata about locations obtained from a Location Services feed."@en-gb ;
+        sh:name           "ThingGraph"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#aa8e358c44ef5b5b198a7f8abb7fd343> ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/provenance/ThingGraph> .
+
+<https://astrea.linkeddata.es/shapes#e9e05d4fd4b83ee0de361fea70322ff0>
+        a               sh:NodeShape ;
+        rdfs:label      "origin map" ;
+        sh:description  "A timeline map linking a physical timeline to a relative one (originating at some point on the physical timeline)" ;
+        sh:name         "origin map" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#be29a843e359e83e804afadfca514294> , <https://astrea.linkeddata.es/shapes#c5769f2aff22af320683c59b4d444c09> , <https://astrea.linkeddata.es/shapes#16eaa9eb881cf918acc351f3b60f292e> ;
+        sh:targetClass  :OriginMap .
+
+<https://astrea.linkeddata.es/shapes#ef5309afafae88506dc6630402c37bbb>
+        a               sh:PropertyShape ;
+        rdfs:label      "delay" , "associate a shift map to a particular delay" ;
+        sh:description  "associate a shift map to a particular delay" ;
+        sh:maxCount     1 ;
+        sh:name         "delay" ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         :delay .
+
+<https://astrea.linkeddata.es/shapes#ca42d1520ff5383f1761f4899e53a81d>
+        a               sh:PropertyShape ;
+        rdfs:label      "on timeline" , "\n\tRelates an interval or an instant to the timeline on which it is defined.\n\n\tThe 29th of August, 2007 would be linked through this property to the universal timeline, whereas\n\t\"from 2s to 5s on this particular signal\" would be defined on the signal' timeline.\n\n    " ;
+        sh:class        :TimeLine ;
+        sh:description  "\n\tRelates an interval or an instant to the timeline on which it is defined.\n\n\tThe 29th of August, 2007 would be linked through this property to the universal timeline, whereas\n\t\"from 2s to 5s on this particular signal\" would be defined on the signal' timeline.\n\n    " ;
+        sh:maxCount     1 ;
+        sh:name         "on timeline" ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         :timeline .
+
+<https://astrea.linkeddata.es/shapes#56a2f4fd0294e71c9fae1b626744425c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:agent_in .
+
+<https://astrea.linkeddata.es/shapes#814b6c977614745fb6acb21ac9b60b04>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/ontology/po/RegionalRadio> .
+
+<https://astrea.linkeddata.es/shapes#26b294fa3b68e5bf90fcc79c8251567f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "episode" , "\n\t\tAssociates a brand or a series to an episode constituting it.\n\t" ;
+        sh:class          <http://purl.org/ontology/po/Episode> ;
+        sh:description    "\n\t\tAssociates a brand or a series to an episode constituting it.\n\t" ;
+        sh:name           "episode" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/episode> .
+
+<https://astrea.linkeddata.es/shapes#38e1536b72babc1a393bbfc37d7a86eb>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      dc:description .
+
+<https://astrea.linkeddata.es/shapes#327a3d9ec7f3a3756883bbeb405e05cd>
+        a            sh:PropertyShape ;
+        sh:equals    time:intervalStartedBy ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :startedBy .
+
+<https://astrea.linkeddata.es/shapes#a0bb35fc8e71afc8ae4d0183d5d0ae24>
+        a         sh:PropertyShape ;
+        sh:class  foaf:Agent .
+
+<https://astrea.linkeddata.es/shapes#1fae42385bbb65bf26cf1c2f772eb29b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "product"@en-gb , "The reference to the product from which the dataset, graph was created. This is needed for dataset management permissions. Not to be confused with bbc:product."@en-gb ;
+        sh:class          <http://www.bbc.co.uk/ontologies/bbc/Product> ;
+        sh:description    "The reference to the product from which the dataset, graph was created. This is needed for dataset management permissions. Not to be confused with bbc:product."@en-gb ;
+        sh:name           "product"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/product> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#a20794a95f584e81f93d5ebbfcb3c3e2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Associates a channel to its frequency" , "frequency" ;
+        sh:datatype       xsd:float ;
+        sh:description    "Associates a channel to its frequency" ;
+        sh:name           "frequency" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/po/frequency> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#4b1f437da3c4e6ffa3c5f16e5dd22c02>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "commentator" , "Relates a programme to one of its commentators" ;
+        sh:class          foaf:Agent ;
+        sh:description    "Relates a programme to one of its commentators" ;
+        sh:name           "commentator" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/commentator> .
+
+<https://astrea.linkeddata.es/shapes#0c5778f091ec41f2897a219d1bfd81c1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "DVB" ;
+        sh:description    "\n\t\tDigital Video Broadcasting\n\t" ;
+        sh:name           "DVB" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/po/DVB> .
+
+<https://astrea.linkeddata.es/shapes#049e3ab0c9af760bc0c796da5d77e81f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "\n\t\tAssociate a brand, series or episode to the master brand service.\n\t" , "service" ;
+        sh:class          <http://purl.org/ontology/po/Service> ;
+        sh:description    "\n\t\tAssociate a brand, series or episode to the master brand service.\n\t" ;
+        sh:maxCount       1 ;
+        sh:name           "service" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/service> .
+
+<https://astrea.linkeddata.es/shapes#d19b3cc0c0c1a9ab7e477919b6fbd894>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "\n\t\tAssociate an episode to a version of it.\n\t\tDifferent versions of a same episode can exist (shortened version, version\n\t\tdesigned for the hearing impaired, etc.).\n\t" , "version" ;
+        sh:class          <http://purl.org/ontology/po/Version> ;
+        sh:description    "\n\t\tAssociate an episode to a version of it.\n\t\tDifferent versions of a same episode can exist (shortened version, version\n\t\tdesigned for the hearing impaired, etc.).\n\t" ;
+        sh:inversePath    <http://purl.org/ontology/po/version> ;
+        sh:maxCount       1 ;
+        sh:name           "version" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           <http://purl.org/ontology/po/version> .
+
+<https://astrea.linkeddata.es/shapes#6cf6e11580de8a23e477f1b5d452f96c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "format" , "\n\t\tRelates a programme to a particular format (eg. `Animation', `Documentary', etc.).\n\t" ;
+        sh:class          <http://purl.org/ontology/po/Format> ;
+        sh:description    "\n\t\tRelates a programme to a particular format (eg. `Animation', `Documentary', etc.).\n\t" ;
+        sh:name           "format" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/format> .
+
+<https://astrea.linkeddata.es/shapes#afac1c5de953a17c4e5c2bb08be05008>
+        a                sh:PropertyShape ;
+        rdfs:label       "duration (integer)" , "A subproperty of :duration, having xsd:int as a range" ;
+        sh:datatype      xsd:int ;
+        sh:description   "A subproperty of :duration, having xsd:int as a range" ;
+        sh:maxInclusive  2147483647 ;
+        sh:minInclusive  -2147483648 ;
+        sh:name          "duration (integer)" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          :durationInt ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#ad3d81a1d5c153dc6703db451160bd73>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :rangeTimeLine .
+
+<https://astrea.linkeddata.es/shapes#4d40d525deba58bbebed164f2f81c04c>
+        a               sh:PropertyShape ;
+        rdfs:label      "at (duration)" , "A property enabling to adress a time point P through the duration of the interval [0,P] on a continuous timeline" ;
+        sh:datatype     xsd:duration ;
+        sh:description  "A property enabling to adress a time point P through the duration of the interval [0,P] on a continuous timeline" ;
+        sh:name         "at (duration)" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :atDuration ;
+        sh:pattern      "-?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S))))" .
+
+<https://astrea.linkeddata.es/shapes#fdfe9a56f48c381791e900a26411ccb9>
+        a            sh:PropertyShape ;
+        sh:equals    :end ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :endsAt .
+
+<https://astrea.linkeddata.es/shapes#8a02e00521f7ab40977e430a93d9f619>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Subtitle" ;
+        sh:description    "\n        Classification of an episode version's region corresponding to a subtitle being shown.\n    " ;
+        sh:name           "Subtitle" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ae5d921543067986447f603fdf32f56c> ;
+        sh:targetClass    <http://purl.org/ontology/po/Subtitle> .
+
+<https://astrea.linkeddata.es/shapes#85329ae717eb14a021a00027a7ef35f2>
+        a               sh:PropertyShape ;
+        rdfs:label      "at (year/month)" , "A subproperty of :at, allowing to address a year/month (beginning of it for an instant, all of it for an interval)" ;
+        sh:datatype     xsd:gYearMonth ;
+        sh:description  "A subproperty of :at, allowing to address a year/month (beginning of it for an instant, all of it for an interval)" ;
+        sh:name         "at (year/month)" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :atYearMonth ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#844694d979feb9f4fe0f7a325e4b7c6f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "series" , "\n\t\tAssociates a brand or a series to a series constituting it.\n\t" ;
+        sh:class          <http://purl.org/ontology/po/Series> ;
+        sh:description    "\n\t\tAssociates a brand or a series to a series constituting it.\n\t" ;
+        sh:name           "series" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/series> .
+
+<https://astrea.linkeddata.es/shapes#178eaf7780c883626711ccda5e1919d6>
+        a               sh:PropertyShape ;
+        rdfs:label      "at (date)" , "A subproperty of :at, allowing to address a date (beginning of it for an instant, all of it for an interval)" ;
+        sh:datatype     xsd:date ;
+        sh:description  "A subproperty of :at, allowing to address a date (beginning of it for an instant, all of it for an interval)" ;
+        sh:name         "at (date)" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :atDate ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#2d391ff50efb3d89b41a50e4b35bdfeb>
+        a               sh:PropertyShape ;
+        rdfs:label      "time" , "\n\t\tRelates an event to a time object, classifying a time region (either instantaneous or having an extent).\n\t\tBy using the Timeline ontology here, you can define event happening on a recorded track or on any \n\t\tmedia with a temporal extent.\n\t\t" ;
+        sh:class        time:TemporalEntity ;
+        sh:description  "\n\t\tRelates an event to a time object, classifying a time region (either instantaneous or having an extent).\n\t\tBy using the Timeline ontology here, you can define event happening on a recorded track or on any \n\t\tmedia with a temporal extent.\n\t\t" ;
+        sh:name         "time" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         event:time .
+
+<https://astrea.linkeddata.es/shapes#ea7ba5ba84fbdb411a309a7eb43f4b30>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Subject" ;
+        sh:description    "\n        Anchor point for subject taxonomies.\n    " ;
+        sh:name           "Subject" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/po/Subject> .
+
+<https://astrea.linkeddata.es/shapes#b086df60e1876dc2778d417a19745ad2>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#0e30d071723196d7da099894222eaf61> , <https://astrea.linkeddata.es/shapes#1883afe0cee837205de41653bb427baf> ;
+        sh:targetClass  <http://www.bbc.co.uk/ontologies/coreconcepts/Thing> .
+
+<https://astrea.linkeddata.es/shapes#67e42363cefdb24a303af5cab3ba28c1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "AM" ;
+        sh:description    "\n\t\tThe AM broadcast band\n\t" ;
+        sh:name           "AM" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/po/LW> .
+
+<https://astrea.linkeddata.es/shapes#444b7c71c62cff4f2b2d4331cec524ed>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "parent service" , "\n\t\tRelates a service to another service encapsulating it (eg. `BBC One' and `BBC One South')\n\t" ;
+        sh:class          <http://purl.org/ontology/po/Service> ;
+        sh:description    "\n\t\tRelates a service to another service encapsulating it (eg. `BBC One' and `BBC One South')\n\t" ;
+        sh:name           "parent service" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/parent_service> .
+
+<https://astrea.linkeddata.es/shapes#142ec29b0150c10b841a256d92af7689>
+        a               sh:NodeShape ;
+        rdfs:label      "timeline" ;
+        sh:description  "Represents a linear and coherent piece of time -- can be either abstract (such as the one behind a score) or concrete (such as the universal time line).\nTwo timelines can be mapped using timeline maps." ;
+        sh:name         "timeline" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :TimeLine .
+
+<https://astrea.linkeddata.es/shapes#17668bd80869119d43d47f7aa5c29e5d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "category" , "\n        Relates a programme to a particular category, e.g. genre, format, place...\n    " ;
+        sh:class          <http://purl.org/ontology/po/Genre> ;
+        sh:description    "\n        Relates a programme to a particular category, e.g. genre, format, place...\n    " ;
+        sh:name           "category" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/category> .
+
+<https://astrea.linkeddata.es/shapes#51e23a13c2af27a1ad641cea014477e2>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :rangeTimeLine .
+
+<https://astrea.linkeddata.es/shapes#e66ab4456056872a4a23c2d0dbbe0b20>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:hasAgent .
+
+<https://astrea.linkeddata.es/shapes#b8128fbbf0c15165ce8d557dd22760c1>
+        a                sh:PropertyShape ;
+        rdfs:label       "at (integer)" , "A subproperty of :at, having as a specific range xsd:int" ;
+        sh:datatype      xsd:int ;
+        sh:description   "A subproperty of :at, having as a specific range xsd:int" ;
+        sh:maxInclusive  2147483647 ;
+        sh:minInclusive  -2147483648 ;
+        sh:name          "at (integer)" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          :atInt ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#f72e7f865e1ba19aa481013d8355057a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "ProgrammeItem" ;
+        sh:description    "\n        A programme that can have versions, and as such can be broadcast or made available on-demand, e.g. a clip or an episode.\n    " ;
+        sh:name           "ProgrammeItem" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#144fffe9ac46b0f52df471213997f639> , <https://astrea.linkeddata.es/shapes#3b521a534e21acc5a30fedfc4e1a8e9a> ;
+        sh:targetClass    <http://purl.org/ontology/po/ProgrammeItem> .
+
+<https://astrea.linkeddata.es/shapes#41ae78f28d89f4355216d5dbfa12b74e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "broadcast of" , "\n\t\tRelates a particular broadcast to the version being broadcasted.\n\t\tSub-property of the event:factor one.\n\t" ;
+        sh:class          <http://purl.org/ontology/po/Version> ;
+        sh:description    "\n\t\tRelates a particular broadcast to the version being broadcasted.\n\t\tSub-property of the event:factor one.\n\t" ;
+        sh:name           "broadcast of" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/broadcast_of> .
+
+<https://astrea.linkeddata.es/shapes#b7c7fa5de45b22703a8ceada8075efcc>
+        a            sh:PropertyShape ;
+        sh:equals    time:intervalOverlappedBy ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :overlappedBy .
+
+<https://astrea.linkeddata.es/shapes#e64425a5e89a96981f8a86dee2e237bf>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Episode" ;
+        sh:description    "\n\t\tA particular episode, e.g. `Top Gear, first episode of the first series' or the film 'A Walk in the Sun' (http://www.bbc.co.uk/programmes/b00gfzdt)\n\t" ;
+        sh:name           "Episode" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#144fffe9ac46b0f52df471213997f639> , <https://astrea.linkeddata.es/shapes#3b521a534e21acc5a30fedfc4e1a8e9a> ;
+        sh:targetClass    <http://purl.org/ontology/po/Episode> .
+
+<https://astrea.linkeddata.es/report/01598422222>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "2020-11-20 16:10:37.563  INFO 1 --- [nio-8080-exec-3] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.org:80: The target server failed to respond2020-11-20 16:10:37.563  INFO 1 --- [nio-8080-exec-3] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.org:80\n" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/NET/c4dm/timeline.owl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "206"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#657b6c5ed4e1a6d42c1de87b759c059d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "The email address extracted from the BBC SSL Certificate, indicating the person or system which directly interacted with the writer service to put the data in the store."@en-gb , "provider"@en-gb ;
+        sh:datatype       xsd:anyURI ;
+        sh:description    "The email address extracted from the BBC SSL Certificate, indicating the person or system which directly interacted with the writer service to put the data in the store."@en-gb ;
+        sh:name           "provider"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/provider> ;
+        sh:pattern        "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#9ea65395ba444f042b5283c6b13b8c3e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "broadcast on" , "\n\t\tRelates a particular broadcast to the service or outlet on which it was.\n\t\tSub-property of the event:factor one.\n\t" ;
+        sh:class          <http://purl.org/ontology/po/Service> ;
+        sh:description    "\n\t\tRelates a particular broadcast to the service or outlet on which it was.\n\t\tSub-property of the event:factor one.\n\t" ;
+        sh:equals         <http://purl.org/ontology/po/broadcasted_on> ;
+        sh:name           "broadcast on" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/broadcast_on> .
+
+<https://astrea.linkeddata.es/shapes#067014565ecdc68eef8ef4c8a6e47e33>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "Graph"@en-gb ;
+        sh:description    "The class of named graphs. All our data is stored in named graphs of different types depending on its provenance and management. These are specified by the subclasses of Graph."@en-gb ;
+        sh:name           "Graph"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7558699cc735bf805d7ea5605349caa6> , <https://astrea.linkeddata.es/shapes#ab26688bc19a35d7edbfa7c1cc6f5324> , <https://astrea.linkeddata.es/shapes#657b6c5ed4e1a6d42c1de87b759c059d> , <https://astrea.linkeddata.es/shapes#4fbefd9c1768a6cccae9b0736c9825ac> , <https://astrea.linkeddata.es/shapes#1fae42385bbb65bf26cf1c2f772eb29b> , <https://astrea.linkeddata.es/shapes#2a0cf70f2fcbd4c2224419be49e7de32> , <https://astrea.linkeddata.es/shapes#bc04698cc9893bf3e0631420cd9e72e7> , <https://astrea.linkeddata.es/shapes#b0dc527a1b574758bc9ac08320a2f090> ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/provenance/Graph> .
+
+<https://astrea.linkeddata.es/shapes#5ae51562168e490b4a87fdc8b439415a>
+        a               sh:NodeShape ;
+        rdfs:label      "relative timeline" ;
+        sh:description  "Semi infinite time line...canonical coordinate system --> adressed through xsd:duration since the instant 0." ;
+        sh:name         "relative timeline" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#43deb861964499543145cca5ab433a72> ;
+        sh:targetClass  :RelativeTimeLine .
+
+<https://astrea.linkeddata.es/shapes#72ebe38a3b62b4d31c90eada596b9662>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Segment" ;
+        sh:description    "\n\t\tClassification of an episode version's region, e.g. 'this track was played at that time'.\n\t" ;
+        sh:name           "Segment" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/po/Segment> .
+
+<https://astrea.linkeddata.es/shapes#5a22aeb1cdcee5410b7234ef417981b6>
+        a            sh:PropertyShape ;
+        sh:equals    time:intervalContains ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :contains .
+
+<https://astrea.linkeddata.es/shapes#1c26e8d28a4e9f1c65470cd5e4ebfdba>
+        a         sh:PropertyShape ;
+        sh:class  :UniformSamplingMap .
+
+<https://astrea.linkeddata.es/shapes#8ba3523f682e8fe6583b51efd582dcf0>
+        a               sh:PropertyShape ;
+        rdfs:label      "at (year)" , "A subproperty of :at, allowing to address a year (beginning of it for an instant, all of it for an interval)" ;
+        sh:datatype     xsd:gYear ;
+        sh:description  "A subproperty of :at, allowing to address a year (beginning of it for an instant, all of it for an interval)" ;
+        sh:name         "at (year)" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :atYear ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#872fdf9f1718dc1f61bed35b23ed9f27>
+        a            sh:PropertyShape ;
+        sh:equals    :start ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :beginsAt .
+
+<https://astrea.linkeddata.es/shapes#77ddf7746a48f15057084e414da82764>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "time" , "Associates an episode's version or a version's segment with a temporal interval. This interval can be associated with a timeline, serving as an anchor for further temporal annotations, e.g. subtitles or played track" ;
+        sh:class          :Interval ;
+        sh:description    "Associates an episode's version or a version's segment with a temporal interval. This interval can be associated with a timeline, serving as an anchor for further temporal annotations, e.g. subtitles or played track" ;
+        sh:name           "time" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/time> .
+
+<https://astrea.linkeddata.es/shapes#a679ba76b567c2a2dbb7410c338335d6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "author" , "Relates a programme to its author - the person who created the content" ;
+        sh:class          foaf:Agent ;
+        sh:description    "Relates a programme to its author - the person who created the content" ;
+        sh:name           "author" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/author> .
+
+<https://astrea.linkeddata.es/shapes#b0dc527a1b574758bc9ac08320a2f090>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "The canonical location where all the triples contained within the context (named graph) are stored in and can be referred to outside the triplestore."@en-gb , "canonicalLocation"@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "The canonical location where all the triples contained within the context (named graph) are stored in and can be referred to outside the triplestore."@en-gb ;
+        sh:name           "canonicalLocation"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/canonicalLocation> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#81b31d47031134dc456fc4bca62ee72c>
+        a               sh:NodeShape ;
+        rdfs:label      "physical timeline" ;
+        sh:description  "A \"physical\" time-line (the universal time line (UTC)) is an instance of this class. Other time zones consists in instances of this class as well, with a \"shifting\" time line map relating them to the universal time line map." ;
+        sh:name         "physical timeline" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#db9d3ce0173d76b1c0e835f5e15dadc1> ;
+        sh:targetClass  :PhysicalTimeLine .
+
+<https://astrea.linkeddata.es/shapes#a6fac1385c91bcfef6833b82411f9517>
+        a               sh:NodeShape ;
+        rdfs:label      "abstract instant" ;
+        sh:description  "An instant defined on an abstract timeline" ;
+        sh:name         "abstract instant" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#616a4873148fe60dafb9928463272558> ;
+        sh:targetClass  :AbstractInstant .
+
+<https://astrea.linkeddata.es/shapes#5694afa0f053a50de40e59e74dc9b0de>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "transitions"@en-gb , "The property that this transition property is providing a transition for."@en-gb ;
+        sh:class          rdfs:Property ;
+        sh:description    "The property that this transition property is providing a transition for."@en-gb ;
+        sh:name           "transitions"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/transitions> .
+
+<https://astrea.linkeddata.es/shapes#a03d8f7a201b1544b273c30544ce5305>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "The position of a particular series or episode within its containing programme. This property can also be used to give the position of an interval within the containing timeline." , "position" ;
+        sh:datatype       xsd:int ;
+        sh:description    "The position of a particular series or episode within its containing programme. This property can also be used to give the position of an interval within the containing timeline." ;
+        sh:maxInclusive   2147483647 ;
+        sh:minInclusive   -2147483648 ;
+        sh:name           "position" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/po/position> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#e1b2c05b794c01117d1f3dc32de435e1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "ShortenedVersion" ;
+        sh:description    "\n\t\tA shortened version.\n\t" ;
+        sh:name           "ShortenedVersion" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#f032ba36da9bb6d47e019e00821a319b> ;
+        sh:targetClass    <http://purl.org/ontology/po/ShortenedVersion> .
+
+<https://astrea.linkeddata.es/shapes#ae5d921543067986447f603fdf32f56c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Associates a subtitle event to the corresponding text" , "text" ;
+        sh:datatype       xsd:string ;
+        sh:description    "Associates a subtitle event to the corresponding text" ;
+        sh:name           "text" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/po/text> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#7319538eddf9cf7aa0cf4f21e7cc167c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "Transition Ontology"@en-gb ;
+        sh:description    "An ontology that is used to provide a transition feature for a parent ontology" ;
+        sh:name           "Transition Ontology"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/provenance/TransitionOntology> .
+
+<https://astrea.linkeddata.es/shapes#c6fa494d07984596aaf900224d0a7a93>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:hasSubEvent .
+
+<https://astrea.linkeddata.es/shapes#353e4a73ce0be33d434cb9d7a146dd22>
+        a               sh:PropertyShape ;
+        rdfs:label      "at date/time" , "This property links an instant defined on the universal time line to an XSD date/time value" ;
+        sh:datatype     xsd:dateTime ;
+        sh:description  "This property links an instant defined on the universal time line to an XSD date/time value" ;
+        sh:name         "at date/time" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :atDateTime ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#eb5932d3b792d88efd3a3522651a9873> , <https://astrea.linkeddata.es/shapes#a738a8ba4a110998c5233f5befd7720a> , <https://astrea.linkeddata.es/shapes#26eb2e1c9018ff0b3e60fd12beb5ade2> , <https://astrea.linkeddata.es/shapes#8a6b3c17bb3ff36fa2fe49388c3ec378> , <https://astrea.linkeddata.es/shapes#953b687f55f4ad6f443b4b40b5f16b9d> , <https://astrea.linkeddata.es/shapes#227089a02c79a74b415365ec484cebab> , <https://astrea.linkeddata.es/shapes#f611a8cb977e8cd8a440c3a08bb1844b> , <https://astrea.linkeddata.es/shapes#4635a42b00666f90e4b2900e0c98654e> , <https://astrea.linkeddata.es/shapes#5694afa0f053a50de40e59e74dc9b0de> , <https://astrea.linkeddata.es/shapes#ff2039464033e9287f6795c5c70ef371> , <https://astrea.linkeddata.es/shapes#5be2ecd5c7dd0790831a39f0242a12f2> , <https://astrea.linkeddata.es/shapes#c67af9b9c2f5f24408ff25e7c5b9e5f5> , <https://astrea.linkeddata.es/shapes#08e20b3b09ae50d502d0872a66950743> , <https://astrea.linkeddata.es/shapes#93e0d2467ae9dacc6415492fc394dd9b> , <https://astrea.linkeddata.es/shapes#48ad251d7e6a17648785e6256d0855c9> , <https://astrea.linkeddata.es/shapes#a3e81beceac4935c3e904696e03b0910> , <https://astrea.linkeddata.es/shapes#ab26688bc19a35d7edbfa7c1cc6f5324> , <https://astrea.linkeddata.es/shapes#424e114c46d16ea901b603aaec857139> , <https://astrea.linkeddata.es/shapes#7bc3d33968fbf85a243a90c839683b36> , <https://astrea.linkeddata.es/shapes#bc04698cc9893bf3e0631420cd9e72e7> , <https://astrea.linkeddata.es/shapes#50dc5d82bf62062d17cc36bc786b05e3> , <https://astrea.linkeddata.es/shapes#d225237d9f8f4a1d79d4d50882eb80eb> , <https://astrea.linkeddata.es/shapes#56a2f4fd0294e71c9fae1b626744425c> , <https://astrea.linkeddata.es/shapes#db9d3ce0173d76b1c0e835f5e15dadc1> , <https://astrea.linkeddata.es/shapes#b7b1dee7d62b542a1bb2044241ae836c> , <https://astrea.linkeddata.es/shapes#f4185dea8ba86563f6ac03fc788d5a2b> , <https://astrea.linkeddata.es/shapes#f38d11b05ae6426c0734876a81efe20f> , <https://astrea.linkeddata.es/shapes#6c218ec144a7839ce0158647697c2749> , <https://astrea.linkeddata.es/shapes#5a22aeb1cdcee5410b7234ef417981b6> , <https://astrea.linkeddata.es/shapes#59d5b293329a31b9b899a6bc4b8e5921> , <https://astrea.linkeddata.es/shapes#cb4eadc3214391b7cf4a08db455356ec> , <https://astrea.linkeddata.es/shapes#a679ba76b567c2a2dbb7410c338335d6> , <https://astrea.linkeddata.es/shapes#5688420055ed3fbb353808a0a050fed9> , <https://astrea.linkeddata.es/shapes#67e42363cefdb24a303af5cab3ba28c1> , <https://astrea.linkeddata.es/shapes#d7ac9d6712d4cfa5d4a2e83fd0ad7267> , <https://astrea.linkeddata.es/shapes#83a728666c32417278ee4fe52dcd1da1> , <https://astrea.linkeddata.es/shapes#5ae51562168e490b4a87fdc8b439415a> , <https://astrea.linkeddata.es/shapes#4159080dd378e86dec6e04569738ca9f> , <https://astrea.linkeddata.es/shapes#11bdff0c5776e2857554682220e63b61> , <https://astrea.linkeddata.es/shapes#c2fa6e1ef089653c758068f1fc5e628c> , <https://astrea.linkeddata.es/shapes#ed45fcec721d4ea91ff6bb620fc3de46> , <https://astrea.linkeddata.es/shapes#310ce7938e9e4c2b066743b0e4294202> , <https://astrea.linkeddata.es/shapes#444b7c71c62cff4f2b2d4331cec524ed> , <https://astrea.linkeddata.es/shapes#d7948f09ab4cff0ef91c7d05ae2355ba> , <https://astrea.linkeddata.es/shapes#be29a843e359e83e804afadfca514294> , <https://astrea.linkeddata.es/shapes#6cf6e11580de8a23e477f1b5d452f96c> , <https://astrea.linkeddata.es/shapes#16a9a2bc0f6331513e985360cb8bc55f> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> , <https://astrea.linkeddata.es/shapes#aa8e358c44ef5b5b198a7f8abb7fd343> , <https://astrea.linkeddata.es/shapes#67f2dc80e351a1bb348cce27baa52420> , <https://astrea.linkeddata.es/shapes#40c576b64e3f3ee63fcb6e2b3d9d480d> , <https://astrea.linkeddata.es/shapes#a20794a95f584e81f93d5ebbfcb3c3e2> , <https://astrea.linkeddata.es/shapes#803087e7a079cbb35fa33f3cfefb1277> , <https://astrea.linkeddata.es/shapes#ae0503360421b9ed371b20ec58630c86> , <https://astrea.linkeddata.es/shapes#20e8e16a9001cf8b9ddffada139db08b> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#ab44a05ccd9e58adeb09a22f6cd3f35a> , <https://astrea.linkeddata.es/shapes#0e30d071723196d7da099894222eaf61> , <https://astrea.linkeddata.es/shapes#3bb597082dbd293b60b7270b0c71b8cf> , <https://astrea.linkeddata.es/shapes#47ef07b62d1973e509922536d72e2faa> , <https://astrea.linkeddata.es/shapes#7319538eddf9cf7aa0cf4f21e7cc167c> , <https://astrea.linkeddata.es/shapes#0505ca50e7baf40070149c0d06c704cd> , <https://astrea.linkeddata.es/shapes#588c5f8bd04036e45eefb3c615d83573> , <https://astrea.linkeddata.es/shapes#a0bb35fc8e71afc8ae4d0183d5d0ae24> , <https://astrea.linkeddata.es/shapes#a6fac1385c91bcfef6833b82411f9517> , <https://astrea.linkeddata.es/shapes#bb4a8b1b903a166c41049e0bbe5c1e59> , <https://astrea.linkeddata.es/shapes#987dc33bb0e8ddedf8e72b6715c1c7eb> , <https://astrea.linkeddata.es/shapes#178eaf7780c883626711ccda5e1919d6> , <https://astrea.linkeddata.es/shapes#51480cf160c2cf736fc022fbc3955890> , <https://astrea.linkeddata.es/shapes#14af07d3c7d8da939663df65b19b6319> , <https://astrea.linkeddata.es/shapes#b0dc527a1b574758bc9ac08320a2f090> , <https://astrea.linkeddata.es/shapes#b0fd000cb074c2b8536f0d00d3e2d852> , <https://astrea.linkeddata.es/shapes#67806f993b4f2a2d6bae89cbe873ec59> , <https://astrea.linkeddata.es/shapes#9ea65395ba444f042b5283c6b13b8c3e> , <https://astrea.linkeddata.es/shapes#f924abec20290e40fc22fe9a80402393> , <https://astrea.linkeddata.es/shapes#6106feb258bb31526d3f7c16cfae92dd> , <https://astrea.linkeddata.es/shapes#77ddf7746a48f15057084e414da82764> , <https://astrea.linkeddata.es/shapes#ea7ba5ba84fbdb411a309a7eb43f4b30> , <https://astrea.linkeddata.es/shapes#8a02e00521f7ab40977e430a93d9f619> , <https://astrea.linkeddata.es/shapes#3bd02ffd0b63fd4f2c812c0fccdb4143> , <https://astrea.linkeddata.es/shapes#ae5d921543067986447f603fdf32f56c> , <https://astrea.linkeddata.es/shapes#f6ffb64e2fb8ba560a7e186c55c0a949> , <https://astrea.linkeddata.es/shapes#bb4f5490195d9bffe6705e9c10e46a0e> , <https://astrea.linkeddata.es/shapes#ae333e258443a78b737b150a28ff9515> , <https://astrea.linkeddata.es/shapes#616a4873148fe60dafb9928463272558> , <https://astrea.linkeddata.es/shapes#34681e75d022ca5e8d6fca0b353fcad7> , <https://astrea.linkeddata.es/shapes#ca42d1520ff5383f1761f4899e53a81d> , <https://astrea.linkeddata.es/shapes#1da2369b4fae08b9ec533b951e3b6c23> , <https://astrea.linkeddata.es/shapes#4d40d525deba58bbebed164f2f81c04c> , <https://astrea.linkeddata.es/shapes#4b1f437da3c4e6ffa3c5f16e5dd22c02> , <https://astrea.linkeddata.es/shapes#d19b3cc0c0c1a9ab7e477919b6fbd894> , <https://astrea.linkeddata.es/shapes#451c451f5db847a26aacc0a44b6ddc88> , <https://astrea.linkeddata.es/shapes#24a8d25bea8b13e66ce7d76398ac116f> , <https://astrea.linkeddata.es/shapes#7558699cc735bf805d7ea5605349caa6> , <https://astrea.linkeddata.es/shapes#41751b1b1df1e8db7836484e3d06c4ba> , <https://astrea.linkeddata.es/shapes#870bef88febb805168fd329f7b7128ea> , <https://astrea.linkeddata.es/shapes#b7c7fa5de45b22703a8ceada8075efcc> , <https://astrea.linkeddata.es/shapes#bad5bc609a3861dd5cb2f3bbcf9f64dd> , <https://astrea.linkeddata.es/shapes#15c8c4ffea28c6471fc82fa0d0a52fc5> , <https://astrea.linkeddata.es/shapes#63ca1689887df7d69ee468e47b2ddc9e> , <https://astrea.linkeddata.es/shapes#2a0cf70f2fcbd4c2224419be49e7de32> , <https://astrea.linkeddata.es/shapes#e64425a5e89a96981f8a86dee2e237bf> , <https://astrea.linkeddata.es/shapes#58433d8f995662e4f9f3cd11e99330c1> , <https://astrea.linkeddata.es/shapes#e66ab4456056872a4a23c2d0dbbe0b20> , <https://astrea.linkeddata.es/shapes#e9e05d4fd4b83ee0de361fea70322ff0> , <https://astrea.linkeddata.es/shapes#b8128fbbf0c15165ce8d557dd22760c1> , <https://astrea.linkeddata.es/shapes#23cb356b0fac8fb9cd61858ea83ddbfd> , <https://astrea.linkeddata.es/shapes#7da1caa3e45b3d497bc85f336f9b6358> , <https://astrea.linkeddata.es/shapes#f2a292fe3d5f10de5262461f6507c80a> , <https://astrea.linkeddata.es/shapes#5f0e872634302cc9a7b5a6576942e75b> , <https://astrea.linkeddata.es/shapes#67ddea7e967b4ac123491275f5e5b36e> , <https://astrea.linkeddata.es/shapes#d9891633922cc321135aca72b04860a0> , <https://astrea.linkeddata.es/shapes#d8d4768641291a62627ff989d12c5bc4> , <https://astrea.linkeddata.es/shapes#ad914b1baaae43cb01a818c1a8c9f003> , <https://astrea.linkeddata.es/shapes#d81b2141560c9ae57176951663912471> , <https://astrea.linkeddata.es/shapes#042aa38e6fcc0623de8a80d457f7e111> , <https://astrea.linkeddata.es/shapes#da14d60e89d1bdb4bb2e04e5796e775e> , <https://astrea.linkeddata.es/shapes#c6fa494d07984596aaf900224d0a7a93> , <https://astrea.linkeddata.es/shapes#faeeb6444c2ed08c40ecc1880be289ca> , <https://astrea.linkeddata.es/shapes#cfb88afd5e888abc2dabfeef10136248> , <https://astrea.linkeddata.es/shapes#a7b9469acd2c58a72578c220a60c7bbc> , <https://astrea.linkeddata.es/shapes#b2197dd24eba3754013a583d627372fa> , <https://astrea.linkeddata.es/shapes#95f8c442a616e2a148cb00346dde448f> , <https://astrea.linkeddata.es/shapes#049e3ab0c9af760bc0c796da5d77e81f> , <https://astrea.linkeddata.es/shapes#865bb7a6c1daf9f58b76e2a9371f02ec> , <https://astrea.linkeddata.es/shapes#7c7d02660fbdfb116cf2bfa5108aca35> , <https://astrea.linkeddata.es/shapes#939b06a962aac3b00f2f76baed339737> , <https://astrea.linkeddata.es/shapes#62b0ff2adb380366aba593c46dae4c0b> , <https://astrea.linkeddata.es/shapes#1811b6dc2fca973b00def14641c4564b> , <https://astrea.linkeddata.es/shapes#953690ce581349704ddcb80a9b2b0718> , <https://astrea.linkeddata.es/shapes#657b6c5ed4e1a6d42c1de87b759c059d> , <https://astrea.linkeddata.es/shapes#fa3e86d505c7c032cef8f60e29a25533> , <https://astrea.linkeddata.es/shapes#84c56759e12f3bfc0f40f8f735843a60> , <https://astrea.linkeddata.es/shapes#fdfe9a56f48c381791e900a26411ccb9> , <https://astrea.linkeddata.es/shapes#067014565ecdc68eef8ef4c8a6e47e33> , <https://astrea.linkeddata.es/shapes#43deb861964499543145cca5ab433a72> , <https://astrea.linkeddata.es/shapes#929b8277b0694de216373a5ca5952fbe> , <https://astrea.linkeddata.es/shapes#e729da3944f0a58fb5f4fec6126ca4e5> , <https://astrea.linkeddata.es/shapes#e99c608768d1a21143d8c4cb414661c6> , <https://astrea.linkeddata.es/shapes#38e1536b72babc1a393bbfc37d7a86eb> , <https://astrea.linkeddata.es/shapes#dc7b27d0e5f224b802f0b7b175e0a4b3> , <https://astrea.linkeddata.es/shapes#c2bc6bfe31e781d8fbb8fb6c2de6ab09> , <https://astrea.linkeddata.es/shapes#0c5778f091ec41f2897a219d1bfd81c1> , <https://astrea.linkeddata.es/shapes#7305432a471ed1d11253489f0fc84374> , <https://astrea.linkeddata.es/shapes#541a26accb47b4f6b417d0db2bd4b1a7> , <https://astrea.linkeddata.es/shapes#51e23a13c2af27a1ad641cea014477e2> , <https://astrea.linkeddata.es/shapes#144fffe9ac46b0f52df471213997f639> , <https://astrea.linkeddata.es/shapes#cbc9b59b9fcb93a25f61dfe9e028c80b> , <https://astrea.linkeddata.es/shapes#c4b46ec506642be966163003a90643fe> , <https://astrea.linkeddata.es/shapes#a03d8f7a201b1544b273c30544ce5305> , <https://astrea.linkeddata.es/shapes#05e1dc08494ca575258e7d6b458c0207> , <https://astrea.linkeddata.es/shapes#b942bb091c29f9f4539e06baaa1ac445> , <https://astrea.linkeddata.es/shapes#c2dc5756363b84e54d58dbb05652e61d> , <https://astrea.linkeddata.es/shapes#afac1c5de953a17c4e5c2bb08be05008> , <https://astrea.linkeddata.es/shapes#814b6c977614745fb6acb21ac9b60b04> , <https://astrea.linkeddata.es/shapes#21434c0c7d9e24de6b6e95555977b21b> , <https://astrea.linkeddata.es/shapes#77857931553392aa7fe21f1fba7c90c9> , <https://astrea.linkeddata.es/shapes#e91558cbd85f5b49aca9aad03a7c80c4> , <https://astrea.linkeddata.es/shapes#b72119c1190e493218981432972237ca> , <https://astrea.linkeddata.es/shapes#d142e9a2bd45751f91749b83ff5505f7> , <https://astrea.linkeddata.es/shapes#f9dca12d4b2c7d397549c08eb93e8826> , <https://astrea.linkeddata.es/shapes#ea2e306b661eb25874c5d8e24c19b318> , <https://astrea.linkeddata.es/shapes#44ba021dbc85d4374c9f187c109bffdb> , <https://astrea.linkeddata.es/shapes#d6308c5f50c5ae918d70f1aa6ada2e3d> , <https://astrea.linkeddata.es/shapes#1fae42385bbb65bf26cf1c2f772eb29b> , <https://astrea.linkeddata.es/shapes#53c6ffeeacc7cce501b3c9bdad7efb76> , <https://astrea.linkeddata.es/shapes#353e4a73ce0be33d434cb9d7a146dd22> , <https://astrea.linkeddata.es/shapes#32e2dd89c6b5519472585b01a6bfb179> , <https://astrea.linkeddata.es/shapes#44c2c750d7389910d03cfcdc10ae54bf> , <https://astrea.linkeddata.es/shapes#888ddee6365d23a47d0a0095327c6e04> , <https://astrea.linkeddata.es/shapes#c7992661b604313f1d85a70aea6a0619> , <https://astrea.linkeddata.es/shapes#2df100945047ac5b813fe3646f6cf23c> , <https://astrea.linkeddata.es/shapes#7ef9988faf1dea4b0c5871aa2e8f0151> , <https://astrea.linkeddata.es/shapes#2a14d5794417358457c0ba723a475b98> , <https://astrea.linkeddata.es/shapes#b797a66be398e4da2fd31941bf87ca6d> , <https://astrea.linkeddata.es/shapes#bd575c567510867c637ca5bccdd7d96e> , <https://astrea.linkeddata.es/shapes#e11de09f0896cf883d3723efcfba2229> , <https://astrea.linkeddata.es/shapes#f07724b32364b882211fd5e8411a4e0c> , <https://astrea.linkeddata.es/shapes#b883969949b06dba3b9b83ee08adf8ba> , <https://astrea.linkeddata.es/shapes#5099bfef468f98ebf6ecfe4ddd272d91> , <https://astrea.linkeddata.es/shapes#4754d29483b8116ecf5f1e114f2159ab> , <https://astrea.linkeddata.es/shapes#9be47b0673e19d91aec8c87c2a425ec3> , <https://astrea.linkeddata.es/shapes#44296187b356d6bf9f4b452e4ce1f46b> , <https://astrea.linkeddata.es/shapes#fa10e315094df89ca2c74627e940e474> , <https://astrea.linkeddata.es/shapes#efa85ce15ca8d676ca6c5478aa0b8ed6> , <https://astrea.linkeddata.es/shapes#29caf22bc9f55b93fc6b186f2be470ec> , <https://astrea.linkeddata.es/shapes#85329ae717eb14a021a00027a7ef35f2> , <https://astrea.linkeddata.es/shapes#4eacd4169bc31fa358a71d9b84c8e9d8> , <https://astrea.linkeddata.es/shapes#10a2b68e090fc22a4421947526be1e64> , <https://astrea.linkeddata.es/shapes#f72e7f865e1ba19aa481013d8355057a> , <https://astrea.linkeddata.es/shapes#ad805b7b3ee51339832b89b16cf75a6f> , <https://astrea.linkeddata.es/shapes#e0c369dbec9c02b2e7d2f4a770de2926> , <https://astrea.linkeddata.es/shapes#6019ec2eb6fb334f464b4a37658b1851> , <https://astrea.linkeddata.es/shapes#17668bd80869119d43d47f7aa5c29e5d> , <https://astrea.linkeddata.es/shapes#25ac5eac46bebe87f3ca137d4a81657f> , <https://astrea.linkeddata.es/shapes#66ace442617e5b3218217619092aeea8> , <https://astrea.linkeddata.es/shapes#ef5309afafae88506dc6630402c37bbb> , <https://astrea.linkeddata.es/shapes#84d6770f99658421473e638086c29202> , <https://astrea.linkeddata.es/shapes#09ce7e2467681ec8b429277fee94b517> , <https://astrea.linkeddata.es/shapes#81b31d47031134dc456fc4bca62ee72c> , <https://astrea.linkeddata.es/shapes#327a3d9ec7f3a3756883bbeb405e05cd> , <https://astrea.linkeddata.es/shapes#c5769f2aff22af320683c59b4d444c09> , <https://astrea.linkeddata.es/shapes#0aa707aade0e3fd7e94280c3cee3ec6c> , <https://astrea.linkeddata.es/shapes#3de5bbb982e136abd720b765012a4e2e> , <https://astrea.linkeddata.es/shapes#1883afe0cee837205de41653bb427baf> , <https://astrea.linkeddata.es/shapes#57fa74f2cee6dfae669fa9d7644f7fad> , <https://astrea.linkeddata.es/shapes#d4c5eef94c7b82fe42214f5895a60e60> , <https://astrea.linkeddata.es/shapes#1c26e8d28a4e9f1c65470cd5e4ebfdba> , <https://astrea.linkeddata.es/shapes#142ec29b0150c10b841a256d92af7689> , <https://astrea.linkeddata.es/shapes#2e519bcb28dedc9c8343f9d4fb37069c> , <https://astrea.linkeddata.es/shapes#d22300234d08af75e3e1b5c37972e483> , <https://astrea.linkeddata.es/shapes#8d1ac68bf62f4dc5b0cfbd3e6a2a68fc> , <https://astrea.linkeddata.es/shapes#077c0b6d40e75b34709a9b919cdbebe3> , <https://astrea.linkeddata.es/shapes#48cfeedcde6ba04c7c20d74c0425b96f> , <https://astrea.linkeddata.es/shapes#0c878e2a0dc925b4dd7d0a1afacba93a> , <https://astrea.linkeddata.es/shapes#2d391ff50efb3d89b41a50e4b35bdfeb> , <https://astrea.linkeddata.es/shapes#72ebe38a3b62b4d31c90eada596b9662> , <https://astrea.linkeddata.es/shapes#b086df60e1876dc2778d417a19745ad2> , <https://astrea.linkeddata.es/shapes#55d3267549f93a4d1f65f0163e405642> , <https://astrea.linkeddata.es/shapes#26b294fa3b68e5bf90fcc79c8251567f> , <https://astrea.linkeddata.es/shapes#596f63b098e877f791c245d8942abe63> , <https://astrea.linkeddata.es/shapes#58ceab21b36063cb932ee19fe9ad7181> , <https://astrea.linkeddata.es/shapes#b96a644fff498cd555d8201e87f70bae> , <https://astrea.linkeddata.es/shapes#6a61014094e09b25adb6ec4967426493> , <https://astrea.linkeddata.es/shapes#4360875dc7488ab8d093a5b60c3b96e4> , <https://astrea.linkeddata.es/shapes#5b4481bc544bb6ff1a519065032c795c> , <https://astrea.linkeddata.es/shapes#e06948bf71261f211e460227d40b5bf9> , <https://astrea.linkeddata.es/shapes#f032ba36da9bb6d47e019e00821a319b> , <https://astrea.linkeddata.es/shapes#3b521a534e21acc5a30fedfc4e1a8e9a> , <https://astrea.linkeddata.es/shapes#6ace7559c09873d57bb26d2909a563c6> , <https://astrea.linkeddata.es/shapes#8e18777de8cc3d7588c950f10b219abb> , <https://astrea.linkeddata.es/shapes#144956ced0d847e500901da16758ca1f> , <https://astrea.linkeddata.es/shapes#ad3d81a1d5c153dc6703db451160bd73> , <https://astrea.linkeddata.es/shapes#38804a457ccc3ab9401952992e98e43f> , <https://astrea.linkeddata.es/shapes#872fdf9f1718dc1f61bed35b23ed9f27> , <https://astrea.linkeddata.es/shapes#844694d979feb9f4fe0f7a325e4b7c6f> , <https://astrea.linkeddata.es/shapes#e1b2c05b794c01117d1f3dc32de435e1> , <https://astrea.linkeddata.es/shapes#4fbefd9c1768a6cccae9b0736c9825ac> , <https://astrea.linkeddata.es/shapes#41ae78f28d89f4355216d5dbfa12b74e> , <https://astrea.linkeddata.es/shapes#3737bfb0a88b6a818bf6fa905f98d24a> , <https://astrea.linkeddata.es/shapes#171e1170547d5a569b4ad6d585aa0a43> , <https://astrea.linkeddata.es/shapes#16eaa9eb881cf918acc351f3b60f292e> , <https://astrea.linkeddata.es/shapes#8ba3523f682e8fe6583b51efd582dcf0> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/1730027736> , <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/800486709> , <https://astrea.linkeddata.es/report/0455406837> , <https://astrea.linkeddata.es/report/02113868144> , <https://astrea.linkeddata.es/report/01598422222> .
+
+<https://astrea.linkeddata.es/shapes#41751b1b1df1e8db7836484e3d06c4ba>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "The duration of a version, in seconds." , "duration" ;
+        sh:datatype       xsd:int ;
+        sh:description    "The duration of a version, in seconds." ;
+        sh:maxInclusive   2147483647 ;
+        sh:minInclusive   -2147483648 ;
+        sh:name           "duration" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/po/duration> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#38804a457ccc3ab9401952992e98e43f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "genre" , "\n\t\tRelates a programme to a particular genre.\n\t" ;
+        sh:class          <http://purl.org/ontology/po/Genre> ;
+        sh:description    "\n\t\tRelates a programme to a particular genre.\n\t" ;
+        sh:name           "genre" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/genre> .
+
+<https://astrea.linkeddata.es/shapes#16eaa9eb881cf918acc351f3b60f292e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :domainTimeLine .
+
+<https://astrea.linkeddata.es/shapes#f2a292fe3d5f10de5262461f6507c80a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "producer" , "Relates a programme to its producer - the manager of an event, show, or other work, usually the individual in charge of finance, personnel, and other non-artistic aspects in the development of commercials, plays, movies, and other works" ;
+        sh:class          foaf:Agent ;
+        sh:description    "Relates a programme to its producer - the manager of an event, show, or other work, usually the individual in charge of finance, personnel, and other non-artistic aspects in the development of commercials, plays, movies, and other works" ;
+        sh:name           "producer" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/producer> .
+
+<https://astrea.linkeddata.es/shapes#66ace442617e5b3218217619092aeea8>
+        a               sh:PropertyShape ;
+        rdfs:label      "literal factor" , "\n\t\tRelates an event to a factor which can be described as a literal. This property\n\t\tshould not be used as-is, but should be subsumed by other, more specific, properties\n\t\t(like an hypothetic :weatherCelsius, linking an event to a temperature).\n\t\t" ;
+        sh:description  "\n\t\tRelates an event to a factor which can be described as a literal. This property\n\t\tshould not be used as-is, but should be subsumed by other, more specific, properties\n\t\t(like an hypothetic :weatherCelsius, linking an event to a temperature).\n\t\t" ;
+        sh:equals       event:hasLiteralFactor ;
+        sh:name         "literal factor" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         event:literal_factor .
+
+<https://astrea.linkeddata.es/shapes#596f63b098e877f791c245d8942abe63>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Web" ;
+        sh:description    "\n\t\tServices that use a Web medium.\n\t" ;
+        sh:name           "Web" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/po/Web> .
+
+<https://astrea.linkeddata.es/shapes#2e519bcb28dedc9c8343f9d4fb37069c>
+        a               sh:NodeShape ;
+        sh:description  "\n        Classification of an episode version's region holding speech content.\n    " ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/po/SpeechSegment> .
+
+<https://astrea.linkeddata.es/shapes#48cfeedcde6ba04c7c20d74c0425b96f>
+        a            sh:PropertyShape ;
+        rdfs:label   "produced in" ;
+        sh:equals    event:produced_in ;
+        sh:name      "produced in" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:producedIn .
+
+<https://astrea.linkeddata.es/shapes#7c7d02660fbdfb116cf2bfa5108aca35>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "Ontology"@en-gb ;
+        sh:description    "Graphs that contain ontologies in the store are declared to be of type provenance:Ontology. The graph name in the store is identical to the ontology IRI."@en-gb ;
+        sh:name           "Ontology"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#953b687f55f4ad6f443b4b40b5f16b9d> ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/provenance/Ontology> .
+
+<https://astrea.linkeddata.es/shapes#63ca1689887df7d69ee468e47b2ddc9e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Version" ;
+        sh:description    "\n\t\tA particular version of an episode.\n\t\tSuch versions include shortened ones, audio described ones\n\t\tor ones that holds sign language.\n\t\tThe version is associated to a timeline.\n\t" ;
+        sh:name           "Version" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#eb5932d3b792d88efd3a3522651a9873> , <https://astrea.linkeddata.es/shapes#b942bb091c29f9f4539e06baaa1ac445> , <https://astrea.linkeddata.es/shapes#23cb356b0fac8fb9cd61858ea83ddbfd> ;
+        sh:targetClass    <http://purl.org/ontology/po/Version> .
+
+<https://astrea.linkeddata.es/shapes#77857931553392aa7fe21f1fba7c90c9>
+        a               sh:PropertyShape ;
+        rdfs:label      "ends at (date/time)" , "A subproperty of :endsAt, allowing to address the end of an interval as a date/time" ;
+        sh:datatype     xsd:dateTime ;
+        sh:description  "A subproperty of :endsAt, allowing to address the end of an interval as a date/time" ;
+        sh:name         "ends at (date/time)" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :endsAtDateTime ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#1da2369b4fae08b9ec533b951e3b6c23>
+        a               sh:NodeShape ;
+        rdfs:label      "Factor" ;
+        sh:description  "\n\t\tEverything used as a factor in an event\n\t\t" ;
+        sh:name         "Factor" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#a0bb35fc8e71afc8ae4d0183d5d0ae24> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#62b0ff2adb380366aba593c46dae4c0b> ;
+        sh:targetClass  event:Factor .
+
+<https://astrea.linkeddata.es/shapes#8a6b3c17bb3ff36fa2fe49388c3ec378>
+        a         sh:PropertyShape ;
+        sh:class  :UniformSamplingWindowingMap .
+
+<https://astrea.linkeddata.es/shapes#4fbefd9c1768a6cccae9b0736c9825ac>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "public"@en-gb , "This predicate allows the distinction of ontologies that are appropriate for publishing from those ones that are currently kept internal, e.g., for testing purposes."@en-gb ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "This predicate allows the distinction of ontologies that are appropriate for publishing from those ones that are currently kept internal, e.g., for testing purposes."@en-gb ;
+        sh:name           "public"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/public> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#23cb356b0fac8fb9cd61858ea83ddbfd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "aspect ratio" , "\n\t\tThe aspect ration of a particular version.\n\t" ;
+        sh:datatype       xsd:string ;
+        sh:description    "\n\t\tThe aspect ration of a particular version.\n\t" ;
+        sh:name           "aspect ratio" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/po/aspect_ratio> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#44c2c750d7389910d03cfcdc10ae54bf>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "track" , "Associates a music segment with a track, as defined in MO" ;
+        sh:class          <http://purl.org/ontology/mo/Track> ;
+        sh:description    "Associates a music segment with a track, as defined in MO" ;
+        sh:name           "track" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/track> .
+
+<https://astrea.linkeddata.es/shapes#bc04698cc9893bf3e0631420cd9e72e7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "version"@en-gb , "The version of the graph."@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "The version of the graph."@en-gb ;
+        sh:name           "version"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/version> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#4754d29483b8116ecf5f1e114f2159ab>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:hasProduct .
+
+<https://astrea.linkeddata.es/shapes#5be2ecd5c7dd0790831a39f0242a12f2>
+        a            sh:PropertyShape ;
+        rdfs:label   "agent in" ;
+        sh:equals    event:agent_in ;
+        sh:name      "agent in" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:isAgentIn .
+
+<https://astrea.linkeddata.es/shapes#310ce7938e9e4c2b066743b0e4294202>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "TV" ;
+        sh:description    "\n\t\tServices that use a television medium.\n\t" ;
+        sh:name           "TV" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#59d5b293329a31b9b899a6bc4b8e5921> ;
+        sh:targetClass    <http://purl.org/ontology/po/TV> .
+
+<https://astrea.linkeddata.es/shapes#b2197dd24eba3754013a583d627372fa>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Genre" ;
+        sh:description    "\n        An anchor point for a programmes' genre taxonomy, e.g. 'Drama'/'Biographical'.\n\t" ;
+        sh:name           "Genre" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/po/Genre> .
+
+<https://astrea.linkeddata.es/shapes#53c6ffeeacc7cce501b3c9bdad7efb76>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Clip" ;
+        sh:description    "\n        A particular clip, e.g. `Clip of Top Gear, first series'\n    " ;
+        sh:name           "Clip" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#144fffe9ac46b0f52df471213997f639> , <https://astrea.linkeddata.es/shapes#3b521a534e21acc5a30fedfc4e1a8e9a> ;
+        sh:targetClass    <http://purl.org/ontology/po/Clip> .
+
+<https://astrea.linkeddata.es/shapes#077c0b6d40e75b34709a9b919cdbebe3>
+        a            sh:PropertyShape ;
+        rdfs:label   "factor of" ;
+        sh:equals    event:factor_of ;
+        sh:name      "factor of" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:isFactorOf .
+
+<https://astrea.linkeddata.es/shapes#ed45fcec721d4ea91ff6bb620fc3de46>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Place" ;
+        sh:description    "A physical place" ;
+        sh:name           "Place" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/po/Place> , geo:Feature .
+
+<https://astrea.linkeddata.es/shapes#929b8277b0694de216373a5ca5952fbe>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hopSize .
+
+<https://astrea.linkeddata.es/shapes#888ddee6365d23a47d0a0095327c6e04>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "AudioDescribedVersion" ;
+        sh:description    "\n\t\tA version holding an audio description.\n\t" ;
+        sh:name           "AudioDescribedVersion" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/po/AudioDescribedVersion> .
+
+<https://astrea.linkeddata.es/shapes#c7992661b604313f1d85a70aea6a0619>
+        a               sh:PropertyShape ;
+        rdfs:label      "sub-event" , "\n\t\tThis property provides a way to split a complex event (for example, a performance involving several \n\t\tmusicians) into simpler ones (one event per musician).\n\t\t" ;
+        sh:class        event:Event ;
+        sh:description  "\n\t\tThis property provides a way to split a complex event (for example, a performance involving several \n\t\tmusicians) into simpler ones (one event per musician).\n\t\t" ;
+        sh:equals       event:hasSubEvent ;
+        sh:name         "sub-event" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         event:sub_event .
+
+<https://astrea.linkeddata.es/shapes#c4b46ec506642be966163003a90643fe>
+        a               sh:PropertyShape ;
+        rdfs:label      "range timeline" , "associates a timeline map to its range timeline" ;
+        sh:class        :TimeLine ;
+        sh:description  "associates a timeline map to its range timeline" ;
+        sh:maxCount     1 ;
+        sh:name         "range timeline" ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         :rangeTimeLine .
+
+<https://astrea.linkeddata.es/shapes#e11de09f0896cf883d3723efcfba2229>
+        a            sh:PropertyShape ;
+        sh:equals    time:intervalEquals ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :equals .
+
+<https://astrea.linkeddata.es/shapes#e729da3944f0a58fb5f4fec6126ca4e5>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :atDateTime .
+
+<https://astrea.linkeddata.es/shapes#d6308c5f50c5ae918d70f1aa6ada2e3d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "news reader" , "Relates a programme to its news reader" ;
+        sh:class          foaf:Agent ;
+        sh:description    "Relates a programme to its news reader" ;
+        sh:name           "news reader" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/news_reader> .
+
+<https://astrea.linkeddata.es/shapes#e91558cbd85f5b49aca9aad03a7c80c4>
+        a               sh:NodeShape ;
+        rdfs:label      "MusicSegment" ;
+        sh:description  "\n\t\tClassification of an episode version's region corresponding to a musical track being played.\n\t" ;
+        sh:name         "MusicSegment" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#44c2c750d7389910d03cfcdc10ae54bf> ;
+        sh:targetClass  <http://purl.org/ontology/po/MusicSegment> .
+
+<https://astrea.linkeddata.es/shapes#c2dc5756363b84e54d58dbb05652e61d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "CreativeWorkGraph"@en-gb ;
+        sh:description    "The class of named graphs which contain the metadata for the CreativeWorks. For example all the metadata for a news story provided by a CMS will be contained in a single CreativeWorkGraph instance."@en-gb ;
+        sh:name           "CreativeWorkGraph"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/provenance/CreativeWorkGraph> .
+
+<https://astrea.linkeddata.es/shapes#a7b9469acd2c58a72578c220a60c7bbc>
+        a               sh:PropertyShape ;
+        rdfs:label      "begins at" , "refers to the beginning of a time interval, through an explicit datatype. time:hasBeginning can be used as well, if you want to associate the beginning of the interval to an explicit time point resource" ;
+        sh:description  "refers to the beginning of a time interval, through an explicit datatype. time:hasBeginning can be used as well, if you want to associate the beginning of the interval to an explicit time point resource" ;
+        sh:name         "begins at" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :start .
+
+<https://astrea.linkeddata.es/shapes#616a4873148fe60dafb9928463272558>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 :timeline ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  :AbstractTimeLine ] .
+
+<https://astrea.linkeddata.es/shapes#d225237d9f8f4a1d79d4d50882eb80eb>
+        a               sh:NodeShape ;
+        rdfs:label      "Event" ;
+        sh:description  "\n\t\tAn arbitrary classification of a space/time region, by a \n\t\tcognitive agent. An event may have actively participating agents,\n\t\tpassive factors, products, and a location in space/time.\n\t\t" ;
+        sh:name         "Event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c7992661b604313f1d85a70aea6a0619> , <https://astrea.linkeddata.es/shapes#fa10e315094df89ca2c74627e940e474> , <https://astrea.linkeddata.es/shapes#2d391ff50efb3d89b41a50e4b35bdfeb> , <https://astrea.linkeddata.es/shapes#b797a66be398e4da2fd31941bf87ca6d> ;
+        sh:targetClass  event:Event .
+
+<https://astrea.linkeddata.es/shapes#987dc33bb0e8ddedf8e72b6715c1c7eb>
+        a               sh:PropertyShape ;
+        rdfs:label      "Deprecated property, left here for historical reasons" ;
+        sh:description  "Deprecated property, left here for historical reasons" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/ontology/po/broadcasted_on> .
+
+<https://astrea.linkeddata.es/shapes#541a26accb47b4f6b417d0db2bd4b1a7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "participant" , "Relates a programme to one of its participants" ;
+        sh:class          foaf:Agent ;
+        sh:description    "Relates a programme to one of its participants" ;
+        sh:name           "participant" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/participant> .
+
+<https://astrea.linkeddata.es/shapes#b72119c1190e493218981432972237ca>
+        a               sh:PropertyShape ;
+        rdfs:label      "ends at" , "refers to the end of a time interval, through an explicit datatype. time:hasEnd can be used as well, if you want to associate the end of the interval to an explicit time point resource" ;
+        sh:description  "refers to the end of a time interval, through an explicit datatype. time:hasEnd can be used as well, if you want to associate the end of the interval to an explicit time point resource" ;
+        sh:name         "ends at" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :end .
+
+<https://astrea.linkeddata.es/shapes#171e1170547d5a569b4ad6d585aa0a43>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 :timeline ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  :AbstractTimeLine ] .
+
+<https://astrea.linkeddata.es/shapes#a3e81beceac4935c3e904696e03b0910>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 event:produced_in ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  event:Event ] .
+
+<https://astrea.linkeddata.es/shapes#9be47b0673e19d91aec8c87c2a425ec3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "performer" , "Relates a programme to an entertainer who performs a dramatic or musical work for audience" ;
+        sh:class          foaf:Agent ;
+        sh:description    "Relates a programme to an entertainer who performs a dramatic or musical work for audience" ;
+        sh:name           "performer" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/performer> .
+
+<https://astrea.linkeddata.es/shapes#cbc9b59b9fcb93a25f61dfe9e028c80b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Category" ;
+        sh:description    "\n        A category provides a way of classifying a set of programmes. Such classifications\n        can be performed according to multiple dimensions and taxonomies, e.g. genre, format, places, people, subjects...\n    " ;
+        sh:name           "Category" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/po/Category> .
+
+<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  foaf:Agent .
+
+<https://astrea.linkeddata.es/shapes#95f8c442a616e2a148cb00346dde448f>
+        a            sh:PropertyShape ;
+        sh:equals    time:intervalMeets ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :meets .
+
+<https://astrea.linkeddata.es/shapes#d8d4768641291a62627ff989d12c5bc4>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :rangeTimeLine .
+
+<https://astrea.linkeddata.es/shapes#5688420055ed3fbb353808a0a050fed9>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :sampleRate .
+
+<https://astrea.linkeddata.es/shapes#a738a8ba4a110998c5233f5befd7720a>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/ontology/po/NationalRadio> .
+
+<https://astrea.linkeddata.es/shapes#58ceab21b36063cb932ee19fe9ad7181>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :domainTimeLine .
+
+<https://astrea.linkeddata.es/shapes#870bef88febb805168fd329f7b7128ea>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "place" , "\n        Relates a programme to a place (e.g. `London')\n    " ;
+        sh:class          <http://purl.org/ontology/po/Place> ;
+        sh:description    "\n        Relates a programme to a place (e.g. `London')\n    " ;
+        sh:name           "place" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/place> .
+
+<https://astrea.linkeddata.es/shapes#4360875dc7488ab8d093a5b60c3b96e4>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      event:hasLiteralFactor .
+
+<https://astrea.linkeddata.es/shapes#424e114c46d16ea901b603aaec857139>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/ontology/po/TV> .
+
+<https://astrea.linkeddata.es/shapes#8e18777de8cc3d7588c950f10b219abb>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/ontology/po/Clip> .
+
+<https://astrea.linkeddata.es/shapes#2a14d5794417358457c0ba723a475b98>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "long synopsis" , "\n\t\tA long synopsis of a series, brand or episode.\n\t\tSub-property of po:synopsis.\n\t" ;
+        sh:description    "\n\t\tA long synopsis of a series, brand or episode.\n\t\tSub-property of po:synopsis.\n\t" ;
+        sh:name           "long synopsis" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/po/long_synopsis> .
+
+<https://astrea.linkeddata.es/shapes#bd575c567510867c637ca5bccdd7d96e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "Dataset"@en-gb ;
+        sh:description    "Dataset is a single graph which contains a collection of things that is managed together, e.g., \"the dataset of the BBC's News Regions\". The management of datasets involves editing RDF files and publishing them to the triplestore in a single action. This requires a good knowledge of semantic technologies therefore datasets are managed by experts."@en-gb ;
+        sh:name           "Dataset"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/provenance/Dataset> .
+
+<https://astrea.linkeddata.es/shapes#da14d60e89d1bdb4bb2e04e5796e775e>
+        a               sh:PropertyShape ;
+        rdfs:label      "factor" , "\n\t\tRelates an event to a passive factor (a tool, an instrument, an abstract cause...)\n\t\t" ;
+        sh:description  "\n\t\tRelates an event to a passive factor (a tool, an instrument, an abstract cause...)\n\t\t" ;
+        sh:equals       event:hasFactor ;
+        sh:name         "factor" ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#eb5932d3b792d88efd3a3522651a9873>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Language of the subtitles embedded in a particular version" , "subtitle language" ;
+        sh:datatype       xsd:string ;
+        sh:description    "Language of the subtitles embedded in a particular version" ;
+        sh:name           "subtitle language" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/po/subtitle_language> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/report/0455406837>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/dc/elements/1.1/" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#1883afe0cee837205de41653bb427baf>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "deprecated"@en-gb , "A predicate to allow hiding of Things so as to not delete them and lose the reference object."@en-gb ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "A predicate to allow hiding of Things so as to not delete them and lose the reference object."@en-gb ;
+        sh:name           "deprecated"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/deprecated> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#bb4f5490195d9bffe6705e9c10e46a0e>
+        a               sh:PropertyShape ;
+        rdfs:label      "at (real)" , "subproperty of :at, having xsd:float as a range" ;
+        sh:datatype     xsd:float ;
+        sh:description  "subproperty of :at, having xsd:float as a range" ;
+        sh:name         "at (real)" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :atReal ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#588c5f8bd04036e45eefb3c615d83573>
+        a                sh:PropertyShape ;
+        rdfs:label       "begins at (integer)" , "A subproperty of :beginsAt, having xsd:int as a range" ;
+        sh:datatype      xsd:int ;
+        sh:description   "A subproperty of :beginsAt, having xsd:int as a range" ;
+        sh:maxInclusive  2147483647 ;
+        sh:minInclusive  -2147483648 ;
+        sh:name          "begins at (integer)" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          :beginsAtInt ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#6a61014094e09b25adb6ec4967426493>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Service" ;
+        sh:description    "\n        A broadcasting service.\n\t\tInstances of this concept include BBC Radio Wales, BBC Radio 4, BBC News, etc.\n        A service is a collection of outlets which contain common material, but with some variations, e.g. by\n        region.\n        Hence, a service may have multiple outlets (po:Outlet), e.g. BBC Radio 4 has BBC Radio 4 LW and BBC Radio 4 FM.\n        A hierarchy of services types is defined within this ontology, e.g. radio and TV.\n        A service that is a master brand only (a service that only commissions programmes, e.g. BBC Switch) should\n        be an instance of the top-level po:Service.\n\t" ;
+        sh:name           "Service" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#47ef07b62d1973e509922536d72e2faa> , <https://astrea.linkeddata.es/shapes#444b7c71c62cff4f2b2d4331cec524ed> , <https://astrea.linkeddata.es/shapes#6019ec2eb6fb334f464b4a37658b1851> , <https://astrea.linkeddata.es/shapes#d7ac9d6712d4cfa5d4a2e83fd0ad7267> , <https://astrea.linkeddata.es/shapes#4eacd4169bc31fa358a71d9b84c8e9d8> ;
+        sh:targetClass    <http://purl.org/ontology/po/Service> .
+
+<https://astrea.linkeddata.es/shapes#e0c369dbec9c02b2e7d2f4a770de2926>
+        a               sh:NodeShape ;
+        rdfs:label      "interval" ;
+        sh:description  "An interval (same as in OWL-Time). Allen's relationships are defined in OWL-Time." ;
+        sh:name         "interval" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ca42d1520ff5383f1761f4899e53a81d> ;
+        sh:targetClass  :Interval , time:ProperInterval .
+
+<https://astrea.linkeddata.es/shapes#f924abec20290e40fc22fe9a80402393>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "DAB" ;
+        sh:description    "\n\t\tDigital Audio Broadcasting\n\t" ;
+        sh:name           "DAB" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/po/DAB> .
+
+<https://astrea.linkeddata.es/shapes#865bb7a6c1daf9f58b76e2a9371f02ec>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "subject" , "\n        Relates a programme to a subject (e.g. `Easter')\n    " ;
+        sh:class          <http://purl.org/ontology/po/Subject> ;
+        sh:description    "\n        Relates a programme to a subject (e.g. `Easter')\n    " ;
+        sh:name           "subject" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/subject> .
+
+<https://astrea.linkeddata.es/shapes#3de5bbb982e136abd720b765012a4e2e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "NationalRadio" ;
+        sh:description    "\n\t\tRadio services aiming at a national coverage.\n\t" ;
+        sh:name           "NationalRadio" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/po/NationalRadio> .
+
+<https://astrea.linkeddata.es/shapes#b942bb091c29f9f4539e06baaa1ac445>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "sound format" , "\n\t\tThe sound format of a particular version.\n\t" ;
+        sh:datatype       xsd:string ;
+        sh:description    "\n\t\tThe sound format of a particular version.\n\t" ;
+        sh:name           "sound format" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/po/sound_format> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#7305432a471ed1d11253489f0fc84374>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "FM" ;
+        sh:description    "\n\t\tThe FM broadcast band\n\t" ;
+        sh:name           "FM" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/po/FM> .
+
+<https://astrea.linkeddata.es/shapes#efa85ce15ca8d676ca6c5478aa0b8ed6>
+        a            sh:PropertyShape ;
+        sh:equals    time:intervalFinishedBy ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :finishedBy .
+
+<https://astrea.linkeddata.es/shapes#ff2039464033e9287f6795c5c70ef371>
+        a               sh:PropertyShape ;
+        rdfs:label      "associates a timeline map to its domain timeline" , "domain timeline" ;
+        sh:class        :TimeLine ;
+        sh:description  "associates a timeline map to its domain timeline" ;
+        sh:maxCount     1 ;
+        sh:name         "domain timeline" ;
+        sh:nodeKind     sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path         :domainTimeLine .
+
+<https://astrea.linkeddata.es/shapes#55d3267549f93a4d1f65f0163e405642>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "executive producer" , "Relates a programme to its executive producer - a producer who is not involved in any technical aspects of the making process, but who is still responsible for the overall production. Typically an executive producer handles business and legal issues" ;
+        sh:class          foaf:Agent ;
+        sh:description    "Relates a programme to its executive producer - a producer who is not involved in any technical aspects of the making process, but who is still responsible for the overall production. Typically an executive producer handles business and legal issues" ;
+        sh:name           "executive producer" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/executive_producer> .
+
+<https://astrea.linkeddata.es/shapes#10a2b68e090fc22a4421947526be1e64>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      dc:title .
+
+<https://astrea.linkeddata.es/shapes#803087e7a079cbb35fa33f3cfefb1277>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "actor" , "Relates a programmes to one of its actors - a person who plays the role of a character" ;
+        sh:class          foaf:Agent ;
+        sh:description    "Relates a programmes to one of its actors - a person who plays the role of a character" ;
+        sh:name           "actor" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/actor> .
+
+<https://astrea.linkeddata.es/shapes#58433d8f995662e4f9f3cd11e99330c1>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :windowLength .
+
+<https://astrea.linkeddata.es/shapes#fa10e315094df89ca2c74627e940e474>
+        a               sh:PropertyShape ;
+        rdfs:label      "agent" , "\n\t\tRelates an event to an active agent (a person, a computer, ... :-) )\n\t\t" ;
+        sh:class        foaf:Agent ;
+        sh:description  "\n\t\tRelates an event to an active agent (a person, a computer, ... :-) )\n\t\t" ;
+        sh:equals       event:hasAgent ;
+        sh:name         "agent" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         event:agent .
+
+<https://astrea.linkeddata.es/shapes#d7ac9d6712d4cfa5d4a2e83fd0ad7267>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "outlet" , "\n\t\tAssociates a service to an outlet, e.g. Radio 4 to Radio 4 LW.\n\t" ;
+        sh:class          <http://purl.org/ontology/po/Outlet> ;
+        sh:description    "\n\t\tAssociates a service to an outlet, e.g. Radio 4 to Radio 4 LW.\n\t" ;
+        sh:name           "outlet" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/outlet> .
+
+<https://astrea.linkeddata.es/shapes#8d1ac68bf62f4dc5b0cfbd3e6a2a68fc>
+        a               sh:NodeShape ;
+        rdfs:label      "discrete interval" ;
+        sh:description  "An interval defined on a discrete timeline, like the one backing a digital signal" ;
+        sh:name         "discrete interval" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :DiscreteInterval .
+
+<https://astrea.linkeddata.es/shapes#ab44a05ccd9e58adeb09a22f6cd3f35a>
+        a               sh:NodeShape ;
+        rdfs:label      "abstract timeline" ;
+        sh:description  "\n    \tAbstract time lines may be used as a backbone for Score, Works, ... \n\tThis allows for TimeLine maps to relate works to a given \n\tperformance (this part was played at this time)." ;
+        sh:name         "abstract timeline" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :AbstractTimeLine .
+
+<https://astrea.linkeddata.es/shapes#f6ffb64e2fb8ba560a7e186c55c0a949>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "credit" , "Relates a programmes to a person who is credited in it" ;
+        sh:class          foaf:Agent ;
+        sh:description    "Relates a programmes to a person who is credited in it" ;
+        sh:name           "credit" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/credit> .
+
+<https://astrea.linkeddata.es/shapes#144956ced0d847e500901da16758ca1f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "person" , "\n        Relates a programme to a person\n    " ;
+        sh:class          <http://purl.org/ontology/po/Person> ;
+        sh:description    "\n        Relates a programme to a person\n    " ;
+        sh:name           "person" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/person> .
+
+<https://astrea.linkeddata.es/shapes#25ac5eac46bebe87f3ca137d4a81657f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "parent series" , "\n\t\tRelates a series to a series constituting it (eg. `Waking the dead').\n\t" ;
+        sh:class          <http://purl.org/ontology/po/Series> ;
+        sh:description    "\n\t\tRelates a series to a series constituting it (eg. `Waking the dead').\n\t" ;
+        sh:name           "parent series" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/parent_series> .
+
+<https://astrea.linkeddata.es/shapes#15c8c4ffea28c6471fc82fa0d0a52fc5>
+        a               sh:NodeShape ;
+        rdfs:label      "Product" ;
+        sh:description  "\n\t\tEverything produced by an event\n\t\t" ;
+        sh:name         "Product" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a3e81beceac4935c3e904696e03b0910> ;
+        sh:targetClass  event:Product .
+
+<https://astrea.linkeddata.es/shapes#84d6770f99658421473e638086c29202>
+        a               sh:NodeShape ;
+        rdfs:label      "shift map" ;
+        sh:description  "a map just shifting one timeline to another" ;
+        sh:name         "shift map" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :ShiftMap .
+
+<https://astrea.linkeddata.es/shapes#11bdff0c5776e2857554682220e63b61>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "Broadcast" ;
+        sh:description    "\n\t\tA broadcast event.\n\t\tSubsumes the event concept defined in\n\t\tthe Event ontology.\n\t\tA broadcast is associated with a service, and with a\n\t\tparticular version of an episode.\n\t" ;
+        sh:name           "Broadcast" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d4c5eef94c7b82fe42214f5895a60e60> , <https://astrea.linkeddata.es/shapes#9ea65395ba444f042b5283c6b13b8c3e> , <https://astrea.linkeddata.es/shapes#41ae78f28d89f4355216d5dbfa12b74e> ;
+        sh:targetClass    <http://purl.org/ontology/po/Broadcast> .
+
+<https://astrea.linkeddata.es/shapes#ab26688bc19a35d7edbfa7c1cc6f5324>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "This property indicates the owner of the data, i.e., the person or CMS who's responsible for managing and governing the data."@en-gb , "owner"@en-gb ;
+        sh:datatype       xsd:anyURI ;
+        sh:description    "This property indicates the owner of the data, i.e., the person or CMS who's responsible for managing and governing the data."@en-gb ;
+        sh:name           "owner"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/owner> ;
+        sh:pattern        "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#953690ce581349704ddcb80a9b2b0718>
+        a               sh:NodeShape ;
+        rdfs:label      "timeline map" ;
+        sh:description  "Allows to map two time lines together" ;
+        sh:name         "timeline map" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c4b46ec506642be966163003a90643fe> , <https://astrea.linkeddata.es/shapes#ff2039464033e9287f6795c5c70ef371> ;
+        sh:targetClass  :TimeLineMap .
+
+<https://astrea.linkeddata.es/shapes#3bd02ffd0b63fd4f2c812c0fccdb4143>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:hasFactor .
+
+<https://astrea.linkeddata.es/shapes#ad805b7b3ee51339832b89b16cf75a6f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/po/> ;
+        rdfs:label        "clip" , "\n        Associates a brand, a series or an episode to a clip.\n    " ;
+        sh:class          <http://purl.org/ontology/po/Clip> ;
+        sh:description    "\n        Associates a brand, a series or an episode to a clip.\n    " ;
+        sh:name           "clip" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/po/clip> .

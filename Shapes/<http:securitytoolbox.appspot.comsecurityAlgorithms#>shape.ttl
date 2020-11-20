@@ -1,0 +1,119 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#2384ec2327e61ce1ae7f92c45e2025e0>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://securitytoolbox.appspot.com/hasNSALevel> .
+
+<https://astrea.linkeddata.es/shapes#8af79a7331a47adfaca16e9a9d2d8b1a>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://securitytoolbox.appspot.com/securityAlgorithms#EncryptionAlgorithm> .
+
+<https://astrea.linkeddata.es/shapes#bcd2195f677c9a6e640dc964db035ff7>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5c22bde7006633dcb5a9cd872d9d7f8d> , <https://astrea.linkeddata.es/shapes#81dce88ca670b9ed1f2da5cf1905e29f> , <https://astrea.linkeddata.es/shapes#2384ec2327e61ce1ae7f92c45e2025e0> ;
+        sh:targetClass  <http://securitytoolbox.appspot.com/securityAlgorithms#SymmetricAlgorithm> .
+
+<https://astrea.linkeddata.es/shapes#e07c7bbef0ac02938c1705df269acc0e>
+        a               sh:PropertyShape ;
+        rdfs:label      "These can be Typel, Type 2, Type3, or Type4" ;
+        sh:class        <http://securitytoolbox.appspot.com/securityAssurance.owl#NSA> ;
+        sh:description  "These can be Typel, Type 2, Type3, or Type4" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://securitytoolbox.appspot.com/securityAlgorithms#hasNSALevel> .
+
+<https://astrea.linkeddata.es/shapes#ef6ca4143ad7849c56c23edad7a695f2>
+        a               sh:NodeShape ;
+        sh:description  "\nKey dependent function; useful in providing user authentication without a\nsecret key\n" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://securitytoolbox.appspot.com/securityAlgorithms#HashAlgorithm> .
+
+<https://astrea.linkeddata.es/shapes#c9ed6e2533eff94b3f7ad311aeb6c6ef>
+        a               sh:PropertyShape ;
+        rdfs:label      "NIST FIPS Standard" ;
+        sh:datatype     xsd:boolean ;
+        sh:description  "NIST FIPS Standard" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://securitytoolbox.appspot.com/securityAlgorithms#isNISTStandard> ;
+        sh:pattern      "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#d732209350f103cb45d196c6e2f8082a>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://securitytoolbox.appspot.com/securityAlgorithms#MACAlgorithm> .
+
+<https://astrea.linkeddata.es/shapes#f50ec7eb9def818731efcc87035e1074>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e07c7bbef0ac02938c1705df269acc0e> ;
+        sh:targetClass  <http://securitytoolbox.appspot.com/securityAlgorithms#SynmmetricAlgorithm> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#eaa05f6526d23ac8932200ec54585736> , <https://astrea.linkeddata.es/shapes#bcd2195f677c9a6e640dc964db035ff7> , <https://astrea.linkeddata.es/shapes#ef6ca4143ad7849c56c23edad7a695f2> , <https://astrea.linkeddata.es/shapes#ed2323ae1275b4503120d618c4f9e023> , <https://astrea.linkeddata.es/shapes#2d0115c6d398e11ce909e627f520768e> , <https://astrea.linkeddata.es/shapes#898f7e05f9565e9e159ac46267b6a155> , <https://astrea.linkeddata.es/shapes#5c22bde7006633dcb5a9cd872d9d7f8d> , <https://astrea.linkeddata.es/shapes#9b70047e5678ab45ba489d0ee5f9675d> , <https://astrea.linkeddata.es/shapes#81dce88ca670b9ed1f2da5cf1905e29f> , <https://astrea.linkeddata.es/shapes#2384ec2327e61ce1ae7f92c45e2025e0> , <https://astrea.linkeddata.es/shapes#0d18cfdb5412ee05bce19836447aec8d> , <https://astrea.linkeddata.es/shapes#c9ed6e2533eff94b3f7ad311aeb6c6ef> , <https://astrea.linkeddata.es/shapes#8af79a7331a47adfaca16e9a9d2d8b1a> , <https://astrea.linkeddata.es/shapes#d732209350f103cb45d196c6e2f8082a> , <https://astrea.linkeddata.es/shapes#e07c7bbef0ac02938c1705df269acc0e> , <https://astrea.linkeddata.es/shapes#f50ec7eb9def818731efcc87035e1074> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#898f7e05f9565e9e159ac46267b6a155>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://securitytoolbox.appspot.com/securityAlgorithms#SignatureAlgorithm> .
+
+<https://astrea.linkeddata.es/shapes#9b70047e5678ab45ba489d0ee5f9675d>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://securitytoolbox.appspot.com/securityAlgorithms#KeyExchangeAlgorithm> .
+
+<https://astrea.linkeddata.es/shapes#0d18cfdb5412ee05bce19836447aec8d>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c9ed6e2533eff94b3f7ad311aeb6c6ef> , <https://astrea.linkeddata.es/shapes#eaa05f6526d23ac8932200ec54585736> ;
+        sh:targetClass  <http://securitytoolbox.appspot.com/securityAlgorithms#Algorithm> .
+
+<https://astrea.linkeddata.es/shapes#5c22bde7006633dcb5a9cd872d9d7f8d>
+        a                sh:PropertyShape ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:minInclusive  0 ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://securitytoolbox.appspot.com/securityAlgorithms#keyLength> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#ed2323ae1275b4503120d618c4f9e023>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://securitytoolbox.appspot.com/securityAlgorithms#AsymmetricAlgorithm> .
+
+<https://astrea.linkeddata.es/shapes#81dce88ca670b9ed1f2da5cf1905e29f>
+        a               sh:PropertyShape ;
+        rdfs:label      "Can be CBC, ECB, OFB, CFB, or Counter" ;
+        sh:datatype     xsd:string ;
+        sh:description  "Can be CBC, ECB, OFB, CFB, or Counter" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://securitytoolbox.appspot.com/securityAlgorithms#modeOfOperation> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#eaa05f6526d23ac8932200ec54585736>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://securitytoolbox.appspot.com/securityAlgorithms#isNISTStandard> .
+
+<https://astrea.linkeddata.es/shapes#2d0115c6d398e11ce909e627f520768e>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://securitytoolbox.appspot.com/securityAlgorithms#ChecksumAlgorithm> .

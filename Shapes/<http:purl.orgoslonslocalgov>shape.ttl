@@ -1,0 +1,356 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#90fe7bc60494acfd97d819de3ba2f4ce>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/org> ;
+        rdfs:label        "has site"@en , "Indicates a site at which the Organization has some presence even if only indirect (e.g. virtual office or a professional service which is acting as the registered address for a company). Inverse of `org:siteOf`."@en ;
+        sh:description    "Indicates a site at which the Organization has some presence even if only indirect (e.g. virtual office or a professional service which is acting as the registered address for a company). Inverse of `org:siteOf`."@en ;
+        sh:name           "has site"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#9747ef62a4bf1aaa00736e1a44e32455>
+        a               sh:PropertyShape ;
+        rdfs:label      "follows"@en , "The follows property links a service to the Rule(s) under which it operates."@en ;
+        sh:class        <http://purl.org/vocab/cpsv#Rule> ;
+        sh:description  "The follows property links a service to the Rule(s) under which it operates."@en ;
+        sh:name         "follows"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/cpsv#follows> .
+
+<https://astrea.linkeddata.es/shapes#6b1f888be3f013be4b83b63854c93482>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/oslo/ns/localgov> ;
+        rdfs:label        "Parcel"@en ;
+        sh:description    "Information related to a Parcel Address or Label"@en ;
+        sh:name           "Parcel"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/oslo/ns/localgov#Parcel> .
+
+<https://astrea.linkeddata.es/shapes#0abfd64fff38c1b98887cf1cdd02634d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/locn#> ;
+        rdfs:label        "Address"@en ;
+        sh:description    "An \"address representation\" as defined in the <a xmlns=\"http://purl.org/oslo/ns/localgov#\" =\"https://inspire-twg.jrc.ec.europa.eu/inspire-fc.html#_C2538\">data specifications</a> of the EU INSPIRE Directive. The <a =\"#locn:addressId\">locn:addressId</a> property may be used to link this Address to other representations." ;
+        sh:name           "Address"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.w3.org/ns/locn#Address> .
+
+<https://astrea.linkeddata.es/shapes#9c748701a861ecc3576a65e6cd0cfe73>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/oslo/ns/localgov> ;
+        rdfs:label        "Permission"@en ;
+        sh:description    "Denotes a the permission of a role. Should be linked with a formal rule."@en ;
+        sh:name           "Permission"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/oslo/ns/localgov#Permission> .
+
+<https://astrea.linkeddata.es/shapes#f445eed1bf1562a93e466a9bd08bd472>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/oslo/ns/localgov> ;
+        rdfs:label        "Status"@en ;
+        sh:description    "Status of Public Service"@en ;
+        sh:name           "Status"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/oslo/ns/localgov#Status> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#f0442820f28f40d1c2738891d949241e>
+        a               sh:PropertyShape ;
+        rdfs:label      "produces"@en , "The produces property links a Public Service to one or more instances of the Output class which is its range."@en ;
+        sh:class        <http://purl.org/vocab/cpsv#Output> ;
+        sh:description  "The produces property links a Public Service to one or more instances of the Output class which is its range."@en ;
+        sh:name         "produces"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/cpsv#produces> .
+
+<https://astrea.linkeddata.es/shapes#f3ab5ebd5762a6c3df63b512082bb967>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/oslo/ns/localgov> ;
+        rdfs:label        "Residence Object"@en ;
+        sh:description    "This is the key class for the OSLO Location Vocabulary and represents a \n      location that is linked with an address and/or a building with parcel(s)."@en ;
+        sh:name           "Residence Object"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/oslo/ns/localgov#ResidenceObject> .
+
+<https://astrea.linkeddata.es/shapes#2de0faaf7145e3451fe276ce0f3f8c4a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/regorg#> , <http://www.w3.org/TR/vocab-regorg/> ;
+        rdfs:label        "The legal name of the business. A business might have more than one \n      legal name, particularly in countries with more than one official language. In such cases the \n      language of the string should be identified."@en , "The legal name of the business. A business might have more than one \n    legal name, particularly in countries with more than one official language. In such cases the \n    language of the string should be identified."@en , "legal name"@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The legal name of the business. A business might have more than one \n      legal name, particularly in countries with more than one official language. In such cases the \n      language of the string should be identified."@en , "The legal name of the business. A business might have more than one \n    legal name, particularly in countries with more than one official language. In such cases the \n    language of the string should be identified."@en ;
+        sh:name           "legal name"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.w3.org/ns/regorg#legalName> .
+
+<https://astrea.linkeddata.es/shapes#4861a09d2208b2376302aff9bb0cef08>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/org> ;
+        rdfs:label        "Indique une personne (ou tout autre Agent, y compris une Organisation) impliquÃ© dans la relation d'Engagement. Inverse de `org:hasMembership`"@fr , "membre"@fr , "member"@en , "Indicates the Person (or other Agent including Organization) involved in the Membership relationship. Inverse of `org:hasMembership`"@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description    "Indicates the Person (or other Agent including Organization) involved in the Membership relationship. Inverse of `org:hasMembership`"@en , "Indique une personne (ou tout autre Agent, y compris une Organisation) impliquÃ© dans la relation d'Engagement. Inverse de `org:hasMembership`"@fr ;
+        sh:maxCount       1 ;
+        sh:name           "membre"@fr , "member"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/ns/org#member> .
+
+<https://astrea.linkeddata.es/shapes#5beddab416ed1158c749789124ea70b9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/oslo/ns/localgov> ;
+        rdfs:label        "ExtendedAddress"@en ;
+        sh:description    "An \"address representation\" as defined in the <a xmlns=\"http://purl.org/oslo/ns/localgov#\" =\"https://inspire-twg.jrc.ec.europa.eu/inspire-fc.html#_C2538\">data specifications</a> of the EU INSPIRE Directive. The <a =\"#locn:addressId\">locn:addressId</a> property may be used to link this Address to other representations. This address extends the address with additional information" ;
+        sh:name           "ExtendedAddress"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/oslo/ns/localgov#ExtendedAddress> .
+
+<https://astrea.linkeddata.es/shapes#b5769d3cf8dbd43eccd522c77055c3af>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-regorg/> , <http://www.w3.org/ns/regorg#> ;
+        rdfs:label        "Terms like insolvent, bankrupt and in receivership are likely to have \n    different legal implications in different jurisdictions. Best Practice for recording various \n    other status levels is to use the relevant jurisdiction's terms and to do so in a \n    consistent manner using a skos:Concept as described in the <skos:a xmlns:skos=\"http://www.w3.org/2004/02/skos/core#\" =\"http://www.w3.org/2004/02/skos/core#Concept\">Concept</skos:a> Class. \n    The term \"Normal Activity\" appears to have cross-border usefulness \n    and this should be used in preference to terms like trading or operating." , "org status"@en , "Terms like insolvent, bankrupt and in receivership are likely to have \n      different legal implications in different jurisdictions. Best Practice for recording various \n      other status levels is to use the relevant jurisdiction's terms and to do so in a \n      consistent manner using a SKOS Concept Scheme. rov:orgStatcompanyus is a sub class of org:classification\n      which has a range of skos:Concept."@en ;
+        sh:class          <http://purl.org/oslo/ns/Code> ;
+        sh:description    "Terms like insolvent, bankrupt and in receivership are likely to have \n    different legal implications in different jurisdictions. Best Practice for recording various \n    other status levels is to use the relevant jurisdiction's terms and to do so in a \n    consistent manner using a skos:Concept as described in the <skos:a xmlns:skos=\"http://www.w3.org/2004/02/skos/core#\" =\"http://www.w3.org/2004/02/skos/core#Concept\">Concept</skos:a> Class. \n    The term \"Normal Activity\" appears to have cross-border usefulness \n    and this should be used in preference to terms like trading or operating." , "Terms like insolvent, bankrupt and in receivership are likely to have \n      different legal implications in different jurisdictions. Best Practice for recording various \n      other status levels is to use the relevant jurisdiction's terms and to do so in a \n      consistent manner using a SKOS Concept Scheme. rov:orgStatcompanyus is a sub class of org:classification\n      which has a range of skos:Concept."@en ;
+        sh:name           "org status"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/ns/regorg#orgStatus> .
+
+<https://astrea.linkeddata.es/shapes#d85287c7e78fc66b63ae341681463204>
+        a               sh:NodeShape ;
+        rdfs:label      "Output"@en ;
+        sh:description  "Outputs can by any resource - document, artefact - anything. In a specific context it is likely to be useful to either define a sub class or declare the particular resource to also be of another type as well. A general case might be a foaf:Document but where possible, it is better to refer to a controlled vocabulary of types. dcterms:type should be used to use to provide this information linking to a SKOS Concept."@en ;
+        sh:name         "Output"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/vocab/cpsv#Output> .
+
+<https://astrea.linkeddata.es/shapes#1a1881ca37e98ba743ce9e8dccf251f7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/person#> ;
+        rdfs:label        "Person"@en ;
+        sh:description    "An individual person who may be dead or alive, \n    but not imaginary. It is that restriction that makes person:Person a\n    sub class of both foaf:Person and schema:Person which both cover imaginary\n    characters as well as real people."@en ;
+        sh:name           "Person"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.w3.org/ns/person#Person> .
+
+<https://astrea.linkeddata.es/shapes#8ab75b2e5a331a346bea75c9c2a7547c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/oslo/ns/localgov> ;
+        rdfs:label        "Organization"@en ;
+        sh:description    "This is the key class for the Business Core Vocabulary and represents a \n    business that is legally registered. In many countries there is a single registry although in others, \n    such as Spain and Germany, multiple registries exist. A Legal Entity is able to trade, is \n    legally liable for its actions, accounts, tax affairs etc. It is a sub class of org:FormalOrganization\n    which covers a wider range of entities, such as charities."@en ;
+        sh:name           "Organization"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/oslo/ns/localgov#Organization> .
+
+<https://astrea.linkeddata.es/shapes#522db8dc5e995b792fad622381effe07>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/org> ;
+        rdfs:label        "organisation"@fr , "Indicates Organization in which the Agent is a member."@en , "Indique l'Organization dont l'agent est membre."@fr , "organization"@en ;
+        sh:class          <http://www.w3.org/ns/org#Organization> ;
+        sh:description    "Indicates Organization in which the Agent is a member."@en , "Indique l'Organization dont l'agent est membre."@fr ;
+        sh:maxCount       1 ;
+        sh:name           "organisation"@fr , "organization"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/ns/org#organization> .
+
+<https://astrea.linkeddata.es/shapes#3ac5b6e2853048b761e053f88bdbde20>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/oslo/ns/localgov> ;
+        rdfs:label        "Membership"@en ;
+        sh:description    "This is the key class for the Business Core Vocabulary and represents a \n    business that is legally registered. In many countries there is a single registry although in others, \n    such as Spain and Germany, multiple registries exist. A Legal Entity is able to trade, is \n    legally liable for its actions, accounts, tax affairs etc. It is a sub class of org:FormalOrganization\n    which covers a wider range of entities, such as charities."@en ;
+        sh:name           "Membership"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/oslo/ns/localgov#Membership> .
+
+<https://astrea.linkeddata.es/shapes#8ec2dbe1b65ae744f43e08c4c3616823>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/oslo/ns/localgov> ;
+        rdfs:label        "Building"@en ;
+        sh:description    "Information related to a Building"@en ;
+        sh:name           "Building"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/oslo/ns/localgov#Building> .
+
+<https://astrea.linkeddata.es/shapes#2a562be15694032690b9939dae532f23>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-regorg/> , <http://www.w3.org/ns/regorg#> ;
+        rdfs:label        "This property records the type of company. Familiar types are SA, PLC, LLC, GmbH etc. Each \n    jurisdiction will have a limited set of recognised company types and these should be used in a consistent manner\n    using a skos:Concept as described in the <skos:a xmlns:skos=\"http://www.w3.org/2004/02/skos/core#\" =\"http://www.w3.org/2004/02/skos/core#Concept\">Code</skos:a> Class." , "This property records the type of company. Familiar types are SA, PLC, LLC, GmbH etc. Each \n      jurisdiction will have a limited set of recognized company types and these should be used in a consistent manner\n      using a SKOS Concept Scheme. rov:orgType is a sub class of org:classification which has a range of skos:Concept."@en , "organization type"@en ;
+        sh:class          <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:description    "This property records the type of company. Familiar types are SA, PLC, LLC, GmbH etc. Each \n      jurisdiction will have a limited set of recognized company types and these should be used in a consistent manner\n      using a SKOS Concept Scheme. rov:orgType is a sub class of org:classification which has a range of skos:Concept."@en , "This property records the type of company. Familiar types are SA, PLC, LLC, GmbH etc. Each \n    jurisdiction will have a limited set of recognised company types and these should be used in a consistent manner\n    using a skos:Concept as described in the <skos:a xmlns:skos=\"http://www.w3.org/2004/02/skos/core#\" =\"http://www.w3.org/2004/02/skos/core#Concept\">Code</skos:a> Class." ;
+        sh:name           "organization type"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/ns/regorg#orgType> .
+
+<https://astrea.linkeddata.es/shapes#89da858946d5488dd3b729dc15be4356>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/oslo/ns/localgov> ;
+        rdfs:label        "Relation"@en ;
+        sh:description    "A relation between two agents"@en ;
+        sh:name           "Relation"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/oslo/ns/localgov#Relation> .
+
+<https://astrea.linkeddata.es/shapes#c306cdf218258980eae8c8183fb3cbf0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/oslo/ns/localgov> ;
+        rdfs:label        "OrganizationnRelation"@en ;
+        sh:description    "A relation between two organizations"@en ;
+        sh:name           "OrganizationnRelation"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/oslo/ns/localgov#OrganizationRelation> .
+
+<https://astrea.linkeddata.es/shapes#41ba1eda0f40b7116acd1ca3c17027b4>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#4861a09d2208b2376302aff9bb0cef08> , <https://astrea.linkeddata.es/shapes#522db8dc5e995b792fad622381effe07> ;
+        sh:targetClass  <http://www.w3.org/ns/org#Membership> .
+
+<https://astrea.linkeddata.es/shapes#562958b55beac6f47d8aa39948b35717>
+        a               sh:NodeShape ;
+        rdfs:label      "Public Service"@en ;
+        sh:description  "This class represents the service itself. As noted in the scope (section 1.4), a public service is the capacity to carry out a procedure and exists whether it is used or not. It is a set of deeds and acts performed by or on behalf of a public agency for the benefit of a citizen, a business or another public agency."@en ;
+        sh:name         "Public Service"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/vocab/cpsv#PublicService> .
+
+<https://astrea.linkeddata.es/shapes#2abea27d27512362d54d8e126b2293df>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/locn#> ;
+        rdfs:label        "Geometry"@en ;
+        sh:description    "The Geometry Class provides the means to identify a Location as a point, line, polygon, etc. expressed using coordinates in some coordinate reference system."@en ;
+        sh:name           "Geometry"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.w3.org/ns/locn#Geometry> .
+
+<https://astrea.linkeddata.es/shapes#a182fa44f1b8a7375066b127bce34cd9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/org#> ;
+        rdfs:label        "Site"@en ;
+        sh:description    "An office or other premise at which the organization is located. Many organizations are spread across multiple sites and many sites will host multiple locations. In most cases a Site will be a physical location. However, we don't exclude the possibility of non-physical sites such as a virtual office with an associated post box and phone reception service. Extensions may provide subclasses to denote particular types of site."@en ;
+        sh:name           "Site"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.w3.org/ns/org#Site> .
+
+<https://astrea.linkeddata.es/shapes#a424fb18f0e4415f8360052c4e214f4d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/oslo/ns/localgov> ;
+        rdfs:label        "PersonRelation"@en ;
+        sh:description    "A relation between two persons"@en ;
+        sh:name           "PersonRelation"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/oslo/ns/localgov#PersonRelation> .
+
+<https://astrea.linkeddata.es/shapes#ab316eedb7e549af63735f3bb052c1fe>
+        a               sh:NodeShape ;
+        rdfs:label      "Input"@en ;
+        sh:description  "Inputs can by any resource - document, artefact - anything. In a specific context it is likely to be useful to either define a sub class or declare the particular resource to also be of another type as well. A general case might be a foaf:Document but where possible, it is better to refer to a controlled vocabulary of types. dcterms:type should be used to use to provide this information linking to a SKOS Concept."@en ;
+        sh:name         "Input"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/vocab/cpsv#Input> .
+
+<https://astrea.linkeddata.es/shapes#a06c7b813ec347f0e4b41401afeba1a2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/oslo/ns/localgov> ;
+        rdfs:label        "Role"@en ;
+        sh:description    "Denotes a role that a Person or other Agent can take in an public service. Instances of this class describe the abstract role; to denote a specific instance of a person playing that role in a specific public service use an instance of `Permission` that is linked with the formal rules `Rule`."@en ;
+        sh:name           "Role"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/oslo/ns/localgov#Role> .
+
+<https://astrea.linkeddata.es/shapes#207158e7ee854ae2e637a5ce730feed3>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/org#hasMembership> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#2de0faaf7145e3451fe276ce0f3f8c4a> , <https://astrea.linkeddata.es/shapes#8ab75b2e5a331a346bea75c9c2a7547c> , <https://astrea.linkeddata.es/shapes#522db8dc5e995b792fad622381effe07> , <https://astrea.linkeddata.es/shapes#b5769d3cf8dbd43eccd522c77055c3af> , <https://astrea.linkeddata.es/shapes#f3ab5ebd5762a6c3df63b512082bb967> , <https://astrea.linkeddata.es/shapes#207158e7ee854ae2e637a5ce730feed3> , <https://astrea.linkeddata.es/shapes#8082b03c4908f9fa8c9b24d8b485bc47> , <https://astrea.linkeddata.es/shapes#97eea4f46d5dc84b32286c2c3501f980> , <https://astrea.linkeddata.es/shapes#89da858946d5488dd3b729dc15be4356> , <https://astrea.linkeddata.es/shapes#5beddab416ed1158c749789124ea70b9> , <https://astrea.linkeddata.es/shapes#07f67adb4462ebf92ce69044faaccb08> , <https://astrea.linkeddata.es/shapes#2abea27d27512362d54d8e126b2293df> , <https://astrea.linkeddata.es/shapes#f445eed1bf1562a93e466a9bd08bd472> , <https://astrea.linkeddata.es/shapes#c306cdf218258980eae8c8183fb3cbf0> , <https://astrea.linkeddata.es/shapes#9747ef62a4bf1aaa00736e1a44e32455> , <https://astrea.linkeddata.es/shapes#4861a09d2208b2376302aff9bb0cef08> , <https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5> , <https://astrea.linkeddata.es/shapes#8ec2dbe1b65ae744f43e08c4c3616823> , <https://astrea.linkeddata.es/shapes#74ac90c9c816d92423aaedea3c4d9dd8> , <https://astrea.linkeddata.es/shapes#d85287c7e78fc66b63ae341681463204> , <https://astrea.linkeddata.es/shapes#41ba1eda0f40b7116acd1ca3c17027b4> , <https://astrea.linkeddata.es/shapes#2a562be15694032690b9939dae532f23> , <https://astrea.linkeddata.es/shapes#2aba20a7a2f5e571b18fc48be8837ca5> , <https://astrea.linkeddata.es/shapes#90fe7bc60494acfd97d819de3ba2f4ce> , <https://astrea.linkeddata.es/shapes#40fd038016c1bf77744ca380d5f67cd6> , <https://astrea.linkeddata.es/shapes#3ac5b6e2853048b761e053f88bdbde20> , <https://astrea.linkeddata.es/shapes#1a1881ca37e98ba743ce9e8dccf251f7> , <https://astrea.linkeddata.es/shapes#a424fb18f0e4415f8360052c4e214f4d> , <https://astrea.linkeddata.es/shapes#ab316eedb7e549af63735f3bb052c1fe> , <https://astrea.linkeddata.es/shapes#12be2c2f9663b70fa74adda0eb5f7e13> , <https://astrea.linkeddata.es/shapes#0abfd64fff38c1b98887cf1cdd02634d> , <https://astrea.linkeddata.es/shapes#562958b55beac6f47d8aa39948b35717> , <https://astrea.linkeddata.es/shapes#6b1f888be3f013be4b83b63854c93482> , <https://astrea.linkeddata.es/shapes#9c748701a861ecc3576a65e6cd0cfe73> , <https://astrea.linkeddata.es/shapes#a06c7b813ec347f0e4b41401afeba1a2> , <https://astrea.linkeddata.es/shapes#f0442820f28f40d1c2738891d949241e> , <https://astrea.linkeddata.es/shapes#a182fa44f1b8a7375066b127bce34cd9> , <https://astrea.linkeddata.es/shapes#9501146cc572243478faa8ff21a3dfd3> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/skos-primer/> ;
+        rdfs:label        "Concept"@en ;
+        sh:description    "<p xmlns=\"http://purl.org/oslo/ns/localgov#\">The Conceptual Model includes a 'Code' datatype that \n      is used for the types of relation and membership properties. This is expressed using the <a =\"http://www.w3.org/TR/skos-primer/\">SKOS vocabulary</a> with\n      a particular 'code' usually being a skos:Concept that is part of a scheme. \n      The intention is that the skos:Concepts class be used as follows;</p><skos:ul xmlns:skos=\"http://www.w3.org/2004/02/skos/core#\">\n        <skos:li>for the content property, use skos:notation</skos:li>\n        <skos:li>the 'list' property will be taken care of by means of the skos:inScheme property;</skos:li>\n        <skos:li>the list agency property is likely to be applied to the scheme as a whole for which dcterms:creator is appropriate;</skos:li>\n        <skos:li>the list version property can be fulfilled using schema:version (see <skos:a =\"http://schema.org/CreativeWork\">http://schema.org/CreativeWork</skos:a>)</skos:li></skos:ul>\n" ;
+        sh:name           "Concept"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.w3.org/2004/02/skos/core#Concept> .
+
+<https://astrea.linkeddata.es/shapes#74ac90c9c816d92423aaedea3c4d9dd8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/org#> ;
+        rdfs:label        "Organization"@en ;
+        sh:description    "Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures.  It is recommended that SKOS lexical labels should be used to label the Organization. In particular `skos:prefLabel` for the primary (possibly legally recognized name), `skos:altLabel` for alternative names (trading names, colloquial names) and `skos:notation` to denote a code from a code list. Alternative names: _Collective_ _Body_ _Org_ _Group_"@en ;
+        sh:name           "Organization"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.w3.org/ns/org#Organization> , <http://xmlns.com/foaf/0.1/Organization> .
+
+<https://astrea.linkeddata.es/shapes#8082b03c4908f9fa8c9b24d8b485bc47>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/dc/terms/> ;
+        rdfs:label        "Location"@en ;
+        sh:description    "dcterms:Location class fully represents the Location Core Vocabulary class of Location."@en ;
+        sh:name           "Location"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/dc/terms/Location> .
+
+<https://astrea.linkeddata.es/shapes#2aba20a7a2f5e571b18fc48be8837ca5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/adms#> ;
+        rdfs:label        "Identifier"@en ;
+        sh:description    "The ADMS class of Identifier fully represents the Business Core Vocabulary term of the same name"@en ;
+        sh:name           "Identifier"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.w3.org/ns/adms#Identifier> .
+
+<https://astrea.linkeddata.es/shapes#07f67adb4462ebf92ce69044faaccb08>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/oslo/ns/localgov> ;
+        rdfs:label        "BasicAddress"@en ;
+        sh:description    "An \"address representation\" as defined in the <a xmlns=\"http://purl.org/oslo/ns/localgov#\" =\"https://inspire-twg.jrc.ec.europa.eu/inspire-fc.html#_C2538\">data specifications</a> of the EU INSPIRE Directive. The <a =\"#locn:addressId\">locn:addressId</a> property may be used to link this Address to other representations. This address extends the address with additional information" ;
+        sh:name           "BasicAddress"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/oslo/ns/localgov#BasicAddress> .
+
+<https://astrea.linkeddata.es/shapes#12be2c2f9663b70fa74adda0eb5f7e13>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/regorg#> ;
+        rdfs:label        "registration"@en , "The legal status of a registered organization is conferred on it by an authority within a given \n      jurisdiction. The registration is therefore a fundamental relationship between a the organization and the authority with \n      which it is registered. The details of the registration are provided as properties of the Identifier class which is \n      defined by ADMS. The vocabulary sets no restriction on the type of legal identifier. In many countries, the business register's \n      identifier is the relevant data point. The tax number often fulfils this function in Spain and elsewhere.\n      Although there is no formal cardinality constraint on any property in the Registered Organization Vocabulary, it is \n      questionable whether a description of a registered organization without this property and an associated Identifier class will \n      be of any value."@en ;
+        sh:description    "The legal status of a registered organization is conferred on it by an authority within a given \n      jurisdiction. The registration is therefore a fundamental relationship between a the organization and the authority with \n      which it is registered. The details of the registration are provided as properties of the Identifier class which is \n      defined by ADMS. The vocabulary sets no restriction on the type of legal identifier. In many countries, the business register's \n      identifier is the relevant data point. The tax number often fulfils this function in Spain and elsewhere.\n      Although there is no formal cardinality constraint on any property in the Registered Organization Vocabulary, it is \n      questionable whether a description of a registered organization without this property and an associated Identifier class will \n      be of any value."@en ;
+        sh:name           "registration"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#97eea4f46d5dc84b32286c2c3501f980>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-regorg/> , <http://www.w3.org/ns/regorg#> ;
+        rdfs:label        "The activity of an organisation should be recorded using a controlled vocabulary expressed\n    as a SKOS concept scheme (see <a xmlns=\"http://purl.org/oslo/ns/localgov#\" =\"#skos:Concept\">Code</a>. Several such \n    vocabularies exist, many of which map to the UN's ISIC codes. Where a particular controlled vocabulary is in use \n    within a given context, such as SIC codes in the UK, it is acceptable to use these, however, the preferred \n    choice for European interoperability is NACE." , "org activity"@en , "The activity of a company should be \n      recorded using a controlled vocabulary expressed as a SKOS concept scheme. Several such \n      vocabularies exist, many of which map to the UN's ISIC codes. Where a particular controlled vocabulary is in use \n      within a given context, such as SIC codes in the UK, it is acceptable to use these, however, the preferred \n      choice for European interoperability is NACE. rov:companyActivity is a sub class of org:classification which has a range of skos:Concept."@en ;
+        sh:class          <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:description    "The activity of a company should be \n      recorded using a controlled vocabulary expressed as a SKOS concept scheme. Several such \n      vocabularies exist, many of which map to the UN's ISIC codes. Where a particular controlled vocabulary is in use \n      within a given context, such as SIC codes in the UK, it is acceptable to use these, however, the preferred \n      choice for European interoperability is NACE. rov:companyActivity is a sub class of org:classification which has a range of skos:Concept."@en , "The activity of an organisation should be recorded using a controlled vocabulary expressed\n    as a SKOS concept scheme (see <a xmlns=\"http://purl.org/oslo/ns/localgov#\" =\"#skos:Concept\">Code</a>. Several such \n    vocabularies exist, many of which map to the UN's ISIC codes. Where a particular controlled vocabulary is in use \n    within a given context, such as SIC codes in the UK, it is acceptable to use these, however, the preferred \n    choice for European interoperability is NACE." ;
+        sh:name           "org activity"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/ns/regorg#orgActivity> .
+
+<https://astrea.linkeddata.es/shapes#9501146cc572243478faa8ff21a3dfd3>
+        a               sh:NodeShape ;
+        rdfs:label      "Rule"@en ;
+        sh:description  "The Rule class represents the specific rules, guidelines or procedures that the Public Service follows. Instances of the Rule class are FRBR Expressions, that is, a concrete expression, such as a document, of the more abstract concept of the rules themselves."@en ;
+        sh:name         "Rule"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/vocab/cpsv#Rule> .
+
+<https://astrea.linkeddata.es/shapes#40fd038016c1bf77744ca380d5f67cd6>
+        a               sh:PropertyShape ;
+        rdfs:label      "has input"@en , "The hasInput property links a Public Service to one or more instances of the Input class (see below). A specific service may require the presence of certain inputs or combinations of inputs in order to operate. These should be described in an application profile for a given service."@en ;
+        sh:class        <http://purl.org/vocab/cpsv#Input> ;
+        sh:description  "The hasInput property links a Public Service to one or more instances of the Input class (see below). A specific service may require the presence of certain inputs or combinations of inputs in order to operate. These should be described in an application profile for a given service."@en ;
+        sh:name         "has input"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/vocab/cpsv#hasInput> .

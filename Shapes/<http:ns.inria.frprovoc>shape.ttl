@@ -1,0 +1,296 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#90fe7bc60494acfd97d819de3ba2f4ce>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/org#hasSite> .
+
+<https://astrea.linkeddata.es/shapes#89a7e8760f9702dc1af1c5f910e4d21c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://xmlns.com/foaf/spec/#term_logo> .
+
+<https://astrea.linkeddata.es/shapes#f538323f409c06a73f4ac93c8ca2a8e2>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#3c34bf6b350ae4684aab1da08559ac61> , <https://astrea.linkeddata.es/shapes#d8ed93cd9e55979df87c9023ffe735d6> ;
+        sh:targetClass  <http://purl.org/goodrelations/v1#BusinessEntity> .
+
+<https://astrea.linkeddata.es/shapes#0c2a97216f26ec251acd005c29745fdf>
+        a               sh:PropertyShape ;
+        rdfs:label      "A related resource from which the described resource is derived."@en ;
+        sh:description  "A related resource from which the described resource is derived."@en ;
+        sh:nodeKind     sh:Literal , sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/dc/elements/1.1/source> .
+
+<https://astrea.linkeddata.es/shapes#810115e8bd5660a068c30d7301b51d7b>
+        a               sh:PropertyShape ;
+        rdfs:label      "This specifies main contributors of the creation of the product."@en ;
+        sh:class        <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description  "This specifies main contributors of the creation of the product."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ns.inria.fr/provoc#hasCreator> .
+
+<https://astrea.linkeddata.es/shapes#f3c59d7f45a03885fd6394fffb2e1d1c>
+        a               sh:PropertyShape ;
+        rdfs:label      "This specifies the group that contains divisions."@en ;
+        sh:class        <http://www.w3.org/ns/org#Organization> ;
+        sh:description  "This specifies the group that contains divisions."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ns.inria.fr/provoc#belongsToGroup> .
+
+<https://astrea.linkeddata.es/shapes#e46e44a5fb4bdb6a8e8193311269a53e>
+        a               sh:PropertyShape ;
+        rdfs:label      "This specifies providers of products incurred by a corporation. for instance Sephora is a provider of L'Oréal."@en ;
+        sh:class        <http://schema.org/Provider> ;
+        sh:description  "This specifies providers of products incurred by a corporation. for instance Sephora is a provider of L'Oréal."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ns.inria.fr/provoc#hasProvider> .
+
+<https://astrea.linkeddata.es/shapes#5e51bed2203961aa8cb24ca4218c7bab>
+        a            sh:PropertyShape ;
+        sh:equals    <http://xmlns.com/foaf/spec/#term_logo> ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.w3.org/2006/vcard/ns#hasLogo> .
+
+<https://astrea.linkeddata.es/shapes#27865d60b81f7745553c32e7c6096fa4>
+        a               sh:PropertyShape ;
+        rdfs:label      "This specifies the components included in a component."@en ;
+        sh:class        <http://ns.inria.fr/provoc#Component> ;
+        sh:description  "This specifies the components included in a component."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ns.inria.fr/provoc#consistsOf> .
+
+<https://astrea.linkeddata.es/shapes#8f86c088bd8fb25832c6ca18f5c759eb>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://dbpedia.org/ontology/formationYear> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#3c34bf6b350ae4684aab1da08559ac61>
+        a               sh:PropertyShape ;
+        rdfs:label      "This specifies the ambassadors of a product, a range of product, a brand, a division, etc..."@en ;
+        sh:class        <http://ns.inria.fr/provoc#Ambassador> ;
+        sh:description  "This specifies the ambassadors of a product, a range of product, a brand, a division, etc..."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ns.inria.fr/provoc#hasAmbassador> .
+
+<https://astrea.linkeddata.es/shapes#00695e1548565353ae1256689baa3d82>
+        a               sh:PropertyShape ;
+        rdfs:label      "This specifies the functionalities/roles of a component. For instance \"sodium nitrate\" is a food preservative."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "This specifies the functionalities/roles of a component. For instance \"sodium nitrate\" is a food preservative."@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://ns.inria.fr/provoc#hasFunctionality> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#c6ef336bda0acad331ddae5734cae163>
+        a               sh:PropertyShape ;
+        rdfs:label      "The depiction property is a relationship between a thing and an Image that depicts it. This property can be used for the image of a product, for instance."@en ;
+        sh:description  "The depiction property is a relationship between a thing and an Image that depicts it. This property can be used for the image of a product, for instance."@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://xmlns.com/foaf/spec/#term_depiction> .
+
+<https://astrea.linkeddata.es/shapes#fc93f3df49f48d83bc2c1d2c11cbfa1d>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.heppnetz.de/ontologies/goodrelations/v1#description> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#b6b4a0ee6824d67f4a759a8274a9a6ab>
+        a               sh:PropertyShape ;
+        rdfs:label      "This specifies persons who represent a product, a range of product, a brand, a division, etc..."@en ;
+        sh:description  "This specifies persons who represent a product, a range of product, a brand, a division, etc..."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ns.inria.fr/provoc#hasRepresentative> .
+
+<https://astrea.linkeddata.es/shapes#9e46497d2120116832b3f2d65ac4abad>
+        a               sh:PropertyShape ;
+        rdfs:label      "This specifies the division that proposes a brand."@en ;
+        sh:class        <http://vivoweb.org/ontology/core#Division> ;
+        sh:description  "This specifies the division that proposes a brand."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ns.inria.fr/provoc#belongsToDivision> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#49b28c75bc3ebff9c23f1fcfe55fd4be>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#1965adb072357e6cb523406650f9eb85>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#27865d60b81f7745553c32e7c6096fa4> , <https://astrea.linkeddata.es/shapes#07f7ca93b1ef6ba6c7d1ec7b646352c1> , <https://astrea.linkeddata.es/shapes#00695e1548565353ae1256689baa3d82> ;
+        sh:targetClass  <http://ns.inria.fr/provoc#Component> .
+
+<https://astrea.linkeddata.es/shapes#9a7cd97cc37660ab4c8e2250b7b34fbf>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#3c34bf6b350ae4684aab1da08559ac61> , <https://astrea.linkeddata.es/shapes#d8ed93cd9e55979df87c9023ffe735d6> , <https://astrea.linkeddata.es/shapes#9e46497d2120116832b3f2d65ac4abad> ;
+        sh:targetClass  <http://www.heppnetz.de/ontologies/goodrelations/v1#Brand> .
+
+<https://astrea.linkeddata.es/shapes#faeeb6444c2ed08c40ecc1880be289ca>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/dc/elements/1.1/date> .
+
+<https://astrea.linkeddata.es/shapes#212abe27f052e89bd7e017bb536e2342>
+        a               sh:PropertyShape ;
+        rdfs:label      "This specifies the founder of a group."@en ;
+        sh:class        <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description  "This specifies the founder of a group."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ns.inria.fr/provoc#hasFounder> .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a99e705cf4f90199ee1026f44ed160ea> ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Person> .
+
+<https://astrea.linkeddata.es/shapes#d8ed93cd9e55979df87c9023ffe735d6>
+        a               sh:PropertyShape ;
+        rdfs:label      "This specifies the models who represent a product, a range of product, a brand, a division, etc..."@en ;
+        sh:class        <http://ns.inria.fr/provoc#Model> ;
+        sh:description  "This specifies the models who represent a product, a range of product, a brand, a division, etc..."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ns.inria.fr/provoc#hasModel> .
+
+<https://astrea.linkeddata.es/shapes#2f45dbc58c8fc724e7651021ef45abac>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/goodrelations/v1#color> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#4ef62ddd3ced45df9f285e25b00b384e>
+        a               sh:PropertyShape ;
+        rdfs:label      "Un produit ou service peut avoir une cible, par exemple féminine ou masculine."@fr , "A product or service may have a target, for example, male or female."@en ;
+        sh:description  "Un produit ou service peut avoir une cible, par exemple féminine ou masculine."@fr , "A product or service may have a target, for example, male or female."@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://ns.inria.fr/provoc#hasTarget> .
+
+<https://astrea.linkeddata.es/shapes#07f7ca93b1ef6ba6c7d1ec7b646352c1>
+        a               sh:PropertyShape ;
+        rdfs:label      "A component/ingredient of a product may have an impact according to health."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "A component/ingredient of a product may have an impact according to health."@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://ns.inria.fr/provoc#healthImpact> ;
+        sh:pattern      ".*" .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#b9a8cdcbb53377f05928b2538c046e24> , <https://astrea.linkeddata.es/shapes#49b28c75bc3ebff9c23f1fcfe55fd4be> , <https://astrea.linkeddata.es/shapes#d8ed93cd9e55979df87c9023ffe735d6> , <https://astrea.linkeddata.es/shapes#810115e8bd5660a068c30d7301b51d7b> , <https://astrea.linkeddata.es/shapes#9e46497d2120116832b3f2d65ac4abad> , <https://astrea.linkeddata.es/shapes#5c52ccbab98f0f0b524a53f57ce7d6b3> , <https://astrea.linkeddata.es/shapes#27865d60b81f7745553c32e7c6096fa4> , <https://astrea.linkeddata.es/shapes#fc93f3df49f48d83bc2c1d2c11cbfa1d> , <https://astrea.linkeddata.es/shapes#9d3141122445e37ccb6a41396728b5ac> , <https://astrea.linkeddata.es/shapes#faeeb6444c2ed08c40ecc1880be289ca> , <https://astrea.linkeddata.es/shapes#9a7cd97cc37660ab4c8e2250b7b34fbf> , <https://astrea.linkeddata.es/shapes#00695e1548565353ae1256689baa3d82> , <https://astrea.linkeddata.es/shapes#89a7e8760f9702dc1af1c5f910e4d21c> , <https://astrea.linkeddata.es/shapes#bef60f7f27ead0dbfea7c9f76a10ab55> , <https://astrea.linkeddata.es/shapes#488eef4f74bbc99643e3316c5bdf00cf> , <https://astrea.linkeddata.es/shapes#0c2a97216f26ec251acd005c29745fdf> , <https://astrea.linkeddata.es/shapes#c6ef336bda0acad331ddae5734cae163> , <https://astrea.linkeddata.es/shapes#4ef62ddd3ced45df9f285e25b00b384e> , <https://astrea.linkeddata.es/shapes#f4399b047988d98ffc304d57fb0ccf83> , <https://astrea.linkeddata.es/shapes#a99e705cf4f90199ee1026f44ed160ea> , <https://astrea.linkeddata.es/shapes#f538323f409c06a73f4ac93c8ca2a8e2> , <https://astrea.linkeddata.es/shapes#9ecdc9e43146c83b546741e6c28377e8> , <https://astrea.linkeddata.es/shapes#2d6cdcde123fa89d8aea56ddbe7c1895> , <https://astrea.linkeddata.es/shapes#1965adb072357e6cb523406650f9eb85> , <https://astrea.linkeddata.es/shapes#e46e44a5fb4bdb6a8e8193311269a53e> , <https://astrea.linkeddata.es/shapes#74ac90c9c816d92423aaedea3c4d9dd8> , <https://astrea.linkeddata.es/shapes#2f45dbc58c8fc724e7651021ef45abac> , <https://astrea.linkeddata.es/shapes#07f7ca93b1ef6ba6c7d1ec7b646352c1> , <https://astrea.linkeddata.es/shapes#2e1790ac2b43b9a8f5e06d784ed857d4> , <https://astrea.linkeddata.es/shapes#90fe7bc60494acfd97d819de3ba2f4ce> , <https://astrea.linkeddata.es/shapes#212abe27f052e89bd7e017bb536e2342> , <https://astrea.linkeddata.es/shapes#b6b4a0ee6824d67f4a759a8274a9a6ab> , <https://astrea.linkeddata.es/shapes#353ad6be96b49651dba6646fc3810700> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#f3c59d7f45a03885fd6394fffb2e1d1c> , <https://astrea.linkeddata.es/shapes#cbd85637fb5444f3154cdda119b9e626> , <https://astrea.linkeddata.es/shapes#5e51bed2203961aa8cb24ca4218c7bab> , <https://astrea.linkeddata.es/shapes#226ee263fa5d8dbc21f880a2644b2762> , <https://astrea.linkeddata.es/shapes#8f86c088bd8fb25832c6ca18f5c759eb> , <https://astrea.linkeddata.es/shapes#d8448f7de5238dcdf58a6a729dd44487> , <https://astrea.linkeddata.es/shapes#3c34bf6b350ae4684aab1da08559ac61> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#2e1790ac2b43b9a8f5e06d784ed857d4>
+        a               sh:PropertyShape ;
+        rdfs:label      "This specifies the creator of a fragrance."@en ;
+        sh:class        <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description  "This specifies the creator of a fragrance."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ns.inria.fr/provoc#hasFragranceCreator> .
+
+<https://astrea.linkeddata.es/shapes#a99e705cf4f90199ee1026f44ed160ea>
+        a               sh:PropertyShape ;
+        rdfs:label      "This specifies persons who are working or who worked for a brand or a business entity."@en ;
+        sh:class        <http://www.w3.org/ns/org#Organization> , <http://www.heppnetz.de/ontologies/goodrelations/v1#Brand> , <http://schema.org/brand> , <http://purl.org/goodrelations/v1#BusinessEntity> ;
+        sh:description  "This specifies persons who are working or who worked for a brand or a business entity."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://vocab.data.gov/def/drm#worksFor> .
+
+<https://astrea.linkeddata.es/shapes#74ac90c9c816d92423aaedea3c4d9dd8>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#212abe27f052e89bd7e017bb536e2342> , <https://astrea.linkeddata.es/shapes#3c34bf6b350ae4684aab1da08559ac61> , <https://astrea.linkeddata.es/shapes#d8ed93cd9e55979df87c9023ffe735d6> ;
+        sh:targetClass  <http://www.w3.org/ns/org#Organization> .
+
+<https://astrea.linkeddata.es/shapes#488eef4f74bbc99643e3316c5bdf00cf>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#3c34bf6b350ae4684aab1da08559ac61> ;
+        sh:targetClass  <http://schema.org/Provider> .
+
+<https://astrea.linkeddata.es/shapes#2d6cdcde123fa89d8aea56ddbe7c1895>
+        a               sh:PropertyShape ;
+        rdfs:label      "This specifies the package that contains several products,, not neceserraly from the same pv:Range."@en ;
+        sh:class        <http://ns.inria.fr/provoc#Package> ;
+        sh:description  "This specifies the package that contains several products,, not neceserraly from the same pv:Range."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ns.inria.fr/provoc#belongsToPackage> .
+
+<https://astrea.linkeddata.es/shapes#226ee263fa5d8dbc21f880a2644b2762>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e46e44a5fb4bdb6a8e8193311269a53e> , <https://astrea.linkeddata.es/shapes#2d6cdcde123fa89d8aea56ddbe7c1895> , <https://astrea.linkeddata.es/shapes#2f45dbc58c8fc724e7651021ef45abac> , <https://astrea.linkeddata.es/shapes#cbd85637fb5444f3154cdda119b9e626> , <https://astrea.linkeddata.es/shapes#9d3141122445e37ccb6a41396728b5ac> , <https://astrea.linkeddata.es/shapes#3c34bf6b350ae4684aab1da08559ac61> , <https://astrea.linkeddata.es/shapes#2e1790ac2b43b9a8f5e06d784ed857d4> , <https://astrea.linkeddata.es/shapes#d8ed93cd9e55979df87c9023ffe735d6> , <https://astrea.linkeddata.es/shapes#810115e8bd5660a068c30d7301b51d7b> , <https://astrea.linkeddata.es/shapes#bef60f7f27ead0dbfea7c9f76a10ab55> , <https://astrea.linkeddata.es/shapes#b9a8cdcbb53377f05928b2538c046e24> , <https://astrea.linkeddata.es/shapes#8f86c088bd8fb25832c6ca18f5c759eb> , <https://astrea.linkeddata.es/shapes#fc93f3df49f48d83bc2c1d2c11cbfa1d> ;
+        sh:targetClass  <http://purl.org/goodrelations/v1#ProductOrService> .
+
+<https://astrea.linkeddata.es/shapes#f4399b047988d98ffc304d57fb0ccf83>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f3c59d7f45a03885fd6394fffb2e1d1c> , <https://astrea.linkeddata.es/shapes#3c34bf6b350ae4684aab1da08559ac61> ;
+        sh:targetClass  <http://vivoweb.org/ontology/core#Division> .
+
+<https://astrea.linkeddata.es/shapes#9ecdc9e43146c83b546741e6c28377e8>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#3c34bf6b350ae4684aab1da08559ac61> , <https://astrea.linkeddata.es/shapes#d8ed93cd9e55979df87c9023ffe735d6> ;
+        sh:targetClass  <http://schema.org/brand> .
+
+<https://astrea.linkeddata.es/shapes#cbd85637fb5444f3154cdda119b9e626>
+        a               sh:PropertyShape ;
+        rdfs:label      "This specifies the brand of a range or a product."@en ;
+        sh:class        <http://www.heppnetz.de/ontologies/goodrelations/v1#Brand> ;
+        sh:description  "This specifies the brand of a range or a product."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ns.inria.fr/provoc#belongsToBrand> .
+
+<https://astrea.linkeddata.es/shapes#bef60f7f27ead0dbfea7c9f76a10ab55>
+        a               sh:PropertyShape ;
+        rdfs:label      "This specifies the range of products."@en ;
+        sh:class        <http://ns.inria.fr/provoc#ProductOrServiceRange> ;
+        sh:description  "This specifies the range of products."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ns.inria.fr/provoc#belongsToProductOrServiceRange> .
+
+<https://astrea.linkeddata.es/shapes#b9a8cdcbb53377f05928b2538c046e24>
+        a               sh:PropertyShape ;
+        rdfs:label      "This specifies the components included in a product."@en ;
+        sh:class        <http://ns.inria.fr/provoc#Component> ;
+        sh:description  "This specifies the components included in a product."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ns.inria.fr/provoc#hasComponent> .
+
+<https://astrea.linkeddata.es/shapes#d8448f7de5238dcdf58a6a729dd44487>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/dc/elements/1.1/creator> .
+
+<https://astrea.linkeddata.es/shapes#353ad6be96b49651dba6646fc3810700>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#cbd85637fb5444f3154cdda119b9e626> ;
+        sh:targetClass  <http://ns.inria.fr/provoc#ProductOrServiceRange> .
+
+<https://astrea.linkeddata.es/shapes#5c52ccbab98f0f0b524a53f57ce7d6b3>
+        a               sh:PropertyShape ;
+        rdfs:label      "This specifies the designer of a fragrance."@en ;
+        sh:class        <http://ns.inria.fr/provoc#Designer> ;
+        sh:description  "This specifies the designer of a fragrance."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ns.inria.fr/provoc#hasPackageDesigner> .
+
+<https://astrea.linkeddata.es/shapes#9d3141122445e37ccb6a41396728b5ac>
+        a               sh:PropertyShape ;
+        rdfs:label      "A product or service may have different versions."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "A product or service may have different versions."@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://ns.inria.fr/provoc#hasVersion> ;
+        sh:pattern      ".*" .

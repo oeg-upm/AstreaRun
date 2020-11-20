@@ -1,0 +1,106 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#bb9d040cc5c8fa0eb274b90e0a7c6697> , <https://astrea.linkeddata.es/shapes#d12875ff34be5926ec4c7f48809b9b6f> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> , <https://astrea.linkeddata.es/shapes#f9c96ecf128b5b06a5560bf1e8f7bbe3> , <https://astrea.linkeddata.es/shapes#c664cc5257067f2e6458370d65264f77> , <https://astrea.linkeddata.es/shapes#51accf7c98167a54d072e7c14531741a> , <https://astrea.linkeddata.es/shapes#2df464c7545ac5ffc75d40ab79786b47> , <https://astrea.linkeddata.es/shapes#b8edc7d1dc2afb15d74c603140073811> , <https://astrea.linkeddata.es/shapes#a55374bc074b575993bae4849df79482> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#c664cc5257067f2e6458370d65264f77>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://privatealpha.com/ontology/certification/1#> ;
+        rdfs:label        "This property specifies that its subject, an agent, has issued a certification."@en , "certifies"@en ;
+        sh:class          <http://privatealpha.com/ontology/certification/1#Certification> ;
+        sh:description    "This property specifies that its subject, an agent, has issued a certification."@en ;
+        sh:inversePath    <http://privatealpha.com/ontology/certification/1#certifies> ;
+        sh:maxCount       1 ;
+        sh:name           "certifies"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           <http://privatealpha.com/ontology/certification/1#certifies> .
+
+<https://astrea.linkeddata.es/shapes#f9c96ecf128b5b06a5560bf1e8f7bbe3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://privatealpha.com/ontology/certification/1#> ;
+        rdfs:label        "principal"@en , "This property specifies who or what agent is being certified."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description    "This property specifies who or what agent is being certified."@en ;
+        sh:name           "principal"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://privatealpha.com/ontology/certification/1#principal> .
+
+<https://astrea.linkeddata.es/shapes#a55374bc074b575993bae4849df79482>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://privatealpha.com/ontology/certification/1#> ;
+        rdfs:label        "This property specifies what achievement, skill, or fact is being certified."@en , "qualification"@en ;
+        rdfs:seeAlso      <http://smiy.sourceforge.net/cco/spec/cognitivecharacteristics.html> , <http://www.w3.org/2004/02/skos/core#Concept> , <http://www.w3.org/TR/vocab-org/#org:Role> ;
+        sh:description    "This property specifies what achievement, skill, or fact is being certified."@en ;
+        sh:name           "qualification"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#51accf7c98167a54d072e7c14531741a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://privatealpha.com/ontology/certification/1#> ;
+        rdfs:label        "authority"@en , "This property specifies who (or what) is doing the certifying."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description    "This property specifies who (or what) is doing the certifying."@en ;
+        sh:maxCount       1 ;
+        sh:name           "authority"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           <http://privatealpha.com/ontology/certification/1#authority> .
+
+<https://astrea.linkeddata.es/shapes#2df464c7545ac5ffc75d40ab79786b47>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://privatealpha.com/ontology/certification/1#> ;
+        rdfs:label        "proof"@en , "This property points to some proof of the certification, like a scan of an official document or a page on the issuing authority's website that corroborates the certification."@en ;
+        rdfs:seeAlso      <http://www.w3.org/ns/auth/cert> ;
+        sh:description    "This property points to some proof of the certification, like a scan of an official document or a page on the issuing authority's website that corroborates the certification."@en ;
+        sh:name           "proof"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#d12875ff34be5926ec4c7f48809b9b6f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://privatealpha.com/ontology/certification/1#> ;
+        rdfs:label        "has-certification"@en , "This property specifies that an agent possesses a given certification."@en ;
+        sh:class          <http://privatealpha.com/ontology/certification/1#Certification> ;
+        sh:description    "This property specifies that an agent possesses a given certification."@en ;
+        sh:name           "has-certification"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://privatealpha.com/ontology/certification/1#has-certification> .
+
+<https://astrea.linkeddata.es/shapes#bb9d040cc5c8fa0eb274b90e0a7c6697>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://privatealpha.com/ontology/certification/1#> ;
+        rdfs:label        "proves"@en , "This property asserts that its subject is somehow proof of a given certification."@en ;
+        sh:class          <http://privatealpha.com/ontology/certification/1#Certification> ;
+        sh:description    "This property asserts that its subject is somehow proof of a given certification."@en ;
+        sh:name           "proves"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://privatealpha.com/ontology/certification/1#proves> .
+
+<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d12875ff34be5926ec4c7f48809b9b6f> ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Agent> .
+
+<https://astrea.linkeddata.es/shapes#b8edc7d1dc2afb15d74c603140073811>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://privatealpha.com/ontology/certification/1#> ;
+        rdfs:label        "Certification"@en ;
+        sh:description    "This class represents the abstract notion of certification, of an agent, by another agent, that the first agent possesses some property or set of properties implied by the certification, potentially within some spatiotemporal scope, and which may or may not be designated by some identifier."@en ;
+        sh:name           "Certification"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#f9c96ecf128b5b06a5560bf1e8f7bbe3> , <https://astrea.linkeddata.es/shapes#51accf7c98167a54d072e7c14531741a> ;
+        sh:targetClass    <http://privatealpha.com/ontology/certification/1#Certification> .

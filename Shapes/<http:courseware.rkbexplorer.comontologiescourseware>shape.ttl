@@ -1,0 +1,318 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#9349f0abc091b4114b798ddb6963bb94>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "Assessment Method" ;
+        sh:description    "A method by which a student is assessed; instances of this class may include examination, coursework, etc." ;
+        sh:name           "Assessment Method" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://courseware.rkbexplorer.com/ontologies/courseware#Assessment-Method> .
+
+<https://astrea.linkeddata.es/shapes#f15d4ab278361eb0074d00dd480faeff>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "This property describes the intellectual property rights and conditions of use for this learning object. " ;
+        sh:description    "This property describes the intellectual property rights and conditions of use for this learning object. " ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#5d48b07be62a4b89c01ce7e87f3af61b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "has assessment method" ;
+        sh:class          <http://courseware.rkbexplorer.com/ontologies/courseware#Assessment-Method> ;
+        sh:name           "has assessment method" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#has-assessment-method> .
+
+<https://astrea.linkeddata.es/shapes#379c1d0610abf5e30186f1849cb190a2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "Whether copyright or other restrictions apply to the use of this learning resource." ;
+        sh:description    "Whether copyright or other restrictions apply to the use of this learning resource." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#has-rights-copyright> .
+
+<https://astrea.linkeddata.es/shapes#65cace6b6ea1f39b93651ffcbdddad60>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "A detailed description of the content conveyed within the course" , "detailed description" ;
+        sh:datatype       xsd:string ;
+        sh:description    "A detailed description of the content conveyed within the course" ;
+        sh:name           "detailed description" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#detailed-description> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#69c3b1b7182840ea2dd38d08299cac0b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "Comments on the conditions of use of this learning resource." ;
+        sh:datatype       xsd:string ;
+        sh:description    "Comments on the conditions of use of this learning resource." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#has-rights-description> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#99f5983fc0a37d5263dfd5acc30639c1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "The total number of hours of laboratory sessions in this course" , "hours of labs" ;
+        sh:datatype       xsd:float ;
+        sh:description    "The total number of hours of laboratory sessions in this course" ;
+        sh:name           "hours of labs" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#hours-of-labs> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#d73c3344d18c974d0f52f16dcf5a0ba2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "Student Interaction Type" ;
+        sh:description    "A type of interaction in which a student engages whilst undertaking a course; instances of this class may include lectures, laboratory sessions, and group or individual projects." ;
+        sh:name           "Student Interaction Type" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://courseware.rkbexplorer.com/ontologies/courseware#Student-Interaction-Type> .
+
+<https://astrea.linkeddata.es/shapes#e75cfe829e08ba289ae549f34cf60db2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "submitted by" , "The ReSIST Project member who has submitted and is the point of contact for this course" ;
+        sh:class          <http://www.aktors.org/ontology/portal#Generic-Agent> ;
+        sh:description    "The ReSIST Project member who has submitted and is the point of contact for this course" ;
+        sh:name           "submitted by" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#submitted-by> .
+
+<https://astrea.linkeddata.es/shapes#37b17bb6879de5b98abbd811b679f3bd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "The total number of hours of personal study in this course" , "hours of personal study" ;
+        sh:datatype       xsd:float ;
+        sh:description    "The total number of hours of personal study in this course" ;
+        sh:name           "hours of personal study" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#hours-of-personal-study> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#a112f93f52b9d78e78f05aa6fbbfff33>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "The language in which an item of abstract information is written, expressed or delivered." , "has language" ;
+        sh:datatype       xsd:language ;
+        sh:description    "The language in which an item of abstract information is written, expressed or delivered." ;
+        sh:name           "has language" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#has-language> ;
+        sh:pattern        "[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*" .
+
+<https://astrea.linkeddata.es/shapes#a5b5989ee377d02d48c5e74938a86858>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "has student interaction type" , "Identifies a course as having the prescribed interaction type" ;
+        sh:class          <http://courseware.rkbexplorer.com/ontologies/courseware#Student-Interaction-Type> ;
+        sh:description    "Identifies a course as having the prescribed interaction type" ;
+        sh:name           "has student interaction type" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#has-student-interaction-type> .
+
+<https://astrea.linkeddata.es/shapes#680a389e2d49131a409be9fc03fc32a2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "has author" , "A person which is involved with the creation of the course" ;
+        sh:class          <http://www.aktors.org/ontology/portal#Generic-Agent> ;
+        sh:description    "A person which is involved with the creation of the course" ;
+        sh:name           "has author" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#has-author> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#379c1d0610abf5e30186f1849cb190a2> , <https://astrea.linkeddata.es/shapes#a112f93f52b9d78e78f05aa6fbbfff33> , <https://astrea.linkeddata.es/shapes#5d48b07be62a4b89c01ce7e87f3af61b> , <https://astrea.linkeddata.es/shapes#a5b5989ee377d02d48c5e74938a86858> , <https://astrea.linkeddata.es/shapes#645d0a238bede6622bd8a0b63373a6a2> , <https://astrea.linkeddata.es/shapes#d113e0fd98e1f0f609e21ef68341b649> , <https://astrea.linkeddata.es/shapes#dffb6585a6712009616fe5d92da1868d> , <https://astrea.linkeddata.es/shapes#06c75c020be7f8b764903c210f453fcb> , <https://astrea.linkeddata.es/shapes#f15d4ab278361eb0074d00dd480faeff> , <https://astrea.linkeddata.es/shapes#db376032c6f2c286c474a11052b1af6b> , <https://astrea.linkeddata.es/shapes#9ab89e10c2520a97fc6de97efa5114e6> , <https://astrea.linkeddata.es/shapes#834078c32610e18e056e7ecd9177e31c> , <https://astrea.linkeddata.es/shapes#a1b111e8ca2d032db77a8cf46cca0402> , <https://astrea.linkeddata.es/shapes#0d2a5febfad03ca22354345c32d927c1> , <https://astrea.linkeddata.es/shapes#69c3b1b7182840ea2dd38d08299cac0b> , <https://astrea.linkeddata.es/shapes#4bef093ea2bf398b39367c365c4d4420> , <https://astrea.linkeddata.es/shapes#680a389e2d49131a409be9fc03fc32a2> , <https://astrea.linkeddata.es/shapes#9349f0abc091b4114b798ddb6963bb94> , <https://astrea.linkeddata.es/shapes#37b17bb6879de5b98abbd811b679f3bd> , <https://astrea.linkeddata.es/shapes#642df9706be6f17501ada22032bc66df> , <https://astrea.linkeddata.es/shapes#65cace6b6ea1f39b93651ffcbdddad60> , <https://astrea.linkeddata.es/shapes#306513f18b49a4063d983a4e55a0f51c> , <https://astrea.linkeddata.es/shapes#99f5983fc0a37d5263dfd5acc30639c1> , <https://astrea.linkeddata.es/shapes#e75cfe829e08ba289ae549f34cf60db2> , <https://astrea.linkeddata.es/shapes#ad56d847ba75f9feecbcce65ba6b6b6f> , <https://astrea.linkeddata.es/shapes#2edfe3e317b5c7cc3238aebb83f88dc3> , <https://astrea.linkeddata.es/shapes#d73c3344d18c974d0f52f16dcf5a0ba2> , <https://astrea.linkeddata.es/shapes#5109b124591c1105fcf54e168bdceae5> , <https://astrea.linkeddata.es/shapes#eee79e630151e7c18b5fef0474fb479f> , <https://astrea.linkeddata.es/shapes#24fa4b7b05d4a0b8956a70ebec6f2f25> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/01771130750> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#0d2a5febfad03ca22354345c32d927c1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "course duration" , "The total duration of the course (in hours)" ;
+        sh:datatype       xsd:integer ;
+        sh:description    "The total duration of the course (in hours)" ;
+        sh:name           "course duration" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#course-duration> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#5109b124591c1105fcf54e168bdceae5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "The title of this course" , "title" ;
+        sh:datatype       xsd:string ;
+        sh:description    "The title of this course" ;
+        sh:name           "title" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#has-title> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#306513f18b49a4063d983a4e55a0f51c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "has courseware" , "Courseware used by the Resist-Course (reference texts, personal hand-outs, slides, etc)." ;
+        sh:class          <http://www.aktors.org/ontology/portal#Publication-Reference> ;
+        sh:description    "Courseware used by the Resist-Course (reference texts, personal hand-outs, slides, etc)." ;
+        sh:name           "has courseware" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#has-courseware> .
+
+<https://astrea.linkeddata.es/shapes#eee79e630151e7c18b5fef0474fb479f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "total hours of engagement" , "The total number of hours of engagement while undertaking this course" ;
+        sh:datatype       xsd:float ;
+        sh:description    "The total number of hours of engagement while undertaking this course" ;
+        sh:name           "total hours of engagement" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#total-hours-engagement> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/report/01771130750>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.aktors.org/ontology/portal" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#ad56d847ba75f9feecbcce65ba6b6b6f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "course objectives" , "The objectives of this course" ;
+        sh:datatype       xsd:string ;
+        sh:description    "The objectives of this course" ;
+        sh:name           "course objectives" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#course-objectives> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#834078c32610e18e056e7ecd9177e31c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "Course" ;
+        sh:description    "This class encapsulates a course that is taught to students" ;
+        sh:name           "Course" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#4bef093ea2bf398b39367c365c4d4420> , <https://astrea.linkeddata.es/shapes#5d48b07be62a4b89c01ce7e87f3af61b> , <https://astrea.linkeddata.es/shapes#d113e0fd98e1f0f609e21ef68341b649> , <https://astrea.linkeddata.es/shapes#9ab89e10c2520a97fc6de97efa5114e6> , <https://astrea.linkeddata.es/shapes#e75cfe829e08ba289ae549f34cf60db2> , <https://astrea.linkeddata.es/shapes#99f5983fc0a37d5263dfd5acc30639c1> , <https://astrea.linkeddata.es/shapes#37b17bb6879de5b98abbd811b679f3bd> , <https://astrea.linkeddata.es/shapes#306513f18b49a4063d983a4e55a0f51c> , <https://astrea.linkeddata.es/shapes#06c75c020be7f8b764903c210f453fcb> , <https://astrea.linkeddata.es/shapes#0d2a5febfad03ca22354345c32d927c1> , <https://astrea.linkeddata.es/shapes#db376032c6f2c286c474a11052b1af6b> , <https://astrea.linkeddata.es/shapes#680a389e2d49131a409be9fc03fc32a2> , <https://astrea.linkeddata.es/shapes#642df9706be6f17501ada22032bc66df> , <https://astrea.linkeddata.es/shapes#ad56d847ba75f9feecbcce65ba6b6b6f> , <https://astrea.linkeddata.es/shapes#a5b5989ee377d02d48c5e74938a86858> , <https://astrea.linkeddata.es/shapes#5109b124591c1105fcf54e168bdceae5> , <https://astrea.linkeddata.es/shapes#eee79e630151e7c18b5fef0474fb479f> , <https://astrea.linkeddata.es/shapes#645d0a238bede6622bd8a0b63373a6a2> , <https://astrea.linkeddata.es/shapes#65cace6b6ea1f39b93651ffcbdddad60> ;
+        sh:targetClass    <http://courseware.rkbexplorer.com/ontologies/courseware#Course> .
+
+<https://astrea.linkeddata.es/shapes#24fa4b7b05d4a0b8956a70ebec6f2f25>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "Pre-requisite" ;
+        sh:description    "This class encapsulates a body of previous knowledge required to undertake a course." ;
+        sh:name           "Pre-requisite" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://courseware.rkbexplorer.com/ontologies/courseware#Pre-requisite> .
+
+<https://astrea.linkeddata.es/shapes#9ab89e10c2520a97fc6de97efa5114e6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "has pre-requisite" ;
+        sh:class          <http://courseware.rkbexplorer.com/ontologies/courseware#Pre-requisite> ;
+        sh:name           "has pre-requisite" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#has-prerequisite> .
+
+<https://astrea.linkeddata.es/shapes#2edfe3e317b5c7cc3238aebb83f88dc3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#is-taught-present> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#06c75c020be7f8b764903c210f453fcb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "has infrastructure requirement" , "An infrastructure requirement that is needed to carry out the course" ;
+        sh:class          <http://www.aktors.org/ontology/portal#Technology> ;
+        sh:description    "An infrastructure requirement that is needed to carry out the course" ;
+        sh:name           "has infrastructure requirement" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#has-infrastructure-requirement> .
+
+<https://astrea.linkeddata.es/shapes#4bef093ea2bf398b39367c365c4d4420>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "has instructor" , "A person delivering tuition as part of the course" ;
+        sh:class          <http://www.aktors.org/ontology/portal#Person> ;
+        sh:description    "A person delivering tuition as part of the course" ;
+        sh:name           "has instructor" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#has-instructor> .
+
+<https://astrea.linkeddata.es/shapes#dffb6585a6712009616fe5d92da1868d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "Whether use of this learning resource requires payment" ;
+        sh:description    "Whether use of this learning resource requires payment" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#has-rights-cost> .
+
+<https://astrea.linkeddata.es/shapes#645d0a238bede6622bd8a0b63373a6a2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "taught at" , "The organization at which this course is taught" ;
+        sh:class          <http://www.aktors.org/ontology/portal#Organization> ;
+        sh:description    "The organization at which this course is taught" ;
+        sh:name           "taught at" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#taught-at> .
+
+<https://astrea.linkeddata.es/shapes#a1b111e8ca2d032db77a8cf46cca0402>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#69c3b1b7182840ea2dd38d08299cac0b> , <https://astrea.linkeddata.es/shapes#a112f93f52b9d78e78f05aa6fbbfff33> ;
+        sh:targetClass  <http://www.aktors.org/ontology/portal#Abstract-Information> .
+
+<https://astrea.linkeddata.es/shapes#642df9706be6f17501ada22032bc66df>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "The number of EU BS/MS program credits" , "number of credits" ;
+        sh:datatype       xsd:float ;
+        sh:description    "The number of EU BS/MS program credits" ;
+        sh:name           "number of credits" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#number-of-credits> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#db376032c6f2c286c474a11052b1af6b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "hours of lectures" , "The total number of hours of lectures delivered in this course" ;
+        sh:datatype       xsd:float ;
+        sh:description    "The total number of hours of lectures delivered in this course" ;
+        sh:name           "hours of lectures" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#hours-of-lectures> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#d113e0fd98e1f0f609e21ef68341b649>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://courseware.rkbexplorer.com/ontologies/courseware> ;
+        rdfs:label        "involves organisation" , "The association of an organisation which is involved in delivering a course" ;
+        sh:class          <http://www.aktors.org/ontology/portal#Organization> ;
+        sh:description    "The association of an organisation which is involved in delivering a course" ;
+        sh:name           "involves organisation" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://courseware.rkbexplorer.com/ontologies/courseware#involves-organization> .

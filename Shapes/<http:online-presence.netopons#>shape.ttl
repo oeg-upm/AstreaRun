@@ -1,0 +1,561 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#4314d729c2e5a862130d7a4743a268b4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "Findability"@en ;
+        sh:description    "The OnlinePresenceComponent used to represent the\n\t\t\tpossibility to find contact details of an Agent in a public\n\t\t\tlisting"@en ;
+        sh:name           "Findability"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#56a3e61a4b880d3523c42ea979d8b9af> , <https://astrea.linkeddata.es/shapes#4fafe428671fa039f3c3bda28ee73fd5> ;
+        sh:targetClass    <http://online-presence.net/opo/ns#Findability> .
+
+<https://astrea.linkeddata.es/shapes#9471203f36bf5ce1b1d6a7b594bd48ab>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "Action"@en ;
+        sh:description    "An action currently performed by the Agent (e.g., listening to music, reading a book)."@en ;
+        sh:name           "Action"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#2b893978b065574c8e6bf9a31bf835f3> , <https://astrea.linkeddata.es/shapes#01aac1f6437ba71e3593710b2c39248a> ;
+        sh:targetClass    <http://online-presence.net/opo/ns#Action> .
+
+<https://astrea.linkeddata.es/shapes#91ebfd9cca0d20b8a8b2b251d6891a82>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "Notifiability"@en ;
+        sh:description    "The OnlinePresenceComponent used to represent the attitude\n\t\t\tof an Agent towards interaction with applications i.e., the\n\t\t\tpossibility of applications to show notifications."@en ;
+        sh:name           "Notifiability"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#4fafe428671fa039f3c3bda28ee73fd5> , <https://astrea.linkeddata.es/shapes#2d073b1c526d3f31e04aa9f3f7c92037> ;
+        sh:targetClass    <http://online-presence.net/opo/ns#Notifiability> .
+
+<https://astrea.linkeddata.es/shapes#4b14082cf1ee9f5fa8dcf771cbc87da1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "School Homepage"@en , "The homepage of school attended by people in the Sharing Space."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Document> ;
+        sh:description    "The homepage of school attended by people in the Sharing Space."@en ;
+        sh:name           "School Homepage"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#schoolHomepage> .
+
+<https://astrea.linkeddata.es/shapes#0b87d811a1f4fb54218392d217fd602a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "OnlinePresenceComponent"@en ;
+        sh:description    "A component of OnlinePresence used to represent one of its\n\t\t\tdimensions."@en ;
+        sh:name           "OnlinePresenceComponent"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#2b893978b065574c8e6bf9a31bf835f3> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7bdab07d5c9c68949b7875d642da109d> ;
+        sh:targetClass    <http://online-presence.net/opo/ns#OnlinePresenceComponent> .
+
+<https://astrea.linkeddata.es/shapes#9c35c231e6620c15b540d59d533bd358>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "inactivityPeriod"@en , "Period of inactivity on a certain service"@en ;
+        sh:datatype       xsd:duration ;
+        sh:description    "Period of inactivity on a certain service"@en ;
+        sh:maxCount       1 ;
+        sh:name           "inactivityPeriod"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
+        sh:path           <http://online-presence.net/opo/ns#inactivityPeriod> ;
+        sh:pattern        "-?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S))))" .
+
+<https://astrea.linkeddata.es/shapes#c008d621808e35976f31460170efc02e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "OnlinePresence"@en ;
+        sh:description    "OnlinePresence, described in termes of various\n\t\t\tOnlinePresenceComponents to represent the attitude of an\n\t\t\tAgent towards interaction with other Agents and\n\t\t\tApplications."@en ;
+        sh:name           "OnlinePresence"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#863663a822c89c7d1eb30177557b6649> , <https://astrea.linkeddata.es/shapes#01aac1f6437ba71e3593710b2c39248a> , <https://astrea.linkeddata.es/shapes#de224300dcf2871650ac6dcb5ecb872e> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c60f47300b8bfc52fecd9827ac308b16> , <https://astrea.linkeddata.es/shapes#ee23d93c4b3e98feb961372446922616> , <https://astrea.linkeddata.es/shapes#ecc11f042c7c9f847f26e59b01a161a9> , <https://astrea.linkeddata.es/shapes#0b329c0886a1ac0632f88621af991fa0> , <https://astrea.linkeddata.es/shapes#e68b02a7db16838fe50295a31ade2e69> , <https://astrea.linkeddata.es/shapes#53fd22887637a0a8dd249d9211d14a49> , <https://astrea.linkeddata.es/shapes#95f9d9bd1e6d3caba55ef0dc6603ba5b> , <https://astrea.linkeddata.es/shapes#99db050f74466f22882b1e2eacbeec11> , <https://astrea.linkeddata.es/shapes#e23656e6d21ae57fb1ee0ea72ffb2f2d> , <https://astrea.linkeddata.es/shapes#5e6754d447b2ae012f92096368a07443> , <https://astrea.linkeddata.es/shapes#3c65cd5d0edb13b00dc31bc67dbc91ad> , <https://astrea.linkeddata.es/shapes#4ceeffc9d803dc4f42f620d0e4895313> ;
+        sh:targetClass    <http://online-presence.net/opo/ns#OnlinePresence> .
+
+<https://astrea.linkeddata.es/shapes#c9a35c26b6db225f5ad2576aa6ce0ff8>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://online-presence.net/opo/ns#hasStatusComponent> .
+
+<https://astrea.linkeddata.es/shapes#4fafe428671fa039f3c3bda28ee73fd5>
+        a         sh:PropertyShape ;
+        sh:class  <http://online-presence.net/opo/ns#OnlineStatus> .
+
+<https://astrea.linkeddata.es/shapes#1ca661189d605860bd44452773e27986>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "Disturbability"@en ;
+        sh:description    "OnlineStatusComponent used to represent the wish of an Agent\n\t\t\tto be or not to be disturbed."@en ;
+        sh:name           "Disturbability"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#a8b179715fad3fd7300da1a270e8d28c> , <https://astrea.linkeddata.es/shapes#711841349d65f90960a4e2a10a5eb355> , <https://astrea.linkeddata.es/shapes#26678016234c50619469634976650656> ;
+        sh:targetClass    <http://online-presence.net/opo/ns#Disturbability> .
+
+<https://astrea.linkeddata.es/shapes#0b329c0886a1ac0632f88621af991fa0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "The source from which the OnlinePresence is declared (e.g., a mobile device)"@en , "publishedFrom"@en ;
+        sh:class          <http://online-presence.net/opo/ns#SourceOfPublishing> ;
+        sh:description    "The source from which the OnlinePresence is declared (e.g., a mobile device)"@en ;
+        sh:maxCount       1 ;
+        sh:name           "publishedFrom"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#publishedFrom> .
+
+<https://astrea.linkeddata.es/shapes#74499525c7636ebe4e278cd930a0179a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "Common Interest"@en , "An interst shared by people in the Sharing Space."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Document> ;
+        sh:description    "An interst shared by people in the Sharing Space."@en ;
+        sh:name           "Common Interest"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#commonInterest> .
+
+<https://astrea.linkeddata.es/shapes#863663a822c89c7d1eb30177557b6649>
+        a         sh:PropertyShape ;
+        sh:class  <http://online-presence.net/opo/ns#OnlinePresenceComponent> .
+
+<https://astrea.linkeddata.es/shapes#d9c512eb760eedb6e4c201e92e91b166>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "A name used by chat systems to distinguish their various\n\t\t\tstatuses."@en , "OnlineStatusName"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "A name used by chat systems to distinguish their various\n\t\t\tstatuses."@en ;
+        sh:name           "OnlineStatusName"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://online-presence.net/opo/ns#onlineStatusName> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#4ceeffc9d803dc4f42f620d0e4895313>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "customMessage"@en , "A message associated with the OnlinePresence, often used in\n\t\t\tchat programs and social networks as custom title as well as in microblogging as status message."@en ;
+        sh:class          <http://rdfs.org/sioc/ns#Item> ;
+        sh:description    "A message associated with the OnlinePresence, often used in\n\t\t\tchat programs and social networks as custom title as well as in microblogging as status message."@en ;
+        sh:name           "customMessage"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#customMessage> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#a9557cbafb854e7ffcdc46ca0d24b6e8>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Group> .
+
+<https://astrea.linkeddata.es/shapes#6ace7559c09873d57bb26d2909a563c6>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+<https://astrea.linkeddata.es/shapes#c60f47300b8bfc52fecd9827ac308b16>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "currentLocation"@en , "Current location of the Agent"@en ;
+        sh:class          <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+        sh:description    "Current location of the Agent"@en ;
+        sh:name           "currentLocation"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#currentLocation> .
+
+<https://astrea.linkeddata.es/shapes#5e6754d447b2ae012f92096368a07443>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "intendedFor"@en , "A group of people belonging to a space for sharing online psresence data - the intended audience of presence information."@en ;
+        sh:class          <http://online-presence.net/opo/ns#SharingSpace> ;
+        sh:description    "A group of people belonging to a space for sharing online psresence data - the intended audience of presence information."@en ;
+        sh:name           "intendedFor"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#intendedFor> .
+
+<https://astrea.linkeddata.es/shapes#8c36d4a80a7623844d2d28e11bdce623>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "OnlineStatusComponent"@en ;
+        sh:description    "The component of the OnlineStatus representing one of its\n\t\t\tdimensions."@en ;
+        sh:name           "OnlineStatusComponent"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#4fafe428671fa039f3c3bda28ee73fd5> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#4cf4e0c9a0a655efb49cd28d87d4200e> ;
+        sh:targetClass    <http://online-presence.net/opo/ns#OnlineStatusComponent> .
+
+<https://astrea.linkeddata.es/shapes#7bbbc5ff32c16535aef3690fb30205dd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "Based Near"@en , "The location where members of the Sharing Space are based."@en ;
+        sh:class          <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+        sh:description    "The location where members of the Sharing Space are based."@en ;
+        sh:name           "Based Near"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#basedNear> .
+
+<https://astrea.linkeddata.es/shapes#ee23d93c4b3e98feb961372446922616>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "hasOnlinePresence"@en , "OnlinePresenceComponent included in this OnlinePresence"@en ;
+        sh:class          <http://online-presence.net/opo/ns#OnlinePresenceComponent> ;
+        sh:description    "OnlinePresenceComponent included in this OnlinePresence"@en ;
+        sh:name           "hasOnlinePresence"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#hasPresenceComponent> .
+
+<https://astrea.linkeddata.es/shapes#99db050f74466f22882b1e2eacbeec11>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "The time when the OnlinePresence started"@en , "startTime"@en ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "The time when the OnlinePresence started"@en ;
+        sh:maxCount       1 ;
+        sh:name           "startTime"@en ;
+        sh:nodeKind       sh:Literal , sh:IRIOrLiteral ;
+        sh:path           <http://online-presence.net/opo/ns#startTime> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#c63eaa45559c838691356491d806556f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "Attended Organised Event"@en , "The organised event attended by people in the Sharing Space."@en ;
+        sh:class          <http://data.semanticweb.org/ns/swc/ontology#OrganisedEvent> ;
+        sh:description    "The organised event attended by people in the Sharing Space."@en ;
+        sh:name           "Attended Organised Event"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#attendedOrganisedEvent> .
+
+<https://astrea.linkeddata.es/shapes#a727bfcbcdc63e80c86cac43b7207418>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://rdfs.org/sioc/ns#has_creator> .
+
+<https://astrea.linkeddata.es/shapes#461c40a4e1afb36c56d12fc911c6ae87>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#OrganisedEvent> .
+
+<https://astrea.linkeddata.es/shapes#711841349d65f90960a4e2a10a5eb355>
+        a         sh:PropertyShape ;
+        sh:class  <http://online-presence.net/opo/ns#Visibility> .
+
+<https://astrea.linkeddata.es/shapes#7f51d4d307764f78cb539a063008ba76>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "OnlineStatus"@en ;
+        sh:description    "The OnlinePresenceComponent used to represent the attitude\n\t\t\tof an Agent towards the possibility of communication with\n\t\t\tother Agents. The OnlineStatus is defined by its components."@en ;
+        sh:name           "OnlineStatus"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#8102775ac6adda9418d75e7f9b95606f> , <https://astrea.linkeddata.es/shapes#56a3e61a4b880d3523c42ea979d8b9af> , <https://astrea.linkeddata.es/shapes#2d073b1c526d3f31e04aa9f3f7c92037> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c9a35c26b6db225f5ad2576aa6ce0ff8> , <https://astrea.linkeddata.es/shapes#4ff7172d8b9cab40ad8b762a9f5855b6> , <https://astrea.linkeddata.es/shapes#d9c512eb760eedb6e4c201e92e91b166> ;
+        sh:targetClass    <http://online-presence.net/opo/ns#OnlineStatus> .
+
+<https://astrea.linkeddata.es/shapes#e68b02a7db16838fe50295a31ade2e69>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "declaredBy"@en , "The Agent that declared the OnlinePresence"@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description    "The Agent that declared the OnlinePresence"@en ;
+        sh:name           "declaredBy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#declaredBy> .
+
+<https://astrea.linkeddata.es/shapes#0a96b5dadbaf11f051a830e85a6fc05e>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://rdfs.org/sioc/ns#UserAccount> .
+
+<https://astrea.linkeddata.es/shapes#326b612c2efdce32566e97287ec4926a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "Currently In"@en , "The current location of people in the Sharing Space."@en ;
+        sh:class          <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+        sh:description    "The current location of people in the Sharing Space."@en ;
+        sh:name           "Currently In"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#currentlyIn> .
+
+<https://astrea.linkeddata.es/shapes#6a35c2bea4cda4ef16cf7a86d5d6fc83>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "Closest Friends Of"@en , "The Person who's closest friends belog to the Sharing Space."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description    "The Person who's closest friends belog to the Sharing Space."@en ;
+        sh:name           "Closest Friends Of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#closestFriendsOf> .
+
+<https://astrea.linkeddata.es/shapes#de224300dcf2871650ac6dcb5ecb872e>
+        a         sh:PropertyShape ;
+        sh:class  <http://online-presence.net/opo/ns#Action> .
+
+<https://astrea.linkeddata.es/shapes#9624b28486a45c07b54f6622a609128c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "sourceDescription"@en , "the description of the SourceOfPublishing."@en ;
+        sh:description    "the description of the SourceOfPublishing."@en ;
+        sh:name           "sourceDescription"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#1a31bcc66e2ffe095c7bb27944853c2b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "Family Of"@en , "The Person who's family members belog to the Sharing Space."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description    "The Person who's family members belog to the Sharing Space."@en ;
+        sh:name           "Family Of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#familyOf> .
+
+<https://astrea.linkeddata.es/shapes#f828ede14770603951c86b8e8444832a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "Contactability"@en ;
+        sh:description    "OnlineStatusComponent used to represent the state of\n\t\t\tcontactability of an Agent. Contatctability relates to the\n\t\t\tpossiblity of other Agents to conatct the Agent freely or\n\t\t\tonly with regard to some conditions."@en ;
+        sh:name           "Contactability"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#f717691aa2b9bf4f25afb6bfb066d3b6> , <https://astrea.linkeddata.es/shapes#711841349d65f90960a4e2a10a5eb355> , <https://astrea.linkeddata.es/shapes#a8b179715fad3fd7300da1a270e8d28c> ;
+        sh:targetClass    <http://online-presence.net/opo/ns#Contactability> .
+
+<https://astrea.linkeddata.es/shapes#94029d5ba42e75b2ffb09343fc5b1f4d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "SourceOfPublishing"@en ;
+        sh:description    "The source that can publish Online Presence data."@en ;
+        sh:name           "SourceOfPublishing"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#2b893978b065574c8e6bf9a31bf835f3> , <https://astrea.linkeddata.es/shapes#de224300dcf2871650ac6dcb5ecb872e> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#6ed1b2fbbd4d9d9c512fc09c7c92291c> ;
+        sh:targetClass    <http://online-presence.net/opo/ns#SourceOfPublishing> .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Person> .
+
+<https://astrea.linkeddata.es/shapes#26678016234c50619469634976650656>
+        a         sh:PropertyShape ;
+        sh:class  <http://online-presence.net/opo/ns#Contactability> .
+
+<https://astrea.linkeddata.es/shapes#4cf4e0c9a0a655efb49cd28d87d4200e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "isStatusComponentOf"@en , "The OnlineStatus that includes this OnlineStatusComponent."@en ;
+        sh:class          <http://online-presence.net/opo/ns#OnlineStatus> ;
+        sh:description    "The OnlineStatus that includes this OnlineStatusComponent."@en ;
+        sh:name           "isStatusComponentOf"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#isStatusComponentOf> .
+
+<https://astrea.linkeddata.es/shapes#7bdab07d5c9c68949b7875d642da109d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "isPresenceComponentOf"@en , "The OnlinePresence that has this OnlinePresenceComponent"@en ;
+        sh:class          <http://online-presence.net/opo/ns#OnlinePresence> ;
+        sh:description    "The OnlinePresence that has this OnlinePresenceComponent"@en ;
+        sh:name           "isPresenceComponentOf"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#isPresenceComponentOf> .
+
+<https://astrea.linkeddata.es/shapes#9458c17558647ab6a2997e7a567d179c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "declaresOnlinePresence"@en , "The OnlinePresence declared by the Agent"@en ;
+        sh:class          <http://online-presence.net/opo/ns#OnlinePresence> ;
+        sh:description    "The OnlinePresence declared by the Agent"@en ;
+        sh:name           "declaresOnlinePresence"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#declaresOnlinePresence> .
+
+<https://astrea.linkeddata.es/shapes#95f9d9bd1e6d3caba55ef0dc6603ba5b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "The estimated duration of the OnlinePresence after the\n\t\t\tstartTime"@en , "duration"@en ;
+        sh:datatype       xsd:duration ;
+        sh:description    "The estimated duration of the OnlinePresence after the\n\t\t\tstartTime"@en ;
+        sh:maxCount       1 ;
+        sh:name           "duration"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
+        sh:path           <http://online-presence.net/opo/ns#duration> ;
+        sh:pattern        "-?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S))))" .
+
+<https://astrea.linkeddata.es/shapes#7a49f5dd0954737e0f7e916a39e41c59>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Image> .
+
+<https://astrea.linkeddata.es/shapes#ecc11f042c7c9f847f26e59b01a161a9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "currentAction"@en , "Current action performed by the Agent"@en ;
+        sh:class          <http://online-presence.net/opo/ns#Action> ;
+        sh:description    "Current action performed by the Agent"@en ;
+        sh:name           "currentAction"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#currentAction> .
+
+<https://astrea.linkeddata.es/shapes#3c65cd5d0edb13b00dc31bc67dbc91ad>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://online-presence.net/opo/ns#hasStatusComponent> .
+
+<https://astrea.linkeddata.es/shapes#d225237d9f8f4a1d79d4d50882eb80eb>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/NET/c4dm/event.owl#Event> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#91ebfd9cca0d20b8a8b2b251d6891a82> , <https://astrea.linkeddata.es/shapes#9458c17558647ab6a2997e7a567d179c> , <https://astrea.linkeddata.es/shapes#6a35c2bea4cda4ef16cf7a86d5d6fc83> , <https://astrea.linkeddata.es/shapes#56a3e61a4b880d3523c42ea979d8b9af> , <https://astrea.linkeddata.es/shapes#3c65cd5d0edb13b00dc31bc67dbc91ad> , <https://astrea.linkeddata.es/shapes#c60f47300b8bfc52fecd9827ac308b16> , <https://astrea.linkeddata.es/shapes#2b893978b065574c8e6bf9a31bf835f3> , <https://astrea.linkeddata.es/shapes#c63eaa45559c838691356491d806556f> , <https://astrea.linkeddata.es/shapes#461c40a4e1afb36c56d12fc911c6ae87> , <https://astrea.linkeddata.es/shapes#6ace7559c09873d57bb26d2909a563c6> , <https://astrea.linkeddata.es/shapes#55a05e88e2f1bdf8b52fa7d0eb1efeca> , <https://astrea.linkeddata.es/shapes#c9a35c26b6db225f5ad2576aa6ce0ff8> , <https://astrea.linkeddata.es/shapes#ecc11f042c7c9f847f26e59b01a161a9> , <https://astrea.linkeddata.es/shapes#4ff7172d8b9cab40ad8b762a9f5855b6> , <https://astrea.linkeddata.es/shapes#57915702333d3c4011eb3bfa935ff3e0> , <https://astrea.linkeddata.es/shapes#711841349d65f90960a4e2a10a5eb355> , <https://astrea.linkeddata.es/shapes#26678016234c50619469634976650656> , <https://astrea.linkeddata.es/shapes#ee23d93c4b3e98feb961372446922616> , <https://astrea.linkeddata.es/shapes#a727bfcbcdc63e80c86cac43b7207418> , <https://astrea.linkeddata.es/shapes#7bdab07d5c9c68949b7875d642da109d> , <https://astrea.linkeddata.es/shapes#01aac1f6437ba71e3593710b2c39248a> , <https://astrea.linkeddata.es/shapes#e68b02a7db16838fe50295a31ade2e69> , <https://astrea.linkeddata.es/shapes#a9557cbafb854e7ffcdc46ca0d24b6e8> , <https://astrea.linkeddata.es/shapes#e23656e6d21ae57fb1ee0ea72ffb2f2d> , <https://astrea.linkeddata.es/shapes#18dae64e1620325f31275141536036f8> , <https://astrea.linkeddata.es/shapes#d225237d9f8f4a1d79d4d50882eb80eb> , <https://astrea.linkeddata.es/shapes#a8b179715fad3fd7300da1a270e8d28c> , <https://astrea.linkeddata.es/shapes#0a96b5dadbaf11f051a830e85a6fc05e> , <https://astrea.linkeddata.es/shapes#c008d621808e35976f31460170efc02e> , <https://astrea.linkeddata.es/shapes#1a31bcc66e2ffe095c7bb27944853c2b> , <https://astrea.linkeddata.es/shapes#74499525c7636ebe4e278cd930a0179a> , <https://astrea.linkeddata.es/shapes#f828ede14770603951c86b8e8444832a> , <https://astrea.linkeddata.es/shapes#7a49f5dd0954737e0f7e916a39e41c59> , <https://astrea.linkeddata.es/shapes#53fd22887637a0a8dd249d9211d14a49> , <https://astrea.linkeddata.es/shapes#5e6754d447b2ae012f92096368a07443> , <https://astrea.linkeddata.es/shapes#d2aa163b872297d1e349d1bd7f5d6526> , <https://astrea.linkeddata.es/shapes#4926ca3db90b960743888f4b1689c095> , <https://astrea.linkeddata.es/shapes#f717691aa2b9bf4f25afb6bfb066d3b6> , <https://astrea.linkeddata.es/shapes#7f51d4d307764f78cb539a063008ba76> , <https://astrea.linkeddata.es/shapes#99db050f74466f22882b1e2eacbeec11> , <https://astrea.linkeddata.es/shapes#0b87d811a1f4fb54218392d217fd602a> , <https://astrea.linkeddata.es/shapes#31eecbe20c72b9242f557f648eebe506> , <https://astrea.linkeddata.es/shapes#2d073b1c526d3f31e04aa9f3f7c92037> , <https://astrea.linkeddata.es/shapes#4314d729c2e5a862130d7a4743a268b4> , <https://astrea.linkeddata.es/shapes#4b14082cf1ee9f5fa8dcf771cbc87da1> , <https://astrea.linkeddata.es/shapes#94029d5ba42e75b2ffb09343fc5b1f4d> , <https://astrea.linkeddata.es/shapes#4fafe428671fa039f3c3bda28ee73fd5> , <https://astrea.linkeddata.es/shapes#6ed1b2fbbd4d9d9c512fc09c7c92291c> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#d9c512eb760eedb6e4c201e92e91b166> , <https://astrea.linkeddata.es/shapes#de224300dcf2871650ac6dcb5ecb872e> , <https://astrea.linkeddata.es/shapes#7bbbc5ff32c16535aef3690fb30205dd> , <https://astrea.linkeddata.es/shapes#0b329c0886a1ac0632f88621af991fa0> , <https://astrea.linkeddata.es/shapes#95f9d9bd1e6d3caba55ef0dc6603ba5b> , <https://astrea.linkeddata.es/shapes#715f680b1934668716b40703441dc550> , <https://astrea.linkeddata.es/shapes#4cf4e0c9a0a655efb49cd28d87d4200e> , <https://astrea.linkeddata.es/shapes#1ca661189d605860bd44452773e27986> , <https://astrea.linkeddata.es/shapes#8c36d4a80a7623844d2d28e11bdce623> , <https://astrea.linkeddata.es/shapes#4ceeffc9d803dc4f42f620d0e4895313> , <https://astrea.linkeddata.es/shapes#326b612c2efdce32566e97287ec4926a> , <https://astrea.linkeddata.es/shapes#863663a822c89c7d1eb30177557b6649> , <https://astrea.linkeddata.es/shapes#9471203f36bf5ce1b1d6a7b594bd48ab> , <https://astrea.linkeddata.es/shapes#9c35c231e6620c15b540d59d533bd358> , <https://astrea.linkeddata.es/shapes#9624b28486a45c07b54f6622a609128c> , <https://astrea.linkeddata.es/shapes#8102775ac6adda9418d75e7f9b95606f> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#56a3e61a4b880d3523c42ea979d8b9af>
+        a         sh:PropertyShape ;
+        sh:class  <http://online-presence.net/opo/ns#Notifiability> .
+
+<https://astrea.linkeddata.es/shapes#57915702333d3c4011eb3bfa935ff3e0>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://rdfs.org/sioc/ns#Item> .
+
+<https://astrea.linkeddata.es/shapes#01aac1f6437ba71e3593710b2c39248a>
+        a         sh:PropertyShape ;
+        sh:class  <http://online-presence.net/opo/ns#SourceOfPublishing> .
+
+<https://astrea.linkeddata.es/shapes#8102775ac6adda9418d75e7f9b95606f>
+        a         sh:PropertyShape ;
+        sh:class  <http://online-presence.net/opo/ns#OnlineStatusComponent> .
+
+<https://astrea.linkeddata.es/shapes#e23656e6d21ae57fb1ee0ea72ffb2f2d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "declaredOn"@en , "The sioc:UserAccount account where the OnlinePresence was declared."@en ;
+        sh:class          <http://rdfs.org/sioc/ns#UserAccount> ;
+        sh:description    "The sioc:UserAccount account where the OnlinePresence was declared."@en ;
+        sh:maxCount       1 ;
+        sh:name           "declaredOn"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#declaredOn> .
+
+<https://astrea.linkeddata.es/shapes#f717691aa2b9bf4f25afb6bfb066d3b6>
+        a         sh:PropertyShape ;
+        sh:class  <http://online-presence.net/opo/ns#Disturbability> .
+
+<https://astrea.linkeddata.es/shapes#6ed1b2fbbd4d9d9c512fc09c7c92291c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "sourceName"@en , "The name of the SourceOfPublishing."@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "The name of the SourceOfPublishing."@en ;
+        sh:maxCount       1 ;
+        sh:name           "sourceName"@en ;
+        sh:nodeKind       sh:Literal , sh:IRIOrLiteral ;
+        sh:path           <http://online-presence.net/opo/ns#sourceName> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#715f680b1934668716b40703441dc550>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "Visibility"@en ;
+        sh:description    "OnlineStatusComponent used to represent the possiblity of\n\t\t\tothers to see the OnlineStatus of the Agent"@en ;
+        sh:name           "Visibility"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#a8b179715fad3fd7300da1a270e8d28c> , <https://astrea.linkeddata.es/shapes#26678016234c50619469634976650656> , <https://astrea.linkeddata.es/shapes#f717691aa2b9bf4f25afb6bfb066d3b6> ;
+        sh:targetClass    <http://online-presence.net/opo/ns#Visibility> .
+
+<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#9458c17558647ab6a2997e7a567d179c> ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Agent> .
+
+<https://astrea.linkeddata.es/shapes#55a05e88e2f1bdf8b52fa7d0eb1efeca>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Document> .
+
+<https://astrea.linkeddata.es/shapes#a8b179715fad3fd7300da1a270e8d28c>
+        a         sh:PropertyShape ;
+        sh:class  <http://online-presence.net/opo/ns#Activity> .
+
+<https://astrea.linkeddata.es/shapes#4926ca3db90b960743888f4b1689c095>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "SharingSpace"@en ;
+        sh:description    "A group of people belonging to a space for sharing online psresence data - the intended audience of data."@en ;
+        sh:name           "SharingSpace"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7bbbc5ff32c16535aef3690fb30205dd> , <https://astrea.linkeddata.es/shapes#c63eaa45559c838691356491d806556f> , <https://astrea.linkeddata.es/shapes#1a31bcc66e2ffe095c7bb27944853c2b> , <https://astrea.linkeddata.es/shapes#4b14082cf1ee9f5fa8dcf771cbc87da1> , <https://astrea.linkeddata.es/shapes#d2aa163b872297d1e349d1bd7f5d6526> , <https://astrea.linkeddata.es/shapes#74499525c7636ebe4e278cd930a0179a> , <https://astrea.linkeddata.es/shapes#6a35c2bea4cda4ef16cf7a86d5d6fc83> , <https://astrea.linkeddata.es/shapes#326b612c2efdce32566e97287ec4926a> ;
+        sh:targetClass    <http://online-presence.net/opo/ns#SharingSpace> .
+
+<https://astrea.linkeddata.es/shapes#4ff7172d8b9cab40ad8b762a9f5855b6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "hasStatusComponent"@en , "OnlineStatusComponent included in this OnlineStatus"@en ;
+        sh:class          <http://online-presence.net/opo/ns#OnlineStatusComponent> ;
+        sh:description    "OnlineStatusComponent included in this OnlineStatus"@en ;
+        sh:name           "hasStatusComponent"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#hasStatusComponent> .
+
+<https://astrea.linkeddata.es/shapes#2d073b1c526d3f31e04aa9f3f7c92037>
+        a         sh:PropertyShape ;
+        sh:class  <http://online-presence.net/opo/ns#Findability> .
+
+<https://astrea.linkeddata.es/shapes#d2aa163b872297d1e349d1bd7f5d6526>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "Workplace Homepage"@en , "The homepage of workplace of people in the Sharing Space."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Document> ;
+        sh:description    "The homepage of workplace of people in the Sharing Space."@en ;
+        sh:name           "Workplace Homepage"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#workplaceHomepage> .
+
+<https://astrea.linkeddata.es/shapes#53fd22887637a0a8dd249d9211d14a49>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "The graphical representation of the Agent used to depict him\n\t\t\tin online systems."@en , "avatar"@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Image> ;
+        sh:description    "The graphical representation of the Agent used to depict him\n\t\t\tin online systems."@en ;
+        sh:maxCount       1 ;
+        sh:name           "avatar"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           <http://online-presence.net/opo/ns#avatar> .
+
+<https://astrea.linkeddata.es/shapes#2b893978b065574c8e6bf9a31bf835f3>
+        a         sh:PropertyShape ;
+        sh:class  <http://online-presence.net/opo/ns#OnlinePresence> .
+
+<https://astrea.linkeddata.es/shapes#31eecbe20c72b9242f557f648eebe506>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "StatusMessage"@en ;
+        sh:description    "A status message that cannot be commented on."@en ;
+        sh:name           "StatusMessage"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://online-presence.net/opo/ns#StatusMessage> .
+
+<https://astrea.linkeddata.es/shapes#18dae64e1620325f31275141536036f8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://online-presence.net/opo/ns#> ;
+        rdfs:label        "Activity"@en ;
+        sh:description    "OnlineStatusComponent used to represent the state of\n\t\t\tActivity of the Agent (e.g., Active, Inactive,\n\t\t\tProlongedInactive)."@en ;
+        sh:name           "Activity"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#26678016234c50619469634976650656> , <https://astrea.linkeddata.es/shapes#711841349d65f90960a4e2a10a5eb355> , <https://astrea.linkeddata.es/shapes#f717691aa2b9bf4f25afb6bfb066d3b6> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#9c35c231e6620c15b540d59d533bd358> ;
+        sh:targetClass    <http://online-presence.net/opo/ns#Activity> .

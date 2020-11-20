@@ -1,0 +1,835 @@
+@prefix vaem:  <http://www.linkedmodel.org/schema/vaem#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix voag:  <http://voag.linkedmodel.org/voag/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#723c938a51f8895b1454ef503f308729>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/dtype> , <http://www.linkedmodel.org/1.1/schema/dtype> ;
+        rdfs:label        "datatype" ;
+        sh:name           "datatype" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.linkedmodel.org/schema/dtype#type> .
+
+<https://astrea.linkeddata.es/shapes#cca2218ba6af073c6af160218dcdbf78>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "namespace" ;
+        sh:datatype       xsd:anyURI ;
+        sh:name           "namespace" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:namespace ;
+        sh:pattern        "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#3629d62eda99102517ad84c29a4e3ecd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "ViewpointDimension" ;
+        sh:name           "ViewpointDimension" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    vaem:Viewpoint .
+
+<https://astrea.linkeddata.es/shapes#abfc716f3440864dee6f183153fecdbd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "release date" ;
+        sh:name           "release date" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:releaseDate .
+
+<https://astrea.linkeddata.es/report/1679564847>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.linkedmodel.org/schema/vaem" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#e03dbcfd1c9066a41f0e28a6c9562dff>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:description .
+
+<https://astrea.linkeddata.es/shapes#47c66ca5553de844e28bdabeb5d2a406>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "name" ;
+        sh:datatype       xsd:string ;
+        sh:name           "name" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:name ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#5419db8914c3501490b6094560613319>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:name .
+
+<https://astrea.linkeddata.es/shapes#8e6c99dc4d225186668e64dde04f50af>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "previous published version" ;
+        sh:datatype       xsd:anyURI ;
+        sh:name           "previous published version" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:previousPublishedVersion ;
+        sh:pattern        "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#4a418c4124ba0353e5e93aa2fa85026c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "date" ;
+        sh:name           "date" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:date .
+
+<https://astrea.linkeddata.es/shapes#2415d92b12d7ab9758e43306061fd322>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "has owner" ;
+        sh:name           "has owner" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           vaem:hasOwner .
+
+<https://astrea.linkeddata.es/shapes#b8d41376b9fc5e382fae29c51ed52df3>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.linkedmodel.org/schema/dtype#value> .
+
+<https://astrea.linkeddata.es/shapes#a52dbca6d97770bbfe6c5dce4c647bd7>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.linkedmodel.org/schema/dtype#DerivedCodeList> .
+
+<https://astrea.linkeddata.es/shapes#798735061ba1f0964d52ff4f94cba02a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "has license type"@en-US ;
+        sh:name           "has license type"@en-US ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           vaem:hasLicenseType .
+
+<https://astrea.linkeddata.es/shapes#77b9634a81a274c32e70730410d2cab4>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:rdfxmlFileURL .
+
+<https://astrea.linkeddata.es/shapes#4e730930929bd8ad41ae7bf82d7a61fb>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/2.0/schema/vaem> , <http://www.linkedmodel.org/schema/vaem> ;
+        rdfs:label        "Graph Metadata" ;
+        rdfs:seeAlso      <http://voag.linkedmodel.org/vocab/voag> ;
+        sh:name           "Graph Metadata" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d53364b6d9a0ad378ffa11adb86f4fce> , <https://astrea.linkeddata.es/shapes#65ef2a208ad70a01a7d9388dee8c3b2f> , <https://astrea.linkeddata.es/shapes#5419db8914c3501490b6094560613319> , <https://astrea.linkeddata.es/shapes#9300a91bc1781bddb9f41a8b0d993421> , <https://astrea.linkeddata.es/shapes#052625e523167b51148591fee22e9964> , <https://astrea.linkeddata.es/shapes#2c6eba77283849e52e0e14dee2a061b0> , <https://astrea.linkeddata.es/shapes#e050429913e8f1f44f9db7814c6a47f7> , <https://astrea.linkeddata.es/shapes#01d5befeaddeb15d0bf26879b1c37a31> , <https://astrea.linkeddata.es/shapes#129db05e09910e474c9238242f8fbab9> , <https://astrea.linkeddata.es/shapes#01c555fed21358e80c8ac79be1a10b58> , <https://astrea.linkeddata.es/shapes#482126d8645a1e3fb02b6ef594aff03d> , <https://astrea.linkeddata.es/shapes#7b66cf955bd6edc79357d3db8875b3b5> , <https://astrea.linkeddata.es/shapes#a003e76cee411072579bc2f5c47f80eb> , <https://astrea.linkeddata.es/shapes#5147576dd87b9c63db9e5ca87461bd2c> , <https://astrea.linkeddata.es/shapes#4ac238016c1fb681e00edea65fe56a01> , <https://astrea.linkeddata.es/shapes#97cfeca4378f15e8b858968556ab9c90> , <https://astrea.linkeddata.es/shapes#e03dbcfd1c9066a41f0e28a6c9562dff> , <https://astrea.linkeddata.es/shapes#10f3ecf21d9a93e88b1300ec5eb350b8> , <https://astrea.linkeddata.es/shapes#77b9634a81a274c32e70730410d2cab4> , <https://astrea.linkeddata.es/shapes#45844c5c18329e95e9e897964918b014> , <https://astrea.linkeddata.es/shapes#bee29d2a93d11cf180ecfb3d2e09f77e> , <https://astrea.linkeddata.es/shapes#cbbd74451ebbe28501fd2811c83c2108> ;
+        sh:targetClass    vaem:GraphMetaData .
+
+<https://astrea.linkeddata.es/shapes#bee29d2a93d11cf180ecfb3d2e09f77e>
+        a            sh:PropertyShape ;
+        sh:class     vaem:Party ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:hasSteward .
+
+<https://astrea.linkeddata.es/shapes#fd11ac0d15eacddf31d7ad9d09d56ee4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/dtype> , <http://www.linkedmodel.org/1.1/schema/dtype> ;
+        rdfs:label        "code" ;
+        sh:datatype       xsd:anySimpleType ;
+        sh:name           "code" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.linkedmodel.org/schema/dtype#code> .
+
+<https://astrea.linkeddata.es/shapes#45844c5c18329e95e9e897964918b014>
+        a            sh:PropertyShape ;
+        sh:class     vaem:Discipline ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:hasDiscipline .
+
+<https://astrea.linkeddata.es/shapes#dc76ed3dd975a42925dc2b9d2d882d1b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/dtype> , <http://www.linkedmodel.org/1.1/schema/dtype> ;
+        rdfs:label        "Simple Code List" ;
+        sh:name           "Simple Code List" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#a52dbca6d97770bbfe6c5dce4c647bd7> , <https://astrea.linkeddata.es/shapes#ced5553e5c07c40da303080f1086b922> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#6d0cd11f012d96ae5af90a83d945267b> ;
+        sh:targetClass    <http://www.linkedmodel.org/schema/dtype#SimpleCodeList> .
+
+<https://astrea.linkeddata.es/shapes#fd0ab7931cbc6b5251b0d5a669bd6ed1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "has discipline" ;
+        sh:name           "has discipline" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           vaem:hasDiscipline .
+
+<https://astrea.linkeddata.es/shapes#a979f97f1d97847aa6c416ae824a9ce6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "title" ;
+        sh:datatype       xsd:string ;
+        sh:name           "title" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:title ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#cbbd74451ebbe28501fd2811c83c2108>
+        a            sh:PropertyShape ;
+        sh:class     vaem:GraphMetaData ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:hasMetadata .
+
+<https://astrea.linkeddata.es/shapes#10f3ecf21d9a93e88b1300ec5eb350b8>
+        a            sh:PropertyShape ;
+        sh:class     vaem:GraphRole ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:hasGraphRole .
+
+<https://astrea.linkeddata.es/shapes#5d8dd305fc678abde9ff899c37412582>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "Discipline Dimension" ;
+        sh:name           "Discipline Dimension" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    vaem:Discipline .
+
+<https://astrea.linkeddata.es/shapes#f025d421cb977af282241b4f4bbeb251>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:description .
+
+<https://astrea.linkeddata.es/shapes#846f87142ec79b51e5619bb1891edf37>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:url .
+
+<https://astrea.linkeddata.es/shapes#df733c0cf99d63bd91abec3f4c73a07b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "has metadata" ;
+        sh:name           "has metadata" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           vaem:hasMetadata .
+
+<https://astrea.linkeddata.es/shapes#83ab220920a4244a0fe67dfe1a67562c>
+        a            sh:PropertyShape ;
+        sh:class     <http://www.linkedmodel.org/schema/dtype#CodeList> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.linkedmodel.org/schema/dtype#compositeOf> .
+
+<https://astrea.linkeddata.es/shapes#801099875d183ff10414f78b17484891>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/1.1/schema/dtype> , <http://www.linkedmodel.org/schema/dtype> ;
+        rdfs:label        "position" ;
+        sh:datatype       xsd:nonNegativeInteger ;
+        sh:minInclusive   0 ;
+        sh:name           "position" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.linkedmodel.org/schema/dtype#position> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#64b7d0ecdcb1b6db86a1250218542062>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/dtype> , <http://www.linkedmodel.org/1.1/schema/dtype> ;
+        rdfs:label        "DTYPE Enumerated value" ;
+        sh:name           "DTYPE Enumerated value" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#31f483d7fd877fff43b066d5e52bf05f> , <https://astrea.linkeddata.es/shapes#4abba776257fb7e895dc39e2e1eb5c03> , <https://astrea.linkeddata.es/shapes#496c8464a4da21095e138f5bb4bc32bc> , <https://astrea.linkeddata.es/shapes#858685835384d9ab8a2f960beff0cd8f> , <https://astrea.linkeddata.es/shapes#e06f25e86d21d5674dc026bc4023737e> , <https://astrea.linkeddata.es/shapes#68a932ca973f99de0481790bf905fa41> , <https://astrea.linkeddata.es/shapes#b8d41376b9fc5e382fae29c51ed52df3> ;
+        sh:targetClass    <http://www.linkedmodel.org/schema/dtype#EnumeratedValue> .
+
+<https://astrea.linkeddata.es/shapes#b37d75546432c7bbd2716b971315e052>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "Aspect Dimension" ;
+        sh:name           "Aspect Dimension" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    vaem:Aspect .
+
+<https://astrea.linkeddata.es/shapes#8600e4e193baab0b028f4c3eeb4f2c94>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "intent" ;
+        sh:datatype       xsd:string ;
+        sh:name           "intent" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:intent ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#27e1821b8a574112ca687e4c3957997c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "turtle file URL" ;
+        sh:datatype       xsd:anyURI ;
+        sh:name           "turtle file URL" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:turtleFileURL ;
+        sh:pattern        "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#fca9051a9d0fd26262832dbfef17ff98>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "namespace prefix" ;
+        sh:datatype       xsd:string ;
+        sh:name           "namespace prefix" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:namespacePrefix ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#65ef2a208ad70a01a7d9388dee8c3b2f>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:hasIdentifier .
+
+<https://astrea.linkeddata.es/shapes#506fc90b0bae24d718d8e1c6544f4172>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "Domain" ;
+        sh:name           "Domain" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    vaem:Dimension .
+
+<https://astrea.linkeddata.es/shapes#81d3bacc312c59d28f245deca9be5b0e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "has graph role" ;
+        sh:class          vaem:GraphRole ;
+        sh:name           "has graph role" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           vaem:hasGraphRole .
+
+<https://astrea.linkeddata.es/shapes#485ed184ba924a6b5ec774ec61ea22ff>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/dtype> , <http://www.linkedmodel.org/1.1/schema/dtype> ;
+        rdfs:label        "numeric union" ;
+        sh:name           "numeric union" ;
+        sh:nodeKind       sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#bde75a8fc66295a559cbbffa3b5f5b99>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "owner" ;
+        sh:datatype       xsd:string ;
+        sh:name           "owner" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:owner ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#fddccdccec3f2c074c64a0a96b911c50>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "id" ;
+        sh:name           "id" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:id .
+
+<https://astrea.linkeddata.es/shapes#d53364b6d9a0ad378ffa11adb86f4fce>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:turtleFileURL .
+
+<https://astrea.linkeddata.es/shapes#4ac238016c1fb681e00edea65fe56a01>
+        a            sh:PropertyShape ;
+        sh:class     vaem:Viewpoint ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:hasViewpoint .
+
+<https://astrea.linkeddata.es/shapes#53c3803359619296f5aea8802ddd0013>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/dtype> , <http://www.linkedmodel.org/1.1/schema/dtype> ;
+        rdfs:label        "has member" ;
+        sh:name           "has member" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.linkedmodel.org/schema/dtype#hasMember> .
+
+<https://astrea.linkeddata.es/shapes#11f3ea8395c5a14f77d8e8ad35bad9a2>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:filePrefix .
+
+<https://astrea.linkeddata.es/shapes#68a932ca973f99de0481790bf905fa41>
+        a            sh:PropertyShape ;
+        sh:minCount  "0"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:url .
+
+<https://astrea.linkeddata.es/shapes#44a380cf3848fe90aa5724d92d37187f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "Domain Dimension" ;
+        sh:name           "Domain Dimension" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    vaem:Domain .
+
+<https://astrea.linkeddata.es/shapes#ced5553e5c07c40da303080f1086b922>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.linkedmodel.org/schema/dtype#CompositeCodeList> .
+
+<https://astrea.linkeddata.es/shapes#8b0a81a27903742e7d6cfbab979703e3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "has viewpoint" ;
+        sh:name           "has viewpoint" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           vaem:hasViewpoint .
+
+<https://astrea.linkeddata.es/shapes#fe0a418d205f0cbf8e554b3d6b45432f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/1.1/schema/dtype> , <http://www.linkedmodel.org/schema/dtype> ;
+        rdfs:label        "Derived Code List" ;
+        sh:name           "Derived Code List" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#ced5553e5c07c40da303080f1086b922> , <https://astrea.linkeddata.es/shapes#19fd3b3cc5729230274d1c01e81eb7f3> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#64f455165358e8f5adca7c25d1ee7a2f> , <https://astrea.linkeddata.es/shapes#6764c93f33862cc83ada598ffd96166d> ;
+        sh:targetClass    <http://www.linkedmodel.org/schema/dtype#DerivedCodeList> .
+
+<https://astrea.linkeddata.es/shapes#c9f6b9ca43eb048ee4e7e2e4b510fa0b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/1.1/schema/dtype> , <http://www.linkedmodel.org/schema/dtype> ;
+        rdfs:label        "order" ;
+        rdfs:seeAlso      <http://www.linkedmodel.org/schema/dtype#orderIndex> ;
+        sh:datatype       xsd:nonNegativeInteger ;
+        sh:minInclusive   0 ;
+        sh:name           "order" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.linkedmodel.org/schema/dtype#order> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#e06f25e86d21d5674dc026bc4023737e>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:description .
+
+<https://astrea.linkeddata.es/shapes#496c8464a4da21095e138f5bb4bc32bc>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.linkedmodel.org/schema/dtype#code> .
+
+<https://astrea.linkeddata.es/shapes#5147576dd87b9c63db9e5ca87461bd2c>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:namespacePrefix .
+
+<https://astrea.linkeddata.es/shapes#01c555fed21358e80c8ac79be1a10b58>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:intent .
+
+<https://astrea.linkeddata.es/shapes#7bc983b11ca548045b3e44b5034a8188>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "has identifier" ;
+        sh:name           "has identifier" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           vaem:hasIdentifier .
+
+<https://astrea.linkeddata.es/shapes#766b6098a19b28ec724dae2ef20bb7df>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/dtype> , <http://www.linkedmodel.org/1.1/schema/dtype> ;
+        rdfs:label        "DTYPE Enumeration" ;
+        sh:name           "DTYPE Enumeration" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#9dcf9d9fcd5aaafca1d282b5f67e339a> , <https://astrea.linkeddata.es/shapes#3c21729db099cd72a860e76faec7f5c1> ;
+        sh:targetClass    <http://www.linkedmodel.org/schema/dtype#Enumeration> .
+
+<https://astrea.linkeddata.es/shapes#a003e76cee411072579bc2f5c47f80eb>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:specificity .
+
+<https://astrea.linkeddata.es/shapes#3777b3540060830b16a572437370817b>
+        a            sh:PropertyShape ;
+        sh:class     <http://www.linkedmodel.org/schema/dtype#EnumeratedValue> ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.linkedmodel.org/schema/dtype#refersTo> .
+
+<https://astrea.linkeddata.es/shapes#7311d75dae43c593ba11df0dab2b102c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/dtype> , <http://www.linkedmodel.org/1.1/schema/dtype> ;
+        rdfs:label        "Codelist" ;
+        sh:name           "Codelist" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.linkedmodel.org/schema/dtype#CodeList> .
+
+<https://astrea.linkeddata.es/shapes#4fd72f72b83dc7bed4aba32bdcbbe71c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "has steward" ;
+        sh:name           "has steward" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           vaem:hasSteward .
+
+<https://astrea.linkeddata.es/shapes#d8a4f75143d6415eb67ff95ae810e93c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/dtype> , <http://www.linkedmodel.org/1.1/schema/dtype> ;
+        rdfs:label        "composite of" ;
+        sh:name           "composite of" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.linkedmodel.org/schema/dtype#compositeOf> .
+
+<https://astrea.linkeddata.es/shapes#fb9a1533e5da5bd1d934cb25330c6beb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "file prefix" ;
+        sh:datatype       xsd:string ;
+        sh:name           "file prefix" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:filePrefix ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#ef56e1c80eedfbd188172626683c4830>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "has dimension" ;
+        sh:name           "has dimension" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           vaem:hasDimension .
+
+<https://astrea.linkeddata.es/shapes#97cfeca4378f15e8b858968556ab9c90>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:owner .
+
+<https://astrea.linkeddata.es/shapes#1fd5caf10fb5f2f189df7e47881c2c0d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "acronym" ;
+        sh:name           "acronym" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:acronym .
+
+<https://astrea.linkeddata.es/shapes#4fb0327feaace6fea767246965384e53>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "Graph role" ;
+        sh:name           "Graph role" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#11f3ea8395c5a14f77d8e8ad35bad9a2> , <https://astrea.linkeddata.es/shapes#f025d421cb977af282241b4f4bbeb251> ;
+        sh:targetClass    vaem:GraphRole .
+
+<https://astrea.linkeddata.es/shapes#19fd3b3cc5729230274d1c01e81eb7f3>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.linkedmodel.org/schema/dtype#SimpleCodeList> .
+
+<https://astrea.linkeddata.es/shapes#87be446fdfb0eabafe9b3fc354018fcb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "description" ;
+        sh:datatype       xsd:string ;
+        sh:name           "description" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:description ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#9dcf9d9fcd5aaafca1d282b5f67e339a>
+        a            sh:PropertyShape ;
+        sh:class     <http://www.linkedmodel.org/schema/dtype#EnumeratedValue> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.linkedmodel.org/schema/dtype#value> .
+
+<https://astrea.linkeddata.es/shapes#31f483d7fd877fff43b066d5e52bf05f>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.linkedmodel.org/schema/dtype#position> .
+
+<https://astrea.linkeddata.es/shapes#1afd966e3ec79afa5fef6f5811ae266c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/dtype> , <http://www.linkedmodel.org/1.1/schema/dtype> ;
+        rdfs:label        "literal" ;
+        sh:datatype       xsd:string ;
+        sh:name           "literal" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.linkedmodel.org/schema/dtype#literal> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#b643e1caef1ec8fb3b29e5ae3c2eff68>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/dtype> , <http://www.linkedmodel.org/1.1/schema/dtype> ;
+        rdfs:label        "is invalid" ;
+        sh:datatype       xsd:boolean ;
+        sh:name           "is invalid" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.linkedmodel.org/schema/dtype#isInvalid> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#fded1ff3f73e4b2722a066ee25639074>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/dtype> , <http://www.linkedmodel.org/1.1/schema/dtype> ;
+        rdfs:label        "refers to" ;
+        sh:name           "refers to" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.linkedmodel.org/schema/dtype#refersTo> .
+
+<https://astrea.linkeddata.es/shapes#4a37a85a69d7151fe3d7740009ad6e74>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "url" ;
+        sh:datatype       xsd:anyURI ;
+        sh:name           "url" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:url ;
+        sh:pattern        "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#7cbc9723562302b96463d10af1005330>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "RDF/XML file URL" ;
+        sh:datatype       xsd:anyURI ;
+        sh:name           "RDF/XML file URL" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:rdfxmlFileURL ;
+        sh:pattern        "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#01d5befeaddeb15d0bf26879b1c37a31>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:latestPublishedVersion .
+
+<https://astrea.linkeddata.es/shapes#129db05e09910e474c9238242f8fbab9>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:revision .
+
+<https://astrea.linkeddata.es/shapes#7542126bd9efb6a004cc6dad4e28321e>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:name .
+
+<https://astrea.linkeddata.es/shapes#4abba776257fb7e895dc39e2e1eb5c03>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.linkedmodel.org/schema/dtype#order> .
+
+<https://astrea.linkeddata.es/shapes#482126d8645a1e3fb02b6ef594aff03d>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:namespace .
+
+<https://astrea.linkeddata.es/shapes#3c21729db099cd72a860e76faec7f5c1>
+        a            sh:PropertyShape ;
+        sh:class     <http://www.linkedmodel.org/schema/dtype#EnumeratedValue> ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.linkedmodel.org/schema/dtype#defaultValue> .
+
+<https://astrea.linkeddata.es/shapes#953aa548846b64ca708019db5ac63638>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/dtype> , <http://www.linkedmodel.org/1.1/schema/dtype> ;
+        rdfs:label        "derived from" ;
+        sh:name           "derived from" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.linkedmodel.org/schema/dtype#derivedFrom> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#abfc716f3440864dee6f183153fecdbd> , <https://astrea.linkeddata.es/shapes#5419db8914c3501490b6094560613319> , <https://astrea.linkeddata.es/shapes#d8a4f75143d6415eb67ff95ae810e93c> , <https://astrea.linkeddata.es/shapes#3777b3540060830b16a572437370817b> , <https://astrea.linkeddata.es/shapes#fd11ac0d15eacddf31d7ad9d09d56ee4> , <https://astrea.linkeddata.es/shapes#77b9634a81a274c32e70730410d2cab4> , <https://astrea.linkeddata.es/shapes#5147576dd87b9c63db9e5ca87461bd2c> , <https://astrea.linkeddata.es/shapes#10f3ecf21d9a93e88b1300ec5eb350b8> , <https://astrea.linkeddata.es/shapes#53c3803359619296f5aea8802ddd0013> , <https://astrea.linkeddata.es/shapes#bde75a8fc66295a559cbbffa3b5f5b99> , <https://astrea.linkeddata.es/shapes#38a89d33452dd7bc873a9541ed8dfed2> , <https://astrea.linkeddata.es/shapes#4a37a85a69d7151fe3d7740009ad6e74> , <https://astrea.linkeddata.es/shapes#df733c0cf99d63bd91abec3f4c73a07b> , <https://astrea.linkeddata.es/shapes#7bc983b11ca548045b3e44b5034a8188> , <https://astrea.linkeddata.es/shapes#723c938a51f8895b1454ef503f308729> , <https://astrea.linkeddata.es/shapes#9300a91bc1781bddb9f41a8b0d993421> , <https://astrea.linkeddata.es/shapes#8b0a81a27903742e7d6cfbab979703e3> , <https://astrea.linkeddata.es/shapes#f025d421cb977af282241b4f4bbeb251> , <https://astrea.linkeddata.es/shapes#68a932ca973f99de0481790bf905fa41> , <https://astrea.linkeddata.es/shapes#4fd72f72b83dc7bed4aba32bdcbbe71c> , <https://astrea.linkeddata.es/shapes#4a418c4124ba0353e5e93aa2fa85026c> , <https://astrea.linkeddata.es/shapes#bee29d2a93d11cf180ecfb3d2e09f77e> , <https://astrea.linkeddata.es/shapes#64f455165358e8f5adca7c25d1ee7a2f> , <https://astrea.linkeddata.es/shapes#8e6c99dc4d225186668e64dde04f50af> , <https://astrea.linkeddata.es/shapes#31f483d7fd877fff43b066d5e52bf05f> , <https://astrea.linkeddata.es/shapes#b8d41376b9fc5e382fae29c51ed52df3> , <https://astrea.linkeddata.es/shapes#766b6098a19b28ec724dae2ef20bb7df> , <https://astrea.linkeddata.es/shapes#7542126bd9efb6a004cc6dad4e28321e> , <https://astrea.linkeddata.es/shapes#a3863d19d2cd909fe43a48470f3269fe> , <https://astrea.linkeddata.es/shapes#482126d8645a1e3fb02b6ef594aff03d> , <https://astrea.linkeddata.es/shapes#6764c93f33862cc83ada598ffd96166d> , <https://astrea.linkeddata.es/shapes#4fb0327feaace6fea767246965384e53> , <https://astrea.linkeddata.es/shapes#b2433b241b2689d50dc1002132a2cd9c> , <https://astrea.linkeddata.es/shapes#5d8dd305fc678abde9ff899c37412582> , <https://astrea.linkeddata.es/shapes#798735061ba1f0964d52ff4f94cba02a> , <https://astrea.linkeddata.es/shapes#2415d92b12d7ab9758e43306061fd322> , <https://astrea.linkeddata.es/shapes#506fc90b0bae24d718d8e1c6544f4172> , <https://astrea.linkeddata.es/shapes#9dcf9d9fcd5aaafca1d282b5f67e339a> , <https://astrea.linkeddata.es/shapes#ef56e1c80eedfbd188172626683c4830> , <https://astrea.linkeddata.es/shapes#65ef2a208ad70a01a7d9388dee8c3b2f> , <https://astrea.linkeddata.es/shapes#fb9a1533e5da5bd1d934cb25330c6beb> , <https://astrea.linkeddata.es/shapes#fded1ff3f73e4b2722a066ee25639074> , <https://astrea.linkeddata.es/shapes#fd0ab7931cbc6b5251b0d5a669bd6ed1> , <https://astrea.linkeddata.es/shapes#6d0cd11f012d96ae5af90a83d945267b> , <https://astrea.linkeddata.es/shapes#19fd3b3cc5729230274d1c01e81eb7f3> , <https://astrea.linkeddata.es/shapes#b37d75546432c7bbd2716b971315e052> , <https://astrea.linkeddata.es/shapes#f1daa63fbde3993fd323327e9314e9ec> , <https://astrea.linkeddata.es/shapes#1fd5caf10fb5f2f189df7e47881c2c0d> , <https://astrea.linkeddata.es/shapes#fddccdccec3f2c074c64a0a96b911c50> , <https://astrea.linkeddata.es/shapes#afdccdb54bf4d74cb56cff2c5d5254a5> , <https://astrea.linkeddata.es/shapes#a003e76cee411072579bc2f5c47f80eb> , <https://astrea.linkeddata.es/shapes#8600e4e193baab0b028f4c3eeb4f2c94> , <https://astrea.linkeddata.es/shapes#846f87142ec79b51e5619bb1891edf37> , <https://astrea.linkeddata.es/shapes#3629d62eda99102517ad84c29a4e3ecd> , <https://astrea.linkeddata.es/shapes#2c6eba77283849e52e0e14dee2a061b0> , <https://astrea.linkeddata.es/shapes#7311d75dae43c593ba11df0dab2b102c> , <https://astrea.linkeddata.es/shapes#45844c5c18329e95e9e897964918b014> , <https://astrea.linkeddata.es/shapes#b0006f5f064a8a13cf0f005c8ead0b78> , <https://astrea.linkeddata.es/shapes#81d3bacc312c59d28f245deca9be5b0e> , <https://astrea.linkeddata.es/shapes#4ac238016c1fb681e00edea65fe56a01> , <https://astrea.linkeddata.es/shapes#f762150500b7025f04736e5c53c3b0af> , <https://astrea.linkeddata.es/shapes#01d5befeaddeb15d0bf26879b1c37a31> , <https://astrea.linkeddata.es/shapes#fca9051a9d0fd26262832dbfef17ff98> , <https://astrea.linkeddata.es/shapes#e06f25e86d21d5674dc026bc4023737e> , <https://astrea.linkeddata.es/shapes#485ed184ba924a6b5ec774ec61ea22ff> , <https://astrea.linkeddata.es/shapes#e050429913e8f1f44f9db7814c6a47f7> , <https://astrea.linkeddata.es/shapes#83ab220920a4244a0fe67dfe1a67562c> , <https://astrea.linkeddata.es/shapes#97cfeca4378f15e8b858968556ab9c90> , <https://astrea.linkeddata.es/shapes#fe0a418d205f0cbf8e554b3d6b45432f> , <https://astrea.linkeddata.es/shapes#b1274d36fd93aff454d953969c8e52f3> , <https://astrea.linkeddata.es/shapes#47c66ca5553de844e28bdabeb5d2a406> , <https://astrea.linkeddata.es/shapes#27e1821b8a574112ca687e4c3957997c> , <https://astrea.linkeddata.es/shapes#936cd73311a6e7235406ab33037c81f1> , <https://astrea.linkeddata.es/shapes#c9f6b9ca43eb048ee4e7e2e4b510fa0b> , <https://astrea.linkeddata.es/shapes#a979f97f1d97847aa6c416ae824a9ce6> , <https://astrea.linkeddata.es/shapes#7b66cf955bd6edc79357d3db8875b3b5> , <https://astrea.linkeddata.es/shapes#64b7d0ecdcb1b6db86a1250218542062> , <https://astrea.linkeddata.es/shapes#44a380cf3848fe90aa5724d92d37187f> , <https://astrea.linkeddata.es/shapes#496c8464a4da21095e138f5bb4bc32bc> , <https://astrea.linkeddata.es/shapes#a7be52572af6ccfb1d82981bb30eb4ee> , <https://astrea.linkeddata.es/shapes#dc76ed3dd975a42925dc2b9d2d882d1b> , <https://astrea.linkeddata.es/shapes#01c555fed21358e80c8ac79be1a10b58> , <https://astrea.linkeddata.es/shapes#4abba776257fb7e895dc39e2e1eb5c03> , <https://astrea.linkeddata.es/shapes#d53364b6d9a0ad378ffa11adb86f4fce> , <https://astrea.linkeddata.es/shapes#b643e1caef1ec8fb3b29e5ae3c2eff68> , <https://astrea.linkeddata.es/shapes#052625e523167b51148591fee22e9964> , <https://astrea.linkeddata.es/shapes#87be446fdfb0eabafe9b3fc354018fcb> , <https://astrea.linkeddata.es/shapes#953aa548846b64ca708019db5ac63638> , <https://astrea.linkeddata.es/shapes#b169fb55244c2d6e13fe34a615648fc8> , <https://astrea.linkeddata.es/shapes#ced5553e5c07c40da303080f1086b922> , <https://astrea.linkeddata.es/shapes#cbbd74451ebbe28501fd2811c83c2108> , <https://astrea.linkeddata.es/shapes#6b441bd00f203319887292427c0311f9> , <https://astrea.linkeddata.es/shapes#7cbc9723562302b96463d10af1005330> , <https://astrea.linkeddata.es/shapes#858685835384d9ab8a2f960beff0cd8f> , <https://astrea.linkeddata.es/shapes#cca2218ba6af073c6af160218dcdbf78> , <https://astrea.linkeddata.es/shapes#801099875d183ff10414f78b17484891> , <https://astrea.linkeddata.es/shapes#1afd966e3ec79afa5fef6f5811ae266c> , <https://astrea.linkeddata.es/shapes#11f3ea8395c5a14f77d8e8ad35bad9a2> , <https://astrea.linkeddata.es/shapes#e03dbcfd1c9066a41f0e28a6c9562dff> , <https://astrea.linkeddata.es/shapes#4e730930929bd8ad41ae7bf82d7a61fb> , <https://astrea.linkeddata.es/shapes#414466360dee2e625b9248384efd5380> , <https://astrea.linkeddata.es/shapes#129db05e09910e474c9238242f8fbab9> , <https://astrea.linkeddata.es/shapes#3c21729db099cd72a860e76faec7f5c1> , <https://astrea.linkeddata.es/shapes#a52dbca6d97770bbfe6c5dce4c647bd7> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/1679564847> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#858685835384d9ab8a2f960beff0cd8f>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:name .
+
+<https://astrea.linkeddata.es/shapes#936cd73311a6e7235406ab33037c81f1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "specificity" ;
+        sh:datatype       xsd:nonNegativeInteger ;
+        sh:minInclusive   0 ;
+        sh:name           "specificity" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:specificity ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#414466360dee2e625b9248384efd5380>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "rationale" ;
+        sh:datatype       xsd:string ;
+        sh:name           "rationale" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:rationale ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#afdccdb54bf4d74cb56cff2c5d5254a5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "abbreviation" ;
+        sh:name           "abbreviation" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:abbreviation .
+
+<https://astrea.linkeddata.es/shapes#b0006f5f064a8a13cf0f005c8ead0b78>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "latest published version" ;
+        sh:datatype       xsd:anyURI ;
+        sh:name           "latest published version" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:latestPublishedVersion ;
+        sh:pattern        "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#9300a91bc1781bddb9f41a8b0d993421>
+        a            sh:PropertyShape ;
+        sh:class     vaem:Aspect ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:hasAspect .
+
+<https://astrea.linkeddata.es/shapes#b169fb55244c2d6e13fe34a615648fc8>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:id .
+
+<https://astrea.linkeddata.es/shapes#b2433b241b2689d50dc1002132a2cd9c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/dtype> , <http://www.linkedmodel.org/1.1/schema/dtype> ;
+        rdfs:label        "Value Reference" ;
+        sh:name           "Value Reference" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#6b441bd00f203319887292427c0311f9> , <https://astrea.linkeddata.es/shapes#3777b3540060830b16a572437370817b> ;
+        sh:targetClass    <http://www.linkedmodel.org/schema/dtype#ValueReference> .
+
+<https://astrea.linkeddata.es/shapes#6d0cd11f012d96ae5af90a83d945267b>
+        a            sh:PropertyShape ;
+        sh:class     <http://www.linkedmodel.org/schema/dtype#EnumeratedValue> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.linkedmodel.org/schema/dtype#hasMember> .
+
+<https://astrea.linkeddata.es/shapes#e050429913e8f1f44f9db7814c6a47f7>
+        a            sh:PropertyShape ;
+        sh:class     vaem:Party ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:hasOwner .
+
+<https://astrea.linkeddata.es/shapes#2c6eba77283849e52e0e14dee2a061b0>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:hasLicenseType .
+
+<https://astrea.linkeddata.es/shapes#38a89d33452dd7bc873a9541ed8dfed2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "reifiable by" ;
+        sh:name           "reifiable by" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           vaem:reifiableBy .
+
+<https://astrea.linkeddata.es/shapes#64f455165358e8f5adca7c25d1ee7a2f>
+        a            sh:PropertyShape ;
+        sh:class     <http://www.linkedmodel.org/schema/dtype#ValueReference> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.linkedmodel.org/schema/dtype#hasMember> .
+
+<https://astrea.linkeddata.es/shapes#6b441bd00f203319887292427c0311f9>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.linkedmodel.org/schema/dtype#position> .
+
+<https://astrea.linkeddata.es/shapes#f762150500b7025f04736e5c53c3b0af>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "has aspect " ;
+        sh:name           "has aspect " ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           vaem:hasAspect .
+
+<https://astrea.linkeddata.es/shapes#052625e523167b51148591fee22e9964>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:previousPublishedVersion .
+
+<https://astrea.linkeddata.es/shapes#a3863d19d2cd909fe43a48470f3269fe>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "has domain" ;
+        sh:name           "has domain" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           vaem:hasDomain .
+
+<https://astrea.linkeddata.es/shapes#f1daa63fbde3993fd323327e9314e9ec>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/2.0/schema/vaem> , <http://www.linkedmodel.org/schema/vaem> ;
+        rdfs:label        "Party" ;
+        sh:name           "Party" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7542126bd9efb6a004cc6dad4e28321e> , <https://astrea.linkeddata.es/shapes#b169fb55244c2d6e13fe34a615648fc8> , <https://astrea.linkeddata.es/shapes#846f87142ec79b51e5619bb1891edf37> ;
+        sh:targetClass    vaem:Party .
+
+<https://astrea.linkeddata.es/shapes#b1274d36fd93aff454d953969c8e52f3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/schema/vaem> , <http://www.linkedmodel.org/2.0/schema/vaem> ;
+        rdfs:label        "revision" ;
+        sh:datatype       xsd:string ;
+        sh:name           "revision" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           vaem:revision ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#7b66cf955bd6edc79357d3db8875b3b5>
+        a            sh:PropertyShape ;
+        sh:class     vaem:Domain ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      vaem:hasDomain .
+
+<https://astrea.linkeddata.es/shapes#6764c93f33862cc83ada598ffd96166d>
+        a            sh:PropertyShape ;
+        sh:class     <http://www.linkedmodel.org/schema/dtype#CodeList> ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.linkedmodel.org/schema/dtype#derivedFrom> .
+
+<https://astrea.linkeddata.es/shapes#a7be52572af6ccfb1d82981bb30eb4ee>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.linkedmodel.org/1.1/schema/dtype> , <http://www.linkedmodel.org/schema/dtype> ;
+        rdfs:label        "Composite Code List" ;
+        sh:name           "Composite Code List" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#a52dbca6d97770bbfe6c5dce4c647bd7> , <https://astrea.linkeddata.es/shapes#19fd3b3cc5729230274d1c01e81eb7f3> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#83ab220920a4244a0fe67dfe1a67562c> ;
+        sh:targetClass    <http://www.linkedmodel.org/schema/dtype#CompositeCodeList> .

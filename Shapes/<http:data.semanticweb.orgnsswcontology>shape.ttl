@@ -1,0 +1,634 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#d44fc88ed0a756807e1ed64657011967>
+        a               sh:PropertyShape ;
+        rdfs:label      "is location of" , "\n\t\t\t<p>\n\t\t\t\tRelates a location to a conference or sub-event thereof which takes place at it.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:class        <http://data.semanticweb.org/ns/swc/ontology#OrganisedEvent> ;
+        sh:description  "\n\t\t\t<p>\n\t\t\t\tRelates a location to a conference or sub-event thereof which takes place at it.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "is location of" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.semanticweb.org/ns/swc/ontology#isLocationFor> .
+
+<https://astrea.linkeddata.es/shapes#9e06fce7b2e57481adf053cdce8839c9>
+        a               sh:NodeShape ;
+        rdfs:label      "Workshop Event" ;
+        sh:description  "\n\t\t\t\n\t\t\t<p>\n\t\t\t\tA scientific workshop. Workshops are often co-located with <a href=\"#ConferenceEvent\">ConferenceEvent</a>s.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Workshop Event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#WorkshopEvent> .
+
+<https://astrea.linkeddata.es/shapes#be9748146a6de649c9e3694bfb356432>
+        a               sh:NodeShape ;
+        rdfs:label      "Panel Event" ;
+        sh:description  "\n\t\t\t\n\t\t\t<p>A panel discussion at a conference or conference-like event, usually involving several speakers.</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Panel Event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#PanelEvent> .
+
+<https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#021a38bb8500f47c758de20d17c4e924> , <https://astrea.linkeddata.es/shapes#72fe1be3cae835aa8295d3a6e8b3eef7> ;
+        sh:targetClass  owl:Thing .
+
+<https://astrea.linkeddata.es/report/01397434574>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://data.semanticweb.org/ns/swc/swrc" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#b950c6da7e9abe547eb931c4f3ce8732>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/wordnet/1.6/Menu> .
+
+<https://astrea.linkeddata.es/shapes#6782e0fc8fdd9f94b6a15335f0c0bc96>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.w3.org/2002/12/cal/ical#location> .
+
+<https://astrea.linkeddata.es/shapes#e17f853ae43fb9eab0f749eedc964c50>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/2002/12/cal/ical#dtstart> .
+
+<https://astrea.linkeddata.es/shapes#db0b936c36f884c11b49a1b18bf8a84e>
+        a               sh:NodeShape ;
+        rdfs:label      "Slide Set" ;
+        sh:description  "\n\t\t\t<p>A set of slides used for a presentation of e.g. a paper at a conference.</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Slide Set" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#SlideSet> .
+
+<https://astrea.linkeddata.es/shapes#18a1ba8ac24202dee3e5a8a5de4ed0fb>
+        a               sh:NodeShape ;
+        rdfs:label      "Tutorial Event" ;
+        sh:description  "\n\t\t\t\n\t\t\t<p>\n\t\t\t\tA tutorial is a special session at a conference or workshop, somewhat like a long lecture on a specific topic.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Tutorial Event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#TutorialEvent> .
+
+<https://astrea.linkeddata.es/shapes#82d24c334f302c032c400feb99a91032>
+        a               sh:PropertyShape ;
+        rdfs:label      "related to event" , "related to Event" , "\n\t\t\t<p>\n\t\t\t\tRelates a <a href=\"#ArgumentativeDocument\">document</a> to an <a href=\"#AcademicEvent\">event</a> such as a conference, workshop, etc.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:class        <http://data.semanticweb.org/ns/swc/ontology#AcademicEvent> ;
+        sh:description  "\n\t\t\t<p>\n\t\t\t\tRelates a <a href=\"#ArgumentativeDocument\">document</a> to an <a href=\"#AcademicEvent\">event</a> such as a conference, workshop, etc.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "related to event" , "related to Event" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.semanticweb.org/ns/swc/ontology#relatedToEvent> .
+
+<https://astrea.linkeddata.es/shapes#09d8c4313acae8c10627eeb9c4634e68>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.w3.org/2002/12/cal/ical#calscale> .
+
+<https://astrea.linkeddata.es/shapes#58b6d07c89b62350922a186a3ca14452>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://xmlns.com/foaf/0.1/title> .
+
+<https://astrea.linkeddata.es/shapes#553aa6b7cd59ac5be185b8ad39567bb3>
+        a               sh:NodeShape ;
+        rdfs:label      "Track Event" ;
+        sh:description  "\n\t\t\t\n\t\t\t<p>\n\t\t\t\tA track groups all those sessions or events at a conference or workshop that belong to a common, overall theme. Depending on the conference, tracks can be quite generic, such as \"Research\" or \"Industrial\", but can also be more specific, such as \"Semantic Web\" or \"Numismatics\". SWC does not define any specific tracks, since conferences often differ so much with respect to how they structure their tracks, that it would be pointless to try and find a set of tracks that would suit all conferences.\n\t\t\t</p>\n\t\t\t<p>Sub-classes of TrackEvent which were defined in previous versions of the SWC ontology are now deprecated.</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Track Event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#TrackEvent> .
+
+<https://astrea.linkeddata.es/shapes#a1acbfb6b76d6bfe31da7e497ad0ce82>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.w3.org/2002/12/cal/ical#sequence> .
+
+<https://astrea.linkeddata.es/shapes#203c6db8a73c7732f2bbe00ba1273a34>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://xmlns.com/foaf/0.1/surname> .
+
+<https://astrea.linkeddata.es/shapes#7c26d1f7af312064f5e91c8674de504f>
+        a               sh:NodeShape ;
+        rdfs:label      "Programme Committee Member" ;
+        sh:description  "\n\t\t\t<p>\n\t\t\t\tThis role is played by the members of the programme committee of a conference or conference-like event. We found this role to be so significant that it justifies to be represented by its own class.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Programme Committee Member" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#ProgrammeCommitteeMember> .
+
+<https://astrea.linkeddata.es/shapes#2401569328f1807492608239282428ea>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2002/12/cal/ical#Vcalendar> .
+
+<https://astrea.linkeddata.es/shapes#f88bb58d928974c710f1e658306532d2>
+        a               sh:NodeShape ;
+        rdfs:label      "Presenter" ;
+        sh:description  "\n\t\t\t<p>\n\t\t\t\tA presenter is someone who presents matter in front of an audience. Examples of events to which this role applies are paper presentations, tutorials, or talks. A keynote speaker could also be modelled as an instance of this class.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Presenter" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#Presenter> .
+
+<https://astrea.linkeddata.es/shapes#dc7b27d0e5f224b802f0b7b175e0a4b3>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://xmlns.com/foaf/0.1/maker> .
+
+<https://astrea.linkeddata.es/shapes#c6591d0bf3dee3173079d39d80bed5da>
+        a               sh:PropertyShape ;
+        rdfs:label      "held by" , "\n\t\t\t<p>\n\t\t\t\tPart of the <a href=\"#Role\">role</a> modelling machinery of SWC. This property relates a role at an event (e.g. a conference chair) to the person who actually holds the role.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:class        <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description  "\n\t\t\t<p>\n\t\t\t\tPart of the <a href=\"#Role\">role</a> modelling machinery of SWC. This property relates a role at an event (e.g. a conference chair) to the person who actually holds the role.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "held by" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.semanticweb.org/ns/swc/ontology#heldBy> .
+
+<https://astrea.linkeddata.es/shapes#aafae602e820dfcd543481e51548d9b2>
+        a               sh:NodeShape ;
+        rdfs:label      "Conference Venue Place" ;
+        sh:description  "\n\t\t\t\n\t\t\t<p>\n\t\t\t\tThe location of a conference or conference-like event. Ideally, this would be more specific than just the city. Instead it should  be the hotel, convention centre, university or similar place where the event is held.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Conference Venue Place" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#ConferenceVenuePlace> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#a9557cbafb854e7ffcdc46ca0d24b6e8>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Group> .
+
+<https://astrea.linkeddata.es/shapes#01a472e01e66b3f7b45f2e66756a86b2>
+        a               sh:PropertyShape ;
+        rdfs:label      "has programme" , "\n\t\t\t<p>\n\t\t\t\tRelates an event such as a conference to its <a href=\"#Programme\">Programme</a>. \n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:class        <http://data.semanticweb.org/ns/swc/ontology#Programme> ;
+        sh:description  "\n\t\t\t<p>\n\t\t\t\tRelates an event such as a conference to its <a href=\"#Programme\">Programme</a>. \n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "has programme" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.semanticweb.org/ns/swc/ontology#hasProgramme> .
+
+<https://astrea.linkeddata.es/shapes#6ace7559c09873d57bb26d2909a563c6>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d44fc88ed0a756807e1ed64657011967> ;
+        sh:targetClass  <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+<https://astrea.linkeddata.es/shapes#f2e9653697b9a942599731acf4663d70>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://swrc.ontoware.org/ontology#Proceedings> .
+
+<https://astrea.linkeddata.es/shapes#21a8678cc2b2492bc01c86a7f63a516e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.w3.org/2002/12/cal/ical#url> .
+
+<https://astrea.linkeddata.es/shapes#6ffd1ddc090195107bfadfe4594b0827>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://xmlns.com/foaf/0.1/mbox> .
+
+<https://astrea.linkeddata.es/shapes#e1343fa65a6e2a7a5a46cbc37f23b9cd>
+        a               sh:NodeShape ;
+        rdfs:label      "Artefact" ;
+        sh:description  "\n\t\t\t<p><emph>Artefact</emph> here means a document which can have a physical manifestation, like a paper or the proceedings of a conference.</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Artefact" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#82d24c334f302c032c400feb99a91032> ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#Artefact> .
+
+<https://astrea.linkeddata.es/shapes#26cdd36487634c30def7a8426443572a>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.w3.org/2002/12/cal/ical#version> .
+
+<https://astrea.linkeddata.es/shapes#d43b855ce8c471c4aa86b39ee38ecce6>
+        a               sh:NodeShape ;
+        rdfs:label      "Programme" ;
+        sh:description  "\n\t\t\t<p>A document containing the programme of an event such as a conference or workshop. Typically, the programme would list the times and dates for the individual sub-events, e.g., talks, dinners, panel discussions, etc.</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Programme" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#Programme> .
+
+<https://astrea.linkeddata.es/shapes#cf4b15ecbd1b27f9d597cf8f335e157f>
+        a               sh:NodeShape ;
+        rdfs:label      "Academic Event" ;
+        sh:description  "\n\t\t\t\n\t\t\t<p>Academic events are e.g. conferences and conference-like events, and all the sub-events of those which are about the topic or theme of the conference, such as talks or panels.</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Academic Event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e643d98ca532cdb8f437c7598bccc61f> , <https://astrea.linkeddata.es/shapes#f420c884c62015aeb94e15c3b63f3546> , <https://astrea.linkeddata.es/shapes#70f0b2fb353213fd3cedc9dd915ee7c1> ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#AcademicEvent> .
+
+<https://astrea.linkeddata.es/shapes#f98612982843d5ba10f2519a7e11ef25>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/2002/12/cal/ical#dtend> .
+
+<https://astrea.linkeddata.es/shapes#461c40a4e1afb36c56d12fc911c6ae87>
+        a               sh:NodeShape ;
+        rdfs:label      "Organised Event" ;
+        sh:description  "\n\t\t\t\n\t\t\t<p>An event in time and space which is planned and organised, as opposed to something which 'just happens', such as a car accident or sunset.</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Organised Event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#31d0dadbea072bca94994a2a7bd7ce04> , <https://astrea.linkeddata.es/shapes#01a472e01e66b3f7b45f2e66756a86b2> ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#OrganisedEvent> .
+
+<https://astrea.linkeddata.es/shapes#2a91fe714eb42785a4d938b4c4c4fd91>
+        a               sh:PropertyShape ;
+        rdfs:label      "holds role" , "\n\t\t\t<p>\n\t\t\t\tPart of the <a href=\"#Role\">role</a> modelling machinery of SWC. This property relates a person to the role (e.g. a conference chair) it holds at an event.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:class        <http://data.semanticweb.org/ns/swc/ontology#Role> ;
+        sh:description  "\n\t\t\t<p>\n\t\t\t\tPart of the <a href=\"#Role\">role</a> modelling machinery of SWC. This property relates a person to the role (e.g. a conference chair) it holds at an event.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "holds role" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.semanticweb.org/ns/swc/ontology#holdsRole> .
+
+<https://astrea.linkeddata.es/shapes#e643d98ca532cdb8f437c7598bccc61f>
+        a               sh:PropertyShape ;
+        rdfs:label      "has related document" , "\n\t\t\t<p>\n\t\t\t\tRelates an <a href=\"#AcademicEvent\">event</a> such as a conference, workshop, etc. to a <a href=\"#ArgumentativeDocument\">document</a>.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:class        <http://data.semanticweb.org/ns/swc/ontology#ArgumentativeDocument> ;
+        sh:description  "\n\t\t\t<p>\n\t\t\t\tRelates an <a href=\"#AcademicEvent\">event</a> such as a conference, workshop, etc. to a <a href=\"#ArgumentativeDocument\">document</a>.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "has related document" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.semanticweb.org/ns/swc/ontology#hasRelatedDocument> .
+
+<https://astrea.linkeddata.es/shapes#4096b9da4858ae26c13a2acedd21966c>
+        a               sh:NodeShape ;
+        rdfs:label      "Delegate" ;
+        sh:description  "\n\t\t\t<p>\n\t\t\t\tA delegate is someone who attends a conference or conference-like event.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Delegate" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#Delegate> .
+
+<https://astrea.linkeddata.es/shapes#ce96e746950a435ffb665ea2f84c2708>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://swrc.ontoware.org/ontology#doi> .
+
+<https://astrea.linkeddata.es/shapes#0ca25c235fe37370a6d12bcb70718af7>
+        a               sh:NodeShape ;
+        rdfs:label      "Argumentative Document" ;
+        rdfs:seeAlso    <http://en.wikipedia.org/wiki/Text_types> ;
+        sh:description  "\n\t\t\t<p>An argumentative document is a document which uses analytical reasoning and evidence in order to argue for a point of view. Typical examples are scientific papers or political pamphlets. Negative examples are novels or plays (even though a novel might also try to sway the reader to a certain point of view).</p>\n\t\t\t<p>According to <a href=\"http://en.wikipedia.org/wiki/Text_types\">Text Types</a>, an argumentative document is based \"on the evaluation and the subsequent subjective judgement in answer to a problem. It refers to the reasons advanced for or against a matter\".</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Argumentative Document" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#82d24c334f302c032c400feb99a91032> ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#ArgumentativeDocument> .
+
+<https://astrea.linkeddata.es/shapes#89493f511d4ce5aa77174587856c250a>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.w3.org/2002/12/cal/ical#dateTime> .
+
+<https://astrea.linkeddata.es/shapes#c931cb004829ef3f0177563623f9604e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.w3.org/2002/12/cal/ical#prodid> .
+
+<https://astrea.linkeddata.es/shapes#5962c26be0fe9091c1d9c0385b1766bb>
+        a               sh:NodeShape ;
+        rdfs:label      "Meal Event" ;
+        sh:description  "\n\t\t\t\n\t\t\t<p>\n\t\t\t\tA lunch, dinner or similar event at a conference or conference-like event.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Meal Event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#MealEvent> .
+
+<https://astrea.linkeddata.es/shapes#f416ed11230ed10e2656ec634cc8684f>
+        a               sh:NodeShape ;
+        rdfs:label      "Communal Place" ;
+        sh:description  "\n\t\t\t\n\t\t\t<p>\n\t\t\t\tA location at the <a href=\"#ConferenceVenuePlace\">conference venue</a> (or elsewhere), which is not a meeting room. \n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Communal Place" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#CommunalPlace> .
+
+<https://astrea.linkeddata.es/shapes#74f07b74d2337f30f26d754bcaac6083>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/wordnet/1.6/Sponsorship> .
+
+<https://astrea.linkeddata.es/shapes#be47af1901102236631604d5826744a4>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://xmlns.com/foaf/0.1/family_name> .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#63c12185809992c5fa246faa8148f88b> , <https://astrea.linkeddata.es/shapes#bc4e697c1571a22adcc84040550fe556> , <https://astrea.linkeddata.es/shapes#2a91fe714eb42785a4d938b4c4c4fd91> ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Person> .
+
+<https://astrea.linkeddata.es/shapes#dd6518c60ce67cbf8a7706734ebc96e9>
+        a               sh:NodeShape ;
+        rdfs:label      "Session Event" ;
+        sh:description  "\n\t\t\t\n\t\t\t<p>\n\t\t\t\tA session dedicated to a specific topic at a conference. This could be a session with talks, or also a poster session, a demo session, or any other kind of session.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Session Event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#SessionEvent> .
+
+<https://astrea.linkeddata.es/shapes#72fe1be3cae835aa8295d3a6e8b3eef7>
+        a               sh:PropertyShape ;
+        rdfs:label      "is part of" , "\n\t\t\t<p>\n\t\t\t\tA generic property to model part-of relationships. In SWC this property is used to relate papers or articles to the <a href=\"#Proceedings\">proceedings document</a> in which they are contained.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:class        owl:Thing ;
+        sh:description  "\n\t\t\t<p>\n\t\t\t\tA generic property to model part-of relationships. In SWC this property is used to relate papers or articles to the <a href=\"#Proceedings\">proceedings document</a> in which they are contained.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "is part of" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.semanticweb.org/ns/swc/ontology#isPartOf> .
+
+<https://astrea.linkeddata.es/shapes#c882664618b695f2904264820a0c87a9>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://xmlns.com/foaf/0.1/based_near> .
+
+<https://astrea.linkeddata.es/shapes#5192bd4012546876e17387cec79301a1>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Organization> .
+
+<https://astrea.linkeddata.es/shapes#b8450f48b029d9564529567fd8de3c05>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://swrc.ontoware.org/ontology#ResearchTopic> .
+
+<https://astrea.linkeddata.es/shapes#2de876383406910023934e4f4a4ef4fd>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/wordnet/1.6/Announcement> .
+
+<https://astrea.linkeddata.es/shapes#74d685cee782529b31d9b38d6de82bc1>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.w3.org/2002/12/cal/ical#date> .
+
+<https://astrea.linkeddata.es/shapes#feb3a2235b05541abadecaf5d677eb87>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://swrc.ontoware.org/ontology#url> .
+
+<https://astrea.linkeddata.es/shapes#caf093be62c5a418449e5381ddefcb06>
+        a               sh:NodeShape ;
+        rdfs:label      "Chair" ;
+        sh:description  "\n\t\t\t<p>\n\t\t\t\tA sub-class of Role for various kinds of chair functions. Examples are the main chair of a conference, the tutorials chair, the proceedings chair, etc. Instead of introducing a large amount of sub-classes of Chair, we suggest to model all the different chair functions as instances of Chair with appropriate labels.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Chair" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#Chair> .
+
+<https://astrea.linkeddata.es/shapes#d8cbd863bd38e5fea73b445d45be74ed>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/wordnet/1.6/Role-1> .
+
+<https://astrea.linkeddata.es/shapes#667f916a18955e8bda14bec53a15c8c9>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://xmlns.com/foaf/0.1/mbox_sha1sum> .
+
+<https://astrea.linkeddata.es/shapes#6f01908a4e7fcd86038ec7f90d1a1436>
+        a               sh:NodeShape ;
+        rdfs:label      "Role" ;
+        sh:description  "\n\t\t\t<p>\n\t\t\t\tRole is the super-class of all the different roles performed at a conference or workshop. Examples are the various conference chairs, the delegates, presenters, PC members, etc. The intended use of this class is that an instance of Role will be related to the event at which it is performed, and to the person which performs it.\n\t\t\t</p>\n\t\t\t<p>\n\t\t\t\tSince the set of roles is slightly different for each event, and since it would therefore be impossible to provide sub-classes for all needs and circumstances, the SWC ontology only contains a very basic set of Role classes. Rather than diversifying the set of Role classes to cater for all needs, users should instead instantiate the small set of different Role classes and cover the roles at a specific event in this way. E.g., instead of sub-classing the Chair role with MainChair, WorkshopChair, TutorialChair, etc., the different kinds of chairs should simply be instances of the generic Chair class and be labelled appropriately.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Role" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#03b47f1286b506cf648962faf73ac404> , <https://astrea.linkeddata.es/shapes#c6591d0bf3dee3173079d39d80bed5da> ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#Role> .
+
+<https://astrea.linkeddata.es/shapes#29c3a5d12df8ba4f3bb0b250a29218a8>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://xmlns.com/foaf/0.1/firstName> .
+
+<https://astrea.linkeddata.es/shapes#03b47f1286b506cf648962faf73ac404>
+        a               sh:PropertyShape ;
+        rdfs:label      "is role at" , "\n\t\t\t<p>\n\t\t\t\tPart of the <a href=\"#Role\">role</a> modelling machinery of SWC. This property relates a role at an event (e.g. a conference chair) to the event (e.g. a conference).\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:class        <http://data.semanticweb.org/ns/swc/ontology#AcademicEvent> ;
+        sh:description  "\n\t\t\t<p>\n\t\t\t\tPart of the <a href=\"#Role\">role</a> modelling machinery of SWC. This property relates a role at an event (e.g. a conference chair) to the event (e.g. a conference).\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "is role at" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.semanticweb.org/ns/swc/ontology#isRoleAt> .
+
+<https://astrea.linkeddata.es/shapes#9382af221edacef7d8df054c7f5a01dc>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/2002/12/cal/ical#component> .
+
+<https://astrea.linkeddata.es/shapes#bc4e697c1571a22adcc84040550fe556>
+        a               sh:PropertyShape ;
+        rdfs:label      "plans to attend" , "\n\t\t\t<p>\n\t\t\t\tA person might plan to attend a talk or session at a conference or similar event. This property could be used to prepare a delegate's conference experience with respect to who they want to meet, etc.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:class        <http://data.semanticweb.org/ns/swc/ontology#OrganisedEvent> ;
+        sh:description  "\n\t\t\t<p>\n\t\t\t\tA person might plan to attend a talk or session at a conference or similar event. This property could be used to prepare a delegate's conference experience with respect to who they want to meet, etc.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "plans to attend" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.semanticweb.org/ns/swc/ontology#plansToAttend> .
+
+<https://astrea.linkeddata.es/shapes#ddf2635b59ba7eb4ef4768579540814c>
+        a               sh:NodeShape ;
+        rdfs:label      "Accommodation Place" ;
+        sh:description  "\n\t\t\t\n\t\t\t<p>\n\t\t\t\tA hotel, hostel, BnB or similar. \n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Accommodation Place" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#AccommodationPlace> .
+
+<https://astrea.linkeddata.es/shapes#a1aa0a63264a311eef9c9a883a1ce923>
+        a               sh:NodeShape ;
+        rdfs:label      "Meeting Room Place" ;
+        sh:description  "\n\t\t\t\n\t\t\t<p>\n\t\t\t\tA particular room at the <a href=\"#ConferenceVenuePlace\">conference venue</a> (or elsewhere). E.g., the room where a particular <a href=\"#SessionEvent\">SessionEvent</a> takes place. \n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Meeting Room Place" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#MeetingRoomPlace> .
+
+<https://astrea.linkeddata.es/shapes#c278b390c208aa128631f8353eb98570>
+        a               sh:NodeShape ;
+        rdfs:label      "Poster" ;
+        sh:description  "\n\t\t\t<p>A scientific poster at a conference or workshop.</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Poster" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#Poster> .
+
+<https://astrea.linkeddata.es/shapes#91062ebd9c12f93c479a794dbcb7ef1f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/2002/12/cal/ical#dtstamp> .
+
+<https://astrea.linkeddata.es/shapes#580659d3d4d3c9974e9dc36d00e6e6e8>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://xmlns.com/foaf/0.1/member> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#cf78d2129741f45b67dba6024ee34fe6> , <https://astrea.linkeddata.es/shapes#be9748146a6de649c9e3694bfb356432> , <https://astrea.linkeddata.es/shapes#021a38bb8500f47c758de20d17c4e924> , <https://astrea.linkeddata.es/shapes#0f29537c3a6fa884b0b8d251584a9448> , <https://astrea.linkeddata.es/shapes#8237931cba956eaefb2cc6bd79f164e5> , <https://astrea.linkeddata.es/shapes#89493f511d4ce5aa77174587856c250a> , <https://astrea.linkeddata.es/shapes#d8cbd863bd38e5fea73b445d45be74ed> , <https://astrea.linkeddata.es/shapes#9e06fce7b2e57481adf053cdce8839c9> , <https://astrea.linkeddata.es/shapes#b950c6da7e9abe547eb931c4f3ce8732> , <https://astrea.linkeddata.es/shapes#461c40a4e1afb36c56d12fc911c6ae87> , <https://astrea.linkeddata.es/shapes#38b0242bee3633d2784fc02c47a51d63> , <https://astrea.linkeddata.es/shapes#72fe1be3cae835aa8295d3a6e8b3eef7> , <https://astrea.linkeddata.es/shapes#6ace7559c09873d57bb26d2909a563c6> , <https://astrea.linkeddata.es/shapes#55a05e88e2f1bdf8b52fa7d0eb1efeca> , <https://astrea.linkeddata.es/shapes#feb3a2235b05541abadecaf5d677eb87> , <https://astrea.linkeddata.es/shapes#aafae602e820dfcd543481e51548d9b2> , <https://astrea.linkeddata.es/shapes#f98612982843d5ba10f2519a7e11ef25> , <https://astrea.linkeddata.es/shapes#4096b9da4858ae26c13a2acedd21966c> , <https://astrea.linkeddata.es/shapes#e643d98ca532cdb8f437c7598bccc61f> , <https://astrea.linkeddata.es/shapes#09d8c4313acae8c10627eeb9c4634e68> , <https://astrea.linkeddata.es/shapes#03b47f1286b506cf648962faf73ac404> , <https://astrea.linkeddata.es/shapes#f420c884c62015aeb94e15c3b63f3546> , <https://astrea.linkeddata.es/shapes#29c3a5d12df8ba4f3bb0b250a29218a8> , <https://astrea.linkeddata.es/shapes#bdc4dc1ff72c245caffefa07af3a5d12> , <https://astrea.linkeddata.es/shapes#a1aa0a63264a311eef9c9a883a1ce923> , <https://astrea.linkeddata.es/shapes#59878102583895d97ceba24ecb0f9e83> , <https://astrea.linkeddata.es/shapes#30ff66b798d1d1f17ada888e325fad33> , <https://astrea.linkeddata.es/shapes#b5f5ee6890c860f2c76a29aa55ab021f> , <https://astrea.linkeddata.es/shapes#f2e9653697b9a942599731acf4663d70> , <https://astrea.linkeddata.es/shapes#a9557cbafb854e7ffcdc46ca0d24b6e8> , <https://astrea.linkeddata.es/shapes#91062ebd9c12f93c479a794dbcb7ef1f> , <https://astrea.linkeddata.es/shapes#203c6db8a73c7732f2bbe00ba1273a34> , <https://astrea.linkeddata.es/shapes#0ca25c235fe37370a6d12bcb70718af7> , <https://astrea.linkeddata.es/shapes#fea932ad9c55d31e0b74f505fa6bbae0> , <https://astrea.linkeddata.es/shapes#9382af221edacef7d8df054c7f5a01dc> , <https://astrea.linkeddata.es/shapes#2de876383406910023934e4f4a4ef4fd> , <https://astrea.linkeddata.es/shapes#04b3f78711c12bf06d7853d11d40da9c> , <https://astrea.linkeddata.es/shapes#c278b390c208aa128631f8353eb98570> , <https://astrea.linkeddata.es/shapes#31d0dadbea072bca94994a2a7bd7ce04> , <https://astrea.linkeddata.es/shapes#6f01908a4e7fcd86038ec7f90d1a1436> , <https://astrea.linkeddata.es/shapes#f416ed11230ed10e2656ec634cc8684f> , <https://astrea.linkeddata.es/shapes#6ffd1ddc090195107bfadfe4594b0827> , <https://astrea.linkeddata.es/shapes#5e32aea6f50ee8ac0d342450d407fed4> , <https://astrea.linkeddata.es/shapes#82d24c334f302c032c400feb99a91032> , <https://astrea.linkeddata.es/shapes#21a8678cc2b2492bc01c86a7f63a516e> , <https://astrea.linkeddata.es/shapes#af7f94aefae9674caf87dce825e7d1f1> , <https://astrea.linkeddata.es/shapes#a1acbfb6b76d6bfe31da7e497ad0ce82> , <https://astrea.linkeddata.es/shapes#e17f853ae43fb9eab0f749eedc964c50> , <https://astrea.linkeddata.es/shapes#74f07b74d2337f30f26d754bcaac6083> , <https://astrea.linkeddata.es/shapes#553aa6b7cd59ac5be185b8ad39567bb3> , <https://astrea.linkeddata.es/shapes#70f0b2fb353213fd3cedc9dd915ee7c1> , <https://astrea.linkeddata.es/shapes#e1343fa65a6e2a7a5a46cbc37f23b9cd> , <https://astrea.linkeddata.es/shapes#bc4e697c1571a22adcc84040550fe556> , <https://astrea.linkeddata.es/shapes#0d30180e88607a9b9f3e7efdf6a5a920> , <https://astrea.linkeddata.es/shapes#2401569328f1807492608239282428ea> , <https://astrea.linkeddata.es/shapes#d43b855ce8c471c4aa86b39ee38ecce6> , <https://astrea.linkeddata.es/shapes#c6591d0bf3dee3173079d39d80bed5da> , <https://astrea.linkeddata.es/shapes#74d685cee782529b31d9b38d6de82bc1> , <https://astrea.linkeddata.es/shapes#01a472e01e66b3f7b45f2e66756a86b2> , <https://astrea.linkeddata.es/shapes#6782e0fc8fdd9f94b6a15335f0c0bc96> , <https://astrea.linkeddata.es/shapes#f88bb58d928974c710f1e658306532d2> , <https://astrea.linkeddata.es/shapes#b8450f48b029d9564529567fd8de3c05> , <https://astrea.linkeddata.es/shapes#db0b936c36f884c11b49a1b18bf8a84e> , <https://astrea.linkeddata.es/shapes#bdcc3da2e9b2c638bca30b6333130941> , <https://astrea.linkeddata.es/shapes#5962c26be0fe9091c1d9c0385b1766bb> , <https://astrea.linkeddata.es/shapes#580659d3d4d3c9974e9dc36d00e6e6e8> , <https://astrea.linkeddata.es/shapes#63c12185809992c5fa246faa8148f88b> , <https://astrea.linkeddata.es/shapes#c882664618b695f2904264820a0c87a9> , <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#be47af1901102236631604d5826744a4> , <https://astrea.linkeddata.es/shapes#18a1ba8ac24202dee3e5a8a5de4ed0fb> , <https://astrea.linkeddata.es/shapes#8d95f76dc4a7c0026105fe64b44fd25c> , <https://astrea.linkeddata.es/shapes#2a91fe714eb42785a4d938b4c4c4fd91> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#667f916a18955e8bda14bec53a15c8c9> , <https://astrea.linkeddata.es/shapes#00fb8ae8d46f6fcf6901b74d29b076bc> , <https://astrea.linkeddata.es/shapes#dd6518c60ce67cbf8a7706734ebc96e9> , <https://astrea.linkeddata.es/shapes#5192bd4012546876e17387cec79301a1> , <https://astrea.linkeddata.es/shapes#dc7b27d0e5f224b802f0b7b175e0a4b3> , <https://astrea.linkeddata.es/shapes#7c26d1f7af312064f5e91c8674de504f> , <https://astrea.linkeddata.es/shapes#26cdd36487634c30def7a8426443572a> , <https://astrea.linkeddata.es/shapes#c931cb004829ef3f0177563623f9604e> , <https://astrea.linkeddata.es/shapes#58b6d07c89b62350922a186a3ca14452> , <https://astrea.linkeddata.es/shapes#c56088a8681d7d7b1ce856b8bd867c97> , <https://astrea.linkeddata.es/shapes#ce96e746950a435ffb665ea2f84c2708> , <https://astrea.linkeddata.es/shapes#ddf2635b59ba7eb4ef4768579540814c> , <https://astrea.linkeddata.es/shapes#d44fc88ed0a756807e1ed64657011967> , <https://astrea.linkeddata.es/shapes#cf4b15ecbd1b27f9d597cf8f335e157f> , <https://astrea.linkeddata.es/shapes#caf093be62c5a418449e5381ddefcb06> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0533639137> , <https://astrea.linkeddata.es/report/01397434574> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#70f0b2fb353213fd3cedc9dd915ee7c1>
+        a               sh:PropertyShape ;
+        rdfs:label      "has role" , "\n\t\t\t<p>\n\t\t\t\tPart of the <a href=\"#Role\">role</a> modelling machinery of SWC. This property relates an event (e.g. a conference) to a role at the event (e.g. a conference chair).\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:class        <http://data.semanticweb.org/ns/swc/ontology#Role> ;
+        sh:description  "\n\t\t\t<p>\n\t\t\t\tPart of the <a href=\"#Role\">role</a> modelling machinery of SWC. This property relates an event (e.g. a conference) to a role at the event (e.g. a conference chair).\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "has role" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.semanticweb.org/ns/swc/ontology#hasRole> .
+
+<https://astrea.linkeddata.es/shapes#0f29537c3a6fa884b0b8d251584a9448>
+        a               sh:NodeShape ;
+        rdfs:label      "Proceedings" ;
+        sh:description  "\n\t\t\t<p>The proceedings of a conference or workshop, which contain the papers presented there.</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Proceedings" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#Proceedings> .
+
+<https://astrea.linkeddata.es/shapes#c56088a8681d7d7b1ce856b8bd867c97>
+        a               sh:NodeShape ;
+        rdfs:label      "Conference Event" ;
+        sh:description  "\n\t\t\t\n\t\t\t<p>\n\t\t\t\tA scientific conference.\n\t\t\t</p>\n\t\t\t<p>\n\t\t\t\tTODO: Maybe this should be opened up - why only scientific conferences?\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Conference Event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#ConferenceEvent> .
+
+<https://astrea.linkeddata.es/shapes#63c12185809992c5fa246faa8148f88b>
+        a               sh:PropertyShape ;
+        rdfs:label      "member of" , "\n\t\t\t<p>FOAF does not define an inverse of <code>foaf:member</code>, so SWC does it.</p>\n\t\t\t\n\t\t" ;
+        sh:class        <http://xmlns.com/foaf/0.1/Group> ;
+        sh:description  "\n\t\t\t<p>FOAF does not define an inverse of <code>foaf:member</code>, so SWC does it.</p>\n\t\t\t\n\t\t" ;
+        sh:name         "member of" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.semanticweb.org/ns/swc/ontology#memberOf> .
+
+<https://astrea.linkeddata.es/shapes#00fb8ae8d46f6fcf6901b74d29b076bc>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.w3.org/2002/12/cal/ical#description> .
+
+<https://astrea.linkeddata.es/shapes#b5f5ee6890c860f2c76a29aa55ab021f>
+        a               sh:NodeShape ;
+        rdfs:label      "Social Event" ;
+        sh:description  "\n\t\t\t\n\t\t\t<p>\n\t\t\t\tExamples for social events are parties or excursions.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Social Event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#SocialEvent> .
+
+<https://astrea.linkeddata.es/shapes#59878102583895d97ceba24ecb0f9e83>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2002/12/cal/ical#Vevent> .
+
+<https://astrea.linkeddata.es/shapes#0d30180e88607a9b9f3e7efdf6a5a920>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://xmlns.com/foaf/0.1/homepage> .
+
+<https://astrea.linkeddata.es/shapes#bdcc3da2e9b2c638bca30b6333130941>
+        a               sh:NodeShape ;
+        rdfs:label      "Non-academic Event" ;
+        sh:description  "\n\t\t\t\n\t\t\t<p>\n\t\t\t\tIn the context of SWC, a non-academic event is any kind or <a href=\"#OrganisedEvent\">organised event</a> which does not concern the topic or theme of the conference as such. Examples are breaks, dinners, parties, etc.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Non-academic Event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#NonAcademicEvent> .
+
+<https://astrea.linkeddata.es/shapes#021a38bb8500f47c758de20d17c4e924>
+        a               sh:PropertyShape ;
+        rdfs:label      "has part" , "\n\t\t\t<p>\n\t\t\t\tA generic property to model part-of relationships. In SWC this property is used to relate a <a href=\"#Proceedings\">proceedings document</a> to the papers and articles contained in it.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:class        owl:Thing ;
+        sh:description  "\n\t\t\t<p>\n\t\t\t\tA generic property to model part-of relationships. In SWC this property is used to relate a <a href=\"#Proceedings\">proceedings document</a> to the papers and articles contained in it.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "has part" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.semanticweb.org/ns/swc/ontology#hasPart> .
+
+<https://astrea.linkeddata.es/shapes#55a05e88e2f1bdf8b52fa7d0eb1efeca>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Document> .
+
+<https://astrea.linkeddata.es/shapes#31d0dadbea072bca94994a2a7bd7ce04>
+        a               sh:PropertyShape ;
+        rdfs:label      "has location" , "\n\t\t\t<p>\n\t\t\t\tRelates an event such as a conference or any sub-event thereof to a location where it takes place. \n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:class        <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+        sh:description  "\n\t\t\t<p>\n\t\t\t\tRelates an event such as a conference or any sub-event thereof to a location where it takes place. \n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "has location" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.semanticweb.org/ns/swc/ontology#hasLocation> .
+
+<https://astrea.linkeddata.es/shapes#5e32aea6f50ee8ac0d342450d407fed4>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/wordnet/1.6/Document> .
+
+<https://astrea.linkeddata.es/shapes#cf78d2129741f45b67dba6024ee34fe6>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/dc/terms/isPartOf> .
+
+<https://astrea.linkeddata.es/report/0533639137>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://data.semanticweb.org/ns/swc/swrc-topics" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#8237931cba956eaefb2cc6bd79f164e5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/wordnet/1.6/Event-1> .
+
+<https://astrea.linkeddata.es/shapes#bdc4dc1ff72c245caffefa07af3a5d12>
+        a               sh:NodeShape ;
+        rdfs:label      "Talk Event" ;
+        sh:description  "\n\t\t\t\n\t\t\t<p>\n\t\t\t\tA speaker giving a talk. This could be the presentation of a paper, but also keynote speech or any other kind of talk.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Talk Event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#TalkEvent> .
+
+<https://astrea.linkeddata.es/shapes#04b3f78711c12bf06d7853d11d40da9c>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Project> .
+
+<https://astrea.linkeddata.es/shapes#fea932ad9c55d31e0b74f505fa6bbae0>
+        a               sh:NodeShape ;
+        rdfs:label      "Break Event" ;
+        sh:description  "\n\t\t\t\n\t\t\t<p>\n\t\t\t\tAny kind of break at the super-event, such as a coffee break.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Break Event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#BreakEvent> .
+
+<https://astrea.linkeddata.es/shapes#30ff66b798d1d1f17ada888e325fad33>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.w3.org/2002/12/cal/ical#duration> .
+
+<https://astrea.linkeddata.es/shapes#8d95f76dc4a7c0026105fe64b44fd25c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.w3.org/2002/12/cal/ical#tzid> .
+
+<https://astrea.linkeddata.es/shapes#38b0242bee3633d2784fc02c47a51d63>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://swrc.ontoware.org/ontology#InProceedings> .
+
+<https://astrea.linkeddata.es/shapes#af7f94aefae9674caf87dce825e7d1f1>
+        a               sh:NodeShape ;
+        rdfs:label      "Paper" ;
+        sh:description  "\n\t\t\t<p>A scientific/scholarly paper, e.g., an article in a scientific journal, or a paper at a conference or workshop. A paper could also be unpublished formally, as long as it has the form of a scientific paper (introduction, conclusion, related work, etc.).</p>\n\t\t\t\n\t\t" ;
+        sh:name         "Paper" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.semanticweb.org/ns/swc/ontology#Paper> .
+
+<https://astrea.linkeddata.es/shapes#f420c884c62015aeb94e15c3b63f3546>
+        a               sh:PropertyShape ;
+        rdfs:label      "has related artefact" , "\n\t\t\t<p>\n\t\t\t\tRelates an <a href=\"#AcademicEvent\">event</a> such as a conference, workshop, etc. to a physical <a href=\"#Artefact\">artefact</a>.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:class        <http://data.semanticweb.org/ns/swc/ontology#Artefact> ;
+        sh:description  "\n\t\t\t<p>\n\t\t\t\tRelates an <a href=\"#AcademicEvent\">event</a> such as a conference, workshop, etc. to a physical <a href=\"#Artefact\">artefact</a>.\n\t\t\t</p>\n\t\t\t\n\t\t" ;
+        sh:name         "has related artefact" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.semanticweb.org/ns/swc/ontology#hasRelatedArtefact> .

@@ -1,0 +1,751 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#c1c2716dbd116f59f3995f73e6657468>
+        a               sh:NodeShape ;
+        rdfs:label      "Given Consent"@en ;
+        sh:description  "Represents a consent entity that is considered given whether implicitly, explicitly, or by delegation."@en ;
+        sh:name         "Given Consent"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/GConsent#GivenConsent> , <https://w3id.org/GDPRov#GivenConsent> .
+
+<https://astrea.linkeddata.es/shapes#407f45d73f6f1c137e3dc9d7c0895c23>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/GDPRov#DataSubject> .
+
+<https://astrea.linkeddata.es/shapes#db62daa6d77b7fcbd68d6c6339daa036>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/GDPRov#ThirdParty> .
+
+<https://astrea.linkeddata.es/shapes#f07d8a0f34215c27c5b65fa72286bdc5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/GDPRov#Controller> .
+
+<https://astrea.linkeddata.es/shapes#154b7c383d52704d4b0903c2b6c4fe9f>
+        a               sh:PropertyShape ;
+        rdfs:label      "is provided to"@en , "Indicates the Person or Data Controller the consent was provided to."@en ;
+        sh:description  "Indicates the Person or Data Controller the consent was provided to."@en ;
+        sh:inversePath  <https://w3id.org/GConsent#isProvidedTo> ;
+        sh:maxCount     1 ;
+        sh:name         "is provided to"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  <http://www.w3.org/ns/prov#Person> ;
+                            sh:path   <https://w3id.org/GConsent#isProvidedTo>
+                          ]
+                          [ sh:class  <https://w3id.org/GConsent#DataController> ;
+                            sh:path   <https://w3id.org/GConsent#isProvidedTo>
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/shapes#02c2571310a7e683b371f14a60cd5af1>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/ns/prov#Location> .
+
+<https://astrea.linkeddata.es/shapes#ce4c5b5a607030eab1a7814cb20cf946>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/GDPRov#PersonalData> .
+
+<https://astrea.linkeddata.es/shapes#1c5215289c2ad11be4c1cc9a7221c535>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT#PersonalData> ;
+        rdfs:label        "for personal data"@en , "Links the consent to personal data it is associated with it."@en ;
+        sh:class          <https://w3id.org/GConsent#PersonalData> ;
+        sh:description    "Links the consent to personal data it is associated with it."@en ;
+        sh:name           "for personal data"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://w3id.org/GConsent#forPersonalData> .
+
+<https://astrea.linkeddata.es/shapes#bb7bcfa89e148f3930b5cf542ca205fd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT#DataSubject> ;
+        rdfs:label        "Data Subject"@en ;
+        sh:description    "Data Subject is defined as an identified or identifiable natural person (‘data subject’); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person; - according to Article 4(1) of the GDPR pertaining to the definition of Personal Data.\n\nIn the case of this ontology, a Data Subject refers to the person(s) as per the definition of the GDPR. Since a Data Subject is a Person, it is defined as a subclass of foaf:Person.\n\nThe Data Subject is linked to the Consent instance via the isConsentForDataSubject and hasConsent properties."@en ;
+        sh:name           "Data Subject"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/GConsent#DataSubject> , <https://w3id.org/GDPRov#DataSubject> .
+
+<https://astrea.linkeddata.es/shapes#8039c5b998ce5507fef3f197592cfe07>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#eb069e1928ad83e55d477e8de5979cd8> ;
+        sh:targetClass  <http://www.w3.org/ns/prov#Association> .
+
+<https://astrea.linkeddata.es/shapes#aaebdd85487ec8c886979216ad199179>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+        rdfs:label        "Data Use"@en ;
+        sh:description    "Represents the type of processing where Use of data takes place."@en ;
+        sh:name           "Data Use"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/GConsent#DataUse> .
+
+<https://astrea.linkeddata.es/shapes#a93bdef81179f5965e0f8447d3210d29>
+        a               sh:PropertyShape ;
+        rdfs:label      "was provided consent"@en , "Indicates that the specified Person or Data Controller was provided the associated consent."@en ;
+        sh:class        <https://w3id.org/GConsent#Consent> ;
+        sh:description  "Indicates that the specified Person or Data Controller was provided the associated consent."@en ;
+        sh:name         "was provided consent"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/GConsent#wasProvidedConsent> .
+
+<https://astrea.linkeddata.es/shapes#f1091aafc299a55d8e0765e66a23c946>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+        rdfs:label        "Data Dissemination"@en ;
+        sh:description    "Represents the type of processing where Dissemination of data takes place."@en ;
+        sh:name           "Data Dissemination"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/GConsent#DataDissemination> .
+
+<https://astrea.linkeddata.es/shapes#27369457ea51e853b0d9197985e8932c>
+        a               sh:PropertyShape ;
+        rdfs:label      "is provided by"@en , "Indicates the entity or activitiy that provided the consent."@en ;
+        sh:description  "Indicates the entity or activitiy that provided the consent."@en ;
+        sh:maxCount     1 ;
+        sh:name         "is provided by"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  <http://www.w3.org/ns/prov#Person> ;
+                            sh:path   <https://w3id.org/GConsent#isProvidedBy>
+                          ]
+                          [ sh:class  <https://w3id.org/GConsent#DataSubject> ;
+                            sh:path   <https://w3id.org/GConsent#isProvidedBy>
+                          ]
+                          [ sh:class  <https://w3id.org/GConsent#Delegation> ;
+                            sh:path   <https://w3id.org/GConsent#isProvidedBy>
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/shapes#5b8137f1a5ec9ef80031ad4f31058725>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <https://w3id.org/GConsent#isConsentForDataSubject> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <https://w3id.org/GConsent#DataSubject> ] .
+
+<https://astrea.linkeddata.es/shapes#91bdb733f5c5f8b68ed72a7c77d5360b>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/prov#wasAttributedTo> .
+
+<https://astrea.linkeddata.es/shapes#8f2d20088b6cc33776528cfb6a12af06>
+        a               sh:PropertyShape ;
+        rdfs:label      "for processing"@en , "Links the consent with its associated processing."@en ;
+        sh:class        <https://w3id.org/GConsent#Processing> ;
+        sh:description  "Links the consent with its associated processing."@en ;
+        sh:name         "for processing"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/GConsent#forProcessing> .
+
+<https://astrea.linkeddata.es/shapes#3e18b0f9fac2d3bdcd51a2fdadcbda53>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2006/time#TemporalEntity> .
+
+<https://astrea.linkeddata.es/shapes#7e467cd218c8b58f9ba375fe657b2f3d>
+        a               sh:PropertyShape ;
+        rdfs:label      "is status for consent"@en , "Links a status to the consent that uses it."@en ;
+        sh:class        <https://w3id.org/GConsent#Consent> ;
+        sh:description  "Links a status to the consent that uses it."@en ;
+        sh:inversePath  <https://w3id.org/GConsent#isStatusForConsent> ;
+        sh:maxCount     1 ;
+        sh:name         "is status for consent"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path         <https://w3id.org/GConsent#isStatusForConsent> .
+
+<https://astrea.linkeddata.es/shapes#9ad91553e5a16a951c4e0317d358038c>
+        a               sh:PropertyShape ;
+        rdfs:label      "is personal data for consent"@en , "Links personal data with the consent it is associated with."@en ;
+        sh:class        <https://w3id.org/GConsent#Consent> ;
+        sh:description  "Links personal data with the consent it is associated with."@en ;
+        sh:name         "is personal data for consent"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/GConsent#isPersonalDataForConsent> .
+
+<https://astrea.linkeddata.es/shapes#24c8c2d81c43d74b84f6b98e1e6b1fd4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+        rdfs:label        "Data Alignment"@en ;
+        sh:description    "Represents the type of processing where Alignment of data takes place."@en ;
+        sh:name           "Data Alignment"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/GConsent#DataAlignment> .
+
+<https://astrea.linkeddata.es/shapes#ede370e24d998d4565c1a2a54ca9482b>
+        a               sh:PropertyShape ;
+        rdfs:label      "is action for purpose"@en , "Links an action to the purpose it is associated with."@en ;
+        sh:class        <https://w3id.org/GConsent#Consent> ;
+        sh:description  "Links an action to the purpose it is associated with."@en ;
+        sh:name         "is action for purpose"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/GConsent#isProcessingForConsent> .
+
+<https://astrea.linkeddata.es/shapes#dfcd5fc30011d551739f9877c244fb84>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/ns/prov#Entity> .
+
+<https://astrea.linkeddata.es/shapes#e429bba413339eea3fece697ed9ee9b8>
+        a               sh:NodeShape ;
+        rdfs:label      "Status"@en ;
+        sh:description  "Represents the status of consent for the data subject. This allows persisting the determination of the validatity or suitability of consent (as an entity or instance) for use in processing and other activities. Examples: consent is given, consent is requested but not given, consent was withdrawn."@en ;
+        sh:name         "Status"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/GConsent#Status> .
+
+<https://astrea.linkeddata.es/shapes#a35cc7f66f87f38547c2a7c688e0af9f>
+        a         sh:PropertyShape ;
+        sh:class  <https://w3id.org/GConsent#StatusValidForProcessing> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#ab26439bcb17094527dd5178a45b2479>
+        a            sh:PropertyShape ;
+        sh:class     <https://w3id.org/GConsent#DataSubject> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <https://w3id.org/GConsent#isProvidedByDataSubject> .
+
+<https://astrea.linkeddata.es/shapes#aa34c8e66fa0181530cef96c39c04ae8>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/GDPRov#PersonalDataEntity> .
+
+<https://astrea.linkeddata.es/shapes#c38adf9b73a7a1a441a2e37756376c38>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+        rdfs:label        "Data Recording"@en ;
+        sh:description    "Represents the type of processing where Recording of data takes place."@en ;
+        sh:name           "Data Recording"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/GConsent#DataRecording> .
+
+<https://astrea.linkeddata.es/shapes#3df452e11d7e2093303eef5163b5f84c>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/GDPRov#GivenConsent> .
+
+<https://astrea.linkeddata.es/shapes#707b974811161880565f3cafb521353b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+        rdfs:label        "Data Adaptation"@en ;
+        sh:description    "Represents the type of processing where Adaptation of data takes place."@en ;
+        sh:name           "Data Adaptation"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/GConsent#DataAdaptation> .
+
+<https://astrea.linkeddata.es/shapes#7160774df0191fa48eadaba1000ac46b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+        rdfs:label        "Data Organisation"@en ;
+        sh:description    "Represents the type of processing where Organisation of data takes place."@en ;
+        sh:name           "Data Organisation"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/GConsent#DataOrganisation> .
+
+<https://astrea.linkeddata.es/shapes#a5001c59ae320799545e3a6e265feaf9>
+        a               sh:PropertyShape ;
+        rdfs:label      "Specifies the Person that provided this consent."@en , "is provided by person"@en ;
+        sh:class        <http://www.w3.org/ns/prov#Person> ;
+        sh:description  "Specifies the Person that provided this consent."@en ;
+        sh:maxCount     1 ;
+        sh:name         "is provided by person"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/GConsent#isProvidedByPerson> .
+
+<https://astrea.linkeddata.es/shapes#976030c8af974daa5e85c863ad286819>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/ns/prov#Delegation> .
+
+<https://astrea.linkeddata.es/shapes#a25d2c40a2b65a3d3bbfa446af913b52>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/ns/prov#Role> .
+
+<https://astrea.linkeddata.es/shapes#b768da97ac6b0fd444e67c28fa84f357>
+        a               sh:PropertyShape ;
+        rdfs:label      "is updated consent for"@en , "Specifies the consent instance which this instance is an update or revision of."@en ;
+        sh:class        <https://w3id.org/GConsent#Consent> ;
+        sh:description  "Specifies the consent instance which this instance is an update or revision of."@en ;
+        sh:name         "is updated consent for"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/GConsent#isUpdatedConsentFor> .
+
+<https://astrea.linkeddata.es/shapes#261db93b1ed5ca71706bd2d8570a680d>
+        a               sh:PropertyShape ;
+        rdfs:label      "is previous consent for"@en , "Denotes that this consent instance is the previous consent for the specified consent instance."@en ;
+        sh:class        <https://w3id.org/GConsent#Consent> ;
+        sh:description  "Denotes that this consent instance is the previous consent for the specified consent instance."@en ;
+        sh:name         "is previous consent for"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/GConsent#isPreviousConsentFor> .
+
+<https://astrea.linkeddata.es/shapes#49582aa10165eeaeee4f8f890fc7f295>
+        a               sh:PropertyShape ;
+        rdfs:label      "is context for consent"@en , "links a context to the consent instance it describes"@en ;
+        sh:class        <https://w3id.org/GConsent#Consent> ;
+        sh:description  "links a context to the consent instance it describes"@en ;
+        sh:name         "is context for consent"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/GConsent#isContextForConsent> .
+
+<https://astrea.linkeddata.es/shapes#626ccae2c0abfde38fe6cfbc9192c8cf>
+        a               sh:NodeShape ;
+        rdfs:label      "Delegation" ;
+        sh:description  "A Delegation of consent occurs when another entity, whether a data subject or their representative or an automated mechanism, provides the consent on behalf of the intended Data Subject. The delegated consent is provided through the mechanism of a _delegation_. This involves three entities - the Data Subject the delegation occurs for, the entity that acts as the delegate, and the mechanism used to verify the authority to delegate. They (first two) are provided respectively by the properties `isConsentDelegationFor`, and `hasConsentGivenByDelegate`."@en ;
+        sh:name         "Delegation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1906109cc1853bf639f39593fe23e709> , <https://astrea.linkeddata.es/shapes#a5001c59ae320799545e3a6e265feaf9> ;
+        sh:targetClass  <https://w3id.org/GConsent#Delegation> .
+
+<https://astrea.linkeddata.es/shapes#eb3e9892c1d2014cf404e833acfc5974>
+        a               sh:PropertyShape ;
+        rdfs:label      "Indicates sharing of personal data with a Third Party through the association."@en ;
+        sh:class        <https://w3id.org/GConsent#ThirdParty> ;
+        sh:description  "Indicates sharing of personal data with a Third Party through the association."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/GConsent#sharesDataWithThirdParty> .
+
+<https://astrea.linkeddata.es/shapes#38c8b16c07f54ef2eef6af22a509d5fe>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+        rdfs:label        "Data Combination"@en ;
+        sh:description    "Represents the type of processing where Combination of data takes place."@en ;
+        sh:name           "Data Combination"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/GConsent#DataCombination> .
+
+<https://astrea.linkeddata.es/shapes#27b774b49d3761a0d499acc76e274313>
+        a               sh:PropertyShape ;
+        rdfs:label      "Specifies the Instant or Duration in which the consent expires."@en , "has expiry"@en ;
+        sh:class        <http://www.w3.org/2006/time#TemporalEntity> ;
+        sh:description  "Specifies the Instant or Duration in which the consent expires."@en ;
+        sh:maxCount     1 ;
+        sh:name         "has expiry"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/GConsent#hasExpiry> .
+
+<https://astrea.linkeddata.es/shapes#57d86c9cbc216c719ade4d9b027f8936>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+        rdfs:label        "Data Storage"@en ;
+        sh:description    "Represents the type of processing where Storage of data takes place."@en ;
+        sh:name           "Data Storage"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/GConsent#DataStorage> .
+
+<https://astrea.linkeddata.es/shapes#4a2895e231ff90d552bc96e2baaf84da>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+        rdfs:label        "Data Collection"@en ;
+        sh:description    "Represents the type of processing where Collection of data takes place."@en ;
+        sh:name           "Data Collection"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/GConsent#DataCollection> .
+
+<https://astrea.linkeddata.es/shapes#4f38477cbb5c195ccd5cf71b34f1dbd5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT#PersonalData> , <https://w3id.org/GDPRtEXT/gdpr#recital26> , <https://w3id.org/GDPRtEXT/gdpr#article4-1> ;
+        rdfs:label        "Personal Data"@en ;
+        sh:description    "As per Article 4(1) of the GDPR, ‘personal data’ means any information relating to an identified or identifiable natural person (‘data subject’);"@en ;
+        sh:name           "Personal Data"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#9ad91553e5a16a951c4e0317d358038c> ;
+        sh:targetClass    <https://w3id.org/GConsent#PersonalData> .
+
+<https://astrea.linkeddata.es/shapes#25986ad6b1aaefc6ec01d8108e0c357d>
+        a               sh:PropertyShape ;
+        rdfs:label      "is consent for data subject"@en , "Links a consent instance with the data subject it is associated with."@en ;
+        sh:class        <https://w3id.org/GConsent#DataSubject> ;
+        sh:description  "Links a consent instance with the data subject it is associated with."@en ;
+        sh:maxCount     1 ;
+        sh:name         "is consent for data subject"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path         <https://w3id.org/GConsent#isConsentForDataSubject> .
+
+<https://astrea.linkeddata.es/shapes#04e5e41cdb3287e3cd1d1b7a7d803894>
+        a               sh:NodeShape ;
+        rdfs:label      "Data Sharing"@en ;
+        sh:description  "Type of processing where sharing of data takes place with a Third Party."@en ;
+        sh:name         "Data Sharing"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#eb3e9892c1d2014cf404e833acfc5974> ;
+        sh:targetClass  <https://w3id.org/GConsent#DataSharing> .
+
+<https://astrea.linkeddata.es/shapes#2c56eb6247539f4052105fe56e32f7a8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT/gdpr> ;
+        rdfs:label        "Purpose"@en ;
+        sh:description    "Purpose refers to the aim or goal towards which the data is processed (or associated with any other form of action)."@en ;
+        sh:name           "Purpose"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7a941f52be3f5cee078fbe91d631b40e> , <https://astrea.linkeddata.es/shapes#1d421e167cf28634debf84073447de2e> , <https://astrea.linkeddata.es/shapes#d30913fac24b9527654224f7d90992b3> ;
+        sh:targetClass    <https://w3id.org/GConsent#Purpose> .
+
+<https://astrea.linkeddata.es/shapes#40ae83814e21c7ae623e6c4cdb004a38>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT#GivenConsent> ;
+        rdfs:label        "Consent"@en ;
+        sh:description    "As per Article 4(11) of the GDPR, ‘consent’ of the data subject means any freely given, specific, informed and unambiguous indication of the data subject’s wishes by which he or she, by a statement or by a clear affirmative action, signifies agreement to the processing of personal data relating to him or her;\n\nIn the case of this ontology, 'Consent' is a concept as well as a tangible entity (something that has a provenance record). To separate this distinction with relation to the data subject, the Consent class represents the consent of the data subject in its entirely, including any history and annotations for it.\n\nTo link the `Consent` instance with the `DataSubject` instance, use the `isConsentForDataSubject` and `hasConsent` properties."@en ;
+        sh:name           "Consent"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#b2b95224bd0e6de323a549074c50171b> , <https://astrea.linkeddata.es/shapes#a5001c59ae320799545e3a6e265feaf9> , <https://astrea.linkeddata.es/shapes#13b5642c80bfa36c442e70bce4f798d4> , <https://astrea.linkeddata.es/shapes#27b774b49d3761a0d499acc76e274313> , <https://astrea.linkeddata.es/shapes#25986ad6b1aaefc6ec01d8108e0c357d> , <https://astrea.linkeddata.es/shapes#261db93b1ed5ca71706bd2d8570a680d> , <https://astrea.linkeddata.es/shapes#d5ded32a9113364befe822582215b184> , <https://astrea.linkeddata.es/shapes#b768da97ac6b0fd444e67c28fa84f357> , <https://astrea.linkeddata.es/shapes#0ae3bbc4154ec179a0445e51d8d7cd4c> , <https://astrea.linkeddata.es/shapes#ab26439bcb17094527dd5178a45b2479> , <https://astrea.linkeddata.es/shapes#8e317ba610d3ce33b40778998da08a00> , <https://astrea.linkeddata.es/shapes#1c5215289c2ad11be4c1cc9a7221c535> , <https://astrea.linkeddata.es/shapes#2bf322f425c5ca9b60e6e2f01bd4765f> , <https://astrea.linkeddata.es/shapes#8f2d20088b6cc33776528cfb6a12af06> , <https://astrea.linkeddata.es/shapes#1906109cc1853bf639f39593fe23e709> , <https://astrea.linkeddata.es/shapes#5b8137f1a5ec9ef80031ad4f31058725> ;
+        sh:targetClass    <https://w3id.org/GConsent#Consent> .
+
+<https://astrea.linkeddata.es/shapes#66aa8da41ff27c52a270c96b25031a15>
+        a               sh:PropertyShape ;
+        rdfs:label      "is association for"@en , "Indicates an Association is for the associated Purpose or Processing."@en ;
+        sh:description  "Indicates an Association is for the associated Purpose or Processing."@en ;
+        sh:name         "is association for"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  <https://w3id.org/GConsent#Processing> ;
+                            sh:path   <https://w3id.org/GConsent#isAssociationFor>
+                          ]
+                          [ sh:class  <https://w3id.org/GConsent#Purpose> ;
+                            sh:path   <https://w3id.org/GConsent#isAssociationFor>
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/shapes#ee4b8a5199cf15fc6cea7f31f6d1580a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT#GivenConsent> ;
+        rdfs:label        "Links the entity or activity that gave consent to the entity or activity representing the consent (or its delegation)."@en , "gave consent"@en ;
+        sh:description    "Links the entity or activity that gave consent to the entity or activity representing the consent (or its delegation)."@en ;
+        sh:inversePath    <https://w3id.org/GConsent#providedConsent> ;
+        sh:maxCount       1 ;
+        sh:name           "gave consent"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:or             ( [ sh:class  <https://w3id.org/GConsent#Consent> ;
+                              sh:path   <https://w3id.org/GConsent#providedConsent>
+                            ]
+                            [ sh:class  <https://w3id.org/GConsent#Delegation> ;
+                              sh:path   <https://w3id.org/GConsent#providedConsent>
+                            ]
+                          ) .
+
+<https://astrea.linkeddata.es/shapes#d30913fac24b9527654224f7d90992b3>
+        a               sh:PropertyShape ;
+        rdfs:label      "is purpose for consent"@en , "Links purpose with the consent instance associated with it."@en ;
+        sh:class        <https://w3id.org/GConsent#Consent> ;
+        sh:description  "Links purpose with the consent instance associated with it."@en ;
+        sh:name         "is purpose for consent"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/GConsent#isPurposeForConsent> .
+
+<https://astrea.linkeddata.es/shapes#8d41c9944bb00669be30891e4a560835>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT#Consent> ;
+        rdfs:label        "has consent"@en , "Links a data subject to their consent."@en ;
+        sh:class          <https://w3id.org/GConsent#Consent> ;
+        sh:description    "Links a data subject to their consent."@en ;
+        sh:inversePath    <https://w3id.org/GConsent#hasConsent> ;
+        sh:maxCount       1 ;
+        sh:name           "has consent"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           <https://w3id.org/GConsent#hasConsent> .
+
+<https://astrea.linkeddata.es/shapes#4549027783d91a1033c2c4b6f20e0bda>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT#DataActivity> ;
+        rdfs:label        "Processing"@en ;
+        sh:description    "Processing is defined by the GDPR (Article 4-2) as \"any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction;\".\n\nProcessing can be considered as the action, within an activity for example, that uses data in a particular or specific way. Therefore, processing specifies what is happening to/with the data. \n\nTo define a type of processing (or its associated action), the Processing class should be subclassed for each type. Furthermore, each subclass should define a instance as a generic representative of that action. For example, \"collect\" as a type of processing (defined by the GDPR), is defined as the class DataCollection, which is a subclass of Processing, and has the individual CollectionOfPersonalData to represent a generic instance of the concept. This is to provide a ready-to-use ontology in terms of \"collect\" as an action, while also providing a way to specialise the action/processing.\nGConsent defines several such types of processing taken from the text of the GDPR."@en ;
+        sh:name           "Processing"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7a941f52be3f5cee078fbe91d631b40e> , <https://astrea.linkeddata.es/shapes#1d421e167cf28634debf84073447de2e> , <https://astrea.linkeddata.es/shapes#ede370e24d998d4565c1a2a54ca9482b> ;
+        sh:targetClass    <https://w3id.org/GConsent#Processing> .
+
+<https://astrea.linkeddata.es/shapes#2e2d777c19ec533db081004c2794a27a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+        rdfs:label        "Data Disclosure by Transmission"@en ;
+        sh:description    "Represents the type of processing where Disclosure by Transmission of data takes place."@en ;
+        sh:name           "Data Disclosure by Transmission"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/GConsent#DataDisclosureByTransmission> .
+
+<https://astrea.linkeddata.es/shapes#0ae3bbc4154ec179a0445e51d8d7cd4c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT#PurposeLimitation> ;
+        rdfs:label        "for purpose"@en , "Links a consent instace to the purpose(s) it is associated with."@en ;
+        sh:class          <https://w3id.org/GConsent#Purpose> ;
+        sh:description    "Links a consent instace to the purpose(s) it is associated with."@en ;
+        sh:name           "for purpose"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://w3id.org/GConsent#forPurpose> .
+
+<https://astrea.linkeddata.es/shapes#cfb7f34bbec907c826ec1e556bd69768>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/ns/prov#Organisation> .
+
+<https://astrea.linkeddata.es/shapes#1753f374c2de2b73af639f74a287b597>
+        a               sh:NodeShape ;
+        rdfs:label      "Status invalid for Processing"@en ;
+        sh:description  "Represents consent states that are invalid for processing."@en ;
+        sh:name         "Status invalid for Processing"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#a35cc7f66f87f38547c2a7c688e0af9f> ;
+        sh:targetClass  <https://w3id.org/GConsent#StatusInvalidForProcessing> .
+
+<https://astrea.linkeddata.es/shapes#8d0995ee671377cd80a53f4b6be193a5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a93bdef81179f5965e0f8447d3210d29> ;
+        sh:targetClass  <http://www.w3.org/ns/prov#Person> .
+
+<https://astrea.linkeddata.es/shapes#f55c73ec2dbdc8186241ccf8ad0d2516>
+        a               sh:NodeShape ;
+        rdfs:label      "Third Party"@en ;
+        sh:description  "Represents an Agent that is a Person or an Organisation other than the current entity (w.r.t. data protection laws)."@en ;
+        sh:name         "Third Party"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/GConsent#ThirdParty> , <https://w3id.org/GDPRov#ThirdParty> .
+
+<https://astrea.linkeddata.es/shapes#1d421e167cf28634debf84073447de2e>
+        a               sh:PropertyShape ;
+        rdfs:label      "has association"@en , "Indicates an Association with another entity for a Purpose or Processing"@en ;
+        sh:class        <http://www.w3.org/ns/prov#Association> ;
+        sh:description  "Indicates an Association with another entity for a Purpose or Processing"@en ;
+        sh:name         "has association"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/GConsent#hasAssociation> .
+
+<https://astrea.linkeddata.es/shapes#13b5642c80bfa36c442e70bce4f798d4>
+        a               sh:PropertyShape ;
+        rdfs:label      "in medium"@en , "Specifies the medium through which the consent was given. Examples are web forms, paper documents."@en ;
+        sh:class        <https://w3id.org/GConsent#Medium> ;
+        sh:description  "Specifies the medium through which the consent was given. Examples are web forms, paper documents."@en ;
+        sh:name         "in medium"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/GConsent#inMedium> .
+
+<https://astrea.linkeddata.es/shapes#b2b95224bd0e6de323a549074c50171b>
+        a               sh:PropertyShape ;
+        rdfs:label      "Denotes the state or status of consent."@en , "has status"@en ;
+        sh:class        <https://w3id.org/GConsent#Status> ;
+        sh:description  "Denotes the state or status of consent."@en ;
+        sh:maxCount     1 ;
+        sh:name         "has status"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path         <https://w3id.org/GConsent#hasStatus> .
+
+<https://astrea.linkeddata.es/shapes#e1f33209247ac6680cb19a492d35d0c2>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/prov#agent> .
+
+<https://astrea.linkeddata.es/shapes#8e317ba610d3ce33b40778998da08a00>
+        a               sh:PropertyShape ;
+        rdfs:label      "at location"@en , "Specifies the location at which the consent was given."@en ;
+        sh:class        <http://www.w3.org/ns/prov#Location> ;
+        sh:description  "Specifies the location at which the consent was given."@en ;
+        sh:name         "at location"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/GConsent#atLocation> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#d5ded32a9113364befe822582215b184> , <https://astrea.linkeddata.es/shapes#25986ad6b1aaefc6ec01d8108e0c357d> , <https://astrea.linkeddata.es/shapes#2f02c0961519eaaa12fd7f159a9153da> , <https://astrea.linkeddata.es/shapes#8039c5b998ce5507fef3f197592cfe07> , <https://astrea.linkeddata.es/shapes#d797577eeedbbe38c6d0bc2da064e813> , <https://astrea.linkeddata.es/shapes#f1091aafc299a55d8e0765e66a23c946> , <https://astrea.linkeddata.es/shapes#407f45d73f6f1c137e3dc9d7c0895c23> , <https://astrea.linkeddata.es/shapes#2c56eb6247539f4052105fe56e32f7a8> , <https://astrea.linkeddata.es/shapes#7e467cd218c8b58f9ba375fe657b2f3d> , <https://astrea.linkeddata.es/shapes#6281294341306c3f5384c8a094b303e0> , <https://astrea.linkeddata.es/shapes#4a2895e231ff90d552bc96e2baaf84da> , <https://astrea.linkeddata.es/shapes#a25d2c40a2b65a3d3bbfa446af913b52> , <https://astrea.linkeddata.es/shapes#2949fa5970594475de1d7b8a71948c68> , <https://astrea.linkeddata.es/shapes#8f39f2c7a41c55d2e63b8cd24b880b08> , <https://astrea.linkeddata.es/shapes#b176a5881560fcfc2bdf4c4cd56a42a0> , <https://astrea.linkeddata.es/shapes#707b974811161880565f3cafb521353b> , <https://astrea.linkeddata.es/shapes#f07d8a0f34215c27c5b65fa72286bdc5> , <https://astrea.linkeddata.es/shapes#27369457ea51e853b0d9197985e8932c> , <https://astrea.linkeddata.es/shapes#c1c2716dbd116f59f3995f73e6657468> , <https://astrea.linkeddata.es/shapes#e1f33209247ac6680cb19a492d35d0c2> , <https://astrea.linkeddata.es/shapes#27b774b49d3761a0d499acc76e274313> , <https://astrea.linkeddata.es/shapes#ea3c48f966a4a152e9bd9aaf4ed542ac> , <https://astrea.linkeddata.es/shapes#3df452e11d7e2093303eef5163b5f84c> , <https://astrea.linkeddata.es/shapes#a5001c59ae320799545e3a6e265feaf9> , <https://astrea.linkeddata.es/shapes#db62daa6d77b7fcbd68d6c6339daa036> , <https://astrea.linkeddata.es/shapes#aaebdd85487ec8c886979216ad199179> , <https://astrea.linkeddata.es/shapes#1906109cc1853bf639f39593fe23e709> , <https://astrea.linkeddata.es/shapes#49582aa10165eeaeee4f8f890fc7f295> , <https://astrea.linkeddata.es/shapes#d30913fac24b9527654224f7d90992b3> , <https://astrea.linkeddata.es/shapes#ee4b8a5199cf15fc6cea7f31f6d1580a> , <https://astrea.linkeddata.es/shapes#9ad91553e5a16a951c4e0317d358038c> , <https://astrea.linkeddata.es/shapes#ce4c5b5a607030eab1a7814cb20cf946> , <https://astrea.linkeddata.es/shapes#13b5642c80bfa36c442e70bce4f798d4> , <https://astrea.linkeddata.es/shapes#eb3e9892c1d2014cf404e833acfc5974> , <https://astrea.linkeddata.es/shapes#24c8c2d81c43d74b84f6b98e1e6b1fd4> , <https://astrea.linkeddata.es/shapes#2e2d777c19ec533db081004c2794a27a> , <https://astrea.linkeddata.es/shapes#38c8b16c07f54ef2eef6af22a509d5fe> , <https://astrea.linkeddata.es/shapes#1c5215289c2ad11be4c1cc9a7221c535> , <https://astrea.linkeddata.es/shapes#154b7c383d52704d4b0903c2b6c4fe9f> , <https://astrea.linkeddata.es/shapes#4f38477cbb5c195ccd5cf71b34f1dbd5> , <https://astrea.linkeddata.es/shapes#6ae7e184835fdd8a0804a00e0813f3b6> , <https://astrea.linkeddata.es/shapes#261db93b1ed5ca71706bd2d8570a680d> , <https://astrea.linkeddata.es/shapes#386ca6ae88f1752be02056a7709fa568> , <https://astrea.linkeddata.es/shapes#bb7bcfa89e148f3930b5cf542ca205fd> , <https://astrea.linkeddata.es/shapes#0ae3bbc4154ec179a0445e51d8d7cd4c> , <https://astrea.linkeddata.es/shapes#7160774df0191fa48eadaba1000ac46b> , <https://astrea.linkeddata.es/shapes#ede370e24d998d4565c1a2a54ca9482b> , <https://astrea.linkeddata.es/shapes#8d0995ee671377cd80a53f4b6be193a5> , <https://astrea.linkeddata.es/shapes#9682133f98ab029c0d9eb7dcbbdd520f> , <https://astrea.linkeddata.es/shapes#93236462865f275f8e4c6651f4971473> , <https://astrea.linkeddata.es/shapes#1d421e167cf28634debf84073447de2e> , <https://astrea.linkeddata.es/shapes#41e6b3d45616caa965393d10edabd99a> , <https://astrea.linkeddata.es/shapes#e7f4be1abd0e635069ea1aad9aa2a54b> , <https://astrea.linkeddata.es/shapes#04e5e41cdb3287e3cd1d1b7a7d803894> , <https://astrea.linkeddata.es/shapes#3d53013c0b5274bf712b836d5f2a4476> , <https://astrea.linkeddata.es/shapes#aa34c8e66fa0181530cef96c39c04ae8> , <https://astrea.linkeddata.es/shapes#dfcd5fc30011d551739f9877c244fb84> , <https://astrea.linkeddata.es/shapes#ab26439bcb17094527dd5178a45b2479> , <https://astrea.linkeddata.es/shapes#91bdb733f5c5f8b68ed72a7c77d5360b> , <https://astrea.linkeddata.es/shapes#cfb7f34bbec907c826ec1e556bd69768> , <https://astrea.linkeddata.es/shapes#e429bba413339eea3fece697ed9ee9b8> , <https://astrea.linkeddata.es/shapes#57d86c9cbc216c719ade4d9b027f8936> , <https://astrea.linkeddata.es/shapes#8d41c9944bb00669be30891e4a560835> , <https://astrea.linkeddata.es/shapes#8f2d20088b6cc33776528cfb6a12af06> , <https://astrea.linkeddata.es/shapes#7a941f52be3f5cee078fbe91d631b40e> , <https://astrea.linkeddata.es/shapes#4549027783d91a1033c2c4b6f20e0bda> , <https://astrea.linkeddata.es/shapes#40ae83814e21c7ae623e6c4cdb004a38> , <https://astrea.linkeddata.es/shapes#2bf322f425c5ca9b60e6e2f01bd4765f> , <https://astrea.linkeddata.es/shapes#b2b95224bd0e6de323a549074c50171b> , <https://astrea.linkeddata.es/shapes#1753f374c2de2b73af639f74a287b597> , <https://astrea.linkeddata.es/shapes#f55c73ec2dbdc8186241ccf8ad0d2516> , <https://astrea.linkeddata.es/shapes#a35cc7f66f87f38547c2a7c688e0af9f> , <https://astrea.linkeddata.es/shapes#66aa8da41ff27c52a270c96b25031a15> , <https://astrea.linkeddata.es/shapes#8e317ba610d3ce33b40778998da08a00> , <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> , <https://astrea.linkeddata.es/shapes#976030c8af974daa5e85c863ad286819> , <https://astrea.linkeddata.es/shapes#eb069e1928ad83e55d477e8de5979cd8> , <https://astrea.linkeddata.es/shapes#b768da97ac6b0fd444e67c28fa84f357> , <https://astrea.linkeddata.es/shapes#c38adf9b73a7a1a441a2e37756376c38> , <https://astrea.linkeddata.es/shapes#5b8137f1a5ec9ef80031ad4f31058725> , <https://astrea.linkeddata.es/shapes#196ea8d0591502158fa42bcdeb09377d> , <https://astrea.linkeddata.es/shapes#a93bdef81179f5965e0f8447d3210d29> , <https://astrea.linkeddata.es/shapes#02c2571310a7e683b371f14a60cd5af1> , <https://astrea.linkeddata.es/shapes#3571caecc3f323eab34cd550ec67fe33> , <https://astrea.linkeddata.es/shapes#626ccae2c0abfde38fe6cfbc9192c8cf> , <https://astrea.linkeddata.es/shapes#3e18b0f9fac2d3bdcd51a2fdadcbda53> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#8f39f2c7a41c55d2e63b8cd24b880b08>
+        a               sh:PropertyShape ;
+        rdfs:label      "is provided to controller"@en , "Indicates the Organisation the consent was provided to."@en ;
+        sh:class        <https://w3id.org/GConsent#DataController> ;
+        sh:description  "Indicates the Organisation the consent was provided to."@en ;
+        sh:inversePath  <https://w3id.org/GConsent#isProvidedToController> ;
+        sh:maxCount     1 ;
+        sh:name         "is provided to controller"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path         <https://w3id.org/GConsent#isProvidedToController> .
+
+<https://astrea.linkeddata.es/shapes#9682133f98ab029c0d9eb7dcbbdd520f>
+        a               sh:PropertyShape ;
+        rdfs:label      "has context"@en , "Links a consent instance to the context in which it was acquired/provided/given."@en ;
+        sh:description  "Links a consent instance to the context in which it was acquired/provided/given."@en ;
+        sh:name         "has context"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#196ea8d0591502158fa42bcdeb09377d>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/prov#atLocation> .
+
+<https://astrea.linkeddata.es/shapes#eb069e1928ad83e55d477e8de5979cd8>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasRole"@en , "Indicates the role played by specified Person or Organisation or Third Party in the specified Association."@en ;
+        sh:class        <http://www.w3.org/ns/prov#Role> ;
+        sh:description  "Indicates the role played by specified Person or Organisation or Third Party in the specified Association."@en ;
+        sh:name         "hasRole"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/GConsent#hasRole> .
+
+<https://astrea.linkeddata.es/shapes#93236462865f275f8e4c6651f4971473>
+        a               sh:NodeShape ;
+        rdfs:label      "Status valid for Processing"@en ;
+        sh:description  "Represents consent states that are valid for processing"@en ;
+        sh:name         "Status valid for Processing"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/GConsent#StatusValidForProcessing> .
+
+<https://astrea.linkeddata.es/shapes#e7f4be1abd0e635069ea1aad9aa2a54b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+        rdfs:label        "Data Structuring"@en ;
+        sh:description    "Represents the type of processing where Structuring of data takes place."@en ;
+        sh:name           "Data Structuring"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/GConsent#DataStructuring> .
+
+<https://astrea.linkeddata.es/shapes#6281294341306c3f5384c8a094b303e0>
+        a               sh:NodeShape ;
+        rdfs:label      "Minor Data Subject"@en ;
+        sh:description  "A Minor is a Data Subject who cannot provide their own consent (that is legally valid). Therefore, their consent must be obtained via a Guardian or Legal Representative or Parent. Minor is a subclass of Data Subject.\n\nConsent given in lieu of a Minor (by their Representative) is associated with the `ConsentInstance` class/instance using the `wasGivenBy` property.\n\nThe ontology currently does not capture this relationship between the Minor and their Representative. This is due to required clarifications regarding how this role should be represented. For example, the `DataSubject` cannot be subclassed to create a `Representative` class, as this would make the `DataSubject` a permanent representative for the Minor. Instead, the role of 'acting as representative' is only for the instance of the given consent. Therefore, this could be represented with a `ConsentRepresentativeRole` class that links to the `MinorDataSubject` with `roleHadDataSubject` property, and the `DataSubject` that gave the consent via the `roleHadRepresentative` property. The relationship or reason or situation of this given consent can be captured by further annotating the `ConsentRepresentativeRole` instance. This approach can also be extended to other similar situations where one `DataSubject` gives consent in lieu of another.\n\nNote: A Minor can provide their own consent in certain cases, or conversely, a minor's consent may need to be provided by a 'parental' representative in some cases."@en ;
+        sh:name         "Minor Data Subject"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/GConsent#MinorDataSubject> .
+
+<https://astrea.linkeddata.es/shapes#7a941f52be3f5cee078fbe91d631b40e>
+        a               sh:PropertyShape ;
+        rdfs:label      "involves third party"@en , "Indicates the involvement by association of a Third Party."@en ;
+        sh:class        <https://w3id.org/GConsent#ThirdParty> ;
+        sh:description  "Indicates the involvement by association of a Third Party."@en ;
+        sh:name         "involves third party"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/GConsent#involvesThirdParty> .
+
+<https://astrea.linkeddata.es/shapes#3571caecc3f323eab34cd550ec67fe33>
+        a               sh:PropertyShape ;
+        rdfs:label      "Indicates the Person the consent was provided to."@en , "is provided to person"@en ;
+        sh:class        <http://www.w3.org/ns/prov#Person> ;
+        sh:description  "Indicates the Person the consent was provided to."@en ;
+        sh:inversePath  <https://w3id.org/GConsent#isProvidedToPerson> ;
+        sh:maxCount     1 ;
+        sh:name         "is provided to person"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path         <https://w3id.org/GConsent#isProvidedToPerson> .
+
+<https://astrea.linkeddata.es/shapes#ea3c48f966a4a152e9bd9aaf4ed542ac>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+        rdfs:label        "Data Restriction"@en ;
+        sh:description    "Represents the type of processing where Restriction of data takes place."@en ;
+        sh:name           "Data Restriction"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/GConsent#DataRestriction> .
+
+<https://astrea.linkeddata.es/shapes#d5ded32a9113364befe822582215b184>
+        a               sh:PropertyShape ;
+        rdfs:label      "at time"@en , "Specifies the instant at which the consent was created/given/changed."@en ;
+        sh:class        <http://www.w3.org/2006/time#Instant> ;
+        sh:description  "Specifies the instant at which the consent was created/given/changed."@en ;
+        sh:name         "at time"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/GConsent#atTime> .
+
+<https://astrea.linkeddata.es/shapes#2f02c0961519eaaa12fd7f159a9153da>
+        a               sh:NodeShape ;
+        rdfs:label      "Medium"@en ;
+        sh:description  "Describes the medium through which consent was given/provided. Example: web form, recorded voice, signature on document."@en ;
+        sh:name         "Medium"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/GConsent#Medium> .
+
+<https://astrea.linkeddata.es/shapes#6ae7e184835fdd8a0804a00e0813f3b6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT#Controller> , <https://w3id.org/GDPRtEXT/gdpr#article4-7> ;
+        rdfs:label        "Data Controller" ;
+        sh:description    "A Data Controller is defined as \"The natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of personal data.\""@en ;
+        sh:name           "Data Controller" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#a93bdef81179f5965e0f8447d3210d29> ;
+        sh:targetClass    <https://w3id.org/GDPRov#Controller> , <https://w3id.org/GConsent#DataController> .
+
+<https://astrea.linkeddata.es/shapes#386ca6ae88f1752be02056a7709fa568>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+        rdfs:label        "Data Destruction"@en ;
+        sh:description    "Represents the type of processing where Destruction of data takes place."@en ;
+        sh:name           "Data Destruction"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/GConsent#DataDestruction> .
+
+<https://astrea.linkeddata.es/shapes#d797577eeedbbe38c6d0bc2da064e813>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/ns/prov#wasInfluencedBy> .
+
+<https://astrea.linkeddata.es/shapes#3d53013c0b5274bf712b836d5f2a4476>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+        rdfs:label        "Data Retrieval"@en ;
+        sh:description    "Represents the type of processing where Retrieval of data takes place."@en ;
+        sh:name           "Data Retrieval"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/GConsent#DataRetrieval> .
+
+<https://astrea.linkeddata.es/shapes#41e6b3d45616caa965393d10edabd99a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+        rdfs:label        "Data Erasure"@en ;
+        sh:description    "Represents the type of processing where Erasure of data takes place."@en ;
+        sh:name           "Data Erasure"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/GConsent#DataErasure> .
+
+<https://astrea.linkeddata.es/shapes#1906109cc1853bf639f39593fe23e709>
+        a               sh:PropertyShape ;
+        rdfs:label      "is provided by delegation"@en , "Specifies the delegation that provided this consent."@en ;
+        sh:class        <https://w3id.org/GConsent#Delegation> ;
+        sh:description  "Specifies the delegation that provided this consent."@en ;
+        sh:maxCount     1 ;
+        sh:name         "is provided by delegation"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path         <https://w3id.org/GConsent#isProvidedByDelegation> .
+
+<https://astrea.linkeddata.es/shapes#2949fa5970594475de1d7b8a71948c68>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+        rdfs:label        "Data Alteration"@en ;
+        sh:description    "Represents the type of processing where Alteration of data takes place."@en ;
+        sh:name           "Data Alteration"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/GConsent#DataAlteration> .
+
+<https://astrea.linkeddata.es/shapes#2bf322f425c5ca9b60e6e2f01bd4765f>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <https://w3id.org/GConsent#hasStatus> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <https://w3id.org/GConsent#Status> ] .
+
+<https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2006/time#Instant> .
+
+<https://astrea.linkeddata.es/shapes#b176a5881560fcfc2bdf4c4cd56a42a0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/GDPRtEXT/gdpr#article4-2> ;
+        rdfs:label        "Data Consultation"@en ;
+        sh:description    "Represents the type of processing where Consultation of data takes place."@en ;
+        sh:name           "Data Consultation"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/GConsent#DataConsultation> .

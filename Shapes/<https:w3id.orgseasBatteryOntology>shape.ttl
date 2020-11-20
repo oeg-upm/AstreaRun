@@ -1,0 +1,2083 @@
+@prefix qudt:  <http://data.qudt.org/qudt/owl/1.0.0/qudt.owl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix saref: <http://ontology.tno.nl/saref#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix sdmx:  <http://purl.org/linked-data/sdmx#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix voaf:  <http://purl.org/vocommons/voaf#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qudt-unit: <http://data.qudt.org/qudt/owl/1.0.0/unit.owl#> .
+@prefix ssn:   <http://www.w3.org/ns/ssn/> .
+@prefix seas:  <https://w3id.org/seas/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:  <http://purl.org/vocab/vann/> .
+@prefix vs:    <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+
+<https://astrea.linkeddata.es/shapes#a625edf40e0745176f67313ca2281668>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Voltage Property" ;
+        sh:description    "The class of properties that are quantifiable and use a quantity dimension of electric potential."@en ;
+        sh:name           "Voltage Property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c798b835d1da2242e46516ba7188ff29> ;
+        sh:targetClass    seas:VoltageProperty .
+
+<https://astrea.linkeddata.es/shapes#2c7a30a5bc084bbc5b96ce79309af23c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "positive wire current"@en , "Links a direct current connection point to the current in its positive wire. By convention, the value is positive if it enters the system.\r\n\r\n  Please contact us in case this convention is incorrect."@en ;
+        sh:class          seas:CurrentProperty ;
+        sh:description    "Links a direct current connection point to the current in its positive wire. By convention, the value is positive if it enters the system.\r\n\r\n  Please contact us in case this convention is incorrect."@en ;
+        sh:maxCount       1 ;
+        sh:name           "positive wire current"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:positiveWireCurrent .
+
+<https://astrea.linkeddata.es/shapes#de77af30ec04bd2c28f756c23937f532>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links an electric energy system to the consumed electric energy."@en , "consumed electric energy" ;
+        sh:class          seas:ElectricEnergyProperty ;
+        sh:description    "Links an electric energy system to the consumed electric energy."@en ;
+        sh:maxCount       1 ;
+        sh:name           "consumed electric energy" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:consumedElectricEnergy .
+
+<https://astrea.linkeddata.es/shapes#ec5f96031f85e7da20769605c48e1097>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Single Phase Connection Point"@en ;
+        sh:description    "A single phase connection point is a connection point composed of two wires (plus the protective earth): \r\n\r\n- wire for the phase;\r\n- wire for the neutral."@en ;
+        sh:name           "Single Phase Connection Point"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#60ce6b9c97a4cbd53e40573152d21572> , <https://astrea.linkeddata.es/shapes#c80f2fb1ef94860b1b1d8375cb25d650> , <https://astrea.linkeddata.es/shapes#1b091c878980d140a154e032f027e183> , <https://astrea.linkeddata.es/shapes#677cebc9b893beaa8a0b9944117a92e9> , <https://astrea.linkeddata.es/shapes#635c424c62ae99fbf3d12e1c9b53dc57> , <https://astrea.linkeddata.es/shapes#90f8b7d2f48296cd1a18a1d1577190cc> , <https://astrea.linkeddata.es/shapes#25fd2f1c4acc549d1295b783f6e2619e> , <https://astrea.linkeddata.es/shapes#cba46547474cbfb1b7c4575c8247e4e8> , <https://astrea.linkeddata.es/shapes#4d006ac7f53f6d407dfc81263c7ec3ee> , <https://astrea.linkeddata.es/shapes#67cd1018cedba941d89809471f06ee6f> ;
+        sh:targetClass    seas:SinglePhaseConnectionPoint .
+
+<https://astrea.linkeddata.es/shapes#95ff5e705ebbb9ae5c59af633fc5f58e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "produced electric energy" , "Links an electric energy system to the produced electric energy."@en ;
+        sh:class          seas:ElectricEnergyProperty ;
+        sh:description    "Links an electric energy system to the produced electric energy."@en ;
+        sh:maxCount       1 ;
+        sh:name           "produced electric energy" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:producedElectricEnergy .
+
+<https://astrea.linkeddata.es/shapes#55d4f37ac24ac0ef892e8e46e0ebcaa4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connects system in star through"@en , "Links a three-phase connection point to a three-phase power bus connection with which it is connected with a star configuration."@en ;
+        sh:class          seas:ThreePhasePowerBus ;
+        sh:description    "Links a three-phase connection point to a three-phase power bus connection with which it is connected with a star configuration."@en ;
+        sh:disjoint       seas:connectsSystemInTriangleThrough ;
+        sh:name           "connects system in star through"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemInStarThrough .
+
+<https://astrea.linkeddata.es/shapes#88e65f0a41736fbf97f92fc9b4baec38>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Resistance Property" ;
+        sh:description    "The class of properties that are quantifiable and have a quantity kind of electric resistance."@en ;
+        sh:name           "Electric Resistance Property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ElectricResistanceProperty .
+
+<https://astrea.linkeddata.es/shapes#51f010570a1d34316e68d172b8a0d6c8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase connection point to the susceptance between its S and its N wires."@en , "S-to-N susceptance"@en ;
+        sh:class          seas:ElectricSusceptanceProperty ;
+        sh:description    "Links a three-phase connection point to the susceptance between its S and its N wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "S-to-N susceptance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:SNSusceptance .
+
+<https://astrea.linkeddata.es/shapes#ab99ba54dd7306d69447ff6ddbcde750>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a direct current connection point to the resistance between its mid and its negative wires."@en , "mid to negative resistance"@en ;
+        sh:class          seas:ElectricResistanceProperty ;
+        sh:description    "Links a direct current connection point to the resistance between its mid and its negative wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "mid to negative resistance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:midToNegativeResistance .
+
+<https://astrea.linkeddata.es/shapes#4e3c18c00bd5afbf991efba0edcf1479>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connects system in triangle"@en , "Links a three-phase power bus to one of the electric power systems it connects with a triangle configuration."@en ;
+        sh:class          seas:ElectricPowerSystem ;
+        sh:description    "Links a three-phase power bus to one of the electric power systems it connects with a triangle configuration."@en ;
+        sh:name           "connects system in triangle"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemInTriangle .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  foaf:Person .
+
+<https://astrea.linkeddata.es/shapes#d04be384a8017c6aec3aa2c68f8456b1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase power bus to one of the electric power systems it connects with a SN configuration."@en , "connects system in SN"@en ;
+        sh:class          seas:ElectricPowerSystem ;
+        sh:description    "Links a three-phase power bus to one of the electric power systems it connects with a SN configuration."@en ;
+        sh:disjoint       seas:connectsSystemInTN ;
+        sh:name           "connects system in SN"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemInSN .
+
+<https://astrea.linkeddata.es/shapes#46628993824a024094ab86f1d48c05fe>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "positive to negative conductance"@en , "Links a direct current connection point to the conductance between its positive and its negative wires."@en ;
+        sh:class          seas:ElectricConductanceProperty ;
+        sh:description    "Links a direct current connection point to the conductance between its positive and its negative wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "positive to negative conductance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:positiveToNegativeConductance .
+
+<https://astrea.linkeddata.es/shapes#8a6b7878438eaa8d303caf6a8057cf8b>
+        sh:path                 seas:evaluationOf ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  seas:ElectricResistanceProperty ] .
+
+<https://astrea.linkeddata.es/shapes#a07c8b7efe002a22b4a93a166eb84e3f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "incoming electric power" , "Links an electric power system, or an electrical connection point, to the incoming electric power.\r\n    (a) the sum of the electric power that enter the system from the exterior, or\r\n    (b) the electric power that enters the system through this connection point."@en ;
+        sh:class          seas:ElectricPowerProperty ;
+        sh:description    "Links an electric power system, or an electrical connection point, to the incoming electric power.\r\n    (a) the sum of the electric power that enter the system from the exterior, or\r\n    (b) the electric power that enters the system through this connection point."@en ;
+        sh:maxCount       1 ;
+        sh:name           "incoming electric power" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:incomingElectricPower .
+
+<https://astrea.linkeddata.es/shapes#fb6fa0bf97d5961a3e4399827669dc1e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase power bus to one of the electric power systems it connects with a RN configuration."@en , "connects system in RN"@en ;
+        sh:class          seas:ElectricPowerSystem ;
+        sh:description    "Links a three-phase power bus to one of the electric power systems it connects with a RN configuration."@en ;
+        sh:disjoint       seas:connectsSystemInSN ;
+        sh:name           "connects system in RN"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemInRN .
+
+<https://astrea.linkeddata.es/shapes#137b6b24d99eb2257376f6f87f05820c>
+        sh:path                 seas:evaluationOf ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  seas:ElectricConductanceProperty ] .
+
+<https://astrea.linkeddata.es/shapes#6b8375b3ae4bb6e1d8ede347ce2f6917>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "outgoing electric power" , "Links an electric power system, or an electrical connection point, to the outgoing electric power.\r\n    (a) the sum of the electric power that leaves the system from the exterior, or\r\n    (b) the electric power that leaves the system through this connection point."@en ;
+        sh:class          seas:ElectricPowerProperty ;
+        sh:description    "Links an electric power system, or an electrical connection point, to the outgoing electric power.\r\n    (a) the sum of the electric power that leaves the system from the exterior, or\r\n    (b) the electric power that leaves the system through this connection point."@en ;
+        sh:maxCount       1 ;
+        sh:name           "outgoing electric power" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:outgoingElectricPower .
+
+<https://astrea.linkeddata.es/shapes#b30884dfc6a11495f1177faebbdbdcc9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Extra-Low Voltage "@en ;
+        sh:description    "The voltage is Extra-Low according to IEC 60038."@en ;
+        sh:name           "Extra-Low Voltage "@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ExtraLowVoltage .
+
+<https://astrea.linkeddata.es/shapes#3bc14bbf2106b8c80d9a7a8b88577a24>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "S-to-N conductance"@en , "Links a three-phase connection point to the conductance between its S and its N wires."@en ;
+        sh:class          seas:ElectricConductanceProperty ;
+        sh:description    "Links a three-phase connection point to the conductance between its S and its N wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "S-to-N conductance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:SNConductance .
+
+<https://astrea.linkeddata.es/shapes#5eb3485402655d07349a665be64e61a6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "electric reactance" , "Links an electrical connection point to one of its reactance properties.\r\n\r\nThere may be many reactance properties of an electrical connection point, so this property is not functional."@en ;
+        sh:class          seas:ElectricReactanceProperty ;
+        sh:description    "Links an electrical connection point to one of its reactance properties.\r\n\r\nThere may be many reactance properties of an electrical connection point, so this property is not functional."@en ;
+        sh:name           "electric reactance" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:electricReactance .
+
+<https://astrea.linkeddata.es/shapes#e2e7e25447c5f2df7ef5df6e387b4745>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links an electric power system to its super electric power systems.\r\n  The electricity of a sub power system contributes to the electricity of its super electric power system. For example,\r\n\r\n- The consumed electricity of an electric power comsumer system contributes to the consumed electricity of its super electric power consumer system;\r\n- The produced electricity of an electric power producer system contributes to the produced electricity of its super electric power producer system;\r\n- the stored electricity of an electric power storage system contributes to the stored electricity of its super electric power storage system."@en , "sub electric power system of"@en ;
+        sh:class          seas:ElectricPowerSystem ;
+        sh:description    "Links an electric power system to its super electric power systems.\r\n  The electricity of a sub power system contributes to the electricity of its super electric power system. For example,\r\n\r\n- The consumed electricity of an electric power comsumer system contributes to the consumed electricity of its super electric power consumer system;\r\n- The produced electricity of an electric power producer system contributes to the produced electricity of its super electric power producer system;\r\n- the stored electricity of an electric power storage system contributes to the stored electricity of its super electric power storage system."@en ;
+        sh:maxCount       1 ;
+        sh:name           "sub electric power system of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:subElectricPowerSystemOf .
+
+<https://astrea.linkeddata.es/shapes#9daa4a207f9f5605dc42e73e74cbd167>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Efficiency Property" ;
+        sh:description    "Efficiency signifies a level of performance that describes a process that uses the lowest amount of inputs to create the greatest \r\n                amount of outputs. Efficiency relates to the use of all inputs in producing any given \r\n                output, including personal time and energy. Efficiency is a measurable concept that can be \r\n                determined by determining the ratio of useful output to total input. It minimizes the waste \r\n                of resources such as physical materials, energy and time, while successfully achieving the \r\n                desired output."@en ;
+        sh:name           "Efficiency Property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:EfficiencyProperty .
+
+<https://astrea.linkeddata.es/shapes#33283a9c158c210c6e6e57035a1a26ab>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Power Distribution Network."@en ;
+        sh:description    " Electric Power Distribution Network is a network used to distribute the electric power. \r\n                      Figure below shows the taxonomy of Electric Power Distribution Network according to the installation mode of Electric Line or cable.\r\n                       [![ElectricPowerDistributionNetworkTaxonomy](https://w3id.org/seas/ElectricPowerDistributionNetwork-1.png)](https://w3id.org/seas/ElectricPowerDistributionNetwork-1.png)\r\n                      "@en ;
+        sh:name           "Electric Power Distribution Network."@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ElectricPowerDistributionNetwork .
+
+<https://astrea.linkeddata.es/shapes#8fe421b94602281cd08b0ad3ede9e1c7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a direct current power bus or a direct current connection point to the voltage between its mid and its negative wires."@en , "mid to negative voltage"@en ;
+        sh:class          seas:VoltageProperty ;
+        sh:description    "Links a direct current power bus or a direct current connection point to the voltage between its mid and its negative wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "mid to negative voltage"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:midToNegativeVoltage .
+
+<https://astrea.linkeddata.es/shapes#b61c551df27dfd6f1250556f8e0fa560>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Efficiency Evaluation" ;
+        sh:description    "The class of evaluations for efficiency properties."@en ;
+        sh:name           "Efficiency Evaluation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#68d1538fff2a43c4dbd869adb2086192> ;
+        sh:targetClass    seas:EfficiencyEvaluation .
+
+<https://astrea.linkeddata.es/shapes#ce002e3b75b8866d593fb6cad315a4e3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "T-to-R conductance"@en , "Links a three-phase connection point to the conductance between its T and its R wires."@en ;
+        sh:class          seas:ElectricConductanceProperty ;
+        sh:description    "Links a three-phase connection point to the conductance between its T and its R wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "T-to-R conductance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:TRConductance .
+
+<https://astrea.linkeddata.es/shapes#c074655e39121cf7878f7176e4fed8e6>
+        a         sh:PropertyShape ;
+        sh:class  seas:DirectCurrentConnectionPoint .
+
+<https://astrea.linkeddata.es/shapes#41c479e69da60638e8f57290fba8aa31>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Two-Wire Direct Current Power Bus"@en ;
+        sh:description    "A two-wire direct current power bus is a connection composed of two wires (potentialy plus the protective earth): \r\n     wire for the positive;\r\n     wire for the negative."@en ;
+        sh:name           "Two-Wire Direct Current Power Bus"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:TwoWireDirectCurrentPowerBus .
+
+<https://astrea.linkeddata.es/shapes#657c43e1c8b101ae9799d0f4c150f40b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Extra-High Voltage "@en ;
+        sh:description    "The voltage is Extra-High according to IEC 60038."@en ;
+        sh:name           "Extra-High Voltage "@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ExtraHighVoltage .
+
+<https://astrea.linkeddata.es/shapes#6b4df08e2f9766026d9894d65a83ba9e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "R-to-N resistance"@en , "Links a three-phase connection point to the resistance between its R and its N wires."@en ;
+        sh:class          seas:ElectricResistanceProperty ;
+        sh:description    "Links a three-phase connection point to the resistance between its R and its N wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "R-to-N resistance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:RNResistance .
+
+<https://astrea.linkeddata.es/report/01697503826>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://w3id.org/seas/ElectricPowerSystemOntology" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#21795c9063cbd2ed593a65f9e14bde9e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Energy Evaluation" ;
+        sh:description    "The class of evaluations for electric energy properties."@en ;
+        sh:name           "Electric Energy Evaluation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#382aa5d49653d21c74b970d608d4aa79> ;
+        sh:targetClass    seas:ElectricEnergyEvaluation .
+
+<https://astrea.linkeddata.es/shapes#984d44b7a7e9d98e3d72b50809ae2d39>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "voltage" , "Links an electrical connection or an electrical connection point to one of its voltage properties.\r\n\r\nThere may be many voltage properties of an electrical connection or an electrical connection point, so this property is not functional.\r\n  "@en ;
+        sh:class          seas:VoltageProperty ;
+        sh:description    "Links an electrical connection or an electrical connection point to one of its voltage properties.\r\n\r\nThere may be many voltage properties of an electrical connection or an electrical connection point, so this property is not functional.\r\n  "@en ;
+        sh:name           "voltage" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:voltage .
+
+<https://astrea.linkeddata.es/shapes#b8f403ca5cdc6e82f488aa6374207dd9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "outgoing electric energy" , "Links an electric energy system, or an electrical connection point, to the outgoing electric energy.\r\n    (a) the sum of the electric energy that leaves the system from the exterior, or\r\n    (b) the electric energy that leaves the system through this connection point."@en ;
+        sh:class          seas:ElectricEnergyProperty ;
+        sh:description    "Links an electric energy system, or an electrical connection point, to the outgoing electric energy.\r\n    (a) the sum of the electric energy that leaves the system from the exterior, or\r\n    (b) the electric energy that leaves the system through this connection point."@en ;
+        sh:maxCount       1 ;
+        sh:name           "outgoing electric energy" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:outgoingElectricEnergy .
+
+<https://astrea.linkeddata.es/shapes#5b49d6c8ae13b25f40b6a5a4e5b5caa9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connects system in SN at"@en , "Links a three-phase power bus to one of the single phase connection points it connects with a SN configuration."@en ;
+        sh:class          seas:SinglePhaseConnectionPoint ;
+        sh:description    "Links a three-phase power bus to one of the single phase connection points it connects with a SN configuration."@en ;
+        sh:name           "connects system in SN at"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemInSNAt .
+
+<https://astrea.linkeddata.es/shapes#4a37909a9aff3cb35607548519ef67c1>
+        sh:path                 seas:evaluationOf ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  seas:VoltageProperty ] .
+
+<https://astrea.linkeddata.es/shapes#9770e128fa609890dd2c0695dfeee5c4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electrical Connection Point"@en ;
+        sh:description    "The class of electrical connection points of electric power systems, at which they may be electricaly connected to other systems.\r\n  For example, an electric vehicle service equipment may have three electric power connection points: two different kinds of plugs that enable to charge electric vehicles, and a three-phase power bus connection point to the grid:\r\n\r\n```\r\n  <electric_vehicle> a seas:ElectricPowerSystem ;\r\n    seas:connectsAt <plug_high_voltage> , <normal_plug> , <three_phase_connection_point> .\r\n  <plug_high_voltage> a seas:ElectricalConnectionPoint .\r\n  <normal_plug> a seas:ElectricalConnectionPoint .\r\n  <three_phase_connection_point> a seas:ElectricalConnectionPoint .\r\n```\r\n\r\n  Any system connected through an electrical connection is connected at one of its electrical connection points to the electrical connection:\r\n  if:\r\n\r\n```\r\n  <system> a seas:System .\r\n  <system> seas:connectedThrough <connection> .\r\n  <connection> a seas:ElectricalConnection .\r\n```\r\n\r\n  then there exists `_:connectionPoint` such that:\r\n\r\n```\r\n  _:connectionPoint a seas:ElectricalConnection Point ;\r\n    seas:connectionPointOf <system> ;\r\n    seas:connectsSystemAt <connection> .\r\n```\r\n\r\n  An electrical connection point describes an electric signal, and the electricity that enters/leaves the electric power system.\r\n  An electrical connection point only belongs to an electric power system, and connects it through electrical connections.\r\n  A connection point of an electric power system is not necessarily an electrical connection."@en ;
+        sh:name           "Electrical Connection Point"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#01901fa1b3042d2201a8ee86851a6cc8> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#54b487394e38c4af289a9e67cf7a4851> , <https://astrea.linkeddata.es/shapes#984d44b7a7e9d98e3d72b50809ae2d39> , <https://astrea.linkeddata.es/shapes#61a16d94f0c854f5059ee5177ef8f559> , <https://astrea.linkeddata.es/shapes#66443c55156fc81d6cf3379d69435e10> , <https://astrea.linkeddata.es/shapes#0a8082c9781c9ad8b4499ea12369fd08> , <https://astrea.linkeddata.es/shapes#b8f403ca5cdc6e82f488aa6374207dd9> , <https://astrea.linkeddata.es/shapes#6b8375b3ae4bb6e1d8ede347ce2f6917> , <https://astrea.linkeddata.es/shapes#a07c8b7efe002a22b4a93a166eb84e3f> , <https://astrea.linkeddata.es/shapes#ae1732e83994f38150c0267d9bbdb92f> ;
+        sh:targetClass    seas:ElectricalConnectionPoint .
+
+<https://astrea.linkeddata.es/shapes#9f695ca34f9783b5ee34f5fd47fecbc5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "power factor evaluation"@en , "Links an alternating current power property to its power factor (i.e., the cosinus of the voltage with respect to current, unitless)."@en ;
+        sh:description    "Links an alternating current power property to its power factor (i.e., the cosinus of the voltage with respect to current, unitless)."@en ;
+        sh:maxCount       1 ;
+        sh:name           "power factor evaluation"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#67cd1018cedba941d89809471f06ee6f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connects system in TN through"@en , "Links a single phase connection point to a three-phase power bus connection with which it is connected with a TN configuration."@en ;
+        sh:class          seas:ThreePhasePowerBus ;
+        sh:description    "Links a single phase connection point to a three-phase power bus connection with which it is connected with a TN configuration."@en ;
+        sh:disjoint       seas:connectsSystemInRNThrough ;
+        sh:name           "connects system in TN through"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemInTNThrough .
+
+<https://astrea.linkeddata.es/shapes#61a16d94f0c854f5059ee5177ef8f559>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "electric conductance" , "Links an electrical connection point to one of its conductance properties.\r\n\r\nThere may be many conductance properties of an electrical connection point, so this property is not functional."@en ;
+        sh:class          seas:ElectricConductanceProperty ;
+        sh:description    "Links an electrical connection point to one of its conductance properties.\r\n\r\nThere may be many conductance properties of an electrical connection point, so this property is not functional."@en ;
+        sh:name           "electric conductance" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:electricConductance .
+
+<https://astrea.linkeddata.es/shapes#cdf857bfba57b8d4205fffa095c7d7c4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Direct Current Connection Point"@en ;
+        sh:description    "The class of electrical connection points through which energy flows using direct current."@en ;
+        sh:name           "Direct Current Connection Point"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ea4d9226d4f8947fa5ee29b29662cc83> , <https://astrea.linkeddata.es/shapes#ab99ba54dd7306d69447ff6ddbcde750> , <https://astrea.linkeddata.es/shapes#674d0e55dffc5b2a7e6b2f944b0a5e12> , <https://astrea.linkeddata.es/shapes#36f32a10a9fc3ffb0513693ae87fb8ef> , <https://astrea.linkeddata.es/shapes#72589c96df66c5438f852f1aa0acd461> , <https://astrea.linkeddata.es/shapes#6bbce4d62d3312700bad5bf6a924774e> , <https://astrea.linkeddata.es/shapes#29879565ddcad91d62b24948a52218d7> , <https://astrea.linkeddata.es/shapes#e507b94876d77770ea1e3a73f9ea9ca3> , <https://astrea.linkeddata.es/shapes#46628993824a024094ab86f1d48c05fe> , <https://astrea.linkeddata.es/shapes#e5eb37732eeb10e27f141ac65e4c81b8> , <https://astrea.linkeddata.es/shapes#c343252e68c619bd496dbb9d5bf45f51> , <https://astrea.linkeddata.es/shapes#f15f3630fcc80f71ee1d63ab3a38e7b1> , <https://astrea.linkeddata.es/shapes#2c7a30a5bc084bbc5b96ce79309af23c> , <https://astrea.linkeddata.es/shapes#f3b517b61629adc7fd5af1c073241ec7> , <https://astrea.linkeddata.es/shapes#3cf253b90c4ff008a62066f73c3a715e> , <https://astrea.linkeddata.es/shapes#f167b994aede4e21b1a049d2cbd81bc7> , <https://astrea.linkeddata.es/shapes#bc00dd47f8a48d133575fbc22fb2837f> , <https://astrea.linkeddata.es/shapes#8fe421b94602281cd08b0ad3ede9e1c7> ;
+        sh:targetClass    seas:DirectCurrentConnectionPoint .
+
+<https://astrea.linkeddata.es/shapes#0189a0ab0643ebdf647c58ded6462e8d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connected in RN through"@en , "Links an electric power system to a three-phase power bus connection with which it is connected with a RN configuration."@en ;
+        sh:class          seas:ThreePhasePowerBus ;
+        sh:description    "Links an electric power system to a three-phase power bus connection with which it is connected with a RN configuration."@en ;
+        sh:name           "connected in RN through"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectedInRNThrough .
+
+<https://astrea.linkeddata.es/shapes#8fb6babea2873234da7c69cb2c5f0e5b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Three-Wire Direct Current Power Bus"@en ;
+        sh:description    "A three-wire direct current power bus is a connection composed of three wires (potentialy plus the protective earth): \r\n     wire for the positive;\r\n     wire for the mid-wire;\r\n     wire for the negative."@en ;
+        sh:name           "Three-Wire Direct Current Power Bus"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ThreeWireDirectCurrentPowerBus .
+
+<https://astrea.linkeddata.es/shapes#1527bca4104aa6bc06c20d51b4ce2a8d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "electric power" , "Links a feature of interest to one of its electric power properties.\r\n\r\nThere may be many power properties for a feature of interest, so this property is not functional."@en ;
+        sh:class          seas:ElectricPowerProperty ;
+        sh:description    "Links a feature of interest to one of its electric power properties.\r\n\r\nThere may be many power properties for a feature of interest, so this property is not functional."@en ;
+        sh:name           "electric power" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:electricPower .
+
+<https://astrea.linkeddata.es/shapes#075408c565fcb68add10972805ff9b4f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Magnetic ballast"@en ;
+        sh:description    "A Magnetic ballast is a Ballast which is Magnetic"@en ;
+        sh:name           "Magnetic ballast"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:MagneticBallast .
+
+<https://astrea.linkeddata.es/shapes#b7a7c03ccd598ad8a3bef13b461ffad2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "High Voltage "@en ;
+        sh:description    "The voltage is High according to IEC 60038."@en ;
+        sh:name           "High Voltage "@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:HighVoltage .
+
+<https://astrea.linkeddata.es/shapes#9db3f0f302af150a8daf2033ff67cc2e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "High Voltage Evaluation"@en ;
+        sh:description    "The voltage is High according to IEC 60038."@en ;
+        sh:name           "High Voltage Evaluation"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:HighVoltageEvaluation .
+
+<https://astrea.linkeddata.es/shapes#01901fa1b3042d2201a8ee86851a6cc8>
+        a         sh:PropertyShape ;
+        sh:class  seas:ElectricPowerSystem .
+
+<https://astrea.linkeddata.es/shapes#29879565ddcad91d62b24948a52218d7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "mid to negative conductance"@en , "Links a direct current connection point to the conductance between its mid and its negative wires."@en ;
+        sh:class          seas:ElectricConductanceProperty ;
+        sh:description    "Links a direct current connection point to the conductance between its mid and its negative wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "mid to negative conductance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:midToNegativeConductance .
+
+<https://astrea.linkeddata.es/shapes#447d64618a81381ee686957ccad22248>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Alternating Current Connection"@en ;
+        sh:description    "The class of electric power connections through which energy flows using alternating current."@en ;
+        sh:name           "Alternating Current Connection"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#dae2211bb50fba909b769629240975c5> ;
+        sh:targetClass    seas:AlternatingCurrentConnection .
+
+<https://astrea.linkeddata.es/shapes#4d006ac7f53f6d407dfc81263c7ec3ee>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "phase to neutral reactance"@en , "Links a single phase connection point to the reactance between its phase and neutral wires."@en ;
+        sh:class          seas:ElectricReactanceProperty ;
+        sh:description    "Links a single phase connection point to the reactance between its phase and neutral wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "phase to neutral reactance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:phaseToNeutralReactance .
+
+<https://astrea.linkeddata.es/shapes#1b091c878980d140a154e032f027e183>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "phase to neutral resistance"@en , "Links a single phase connection point to the resistance between its phase and neutral wires."@en ;
+        sh:class          seas:ElectricResistanceProperty ;
+        sh:description    "Links a single phase connection point to the resistance between its phase and neutral wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "phase to neutral resistance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:phaseToNeutralResistance .
+
+<https://astrea.linkeddata.es/shapes#0a8082c9781c9ad8b4499ea12369fd08>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "electrical current"@en , "Links an electrical connection point to one of its current properties.\r\n\r\nThere may be many current properties of a connection point, so this property is not functional."@en ;
+        sh:class          seas:CurrentProperty ;
+        sh:description    "Links an electrical connection point to one of its current properties.\r\n\r\nThere may be many current properties of a connection point, so this property is not functional."@en ;
+        sh:name           "electrical current"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:electricCurrent .
+
+<https://astrea.linkeddata.es/shapes#056d4bbc18ddd5ba5a09b9f19330dca8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Power Property" ;
+        sh:description    "The class of properties that are quantifiable and have a quantity kind of electric power."@en ;
+        sh:name           "Electric Power Property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ElectricPowerProperty .
+
+<https://astrea.linkeddata.es/shapes#155b681304782a92dcef894693ffae0c>
+        sh:path                 seas:evaluationOf ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  seas:CurrentProperty ] .
+
+<https://astrea.linkeddata.es/shapes#dae2211bb50fba909b769629240975c5>
+        a         sh:PropertyShape ;
+        sh:class  seas:DirectCurrentConnection .
+
+<https://astrea.linkeddata.es/shapes#07109a7e05ad44084089cab4c1d826c3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links an electric power system to a split-phase power bus connection with which it is connected with a hot1-to-hot2 configuration."@en , "connected in Hot1-to-Hot2 through"@en ;
+        sh:class          seas:SplitPhasePowerBus ;
+        sh:description    "Links an electric power system to a split-phase power bus connection with which it is connected with a hot1-to-hot2 configuration."@en ;
+        sh:disjoint       seas:connectedInHot1NThrough , seas:connectedInHot2NThrough ;
+        sh:name           "connected in Hot1-to-Hot2 through"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectedInHot1Hot2Through .
+
+<https://astrea.linkeddata.es/shapes#46d724ee86ac6ef9478cfd8ab4701599>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "powers"@en , "links a system to the systems its powers."@en ;
+        sh:class          seas:ElectricPowerSystem ;
+        sh:description    "links a system to the systems its powers."@en ;
+        sh:name           "powers"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:powers .
+
+<https://astrea.linkeddata.es/shapes#17b2fdec7f14116b9dbab7a49549f16f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "S-to-T reactance"@en , "Links a three-phase connection point to the reactance between its S and its T wires."@en ;
+        sh:class          seas:ElectricReactanceProperty ;
+        sh:description    "Links a three-phase connection point to the reactance between its S and its T wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "S-to-T reactance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:STReactance .
+
+<https://astrea.linkeddata.es/shapes#b105b86b9da8d258879ec3e667d6f985>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "active power"@en , "Links an alternating current power property to its reactive part (i.e., the imaginary part of the complex value)."@en ;
+        sh:class          seas:ElectricPowerProperty ;
+        sh:description    "Links an alternating current power property to its reactive part (i.e., the imaginary part of the complex value)."@en ;
+        sh:maxCount       1 ;
+        sh:name           "active power"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:reactivePower .
+
+<https://astrea.linkeddata.es/shapes#8fd76e995577fa30e9756931675041c1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "electric energy" , "Links a feature of interest to one of its electric energy properties.\r\n\r\nThere may be many energy properties for a feature of interest, so this property is not functional."@en ;
+        sh:class          seas:ElectricEnergyProperty ;
+        sh:description    "Links a feature of interest to one of its electric energy properties.\r\n\r\nThere may be many energy properties for a feature of interest, so this property is not functional."@en ;
+        sh:name           "electric energy" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:electricEnergy .
+
+<https://astrea.linkeddata.es/shapes#54431298c1808c7c21c7b6be001f8fcc>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Overhead Electric Power Distribution Network"@en ;
+        sh:description    "An Overhead Electric Power DistributionNetwork is an ElectricPowerDistributionNetwork which is suspended in the air. "@en ;
+        sh:name           "Overhead Electric Power Distribution Network"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:OverheadElectricPowerDistributionNetwork .
+
+<https://astrea.linkeddata.es/shapes#06aadfbe855dbc0307131d874649d458>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "active power"@en , "Links an alternating current power property to its apparent part (i.e., the module of the complex value)."@en ;
+        sh:class          seas:ElectricPowerProperty ;
+        sh:description    "Links an alternating current power property to its apparent part (i.e., the module of the complex value)."@en ;
+        sh:maxCount       1 ;
+        sh:name           "active power"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:apparentPower .
+
+<https://astrea.linkeddata.es/shapes#c343252e68c619bd496dbb9d5bf45f51>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a direct current connection point to the current in its mid-wire. By convention, the value is positive if it enters the system.\r\n\r\n  Please contact us in case this convention is incorrect."@en , "mid wire current"@en ;
+        sh:class          seas:CurrentProperty ;
+        sh:description    "Links a direct current connection point to the current in its mid-wire. By convention, the value is positive if it enters the system.\r\n\r\n  Please contact us in case this convention is incorrect."@en ;
+        sh:maxCount       1 ;
+        sh:name           "mid wire current"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:midWireCurrent .
+
+<https://astrea.linkeddata.es/shapes#b9be1d086a635f47c2c7223009f52883>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Alternating Current Power Property" ;
+        sh:description    "The class of electric power properties for alternating current.\r\n\r\nAn alternating current power property cannot be directly quantified. One must quantify its individual power properties."@en ;
+        sh:name           "Alternating Current Power Property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c032a0ce825dad60afa2739a5ffe9119> , <https://astrea.linkeddata.es/shapes#b105b86b9da8d258879ec3e667d6f985> , <https://astrea.linkeddata.es/shapes#06aadfbe855dbc0307131d874649d458> ;
+        sh:targetClass    seas:AlternatingCurrentPowerProperty .
+
+<https://astrea.linkeddata.es/shapes#53ea861bd78d093c99941ad1fedda1c2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Energy Property" ;
+        sh:description    "The class of properties that are quantifiable and have a quantity kind of electric energy."@en ;
+        sh:name           "Electric Energy Property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ElectricEnergyProperty .
+
+<https://astrea.linkeddata.es/shapes#dd91be0a6df028a3eab8a8b70ccc958b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connects system in Hot2-to-Hot1"@en , "Links a split-phase power bus to one of the electric power systems it connects with a hot2-to-hot1 configuration."@en ;
+        sh:class          seas:ElectricPowerSystem ;
+        sh:description    "Links a split-phase power bus to one of the electric power systems it connects with a hot2-to-hot1 configuration."@en ;
+        sh:name           "connects system in Hot2-to-Hot1"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemInHot2Hot1 .
+
+<https://astrea.linkeddata.es/shapes#1a4f92a771e99d13fab432a775699998>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connected in star through"@en , "Links an electric power system to a three-phase power bus connection with which it is connected with a star configuration."@en ;
+        sh:class          seas:ThreePhasePowerBus ;
+        sh:description    "Links an electric power system to a three-phase power bus connection with which it is connected with a star configuration."@en ;
+        sh:name           "connected in star through"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectedInStarThrough .
+
+<https://astrea.linkeddata.es/shapes#6576f743ddca8613a499ef6c06c2d4e8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase power bus or a three-phase connection point to the voltage between its T and its R wires."@en , "T-to-R voltage"@en ;
+        sh:class          seas:VoltageProperty ;
+        sh:description    "Links a three-phase power bus or a three-phase connection point to the voltage between its T and its R wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "T-to-R voltage"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:TRVoltage .
+
+<https://astrea.linkeddata.es/shapes#aef4560868463d25dd152c76f924802d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase power bus or a three-phase connection point to the voltage between its R and its N wires."@en , "R-to-N voltage"@en ;
+        sh:class          seas:VoltageProperty ;
+        sh:description    "Links a three-phase power bus or a three-phase connection point to the voltage between its R and its N wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "R-to-N voltage"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:RNVoltage .
+
+<https://astrea.linkeddata.es/shapes#f15f3630fcc80f71ee1d63ab3a38e7b1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "positive to mid reactance"@en , "Links a direct current connection point to the reactance between its positive and its mid wires."@en ;
+        sh:class          seas:ElectricReactanceProperty ;
+        sh:description    "Links a direct current connection point to the reactance between its positive and its mid wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "positive to mid reactance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:positiveToMidReactance .
+
+<https://astrea.linkeddata.es/shapes#679972ea586f6a66bc679ca80c6bbb0a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Extra-Low Voltage Evaluation"@en ;
+        sh:description    "The voltage is Extra-Low according to IEC 60038."@en ;
+        sh:name           "Extra-Low Voltage Evaluation"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ExtraLowVoltageEvaluation .
+
+<https://astrea.linkeddata.es/shapes#555c953a62520972f6efd063cc14855c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "R-to-S resistance"@en , "Links a three-phase connection point to the resistance between its R and its S wires."@en ;
+        sh:class          seas:ElectricResistanceProperty ;
+        sh:description    "Links a three-phase connection point to the resistance between its R and its S wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "R-to-S resistance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:RSResistance .
+
+<https://astrea.linkeddata.es/shapes#242dbee24fed096d70fd50dad1b79c31>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Resistance Evaluation" ;
+        sh:description    "The class of evaluations for electric resistance properties."@en ;
+        sh:name           "Electric Resistance Evaluation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#8a6b7878438eaa8d303caf6a8057cf8b> ;
+        sh:targetClass    seas:ElectricResistanceEvaluation .
+
+<https://astrea.linkeddata.es/shapes#c583821ee9af42f081a849d75e6a7e8f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Medium Voltage "@en ;
+        sh:description    "The voltage is Medium according to IEC 60038."@en ;
+        sh:name           "Medium Voltage "@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:MediumVoltage .
+
+<https://astrea.linkeddata.es/shapes#5f8e1ab3ff537c03bc106e92eac61171>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase connection point to the conductance between its T and its N wires."@en , "T-to-N conductance"@en ;
+        sh:class          seas:ElectricConductanceProperty ;
+        sh:description    "Links a three-phase connection point to the conductance between its T and its N wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "T-to-N conductance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:TNConductance .
+
+<https://astrea.linkeddata.es/shapes#7bdc645c2f607c55ea89afecb2b9db74>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Reactance Evaluation" ;
+        sh:description    "The class of evaluations for electric reactance properties."@en ;
+        sh:name           "Electric Reactance Evaluation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#5a4130aa977c9c11ed5248b72011964e> ;
+        sh:targetClass    seas:ElectricReactanceEvaluation .
+
+<https://astrea.linkeddata.es/shapes#b0d936e4e731bb81e243e4b19c7fd3d4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Conductance Property" ;
+        sh:description    "The class of properties that are quantifiable and have a quantity kind of electric conductance."@en ;
+        sh:name           "Electric Conductance Property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ElectricConductanceProperty .
+
+<https://astrea.linkeddata.es/shapes#aa98f4bacebb5bb893679cb15903111b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Power box"@en ;
+        sh:description    "A power box (USA) or feeder pillar (UK) is a cabinet for electrical equipment, \r\n                      mounted in the street and controlling the electrical supply to a number of houses in a neighborhood. (source:wikipedia)"@en ;
+        sh:name           "Power box"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:PowerBox .
+
+<https://astrea.linkeddata.es/shapes#2dbf10c08ccac0b1b7093e2f75083273>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Two-Wire Direct Current Connection Point"@en ;
+        sh:description    "A two-wire direct current connection point is a connection point composed of two wires (potentialy plus the protective earth): \r\n     wire for the positive;\r\n     wire for the negative."@en ;
+        sh:name           "Two-Wire Direct Current Connection Point"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:TwoWireDirectCurrentConnectionPoint .
+
+<https://astrea.linkeddata.es/shapes#ff624297c2cc1447e8ad865e0c90c1c1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links an electric energy system to the stored electric energy."@en , "stored electric energy" ;
+        sh:class          seas:ElectricEnergyProperty ;
+        sh:description    "Links an electric energy system to the stored electric energy."@en ;
+        sh:maxCount       1 ;
+        sh:name           "stored electric energy" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:storedElectricEnergy .
+
+<https://astrea.linkeddata.es/shapes#9966230c32c8fac1057388295464fdee>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase connection point to the susceptance between its T and its N wires."@en , "T-to-N susceptance"@en ;
+        sh:class          seas:ElectricSusceptanceProperty ;
+        sh:description    "Links a three-phase connection point to the susceptance between its T and its N wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "T-to-N susceptance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:TNSusceptance .
+
+<https://astrea.linkeddata.es/shapes#4f8daaa1a01506d406f433112f49c78e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase connection point to the susceptance between its R and its N wires."@en , "R-to-N susceptance"@en ;
+        sh:class          seas:ElectricSusceptanceProperty ;
+        sh:description    "Links a three-phase connection point to the susceptance between its R and its N wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "R-to-N susceptance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:RNSusceptance .
+
+<https://astrea.linkeddata.es/shapes#cba46547474cbfb1b7c4575c8247e4e8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a single phase connection point to the conductance between its phase and neutral wires."@en , "phase to neutral conductance"@en ;
+        sh:class          seas:ElectricConductanceProperty ;
+        sh:description    "Links a single phase connection point to the conductance between its phase and neutral wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "phase to neutral conductance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:phaseToNeutralConductance .
+
+<https://astrea.linkeddata.es/shapes#b45c08db397692dbd92b246914c8258c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase connection point to the current in its S wire. By convention, the value is positive if it enters the system."@en , "S Current"@en ;
+        sh:class          seas:CurrentProperty ;
+        sh:description    "Links a three-phase connection point to the current in its S wire. By convention, the value is positive if it enters the system."@en ;
+        sh:maxCount       1 ;
+        sh:name           "S Current"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:sCurrent .
+
+<https://astrea.linkeddata.es/shapes#65f3af564720b05d87cb5d5e0222eb22>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Medium Voltage Evaluation"@en ;
+        sh:description    "The voltage is Medium according to IEC 60038."@en ;
+        sh:name           "Medium Voltage Evaluation"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:MediumVoltageEvaluation .
+
+<https://astrea.linkeddata.es/shapes#60942b7c7185b03c98e9e09f9b636d32>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connects system in star at"@en , "Links a three-phase power bus to one of the three-phase connection points it connects with a star configuration."@en ;
+        sh:class          seas:ThreePhaseConnectionPoint ;
+        sh:description    "Links a three-phase power bus to one of the three-phase connection points it connects with a star configuration."@en ;
+        sh:name           "connects system in star at"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemInStarAt .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#1b8cb8901b9a9dd76d08afddf8c2573d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "The Tap changer to change the voltage regulation of the transformer."@en , "tap Changer"@en ;
+        sh:class          seas:VoltageProperty ;
+        sh:description    "The Tap changer to change the voltage regulation of the transformer."@en ;
+        sh:maxCount       1 ;
+        sh:name           "tap Changer"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:tapChanger .
+
+<https://astrea.linkeddata.es/shapes#0c04d45689526ae8c7afa3549c69e10c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "is powered by"@en , "links a System to it powered system."@en ;
+        sh:class          seas:ElectricPowerSystem ;
+        sh:description    "links a System to it powered system."@en ;
+        sh:name           "is powered by"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:isPoweredBy .
+
+<https://astrea.linkeddata.es/shapes#6de124f161f6141253a3ae0b16bd8938>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase connection point to the current in its T wire. By convention, the value is positive if it enters the system."@en , "T Current"@en ;
+        sh:class          seas:CurrentProperty ;
+        sh:description    "Links a three-phase connection point to the current in its T wire. By convention, the value is positive if it enters the system."@en ;
+        sh:maxCount       1 ;
+        sh:name           "T Current"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:tCurrent .
+
+<https://astrea.linkeddata.es/shapes#25fd2f1c4acc549d1295b783f6e2619e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "phase wire current"@en , "Links a single phase connection point to the current in its phase wire. By convention, the value is positive if it enters the system."@en ;
+        sh:class          seas:CurrentProperty ;
+        sh:description    "Links a single phase connection point to the current in its phase wire. By convention, the value is positive if it enters the system."@en ;
+        sh:maxCount       1 ;
+        sh:name           "phase wire current"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:phaseWireCurrent .
+
+<https://astrea.linkeddata.es/shapes#c032a0ce825dad60afa2739a5ffe9119>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "active power"@en , "Links an alternating current power property to its active part (i.e., the real part of the complex value)."@en ;
+        sh:class          seas:ElectricPowerProperty ;
+        sh:description    "Links an alternating current power property to its active part (i.e., the real part of the complex value)."@en ;
+        sh:maxCount       1 ;
+        sh:name           "active power"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:activePower .
+
+<https://astrea.linkeddata.es/shapes#ad58ea8e5d48c4ca751179f205300239>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Facade Electric Power Distribution Network"@en ;
+        sh:description    "A Facade Electric Power DistributionNetwork is an ElectricPowerDistributionNetwork which is hanging along a facade."@en ;
+        sh:name           "Facade Electric Power Distribution Network"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:FacadeElectricPowerDistributionNetwork .
+
+<https://astrea.linkeddata.es/shapes#f04c5310a3a447591848da9c40beae67>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Low Voltage Evaluation"@en ;
+        sh:description    "The voltage is Low according to IEC 60038."@en ;
+        sh:name           "Low Voltage Evaluation"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:LowVoltageEvaluation .
+
+<https://astrea.linkeddata.es/shapes#635c424c62ae99fbf3d12e1c9b53dc57>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a single phase connection point to the current in its neutral wire. By convention, the value is positive if it leaves the system."@en , "neutral wire current"@en ;
+        sh:class          seas:CurrentProperty ;
+        sh:description    "Links a single phase connection point to the current in its neutral wire. By convention, the value is positive if it leaves the system."@en ;
+        sh:maxCount       1 ;
+        sh:name           "neutral wire current"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:neutralWireCurrent .
+
+<https://astrea.linkeddata.es/shapes#f68dda19dd5d28dfa9d053bb647cb5bd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connects system in triangle through"@en , "Links a three-phase connection point to a three-phase power bus connection with which it is connected with a triangle configuration."@en ;
+        sh:class          seas:ThreePhasePowerBus ;
+        sh:description    "Links a three-phase connection point to a three-phase power bus connection with which it is connected with a triangle configuration."@en ;
+        sh:name           "connects system in triangle through"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemInTriangleThrough .
+
+<https://astrea.linkeddata.es/shapes#836e1cc9aefdfc40c814f74a2b2e5647>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Charging Efficiency Property" ;
+        sh:description    "Charging Efficiency Property is a Efficiency Property which concern the charging process"@en ;
+        sh:name           "Charging Efficiency Property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ChargingEfficiencyProperty .
+
+<https://astrea.linkeddata.es/shapes#2f2439d3c7c53e22b4d6cffa63b244b6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase connection point to the susceptance between its T and its R wires."@en , "T-to-R susceptance"@en ;
+        sh:class          seas:ElectricSusceptanceProperty ;
+        sh:description    "Links a three-phase connection point to the susceptance between its T and its R wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "T-to-R susceptance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:TRSusceptance .
+
+<https://astrea.linkeddata.es/shapes#7d35cfe4a6f2dcd63cf9abb4f93bd040>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Current Evaluation" ;
+        sh:description    "The class of evaluations for current properties."@en ;
+        sh:name           "Current Evaluation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#155b681304782a92dcef894693ffae0c> ;
+        sh:targetClass    seas:CurrentEvaluation .
+
+<https://astrea.linkeddata.es/shapes#3c6cd5927e16d1fa00c51039fbb3dd3f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connects system in RN at"@en , "Links a three-phase power bus to one of the single phase connection points it connects with a RN configuration."@en ;
+        sh:class          seas:SinglePhaseConnectionPoint ;
+        sh:description    "Links a three-phase power bus to one of the single phase connection points it connects with a RN configuration."@en ;
+        sh:name           "connects system in RN at"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemInRNAt .
+
+<https://astrea.linkeddata.es/shapes#3cf253b90c4ff008a62066f73c3a715e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "positive to mid resistance"@en , "Links a direct current connection point to the resistance between its positive and its mid wires."@en ;
+        sh:class          seas:ElectricResistanceProperty ;
+        sh:description    "Links a direct current connection point to the resistance between its positive and its mid wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "positive to mid resistance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:positiveToMidResistance .
+
+<https://astrea.linkeddata.es/shapes#f3e618d5d8bcd675e5c8022c9418f619>
+        sh:path                 seas:evaluationOf ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  seas:ElectricSusceptanceProperty ] .
+
+<https://astrea.linkeddata.es/shapes#7a13a59159478f82ab72ded67a287f50>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "length"@en , "The lenght of the feature of interest"@en ;
+        sh:description    "The lenght of the feature of interest"@en ;
+        sh:maxCount       1 ;
+        sh:name           "length"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:length .
+
+<https://astrea.linkeddata.es/shapes#a1227b8d1d57ff1e91478a6059af60e8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Extra-High Voltage Evaluation"@en ;
+        sh:description    "The voltage is Extra-High according to IEC 60038."@en ;
+        sh:name           "Extra-High Voltage Evaluation"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ExtraHighVoltageEvaluation .
+
+<https://astrea.linkeddata.es/shapes#f4fda43935d7242dd528e42d2ce73703>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Three-Phase Connection Point"@en ;
+        sh:description    "A three-phase connection point is a connection point composed of four wires (plus the protective earth): \r\n\r\n- wires R, S, T, for the phases;\r\n- wire N for the neutral.\r\n"@en ;
+        sh:name           "Three-Phase Connection Point"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#128616012017be031bff742d4e6b09d3> , <https://astrea.linkeddata.es/shapes#328d08b58ca9869c7abea9c986ba8b47> , <https://astrea.linkeddata.es/shapes#2b593719943c12b4bf8e99602ca49fcc> , <https://astrea.linkeddata.es/shapes#aef4560868463d25dd152c76f924802d> , <https://astrea.linkeddata.es/shapes#a5060b7ebebd11e37be652979458975a> , <https://astrea.linkeddata.es/shapes#a83f601a5749b1c46031a9ca8daa134e> , <https://astrea.linkeddata.es/shapes#6576f743ddca8613a499ef6c06c2d4e8> , <https://astrea.linkeddata.es/shapes#43fd29a3817d278b3ed050c24430cb9b> , <https://astrea.linkeddata.es/shapes#a40b15efc7b38b5cd91586367b3fadd6> , <https://astrea.linkeddata.es/shapes#2f2439d3c7c53e22b4d6cffa63b244b6> , <https://astrea.linkeddata.es/shapes#55d4f37ac24ac0ef892e8e46e0ebcaa4> , <https://astrea.linkeddata.es/shapes#f2507c5708d2774a33bc46bdc56e9dd1> , <https://astrea.linkeddata.es/shapes#757ccd1b266f5b34a6d7619bd039e86f> , <https://astrea.linkeddata.es/shapes#5ec4c4b1bf261a91248421846bb72937> , <https://astrea.linkeddata.es/shapes#51f010570a1d34316e68d172b8a0d6c8> , <https://astrea.linkeddata.es/shapes#ce002e3b75b8866d593fb6cad315a4e3> , <https://astrea.linkeddata.es/shapes#1a8c0c66516948535a3c476ee382d39e> , <https://astrea.linkeddata.es/shapes#b45c08db397692dbd92b246914c8258c> , <https://astrea.linkeddata.es/shapes#3bc14bbf2106b8c80d9a7a8b88577a24> , <https://astrea.linkeddata.es/shapes#555c953a62520972f6efd063cc14855c> , <https://astrea.linkeddata.es/shapes#833bb9db1c8816f8171dc80c079c434c> , <https://astrea.linkeddata.es/shapes#9966230c32c8fac1057388295464fdee> , <https://astrea.linkeddata.es/shapes#2339f47fdd6788c87f788c1ea05b7fed> , <https://astrea.linkeddata.es/shapes#1563ed0a1d4b144e950d6a57659ee062> , <https://astrea.linkeddata.es/shapes#3ddc0a349a06cb99a561f4e2a08bf3eb> , <https://astrea.linkeddata.es/shapes#4f8daaa1a01506d406f433112f49c78e> , <https://astrea.linkeddata.es/shapes#f57f5551ae7c40ac6d901222eb3f11db> , <https://astrea.linkeddata.es/shapes#f4f2eb71562fb21febc9d46e5d245571> , <https://astrea.linkeddata.es/shapes#5f8e1ab3ff537c03bc106e92eac61171> , <https://astrea.linkeddata.es/shapes#6de124f161f6141253a3ae0b16bd8938> , <https://astrea.linkeddata.es/shapes#17b2fdec7f14116b9dbab7a49549f16f> , <https://astrea.linkeddata.es/shapes#6b4df08e2f9766026d9894d65a83ba9e> , <https://astrea.linkeddata.es/shapes#51ecf33f8bd6a4213be94d0efd67501c> , <https://astrea.linkeddata.es/shapes#03c61adb3bdabe5002db5cfd138b0347> , <https://astrea.linkeddata.es/shapes#b185d27a84360c503cac47e448a59fb2> , <https://astrea.linkeddata.es/shapes#f68dda19dd5d28dfa9d053bb647cb5bd> ;
+        sh:targetClass    seas:ThreePhaseConnectionPoint .
+
+<https://astrea.linkeddata.es/shapes#aa40e61182a2f910a06935df37f26e2b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electrical Ballast"@en ;
+        sh:description    "An electrical ballast is a device placed in line with the load to limit the amount of current in an electrical circuit. \r\n                      It may be a fixed or variable resistor.\r\n                      A familiar and widely used example is the inductive ballast used in fluorescent lamps to limit the current through the tube, \r\n                      which would otherwise rise to a destructive level due to the negative differential resistance artifact in the tube's voltage-current \r\n                      characteristic. Ballasts vary greatly in complexity. They may be as simple as a resistor, inductor or capacitor (or a combination of these) \r\n                      wired in series with the lamp; or as complex as the electronic ballasts used in compact fluorescent lamps and high-intensity discharge lamps. \r\n                      (source:wikipedia)"@en ;
+        sh:name           "Electrical Ballast"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ElectricalBallast .
+
+<https://astrea.linkeddata.es/shapes#b185d27a84360c503cac47e448a59fb2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "N Current"@en , "Links a three-phase connection point to the current in its N wire. By convention, the value is positive if it enters the system."@en ;
+        sh:class          seas:CurrentProperty ;
+        sh:description    "Links a three-phase connection point to the current in its N wire. By convention, the value is positive if it enters the system."@en ;
+        sh:maxCount       1 ;
+        sh:name           "N Current"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:nCurrent .
+
+<https://astrea.linkeddata.es/shapes#798f7aa8e788502aae6c3f4c5f7155b4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Low Voltage "@en ;
+        sh:description    "The voltage is Low according to IEC 60038."@en ;
+        sh:name           "Low Voltage "@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:LowVoltage .
+
+<https://astrea.linkeddata.es/shapes#f51ee3df371a5a133102448efbed545a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Voltage Evaluation" ;
+        sh:description    "The class of evaluations for voltage properties."@en ;
+        sh:name           "Voltage Evaluation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#4a37909a9aff3cb35607548519ef67c1> ;
+        sh:targetClass    seas:VoltageEvaluation .
+
+<https://astrea.linkeddata.es/shapes#21aef57f044e038754b9d7261b4ef8a1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electronic ballast"@en ;
+        sh:description    "An electronic ballast uses solid state electronic circuitry to provide the proper starting and operating electrical conditions to power discharge lamps.\r\n                      An electronic ballast can be smaller and lighter than a comparably-rated magnetic one. An electronic ballast is usually quieter than a magnetic one,\r\n                      which produces a line-frequency hum by vibration of the transformer laminations. \r\n                      (source:wikipedia)"@en ;
+        sh:name           "Electronic ballast"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ElectronicBallast .
+
+<https://astrea.linkeddata.es/shapes#89f69fc9efc03752ab39e9830a6056e4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "produced electric power" , "Links an electric power system to the produced electric power."@en ;
+        sh:class          seas:ElectricPowerProperty ;
+        sh:description    "Links an electric power system to the produced electric power."@en ;
+        sh:maxCount       1 ;
+        sh:name           "produced electric power" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:producedElectricPower .
+
+<https://astrea.linkeddata.es/shapes#3e23e0cedd854e83fabe6731761ed579>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Reactance Property" ;
+        sh:description    "The class of properties that are quantifiable and have a quantity kind of electric reactance."@en ;
+        sh:name           "Electric Reactance Property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ElectricReactanceProperty .
+
+<https://astrea.linkeddata.es/shapes#a8a65311eea42a38447e78276e14f1e6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connects system in triangle at"@en , "Links a three-phase power bus to one of the three-phase connection points it connects with a triangle configuration."@en ;
+        sh:class          seas:ThreePhaseConnectionPoint ;
+        sh:description    "Links a three-phase power bus to one of the three-phase connection points it connects with a triangle configuration."@en ;
+        sh:name           "connects system in triangle at"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemInTriangleAt .
+
+<https://astrea.linkeddata.es/shapes#1a8c0c66516948535a3c476ee382d39e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "T-to-N resistance"@en , "Links a three-phase connection point to the resistance between its T and its N wires."@en ;
+        sh:class          seas:ElectricResistanceProperty ;
+        sh:description    "Links a three-phase connection point to the resistance between its T and its N wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "T-to-N resistance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:TNResistance .
+
+<https://astrea.linkeddata.es/shapes#893797ba8898177df5b817ba86554a38>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      foaf:name .
+
+<https://astrea.linkeddata.es/shapes#3c6a5fda420d686f6fffcac026ba92c1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connected in TN through"@en , "Links an electric power system to a three-phase power bus connection with which it is connected with a TN configuration."@en ;
+        sh:class          seas:ThreePhasePowerBus ;
+        sh:description    "Links an electric power system to a three-phase power bus connection with which it is connected with a TN configuration."@en ;
+        sh:name           "connected in TN through"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectedInTNThrough .
+
+<https://astrea.linkeddata.es/shapes#68d1538fff2a43c4dbd869adb2086192>
+        sh:path                 seas:evaluationOf ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  seas:EfficiencyProperty ] .
+
+<https://astrea.linkeddata.es/shapes#a5060b7ebebd11e37be652979458975a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "S-to-T susceptance"@en , "Links a three-phase connection point to the susceptance between its S and its T wires."@en ;
+        sh:class          seas:ElectricSusceptanceProperty ;
+        sh:description    "Links a three-phase connection point to the susceptance between its S and its T wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "S-to-T susceptance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:STSusceptance .
+
+<https://astrea.linkeddata.es/shapes#426733e0fbaff500de01740484d36d38>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Single Phase Power Bus"@en ;
+        sh:description    "A single phase power bus is a connection composed of two wires (plus the protective earth): \r\n     wire for the phase;\r\n     wire for the neutral."@en ;
+        sh:name           "Single Phase Power Bus"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#90f8b7d2f48296cd1a18a1d1577190cc> ;
+        sh:targetClass    seas:SinglePhasePowerBus .
+
+<https://astrea.linkeddata.es/shapes#6ccc2acb8c0fe10cbe73423add9be92c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "primarily connected through"@en , "Links an electric power transformer to its primary connection"@en ;
+        sh:class          seas:ElectricalConnection ;
+        sh:description    "Links an electric power transformer to its primary connection"@en ;
+        sh:name           "primarily connected through"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:primarilyConnectedThrough .
+
+<https://astrea.linkeddata.es/shapes#a2c5ef0c0e9fc151b431d9293418db05>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connects system in Hot1-to-Hot2"@en , "Links a split-phase power bus to one of the electric power systems it connects with a hot1-to-hot2 configuration."@en ;
+        sh:class          seas:ElectricPowerSystem ;
+        sh:description    "Links a split-phase power bus to one of the electric power systems it connects with a hot1-to-hot2 configuration."@en ;
+        sh:name           "connects system in Hot1-to-Hot2"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemInHot1Hot2 .
+
+<https://astrea.linkeddata.es/shapes#f4f2eb71562fb21febc9d46e5d245571>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase connection point to the resistance between its S and its N wires."@en , "T-to-N resistance"@en ;
+        sh:class          seas:ElectricResistanceProperty ;
+        sh:description    "Links a three-phase connection point to the resistance between its S and its N wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "T-to-N resistance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:SNResistance .
+
+<https://astrea.linkeddata.es/shapes#54b487394e38c4af289a9e67cf7a4851>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links an electric energy system, or an electrical connection point, to the balance between the incoming electric energy and the outgoing electric energy."@en , "electric energy balance" ;
+        sh:class          seas:ElectricEnergyProperty ;
+        sh:description    "Links an electric energy system, or an electrical connection point, to the balance between the incoming electric energy and the outgoing electric energy."@en ;
+        sh:maxCount       1 ;
+        sh:name           "electric energy balance" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:electricEnergyBalance .
+
+<https://astrea.linkeddata.es/shapes#2beb40056f04097a2250aee1a10636f2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Split Phase Power Bus"@en ;
+        sh:description    "A split-phase power bus is a connection composed of three wires (plus the protective earth): \r\n\r\n- wire for the hot 1 phase;\r\n- wire for the neutral;\r\n- wire for the hot 2 phase.\r\n\r\n"@en ;
+        sh:name           "Split Phase Power Bus"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#fd20656859e0bf9fa08ddbdc9d57b018> , <https://astrea.linkeddata.es/shapes#dd91be0a6df028a3eab8a8b70ccc958b> , <https://astrea.linkeddata.es/shapes#9c7c889445d3a3cea045d17d2a613faa> , <https://astrea.linkeddata.es/shapes#a2c5ef0c0e9fc151b431d9293418db05> ;
+        sh:targetClass    seas:SplitPhasePowerBus .
+
+<https://astrea.linkeddata.es/shapes#293439ca1f37c5b95117b69294d13ec7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connected in SN through"@en , "Links an electric power system to a three-phase power bus connection with which it is connected with a SN configuration."@en ;
+        sh:class          seas:ThreePhasePowerBus ;
+        sh:description    "Links an electric power system to a three-phase power bus connection with which it is connected with a SN configuration."@en ;
+        sh:name           "connected in SN through"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectedInSNThrough .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#8fe421b94602281cd08b0ad3ede9e1c7> , <https://astrea.linkeddata.es/shapes#c032a0ce825dad60afa2739a5ffe9119> , <https://astrea.linkeddata.es/shapes#6faa835ee36c1441878ccda41ea66794> , <https://astrea.linkeddata.es/shapes#17b2fdec7f14116b9dbab7a49549f16f> , <https://astrea.linkeddata.es/shapes#7bdc645c2f607c55ea89afecb2b9db74> , <https://astrea.linkeddata.es/shapes#833bb9db1c8816f8171dc80c079c434c> , <https://astrea.linkeddata.es/shapes#dbf5497d8a4ee2412e2f4d915f5d9644> , <https://astrea.linkeddata.es/shapes#3e23e0cedd854e83fabe6731761ed579> , <https://astrea.linkeddata.es/shapes#2aea683738febbb2949a71ddc514f791> , <https://astrea.linkeddata.es/shapes#36f32a10a9fc3ffb0513693ae87fb8ef> , <https://astrea.linkeddata.es/shapes#d04be384a8017c6aec3aa2c68f8456b1> , <https://astrea.linkeddata.es/shapes#0c04d45689526ae8c7afa3549c69e10c> , <https://astrea.linkeddata.es/shapes#90eaf4e2d5f7486e26ae9a05919b2622> , <https://astrea.linkeddata.es/shapes#cba46547474cbfb1b7c4575c8247e4e8> , <https://astrea.linkeddata.es/shapes#43fd29a3817d278b3ed050c24430cb9b> , <https://astrea.linkeddata.es/shapes#95ff5e705ebbb9ae5c59af633fc5f58e> , <https://astrea.linkeddata.es/shapes#72589c96df66c5438f852f1aa0acd461> , <https://astrea.linkeddata.es/shapes#dd91be0a6df028a3eab8a8b70ccc958b> , <https://astrea.linkeddata.es/shapes#b8f403ca5cdc6e82f488aa6374207dd9> , <https://astrea.linkeddata.es/shapes#b61c551df27dfd6f1250556f8e0fa560> , <https://astrea.linkeddata.es/shapes#e5eb37732eeb10e27f141ac65e4c81b8> , <https://astrea.linkeddata.es/shapes#5ec4c4b1bf261a91248421846bb72937> , <https://astrea.linkeddata.es/shapes#aa98f4bacebb5bb893679cb15903111b> , <https://astrea.linkeddata.es/shapes#fb6fa0bf97d5961a3e4399827669dc1e> , <https://astrea.linkeddata.es/shapes#028f17dff650740a596224dd7da1f3ea> , <https://astrea.linkeddata.es/shapes#46628993824a024094ab86f1d48c05fe> , <https://astrea.linkeddata.es/shapes#03c61adb3bdabe5002db5cfd138b0347> , <https://astrea.linkeddata.es/shapes#67cd1018cedba941d89809471f06ee6f> , <https://astrea.linkeddata.es/shapes#964e6ae845fbf5a31ef3984bfb4b8f3a> , <https://astrea.linkeddata.es/shapes#b76096ea1f4f831742bb59cc5284444b> , <https://astrea.linkeddata.es/shapes#5f8e1ab3ff537c03bc106e92eac61171> , <https://astrea.linkeddata.es/shapes#984d44b7a7e9d98e3d72b50809ae2d39> , <https://astrea.linkeddata.es/shapes#075408c565fcb68add10972805ff9b4f> , <https://astrea.linkeddata.es/shapes#c583821ee9af42f081a849d75e6a7e8f> , <https://astrea.linkeddata.es/shapes#6576f743ddca8613a499ef6c06c2d4e8> , <https://astrea.linkeddata.es/shapes#07109a7e05ad44084089cab4c1d826c3> , <https://astrea.linkeddata.es/shapes#14711b0603b90565090294f3d3c708c5> , <https://astrea.linkeddata.es/shapes#de77af30ec04bd2c28f756c23937f532> , <https://astrea.linkeddata.es/shapes#dda6dfccfd63acccc655378ff231b95b> , <https://astrea.linkeddata.es/shapes#816eb3fd352fb524a04d05ad012e0679> , <https://astrea.linkeddata.es/shapes#c798b835d1da2242e46516ba7188ff29> , <https://astrea.linkeddata.es/shapes#cdf857bfba57b8d4205fffa095c7d7c4> , <https://astrea.linkeddata.es/shapes#128616012017be031bff742d4e6b09d3> , <https://astrea.linkeddata.es/shapes#da82e4a15f776970f8a37b855018d3f3> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#b9be1d086a635f47c2c7223009f52883> , <https://astrea.linkeddata.es/shapes#555c953a62520972f6efd063cc14855c> , <https://astrea.linkeddata.es/shapes#677cebc9b893beaa8a0b9944117a92e9> , <https://astrea.linkeddata.es/shapes#293439ca1f37c5b95117b69294d13ec7> , <https://astrea.linkeddata.es/shapes#46d724ee86ac6ef9478cfd8ab4701599> , <https://astrea.linkeddata.es/shapes#1527bca4104aa6bc06c20d51b4ce2a8d> , <https://astrea.linkeddata.es/shapes#5eb3485402655d07349a665be64e61a6> , <https://astrea.linkeddata.es/shapes#2339f47fdd6788c87f788c1ea05b7fed> , <https://astrea.linkeddata.es/shapes#5ecf42629c142e36be93e1c17ca52436> , <https://astrea.linkeddata.es/shapes#65f3af564720b05d87cb5d5e0222eb22> , <https://astrea.linkeddata.es/shapes#c074655e39121cf7878f7176e4fed8e6> , <https://astrea.linkeddata.es/shapes#6bbce4d62d3312700bad5bf6a924774e> , <https://astrea.linkeddata.es/shapes#fd20656859e0bf9fa08ddbdc9d57b018> , <https://astrea.linkeddata.es/shapes#9f695ca34f9783b5ee34f5fd47fecbc5> , <https://astrea.linkeddata.es/shapes#056d4bbc18ddd5ba5a09b9f19330dca8> , <https://astrea.linkeddata.es/shapes#5ca5f3dc3edd0476532c50cb4f0d0582> , <https://astrea.linkeddata.es/shapes#6ed00810bc454667963f9ea5ecb96ee3> , <https://astrea.linkeddata.es/shapes#1b8cb8901b9a9dd76d08afddf8c2573d> , <https://astrea.linkeddata.es/shapes#6de124f161f6141253a3ae0b16bd8938> , <https://astrea.linkeddata.es/shapes#ea4d9226d4f8947fa5ee29b29662cc83> , <https://astrea.linkeddata.es/shapes#aa40e61182a2f910a06935df37f26e2b> , <https://astrea.linkeddata.es/shapes#0bd534f053cce7129bfc0a0daab75e1c> , <https://astrea.linkeddata.es/shapes#33283a9c158c210c6e6e57035a1a26ab> , <https://astrea.linkeddata.es/shapes#ff624297c2cc1447e8ad865e0c90c1c1> , <https://astrea.linkeddata.es/shapes#41c479e69da60638e8f57290fba8aa31> , <https://astrea.linkeddata.es/shapes#f04c5310a3a447591848da9c40beae67> , <https://astrea.linkeddata.es/shapes#01901fa1b3042d2201a8ee86851a6cc8> , <https://astrea.linkeddata.es/shapes#9770e128fa609890dd2c0695dfeee5c4> , <https://astrea.linkeddata.es/shapes#679972ea586f6a66bc679ca80c6bbb0a> , <https://astrea.linkeddata.es/shapes#e3356f0adef130a547b73cf8e73d88b8> , <https://astrea.linkeddata.es/shapes#ad58ea8e5d48c4ca751179f205300239> , <https://astrea.linkeddata.es/shapes#1a8c0c66516948535a3c476ee382d39e> , <https://astrea.linkeddata.es/shapes#f15f3630fcc80f71ee1d63ab3a38e7b1> , <https://astrea.linkeddata.es/shapes#757ccd1b266f5b34a6d7619bd039e86f> , <https://astrea.linkeddata.es/shapes#9316217051a9e4f25c70570b2c6d1b23> , <https://astrea.linkeddata.es/shapes#ce002e3b75b8866d593fb6cad315a4e3> , <https://astrea.linkeddata.es/shapes#0189a0ab0643ebdf647c58ded6462e8d> , <https://astrea.linkeddata.es/shapes#674d0e55dffc5b2a7e6b2f944b0a5e12> , <https://astrea.linkeddata.es/shapes#657c43e1c8b101ae9799d0f4c150f40b> , <https://astrea.linkeddata.es/shapes#b185d27a84360c503cac47e448a59fb2> , <https://astrea.linkeddata.es/shapes#836e1cc9aefdfc40c814f74a2b2e5647> , <https://astrea.linkeddata.es/shapes#8e92c6cbb8823c79a694682237a4c654> , <https://astrea.linkeddata.es/shapes#1b091c878980d140a154e032f027e183> , <https://astrea.linkeddata.es/shapes#426733e0fbaff500de01740484d36d38> , <https://astrea.linkeddata.es/shapes#ae1732e83994f38150c0267d9bbdb92f> , <https://astrea.linkeddata.es/shapes#60ce6b9c97a4cbd53e40573152d21572> , <https://astrea.linkeddata.es/shapes#a2c5ef0c0e9fc151b431d9293418db05> , <https://astrea.linkeddata.es/shapes#81819d0c3339be35950114c23d54068d> , <https://astrea.linkeddata.es/shapes#bc00dd47f8a48d133575fbc22fb2837f> , <https://astrea.linkeddata.es/shapes#8fb6babea2873234da7c69cb2c5f0e5b> , <https://astrea.linkeddata.es/shapes#4f8daaa1a01506d406f433112f49c78e> , <https://astrea.linkeddata.es/shapes#f3b517b61629adc7fd5af1c073241ec7> , <https://astrea.linkeddata.es/shapes#53ea861bd78d093c99941ad1fedda1c2> , <https://astrea.linkeddata.es/shapes#62a1ba3c7716c8cddd43f3754ee5a4ac> , <https://astrea.linkeddata.es/shapes#d60c8d3b0ee4f269b84d2429f9badac8> , <https://astrea.linkeddata.es/shapes#a625edf40e0745176f67313ca2281668> , <https://astrea.linkeddata.es/shapes#635c424c62ae99fbf3d12e1c9b53dc57> , <https://astrea.linkeddata.es/shapes#5b3c695e13680e86ecdd8f2ccad150d3> , <https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f> , <https://astrea.linkeddata.es/shapes#09381a3531ce97646dd1f25ae5f2f8c8> , <https://astrea.linkeddata.es/shapes#962f3283abaf86ff907bf8715dd0d05b> , <https://astrea.linkeddata.es/shapes#3c6cd5927e16d1fa00c51039fbb3dd3f> , <https://astrea.linkeddata.es/shapes#88e65f0a41736fbf97f92fc9b4baec38> , <https://astrea.linkeddata.es/shapes#893797ba8898177df5b817ba86554a38> , <https://astrea.linkeddata.es/shapes#f51ee3df371a5a133102448efbed545a> , <https://astrea.linkeddata.es/shapes#9c32d26bfbf10700efe5f1cedaa11c12> , <https://astrea.linkeddata.es/shapes#13a3c2bc7c8b13473aa28f74a38ee4d2> , <https://astrea.linkeddata.es/shapes#ea9ddd6377c69336d4d3e9c961ebc7f3> , <https://astrea.linkeddata.es/shapes#ab99ba54dd7306d69447ff6ddbcde750> , <https://astrea.linkeddata.es/shapes#242dbee24fed096d70fd50dad1b79c31> , <https://astrea.linkeddata.es/shapes#a5060b7ebebd11e37be652979458975a> , <https://astrea.linkeddata.es/shapes#a83f601a5749b1c46031a9ca8daa134e> , <https://astrea.linkeddata.es/shapes#f4fda43935d7242dd528e42d2ce73703> , <https://astrea.linkeddata.es/shapes#6ccc2acb8c0fe10cbe73423add9be92c> , <https://astrea.linkeddata.es/shapes#8fd76e995577fa30e9756931675041c1> , <https://astrea.linkeddata.es/shapes#2dbf10c08ccac0b1b7093e2f75083273> , <https://astrea.linkeddata.es/shapes#6b8375b3ae4bb6e1d8ede347ce2f6917> , <https://astrea.linkeddata.es/shapes#b1c83350237a7234aca21b800de7e5e8> , <https://astrea.linkeddata.es/shapes#21aef57f044e038754b9d7261b4ef8a1> , <https://astrea.linkeddata.es/shapes#b30884dfc6a11495f1177faebbdbdcc9> , <https://astrea.linkeddata.es/shapes#9daa4a207f9f5605dc42e73e74cbd167> , <https://astrea.linkeddata.es/shapes#e507b94876d77770ea1e3a73f9ea9ca3> , <https://astrea.linkeddata.es/shapes#3cf253b90c4ff008a62066f73c3a715e> , <https://astrea.linkeddata.es/shapes#9c7c889445d3a3cea045d17d2a613faa> , <https://astrea.linkeddata.es/shapes#54b487394e38c4af289a9e67cf7a4851> , <https://astrea.linkeddata.es/shapes#328d08b58ca9869c7abea9c986ba8b47> , <https://astrea.linkeddata.es/shapes#f57f5551ae7c40ac6d901222eb3f11db> , <https://astrea.linkeddata.es/shapes#2beb40056f04097a2250aee1a10636f2> , <https://astrea.linkeddata.es/shapes#4d006ac7f53f6d407dfc81263c7ec3ee> , <https://astrea.linkeddata.es/shapes#e2e7e25447c5f2df7ef5df6e387b4745> , <https://astrea.linkeddata.es/shapes#7d35cfe4a6f2dcd63cf9abb4f93bd040> , <https://astrea.linkeddata.es/shapes#f23de6198c7d88679bd65c91c5474bf6> , <https://astrea.linkeddata.es/shapes#c3c3a140fc73451ebf33ddcb9f86e843> , <https://astrea.linkeddata.es/shapes#7761b48f3efe4ba1a46f80e2b436ebf1> , <https://astrea.linkeddata.es/shapes#0c23b432c722782884b2d10fcd167da1> , <https://astrea.linkeddata.es/shapes#f4f2eb71562fb21febc9d46e5d245571> , <https://astrea.linkeddata.es/shapes#b2762c6a5768260ca9a81576cf98ca6c> , <https://astrea.linkeddata.es/shapes#7a13a59159478f82ab72ded67a287f50> , <https://astrea.linkeddata.es/shapes#84b76e3468ae74a886d52c6bb072eb16> , <https://astrea.linkeddata.es/shapes#66443c55156fc81d6cf3379d69435e10> , <https://astrea.linkeddata.es/shapes#9966230c32c8fac1057388295464fdee> , <https://astrea.linkeddata.es/shapes#3bc14bbf2106b8c80d9a7a8b88577a24> , <https://astrea.linkeddata.es/shapes#2b593719943c12b4bf8e99602ca49fcc> , <https://astrea.linkeddata.es/shapes#c343252e68c619bd496dbb9d5bf45f51> , <https://astrea.linkeddata.es/shapes#55d4f37ac24ac0ef892e8e46e0ebcaa4> , <https://astrea.linkeddata.es/shapes#54431298c1808c7c21c7b6be001f8fcc> , <https://astrea.linkeddata.es/shapes#9db3f0f302af150a8daf2033ff67cc2e> , <https://astrea.linkeddata.es/shapes#4e3c18c00bd5afbf991efba0edcf1479> , <https://astrea.linkeddata.es/shapes#3ddc0a349a06cb99a561f4e2a08bf3eb> , <https://astrea.linkeddata.es/shapes#6b3c84a3f6245b3245bfc2abc7782430> , <https://astrea.linkeddata.es/shapes#51ecf33f8bd6a4213be94d0efd67501c> , <https://astrea.linkeddata.es/shapes#89f69fc9efc03752ab39e9830a6056e4> , <https://astrea.linkeddata.es/shapes#f68dda19dd5d28dfa9d053bb647cb5bd> , <https://astrea.linkeddata.es/shapes#a8a65311eea42a38447e78276e14f1e6> , <https://astrea.linkeddata.es/shapes#bbd87ce2ee8dec951d766e84a45d7190> , <https://astrea.linkeddata.es/shapes#59b72acb0dcc02fb8613fb750c28accb> , <https://astrea.linkeddata.es/shapes#2f2439d3c7c53e22b4d6cffa63b244b6> , <https://astrea.linkeddata.es/shapes#cddf41507dd5d3952cfd78e3b312b3e7> , <https://astrea.linkeddata.es/shapes#25fd2f1c4acc549d1295b783f6e2619e> , <https://astrea.linkeddata.es/shapes#ec5f96031f85e7da20769605c48e1097> , <https://astrea.linkeddata.es/shapes#b105b86b9da8d258879ec3e667d6f985> , <https://astrea.linkeddata.es/shapes#dae2211bb50fba909b769629240975c5> , <https://astrea.linkeddata.es/shapes#b7a7c03ccd598ad8a3bef13b461ffad2> , <https://astrea.linkeddata.es/shapes#f167b994aede4e21b1a049d2cbd81bc7> , <https://astrea.linkeddata.es/shapes#60942b7c7185b03c98e9e09f9b636d32> , <https://astrea.linkeddata.es/shapes#29879565ddcad91d62b24948a52218d7> , <https://astrea.linkeddata.es/shapes#2c7a30a5bc084bbc5b96ce79309af23c> , <https://astrea.linkeddata.es/shapes#f2507c5708d2774a33bc46bdc56e9dd1> , <https://astrea.linkeddata.es/shapes#48304debb5110237e7329ed19fbb29e6> , <https://astrea.linkeddata.es/shapes#90f8b7d2f48296cd1a18a1d1577190cc> , <https://astrea.linkeddata.es/shapes#c80f2fb1ef94860b1b1d8375cb25d650> , <https://astrea.linkeddata.es/shapes#21795c9063cbd2ed593a65f9e14bde9e> , <https://astrea.linkeddata.es/shapes#5321a95623684b22bdee3f2f8e638620> , <https://astrea.linkeddata.es/shapes#06aadfbe855dbc0307131d874649d458> , <https://astrea.linkeddata.es/shapes#1563ed0a1d4b144e950d6a57659ee062> , <https://astrea.linkeddata.es/shapes#3c6a5fda420d686f6fffcac026ba92c1> , <https://astrea.linkeddata.es/shapes#0a8082c9781c9ad8b4499ea12369fd08> , <https://astrea.linkeddata.es/shapes#a07c8b7efe002a22b4a93a166eb84e3f> , <https://astrea.linkeddata.es/shapes#a72293b5720d61799034b5fb46fbc7cc> , <https://astrea.linkeddata.es/shapes#b0d936e4e731bb81e243e4b19c7fd3d4> , <https://astrea.linkeddata.es/shapes#798f7aa8e788502aae6c3f4c5f7155b4> , <https://astrea.linkeddata.es/shapes#a40b15efc7b38b5cd91586367b3fadd6> , <https://astrea.linkeddata.es/shapes#407f45a2b968d198099e40c089daac3a> , <https://astrea.linkeddata.es/shapes#b45c08db397692dbd92b246914c8258c> , <https://astrea.linkeddata.es/shapes#6b4df08e2f9766026d9894d65a83ba9e> , <https://astrea.linkeddata.es/shapes#447d64618a81381ee686957ccad22248> , <https://astrea.linkeddata.es/shapes#5b49d6c8ae13b25f40b6a5a4e5b5caa9> , <https://astrea.linkeddata.es/shapes#61a16d94f0c854f5059ee5177ef8f559> , <https://astrea.linkeddata.es/shapes#51f010570a1d34316e68d172b8a0d6c8> , <https://astrea.linkeddata.es/shapes#1a4f92a771e99d13fab432a775699998> , <https://astrea.linkeddata.es/shapes#a1227b8d1d57ff1e91478a6059af60e8> , <https://astrea.linkeddata.es/shapes#aef4560868463d25dd152c76f924802d> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/01697503826> .
+
+<https://astrea.linkeddata.es/shapes#9c32d26bfbf10700efe5f1cedaa11c12>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connects system in TN at"@en , "Links a three-phase power bus to one of the single phase connection points it connects with a TN configuration."@en ;
+        sh:class          seas:SinglePhaseConnectionPoint ;
+        sh:description    "Links a three-phase power bus to one of the single phase connection points it connects with a TN configuration."@en ;
+        sh:name           "connects system in TN at"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemInTNAt .
+
+<https://astrea.linkeddata.es/shapes#0bd534f053cce7129bfc0a0daab75e1c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Power Consumer"@en ;
+        sh:description    "An electric power consumer is an electric power system that is capable of consuming electricity."@en ;
+        sh:name           "Electric Power Consumer"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ElectricPowerConsumer .
+
+<https://astrea.linkeddata.es/shapes#5ecf42629c142e36be93e1c17ca52436>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Underground Electric Power Distribution Network"@en ;
+        sh:description    "An Underground Electric Power Distribution Network is an ElectricPowerDistributionNetwork which is buried underground."@en ;
+        sh:name           "Underground Electric Power Distribution Network"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:UndergroundElectricPowerDistributionNetwork .
+
+<https://astrea.linkeddata.es/shapes#5ec4c4b1bf261a91248421846bb72937>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "R-to-S voltage"@en , "Links a three-phase power bus or a three-phase connection point to the voltage between its R and its S wires."@en ;
+        sh:class          seas:VoltageProperty ;
+        sh:description    "Links a three-phase power bus or a three-phase connection point to the voltage between its R and its S wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "R-to-S voltage"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:RSVoltage .
+
+<https://astrea.linkeddata.es/shapes#8e92c6cbb8823c79a694682237a4c654>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electrical Connection"@en ;
+        sh:description    "The class of electrical connections between electric power systems.\r\n  An electrical connection describes potential electricity flows between the electric power systems it connects.\r\n  For example, the following RDF graph states that a power bus connects two power lines and a transformer:\r\n\r\n```\r\n  <power_bus> a seas:ElectricalConnection ;\r\n    seas:connectsSystem <power_line_1> , <transformer> , <power_line_2> .\r\n```\r\n\r\n  Only electric power systems and electrical connection points are connected through an electrical connection.\r\n  A connection between electric power systems is not necessarily an electrical connection.\r\n\r\n  Any electric power system that exchanges electricity through an electrical connection is connected at least through one of its power connection points to the electrical connection:\r\n  if:\r\n\r\n```\r\n  <power_system> a seas:ElectricPowerSystem .\r\n  <power_connection> a seas:ElectricalConnection .\r\n  <power_system> seas:connectedThrough <power_connection> .\r\n```\r\n\r\n  then there exists `_:powerConnectionPoint` such that:\r\n\r\n```\r\n  _:powerConnectionPoint a seas:ElectricalConnectionPoint ;\r\n    seas:connectionPointOf <power-system> ;\r\n    seas:connectsSystemThrough <power_connection> .\r\n```"@en ;
+        sh:name           "Electrical Connection"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#01901fa1b3042d2201a8ee86851a6cc8> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#984d44b7a7e9d98e3d72b50809ae2d39> ;
+        sh:targetClass    seas:ElectricalConnection .
+
+<https://astrea.linkeddata.es/shapes#f23de6198c7d88679bd65c91c5474bf6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "imported active znergy"@en , "Links an alternating current power property to its imported active energy, often in Wh/10."@en ;
+        sh:description    "Links an alternating current power property to its imported active energy, often in Wh/10."@en ;
+        sh:maxCount       1 ;
+        sh:name           "imported active znergy"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#a40b15efc7b38b5cd91586367b3fadd6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "S-to-T conductance"@en , "Links a three-phase connection point to the conductance between its S and its T wires."@en ;
+        sh:class          seas:ElectricConductanceProperty ;
+        sh:description    "Links a three-phase connection point to the conductance between its S and its T wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "S-to-T conductance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:STConductance .
+
+<https://astrea.linkeddata.es/shapes#407f45a2b968d198099e40c089daac3a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Direct Current Connection"@en ;
+        sh:description    "The class of electrical connections through which energy flows using direct current."@en ;
+        sh:name           "Direct Current Connection"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e5eb37732eeb10e27f141ac65e4c81b8> , <https://astrea.linkeddata.es/shapes#8fe421b94602281cd08b0ad3ede9e1c7> , <https://astrea.linkeddata.es/shapes#ea4d9226d4f8947fa5ee29b29662cc83> ;
+        sh:targetClass    seas:DirectCurrentConnection .
+
+<https://astrea.linkeddata.es/shapes#5ca5f3dc3edd0476532c50cb4f0d0582>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:BatteryOntology ;
+        rdfs:label        "state of charge ratio"@en , "The state of charge of a battery, quantified by unitless values."@en ;
+        sh:class          seas:PercentageProperty ;
+        sh:description    "The state of charge of a battery, quantified by unitless values."@en ;
+        sh:maxCount       1 ;
+        sh:name           "state of charge ratio"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:stateOfChargeRatio .
+
+<https://astrea.linkeddata.es/shapes#328d08b58ca9869c7abea9c986ba8b47>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "S-to-T voltage"@en , "Links a three-phase power bus or a three-phase connection point to the voltage between its S and its T wires."@en ;
+        sh:class          seas:VoltageProperty ;
+        sh:description    "Links a three-phase power bus or a three-phase connection point to the voltage between its S and its T wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "S-to-T voltage"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:STVoltage .
+
+<https://astrea.linkeddata.es/shapes#f2507c5708d2774a33bc46bdc56e9dd1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "R-to-S reactance"@en , "Links a three-phase connection point to the reactance between its R and its S wires."@en ;
+        sh:class          seas:ElectricReactanceProperty ;
+        sh:description    "Links a three-phase connection point to the reactance between its R and its S wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "R-to-S reactance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:RSReactance .
+
+<https://astrea.linkeddata.es/shapes#a83f601a5749b1c46031a9ca8daa134e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "T-to-N voltage"@en , "Links a three-phase power bus or a three-phase connection point to the voltage between its T and its N wires."@en ;
+        sh:class          seas:VoltageProperty ;
+        sh:description    "Links a three-phase power bus or a three-phase connection point to the voltage between its T and its N wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "T-to-N voltage"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:TNVoltage .
+
+<https://astrea.linkeddata.es/shapes#90f8b7d2f48296cd1a18a1d1577190cc>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "phase to neutral voltage"@en , "Links a single phase power bus or a single phase connection point to the voltage between its phase and neutral wires."@en ;
+        sh:class          seas:VoltageProperty ;
+        sh:description    "Links a single phase power bus or a single phase connection point to the voltage between its phase and neutral wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "phase to neutral voltage"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:phaseToNeutralVoltage .
+
+<https://astrea.linkeddata.es/shapes#e5eb37732eeb10e27f141ac65e4c81b8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a direct current power bus or a direct current connection point to the voltage between its positive and its negative wires."@en , "positive to negative voltage"@en ;
+        sh:class          seas:VoltageProperty ;
+        sh:description    "Links a direct current power bus or a direct current connection point to the voltage between its positive and its negative wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "positive to negative voltage"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:positiveToNegativeVoltage .
+
+<https://astrea.linkeddata.es/shapes#13a3c2bc7c8b13473aa28f74a38ee4d2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Angle Evaluation" ;
+        sh:description    "The class of evaluations for angle properties."@en ;
+        sh:name           "Angle Evaluation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#860ac3328bd6c660f537ef52bd82ccf7> ;
+        sh:targetClass    seas:AngleEvaluation .
+
+<https://astrea.linkeddata.es/shapes#a72293b5720d61799034b5fb46fbc7cc>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Conductance Evaluation" ;
+        sh:description    "The class of evaluations for electric conductance properties."@en ;
+        sh:name           "Electric Conductance Evaluation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#137b6b24d99eb2257376f6f87f05820c> ;
+        sh:targetClass    seas:ElectricConductanceEvaluation .
+
+<https://astrea.linkeddata.es/shapes#cddf41507dd5d3952cfd78e3b312b3e7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BatteryOntology ;
+        rdfs:label        "Battery" ;
+        sh:description    "The class of batteries, which are electric power storage systems."@en ;
+        sh:name           "Battery" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#5ca5f3dc3edd0476532c50cb4f0d0582> ;
+        sh:targetClass    seas:Battery .
+
+<https://astrea.linkeddata.es/shapes#e507b94876d77770ea1e3a73f9ea9ca3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a direct current connection point to the resistance between its positive and its negative wires."@en , "positive to negative resistance"@en ;
+        sh:class          seas:ElectricResistanceProperty ;
+        sh:description    "Links a direct current connection point to the resistance between its positive and its negative wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "positive to negative resistance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:positiveToNegativeResistance .
+
+<https://astrea.linkeddata.es/shapes#6faa835ee36c1441878ccda41ea66794>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Split Phase Current Connection Point"@en ;
+        sh:description    "The class of power connection points through which energy flows using split-phase alternating current."@en ;
+        sh:name           "Split Phase Current Connection Point"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:SplitPhaseConnectionPoint .
+
+<https://astrea.linkeddata.es/shapes#b2762c6a5768260ca9a81576cf98ca6c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Digital ballast "@en ;
+        sh:description    "A Digital ballast is a Ballast which is Digital"@en ;
+        sh:name           "Digital ballast "@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:DigitalBallast .
+
+<https://astrea.linkeddata.es/shapes#5a4130aa977c9c11ed5248b72011964e>
+        sh:path                 seas:evaluationOf ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  seas:ElectricReactanceProperty ] .
+
+<https://astrea.linkeddata.es/shapes#b45eb0ee14b6b2df08e85b04ff64eec6>
+        sh:path                 seas:evaluationOf ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  seas:ElectricPowerProperty ] .
+
+<https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  voaf:Vocabulary .
+
+<https://astrea.linkeddata.es/shapes#0c23b432c722782884b2d10fcd167da1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connects primarily at"@en , "Links an electric power transformer to its primary connection point"@en ;
+        sh:class          seas:ElectricalConnectionPoint ;
+        sh:description    "Links an electric power transformer to its primary connection point"@en ;
+        sh:name           "connects primarily at"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsPrimarilyAt .
+
+<https://astrea.linkeddata.es/shapes#c798b835d1da2242e46516ba7188ff29>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "voltage angle" , "Link the voltage property to the angle."@en ;
+        sh:class          seas:AngleProperty ;
+        sh:description    "Link the voltage property to the angle."@en ;
+        sh:name           "voltage angle" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:voltageAngle .
+
+<https://astrea.linkeddata.es/shapes#964e6ae845fbf5a31ef3984bfb4b8f3a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase power bus to one of the electric power systems it connects with a TN configuration."@en , "connects system in TN"@en ;
+        sh:class          seas:ElectricPowerSystem ;
+        sh:description    "Links a three-phase power bus to one of the electric power systems it connects with a TN configuration."@en ;
+        sh:disjoint       seas:connectsSystemInRN ;
+        sh:name           "connects system in TN"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemInTN .
+
+<https://astrea.linkeddata.es/shapes#860ac3328bd6c660f537ef52bd82ccf7>
+        sh:path                 seas:evaluationOf ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  seas:AngleProperty ] .
+
+<https://astrea.linkeddata.es/shapes#da82e4a15f776970f8a37b855018d3f3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connected in triangle through"@en , "Links an electric power system to a three-phase power bus connection with which it is connected with a triangle configuration."@en ;
+        sh:class          seas:ThreePhasePowerBus ;
+        sh:description    "Links an electric power system to a three-phase power bus connection with which it is connected with a triangle configuration."@en ;
+        sh:name           "connected in triangle through"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectedInTriangleThrough .
+
+<https://astrea.linkeddata.es/shapes#51ecf33f8bd6a4213be94d0efd67501c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "T-to-R reactance"@en , "Links a three-phase connection point to the reactance between its T and its R wires."@en ;
+        sh:class          seas:ElectricReactanceProperty ;
+        sh:description    "Links a three-phase connection point to the reactance between its T and its R wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "T-to-R reactance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:TRReactance .
+
+<https://astrea.linkeddata.es/shapes#1563ed0a1d4b144e950d6a57659ee062>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase connection point to the conductance between its R and its S wires."@en , "R-to-S conductance"@en ;
+        sh:class          seas:ElectricConductanceProperty ;
+        sh:description    "Links a three-phase connection point to the conductance between its R and its S wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "R-to-S conductance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:RSConductance .
+
+<https://astrea.linkeddata.es/shapes#f3b517b61629adc7fd5af1c073241ec7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a direct current connection point to the susceptance between its positive and its mid wires."@en , "positive to mid susceptance"@en ;
+        sh:class          seas:ElectricSusceptanceProperty ;
+        sh:description    "Links a direct current connection point to the susceptance between its positive and its mid wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "positive to mid susceptance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:positiveToMidSusceptance .
+
+<https://astrea.linkeddata.es/shapes#7761b48f3efe4ba1a46f80e2b436ebf1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Power Line"@en ;
+        sh:description    "An electric power line is an electric transmission system that is capable of transmitting electricity on a certain distance within an electric power network.\r\n\r\n    An electric power line must be connected to two power connections, although this requirement cannot be modeled using OWL axioms if we want to remain in a decidable fragment."@en ;
+        sh:name           "Electric Power Line"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ElectricPowerLine .
+
+<https://astrea.linkeddata.es/shapes#36f32a10a9fc3ffb0513693ae87fb8ef>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a direct current connection point to the conductance between its positive and its mid wires."@en , "positive to mid conductance"@en ;
+        sh:class          seas:ElectricConductanceProperty ;
+        sh:description    "Links a direct current connection point to the conductance between its positive and its mid wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "positive to mid conductance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:positiveToMidConductance .
+
+<https://astrea.linkeddata.es/shapes#9316217051a9e4f25c70570b2c6d1b23>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "exchanges electricity with"@en , "Links an electric power system to another electric power system it exchanges electricity with. \r\n\r\n  This property can be qualified using class seas:ElectricalConnection, which connects (at least) the two electric power systems.\r\n  For example, for the electricity to flow between a battery and a light, then they must share an electrical connection:\r\n\r\n```\r\n  <battery> a seas:ElectricPowerSystem .\r\n  <light> a seas:ElectricPowerSystem .\r\n  <battery> seas:exchangesElectricityWith <light> . \r\n```\r\n\r\n  If there is an electrical connection between several electric power systems, then one may infer these electric power systems can exchange electricity."@en ;
+        sh:class          seas:ElectricPowerSystem ;
+        sh:description    "Links an electric power system to another electric power system it exchanges electricity with. \r\n\r\n  This property can be qualified using class seas:ElectricalConnection, which connects (at least) the two electric power systems.\r\n  For example, for the electricity to flow between a battery and a light, then they must share an electrical connection:\r\n\r\n```\r\n  <battery> a seas:ElectricPowerSystem .\r\n  <light> a seas:ElectricPowerSystem .\r\n  <battery> seas:exchangesElectricityWith <light> . \r\n```\r\n\r\n  If there is an electrical connection between several electric power systems, then one may infer these electric power systems can exchange electricity."@en ;
+        sh:name           "exchanges electricity with"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:exchangesElectricityWith .
+
+<https://astrea.linkeddata.es/shapes#757ccd1b266f5b34a6d7619bd039e86f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "S-to-N voltage"@en , "Links a three-phase power bus or a three-phase connection point to the voltage between its S and its N wires."@en ;
+        sh:class          seas:VoltageProperty ;
+        sh:description    "Links a three-phase power bus or a three-phase connection point to the voltage between its S and its N wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "S-to-N voltage"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:SNVoltage .
+
+<https://astrea.linkeddata.es/shapes#fd20656859e0bf9fa08ddbdc9d57b018>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connects system in Hot1-to-N"@en , "Links a split-phase power bus to one of the electric power systems it connects with a hot1-to-N configuration."@en ;
+        sh:class          seas:ElectricPowerSystem ;
+        sh:description    "Links a split-phase power bus to one of the electric power systems it connects with a hot1-to-N configuration."@en ;
+        sh:name           "connects system in Hot1-to-N"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemInHot1N .
+
+<https://astrea.linkeddata.es/shapes#dbf5497d8a4ee2412e2f4d915f5d9644>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connects secondarily at"@en , "Links an electric power transformer to its secondary connection point"@en ;
+        sh:class          seas:ElectricalConnectionPoint ;
+        sh:description    "Links an electric power transformer to its secondary connection point"@en ;
+        sh:name           "connects secondarily at"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSecondarilyAt .
+
+<https://astrea.linkeddata.es/shapes#60ce6b9c97a4cbd53e40573152d21572>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a single phase connection point to a three-phase power bus connection with which it is connected with a RN configuration."@en , "connects system in RN through"@en ;
+        sh:class          seas:ThreePhasePowerBus ;
+        sh:description    "Links a single phase connection point to a three-phase power bus connection with which it is connected with a RN configuration."@en ;
+        sh:disjoint       seas:connectsSystemInSNThrough ;
+        sh:name           "connects system in RN through"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemInRNThrough .
+
+<https://astrea.linkeddata.es/shapes#c3c3a140fc73451ebf33ddcb9f86e843>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Power Storage System"@en ;
+        sh:description    "An electric power storage system is an electric power system that is capable of storing electricity. Usually a battery, an electric vehicle, or a microgrid"@en ;
+        sh:name           "Electric Power Storage System"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ElectricPowerStorageSystem .
+
+<https://astrea.linkeddata.es/shapes#9c7c889445d3a3cea045d17d2a613faa>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connects system in Hot2-to-N"@en , "Links a split-phase power bus to one of the electric power systems it connects with a hot2-to-N configuration."@en ;
+        sh:class          seas:ElectricPowerSystem ;
+        sh:description    "Links a split-phase power bus to one of the electric power systems it connects with a hot2-to-N configuration."@en ;
+        sh:name           "connects system in Hot2-to-N"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemInHot2N .
+
+<https://astrea.linkeddata.es/shapes#dda6dfccfd63acccc655378ff231b95b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "electric resistance" , "Links an electrical connection point to one of its resistance properties.\r\n\r\nThere may be many resistance properties of an electrical connection point, so this property is not functional."@en ;
+        sh:class          seas:ElectricResistanceProperty ;
+        sh:description    "Links an electrical connection point to one of its resistance properties.\r\n\r\nThere may be many resistance properties of an electrical connection point, so this property is not functional."@en ;
+        sh:name           "electric resistance" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:electricResistance .
+
+<https://astrea.linkeddata.es/shapes#b76096ea1f4f831742bb59cc5284444b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Power Transmission System"@en , "Sistema de Transmissão"@pt ;
+        sh:description    "An electric power transmission system is an electric power system that is capable of transmitting electricity. \r\n  Usually to transmit electricity on a certain distance within an electric power network, or to transform it."@en ;
+        sh:name           "Electric Power Transmission System"@en , "Sistema de Transmissão"@pt ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ElectricPowerTransmissionSystem .
+
+<https://astrea.linkeddata.es/shapes#816eb3fd352fb524a04d05ad012e0679>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connected in Hot2-to-N through"@en , "Links an electric power system to a split-phase power bus connection with which it is connected with a hot2-to-N configuration."@en ;
+        sh:class          seas:SplitPhasePowerBus ;
+        sh:description    "Links an electric power system to a split-phase power bus connection with which it is connected with a hot2-to-N configuration."@en ;
+        sh:disjoint       seas:connectedInHot1NThrough ;
+        sh:name           "connected in Hot2-to-N through"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectedInHot2NThrough .
+
+<https://astrea.linkeddata.es/shapes#5b3c695e13680e86ecdd8f2ccad150d3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Angle Property" ;
+        sh:description    "The class of properties that are quantifiable and measure the angle property ."@en ;
+        sh:name           "Angle Property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:AngleProperty .
+
+<https://astrea.linkeddata.es/shapes#b1c83350237a7234aca21b800de7e5e8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connected in Hot1-to-N through"@en , "Links an electric power system to a split-phase power bus connection with which it is connected with a hot1-to-N configuration."@en ;
+        sh:class          seas:SplitPhasePowerBus ;
+        sh:description    "Links an electric power system to a split-phase power bus connection with which it is connected with a hot1-to-N configuration."@en ;
+        sh:name           "connected in Hot1-to-N through"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectedInHot1NThrough .
+
+<https://astrea.linkeddata.es/shapes#2b593719943c12b4bf8e99602ca49fcc>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "R-to-N conductance"@en , "Links a three-phase connection point to the conductance between its R and its N wires."@en ;
+        sh:class          seas:ElectricConductanceProperty ;
+        sh:description    "Links a three-phase connection point to the conductance between its R and its N wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "R-to-N conductance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:RNConductance .
+
+<https://astrea.linkeddata.es/shapes#833bb9db1c8816f8171dc80c079c434c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase connection point to the reactance between its S and its N wires."@en , "S-to-N reactance"@en ;
+        sh:class          seas:ElectricReactanceProperty ;
+        sh:description    "Links a three-phase connection point to the reactance between its S and its N wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "S-to-N reactance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:SNReactance .
+
+<https://astrea.linkeddata.es/shapes#382aa5d49653d21c74b970d608d4aa79>
+        sh:path                 seas:evaluationOf ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  seas:ElectricEnergyProperty ] .
+
+<https://astrea.linkeddata.es/shapes#62a1ba3c7716c8cddd43f3754ee5a4ac>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connected in Hot2-to-Hot1 through"@en , "Links an electric power system to a split-phase power bus connection with which it is connected with a hot2-to-hot1 configuration."@en ;
+        sh:class          seas:SplitPhasePowerBus ;
+        sh:description    "Links an electric power system to a split-phase power bus connection with which it is connected with a hot2-to-hot1 configuration."@en ;
+        sh:disjoint       seas:connectedInHot2NThrough , seas:connectedInHot1Hot2Through , seas:connectedInHot1NThrough ;
+        sh:name           "connected in Hot2-to-Hot1 through"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectedInHot2Hot1Through .
+
+<https://astrea.linkeddata.es/shapes#2aea683738febbb2949a71ddc514f791>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Susceptance Property" ;
+        sh:description    "The class of properties that are quantifiable and have a quantity kind of electric susceptance."@en ;
+        sh:name           "Electric Susceptance Property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ElectricSusceptanceProperty .
+
+<https://astrea.linkeddata.es/shapes#72589c96df66c5438f852f1aa0acd461>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a direct current connection point to the reactance between its mid and its negative wires."@en , "mid to negative reactance"@en ;
+        sh:class          seas:ElectricReactanceProperty ;
+        sh:description    "Links a direct current connection point to the reactance between its mid and its negative wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "mid to negative reactance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:midToNegativeReactance .
+
+<https://astrea.linkeddata.es/shapes#962f3283abaf86ff907bf8715dd0d05b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Charging Efficiency Evaluation" ;
+        sh:description    "The class of evaluations for efficiency properties."@en ;
+        sh:name           "Charging Efficiency Evaluation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#19b4c87547ad4f8342243544b3420f96> ;
+        sh:targetClass    seas:ChargingEfficiencyEvaluation .
+
+<https://astrea.linkeddata.es/shapes#f57f5551ae7c40ac6d901222eb3f11db>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase connection point to the current in its R wire. By convention, the value is positive if it enters the system."@en , "R Current"@en ;
+        sh:class          seas:CurrentProperty ;
+        sh:description    "Links a three-phase connection point to the current in its R wire. By convention, the value is positive if it enters the system."@en ;
+        sh:maxCount       1 ;
+        sh:name           "R Current"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:rCurrent .
+
+<https://astrea.linkeddata.es/shapes#bbd87ce2ee8dec951d766e84a45d7190>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "electric susceptance" , "Links an electrical connection point to one of its susceptance properties.\r\n\r\nThere may be many susceptance properties of an electrical connection point, so this property is not functional."@en ;
+        sh:class          seas:ElectricSusceptanceProperty ;
+        sh:description    "Links an electrical connection point to one of its susceptance properties.\r\n\r\nThere may be many susceptance properties of an electrical connection point, so this property is not functional."@en ;
+        sh:name           "electric susceptance" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:electricSusceptance .
+
+<https://astrea.linkeddata.es/shapes#6b3c84a3f6245b3245bfc2abc7782430>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links an electric power system to the consumed electric power."@en , "consumed electric power" ;
+        sh:class          seas:ElectricPowerProperty ;
+        sh:description    "Links an electric power system to the consumed electric power."@en ;
+        sh:maxCount       1 ;
+        sh:name           "consumed electric power" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:consumedElectricPower .
+
+<https://astrea.linkeddata.es/shapes#48304debb5110237e7329ed19fbb29e6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connects system in star"@en , "Links a three-phase power bus to one of the electric power systems it connects with a star configuration."@en ;
+        sh:class          seas:ElectricPowerSystem ;
+        sh:description    "Links a three-phase power bus to one of the electric power systems it connects with a star configuration."@en ;
+        sh:disjoint       seas:connectsSystemInTriangle ;
+        sh:name           "connects system in star"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemInStar .
+
+<https://astrea.linkeddata.es/shapes#f167b994aede4e21b1a049d2cbd81bc7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a direct current connection point to the current in its negative wire. By convention, the value is positive if it enters the system.\r\n\r\n  Please contact us in case this convention is incorrect."@en , "negative wire current"@en ;
+        sh:class          seas:CurrentProperty ;
+        sh:description    "Links a direct current connection point to the current in its negative wire. By convention, the value is positive if it enters the system.\r\n\r\n  Please contact us in case this convention is incorrect."@en ;
+        sh:maxCount       1 ;
+        sh:name           "negative wire current"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:negativeWireCurrent .
+
+<https://astrea.linkeddata.es/shapes#81819d0c3339be35950114c23d54068d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "secondarily connected through"@en , "Links an electric power transformer to its secondary connection"@en ;
+        sh:class          seas:ElectricalConnection ;
+        sh:description    "Links an electric power transformer to its secondary connection"@en ;
+        sh:name           "secondarily connected through"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:secondarilyConnectedThrough .
+
+<https://astrea.linkeddata.es/shapes#14711b0603b90565090294f3d3c708c5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Three-Phase Power Bus"@en ;
+        sh:description    "A three-phase power bus is a connection composed of four wires (plus the protective earth): \r\n     wires R, S, T, for the phases;\r\n     wire N for the neutral."@en ;
+        sh:name           "Three-Phase Power Bus"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#a83f601a5749b1c46031a9ca8daa134e> , <https://astrea.linkeddata.es/shapes#5b49d6c8ae13b25f40b6a5a4e5b5caa9> , <https://astrea.linkeddata.es/shapes#964e6ae845fbf5a31ef3984bfb4b8f3a> , <https://astrea.linkeddata.es/shapes#5ec4c4b1bf261a91248421846bb72937> , <https://astrea.linkeddata.es/shapes#48304debb5110237e7329ed19fbb29e6> , <https://astrea.linkeddata.es/shapes#aef4560868463d25dd152c76f924802d> , <https://astrea.linkeddata.es/shapes#60942b7c7185b03c98e9e09f9b636d32> , <https://astrea.linkeddata.es/shapes#4e3c18c00bd5afbf991efba0edcf1479> , <https://astrea.linkeddata.es/shapes#a8a65311eea42a38447e78276e14f1e6> , <https://astrea.linkeddata.es/shapes#328d08b58ca9869c7abea9c986ba8b47> , <https://astrea.linkeddata.es/shapes#d04be384a8017c6aec3aa2c68f8456b1> , <https://astrea.linkeddata.es/shapes#fb6fa0bf97d5961a3e4399827669dc1e> , <https://astrea.linkeddata.es/shapes#757ccd1b266f5b34a6d7619bd039e86f> , <https://astrea.linkeddata.es/shapes#9c32d26bfbf10700efe5f1cedaa11c12> , <https://astrea.linkeddata.es/shapes#6576f743ddca8613a499ef6c06c2d4e8> , <https://astrea.linkeddata.es/shapes#3c6cd5927e16d1fa00c51039fbb3dd3f> ;
+        sh:targetClass    seas:ThreePhasePowerBus .
+
+<https://astrea.linkeddata.es/shapes#ae1732e83994f38150c0267d9bbdb92f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "incoming electric energy" , "Links an electric energy system, or an electrical connection point, to the incoming electric energy.\r\n    (a) the sum of the electric energy that enter the system from the exterior, or\r\n    (b) the electric energy that enters the system through this connection point."@en ;
+        sh:class          seas:ElectricEnergyProperty ;
+        sh:description    "Links an electric energy system, or an electrical connection point, to the incoming electric energy.\r\n    (a) the sum of the electric energy that enter the system from the exterior, or\r\n    (b) the electric energy that enters the system through this connection point."@en ;
+        sh:maxCount       1 ;
+        sh:name           "incoming electric energy" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:incomingElectricEnergy .
+
+<https://astrea.linkeddata.es/shapes#6ed00810bc454667963f9ea5ecb96ee3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Power System"@en ;
+        sh:description    "The class of electric power systems, i.e., systems that exchange electricity (i.e., electric power) with other systems.\r\n\r\nElectric power systems may consume, produce, or store electricity. Such systems are defined by subclasses of electric power system.\r\nElectric power systems that dissipate energy are thermodynamic systems (i.e., they can then dissipate heat).\r\n\r\n  Electric power systems can exchange electricity with other electric power systems. \r\n  These exchange are only possible through electrical connections between electric power systems.\r\n\r\n  Electric power systems can have sub power systems:\r\n\r\n- The consumed or produced electricity of subsystems contribute to the consumed or produced electricity of the supersystem;\r\n- the stored electricity of subsystems contribute to the stored electricity of super systems."@en ;
+        sh:name           "Electric Power System"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#95ff5e705ebbb9ae5c59af633fc5f58e> , <https://astrea.linkeddata.es/shapes#b1c83350237a7234aca21b800de7e5e8> , <https://astrea.linkeddata.es/shapes#54b487394e38c4af289a9e67cf7a4851> , <https://astrea.linkeddata.es/shapes#62a1ba3c7716c8cddd43f3754ee5a4ac> , <https://astrea.linkeddata.es/shapes#1a4f92a771e99d13fab432a775699998> , <https://astrea.linkeddata.es/shapes#3c6a5fda420d686f6fffcac026ba92c1> , <https://astrea.linkeddata.es/shapes#e2e7e25447c5f2df7ef5df6e387b4745> , <https://astrea.linkeddata.es/shapes#89f69fc9efc03752ab39e9830a6056e4> , <https://astrea.linkeddata.es/shapes#07109a7e05ad44084089cab4c1d826c3> , <https://astrea.linkeddata.es/shapes#293439ca1f37c5b95117b69294d13ec7> , <https://astrea.linkeddata.es/shapes#46d724ee86ac6ef9478cfd8ab4701599> , <https://astrea.linkeddata.es/shapes#de77af30ec04bd2c28f756c23937f532> , <https://astrea.linkeddata.es/shapes#816eb3fd352fb524a04d05ad012e0679> , <https://astrea.linkeddata.es/shapes#a07c8b7efe002a22b4a93a166eb84e3f> , <https://astrea.linkeddata.es/shapes#0189a0ab0643ebdf647c58ded6462e8d> , <https://astrea.linkeddata.es/shapes#ff624297c2cc1447e8ad865e0c90c1c1> , <https://astrea.linkeddata.es/shapes#6b3c84a3f6245b3245bfc2abc7782430> , <https://astrea.linkeddata.es/shapes#0c04d45689526ae8c7afa3549c69e10c> , <https://astrea.linkeddata.es/shapes#da82e4a15f776970f8a37b855018d3f3> , <https://astrea.linkeddata.es/shapes#66443c55156fc81d6cf3379d69435e10> , <https://astrea.linkeddata.es/shapes#d60c8d3b0ee4f269b84d2429f9badac8> , <https://astrea.linkeddata.es/shapes#ae1732e83994f38150c0267d9bbdb92f> , <https://astrea.linkeddata.es/shapes#b8f403ca5cdc6e82f488aa6374207dd9> , <https://astrea.linkeddata.es/shapes#9316217051a9e4f25c70570b2c6d1b23> , <https://astrea.linkeddata.es/shapes#6b8375b3ae4bb6e1d8ede347ce2f6917> ;
+        sh:targetClass    seas:ElectricPowerSystem .
+
+<https://astrea.linkeddata.es/shapes#028f17dff650740a596224dd7da1f3ea>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Current Property" ;
+        sh:description    "The class of properties that are quantifiable and use a quantity dimension of electric current."@en ;
+        sh:name           "Current Property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:CurrentProperty .
+
+<https://astrea.linkeddata.es/shapes#674d0e55dffc5b2a7e6b2f944b0a5e12>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "mid to negative susceptance"@en , "Links a direct current connection point to the susceptance between its mid and its negative wires."@en ;
+        sh:class          seas:ElectricSusceptanceProperty ;
+        sh:description    "Links a direct current connection point to the susceptance between its mid and its negative wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "mid to negative susceptance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:midToNegativeSusceptance .
+
+<https://astrea.linkeddata.es/shapes#03c61adb3bdabe5002db5cfd138b0347>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase connection point to the resistance between its T and its R wires."@en , "T-to-R resistance"@en ;
+        sh:class          seas:ElectricResistanceProperty ;
+        sh:description    "Links a three-phase connection point to the resistance between its T and its R wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "T-to-R resistance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:TRResistance .
+
+<https://astrea.linkeddata.es/shapes#5321a95623684b22bdee3f2f8e638620>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Three-Wire Direct Current Connection Point"@en ;
+        sh:description    "A three-wire direct current power connection point is a connection point composed of three wires (potentialy plus the protective earth): \r\n\r\n- wire for the positive;\r\n- wire for the mid-wire;\r\n- wire for the negative.\r\n"@en ;
+        sh:name           "Three-Wire Direct Current Connection Point"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ThreeWireDirectCurrentConnectionPoint .
+
+<https://astrea.linkeddata.es/shapes#ea4d9226d4f8947fa5ee29b29662cc83>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "positive to mid voltage"@en , "Links a direct current power bus or a direct current connection point to the voltage between its positive and its mid wires."@en ;
+        sh:class          seas:VoltageProperty ;
+        sh:description    "Links a direct current power bus or a direct current connection point to the voltage between its positive and its mid wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "positive to mid voltage"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:positiveToMidVoltage .
+
+<https://astrea.linkeddata.es/shapes#3ddc0a349a06cb99a561f4e2a08bf3eb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase connection point to the reactance between its R and its N wires."@en , "R-to-N reactance"@en ;
+        sh:class          seas:ElectricReactanceProperty ;
+        sh:description    "Links a three-phase connection point to the reactance between its R and its N wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "R-to-N reactance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:RNReactance .
+
+<https://astrea.linkeddata.es/shapes#d60c8d3b0ee4f269b84d2429f9badac8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links an electric power system to the storage electric power."@en , "storage electric power" ;
+        sh:class          seas:ElectricPowerProperty ;
+        sh:description    "Links an electric power system to the storage electric power."@en ;
+        sh:maxCount       1 ;
+        sh:name           "storage electric power" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:storageElectricPower .
+
+<https://astrea.linkeddata.es/shapes#19b4c87547ad4f8342243544b3420f96>
+        sh:path                 seas:evaluationOf ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  seas:ChargingEfficiencyProperty ] .
+
+<https://astrea.linkeddata.es/shapes#09381a3531ce97646dd1f25ae5f2f8c8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Power Evaluation" ;
+        sh:description    "The class of evaluations for electric power properties."@en ;
+        sh:name           "Electric Power Evaluation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#b45eb0ee14b6b2df08e85b04ff64eec6> ;
+        sh:targetClass    seas:ElectricPowerEvaluation .
+
+<https://astrea.linkeddata.es/shapes#6bbce4d62d3312700bad5bf6a924774e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a direct current connection point to the susceptance between its positive and its negative wires."@en , "positive to negative susceptance"@en ;
+        sh:class          seas:ElectricSusceptanceProperty ;
+        sh:description    "Links a direct current connection point to the susceptance between its positive and its negative wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "positive to negative susceptance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:positiveToNegativeSusceptance .
+
+<https://astrea.linkeddata.es/shapes#84b76e3468ae74a886d52c6bb072eb16>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "efficiency"@en , "The efficiency of the feature of interest."@en ;
+        sh:class          seas:EfficiencyProperty ;
+        sh:description    "The efficiency of the feature of interest."@en ;
+        sh:maxCount       1 ;
+        sh:name           "efficiency"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:efficiency .
+
+<https://astrea.linkeddata.es/shapes#677cebc9b893beaa8a0b9944117a92e9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a single phase connection point to the susceptance between its phase and neutral wires."@en , "phase to neutral susceptance"@en ;
+        sh:class          seas:ElectricSusceptanceProperty ;
+        sh:description    "Links a single phase connection point to the susceptance between its phase and neutral wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "phase to neutral susceptance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:phaseToNeutralSusceptance .
+
+<https://astrea.linkeddata.es/shapes#bc00dd47f8a48d133575fbc22fb2837f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "positive to negative reactance"@en , "Links a direct current connection point to the reactance between its positive and its negative wires."@en ;
+        sh:class          seas:ElectricReactanceProperty ;
+        sh:description    "Links a direct current connection point to the reactance between its positive and its negative wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "positive to negative reactance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:positiveToNegativeReactance .
+
+<https://astrea.linkeddata.es/shapes#90eaf4e2d5f7486e26ae9a05919b2622>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Alternating Current Connection Point"@en ;
+        sh:description    "The class of electric power connection points through which energy flows using alternating current."@en ;
+        sh:name           "Alternating Current Connection Point"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#c074655e39121cf7878f7176e4fed8e6> ;
+        sh:targetClass    seas:AlternatingCurrentConnectionPoint .
+
+<https://astrea.linkeddata.es/shapes#66443c55156fc81d6cf3379d69435e10>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links an electric power system, or an electrical connection point, to the balance between the incoming electric power and the outgoing electric power."@en , "electric power balance" ;
+        sh:class          seas:ElectricPowerProperty ;
+        sh:description    "Links an electric power system, or an electrical connection point, to the balance between the incoming electric power and the outgoing electric power."@en ;
+        sh:maxCount       1 ;
+        sh:name           "electric power balance" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:electricPowerBalance .
+
+<https://astrea.linkeddata.es/shapes#ea9ddd6377c69336d4d3e9c961ebc7f3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Power Transformer"@en ;
+        sh:description    "An electric power transformer is an electric power system that is capable of transforming electricity within a power network, between a primary connection point and a secondary connection point."@en ;
+        sh:name           "Electric Power Transformer"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#0c23b432c722782884b2d10fcd167da1> , <https://astrea.linkeddata.es/shapes#6ccc2acb8c0fe10cbe73423add9be92c> , <https://astrea.linkeddata.es/shapes#dbf5497d8a4ee2412e2f4d915f5d9644> , <https://astrea.linkeddata.es/shapes#81819d0c3339be35950114c23d54068d> , <https://astrea.linkeddata.es/shapes#1b8cb8901b9a9dd76d08afddf8c2573d> ;
+        sh:targetClass    seas:ElectricPowerTransformer .
+
+<https://astrea.linkeddata.es/shapes#2339f47fdd6788c87f788c1ea05b7fed>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase connection point to the reactance between its T and its N wires."@en , "T-to-N reactance"@en ;
+        sh:class          seas:ElectricReactanceProperty ;
+        sh:description    "Links a three-phase connection point to the reactance between its T and its N wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "T-to-N reactance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:TNReactance .
+
+<https://astrea.linkeddata.es/shapes#43fd29a3817d278b3ed050c24430cb9b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase connection point to the susceptance between its R and its S wires."@en , "R-to-S susceptance"@en ;
+        sh:class          seas:ElectricSusceptanceProperty ;
+        sh:description    "Links a three-phase connection point to the susceptance between its R and its S wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "R-to-S susceptance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:RSSusceptance .
+
+<https://astrea.linkeddata.es/shapes#59b72acb0dcc02fb8613fb750c28accb>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Susceptance Evaluation" ;
+        sh:description    "The class of evaluations for electric susceptance properties."@en ;
+        sh:name           "Electric Susceptance Evaluation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#f3e618d5d8bcd675e5c8022c9418f619> ;
+        sh:targetClass    seas:ElectricSusceptanceEvaluation .
+
+<https://astrea.linkeddata.es/shapes#c80f2fb1ef94860b1b1d8375cb25d650>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "connects system in SN through"@en , "Links a single phase connection point to a three-phase power bus connection with which it is connected with a SN configuration."@en ;
+        sh:class          seas:ThreePhasePowerBus ;
+        sh:description    "Links a single phase connection point to a three-phase power bus connection with which it is connected with a SN configuration."@en ;
+        sh:disjoint       seas:connectsSystemInTNThrough ;
+        sh:name           "connects system in SN through"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemInSNThrough .
+
+<https://astrea.linkeddata.es/shapes#e3356f0adef130a547b73cf8e73d88b8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Electric Power Producer"@en ;
+        sh:description    "An electric power producer is an electric power system that is capable of producing electricity."@en ;
+        sh:name           "Electric Power Producer"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ElectricPowerProducer .
+
+<https://astrea.linkeddata.es/shapes#128616012017be031bff742d4e6b09d3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase connection point to the resistance between its S and its T wires."@en , "S-to-T resistance"@en ;
+        sh:class          seas:ElectricResistanceProperty ;
+        sh:description    "Links a three-phase connection point to the resistance between its S and its T wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "S-to-T resistance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:STResistance .

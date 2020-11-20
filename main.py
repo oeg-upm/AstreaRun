@@ -88,54 +88,51 @@ def convert_triple(filename):
 
 def run_astrea(ontofile):
 
-    url = 'https://astrea.linkeddata.es/api/shacl/file'
+    url = 'https://astrea.linkeddata.es/api/shacl/document'
 
     if ontofile != 'all':
-        # with open(ontofile, 'r') as file:
-        #    content = file.read()
-        # input_file = {'ontology': content, 'serialisation': 'N-Triples'}
-        headers = {"access-control-allow-origin": "*",
-        "connection": "Keep-Alive",
-        "content-length": "75160",
-        "content-type": "text/rdf+turtle;charset=UTF-8",
-        "date": "Mon, 16 Nov 2020 13:28:25 GMT",
-        "keep-alive": "timeout=5, max=100",
-        "server": "Astrea Service"}
-        input_file = {"Content-Type": "multipart/form-data", "accept": "text/rdf+turtle", "file": ontofile, "format": "n-triple"}
+        with open(ontofile, 'r') as file:
+            content = file.read()
+        headers = {"content-type": "application/json"}
+        input_file = {"ontology": content, "serialisation": "N-Triples"}
         x = requests.post(url, json=input_file, headers=headers)
-        print(x)
+        os.chdir(shapes_dir)
+        with open(ontofile.replace(".nt", "")+'shape.ttl', 'w') as file:
+            file.write(x.content.decode())
+        path_parent = os.path.dirname(os.getcwd())
+        os.chdir(path_parent)
 
     if ontofile == 'all':
         for filename in os.listdir(onto_dir):
-            os.chdir(onto_dir)
-            # with open(filename, 'r') as file:
-            #    content = file.read()
-            # print(content)
-            input_file = {filename}
-            print(input_file)
-            x = requests.post(url, json=input_file)
-            print(x)
-            path_parent = os.path.dirname(os.getcwd())
-            os.chdir(path_parent)
-
-    # put all resulting files in Shapes folder with matching names
+            if filename.endswith('.nt'):
+                os.chdir(onto_dir)
+                with open(filename, 'r') as file:
+                    content = file.read()
+                headers = {"content-type": "application/json"}
+                input_file = {"ontology": content, "serialisation": "N-Triples"}
+                x = requests.post(url, json=input_file, headers=headers)
+                path_parent = os.path.dirname(os.getcwd())
+                os.chdir(path_parent)
+                os.chdir(shapes_dir)
+                with open(filename.replace(".nt", "") + 'shape.ttl', 'w') as file:
+                    file.write(x.content.decode())
+                path_parent = os.path.dirname(os.getcwd())
+                os.chdir(path_parent)
 
 
 def main():
 
-    # create_folders(clean=True)
-    # input clean value = True to erase previous ontology and shapes folder before creating the new ones
+    create_folders(clean=True)
+    # input value clean = True to erase previous ontology and shapes folder before creating the new ones
 
-    # divide('lov.nq')
+    divide('lov.nq')
     # input filename to divide = "lov.nq" or "test.nq"...
 
-    # convert_triple(filename='all')
+    convert_triple(filename='all')
     # converts input file .nq to .nt (main.py folder level) or all files with ='all' (Ontologies folder)
 
-    run_astrea(ontofile='<http:aims.fao.orgaosgeopolitical.owl>.nt')
+    run_astrea(ontofile='all')
     # automatically generate shape files from filename or 'all' vocabularies with Astrea (same folder logic as above)
-
-    # TODO run_astrea(), save shapes files automatically with names
 
 
 if __name__ == '__main__':

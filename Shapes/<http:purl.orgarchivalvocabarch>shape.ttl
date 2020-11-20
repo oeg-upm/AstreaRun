@@ -1,0 +1,172 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#e4a63969285b9063cc9124960684d1a8>
+        a               sh:PropertyShape ;
+        rdfs:label      "Relates an arch:Archive to a collection that it holds.  Inverse of arch:heldBy" ;
+        sh:class        <http://purl.org/archival/vocab/arch#Collection> ;
+        sh:description  "Relates an arch:Archive to a collection that it holds.  Inverse of arch:heldBy" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/archival/vocab/arch#holds> .
+
+<https://astrea.linkeddata.es/shapes#b9186b38f29c1916fbfb22cd4c694021>
+        a               sh:PropertyShape ;
+        rdfs:label      "The beginning of a collection's inclusive dates" ;
+        sh:description  "The beginning of a collection's inclusive dates" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/archival/vocab/arch#inclusiveStart> .
+
+<https://astrea.linkeddata.es/shapes#dd90646bec69fe2d0f72d4a6be17a0f5>
+        a               sh:PropertyShape ;
+        rdfs:label      "Relates a foaf:Person, foaf:Organization, or arch:Family to a arch:Collection that they are referenced in." ;
+        sh:class        <http://purl.org/archival/vocab/arch#Collection> ;
+        sh:description  "Relates a foaf:Person, foaf:Organization, or arch:Family to a arch:Collection that they are referenced in." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/archival/vocab/arch#referencedIn> .
+
+<https://astrea.linkeddata.es/shapes#458d0e50aa300abd1e385588aab50e42>
+        a               sh:NodeShape ;
+        sh:description  "A collection of documents organized according to the principle of provenance." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#371751a777a7909fe3a2d17a6b544f18> , <https://astrea.linkeddata.es/shapes#379a9cb08035ae5e9a5533c71f166d23> ;
+        sh:targetClass  <http://purl.org/archival/vocab/arch#Collection> .
+
+<https://astrea.linkeddata.es/shapes#a9557cbafb854e7ffcdc46ca0d24b6e8>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Group> .
+
+<https://astrea.linkeddata.es/shapes#256bd1507ee9b0e675388546e57db7e8>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/dc/terms/subject> .
+
+<https://astrea.linkeddata.es/shapes#371751a777a7909fe3a2d17a6b544f18>
+        a               sh:PropertyShape ;
+        rdfs:label      "Property relating a arch:Collection to the names that are the provenance of that collection.  Inverse of arch:primaryProvenanceOf." ;
+        sh:class        <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description  "Property relating a arch:Collection to the names that are the provenance of that collection.  Inverse of arch:primaryProvenanceOf." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/archival/vocab/arch#hasProvenance> .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#dd90646bec69fe2d0f72d4a6be17a0f5> ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Person> .
+
+<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#644c62b7ee4488e5a83bd0bce16027ef> ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Agent> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#53b755fb8b9add83449930b282a4807b> , <https://astrea.linkeddata.es/shapes#daf74dd063206aca63c9f86cc69f15bf> , <https://astrea.linkeddata.es/shapes#5671f546fab3a1d20e23b830b306070b> , <https://astrea.linkeddata.es/shapes#fd1c063ccbf7f7bd63963daef2f40f29> , <https://astrea.linkeddata.es/shapes#689068c59e380d3abf995332cf56d295> , <https://astrea.linkeddata.es/shapes#379a9cb08035ae5e9a5533c71f166d23> , <https://astrea.linkeddata.es/shapes#5192bd4012546876e17387cec79301a1> , <https://astrea.linkeddata.es/shapes#b9186b38f29c1916fbfb22cd4c694021> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#b112e59eaa72312800a314d0e78b9d6b> , <https://astrea.linkeddata.es/shapes#dd90646bec69fe2d0f72d4a6be17a0f5> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> , <https://astrea.linkeddata.es/shapes#458d0e50aa300abd1e385588aab50e42> , <https://astrea.linkeddata.es/shapes#371751a777a7909fe3a2d17a6b544f18> , <https://astrea.linkeddata.es/shapes#644c62b7ee4488e5a83bd0bce16027ef> , <https://astrea.linkeddata.es/shapes#a9557cbafb854e7ffcdc46ca0d24b6e8> , <https://astrea.linkeddata.es/shapes#e4a63969285b9063cc9124960684d1a8> , <https://astrea.linkeddata.es/shapes#2fc00a5cd48b26a71354da21ec5b29d9> , <https://astrea.linkeddata.es/shapes#84099d4faa5b51d0d0a56780ecf524ff> , <https://astrea.linkeddata.es/shapes#f31288f45557f654fc2db4a369bebfa7> , <https://astrea.linkeddata.es/shapes#c257fce78883cc866d5761e21aa8f3c5> , <https://astrea.linkeddata.es/shapes#961eaf43e8e754a6d278435255e37a00> , <https://astrea.linkeddata.es/shapes#256bd1507ee9b0e675388546e57db7e8> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#f31288f45557f654fc2db4a369bebfa7>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/dc/terms/created> .
+
+<https://astrea.linkeddata.es/shapes#689068c59e380d3abf995332cf56d295>
+        a               sh:PropertyShape ;
+        rdfs:label      "Subjects related to a name in an archival collection.  Usually represents the subjects from a collection that a name is the arch:primaryProvenanceOf" , "Related Subject" ;
+        sh:description  "Subjects related to a name in an archival collection.  Usually represents the subjects from a collection that a name is the arch:primaryProvenanceOf" , "Related Subject" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/archival/vocab/arch#relatedSubject> .
+
+<https://astrea.linkeddata.es/shapes#961eaf43e8e754a6d278435255e37a00>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/archival/vocab/arch#correspondedWith> .
+
+<https://astrea.linkeddata.es/shapes#c257fce78883cc866d5761e21aa8f3c5>
+        a               sh:PropertyShape ;
+        rdfs:label      "The beginning of a collection's bulk dates" ;
+        sh:description  "The beginning of a collection's bulk dates" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/archival/vocab/arch#bulkStart> .
+
+<https://astrea.linkeddata.es/shapes#daf74dd063206aca63c9f86cc69f15bf>
+        a               sh:PropertyShape ;
+        rdfs:label      "The end of a collection's bulk dates" ;
+        sh:description  "The end of a collection's bulk dates" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/archival/vocab/arch#bulkEnd> .
+
+<https://astrea.linkeddata.es/shapes#2fc00a5cd48b26a71354da21ec5b29d9>
+        a               sh:PropertyShape ;
+        rdfs:label      "Name appears with another name in an archival collection" ;
+        sh:description  "Name appears with another name in an archival collection" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/archival/vocab/arch#appearsWith> .
+
+<https://astrea.linkeddata.es/shapes#fd1c063ccbf7f7bd63963daef2f40f29>
+        a               sh:NodeShape ;
+        sh:description  "An unpublished document in an arch:Collection" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/archival/vocab/arch#Manuscript> .
+
+<https://astrea.linkeddata.es/shapes#379a9cb08035ae5e9a5533c71f166d23>
+        a               sh:PropertyShape ;
+        rdfs:label      "Relates a arch:Collection to the archive that holds it.  Inverse of arch:holds" ;
+        sh:class        <http://purl.org/archival/vocab/arch#Archive> ;
+        sh:description  "Relates a arch:Collection to the archive that holds it.  Inverse of arch:holds" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/archival/vocab/arch#heldBy> .
+
+<https://astrea.linkeddata.es/shapes#5671f546fab3a1d20e23b830b306070b>
+        a               sh:PropertyShape ;
+        rdfs:label      "The end of a collection's inclusive dates" ;
+        sh:description  "The end of a collection's inclusive dates" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/archival/vocab/arch#inclusiveEnd> .
+
+<https://astrea.linkeddata.es/shapes#84099d4faa5b51d0d0a56780ecf524ff>
+        a               sh:NodeShape ;
+        sh:description  "For representing a family, a subclass of foaf:Group.  This class might be equivalent to a similar class in genealogical vocabularies." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#dd90646bec69fe2d0f72d4a6be17a0f5> ;
+        sh:targetClass  <http://purl.org/archival/vocab/arch#Family> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#53b755fb8b9add83449930b282a4807b>
+        a               sh:NodeShape ;
+        sh:description  "An organization that holds archival collections." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e4a63969285b9063cc9124960684d1a8> ;
+        sh:targetClass  <http://purl.org/archival/vocab/arch#Archive> .
+
+<https://astrea.linkeddata.es/shapes#b112e59eaa72312800a314d0e78b9d6b>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://xmlns.com/foaf/0.1/knows> .
+
+<https://astrea.linkeddata.es/shapes#644c62b7ee4488e5a83bd0bce16027ef>
+        a               sh:PropertyShape ;
+        rdfs:label      "Relates a foaf:Person, foaf:Organization, or arch:Family to the arch:Collection that they created.  This might be more than one entity.  Inverse of arch:hasProvenance." ;
+        sh:class        <http://purl.org/archival/vocab/arch#Collection> ;
+        sh:description  "Relates a foaf:Person, foaf:Organization, or arch:Family to the arch:Collection that they created.  This might be more than one entity.  Inverse of arch:hasProvenance." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/archival/vocab/arch#primaryProvenanceOf> .
+
+<https://astrea.linkeddata.es/shapes#5192bd4012546876e17387cec79301a1>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#dd90646bec69fe2d0f72d4a6be17a0f5> ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Organization> .

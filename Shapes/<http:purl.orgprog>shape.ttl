@@ -1,0 +1,47 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#5a61621618bf1b242f284e0a1edbd1e2> , <https://astrea.linkeddata.es/shapes#d2231831f7958d411c7f591cf9f19a97> , <https://astrea.linkeddata.es/shapes#dc94628b470d19d6b75366e197e914db> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#dc94628b470d19d6b75366e197e914db>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/prog/> ;
+        rdfs:label        "Activity" ;
+        sh:description    "This class represents the abstract content of an event, which may be repeated many times, once or never. For example a training course, or a play. The primary purpose is to indicate that several events will have very similar content, to aid planning what to attend. It does not indicate that there is any reason people could not attend more than one realisation. It should not be used to abstract a repeating event, such as morning coffee or a monthly meeting.\n\n\nMultiple Events may reference that they are realises of the same Activity. \nActivities are not Events and may not have a time or place." ;
+        sh:name           "Activity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/prog/Activity> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#5a61621618bf1b242f284e0a1edbd1e2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/prog/> ;
+        rdfs:label        "TimeSlot" ;
+        sh:description    "This is a property of a Programme to facilitate understanding by humans. There is no semantic relationship between events in the programme and TimeSlots as complex programmes often have events which ignore the published timeslots. A timeslot is effectively an event with nothing but a time interval and label.\n\nA Timeslot must have an rdfs:label and a event:time linking it to a tl:Interval.\n\nTimeslots are purely cosmetic and it is not recommended that events should not be artificially fitted into them." ;
+        sh:name           "TimeSlot" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/prog/TimeSlot> .
+
+<https://astrea.linkeddata.es/shapes#d2231831f7958d411c7f591cf9f19a97>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/prog/> ;
+        rdfs:label        "Programme" ;
+        sh:description    "A programme is a description of the parts of a complex event to aid understanding it. A single event may be described by several programmes, for example one may give a break down by day, another by rooms, another by topic.\n\nA programme should not have Timeslots or Events if it subprogrammes. In effect this means there are two subclasses of Programme, but there's no need to express that in the data.\n\nA simple application only needs to operate on a single Programme at once." ;
+        sh:name           "Programme" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/prog/Programme> .

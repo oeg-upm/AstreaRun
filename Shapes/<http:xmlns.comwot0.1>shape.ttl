@@ -1,0 +1,589 @@
+@prefix grddl: <http://www.w3.org/2003/g/data-view#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<https://astrea.linkeddata.es/shapes#b0b0a23780724e75631dd288816ba40d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "Nothing" ;
+        sh:description    "This is the empty class." ;
+        sh:name           "Nothing" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:Nothing .
+
+<https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "Thing" ;
+        sh:description    "The class of OWL individuals." ;
+        sh:name           "Thing" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#71e902c1a9999b0a675d0a10a9c52181> , <https://astrea.linkeddata.es/shapes#b5709a9c2eaa7805ed5f7e56a090d496> , <https://astrea.linkeddata.es/shapes#a846a4145de1fc510b3a990fb8182f4f> , <https://astrea.linkeddata.es/shapes#09925f9dd96d052646fc8124bb4c126c> ;
+        sh:targetClass    owl:Thing .
+
+<https://astrea.linkeddata.es/shapes#5168d1cd70adcfa9ea0f345012485742>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/wot/0.1/> ;
+        rdfs:label        "Signature time" , "The time (of day) of a public key signature event." ;
+        sh:datatype       xsd:time ;
+        sh:description    "The time (of day) of a public key signature event." ;
+        sh:name           "Signature time" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://xmlns.com/wot/0.1/sigtime> ;
+        sh:pattern        "(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#9ed2fb7d3b7985c23e788a879a4db9d7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "Restriction" ;
+        sh:description    "The class of property restrictions." ;
+        sh:name           "Restriction" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:Restriction .
+
+<https://astrea.linkeddata.es/shapes#41718680170bfbeb266b4f0e9a64ae07>
+        a         sh:PropertyShape ;
+        sh:class  <http://xmlns.com/wot/0.1/SigEvent> .
+
+<https://astrea.linkeddata.es/report/987595915>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.w3.org/2000/01/rdf-schema" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#6d7d6c3b8fa3958897d10e3da8d32db4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/wot/0.1/> ;
+        rdfs:label        "Encrypted by" , "A property linking an encrypted document to the public key that was used to encrypt it." ;
+        sh:class          <http://xmlns.com/wot/0.1/PubKey> ;
+        sh:description    "A property linking an encrypted document to the public key that was used to encrypt it." ;
+        sh:maxCount       1 ;
+        sh:name           "Encrypted by" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           <http://xmlns.com/wot/0.1/encrypter> .
+
+<https://astrea.linkeddata.es/shapes#b8202e1cccd48b4c5f906f32ef392621>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/wot/0.1/> ;
+        rdfs:label        "has Key" , "A property to link a PubKey from a User" ;
+        sh:class          <http://xmlns.com/wot/0.1/PubKey> ;
+        sh:description    "A property to link a PubKey from a User" ;
+        sh:name           "has Key" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://xmlns.com/wot/0.1/hasKey> .
+
+<https://astrea.linkeddata.es/shapes#708835ba2a25eeafa17527ad04e98ad3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/wot/0.1/> ;
+        rdfs:label        "Signer" , "A property linking a public key signature event to the public key that was used to sign." ;
+        sh:class          <http://xmlns.com/wot/0.1/PubKey> ;
+        sh:description    "A property linking a public key signature event to the public key that was used to sign." ;
+        sh:maxCount       1 ;
+        sh:name           "Signer" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           <http://xmlns.com/wot/0.1/signer> .
+
+<https://astrea.linkeddata.es/shapes#8f0db10b5a26271ac7d8cddee2bc128c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/wot/0.1/> ;
+        rdfs:label        "Assurance" , "A property linking a document to an endorsement resource containing a detached ascii signature." ;
+        sh:class          <http://xmlns.com/wot/0.1/Endorsement> ;
+        sh:description    "A property linking a document to an endorsement resource containing a detached ascii signature." ;
+        sh:name           "Assurance" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://xmlns.com/wot/0.1/assurance> .
+
+<https://astrea.linkeddata.es/shapes#d67b17ee1af7afd39f143c8cc0114007>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  rdfs: ;
+        rdfs:label        "ContainerMembershipProperty" ;
+        sh:description    "The class of container membership properties, rdf:_1, rdf:_2, ...,\n                    all of which are sub-properties of 'member'." ;
+        sh:name           "ContainerMembershipProperty" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    rdfs:ContainerMembershipProperty .
+
+<https://astrea.linkeddata.es/shapes#ad808933a855b5113f5840f343578761>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  rdfs: ;
+        rdfs:label        "Class" ;
+        sh:description    "The class of classes." ;
+        sh:name           "Class" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    rdfs:Class .
+
+<https://astrea.linkeddata.es/shapes#aa6f16c11bf2932eccbdd02cc7ed5235>
+        a         sh:PropertyShape ;
+        sh:class  <http://xmlns.com/wot/0.1/EncryptedDocument> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#277ca96529dce43c47445842a6e0bcb6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "DeprecatedProperty" ;
+        sh:description    "The class of deprecated properties." ;
+        sh:name           "DeprecatedProperty" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:DeprecatedProperty .
+
+<https://astrea.linkeddata.es/shapes#2f714e173ad6b295c885d010aae2dadc>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "Annotation" ;
+        sh:description    "The class of annotated annotations for which the RDF serialization consists of an annotated subject, predicate and object." ;
+        sh:name           "Annotation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:Annotation .
+
+<https://astrea.linkeddata.es/shapes#c012b7ec75460f4fa419f022afb089eb>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "InverseFunctionalProperty" ;
+        sh:description    "The class of inverse-functional properties." ;
+        sh:name           "InverseFunctionalProperty" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:InverseFunctionalProperty .
+
+<https://astrea.linkeddata.es/shapes#0b9ff705967dd434db2c9add852a98ab>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/wot/0.1/> ;
+        rdfs:label        "Address" , "The location of an ascii version of a public key." ;
+        sh:class          <http://xmlns.com/foaf/0.1/Document> ;
+        sh:description    "The location of an ascii version of a public key." ;
+        sh:name           "Address" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://xmlns.com/wot/0.1/pubkeyAddress> .
+
+<https://astrea.linkeddata.es/shapes#e784fc38a226153e4c40081d76e63345>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "DeprecatedClass" ;
+        sh:description    "The class of deprecated classes." ;
+        sh:name           "DeprecatedClass" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:DeprecatedClass .
+
+<https://astrea.linkeddata.es/shapes#20f28794068b4bfda3a8487130684349>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/wot/0.1/> ;
+        rdfs:label        "Fingerprint" , "A public key hex fingerprint string (40 digits, white space insignificant)." ;
+        sh:datatype       xsd:string ;
+        sh:description    "A public key hex fingerprint string (40 digits, white space insignificant)." ;
+        sh:inversePath    <http://xmlns.com/wot/0.1/fingerprint> ;
+        sh:maxCount       1 ;
+        sh:name           "Fingerprint" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
+        sh:path           <http://xmlns.com/wot/0.1/fingerprint> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#f9b9c0da904cd874abc2e79ba39d1bc9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/wot/0.1/> ;
+        rdfs:label        "A property linking a public key to the user of the key." , "Identity" ;
+        sh:class          <http://xmlns.com/wot/0.1/User> ;
+        sh:description    "A property linking a public key to the user of the key." ;
+        sh:maxCount       1 ;
+        sh:name           "Identity" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           <http://xmlns.com/wot/0.1/identity> .
+
+<https://astrea.linkeddata.es/shapes#bf31ad12e6ea8d6a6fa672ca7acca0f5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/wot/0.1/> ;
+        rdfs:label        "Hex identifier" , "A public key hex identifier string (8 digits)." ;
+        sh:datatype       xsd:string ;
+        sh:description    "A public key hex identifier string (8 digits)." ;
+        sh:name           "Hex identifier" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://xmlns.com/wot/0.1/hex_id> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#f5b57e73404f923ba9cf7d7388444c2d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  rdfs: ;
+        rdfs:label        "Container" ;
+        sh:description    "The class of RDF containers." ;
+        sh:name           "Container" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    rdfs:Container .
+
+<https://astrea.linkeddata.es/shapes#635f8d140e0cf92eb12a7bf7bfab098b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/wot/0.1/> ;
+        rdfs:label        "Key Signing Event" ;
+        sh:description    "An event describing the action of a public key being signed by some other public key." ;
+        sh:name           "Key Signing Event" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#2952dbcfe85da0fb3622c1d2c2b1cde8> , <https://astrea.linkeddata.es/shapes#e2c74ed28018bf890fec8efdc32acd4b> , <https://astrea.linkeddata.es/shapes#5de85b4bbdfe5474a6467b8c5715d8da> , <https://astrea.linkeddata.es/shapes#aa6f16c11bf2932eccbdd02cc7ed5235> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#5168d1cd70adcfa9ea0f345012485742> , <https://astrea.linkeddata.es/shapes#feefd86e3cb04786a542754753464bc0> , <https://astrea.linkeddata.es/shapes#708835ba2a25eeafa17527ad04e98ad3> ;
+        sh:targetClass    <http://xmlns.com/wot/0.1/SigEvent> .
+
+<https://astrea.linkeddata.es/report/1930583031>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.w3.org/2002/07/owl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#1ca745c9f8b3c9769bd64e64b306d5f2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "Axiom" ;
+        sh:description    "The class of annotated axioms for which the RDF serialization consists of an annotated subject, predicate and object." ;
+        sh:name           "Axiom" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:Axiom .
+
+<https://astrea.linkeddata.es/shapes#bb70ba4af84eba77e76cf90374b5e869>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "NamedIndividual" ;
+        sh:description    "The class of named individuals." ;
+        sh:name           "NamedIndividual" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:NamedIndividual .
+
+<https://astrea.linkeddata.es/shapes#a0005af2635b82beb671b40f25536d31>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  rdfs: ;
+        rdfs:label        "Resource" ;
+        sh:description    "The class resource, everything." ;
+        sh:name           "Resource" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    rdfs:Resource .
+
+<https://astrea.linkeddata.es/shapes#de22708738fa2273403a7eca2dc46c20>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "NegativePropertyAssertion" ;
+        sh:description    "The class of negative property assertions." ;
+        sh:name           "NegativePropertyAssertion" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:NegativePropertyAssertion .
+
+<https://astrea.linkeddata.es/shapes#df703c6b8b1daf6b9174f41e52e5bf6a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/wot/0.1/> ;
+        rdfs:label        "A numeric string representing the length, in bytes, of a public key." , "Length" ;
+        sh:datatype       xsd:integer ;
+        sh:description    "A numeric string representing the length, in bytes, of a public key." ;
+        sh:name           "Length" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://xmlns.com/wot/0.1/length> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#e282a1470cfb9942fe04059d83d99387>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/wot/0.1/> ;
+        rdfs:label        "Public Key" ;
+        sh:description    "A class used to represent a PGP/GPG public key for a user (an agent, person, group or organization)." ;
+        sh:name           "Public Key" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#aa6f16c11bf2932eccbdd02cc7ed5235> , <https://astrea.linkeddata.es/shapes#41718680170bfbeb266b4f0e9a64ae07> , <https://astrea.linkeddata.es/shapes#2952dbcfe85da0fb3622c1d2c2b1cde8> , <https://astrea.linkeddata.es/shapes#5de85b4bbdfe5474a6467b8c5715d8da> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#bf31ad12e6ea8d6a6fa672ca7acca0f5> , <https://astrea.linkeddata.es/shapes#df703c6b8b1daf6b9174f41e52e5bf6a> , <https://astrea.linkeddata.es/shapes#3515cfadbc5dbd4dca814bca44326781> , <https://astrea.linkeddata.es/shapes#0b9ff705967dd434db2c9add852a98ab> , <https://astrea.linkeddata.es/shapes#f9b9c0da904cd874abc2e79ba39d1bc9> ;
+        sh:targetClass    <http://xmlns.com/wot/0.1/PubKey> .
+
+<https://astrea.linkeddata.es/shapes#5de85b4bbdfe5474a6467b8c5715d8da>
+        a         sh:PropertyShape ;
+        sh:class  <http://xmlns.com/wot/0.1/User> .
+
+<https://astrea.linkeddata.es/shapes#76b03855b1a11f518d5c526974b87a43>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/wot/0.1/> ;
+        rdfs:label        "Key User" ;
+        sh:description    "A user (agent, person, group or organization) of a PGP/GPG public key." ;
+        sh:name           "Key User" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#2952dbcfe85da0fb3622c1d2c2b1cde8> , <https://astrea.linkeddata.es/shapes#aa6f16c11bf2932eccbdd02cc7ed5235> , <https://astrea.linkeddata.es/shapes#41718680170bfbeb266b4f0e9a64ae07> , <https://astrea.linkeddata.es/shapes#e2c74ed28018bf890fec8efdc32acd4b> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#b8202e1cccd48b4c5f906f32ef392621> ;
+        sh:targetClass    <http://xmlns.com/wot/0.1/User> .
+
+<https://astrea.linkeddata.es/shapes#b356cdf11f960ef1ecf1d11671349294>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/wot/0.1/> ;
+        rdfs:label        "Endorsement" ;
+        sh:description    "An endorsement resource containing a detached ascii signature." ;
+        sh:name           "Endorsement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#41718680170bfbeb266b4f0e9a64ae07> , <https://astrea.linkeddata.es/shapes#e2c74ed28018bf890fec8efdc32acd4b> , <https://astrea.linkeddata.es/shapes#5de85b4bbdfe5474a6467b8c5715d8da> , <https://astrea.linkeddata.es/shapes#aa6f16c11bf2932eccbdd02cc7ed5235> ;
+        sh:targetClass    <http://xmlns.com/wot/0.1/Endorsement> .
+
+<https://astrea.linkeddata.es/shapes#717e1ac2dd567ad1567ba802cdb67e2a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "FunctionalProperty" ;
+        sh:description    "The class of functional properties." ;
+        sh:name           "FunctionalProperty" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:FunctionalProperty .
+
+<https://astrea.linkeddata.es/shapes#2e3d9909eded822ed6efb70e75a1cddd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "ReflexiveProperty" ;
+        sh:description    "The class of reflexive properties." ;
+        sh:name           "ReflexiveProperty" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:ReflexiveProperty .
+
+<https://astrea.linkeddata.es/shapes#b27b57967a80b27954ee7a8370c62feb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/wot/0.1/> ;
+        rdfs:label        "Encrypted to" , "A property linking an encrypted document to a recipient." ;
+        sh:class          <http://xmlns.com/wot/0.1/PubKey> ;
+        sh:description    "A property linking an encrypted document to a recipient." ;
+        sh:name           "Encrypted to" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://xmlns.com/wot/0.1/encryptedTo> .
+
+<https://astrea.linkeddata.es/shapes#89df24df35df8882616112ab6a78df83>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "Ontology" ;
+        sh:description    "The class of ontologies." ;
+        sh:name           "Ontology" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:Ontology .
+
+<https://astrea.linkeddata.es/shapes#feefd86e3cb04786a542754753464bc0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/wot/0.1/> ;
+        rdfs:label        "The date of a public key signature event." , "Signature date" ;
+        sh:datatype       xsd:date ;
+        sh:description    "The date of a public key signature event." ;
+        sh:name           "Signature date" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://xmlns.com/wot/0.1/sigdate> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#e70106cf33c4a8d55f7031297af9b64e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  rdfs: ;
+        rdfs:label        "Datatype" ;
+        sh:description    "The class of RDF datatypes." ;
+        sh:name           "Datatype" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    rdfs:Datatype .
+
+<https://astrea.linkeddata.es/shapes#4c7e1d98f9b557728d77169534cf9251>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "AllDisjointClasses" ;
+        sh:description    "The class of collections of pairwise disjoint classes." ;
+        sh:name           "AllDisjointClasses" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:AllDisjointClasses .
+
+<https://astrea.linkeddata.es/shapes#6be100d081a438502013ba4e5fef3db7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "Class" ;
+        sh:description    "The class of OWL classes." ;
+        sh:name           "Class" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:Class .
+
+<https://astrea.linkeddata.es/shapes#74e425b281aba40c64591e447b4752d2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "AllDisjointProperties" ;
+        sh:description    "The class of collections of pairwise disjoint properties." ;
+        sh:name           "AllDisjointProperties" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:AllDisjointProperties .
+
+<https://astrea.linkeddata.es/shapes#9e6d9eddc19d6811c0a885c828aceb63>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "DatatypeProperty" ;
+        sh:description    "The class of data properties." ;
+        sh:name           "DatatypeProperty" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:DatatypeProperty .
+
+<https://astrea.linkeddata.es/shapes#3515cfadbc5dbd4dca814bca44326781>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/wot/0.1/> ;
+        rdfs:label        "Signed" , "A property linking a public key to a public key signature event." ;
+        sh:class          <http://xmlns.com/wot/0.1/SigEvent> ;
+        sh:description    "A property linking a public key to a public key signature event." ;
+        sh:name           "Signed" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://xmlns.com/wot/0.1/signed> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#bf31ad12e6ea8d6a6fa672ca7acca0f5> , <https://astrea.linkeddata.es/shapes#4e85196ed3bddbd1fd5ea130daf448db> , <https://astrea.linkeddata.es/shapes#df703c6b8b1daf6b9174f41e52e5bf6a> , <https://astrea.linkeddata.es/shapes#8f0db10b5a26271ac7d8cddee2bc128c> , <https://astrea.linkeddata.es/shapes#c012b7ec75460f4fa419f022afb089eb> , <https://astrea.linkeddata.es/shapes#5f9a3c4a1822965124a1535d6433dbe3> , <https://astrea.linkeddata.es/shapes#2f714e173ad6b295c885d010aae2dadc> , <https://astrea.linkeddata.es/shapes#48ed32b24428f0acf2d714cba289a35b> , <https://astrea.linkeddata.es/shapes#2e3d9909eded822ed6efb70e75a1cddd> , <https://astrea.linkeddata.es/shapes#717e1ac2dd567ad1567ba802cdb67e2a> , <https://astrea.linkeddata.es/shapes#17b4b079e0bbed1b382b55d62fcf73ea> , <https://astrea.linkeddata.es/shapes#f9b9c0da904cd874abc2e79ba39d1bc9> , <https://astrea.linkeddata.es/shapes#55a05e88e2f1bdf8b52fa7d0eb1efeca> , <https://astrea.linkeddata.es/shapes#5168d1cd70adcfa9ea0f345012485742> , <https://astrea.linkeddata.es/shapes#b27b57967a80b27954ee7a8370c62feb> , <https://astrea.linkeddata.es/shapes#2952dbcfe85da0fb3622c1d2c2b1cde8> , <https://astrea.linkeddata.es/shapes#ad808933a855b5113f5840f343578761> , <https://astrea.linkeddata.es/shapes#f02d9eba6439d3843194fd02bb1c21a6> , <https://astrea.linkeddata.es/shapes#4a79de8578f265800bc4c1e3b090e76c> , <https://astrea.linkeddata.es/shapes#4c7e1d98f9b557728d77169534cf9251> , <https://astrea.linkeddata.es/shapes#74e425b281aba40c64591e447b4752d2> , <https://astrea.linkeddata.es/shapes#b356cdf11f960ef1ecf1d11671349294> , <https://astrea.linkeddata.es/shapes#41718680170bfbeb266b4f0e9a64ae07> , <https://astrea.linkeddata.es/shapes#472ee8b9e92f00863f1b11929967a7fa> , <https://astrea.linkeddata.es/shapes#b0b0a23780724e75631dd288816ba40d> , <https://astrea.linkeddata.es/shapes#d67b17ee1af7afd39f143c8cc0114007> , <https://astrea.linkeddata.es/shapes#5de85b4bbdfe5474a6467b8c5715d8da> , <https://astrea.linkeddata.es/shapes#71e902c1a9999b0a675d0a10a9c52181> , <https://astrea.linkeddata.es/shapes#09925f9dd96d052646fc8124bb4c126c> , <https://astrea.linkeddata.es/shapes#e282a1470cfb9942fe04059d83d99387> , <https://astrea.linkeddata.es/shapes#708835ba2a25eeafa17527ad04e98ad3> , <https://astrea.linkeddata.es/shapes#feefd86e3cb04786a542754753464bc0> , <https://astrea.linkeddata.es/shapes#0b9ff705967dd434db2c9add852a98ab> , <https://astrea.linkeddata.es/shapes#a846a4145de1fc510b3a990fb8182f4f> , <https://astrea.linkeddata.es/shapes#63a8f4c7428d6fc6fa96ed60cd159838> , <https://astrea.linkeddata.es/shapes#bb70ba4af84eba77e76cf90374b5e869> , <https://astrea.linkeddata.es/shapes#1ca745c9f8b3c9769bd64e64b306d5f2> , <https://astrea.linkeddata.es/shapes#f5b57e73404f923ba9cf7d7388444c2d> , <https://astrea.linkeddata.es/shapes#635f8d140e0cf92eb12a7bf7bfab098b> , <https://astrea.linkeddata.es/shapes#3515cfadbc5dbd4dca814bca44326781> , <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#20f28794068b4bfda3a8487130684349> , <https://astrea.linkeddata.es/shapes#de22708738fa2273403a7eca2dc46c20> , <https://astrea.linkeddata.es/shapes#55439a5d90df8ccad534dc9af3fc4aee> , <https://astrea.linkeddata.es/shapes#9e6d9eddc19d6811c0a885c828aceb63> , <https://astrea.linkeddata.es/shapes#6be100d081a438502013ba4e5fef3db7> , <https://astrea.linkeddata.es/shapes#e2c74ed28018bf890fec8efdc32acd4b> , <https://astrea.linkeddata.es/shapes#a0005af2635b82beb671b40f25536d31> , <https://astrea.linkeddata.es/shapes#b8202e1cccd48b4c5f906f32ef392621> , <https://astrea.linkeddata.es/shapes#e70106cf33c4a8d55f7031297af9b64e> , <https://astrea.linkeddata.es/shapes#6d7d6c3b8fa3958897d10e3da8d32db4> , <https://astrea.linkeddata.es/shapes#0064d92ff46c54d3097a0d30b93d8be6> , <https://astrea.linkeddata.es/shapes#e784fc38a226153e4c40081d76e63345> , <https://astrea.linkeddata.es/shapes#aa6f16c11bf2932eccbdd02cc7ed5235> , <https://astrea.linkeddata.es/shapes#b5709a9c2eaa7805ed5f7e56a090d496> , <https://astrea.linkeddata.es/shapes#3b46ba4c0adbd1be8c4d87b306c67b25> , <https://astrea.linkeddata.es/shapes#9ed2fb7d3b7985c23e788a879a4db9d7> , <https://astrea.linkeddata.es/shapes#76b03855b1a11f518d5c526974b87a43> , <https://astrea.linkeddata.es/shapes#89df24df35df8882616112ab6a78df83> , <https://astrea.linkeddata.es/shapes#277ca96529dce43c47445842a6e0bcb6> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/987595915> , <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/1930583031> .
+
+<https://astrea.linkeddata.es/shapes#e2c74ed28018bf890fec8efdc32acd4b>
+        a         sh:PropertyShape ;
+        sh:class  <http://xmlns.com/wot/0.1/PubKey> .
+
+<https://astrea.linkeddata.es/shapes#a846a4145de1fc510b3a990fb8182f4f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "topObjectProperty" , "The object property that relates every two individuals." ;
+        sh:class          owl:Thing ;
+        sh:description    "The object property that relates every two individuals." ;
+        sh:name           "topObjectProperty" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           owl:topObjectProperty .
+
+<https://astrea.linkeddata.es/shapes#63a8f4c7428d6fc6fa96ed60cd159838>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  rdfs: ;
+        rdfs:label        "Literal" ;
+        sh:description    "The class of literal values, eg. textual strings and integers." ;
+        sh:name           "Literal" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    rdfs:Literal .
+
+<https://astrea.linkeddata.es/shapes#71e902c1a9999b0a675d0a10a9c52181>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "bottomObjectProperty" , "The object property that does not relate any two individuals." ;
+        sh:class          owl:Thing ;
+        sh:description    "The object property that does not relate any two individuals." ;
+        sh:name           "bottomObjectProperty" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           owl:bottomObjectProperty .
+
+<https://astrea.linkeddata.es/shapes#4e85196ed3bddbd1fd5ea130daf448db>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "OntologyProperty" ;
+        sh:description    "The class of ontology properties." ;
+        sh:name           "OntologyProperty" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:OntologyProperty .
+
+<https://astrea.linkeddata.es/shapes#55a05e88e2f1bdf8b52fa7d0eb1efeca>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#8f0db10b5a26271ac7d8cddee2bc128c> ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Document> .
+
+<https://astrea.linkeddata.es/shapes#4a79de8578f265800bc4c1e3b090e76c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "AsymmetricProperty" ;
+        sh:description    "The class of asymmetric properties." ;
+        sh:name           "AsymmetricProperty" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:AsymmetricProperty .
+
+<https://astrea.linkeddata.es/shapes#472ee8b9e92f00863f1b11929967a7fa>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "ObjectProperty" ;
+        sh:description    "The class of object properties." ;
+        sh:name           "ObjectProperty" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:ObjectProperty .
+
+<https://astrea.linkeddata.es/shapes#3b46ba4c0adbd1be8c4d87b306c67b25>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "TransitiveProperty" ;
+        sh:description    "The class of transitive properties." ;
+        sh:name           "TransitiveProperty" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:TransitiveProperty .
+
+<https://astrea.linkeddata.es/shapes#b5709a9c2eaa7805ed5f7e56a090d496>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "topDataProperty" , "The data property that relates every individual to every data value." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The data property that relates every individual to every data value." ;
+        sh:name           "topDataProperty" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           owl:topDataProperty .
+
+<https://astrea.linkeddata.es/shapes#17b4b079e0bbed1b382b55d62fcf73ea>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "AllDifferent" ;
+        sh:description    "The class of collections of pairwise different individuals." ;
+        sh:name           "AllDifferent" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:AllDifferent .
+
+<https://astrea.linkeddata.es/shapes#5f9a3c4a1822965124a1535d6433dbe3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "DataRange" ;
+        sh:description    "The class of OWL data ranges, which are special kinds of datatypes. Note: The use of the IRI owl:DataRange has been deprecated as of OWL 2. The IRI rdfs:Datatype SHOULD be used instead." ;
+        sh:name           "DataRange" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:DataRange .
+
+<https://astrea.linkeddata.es/shapes#0064d92ff46c54d3097a0d30b93d8be6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/wot/0.1/> ;
+        rdfs:label        "Encrypted Document" ;
+        sh:description    "An encrypted document intended for a set of recipients." ;
+        sh:name           "Encrypted Document" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#5de85b4bbdfe5474a6467b8c5715d8da> , <https://astrea.linkeddata.es/shapes#2952dbcfe85da0fb3622c1d2c2b1cde8> , <https://astrea.linkeddata.es/shapes#e2c74ed28018bf890fec8efdc32acd4b> , <https://astrea.linkeddata.es/shapes#41718680170bfbeb266b4f0e9a64ae07> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#6d7d6c3b8fa3958897d10e3da8d32db4> , <https://astrea.linkeddata.es/shapes#b27b57967a80b27954ee7a8370c62feb> ;
+        sh:targetClass    <http://xmlns.com/wot/0.1/EncryptedDocument> .
+
+<https://astrea.linkeddata.es/shapes#09925f9dd96d052646fc8124bb4c126c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "bottomDataProperty" , "The data property that does not relate any individual to any data value." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The data property that does not relate any individual to any data value." ;
+        sh:name           "bottomDataProperty" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           owl:bottomDataProperty .
+
+<https://astrea.linkeddata.es/shapes#48ed32b24428f0acf2d714cba289a35b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "IrreflexiveProperty" ;
+        sh:description    "The class of irreflexive properties." ;
+        sh:name           "IrreflexiveProperty" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:IrreflexiveProperty .
+
+<https://astrea.linkeddata.es/shapes#f02d9eba6439d3843194fd02bb1c21a6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "SymmetricProperty" ;
+        sh:description    "The class of symmetric properties." ;
+        sh:name           "SymmetricProperty" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:SymmetricProperty .
+
+<https://astrea.linkeddata.es/shapes#55439a5d90df8ccad534dc9af3fc4aee>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  owl: ;
+        rdfs:label        "AnnotationProperty" ;
+        sh:description    "The class of annotation properties." ;
+        sh:name           "AnnotationProperty" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    owl:AnnotationProperty .
+
+<https://astrea.linkeddata.es/shapes#2952dbcfe85da0fb3622c1d2c2b1cde8>
+        a         sh:PropertyShape ;
+        sh:class  <http://xmlns.com/wot/0.1/Endorsement> .

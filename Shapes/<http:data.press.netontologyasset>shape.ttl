@@ -1,0 +1,175 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#c669f55c49c56bf4d5accebed48054ef>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.press.net/ontology/asset/> ;
+        rdfs:label        "Asset embargoed until dateTime"@en , "The date and time a news Asset is embargoedUntil"@en ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "The date and time a news Asset is embargoedUntil"@en ;
+        sh:name           "Asset embargoed until dateTime"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.press.net/ontology/asset/embargoedUntil> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#c669f55c49c56bf4d5accebed48054ef> , <https://astrea.linkeddata.es/shapes#9f99267fa1ba297d43d5ff2947b3eb1e> , <https://astrea.linkeddata.es/shapes#19c4ba3b4ae008d777893b357453a6b9> , <https://astrea.linkeddata.es/shapes#d552fd11f5be6cce603b8871a1ddfdac> , <https://astrea.linkeddata.es/shapes#e1be02eb337ba4592895770e81edab9a> , <https://astrea.linkeddata.es/shapes#db8f4ee82eb3afda1d537a3acdb18fbd> , <https://astrea.linkeddata.es/shapes#ae9c638a77f04c31de409b0ecc98f51e> , <https://astrea.linkeddata.es/shapes#9962b41c96d7ea33e83a68070f751f85> , <https://astrea.linkeddata.es/shapes#05193169f17992100a3fb6979017e725> , <https://astrea.linkeddata.es/shapes#a401289b52b14e7e25b4b02ac004ae8c> , <https://astrea.linkeddata.es/shapes#c24608b5eec1fb3b932bc16546e53622> , <https://astrea.linkeddata.es/shapes#78a5156623ddf289a7e212554f88b396> , <https://astrea.linkeddata.es/shapes#3a91fbc0e04ab50d52fab3a2788a9a50> , <https://astrea.linkeddata.es/shapes#222ef07bacec832a13355dd869a3b4f7> , <https://astrea.linkeddata.es/shapes#b46a5bf0b87192a17c7db7a5668017e6> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#c24608b5eec1fb3b932bc16546e53622>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.press.net/ontology/asset/> ;
+        rdfs:label        "Relates an asset to an asset that it is derived from"@en ;
+        sh:class          <http://data.press.net/ontology/asset/Asset> ;
+        sh:description    "Relates an asset to an asset that it is derived from"@en ;
+        sh:name           "Relates an asset to an asset that it is derived from"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.press.net/ontology/asset/derivedFrom> .
+
+<https://astrea.linkeddata.es/shapes#db8f4ee82eb3afda1d537a3acdb18fbd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.press.net/ontology/asset/> ;
+        rdfs:label        "Asset byline"@en , "The byline of a news Asset"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "The byline of a news Asset"@en ;
+        sh:name           "Asset byline"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.press.net/ontology/asset/byline> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#19c4ba3b4ae008d777893b357453a6b9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.press.net/ontology/asset/> ;
+        rdfs:label        "Video Asset Class"@en ;
+        sh:description    "Video Asset Class"@en ;
+        sh:name           "Video Asset Class"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d552fd11f5be6cce603b8871a1ddfdac> ;
+        sh:targetClass    <http://data.press.net/ontology/asset/Video> .
+
+<https://astrea.linkeddata.es/shapes#05193169f17992100a3fb6979017e725>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.press.net/ontology/asset/> ;
+        rdfs:label        "Property that associates one asset with another asset"@en ;
+        sh:class          <http://data.press.net/ontology/asset/Asset> ;
+        sh:description    "Property that associates one asset with another asset"@en ;
+        sh:name           "Property that associates one asset with another asset"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.press.net/ontology/asset/associatedAsset> .
+
+<https://astrea.linkeddata.es/shapes#d552fd11f5be6cce603b8871a1ddfdac>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.press.net/ontology/asset/> ;
+        rdfs:label        "The text transcript of a Video"@en , "Property that associates a Text transcript with a Video"@en ;
+        sh:class          <http://data.press.net/ontology/asset/Text> ;
+        sh:description    "Property that associates a Text transcript with a Video"@en ;
+        sh:name           "The text transcript of a Video"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.press.net/ontology/asset/hasTranscript> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#b46a5bf0b87192a17c7db7a5668017e6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.press.net/ontology/asset/> ;
+        rdfs:label        "Property that associates a thumbnail image with an asset"@en ;
+        sh:class          <http://data.press.net/ontology/asset/Image> ;
+        sh:description    "Property that associates a thumbnail image with an asset"@en ;
+        sh:name           "Property that associates a thumbnail image with an asset"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.press.net/ontology/asset/hasThumbnail> .
+
+<https://astrea.linkeddata.es/shapes#a401289b52b14e7e25b4b02ac004ae8c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.press.net/ontology/asset/> ;
+        rdfs:label        "Image Asset Class"@en ;
+        sh:description    "Image Asset Class"@en ;
+        sh:name           "Image Asset Class"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.press.net/ontology/asset/Image> .
+
+<https://astrea.linkeddata.es/shapes#9f99267fa1ba297d43d5ff2947b3eb1e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.press.net/ontology/asset/> ;
+        rdfs:label        "Asset created dateTime"@en , "The date and time a news Asset was created"@en ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "The date and time a news Asset was created"@en ;
+        sh:name           "Asset created dateTime"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.press.net/ontology/asset/created> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#9962b41c96d7ea33e83a68070f751f85>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.press.net/ontology/asset/> ;
+        rdfs:label        "Text Asset Class"@en ;
+        sh:description    "Text Asset Class"@en ;
+        sh:name           "Text Asset Class"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.press.net/ontology/asset/Text> .
+
+<https://astrea.linkeddata.es/shapes#78a5156623ddf289a7e212554f88b396>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.press.net/ontology/asset/> ;
+        rdfs:label        "The summary text of a news Asset"@en , "Asset summary"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "The summary text of a news Asset"@en ;
+        sh:name           "Asset summary"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.press.net/ontology/asset/summary> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#3a91fbc0e04ab50d52fab3a2788a9a50>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.press.net/ontology/asset/> ;
+        rdfs:label        "The title of a news Asset"@en , "Asset title"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "The title of a news Asset"@en ;
+        sh:name           "Asset title"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.press.net/ontology/asset/title> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#e1be02eb337ba4592895770e81edab9a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.press.net/ontology/asset/> ;
+        rdfs:label        "Generic Asset Class"@en ;
+        sh:description    "Generic News Asset Class"@en ;
+        sh:name           "Generic Asset Class"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#9f99267fa1ba297d43d5ff2947b3eb1e> , <https://astrea.linkeddata.es/shapes#222ef07bacec832a13355dd869a3b4f7> , <https://astrea.linkeddata.es/shapes#05193169f17992100a3fb6979017e725> , <https://astrea.linkeddata.es/shapes#c24608b5eec1fb3b932bc16546e53622> , <https://astrea.linkeddata.es/shapes#b46a5bf0b87192a17c7db7a5668017e6> , <https://astrea.linkeddata.es/shapes#3a91fbc0e04ab50d52fab3a2788a9a50> , <https://astrea.linkeddata.es/shapes#db8f4ee82eb3afda1d537a3acdb18fbd> , <https://astrea.linkeddata.es/shapes#c669f55c49c56bf4d5accebed48054ef> , <https://astrea.linkeddata.es/shapes#78a5156623ddf289a7e212554f88b396> , <https://astrea.linkeddata.es/shapes#ae9c638a77f04c31de409b0ecc98f51e> ;
+        sh:targetClass    <http://data.press.net/ontology/asset/Asset> .
+
+<https://astrea.linkeddata.es/shapes#ae9c638a77f04c31de409b0ecc98f51e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.press.net/ontology/asset/> ;
+        rdfs:label        "Asset published dateTime"@en , "The date and time a news Asset was published"@en ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "The date and time a news Asset was published"@en ;
+        sh:name           "Asset published dateTime"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.press.net/ontology/asset/published> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#222ef07bacec832a13355dd869a3b4f7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.press.net/ontology/asset/> ;
+        rdfs:label        "Asset modified dateTime"@en , "The date and time a news Asset was modified"@en ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "The date and time a news Asset was modified"@en ;
+        sh:name           "Asset modified dateTime"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.press.net/ontology/asset/modified> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .

@@ -1,0 +1,528 @@
+@prefix qudt:  <http://data.qudt.org/qudt/owl/1.0.0/qudt.owl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix saref: <http://ontology.tno.nl/saref#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfp:  <https://w3id.org/rdfp/> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix voaf:  <http://purl.org/vocommons/voaf#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qudt-unit: <http://data.qudt.org/qudt/owl/1.0.0/unit.owl#> .
+@prefix ssn:   <http://www.w3.org/ns/ssn/> .
+@prefix seas:  <https://w3id.org/seas/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix pep:   <https://w3id.org/pep/> .
+@prefix dul:   <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix vann:  <http://purl.org/vocab/vann/> .
+@prefix vs:    <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+
+<https://astrea.linkeddata.es/shapes#130152422d1b733f268af2082015abd5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:DeviceOntology ;
+        rdfs:label        "acts on"@en , "Links an actuating, actuator, or actuation, to the feature of interest a property of which it acts on.\r\n\r\nIf `x` acts on a property, then it also acts on the feature of interest of this property:\r\n\r\n```\r\nseas:actsOnProperty < seas:actsOn o seas:isPropertyOf .\r\n```\r\n\r\nIf a acting acts on a feature of interest, then any actuator that implements this acting also acts on this feature of interest, and any actuation that used this acting also acts on this feature of interest. Furthermore, if a actuator acts on a feature of interest, then any actuation executed by this actuator also acts on this feature of interest:\r\n\r\n```\r\nseas:actsOn < pep:usedProcedure o seas:actsOn .\r\nseas:actsOn < pep:usedProcedure o seas:actsOn .\r\nseas:actsOn < pep:madeBy o seas:actsOn .\r\n```\r\n"@en ;
+        sh:class          seas:FeatureOfInterest ;
+        sh:description    "Links an actuating, actuator, or actuation, to the feature of interest a property of which it acts on.\r\n\r\nIf `x` acts on a property, then it also acts on the feature of interest of this property:\r\n\r\n```\r\nseas:actsOnProperty < seas:actsOn o seas:isPropertyOf .\r\n```\r\n\r\nIf a acting acts on a feature of interest, then any actuator that implements this acting also acts on this feature of interest, and any actuation that used this acting also acts on this feature of interest. Furthermore, if a actuator acts on a feature of interest, then any actuation executed by this actuator also acts on this feature of interest:\r\n\r\n```\r\nseas:actsOn < pep:usedProcedure o seas:actsOn .\r\nseas:actsOn < pep:usedProcedure o seas:actsOn .\r\nseas:actsOn < pep:madeBy o seas:actsOn .\r\n```\r\n"@en ;
+        sh:name           "acts on"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:actsOn .
+
+<https://astrea.linkeddata.es/shapes#14f028ded1f26cf74d3da048e8828388>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  pep: ;
+        rdfs:label        "has simple command" , "Links a Procedure Execution to its unique simple command (a RDFS literal)."@en ;
+        sh:description    "Links a Procedure Execution to its unique simple command (a RDFS literal)."@en ;
+        sh:maxCount       1 ;
+        sh:name           "has simple command" ;
+        sh:nodeKind       sh:Literal , sh:IRIOrLiteral ;
+        sh:path           pep:hasSimpleCommand .
+
+<https://astrea.linkeddata.es/shapes#a34d1746088aa4c1ccedf29b7034d733>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  pep: ;
+        rdfs:label        "used procedure" , "Relation between a Procedure Execution and the Procedure it used."@en ;
+        sh:class          pep:Procedure ;
+        sh:description    "Relation between a Procedure Execution and the Procedure it used."@en ;
+        sh:maxCount       1 ;
+        sh:name           "used procedure" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           pep:usedProcedure .
+
+<https://astrea.linkeddata.es/shapes#6e994965f5ea839645a520b47e4fec9e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  pep: ;
+        rdfs:label        "Links a Procedure Execution Container to the Procedure Executor that makes the executions it contains."@en , "for executor" ;
+        sh:class          pep:ProcedureExecutor ;
+        sh:description    "Links a Procedure Execution Container to the Procedure Executor that makes the executions it contains."@en ;
+        sh:maxCount       1 ;
+        sh:name           "for executor" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           pep:forExecutor .
+
+<https://astrea.linkeddata.es/shapes#23b73f094038b2a7b3e86eaceb894d35>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:SystemOntology ;
+        rdfs:label        "Connection Point"@en ;
+        sh:description    "The class of connection points of systems, at which they may be connected to other systems.\r\n\r\nThis class qualifies properties `seas:connectsSystem` and `seas:connectedThrough`.\r\n\r\nA connection point belongs to exactly one system.\r\n\r\n\r\nFor example, an electric vehicle service equipment may have three power connection points: two different kinds of plugs that enable to charge electric vehicles, and a three phase power bus connection point to the grid:\r\n\r\n```\r\n<electric_vehicle> seas:connectsAt <plug_high_voltage> , <normal_plug> , <three_phase_connection_point> .\r\n```\r\n\r\n\r\nAny system connected through a connection is connected at one of its connection points to the connection:\r\n  if:\r\n\r\n```\r\n<system> a seas:System .\r\n<system> seas:connectedThrough <connection> .\r\n<connection> a seas:Connection .\r\n```\r\n\r\n  then there exists `_:connectionPoint` such that:\r\n\r\n```\r\n<system> seas:connectsAt _:connectionPoint .\r\n\r\n_:connectionPoint seas:connectsSystemAt <connection> .\r\n```\r\n\r\n\r\nThe system of a connection point that is connected through a connection is itself connected through the connection:. If:\r\n\r\n```\r\n<connection> a seas:Connection .\r\n<system> a seas:System .\r\n<connectionPoint> a seas:ConnectionPoint ;\r\n<connectionPoint> seas:connectsSystemThrough <connection> .\r\n```\r\n\r\nthen it is true that:\r\n\r\n```\r\n<connectionPoint> seas:connectionPointOf <system> .\r\n```\r\n\r\nFigure below illustrates connection points of systems:\r\n\r\n[![Connection points of systems](https://w3id.org/seas/system3.png)](https://w3id.org/seas/system3.png)\r\n\r\n"@en ;
+        sh:name           "Connection Point"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#e3b6c8b77d13a3c7315f2a4a99d76667> , <https://astrea.linkeddata.es/shapes#6b7d20f990303e6eb9ddbc1f540c45b6> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#271777936d66d37883ec48049f9d99ed> , <https://astrea.linkeddata.es/shapes#e636a81d5b8700d631eaf13114c868b4> ;
+        sh:targetClass    seas:ConnectionPoint .
+
+<https://astrea.linkeddata.es/shapes#dffd0212637d4583d11cee3ad7656e37>
+        a         sh:PropertyShape ;
+        sh:class  pep:ProcedureExecutor .
+
+<https://astrea.linkeddata.es/shapes#85991995f7b354ce799a74701a789464>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:SystemOntology ;
+        rdfs:label        "sub system of"@en , "Links a system to its super system.\r\n\r\nProperties of subsystems somehow contribute to the properties of the super system. The exact meaning of _contribute_ is defined by sub properties of `seas:subSystemOf`.\r\n\r\nFor example, if a fridge is a subsystem of a kitchen, then its consumption power contributes to the consumption power of the kitchen. \r\n\r\nProperty `seas:subSystemOf` is functional, and should be asymmetric:\r\n\r\n```\r\nif x seas:subSystemOf y1 and x seas:subSystemOf y2, then y1 and y2 refer to the same resource.\r\nif x seas:subSystemOf y, then it can't be the case that y seas:subSystemOf x.\r\n```\r\n\r\nThe asymmetric aspect of property `seas:subSystemOf` would prevents a system from being its own sub-system. Unfortunately, OWL 2 DL disallow a non-simple property (e.g., a functional property) from being asymmetric, see OWL 2 Syntax section 11.\r\n\r\nIf it was possible that both the fridge and the kitchen be sub systems of a common super system, say, the house, then the consumption power of the fridge would contribute twice to the consumption power of the house. The functional aspect of property `seas:subSystemOf` prevents this undesired effect. \r\n\r\nDue to the open world assumption of RDF, it is not possible to model the closed set of sub systems of a system using property `seas:subSystemOf`.\r\n"@en ;
+        sh:class          seas:System ;
+        sh:description    "Links a system to its super system.\r\n\r\nProperties of subsystems somehow contribute to the properties of the super system. The exact meaning of _contribute_ is defined by sub properties of `seas:subSystemOf`.\r\n\r\nFor example, if a fridge is a subsystem of a kitchen, then its consumption power contributes to the consumption power of the kitchen. \r\n\r\nProperty `seas:subSystemOf` is functional, and should be asymmetric:\r\n\r\n```\r\nif x seas:subSystemOf y1 and x seas:subSystemOf y2, then y1 and y2 refer to the same resource.\r\nif x seas:subSystemOf y, then it can't be the case that y seas:subSystemOf x.\r\n```\r\n\r\nThe asymmetric aspect of property `seas:subSystemOf` would prevents a system from being its own sub-system. Unfortunately, OWL 2 DL disallow a non-simple property (e.g., a functional property) from being asymmetric, see OWL 2 Syntax section 11.\r\n\r\nIf it was possible that both the fridge and the kitchen be sub systems of a common super system, say, the house, then the consumption power of the fridge would contribute twice to the consumption power of the house. The functional aspect of property `seas:subSystemOf` prevents this undesired effect. \r\n\r\nDue to the open world assumption of RDF, it is not possible to model the closed set of sub systems of a system using property `seas:subSystemOf`.\r\n"@en ;
+        sh:maxCount       1 ;
+        sh:name           "sub system of"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:subSystemOf .
+
+<https://astrea.linkeddata.es/shapes#82ca69c02c56f97b3338c29bce889f46>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:DeviceOntology ;
+        rdfs:label        "Actuation"@en ;
+        sh:description    "An actuation is the execution of some actuating procedure by some actuator, and has an impact on the physical world."@en ;
+        sh:name           "Actuation"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#147a73dcb4589c91ba49b637b00663f0> , <https://astrea.linkeddata.es/shapes#0858a52fa9ebde1be81ef35b63741a3d> , <https://astrea.linkeddata.es/shapes#130152422d1b733f268af2082015abd5> ;
+        sh:targetClass    seas:Actuation .
+
+<https://astrea.linkeddata.es/shapes#f3534318a2af2e1ff5fc716a9c0d8790>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  pep: ;
+        rdfs:label        "has command" , "Links a Procedure Execution to its unique command (a OWL individual)."@en ;
+        sh:description    "Links a Procedure Execution to its unique command (a OWL individual)."@en ;
+        sh:maxCount       1 ;
+        sh:name           "has command" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           pep:hasCommand .
+
+<https://astrea.linkeddata.es/shapes#271777936d66d37883ec48049f9d99ed>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:SystemOntology ;
+        rdfs:label        "connects system through"@en , "Links a connection point to one of the connections through which it connects its system."@en ;
+        sh:class          seas:Connection ;
+        sh:description    "Links a connection point to one of the connections through which it connects its system."@en ;
+        sh:name           "connects system through"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemThrough .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#9b03058280a5f782f3b923f93a45927b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:DeviceOntology ;
+        rdfs:label        "Sensing"@en ;
+        sh:description    "Sensing is a procedure where stimuli from the physical world are used to produce outputs."@en ;
+        sh:name           "Sensing"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#464d5cb2b1b4373850c31f2ea42d941b> , <https://astrea.linkeddata.es/shapes#7a29398a73e48889030fcc74e0f6f063> ;
+        sh:targetClass    seas:Sensing .
+
+<https://astrea.linkeddata.es/shapes#f3c8407bdbe56a57f4032aee7202ebc1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:DeviceOntology ;
+        rdfs:label        "Sensor"@en ;
+        sh:description    "A sensor is a device that implements some sensing procedure, and hence uses stimuli from the physical world to produce outputs."@en ;
+        sh:name           "Sensor"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#0162dfe6ec57863d28cb00867aad81fc> , <https://astrea.linkeddata.es/shapes#7a29398a73e48889030fcc74e0f6f063> , <https://astrea.linkeddata.es/shapes#464d5cb2b1b4373850c31f2ea42d941b> ;
+        sh:targetClass    seas:Sensor .
+
+<https://astrea.linkeddata.es/shapes#b95a7a4cf0630faf321865f8228fbdb0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  pep: ;
+        rdfs:label        "Links a Procedure Execution to its unique simple result (a RDFS literal)."@en , "has simple result" ;
+        sh:description    "Links a Procedure Execution to its unique simple result (a RDFS literal)."@en ;
+        sh:maxCount       1 ;
+        sh:name           "has simple result" ;
+        sh:nodeKind       sh:Literal , sh:IRIOrLiteral ;
+        sh:path           pep:hasSimpleResult .
+
+<https://astrea.linkeddata.es/shapes#7541748c1c32407aa3b77dbdcf5363b2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  pep: ;
+        rdfs:label        "Procedure Execution Container" ;
+        sh:description    "The class of containers of Procedure Executions made by a specific Procedure Executor using a specific Procedure. \r\n\r\nA Procedure Executor Container can be for example a Web container of Procedure Execution resources, where one may operate HTTP POST requests to execute a given procedure."@en ;
+        sh:name           "Procedure Execution Container" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#76e82f81616afb45a31ee306b745a38b> , <https://astrea.linkeddata.es/shapes#6e994965f5ea839645a520b47e4fec9e> ;
+        sh:targetClass    pep:ProcedureExecutionContainer .
+
+<https://astrea.linkeddata.es/shapes#7a29398a73e48889030fcc74e0f6f063>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:DeviceOntology ;
+        rdfs:label        "observes"@en , "Links a sensing, sensor, or observation, to the feature of interest a property of which it observes.\r\n\r\nIf `x` observes a property, then it also observes the feature of interest of this property:\r\n\r\n```\r\nseas:observes < seas:observesProperty o seas:isPropertyOf .\r\n```\r\n\r\nIf a sensing observes a feature of interest, then any sensor that implements this sensing also observes this feature of interest, and any observation that used this sensing also observes this feature of interest. Furthermore, if a sensor observes a feature of interest, then any observation executed by this sensor also observes this feature of interest:\r\n\r\n```\r\nseas:observes < pep:usedProcedure o seas:observes .\r\nseas:observes < pep:usedProcedure o seas:observes .\r\nseas:observes < pep:madeBy o seas:observes .\r\n```\r\n  \r\n"@en ;
+        sh:class          seas:FeatureOfInterest ;
+        sh:description    "Links a sensing, sensor, or observation, to the feature of interest a property of which it observes.\r\n\r\nIf `x` observes a property, then it also observes the feature of interest of this property:\r\n\r\n```\r\nseas:observes < seas:observesProperty o seas:isPropertyOf .\r\n```\r\n\r\nIf a sensing observes a feature of interest, then any sensor that implements this sensing also observes this feature of interest, and any observation that used this sensing also observes this feature of interest. Furthermore, if a sensor observes a feature of interest, then any observation executed by this sensor also observes this feature of interest:\r\n\r\n```\r\nseas:observes < pep:usedProcedure o seas:observes .\r\nseas:observes < pep:usedProcedure o seas:observes .\r\nseas:observes < pep:madeBy o seas:observes .\r\n```\r\n  \r\n"@en ;
+        sh:name           "observes"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:observes .
+
+<https://astrea.linkeddata.es/shapes#893797ba8898177df5b817ba86554a38>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      foaf:name .
+
+<https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  voaf:Vocabulary .
+
+<https://astrea.linkeddata.es/shapes#3dace43f5fa1811992381b27c58325cb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  pep: ;
+        rdfs:label        "has input" , "Links a Procedure to the (unique) description of its input."@en ;
+        sh:description    "Links a Procedure to the (unique) description of its input."@en ;
+        sh:maxCount       1 ;
+        sh:name           "has input" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           pep:hasInput .
+
+<https://astrea.linkeddata.es/shapes#33f1fd983c1b4c87622c120da662914a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  pep: ;
+        rdfs:label        "implements" , "A relation between a Procedure Executor and a Procedure it implements."@en ;
+        sh:class          pep:Procedure ;
+        sh:description    "A relation between a Procedure Executor and a Procedure it implements."@en ;
+        sh:name           "implements" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           pep:implements .
+
+<https://astrea.linkeddata.es/shapes#0bf39083493fd3048c20d8d3c1bb78c0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:DeviceOntology ;
+        rdfs:label        "Actuator"@en ;
+        sh:description    "An actuator is a device that implements some actuating procedure, and has thus an impact on the physical world."@en ;
+        sh:name           "Actuator"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#147a73dcb4589c91ba49b637b00663f0> , <https://astrea.linkeddata.es/shapes#130152422d1b733f268af2082015abd5> , <https://astrea.linkeddata.es/shapes#960b194365d62b625bfed0429af3881b> ;
+        sh:targetClass    seas:Actuator .
+
+<https://astrea.linkeddata.es/report/1755827111>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://w3id.org/pep/" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#c92996f282f1178e15f64aed2d3b7bb3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "Incoming evaluation"@en ;
+        sh:description    "Evaluation of how the exterior contributes to the property."@en ;
+        sh:name           "Incoming evaluation"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:IncomingEvaluation .
+
+<https://astrea.linkeddata.es/shapes#ecde7734c40d7b973ca3e5eec2085fb2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  pep: ;
+        rdfs:label        "made by" , "Relation between a Procedure Execution and what made it."@en ;
+        sh:class          pep:ProcedureExecutor ;
+        sh:description    "Relation between a Procedure Execution and what made it."@en ;
+        sh:maxCount       1 ;
+        sh:name           "made by" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           pep:madeBy .
+
+<https://astrea.linkeddata.es/shapes#e636a81d5b8700d631eaf13114c868b4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:SystemOntology ;
+        rdfs:label        "Links a connection point to the one and only one system it belongs to."@en , "connection point to"@en ;
+        sh:class          seas:System ;
+        sh:description    "Links a connection point to the one and only one system it belongs to."@en ;
+        sh:maxCount       1 ;
+        sh:name           "connection point to"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:connectionPointOf .
+
+<https://astrea.linkeddata.es/shapes#18e575a5bf1aff586780bd7f0bacbdfa>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:SystemOntology ;
+        rdfs:label        "connects system at"@en , "Links a connection to one of the connection points at which it connects a system."@en ;
+        sh:class          seas:ConnectionPoint ;
+        sh:description    "Links a connection to one of the connection points at which it connects a system."@en ;
+        sh:name           "connects system at"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystemAt .
+
+<https://astrea.linkeddata.es/shapes#d66c3ce46d53deef8c175dd2adf29888>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:SystemOntology ;
+        rdfs:label        "Links a system to one of the connection points at which it connects."@en , "connects at"@en ;
+        sh:class          seas:ConnectionPoint ;
+        sh:description    "Links a system to one of the connection points at which it connects."@en ;
+        sh:inversePath    seas:connectsAt ;
+        sh:maxCount       1 ;
+        sh:name           "connects at"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsAt .
+
+<https://astrea.linkeddata.es/shapes#7ba0889be0ca0c87645a2c7cee6e0b0e>
+        a         sh:PropertyShape ;
+        sh:class  pep:Procedure .
+
+<https://astrea.linkeddata.es/shapes#74a549a85b2294c2e7528d148e18b364>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:DeviceOntology ;
+        rdfs:label        "Observation"@en ;
+        sh:description    "An observation is the execution of some sensing procedure by some sensor."@en ;
+        sh:name           "Observation"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7a29398a73e48889030fcc74e0f6f063> , <https://astrea.linkeddata.es/shapes#464d5cb2b1b4373850c31f2ea42d941b> , <https://astrea.linkeddata.es/shapes#611d0edd460d1d586fd741fad4d992fe> ;
+        sh:targetClass    seas:Observation .
+
+<https://astrea.linkeddata.es/shapes#0858a52fa9ebde1be81ef35b63741a3d>
+        sh:path                 pep:usedProcedure ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  seas:Actuating ] .
+
+<https://astrea.linkeddata.es/shapes#0162dfe6ec57863d28cb00867aad81fc>
+        sh:path                 pep:implements ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  seas:Sensing ] .
+
+<https://astrea.linkeddata.es/shapes#988cba7f0d0616ff83e0f9ef53dcc486>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:SystemOntology ;
+        rdfs:label        "connected through"@en , "Links a system to one of its connections to other systems."@en ;
+        sh:class          seas:Connection ;
+        sh:description    "Links a system to one of its connections to other systems."@en ;
+        sh:name           "connected through"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectedThrough .
+
+<https://astrea.linkeddata.es/report/967848598>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://w3id.org/seas/SystemOntology" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#960b194365d62b625bfed0429af3881b>
+        sh:path                 pep:implements ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  seas:Actuating ] .
+
+<https://astrea.linkeddata.es/shapes#bb641b746f4e11b35c5fc3488a7fbd58>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:DeviceOntology ;
+        rdfs:label        "Actuating"@en ;
+        sh:description    "Actuating is a procedure that has an impact on the physical world."@en ;
+        sh:name           "Actuating"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#147a73dcb4589c91ba49b637b00663f0> , <https://astrea.linkeddata.es/shapes#130152422d1b733f268af2082015abd5> ;
+        sh:targetClass    seas:Actuating .
+
+<https://astrea.linkeddata.es/shapes#f867410023dfcf911c287841b46ad3e7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:SystemOntology ;
+        rdfs:label        "System"@en ;
+        sh:description    "The class of systems, i.e., systems virtually isolated from the environment, whose behaviour and interactions with the environment are modeled.\r\n\r\n  Systems can be connected to other systems. Connected systems interact in some ways. For example:\r\n\r\n```\r\n<electric_vehicle> seas:connectedTo <electric_vehicle_service_equipment> .\r\n```\r\n\r\n  Systems can also have subsystems. Properties of subsystems somehow contribute to the properties of the supersystem. For example:\r\n\r\n```\r\n<battery> seas:subSystemOf <electric_vehicle> .\r\n```\r\n\r\nFigure below illustrates systems and their connections:\r\n\r\n[![Systems and their connections](https://w3id.org/seas/system1.png)](https://w3id.org/seas/system1.png)\r\n\r\n"@en ;
+        sh:name           "System"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#988cba7f0d0616ff83e0f9ef53dcc486> , <https://astrea.linkeddata.es/shapes#0cd161191a5989993186f70a3b716856> , <https://astrea.linkeddata.es/shapes#85991995f7b354ce799a74701a789464> ;
+        sh:targetClass    seas:System .
+
+<https://astrea.linkeddata.es/shapes#5c4853c956f1f6fef4acaa4f1fbebb04>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  pep: ;
+        rdfs:label        "has output" , "Links a Procedure to the (unique) description of its output."@en ;
+        sh:description    "Links a Procedure to the (unique) description of its output."@en ;
+        sh:maxCount       1 ;
+        sh:name           "has output" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           pep:hasOutput .
+
+<https://astrea.linkeddata.es/shapes#40351ec0104f178ebf1dae47e679ba32>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  pep: ;
+        rdfs:label        "Procedure Execution" ;
+        sh:description    "Act of carrying out a Procedure. Links to:\r\n\r\n- a Procedure Executor to describe what made it and how; \r\n- the used procedure;\r\n- the command and the result of the procedure execution (simple or complex).\r\n"@en ;
+        sh:name           "Procedure Execution" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#7ba0889be0ca0c87645a2c7cee6e0b0e> , <https://astrea.linkeddata.es/shapes#dffd0212637d4583d11cee3ad7656e37> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#a34d1746088aa4c1ccedf29b7034d733> , <https://astrea.linkeddata.es/shapes#ecde7734c40d7b973ca3e5eec2085fb2> ;
+        sh:targetClass    pep:ProcedureExecution .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  foaf:Person .
+
+<https://astrea.linkeddata.es/shapes#464d5cb2b1b4373850c31f2ea42d941b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:DeviceOntology ;
+        rdfs:label        "observes property"@en , "Links a sensing, sensor, or observation, to a property it observes.\r\n\r\nIf a sensing observes a property, then any sensor that implements this sensing also observes this property, and any observation that used this sensing also observes this property. Furthermore, if a sensor observes a property, then any observation executed by this sensor also observes this property:\r\n\r\n```\r\nseas:observesProperty < pep:implements o seas:observesProperty .\r\nseas:observesProperty < pep:usedProcedure o seas:observesProperty .\r\nseas:observesProperty < pep:madeBy o seas:observesProperty .\r\n```\r\n"@en ;
+        sh:class          seas:Property ;
+        sh:description    "Links a sensing, sensor, or observation, to a property it observes.\r\n\r\nIf a sensing observes a property, then any sensor that implements this sensing also observes this property, and any observation that used this sensing also observes this property. Furthermore, if a sensor observes a property, then any observation executed by this sensor also observes this property:\r\n\r\n```\r\nseas:observesProperty < pep:implements o seas:observesProperty .\r\nseas:observesProperty < pep:usedProcedure o seas:observesProperty .\r\nseas:observesProperty < pep:madeBy o seas:observesProperty .\r\n```\r\n"@en ;
+        sh:name           "observes property"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:observesProperty .
+
+<https://astrea.linkeddata.es/shapes#6b7d20f990303e6eb9ddbc1f540c45b6>
+        a         sh:PropertyShape ;
+        sh:class  seas:Connection .
+
+<https://astrea.linkeddata.es/shapes#cc83a03e1058c17db8479734b3f2b00b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  pep: ;
+        rdfs:label        "Procedure Executor" ;
+        sh:description    "Device, agent (including humans), or software (simulation, web service) involved in, or implementing, a `Procedure`. Examples of sub-classes of Procedure Executor are Sensor, Actuator, Estimator.\r\n\r\nA Procedure Executor can be linked to the executions that it made using property `made`. Also, it can be linked to one or more `Procedure`s it implements using property `implements`. A Procedure Executor implements each of the methods used by the `Execution`s it made. \r\n\r\nOther metadata may detail geolocation, vendor, operator, consumed power, etc."@en ;
+        sh:name           "Procedure Executor" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#7ba0889be0ca0c87645a2c7cee6e0b0e> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#33f1fd983c1b4c87622c120da662914a> , <https://astrea.linkeddata.es/shapes#f8f3513e482822584b703ef35c0eebff> ;
+        sh:targetClass    pep:ProcedureExecutor .
+
+<https://astrea.linkeddata.es/shapes#147a73dcb4589c91ba49b637b00663f0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:DeviceOntology ;
+        rdfs:label        "acts on property"@en , "Links an actuating, actuator, or actuation, to the property it acts on.\r\n\r\nIf a acting acts on a property, then any actuator that implements this acting also acts on this property, and any actuation that used this acting also acts on this property. Furthermore, if a actuator acts on a property, then any actuation executed by this actuator also acts on this property:\r\n\r\n```\r\nseas:actsOnProperty < pep:implements o seas:actsOnProperty .\r\nseas:actsOnProperty < pep:usedProcedure o seas:actsOnProperty .\r\nseas:actsOnProperty < pep:madeBy o seas:actsOnProperty .\r\n```"@en ;
+        sh:class          seas:Property ;
+        sh:description    "Links an actuating, actuator, or actuation, to the property it acts on.\r\n\r\nIf a acting acts on a property, then any actuator that implements this acting also acts on this property, and any actuation that used this acting also acts on this property. Furthermore, if a actuator acts on a property, then any actuation executed by this actuator also acts on this property:\r\n\r\n```\r\nseas:actsOnProperty < pep:implements o seas:actsOnProperty .\r\nseas:actsOnProperty < pep:usedProcedure o seas:actsOnProperty .\r\nseas:actsOnProperty < pep:madeBy o seas:actsOnProperty .\r\n```"@en ;
+        sh:name           "acts on property"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:actsOnProperty .
+
+<https://astrea.linkeddata.es/shapes#0cd161191a5989993186f70a3b716856>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:SystemOntology ;
+        rdfs:label        "connected to"@en , "Links a system to a system it is connected to.\r\n\r\nConnected systems interact in some way. The exact meaning of _interact_ is defined by sub properties of `seas:connectedTo`.\r\n\r\nFor example, for the electricity to directly flow between an electric vehicle service equipment and an electric vehicle, then they must be linked by property `seas:exchangesElectricityWith`: \r\n\r\n```\r\nseas:exchangesElectricityWith rdfs:subPropertyOf seas:connectedTo .\r\n\r\n<electric_vehicle> seas:exchangesElectricityWith <electric_vehicle_service_equipment> .\r\n```\r\n\r\nProperty `seas:connectedTo` is symmetric:\r\n\r\n```\r\nif x seas:connectedTo y, then it is true that y seas:connectedTo x.\r\n```\r\n\r\nThis property can be qualified using class `seas:Connection`, which connects the two systems.\r\n\r\nIf there is a connection between several systems, then one may infer these systems are pairwise connected."@en ;
+        sh:class          seas:System ;
+        sh:description    "Links a system to a system it is connected to.\r\n\r\nConnected systems interact in some way. The exact meaning of _interact_ is defined by sub properties of `seas:connectedTo`.\r\n\r\nFor example, for the electricity to directly flow between an electric vehicle service equipment and an electric vehicle, then they must be linked by property `seas:exchangesElectricityWith`: \r\n\r\n```\r\nseas:exchangesElectricityWith rdfs:subPropertyOf seas:connectedTo .\r\n\r\n<electric_vehicle> seas:exchangesElectricityWith <electric_vehicle_service_equipment> .\r\n```\r\n\r\nProperty `seas:connectedTo` is symmetric:\r\n\r\n```\r\nif x seas:connectedTo y, then it is true that y seas:connectedTo x.\r\n```\r\n\r\nThis property can be qualified using class `seas:Connection`, which connects the two systems.\r\n\r\nIf there is a connection between several systems, then one may infer these systems are pairwise connected."@en ;
+        sh:name           "connected to"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectedTo .
+
+<https://astrea.linkeddata.es/shapes#e3b6c8b77d13a3c7315f2a4a99d76667>
+        a         sh:PropertyShape ;
+        sh:class  seas:System .
+
+<https://astrea.linkeddata.es/shapes#76e82f81616afb45a31ee306b745a38b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  pep: ;
+        rdfs:label        "Links a Procedure Execution Container to the Procedure that the executions it contains used."@en , "for procedure" ;
+        sh:class          pep:Procedure ;
+        sh:description    "Links a Procedure Execution Container to the Procedure that the executions it contains used."@en ;
+        sh:maxCount       1 ;
+        sh:name           "for procedure" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           pep:forProcedure .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#f3534318a2af2e1ff5fc716a9c0d8790> , <https://astrea.linkeddata.es/shapes#e43305d139ae7b345918f7e3d32811b3> , <https://astrea.linkeddata.es/shapes#130152422d1b733f268af2082015abd5> , <https://astrea.linkeddata.es/shapes#18e575a5bf1aff586780bd7f0bacbdfa> , <https://astrea.linkeddata.es/shapes#23b73f094038b2a7b3e86eaceb894d35> , <https://astrea.linkeddata.es/shapes#82ca69c02c56f97b3338c29bce889f46> , <https://astrea.linkeddata.es/shapes#ecde7734c40d7b973ca3e5eec2085fb2> , <https://astrea.linkeddata.es/shapes#7ba0889be0ca0c87645a2c7cee6e0b0e> , <https://astrea.linkeddata.es/shapes#5c4853c956f1f6fef4acaa4f1fbebb04> , <https://astrea.linkeddata.es/shapes#0abb68fa3cb75bd8ca727c50d887951f> , <https://astrea.linkeddata.es/shapes#cc83a03e1058c17db8479734b3f2b00b> , <https://astrea.linkeddata.es/shapes#f867410023dfcf911c287841b46ad3e7> , <https://astrea.linkeddata.es/shapes#0cd161191a5989993186f70a3b716856> , <https://astrea.linkeddata.es/shapes#147a73dcb4589c91ba49b637b00663f0> , <https://astrea.linkeddata.es/shapes#74a549a85b2294c2e7528d148e18b364> , <https://astrea.linkeddata.es/shapes#4f4ce0cddc9e14d9577b742e7ffb7165> , <https://astrea.linkeddata.es/shapes#0bf39083493fd3048c20d8d3c1bb78c0> , <https://astrea.linkeddata.es/shapes#40351ec0104f178ebf1dae47e679ba32> , <https://astrea.linkeddata.es/shapes#c92996f282f1178e15f64aed2d3b7bb3> , <https://astrea.linkeddata.es/shapes#f8f3513e482822584b703ef35c0eebff> , <https://astrea.linkeddata.es/shapes#85991995f7b354ce799a74701a789464> , <https://astrea.linkeddata.es/shapes#f3c8407bdbe56a57f4032aee7202ebc1> , <https://astrea.linkeddata.es/shapes#1bd16a93758d6778e243f07c8431c80d> , <https://astrea.linkeddata.es/shapes#14940e232a487b79039cd7f485ccca1f> , <https://astrea.linkeddata.es/shapes#271777936d66d37883ec48049f9d99ed> , <https://astrea.linkeddata.es/shapes#e636a81d5b8700d631eaf13114c868b4> , <https://astrea.linkeddata.es/shapes#7541748c1c32407aa3b77dbdcf5363b2> , <https://astrea.linkeddata.es/shapes#bb641b746f4e11b35c5fc3488a7fbd58> , <https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f> , <https://astrea.linkeddata.es/shapes#7a29398a73e48889030fcc74e0f6f063> , <https://astrea.linkeddata.es/shapes#3a9e3080591d33fa6b0f0537921e60b0> , <https://astrea.linkeddata.es/shapes#9b03058280a5f782f3b923f93a45927b> , <https://astrea.linkeddata.es/shapes#14f028ded1f26cf74d3da048e8828388> , <https://astrea.linkeddata.es/shapes#76e82f81616afb45a31ee306b745a38b> , <https://astrea.linkeddata.es/shapes#464d5cb2b1b4373850c31f2ea42d941b> , <https://astrea.linkeddata.es/shapes#783c68342bf586fe2f0493752ebb0e86> , <https://astrea.linkeddata.es/shapes#d66c3ce46d53deef8c175dd2adf29888> , <https://astrea.linkeddata.es/shapes#988cba7f0d0616ff83e0f9ef53dcc486> , <https://astrea.linkeddata.es/shapes#6e994965f5ea839645a520b47e4fec9e> , <https://astrea.linkeddata.es/shapes#a34d1746088aa4c1ccedf29b7034d733> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#b95a7a4cf0630faf321865f8228fbdb0> , <https://astrea.linkeddata.es/shapes#33f1fd983c1b4c87622c120da662914a> , <https://astrea.linkeddata.es/shapes#c601ad2d0f3a89863502ca503b8c1457> , <https://astrea.linkeddata.es/shapes#6b7d20f990303e6eb9ddbc1f540c45b6> , <https://astrea.linkeddata.es/shapes#dffd0212637d4583d11cee3ad7656e37> , <https://astrea.linkeddata.es/shapes#e3b6c8b77d13a3c7315f2a4a99d76667> , <https://astrea.linkeddata.es/shapes#3dace43f5fa1811992381b27c58325cb> , <https://astrea.linkeddata.es/shapes#893797ba8898177df5b817ba86554a38> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/967848598> , <https://astrea.linkeddata.es/report/1755827111> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#f8f3513e482822584b703ef35c0eebff>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  pep: ;
+        rdfs:label        "made" , "Relation between a procedure executor and an execution it made."@en ;
+        sh:class          pep:ProcedureExecution ;
+        sh:description    "Relation between a procedure executor and an execution it made."@en ;
+        sh:name           "made" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           pep:made .
+
+<https://astrea.linkeddata.es/shapes#0abb68fa3cb75bd8ca727c50d887951f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "Outgoing Evaluation"@en ;
+        sh:description    "Evaluation of how the property contributes to the exterior."@en ;
+        sh:name           "Outgoing Evaluation"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#14940e232a487b79039cd7f485ccca1f> ;
+        sh:targetClass    seas:OutgoingEvaluation .
+
+<https://astrea.linkeddata.es/shapes#783c68342bf586fe2f0493752ebb0e86>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:SystemOntology ;
+        rdfs:label        "Links a system to one of its sub systems."@en , "has sub system"@en ;
+        sh:class          seas:System ;
+        sh:description    "Links a system to one of its sub systems."@en ;
+        sh:inversePath    seas:hasSubSystem ;
+        sh:maxCount       1 ;
+        sh:name           "has sub system"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:hasSubSystem .
+
+<https://astrea.linkeddata.es/shapes#1bd16a93758d6778e243f07c8431c80d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:SystemOntology ;
+        rdfs:label        "Connection"@en ;
+        sh:description    "The class of connections between systems.\r\n\r\nThis class qualifies property `seas:connectedTo`. \r\n\r\nA connection describes potential interactions between systems. \r\n\r\nFor example, a power connection between power systems describes the fact that these systems may exchange electricity.\r\n\r\n```\r\n<connection> seas:connectsSystem <electric_vehicle> , <electric_vehicle_service_equipment> .\r\n<electric_vehicle> seas:connectedThrough <connection> .\r\n<electric_vehicle_service_equipment> seas:connectedThrough <connection> .\r\n```\r\n\r\nAny two connected systems are connected through a connection. If:\r\n\r\n```\r\n<system1> a seas:System .\r\n<system2> a seas:System .\r\n<system1> seas:connectedTo <system2> .\r\n```\r\n\r\nthen there exists `_:connection` such that:\r\n\r\n```\r\n_:connection seas:connectsSystem <system1> , <system2> .\r\n```\r\n\r\nA connection can connect more than two systems at the same time.\r\n\r\n\r\nFigure below illustrates connections of systems:\r\n\r\n[![Connections of systems](https://w3id.org/seas/system2.png)](https://w3id.org/seas/system2.png)\r\n\r\n"@en ;
+        sh:name           "Connection"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#e3b6c8b77d13a3c7315f2a4a99d76667> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#18e575a5bf1aff586780bd7f0bacbdfa> , <https://astrea.linkeddata.es/shapes#c601ad2d0f3a89863502ca503b8c1457> ;
+        sh:targetClass    seas:Connection .
+
+<https://astrea.linkeddata.es/shapes#c601ad2d0f3a89863502ca503b8c1457>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:SystemOntology ;
+        rdfs:label        "connects system"@en , "Links a connection to one of the systems it connects."@en ;
+        sh:class          seas:System ;
+        sh:description    "Links a connection to one of the systems it connects."@en ;
+        sh:name           "connects system"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectsSystem .
+
+<https://astrea.linkeddata.es/shapes#4f4ce0cddc9e14d9577b742e7ffb7165>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:DeviceOntology ;
+        rdfs:label        "Device"@en ;
+        sh:description    "Device is a physical system designed to execute one or more procedures that invove the physical world.\r\n\r\nA `seas:Device` is also a `pep:ProcedureExecutor` from the [Procedure Execution Ontology (PEP)](https://w3id.org/pep/). As such, it may implement procedures, and generate procedure executions.\r\n\r\nIf SEAS was to be aligned to the SAREF ontology, `seas:Device` would be more generic than `saref:Device`.\r\n\r\nA `seas:Device` may also be aligned with the SSN `ssn:Device`."@en ;
+        sh:name           "Device"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Device .
+
+<https://astrea.linkeddata.es/shapes#611d0edd460d1d586fd741fad4d992fe>
+        sh:path                 pep:usedProcedure ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  seas:Sensing ] .
+
+<https://astrea.linkeddata.es/shapes#3a9e3080591d33fa6b0f0537921e60b0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  pep: ;
+        rdfs:label        "Procedure"@en ;
+        sh:description    "A workflow, protocol, plan, algorithm, or computational method. It explains the steps to be carried out to arrive at reproducible results. A Procedure is re-usable, and might be implemented by several Procedure Executors and used for several Procedure Executions. \r\n\r\nExamples of sub-classes of Procedure include Sensing, Actuating, Planning, Forecasting."@en ;
+        sh:name           "Procedure"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    pep:Procedure .
+
+<https://astrea.linkeddata.es/shapes#e43305d139ae7b345918f7e3d32811b3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  pep: ;
+        rdfs:label        "has result" , "Links a Procedure Execution to its unique result (a OWL individual)."@en ;
+        sh:description    "Links a Procedure Execution to its unique result (a OWL individual)."@en ;
+        sh:maxCount       1 ;
+        sh:name           "has result" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           pep:hasResult .
+
+<https://astrea.linkeddata.es/shapes#14940e232a487b79039cd7f485ccca1f>
+        a         sh:PropertyShape ;
+        sh:class  seas:IncomingEvaluation .

@@ -1,0 +1,1047 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#4ef607a7eaad9ae35162b94fe933ad22>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#Dependency> .
+
+<https://astrea.linkeddata.es/shapes#601a626198188bea0118f2425a5aff82>
+        a               sh:NodeShape ;
+        rdfs:label      "StructuralDependency" ;
+        sh:description  "describes a  part/whole relationship between components.\nA strucural dependency is an included file, a paragrapg in a text, a  library used by applcation an application etc. etc."@en ;
+        sh:name         "StructuralDependency" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#1014289116a46f78f709e6b09bb093a7> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#StructuralDependency> .
+
+<https://astrea.linkeddata.es/shapes#326ff310925bee567b9fe0db3ed1086a>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#OLA> .
+
+<https://astrea.linkeddata.es/shapes#2292389db2bdc571cb06986cc4373b65>
+        a               sh:NodeShape ;
+        rdfs:label      "criticality" ;
+        sh:description  "A process Critcality"@en ;
+        sh:name         "criticality" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#ff38212175c590d305fca6b37757c16d> , <https://astrea.linkeddata.es/shapes#78c971805f815d8fceefab70c0ec7901> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#Criticality> .
+
+<https://astrea.linkeddata.es/shapes#65e076ed5766cefd995efa1873b21c84>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.it/itsmo/v1#hasDependencyStrength> .
+
+<https://astrea.linkeddata.es/shapes#8822eadc264ca794dcf5d133f9049eb8>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.it/itsmo/v1#hasPriority> .
+
+<https://astrea.linkeddata.es/shapes#03d250f11fcd180b604ec3ceb6f1ff2b>
+        a               sh:NodeShape ;
+        rdfs:label      "QualitativeValue" ;
+        sh:description  "This property share the same definition of  gr:QualitativeValue.\n A qualitative value is a predefined value for a service characteristic. \n\t\nExamples: The Service is critical.\n\t\nNote: Value sets are supported by creating subclasses of this class. Ordinal relations between values (gr:greater, gr:lesser, ...) can be provided directly by GoodRelations after subclassing itsmo:QualitativeValue to gr:QualitativeValue"@en ;
+        sh:name         "QualitativeValue" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#c9c7f951fe519298f0c42abc7cef537e> , <https://astrea.linkeddata.es/shapes#4ef607a7eaad9ae35162b94fe933ad22> , <https://astrea.linkeddata.es/shapes#c8e3e3744ee7838c75e61368f15b92f6> , <https://astrea.linkeddata.es/shapes#1629a387d03a35a79ba146cef525c08e> , <https://astrea.linkeddata.es/shapes#63279f2a280d8a8601dba626a7f204e0> , <https://astrea.linkeddata.es/shapes#c19b6b258c1a2fe11d1b871577b89aa6> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#QualitativeValue> .
+
+<https://astrea.linkeddata.es/shapes#491eb35764c5280491b0951be129194b>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasReferenceBaseline" , "the referenced resource is a baseline that officially represent  the annotated Configuration Item. If not present you can assume the the actual configuration."@en ;
+        sh:description  "the referenced resource is a baseline that officially represent  the annotated Configuration Item. If not present you can assume the the actual configuration."@en ;
+        sh:name         "hasReferenceBaseline" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasReferenceBaseline> .
+
+<https://astrea.linkeddata.es/shapes#3fec43ef24eb9a2c339d60f4ec087f6d>
+        a               sh:PropertyShape ;
+        rdfs:label      "requires" , "A related resource that is directly totally or partially  included either physically or logically in the described resource. This property implies dcterms:hasPart\nThis object property is a shortcut for the original itsmo:hasDirectDependency property for the common case of having a static structural (itsmo:structuralDependency) dependency with strong strength (itsmo:strongDependency).\nNote that this property is NOT transitive becouse it states a DIRECT dependency.\nSee  http://ontology.it/itsmo/v1/itsmo.html#dependency_relations for more info.\nN.B. The study of part-whole relations is a large field in its own right - \"mereology\" and \"mereotopology\" and has been the topic of many papers.\nNote that this property is quite different form gr:includes one (that has a more restricted domains). gr:includes could be thinked as a subclass of itsmo:includes"@en ;
+        rdfs:seeAlso    <http://ontology.it/itsmo/v1/userguide#dependency_relations> ;
+        sh:class        <http://ontology.it/itsmo/v1#ConfigurationItem> ;
+        sh:description  "A related resource that is directly totally or partially  included either physically or logically in the described resource. This property implies dcterms:hasPart\nThis object property is a shortcut for the original itsmo:hasDirectDependency property for the common case of having a static structural (itsmo:structuralDependency) dependency with strong strength (itsmo:strongDependency).\nNote that this property is NOT transitive becouse it states a DIRECT dependency.\nSee  http://ontology.it/itsmo/v1/itsmo.html#dependency_relations for more info.\nN.B. The study of part-whole relations is a large field in its own right - \"mereology\" and \"mereotopology\" and has been the topic of many papers.\nNote that this property is quite different form gr:includes one (that has a more restricted domains). gr:includes could be thinked as a subclass of itsmo:includes"@en ;
+        sh:name         "requires" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#requires> .
+
+<https://astrea.linkeddata.es/shapes#6fe20ac6cb8b4ca20c9e8c21b6bd9735>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasConsole" , "The referenced service is an administrative console forr the annotate service"@en ;
+        sh:class        <http://ontology.it/itsmo/v1#ITService> ;
+        sh:description  "The referenced service is an administrative console forr the annotate service"@en ;
+        sh:name         "hasConsole" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasConsole> .
+
+<https://astrea.linkeddata.es/shapes#5b6aa24e4676263adeb49900d42e33c9>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasManagementProcess" , "the referernced resource is a process for managing the described project rference"@en ;
+        sh:class        <http://ontology.it/itsmo/v1#ManagementProcess> ;
+        sh:description  "the referernced resource is a process for managing the described project rference"@en ;
+        sh:name         "hasManagementProcess" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasManagementProcess> .
+
+<https://astrea.linkeddata.es/shapes#f22849681490eedd4c7e680902fd8a63>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasSnapshot" , "The reference resource is a snapshot of a configuration item."@en ;
+        sh:class        <http://ontology.it/itsmo/v1#Snapshot> ;
+        sh:description  "The reference resource is a snapshot of a configuration item."@en ;
+        sh:name         "hasSnapshot" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasSnapshot> .
+
+<https://astrea.linkeddata.es/shapes#b074cb14e62f7171734950c7a30486a5>
+        a               sh:PropertyShape ;
+        rdfs:label      "agreementValidFrom" , "This property specifies the beginning of the validity of an agreement."@en ;
+        sh:datatype     xsd:dateTime ;
+        sh:description  "This property specifies the beginning of the validity of an agreement."@en ;
+        sh:name         "agreementValidFrom" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://ontology.it/itsmo/v1#agreementValidFrom> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#3779fbdd0631761ac8898fd825b10b4d>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#Hardware> .
+
+<https://astrea.linkeddata.es/shapes#5f5209f4d4602e3799816dfc8e7390b9>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.it/itsmo/v1#hasDependencyDistance> .
+
+<https://astrea.linkeddata.es/shapes#eb4ca5d91393a735f08fc2a440aa5c0f>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasSystemAdministrator" , "the referenced resource is the owner of the  the system"@en ;
+        sh:description  "the referenced resource is the owner of the  the system"@en ;
+        sh:name         "hasSystemAdministrator" ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#a6e786fa745d2bf68e5b2186ff26b928>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasUtility" , "The referenced resource is an utility for the annotated service or service option."@en ;
+        sh:class        <http://ontology.it/itsmo/v1#Utility> ;
+        sh:description  "The referenced resource is an utility for the annotated service or service option."@en ;
+        sh:name         "hasUtility" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasUtility> .
+
+<https://astrea.linkeddata.es/shapes#42b82e396ec8b1ca407cdf4d2627b4e7>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.it/itsmo/v1#datatypeDependencyProperty> .
+
+<https://astrea.linkeddata.es/shapes#c4585ee8ac0c51d42e72b2dd9fd945ba>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#Criticality> .
+
+<https://astrea.linkeddata.es/shapes#3c798e5112ec225da815b99a7494e38a>
+        a               sh:PropertyShape ;
+        rdfs:label      "isShared"@en , "The service is shared between many customers"@en ;
+        sh:datatype     xsd:boolean ;
+        sh:description  "The service is shared between many customers"@en ;
+        sh:name         "isShared"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://ontology.it/itsmo/v1#isShared> ;
+        sh:pattern      "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#b4b8083dcf2e62d3dd4658647ebc28c9>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#ServicePortfolio> .
+
+<https://astrea.linkeddata.es/shapes#b65851d9178022d1240bc48587f91fbc>
+        a               sh:NodeShape ;
+        rdfs:label      "Plan" ;
+        sh:description  "A detailed proposal that describes the activities and resources needed to achieve\nan objective – for example, a plan to implement a new IT service or process.\nISO/IEC 20000 requires a plan for the management of each IT service management\nprocess." ;
+        sh:name         "Plan" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#44132acb9ca6a29f6e27aa737723c86b> , <https://astrea.linkeddata.es/shapes#dadbc58b967aa73c6053d7ce688bd44f> , <https://astrea.linkeddata.es/shapes#f5769c9d9a041430478d6c96086202a0> , <https://astrea.linkeddata.es/shapes#532f30f668d5bb936b5d75a88366129c> , <https://astrea.linkeddata.es/shapes#3147ce2141b0f55f5d91993e5e01ef41> , <https://astrea.linkeddata.es/shapes#c9c666368873a17f7ab3dc94f65371f6> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#Plan> .
+
+<https://astrea.linkeddata.es/shapes#231747a179d13e2cf1424b3127fa6d09>
+        a               sh:NodeShape ;
+        rdfs:label      "Configuration" ;
+        sh:description  "A term that indicate a set of related phisical object with their metadata that are considered as a whole."@en ;
+        sh:name         "Configuration" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#63279f2a280d8a8601dba626a7f204e0> , <https://astrea.linkeddata.es/shapes#13c6be7779354d657527b5fd4de577b8> , <https://astrea.linkeddata.es/shapes#c8e3e3744ee7838c75e61368f15b92f6> , <https://astrea.linkeddata.es/shapes#c19b6b258c1a2fe11d1b871577b89aa6> , <https://astrea.linkeddata.es/shapes#4ef607a7eaad9ae35162b94fe933ad22> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#Configuration> .
+
+<https://astrea.linkeddata.es/shapes#ff38212175c590d305fca6b37757c16d>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#DependencyStrength> .
+
+<https://astrea.linkeddata.es/shapes#1c5795487e3bb2d164cce32ac7e35c09>
+        a               sh:NodeShape ;
+        rdfs:label      "Hardware" ;
+        sh:description  "the physical part of a computer"@en ;
+        sh:name         "Hardware" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#c1e419bfadbbe5f222260c01897a6f88> , <https://astrea.linkeddata.es/shapes#a06b6a364f69fc758b2fe76b5f352297> , <https://astrea.linkeddata.es/shapes#9962e94d527d663315d323d999d8c79f> , <https://astrea.linkeddata.es/shapes#ce80991821a6d4103ffebd2120320f39> , <https://astrea.linkeddata.es/shapes#9b22fca39c82a4b0607bbf371916be15> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#Hardware> .
+
+<https://astrea.linkeddata.es/shapes#3147ce2141b0f55f5d91993e5e01ef41>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#Catalogue> .
+
+<https://astrea.linkeddata.es/shapes#1a45964107587a15668e6e73a964af0a>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasInformed" , "Those who are kept up-to-date on progress, often only on completion of the task or deliverable; and with whom there is just one-way communication. [source Wikypedia Raci matrix]"@en ;
+        sh:class        <http://ontology.it/itsmo/v1#Identity> ;
+        sh:description  "Those who are kept up-to-date on progress, often only on completion of the task or deliverable; and with whom there is just one-way communication. [source Wikypedia Raci matrix]"@en ;
+        sh:name         "hasInformed" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasInformed> .
+
+<https://astrea.linkeddata.es/shapes#bde261ab626344b65da38d9248bf43c8>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasWarranty" , "The referenced resource is a Warranty for the annotated service or Service Option."@en ;
+        sh:class        <http://ontology.it/itsmo/v1#Warranty> ;
+        sh:description  "The referenced resource is a Warranty for the annotated service or Service Option."@en ;
+        sh:name         "hasWarranty" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasWarranty> .
+
+<https://astrea.linkeddata.es/shapes#f5769c9d9a041430478d6c96086202a0>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#Warranty> .
+
+<https://astrea.linkeddata.es/shapes#4d513663c7c31313e6d2f50d1891a129>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasConfiguration" , "A resource in from which the described resource is derived.\nGeneral practice suggests to use a Version Control System to manage configuration  ad  versioned directory. This practice minimize the need of baseline and helps to maintain a coherent history of Configuration Items Changes.\nITIL impose using just one Controlled Configuration record per Configuration Item."@en ;
+        sh:class        <http://ontology.it/itsmo/v1#Configuration> ;
+        sh:description  "A resource in from which the described resource is derived.\nGeneral practice suggests to use a Version Control System to manage configuration  ad  versioned directory. This practice minimize the need of baseline and helps to maintain a coherent history of Configuration Items Changes.\nITIL impose using just one Controlled Configuration record per Configuration Item."@en ;
+        sh:name         "hasConfiguration" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasConfiguration> .
+
+<https://astrea.linkeddata.es/shapes#7b5d9788bf9b0882d2ee8ffd15dca536>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#StructuralDependency> .
+
+<https://astrea.linkeddata.es/shapes#6d352f5d6a164b8c25cdea0b1372bcc6>
+        a               sh:NodeShape ;
+        rdfs:label      "Identity" ;
+        sh:description  "A unique name that is used to identify a user, person or role. The identity is used to grant rights to that user, person or role. Example identities might be the username SmithJ or the role ‘change manager’."@en ;
+        sh:name         "Identity" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#9b22fca39c82a4b0607bbf371916be15> , <https://astrea.linkeddata.es/shapes#a06b6a364f69fc758b2fe76b5f352297> , <https://astrea.linkeddata.es/shapes#ce80991821a6d4103ffebd2120320f39> , <https://astrea.linkeddata.es/shapes#3779fbdd0631761ac8898fd825b10b4d> , <https://astrea.linkeddata.es/shapes#9962e94d527d663315d323d999d8c79f> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#9bcfd9b3203cc9ba9efbd1fcbb4b8653> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#Identity> .
+
+<https://astrea.linkeddata.es/shapes#c6fb44eece41f1e2b8bda4b34514c52f>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasProvisioningProcess"@en , ""@en ;
+        sh:class        <http://ontology.it/itsmo/v1#Process> ;
+        sh:description  ""@en ;
+        sh:name         "hasProvisioningProcess"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasProvisioningProcess> .
+
+<https://astrea.linkeddata.es/shapes#c1e419bfadbbe5f222260c01897a6f88>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#Identity> .
+
+<https://astrea.linkeddata.es/shapes#42a2ac258fbe9eeff6767663e9766d19>
+        a               sh:NodeShape ;
+        rdfs:label      "ManagementProcess" ;
+        sh:description  "Is a process of planning and controlling one or more of activities. Here \n    are some examples:\n\n    <ul>\n      <li>\n        <b>Configuration Management</b>: the process responsible for ensuring \n        that the assets required to deliver services are properly controlled, \n        and that accurate and reliable information about those assets is \n        available when and where it is needed. This information includes \n        details of how the assets have been configured and the relationships \n        betweens [ITIL glossary].\n      </li>\n      <li>\n        <b>Project Management</b>: the discipline of planning, organizing, \n        securing, and managing resources to achieve specific goals. A project \n        is a temporary endeavor with a defined beginning and end (usually \n        time-constrained, and often constrained by funding or deliverables), \n        undertaken to meet unique goals and objectives, typically to bring \n        about beneficial change or added value[Wikipedia].\n      </li>\n      <li>\n        Change Management: the process responsible for controlling the \n        lifecycle of all changes, enabling beneficial changes to be made with \n        minimum disruption to IT services.[ITIL glossary]\n      </li>\n    </ul>\n    <p>"@en ;
+        sh:name         "ManagementProcess" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1f9295d687937e8d208c68c05fd106db> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#ManagementProcess> .
+
+<https://astrea.linkeddata.es/shapes#4dde295a8e6ffefb3a1ef26f89f5053f>
+        a               sh:NodeShape ;
+        rdfs:label      "Document" ;
+        sh:description  "Information in readable form. A document may be paper or electronic – for example, a policy statement, service level agreement, incident record or diagram of a computer room layout.\n\nDublin Core vocabulary appy to objetc of thes class."@en ;
+        sh:name         "Document" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#c1e419bfadbbe5f222260c01897a6f88> , <https://astrea.linkeddata.es/shapes#ce80991821a6d4103ffebd2120320f39> , <https://astrea.linkeddata.es/shapes#9962e94d527d663315d323d999d8c79f> , <https://astrea.linkeddata.es/shapes#a06b6a364f69fc758b2fe76b5f352297> , <https://astrea.linkeddata.es/shapes#3779fbdd0631761ac8898fd825b10b4d> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#48313c5729ffdbc7d0bfad7d49f3a2b1> , <https://astrea.linkeddata.es/shapes#cc2938dc803b4c2a887246d124b021e1> , <https://astrea.linkeddata.es/shapes#41b044d27291dfb086511f233f946ab7> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#Document> .
+
+<https://astrea.linkeddata.es/shapes#9ef48a1404fc91038a6e24b94704549f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://ontology.it/itsmo/v1> ;
+        rdfs:label        "Service Level Agreement" ;
+        sh:description    "An Agreement between an IT Service Provider and a Customer. The SLA describes the IT Service, documents Service Level Targets, and specifies the responsibilities of the IT Service Provider and the Customer. A single SLA may cover multiple IT Services or multiple Customers.\nSee Operational Level Agreement."@en ;
+        sh:name           "Service Level Agreement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#326ff310925bee567b9fe0db3ed1086a> ;
+        sh:targetClass    <http://ontology.it/itsmo/v1#SLA> .
+
+<https://astrea.linkeddata.es/shapes#9bcfd9b3203cc9ba9efbd1fcbb4b8653>
+        a               sh:PropertyShape ;
+        rdfs:label      "directReportOf" , "The referenced resource  is the head of  the described resource. This is a shortcut for describing a strong structural dependency between two identities."@en ;
+        sh:class        <http://ontology.it/itsmo/v1#Identity> ;
+        sh:description  "The referenced resource  is the head of  the described resource. This is a shortcut for describing a strong structural dependency between two identities."@en ;
+        sh:name         "directReportOf" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#directReportOf> .
+
+<https://astrea.linkeddata.es/shapes#b6d9a1af4d688d3b350e825f44f840e2>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasConfigurationDump" , "identifies a dump of a configuration. This cold be an URI of a controlled configuration revision. an archive file  or just a string that allow you how to identify such dump."@en ;
+        sh:description  "identifies a dump of a configuration. This cold be an URI of a controlled configuration revision. an archive file  or just a string that allow you how to identify such dump."@en ;
+        sh:name         "hasConfigurationDump" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://ontology.it/itsmo/v1#hasConfigurationDump> .
+
+<https://astrea.linkeddata.es/shapes#50d0690f2a94a2f282fe116fbaf14f79>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.it/itsmo/v1#hasDependentObject> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#210cfdf9ac06f97fbcca496ea5b90637>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasDesign" , "States process that identifies requirements and then defines a solution that is able to meet these requirements."@en ;
+        sh:class        <http://ontology.it/itsmo/v1#Process> ;
+        sh:description  "States process that identifies requirements and then defines a solution that is able to meet these requirements."@en ;
+        sh:name         "hasDesign" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasDesignProcess> .
+
+<https://astrea.linkeddata.es/shapes#85b1a201e10425de56538493cd86ad33>
+        a               sh:NodeShape ;
+        rdfs:label      "Dependency" ;
+        rdfs:seeAlso    <http://ontology.it/itsmo/v1/userguide#dependency_relations> ;
+        sh:description  "The direct or indirect reliance of one Configuraiton Item on another.\n [ Note that the ITIL 2011 restrict the domain of this terms to Processes or activity, this definition is more general ]. This is a superclass for all types of dependency relastionship for a CI."@en ;
+        sh:name         "Dependency" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#c19b6b258c1a2fe11d1b871577b89aa6> , <https://astrea.linkeddata.es/shapes#63279f2a280d8a8601dba626a7f204e0> , <https://astrea.linkeddata.es/shapes#c9c7f951fe519298f0c42abc7cef537e> , <https://astrea.linkeddata.es/shapes#13c6be7779354d657527b5fd4de577b8> , <https://astrea.linkeddata.es/shapes#c8e3e3744ee7838c75e61368f15b92f6> , <https://astrea.linkeddata.es/shapes#1629a387d03a35a79ba146cef525c08e> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#3cfa057c94a069a811c8100762aba569> , <https://astrea.linkeddata.es/shapes#10c339555917068ce0eb586e89dfa8d3> , <https://astrea.linkeddata.es/shapes#5f5209f4d4602e3799816dfc8e7390b9> , <https://astrea.linkeddata.es/shapes#65e076ed5766cefd995efa1873b21c84> , <https://astrea.linkeddata.es/shapes#50d0690f2a94a2f282fe116fbaf14f79> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#Dependency> .
+
+<https://astrea.linkeddata.es/shapes#e89e37125017b64ef722fc2027157409>
+        a               sh:NodeShape ;
+        rdfs:label      "ServiceCatalogue"@en ;
+        sh:description  "A database or structured document with\ninformation about all live IT services,\nincluding those available for deployment. The\nservice catalogue is part of the service\nportfolio and contains information about two\ntypes of IT service: customer-facing services\nthat are visible to the business; and\nsupporting services required by the service\nprovider to deliver customer-facing services."@en ;
+        sh:name         "ServiceCatalogue"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#ServiceCatalogue> .
+
+<https://astrea.linkeddata.es/shapes#e45e0452294c9916b4c5e22820a48ca2>
+        a               sh:PropertyShape ;
+        rdfs:label      "links" , "This object property is a shortcut for the original itsmo:hasDirectDependency property for the common case of  having a runtime  (itsmo:runtimeDependency) dependency with weak strength (itsmo:strongDependency) with another resource (totally or partially).\nNote that this property is NOT transitive because states a DIRECT dependency.\nIt is an uses properties but with a weak dependency strenght becouse the link can be broken without risk of destruction for describing resource."@en ;
+        sh:description  "This object property is a shortcut for the original itsmo:hasDirectDependency property for the common case of  having a runtime  (itsmo:runtimeDependency) dependency with weak strength (itsmo:strongDependency) with another resource (totally or partially).\nNote that this property is NOT transitive because states a DIRECT dependency.\nIt is an uses properties but with a weak dependency strenght becouse the link can be broken without risk of destruction for describing resource."@en ;
+        sh:name         "links" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#links> .
+
+<https://astrea.linkeddata.es/shapes#c8e3e3744ee7838c75e61368f15b92f6>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#ConfigurationItem> .
+
+<https://astrea.linkeddata.es/shapes#3cfa057c94a069a811c8100762aba569>
+        a                sh:PropertyShape ;
+        rdfs:label       "States the distance of an indirect dependency. If this property does not exist the distance is unknown. The value means the number of dependency hops from the direct dependency source reference.\nA value of 1 means a direct dependancy.\n This should be a positive integer."@en , "hasDependencyDistance" ;
+        sh:datatype      xsd:positiveInteger ;
+        sh:description   "States the distance of an indirect dependency. If this property does not exist the distance is unknown. The value means the number of dependency hops from the direct dependency source reference.\nA value of 1 means a direct dependancy.\n This should be a positive integer."@en ;
+        sh:minInclusive  1 ;
+        sh:name          "hasDependencyDistance" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://ontology.it/itsmo/v1#hasDependencyDistance> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#bee352bebc3b4700e7f4121886d45057>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.it/itsmo/v1#hasOperationProcess> .
+
+<https://astrea.linkeddata.es/shapes#f3953140a30657511bd7f28d74898c76>
+        a               sh:NodeShape ;
+        rdfs:label      "Snapshot" ;
+        sh:description  "A shapshot at a defined  time frame for a configuration Item. Use dcterms:created to annotate the date of the snapshot."@en ;
+        sh:name         "Snapshot" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#1629a387d03a35a79ba146cef525c08e> , <https://astrea.linkeddata.es/shapes#c8e3e3744ee7838c75e61368f15b92f6> , <https://astrea.linkeddata.es/shapes#c9c7f951fe519298f0c42abc7cef537e> , <https://astrea.linkeddata.es/shapes#13c6be7779354d657527b5fd4de577b8> , <https://astrea.linkeddata.es/shapes#63279f2a280d8a8601dba626a7f204e0> , <https://astrea.linkeddata.es/shapes#4ef607a7eaad9ae35162b94fe933ad22> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2d91850f358864f019bcd2e05c1a5c80> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#Snapshot> .
+
+<https://astrea.linkeddata.es/shapes#561cee74309f553c00bac6b742511772>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#SLA> .
+
+<https://astrea.linkeddata.es/shapes#5477c274b5200f7388543d0c645decc3>
+        a               sh:NodeShape ;
+        rdfs:label      "ControlledConfiguration" ;
+        sh:description  "A  term used to describe configuration  subjected to change management and stored in a configuration management database (CMDB).\nIf you use a Version Control System as CMDB, this is could be the  the name of a source tree. If you use a plain filesystem as CMDB, this is the pathname of a directory that contains a file structure. Could be thinked as a \"versioned directory\". This term  is similar to ITILs: \"configuration record\"."@en ;
+        sh:name         "ControlledConfiguration" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#63279f2a280d8a8601dba626a7f204e0> , <https://astrea.linkeddata.es/shapes#13c6be7779354d657527b5fd4de577b8> , <https://astrea.linkeddata.es/shapes#4ef607a7eaad9ae35162b94fe933ad22> , <https://astrea.linkeddata.es/shapes#c19b6b258c1a2fe11d1b871577b89aa6> , <https://astrea.linkeddata.es/shapes#c8e3e3744ee7838c75e61368f15b92f6> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#6f6e0e94a7a8dddd9cb3196a22528a95> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#ControlledConfiguration> .
+
+<https://astrea.linkeddata.es/shapes#cf9bfca2eec22b4c0d4f3153162c0017>
+        a               sh:NodeShape ;
+        rdfs:label      "System" ;
+        sh:description  "A number of related things that work together to achieve an overall Objective. For example:computer System including hardware, software and Applications, a management System, including multiple Processes that are planned and managed together. For example a Quality Management System, a Database Management System or Operating System that includes many software modules that are designed to perform a set of related Functions."@en ;
+        sh:name         "System" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c6fb44eece41f1e2b8bda4b34514c52f> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#System> .
+
+<https://astrea.linkeddata.es/shapes#1f9295d687937e8d208c68c05fd106db>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasManagementPlan" , "the reference resource is a plan document for the described resource."@en ;
+        sh:class        <http://ontology.it/itsmo/v1#Plan> ;
+        sh:description  "the reference resource is a plan document for the described resource."@en ;
+        sh:name         "hasManagementPlan" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasManagementPlan> .
+
+<https://astrea.linkeddata.es/shapes#f83e91f498dc2cf3b70f8c1890e5a15a>
+        a               sh:NodeShape ;
+        rdfs:label      "CustomerPortfolio"@en ;
+        sh:description  "A database or\nstructured document used to record all\ncustomers of the IT service provider. The\ncustomer portfolio is the business\nrelationship manager’s view of the customers\nwho receive services from the IT service\nprovider.>"@en ;
+        sh:name         "CustomerPortfolio"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#bcdfb1f6b4effaa682c7e9d67637b4c4> , <https://astrea.linkeddata.es/shapes#b4b8083dcf2e62d3dd4658647ebc28c9> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#CustomerPortfolio> .
+
+<https://astrea.linkeddata.es/shapes#babf461c92f311f86f36f23736413bc0>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.it/itsmo/v1#hasProjectOwner> .
+
+<https://astrea.linkeddata.es/shapes#c9c666368873a17f7ab3dc94f65371f6>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#Utility> .
+
+<https://astrea.linkeddata.es/shapes#10c339555917068ce0eb586e89dfa8d3>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasDependencyStrength" , "The level of dependency. There are two level of predefined value: itsmo:strongDependancy and  itsmo:weakDependancy. Other value can be defined."@en ;
+        sh:class        <http://ontology.it/itsmo/v1#DependencyStrength> ;
+        sh:description  "The level of dependency. There are two level of predefined value: itsmo:strongDependancy and  itsmo:weakDependancy. Other value can be defined."@en ;
+        sh:name         "hasDependencyStrength" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasDependencyStrength> .
+
+<https://astrea.linkeddata.es/shapes#a88092e6e436b8baa3c265e3e28d2b08>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.it/itsmo/v1#hasReferenceBaseline> .
+
+<https://astrea.linkeddata.es/shapes#2f4399bbcf4988be16e82b59f6ec4f18>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasDeliverable" , "the reference resource is a planned output for the described resource"@en ;
+        sh:class        <http://ontology.it/itsmo/v1#ConfigurationItem> ;
+        sh:description  "the reference resource is a planned output for the described resource"@en ;
+        sh:name         "hasDeliverable" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasDeliverable> .
+
+<https://astrea.linkeddata.es/shapes#7eb782c2908b738e7b382a7c44175ecc>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasServiceScope"@en , "This atribute state the service scope"@en ;
+        sh:class        <http://ontology.it/itsmo/v1#ServiceScope> ;
+        sh:description  "This atribute state the service scope"@en ;
+        sh:name         "hasServiceScope"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasServiceScope> .
+
+<https://astrea.linkeddata.es/shapes#80b987a9c0e47791194d2606d51e2e35>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://ontology.it/itsmo/v1> ;
+        rdfs:label        "IT Service" ;
+        sh:description    "A service is a means of delivering value to customers by facilitating \n      outcomes customers want to achieve without the ownership of specific \n      costs and risks. An IT is a service provided by an IT service provider. \n      An IT service is made up of a combination of information technology, \n      people and processes. A customer-facing IT service directly supports the \n      business processes of one or more customers and its service level \n      targets should be defined in a service level agreement. Other IT \n      services, called supporting services, are not directly used by the \n      business but are required by the service provider to deliver \n      customer-facing services."@en ;
+        sh:name           "IT Service" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7eb782c2908b738e7b382a7c44175ecc> , <https://astrea.linkeddata.es/shapes#3c798e5112ec225da815b99a7494e38a> , <https://astrea.linkeddata.es/shapes#bde261ab626344b65da38d9248bf43c8> , <https://astrea.linkeddata.es/shapes#63980afb8d32a9e9d99583643c46ffdb> , <https://astrea.linkeddata.es/shapes#6fe20ac6cb8b4ca20c9e8c21b6bd9735> , <https://astrea.linkeddata.es/shapes#c6fb44eece41f1e2b8bda4b34514c52f> , <https://astrea.linkeddata.es/shapes#aed71d3cbd3f20bbedbb23e74c53fe4a> , <https://astrea.linkeddata.es/shapes#cadf4e9efb401fff73b7df35603c4615> , <https://astrea.linkeddata.es/shapes#a6e786fa745d2bf68e5b2186ff26b928> , <https://astrea.linkeddata.es/shapes#2d39d22df3a29f6b000099af7a9dceb9> ;
+        sh:targetClass    <http://ontology.it/itsmo/v1#ITService> .
+
+<https://astrea.linkeddata.es/shapes#4d42a2dd796ffaa7396d053f97c301a3>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasProjectOwner" , "the reference resource is who owns the described respurce."@en ;
+        sh:class        <http://ontology.it/itsmo/v1#Identity> ;
+        sh:description  "the reference resource is who owns the described respurce."@en ;
+        sh:name         "hasProjectOwner" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasProjectOwner> .
+
+<https://astrea.linkeddata.es/shapes#fbc7d6afdfdf9871cd094fc0401314ec>
+        a               sh:NodeShape ;
+        rdfs:label      "Template"@en ;
+        sh:description  "A skeleton document or a document to be  used as reference for editing another document."@en ;
+        sh:name         "Template"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#3147ce2141b0f55f5d91993e5e01ef41> , <https://astrea.linkeddata.es/shapes#532f30f668d5bb936b5d75a88366129c> , <https://astrea.linkeddata.es/shapes#dadbc58b967aa73c6053d7ce688bd44f> , <https://astrea.linkeddata.es/shapes#f5769c9d9a041430478d6c96086202a0> , <https://astrea.linkeddata.es/shapes#01adfe4df08f598ebee46ae157d222b5> , <https://astrea.linkeddata.es/shapes#c9c666368873a17f7ab3dc94f65371f6> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#Template> .
+
+<https://astrea.linkeddata.es/shapes#a75b7c44e0c2126628e0c807a2f467b1>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.it/itsmo/v1#hasCriticality> .
+
+<https://astrea.linkeddata.es/shapes#43e6ad33e3b6b2b8c1fa32533d74ec68>
+        a               sh:NodeShape ;
+        rdfs:label      "Process Priority" ;
+        sh:description  "A process priority"@en ;
+        sh:name         "Process Priority" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#c4585ee8ac0c51d42e72b2dd9fd945ba> , <https://astrea.linkeddata.es/shapes#ff38212175c590d305fca6b37757c16d> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#Priority> .
+
+<https://astrea.linkeddata.es/shapes#a37cfc4d85dc3b5f1bdd1adbed1de331>
+        a               sh:NodeShape ;
+        rdfs:label      "Building" ;
+        sh:description  "Any human-made structure used or intended for supporting or sheltering any use or continuous occupancy"@en ;
+        sh:name         "Building" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#3779fbdd0631761ac8898fd825b10b4d> , <https://astrea.linkeddata.es/shapes#9b22fca39c82a4b0607bbf371916be15> , <https://astrea.linkeddata.es/shapes#a06b6a364f69fc758b2fe76b5f352297> , <https://astrea.linkeddata.es/shapes#c1e419bfadbbe5f222260c01897a6f88> , <https://astrea.linkeddata.es/shapes#ce80991821a6d4103ffebd2120320f39> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#Building> .
+
+<https://astrea.linkeddata.es/shapes#9875d31dddc525f2f87d98e6ac085cef>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasParty" , "One of the parties of an agreement"@en ;
+        sh:description  "One of the parties of an agreement"@en ;
+        sh:name         "hasParty" ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#63980afb8d32a9e9d99583643c46ffdb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://ontology.it/itsmo/v1> ;
+        rdfs:label        "hasCustomer" , "States the service Customer"@en ;
+        sh:class          <http://ontology.it/itsmo/v1#Identity> ;
+        sh:description    "States the service Customer"@en ;
+        sh:name           "hasCustomer" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://ontology.it/itsmo/v1#hasCustomer> .
+
+<https://astrea.linkeddata.es/shapes#83e210397b40633aa8f2ac0376598a27>
+        a               sh:PropertyShape ;
+        rdfs:label      "quantitativeServiceProperty" , "This class is  a container to collect all property that are safely sub-classable to gr:quantitativeProductOrServiceProperties."@en ;
+        sh:description  "This class is  a container to collect all property that are safely sub-classable to gr:quantitativeProductOrServiceProperties."@en ;
+        sh:name         "quantitativeServiceProperty" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#qualitativeServiceProperty> .
+
+<https://astrea.linkeddata.es/shapes#4e20ad3a8eb5eb6e6f4caac244d92375>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasConsulted" , "Those whose opinions are sought, typically subject matter experts; and with whom there is two-way communication. [ source wikypedia RACI matrix]"@en ;
+        sh:class        <http://ontology.it/itsmo/v1#Identity> ;
+        sh:description  "Those whose opinions are sought, typically subject matter experts; and with whom there is two-way communication. [ source wikypedia RACI matrix]"@en ;
+        sh:name         "hasConsulted" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasConsulted> .
+
+<https://astrea.linkeddata.es/shapes#abd6ee13132c16dd3ea62c00c6c97c9e>
+        a               sh:NodeShape ;
+        rdfs:label      "CustomerAgreementPortfolio"@en ;
+        sh:description  "A database or\nstructured document used to manage service\ncontracts or agreements between an IT\nservice provider and its customers. Each IT\nservice delivered to a customer should have\na contract or other agreement that is listed in\nthe customer agreement portfolio."@en ;
+        sh:name         "CustomerAgreementPortfolio"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#f6c9bd4ee8615b502860d2db54176804> , <https://astrea.linkeddata.es/shapes#b4b8083dcf2e62d3dd4658647ebc28c9> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#CustomerAgreementPortfolio> .
+
+<https://astrea.linkeddata.es/shapes#78c971805f815d8fceefab70c0ec7901>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#Priority> .
+
+<https://astrea.linkeddata.es/shapes#aed71d3cbd3f20bbedbb23e74c53fe4a>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.it/itsmo/v1#hasProvider> .
+
+<https://astrea.linkeddata.es/shapes#41b044d27291dfb086511f233f946ab7>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasTemplate" , "states a document that contains a skeleton or that can be used as reference for editing."@en ;
+        sh:class        <http://ontology.it/itsmo/v1#Template> ;
+        sh:description  "states a document that contains a skeleton or that can be used as reference for editing."@en ;
+        sh:name         "hasTemplate" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasTemplate> .
+
+<https://astrea.linkeddata.es/shapes#b6c65ea777827b4f187ca7405a4e7120>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasStatus" , "the referenced resource is a stage in the life cycle of the described resource."@en ;
+        sh:class        <http://ontology.it/itsmo/v1#LifeCycleStage> ;
+        sh:description  "the referenced resource is a stage in the life cycle of the described resource."@en ;
+        sh:name         "hasStatus" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasStatus> .
+
+<https://astrea.linkeddata.es/shapes#bcdfb1f6b4effaa682c7e9d67637b4c4>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#CustomerAgreementPortfolio> .
+
+<https://astrea.linkeddata.es/shapes#f6c9bd4ee8615b502860d2db54176804>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#CustomerPortfolio> .
+
+<https://astrea.linkeddata.es/shapes#c19b6b258c1a2fe11d1b871577b89aa6>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#Snapshot> .
+
+<https://astrea.linkeddata.es/shapes#6acc7fc96db9ab75c250d244da0cd3fb>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasDependency" , "This states that the subject resource depends (directly or indirectly) from referenced resource.\nThis could be thinked as  a pseudo transitive property. \nIf  hasDependency(A,B) and BhasDependency(B,C) then\nhasDepency(A,C).\n\nNote that this is not a standard OWL reasoning."@en ;
+        rdfs:seeAlso    <http://ontology.it/itsmo/v1/userguide#dependency_relations> ;
+        sh:class        <http://ontology.it/itsmo/v1#Dependency> ;
+        sh:description  "This states that the subject resource depends (directly or indirectly) from referenced resource.\nThis could be thinked as  a pseudo transitive property. \nIf  hasDependency(A,B) and BhasDependency(B,C) then\nhasDepency(A,C).\n\nNote that this is not a standard OWL reasoning."@en ;
+        sh:name         "hasDependency" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasDependency> .
+
+<https://astrea.linkeddata.es/shapes#c9b47355d1f0c05c19d66be7c5c71fb6>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasCMDB" , "the related resource is a means  to store configuration  throughout their lifecycle for described resource. The configuration management\nsystem  maintains one or more configuration management databases, and each database stores attributes of configuration items, and\nrelationships with other configuration items."@en ;
+        sh:description  "the related resource is a means  to store configuration  throughout their lifecycle for described resource. The configuration management\nsystem  maintains one or more configuration management databases, and each database stores attributes of configuration items, and\nrelationships with other configuration items."@en ;
+        sh:name         "hasCMDB" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  <http://ontology.it/itsmo/v1#ITService> ;
+                            sh:path   <http://ontology.it/itsmo/v1#hasCMDB>
+                          ]
+                          [ sh:class  <http://ontology.it/itsmo/v1#System> ;
+                            sh:path   <http://ontology.it/itsmo/v1#hasCMDB>
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/shapes#996cbe280c3f6ac54fb1c7ec4c6c612c>
+        a               sh:NodeShape ;
+        rdfs:label      "Project" ;
+        sh:description  "A temporary organization, with people and other assets, that is required to achieve an\nobjective or other outcome. Each project has a lifecycle that typically includes initiation,\nplanning, execution, and closure. Projects are usually managed using a formal\nmethodology such as PRojects IN Controlled Environments (PRINCE2) or the Project\nManagement Body of Knowledge (PMBOK)."@en ;
+        sh:name         "Project" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2f4399bbcf4988be16e82b59f6ec4f18> , <https://astrea.linkeddata.es/shapes#4d42a2dd796ffaa7396d053f97c301a3> , <https://astrea.linkeddata.es/shapes#babf461c92f311f86f36f23736413bc0> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#Project> .
+
+<https://astrea.linkeddata.es/shapes#1629a387d03a35a79ba146cef525c08e>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#ControlledConfiguration> .
+
+<https://astrea.linkeddata.es/shapes#b488f71990e7a3ce08d632dd18f6a74e>
+        a               sh:NodeShape ;
+        rdfs:label      "LifeCycleStage" ;
+        sh:description  "A stage in the life of a configuration item. The lifecycle defines the \n    categories for status and the status transitions that are permitted. For \n    example:\n\n    <ul>\n      <li>\n        The lifecycle of an application includes requirements, design, build, \n        deploy, operate, optimize.\n      </li>\n      <li>\n        The expanded incident lifecycle includes detection, diagnosis, repair, \n        recovery and restoration\n      </li>\n      <li>\n        The lifecycle of a server may include: ordered, received, in test, \n        live, disposed etc\n      </li>\n    </ul>"@en ;
+        sh:name         "LifeCycleStage" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#c9c7f951fe519298f0c42abc7cef537e> , <https://astrea.linkeddata.es/shapes#4ef607a7eaad9ae35162b94fe933ad22> , <https://astrea.linkeddata.es/shapes#13c6be7779354d657527b5fd4de577b8> , <https://astrea.linkeddata.es/shapes#c8e3e3744ee7838c75e61368f15b92f6> , <https://astrea.linkeddata.es/shapes#c19b6b258c1a2fe11d1b871577b89aa6> , <https://astrea.linkeddata.es/shapes#1629a387d03a35a79ba146cef525c08e> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#LifeCycleStage> .
+
+<https://astrea.linkeddata.es/shapes#ce80991821a6d4103ffebd2120320f39>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#RunnableResource> .
+
+<https://astrea.linkeddata.es/shapes#a06b6a364f69fc758b2fe76b5f352297>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#SoftwarePackage> .
+
+<https://astrea.linkeddata.es/shapes#e902bc6106d23c2a21cd6f54f1775a9a>
+        a               sh:NodeShape ;
+        rdfs:label      "ServiceOption" ;
+        sh:description  "A choice of utility and warranty offered to customers by a core service or service package."@en ;
+        sh:name         "ServiceOption" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#dadbc58b967aa73c6053d7ce688bd44f> , <https://astrea.linkeddata.es/shapes#01adfe4df08f598ebee46ae157d222b5> , <https://astrea.linkeddata.es/shapes#44132acb9ca6a29f6e27aa737723c86b> , <https://astrea.linkeddata.es/shapes#f5769c9d9a041430478d6c96086202a0> , <https://astrea.linkeddata.es/shapes#3147ce2141b0f55f5d91993e5e01ef41> , <https://astrea.linkeddata.es/shapes#c9c666368873a17f7ab3dc94f65371f6> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a6e786fa745d2bf68e5b2186ff26b928> , <https://astrea.linkeddata.es/shapes#bde261ab626344b65da38d9248bf43c8> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#ServiceOption> .
+
+<https://astrea.linkeddata.es/shapes#7e2abc00cbefb50619f9462c73af6dd3>
+        a               sh:NodeShape ;
+        rdfs:label      "DataCenter" ;
+        sh:description  "is a facility used to house computer systems and associated components>"@en ;
+        sh:name         "DataCenter" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#DataCenter> .
+
+<https://astrea.linkeddata.es/shapes#fdcafe7c10a9c8835ff5d99f1fac2ab9>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasProvider"@it , "States The Service Provider that provides IT Services to Internal Customers or External Customers." ;
+        sh:description  "States The Service Provider that provides IT Services to Internal Customers or External Customers." ;
+        sh:name         "hasProvider"@it ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#0cbd1eb8ca5544698105520c24deb55b>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasDependentObject" , "The subject of the statement depends fro, the referenced resource."@en ;
+        sh:description  "The subject of the statement depends fro, the referenced resource."@en ;
+        sh:name         "hasDependentObject" ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#21af066bf6ce506edbc550793984cd42>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasServiceDesignPackage" , "the reference resource  is a  resource defining some  aspects of an IT Service and  its Requirements through each stage of its Lifecycle."@en ;
+        sh:description  "the reference resource  is a  resource defining some  aspects of an IT Service and  its Requirements through each stage of its Lifecycle."@en ;
+        sh:name         "hasServiceDesignPackage" ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#d678daf0fcae094d363e7eeb17f508ad>
+        a               sh:PropertyShape ;
+        rdfs:label      "agreementValidThrough"@en , "This property specifies the end of the validity of an agreement."@en ;
+        sh:datatype     xsd:dateTime ;
+        sh:description  "This property specifies the end of the validity of an agreement."@en ;
+        sh:name         "agreementValidThrough"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://ontology.it/itsmo/v1#agreementValidThrough> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#ea9ffabcc7b32e1dfd8b33392d496eba>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://ontology.it/itsmo/v1> ;
+        rdfs:label        "Operational Level Agreement" ;
+        sh:description    "An Agreement between an IT Service Provider and another part of the same Organisation. An OLA supports the IT Service Provider's delivery of IT Services to Customers. The OLA defines the goods or Services to be provided and the responsibilities of both parties. For example there could be an OLA between the IT Service Provider and a procurement department to obtain hardware in agreed times, between the Service Desk and a Support Group to provide Incident Resolution in agreed times.\nSee Service Level Agreement."@en ;
+        sh:name           "Operational Level Agreement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#561cee74309f553c00bac6b742511772> ;
+        sh:targetClass    <http://ontology.it/itsmo/v1#OLA> .
+
+<https://astrea.linkeddata.es/shapes#532f30f668d5bb936b5d75a88366129c>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#ServiceOption> .
+
+<https://astrea.linkeddata.es/shapes#656ddcb1c5e2a555afd39b97c4f1073b>
+        a               sh:NodeShape ;
+        rdfs:label      "Agreement"@en ;
+        sh:description  "A document that describes a formal understanding between two or more parties.\nAn agreement is not legally binding, unless it forms part of a contract."@en ;
+        sh:name         "Agreement"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d678daf0fcae094d363e7eeb17f508ad> , <https://astrea.linkeddata.es/shapes#b074cb14e62f7171734950c7a30486a5> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#Agreement> .
+
+<https://astrea.linkeddata.es/shapes#2d91850f358864f019bcd2e05c1a5c80>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasLinkedDataDump" , "states a set of metadata snapshot. This sholud be a string expressed in a formal RDF language like XML/RF or turtle.\nIt is used to take a snapshot of the properties of a C.I. when it has mulltiple or uncontrolled configuration or any other sparse metadata definition.\nThink  it  as the output of a SPARQL DESCRIBE query to an end-point that contains  metadata for configuration Item.."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "states a set of metadata snapshot. This sholud be a string expressed in a formal RDF language like XML/RF or turtle.\nIt is used to take a snapshot of the properties of a C.I. when it has mulltiple or uncontrolled configuration or any other sparse metadata definition.\nThink  it  as the output of a SPARQL DESCRIBE query to an end-point that contains  metadata for configuration Item.."@en ;
+        sh:name         "hasLinkedDataDump" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://ontology.it/itsmo/v1#hasLinkedDataDump> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#c9c7f951fe519298f0c42abc7cef537e>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#Configuration> .
+
+<https://astrea.linkeddata.es/shapes#6661ffd66907cfd6458ef139147461fe>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://ontology.it/itsmo/v1> ;
+        rdfs:label        "Application" ;
+        sh:description    "Software that provides functions which are required by an IT service. Each application\nmay be part of more than one IT service. An application runs on one or more servers or\nclients."@en , "Application should be executable and installable Software Package. For example a library is not an application but it is a Software Package. [Not ITIL definition]"@en ;
+        sh:name           "Application" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://ontology.it/itsmo/v1#Application> .
+
+<https://astrea.linkeddata.es/shapes#cadf4e9efb401fff73b7df35603c4615>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://ontology.it/itsmo/v1> ;
+        rdfs:label        "hasAgreement" , "An contract or an agriment related to a service (Service level agreed, ola or other)"@en ;
+        sh:class          <http://ontology.it/itsmo/v1#Agreement> ;
+        sh:description    "An contract or an agriment related to a service (Service level agreed, ola or other)"@en ;
+        sh:name           "hasAgreement" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://ontology.it/itsmo/v1#hasAgreement> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#3fec43ef24eb9a2c339d60f4ec087f6d> , <https://astrea.linkeddata.es/shapes#cf9bfca2eec22b4c0d4f3153162c0017> , <https://astrea.linkeddata.es/shapes#ea9ffabcc7b32e1dfd8b33392d496eba> , <https://astrea.linkeddata.es/shapes#5f5209f4d4602e3799816dfc8e7390b9> , <https://astrea.linkeddata.es/shapes#44132acb9ca6a29f6e27aa737723c86b> , <https://astrea.linkeddata.es/shapes#2d91850f358864f019bcd2e05c1a5c80> , <https://astrea.linkeddata.es/shapes#996cbe280c3f6ac54fb1c7ec4c6c612c> , <https://astrea.linkeddata.es/shapes#42b82e396ec8b1ca407cdf4d2627b4e7> , <https://astrea.linkeddata.es/shapes#1629a387d03a35a79ba146cef525c08e> , <https://astrea.linkeddata.es/shapes#2d39d22df3a29f6b000099af7a9dceb9> , <https://astrea.linkeddata.es/shapes#bde261ab626344b65da38d9248bf43c8> , <https://astrea.linkeddata.es/shapes#cadf4e9efb401fff73b7df35603c4615> , <https://astrea.linkeddata.es/shapes#21af066bf6ce506edbc550793984cd42> , <https://astrea.linkeddata.es/shapes#3147ce2141b0f55f5d91993e5e01ef41> , <https://astrea.linkeddata.es/shapes#9875d31dddc525f2f87d98e6ac085cef> , <https://astrea.linkeddata.es/shapes#a88092e6e436b8baa3c265e3e28d2b08> , <https://astrea.linkeddata.es/shapes#5477c274b5200f7388543d0c645decc3> , <https://astrea.linkeddata.es/shapes#dadbc58b967aa73c6053d7ce688bd44f> , <https://astrea.linkeddata.es/shapes#9bcfd9b3203cc9ba9efbd1fcbb4b8653> , <https://astrea.linkeddata.es/shapes#e41bbb3f616faff3ba2be50448ef60b1> , <https://astrea.linkeddata.es/shapes#85b1a201e10425de56538493cd86ad33> , <https://astrea.linkeddata.es/shapes#13c6be7779354d657527b5fd4de577b8> , <https://astrea.linkeddata.es/shapes#4ef607a7eaad9ae35162b94fe933ad22> , <https://astrea.linkeddata.es/shapes#ce80991821a6d4103ffebd2120320f39> , <https://astrea.linkeddata.es/shapes#231747a179d13e2cf1424b3127fa6d09> , <https://astrea.linkeddata.es/shapes#601a626198188bea0118f2425a5aff82> , <https://astrea.linkeddata.es/shapes#65e076ed5766cefd995efa1873b21c84> , <https://astrea.linkeddata.es/shapes#c6fb44eece41f1e2b8bda4b34514c52f> , <https://astrea.linkeddata.es/shapes#1c5795487e3bb2d164cce32ac7e35c09> , <https://astrea.linkeddata.es/shapes#48313c5729ffdbc7d0bfad7d49f3a2b1> , <https://astrea.linkeddata.es/shapes#f6c9bd4ee8615b502860d2db54176804> , <https://astrea.linkeddata.es/shapes#f3953140a30657511bd7f28d74898c76> , <https://astrea.linkeddata.es/shapes#3779fbdd0631761ac8898fd825b10b4d> , <https://astrea.linkeddata.es/shapes#83e210397b40633aa8f2ac0376598a27> , <https://astrea.linkeddata.es/shapes#9ef48a1404fc91038a6e24b94704549f> , <https://astrea.linkeddata.es/shapes#d678daf0fcae094d363e7eeb17f508ad> , <https://astrea.linkeddata.es/shapes#63279f2a280d8a8601dba626a7f204e0> , <https://astrea.linkeddata.es/shapes#1b1237ed5de5f05bd567198baaa9a296> , <https://astrea.linkeddata.es/shapes#e902bc6106d23c2a21cd6f54f1775a9a> , <https://astrea.linkeddata.es/shapes#f22849681490eedd4c7e680902fd8a63> , <https://astrea.linkeddata.es/shapes#6fe20ac6cb8b4ca20c9e8c21b6bd9735> , <https://astrea.linkeddata.es/shapes#a06b6a364f69fc758b2fe76b5f352297> , <https://astrea.linkeddata.es/shapes#abd6ee13132c16dd3ea62c00c6c97c9e> , <https://astrea.linkeddata.es/shapes#f512539250968b644b934379ad9a57e8> , <https://astrea.linkeddata.es/shapes#eb4ca5d91393a735f08fc2a440aa5c0f> , <https://astrea.linkeddata.es/shapes#aed71d3cbd3f20bbedbb23e74c53fe4a> , <https://astrea.linkeddata.es/shapes#998b67b3782c5c7b622ec9ae36cab6a5> , <https://astrea.linkeddata.es/shapes#27873886b9bcb1d38454396ab46917ab> , <https://astrea.linkeddata.es/shapes#062d39a21eef59d8ee4fbedff2dd52af> , <https://astrea.linkeddata.es/shapes#b074cb14e62f7171734950c7a30486a5> , <https://astrea.linkeddata.es/shapes#c8e3e3744ee7838c75e61368f15b92f6> , <https://astrea.linkeddata.es/shapes#1388c98301192d09bb85e19257d2bc0d> , <https://astrea.linkeddata.es/shapes#50d0690f2a94a2f282fe116fbaf14f79> , <https://astrea.linkeddata.es/shapes#41b044d27291dfb086511f233f946ab7> , <https://astrea.linkeddata.es/shapes#f5769c9d9a041430478d6c96086202a0> , <https://astrea.linkeddata.es/shapes#c1e419bfadbbe5f222260c01897a6f88> , <https://astrea.linkeddata.es/shapes#532f30f668d5bb936b5d75a88366129c> , <https://astrea.linkeddata.es/shapes#4dde295a8e6ffefb3a1ef26f89f5053f> , <https://astrea.linkeddata.es/shapes#8822eadc264ca794dcf5d133f9049eb8> , <https://astrea.linkeddata.es/shapes#c9c666368873a17f7ab3dc94f65371f6> , <https://astrea.linkeddata.es/shapes#3c798e5112ec225da815b99a7494e38a> , <https://astrea.linkeddata.es/shapes#4d42a2dd796ffaa7396d053f97c301a3> , <https://astrea.linkeddata.es/shapes#6acc7fc96db9ab75c250d244da0cd3fb> , <https://astrea.linkeddata.es/shapes#da41e7ab63e179ae77387240b6a481d7> , <https://astrea.linkeddata.es/shapes#43e6ad33e3b6b2b8c1fa32533d74ec68> , <https://astrea.linkeddata.es/shapes#1a45964107587a15668e6e73a964af0a> , <https://astrea.linkeddata.es/shapes#491eb35764c5280491b0951be129194b> , <https://astrea.linkeddata.es/shapes#fdcafe7c10a9c8835ff5d99f1fac2ab9> , <https://astrea.linkeddata.es/shapes#b4b8083dcf2e62d3dd4658647ebc28c9> , <https://astrea.linkeddata.es/shapes#9b4cdaad3df6c628d7f2dbb375481a7b> , <https://astrea.linkeddata.es/shapes#7d975fa0d80b59862eda81be613789b2> , <https://astrea.linkeddata.es/shapes#c19b6b258c1a2fe11d1b871577b89aa6> , <https://astrea.linkeddata.es/shapes#4bf58db0cbfff94d36f6ea309ea42c24> , <https://astrea.linkeddata.es/shapes#b488f71990e7a3ce08d632dd18f6a74e> , <https://astrea.linkeddata.es/shapes#854fff95b46f5d7996f92be98d7b4d38> , <https://astrea.linkeddata.es/shapes#cc2938dc803b4c2a887246d124b021e1> , <https://astrea.linkeddata.es/shapes#01adfe4df08f598ebee46ae157d222b5> , <https://astrea.linkeddata.es/shapes#7e2abc00cbefb50619f9462c73af6dd3> , <https://astrea.linkeddata.es/shapes#2bee7d854ed552ffd5e8e028a0147d84> , <https://astrea.linkeddata.es/shapes#3e0ccb6ab38f1e30038f278a290c0a78> , <https://astrea.linkeddata.es/shapes#1c3213b7000de09abef8ee4748d8cc19> , <https://astrea.linkeddata.es/shapes#326ff310925bee567b9fe0db3ed1086a> , <https://astrea.linkeddata.es/shapes#ff78e9b4de77c7fe02133a9c9b4b7422> , <https://astrea.linkeddata.es/shapes#3cfa057c94a069a811c8100762aba569> , <https://astrea.linkeddata.es/shapes#1014289116a46f78f709e6b09bb093a7> , <https://astrea.linkeddata.es/shapes#fbc7d6afdfdf9871cd094fc0401314ec> , <https://astrea.linkeddata.es/shapes#9b22fca39c82a4b0607bbf371916be15> , <https://astrea.linkeddata.es/shapes#10c339555917068ce0eb586e89dfa8d3> , <https://astrea.linkeddata.es/shapes#656ddcb1c5e2a555afd39b97c4f1073b> , <https://astrea.linkeddata.es/shapes#e89e37125017b64ef722fc2027157409> , <https://astrea.linkeddata.es/shapes#606397ae38b70c53e190d0575125acce> , <https://astrea.linkeddata.es/shapes#bee352bebc3b4700e7f4121886d45057> , <https://astrea.linkeddata.es/shapes#babf461c92f311f86f36f23736413bc0> , <https://astrea.linkeddata.es/shapes#7b5d9788bf9b0882d2ee8ffd15dca536> , <https://astrea.linkeddata.es/shapes#7504e44072fa324b45c34f4ec8701d06> , <https://astrea.linkeddata.es/shapes#a6e786fa745d2bf68e5b2186ff26b928> , <https://astrea.linkeddata.es/shapes#03d250f11fcd180b604ec3ceb6f1ff2b> , <https://astrea.linkeddata.es/shapes#e45e0452294c9916b4c5e22820a48ca2> , <https://astrea.linkeddata.es/shapes#c9c7f951fe519298f0c42abc7cef537e> , <https://astrea.linkeddata.es/shapes#9962e94d527d663315d323d999d8c79f> , <https://astrea.linkeddata.es/shapes#1f7fb2bf8a85162abd67ee11add45a7e> , <https://astrea.linkeddata.es/shapes#6f6e0e94a7a8dddd9cb3196a22528a95> , <https://astrea.linkeddata.es/shapes#4e20ad3a8eb5eb6e6f4caac244d92375> , <https://astrea.linkeddata.es/shapes#c9b47355d1f0c05c19d66be7c5c71fb6> , <https://astrea.linkeddata.es/shapes#a75b7c44e0c2126628e0c807a2f467b1> , <https://astrea.linkeddata.es/shapes#1f9295d687937e8d208c68c05fd106db> , <https://astrea.linkeddata.es/shapes#74cd16fb6d1d93b9d1a61a86b2efae7f> , <https://astrea.linkeddata.es/shapes#4d513663c7c31313e6d2f50d1891a129> , <https://astrea.linkeddata.es/shapes#2292389db2bdc571cb06986cc4373b65> , <https://astrea.linkeddata.es/shapes#78c971805f815d8fceefab70c0ec7901> , <https://astrea.linkeddata.es/shapes#f83e91f498dc2cf3b70f8c1890e5a15a> , <https://astrea.linkeddata.es/shapes#63980afb8d32a9e9d99583643c46ffdb> , <https://astrea.linkeddata.es/shapes#7eb782c2908b738e7b382a7c44175ecc> , <https://astrea.linkeddata.es/shapes#b65851d9178022d1240bc48587f91fbc> , <https://astrea.linkeddata.es/shapes#561cee74309f553c00bac6b742511772> , <https://astrea.linkeddata.es/shapes#ca83dd1f1664d63bbc311a5d3f4e45f5> , <https://astrea.linkeddata.es/shapes#a37cfc4d85dc3b5f1bdd1adbed1de331> , <https://astrea.linkeddata.es/shapes#6d352f5d6a164b8c25cdea0b1372bcc6> , <https://astrea.linkeddata.es/shapes#b586c14daf1d51a51657ad16ef2b9e20> , <https://astrea.linkeddata.es/shapes#c4585ee8ac0c51d42e72b2dd9fd945ba> , <https://astrea.linkeddata.es/shapes#5b6aa24e4676263adeb49900d42e33c9> , <https://astrea.linkeddata.es/shapes#210cfdf9ac06f97fbcca496ea5b90637> , <https://astrea.linkeddata.es/shapes#0cbd1eb8ca5544698105520c24deb55b> , <https://astrea.linkeddata.es/shapes#42a2ac258fbe9eeff6767663e9766d19> , <https://astrea.linkeddata.es/shapes#cbe4f1d858d89278040034ac61bc0f5e> , <https://astrea.linkeddata.es/shapes#4bef8568ec24bdd0bae1ad90d7a6f10c> , <https://astrea.linkeddata.es/shapes#b6d9a1af4d688d3b350e825f44f840e2> , <https://astrea.linkeddata.es/shapes#ff38212175c590d305fca6b37757c16d> , <https://astrea.linkeddata.es/shapes#bcdfb1f6b4effaa682c7e9d67637b4c4> , <https://astrea.linkeddata.es/shapes#6739f43d0d9304b683b09b72f5fc93dd> , <https://astrea.linkeddata.es/shapes#80b987a9c0e47791194d2606d51e2e35> , <https://astrea.linkeddata.es/shapes#2f4399bbcf4988be16e82b59f6ec4f18> , <https://astrea.linkeddata.es/shapes#b6c65ea777827b4f187ca7405a4e7120> , <https://astrea.linkeddata.es/shapes#6661ffd66907cfd6458ef139147461fe> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#b586c14daf1d51a51657ad16ef2b9e20>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.it/itsmo/v1#hasStatus> .
+
+<https://astrea.linkeddata.es/shapes#6739f43d0d9304b683b09b72f5fc93dd>
+        a               sh:PropertyShape ;
+        rdfs:label      "uses" , "This object property is a shortcut for the original itsmo:hasDirectDependency property for the common case of  having a runtime  (itsmo:runtimeDependency) dependency with strong strength (itsmo:strongDependency) with another resource (totally or partially).\nNote that this property is NOT transitive because states a DIRECT dependency."@en ;
+        rdfs:seeAlso    <http://ontology.it/itsmo/v1/userguide#dependency_relations> ;
+        sh:class        <http://ontology.it/itsmo/v1#ConfigurationItem> ;
+        sh:description  "This object property is a shortcut for the original itsmo:hasDirectDependency property for the common case of  having a runtime  (itsmo:runtimeDependency) dependency with strong strength (itsmo:strongDependency) with another resource (totally or partially).\nNote that this property is NOT transitive because states a DIRECT dependency."@en ;
+        sh:name         "uses" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#uses> .
+
+<https://astrea.linkeddata.es/shapes#e41bbb3f616faff3ba2be50448ef60b1>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasCriticality"@en , "Relative criticality"@en ;
+        sh:class        <http://ontology.it/itsmo/v1#Criticality> ;
+        sh:description  "Relative criticality"@en ;
+        sh:name         "hasCriticality"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasCriticality> .
+
+<https://astrea.linkeddata.es/shapes#74cd16fb6d1d93b9d1a61a86b2efae7f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://ontology.it/itsmo/v1> ;
+        rdfs:label        "Process" ;
+        sh:description    "A structured set of activities designed to accomplish a specific objective. \nA process takes one or more defined inputs and turns them into defined outputs. It may include any of the roles, responsibilities, tools and management controls required to reliably deliver the outputs. A process may define policies, standards, guidelines, activities and work instructions if they are needed."@en ;
+        sh:name           "Process" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#4e20ad3a8eb5eb6e6f4caac244d92375> , <https://astrea.linkeddata.es/shapes#2bee7d854ed552ffd5e8e028a0147d84> , <https://astrea.linkeddata.es/shapes#1a45964107587a15668e6e73a964af0a> , <https://astrea.linkeddata.es/shapes#f512539250968b644b934379ad9a57e8> ;
+        sh:targetClass    <http://ontology.it/itsmo/v1#Process> .
+
+<https://astrea.linkeddata.es/shapes#062d39a21eef59d8ee4fbedff2dd52af>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasBaseline" , "A reference to  a  baseline  of a configuration."@en ;
+        sh:class        <http://ontology.it/itsmo/v1#Baseline> ;
+        sh:description  "A reference to  a  baseline  of a configuration."@en ;
+        sh:name         "hasBaseline" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasBaseline> .
+
+<https://astrea.linkeddata.es/shapes#2d39d22df3a29f6b000099af7a9dceb9>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasSLAPackage" , "The reference resouce (or litteral) is a choice of utility and warranty offered to\ncustomers by a core service or service package."@en ;
+        sh:class        <http://ontology.it/itsmo/v1#ServiceOption> ;
+        sh:description  "The reference resouce (or litteral) is a choice of utility and warranty offered to\ncustomers by a core service or service package."@en ;
+        sh:name         "hasSLAPackage" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasServiceOption> .
+
+<https://astrea.linkeddata.es/shapes#f512539250968b644b934379ad9a57e8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://ontology.it/itsmo/v1> ;
+        rdfs:label        "hasResponsible"@en , "Those who do the work to achieve a Process. There is typically one role with a participation type of Responsible, although others can be delegated to assist in the work required."@en ;
+        sh:class          <http://ontology.it/itsmo/v1#Identity> ;
+        sh:description    "Those who do the work to achieve a Process. There is typically one role with a participation type of Responsible, although others can be delegated to assist in the work required."@en ;
+        sh:name           "hasResponsible"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://ontology.it/itsmo/v1#hasResponsible> .
+
+<https://astrea.linkeddata.es/shapes#dadbc58b967aa73c6053d7ce688bd44f>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#Policy> .
+
+<https://astrea.linkeddata.es/shapes#1014289116a46f78f709e6b09bb093a7>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#RunTimeDependency> .
+
+<https://astrea.linkeddata.es/shapes#44132acb9ca6a29f6e27aa737723c86b>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#Template> .
+
+<https://astrea.linkeddata.es/shapes#4bef8568ec24bdd0bae1ad90d7a6f10c>
+        a               sh:NodeShape ;
+        rdfs:label      "Baseline" ;
+        rdfs:seeAlso    <http://ontology.it/itsmo/v1/userguide/#CI> ;
+        sh:description  "A configuration baseline is a snapshot that is used as a reference point."@en ;
+        sh:name         "Baseline" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#Baseline> .
+
+<https://astrea.linkeddata.es/shapes#1388c98301192d09bb85e19257d2bc0d>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasOperationProcess" , "States Day-to-day management  proces of an IT service, system or other runnable item."@en ;
+        sh:class        <http://ontology.it/itsmo/v1#Process> ;
+        sh:description  "States Day-to-day management  proces of an IT service, system or other runnable item."@en ;
+        sh:name         "hasOperationProcess" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasOperationProcess> .
+
+<https://astrea.linkeddata.es/shapes#998b67b3782c5c7b622ec9ae36cab6a5>
+        a               sh:NodeShape ;
+        rdfs:label      "SoftwarePackage" ;
+        sh:description  "A logical entity that identify a software release or a software feature set.\nFor example: \"VirtueMart 1.1.x\", \"Linux LTS 10.04\" , \"Windows 7 service pack 2\", \"Apache 2\" . Sometime referenced only with \"software\"."@en ;
+        sh:name         "SoftwarePackage" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#ce80991821a6d4103ffebd2120320f39> , <https://astrea.linkeddata.es/shapes#3779fbdd0631761ac8898fd825b10b4d> , <https://astrea.linkeddata.es/shapes#9962e94d527d663315d323d999d8c79f> , <https://astrea.linkeddata.es/shapes#c1e419bfadbbe5f222260c01897a6f88> , <https://astrea.linkeddata.es/shapes#9b22fca39c82a4b0607bbf371916be15> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#SoftwarePackage> .
+
+<https://astrea.linkeddata.es/shapes#1c3213b7000de09abef8ee4748d8cc19>
+        a               sh:NodeShape ;
+        rdfs:label      "Policy" ;
+        sh:description  "Formally documented management expectations and intentions. Policies are used to direct decisions, and to ensure consistent and appropriate development and implementation of processes, standards, roles, activities, IT infrastructure etc."@en ;
+        sh:name         "Policy" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#01adfe4df08f598ebee46ae157d222b5> , <https://astrea.linkeddata.es/shapes#f5769c9d9a041430478d6c96086202a0> , <https://astrea.linkeddata.es/shapes#c9c666368873a17f7ab3dc94f65371f6> , <https://astrea.linkeddata.es/shapes#44132acb9ca6a29f6e27aa737723c86b> , <https://astrea.linkeddata.es/shapes#532f30f668d5bb936b5d75a88366129c> , <https://astrea.linkeddata.es/shapes#3147ce2141b0f55f5d91993e5e01ef41> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#Policy> .
+
+<https://astrea.linkeddata.es/shapes#9b4cdaad3df6c628d7f2dbb375481a7b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://ontology.it/itsmo/v1> ;
+        rdfs:label        "hasAccountable" , "The one ultimately accountable for the correct and thorough completion of the process, and the one to whom Responsible is accountable. In other words, an Accountable must sign off (Approve) on work that Responsible provides. There must be only one Accountable specified for each process."@en ;
+        sh:description    "The one ultimately accountable for the correct and thorough completion of the process, and the one to whom Responsible is accountable. In other words, an Accountable must sign off (Approve) on work that Responsible provides. There must be only one Accountable specified for each process."@en ;
+        sh:name           "hasAccountable" ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#ca83dd1f1664d63bbc311a5d3f4e45f5>
+        a               sh:PropertyShape ;
+        rdfs:label      "datatypeServiceProperty" , "This property is the super property for all pure datatype properties that can be used to describe a gr:ProductOrService."@en ;
+        sh:description  "This property is the super property for all pure datatype properties that can be used to describe a gr:ProductOrService."@en ;
+        sh:name         "datatypeServiceProperty" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://ontology.it/itsmo/v1#datatypeServiceProperty> .
+
+<https://astrea.linkeddata.es/shapes#606397ae38b70c53e190d0575125acce>
+        a               sh:NodeShape ;
+        rdfs:label      "ServiceScope"@en ;
+        sh:description  "The service Scope (busines or infrastructure)"@en ;
+        sh:name         "ServiceScope"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#ServiceScope> .
+
+<https://astrea.linkeddata.es/shapes#13c6be7779354d657527b5fd4de577b8>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#QualitativeValue> .
+
+<https://astrea.linkeddata.es/shapes#ff78e9b4de77c7fe02133a9c9b4b7422>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.it/itsmo/v1#hasDesignProcess> .
+
+<https://astrea.linkeddata.es/shapes#7504e44072fa324b45c34f4ec8701d06>
+        a               sh:NodeShape ;
+        rdfs:label      "Utility" ;
+        sh:description  "The functionality offered by a product or service to meet a particular need. Utility can be summarized as ‘what the service does’, and can be used to determine whether a service is able to meet its required outcomes, or is ‘fit for purpose’. The business value of an IT service is created by the combination of utility and warranty."@en ;
+        sh:name         "Utility" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#dadbc58b967aa73c6053d7ce688bd44f> , <https://astrea.linkeddata.es/shapes#01adfe4df08f598ebee46ae157d222b5> , <https://astrea.linkeddata.es/shapes#532f30f668d5bb936b5d75a88366129c> , <https://astrea.linkeddata.es/shapes#3147ce2141b0f55f5d91993e5e01ef41> , <https://astrea.linkeddata.es/shapes#44132acb9ca6a29f6e27aa737723c86b> , <https://astrea.linkeddata.es/shapes#f5769c9d9a041430478d6c96086202a0> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#Utility> .
+
+<https://astrea.linkeddata.es/shapes#1f7fb2bf8a85162abd67ee11add45a7e>
+        a               sh:NodeShape ;
+        rdfs:label      "RunnableResource" ;
+        sh:description  "Configuration items that require an execution environment to go live."@en ;
+        sh:name         "RunnableResource" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#3779fbdd0631761ac8898fd825b10b4d> , <https://astrea.linkeddata.es/shapes#9962e94d527d663315d323d999d8c79f> , <https://astrea.linkeddata.es/shapes#9b22fca39c82a4b0607bbf371916be15> , <https://astrea.linkeddata.es/shapes#c1e419bfadbbe5f222260c01897a6f88> , <https://astrea.linkeddata.es/shapes#a06b6a364f69fc758b2fe76b5f352297> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#8822eadc264ca794dcf5d133f9049eb8> , <https://astrea.linkeddata.es/shapes#e41bbb3f616faff3ba2be50448ef60b1> , <https://astrea.linkeddata.es/shapes#bee352bebc3b4700e7f4121886d45057> , <https://astrea.linkeddata.es/shapes#1388c98301192d09bb85e19257d2bc0d> , <https://astrea.linkeddata.es/shapes#210cfdf9ac06f97fbcca496ea5b90637> , <https://astrea.linkeddata.es/shapes#7d975fa0d80b59862eda81be613789b2> , <https://astrea.linkeddata.es/shapes#ff78e9b4de77c7fe02133a9c9b4b7422> , <https://astrea.linkeddata.es/shapes#a75b7c44e0c2126628e0c807a2f467b1> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#RunnableResource> .
+
+<https://astrea.linkeddata.es/shapes#da41e7ab63e179ae77387240b6a481d7>
+        a               sh:NodeShape ;
+        rdfs:label      "Warranty" ;
+        sh:description  "Assurance that a product or service will meet agreed requirements. This may be a formal agreement such as a service level agreement or contract, or it may be a marketing message or brand image. Warranty refers to the ability of a service to be available when needed, to provide the required capacity, and to provide the required reliability in terms of continuity and security. Warranty can be summarized as ‘how the service is delivered’, and can be used to determine whether a service is ‘fit for use’. The business value of an IT service is created by the combination of utility and warranty."@en ;
+        sh:name         "Warranty" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#44132acb9ca6a29f6e27aa737723c86b> , <https://astrea.linkeddata.es/shapes#3147ce2141b0f55f5d91993e5e01ef41> , <https://astrea.linkeddata.es/shapes#01adfe4df08f598ebee46ae157d222b5> , <https://astrea.linkeddata.es/shapes#532f30f668d5bb936b5d75a88366129c> , <https://astrea.linkeddata.es/shapes#c9c666368873a17f7ab3dc94f65371f6> , <https://astrea.linkeddata.es/shapes#dadbc58b967aa73c6053d7ce688bd44f> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#Warranty> .
+
+<https://astrea.linkeddata.es/shapes#48313c5729ffdbc7d0bfad7d49f3a2b1>
+        a               sh:PropertyShape ;
+        rdfs:label      "the referenced resource is process for edititing described resource." , "hasEditingProcess"@en ;
+        sh:class        <http://ontology.it/itsmo/v1#Process> ;
+        sh:description  "hasEditingProcess"@en ;
+        sh:name         "the referenced resource is process for edititing described resource." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasEditingProcess> .
+
+<https://astrea.linkeddata.es/shapes#cbe4f1d858d89278040034ac61bc0f5e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://ontology.it/itsmo/v1> ;
+        rdfs:label        "Configuration Item" ;
+        rdfs:seeAlso      <http://ontology.it/itsmo/v1/userguide/#CI> ;
+        sh:description    "any component or other service asset  that needs to be managed in order to deliver an IT service. Information about each configuration item is recorded [at least] in a configuration record within the configuration management system and is maintained throughout its lifecycle by service asset and configuration management.\nConfiguration items are under the control of change management. They  typically include IT services, hardware, software, buildings, people and  formal documentation such as process documentation and service level  agreements.\nNote that tis definition is a  bit extensive than ITIL one, because it allow a CI to be described in more than one configuration records.This make this definition compatible with semantic web architecture that allow metadata do be defined everywhere in the web. See ITSMO user manual for more info about this class."@en ;
+        sh:name           "Configuration Item" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#13c6be7779354d657527b5fd4de577b8> , <https://astrea.linkeddata.es/shapes#c9c7f951fe519298f0c42abc7cef537e> , <https://astrea.linkeddata.es/shapes#1629a387d03a35a79ba146cef525c08e> , <https://astrea.linkeddata.es/shapes#4ef607a7eaad9ae35162b94fe933ad22> , <https://astrea.linkeddata.es/shapes#c19b6b258c1a2fe11d1b871577b89aa6> , <https://astrea.linkeddata.es/shapes#63279f2a280d8a8601dba626a7f204e0> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#f22849681490eedd4c7e680902fd8a63> , <https://astrea.linkeddata.es/shapes#3fec43ef24eb9a2c339d60f4ec087f6d> , <https://astrea.linkeddata.es/shapes#b586c14daf1d51a51657ad16ef2b9e20> , <https://astrea.linkeddata.es/shapes#4d513663c7c31313e6d2f50d1891a129> , <https://astrea.linkeddata.es/shapes#5b6aa24e4676263adeb49900d42e33c9> , <https://astrea.linkeddata.es/shapes#6739f43d0d9304b683b09b72f5fc93dd> , <https://astrea.linkeddata.es/shapes#a88092e6e436b8baa3c265e3e28d2b08> ;
+        sh:targetClass    <http://ontology.it/itsmo/v1#ConfigurationItem> .
+
+<https://astrea.linkeddata.es/shapes#cc2938dc803b4c2a887246d124b021e1>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasPublishingProcess" , "the referenced resource is a Process for publishing the described resource."@en ;
+        sh:class        <http://ontology.it/itsmo/v1#Process> ;
+        sh:description  "the referenced resource is a Process for publishing the described resource."@en ;
+        sh:name         "hasPublishingProcess" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasPublishingProcess> .
+
+<https://astrea.linkeddata.es/shapes#1b1237ed5de5f05bd567198baaa9a296>
+        a               sh:NodeShape ;
+        rdfs:label      "Life cycle"@en ;
+        sh:description  "A set of related LifeCycleStage. Could be implementetd with a state machine."@en ;
+        sh:name         "Life cycle"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#LifeCycle> .
+
+<https://astrea.linkeddata.es/shapes#01adfe4df08f598ebee46ae157d222b5>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#Plan> .
+
+<https://astrea.linkeddata.es/shapes#9b22fca39c82a4b0607bbf371916be15>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#Document> .
+
+<https://astrea.linkeddata.es/shapes#9962e94d527d663315d323d999d8c79f>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#Building> .
+
+<https://astrea.linkeddata.es/shapes#63279f2a280d8a8601dba626a7f204e0>
+        a         sh:PropertyShape ;
+        sh:class  <http://ontology.it/itsmo/v1#LifeCycleStage> .
+
+<https://astrea.linkeddata.es/shapes#3e0ccb6ab38f1e30038f278a290c0a78>
+        a               sh:NodeShape ;
+        rdfs:label      "Catalogue"@en ;
+        sh:description  "A complete list of items, typically one in alphabetical or other systematic order"@en ;
+        sh:name         "Catalogue"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#44132acb9ca6a29f6e27aa737723c86b> , <https://astrea.linkeddata.es/shapes#dadbc58b967aa73c6053d7ce688bd44f> , <https://astrea.linkeddata.es/shapes#f5769c9d9a041430478d6c96086202a0> , <https://astrea.linkeddata.es/shapes#532f30f668d5bb936b5d75a88366129c> , <https://astrea.linkeddata.es/shapes#01adfe4df08f598ebee46ae157d222b5> , <https://astrea.linkeddata.es/shapes#c9c666368873a17f7ab3dc94f65371f6> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#Catalogue> .
+
+<https://astrea.linkeddata.es/shapes#4bf58db0cbfff94d36f6ea309ea42c24>
+        a               sh:NodeShape ;
+        rdfs:label      "ServicePortfolio"@en ;
+        sh:description  "The complete set of\nservices that is managed by a service\nprovider. The service portfolio is used to\nmanage the entire lifecycle of all services,\nand includes three categories: service\npipeline (proposed or in development),\nservice catalogue (live or available for\ndeployment), and retired services."@en ;
+        sh:name         "ServicePortfolio"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#f6c9bd4ee8615b502860d2db54176804> , <https://astrea.linkeddata.es/shapes#bcdfb1f6b4effaa682c7e9d67637b4c4> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#ServicePortfolio> .
+
+<https://astrea.linkeddata.es/shapes#6f6e0e94a7a8dddd9cb3196a22528a95>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.it/itsmo/v1#hasCMDB> .
+
+<https://astrea.linkeddata.es/shapes#2bee7d854ed552ffd5e8e028a0147d84>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.it/itsmo/v1#hasAccountable> .
+
+<https://astrea.linkeddata.es/shapes#27873886b9bcb1d38454396ab46917ab>
+        a               sh:NodeShape ;
+        rdfs:label      "Dependency Strength" ;
+        sh:description  "A Strength level for a dependency"@en ;
+        sh:name         "Dependency Strength" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#c4585ee8ac0c51d42e72b2dd9fd945ba> , <https://astrea.linkeddata.es/shapes#78c971805f815d8fceefab70c0ec7901> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#DependencyStrength> .
+
+<https://astrea.linkeddata.es/shapes#854fff95b46f5d7996f92be98d7b4d38>
+        a               sh:NodeShape ;
+        rdfs:label      "RunTimeDependency" ;
+        sh:description  "A time dependent dinamic dependency. \nFor example there is a runtime dependency betwen proces A and ITservice B when A calls a REST service exposed by B."@en ;
+        sh:name         "RunTimeDependency" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#7b5d9788bf9b0882d2ee8ffd15dca536> ;
+        sh:targetClass  <http://ontology.it/itsmo/v1#RunTimeDependency> .
+
+<https://astrea.linkeddata.es/shapes#7d975fa0d80b59862eda81be613789b2>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasPriority" , "Relative priority"@en ;
+        sh:class        <http://ontology.it/itsmo/v1#Priority> ;
+        sh:description  "Relative priority"@en ;
+        sh:name         "hasPriority" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.it/itsmo/v1#hasPriority> .

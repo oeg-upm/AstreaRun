@@ -1,0 +1,230 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#eebb4282fc6dd06c1a267c92c600d627>
+        a                sh:PropertyShape ;
+        rdfs:label       "number of triple patterns"@en , "The number of triple patterns in a query"@en ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "The number of triple patterns in a query"@en ;
+        sh:maxCount      1 ;
+        sh:minInclusive  0 ;
+        sh:name          "number of triple patterns"@en ;
+        sh:nodeKind      sh:IRIOrLiteral , sh:Literal ;
+        sh:path          <http://lsq.aksw.org/vocab#triplePatterns> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#bbd0fac4e8fba4bbac79e18ecf3f8052>
+        a               sh:PropertyShape ;
+        rdfs:label      "is of type"@en , "Links a join vertex to the type of vertex it is"@en ;
+        sh:description  "Links a join vertex to the type of vertex it is"@en ;
+        sh:maxCount     1 ;
+        sh:name         "is of type"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <http://lsq.aksw.org/vocab#joinVertexType> .
+
+<https://astrea.linkeddata.es/shapes#420d3930be78672f3c5081c4a54766bd>
+        a               sh:PropertyShape ;
+        rdfs:label      "has join vertex"@en , "Links a query to a join vertex it contains"@en ;
+        sh:description  "Links a query to a join vertex it contains"@en ;
+        sh:name         "has join vertex"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://lsq.aksw.org/vocab#joinVertex> .
+
+<https://astrea.linkeddata.es/shapes#777e4af2e3191e66734f748d84b38457>
+        a               sh:PropertyShape ;
+        rdfs:label      "run by agent"@en , "Links a query execution instance to the agent that initiated the execution"@en ;
+        sh:description  "Links a query execution instance to the agent that initiated the execution"@en ;
+        sh:maxCount     1 ;
+        sh:name         "run by agent"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <http://lsq.aksw.org/vocab#agent> .
+
+<https://astrea.linkeddata.es/shapes#5b364962fc0b8ebd919c95e03cd93401>
+        a               sh:PropertyShape ;
+        rdfs:label      "parse error"@en , "The text of an error encountered when parsing query"@en ;
+        sh:description  "The text of an error encountered when parsing query"@en ;
+        sh:name         "parse error"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://lsq.aksw.org/vocab#parseError> .
+
+<https://astrea.linkeddata.es/shapes#9ac549189c28349d7416a546708f75e0>
+        a               sh:PropertyShape ;
+        rdfs:label      "has execution"@en , "Links a query to an execution of it against a particular endpoint by a particular agent at a particular time"@en ;
+        sh:description  "Links a query to an execution of it against a particular endpoint by a particular agent at a particular time"@en ;
+        sh:maxCount     1 ;
+        sh:name         "has execution"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <http://lsq.aksw.org/vocab#execution> .
+
+<https://astrea.linkeddata.es/shapes#c11fb588e51d5b0feeea3090e3978ec0>
+        a               sh:NodeShape ;
+        rdfs:label      "Join Vertex"@en ;
+        sh:description  "Each instance is a join vertex (position) in the query"@en ;
+        sh:name         "Join Vertex"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://lsq.aksw.org/vocab#JoinVertex> .
+
+<https://astrea.linkeddata.es/shapes#75f2cc1bfe0d6773d4620a298b01181a>
+        a                sh:PropertyShape ;
+        rdfs:label       "number of join vertices"@en , "The number of join vertices in a query"@en ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "The number of join vertices in a query"@en ;
+        sh:maxCount      1 ;
+        sh:minInclusive  0 ;
+        sh:name          "number of join vertices"@en ;
+        sh:nodeKind      sh:Literal , sh:IRIOrLiteral ;
+        sh:path          <http://lsq.aksw.org/vocab#joinVertices> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#4ac33b1e23241cbbdbb86ded7b1846a8> , <https://astrea.linkeddata.es/shapes#bbd0fac4e8fba4bbac79e18ecf3f8052> , <https://astrea.linkeddata.es/shapes#0411e6e5e51063576cfbebcd584791d6> , <https://astrea.linkeddata.es/shapes#b809a9824c60724b7bbbee168ed3ca02> , <https://astrea.linkeddata.es/shapes#ed618e8a2a7ed9e48da850282ca3b449> , <https://astrea.linkeddata.es/shapes#c11fb588e51d5b0feeea3090e3978ec0> , <https://astrea.linkeddata.es/shapes#dae1e6f5acc4df2c884f8a9d490ed2a4> , <https://astrea.linkeddata.es/shapes#eebb4282fc6dd06c1a267c92c600d627> , <https://astrea.linkeddata.es/shapes#1984533bfa80b30b08a6b5ee64b4bafc> , <https://astrea.linkeddata.es/shapes#407e18fb3934b753486a099b4bf7aba4> , <https://astrea.linkeddata.es/shapes#03f7bc2f97d37f21a3f745f951c74551> , <https://astrea.linkeddata.es/shapes#dfab84392672a988b92939cf68463c22> , <https://astrea.linkeddata.es/shapes#5b364962fc0b8ebd919c95e03cd93401> , <https://astrea.linkeddata.es/shapes#9ac549189c28349d7416a546708f75e0> , <https://astrea.linkeddata.es/shapes#8e79d054f9927ef6d72be835f11f6c91> , <https://astrea.linkeddata.es/shapes#c817ad5a82f2202dba7e8a49a97c3045> , <https://astrea.linkeddata.es/shapes#257ca1193b329f419951669e1c0689e9> , <https://astrea.linkeddata.es/shapes#75f2cc1bfe0d6773d4620a298b01181a> , <https://astrea.linkeddata.es/shapes#cfa4f6e0b93e01765f97956f494ee02b> , <https://astrea.linkeddata.es/shapes#5e902f401a94afc8284323214c04729c> , <https://astrea.linkeddata.es/shapes#3e7abf8a23d739fd920341b24c1c8d01> , <https://astrea.linkeddata.es/shapes#777e4af2e3191e66734f748d84b38457> , <https://astrea.linkeddata.es/shapes#420d3930be78672f3c5081c4a54766bd> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#4ac33b1e23241cbbdbb86ded7b1846a8>
+        a               sh:NodeShape ;
+        rdfs:label      "Query Execution"@en ;
+        sh:description  "Each instance is an execution of a particular query against a particular endpoint at a particular time by a particular agent"@en ;
+        sh:name         "Query Execution"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://lsq.aksw.org/vocab#Execution> .
+
+<https://astrea.linkeddata.es/shapes#407e18fb3934b753486a099b4bf7aba4>
+        a               sh:PropertyShape ;
+        rdfs:label      "SPIN error"@en , "The text of an error encountered when generating the SPIN description"@en ;
+        sh:description  "The text of an error encountered when generating the SPIN description"@en ;
+        sh:name         "SPIN error"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://lsq.aksw.org/vocab#spinError> .
+
+<https://astrea.linkeddata.es/shapes#dfab84392672a988b92939cf68463c22>
+        a               sh:PropertyShape ;
+        rdfs:label      "execution error"@en , "The text of an error encountered during a query execution"@en ;
+        sh:description  "The text of an error encountered during a query execution"@en ;
+        sh:name         "execution error"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://lsq.aksw.org/vocab#executionError> .
+
+<https://astrea.linkeddata.es/shapes#cfa4f6e0b93e01765f97956f494ee02b>
+        a               sh:NodeShape ;
+        rdfs:label      "Sink Join Vertex"@en ;
+        sh:description  "Each instance is a sink join vertex (position) in the query (multiple incoming edges, zero outgoing edges)"@en ;
+        sh:name         "Sink Join Vertex"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://lsq.aksw.org/vocab#Sink> .
+
+<https://astrea.linkeddata.es/shapes#8e79d054f9927ef6d72be835f11f6c91>
+        a                sh:PropertyShape ;
+        rdfs:label       "Number of results returned when executed locally"@en , "result size"@en ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "Number of results returned when executed locally"@en ;
+        sh:minInclusive  0 ;
+        sh:name          "result size"@en ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://lsq.aksw.org/vocab#resultSize> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#257ca1193b329f419951669e1c0689e9>
+        a               sh:NodeShape ;
+        rdfs:label      "Hybrid Join Vertex"@en ;
+        sh:description  "Each instance is a hybrid join vertex (position) in the query (at least one incoming edge, at least one outgoing edge, at least three edges)"@en ;
+        sh:name         "Hybrid Join Vertex"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://lsq.aksw.org/vocab#Hybrid> .
+
+<https://astrea.linkeddata.es/shapes#03f7bc2f97d37f21a3f745f951c74551>
+        a               sh:PropertyShape ;
+        rdfs:label      "uses feature"@en , "A feature used by the query"@en ;
+        sh:description  "A feature used by the query"@en ;
+        sh:name         "uses feature"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://lsq.aksw.org/vocab#usesFeature> .
+
+<https://astrea.linkeddata.es/shapes#5e902f401a94afc8284323214c04729c>
+        a               sh:PropertyShape ;
+        rdfs:label      "run time in milliseconds"@en , "The run time of the query in milliseconds when executed locally"@en ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "The run time of the query in milliseconds when executed locally"@en ;
+        sh:name         "run time in milliseconds"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://lsq.aksw.org/vocab#runTimeMs> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#c817ad5a82f2202dba7e8a49a97c3045>
+        a               sh:NodeShape ;
+        rdfs:label      "Star Join Vertex"@en ;
+        sh:description  "Each instance is a star-shaped join vertex (position) in the query (zero incoming edges, multiple outgoing edges)"@en ;
+        sh:name         "Star Join Vertex"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://lsq.aksw.org/vocab#Star> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#b809a9824c60724b7bbbee168ed3ca02>
+        a                sh:PropertyShape ;
+        rdfs:label       "number of bgps"@en , "The number of Basic Graph Patterns in a query"@en ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "The number of Basic Graph Patterns in a query"@en ;
+        sh:maxCount      1 ;
+        sh:minInclusive  0 ;
+        sh:name          "number of bgps"@en ;
+        sh:nodeKind      sh:Literal , sh:IRIOrLiteral ;
+        sh:path          <http://lsq.aksw.org/vocab#bgps> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#1984533bfa80b30b08a6b5ee64b4bafc>
+        a               sh:PropertyShape ;
+        rdfs:label      "The mean degree across all the join vertices"@en , "mean join vertex degree"@en ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "The mean degree across all the join vertices"@en ;
+        sh:maxCount     1 ;
+        sh:name         "mean join vertex degree"@en ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://lsq.aksw.org/vocab#meanJoinVerticesDegree> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#dae1e6f5acc4df2c884f8a9d490ed2a4>
+        a               sh:NodeShape ;
+        rdfs:label      "Path Join Vertex"@en ;
+        sh:description  "Each instance is a path-shaped join vertex (position) in the query (one incoming edge, one outgoing edge)"@en ;
+        sh:name         "Path Join Vertex"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://lsq.aksw.org/vocab#Path> .
+
+<https://astrea.linkeddata.es/shapes#ed618e8a2a7ed9e48da850282ca3b449>
+        a               sh:PropertyShape ;
+        rdfs:label      "mean selectivity of triple patterns"@en , "The mean selectivity of all triple patterns"@en ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "The mean selectivity of all triple patterns"@en ;
+        sh:name         "mean selectivity of triple patterns"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://lsq.aksw.org/vocab#meanTriplePatternSelectivity> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#3e7abf8a23d739fd920341b24c1c8d01>
+        a               sh:PropertyShape ;
+        rdfs:label      "runtime error"@en , "The text of an error encountered when running the query locally"@en ;
+        sh:description  "The text of an error encountered when running the query locally"@en ;
+        sh:name         "runtime error"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://lsq.aksw.org/vocab#runtimeError> .
+
+<https://astrea.linkeddata.es/shapes#0411e6e5e51063576cfbebcd584791d6>
+        a               sh:PropertyShape ;
+        rdfs:label      "run at endpoint"@en , "Links a query execution instance to the endpoint against which it was run"@en ;
+        sh:description  "Links a query execution instance to the endpoint against which it was run"@en ;
+        sh:maxCount     1 ;
+        sh:name         "run at endpoint"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <http://lsq.aksw.org/vocab#endpoint> .

@@ -1,0 +1,408 @@
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<https://astrea.linkeddata.es/shapes#6733f416267b2ef4b39f43a4a4d820e9>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/spar/c4o/pertainsTo> .
+
+<https://astrea.linkeddata.es/shapes#3fcba700ac0839fe787ba4b44d391d13>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/spar/c4o/InTextReferencePointer> .
+
+<https://astrea.linkeddata.es/shapes#6fa7dbc22a6ae8f247d76ce77fcb7c86>
+        a               sh:NodeShape ;
+        rdfs:label      "library catalogue"@en ;
+        sh:description  "A catalogue of the bibliographic holdings of a library."@en ;
+        sh:name         "library catalogue"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/spar/biro/LibraryCatalogue> .
+
+<https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  owl:Thing .
+
+<https://astrea.linkeddata.es/shapes#2587ff51a806154ae16abb105a6d484e>
+        a               sh:NodeShape ;
+        rdfs:label      "global citation count"@en ;
+        sh:description  "The number of times a work has been cited globally, as determined from a particular bibliographic information source on a particular date."@en ;
+        sh:name         "global citation count"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#3fcba700ac0839fe787ba4b44d391d13> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#42d99ad6788887f2d4e788cfa115fb2b> , <https://astrea.linkeddata.es/shapes#3183b86320dfd8799230e1464f2e654d> , <https://astrea.linkeddata.es/shapes#1941da178eb2fb8c938c264f05b8e98a> ;
+        sh:targetClass  <http://purl.org/spar/c4o/GlobalCitationCount> .
+
+<https://astrea.linkeddata.es/shapes#f446bcaabdf801de2fff2b919858d3ff>
+        a               sh:PropertyShape ;
+        rdfs:label      "is relevant to"@en , "A property allowing one FRBR expression to be declared to be of rhetorical relevance to another, for instance that the textual context of a particular in-text reference pointer in one document is relevant to a section of text within the published document that is referenced by the bibliographic reference denoted by the in-text reference pointer, and vice versa that the converse relevance also exists."@en ;
+        sh:class        <http://purl.org/vocab/frbr/core#Expression> ;
+        sh:description  "A property allowing one FRBR expression to be declared to be of rhetorical relevance to another, for instance that the textual context of a particular in-text reference pointer in one document is relevant to a section of text within the published document that is referenced by the bibliographic reference denoted by the in-text reference pointer, and vice versa that the converse relevance also exists."@en ;
+        sh:name         "is relevant to"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/c4o/isRelevantTo> .
+
+<https://astrea.linkeddata.es/shapes#3183b86320dfd8799230e1464f2e654d>
+        a                sh:PropertyShape ;
+        rdfs:label       "has global count value"@en , "An integer defining the value of the global citation count of a cited entity recorded from a named bibliographic information source on a particular date."@en ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "An integer defining the value of the global citation count of a cited entity recorded from a named bibliographic information source on a particular date."@en ;
+        sh:minInclusive  0 ;
+        sh:name          "has global count value"@en ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://purl.org/spar/c4o/hasGlobalCountValue> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#6cb054d0578730bb8ee8049271f59638>
+        a               sh:NodeShape ;
+        rdfs:label      "bibliographic reference"@en ;
+        sh:description  "An expression of a bibliographic record in a specific format, that references a particular textual or data publication (or a work in preparation for publication). Each bibliographic reference is a list of items containing entities that describe aspects of the referenced work - for example authors, title, journal, publication year - selected from the bibliographic record.  Note that because different journal styles may require omission of elements of the bibliographic record in references included in a paper's reference list (e.g. the title, the identifier, the names of the eighth and subsequent authors), and because errors can be introduced when an author creates a bibliographic reference, the bibliographic reference to a published work may not be a complete or fully accurate expression of the information contained within the authoritative bibliographic record for that work."@en ;
+        sh:name         "bibliographic reference"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#472ae04364175c6766c871e733dc8777> , <https://astrea.linkeddata.es/shapes#34941a1bb488fd774758c446ce7fd414> , <https://astrea.linkeddata.es/shapes#b3a324cd2fed19cfa3585fde096c32b6> , <https://astrea.linkeddata.es/shapes#12f12b07055cf542483835e02fbb125d> , <https://astrea.linkeddata.es/shapes#37fba16d6f373945b5a1851ed157118a> ;
+        sh:targetClass  <http://purl.org/spar/biro/BibliographicReference> .
+
+<https://astrea.linkeddata.es/shapes#1941da178eb2fb8c938c264f05b8e98a>
+        a               sh:PropertyShape ;
+        rdfs:label      "has global count date"@en , "The date on which the global citation count of the cited entity was recorded from a named bibliographic information source."@en ;
+        sh:datatype     xsd:date ;
+        sh:description  "The date on which the global citation count of the cited entity was recorded from a named bibliographic information source."@en ;
+        sh:name         "has global count date"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/spar/c4o/hasGlobalCountDate> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#ca962003c00bd6dc75b055f3c29d84da>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://purl.org/spar/c4o/denotes> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.org/spar/biro/BibliographicReference> ] ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.org/spar/biro/BibliographicReference> ] .
+
+<https://astrea.linkeddata.es/shapes#b3a324cd2fed19cfa3585fde096c32b6>
+        a               sh:PropertyShape ;
+        rdfs:label      "references"@en , "The relation between a bibliographic record or a bibliographic reference and the publication being referenced."@en ;
+        sh:class        <http://purl.org/vocab/frbr/core#Endeavour> ;
+        sh:description  "The relation between a bibliographic record or a bibliographic reference and the publication being referenced."@en ;
+        sh:name         "references"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/biro/references> .
+
+<https://astrea.linkeddata.es/shapes#3c8fd2179b9faa7c8d30b83feb13120e>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/spar/c4o/hasContext> .
+
+<https://astrea.linkeddata.es/shapes#0fdb26a6a125373431a857fadc9ea20d>
+        a               sh:NodeShape ;
+        rdfs:label      "bibliographic collection"@en ;
+        sh:description  "A collection of bibliographic records, each of which references a publication (or a work in preparation for publication). Examples of bibliographic collections include a collection of the bibliographic records of all the publications that a single individual has authored, or a collection of those bibliographic records to be included in a research paper, where they are expressed as a reference list."@en ;
+        sh:name         "bibliographic collection"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#143ff2dd6e182ef2645d4b2ba63a0efe> , <https://astrea.linkeddata.es/shapes#0fcd3f5c0bd1322f65c8b1fd13883a54> , <https://astrea.linkeddata.es/shapes#e58a9ea89064b6248e8ae0f31db7d177> ;
+        sh:targetClass  <http://purl.org/spar/biro/BibliographicCollection> .
+
+<https://astrea.linkeddata.es/shapes#34941a1bb488fd774758c446ce7fd414>
+        a                sh:PropertyShape ;
+        rdfs:label       "has in text citation frequency"@en , "This property allows one to specify how many separate in-text reference pointers exist within the text of a citing document that all denote the same single bibliographic reference to a cited document (i.e how many distinct textual contexts exist within the citing document from which a citation is made to a particular document)."@en ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "This property allows one to specify how many separate in-text reference pointers exist within the text of a citing document that all denote the same single bibliographic reference to a cited document (i.e how many distinct textual contexts exist within the citing document from which a citation is made to a particular document)."@en ;
+        sh:maxCount      1 ;
+        sh:minInclusive  0 ;
+        sh:name          "has in text citation frequency"@en ;
+        sh:nodeKind      sh:Literal , sh:IRIOrLiteral ;
+        sh:path          <http://purl.org/spar/c4o/hasInTextCitationFrequency> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#bb2b63df5367f3632dad1cf8d66b98c4>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f446bcaabdf801de2fff2b919858d3ff> , <https://astrea.linkeddata.es/shapes#d79b137bf42d1fa5cd82cc909bad765c> ;
+        sh:targetClass  <http://purl.org/vocab/frbr/core#Expression> .
+
+<https://astrea.linkeddata.es/shapes#8d256dbc1d6120dc3c530d48939d44d7>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/spar/c4o/InTextReferencePointer> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/co/itemContent> .
+
+<https://astrea.linkeddata.es/shapes#12f12b07055cf542483835e02fbb125d>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/co/element> .
+
+<https://astrea.linkeddata.es/shapes#0fcd3f5c0bd1322f65c8b1fd13883a54>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/spar/biro/BibliographicRecord> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/co/element> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#143ff2dd6e182ef2645d4b2ba63a0efe>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/spar/biro/BibliographicList> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/vocab/frbr/core#realization> .
+
+<https://astrea.linkeddata.es/shapes#37fba16d6f373945b5a1851ed157118a>
+        a               sh:PropertyShape ;
+        rdfs:label      "is denoted by"@en , "A property used to assert the connection between a bibliographic reference and the in-text reference pointer that points to it."@en ;
+        sh:class        <http://purl.org/spar/c4o/InTextReferencePointer> ;
+        sh:description  "A property used to assert the connection between a bibliographic reference and the in-text reference pointer that points to it."@en ;
+        sh:name         "is denoted by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/c4o/isDenotedBy> .
+
+<https://astrea.linkeddata.es/shapes#7f8db138b2930f251cbb3d6ff3534dbc>
+        a               sh:NodeShape ;
+        rdfs:label      "bibliographic record"@en ;
+        sh:description  "A record that uniquely describes a particular textual or data publication (or a work in preparation for publication). Each bibliographic record is a set of entities describing aspects of the referenced work, including, for example, but not restricted to: authors, title, journal, publication year, DOI, ISSN, publisher and copyright information, or, in the case of a data publication: creators, title, version, archive, publication year, DOI or other identifier). The FRBR expression of a bibliographic record is a bibliographic reference, which usually contains only a sub-set of these entities, ordered in a particular way that corresponds to the house style of the publication in which it occurs."@en ;
+        sh:name         "bibliographic record"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b3a324cd2fed19cfa3585fde096c32b6> , <https://astrea.linkeddata.es/shapes#6722b87b8f294a79a53463df55b85f80> ;
+        sh:targetClass  <http://purl.org/spar/biro/BibliographicRecord> .
+
+<https://astrea.linkeddata.es/shapes#e58a9ea89064b6248e8ae0f31db7d177>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/vocab/frbr/core#part> .
+
+<https://astrea.linkeddata.es/shapes#9ae00c66cfef8fab55d189f79f46104d>
+        a               sh:NodeShape ;
+        rdfs:label      "in-text reference pointer list"@en ;
+        sh:description  "A list containing only in-text reference pointers denoting the specific bibliographic references to which the list pertains."@en ;
+        sh:name         "in-text reference pointer list"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5074c408cd92ca052d023e79a0adc8f0> , <https://astrea.linkeddata.es/shapes#063f84f7d8863d2a505b0380513a4bba> , <https://astrea.linkeddata.es/shapes#f22a22a6988e5de7df37b4e9235e333b> ;
+        sh:targetClass  <http://purl.org/spar/c4o/InTextReferencePointerList> .
+
+<https://astrea.linkeddata.es/shapes#f22a22a6988e5de7df37b4e9235e333b>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/spar/c4o/InTextReferencePointerListItem> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/co/item> .
+
+<https://astrea.linkeddata.es/shapes#0dfdde4ca7b203230cd816adb53f95e6>
+        a               sh:PropertyShape ;
+        rdfs:label      "denotes"@en , "A property used to assert the connection between an in-text reference pointer and the bibliographic reference it points to."@en ;
+        sh:class        <http://purl.org/spar/biro/BibliographicReference> ;
+        sh:description  "A property used to assert the connection between an in-text reference pointer and the bibliographic reference it points to."@en ;
+        sh:name         "denotes"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/c4o/denotes> .
+
+<https://astrea.linkeddata.es/shapes#c05c1b28f431873d67bd08fe90a94607>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/spar/biro/BibliographicCollection> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/vocab/frbr/core#realizationOf> .
+
+<https://astrea.linkeddata.es/shapes#6722b87b8f294a79a53463df55b85f80>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/spar/biro/BibliographicReference> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/vocab/frbr/core#realization> .
+
+<https://astrea.linkeddata.es/shapes#5074c408cd92ca052d023e79a0adc8f0>
+        a               sh:PropertyShape ;
+        rdfs:label      "pertains to"@en , "The property linking an in-text reference pointer list to the bibliographic reference or references denoted by the in-text reference pointers within that list."@en ;
+        sh:class        <http://purl.org/spar/biro/BibliographicReference> ;
+        sh:description  "The property linking an in-text reference pointer list to the bibliographic reference or references denoted by the in-text reference pointers within that list."@en ;
+        sh:name         "pertains to"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/c4o/pertainsTo> .
+
+<https://astrea.linkeddata.es/shapes#d2d43b0ae8cf657f5fa371abeec9f128>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/vocab/frbr/core#realizationOf> .
+
+<https://astrea.linkeddata.es/shapes#80fcce3ead303d97328dc707a09bd0a2>
+        a               sh:PropertyShape ;
+        rdfs:label      "is referenced by"@en , "The relation between a publication and the bibliographic record or bibliographic reference describing it."@en ;
+        sh:description  "The relation between a publication and the bibliographic record or bibliographic reference describing it."@en ;
+        sh:name         "is referenced by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  <http://purl.org/spar/biro/BibliographicRecord> ;
+                            sh:path   <http://purl.org/spar/biro/isReferencedBy>
+                          ]
+                          [ sh:class  <http://purl.org/spar/biro/BibliographicReference> ;
+                            sh:path   <http://purl.org/spar/biro/isReferencedBy>
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/shapes#a86567212496b2944658c95f830a9b6c>
+        a               sh:NodeShape ;
+        rdfs:label      "in-text reference pointer"@en ;
+        sh:description  "The in-text reference pointer is a textual element, usually embedded at the end of a phrase or sentence within the text of a document, that denotes a specific bibliographic reference present in the reference list of that document. For example, if the item in the reference list is: \n\n4.  Ko AI, Reis MG, Ribeiro Dourado CM, Johnson WD Jr, Riley LW (1999). Urban epidemic of severe leptospirosis in Brazil. Salvador Leptospirosis Study Group. Lancet 354: 820-825.\n\nthe in-text reference pointer to this paper in a journal article may be manifested in a number of ways:\t\n\nNumerically, for example by using the numeral 4 in superscript or between square brackets, thus: [4].  Such numerical in-text \nreference pointers are frequently aggregated, e.g. [4, 5, 6-9].  In such cases, the missing pointers to references 7 and 8 are inferred (and should be added explicitly to the XML mark-up at this point in the text!). \n\nOr by use of the author names (or the first author's name plus et al.) and the publication year in parentheses, thus: (Ko et al., 1999). \n\nOr, less commonly, by the use of a code, e.g. by specifying the first surname letter of the first three author of the cited work followed by the last two digits of the year of publication, this string of characters being enclosed within square brackets, thus: [KRR99]."@en ;
+        sh:name         "in-text reference pointer"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#0dfdde4ca7b203230cd816adb53f95e6> , <https://astrea.linkeddata.es/shapes#ca962003c00bd6dc75b055f3c29d84da> , <https://astrea.linkeddata.es/shapes#3c8fd2179b9faa7c8d30b83feb13120e> ;
+        sh:targetClass  <http://purl.org/spar/c4o/InTextReferencePointer> .
+
+<https://astrea.linkeddata.es/report/0956281251>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/spar/biro" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#bccb55e21eac8485412feb29e1f9ee85>
+        a               sh:NodeShape ;
+        rdfs:label      "in-text reference pointer list item"@en ;
+        sh:description  "This class describes all the list items that must be used in the context of an in-text reference pointer list."@en ;
+        sh:name         "in-text reference pointer list item"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#8d256dbc1d6120dc3c530d48939d44d7> ;
+        sh:targetClass  <http://purl.org/spar/c4o/InTextReferencePointerListItem> .
+
+<https://astrea.linkeddata.es/shapes#d79b137bf42d1fa5cd82cc909bad765c>
+        a               sh:PropertyShape ;
+        rdfs:label      "has content"@en , "It is used to specify the textual content of a particular FRBR expression."@en ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "It is used to specify the textual content of a particular FRBR expression."@en ;
+        sh:name         "has content"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/spar/c4o/hasContent> .
+
+<https://astrea.linkeddata.es/shapes#472ae04364175c6766c871e733dc8777>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/spar/biro/BibliographicRecord> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/vocab/frbr/core#realizationOf> .
+
+<https://astrea.linkeddata.es/shapes#c39b0483ad4baabfbf60ee1dc886f90f>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#cac98960c1885614afa25329591a8549> ;
+        sh:targetClass  <http://purl.org/vocab/frbr/core#Endeavour> .
+
+<https://astrea.linkeddata.es/shapes#1a65a2a94c9bd4d123360890d53c9594>
+        a               sh:NodeShape ;
+        rdfs:label      "reference list"@en ;
+        sh:description  "A list used to describe the bibliography of a research paper, a journal article, a book, a book chapter or similar publication."@en ;
+        sh:name         "reference list"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/spar/biro/ReferenceList> .
+
+<https://astrea.linkeddata.es/shapes#6771f79ae869158bab5c1f08a6220ec6>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/spar/biro/BibliographicReference> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/co/element> .
+
+<https://astrea.linkeddata.es/shapes#cac98960c1885614afa25329591a8549>
+        a               sh:PropertyShape ;
+        rdfs:label      "has global citation frequency"@en , "A property linking a publication entity to the property c40:GlobalCitationCount that specify how many times a work has been cited by others, according to a particular information source on a particular date."@en ;
+        sh:class        <http://purl.org/spar/c4o/GlobalCitationCount> ;
+        sh:description  "A property linking a publication entity to the property c40:GlobalCitationCount that specify how many times a work has been cited by others, according to a particular information source on a particular date."@en ;
+        sh:name         "has global citation frequency"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/c4o/hasGlobalCitationFrequency> .
+
+<https://astrea.linkeddata.es/shapes#c6b91e9735d58e2d1538bd067a2467e2>
+        a               sh:NodeShape ;
+        rdfs:label      "single reference pointer list"@en ;
+        sh:description  "An in-text reference pointer list that pertains to exactly one bibliographic reference."@en ;
+        sh:name         "single reference pointer list"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#6733f416267b2ef4b39f43a4a4d820e9> ;
+        sh:targetClass  <http://purl.org/spar/c4o/SingleReferencePointerList> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#d2d43b0ae8cf657f5fa371abeec9f128> , <https://astrea.linkeddata.es/shapes#1941da178eb2fb8c938c264f05b8e98a> , <https://astrea.linkeddata.es/shapes#a31fd8e0a9bbc9c803bf873f6c8597a0> , <https://astrea.linkeddata.es/shapes#d79b137bf42d1fa5cd82cc909bad765c> , <https://astrea.linkeddata.es/shapes#3183b86320dfd8799230e1464f2e654d> , <https://astrea.linkeddata.es/shapes#db9d284c34c8e0459cd347bd8e3595da> , <https://astrea.linkeddata.es/shapes#0fdb26a6a125373431a857fadc9ea20d> , <https://astrea.linkeddata.es/shapes#f446bcaabdf801de2fff2b919858d3ff> , <https://astrea.linkeddata.es/shapes#3fcba700ac0839fe787ba4b44d391d13> , <https://astrea.linkeddata.es/shapes#7f8db138b2930f251cbb3d6ff3534dbc> , <https://astrea.linkeddata.es/shapes#0dfdde4ca7b203230cd816adb53f95e6> , <https://astrea.linkeddata.es/shapes#a86567212496b2944658c95f830a9b6c> , <https://astrea.linkeddata.es/shapes#bc8d32d231350ada349bb1d0a73abde9> , <https://astrea.linkeddata.es/shapes#063f84f7d8863d2a505b0380513a4bba> , <https://astrea.linkeddata.es/shapes#750c566e2feae6833630bee9059b75af> , <https://astrea.linkeddata.es/shapes#42d99ad6788887f2d4e788cfa115fb2b> , <https://astrea.linkeddata.es/shapes#e58a9ea89064b6248e8ae0f31db7d177> , <https://astrea.linkeddata.es/shapes#c39b0483ad4baabfbf60ee1dc886f90f> , <https://astrea.linkeddata.es/shapes#c6b91e9735d58e2d1538bd067a2467e2> , <https://astrea.linkeddata.es/shapes#2587ff51a806154ae16abb105a6d484e> , <https://astrea.linkeddata.es/shapes#f22a22a6988e5de7df37b4e9235e333b> , <https://astrea.linkeddata.es/shapes#bb2b63df5367f3632dad1cf8d66b98c4> , <https://astrea.linkeddata.es/shapes#143ff2dd6e182ef2645d4b2ba63a0efe> , <https://astrea.linkeddata.es/shapes#1a65a2a94c9bd4d123360890d53c9594> , <https://astrea.linkeddata.es/shapes#a29c00abf711ab05e91ca658e57c6e2e> , <https://astrea.linkeddata.es/shapes#472ae04364175c6766c871e733dc8777> , <https://astrea.linkeddata.es/shapes#c05c1b28f431873d67bd08fe90a94607> , <https://astrea.linkeddata.es/shapes#a846a4145de1fc510b3a990fb8182f4f> , <https://astrea.linkeddata.es/shapes#6722b87b8f294a79a53463df55b85f80> , <https://astrea.linkeddata.es/shapes#b8840ae319dd17775a4c3ff2c43caeca> , <https://astrea.linkeddata.es/shapes#6cb054d0578730bb8ee8049271f59638> , <https://astrea.linkeddata.es/shapes#b3a324cd2fed19cfa3585fde096c32b6> , <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#3c8fd2179b9faa7c8d30b83feb13120e> , <https://astrea.linkeddata.es/shapes#12f12b07055cf542483835e02fbb125d> , <https://astrea.linkeddata.es/shapes#37fba16d6f373945b5a1851ed157118a> , <https://astrea.linkeddata.es/shapes#0fcd3f5c0bd1322f65c8b1fd13883a54> , <https://astrea.linkeddata.es/shapes#cac98960c1885614afa25329591a8549> , <https://astrea.linkeddata.es/shapes#6fa7dbc22a6ae8f247d76ce77fcb7c86> , <https://astrea.linkeddata.es/shapes#bccb55e21eac8485412feb29e1f9ee85> , <https://astrea.linkeddata.es/shapes#8d256dbc1d6120dc3c530d48939d44d7> , <https://astrea.linkeddata.es/shapes#9ae00c66cfef8fab55d189f79f46104d> , <https://astrea.linkeddata.es/shapes#6771f79ae869158bab5c1f08a6220ec6> , <https://astrea.linkeddata.es/shapes#34941a1bb488fd774758c446ce7fd414> , <https://astrea.linkeddata.es/shapes#b5709a9c2eaa7805ed5f7e56a090d496> , <https://astrea.linkeddata.es/shapes#e1b4192da98236eece2984d36e94aba8> , <https://astrea.linkeddata.es/shapes#80fcce3ead303d97328dc707a09bd0a2> , <https://astrea.linkeddata.es/shapes#6bb54238577a56d525e2de8d030096d3> , <https://astrea.linkeddata.es/shapes#ca962003c00bd6dc75b055f3c29d84da> , <https://astrea.linkeddata.es/shapes#6733f416267b2ef4b39f43a4a4d820e9> , <https://astrea.linkeddata.es/shapes#5074c408cd92ca052d023e79a0adc8f0> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0956281251> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#a846a4145de1fc510b3a990fb8182f4f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      owl:topObjectProperty .
+
+<https://astrea.linkeddata.es/shapes#42d99ad6788887f2d4e788cfa115fb2b>
+        a               sh:PropertyShape ;
+        rdfs:label      "has global count source"@en , "A property linking the property c40:GlobalCitationCount to the bibliographic information source providing the global citation count information for a particular publication on a particular date."@en ;
+        sh:class        <http://purl.org/spar/c4o/BibliographicInformationSource> ;
+        sh:description  "A property linking the property c40:GlobalCitationCount to the bibliographic information source providing the global citation count information for a particular publication on a particular date."@en ;
+        sh:name         "has global count source"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/c4o/hasGlobalCountSource> .
+
+<https://astrea.linkeddata.es/shapes#bc8d32d231350ada349bb1d0a73abde9>
+        a               sh:PropertyShape ;
+        rdfs:label      "has context"@en , "This property is used to indicate the textual context (e.g. a sentence or a paragraph) of a particular in-text reference pointer, this context providing the rhetorical motivation for the existence of that citation."@en ;
+        sh:description  "This property is used to indicate the textual context (e.g. a sentence or a paragraph) of a particular in-text reference pointer, this context providing the rhetorical motivation for the existence of that citation."@en ;
+        sh:name         "has context"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#b8840ae319dd17775a4c3ff2c43caeca>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#a31fd8e0a9bbc9c803bf873f6c8597a0>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/spar/c4o/GlobalCitationCount> .
+
+<https://astrea.linkeddata.es/shapes#db9d284c34c8e0459cd347bd8e3595da>
+        a               sh:NodeShape ;
+        rdfs:label      "bibliographic information source"@en ;
+        sh:description  "A source of information about bibliographic citations, such as Google Scholar, Web of Science or Scopus."@en ;
+        sh:name         "bibliographic information source"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#a31fd8e0a9bbc9c803bf873f6c8597a0> , <https://astrea.linkeddata.es/shapes#3fcba700ac0839fe787ba4b44d391d13> ;
+        sh:targetClass  <http://purl.org/spar/c4o/BibliographicInformationSource> .
+
+<https://astrea.linkeddata.es/shapes#063f84f7d8863d2a505b0380513a4bba>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/spar/c4o/pertainsTo> .
+
+<https://astrea.linkeddata.es/shapes#b5709a9c2eaa7805ed5f7e56a090d496>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      owl:topDataProperty .
+
+<https://astrea.linkeddata.es/shapes#a29c00abf711ab05e91ca658e57c6e2e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/vocab/frbr/core#part> .
+
+<https://astrea.linkeddata.es/shapes#6bb54238577a56d525e2de8d030096d3>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/vocab/frbr/core#realization> .
+
+<https://astrea.linkeddata.es/shapes#e1b4192da98236eece2984d36e94aba8>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/vocab/frbr/core#Work> .
+
+<https://astrea.linkeddata.es/shapes#750c566e2feae6833630bee9059b75af>
+        a               sh:NodeShape ;
+        rdfs:label      "bibliographic list"@en ;
+        sh:description  "An ordered list of bibliographic items, each of which contains a bibliographic reference."@en ;
+        sh:name         "bibliographic list"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c05c1b28f431873d67bd08fe90a94607> , <https://astrea.linkeddata.es/shapes#6771f79ae869158bab5c1f08a6220ec6> ;
+        sh:targetClass  <http://purl.org/spar/biro/BibliographicList> .

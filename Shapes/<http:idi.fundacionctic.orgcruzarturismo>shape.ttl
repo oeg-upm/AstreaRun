@@ -1,0 +1,940 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#25ec1b4c3ec77d7a2f3662203ec3d594>
+        a               sh:NodeShape ;
+        rdfs:label      "Recurso de Zaragoza"@es ;
+        sh:description  "Recursos de interés comercial, turístico o de hostelería, que ofrece la ciudad de Zaragoza."@es ;
+        sh:name         "Recurso de Zaragoza"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b6664a47668d16a5c1f0843e63edf179> , <https://astrea.linkeddata.es/shapes#a650b484d4c3f723ef0f45291d746aa8> , <https://astrea.linkeddata.es/shapes#e7990c6dd6a3dca6de078b32328bc4ef> , <https://astrea.linkeddata.es/shapes#172382a059e61f60b739a6e8d904fff3> , <https://astrea.linkeddata.es/shapes#9d8c8943ae43464a04ab1138a00b00c8> , <https://astrea.linkeddata.es/shapes#aec4cc5564085fa61d4c66a276fc5ccc> ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Recurso-de-zaragoza> .
+
+<https://astrea.linkeddata.es/shapes#1c624c79dfe01437e066a18c15728da0>
+        a            sh:PropertyShape ;
+        rdfs:label   "temporally coincides"@en ;
+        sh:name      "temporally coincides"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:or        ( [ sh:class  <http://idi.fundacionctic.org/cruzar/turismo#Visita-turistica> ;
+                         sh:path   <http://www.loa-cnr.it/ontologies/TemporalRelations#temporally-coincides>
+                       ]
+                       [ sh:class  <http://www.loa-cnr.it/ontologies/DOLCE-Lite#event> ;
+                         sh:path   <http://www.loa-cnr.it/ontologies/TemporalRelations#temporally-coincides>
+                       ]
+                     ) .
+
+<https://astrea.linkeddata.es/shapes#b7dfba33b686edba1eb2244ee40c64ff>
+        a               sh:NodeShape ;
+        rdfs:label      "Zona verde"@es ;
+        sh:description  "Espacio verde en la ciudad de Zaragoza como puede ser parques, zonas ajardinadas, etc."@es ;
+        sh:name         "Zona verde"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Zona-verde> .
+
+<https://astrea.linkeddata.es/shapes#b11a563d2c810aae9ff1945edca1c826>
+        a               sh:NodeShape ;
+        rdfs:label      "Temporada"@es ;
+        sh:description  "Espacio temporal de varios meses. A nivel turístico, el año se divide en temporada de verano y temporada de invierno. La temporada influye en los horarios de apertura y cierre de los recursos turísticos: museos, iglesias, etc. El mismo monumento, pongamos por caso, la Basílica del \nPilar, no tiene el mismo horario de visita en la temporada de invierno, que en la temporada de verano. En esta ontología, se siguen los siguientes \ncriterios: 1) Temporada de invierno: desde el 9 de octubre hasta el 30 de abril; 2) Temporada de verano: desde el 1 de mayo hasta el 8 de octubre."@es ;
+        sh:name         "Temporada"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#6c55d03ea0b102c605b2bcd913886b9a> , <https://astrea.linkeddata.es/shapes#19a7f9616397ffe012a63a6f8504e582> , <https://astrea.linkeddata.es/shapes#41cb0287b8ad5ee1c43710f1539f2456> , <https://astrea.linkeddata.es/shapes#7e7cf9247022531f632c20a4da076d7f> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#340b19279a897a5ac70dcaeb48c20a80> , <https://astrea.linkeddata.es/shapes#a51c70ccce71914f06ee00a05298b41a> ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Temporada> .
+
+<https://astrea.linkeddata.es/shapes#e7990c6dd6a3dca6de078b32328bc4ef>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:double ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.w3.org/2003/01/geo/wgs84_pos#long> ;
+        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#6748bbd72701d64e56e31ecef6ea000e>
+        a               sh:NodeShape ;
+        rdfs:label      "Entorno natural"@es ;
+        sh:description  "Zona de verde de excepcional singularidad debido a su paisaje, protección medioambiental e interés turístico."@es ;
+        sh:name         "Entorno natural"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Entorno-natural> .
+
+<https://astrea.linkeddata.es/shapes#82430eeb57efe0664282ba58fed78b44>
+        a            sh:PropertyShape ;
+        rdfs:label   "follows"@en ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Visita-turistica> ;
+        sh:name      "follows"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.loa-cnr.it/ontologies/TemporalRelations#follows> .
+
+<https://astrea.linkeddata.es/shapes#3f9efe7c59746776732f42165d5187fb>
+        a            sh:PropertyShape ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Temporada> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/DOLCE-Lite#r-location> .
+
+<https://astrea.linkeddata.es/shapes#1b642cd8bb9d3702d423826801223caf>
+        a         sh:PropertyShape ;
+        sh:class  <http://idi.fundacionctic.org/cruzar/turismo#Temporada> .
+
+<https://astrea.linkeddata.es/shapes#427a7339338b88c071415db01b989fa8>
+        a            sh:PropertyShape ;
+        rdfs:label   "refines"@en ;
+        sh:name      "refines"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:or        ( [ sh:class  <http://idi.fundacionctic.org/cruzar/turismo#Perfil-de-turista> ;
+                         sh:path   <http://www.loa-cnr.it/ontologies/ExtendedDnS#refines>
+                       ]
+                       [ sh:class  <http://idi.fundacionctic.org/cruzar/turismo#Ruta-turistica> ;
+                         sh:path   <http://www.loa-cnr.it/ontologies/ExtendedDnS#refines>
+                       ]
+                     ) .
+
+<https://astrea.linkeddata.es/shapes#8ea813ef04f4021d9db39d930b37c8a6>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/ExtendedDnS#desire-towards> .
+
+<https://astrea.linkeddata.es/shapes#eb8007ba14327fb93e51b54c68daece9>
+        a               sh:NodeShape ;
+        rdfs:label      "Curso de eventos"@es ;
+        sh:description  "Se trata de un concepto que clasifica (más concretamente \"secuencia\") los \"perdurants\" (procesos, eventos, estados) como un componente de alguna descripción. Los \"courses\" son homólogos de los \"perdurants\". En esta ontología, las preferencias de los turistas serán consideradas \"courses\" ya que secuencian actividades genéricas que los turística podrían estar interesados en realizar."@es ;
+        sh:name         "Curso de eventos"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#00006224d3cafef240b1a34f0adb779b> , <https://astrea.linkeddata.es/shapes#7a515ee03c9f3474f82bee316825f170> , <https://astrea.linkeddata.es/shapes#bddae772bcde7f0cea26a8e10c5c491c> , <https://astrea.linkeddata.es/shapes#eca5c2a210a7d9fbfde74a318fda4c93> , <https://astrea.linkeddata.es/shapes#eb5e0c954c39eab35ff296113f277d36> , <https://astrea.linkeddata.es/shapes#ec8663bce574a68d78f240cda0409399> , <https://astrea.linkeddata.es/shapes#7e4c103ae69371f7242f0ac77972b4a7> ;
+        sh:targetClass  <http://www.loa-cnr.it/ontologies/ExtendedDnS#course> .
+
+<https://astrea.linkeddata.es/shapes#a51c70ccce71914f06ee00a05298b41a>
+        a               sh:PropertyShape ;
+        rdfs:label      "Fecha de inicio" , "Día de inicio de cada temporada del año. Se distinguen las temporadas de invierno y de verano. Es importante para los horarios de los monumentos."@es ;
+        sh:datatype     xsd:date ;
+        sh:description  "Día de inicio de cada temporada del año. Se distinguen las temporadas de invierno y de verano. Es importante para los horarios de los monumentos."@es ;
+        sh:name         "Fecha de inicio" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://idi.fundacionctic.org/cruzar/turismo#begining-date> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#e04042bf8524ab83008c505b25777214>
+        a               sh:NodeShape ;
+        rdfs:label      "Visita turística"@es ;
+        sh:description  "Una visita turística es cada una de las partes de las que se compone una ruta turística. Una visita turística tiene como objetivo uno y sólo un recurso de Zaragoza que forma parte del itinerario de la ruta. Las visitas turísticas están ordenadas temporalmente y el sistema procura minimizar la distancia entre unas y otras de acuerdo a las características del perfil."@es ;
+        sh:name         "Visita turística"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#138e104d0c2764a77822711f2821472c> , <https://astrea.linkeddata.es/shapes#65d55bb336533b9a3a6680c12b5d3964> , <https://astrea.linkeddata.es/shapes#9fb0b75b088b02e493f3f818b8273e4a> , <https://astrea.linkeddata.es/shapes#b3a1927504bc1020e5876d3893be9ea0> , <https://astrea.linkeddata.es/shapes#b0f52e98e48db09edcef0ae70ccb0bb6> , <https://astrea.linkeddata.es/shapes#82430eeb57efe0664282ba58fed78b44> , <https://astrea.linkeddata.es/shapes#ca257febb4f61cbee95f84cca3406559> , <https://astrea.linkeddata.es/shapes#ee7e45853debae0148beb7b1539ddc01> , <https://astrea.linkeddata.es/shapes#b2d3e2102f50c3ac9e6969ea108878f8> , <https://astrea.linkeddata.es/shapes#4c2ace9cb9cef8c840629315a3125c06> , <https://astrea.linkeddata.es/shapes#261ae12c2de4f19b52f47506d7b2c7cd> ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Visita-turistica> .
+
+<https://astrea.linkeddata.es/shapes#aec4cc5564085fa61d4c66a276fc5ccc>
+        a            sh:PropertyShape ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Horario-de-visita> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/TemporalRelations#present-at> .
+
+<https://astrea.linkeddata.es/shapes#26a0d587fe051e59f7f09428cb1895da>
+        a               sh:NodeShape ;
+        rdfs:label      "Calificación"@es ;
+        sh:description  "Calificación oficial proporcionada por el Patronato de Turismo para los distintos restaurantes de la ciudad de Zaragoza."@es ;
+        sh:name         "Calificación"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Calificacion> .
+
+<https://astrea.linkeddata.es/shapes#ab0931bbacf24134a2b48b7955a6574f>
+        a            sh:PropertyShape ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Recurso-de-zaragoza> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/SpatialRelations#participant-place> .
+
+<https://astrea.linkeddata.es/shapes#3e0bb705eb8569ca0b19d823041fc8fe>
+        a               sh:NodeShape ;
+        rdfs:label      "Preferencia de usuario"@es ;
+        sh:description  "Actividades que el turista puede estar interesado en realizar como visitar museos, pasear, ir de compras, etc."@es ;
+        sh:name         "Preferencia de usuario"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Preferencia-de-usuario> .
+
+<https://astrea.linkeddata.es/shapes#63203a3f2dd43b529472d96c1eeb91b4>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/DOLCE-Lite#part-of> .
+
+<https://astrea.linkeddata.es/shapes#94f3b16dd72005377205732cf17f4acf>
+        a               sh:NodeShape ;
+        rdfs:label      "Horario de visita"@es ;
+        sh:description  "Horarios de visita de los recursos turísticos: museos, edificios, iglesias, etc. Para construir el horario de visita, se utiliza el horario de apertura y cierre del recurso, el día de la semana y la temporada."@es ;
+        sh:name         "Horario de visita"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:or           ( [ sh:class  <http://idi.fundacionctic.org/cruzar/turismo#Dia-Festivo> ;
+                            sh:path   <http://www.loa-cnr.it/ontologies/DOLCE-Lite#part-of>
+                          ]
+                          [ sh:class  <http://idi.fundacionctic.org/cruzar/turismo#Dia-de-la-semana> ;
+                            sh:path   <http://www.loa-cnr.it/ontologies/DOLCE-Lite#part-of>
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#63203a3f2dd43b529472d96c1eeb91b4> , <https://astrea.linkeddata.es/shapes#3f9efe7c59746776732f42165d5187fb> , <https://astrea.linkeddata.es/shapes#07e96a71e57553f82e02bb685610d53a> , <https://astrea.linkeddata.es/shapes#6797e77a8a411ec36c6c23594fc1edb5> , <https://astrea.linkeddata.es/shapes#cfeb029417583496ecad5574fba5978f> ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Horario-de-visita> .
+
+<https://astrea.linkeddata.es/shapes#fab62554097f2e724bb65489e3981bbb>
+        a               sh:NodeShape ;
+        rdfs:label      "Fortaleza"@es ;
+        sh:description  "Construcción fortificada como murallas o torreones de defensa."@es ;
+        sh:name         "Fortaleza"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Fortaleza> .
+
+<https://astrea.linkeddata.es/shapes#79b0e963696d92819f47d06d26d9eee1>
+        a               sh:NodeShape ;
+        rdfs:label      "Monumento"@es ;
+        sh:description  "Construcción que posee valor artístico, arqueológico, histórico, etc. Las bases de datos de Monumentos y el Catálogo de Edificios de la Ciudad de Zaragoza se han mapeado a este concepto. Se ha subclasificado este concepto para conseguir una organización más rica de los monumentos. Esta información es usada por el sistema para configurar la ruta de manera más acorde a las preferencias del usuario mediante las reglas de negocio. Por ejemplo, si el usuario viaja con niños, el sistema por defecto no le ofrecerá museos en la ruta."@es ;
+        sh:name         "Monumento"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#af5f6bafd39c3fcb06f421c6afd359e3> ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Monumento> .
+
+<https://astrea.linkeddata.es/shapes#6fb46f78669d766637551fc8cecc4364>
+        a               sh:NodeShape ;
+        rdfs:label      "Cualidad"@es ;
+        sh:description  "Las \"qualities\" se consideran entidades básicas que se pueden percibir: los colores, sonidos, olores, formas, etc., así como entidades que se pueden medir: pesos, longitudes, pesos, tamaños, etc. Las \"qualities\" a veces se usan como sinónimo de \"properties\", aunque no es el caso de esta ontología. Las \"qualities\" son inherentes a las entidades y las entidades tienen ciertas \"qualities\". Por ejemplo, un recurso artístico tiene un determinado estilo artístico, donde el estilo es una \"quality\" del recurso en cuestión."@es ;
+        sh:name         "Cualidad"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#00006224d3cafef240b1a34f0adb779b> , <https://astrea.linkeddata.es/shapes#7e4c103ae69371f7242f0ac77972b4a7> , <https://astrea.linkeddata.es/shapes#ec8663bce574a68d78f240cda0409399> , <https://astrea.linkeddata.es/shapes#eca5c2a210a7d9fbfde74a318fda4c93> , <https://astrea.linkeddata.es/shapes#3bd7ee1b5d68d4f587283e7c8f241ed3> , <https://astrea.linkeddata.es/shapes#eb5e0c954c39eab35ff296113f277d36> , <https://astrea.linkeddata.es/shapes#bddae772bcde7f0cea26a8e10c5c491c> ;
+        sh:targetClass  <http://www.loa-cnr.it/ontologies/DOLCE-Lite#quality> .
+
+<https://astrea.linkeddata.es/shapes#b6664a47668d16a5c1f0843e63edf179>
+        a               sh:PropertyShape ;
+        rdfs:label      "No tiene interés"@en , "Representa el valor negativo de la propiedad \"has-interest\"."@es ;
+        sh:class        <http://idi.fundacionctic.org/cruzar/turismo#Interes-turistico> ;
+        sh:description  "Representa el valor negativo de la propiedad \"has-interest\"."@es ;
+        sh:name         "No tiene interés"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://idi.fundacionctic.org/cruzar/turismo#has-no-interest> .
+
+<https://astrea.linkeddata.es/shapes#fb974b49220bd209798fa80fde027027>
+        a               sh:NodeShape ;
+        rdfs:label      "Día de visita turística"@es ;
+        sh:description  "Cada uno de los días de visita turística por la ciudad de Zaragoza que escoge el turista. Para cada uno de estos días, el sistema construirá una ruta específica atendiendo a su perfil y a la disponibilidad de los recursos de la ciudad."@es ;
+        sh:name         "Día de visita turística"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#19a7f9616397ffe012a63a6f8504e582> , <https://astrea.linkeddata.es/shapes#41cb0287b8ad5ee1c43710f1539f2456> , <https://astrea.linkeddata.es/shapes#1b642cd8bb9d3702d423826801223caf> , <https://astrea.linkeddata.es/shapes#6c55d03ea0b102c605b2bcd913886b9a> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b3280994bbb1ed687f267e11a501d1a5> , <https://astrea.linkeddata.es/shapes#77dd30ff72d9b85c1fdbe4803905777a> ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Dia-de-visita-turistica> .
+
+<https://astrea.linkeddata.es/shapes#f7969d57edb1e83092f5e216fc008802>
+        a               sh:PropertyShape ;
+        rdfs:label      "Relevancia de las preferencias de ruta" , "Representa el valor de cada una de las preferencias de ruta. Estas preferencias actúan como restricciones para el planificador. Los valores de estos recursos modifican los parámetros iniciales del sistema de planificador."@es ;
+        sh:datatype     xsd:float ;
+        sh:description  "Representa el valor de cada una de las preferencias de ruta. Estas preferencias actúan como restricciones para el planificador. Los valores de estos recursos modifican los parámetros iniciales del sistema de planificador."@es ;
+        sh:name         "Relevancia de las preferencias de ruta" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://idi.fundacionctic.org/cruzar/turismo#necessity-relevance> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#c5f33ec953879d760d1a77750041373c>
+        a               sh:PropertyShape ;
+        rdfs:label      "Relevancia de los intereses turísticos" , "Indica el grado de interés objetivo de una determinada preferencia. Por ejemplo, cuál es la relevancia del gusto por la arquitectura o la preferencia por ir de compras."@es ;
+        sh:datatype     xsd:float ;
+        sh:description  "Indica el grado de interés objetivo de una determinada preferencia. Por ejemplo, cuál es la relevancia del gusto por la arquitectura o la preferencia por ir de compras."@es ;
+        sh:name         "Relevancia de los intereses turísticos" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://idi.fundacionctic.org/cruzar/turismo#interest-relevance> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#6797e77a8a411ec36c6c23594fc1edb5>
+        a               sh:PropertyShape ;
+        rdfs:label      "Horario de cierre"@es , "Hora de cierre del horario de visita de un punto de interés. Por ejemplo, de un museo o de una iglesia."@es ;
+        sh:datatype     xsd:time ;
+        sh:description  "Hora de cierre del horario de visita de un punto de interés. Por ejemplo, de un museo o de una iglesia."@es ;
+        sh:name         "Horario de cierre"@es ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://idi.fundacionctic.org/cruzar/turismo#closing-time> ;
+        sh:pattern      "(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#a820dec3805e97d547c69494f13dc683>
+        a               sh:PropertyShape ;
+        rdfs:label      "Relevancia de los Puntos de Interés"@es , "Es la relevancia o importancia objetiva de cada uno de los puntos de interés de la ciudad de Zaragoza."@es ;
+        sh:description  "Es la relevancia o importancia objetiva de cada uno de los puntos de interés de la ciudad de Zaragoza."@es ;
+        sh:maxCount     1 ;
+        sh:name         "Relevancia de los Puntos de Interés"@es ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://idi.fundacionctic.org/cruzar/turismo#poi-relevance> .
+
+<https://astrea.linkeddata.es/shapes#b2d3e2102f50c3ac9e6969ea108878f8>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/ExtendedDnS#setting> .
+
+<https://astrea.linkeddata.es/shapes#b3280994bbb1ed687f267e11a501d1a5>
+        a               sh:PropertyShape ;
+        rdfs:label      "Fecha"@es , "Indica la fecha de cada uno de los días de visita que el turista va a estar en Zaragoza. También se aplica a Días Festivos."@es ;
+        sh:datatype     xsd:date ;
+        sh:description  "Indica la fecha de cada uno de los días de visita que el turista va a estar en Zaragoza. También se aplica a Días Festivos."@es ;
+        sh:maxCount     1 ;
+        sh:name         "Fecha"@es ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
+        sh:path         <http://idi.fundacionctic.org/cruzar/turismo#date> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#7a5c798008b41b950d35f43f38df9fc4>
+        a               sh:NodeShape ;
+        rdfs:label      "Realización de Plan"@es ;
+        sh:description  "Las realizaciones de planes son aquellas situaciones en las que un plan se satisface completamente."@es ;
+        sh:name         "Realización de Plan"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#7e4c103ae69371f7242f0ac77972b4a7> , <https://astrea.linkeddata.es/shapes#3bd7ee1b5d68d4f587283e7c8f241ed3> , <https://astrea.linkeddata.es/shapes#7a515ee03c9f3474f82bee316825f170> , <https://astrea.linkeddata.es/shapes#bddae772bcde7f0cea26a8e10c5c491c> , <https://astrea.linkeddata.es/shapes#eca5c2a210a7d9fbfde74a318fda4c93> , <https://astrea.linkeddata.es/shapes#00006224d3cafef240b1a34f0adb779b> , <https://astrea.linkeddata.es/shapes#eb5e0c954c39eab35ff296113f277d36> ;
+        sh:targetClass  <http://www.loa-cnr.it/ontologies/Plans#plan-execution> .
+
+<https://astrea.linkeddata.es/shapes#72d6df92f5b2bc0f69c7bb34fe28ba37>
+        a            sh:PropertyShape ;
+        rdfs:label   "setting for"@en ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Visita-turistica> ;
+        sh:name      "setting for"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.loa-cnr.it/ontologies/ExtendedDnS#setting-for> .
+
+<https://astrea.linkeddata.es/shapes#2d1c445d299e2c05a8d02e164d705580>
+        a               sh:NodeShape ;
+        rdfs:label      "Colectivo social"@es ;
+        sh:description  "Los colectivos sociales son colectivos tipificados que son representados por roles del mundo social. Suelen basarse en accciones (prácticas más que planes). Se pueden dividir en geográficos, de vecinaje, étnicos, lingüísticos, comerciales, industriales, científicos, políticos, religiosos, institucionales, administrativos, profesionales, deportivos, basados en interés, estilísticos, devocionales,etc."@es ;
+        sh:name         "Colectivo social"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#7e4c103ae69371f7242f0ac77972b4a7> , <https://astrea.linkeddata.es/shapes#ec8663bce574a68d78f240cda0409399> , <https://astrea.linkeddata.es/shapes#3bd7ee1b5d68d4f587283e7c8f241ed3> , <https://astrea.linkeddata.es/shapes#7a515ee03c9f3474f82bee316825f170> , <https://astrea.linkeddata.es/shapes#bddae772bcde7f0cea26a8e10c5c491c> , <https://astrea.linkeddata.es/shapes#eb5e0c954c39eab35ff296113f277d36> , <https://astrea.linkeddata.es/shapes#00006224d3cafef240b1a34f0adb779b> ;
+        sh:targetClass  <http://www.loa-cnr.it/ontologies/Collectives#social-type-collective> .
+
+<https://astrea.linkeddata.es/shapes#329b09e1d221f2b87aec16f64f5a219e>
+        a            sh:PropertyShape ;
+        rdfs:label   "e-temporal location"@en ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Dia-de-visita-turistica> ;
+        sh:name      "e-temporal location"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.loa-cnr.it/ontologies/TemporalRelations#e-temporal-location> .
+
+<https://astrea.linkeddata.es/shapes#9fb0b75b088b02e493f3f818b8273e4a>
+        a            sh:PropertyShape ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Evento-de-zaragoza> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/TemporalRelations#temporally-coincides> .
+
+<https://astrea.linkeddata.es/shapes#1aa3d7dd735aa2bab6811d9a8f8465d0>
+        a               sh:NodeShape ;
+        rdfs:label      "Región temporal"@es ;
+        sh:description  "Una región  temporal que puede tener diferente duración. Asume métricas temporales."@es ;
+        sh:name         "Región temporal"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#3bd7ee1b5d68d4f587283e7c8f241ed3> , <https://astrea.linkeddata.es/shapes#eca5c2a210a7d9fbfde74a318fda4c93> , <https://astrea.linkeddata.es/shapes#ec8663bce574a68d78f240cda0409399> , <https://astrea.linkeddata.es/shapes#00006224d3cafef240b1a34f0adb779b> , <https://astrea.linkeddata.es/shapes#eb5e0c954c39eab35ff296113f277d36> , <https://astrea.linkeddata.es/shapes#bddae772bcde7f0cea26a8e10c5c491c> , <https://astrea.linkeddata.es/shapes#7a515ee03c9f3474f82bee316825f170> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#53dfd8406a901173366c91902b5016aa> , <https://astrea.linkeddata.es/shapes#e3c95cd69d4fe851c9a98b78355398d3> ;
+        sh:targetClass  <http://www.loa-cnr.it/ontologies/DOLCE-Lite#temporal-region> .
+
+<https://astrea.linkeddata.es/shapes#58b0237478c54eb69d11591e394fad32>
+        a               sh:NodeShape ;
+        rdfs:label      "Interés turístico"@es ;
+        sh:description  "El interés turístico es el grado de relevancia que tiene un recurso de la ciudad de Zaragoza para un determinado perfil de turista. Por ejemplo, si a un turista le gusta el arte barroco, el turista tendrá interés en el arte barroco y, por tanto, en cualquier monumento que se englobe dentro de este estilo. Los intereses de los perfiles se calculan a partir de las preferencias declaradas por el usuario y utilizando las reglas de negocio."@es ;
+        sh:name         "Interés turístico"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c5f33ec953879d760d1a77750041373c> ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Interes-turistico> .
+
+<https://astrea.linkeddata.es/shapes#41cb0287b8ad5ee1c43710f1539f2456>
+        a         sh:PropertyShape ;
+        sh:class  <http://idi.fundacionctic.org/cruzar/turismo#Dia-de-la-semana> .
+
+<https://astrea.linkeddata.es/shapes#a4c2185ff18dd1f3b0884e403ff4f020>
+        a            sh:PropertyShape ;
+        rdfs:label   "participant place"@en ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Recurso-de-zaragoza> ;
+        sh:name      "participant place"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.loa-cnr.it/ontologies/SpatialRelations#participant-place> .
+
+<https://astrea.linkeddata.es/shapes#610dae68f3603acd65a5a59ce1d80cdb>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/ExtendedDnS#expected-setting-for> .
+
+<https://astrea.linkeddata.es/shapes#2fff3cdf36995bcfb76be4640a8f0630>
+        a               sh:NodeShape ;
+        rdfs:label      "Accesibilidad de movilidad reducida"@es ;
+        sh:description  "La accesibilidad es el grado con el que algo puede ser usado, visitado o accedido por todas las personas, independientemente de sus capacidades técnicas o físicas. En el caso de personas con movilidad reducida (que implique el uso de ayudas técnicas como muletas, sillas de ruedas, etc.), el grado de accesibilidad se mide de acuerdo a la facilidad de desplazamiento de los turistas por el entorno de los distintos recursos de la ciudad. La descripción del grado de accesibilidad de cada monumento se ha extraído de la base de datos de Monumentos."@es ;
+        sh:name         "Accesibilidad de movilidad reducida"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#ed2991d2503cffc7fe94b6199f237fe9> ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Accesibilidad-de-movilidad-reducida> .
+
+<https://astrea.linkeddata.es/shapes#34ef98c99dc50f46d089dd76b2188b0e>
+        a               sh:NodeShape ;
+        rdfs:label      "Ruta turística"@es ;
+        sh:description  "Es el itinerario calculado dinámicamente por el sistema. Para cada día de estancia del turista se confecciona una ruta específica que consiste en una serie de visitas a determinados recursos turísticos de la ciudad de Zaragoza. La ruta se adapta además a las características del perfil del usuario como las preferencias, las limitaciones de movilidad, el alojamiento, los horarios de visitas de los monumentos, etc. El sistema no sólo genera un itinerario en el tiempo y espacio correspondientes, sino que además proporciona una serie de sugerencias para el turista que complementan su visita a la ciudad: eventos de interés, restaurantes cercanos y sectores comerciales."@es ;
+        sh:name         "Ruta turística"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#610dae68f3603acd65a5a59ce1d80cdb> , <https://astrea.linkeddata.es/shapes#36b305d9c2d38244909b2f4b89b054b3> , <https://astrea.linkeddata.es/shapes#419d2d5ed023acf67f6756cc4ac1577a> , <https://astrea.linkeddata.es/shapes#72d6df92f5b2bc0f69c7bb34fe28ba37> ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Ruta-turistica> .
+
+<https://astrea.linkeddata.es/shapes#53dfd8406a901173366c91902b5016aa>
+        a            sh:PropertyShape ;
+        rdfs:label   "part of"@en ;
+        sh:class     <http://www.loa-cnr.it/ontologies/DOLCE-Lite#temporal-region> ;
+        sh:name      "part of"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.loa-cnr.it/ontologies/DOLCE-Lite#part-of> .
+
+<https://astrea.linkeddata.es/shapes#bb48a93dba07799ad735021b166af47a>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#9ec61ebb3dbe94c947c910660a6e9500>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/DOLCE-Lite#has-quality> .
+
+<https://astrea.linkeddata.es/shapes#12caeec8ebdb3a9c675778961fd0aa47>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/ExtendedDnS#covers> .
+
+<https://astrea.linkeddata.es/shapes#86490ee5e333fbb0d91fca10d28efdca>
+        a               sh:NodeShape ;
+        rdfs:label      "Mercado"@es ;
+        sh:description  "Sitio público destinado a vender o comprar productos. Los mercados se ofrecen como sugerencias a la ruta en base al perfil del turista y sólo se ofrecen en los días señalados."@es ;
+        sh:name         "Mercado"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Mercado> .
+
+<https://astrea.linkeddata.es/shapes#34c203903391e22b4aa06e8cb84dff54>
+        a               sh:NodeShape ;
+        rdfs:label      "Recurso geográfico"@es ;
+        sh:description  "Recurso físico con entidad propia cuya localización espacial se expresa en coordenadas geográficas."@es ;
+        sh:name         "Recurso geográfico"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#7e4c103ae69371f7242f0ac77972b4a7> , <https://astrea.linkeddata.es/shapes#7a515ee03c9f3474f82bee316825f170> , <https://astrea.linkeddata.es/shapes#eca5c2a210a7d9fbfde74a318fda4c93> , <https://astrea.linkeddata.es/shapes#3bd7ee1b5d68d4f587283e7c8f241ed3> , <https://astrea.linkeddata.es/shapes#bddae772bcde7f0cea26a8e10c5c491c> , <https://astrea.linkeddata.es/shapes#eb5e0c954c39eab35ff296113f277d36> , <https://astrea.linkeddata.es/shapes#ec8663bce574a68d78f240cda0409399> ;
+        sh:targetClass  <http://www.loa-cnr.it/ontologies/CommonSenseMapping#geographical-object> .
+
+<https://astrea.linkeddata.es/shapes#9bef83c45ef4a0296cd5947a0160dded>
+        a               sh:PropertyShape ;
+        rdfs:label      "No tiene preferencia"@en , "Representa el valor negativo de la propiedad \"desire-towards\". Indica las actividades que el turista no quiere realizar. Esta propiedad, como \"desire-towards\" servirán de entrada para el cálculo de los intereses de los perfiles de turista en las reglas de negocio de turismo de la aplicación."@es ;
+        sh:class        <http://idi.fundacionctic.org/cruzar/turismo#Preferencia-de-usuario> ;
+        sh:description  "Representa el valor negativo de la propiedad \"desire-towards\". Indica las actividades que el turista no quiere realizar. Esta propiedad, como \"desire-towards\" servirán de entrada para el cálculo de los intereses de los perfiles de turista en las reglas de negocio de turismo de la aplicación."@es ;
+        sh:name         "No tiene preferencia"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://idi.fundacionctic.org/cruzar/turismo#not-desire-towards> .
+
+<https://astrea.linkeddata.es/shapes#2e69f6840d1e1e1d5275fcb6f3f60c87>
+        a               sh:NodeShape ;
+        rdfs:label      "Edificio histórico"@es ;
+        sh:description  "Edificio de carácter histórico con interés cultural o arquitectónico."@es ;
+        sh:name         "Edificio histórico"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Edificio-historico> .
+
+<https://astrea.linkeddata.es/shapes#cb2cc0e3445cc11fd94317f1dce39c15>
+        a               sh:NodeShape ;
+        rdfs:label      "Palacio"@es ;
+        sh:description  "Edificio de gran transcendencia artística y de relevancia social ya que nacen como lugar de residencia de personajes importanes: palacio ducal, arzobispal."@es ;
+        sh:name         "Palacio"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Palacio> .
+
+<https://astrea.linkeddata.es/shapes#7a515ee03c9f3474f82bee316825f170>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.loa-cnr.it/ontologies/DOLCE-Lite#quality> .
+
+<https://astrea.linkeddata.es/shapes#a650b484d4c3f723ef0f45291d746aa8>
+        a            sh:PropertyShape ;
+        rdfs:label   "has quality"@en ;
+        sh:class     <http://www.loa-cnr.it/ontologies/DOLCE-Lite#quality> ;
+        sh:name      "has quality"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.loa-cnr.it/ontologies/DOLCE-Lite#has-quality> .
+
+<https://astrea.linkeddata.es/shapes#a2fcb3f52242bead972b7d185273ba57>
+        a               sh:NodeShape ;
+        rdfs:label      "Día festivo"@es ;
+        sh:description  "Día no laborable relacionado con alguna fiesta local o nacional: Fiesta del Pilar, Navidad, etc. Estos días requieren un tratamiento independiente ya que los recursos turísticos tienen estos días un horario especial."@es ;
+        sh:name         "Día festivo"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#41cb0287b8ad5ee1c43710f1539f2456> , <https://astrea.linkeddata.es/shapes#19a7f9616397ffe012a63a6f8504e582> , <https://astrea.linkeddata.es/shapes#1b642cd8bb9d3702d423826801223caf> , <https://astrea.linkeddata.es/shapes#7e7cf9247022531f632c20a4da076d7f> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b3280994bbb1ed687f267e11a501d1a5> ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Dia-Festivo> .
+
+<https://astrea.linkeddata.es/shapes#ef9ea45e1849bd12d4a127b0042392bd>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/TemporalRelations#e-temporal-location> .
+
+<https://astrea.linkeddata.es/shapes#7fdd2fb98df8bb8a95a6f05585adb8dc>
+        a               sh:NodeShape ;
+        rdfs:label      "Actividad"@es ;
+        sh:description  "Una actividad es un conjunto de acciones o tareas realizadas por una persona o entidad."@es ;
+        sh:name         "Actividad"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.loa-cnr.it/ontologies/ExtendedDnS#activity> .
+
+<https://astrea.linkeddata.es/shapes#340b19279a897a5ac70dcaeb48c20a80>
+        a               sh:PropertyShape ;
+        rdfs:label      "Fecha de finalización" , "Día de finalización de las temporadas del año. Se contemplan temporada de verano y temporada de invierno."@es ;
+        sh:datatype     xsd:date ;
+        sh:description  "Día de finalización de las temporadas del año. Se contemplan temporada de verano y temporada de invierno."@es ;
+        sh:name         "Fecha de finalización" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://idi.fundacionctic.org/cruzar/turismo#ending-date> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#fef5d7052a05430a408fe8f98b49e28a>
+        a               sh:PropertyShape ;
+        rdfs:label      "Tiene interés en determinados recursos"@en , "Indica los recursos que el usuario quiere que figuren obligatoriamente en la ruta propuesta por el sistema"@es ;
+        sh:class        <http://idi.fundacionctic.org/cruzar/turismo#Recurso-de-zaragoza> ;
+        sh:description  "Indica los recursos que el usuario quiere que figuren obligatoriamente en la ruta propuesta por el sistema"@es ;
+        sh:name         "Tiene interés en determinados recursos"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://idi.fundacionctic.org/cruzar/turismo#interest-towards> .
+
+<https://astrea.linkeddata.es/shapes#172382a059e61f60b739a6e8d904fff3>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:double ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ;
+        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#65d55bb336533b9a3a6680c12b5d3964>
+        a            sh:PropertyShape ;
+        rdfs:label   "precedes"@en ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Visita-turistica> ;
+        sh:name      "precedes"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.loa-cnr.it/ontologies/TemporalRelations#precedes> .
+
+<https://astrea.linkeddata.es/shapes#1c92304d5fd24e040880b93fb61d974a>
+        a               sh:NodeShape ;
+        rdfs:label      "Recurso turístico"@es ;
+        sh:description  "Recurso de interés turístico que ofrece la ciudad de Zaragoza."@es ;
+        sh:name         "Recurso turístico"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:or           ( [ sh:class  <http://idi.fundacionctic.org/cruzar/turismo#Accesibilidad-de-movilidad-reducida> ;
+                            sh:path   <http://www.loa-cnr.it/ontologies/DOLCE-Lite#has-quality>
+                          ]
+                          [ sh:class  <http://idi.fundacionctic.org/cruzar/turismo#Estilo-artistico> ;
+                            sh:path   <http://www.loa-cnr.it/ontologies/DOLCE-Lite#has-quality>
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#77cd179c06792c4c57c81305213bc968> , <https://astrea.linkeddata.es/shapes#061fc4b8b5fb17b82b58fb61136b3c8c> ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Recurso-turistico> .
+
+<https://astrea.linkeddata.es/shapes#ca257febb4f61cbee95f84cca3406559>
+        a            sh:PropertyShape ;
+        rdfs:label   "target"@en ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Recurso-de-zaragoza> ;
+        sh:name      "target"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.loa-cnr.it/ontologies/FunctionalParticipation#target> .
+
+<https://astrea.linkeddata.es/shapes#74671166afee7d48af81a68137d91775>
+        a            sh:PropertyShape ;
+        rdfs:label   "performs"@en ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Viaje> ;
+        sh:name      "performs"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.loa-cnr.it/ontologies/ExtendedDnS#performs> .
+
+<https://astrea.linkeddata.es/shapes#0ebe96c7396884ec39ea3d0cc92e67dd>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#4c2ace9cb9cef8c840629315a3125c06>
+        a            sh:PropertyShape ;
+        rdfs:label   "setting"@en ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Ruta-turistica> ;
+        sh:name      "setting"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.loa-cnr.it/ontologies/ExtendedDnS#setting> .
+
+<https://astrea.linkeddata.es/shapes#eca5c2a210a7d9fbfde74a318fda4c93>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.loa-cnr.it/ontologies/Collectives#social-type-collective> .
+
+<https://astrea.linkeddata.es/shapes#6c55d03ea0b102c605b2bcd913886b9a>
+        a         sh:PropertyShape ;
+        sh:class  <http://idi.fundacionctic.org/cruzar/turismo#Dia-Festivo> .
+
+<https://astrea.linkeddata.es/shapes#9d8c8943ae43464a04ab1138a00b00c8>
+        a            sh:PropertyShape ;
+        rdfs:label   "present at"@en ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Horario-de-visita> ;
+        sh:name      "present at"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.loa-cnr.it/ontologies/TemporalRelations#present-at> .
+
+<https://astrea.linkeddata.es/shapes#59f2e0ac397fd1b67b4a1e9794c5a06f>
+        a            sh:PropertyShape ;
+        rdfs:label   "covers"@en ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Grupo-de-viaje> ;
+        sh:name      "covers"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.loa-cnr.it/ontologies/ExtendedDnS#covers> .
+
+<https://astrea.linkeddata.es/shapes#261ae12c2de4f19b52f47506d7b2c7cd>
+        a            sh:PropertyShape ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Visita-turistica> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/TemporalRelations#follows> .
+
+<https://astrea.linkeddata.es/shapes#bddae772bcde7f0cea26a8e10c5c491c>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.loa-cnr.it/ontologies/ExtendedDnS#social-role> .
+
+<https://astrea.linkeddata.es/shapes#77dd30ff72d9b85c1fdbe4803905777a>
+        a            sh:PropertyShape ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Temporada> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/DOLCE-Lite#part-of> .
+
+<https://astrea.linkeddata.es/shapes#edb34f54cff2ea53fdad2cd063f28d05>
+        a         sh:PropertyShape ;
+        sh:class  <http://idi.fundacionctic.org/cruzar/turismo#Accesibilidad-de-movilidad-reducida> .
+
+<https://astrea.linkeddata.es/shapes#018c8a13e573859883274351d92b8129>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#63069d746d9a775fa7ca765e2079b495>
+        a               sh:NodeShape ;
+        rdfs:label      "Evento"@es ;
+        sh:description  "Un evento es un suceso importante y programado, de índole social, académica, artística o deportiva."@es ;
+        sh:name         "Evento"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#eca5c2a210a7d9fbfde74a318fda4c93> , <https://astrea.linkeddata.es/shapes#ec8663bce574a68d78f240cda0409399> , <https://astrea.linkeddata.es/shapes#7e4c103ae69371f7242f0ac77972b4a7> , <https://astrea.linkeddata.es/shapes#7a515ee03c9f3474f82bee316825f170> , <https://astrea.linkeddata.es/shapes#3bd7ee1b5d68d4f587283e7c8f241ed3> , <https://astrea.linkeddata.es/shapes#bddae772bcde7f0cea26a8e10c5c491c> , <https://astrea.linkeddata.es/shapes#00006224d3cafef240b1a34f0adb779b> ;
+        sh:targetClass  <http://www.loa-cnr.it/ontologies/DOLCE-Lite#event> .
+
+<https://astrea.linkeddata.es/shapes#ed2991d2503cffc7fe94b6199f237fe9>
+        a         sh:PropertyShape ;
+        sh:class  <http://idi.fundacionctic.org/cruzar/turismo#Estilo-artistico> .
+
+<https://astrea.linkeddata.es/shapes#7e4c103ae69371f7242f0ac77972b4a7>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.loa-cnr.it/ontologies/DOLCE-Lite#temporal-region> .
+
+<https://astrea.linkeddata.es/shapes#419d2d5ed023acf67f6756cc4ac1577a>
+        a            sh:PropertyShape ;
+        rdfs:label   "expected setting for"@en ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Perfil-de-turista> ;
+        sh:maxCount  1 ;
+        sh:name      "expected setting for"@en ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path      <http://www.loa-cnr.it/ontologies/ExtendedDnS#expected-setting-for> .
+
+<https://astrea.linkeddata.es/shapes#ec8663bce574a68d78f240cda0409399>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.loa-cnr.it/ontologies/Plans#plan-execution> .
+
+<https://astrea.linkeddata.es/shapes#cfeb029417583496ecad5574fba5978f>
+        a               sh:PropertyShape ;
+        rdfs:label      "Horario de apertura"@es , "Hora de apertura del horario de visita de un punto de interés de la ciudad."@es ;
+        sh:datatype     xsd:time ;
+        sh:description  "Hora de apertura del horario de visita de un punto de interés de la ciudad."@es ;
+        sh:name         "Horario de apertura"@es ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://idi.fundacionctic.org/cruzar/turismo#opening-time> ;
+        sh:pattern      "(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#b0f52e98e48db09edcef0ae70ccb0bb6>
+        a            sh:PropertyShape ;
+        rdfs:label   "happens at"@en ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Dia-de-visita-turistica> ;
+        sh:name      "happens at"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.loa-cnr.it/ontologies/CommonSenseMapping#happens-at> .
+
+<https://astrea.linkeddata.es/shapes#3291691f3eee2d6c95e1396e9fb2d76a>
+        a               sh:NodeShape ;
+        rdfs:label      "Sector comercial"@es ;
+        sh:description  "Un sector es un conjunto de negocios que se engloban en un área diferenciada de la ciudad de Zaragoza."@es ;
+        sh:name         "Sector comercial"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Sector-comercial> .
+
+<https://astrea.linkeddata.es/shapes#00006224d3cafef240b1a34f0adb779b>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.loa-cnr.it/ontologies/CommonSenseMapping#geographical-object> .
+
+<https://astrea.linkeddata.es/shapes#0720598e49ac2848fcbe51ad2e6f34b1>
+        a               sh:PropertyShape ;
+        rdfs:label      "Tiene interés"@en , "Esta relación entre recursos e intereses se obtiene a partir de un conjunto de reglas de negocio de turismo. Estas reglas permiten inferir a partir de las preferencias de los usuarios (edns:desire-towards, cúales son sus intereses turísticos. Lo mismo ocurre en el caso de los puntos de interés de la ciudad. Se deduce cuál es el interés potencial que tiene cada recurso para un turista. A partir de la descripción de los intereses de los perfiles y recursos, se calcula la relevancia o importancia subjetiva de cada recurso para un determinado perfil (\"matchmaking\")."@es ;
+        sh:class        <http://idi.fundacionctic.org/cruzar/turismo#Interes-turistico> ;
+        sh:description  "Esta relación entre recursos e intereses se obtiene a partir de un conjunto de reglas de negocio de turismo. Estas reglas permiten inferir a partir de las preferencias de los usuarios (edns:desire-towards, cúales son sus intereses turísticos. Lo mismo ocurre en el caso de los puntos de interés de la ciudad. Se deduce cuál es el interés potencial que tiene cada recurso para un turista. A partir de la descripción de los intereses de los perfiles y recursos, se calcula la relevancia o importancia subjetiva de cada recurso para un determinado perfil (\"matchmaking\")."@es ;
+        sh:name         "Tiene interés"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://idi.fundacionctic.org/cruzar/turismo#has-interest> .
+
+<https://astrea.linkeddata.es/shapes#ee7e45853debae0148beb7b1539ddc01>
+        a            sh:PropertyShape ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Visita-turistica> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/TemporalRelations#precedes> .
+
+<https://astrea.linkeddata.es/shapes#e3c95cd69d4fe851c9a98b78355398d3>
+        a            sh:PropertyShape ;
+        rdfs:label   "part"@en ;
+        sh:class     <http://www.loa-cnr.it/ontologies/DOLCE-Lite#temporal-region> ;
+        sh:name      "part"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.loa-cnr.it/ontologies/DOLCE-Lite#part> .
+
+<https://astrea.linkeddata.es/shapes#6062b6b2b8f01ec92efbed065514e936>
+        a               sh:NodeShape ;
+        rdfs:label      "Evento de Zaragoza"@es ;
+        sh:description  "Esta clase conceptualiza la Agenda de actividades de la ciudad de Zaragoza. Cada uno de los eventos de la Agenda son instancias de este concepto. Los eventos se utilizan como sugerencias complementarias a la ruta definida por el sistema."@es ;
+        sh:name         "Evento de Zaragoza"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a940485836d620ca97b970e817244891> , <https://astrea.linkeddata.es/shapes#a4c2185ff18dd1f3b0884e403ff4f020> , <https://astrea.linkeddata.es/shapes#b6664a47668d16a5c1f0843e63edf179> , <https://astrea.linkeddata.es/shapes#ab0931bbacf24134a2b48b7955a6574f> , <https://astrea.linkeddata.es/shapes#5763fb8b9e186b5f3d39178eec37fb29> , <https://astrea.linkeddata.es/shapes#a650b484d4c3f723ef0f45291d746aa8> ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Evento-de-zaragoza> .
+
+<https://astrea.linkeddata.es/shapes#cab629c90268c99a5bf91eaaa68f9edd>
+        a               sh:NodeShape ;
+        rdfs:label      "Grupo de viaje"@es ;
+        sh:description  "Colectivo de personas que realizan una visita turística a la ciudad de Zaragoza, y para los que el sistema calculará una ruta contextualizada."@es ;
+        sh:name         "Grupo de viaje"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Grupo-de-viaje> .
+
+<https://astrea.linkeddata.es/shapes#ad82f99f6449704cc52d9fe0d498700f>
+        a               sh:NodeShape ;
+        rdfs:label      "Perfil de turista"@es ;
+        sh:description  "El perfil de turista es el conjunto de rasgos particulares que caracterizan a un turista en particular para el cual se va a calcular la ruta. El perfil de turista contempla desde los días de visita a la ciudad de Zaragoza (único dato obligatorio), el tipo de viaje, si es un viaje en grupo, los intereses y las preferencias turísticas del perfil."@es ;
+        sh:name         "Perfil de turista"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#db81190053f7b8c74dab597eb4aedba7> , <https://astrea.linkeddata.es/shapes#12caeec8ebdb3a9c675778961fd0aa47> , <https://astrea.linkeddata.es/shapes#b6664a47668d16a5c1f0843e63edf179> , <https://astrea.linkeddata.es/shapes#9bef83c45ef4a0296cd5947a0160dded> , <https://astrea.linkeddata.es/shapes#0413469d41ac16bb5ca1f4c14d978d11> , <https://astrea.linkeddata.es/shapes#fef5d7052a05430a408fe8f98b49e28a> , <https://astrea.linkeddata.es/shapes#ef9ea45e1849bd12d4a127b0042392bd> , <https://astrea.linkeddata.es/shapes#59f2e0ac397fd1b67b4a1e9794c5a06f> , <https://astrea.linkeddata.es/shapes#e7008611ce34628f731879f5b8b10e74> , <https://astrea.linkeddata.es/shapes#8ea813ef04f4021d9db39d930b37c8a6> , <https://astrea.linkeddata.es/shapes#a650b484d4c3f723ef0f45291d746aa8> , <https://astrea.linkeddata.es/shapes#329b09e1d221f2b87aec16f64f5a219e> , <https://astrea.linkeddata.es/shapes#74671166afee7d48af81a68137d91775> ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Perfil-de-turista> .
+
+<https://astrea.linkeddata.es/shapes#36b305d9c2d38244909b2f4b89b054b3>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/ExtendedDnS#setting-for> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#a4c2185ff18dd1f3b0884e403ff4f020> , <https://astrea.linkeddata.es/shapes#b7dfba33b686edba1eb2244ee40c64ff> , <https://astrea.linkeddata.es/shapes#ed2991d2503cffc7fe94b6199f237fe9> , <https://astrea.linkeddata.es/shapes#fef5d7052a05430a408fe8f98b49e28a> , <https://astrea.linkeddata.es/shapes#ee7e45853debae0148beb7b1539ddc01> , <https://astrea.linkeddata.es/shapes#9c63501aafb3f0d9215cd167709c4512> , <https://astrea.linkeddata.es/shapes#061fc4b8b5fb17b82b58fb61136b3c8c> , <https://astrea.linkeddata.es/shapes#018c8a13e573859883274351d92b8129> , <https://astrea.linkeddata.es/shapes#eb5e0c954c39eab35ff296113f277d36> , <https://astrea.linkeddata.es/shapes#63069d746d9a775fa7ca765e2079b495> , <https://astrea.linkeddata.es/shapes#500c133bc52cd15a8f1307e1e249fbfb> , <https://astrea.linkeddata.es/shapes#63203a3f2dd43b529472d96c1eeb91b4> , <https://astrea.linkeddata.es/shapes#36b305d9c2d38244909b2f4b89b054b3> , <https://astrea.linkeddata.es/shapes#419d2d5ed023acf67f6756cc4ac1577a> , <https://astrea.linkeddata.es/shapes#7a515ee03c9f3474f82bee316825f170> , <https://astrea.linkeddata.es/shapes#2fff3cdf36995bcfb76be4640a8f0630> , <https://astrea.linkeddata.es/shapes#ad82f99f6449704cc52d9fe0d498700f> , <https://astrea.linkeddata.es/shapes#6c55d03ea0b102c605b2bcd913886b9a> , <https://astrea.linkeddata.es/shapes#329b09e1d221f2b87aec16f64f5a219e> , <https://astrea.linkeddata.es/shapes#2d1c445d299e2c05a8d02e164d705580> , <https://astrea.linkeddata.es/shapes#34c203903391e22b4aa06e8cb84dff54> , <https://astrea.linkeddata.es/shapes#a650b484d4c3f723ef0f45291d746aa8> , <https://astrea.linkeddata.es/shapes#0413469d41ac16bb5ca1f4c14d978d11> , <https://astrea.linkeddata.es/shapes#65d55bb336533b9a3a6680c12b5d3964> , <https://astrea.linkeddata.es/shapes#e7990c6dd6a3dca6de078b32328bc4ef> , <https://astrea.linkeddata.es/shapes#f7969d57edb1e83092f5e216fc008802> , <https://astrea.linkeddata.es/shapes#e3c95cd69d4fe851c9a98b78355398d3> , <https://astrea.linkeddata.es/shapes#1aa3d7dd735aa2bab6811d9a8f8465d0> , <https://astrea.linkeddata.es/shapes#b2d3e2102f50c3ac9e6969ea108878f8> , <https://astrea.linkeddata.es/shapes#6fb46f78669d766637551fc8cecc4364> , <https://astrea.linkeddata.es/shapes#1b642cd8bb9d3702d423826801223caf> , <https://astrea.linkeddata.es/shapes#fb974b49220bd209798fa80fde027027> , <https://astrea.linkeddata.es/shapes#b0f52e98e48db09edcef0ae70ccb0bb6> , <https://astrea.linkeddata.es/shapes#8ea813ef04f4021d9db39d930b37c8a6> , <https://astrea.linkeddata.es/shapes#7e7cf9247022531f632c20a4da076d7f> , <https://astrea.linkeddata.es/shapes#9ec61ebb3dbe94c947c910660a6e9500> , <https://astrea.linkeddata.es/shapes#08d0cf8ea8a44bf99287434427e19f04> , <https://astrea.linkeddata.es/shapes#3bd7ee1b5d68d4f587283e7c8f241ed3> , <https://astrea.linkeddata.es/shapes#7e4c103ae69371f7242f0ac77972b4a7> , <https://astrea.linkeddata.es/shapes#b3a1927504bc1020e5876d3893be9ea0> , <https://astrea.linkeddata.es/shapes#74671166afee7d48af81a68137d91775> , <https://astrea.linkeddata.es/shapes#c5f33ec953879d760d1a77750041373c> , <https://astrea.linkeddata.es/shapes#a834590b6829ec641fc4ec11cb77003d> , <https://astrea.linkeddata.es/shapes#3f9efe7c59746776732f42165d5187fb> , <https://astrea.linkeddata.es/shapes#fab62554097f2e724bb65489e3981bbb> , <https://astrea.linkeddata.es/shapes#82430eeb57efe0664282ba58fed78b44> , <https://astrea.linkeddata.es/shapes#86490ee5e333fbb0d91fca10d28efdca> , <https://astrea.linkeddata.es/shapes#427a7339338b88c071415db01b989fa8> , <https://astrea.linkeddata.es/shapes#07e96a71e57553f82e02bb685610d53a> , <https://astrea.linkeddata.es/shapes#94f3b16dd72005377205732cf17f4acf> , <https://astrea.linkeddata.es/shapes#00006224d3cafef240b1a34f0adb779b> , <https://astrea.linkeddata.es/shapes#59f2e0ac397fd1b67b4a1e9794c5a06f> , <https://astrea.linkeddata.es/shapes#1c624c79dfe01437e066a18c15728da0> , <https://astrea.linkeddata.es/shapes#a755eac53b26f966e9d25d8d92642f5a> , <https://astrea.linkeddata.es/shapes#b3280994bbb1ed687f267e11a501d1a5> , <https://astrea.linkeddata.es/shapes#138e104d0c2764a77822711f2821472c> , <https://astrea.linkeddata.es/shapes#340b19279a897a5ac70dcaeb48c20a80> , <https://astrea.linkeddata.es/shapes#25ec1b4c3ec77d7a2f3662203ec3d594> , <https://astrea.linkeddata.es/shapes#9fb0b75b088b02e493f3f818b8273e4a> , <https://astrea.linkeddata.es/shapes#cfeb029417583496ecad5574fba5978f> , <https://astrea.linkeddata.es/shapes#ef9ea45e1849bd12d4a127b0042392bd> , <https://astrea.linkeddata.es/shapes#53dfd8406a901173366c91902b5016aa> , <https://astrea.linkeddata.es/shapes#6797e77a8a411ec36c6c23594fc1edb5> , <https://astrea.linkeddata.es/shapes#58b0237478c54eb69d11591e394fad32> , <https://astrea.linkeddata.es/shapes#af5f6bafd39c3fcb06f421c6afd359e3> , <https://astrea.linkeddata.es/shapes#41cb0287b8ad5ee1c43710f1539f2456> , <https://astrea.linkeddata.es/shapes#19a7f9616397ffe012a63a6f8504e582> , <https://astrea.linkeddata.es/shapes#261ae12c2de4f19b52f47506d7b2c7cd> , <https://astrea.linkeddata.es/shapes#bddae772bcde7f0cea26a8e10c5c491c> , <https://astrea.linkeddata.es/shapes#83b38d3565c0a24a203c16878530d126> , <https://astrea.linkeddata.es/shapes#1c92304d5fd24e040880b93fb61d974a> , <https://astrea.linkeddata.es/shapes#1cb7d83dd3bb7d4eb5856ef43b5d17c3> , <https://astrea.linkeddata.es/shapes#db81190053f7b8c74dab597eb4aedba7> , <https://astrea.linkeddata.es/shapes#ec8663bce574a68d78f240cda0409399> , <https://astrea.linkeddata.es/shapes#aec4cc5564085fa61d4c66a276fc5ccc> , <https://astrea.linkeddata.es/shapes#e7008611ce34628f731879f5b8b10e74> , <https://astrea.linkeddata.es/shapes#b8840ae319dd17775a4c3ff2c43caeca> , <https://astrea.linkeddata.es/shapes#eca5c2a210a7d9fbfde74a318fda4c93> , <https://astrea.linkeddata.es/shapes#610dae68f3603acd65a5a59ce1d80cdb> , <https://astrea.linkeddata.es/shapes#f1a8d0b80f4244915b07ac7bde137dac> , <https://astrea.linkeddata.es/shapes#0ebe96c7396884ec39ea3d0cc92e67dd> , <https://astrea.linkeddata.es/shapes#172382a059e61f60b739a6e8d904fff3> , <https://astrea.linkeddata.es/shapes#c7ad2d0b02fcfefaf443acf0c533b817> , <https://astrea.linkeddata.es/shapes#6748bbd72701d64e56e31ecef6ea000e> , <https://astrea.linkeddata.es/shapes#72d6df92f5b2bc0f69c7bb34fe28ba37> , <https://astrea.linkeddata.es/shapes#a51c70ccce71914f06ee00a05298b41a> , <https://astrea.linkeddata.es/shapes#b6664a47668d16a5c1f0843e63edf179> , <https://astrea.linkeddata.es/shapes#eb8007ba14327fb93e51b54c68daece9> , <https://astrea.linkeddata.es/shapes#fde84fe1a66e878fce4210466300deed> , <https://astrea.linkeddata.es/shapes#77dd30ff72d9b85c1fdbe4803905777a> , <https://astrea.linkeddata.es/shapes#7fdd2fb98df8bb8a95a6f05585adb8dc> , <https://astrea.linkeddata.es/shapes#5763fb8b9e186b5f3d39178eec37fb29> , <https://astrea.linkeddata.es/shapes#34ef98c99dc50f46d089dd76b2188b0e> , <https://astrea.linkeddata.es/shapes#2e69f6840d1e1e1d5275fcb6f3f60c87> , <https://astrea.linkeddata.es/shapes#a2fcb3f52242bead972b7d185273ba57> , <https://astrea.linkeddata.es/shapes#b11a563d2c810aae9ff1945edca1c826> , <https://astrea.linkeddata.es/shapes#77cd179c06792c4c57c81305213bc968> , <https://astrea.linkeddata.es/shapes#e04042bf8524ab83008c505b25777214> , <https://astrea.linkeddata.es/shapes#6062b6b2b8f01ec92efbed065514e936> , <https://astrea.linkeddata.es/shapes#a820dec3805e97d547c69494f13dc683> , <https://astrea.linkeddata.es/shapes#edb34f54cff2ea53fdad2cd063f28d05> , <https://astrea.linkeddata.es/shapes#bb48a93dba07799ad735021b166af47a> , <https://astrea.linkeddata.es/shapes#2c8606b4292d3456adc7a37de60b31ab> , <https://astrea.linkeddata.es/shapes#ab0931bbacf24134a2b48b7955a6574f> , <https://astrea.linkeddata.es/shapes#0720598e49ac2848fcbe51ad2e6f34b1> , <https://astrea.linkeddata.es/shapes#4c2ace9cb9cef8c840629315a3125c06> , <https://astrea.linkeddata.es/shapes#9b24ab6750dbda1cb915c52c460e720f> , <https://astrea.linkeddata.es/shapes#9bef83c45ef4a0296cd5947a0160dded> , <https://astrea.linkeddata.es/shapes#9d8c8943ae43464a04ab1138a00b00c8> , <https://astrea.linkeddata.es/shapes#12caeec8ebdb3a9c675778961fd0aa47> , <https://astrea.linkeddata.es/shapes#3291691f3eee2d6c95e1396e9fb2d76a> , <https://astrea.linkeddata.es/shapes#a940485836d620ca97b970e817244891> , <https://astrea.linkeddata.es/shapes#79b0e963696d92819f47d06d26d9eee1> , <https://astrea.linkeddata.es/shapes#cab629c90268c99a5bf91eaaa68f9edd> , <https://astrea.linkeddata.es/shapes#26a0d587fe051e59f7f09428cb1895da> , <https://astrea.linkeddata.es/shapes#3e0bb705eb8569ca0b19d823041fc8fe> , <https://astrea.linkeddata.es/shapes#46e53a8a6bcdad0a003f0b4f856d9e80> , <https://astrea.linkeddata.es/shapes#cb2cc0e3445cc11fd94317f1dce39c15> , <https://astrea.linkeddata.es/shapes#7a5c798008b41b950d35f43f38df9fc4> , <https://astrea.linkeddata.es/shapes#ca257febb4f61cbee95f84cca3406559> , <https://astrea.linkeddata.es/shapes#912077400066d6282f2eaa05635b70d6> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#af5f6bafd39c3fcb06f421c6afd359e3>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/DOLCE-Lite#has-quality> .
+
+<https://astrea.linkeddata.es/shapes#07e96a71e57553f82e02bb685610d53a>
+        a               sh:PropertyShape ;
+        rdfs:label      "r-location"@en , "Es una relación para representar una \"región abstracta\" dentro de otra \"región\". Se puede utilizar para la composición de regiones. En cualquier caso, aquí la idea que se sugiere es que un horario de visita se localiza dentro de una parte del día (slots por ruta)."@es ;
+        sh:class        <http://idi.fundacionctic.org/cruzar/turismo#Temporada> ;
+        sh:description  "Es una relación para representar una \"región abstracta\" dentro de otra \"región\". Se puede utilizar para la composición de regiones. En cualquier caso, aquí la idea que se sugiere es que un horario de visita se localiza dentro de una parte del día (slots por ruta)."@es ;
+        sh:name         "r-location"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.loa-cnr.it/ontologies/DOLCE-Lite#r-location> .
+
+<https://astrea.linkeddata.es/shapes#a940485836d620ca97b970e817244891>
+        a               sh:PropertyShape ;
+        rdfs:label      "Día inicial" , "Día de inicio de un determinado evento de Zaragoza. Por ejemplo, un musical o una exposición. En el caso de eventos puntuales, tanto el día de inicio como el final será el mismo."@es ;
+        sh:datatype     xsd:date ;
+        sh:description  "Día de inicio de un determinado evento de Zaragoza. Por ejemplo, un musical o una exposición. En el caso de eventos puntuales, tanto el día de inicio como el final será el mismo."@es ;
+        sh:name         "Día inicial" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://idi.fundacionctic.org/cruzar/turismo#initial-date> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#b3a1927504bc1020e5876d3893be9ea0>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/CommonSenseMapping#happens-at> .
+
+<https://astrea.linkeddata.es/shapes#a834590b6829ec641fc4ec11cb77003d>
+        a               sh:NodeShape ;
+        rdfs:label      "Edificio religioso"@es ;
+        sh:description  "Edificio de carácter religioso, como pueden ser iglesias, conventos, catedrales, etc."@es ;
+        sh:name         "Edificio religioso"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Edificio-religioso> .
+
+<https://astrea.linkeddata.es/shapes#08d0cf8ea8a44bf99287434427e19f04>
+        a               sh:NodeShape ;
+        rdfs:label      "Preferencia de ruta"@es ;
+        sh:description  "Una preferencia de ruta es una constricción contextual para el cálculo dinámico de la ruta. Los perfiles de turista pueden requerir configuraciones particulares de los parámetros que afectan a la confección de la ruta, por ejemplo, que la velocidad de desplazamiento se vea afectada por características de movilidad de los turistas. Las preferencias de ruta para cada perfil se calculan mediante las reglas de negocio: duración de la visita y velocidad de desplazamiento."@es ;
+        sh:name         "Preferencia de ruta"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f7969d57edb1e83092f5e216fc008802> ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Preferencia-de-ruta> .
+
+<https://astrea.linkeddata.es/shapes#83b38d3565c0a24a203c16878530d126>
+        a               sh:NodeShape ;
+        rdfs:label      "Escultura"@es ;
+        sh:description  "Fuentes y estatuas"@es ;
+        sh:name         "Escultura"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Escultura> .
+
+<https://astrea.linkeddata.es/shapes#7e7cf9247022531f632c20a4da076d7f>
+        a         sh:PropertyShape ;
+        sh:class  <http://idi.fundacionctic.org/cruzar/turismo#Dia-de-visita-turistica> .
+
+<https://astrea.linkeddata.es/shapes#f1a8d0b80f4244915b07ac7bde137dac>
+        a               sh:NodeShape ;
+        rdfs:label      "Día de la semana"@es ;
+        sh:description  "Cada uno de los días de la semana"@es ;
+        sh:name         "Día de la semana"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#7e7cf9247022531f632c20a4da076d7f> , <https://astrea.linkeddata.es/shapes#6c55d03ea0b102c605b2bcd913886b9a> , <https://astrea.linkeddata.es/shapes#19a7f9616397ffe012a63a6f8504e582> , <https://astrea.linkeddata.es/shapes#1b642cd8bb9d3702d423826801223caf> ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Dia-de-la-semana> .
+
+<https://astrea.linkeddata.es/shapes#19a7f9616397ffe012a63a6f8504e582>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.loa-cnr.it/ontologies/DOLCE-Lite#time-interval> .
+
+<https://astrea.linkeddata.es/shapes#eb5e0c954c39eab35ff296113f277d36>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.loa-cnr.it/ontologies/DOLCE-Lite#event> .
+
+<https://astrea.linkeddata.es/shapes#c7ad2d0b02fcfefaf443acf0c533b817>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#b8840ae319dd17775a4c3ff2c43caeca>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#9c63501aafb3f0d9215cd167709c4512>
+        a               sh:NodeShape ;
+        rdfs:label      "Recurso hostelero"@es ;
+        sh:description  "Recurso de interés hostelero que ofrece la ciudad de Zaragoza. Las bases de datos de restaurantes y alojamientos se han mapeado a sus subclases."@es ;
+        sh:name         "Recurso hostelero"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Recurso-hostelero> .
+
+<https://astrea.linkeddata.es/shapes#2c8606b4292d3456adc7a37de60b31ab>
+        a               sh:NodeShape ;
+        rdfs:label      "Recurso comercial"@es ;
+        sh:description  "Recurso de interés comercial que ofrece la ciudad de Zaragoza. La información tanto de los mercados como de los sectores se ha extraído directamente de la página web municipal del Ayuntamiento. Los recursos comerciales se muestran como sugerencias en la ruta, y siempre bajo demanda del usuario (selección de la casilla \"Me gusta ir de compras\")."@es ;
+        sh:name         "Recurso comercial"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Recurso-comercial> .
+
+<https://astrea.linkeddata.es/shapes#0413469d41ac16bb5ca1f4c14d978d11>
+        a               sh:PropertyShape ;
+        rdfs:label      "No tiene interés en determinados recursos"@en , "Indica los recursos que el usuario no quiere que figuren en la ruta propuesta por el sistema"@es ;
+        sh:class        <http://idi.fundacionctic.org/cruzar/turismo#Recurso-de-zaragoza> ;
+        sh:description  "Indica los recursos que el usuario no quiere que figuren en la ruta propuesta por el sistema"@es ;
+        sh:name         "No tiene interés en determinados recursos"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://idi.fundacionctic.org/cruzar/turismo#not-interest-towards> .
+
+<https://astrea.linkeddata.es/shapes#138e104d0c2764a77822711f2821472c>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/FunctionalParticipation#target> .
+
+<https://astrea.linkeddata.es/shapes#061fc4b8b5fb17b82b58fb61136b3c8c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/DOLCE-Lite#has-quality> .
+
+<https://astrea.linkeddata.es/shapes#1cb7d83dd3bb7d4eb5856ef43b5d17c3>
+        a               sh:NodeShape ;
+        rdfs:label      "Estilo artístico"@es ;
+        sh:description  "El estilo es el conjunto de características que individualizan la tendencia artística de una época: barroco, mudéjar, renacentista, etc. La descripción de los estilos de cada monumento se ha extraído de la base de datos de Monumentos."@es ;
+        sh:name         "Estilo artístico"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#edb34f54cff2ea53fdad2cd063f28d05> ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Estilo-artistico> .
+
+<https://astrea.linkeddata.es/shapes#5763fb8b9e186b5f3d39178eec37fb29>
+        a               sh:PropertyShape ;
+        rdfs:label      "Día final" , "Día de finalización de un determinado evento en la ciudad de Zaragoza."@es ;
+        sh:datatype     xsd:date ;
+        sh:description  "Día de finalización de un determinado evento en la ciudad de Zaragoza."@es ;
+        sh:name         "Día final" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://idi.fundacionctic.org/cruzar/turismo#final-date> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#912077400066d6282f2eaa05635b70d6>
+        a               sh:NodeShape ;
+        rdfs:label      "Rol social"@es ;
+        sh:description  "Papel o rol que desempeña un individuo en determinadas circunstancias o situaciones sociales: La profesión, turista, conductor o preso son ejemplos de diferentes roles."@es ;
+        sh:name         "Rol social"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#eb5e0c954c39eab35ff296113f277d36> , <https://astrea.linkeddata.es/shapes#eca5c2a210a7d9fbfde74a318fda4c93> , <https://astrea.linkeddata.es/shapes#ec8663bce574a68d78f240cda0409399> , <https://astrea.linkeddata.es/shapes#7a515ee03c9f3474f82bee316825f170> , <https://astrea.linkeddata.es/shapes#00006224d3cafef240b1a34f0adb779b> , <https://astrea.linkeddata.es/shapes#7e4c103ae69371f7242f0ac77972b4a7> , <https://astrea.linkeddata.es/shapes#3bd7ee1b5d68d4f587283e7c8f241ed3> ;
+        sh:targetClass  <http://www.loa-cnr.it/ontologies/ExtendedDnS#social-role> .
+
+<https://astrea.linkeddata.es/shapes#fde84fe1a66e878fce4210466300deed>
+        a               sh:NodeShape ;
+        rdfs:label      "Intervalo temporal"@es ;
+        sh:description  "Intervalo de tiempo con un inicio y final bien delimitado en una región temporal."@es ;
+        sh:name         "Intervalo temporal"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#41cb0287b8ad5ee1c43710f1539f2456> , <https://astrea.linkeddata.es/shapes#6c55d03ea0b102c605b2bcd913886b9a> , <https://astrea.linkeddata.es/shapes#7e7cf9247022531f632c20a4da076d7f> , <https://astrea.linkeddata.es/shapes#1b642cd8bb9d3702d423826801223caf> ;
+        sh:targetClass  <http://www.loa-cnr.it/ontologies/DOLCE-Lite#time-interval> .
+
+<https://astrea.linkeddata.es/shapes#3bd7ee1b5d68d4f587283e7c8f241ed3>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.loa-cnr.it/ontologies/ExtendedDnS#course> .
+
+<https://astrea.linkeddata.es/shapes#e7008611ce34628f731879f5b8b10e74>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.loa-cnr.it/ontologies/ExtendedDnS#performs> .
+
+<https://astrea.linkeddata.es/shapes#500c133bc52cd15a8f1307e1e249fbfb>
+        a               sh:NodeShape ;
+        rdfs:label      "Viaje"@es ;
+        sh:description  "Un viaje a la ciudad de Zaragoza puede realizarse por distintos motivos. En esta ontología, se contamplan cuatro posibilidades: puramente turísticos, por motivos laborales, asistencia a un congreso o conferencia y por descanso."@es ;
+        sh:name         "Viaje"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Viaje> .
+
+<https://astrea.linkeddata.es/shapes#9b24ab6750dbda1cb915c52c460e720f>
+        a               sh:NodeShape ;
+        rdfs:label      "Restaurante"@es ;
+        sh:description  "Establecimiento público donde se sirven comidas. Los restaurantes se sugieren al usuario a la hora de la comida y de la cena. Se sugieren 5 restaurantes por cada slot de tiempo utilizando dos criterios: proximidad con el último POI de la ruta turística y calificación gastronómica."@es ;
+        sh:name         "Restaurante"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#9ec61ebb3dbe94c947c910660a6e9500> ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Restaurante> .
+
+<https://astrea.linkeddata.es/shapes#a755eac53b26f966e9d25d8d92642f5a>
+        a               sh:NodeShape ;
+        rdfs:label      "Museo"@es ;
+        sh:description  "Lugar de Zaragoza en que se exponen colecciones de objetos artísticos de distinto estilo y época: romana, mudéjar, etc."@es ;
+        sh:name         "Museo"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Museo> .
+
+<https://astrea.linkeddata.es/shapes#db81190053f7b8c74dab597eb4aedba7>
+        a            sh:PropertyShape ;
+        rdfs:label   "Tiene interés"@en ;
+        sh:class     <http://idi.fundacionctic.org/cruzar/turismo#Preferencia-de-usuario> ;
+        sh:name      "Tiene interés"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.loa-cnr.it/ontologies/ExtendedDnS#desire-towards> .
+
+<https://astrea.linkeddata.es/shapes#46e53a8a6bcdad0a003f0b4f856d9e80>
+        a               sh:NodeShape ;
+        rdfs:label      "Alojamiento"@es ;
+        sh:description  "Establecimiento de hostelería en Zaragoza en el que se proporciona alojamiento. La elección de un alojamiento determinado modifica el lugar de inicio de la ruta, tomando como punto de partida el alojamiento en el que se hospeda el usuario."@es ;
+        sh:name         "Alojamiento"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://idi.fundacionctic.org/cruzar/turismo#Alojamiento> .
+
+<https://astrea.linkeddata.es/shapes#77cd179c06792c4c57c81305213bc968>
+        a                sh:PropertyShape ;
+        rdfs:label       "Tiempo estimado de duración de las visitas a los distintos monumentos y puntos de interés de la ciudad de Zaragoza. Se utiliza para el cálculo de la ruta."@es , "Duración de la visita"@es ;
+        sh:datatype      xsd:int ;
+        sh:description   "Tiempo estimado de duración de las visitas a los distintos monumentos y puntos de interés de la ciudad de Zaragoza. Se utiliza para el cálculo de la ruta."@es ;
+        sh:maxInclusive  2147483647 ;
+        sh:minInclusive  -2147483648 ;
+        sh:name          "Duración de la visita"@es ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://idi.fundacionctic.org/cruzar/turismo#visit-duration> ;
+        sh:pattern       "[\\-+]?[0-9]+" .

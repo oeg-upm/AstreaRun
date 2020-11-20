@@ -1,0 +1,328 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#cf1bf06f8e873f337603bf986a4bf9fb>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://mex.aksw.org/mex-perf#PerformanceMeasure> .
+
+<https://astrea.linkeddata.es/shapes#583ee322e80e919bce2a2e4ebed8473b>
+        a               sh:NodeShape ;
+        rdfs:label      "linkset" ;
+        sh:description  "A collection of RDF links between two void:Datasets." ;
+        sh:name         "linkset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#43eaa80a293943bc089f1cabbfe25297> ;
+        sh:targetClass  <http://rdfs.org/ns/void#Linkset> .
+
+<https://astrea.linkeddata.es/shapes#d2fb53123d92b6dce95d3f27fd17c8d4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/dc/terms/ProvenanceStatement> ;
+        rdfs:label        "Provenance Statement" ;
+        sh:name           "Provenance Statement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/dc/terms/ProvenanceStatement> .
+
+<https://astrea.linkeddata.es/shapes#5656cf5bd273e6c9a546297659910424>
+        a            sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral .
+
+<https://astrea.linkeddata.es/shapes#ed2970ae28e833ddf584abf6f508a92c>
+        a               sh:NodeShape ;
+        rdfs:label      "Shared instance set"@en ;
+        sh:description  "A shared instance set between exactly two datasets. For example, two datasets that contain the same OWL/RDFS class instances."@en ;
+        sh:name         "Shared instance set"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#43eaa80a293943bc089f1cabbfe25297> ;
+        sh:targetClass  <http://purl.org/query/voidext#SharedInstanceSet> .
+
+<https://astrea.linkeddata.es/shapes#9fe4bbe8211c6c07df05b0bd55772fb2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://vocab.deri.ie/void> ;
+        rdfs:label        "URI space" , "A URI that is a common string prefix of all the entity URIs in a void:Dataset." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "A URI that is a common string prefix of all the entity URIs in a void:Dataset." ;
+        sh:name           "URI space" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/ns/void#uriSpace> .
+
+<https://astrea.linkeddata.es/shapes#08f75ea57df785934b681cf2295e7bcf>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://vocab.deri.ie/void> ;
+        rdfs:label        "classes" , "The total number of distinct classes in a void:Dataset. In other words, the number of distinct resources occuring as objects of rdf:type triples in the dataset." ;
+        sh:datatype       xsd:integer ;
+        sh:description    "The total number of distinct classes in a void:Dataset. In other words, the number of distinct resources occuring as objects of rdf:type triples in the dataset." ;
+        sh:name           "classes" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/ns/void#classes> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#dfcd5fc30011d551739f9877c244fb84>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/ns/prov#Entity> .
+
+<https://astrea.linkeddata.es/shapes#a73b4732fcf0112ec162de16fcacc4a4>
+        a               sh:PropertyShape ;
+        rdfs:label      "intersects at"@en , "This property is used to assign exactly either two shared instance sets (voidext:SharedInstanceSet) or two link sets (void:Linkset) to compose a complex link set (voidext:ComplexLinkSet). For each void:Linkset, either the subject or the object node of its link predicate intersects an RDF node of the link predicate from the other link set. In other words, the subject xor the object of a link predicate matches the subject xor the object of the other link predicate, where xor is the exclusive or. These link predicates must be from different datasets."@en ;
+        sh:class        <http://purl.org/query/voidext#LINK_SHAREDINSTANCE_SET> ;
+        sh:description  "This property is used to assign exactly either two shared instance sets (voidext:SharedInstanceSet) or two link sets (void:Linkset) to compose a complex link set (voidext:ComplexLinkSet). For each void:Linkset, either the subject or the object node of its link predicate intersects an RDF node of the link predicate from the other link set. In other words, the subject xor the object of a link predicate matches the subject xor the object of the other link predicate, where xor is the exclusive or. These link predicates must be from different datasets."@en ;
+        sh:name         "intersects at"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           _:b0 ;
+        sh:path         <http://purl.org/query/voidext#intersectAt> .
+
+<https://astrea.linkeddata.es/shapes#9183ec4592778e350755956753ed1a12>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://vocab.deri.ie/void> ;
+        rdfs:label        "The total number of documents, for datasets that are published as a set of individual documents, such as RDF/XML documents or RDFa-annotated web pages. Non-RDF documents, such as web pages in HTML or images, are usually not included in this count. This property is intended for datasets where the total number of triples or entities is hard to determine. void:triples or void:entities should be preferred where practical." , "number of documents" ;
+        sh:datatype       xsd:integer ;
+        sh:description    "The total number of documents, for datasets that are published as a set of individual documents, such as RDF/XML documents or RDFa-annotated web pages. Non-RDF documents, such as web pages in HTML or images, are usually not included in this count. This property is intended for datasets where the total number of triples or entities is hard to determine. void:triples or void:entities should be preferred where practical." ;
+        sh:name           "number of documents" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/ns/void#documents> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#583ee322e80e919bce2a2e4ebed8473b> ;
+        rdf:first  [ sh:class  <http://rdfs.org/ns/void#Linkset> ;
+                     sh:path   <http://purl.org/query/voidext#intersectAt>
+                   ] ;
+        rdf:first  [ sh:class  <http://rdfs.org/ns/void#Linkset> ;
+                     sh:path   <http://purl.org/query/voidext#recommendedMapping>
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#ed2970ae28e833ddf584abf6f508a92c> ;
+                     rdf:first  [ sh:class  <http://purl.org/query/voidext#SharedInstanceSet> ;
+                                  sh:path   <http://purl.org/query/voidext#intersectAt>
+                                ] ;
+                     rdf:first  [ sh:class  <http://purl.org/query/voidext#SharedInstanceSet> ;
+                                  sh:path   <http://purl.org/query/voidext#recommendedMapping>
+                                ] ;
+                     rdf:rest   ()
+                   ] .
+
+<https://astrea.linkeddata.es/shapes#a7c4971a4e53cdff4a576c265161294f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://vocab.deri.ie/void> ;
+        rdfs:label        "distinct subjects" , "The total number of distinct subjects in a void:Dataset. In other words, the number of distinct resources that occur in the subject position of triples in the dataset." ;
+        sh:datatype       xsd:integer ;
+        sh:description    "The total number of distinct subjects in a void:Dataset. In other words, the number of distinct resources that occur in the subject position of triples in the dataset." ;
+        sh:name           "distinct subjects" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/ns/void#distinctSubjects> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#3798c3bcd627fa082f5662a8985e772e>
+        a            sh:PropertyShape ;
+        rdfs:label   "is subset of" ;
+        sh:class     <http://rdfs.org/ns/void#Dataset> ;
+        sh:name      "is subset of" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/query/voidext#isSubsetOf> .
+
+<https://astrea.linkeddata.es/shapes#1fa34b10243640caae2c07647193e8ad>
+        a               sh:PropertyShape ;
+        rdfs:label      "supports SPARQL 1.1 federated query"@en , "This property should be used to explicitly assert that a void:Dataset supports SPARQL 1.1. federated queries to be able to access the dataset with the SERVICE keyword and perform federated join queries."@en ;
+        sh:datatype     xsd:boolean ;
+        sh:description  "This property should be used to explicitly assert that a void:Dataset supports SPARQL 1.1. federated queries to be able to access the dataset with the SERVICE keyword and perform federated join queries."@en ;
+        sh:name         "supports SPARQL 1.1 federated query"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/query/voidext#supportFederatedQuery> ;
+        sh:pattern      "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#79215fd92df57505bc800609aea88f0b>
+        a               sh:NodeShape ;
+        rdfs:label      "Virtual link set"@en ;
+        sh:description  "A set of virtual links between two datasets. A virtual link is a connection between resources such as literals and instances with some commonality. Each of these resources is from a different RDF dataset. A resource mapping can be also considered when defining common resources between datasets. For example, the datasets uses different prefix namespaces for similar instances in a given domain scope. A virtual link can be interpreted as an intersection data point between two datasets. In addition, a virtual link is not concretely stored. The link may be physically established during a federated query execution, for example. This class must only have instances of its subclasses. It is recommendable to comment (rdfs:comment) the scope of the virtual link set."@en ;
+        sh:name         "Virtual link set"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#7c41cf155aa9f49b07a8fb949913570f> ;
+        sh:targetClass  <http://purl.org/query/voidext#VirtualLinkSet> .
+
+<https://astrea.linkeddata.es/shapes#766c8598d27d563e655cd92f85ce6781>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.deri.ie/void> ;
+        rdfs:label        "dataset description" ;
+        sh:description    "A web resource whose foaf:primaryTopic or foaf:topics include void:Datasets." ;
+        sh:name           "dataset description" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://rdfs.org/ns/void#DatasetDescription> .
+
+<https://astrea.linkeddata.es/shapes#79642af4a4c82f9c90611a6dc81fe11d>
+        a            sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral .
+
+<https://astrea.linkeddata.es/shapes#a7f55a797fa1acb8f0b695a74ec14a48>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.deri.ie/void> ;
+        rdfs:label        "technical feature" ;
+        sh:description    "A technical feature of a void:Dataset, such as a supported RDF serialization format." ;
+        sh:name           "technical feature" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://rdfs.org/ns/void#TechnicalFeature> .
+
+<https://astrea.linkeddata.es/shapes#52f602fa94ae482025750508e210f4d2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://vocab.deri.ie/void> ;
+        rdfs:label        "The total number of entities that are described in a void:Dataset." , "number of entities" ;
+        sh:datatype       xsd:integer ;
+        sh:description    "The total number of entities that are described in a void:Dataset." ;
+        sh:name           "number of entities" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/ns/void#entities> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#fa7365f43b38a472db81d37b986f3674>
+        a               sh:PropertyShape ;
+        rdfs:label      "If more than one mapping is defined in the different void:Linkset(s) that are part of a voidext:ComplexLinkSet, one of the resource mappings may be recommended by asserting this property. The recommended mapping is the one stated to the void:Linkset assigned as the value of this property. If no mapping is explicitly recommended, solely one of them must arbitrarily be applied to establish a virtual link. At most one mapping function can be defined either per linkset or per shared instance set."@en , "recommended mapping from"@en ;
+        sh:class        <http://purl.org/query/voidext#LINK_SHAREDINSTANCE_SET> ;
+        sh:description  "If more than one mapping is defined in the different void:Linkset(s) that are part of a voidext:ComplexLinkSet, one of the resource mappings may be recommended by asserting this property. The recommended mapping is the one stated to the void:Linkset assigned as the value of this property. If no mapping is explicitly recommended, solely one of them must arbitrarily be applied to establish a virtual link. At most one mapping function can be defined either per linkset or per shared instance set."@en ;
+        sh:maxCount     1 ;
+        sh:name         "recommended mapping from"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:or           _:b0 ;
+        sh:path         <http://purl.org/query/voidext#recommendedMapping> .
+
+<https://astrea.linkeddata.es/shapes#b27c52b42a76b65141ae00cf36ed05c2>
+        a               sh:PropertyShape ;
+        rdfs:label      "intersection type"@en , "This property assigns the intersection type of two RDF triples in different datasets (void:Dataset). In other words, if the intersection occurs at the subject xor the object node of a link predicate."@en ;
+        sh:class        <http://purl.org/query/voidext#LinkSetIntersection> ;
+        sh:description  "This property assigns the intersection type of two RDF triples in different datasets (void:Dataset). In other words, if the intersection occurs at the subject xor the object node of a link predicate."@en ;
+        sh:name         "intersection type"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/query/voidext#intersectionType> .
+
+<https://astrea.linkeddata.es/shapes#a9be4a45c3bfde1f4fb9acb6e19d42bf>
+        a            sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral .
+
+<https://astrea.linkeddata.es/shapes#0ae109158b27882de32d4aea6875c52d>
+        a               sh:NodeShape ;
+        rdfs:label      "Complex link set"@en ;
+        sh:description  "It is a complex virtual link set. A complex link set is composed of exactly two link sets xor two shared instance sets where xor is the exclusive or. For example, two link sets that intersects at some graph node (e.g. the object nodes of link predicates)."@en ;
+        sh:name         "Complex link set"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#372e43f242e6c77aca8bfa5bc398e976> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a73b4732fcf0112ec162de16fcacc4a4> , <https://astrea.linkeddata.es/shapes#fa7365f43b38a472db81d37b986f3674> , <https://astrea.linkeddata.es/shapes#b27c52b42a76b65141ae00cf36ed05c2> ;
+        sh:targetClass  <http://purl.org/query/voidext#ComplexLinkSet> .
+
+<https://astrea.linkeddata.es/shapes#372e43f242e6c77aca8bfa5bc398e976>
+        a         sh:PropertyShape ;
+        sh:class  <http://rdfs.org/ns/void#Dataset> .
+
+<https://astrea.linkeddata.es/shapes#5bb46ada7d91f280f4814f081c4c788e>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:or           _:b0 ;
+        sh:property     <https://astrea.linkeddata.es/shapes#43eaa80a293943bc089f1cabbfe25297> ;
+        sh:targetClass  <http://purl.org/query/voidext#LINK_SHAREDINSTANCE_SET> .
+
+<https://astrea.linkeddata.es/shapes#c3aef48a5198db60803088cd3ab9e62f>
+        a               sh:NodeShape ;
+        rdfs:label      "Simple link set"@en ;
+        sh:description  "A simple link set must be a linkset that does not target another linkset (i.e. it has exactly one link predicate) or a set with exactly the same shared instances of the same type (i.e. class) in both datasets. The instances of this class must be also instances of either void:Linkset or voidext:SharedInstanceSet."@en ;
+        sh:name         "Simple link set"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/query/voidext#SimpleLinkSet> ;
+        sh:targetClass  []  ;
+        sh:targetClass  []  .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#c3aef48a5198db60803088cd3ab9e62f> , <https://astrea.linkeddata.es/shapes#5bb46ada7d91f280f4814f081c4c788e> , <https://astrea.linkeddata.es/shapes#79642af4a4c82f9c90611a6dc81fe11d> , <https://astrea.linkeddata.es/shapes#35ff777cf20cb215ff2456f17c79511b> , <https://astrea.linkeddata.es/shapes#ed2970ae28e833ddf584abf6f508a92c> , <https://astrea.linkeddata.es/shapes#766c8598d27d563e655cd92f85ce6781> , <https://astrea.linkeddata.es/shapes#507c0da62f3f10af7c4400662c00f172> , <https://astrea.linkeddata.es/shapes#9fe4bbe8211c6c07df05b0bd55772fb2> , <https://astrea.linkeddata.es/shapes#0ae109158b27882de32d4aea6875c52d> , <https://astrea.linkeddata.es/shapes#7c41cf155aa9f49b07a8fb949913570f> , <https://astrea.linkeddata.es/shapes#5656cf5bd273e6c9a546297659910424> , <https://astrea.linkeddata.es/shapes#a7f55a797fa1acb8f0b695a74ec14a48> , <https://astrea.linkeddata.es/shapes#d2fb53123d92b6dce95d3f27fd17c8d4> , <https://astrea.linkeddata.es/shapes#a73b4732fcf0112ec162de16fcacc4a4> , <https://astrea.linkeddata.es/shapes#372e43f242e6c77aca8bfa5bc398e976> , <https://astrea.linkeddata.es/shapes#3a190925aa3c02eab10d24a0904d162d> , <https://astrea.linkeddata.es/shapes#08f75ea57df785934b681cf2295e7bcf> , <https://astrea.linkeddata.es/shapes#52f602fa94ae482025750508e210f4d2> , <https://astrea.linkeddata.es/shapes#a9be4a45c3bfde1f4fb9acb6e19d42bf> , <https://astrea.linkeddata.es/shapes#1fa34b10243640caae2c07647193e8ad> , <https://astrea.linkeddata.es/shapes#cf1bf06f8e873f337603bf986a4bf9fb> , <https://astrea.linkeddata.es/shapes#fa7365f43b38a472db81d37b986f3674> , <https://astrea.linkeddata.es/shapes#583ee322e80e919bce2a2e4ebed8473b> , <https://astrea.linkeddata.es/shapes#3798c3bcd627fa082f5662a8985e772e> , <https://astrea.linkeddata.es/shapes#9183ec4592778e350755956753ed1a12> , <https://astrea.linkeddata.es/shapes#015a129d9da6784b616f79031481e65b> , <https://astrea.linkeddata.es/shapes#a7c4971a4e53cdff4a576c265161294f> , <https://astrea.linkeddata.es/shapes#43eaa80a293943bc089f1cabbfe25297> , <https://astrea.linkeddata.es/shapes#79215fd92df57505bc800609aea88f0b> , <https://astrea.linkeddata.es/shapes#3fb6ff86370e59e28c2d3851e5b3f004> , <https://astrea.linkeddata.es/shapes#786891b2dfdb64a92b6aa66ae3536299> , <https://astrea.linkeddata.es/shapes#b27c52b42a76b65141ae00cf36ed05c2> , <https://astrea.linkeddata.es/shapes#dfcd5fc30011d551739f9877c244fb84> , <https://astrea.linkeddata.es/shapes#b5b091375b417dae7dbeaa5023094649> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#43eaa80a293943bc089f1cabbfe25297>
+        a               sh:PropertyShape ;
+        rdfs:label      "resource mapped with"@en , "The preprocessing of a resource (i.e. IRI or literal) in a source void:Dataset in order\r\nto match another resource in the target void:Dataset. A resource is either the subject or the \r\nobject of an RDF triple. The resource preprocessing (i.e. the resource mapping)\r\nmust be defined with the SPARQL language by mainly using SPARQL built-ins for assignments\r\n(e.g. BIND), and expression and testing values (e.g. IF and FILTER). BIND is used to assign\r\nthe output of a function." ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "The preprocessing of a resource (i.e. IRI or literal) in a source void:Dataset in order\r\nto match another resource in the target void:Dataset. A resource is either the subject or the \r\nobject of an RDF triple. The resource preprocessing (i.e. the resource mapping)\r\nmust be defined with the SPARQL language by mainly using SPARQL built-ins for assignments\r\n(e.g. BIND), and expression and testing values (e.g. IF and FILTER). BIND is used to assign\r\nthe output of a function." ;
+        sh:maxCount     1 ;
+        sh:name         "resource mapped with"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
+        sh:path         <http://purl.org/query/voidext#resourceMapping> .
+
+<https://astrea.linkeddata.es/shapes#3a190925aa3c02eab10d24a0904d162d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://vocab.deri.ie/void> ;
+        rdfs:label        "The total number of distinct objects in a void:Dataset. In other words, the number of distinct resources that occur in the object position of triples in the dataset. Literals are included in this count." , "distinct objects" ;
+        sh:datatype       xsd:integer ;
+        sh:description    "The total number of distinct objects in a void:Dataset. In other words, the number of distinct resources that occur in the object position of triples in the dataset. Literals are included in this count." ;
+        sh:name           "distinct objects" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/ns/void#distinctObjects> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#7c41cf155aa9f49b07a8fb949913570f>
+        a               sh:PropertyShape ;
+        rdfs:label      "has performance measure"@en , "This property assings the performance of the virtual link set, for example, in terms of recall and precision. The values to be assigned (property range) are represented with the ontology MEX Performance Ontology."@en ;
+        sh:class        <http://mex.aksw.org/mex-perf#PerformanceMeasure> ;
+        sh:description  "This property assings the performance of the virtual link set, for example, in terms of recall and precision. The values to be assigned (property range) are represented with the ontology MEX Performance Ontology."@en ;
+        sh:name         "has performance measure"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/query/voidext#hasPerformanceMeasure> .
+
+<https://astrea.linkeddata.es/shapes#507c0da62f3f10af7c4400662c00f172>
+        a            sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral .
+
+<https://astrea.linkeddata.es/shapes#b5b091375b417dae7dbeaa5023094649>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://vocab.deri.ie/void> ;
+        rdfs:label        "The total number of triples contained in a void:Dataset." , "number of triples" ;
+        sh:datatype       xsd:integer ;
+        sh:description    "The total number of triples contained in a void:Dataset." ;
+        sh:name           "number of triples" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/ns/void#triples> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#786891b2dfdb64a92b6aa66ae3536299>
+        a               sh:NodeShape ;
+        rdfs:label      "Linkset intersection"@en ;
+        sh:description  "The possible intersection types between the RDF graph nodes in different void:Dataset(s) (i.e. either the subject or the object node of a link predicate). The instances of this class are exclusively voidext:OBJECT_OBJECT, voidext:OBJECT_SUBJECT, and voidext:SUBJECT_SUBJECT."@en ;
+        sh:name         "Linkset intersection"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/query/voidext#LinkSetIntersection> .
+
+<https://astrea.linkeddata.es/shapes#015a129d9da6784b616f79031481e65b>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://mex.aksw.org/mex-perf#ClassificationMeasure> .
+
+<https://astrea.linkeddata.es/shapes#35ff777cf20cb215ff2456f17c79511b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://vocab.deri.ie/void> ;
+        rdfs:label        "The total number of distinct properties in a void:Dataset. In other words, the number of distinct resources that occur in the predicate position of triples in the dataset." , "number of properties" ;
+        sh:datatype       xsd:integer ;
+        sh:description    "The total number of distinct properties in a void:Dataset. In other words, the number of distinct resources that occur in the predicate position of triples in the dataset." ;
+        sh:name           "number of properties" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/ns/void#properties> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#3fb6ff86370e59e28c2d3851e5b3f004>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.deri.ie/void> ;
+        rdfs:label        "dataset" ;
+        sh:description    "A set of RDF triples that are published, maintained or aggregated by a single provider." ;
+        sh:name           "dataset" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#35ff777cf20cb215ff2456f17c79511b> , <https://astrea.linkeddata.es/shapes#3a190925aa3c02eab10d24a0904d162d> , <https://astrea.linkeddata.es/shapes#3798c3bcd627fa082f5662a8985e772e> , <https://astrea.linkeddata.es/shapes#b5b091375b417dae7dbeaa5023094649> , <https://astrea.linkeddata.es/shapes#52f602fa94ae482025750508e210f4d2> , <https://astrea.linkeddata.es/shapes#08f75ea57df785934b681cf2295e7bcf> , <https://astrea.linkeddata.es/shapes#1fa34b10243640caae2c07647193e8ad> , <https://astrea.linkeddata.es/shapes#9fe4bbe8211c6c07df05b0bd55772fb2> , <https://astrea.linkeddata.es/shapes#9183ec4592778e350755956753ed1a12> , <https://astrea.linkeddata.es/shapes#a7c4971a4e53cdff4a576c265161294f> ;
+        sh:targetClass    <http://rdfs.org/ns/void#Dataset> .

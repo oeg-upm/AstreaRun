@@ -1,0 +1,1736 @@
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix gleif-base: <https://www.gleif.org/ontology/Base/> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix voaf:  <http://purl.org/vocommons/voaf#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix gleif-elf: <https://www.gleif.org/ontology/EntityLegalForm/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix gleif-ra: <https://www.gleif.org/ontology/RegistrationAuthority/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix vann:  <http://purl.org/vocab/vann/> .
+@prefix lcc-cr: <https://www.omg.org/spec/LCC/Countries/CountryRepresentation/> .
+@prefix gleif-L1: <https://www.gleif.org/ontology/L1/> .
+
+<https://astrea.linkeddata.es/shapes#ff3e3449b3d3b1323d4487bcdb0eaf70>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has legal name" ;
+        sh:name           "has legal name" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-L1:hasLegalName .
+
+<https://astrea.linkeddata.es/shapes#349cd4223380adad244c3f52b727d17d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has entity id" ;
+        sh:datatype       xsd:string ;
+        sh:name           "has entity id" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-L1:hasEntityID ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#0782b0588a3cbb5a9c8078dc1fa1ba53>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/L2/> ;
+        rdfs:label        "direct consolidation" ;
+        sh:name           "direct consolidation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://www.gleif.org/ontology/L2/DirectConsolidation> .
+
+<https://astrea.linkeddata.es/shapes#973e1ecd22e62455a7c5ce5d06145aa9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "registration status" ;
+        sh:name           "registration status" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    gleif-base:RegistrationStatus .
+
+<https://astrea.linkeddata.es/shapes#be70b73ed0bfcfa54ee263af00099e83>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has transliterated other addresses" ;
+        sh:name           "has transliterated other addresses" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasTransliteratedOtherAddresses .
+
+<https://astrea.linkeddata.es/shapes#8b20e1d178e16bf6e7004f27c3a492d8>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-L1:hasRegistrationIdentifier ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-L1:BusinessRegistryIdentifier ] .
+
+<https://astrea.linkeddata.es/shapes#b0a1e30ad6c1ecd1e97cdf7616e2eb62>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "legal entity" ;
+        sh:name           "legal entity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    gleif-L1:LegalEntity .
+
+<https://astrea.linkeddata.es/shapes#a50715baffa37deeb473f22fe7885432>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-L1:LEI .
+
+<https://astrea.linkeddata.es/shapes#aa1d0557de28bc344ca793495c927be0>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-base:hasSuccessor ;
+        sh:qualifiedMinCount    "0"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-base:Entity ] .
+
+<https://astrea.linkeddata.es/shapes#ddce5d9a3105287451d11a5bb4f80c6a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has headquarters address" ;
+        sh:class          gleif-base:PhysicalAddress ;
+        sh:name           "has headquarters address" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasHeadquartersAddress .
+
+<https://astrea.linkeddata.es/shapes#5775120850c1a8408ca3f4be4152b4d0>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <https://www.gleif.org/ontology/L2/hasValidationSources> ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  []  ] .
+
+<https://astrea.linkeddata.es/shapes#fbf44f725e9bc3a71dbe2a6a85fed110>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <https://www.gleif.org/ontology/L2/hasDocumentFilingPeriod> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-base:Period ] .
+
+<https://astrea.linkeddata.es/shapes#f78752f3df83c613ed80c80b3167654f>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <https://www.gleif.org/ontology/L2/hasParent> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-base:Entity ] .
+
+<https://astrea.linkeddata.es/shapes#bdbae981bcfe38575f8472ce3bd0983e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/L2/> ;
+        rdfs:label        "ultimate consolidation" ;
+        sh:name           "ultimate consolidation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://www.gleif.org/ontology/L2/UltimateConsolidation> .
+
+<https://astrea.linkeddata.es/shapes#9a8ca3cf63332536889fc76251461417>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasNameLegalLocal .
+
+<https://astrea.linkeddata.es/shapes#833d0d6cb8da95eae690d36493b35e80>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "is qualified by" ;
+        sh:name           "is qualified by" ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#c8eb51fb451cb67585816b29eb943c81>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has transliterated headquarters address" ;
+        sh:name           "has transliterated headquarters address" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasTransliteratedHeadquartersAddress .
+
+<https://astrea.linkeddata.es/shapes#0504d5aa7e9f7f44677f967c9a505719>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has legal form" ;
+        sh:name           "has legal form" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-L1:hasLegalFormText .
+
+<https://astrea.linkeddata.es/shapes#2059bb1d12ab9927fa0bd24572a17a41>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-base:identifies ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-L1:RegisteredEntity ] .
+
+<https://astrea.linkeddata.es/shapes#e8e580ee5f7d60299b709ba816a6b6ec>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has auto ASCII transliterated legal address" ;
+        sh:name           "has auto ASCII transliterated legal address" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasAutoASCIITransliteratedLegalAddress .
+
+<https://astrea.linkeddata.es/shapes#96404ac52538e3e504d83aea135ba246>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "sole proprietor" ;
+        sh:name           "sole proprietor" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    gleif-L1:SoleProprietor .
+
+<https://astrea.linkeddata.es/shapes#6db72f3e60c7e677b4cbdc87cc4c7f60>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/base/> ;
+        rdfs:label        "has name trading or operating" ;
+        sh:name           "has name trading or operating" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasNameTradingOrOperating .
+
+<https://astrea.linkeddata.es/shapes#e8a5a2a96dd424d8a5860fc811bee5fb>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "fund family" ;
+        sh:name           "fund family" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    gleif-L1:FundFamily .
+
+<https://astrea.linkeddata.es/shapes#2987491b18f62af457daa9344ba4568b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/L2/> ;
+        rdfs:label        "accounting standard" ;
+        sh:in             ( <https://astrea.linkeddata.es/shapes#791faea8907010fbc0c202316845b0aa> <https://astrea.linkeddata.es/shapes#07c5b78d4f83a35fe3c72c4276fac89c> <https://astrea.linkeddata.es/shapes#e96b362da44f651dc16f40e87c570d43> ) ;
+        sh:name           "accounting standard" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://www.gleif.org/ontology/L2/AccountingStandard> .
+
+<https://astrea.linkeddata.es/shapes#92110d475f34cf24875c434c0c317472>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has postal code" ;
+        sh:name           "has postal code" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasPostalCode .
+
+<https://astrea.linkeddata.es/shapes#2fda3770de8dff0f0c006fb3901519eb>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-L1:hasHeadquartersAddress ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-base:PhysicalAddress ] .
+
+<https://astrea.linkeddata.es/shapes#f1d7a10fb333ad1c38bb2b3dc168a731>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has other entity names" ;
+        sh:name           "has other entity names" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-L1:hasOtherEntityNames .
+
+<https://astrea.linkeddata.es/shapes#a2dfccdfddec36e76f095551a9d60289>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "registry entry" ;
+        sh:name           "registry entry" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d17a1e2d43d0f78f927c617304687037> ;
+        sh:targetClass    gleif-base:RegistryEntry .
+
+<https://astrea.linkeddata.es/shapes#3374f932f187d04e3e20badbbeb30c92>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-base:isManagedBy ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-base:Entity ] .
+
+<https://astrea.linkeddata.es/shapes#d0067e4642f91f3145810fe879940468>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has coverage area" ;
+        sh:class          lcc-cr:GeographicRegion ;
+        sh:name           "has coverage area" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:hasCoverageArea .
+
+<https://astrea.linkeddata.es/shapes#fe8efc643b67eb1b2a851b732dd4f824>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasTag .
+
+<https://astrea.linkeddata.es/shapes#09e9a073c9bf84bd9efd3283301d2a37>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "fund" ;
+        sh:name           "fund" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#5c6e2721e86d58fe6886d34823911a8d> , <https://astrea.linkeddata.es/shapes#602a990cd8348710082d9b64488926bd> , <https://astrea.linkeddata.es/shapes#841ddc5b88de5633e24100ffd652a9a8> ;
+        sh:targetClass    gleif-L1:Fund .
+
+<https://astrea.linkeddata.es/shapes#3ce6b698dcb47a9ba5e97301fa5121ab>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1" ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasAddressNumber .
+
+<https://astrea.linkeddata.es/shapes#2c94966f9d04396635ea1c9dc2286988>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has registration status" ;
+        sh:class          gleif-base:RegistrationStatus ;
+        sh:maxCount       1 ;
+        sh:name           "has registration status" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:hasRegistrationStatus .
+
+<https://astrea.linkeddata.es/shapes#91732716ddee4d5719da28e5ea388149>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has name legal local" ;
+        sh:name           "has name legal local" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasNameLegalLocal .
+
+<https://astrea.linkeddata.es/shapes#6895a05d4c8d1b7013bbbfd90520d7e3>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-L1:identifiesAndRecords ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-L1:RegisteredEntity ] .
+
+<https://astrea.linkeddata.es/shapes#c933b800f89b987301815b9aacda7444>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has address legal" ;
+        sh:name           "has address legal" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:hasAddressLegal .
+
+<https://astrea.linkeddata.es/shapes#56bcfd4adca6565bc0cf64e16cc5b26e>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-base:hasRegistrationStatus ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  []  ] .
+
+<https://astrea.linkeddata.es/shapes#0fc8001526eb73cf934569bdafb98384>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/L2/> ;
+        rdfs:label        "has child" ;
+        sh:class          gleif-base:Entity ;
+        sh:maxCount       1 ;
+        sh:name           "has child" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           <https://www.gleif.org/ontology/L2/hasChild> .
+
+<https://astrea.linkeddata.es/shapes#bbaf06940bb760d2335082404fe544a0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has abbreviation transliterated" ;
+        sh:name           "has abbreviation transliterated" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasAbbreviationTransliterated .
+
+<https://astrea.linkeddata.es/shapes#691491c142b69599f519208d53673a20>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "entity status" ;
+        sh:in             ( <https://astrea.linkeddata.es/shapes#057ec97d5e39430a7ebb597a433e432d> <https://astrea.linkeddata.es/shapes#05745137f1ca45c6c63059aa4c6419a3> ) ;
+        sh:name           "entity status" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    gleif-base:EntityStatus .
+
+<https://astrea.linkeddata.es/shapes#8be8ea8ae0a4aeaaf52a7833b5111fe3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/base/> ;
+        rdfs:label        "has name previous legal" ;
+        sh:name           "has name previous legal" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasNamePreviousLegal .
+
+<https://astrea.linkeddata.es/shapes#90db99715e6a98b72ae40c32b4405d89>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-base:hasRegistrationStatus ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  []  ] .
+
+<https://astrea.linkeddata.es/shapes#c4b37c02e5b6d9815a4e91155a259570>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "legal entity identifier registry entry" ;
+        sh:name           "legal entity identifier registry entry" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#56bcfd4adca6565bc0cf64e16cc5b26e> , <https://astrea.linkeddata.es/shapes#79718a847035fc6a239ada2e78827740> , <https://astrea.linkeddata.es/shapes#50a94e046a8ccc4227b5eb2eb243e0c5> , <https://astrea.linkeddata.es/shapes#6f49a0de27e39316a431e9f03fcdaf90> , <https://astrea.linkeddata.es/shapes#d49a9f8b35ac3107c526ae4746823a54> , <https://astrea.linkeddata.es/shapes#f5fb2668173e765774634b07c0dcb079> , <https://astrea.linkeddata.es/shapes#93c9be0ac9f2f532e36b18b508b69d60> , <https://astrea.linkeddata.es/shapes#4a6dbb28975c135d8d12e6dc6b60f0a4> , <https://astrea.linkeddata.es/shapes#a50715baffa37deeb473f22fe7885432> , <https://astrea.linkeddata.es/shapes#6895a05d4c8d1b7013bbbfd90520d7e3> ;
+        sh:targetClass    gleif-L1:LegalEntityIdentifierRegistryEntry .
+
+<https://astrea.linkeddata.es/shapes#c365371038af358dd3ae6475658dd82a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has other addresses" ;
+        sh:name           "has other addresses" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasOtherAddresses .
+
+<https://astrea.linkeddata.es/shapes#80d771ae411137a38de3954fddeb4519>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has address line 4" ;
+        sh:name           "has address line 4" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasAddressLine4 .
+
+<https://astrea.linkeddata.es/shapes#e5297e1c5028673dce430acf569dfc08>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has address line 2" ;
+        sh:name           "has address line 2" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasAddressLine2 .
+
+<https://astrea.linkeddata.es/shapes#972c53343a346e57f4caef309e276188>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has validation identifier" ;
+        sh:class          gleif-L1:BusinessRegistryIdentifier ;
+        sh:name           "has validation identifier" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasValidationIdentifier .
+
+<https://astrea.linkeddata.es/shapes#c28b60b088d6f49a440427cd6af7e7d5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has other authority" ;
+        sh:name           "has other authority" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-L1:hasOtherAuthority .
+
+<https://astrea.linkeddata.es/shapes#50a94e046a8ccc4227b5eb2eb243e0c5>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-L1:hasValidationIdentifier ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-L1:BusinessRegistryIdentifier ] .
+
+<https://astrea.linkeddata.es/shapes#e870f2c345383fe686a4f659ce3549e0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has entity status" ;
+        sh:class          gleif-base:EntityStatus ;
+        sh:maxCount       1 ;
+        sh:name           "has entity status" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:hasEntityStatus .
+
+<https://astrea.linkeddata.es/shapes#75aaa50bb3c4703e28ed224772c7c48a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has associated entity" ;
+        sh:class          gleif-L1:RegisteredEntity ;
+        sh:name           "has associated entity" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasAssociatedEntity .
+
+<https://astrea.linkeddata.es/shapes#44be63d2ca520726895155e9458468cd>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-base:hasEntityStatus ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-base:EntityStatus ] .
+
+<https://astrea.linkeddata.es/shapes#e3d9f7f4050b060aaabbd88c9cc8220d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/L2/> ;
+        rdfs:label        "relationship registration status" ;
+        sh:name           "relationship registration status" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://www.gleif.org/ontology/L2/RegistrationStatus> .
+
+<https://astrea.linkeddata.es/shapes#43e8f40fff6850b136d28529a19f002e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "registration authority" ;
+        sh:name           "registration authority" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    gleif-base:RegistrationAuthority .
+
+<https://astrea.linkeddata.es/shapes#4ed8a632ec5432c5074233766a9c28fd>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasEntityExpirationDate .
+
+<https://astrea.linkeddata.es/shapes#1e92f6bd5e764c6ba07969304a40e158>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has transliterated other entity names" ;
+        sh:name           "has transliterated other entity names" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-L1:hasTransliteratedOtherEntityNames .
+
+<https://astrea.linkeddata.es/shapes#841ddc5b88de5633e24100ffd652a9a8>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-L1:hasFundFamilyName .
+
+<https://astrea.linkeddata.es/shapes#f915475c301e25939f6384849042065c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has address transliterated" ;
+        sh:class          gleif-base:PhysicalAddressASCII ;
+        sh:name           "has address transliterated" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:hasAddressTransliterated .
+
+<https://astrea.linkeddata.es/shapes#748d91b0b751d6f8e1f1da9a246b11f9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/L2/> ;
+        rdfs:label        "has relationship status" ;
+        sh:class          <https://www.gleif.org/ontology/L2/RelationshipStatus> ;
+        sh:name           "has relationship status" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.gleif.org/ontology/L2/hasRelationshipStatus> .
+
+<https://astrea.linkeddata.es/shapes#992a36a0305d3c5dbc3e28aa35ccb3e7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has source" ;
+        sh:class          gleif-base:Entity ;
+        sh:maxCount       1 ;
+        sh:name           "has source" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:hasSource .
+
+<https://astrea.linkeddata.es/shapes#c19066021252211eb8bfe876bce91930>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "LEI" ;
+        sh:datatype       xsd:string ;
+        sh:maxCount       1 ;
+        sh:name           "LEI" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
+        sh:path           gleif-L1:LEI ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#81395fc140a79396643e0548071a1b5d>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-L1:hasLegalAddress ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-base:PhysicalAddress ] .
+
+<https://astrea.linkeddata.es/shapes#a44cd4b73f436824b88ce78f14768f3a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has validation sources" ;
+        sh:class          gleif-L1:ValidationSourceKind ;
+        sh:name           "has validation sources" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasValidationSources .
+
+<https://astrea.linkeddata.es/shapes#bef64d72cb4133454fa666846e9c3aa7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has additional address line" ;
+        sh:name           "has additional address line" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasAdditionalAddressLine .
+
+<https://astrea.linkeddata.es/shapes#33ac96203e637ddb5104aa3ab523e9b4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/L2/> ;
+        rdfs:label        "has validation sources" ;
+        sh:class          gleif-L1:ValidationSourceKind ;
+        sh:name           "has validation sources" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.gleif.org/ontology/L2/hasValidationSources> .
+
+<https://astrea.linkeddata.es/shapes#7dd958a16ffe029c5975357fa1b0ce07>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/L2/> ;
+        rdfs:label        "accounting consolidation" ;
+        sh:name           "accounting consolidation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#5c786f646b421b3823c3d901a8f2271e> , <https://astrea.linkeddata.es/shapes#811c4b943c8605d95d2f1b464e28b1b7> ;
+        sh:targetClass    <https://www.gleif.org/ontology/L2/AccountingConsolidation> .
+
+<https://astrea.linkeddata.es/shapes#74de9b57177889df622f50395a9d7afa>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has other entity names" ;
+        sh:name           "has other entity names" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-L1:hasAlternativeLanguageLegalName .
+
+<https://astrea.linkeddata.es/shapes#5c786f646b421b3823c3d901a8f2271e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/L2/> ;
+        rdfs:label        "has accounting standard" ;
+        sh:class          <https://www.gleif.org/ontology/L2/AccountingStandard> ;
+        sh:name           "has accounting standard" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.gleif.org/ontology/L2/hasAccountingStandard> .
+
+<https://astrea.linkeddata.es/shapes#658ab0f772a6d92b4bb4541f40496f80>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-base:hasEntityExpirationReason ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-base:EntityExpirationReason ] .
+
+<https://astrea.linkeddata.es/shapes#3e40653699bb157f299ef7e658fc796a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has preferred ASCII transliterated legal address" ;
+        sh:name           "has preferred ASCII transliterated legal address" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasPreferredASCIITransliteratedLegalAddress .
+
+<https://astrea.linkeddata.es/shapes#0c71f331ea9bbe5613cb3611d883cfbf>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:identifies .
+
+<https://astrea.linkeddata.es/shapes#9851716dfb569efc1f23f7b5da050c6b>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1" ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasPostalCode .
+
+<https://astrea.linkeddata.es/shapes#3b1bb82206bea7b8617bfdb370290519>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-base:records ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-base:LegalEntityRelationship ] .
+
+<https://astrea.linkeddata.es/shapes#6ebc4434235ba55367712ab05c273441>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has city" ;
+        sh:name           "has city" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasCity .
+
+<https://astrea.linkeddata.es/shapes#6dedb42efd9c3c065b3e54fbfa0b1cb7>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1" ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasMailRouting .
+
+<https://astrea.linkeddata.es/shapes#f5fb2668173e765774634b07c0dcb079>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasInitialRegistrationDate .
+
+<https://astrea.linkeddata.es/shapes#56d043b44f4979e12d535a6d2155e7d7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has target" ;
+        sh:class          gleif-base:Entity ;
+        sh:maxCount       1 ;
+        sh:name           "has target" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:hasTarget .
+
+<https://astrea.linkeddata.es/shapes#3fd3a50932c0ecd000c8d742a653f869>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-L1:hasOtherAuthority .
+
+<https://astrea.linkeddata.es/shapes#53c30a1816dbab1f4819ef3adc8b71e9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "business registry identifier" ;
+        sh:name           "business registry identifier" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#2059bb1d12ab9927fa0bd24572a17a41> , <https://astrea.linkeddata.es/shapes#c97b59bfed7e3301eba2ab7d10f40161> , <https://astrea.linkeddata.es/shapes#349cd4223380adad244c3f52b727d17d> , <https://astrea.linkeddata.es/shapes#3fd3a50932c0ecd000c8d742a653f869> , <https://astrea.linkeddata.es/shapes#6684f79ddebd6dc8e1af02511fafa9eb> ;
+        sh:targetClass    gleif-L1:BusinessRegistryIdentifier .
+
+<https://astrea.linkeddata.es/shapes#30da66faad7c4e745942bb81c1efd502>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has legal address" ;
+        sh:class          gleif-base:PhysicalAddress ;
+        sh:name           "has legal address" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasLegalAddress .
+
+<https://astrea.linkeddata.es/shapes#010f6b82a0bc476af62a1ee5c5736cce>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has name legal" ;
+        sh:name           "has name legal" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasNameLegal .
+
+<https://astrea.linkeddata.es/shapes#ff2d81363a0880e8d5db6e146defdb78>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has initial registration date" ;
+        sh:datatype       xsd:dateTime ;
+        sh:name           "has initial registration date" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasInitialRegistrationDate ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#37eb5a2102f6960f95d7ab390de9734a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has transliterated legal address" ;
+        sh:name           "has transliterated legal address" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasTransliteratedLegalAddress .
+
+<https://astrea.linkeddata.es/shapes#24317831515963db2039859f35833cb0>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-base:hasCountry ;
+        sh:qualifiedMaxCount    "1" ;
+        sh:qualifiedMinCount    "1" ;
+        sh:qualifiedValueShape  [ sh:class  lcc-cr:Country ] .
+
+<https://astrea.linkeddata.es/shapes#d4ac9c312a5c92166ac8236507c3afb2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has entity expiration date" ;
+        sh:datatype       xsd:dateTime ;
+        sh:name           "has entity expiration date" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasEntityExpirationDate ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#e7eda359764f28af7747f4c8bfcb2d1d>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <https://www.gleif.org/ontology/L2/hasAccountingPeriod> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-base:Period ] .
+
+<https://astrea.linkeddata.es/shapes#15467bba001ec36ae5f1d81c3260fccf>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "legal entity relationship" ;
+        sh:name           "legal entity relationship" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7fcf7a11178dced45ba11360d8242a90> , <https://astrea.linkeddata.es/shapes#39d1e487ba2f35e1c3d46bcc2b8f2c13> , <https://astrea.linkeddata.es/shapes#f78752f3df83c613ed80c80b3167654f> , <https://astrea.linkeddata.es/shapes#34e43b5a0bdf1447dace59deeccb53b3> , <https://astrea.linkeddata.es/shapes#19d22a065e6030c770fe7371c4190f03> , <https://astrea.linkeddata.es/shapes#992a36a0305d3c5dbc3e28aa35ccb3e7> , <https://astrea.linkeddata.es/shapes#748d91b0b751d6f8e1f1da9a246b11f9> , <https://astrea.linkeddata.es/shapes#27bd40bf53c6df145358cde93cd0520a> , <https://astrea.linkeddata.es/shapes#75022ed092567fc0984a08d212531d0f> , <https://astrea.linkeddata.es/shapes#e8ba76853d2af8b1bbeb1ce7a105f459> , <https://astrea.linkeddata.es/shapes#09246dc7582d01458719e13145c89d1e> , <https://astrea.linkeddata.es/shapes#0fc8001526eb73cf934569bdafb98384> , <https://astrea.linkeddata.es/shapes#56d043b44f4979e12d535a6d2155e7d7> ;
+        sh:targetClass    gleif-base:LegalEntityRelationship .
+
+<https://astrea.linkeddata.es/shapes#5f23e2383e193878b2b2b87d46c7c73f>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1" ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasAddressLine2 .
+
+<https://astrea.linkeddata.es/shapes#17ea10c9c4499bfe1e7448f94bce05e4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has name transliterated" ;
+        sh:name           "has name transliterated" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasNameTransliterated .
+
+<https://astrea.linkeddata.es/shapes#9260591c924d15c0849e32127cf67001>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has trading or operating name" ;
+        sh:name           "has trading or operating name" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-L1:hasTradingOrOperatingName .
+
+<https://astrea.linkeddata.es/shapes#6684f79ddebd6dc8e1af02511fafa9eb>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-L1:hasEntityID .
+
+<https://astrea.linkeddata.es/shapes#5c6e2721e86d58fe6886d34823911a8d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has fund family" ;
+        sh:class          gleif-L1:FundFamily ;
+        sh:name           "has fund family" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasFundFamily .
+
+<https://astrea.linkeddata.es/shapes#ca9dfa40714338b7f461adb5e998042a>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasNextRenewalDate .
+
+<https://astrea.linkeddata.es/shapes#a508b967fa9180a17c2c076a8be340a8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has entity expiration reason" ;
+        sh:class          gleif-base:EntityExpirationReason ;
+        sh:name           "has entity expiration reason" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:hasEntityExpirationReason .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#e8ba76853d2af8b1bbeb1ce7a105f459>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/L2/> ;
+        rdfs:label        "has relationship period" ;
+        sh:class          gleif-base:Period ;
+        sh:name           "has relationship period" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.gleif.org/ontology/L2/hasRelationshipPeriod> .
+
+<https://astrea.linkeddata.es/shapes#5f8e86a311284b73773fb84870d86807>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "physical address ASCII" ;
+        sh:name           "physical address ASCII" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    gleif-base:PhysicalAddressASCII .
+
+<https://astrea.linkeddata.es/shapes#f9d5ae522a65651171076a11bcfc6875>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has tag" ;
+        sh:datatype       xsd:string ;
+        sh:maxCount       1 ;
+        sh:name           "has tag" ;
+        sh:nodeKind       sh:Literal , sh:IRIOrLiteral ;
+        sh:path           gleif-base:hasTag ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#f090fd9ae0f7cc2b6f6e4de3324567d3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has country" ;
+        sh:class          lcc-cr:Country ;
+        sh:name           "has country" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:hasCountry .
+
+<https://astrea.linkeddata.es/shapes#d2affd71e43b735c9d3d58201a5ad5ae>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has registered authority" ;
+        sh:class          gleif-ra:BusinessRegistry ;
+        sh:name           "has registered authority" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasRegisteredAuthority .
+
+<https://astrea.linkeddata.es/shapes#f11c0fa39c7fe745223160127d8247ce>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-L1:LEI .
+
+<https://astrea.linkeddata.es/shapes#6e30955e53f4095340f00ca9199f99f1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has region" ;
+        sh:class          lcc-cr:CountrySubdivision ;
+        sh:name           "has region" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:hasRegion .
+
+<https://astrea.linkeddata.es/shapes#f8237ff6b5e8a3c90841a464cf321fd2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/L2/> ;
+        rdfs:label        "legal entity relationship record" ;
+        sh:name           "legal entity relationship record" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e7eda359764f28af7747f4c8bfcb2d1d> , <https://astrea.linkeddata.es/shapes#65298ee18bc8c5e3d9cc9481d8affa41> , <https://astrea.linkeddata.es/shapes#c95b820ec9f9adeecec3889837eaa6c9> , <https://astrea.linkeddata.es/shapes#3b1bb82206bea7b8617bfdb370290519> , <https://astrea.linkeddata.es/shapes#bdef92420ab62ae1f5c548c7451df1bb> , <https://astrea.linkeddata.es/shapes#fbf44f725e9bc3a71dbe2a6a85fed110> , <https://astrea.linkeddata.es/shapes#d8f775b9fc8af7004fdb5dae12fdd78b> , <https://astrea.linkeddata.es/shapes#d2468e65efa0e8f1bbde0aa6baac6803> , <https://astrea.linkeddata.es/shapes#5775120850c1a8408ca3f4be4152b4d0> , <https://astrea.linkeddata.es/shapes#90db99715e6a98b72ae40c32b4405d89> , <https://astrea.linkeddata.es/shapes#e83ea7111ab8d84767e8915cdd8d889b> , <https://astrea.linkeddata.es/shapes#4dac126781acaa2c7f6616e51051ac10> , <https://astrea.linkeddata.es/shapes#ca9dfa40714338b7f461adb5e998042a> , <https://astrea.linkeddata.es/shapes#eafb4c0ef72a6a4f91f2d6c8de9bef22> , <https://astrea.linkeddata.es/shapes#33ac96203e637ddb5104aa3ab523e9b4> ;
+        sh:targetClass    <https://www.gleif.org/ontology/L2/LegalEntityRelationshipRecord> .
+
+<https://astrea.linkeddata.es/shapes#75022ed092567fc0984a08d212531d0f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/L2/> ;
+        rdfs:label        "has parent" ;
+        sh:class          gleif-base:Entity ;
+        sh:maxCount       1 ;
+        sh:name           "has parent" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           <https://www.gleif.org/ontology/L2/hasParent> .
+
+<https://astrea.linkeddata.es/shapes#8da677f7a80038d3ccb6be294d75ab4f>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-base:hasLegalJurisdiction ;
+        sh:qualifiedMinCount    "0"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  lcc-cr:GeographicRegion ] .
+
+<https://astrea.linkeddata.es/shapes#7853207406e9ac5ec882ad911a7a8735>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has address number" ;
+        sh:name           "has address number" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasAddressNumber .
+
+<https://astrea.linkeddata.es/shapes#d6146b0a6ebd5d3b95f8512584fac5ec>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has successor name" ;
+        sh:name           "has successor name" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasSuccessorName .
+
+<https://astrea.linkeddata.es/shapes#4c4fc8efa47d0a25a66dc2dc59d306e6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "is managed by" ;
+        sh:name           "is managed by" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:isManagedBy .
+
+<https://astrea.linkeddata.es/shapes#7fcf7a11178dced45ba11360d8242a90>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "is quantified by" ;
+        sh:datatype       xsd:decimal ;
+        sh:name           "is quantified by" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:isQuantifiedBy ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#57e7952c13b77362cf120eae94ef9c14>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has address number within building" ;
+        sh:name           "has address number within building" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasAddressNumberWithinBuilding .
+
+<https://astrea.linkeddata.es/shapes#3258b160073ab3bb1e143caddd8d5180>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "legal entity identifier registration status" ;
+        sh:name           "legal entity identifier registration status" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    gleif-L1:RegistrationStatus .
+
+<https://astrea.linkeddata.es/shapes#c97b59bfed7e3301eba2ab7d10f40161>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-L1:hasRegisteredAuthority ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-ra:BusinessRegistry ] .
+
+<https://astrea.linkeddata.es/shapes#cb4990c2b69444017a0b1d54ac14613f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "entity expiration reason" ;
+        sh:in             ( <https://astrea.linkeddata.es/shapes#86949d9b56a848ef1b022f1034bbdae1> <https://astrea.linkeddata.es/shapes#173fe7b101b5db0e66548984670dfe7f> <https://astrea.linkeddata.es/shapes#2178af0c430bd01090c2abf9741e6b5b> ) ;
+        sh:name           "entity expiration reason" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    gleif-base:EntityExpirationReason .
+
+<https://astrea.linkeddata.es/shapes#559cade8c8e00788878ab24048208624>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has geographic region" ;
+        sh:class          lcc-cr:GeographicRegion ;
+        sh:name           "has geographic region" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:hasGeographicRegion .
+
+<https://astrea.linkeddata.es/shapes#33c56fcbd6372c3133e2531d5a6bd59d>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-L1:hasTransliteratedLegalAddress ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-base:PhysicalAddressASCII ] .
+
+<https://astrea.linkeddata.es/shapes#c8879e8553caa93abc5f07fe1a3f9f11>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has alternative language legal address" ;
+        sh:name           "has alternative language legal address" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasAlternativeLanguageLegalAddress .
+
+<https://astrea.linkeddata.es/shapes#3f56d071a7251f2da035cec3a756bea6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has legal jurisdiction" ;
+        sh:class          lcc-cr:GeographicRegion ;
+        sh:name           "has legal jurisdiction" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:hasLegalJurisdiction .
+
+<https://astrea.linkeddata.es/shapes#916a70b2fd574a419e060d32506d2587>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has website" ;
+        sh:datatype       xsd:anyURI ;
+        sh:name           "has website" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasWebsite ;
+        sh:pattern        "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#d17a1e2d43d0f78f927c617304687037>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has managing LOU" ;
+        sh:class          gleif-L1:LocalOperatingUnit ;
+        sh:maxCount       1 ;
+        sh:name           "has managing LOU" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasManagingLOU .
+
+<https://astrea.linkeddata.es/shapes#342ecd6667d27501e27ddc2c2154b4fa>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-base:hasEntityExpirationReason ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-base:EntityExpirationReason ] .
+
+<https://astrea.linkeddata.es/shapes#27bd40bf53c6df145358cde93cd0520a>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-base:hasTarget ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-base:Entity ] .
+
+<https://astrea.linkeddata.es/shapes#a717610321709288b387542ac059d3ff>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has address line 1" ;
+        sh:name           "has address line 1" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasAddressLine1 .
+
+<https://astrea.linkeddata.es/shapes#4dac126781acaa2c7f6616e51051ac10>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasInitialRegistrationDate .
+
+<https://astrea.linkeddata.es/shapes#6f9a4b1c3895c36aadf6a486bea772c4>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1" ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasAddressLine3 .
+
+<https://astrea.linkeddata.es/shapes#00fc3f10183b39c32897a731f61b51cd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has address headquarters" ;
+        sh:name           "has address headquarters" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:hasAddressHeadquarters .
+
+<https://astrea.linkeddata.es/shapes#845ffcf66a9eca49d9394378b414a3ba>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "LEI validation source kind" ;
+        sh:name           "LEI validation source kind" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    gleif-L1:ValidationSourceKind .
+
+<https://astrea.linkeddata.es/shapes#8c29247f3c2fa3fb76d785759a36d1d5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has name additional" ;
+        sh:name           "has name additional" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasNameAdditional .
+
+<https://astrea.linkeddata.es/shapes#e333c42f621671b528e74e782d19b84a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has name local" ;
+        sh:name           "has name local" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasNameLocal .
+
+<https://astrea.linkeddata.es/shapes#5490f2c89216d15dcd9dd3c5b087eef3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has end"@en ;
+        sh:datatype       xsd:dateTime ;
+        sh:name           "has end"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasEnd ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#239b94e0ca30a49f59d6159c0031cb11>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/L2/> ;
+        rdfs:label        "relationship validation documents kind" ;
+        sh:in             ( <https://astrea.linkeddata.es/shapes#ece09cc6f9c58d92cf2c465525a00a25> <https://astrea.linkeddata.es/shapes#d7a2361c1b139cc6586f7d5aed874f38> <https://astrea.linkeddata.es/shapes#c26c3a4d47532d865cf382b0c58b3d9e> <https://astrea.linkeddata.es/shapes#73b6f700a613f4b9e8c73a301d73a9a9> <https://astrea.linkeddata.es/shapes#45fafbaae4248ef19e239d048330d900> ) ;
+        sh:name           "relationship validation documents kind" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://www.gleif.org/ontology/L2/RelationshipValidationDocumentsKind> .
+
+<https://astrea.linkeddata.es/shapes#1541facb478cd70b6b13bc8000c91c56>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has successor" ;
+        sh:class          gleif-base:Entity ;
+        sh:name           "has successor" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:hasSuccessor .
+
+<https://astrea.linkeddata.es/shapes#af2306ac7cb2632e9891105b74a862b7>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-base:hasSuccessor ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-L1:LegalEntity ] .
+
+<https://astrea.linkeddata.es/shapes#15c8ff9fd418d7e5c9124479029c01ba>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has name ASCII preferred" ;
+        sh:name           "has name ASCII preferred" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasNameASCIIPreferred .
+
+<https://astrea.linkeddata.es/shapes#b3f5134fdb2d0efbaf7c7b4208c2134b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has preferred ASCII transliterated legal name" ;
+        sh:name           "has preferred ASCII transliterated legal name" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-L1:hasPreferredASCIITransliteratedLegalName .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#cb4990c2b69444017a0b1d54ac14613f> , <https://astrea.linkeddata.es/shapes#d03154301083cf8bfac9ad31104b108b> , <https://astrea.linkeddata.es/shapes#d0d51a9495e6c136802706805c2b299f> , <https://astrea.linkeddata.es/shapes#6ebc4434235ba55367712ab05c273441> , <https://astrea.linkeddata.es/shapes#6dedb42efd9c3c065b3e54fbfa0b1cb7> , <https://astrea.linkeddata.es/shapes#a44cd4b73f436824b88ce78f14768f3a> , <https://astrea.linkeddata.es/shapes#d8f775b9fc8af7004fdb5dae12fdd78b> , <https://astrea.linkeddata.es/shapes#b35859eef297520ced1d614c30a3e0c0> , <https://astrea.linkeddata.es/shapes#0c71f331ea9bbe5613cb3611d883cfbf> , <https://astrea.linkeddata.es/shapes#e8e580ee5f7d60299b709ba816a6b6ec> , <https://astrea.linkeddata.es/shapes#b0a1e30ad6c1ecd1e97cdf7616e2eb62> , <https://astrea.linkeddata.es/shapes#622e3f71b8add1ea4f6141ff73fff005> , <https://astrea.linkeddata.es/shapes#2953b61ec7911b3cc6f460e8d8536509> , <https://astrea.linkeddata.es/shapes#1d251c7ebb130c1a6e64707fb8fc27a5> , <https://astrea.linkeddata.es/shapes#be70b73ed0bfcfa54ee263af00099e83> , <https://astrea.linkeddata.es/shapes#96404ac52538e3e504d83aea135ba246> , <https://astrea.linkeddata.es/shapes#2f3cc808cce16a14a8568a178b9b6904> , <https://astrea.linkeddata.es/shapes#81395fc140a79396643e0548071a1b5d> , <https://astrea.linkeddata.es/shapes#811c4b943c8605d95d2f1b464e28b1b7> , <https://astrea.linkeddata.es/shapes#3b72bb15a80d7ce96a1739b3817701dd> , <https://astrea.linkeddata.es/shapes#c8879e8553caa93abc5f07fe1a3f9f11> , <https://astrea.linkeddata.es/shapes#3f56d071a7251f2da035cec3a756bea6> , <https://astrea.linkeddata.es/shapes#d2468e65efa0e8f1bbde0aa6baac6803> , <https://astrea.linkeddata.es/shapes#8c29247f3c2fa3fb76d785759a36d1d5> , <https://astrea.linkeddata.es/shapes#e83ea7111ab8d84767e8915cdd8d889b> , <https://astrea.linkeddata.es/shapes#6684f79ddebd6dc8e1af02511fafa9eb> , <https://astrea.linkeddata.es/shapes#010f6b82a0bc476af62a1ee5c5736cce> , <https://astrea.linkeddata.es/shapes#0504d5aa7e9f7f44677f967c9a505719> , <https://astrea.linkeddata.es/shapes#f78752f3df83c613ed80c80b3167654f> , <https://astrea.linkeddata.es/shapes#7fcf7a11178dced45ba11360d8242a90> , <https://astrea.linkeddata.es/shapes#24317831515963db2039859f35833cb0> , <https://astrea.linkeddata.es/shapes#973e1ecd22e62455a7c5ce5d06145aa9> , <https://astrea.linkeddata.es/shapes#91732716ddee4d5719da28e5ea388149> , <https://astrea.linkeddata.es/shapes#b880de5baa2a007a22132c76e257b2ee> , <https://astrea.linkeddata.es/shapes#50b71d2bfc4045b5d9c9338b14c4d91f> , <https://astrea.linkeddata.es/shapes#3ce6b698dcb47a9ba5e97301fa5121ab> , <https://astrea.linkeddata.es/shapes#e5297e1c5028673dce430acf569dfc08> , <https://astrea.linkeddata.es/shapes#0782b0588a3cbb5a9c8078dc1fa1ba53> , <https://astrea.linkeddata.es/shapes#c1ac715e34fd7edc6ecbe3b091515c1f> , <https://astrea.linkeddata.es/shapes#972c53343a346e57f4caef309e276188> , <https://astrea.linkeddata.es/shapes#33c56fcbd6372c3133e2531d5a6bd59d> , <https://astrea.linkeddata.es/shapes#d17a1e2d43d0f78f927c617304687037> , <https://astrea.linkeddata.es/shapes#2565f37b5f4008b7052e2f658d35d380> , <https://astrea.linkeddata.es/shapes#dd504f5cd04dc4172b8927b0d29f8f4b> , <https://astrea.linkeddata.es/shapes#0e53cb00f01d3240fc82a046ea349c96> , <https://astrea.linkeddata.es/shapes#581d4546b5e5eccfa7535fda4460639f> , <https://astrea.linkeddata.es/shapes#349cd4223380adad244c3f52b727d17d> , <https://astrea.linkeddata.es/shapes#4c4fc8efa47d0a25a66dc2dc59d306e6> , <https://astrea.linkeddata.es/shapes#25069c1a2fa427d4507ffb1387aae8bd> , <https://astrea.linkeddata.es/shapes#d49a9f8b35ac3107c526ae4746823a54> , <https://astrea.linkeddata.es/shapes#6db72f3e60c7e677b4cbdc87cc4c7f60> , <https://astrea.linkeddata.es/shapes#916a70b2fd574a419e060d32506d2587> , <https://astrea.linkeddata.es/shapes#1b2a58592929905195ab2afa46991203> , <https://astrea.linkeddata.es/shapes#fe8efc643b67eb1b2a851b732dd4f824> , <https://astrea.linkeddata.es/shapes#f090fd9ae0f7cc2b6f6e4de3324567d3> , <https://astrea.linkeddata.es/shapes#8be8ea8ae0a4aeaaf52a7833b5111fe3> , <https://astrea.linkeddata.es/shapes#658ab0f772a6d92b4bb4541f40496f80> , <https://astrea.linkeddata.es/shapes#c19066021252211eb8bfe876bce91930> , <https://astrea.linkeddata.es/shapes#41139a4efe78b5f454a21529fdf21176> , <https://astrea.linkeddata.es/shapes#56bcfd4adca6565bc0cf64e16cc5b26e> , <https://astrea.linkeddata.es/shapes#15c8ff9fd418d7e5c9124479029c01ba> , <https://astrea.linkeddata.es/shapes#5f23e2383e193878b2b2b87d46c7c73f> , <https://astrea.linkeddata.es/shapes#7dd958a16ffe029c5975357fa1b0ce07> , <https://astrea.linkeddata.es/shapes#30da66faad7c4e745942bb81c1efd502> , <https://astrea.linkeddata.es/shapes#5f8e86a311284b73773fb84870d86807> , <https://astrea.linkeddata.es/shapes#602a990cd8348710082d9b64488926bd> , <https://astrea.linkeddata.es/shapes#748d91b0b751d6f8e1f1da9a246b11f9> , <https://astrea.linkeddata.es/shapes#9eb69392753521164cedbbfb4fbc834e> , <https://astrea.linkeddata.es/shapes#c97b59bfed7e3301eba2ab7d10f40161> , <https://astrea.linkeddata.es/shapes#15467bba001ec36ae5f1d81c3260fccf> , <https://astrea.linkeddata.es/shapes#65298ee18bc8c5e3d9cc9481d8affa41> , <https://astrea.linkeddata.es/shapes#d4ac9c312a5c92166ac8236507c3afb2> , <https://astrea.linkeddata.es/shapes#a717610321709288b387542ac059d3ff> , <https://astrea.linkeddata.es/shapes#e3d9f7f4050b060aaabbd88c9cc8220d> , <https://astrea.linkeddata.es/shapes#bdbae981bcfe38575f8472ce3bd0983e> , <https://astrea.linkeddata.es/shapes#50d3f75527d6ae578fbd400b65a8089a> , <https://astrea.linkeddata.es/shapes#a6244a1576e3b268b1914889010f6bbf> , <https://astrea.linkeddata.es/shapes#306e0567ef62e99082d850348a582ba6> , <https://astrea.linkeddata.es/shapes#9a8ca3cf63332536889fc76251461417> , <https://astrea.linkeddata.es/shapes#3e40653699bb157f299ef7e658fc796a> , <https://astrea.linkeddata.es/shapes#39d1e487ba2f35e1c3d46bcc2b8f2c13> , <https://astrea.linkeddata.es/shapes#6e30955e53f4095340f00ca9199f99f1> , <https://astrea.linkeddata.es/shapes#3fd3a50932c0ecd000c8d742a653f869> , <https://astrea.linkeddata.es/shapes#75aaa50bb3c4703e28ed224772c7c48a> , <https://astrea.linkeddata.es/shapes#f1605a56ade675ef52c78bac4bb82c5f> , <https://astrea.linkeddata.es/shapes#32c529984784c304343e511453077423> , <https://astrea.linkeddata.es/shapes#5490f2c89216d15dcd9dd3c5b087eef3> , <https://astrea.linkeddata.es/shapes#5775120850c1a8408ca3f4be4152b4d0> , <https://astrea.linkeddata.es/shapes#b3f5134fdb2d0efbaf7c7b4208c2134b> , <https://astrea.linkeddata.es/shapes#16813a8f99700d058e3d8a80d2265d8d> , <https://astrea.linkeddata.es/shapes#afff9072671ee8cc573701ae7244dd4c> , <https://astrea.linkeddata.es/shapes#5a956a4fd41c47b7458b2ac6bc645225> , <https://astrea.linkeddata.es/shapes#ca9dfa40714338b7f461adb5e998042a> , <https://astrea.linkeddata.es/shapes#00fc3f10183b39c32897a731f61b51cd> , <https://astrea.linkeddata.es/shapes#478ce82409846eb86867defb31af81a8> , <https://astrea.linkeddata.es/shapes#27bd40bf53c6df145358cde93cd0520a> , <https://astrea.linkeddata.es/shapes#8b20e1d178e16bf6e7004f27c3a492d8> , <https://astrea.linkeddata.es/shapes#f915475c301e25939f6384849042065c> , <https://astrea.linkeddata.es/shapes#8078e906608939fea09668ea433d5f19> , <https://astrea.linkeddata.es/shapes#992a36a0305d3c5dbc3e28aa35ccb3e7> , <https://astrea.linkeddata.es/shapes#bef64d72cb4133454fa666846e9c3aa7> , <https://astrea.linkeddata.es/shapes#43e8f40fff6850b136d28529a19f002e> , <https://astrea.linkeddata.es/shapes#7b74e6f497d41688cabbd41c8c7c3d92> , <https://astrea.linkeddata.es/shapes#46d555e11516d28413164fc594c49e93> , <https://astrea.linkeddata.es/shapes#e870f2c345383fe686a4f659ce3549e0> , <https://astrea.linkeddata.es/shapes#f9d5ae522a65651171076a11bcfc6875> , <https://astrea.linkeddata.es/shapes#4fbf0a5a11d61f56863166bc04997022> , <https://astrea.linkeddata.es/shapes#691491c142b69599f519208d53673a20> , <https://astrea.linkeddata.es/shapes#b36d42ce00d86f2ed997b673be3f4953> , <https://astrea.linkeddata.es/shapes#342ecd6667d27501e27ddc2c2154b4fa> , <https://astrea.linkeddata.es/shapes#d2affd71e43b735c9d3d58201a5ad5ae> , <https://astrea.linkeddata.es/shapes#2c94966f9d04396635ea1c9dc2286988> , <https://astrea.linkeddata.es/shapes#a508b967fa9180a17c2c076a8be340a8> , <https://astrea.linkeddata.es/shapes#2fda3770de8dff0f0c006fb3901519eb> , <https://astrea.linkeddata.es/shapes#c933b800f89b987301815b9aacda7444> , <https://astrea.linkeddata.es/shapes#0fc8001526eb73cf934569bdafb98384> , <https://astrea.linkeddata.es/shapes#841ddc5b88de5633e24100ffd652a9a8> , <https://astrea.linkeddata.es/shapes#2987491b18f62af457daa9344ba4568b> , <https://astrea.linkeddata.es/shapes#df7e0bd8bdd99cf70d6a2e612660864e> , <https://astrea.linkeddata.es/shapes#17ea10c9c4499bfe1e7448f94bce05e4> , <https://astrea.linkeddata.es/shapes#d0ee41371cdf68d975da31b0ec047a4a> , <https://astrea.linkeddata.es/shapes#57e7952c13b77362cf120eae94ef9c14> , <https://astrea.linkeddata.es/shapes#a2dfccdfddec36e76f095551a9d60289> , <https://astrea.linkeddata.es/shapes#75022ed092567fc0984a08d212531d0f> , <https://astrea.linkeddata.es/shapes#92110d475f34cf24875c434c0c317472> , <https://astrea.linkeddata.es/shapes#4dac126781acaa2c7f6616e51051ac10> , <https://astrea.linkeddata.es/shapes#3b1bb82206bea7b8617bfdb370290519> , <https://astrea.linkeddata.es/shapes#0f3aa34701d49e907e76a2c3f9efe7f8> , <https://astrea.linkeddata.es/shapes#37ead08f8f9a196e09d4553ad7711118> , <https://astrea.linkeddata.es/shapes#4d3e5260aee4835e3fd4664455edbab1> , <https://astrea.linkeddata.es/shapes#8c618b3005006753292095f9e3802613> , <https://astrea.linkeddata.es/shapes#5c786f646b421b3823c3d901a8f2271e> , <https://astrea.linkeddata.es/shapes#fa22673aa0da21b8d35236b10893b0d9> , <https://astrea.linkeddata.es/shapes#5cfa598d7d05d5d55cc877b1e90560ce> , <https://astrea.linkeddata.es/shapes#bfcea747d77fe06a33244753f5f3b2a4> , <https://astrea.linkeddata.es/shapes#e333c42f621671b528e74e782d19b84a> , <https://astrea.linkeddata.es/shapes#3374f932f187d04e3e20badbbeb30c92> , <https://astrea.linkeddata.es/shapes#85f5f34ee6d7c1e626352e1e29f024f7> , <https://astrea.linkeddata.es/shapes#fbf44f725e9bc3a71dbe2a6a85fed110> , <https://astrea.linkeddata.es/shapes#4ed8a632ec5432c5074233766a9c28fd> , <https://astrea.linkeddata.es/shapes#ff3e3449b3d3b1323d4487bcdb0eaf70> , <https://astrea.linkeddata.es/shapes#f8237ff6b5e8a3c90841a464cf321fd2> , <https://astrea.linkeddata.es/shapes#d0067e4642f91f3145810fe879940468> , <https://astrea.linkeddata.es/shapes#6f49a0de27e39316a431e9f03fcdaf90> , <https://astrea.linkeddata.es/shapes#1e92f6bd5e764c6ba07969304a40e158> , <https://astrea.linkeddata.es/shapes#74de9b57177889df622f50395a9d7afa> , <https://astrea.linkeddata.es/shapes#9851716dfb569efc1f23f7b5da050c6b> , <https://astrea.linkeddata.es/shapes#af2306ac7cb2632e9891105b74a862b7> , <https://astrea.linkeddata.es/shapes#93c9be0ac9f2f532e36b18b508b69d60> , <https://astrea.linkeddata.es/shapes#09a9e532bf5a835f10a4b74673fe9c6f> , <https://astrea.linkeddata.es/shapes#2059bb1d12ab9927fa0bd24572a17a41> , <https://astrea.linkeddata.es/shapes#50a94e046a8ccc4227b5eb2eb243e0c5> , <https://astrea.linkeddata.es/shapes#09246dc7582d01458719e13145c89d1e> , <https://astrea.linkeddata.es/shapes#e8a5a2a96dd424d8a5860fc811bee5fb> , <https://astrea.linkeddata.es/shapes#80d771ae411137a38de3954fddeb4519> , <https://astrea.linkeddata.es/shapes#c95b820ec9f9adeecec3889837eaa6c9> , <https://astrea.linkeddata.es/shapes#5c6e2721e86d58fe6886d34823911a8d> , <https://astrea.linkeddata.es/shapes#34e43b5a0bdf1447dace59deeccb53b3> , <https://astrea.linkeddata.es/shapes#1c6f6cb1d2b9d6f68de3cda10982877c> , <https://astrea.linkeddata.es/shapes#09e9a073c9bf84bd9efd3283301d2a37> , <https://astrea.linkeddata.es/shapes#0bd3e8d5c65aba502aa4f7b488b3ca73> , <https://astrea.linkeddata.es/shapes#239b94e0ca30a49f59d6159c0031cb11> , <https://astrea.linkeddata.es/shapes#559cade8c8e00788878ab24048208624> , <https://astrea.linkeddata.es/shapes#f11c0fa39c7fe745223160127d8247ce> , <https://astrea.linkeddata.es/shapes#e8ba76853d2af8b1bbeb1ce7a105f459> , <https://astrea.linkeddata.es/shapes#f1d7a10fb333ad1c38bb2b3dc168a731> , <https://astrea.linkeddata.es/shapes#845ffcf66a9eca49d9394378b414a3ba> , <https://astrea.linkeddata.es/shapes#37eb5a2102f6960f95d7ab390de9734a> , <https://astrea.linkeddata.es/shapes#d2f3a23d50745b5044dd913cb2622776> , <https://astrea.linkeddata.es/shapes#4a6dbb28975c135d8d12e6dc6b60f0a4> , <https://astrea.linkeddata.es/shapes#53c30a1816dbab1f4819ef3adc8b71e9> , <https://astrea.linkeddata.es/shapes#c8eb51fb451cb67585816b29eb943c81> , <https://astrea.linkeddata.es/shapes#33ac96203e637ddb5104aa3ab523e9b4> , <https://astrea.linkeddata.es/shapes#f5fb2668173e765774634b07c0dcb079> , <https://astrea.linkeddata.es/shapes#7853207406e9ac5ec882ad911a7a8735> , <https://astrea.linkeddata.es/shapes#4f5a448dd15c5676b3dfaf00d54afc65> , <https://astrea.linkeddata.es/shapes#3258b160073ab3bb1e143caddd8d5180> , <https://astrea.linkeddata.es/shapes#c365371038af358dd3ae6475658dd82a> , <https://astrea.linkeddata.es/shapes#a85e41a24b137119b9f5ee7085e9ec77> , <https://astrea.linkeddata.es/shapes#a1552f83e7fb6fdb7d276f6bd4fea4a3> , <https://astrea.linkeddata.es/shapes#aa1d0557de28bc344ca793495c927be0> , <https://astrea.linkeddata.es/shapes#44be63d2ca520726895155e9458468cd> , <https://astrea.linkeddata.es/shapes#eafb4c0ef72a6a4f91f2d6c8de9bef22> , <https://astrea.linkeddata.es/shapes#9260591c924d15c0849e32127cf67001> , <https://astrea.linkeddata.es/shapes#a50715baffa37deeb473f22fe7885432> , <https://astrea.linkeddata.es/shapes#833d0d6cb8da95eae690d36493b35e80> , <https://astrea.linkeddata.es/shapes#bdef92420ab62ae1f5c548c7451df1bb> , <https://astrea.linkeddata.es/shapes#e06e3aa3f9b0d63b1b98d4c9e8ee96fd> , <https://astrea.linkeddata.es/shapes#8da677f7a80038d3ccb6be294d75ab4f> , <https://astrea.linkeddata.es/shapes#6895a05d4c8d1b7013bbbfd90520d7e3> , <https://astrea.linkeddata.es/shapes#56d043b44f4979e12d535a6d2155e7d7> , <https://astrea.linkeddata.es/shapes#180965c468ca58666bc399a8f0f43e59> , <https://astrea.linkeddata.es/shapes#19d22a065e6030c770fe7371c4190f03> , <https://astrea.linkeddata.es/shapes#79718a847035fc6a239ada2e78827740> , <https://astrea.linkeddata.es/shapes#90db99715e6a98b72ae40c32b4405d89> , <https://astrea.linkeddata.es/shapes#9c873a92ad3d5087388b8a1e24a23795> , <https://astrea.linkeddata.es/shapes#9c5c3bb6f99cab7398c30f9f3c3bcd61> , <https://astrea.linkeddata.es/shapes#c28b60b088d6f49a440427cd6af7e7d5> , <https://astrea.linkeddata.es/shapes#3fddb696850446e40d2e70a8589e6c60> , <https://astrea.linkeddata.es/shapes#8930bfa649f68cfc55fc675490597d64> , <https://astrea.linkeddata.es/shapes#9c373870120420302ae520297d2a945a> , <https://astrea.linkeddata.es/shapes#6f9a4b1c3895c36aadf6a486bea772c4> , <https://astrea.linkeddata.es/shapes#36ac79162647556c2b6bd09ddaa6d5cc> , <https://astrea.linkeddata.es/shapes#ff2d81363a0880e8d5db6e146defdb78> , <https://astrea.linkeddata.es/shapes#d6146b0a6ebd5d3b95f8512584fac5ec> , <https://astrea.linkeddata.es/shapes#e7eda359764f28af7747f4c8bfcb2d1d> , <https://astrea.linkeddata.es/shapes#b1041e1ad915b9311e67950afc0b9dd6> , <https://astrea.linkeddata.es/shapes#bbaf06940bb760d2335082404fe544a0> , <https://astrea.linkeddata.es/shapes#1541facb478cd70b6b13bc8000c91c56> , <https://astrea.linkeddata.es/shapes#c4b37c02e5b6d9815a4e91155a259570> , <https://astrea.linkeddata.es/shapes#e705abdaedeb2f47b796d9925633e34e> , <https://astrea.linkeddata.es/shapes#ddce5d9a3105287451d11a5bb4f80c6a> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/603031756> , <https://astrea.linkeddata.es/report/0314804160> .
+
+<https://astrea.linkeddata.es/shapes#2953b61ec7911b3cc6f460e8d8536509>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has name translated English" ;
+        sh:name           "has name translated English" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasNameTranslatedEnglish .
+
+<https://astrea.linkeddata.es/shapes#09246dc7582d01458719e13145c89d1e>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-base:hasSource ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-base:Entity ] .
+
+<https://astrea.linkeddata.es/shapes#e83ea7111ab8d84767e8915cdd8d889b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/L2/> ;
+        rdfs:label        "has document filing period" ;
+        sh:class          gleif-base:Period ;
+        sh:name           "has document filing period" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.gleif.org/ontology/L2/hasDocumentFilingPeriod> .
+
+<https://astrea.linkeddata.es/shapes#581d4546b5e5eccfa7535fda4460639f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "identifies" ;
+        sh:maxCount       1 ;
+        sh:name           "identifies" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:identifies .
+
+<https://astrea.linkeddata.es/shapes#b880de5baa2a007a22132c76e257b2ee>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has next renewal date" ;
+        sh:datatype       xsd:dateTime ;
+        sh:name           "has next renewal date" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasNextRenewalDate ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#c1ac715e34fd7edc6ecbe3b091515c1f>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-base:hasLegalJurisdiction ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  lcc-cr:GeographicRegion ] .
+
+<https://astrea.linkeddata.es/shapes#36ac79162647556c2b6bd09ddaa6d5cc>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasEnd .
+
+<https://astrea.linkeddata.es/shapes#bdef92420ab62ae1f5c548c7451df1bb>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-L1:hasManagingLOU ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-L1:LocalOperatingUnit ] .
+
+<https://astrea.linkeddata.es/shapes#8c618b3005006753292095f9e3802613>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1" ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasAddressNumberWithinBuilding .
+
+<https://astrea.linkeddata.es/shapes#dd504f5cd04dc4172b8927b0d29f8f4b>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-L1:hasOtherAddresses ;
+        sh:qualifiedMinCount    "0"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-base:PhysicalAddress ] .
+
+<https://astrea.linkeddata.es/shapes#9eb69392753521164cedbbfb4fbc834e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "legal person" ;
+        sh:name           "legal person" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    gleif-base:LegalPerson .
+
+<https://astrea.linkeddata.es/shapes#1d251c7ebb130c1a6e64707fb8fc27a5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has name" ;
+        sh:name           "has name" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasName .
+
+<https://astrea.linkeddata.es/shapes#d2468e65efa0e8f1bbde0aa6baac6803>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <https://www.gleif.org/ontology/L2/hasValidationDocuments> ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <https://www.gleif.org/ontology/L2/RelationshipValidationDocumentsKind> ] .
+
+<https://astrea.linkeddata.es/shapes#306e0567ef62e99082d850348a582ba6>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasStart .
+
+<https://astrea.linkeddata.es/shapes#34e43b5a0bdf1447dace59deeccb53b3>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <https://www.gleif.org/ontology/L2/hasRelationshipStatus> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <https://www.gleif.org/ontology/L2/RelationshipStatus> ] .
+
+<https://astrea.linkeddata.es/shapes#39d1e487ba2f35e1c3d46bcc2b8f2c13>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <https://www.gleif.org/ontology/L2/hasRelationshipPeriod> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-base:Period ] .
+
+<https://astrea.linkeddata.es/shapes#a85e41a24b137119b9f5ee7085e9ec77>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has registration identifier" ;
+        sh:class          gleif-base:RegistryIdentifier ;
+        sh:name           "has registration identifier" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasRegistrationIdentifier .
+
+<https://astrea.linkeddata.es/shapes#4fbf0a5a11d61f56863166bc04997022>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:isRegisteredIn .
+
+<https://astrea.linkeddata.es/shapes#180965c468ca58666bc399a8f0f43e59>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "identifier" ;
+        sh:name           "identifier" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#0c71f331ea9bbe5613cb3611d883cfbf> , <https://astrea.linkeddata.es/shapes#fe8efc643b67eb1b2a851b732dd4f824> ;
+        sh:targetClass    gleif-base:Identifier .
+
+<https://astrea.linkeddata.es/shapes#f1605a56ade675ef52c78bac4bb82c5f>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-base:hasEntityStatus ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-base:EntityStatus ] .
+
+<https://astrea.linkeddata.es/shapes#a1552f83e7fb6fdb7d276f6bd4fea4a3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "registry" ;
+        sh:name           "registry" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3374f932f187d04e3e20badbbeb30c92> ;
+        sh:targetClass    gleif-base:Registry .
+
+<https://astrea.linkeddata.es/shapes#d0d51a9495e6c136802706805c2b299f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has abbreviation local" ;
+        sh:name           "has abbreviation local" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasAbbreviationLocal .
+
+<https://astrea.linkeddata.es/shapes#0e53cb00f01d3240fc82a046ea349c96>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "records" ;
+        sh:maxCount       1 ;
+        sh:name           "records" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#d03154301083cf8bfac9ad31104b108b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "physical address"@en ;
+        sh:name           "physical address"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#24317831515963db2039859f35833cb0> , <https://astrea.linkeddata.es/shapes#f090fd9ae0f7cc2b6f6e4de3324567d3> , <https://astrea.linkeddata.es/shapes#8c618b3005006753292095f9e3802613> , <https://astrea.linkeddata.es/shapes#3ce6b698dcb47a9ba5e97301fa5121ab> , <https://astrea.linkeddata.es/shapes#50d3f75527d6ae578fbd400b65a8089a> , <https://astrea.linkeddata.es/shapes#1c6f6cb1d2b9d6f68de3cda10982877c> , <https://astrea.linkeddata.es/shapes#9851716dfb569efc1f23f7b5da050c6b> , <https://astrea.linkeddata.es/shapes#37ead08f8f9a196e09d4553ad7711118> , <https://astrea.linkeddata.es/shapes#5f23e2383e193878b2b2b87d46c7c73f> , <https://astrea.linkeddata.es/shapes#6dedb42efd9c3c065b3e54fbfa0b1cb7> , <https://astrea.linkeddata.es/shapes#6f9a4b1c3895c36aadf6a486bea772c4> , <https://astrea.linkeddata.es/shapes#df7e0bd8bdd99cf70d6a2e612660864e> ;
+        sh:targetClass    gleif-base:PhysicalAddress .
+
+<https://astrea.linkeddata.es/report/603031756>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://www.gleif.org/ontology/L1/" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#d0ee41371cdf68d975da31b0ec047a4a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has address line 3" ;
+        sh:name           "has address line 3" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasAddressLine3 .
+
+<https://astrea.linkeddata.es/shapes#d49a9f8b35ac3107c526ae4746823a54>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasLastUpdateDate .
+
+<https://astrea.linkeddata.es/shapes#afff9072671ee8cc573701ae7244dd4c>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasSuccessorName .
+
+<https://astrea.linkeddata.es/shapes#6f49a0de27e39316a431e9f03fcdaf90>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-L1:hasOtherValidationIdentifier ;
+        sh:qualifiedMinCount    "0"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-L1:BusinessRegistryIdentifier ] .
+
+<https://astrea.linkeddata.es/shapes#9c373870120420302ae520297d2a945a>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-L1:hasTransliteratedHeadquartersAddress ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-base:PhysicalAddressASCII ] .
+
+<https://astrea.linkeddata.es/shapes#09a9e532bf5a835f10a4b74673fe9c6f>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d2affd71e43b735c9d3d58201a5ad5ae> ;
+        sh:targetClass  gleif-ra:BusinessRegistryIdentifier .
+
+<https://astrea.linkeddata.es/shapes#622e3f71b8add1ea4f6141ff73fff005>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "branch" ;
+        sh:name           "branch" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    gleif-L1:Branch .
+
+<https://astrea.linkeddata.es/shapes#5cfa598d7d05d5d55cc877b1e90560ce>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has name additional local" ;
+        sh:name           "has name additional local" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasNameAdditionalLocal .
+
+<https://astrea.linkeddata.es/shapes#41139a4efe78b5f454a21529fdf21176>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has start"@en ;
+        sh:datatype       xsd:dateTime ;
+        sh:name           "has start"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasStart ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#1c6f6cb1d2b9d6f68de3cda10982877c>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-base:hasRegion ;
+        sh:qualifiedMaxCount    "1" ;
+        sh:qualifiedValueShape  [ sh:class  lcc-cr:Region ] .
+
+<https://astrea.linkeddata.es/shapes#8930bfa649f68cfc55fc675490597d64>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "legal entity identifier" ;
+        sh:name           "legal entity identifier" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#85f5f34ee6d7c1e626352e1e29f024f7> , <https://astrea.linkeddata.es/shapes#f11c0fa39c7fe745223160127d8247ce> ;
+        sh:targetClass    gleif-L1:LegalEntityIdentifier .
+
+<https://astrea.linkeddata.es/shapes#df7e0bd8bdd99cf70d6a2e612660864e>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1" ;
+        sh:minCount  "1" ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasAddressLine1 .
+
+<https://astrea.linkeddata.es/shapes#79718a847035fc6a239ada2e78827740>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-L1:hasManagingLOU ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-L1:LocalOperatingUnit ] .
+
+<https://astrea.linkeddata.es/shapes#16813a8f99700d058e3d8a80d2265d8d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has preferred ASCII transliterated headquarters address" ;
+        sh:name           "has preferred ASCII transliterated headquarters address" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasPreferredASCIITransliteratedHeadquartersAddress .
+
+<https://astrea.linkeddata.es/shapes#9c873a92ad3d5087388b8a1e24a23795>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has first address line" ;
+        sh:equals         gleif-base:hasAddressLine1 ;
+        sh:name           "has first address line" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasFirstAddressLine .
+
+<https://astrea.linkeddata.es/shapes#4f5a448dd15c5676b3dfaf00d54afc65>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/L2/> ;
+        rdfs:label        "international branch relationship" ;
+        sh:name           "international branch relationship" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://www.gleif.org/ontology/L2/InternationalBranchRelationship> .
+
+<https://astrea.linkeddata.es/shapes#65298ee18bc8c5e3d9cc9481d8affa41>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasLastUpdateDate .
+
+<https://astrea.linkeddata.es/shapes#50d3f75527d6ae578fbd400b65a8089a>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1" ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasAddressLine4 .
+
+<https://astrea.linkeddata.es/shapes#85f5f34ee6d7c1e626352e1e29f024f7>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-base:identifies ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-L1:RegisteredEntity ] .
+
+<https://astrea.linkeddata.es/shapes#25069c1a2fa427d4507ffb1387aae8bd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "entity" ;
+        sh:name           "entity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#8da677f7a80038d3ccb6be294d75ab4f> , <https://astrea.linkeddata.es/shapes#e870f2c345383fe686a4f659ce3549e0> , <https://astrea.linkeddata.es/shapes#342ecd6667d27501e27ddc2c2154b4fa> , <https://astrea.linkeddata.es/shapes#ddce5d9a3105287451d11a5bb4f80c6a> , <https://astrea.linkeddata.es/shapes#7b74e6f497d41688cabbd41c8c7c3d92> , <https://astrea.linkeddata.es/shapes#46d555e11516d28413164fc594c49e93> , <https://astrea.linkeddata.es/shapes#aa1d0557de28bc344ca793495c927be0> , <https://astrea.linkeddata.es/shapes#44be63d2ca520726895155e9458468cd> , <https://astrea.linkeddata.es/shapes#1541facb478cd70b6b13bc8000c91c56> , <https://astrea.linkeddata.es/shapes#a508b967fa9180a17c2c076a8be340a8> , <https://astrea.linkeddata.es/shapes#30da66faad7c4e745942bb81c1efd502> , <https://astrea.linkeddata.es/shapes#3f56d071a7251f2da035cec3a756bea6> , <https://astrea.linkeddata.es/shapes#9a8ca3cf63332536889fc76251461417> , <https://astrea.linkeddata.es/shapes#d4ac9c312a5c92166ac8236507c3afb2> , <https://astrea.linkeddata.es/shapes#32c529984784c304343e511453077423> ;
+        sh:targetClass    gleif-base:Entity .
+
+<https://astrea.linkeddata.es/shapes#bfcea747d77fe06a33244753f5f3b2a4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has associated entity name" ;
+        sh:name           "has associated entity name" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-L1:hasAssociatedEntityName .
+
+<https://astrea.linkeddata.es/shapes#5a956a4fd41c47b7458b2ac6bc645225>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has auto ASCII transliterated legal name" ;
+        sh:name           "has auto ASCII transliterated legal name" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-L1:hasAutoASCIITransliteratedLegalName .
+
+<https://astrea.linkeddata.es/shapes#46d555e11516d28413164fc594c49e93>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasEntityExpirationDate .
+
+<https://astrea.linkeddata.es/shapes#d2f3a23d50745b5044dd913cb2622776>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/L2/> ;
+        rdfs:label        "relationship status" ;
+        sh:in             ( <https://astrea.linkeddata.es/shapes#b6fb093126b9fc2281ef4a0da70634f7> <https://astrea.linkeddata.es/shapes#4384235b706604fff12e9a15b597452e> ) ;
+        sh:name           "relationship status" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://www.gleif.org/ontology/L2/RelationshipStatus> .
+
+<https://astrea.linkeddata.es/shapes#2565f37b5f4008b7052e2f658d35d380>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has previous legal name" ;
+        sh:name           "has previous legal name" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-L1:hasPreviousLegalName .
+
+<https://astrea.linkeddata.es/shapes#1b2a58592929905195ab2afa46991203>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "registered entity" ;
+        sh:name           "registered entity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#4ed8a632ec5432c5074233766a9c28fd> , <https://astrea.linkeddata.es/shapes#478ce82409846eb86867defb31af81a8> , <https://astrea.linkeddata.es/shapes#9c373870120420302ae520297d2a945a> , <https://astrea.linkeddata.es/shapes#3b72bb15a80d7ce96a1739b3817701dd> , <https://astrea.linkeddata.es/shapes#658ab0f772a6d92b4bb4541f40496f80> , <https://astrea.linkeddata.es/shapes#dd504f5cd04dc4172b8927b0d29f8f4b> , <https://astrea.linkeddata.es/shapes#81395fc140a79396643e0548071a1b5d> , <https://astrea.linkeddata.es/shapes#75aaa50bb3c4703e28ed224772c7c48a> , <https://astrea.linkeddata.es/shapes#afff9072671ee8cc573701ae7244dd4c> , <https://astrea.linkeddata.es/shapes#c1ac715e34fd7edc6ecbe3b091515c1f> , <https://astrea.linkeddata.es/shapes#8b20e1d178e16bf6e7004f27c3a492d8> , <https://astrea.linkeddata.es/shapes#33c56fcbd6372c3133e2531d5a6bd59d> , <https://astrea.linkeddata.es/shapes#af2306ac7cb2632e9891105b74a862b7> , <https://astrea.linkeddata.es/shapes#f1605a56ade675ef52c78bac4bb82c5f> , <https://astrea.linkeddata.es/shapes#2fda3770de8dff0f0c006fb3901519eb> ;
+        sh:targetClass    gleif-L1:RegisteredEntity .
+
+<https://astrea.linkeddata.es/shapes#2f3cc808cce16a14a8568a178b9b6904>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has last modification date" ;
+        sh:datatype       xsd:dateTime ;
+        sh:name           "has last modification date" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasLastUpdateDate ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#811c4b943c8605d95d2f1b464e28b1b7>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <https://www.gleif.org/ontology/L2/hasAccountingStandard> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <https://www.gleif.org/ontology/L2/AccountingStandard> ] .
+
+<https://astrea.linkeddata.es/shapes#4a6dbb28975c135d8d12e6dc6b60f0a4>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasNextRenewalDate .
+
+<https://astrea.linkeddata.es/shapes#0bd3e8d5c65aba502aa4f7b488b3ca73>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "is registered in" ;
+        sh:class          gleif-base:Registry ;
+        sh:name           "is registered in" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:isRegisteredIn .
+
+<https://astrea.linkeddata.es/shapes#b35859eef297520ced1d614c30a3e0c0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has abbreviation" ;
+        sh:name           "has abbreviation" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasAbbreviation .
+
+<https://astrea.linkeddata.es/shapes#7b74e6f497d41688cabbd41c8c7c3d92>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has address" ;
+        sh:class          gleif-base:PhysicalAddress ;
+        sh:name           "has address" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:hasAddress .
+
+<https://astrea.linkeddata.es/shapes#9c5c3bb6f99cab7398c30f9f3c3bcd61>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has alternative language headquarters address" ;
+        sh:name           "has alternative language headquarters address" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasAlternativeLanguageHeadquartersAddress .
+
+<https://astrea.linkeddata.es/shapes#b1041e1ad915b9311e67950afc0b9dd6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has other validation identifier" ;
+        sh:class          gleif-base:RegistryIdentifier ;
+        sh:name           "has other validation identifier" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasOtherValidationIdentifier .
+
+<https://astrea.linkeddata.es/shapes#37ead08f8f9a196e09d4553ad7711118>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1" ;
+        sh:minCount  "1" ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasCity .
+
+<https://astrea.linkeddata.es/shapes#c95b820ec9f9adeecec3889837eaa6c9>
+        a            sh:PropertyShape ;
+        sh:minCount  "0"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://www.gleif.org/ontology/L2/hasValidationReference> .
+
+<https://astrea.linkeddata.es/shapes#e705abdaedeb2f47b796d9925633e34e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "identifies and records" ;
+        sh:class          gleif-L1:RegisteredEntity ;
+        sh:maxCount       1 ;
+        sh:name           "identifies and records" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:identifiesAndRecords .
+
+<https://astrea.linkeddata.es/report/0314804160>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://www.gleif.org/ontology/Base/" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#3fddb696850446e40d2e70a8589e6c60>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "mail routing" ;
+        sh:name           "mail routing" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasMailRouting .
+
+<https://astrea.linkeddata.es/shapes#a6244a1576e3b268b1914889010f6bbf>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "local operating unit" ;
+        sh:name           "local operating unit" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    gleif-L1:LocalOperatingUnit .
+
+<https://astrea.linkeddata.es/shapes#e06e3aa3f9b0d63b1b98d4c9e8ee96fd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "period"@en ;
+        sh:name           "period"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#5490f2c89216d15dcd9dd3c5b087eef3> , <https://astrea.linkeddata.es/shapes#36ac79162647556c2b6bd09ddaa6d5cc> , <https://astrea.linkeddata.es/shapes#41139a4efe78b5f454a21529fdf21176> , <https://astrea.linkeddata.es/shapes#306e0567ef62e99082d850348a582ba6> ;
+        sh:targetClass    gleif-base:Period .
+
+<https://astrea.linkeddata.es/shapes#b36d42ce00d86f2ed997b673be3f4953>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has name ASCII automatic" ;
+        sh:name           "has name ASCII automatic" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasNameASCIIAutomatic .
+
+<https://astrea.linkeddata.es/shapes#602a990cd8348710082d9b64488926bd>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-L1:hasFundFamily ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-L1:FundFamily ] .
+
+<https://astrea.linkeddata.es/shapes#eafb4c0ef72a6a4f91f2d6c8de9bef22>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/L2/> ;
+        rdfs:label        "has accounting period" ;
+        sh:class          gleif-base:Period ;
+        sh:name           "has accounting period" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.gleif.org/ontology/L2/hasAccountingPeriod> .
+
+<https://astrea.linkeddata.es/shapes#19d22a065e6030c770fe7371c4190f03>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <https://www.gleif.org/ontology/L2/hasChild> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-L1:RegisteredEntity ] .
+
+<https://astrea.linkeddata.es/shapes#8078e906608939fea09668ea433d5f19>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has auto ASCII transliterated headquarters address" ;
+        sh:name           "has auto ASCII transliterated headquarters address" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasAutoASCIITransliteratedHeadquartersAddress .
+
+<https://astrea.linkeddata.es/shapes#0f3aa34701d49e907e76a2c3f9efe7f8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "registry identifier" ;
+        sh:name           "registry identifier" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#4fbf0a5a11d61f56863166bc04997022> ;
+        sh:targetClass    gleif-base:RegistryIdentifier .
+
+<https://astrea.linkeddata.es/shapes#50b71d2bfc4045b5d9c9338b14c4d91f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has fund family name" ;
+        sh:name           "has fund family name" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-L1:hasFundFamilyName .
+
+<https://astrea.linkeddata.es/shapes#fa22673aa0da21b8d35236b10893b0d9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has name ASCII" ;
+        sh:name           "has name ASCII" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gleif-base:hasNameASCII .
+
+<https://astrea.linkeddata.es/shapes#4d3e5260aee4835e3fd4664455edbab1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/L2/> ;
+        rdfs:label        "has validation reference" ;
+        sh:name           "has validation reference" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <https://www.gleif.org/ontology/L2/hasValidationReference> .
+
+<https://astrea.linkeddata.es/shapes#3b72bb15a80d7ce96a1739b3817701dd>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-L1:hasLegalName .
+
+<https://astrea.linkeddata.es/shapes#32c529984784c304343e511453077423>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-L1: ;
+        rdfs:label        "has legal form" ;
+        sh:class          gleif-elf:EntityLegalForm ;
+        sh:name           "has legal form" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-L1:hasLegalForm .
+
+<https://astrea.linkeddata.es/shapes#d8f775b9fc8af7004fdb5dae12fdd78b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.gleif.org/ontology/L2/> ;
+        rdfs:label        "has validation documents" ;
+        sh:class          <https://www.gleif.org/ontology/L2/RelationshipValidationDocumentsKind> ;
+        sh:name           "has validation documents" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.gleif.org/ontology/L2/hasValidationDocuments> .
+
+<https://astrea.linkeddata.es/shapes#93c9be0ac9f2f532e36b18b508b69d60>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-L1:hasValidationSources ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  []  ] .
+
+<https://astrea.linkeddata.es/shapes#478ce82409846eb86867defb31af81a8>
+        a            sh:PropertyShape ;
+        sh:minCount  "0"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-L1:hasOtherEntityNames .

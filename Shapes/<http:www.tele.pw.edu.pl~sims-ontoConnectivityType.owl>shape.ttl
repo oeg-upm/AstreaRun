@@ -1,0 +1,283 @@
+@prefix :      <http://www.tele.pw.edu.pl/~sims-onto/ParticipantCharacteristic.owl#> .
+@prefix te:    <http://www.tele.pw.edu.pl/~sims-onto/TelecomEntity.owl#> .
+@prefix pc:    <http://www.tele.pw.edu.pl/~sims-onto/ParticipantCharacteristic.owl#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl11: <http://www.w3.org/2006/12/owl11#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl11xml: <http://www.w3.org/2006/12/owl11-xml#> .
+
+<https://astrea.linkeddata.es/shapes#ee47d72417e2635b66f694bc1a081835>
+        a               sh:NodeShape ;
+        sh:description  "Defines SIP identification address type." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  pc:SIPAddressType .
+
+<https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  owl:Thing .
+
+<https://astrea.linkeddata.es/shapes#105a49f2bf43ba6e6e2fdb738c047df3>
+        a               sh:PropertyShape ;
+        rdfs:label      "Defines transmission technology." ;
+        sh:class        <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#BearerType> ;
+        sh:description  "Defines transmission technology." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#hasBearerType> .
+
+<https://astrea.linkeddata.es/shapes#f96e5563bfc52b1cd5a221accf337255>
+        a               sh:NodeShape ;
+        sh:description  "Defines transmission technology used to transfer voice or data in network." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#BearerType> .
+
+<https://astrea.linkeddata.es/shapes#40a6fe38ff34964ed6c20899dd16c8e3>
+        a               sh:PropertyShape ;
+        rdfs:label      "Defines state of communication participant." ;
+        sh:class        pc:ParticipantState ;
+        sh:description  "Defines state of communication participant." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         pc:hasState .
+
+<https://astrea.linkeddata.es/shapes#e0a72e5aa104e984a2b919003448f8c8>
+        a               sh:NodeShape ;
+        sh:description  "Defines network bearer service that allows transmission of information signals between network interfaces. E.g. transmission of MMS in GSM network is modelled as instance 'GSM_GPRS_IPV4'. Bearer capabilities are modeled as sublasses." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#105a49f2bf43ba6e6e2fdb738c047df3> , <https://astrea.linkeddata.es/shapes#66b910b32cb3a67a9be10b1717d2fd1b> , <https://astrea.linkeddata.es/shapes#b543ccf96ffddf7d05497322e99baa79> ;
+        sh:targetClass  <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#NetworkBearerService> .
+
+<https://astrea.linkeddata.es/shapes#fc9184eb3eea79c3a9cad8a151fa1130>
+        a            sh:PropertyShape ;
+        sh:class     <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#NetworkBearerService> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#hasNetworkBearerService> .
+
+<https://astrea.linkeddata.es/shapes#c6c60f248d433d76f0777aa33a959938>
+        a               sh:NodeShape ;
+        sh:description  "Defines type of address supported in network and associated with bearer. Specific addresses are modelled as instances e.g. GSM_MSISDN describe type of address used in GSM network." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#BearerAddressType> .
+
+<https://astrea.linkeddata.es/shapes#4cc3f304554aec07b7df3a19a0bd2e67>
+        a               sh:NodeShape ;
+        sh:description  "Defines MSISDN (Mobile Subscriber ISDN Number) address type which refers to the telephone number of a mobile subscriber." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  pc:GSMMSISDNAddressType .
+
+<https://astrea.linkeddata.es/report/1899899857>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.tele.pw.edu.pl/~sims-onto/ParticipantCharacteristic.owl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#b798a40bd257511a9378527f2e6cd4a6>
+        a               sh:PropertyShape ;
+        rdfs:label      "Defines address type which allow to identify communication participant." ;
+        sh:class        pc:ParticipantIdentificationType ;
+        sh:description  "Defines address type which allow to identify communication participant." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         pc:hasIdentificationAddress .
+
+<https://astrea.linkeddata.es/shapes#f568945ffa85a7c08ad52eb41cea4a8c>
+        a               sh:NodeShape ;
+        sh:description  "Defines bearer capable to transmit voice." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#VoiceBearerService> .
+
+<https://astrea.linkeddata.es/shapes#96e277de5088844b6ae616b713786cfc>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b798a40bd257511a9378527f2e6cd4a6> , <https://astrea.linkeddata.es/shapes#219e884d2bce605593a538ff9366ddd2> , <https://astrea.linkeddata.es/shapes#40a6fe38ff34964ed6c20899dd16c8e3> , <https://astrea.linkeddata.es/shapes#19fe770e3a4f7920aebb2dcdc86f5b38> , <https://astrea.linkeddata.es/shapes#8645d5b2a678f32545355e0a60d06038> ;
+        sh:targetClass  te:CommunicationParticipant .
+
+<https://astrea.linkeddata.es/shapes#d669c5d4b1163ea2bd5aaeaae8310aed>
+        a               sh:NodeShape ;
+        sh:description  "Defines that user is logged in at his terminal but temporarily is unattainable and can not take part in two way communication." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  pc:CommingSoon .
+
+<https://astrea.linkeddata.es/shapes#fed0080e79db1b39bacd04ed7e4f227d>
+        a               sh:NodeShape ;
+        sh:description  "Defines e-mail address type." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  pc:EMailAddressType .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#219e884d2bce605593a538ff9366ddd2>
+        a               sh:PropertyShape ;
+        rdfs:label      "Defines profile which express user rights during service." ;
+        sh:class        pc:ParticipantProfile ;
+        sh:description  "Defines profile which express user rights during service." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         pc:hasProfile .
+
+<https://astrea.linkeddata.es/shapes#d31ac6c02bbd8943a1a764487de6d997>
+        a               sh:NodeShape ;
+        sh:description  "Wireless connectivity type (e.g., GSM connectivity)" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#WirelessConnectivityType> .
+
+<https://astrea.linkeddata.es/shapes#2092c99a9cb7bfe214b0fc91f160eed8>
+        a               sh:PropertyShape ;
+        rdfs:label      "Defines communication initiatives to which communication participant has rights." ;
+        sh:class        te:CommunicationAction ;
+        sh:description  "Defines communication initiatives to which communication participant has rights." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         pc:hasPermissionTo .
+
+<https://astrea.linkeddata.es/shapes#b543ccf96ffddf7d05497322e99baa79>
+        a               sh:PropertyShape ;
+        rdfs:label      "Defines network which supports bearer." ;
+        sh:class        <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#Network> ;
+        sh:description  "Defines network which supports bearer." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#referesToNetwork> .
+
+<https://astrea.linkeddata.es/shapes#3654e116b7cb8453076afb27cf8250dc>
+        a               sh:NodeShape ;
+        sh:description  "Defines that user is not logged in at his terminal and cannot take part in communication." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  pc:Unattainable .
+
+<https://astrea.linkeddata.es/shapes#37b2bbb751c339a5765bae6bc490c37f>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ec93e7e27d70c7965005ab4bfa933100> , <https://astrea.linkeddata.es/shapes#fc9184eb3eea79c3a9cad8a151fa1130> ;
+        sh:targetClass  te:ConnectivityType .
+
+<https://astrea.linkeddata.es/shapes#9e59ccf8f7cc69a1cbd4376451f44461>
+        a               sh:NodeShape ;
+        sh:description  "Defines bearer capable to transmit data." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#DataBearerService> .
+
+<https://astrea.linkeddata.es/shapes#6dd729a8009985fcf5fa49b742d777d8>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  te:CommunicationAction .
+
+<https://astrea.linkeddata.es/shapes#082d00860f0020022523d546df77143d>
+        a               sh:NodeShape ;
+        sh:description  "Short range wireless connectivity type (WiFi, Bluetooth)" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#ShortRangeConnectivityType> .
+
+<https://astrea.linkeddata.es/shapes#19fe770e3a4f7920aebb2dcdc86f5b38>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      pc:hasIdentificationAddress .
+
+<https://astrea.linkeddata.es/shapes#f6c82dbe2a1de4afe9016e3ca4c2d85b>
+        a               sh:NodeShape ;
+        sh:description  "Defines profile of the communication participant. Can be used to specify rights to communication initiative." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2092c99a9cb7bfe214b0fc91f160eed8> ;
+        sh:targetClass  pc:ParticipantProfile .
+
+<https://astrea.linkeddata.es/shapes#c7ba27e9ea2b63e5765f4a2e5f88489a>
+        a               sh:NodeShape ;
+        sh:description  "Defines bearer capable to transmit video." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#VideoBearerService> .
+
+<https://astrea.linkeddata.es/shapes#79c2affd4cc273bf8951ebd8e7f26628>
+        a               sh:NodeShape ;
+        sh:description  "Defines the international public telecommunication numbering plan used in the PSTN and some other data networks." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  pc:E.164AddressType .
+
+<https://astrea.linkeddata.es/shapes#7b7bf3c2504a2ac165154c0ec096e33a>
+        a               sh:NodeShape ;
+        sh:description  "Long range wireless connectivity, such as WiMAX or GSM" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#LongRangeConnectivityType> .
+
+<https://astrea.linkeddata.es/shapes#87d370974c15fddf8210620c4c51f0f8>
+        a               sh:NodeShape ;
+        sh:description  "Defines status of the user in service, it could also be used express that participant is logged in to his terminal and has access to the network." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  pc:CommingSoon , pc:Busy , pc:Unattainable , pc:Accessible , pc:ParticipantState .
+
+<https://astrea.linkeddata.es/shapes#2169ba823c81ad561f76e88c8c1e0f39>
+        a               sh:NodeShape ;
+        sh:description  "Defines that user is logged in and can take part in communication." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  pc:Accessible .
+
+<https://astrea.linkeddata.es/shapes#ec93e7e27d70c7965005ab4bfa933100>
+        a               sh:PropertyShape ;
+        rdfs:label      "Defines network bearers supported by connectivity type." ;
+        sh:class        <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#NetworkBearerService> ;
+        sh:description  "Defines network bearers supported by connectivity type." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#hasNetworkBearerService> .
+
+<https://astrea.linkeddata.es/shapes#66b910b32cb3a67a9be10b1717d2fd1b>
+        a               sh:PropertyShape ;
+        rdfs:label      "Defines network address type used by network bearer type." ;
+        sh:class        <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#BearerAddressType> ;
+        sh:description  "Defines network address type used by network bearer type." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#referesToAddress> .
+
+<https://astrea.linkeddata.es/shapes#bfdc1ddd1d51279578135b20a332feff>
+        a               sh:NodeShape ;
+        sh:description  "Cellular connectivity, e.g., GSM" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#CellularConnectivityType> .
+
+<https://astrea.linkeddata.es/shapes#49d2640f9767f5f332dff25b66c9bfb1>
+        a               sh:NodeShape ;
+        sh:description  "Defines bearer capable to transmit text. E.g. bearer responsible for SMS transfer." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#TextBearerService> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#2092c99a9cb7bfe214b0fc91f160eed8> , <https://astrea.linkeddata.es/shapes#219e884d2bce605593a538ff9366ddd2> , <https://astrea.linkeddata.es/shapes#b543ccf96ffddf7d05497322e99baa79> , <https://astrea.linkeddata.es/shapes#fed0080e79db1b39bacd04ed7e4f227d> , <https://astrea.linkeddata.es/shapes#87d370974c15fddf8210620c4c51f0f8> , <https://astrea.linkeddata.es/shapes#79c2affd4cc273bf8951ebd8e7f26628> , <https://astrea.linkeddata.es/shapes#6dd729a8009985fcf5fa49b742d777d8> , <https://astrea.linkeddata.es/shapes#bfdc1ddd1d51279578135b20a332feff> , <https://astrea.linkeddata.es/shapes#c6c60f248d433d76f0777aa33a959938> , <https://astrea.linkeddata.es/shapes#c7ba27e9ea2b63e5765f4a2e5f88489a> , <https://astrea.linkeddata.es/shapes#96e277de5088844b6ae616b713786cfc> , <https://astrea.linkeddata.es/shapes#3654e116b7cb8453076afb27cf8250dc> , <https://astrea.linkeddata.es/shapes#14e0cd68353b4486ba06a961395924b1> , <https://astrea.linkeddata.es/shapes#4da31b272d2b8538fcf855f654bc7a1d> , <https://astrea.linkeddata.es/shapes#96c4722b4c3e2af23372c73dfb8e7e70> , <https://astrea.linkeddata.es/shapes#4cc3f304554aec07b7df3a19a0bd2e67> , <https://astrea.linkeddata.es/shapes#d31ac6c02bbd8943a1a764487de6d997> , <https://astrea.linkeddata.es/shapes#f96e5563bfc52b1cd5a221accf337255> , <https://astrea.linkeddata.es/shapes#9e59ccf8f7cc69a1cbd4376451f44461> , <https://astrea.linkeddata.es/shapes#ee47d72417e2635b66f694bc1a081835> , <https://astrea.linkeddata.es/shapes#37b2bbb751c339a5765bae6bc490c37f> , <https://astrea.linkeddata.es/shapes#7b7bf3c2504a2ac165154c0ec096e33a> , <https://astrea.linkeddata.es/shapes#19fe770e3a4f7920aebb2dcdc86f5b38> , <https://astrea.linkeddata.es/shapes#ec93e7e27d70c7965005ab4bfa933100> , <https://astrea.linkeddata.es/shapes#f6c82dbe2a1de4afe9016e3ca4c2d85b> , <https://astrea.linkeddata.es/shapes#f568945ffa85a7c08ad52eb41cea4a8c> , <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#d669c5d4b1163ea2bd5aaeaae8310aed> , <https://astrea.linkeddata.es/shapes#66b910b32cb3a67a9be10b1717d2fd1b> , <https://astrea.linkeddata.es/shapes#2169ba823c81ad561f76e88c8c1e0f39> , <https://astrea.linkeddata.es/shapes#f7c9cdf4bfcee8b10d23a79f53e85b4c> , <https://astrea.linkeddata.es/shapes#e0a72e5aa104e984a2b919003448f8c8> , <https://astrea.linkeddata.es/shapes#40a6fe38ff34964ed6c20899dd16c8e3> , <https://astrea.linkeddata.es/shapes#082d00860f0020022523d546df77143d> , <https://astrea.linkeddata.es/shapes#b798a40bd257511a9378527f2e6cd4a6> , <https://astrea.linkeddata.es/shapes#49d2640f9767f5f332dff25b66c9bfb1> , <https://astrea.linkeddata.es/shapes#105a49f2bf43ba6e6e2fdb738c047df3> , <https://astrea.linkeddata.es/shapes#8645d5b2a678f32545355e0a60d06038> , <https://astrea.linkeddata.es/shapes#fc9184eb3eea79c3a9cad8a151fa1130> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/1899899857> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#f7c9cdf4bfcee8b10d23a79f53e85b4c>
+        a               sh:NodeShape ;
+        sh:description  "Defines that user is logged in at his terminal but will not take part in communication." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  pc:Busy .
+
+<https://astrea.linkeddata.es/shapes#96c4722b4c3e2af23372c73dfb8e7e70>
+        a               sh:NodeShape ;
+        sh:description  "Defines participant address type." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  pc:ParticipantIdentificationType .
+
+<https://astrea.linkeddata.es/shapes#14e0cd68353b4486ba06a961395924b1>
+        a               sh:NodeShape ;
+        sh:description  "Fixed, wireline connectivity type (e.g., PSTN)" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#WirelineConnectivityType> .
+
+<https://astrea.linkeddata.es/shapes#4da31b272d2b8538fcf855f654bc7a1d>
+        a               sh:NodeShape ;
+        sh:description  "Defines general term for telecommunication network." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.tele.pw.edu.pl/~sims-onto/ConnectivityType.owl#Network> .
+
+<https://astrea.linkeddata.es/shapes#8645d5b2a678f32545355e0a60d06038>
+        a            sh:PropertyShape ;
+        sh:class     pc:ParticipantProfile ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      pc:hasProfile .

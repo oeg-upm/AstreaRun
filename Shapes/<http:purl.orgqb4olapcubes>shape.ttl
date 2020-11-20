@@ -1,0 +1,277 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#efca1dc521ddcbfab2fe39d601d36fea>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "Level has attribute"@en , "Indicates the attributes in an level"@en ;
+        sh:class          <http://purl.org/qb4olap/cubes#LevelAttribute> ;
+        sh:description    "Indicates the attributes in an level"@en ;
+        sh:name           "Level has attribute"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/qb4olap/cubes#hasAttribute> .
+
+<https://astrea.linkeddata.es/shapes#c618b700e567ba2d25015858eeeb6009>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "hierarchy belongs to dimension"@en , "Indicates to which dimension the hierarchy belongs"@en ;
+        sh:class          <http://purl.org/linked-data/cube#DimensionProperty> ;
+        sh:description    "Indicates to which dimension the hierarchy belongs"@en ;
+        sh:name           "hierarchy belongs to dimension"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/qb4olap/cubes#inDimension> .
+
+<https://astrea.linkeddata.es/report/0169004139>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/linked-data/cube#" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#6ebc57118f18f838c6fa9038ecbcf541>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "set of levels in hierarchy"@en , "Indicates the levels that compose the hierarchy"@en ;
+        sh:class          <http://purl.org/qb4olap/cubes#LevelProperty> ;
+        sh:description    "Indicates the levels that compose the hierarchy"@en ;
+        sh:name           "set of levels in hierarchy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/qb4olap/cubes#hasLevel> .
+
+<https://astrea.linkeddata.es/shapes#0e791a2295b48a91965c0ef5ddb4df85>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "Cardinality"@en ;
+        sh:description    "Class that represents different cardinalities restrictions. These may be applied to  hierarchy steps or to the relationship between facts and dimension levels"@en ;
+        sh:name           "Cardinality"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/qb4olap/cubes#Cardinality> .
+
+<https://astrea.linkeddata.es/shapes#5af2cae010f163449502756598b0a67f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "hierarchy step belongs to hierarchy"@en , "Indicates to which hierarchy a hierarchy step (pair of levels) belongs"@en ;
+        sh:class          <http://purl.org/qb4olap/cubes#Hierarchy> ;
+        sh:description    "Indicates to which hierarchy a hierarchy step (pair of levels) belongs"@en ;
+        sh:name           "hierarchy step belongs to hierarchy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/qb4olap/cubes#inHierarchy> .
+
+<https://astrea.linkeddata.es/shapes#e49c64c740f261736c2ff72f07d8128a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "An alternative to qb:componentProperty which allows to specify a cardinality constraint in fact-level relationship"@en , "cardinality constraint"@en , "cardinality"@en ;
+        sh:class          <http://purl.org/qb4olap/cubes#Cardinality> ;
+        sh:description    "An alternative to qb:componentProperty which allows to specify a cardinality constraint in fact-level relationship"@en ;
+        sh:name           "cardinality"@en , "cardinality constraint"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/qb4olap/cubes#cardinality> .
+
+<https://astrea.linkeddata.es/shapes#654a2345ada165bb50b71fc4ec2656e4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "child level"@en , "Child level property in a HierarchyStep"@en ;
+        sh:class          <http://purl.org/qb4olap/cubes#LevelProperty> ;
+        sh:description    "Child level property in a HierarchyStep"@en ;
+        sh:name           "child level"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/qb4olap/cubes#childLevel> .
+
+<https://astrea.linkeddata.es/shapes#e1b6f163d1c8f1b128933978031e0bcd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "Level property"@en ;
+        sh:description    "The class of components which represent the levels of a hierarchy"@en ;
+        sh:name           "Level property"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#efca1dc521ddcbfab2fe39d601d36fea> , <https://astrea.linkeddata.es/shapes#dda69ec6c150bb582cf4aa3bdd711034> ;
+        sh:targetClass    <http://purl.org/qb4olap/cubes#LevelProperty> .
+
+<https://astrea.linkeddata.es/shapes#066e91a6cc87a165a8c0e2cab65aa342>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "aggregate function"@en , "An alternative to qb:componentProperty which makes explicit that the component is an aggregate function"@en ;
+        sh:class          <http://purl.org/qb4olap/cubes#AggregateFunction> ;
+        sh:description    "An alternative to qb:componentProperty which makes explicit that the component is an aggregate function"@en ;
+        sh:name           "aggregate function"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/qb4olap/cubes#aggregateFunction> .
+
+<https://astrea.linkeddata.es/shapes#733c015d5afbfee34b891410275696c6>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#840ea47b8684d98e727969204d640049> ;
+        sh:targetClass  <http://purl.org/linked-data/cube#DimensionProperty> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#b9cbc53e2736b9e3085ae25c072a0a04> , <https://astrea.linkeddata.es/shapes#733c015d5afbfee34b891410275696c6> , <https://astrea.linkeddata.es/shapes#58107239cf40ac98e78affebee75e058> , <https://astrea.linkeddata.es/shapes#e49c64c740f261736c2ff72f07d8128a> , <https://astrea.linkeddata.es/shapes#b5058f72d9f76b4d536b009317669251> , <https://astrea.linkeddata.es/shapes#204c57739bcba9a0eb0f865f8fa5eee1> , <https://astrea.linkeddata.es/shapes#840ea47b8684d98e727969204d640049> , <https://astrea.linkeddata.es/shapes#654a2345ada165bb50b71fc4ec2656e4> , <https://astrea.linkeddata.es/shapes#99b417c56ef557024ac959d41f2533d0> , <https://astrea.linkeddata.es/shapes#a24c9d2e7c38c9afd3c935887e0d6836> , <https://astrea.linkeddata.es/shapes#c618b700e567ba2d25015858eeeb6009> , <https://astrea.linkeddata.es/shapes#e1b6f163d1c8f1b128933978031e0bcd> , <https://astrea.linkeddata.es/shapes#ac3c601db06e9cf24384a41d25ed8a80> , <https://astrea.linkeddata.es/shapes#7d0196f6c51b1429be7680e8bc1aceeb> , <https://astrea.linkeddata.es/shapes#aa04495a2395247b908d33d4b8a9c8bd> , <https://astrea.linkeddata.es/shapes#dda69ec6c150bb582cf4aa3bdd711034> , <https://astrea.linkeddata.es/shapes#066e91a6cc87a165a8c0e2cab65aa342> , <https://astrea.linkeddata.es/shapes#61b3fc6b2bcad739fe01e6f63ca99f4d> , <https://astrea.linkeddata.es/shapes#d27eb34834226b8b939b8f2e868a02b7> , <https://astrea.linkeddata.es/shapes#efca1dc521ddcbfab2fe39d601d36fea> , <https://astrea.linkeddata.es/shapes#7bd3ddb186a5d2cfd62aa246b65d4f07> , <https://astrea.linkeddata.es/shapes#c1be7cb1b0c84a6604f0b5e6ffb320fe> , <https://astrea.linkeddata.es/shapes#0e791a2295b48a91965c0ef5ddb4df85> , <https://astrea.linkeddata.es/shapes#68ebe4bd61e78454494dd57c8d86b182> , <https://astrea.linkeddata.es/shapes#5af2cae010f163449502756598b0a67f> , <https://astrea.linkeddata.es/shapes#6ebc57118f18f838c6fa9038ecbcf541> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/0169004139> .
+
+<https://astrea.linkeddata.es/shapes#840ea47b8684d98e727969204d640049>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "set of hierarchies in a dimensoin"@en , "Indicates the hierarchies that compose the dimension"@en ;
+        sh:class          <http://purl.org/qb4olap/cubes#Hierarchy> ;
+        sh:description    "Indicates the hierarchies that compose the dimension"@en ;
+        sh:name           "set of hierarchies in a dimensoin"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/qb4olap/cubes#hasHierarchy> .
+
+<https://astrea.linkeddata.es/shapes#b9cbc53e2736b9e3085ae25c072a0a04>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "Rollup property"@en ;
+        sh:description    "The class of properties which represent the rollup relationships."@en ;
+        sh:name           "Rollup property"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d27eb34834226b8b939b8f2e868a02b7> ;
+        sh:targetClass    <http://purl.org/qb4olap/cubes#RollupProperty> .
+
+<https://astrea.linkeddata.es/shapes#dda69ec6c150bb582cf4aa3bdd711034>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "Level has ID attribute"@en , "Indicates the attribute that identifies level members. Necessary to automatize ROLAP to QB4OLAP"@en ;
+        sh:class          <http://purl.org/linked-data/cube#AttributeProperty> ;
+        sh:description    "Indicates the attribute that identifies level members. Necessary to automatize ROLAP to QB4OLAP"@en ;
+        sh:name           "Level has ID attribute"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/qb4olap/cubes#hasID> .
+
+<https://astrea.linkeddata.es/shapes#aa04495a2395247b908d33d4b8a9c8bd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "level attribute in level"@en , "Indicates to which level the level attribute belongs"@en ;
+        sh:class          <http://purl.org/qb4olap/cubes#LevelProperty> ;
+        sh:description    "Indicates to which level the level attribute belongs"@en ;
+        sh:name           "level attribute in level"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/qb4olap/cubes#inLevel> .
+
+<https://astrea.linkeddata.es/shapes#61b3fc6b2bcad739fe01e6f63ca99f4d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "parent level"@en , "Parent level property in a HierarchyStep"@en ;
+        sh:class          <http://purl.org/qb4olap/cubes#LevelProperty> ;
+        sh:description    "Parent level property in a HierarchyStep"@en ;
+        sh:name           "parent level"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/qb4olap/cubes#parentLevel> .
+
+<https://astrea.linkeddata.es/shapes#ac3c601db06e9cf24384a41d25ed8a80>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "Level attribute" ;
+        sh:description    "The class of properties that represent level attributes"@en ;
+        sh:name           "Level attribute" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#aa04495a2395247b908d33d4b8a9c8bd> ;
+        sh:targetClass    <http://purl.org/qb4olap/cubes#LevelAttribute> .
+
+<https://astrea.linkeddata.es/shapes#68ebe4bd61e78454494dd57c8d86b182>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "Aggregate function"@en ;
+        sh:description    "Class that represents aggregate functions that are applied to compute measure aggregate values"@en ;
+        sh:name           "Aggregate function"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/qb4olap/cubes#AggregateFunction> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#b5058f72d9f76b4d536b009317669251>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a24c9d2e7c38c9afd3c935887e0d6836> ;
+        sh:targetClass  <http://purl.org/linked-data/cube#DataStructureDefinition> .
+
+<https://astrea.linkeddata.es/shapes#d27eb34834226b8b939b8f2e868a02b7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "rollup function"@en , "A property which allows to specify the predicate that implements the rollup relationship in a hierarchy step."@en ;
+        sh:class          <http://purl.org/qb4olap/cubes#HierarchyStep> ;
+        sh:description    "A property which allows to specify the predicate that implements the rollup relationship in a hierarchy step."@en ;
+        sh:name           "rollup function"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/qb4olap/cubes#rollup> .
+
+<https://astrea.linkeddata.es/shapes#7bd3ddb186a5d2cfd62aa246b65d4f07>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "level"@en , "An alternative to qb:componentProperty which makes explicit that the component is a level"@en ;
+        sh:class          <http://purl.org/qb4olap/cubes#LevelProperty> ;
+        sh:description    "An alternative to qb:componentProperty which makes explicit that the component is a level"@en ;
+        sh:name           "level"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/qb4olap/cubes#level> .
+
+<https://astrea.linkeddata.es/shapes#58107239cf40ac98e78affebee75e058>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "Hierarchy"@en ;
+        sh:description    "The class of components which represent the hierarchies of a dimension"@en ;
+        sh:name           "Hierarchy"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c618b700e567ba2d25015858eeeb6009> , <https://astrea.linkeddata.es/shapes#6ebc57118f18f838c6fa9038ecbcf541> ;
+        sh:targetClass    <http://purl.org/qb4olap/cubes#Hierarchy> .
+
+<https://astrea.linkeddata.es/shapes#c1be7cb1b0c84a6604f0b5e6ffb320fe>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "level member is member of level"@en , "Indicates the level to which the level member belongs"@en ;
+        sh:class          <http://purl.org/qb4olap/cubes#LevelProperty> ;
+        sh:description    "Indicates the level to which the level member belongs"@en ;
+        sh:name           "level member is member of level"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/qb4olap/cubes#memberOf> .
+
+<https://astrea.linkeddata.es/shapes#7d0196f6c51b1429be7680e8bc1aceeb>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "Level member"@en ;
+        sh:description    "The class of components which represent the members of a level"@en ;
+        sh:name           "Level member"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c1be7cb1b0c84a6604f0b5e6ffb320fe> ;
+        sh:targetClass    <http://purl.org/qb4olap/cubes#LevelMember> .
+
+<https://astrea.linkeddata.es/shapes#a24c9d2e7c38c9afd3c935887e0d6836>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "is cuboid of"@en , "Indicates to which cube a cuboid corresponds"@en ;
+        sh:class          <http://purl.org/linked-data/cube#DataStructureDefinition> ;
+        sh:description    "Indicates to which cube a cuboid corresponds"@en ;
+        sh:name           "is cuboid of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/qb4olap/cubes#isCuboidOf> .
+
+<https://astrea.linkeddata.es/shapes#99b417c56ef557024ac959d41f2533d0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "hierarchy step"@en ;
+        sh:description    "Class that represents a pair of levels (childLevel, parentLevel) in a dimension hierarchy"@en ;
+        sh:name           "hierarchy step"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#61b3fc6b2bcad739fe01e6f63ca99f4d> , <https://astrea.linkeddata.es/shapes#204c57739bcba9a0eb0f865f8fa5eee1> , <https://astrea.linkeddata.es/shapes#654a2345ada165bb50b71fc4ec2656e4> , <https://astrea.linkeddata.es/shapes#5af2cae010f163449502756598b0a67f> ;
+        sh:targetClass    <http://purl.org/qb4olap/cubes#HierarchyStep> .
+
+<https://astrea.linkeddata.es/shapes#204c57739bcba9a0eb0f865f8fa5eee1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/qb4olap/cubes> ;
+        rdfs:label        "cardinality"@en , "A property which allows to specify a cardinality constraint in a parent-child relationship"@en , "cardinality constraint"@en ;
+        sh:class          <http://purl.org/qb4olap/cubes#Cardinality> ;
+        sh:description    "A property which allows to specify a cardinality constraint in a parent-child relationship"@en ;
+        sh:name           "cardinality"@en , "cardinality constraint"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/qb4olap/cubes#pcCardinality> .

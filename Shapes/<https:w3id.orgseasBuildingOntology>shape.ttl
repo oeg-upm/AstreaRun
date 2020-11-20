@@ -1,0 +1,829 @@
+@prefix seas:  <https://w3id.org/seas/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix voaf:  <http://purl.org/vocommons/voaf#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann:  <http://purl.org/vocab/vann/> .
+@prefix vs:    <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+
+<https://astrea.linkeddata.es/shapes#3576c754bbfaa5a3d0cc7b548e73a97a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "Humidity Property"@en ;
+        sh:description    "The class of humidity properties of zones, zone connections, or zone frontiers."@en ;
+        sh:name           "Humidity Property"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3ffeb84043e081e4d1f47bb46d0f504c> , <https://astrea.linkeddata.es/shapes#f21057e2da1628b26d02ce0f1abb0451> , <https://astrea.linkeddata.es/shapes#ebd4701bc7bde3580ef4a2496c146c01> ;
+        sh:targetClass    seas:HumidityProperty .
+
+<https://astrea.linkeddata.es/shapes#4de21dcd6016e2246d6fb647882aa45c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Wall"@en ;
+        sh:description    "A roof upwards tilted surface tilted up part of upper envelope of building."@en ;
+        sh:name           "Wall"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Wall .
+
+<https://astrea.linkeddata.es/shapes#b2b36ba8d3842126b176a840d78da463>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Matalaenergiatalo"@fi , "LowEnergyHouse"@en ;
+        sh:description    "A house typically consuming half the energy than a norm house."@en ;
+        sh:name           "Matalaenergiatalo"@fi , "LowEnergyHouse"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:LowEnergyHouse .
+
+<https://astrea.linkeddata.es/shapes#8ad757217044a82f203a7f24e7369ffa>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "BuildingStorey"@en ;
+        sh:description    "The storey represents a (nearly) horizontal aggregation of spaces that are vertically bound."@en ;
+        sh:name           "BuildingStorey"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:BuildingStorey .
+
+<https://astrea.linkeddata.es/shapes#7456210443f5386af7f76569070a69f9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Building Space Connection"@en ;
+        sh:description    "Connection between two building spaces, where they may potentially exchange heat, humidity, agents."@en ;
+        sh:name           "Building Space Connection"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:BuildingSpaceConnection .
+
+<https://astrea.linkeddata.es/shapes#b3a3c26ca28fd279b8d4e6cdd3e0b26f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "SiteOfBuilding"@en ;
+        sh:description    "Building site is a locale containing one or more separate buildings. They are zones."@en ;
+        sh:name           "SiteOfBuilding"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:SiteOfBuilding .
+
+<https://astrea.linkeddata.es/shapes#2f0ee898599947c2cdf0e4c0c9b78427>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Office"@en ;
+        sh:description    "A room, set of rooms, or building where the business of a commercial or industrial organization or of a professional person is conducted."@en ;
+        sh:name           "Office"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Office .
+
+<https://astrea.linkeddata.es/shapes#f22cf13ab08f7ca7c066f696d99245e3>
+        a         sh:PropertyShape ;
+        sh:class  seas:OpennableBuildingSpaceConnection .
+
+<https://astrea.linkeddata.es/shapes#88647c33951076d65e4d1041dc6ce781>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "YhdenAsunnonTalo"@fi , "OneDwellingBuilding"@en ;
+        sh:description    "Detached house."@en ;
+        sh:name           "YhdenAsunnonTalo"@fi , "OneDwellingBuilding"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:OneDwellingBuilding .
+
+<https://astrea.linkeddata.es/shapes#7e1ecc4d2bbd215cc625e8ac9f50d36c>
+        a         sh:PropertyShape ;
+        sh:class  seas:ClosedBuildingSpaceConnection .
+
+<https://astrea.linkeddata.es/shapes#422412508df73a93fa6facae9c526c98>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Opennable Building Space Connection"@en ;
+        sh:description    "An opennable building space connection is a connection between two building spaces that has a certain degree of openness.\r\n\r\n  This connection may for instance be a window or a door.\r\n\r\n  Instances of `seas:OpennableBuildingSpaceConnection` may be typed by classes from specialized building ontologies."@en ;
+        sh:name           "Opennable Building Space Connection"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#7e1ecc4d2bbd215cc625e8ac9f50d36c> ;
+        sh:targetClass    seas:OpennableBuildingSpaceConnection .
+
+<https://astrea.linkeddata.es/shapes#9b2afdad819137a5ec621787b0e6d881>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Utility Room"@en ;
+        sh:description    "Room for other special utilities and hobbies."@en ;
+        sh:name           "Utility Room"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:UtilityRoom .
+
+<https://astrea.linkeddata.es/shapes#521d2d048135805ea2dda693a0d24ab9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "Quantifies the volume of the zone."@en , "volume" ;
+        sh:class          seas:VolumeProperty ;
+        sh:description    "Quantifies the volume of the zone."@en ;
+        sh:maxCount       1 ;
+        sh:name           "volume" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:volume .
+
+<https://astrea.linkeddata.es/shapes#2a809f9b2e9ee89a01a932f0981adf97>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Bathroom"@en ;
+        sh:description    "Bathroom is mainly used for bathing &amp; washing up related activities."@en ;
+        sh:name           "Bathroom"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Bathroom .
+
+<https://astrea.linkeddata.es/shapes#65ab7d69b74eef9ca3200328178d21e1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Liikerakennus"@fi , "MercantileBuilding"@en ;
+        sh:description    "Places where goods are displayed and sold. Examples: grocery stores, department stores, and gas stations."@en ;
+        sh:name           "Liikerakennus"@fi , "MercantileBuilding"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:MercantileBuilding .
+
+<https://astrea.linkeddata.es/shapes#1bbb0a6a4ac88f21447df1e8acea9f07>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Swimming Pool"@en ;
+        sh:description    "A structure, either attached or integrated into a building, which allows enjoyment of the surrounding landscape while being sheltered from adverse weather."@en ;
+        sh:name           "Swimming Pool"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Sunroom .
+
+<https://astrea.linkeddata.es/shapes#fa4f04c3689f9869bd4f6b3f3eaa612b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Hall"@en ;
+        sh:description    "A large entrance room of a house or building."@en ;
+        sh:name           "Hall"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Hall .
+
+<https://astrea.linkeddata.es/shapes#be90c2a1b367f353b76210be30e3e4b3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "humidity" ;
+        sh:description    "Humidity sensors observe the humidity of a zone, zone connection, or zone frontier."@en ;
+        sh:name           "humidity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:HumiditySensor .
+
+<https://astrea.linkeddata.es/shapes#cb5078ea421a697a890a7cb7d490a82e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "IndustrialBuilding"@en ;
+        sh:description    "Buildings used for industrial production, e.g. factories, workshops, slaughterhouses, breweries, assembly plants, etc."@en ;
+        sh:name           "IndustrialBuilding"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:IndustrialBuilding .
+
+<https://astrea.linkeddata.es/shapes#09cee255ea00e3c4bfdd956f6a640a1a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "Presence Sensor" ;
+        sh:description    "A Presence sensor observes the population inside a zone, zone connection or zone frontier."@en ;
+        sh:name           "Presence Sensor" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:PresenceSensor .
+
+<https://astrea.linkeddata.es/shapes#dc621f7f43fbc146ad7d76ef21d89c53>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Greenhouse"@en ;
+        sh:description    "A building, room, or zone, usually chiefly of glass, in which the temperature is maintained within a desired range, used for cultivating tender plants or growing plants out of season."@en ;
+        sh:name           "Greenhouse"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Greenhouse .
+
+<https://astrea.linkeddata.es/shapes#c54c601357ff29dade00a0b6778cd49d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Tree house"@en ;
+        sh:description    "A work or office space set up in a person's home and used exclusively for business on a regular basis."@en ;
+        sh:name           "Tree house"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:HomeOffice .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#cde3b6979e74b2c8cc9edf4ca59706f6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "Humidity Actuator"@en ;
+        sh:description    "An actuator that is capable of modifying the humidity in zones."@en ;
+        sh:name           "Humidity Actuator"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:HumidityActuator .
+
+<https://astrea.linkeddata.es/shapes#893797ba8898177df5b817ba86554a38>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      foaf:name .
+
+<https://astrea.linkeddata.es/shapes#b90c817d054a1291db95fc657378c9df>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "NonResidentalBuilding"@en ;
+        sh:description    "A  non-residential building is a building at least half of which is used for other than residential purposes. "@en ;
+        sh:name           "NonResidentalBuilding"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:NonResidentalBuilding .
+
+<https://astrea.linkeddata.es/shapes#74b63870747b48d0081daa50be1e55a2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "The area of the Zone."@en , "area" ;
+        sh:class          seas:AreaProperty ;
+        sh:description    "The area of the Zone."@en ;
+        sh:maxCount       1 ;
+        sh:name           "area" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:area .
+
+<https://astrea.linkeddata.es/shapes#00c44f3e1bf4a0f09cf546b2087015a2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Kokoontumisrakennus"@fi , "AssemblyBuilding"@en ;
+        sh:description    "places used for people gathering for entertainment, worship, and eating or drinking. Examples: churches, restaurants."@en ;
+        sh:name           "Kokoontumisrakennus"@fi , "AssemblyBuilding"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:AssemblyBuilding .
+
+<https://astrea.linkeddata.es/shapes#9b02483c99871a92e8f05753acee7a71>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Building Space Frontier"@en ;
+        sh:description    "Surface that marks the frontier of a building space, and represents the connection point to other building spaces."@en ;
+        sh:name           "Building Space Frontier"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:BuildingSpaceFrontier .
+
+<https://astrea.linkeddata.es/shapes#71bda8edc8a1e9cc96c77340834efbd0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Nollaenergiatalo"@fi , "ZeroEnergyBuilding"@en ;
+        sh:description    "A net zero-energy building (ZEB) is a building that over a year does not use more energy than it generates. "@en ;
+        sh:name           "Nollaenergiatalo"@fi , "ZeroEnergyBuilding"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ZeroEnergyBuilding .
+
+<https://astrea.linkeddata.es/shapes#432945658eaa882294cfe997b20eaad3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "Pressure Property"@en ;
+        sh:description    "Pressure (symbol: p or P) is the force applied perpendicular to the surface of an object per unit area over which that force is distributed. Gauge pressure (also spelled gage pressure)[a] is the pressure relative to the ambient pressure. (source: Wikipedia)"@en ;
+        sh:name           "Pressure Property"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:PressureProperty .
+
+<https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  voaf:Vocabulary .
+
+<https://astrea.linkeddata.es/shapes#5b4aa87ab4230ef7cca02af9b022447e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Corridor"@en ;
+        sh:description    "A gallery or passage connecting parts of a building; hallway."@en ;
+        sh:name           "Corridor"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Corridor .
+
+<https://astrea.linkeddata.es/shapes#f2e6b45c93537f78b865a6b77a3fde6e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Swimming Pool"@en ;
+        sh:description    "A tank or large artificial basin, as of concrete, for filling with water for swimming."@en ;
+        sh:name           "Swimming Pool"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:SwimmingPool .
+
+<https://astrea.linkeddata.es/shapes#757fe2fc4d1dfc3074bce263cf3a6b82>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "Links a zone, zone connection, or zone frontier, to the property that qualifies its humidity.\r\n\r\nThe humidity property has itself properties that quantify it, such as the specific humidity."@en , "humidity" ;
+        sh:class          seas:HumidityProperty ;
+        sh:description    "Links a zone, zone connection, or zone frontier, to the property that qualifies its humidity.\r\n\r\nThe humidity property has itself properties that quantify it, such as the specific humidity."@en ;
+        sh:maxCount       1 ;
+        sh:name           "humidity" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:humidity .
+
+<https://astrea.linkeddata.es/shapes#683facc7f657fb52f1587441dd8ac137>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Door"@en ;
+        sh:description    "the large flat piece of wood, glass etc that you move when you go into or out of a building, room, vehicle etc, or when you open a cupboard (Longman Dictionary of Contemporary English Online)"@en ;
+        sh:name           "Door"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Door .
+
+<https://astrea.linkeddata.es/shapes#02809e73c44471c076b4cfc7cf552612>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Floor"@en ;
+        sh:description    "A floor is a upwards tilted horzontal surface, could be divided to interior, exposed (outside) or raised floor."@en ;
+        sh:name           "Floor"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Floor .
+
+<https://astrea.linkeddata.es/shapes#5b26558bfcadd976102c0ca0d48e84bc>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Garage"@en ;
+        sh:description    "Room for garage."@en ;
+        sh:name           "Garage"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Garage .
+
+<https://astrea.linkeddata.es/shapes#b577324aa4637f10295d04e8ac1aa191>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Storage Room"@en ;
+        sh:description    "Room for storage."@en ;
+        sh:name           "Storage Room"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:StorageRoom .
+
+<https://astrea.linkeddata.es/shapes#28ad454d28c7513b5db601bf6d118688>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Building"@en ;
+        sh:description    "Buildings are roofed constructions which can be used separately, have been built for permanent purposes, can be entered by persons and are suitable or intended for protecting persons, animals or objects."@en ;
+        sh:name           "Building"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Building .
+
+<https://astrea.linkeddata.es/shapes#e43d3155b34246810695c684c3db70f8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "VoimalaRakennus"@fi , "PowerplantBuilding"@en ;
+        sh:description    "Places housing any type of a power plants."@en ;
+        sh:name           "VoimalaRakennus"@fi , "PowerplantBuilding"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:PowerplantBuilding .
+
+<https://astrea.linkeddata.es/shapes#7a33f7c0298703c2f75e8b1d590d7f14>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Plusenergiatalo"@fi , "PlusEnergyBuilding"@en ;
+        sh:description    "A net plus-energy building is a building that over a year does generates more energy than it uses. "@en ;
+        sh:name           "Plusenergiatalo"@fi , "PlusEnergyBuilding"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:PlusEnergyBuilding .
+
+<https://astrea.linkeddata.es/shapes#ccd8893460028776f2b7d0176200a1f3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Lobby"@en ;
+        sh:description    "An entrance hall, corridor, or vestibule, as in a public building, often serving as an anteroom; foyer."@en ;
+        sh:name           "Lobby"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Lobby .
+
+<https://astrea.linkeddata.es/shapes#4947912389f10a60303954fe8efa2ed9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "VarastoRakennus"@fi , "StorageBuilding"@en ;
+        sh:description    "Places where items are stored. Examples: warehouses, reservoirs and silos."@en ;
+        sh:name           "VarastoRakennus"@fi , "StorageBuilding"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:StorageBuilding .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  foaf:Person .
+
+<https://astrea.linkeddata.es/shapes#66631e9497876391674a5de951a7a1b0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Open Building Space Connection"@en ;
+        sh:description    "An open building space connection is a connection between two building spaces that is open.\r\n\r\n  This connection may for instance be a hole in a wall, or a virtual separation between two offices in an open space.\r\n\r\n  Instances of `seas:OpenBuildingSpaceConnection` may be typed by classes from specialized building ontologies."@en ;
+        sh:name           "Open Building Space Connection"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#f22cf13ab08f7ca7c066f696d99245e3> , <https://astrea.linkeddata.es/shapes#7e1ecc4d2bbd215cc625e8ac9f50d36c> ;
+        sh:targetClass    seas:OpenBuildingSpaceConnection .
+
+<https://astrea.linkeddata.es/shapes#817db72dde1f8e6b9f090dde4d47312a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "Population Property"@en ;
+        sh:description    "The class of population properties of zones, zone connections, or zone frontiers."@en ;
+        sh:name           "Population Property"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#5c440984bf274d6858ea981bfe534acf> ;
+        sh:targetClass    seas:PopulationProperty .
+
+<https://astrea.linkeddata.es/shapes#41ec135258c5865b7d22c323ecd0a845>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Living Room"@en ;
+        sh:description    "Living Room is the main room of daytime activity."@en ;
+        sh:name           "Living Room"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:LivingRoom .
+
+<https://astrea.linkeddata.es/shapes#a7e88996e40aecf9879b8fa890a4072c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Attic"@en ;
+        sh:description    "the part of a building, especially of a house, directly under a roof; garret."@en ;
+        sh:name           "Attic"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Attic .
+
+<https://astrea.linkeddata.es/shapes#dfa6ae7511877532c7e0bbf9c088e3a0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Ceiling"@en ;
+        sh:description    "Ceiling is a downwards tilted horizontal surface."@en ;
+        sh:name           "Ceiling"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Ceiling .
+
+<https://astrea.linkeddata.es/shapes#f21057e2da1628b26d02ce0f1abb0451>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "The specific humidity is defined as the mass of water per unit mass of moist air."@en , "specific humidity" ;
+        sh:class          seas:PercentageProperty ;
+        sh:description    "The specific humidity is defined as the mass of water per unit mass of moist air."@en ;
+        sh:maxCount       1 ;
+        sh:name           "specific humidity" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:specificHumidity .
+
+<https://astrea.linkeddata.es/shapes#7746854a5f5e6a427656295578ee1eb1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Normitalo"@fi , "NormHouse"@en ;
+        sh:description    "A building fulfilling the minimal criteria for energy efficiency."@en ;
+        sh:name           "Normitalo"@fi , "NormHouse"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:NormHouse .
+
+<https://astrea.linkeddata.es/shapes#391f665bd398f94516430e7781dda790>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "Links a zone, zone connection or zone frontier to the property that quantifies its population in terms of agents.\r\n\r\nThe population property may itself have properties such as the population flow."@en , "population" ;
+        sh:class          seas:PopulationProperty ;
+        sh:description    "Links a zone, zone connection or zone frontier to the property that quantifies its population in terms of agents.\r\n\r\nThe population property may itself have properties such as the population flow."@en ;
+        sh:maxCount       1 ;
+        sh:name           "population" ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:population .
+
+<https://astrea.linkeddata.es/shapes#1a0742474323a89ba61efdf3a97087fe>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Yard"@en ;
+        sh:description    "A small usually walled and often paved zone open to the sky and adjacent to a building."@en ;
+        sh:name           "Yard"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Yard .
+
+<https://astrea.linkeddata.es/shapes#0e43898caedf95f016f87f9e6099a04f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Stairs"@en ;
+        sh:description    "A construction designed to bridge a large vertical distance by dividing it into smaller vertical distances, called steps."@en ;
+        sh:name           "Stairs"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Stairs .
+
+<https://astrea.linkeddata.es/shapes#e658dd44a5517bd245001943080499ba>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Asuinrakennus"@fi , "ResidentalBuilding"@en ;
+        sh:description    "A residential building is a building at least half of which is used for residential purposes. "@en ;
+        sh:name           "Asuinrakennus"@fi , "ResidentalBuilding"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ResidentalBuilding .
+
+<https://astrea.linkeddata.es/shapes#a09cc4bb8e62910c7e9042091229ae73>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "Zone" ;
+        sh:description    "A part or a section of a building, campus, town, etc."@en ;
+        sh:name           "Zone" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#391f665bd398f94516430e7781dda790> , <https://astrea.linkeddata.es/shapes#757fe2fc4d1dfc3074bce263cf3a6b82> , <https://astrea.linkeddata.es/shapes#521d2d048135805ea2dda693a0d24ab9> , <https://astrea.linkeddata.es/shapes#74b63870747b48d0081daa50be1e55a2> , <https://astrea.linkeddata.es/shapes#a9f6c50d4c2f44ea13f46ccebfc276dd> ;
+        sh:targetClass    seas:Zone .
+
+<https://astrea.linkeddata.es/shapes#a96cc6c06fe537e5a8a2bbaf131309b8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "Volume Property"@en ;
+        sh:description    "Volume is the quantity of three-dimensional space enclosed by a closed surface, for example, the space that a substance (solid, liquid, gas, or plasma) or shape occupies or contains.[1] Volume is often quantified numerically using the SI derived unit, the cubic metre. The volume of a container is generally understood to be the capacity of the container, i. e. the amount of fluid (gas or liquid) that the container could hold, rather than the amount of space the container itself displaces. (source: Wikipedia)"@en ;
+        sh:name           "Volume Property"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:VolumeProperty .
+
+<https://astrea.linkeddata.es/shapes#31379dd89b7ee5c013ed1aedc769308b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Closed Building Space Connection"@en ;
+        sh:description    "A closed building space connection is a closed connection between two building spaces. \r\n\r\n  This separation may for instance be a wall, i.e., a (tilted more than 60 percent) vertical surface. \r\n\r\n  Instances of `seas:ClosedBuildingSpaceConnection` may be typed by classes from specialized building ontologies."@en ;
+        sh:name           "Closed Building Space Connection"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:ClosedBuildingSpaceConnection .
+
+<https://astrea.linkeddata.es/shapes#b36d07a40819ab6f651dcb1f48f2c7c7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Construction"@en ;
+        sh:description    "Constructions are structures connected with the ground which are made of construction materials and components and/or for which construction work is carried out."@en ;
+        sh:name           "Construction"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Construction .
+
+<https://astrea.linkeddata.es/shapes#64eb924cf2cf697f9148af3013814037>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Dining Room"@en ;
+        sh:description    "A room in which meals are eaten, as in a home or hotel, especially the room in which the major or more formal meals are eaten."@en ;
+        sh:name           "Dining Room"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:DiningRoom .
+
+<https://astrea.linkeddata.es/shapes#a1e6c25b5050d6dadccba89bee8fa22d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "VapaaAjanRakennus"@fi , "HolidayBuilding"@en ;
+        sh:description    "A secondary residential building used only occasionally during vacations such as a summerhouse or cottage. "@en ;
+        sh:name           "VapaaAjanRakennus"@fi , "HolidayBuilding"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:HolidayBuilding .
+
+<https://astrea.linkeddata.es/shapes#88852defdd9ce7f00799d498c9dc7edd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Basement"@en ;
+        sh:description    "A story of a building, partly or wholly underground."@en ;
+        sh:name           "Basement"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Basement .
+
+<https://astrea.linkeddata.es/shapes#a3052447e3eec164d86d2d5ed48a10ad>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "BuildingSpace"@en ;
+        sh:description    "A Space is a 3D volume bounded by surfaces. According to the FIEMSER definition, a building space in SAREF defines the physical spaces of the building."@en ;
+        sh:name           "BuildingSpace"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:BuildingSpace .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#391f665bd398f94516430e7781dda790> , <https://astrea.linkeddata.es/shapes#ebd4701bc7bde3580ef4a2496c146c01> , <https://astrea.linkeddata.es/shapes#a96cc6c06fe537e5a8a2bbaf131309b8> , <https://astrea.linkeddata.es/shapes#71bda8edc8a1e9cc96c77340834efbd0> , <https://astrea.linkeddata.es/shapes#4ef1293f62e52acc95f5002f1d5325d1> , <https://astrea.linkeddata.es/shapes#bdb3beabfcb4a7746bb3c8133332358b> , <https://astrea.linkeddata.es/shapes#fa4f04c3689f9869bd4f6b3f3eaa612b> , <https://astrea.linkeddata.es/shapes#00c44f3e1bf4a0f09cf546b2087015a2> , <https://astrea.linkeddata.es/shapes#28ad454d28c7513b5db601bf6d118688> , <https://astrea.linkeddata.es/shapes#1bbb0a6a4ac88f21447df1e8acea9f07> , <https://astrea.linkeddata.es/shapes#8e4b2228b1a1f66caee653ba337e903e> , <https://astrea.linkeddata.es/shapes#9b2afdad819137a5ec621787b0e6d881> , <https://astrea.linkeddata.es/shapes#5c440984bf274d6858ea981bfe534acf> , <https://astrea.linkeddata.es/shapes#1a0742474323a89ba61efdf3a97087fe> , <https://astrea.linkeddata.es/shapes#88647c33951076d65e4d1041dc6ce781> , <https://astrea.linkeddata.es/shapes#cb53857f465969792867fbb96c9c2e66> , <https://astrea.linkeddata.es/shapes#7746854a5f5e6a427656295578ee1eb1> , <https://astrea.linkeddata.es/shapes#4947912389f10a60303954fe8efa2ed9> , <https://astrea.linkeddata.es/shapes#722de213f49001deeae0ebf71da0f43e> , <https://astrea.linkeddata.es/shapes#3ffeb84043e081e4d1f47bb46d0f504c> , <https://astrea.linkeddata.es/shapes#51a605f119ebe4102afafa26256e6576> , <https://astrea.linkeddata.es/shapes#a67679ab9a24abffe9ae73bfca0ec3eb> , <https://astrea.linkeddata.es/shapes#683facc7f657fb52f1587441dd8ac137> , <https://astrea.linkeddata.es/shapes#5b26558bfcadd976102c0ca0d48e84bc> , <https://astrea.linkeddata.es/shapes#757fe2fc4d1dfc3074bce263cf3a6b82> , <https://astrea.linkeddata.es/shapes#09cee255ea00e3c4bfdd956f6a640a1a> , <https://astrea.linkeddata.es/shapes#02809e73c44471c076b4cfc7cf552612> , <https://astrea.linkeddata.es/shapes#2dc9bf3a8430a530038d3303ab20fee2> , <https://astrea.linkeddata.es/shapes#5b4aa87ab4230ef7cca02af9b022447e> , <https://astrea.linkeddata.es/shapes#38499828119e9c0bf384a828be56a329> , <https://astrea.linkeddata.es/shapes#57729b6454bcad4da394677306ec824d> , <https://astrea.linkeddata.es/shapes#2f0ee898599947c2cdf0e4c0c9b78427> , <https://astrea.linkeddata.es/shapes#2ec1142d40b693ba8ef880cf0e85fada> , <https://astrea.linkeddata.es/shapes#f22cf13ab08f7ca7c066f696d99245e3> , <https://astrea.linkeddata.es/shapes#d36e3932e934afd734fb648420edd27d> , <https://astrea.linkeddata.es/shapes#74b63870747b48d0081daa50be1e55a2> , <https://astrea.linkeddata.es/shapes#432945658eaa882294cfe997b20eaad3> , <https://astrea.linkeddata.es/shapes#c1f512d87f0b141887d8af5a349c3e75> , <https://astrea.linkeddata.es/shapes#f2e6b45c93537f78b865a6b77a3fde6e> , <https://astrea.linkeddata.es/shapes#d7d5e09436306230713e1764465d1010> , <https://astrea.linkeddata.es/shapes#cfd0df64b60084d997a5754b2b808fdc> , <https://astrea.linkeddata.es/shapes#55ddb545b3cf7693d9196057bf14e434> , <https://astrea.linkeddata.es/shapes#e658dd44a5517bd245001943080499ba> , <https://astrea.linkeddata.es/shapes#817db72dde1f8e6b9f090dde4d47312a> , <https://astrea.linkeddata.es/shapes#1a3e7e598589341279ede47197b49c61> , <https://astrea.linkeddata.es/shapes#3576c754bbfaa5a3d0cc7b548e73a97a> , <https://astrea.linkeddata.es/shapes#cde3b6979e74b2c8cc9edf4ca59706f6> , <https://astrea.linkeddata.es/shapes#f21057e2da1628b26d02ce0f1abb0451> , <https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f> , <https://astrea.linkeddata.es/shapes#b36d07a40819ab6f651dcb1f48f2c7c7> , <https://astrea.linkeddata.es/shapes#65ab7d69b74eef9ca3200328178d21e1> , <https://astrea.linkeddata.es/shapes#b2b36ba8d3842126b176a840d78da463> , <https://astrea.linkeddata.es/shapes#521d2d048135805ea2dda693a0d24ab9> , <https://astrea.linkeddata.es/shapes#7456210443f5386af7f76569070a69f9> , <https://astrea.linkeddata.es/shapes#e31d62c49fefcba48fa8d8cd7905a133> , <https://astrea.linkeddata.es/shapes#a7e88996e40aecf9879b8fa890a4072c> , <https://astrea.linkeddata.es/shapes#e43d3155b34246810695c684c3db70f8> , <https://astrea.linkeddata.es/shapes#be90c2a1b367f353b76210be30e3e4b3> , <https://astrea.linkeddata.es/shapes#66631e9497876391674a5de951a7a1b0> , <https://astrea.linkeddata.es/shapes#88852defdd9ce7f00799d498c9dc7edd> , <https://astrea.linkeddata.es/shapes#b3a3c26ca28fd279b8d4e6cdd3e0b26f> , <https://astrea.linkeddata.es/shapes#4de21dcd6016e2246d6fb647882aa45c> , <https://astrea.linkeddata.es/shapes#a3052447e3eec164d86d2d5ed48a10ad> , <https://astrea.linkeddata.es/shapes#41ec135258c5865b7d22c323ecd0a845> , <https://astrea.linkeddata.es/shapes#31379dd89b7ee5c013ed1aedc769308b> , <https://astrea.linkeddata.es/shapes#422412508df73a93fa6facae9c526c98> , <https://astrea.linkeddata.es/shapes#cb5078ea421a697a890a7cb7d490a82e> , <https://astrea.linkeddata.es/shapes#9b02483c99871a92e8f05753acee7a71> , <https://astrea.linkeddata.es/shapes#dfa6ae7511877532c7e0bbf9c088e3a0> , <https://astrea.linkeddata.es/shapes#52bb3a67867e8ed373c6b7b68c0ff987> , <https://astrea.linkeddata.es/shapes#c33f7946d67dbe8a66fa9163bb030238> , <https://astrea.linkeddata.es/shapes#7e1ecc4d2bbd215cc625e8ac9f50d36c> , <https://astrea.linkeddata.es/shapes#0e43898caedf95f016f87f9e6099a04f> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#c54c601357ff29dade00a0b6778cd49d> , <https://astrea.linkeddata.es/shapes#b90c817d054a1291db95fc657378c9df> , <https://astrea.linkeddata.es/shapes#8ad757217044a82f203a7f24e7369ffa> , <https://astrea.linkeddata.es/shapes#93f8b4ef4c42769050f8db6ef2fe859b> , <https://astrea.linkeddata.es/shapes#64eb924cf2cf697f9148af3013814037> , <https://astrea.linkeddata.es/shapes#a09cc4bb8e62910c7e9042091229ae73> , <https://astrea.linkeddata.es/shapes#dc621f7f43fbc146ad7d76ef21d89c53> , <https://astrea.linkeddata.es/shapes#2a809f9b2e9ee89a01a932f0981adf97> , <https://astrea.linkeddata.es/shapes#ccd8893460028776f2b7d0176200a1f3> , <https://astrea.linkeddata.es/shapes#893797ba8898177df5b817ba86554a38> , <https://astrea.linkeddata.es/shapes#b577324aa4637f10295d04e8ac1aa191> , <https://astrea.linkeddata.es/shapes#a9f6c50d4c2f44ea13f46ccebfc276dd> , <https://astrea.linkeddata.es/shapes#7a33f7c0298703c2f75e8b1d590d7f14> , <https://astrea.linkeddata.es/shapes#a1e6c25b5050d6dadccba89bee8fa22d> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/473576723> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#cfd0df64b60084d997a5754b2b808fdc>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Window"@en ;
+        sh:description    "a space or an zone of glass in the wall of a building or vehicle that lets in light (Longman Dictionary of Contemporary English Online)"@en ;
+        sh:name           "Window"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Window .
+
+<https://astrea.linkeddata.es/shapes#c33f7946d67dbe8a66fa9163bb030238>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Tree House"@en ;
+        sh:description    "A small house, especially one for children to play in, built or placed up in the branches of a tree."@en ;
+        sh:name           "Tree House"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:TreeHouse .
+
+<https://astrea.linkeddata.es/shapes#38499828119e9c0bf384a828be56a329>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Room"@en ;
+        sh:description    "A room in a building space enclosed by surfaces, this could also be modelled as role of space, not subclass of the space itself."@en ;
+        sh:name           "Room"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Room .
+
+<https://astrea.linkeddata.es/shapes#a9f6c50d4c2f44ea13f46ccebfc276dd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "sub zone of"@en , "Links an zone to another it is contained in."@en ;
+        sh:class          seas:Zone ;
+        sh:description    "Links an zone to another it is contained in."@en ;
+        sh:name           "sub zone of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:subZoneOf .
+
+<https://astrea.linkeddata.es/shapes#57729b6454bcad4da394677306ec824d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Elevator"@en ;
+        sh:description    "Elevator is used to transport people between different floors."@en ;
+        sh:name           "Elevator"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Elevator .
+
+<https://astrea.linkeddata.es/shapes#1a3e7e598589341279ede47197b49c61>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "CivilEngnineeringWork"@en ;
+        sh:description    "Civil engineering works are all constructions not classified under buildings : railways, roads, bridges, highways, airport runways, dams etc."@en ;
+        sh:name           "CivilEngnineeringWork"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:CivilEngineeringWork .
+
+<https://astrea.linkeddata.es/shapes#ebd4701bc7bde3580ef4a2496c146c01>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "The saturated vapor pressure of moist air."@en , "saturated vapor pressure" ;
+        sh:class          seas:PressureProperty ;
+        sh:description    "The saturated vapor pressure of moist air."@en ;
+        sh:maxCount       1 ;
+        sh:name           "saturated vapor pressure" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:saturatedVapourPressure .
+
+<https://astrea.linkeddata.es/shapes#722de213f49001deeae0ebf71da0f43e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Laundry"@en ;
+        sh:description    "A room or zone, as in a home or apartment building, reserved for doing the family wash."@en ;
+        sh:name           "Laundry"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Laundry .
+
+<https://astrea.linkeddata.es/shapes#5c440984bf274d6858ea981bfe534acf>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "population flow" , "The flow of agents that cross a zone, a zone connection, or a zone frontier."@en ;
+        sh:class          seas:Property ;
+        sh:description    "The flow of agents that cross a zone, a zone connection, or a zone frontier."@en ;
+        sh:maxCount       1 ;
+        sh:name           "population flow" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:populationFlow .
+
+<https://astrea.linkeddata.es/shapes#2dc9bf3a8430a530038d3303ab20fee2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Bedroom"@en ;
+        sh:description    "Bedroom is used mainly for sleeping."@en ;
+        sh:name           "Bedroom"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Bedroom .
+
+<https://astrea.linkeddata.es/shapes#55ddb545b3cf7693d9196057bf14e434>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Balcony"@en ;
+        sh:description    "An accessible structure extending from a building, especially outside a window."@en ;
+        sh:name           "Balcony"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Balcony .
+
+<https://astrea.linkeddata.es/shapes#4ef1293f62e52acc95f5002f1d5325d1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Roof"@en ;
+        sh:description    "A (tilted more than 60 percent) vertical surface that separates building spaces."@en ;
+        sh:name           "Roof"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Roof .
+
+<https://astrea.linkeddata.es/shapes#bdb3beabfcb4a7746bb3c8133332358b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "HoitoalanRakennus"@fi , "InstitutionalBuilding"@en ;
+        sh:description    "Institutions such as hospitals providing medical and surgical treatment and nursing care for ill or injured people."@en ;
+        sh:name           "HoitoalanRakennus"@fi , "InstitutionalBuilding"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:InstitutionalBuilding .
+
+<https://astrea.linkeddata.es/shapes#e31d62c49fefcba48fa8d8cd7905a133>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Passiivitalo"@fi , "PassiveHouse"@en ;
+        sh:description    "A house typically consuming a quarter of the energy than a norm house."@en ;
+        sh:name           "Passiivitalo"@fi , "PassiveHouse"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:PassiveHouse .
+
+<https://astrea.linkeddata.es/shapes#cb53857f465969792867fbb96c9c2e66>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Kitchen"@en ;
+        sh:description    "Kitchen is a room used mainly for cooking and possibly eating."@en ;
+        sh:name           "Kitchen"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Kitchen .
+
+<https://astrea.linkeddata.es/shapes#a67679ab9a24abffe9ae73bfca0ec3eb>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Zone Connection"@en ;
+        sh:description    "When they are connected, zones may exchange light, heat, humidity, agents."@en ;
+        sh:name           "Zone Connection"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#757fe2fc4d1dfc3074bce263cf3a6b82> , <https://astrea.linkeddata.es/shapes#391f665bd398f94516430e7781dda790> , <https://astrea.linkeddata.es/shapes#74b63870747b48d0081daa50be1e55a2> ;
+        sh:targetClass    seas:ZoneConnection .
+
+<https://astrea.linkeddata.es/shapes#93f8b4ef4c42769050f8db6ef2fe859b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "Area Property"@en ;
+        sh:description    "Area is the quantity that expresses the extent of a two-dimensional figure or shape, or planar lamina, in the plane. Surface area is its analog on the two-dimensional surface of a three-dimensional object. Area can be understood as the amount of material with a given thickness that would be necessary to fashion a model of the shape, or the amount of paint necessary to cover the surface with a single coat.[1] It is the two-dimensional analog of the length of a curve (a one-dimensional concept) or the volume of a solid (a three-dimensional concept). (source: Wikipedia)"@en ;
+        sh:name           "Area Property"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:AreaProperty .
+
+<https://astrea.linkeddata.es/shapes#d36e3932e934afd734fb648420edd27d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "BuildingSpatialStructure"@en ;
+        sh:description    "A man made structure with spatial properties."@en ;
+        sh:name           "BuildingSpatialStructure"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:BuildingSpatialStructure .
+
+<https://astrea.linkeddata.es/shapes#d7d5e09436306230713e1764465d1010>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Toimistorakennus"@fi , "BusinessBuilding"@en ;
+        sh:description    "Places where services are provided. Examples: banks, insurance agencies."@en ;
+        sh:name           "Toimistorakennus"@fi , "BusinessBuilding"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:OfficeBuilding .
+
+<https://astrea.linkeddata.es/shapes#c1f512d87f0b141887d8af5a349c3e75>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Opetusrakennus"@fi , "EducationalBuilding"@en ;
+        sh:description    "Schools and day care centers."@en ;
+        sh:name           "Opetusrakennus"@fi , "EducationalBuilding"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:EducationalBuilding .
+
+<https://astrea.linkeddata.es/shapes#8e4b2228b1a1f66caee653ba337e903e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Sauna"@en ;
+        sh:description    "Sauna is a special type bathroom for enjoying heated steam."@en ;
+        sh:name           "Sauna"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:Sauna .
+
+<https://astrea.linkeddata.es/shapes#52bb3a67867e8ed373c6b7b68c0ff987>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Pientalo"@en , "SmallHouse"@en ;
+        sh:description    "A detached small residential building."@en ;
+        sh:name           "Pientalo"@en , "SmallHouse"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:SmallHouse .
+
+<https://astrea.linkeddata.es/shapes#51a605f119ebe4102afafa26256e6576>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "Volumetric Mass Density Property"@en ;
+        sh:description    "The density, or more precisely, the volumetric mass density, of a substance is its mass per unit volume. The symbol most often used for density is ρ (the lower case Greek letter rho), although the Latin letter D can also be used. Mathematically, density is defined as mass divided by volume: ρ = m/V, where ρ is the density, m is the mass, and V is the volume. In some cases (for instance, in the United States oil and gas industry), density is loosely defined as its weight per unit volume, although this is scientifically inaccurate – this quantity is more specifically called specific weight. (source: Wikipedia)"@en ;
+        sh:name           "Volumetric Mass Density Property"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:VolumetricMassDensityProperty .
+
+<https://astrea.linkeddata.es/report/473576723>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://w3id.org/seas/ZoneOntology" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#3ffeb84043e081e4d1f47bb46d0f504c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ZoneOntology ;
+        rdfs:label        "absolute humidity" , "The absolute humidity is defined by the mass of water vapor per humid air volume."@en ;
+        sh:class          seas:VolumetricMassDensityProperty ;
+        sh:description    "The absolute humidity is defined by the mass of water vapor per humid air volume."@en ;
+        sh:maxCount       1 ;
+        sh:name           "absolute humidity" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:absoluteHumidity .
+
+<https://astrea.linkeddata.es/shapes#2ec1142d40b693ba8ef880cf0e85fada>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:BuildingOntology ;
+        rdfs:label        "Zone Frontier"@en ;
+        sh:description    "Surface that marks the frontier of an zone, and represents the connection point to other zones."@en ;
+        sh:name           "Zone Frontier"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#391f665bd398f94516430e7781dda790> , <https://astrea.linkeddata.es/shapes#74b63870747b48d0081daa50be1e55a2> , <https://astrea.linkeddata.es/shapes#757fe2fc4d1dfc3074bce263cf3a6b82> ;
+        sh:targetClass    seas:ZoneFrontier .

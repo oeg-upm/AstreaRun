@@ -1,0 +1,2227 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#b2e7302dfc20053f656147e6b8e1f0a6>
+        a            sh:PropertyShape ;
+        rdfs:label   "Idioma admitido en la presentación de oferta"@es , "Tender submission supported language"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Idioma admitido en la presentación de oferta"@es , "Tender submission supported language"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#tenderSubmissionSupportedLanguage> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#4f7aceebb588505fae05ddc2f9f7711d>
+        a            sh:PropertyShape ;
+        rdfs:label   "Recurso"@es , "Remedy"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#Remedy> ;
+        sh:name      "Recurso"@es , "Remedy"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#remedy> .
+
+<https://astrea.linkeddata.es/shapes#937a45f8221342433548f0647949c019>
+        a            sh:PropertyShape ;
+        rdfs:label   "Contract economic conditions"@en , "Condiciones económicas del contrato"@es ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#ContractEconomicConditions> ;
+        sh:maxCount  1 ;
+        sh:name      "Contract economic conditions"@en , "Condiciones económicas del contrato"@es ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#contractEconomicConditions> .
+
+<https://astrea.linkeddata.es/shapes#50a5fa667bdaf06d11130087ba122284>
+        a            sh:PropertyShape ;
+        rdfs:label   "Contract procedure specifications"@en , "Especificaciones del procedimiento del contrato"@es ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#ContractProcedureSpecifications> ;
+        sh:maxCount  1 ;
+        sh:name      "Contract procedure specifications"@en , "Especificaciones del procedimiento del contrato"@es ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#contractProcedureSpecifications> .
+
+<https://astrea.linkeddata.es/shapes#1e5adabcb28bcad16a7b1ab7d0ead155>
+        a                sh:PropertyShape ;
+        rdfs:label       "Número mínimo de participantes"@es , "Minimum number of operators"@en ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:maxCount      1 ;
+        sh:minInclusive  0 ;
+        sh:name          "Minimum number of operators"@en , "Número mínimo de participantes"@es ;
+        sh:nodeKind      sh:IRIOrLiteral , sh:Literal ;
+        sh:path          <http://contsem.unizar.es/def/sector-publico/pproc#minNumberOfOperators> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#27d547919d4385492fa0d8399992a052>
+        a            sh:PropertyShape ;
+        rdfs:label   "Contract additional obligations"@en , "Obligaciones accesorias del contrato"@es ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#ContractAdditionalObligations> ;
+        sh:maxCount  1 ;
+        sh:name      "Contract additional obligations"@en , "Obligaciones accesorias del contrato"@es ;
+        sh:nodeKind  sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#contractAdditionalObligations> .
+
+<https://astrea.linkeddata.es/shapes#795347c1e6f2852889ddcc534a607843>
+        a               sh:PropertyShape ;
+        rdfs:label      "Property for attachment of an item to a tender."@en , "Artículo"@es , "Item"@en ;
+        sh:class        <http://purl.org/goodrelations/v1#Offering> ;
+        sh:description  "Property for attachment of an item to a tender."@en ;
+        sh:name         "Item"@en , "Artículo"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#item> .
+
+<https://astrea.linkeddata.es/shapes#45a5470724de4b705e79597bf7a47713>
+        a                sh:PropertyShape ;
+        rdfs:label       "Número de lotes"@es , "Number of lots"@en ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:maxCount      1 ;
+        sh:minInclusive  0 ;
+        sh:name          "Number of lots"@en , "Número de lotes"@es ;
+        sh:nodeKind      sh:IRIOrLiteral , sh:Literal ;
+        sh:path          <http://contsem.unizar.es/def/sector-publico/pproc#numberOfLots> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#77c312b2e09086e6de9fe5c513fa19ac>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato de establecimiento"@es , "Conclusion contract"@en ;
+        sh:description  "Clase de los contratos que consisten en el establecimiento de un acuerdo marco o un sistema dinámico de contratación."@es , "Class describing the contracts consisting in the conclusion of a framework agreement or a dynamic purchasing system."@en ;
+        sh:name         "Conclusion contract"@en , "Contrato de establecimiento"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#6147a1a53fd1cd49e4988c2c36a011d7> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#df457cde2978d096a6383733f5ee9da8> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ConclusionContract> .
+
+<https://astrea.linkeddata.es/shapes#272fbe5d8ef88ffbebede231ccefeaf5>
+        a               sh:PropertyShape ;
+        rdfs:label      "El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0."@es , "Modificación máxima de presupuesto"@es , "Maximum budget change"@en , "The range of this property must be a percentage (i.e. float between 0.0 and 100.0)"@en ;
+        sh:datatype     xsd:float ;
+        sh:description  "El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0."@es , "The range of this property must be a percentage (i.e. float between 0.0 and 100.0)"@en ;
+        sh:maxCount     1 ;
+        sh:name         "Maximum budget change"@en , "Modificación máxima de presupuesto"@es ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#maxBudgetChange> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#060663946be267e9333d622613dab045>
+        a               sh:NodeShape ;
+        rdfs:label      "Contract modification conditions"@en , "Condiciones para la modificación del contrato"@es ;
+        sh:description  "Class describing the conditions for which a contract can be modified (e.g. maximum percentage of its price or budget)."@en , "Clase que define las condiciones para la modificación de un contrato (e.g. porcentaje máximo de modificación del presupuesto)."@es ;
+        sh:name         "Contract modification conditions"@en , "Condiciones para la modificación del contrato"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#500ce0967af8ffac70838d97e1101af6> , <https://astrea.linkeddata.es/shapes#3787e8131e858e2d6376503d0cf9f4c3> , <https://astrea.linkeddata.es/shapes#272fbe5d8ef88ffbebede231ccefeaf5> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ContractModificationConditions> .
+
+<https://astrea.linkeddata.es/shapes#64b9036a2206e9c7a0d38229aba4d53d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/procurement/public-contracts#> ;
+        rdfs:label        "Combinación de criterios para la adjudicación"@es , "Award criteria combination"@en ;
+        sh:name           "Combinación de criterios para la adjudicación"@es , "Award criteria combination"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/procurement/public-contracts#AwardCriteriaCombination> .
+
+<https://astrea.linkeddata.es/shapes#069fa77625a2af6d3de843b4f8a0c0e0>
+        a            sh:PropertyShape ;
+        rdfs:label   "Reunión de la mesa de contratación"@es , "Tender meeting"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#TenderMeeting> ;
+        sh:name      "Reunión de la mesa de contratación"@es , "Tender meeting"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#tenderMeeting> .
+
+<https://astrea.linkeddata.es/shapes#6b9e427b1067f9fe7c21eba137b5780d>
+        a               sh:PropertyShape ;
+        rdfs:label      "Web de la subasta electrónica"@es , "Apunta a la web donde puede se realiza la subasta electrónica, o en su defecto, donde se pueda encontrar más información acerca de la subasta electrónica."@es , "Electronic auction web"@en , "Property that indicated where the electronic auction is made or where we can look for more information about the auction."@en ;
+        sh:class        <http://xmlns.com/foaf/0.1/Document> ;
+        sh:description  "Apunta a la web donde puede se realiza la subasta electrónica, o en su defecto, donde se pueda encontrar más información acerca de la subasta electrónica."@es , "Property that indicated where the electronic auction is made or where we can look for more information about the auction."@en ;
+        sh:name         "Electronic auction web"@en , "Web de la subasta electrónica"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#electronicAuctionWeb> .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/foaf/0.1/> ;
+        rdfs:label        "Persona"@es , "Person"@en ;
+        sh:name           "Persona"@es , "Person"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://xmlns.com/foaf/0.1/Person> .
+
+<https://astrea.linkeddata.es/shapes#28ddc1b2b1253f219a6d8e51fc7ec381>
+        a               sh:PropertyShape ;
+        rdfs:label      "Abstract property pointing to extinction of contract or procedure. Use any of its subclasses."@en , "Extinción de contrato o de procedimiento"@es , "Contract or procedure extinction"@en , "Propiedad abstracta que indica la extinción de un contrato por resolución, renuncia o abandono. O bien la extinción del procedimiento al ser declarado desierto.\n\nUtilizar una de sus subclases."@es ;
+        sh:class        <http://contsem.unizar.es/def/sector-publico/pproc#ContractOrProcedureExtinction> ;
+        sh:description  "Propiedad abstracta que indica la extinción de un contrato por resolución, renuncia o abandono. O bien la extinción del procedimiento al ser declarado desierto.\n\nUtilizar una de sus subclases."@es , "Abstract property pointing to extinction of contract or procedure. Use any of its subclasses."@en ;
+        sh:name         "Extinción de contrato o de procedimiento"@es , "Contract or procedure extinction"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#contractOrProcedureExtinction> .
+
+<https://astrea.linkeddata.es/shapes#7246f42eb51d12015d811865ed93b81c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.org/> ;
+        rdfs:label        "Lugar"@es , "Location"@en ;
+        sh:name           "Lugar"@es , "Location"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://schema.org/location> .
+
+<https://astrea.linkeddata.es/shapes#892e36c8b727c9504cef4d094cdd4db1>
+        a               sh:PropertyShape ;
+        rdfs:label      "Enlace a documentación.\n\nPropiedad similar a pc:attachment, pero sin dominio fijo, pues esta misma propiedad puede utilizarse con múltiples clases (e.g. pc:Contract ó contsem:TenderMeeting)"@es , "Document reference"@en , "Documentación"@es , "Links to external documents."@en ;
+        rdfs:seeAlso    <http://purl.org/procurement/public-contracts#attachment> ;
+        sh:class        <http://xmlns.com/foaf/0.1/Document> ;
+        sh:description  "Links to external documents."@en , "Enlace a documentación.\n\nPropiedad similar a pc:attachment, pero sin dominio fijo, pues esta misma propiedad puede utilizarse con múltiples clases (e.g. pc:Contract ó contsem:TenderMeeting)"@es ;
+        sh:name         "Document reference"@en , "Documentación"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#documentReference> .
+
+<https://astrea.linkeddata.es/shapes#ecfcad6fa1d0058a3bc405c0fa00d34c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/procurement/public-contracts#> ;
+        rdfs:label        "Tender"@en , "Oferta de licitación"@es ;
+        sh:name           "Oferta de licitación"@es , "Tender"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#21d5d67fe3f51dcf439984fbe0687be9> , <https://astrea.linkeddata.es/shapes#8e2306f5a20f0b18766cc12bebdac739> , <https://astrea.linkeddata.es/shapes#634682557f8fa304a97637ca3812ece0> , <https://astrea.linkeddata.es/shapes#9eae1ffd8bb6564c914f1baf98859f6a> , <https://astrea.linkeddata.es/shapes#5c3c8698ce3a97639f1f86bcdb44abc0> , <https://astrea.linkeddata.es/shapes#72b3b4c6c283176101066ad947b806b8> , <https://astrea.linkeddata.es/shapes#795347c1e6f2852889ddcc534a607843> ;
+        sh:targetClass    <http://purl.org/procurement/public-contracts#Tender> .
+
+<https://astrea.linkeddata.es/shapes#5c689719c23d0b78e9efdea42511d7df>
+        a               sh:NodeShape ;
+        rdfs:label      "Electronic auction phase"@en , "Fase de subasta electrónica"@es ;
+        sh:description  "Class describing a phase of an electronic auction."@en , "Fase de la subasta electrónica de uno o más de los criterios de adjudicación del contrato."@es ;
+        sh:name         "Fase de subasta electrónica"@es , "Electronic auction phase"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d4f2313825f3718b4c5b620de6036f5f> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ElectronicAuctionPhase> .
+
+<https://astrea.linkeddata.es/shapes#880a651ad4880a3644ae8912c4770f58>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato de establecimiento de un acuerdo marco"@es , "Framework conclusion contract"@en ;
+        sh:description  "Clase de los contratos que consisten en el establecimiento de un acuerdo marco."@es , "Class describing the contracts consisting in the conclusion of a framework agreement."@en ;
+        sh:name         "Contrato de establecimiento de un acuerdo marco"@es , "Framework conclusion contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#FrameworkConclusionContract> .
+
+<https://astrea.linkeddata.es/shapes#fe72148f1a340b96cfea9d77f80cd76d>
+        a            sh:PropertyShape ;
+        rdfs:label   "Alcance de la modificación"@es , "Modification scope"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Alcance de la modificación"@es , "Modification scope"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#modificationScope> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#37e73cfa60f70d68b23d018afc3372fd>
+        a               sh:NodeShape ;
+        rdfs:label      "Acuerdo marco o Sistema Dinámico de contratación"@es , "Framework agreement or dynamic purchasing system"@en ;
+        sh:description  "Clase a utilizar cuando estemos ante un contrato que consiste en la declaración, tanto de un acuerdo marco como de un sistema dinámico de contratación."@es , "Class used to describe a contract that is a declaration of a framework agreement or a dynamic purchasing system."@en ;
+        sh:name         "Framework agreement or dynamic purchasing system"@en , "Acuerdo marco o Sistema Dinámico de contratación"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#99e91f94c21fb2e2f298df6523c7ef36> , <https://astrea.linkeddata.es/shapes#fedb65372dbfd05436b647242d815f62> , <https://astrea.linkeddata.es/shapes#1e5adabcb28bcad16a7b1ab7d0ead155> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#FrameworkAgreement> .
+
+<https://astrea.linkeddata.es/shapes#d5540942382daa981be234b164b54ad2>
+        a            sh:PropertyShape ;
+        rdfs:label   "Plazo de la garantía definitiva"@es , "Final financial guarantee duration"@en ;
+        sh:maxCount  1 ;
+        sh:name      "Plazo de la garantía definitiva"@es , "Final financial guarantee duration"@en ;
+        sh:nodeKind  sh:Literal , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#finalFinancialGuaranteeDuration> .
+
+<https://astrea.linkeddata.es/shapes#da02662b0d48da276023632810903234>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/procurement/public-contracts#> ;
+        rdfs:label        "En nombre de"@es , "On behalf of"@en ;
+        sh:name           "En nombre de"@es , "On behalf of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/procurement/public-contracts#onBehalfOf> .
+
+<https://astrea.linkeddata.es/shapes#2f858283a5e4e828c86ca4d2fb98191a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://schema.org/> ;
+        rdfs:label        "Evento"@es , "Event"@en ;
+        sh:name           "Evento"@es , "Event"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://schema.org/Event> .
+
+<https://astrea.linkeddata.es/shapes#65564f6f7b1dba435467db69f937d93d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/dc/terms/> ;
+        rdfs:label        "Fecha"@es , "Date"@en ;
+        sh:name           "Fecha"@es , "Date"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/dc/terms/date> .
+
+<https://astrea.linkeddata.es/shapes#fc88b9e8c0949d30b2294a9ea9384717>
+        a               sh:NodeShape ;
+        rdfs:label      "Concierto"@es , "Agreement contract"@en ;
+        sh:description  "Contrato de los conciertos con persona natural o jurídica que venga realizando prestaciones análogas a las que constituyen el servicio público de que se trate."@es , "Class describing the contract concerts with natural or legal person performing similar services at the public service in question."@en ;
+        sh:name         "Concierto"@es , "Agreement contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#AgreementContract> .
+
+<https://astrea.linkeddata.es/shapes#3bdfb9e34e77280390351d880383fcd2>
+        a               sh:NodeShape ;
+        rdfs:label      "Anuncio de licitación"@es , "Contract notice"@en ;
+        sh:name         "Anuncio de licitación"@es , "Contract notice"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ContractNotice> .
+
+<https://astrea.linkeddata.es/shapes#62c55674eefe20ecbb08e7d2bdbb4b04>
+        a               sh:NodeShape ;
+        rdfs:label      "Recurso legal"@es , "Legal remedy"@en ;
+        sh:name         "Recurso legal"@es , "Legal remedy"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#LegalRemedy> .
+
+<https://astrea.linkeddata.es/shapes#3f2ae919e9c05cd1b735ab4f438ab19b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/dc/terms/> ;
+        rdfs:label        "Título"@es , "Title"@en ;
+        sh:name           "Título"@es , "Title"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/dc/terms/title> .
+
+<https://astrea.linkeddata.es/shapes#5666dbcf8589853a2f8137ffe7a01f69>
+        a            sh:PropertyShape ;
+        rdfs:label   "Proveedor de información sobre la licitación"@es , "Tender information provider"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#InformationProvider> ;
+        sh:name      "Proveedor de información sobre la licitación"@es , "Tender information provider"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#tenderInformationProvider> .
+
+<https://astrea.linkeddata.es/shapes#7bbe49560a36485e7dd9ed2792b05638>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://schema.org/> ;
+        rdfs:label        "Lugar"@es , "Place"@en ;
+        sh:name           "Lugar"@es , "Place"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://schema.org/Place> .
+
+<https://astrea.linkeddata.es/shapes#d6477f81edee78070bae11669e2eb7a9>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato mixto"@es , "Mixed contract"@en ;
+        sh:name         "Contrato mixto"@es , "Mixed contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#MixedContract> .
+
+<https://astrea.linkeddata.es/shapes#60ce557be08c7a70034d74bfbf32995f>
+        a               sh:PropertyShape ;
+        rdfs:label      "The range of this property must be a percentage (i.e. float between 0.0 and 100.0)"@en , "El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0."@es , "Subcontratación máxima"@es , "Maximum subcontracting"@en ;
+        sh:datatype     xsd:float ;
+        sh:description  "The range of this property must be a percentage (i.e. float between 0.0 and 100.0)"@en , "El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0."@es ;
+        sh:maxCount     1 ;
+        sh:name         "Maximum subcontracting"@en , "Subcontratación máxima"@es ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#maxSubcontracting> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#366ac9c43f3418b6af86e04c3ff2708a>
+        a            sh:PropertyShape ;
+        rdfs:label   "Valor estimado del contrato"@es , "Estimated value of the contract"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#BundlePriceSpecification> ;
+        sh:maxCount  1 ;
+        sh:name      "Valor estimado del contrato"@es , "Estimated value of the contract"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#estimatedValue> .
+
+<https://astrea.linkeddata.es/shapes#d41d543b1b0c217fc8d492a11f9daae7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.org/> ;
+        rdfs:label        "País"@es , "Address country"@en ;
+        sh:name           "País"@es , "Address country"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://schema.org/addressCountry> .
+
+<https://astrea.linkeddata.es/shapes#cdc93306d557ea46f75403b48d60adcb>
+        a            sh:PropertyShape ;
+        rdfs:label   "Variación del plazo"@es , "Duration change"@en ;
+        sh:datatype  xsd:string ;
+        sh:maxCount  1 ;
+        sh:name      "Variación del plazo"@es , "Duration change"@en ;
+        sh:nodeKind  sh:Literal , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#durationChange> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#04daf3dd0751d508500e255daa39f623>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato de servicios"@es , "Services contract"@en ;
+        sh:name         "Contrato de servicios"@es , "Services contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ServicesContract> .
+
+<https://astrea.linkeddata.es/shapes#3d327119dbbf66457b16618948ee7648>
+        a               sh:PropertyShape ;
+        rdfs:label      "Property that points to the concept of the CPV code of an object.\n\nThe concept used should be a valid representation of a CPV code, as it is in http://cpv.data.ac.uk/."@en , "Main object of contract"@en , "Principal objeto del contrato"@es , "Representación CPV del objeto de un contrato.\n\nDebe apuntar a un concepto de objeto siguiendo la clasificación CPV de algún esquema de conceptos SKOS, como http://cpv.data.ac.uk/."@es ;
+        sh:class        <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:description  "Representación CPV del objeto de un contrato.\n\nDebe apuntar a un concepto de objeto siguiendo la clasificación CPV de algún esquema de conceptos SKOS, como http://cpv.data.ac.uk/."@es , "Property that points to the concept of the CPV code of an object.\n\nThe concept used should be a valid representation of a CPV code, as it is in http://cpv.data.ac.uk/."@en ;
+        sh:maxCount     1 ;
+        sh:name         "Principal objeto del contrato"@es , "Main object of contract"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#mainObject> .
+
+<https://astrea.linkeddata.es/shapes#8e5a4255ad5c9ebf5acbb828132f6117>
+        a            sh:PropertyShape ;
+        rdfs:label   "Documentación adicional"@es , "Additional document reference"@en ;
+        sh:name      "Documentación adicional"@es , "Additional document reference"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#c2a816bc0020df4b59bf7e34d171659d>
+        a               sh:NodeShape ;
+        rdfs:label      "Anuncio de formalización"@es , "Formalization notice"@en ;
+        sh:name         "Anuncio de formalización"@es , "Formalization notice"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#FormalizationNotice> .
+
+<https://astrea.linkeddata.es/shapes#243e11baaf242f03b29ad4c25d826557>
+        a               sh:NodeShape ;
+        rdfs:label      "Órganos del contrato"@es , "Contract bodies"@en ;
+        sh:description  "Clase que engloba los órganos relacionados con un contrato (e.g. mesa de contratación ó comité de expertos)."@es , "Class describing the bodies related to the contract."@en ;
+        sh:name         "Contract bodies"@en , "Órganos del contrato"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a317bdf4560ca2432bfd47ad07a612f6> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ContractBodies> .
+
+<https://astrea.linkeddata.es/shapes#fc5419ed0682d5543e6c48cc1f22ad72>
+        a            sh:PropertyShape ;
+        rdfs:label   "Revisión de precios permitida"@es , "Price review allowable"@en ;
+        sh:datatype  xsd:boolean ;
+        sh:maxCount  1 ;
+        sh:name      "Revisión de precios permitida"@es , "Price review allowable"@en ;
+        sh:nodeKind  sh:Literal , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#priceReviewAllowable> ;
+        sh:pattern   "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#1fab0d0ee9ec7a3f47c8fc289a2ca00f>
+        a               sh:NodeShape ;
+        rdfs:label      "Contract object"@en , "Objeto del contato"@es ;
+        sh:description  "Clase que define el objeto del contrato y las diferentes condiciones, obligaciones y modificaciones de este."@es , "Class that defines the object of the contract and the conditions or modifications the contract can have."@en ;
+        sh:name         "Objeto del contato"@es , "Contract object"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#021709f3ea2566e2d10839be9f8b04de> , <https://astrea.linkeddata.es/shapes#937a45f8221342433548f0647949c019> , <https://astrea.linkeddata.es/shapes#a20c259542ba4074a0ad7e9feec3a659> , <https://astrea.linkeddata.es/shapes#a9c02ebe490eaa1a55e576103b71c814> , <https://astrea.linkeddata.es/shapes#421f1cfdd7a65a94141edcfb522cb2fe> , <https://astrea.linkeddata.es/shapes#94f968bbd6b4647aebc63f9a5f031f09> , <https://astrea.linkeddata.es/shapes#d6c9d6f8f41f5ab4d2d681b38ee57522> , <https://astrea.linkeddata.es/shapes#ad5f85156c45e3f5cd5e920609f67202> , <https://astrea.linkeddata.es/shapes#3d327119dbbf66457b16618948ee7648> , <https://astrea.linkeddata.es/shapes#d69cfd802a3109facc29ba42f10e6140> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ContractObject> .
+
+<https://astrea.linkeddata.es/shapes#5c3c8698ce3a97639f1f86bcdb44abc0>
+        a               sh:PropertyShape ;
+        rdfs:label      "Award agreement"@en , "Points to the body agreement where a tender has been awarded."@en , "Indica el acuerdo del órgano de contratación donde se ha adjudicado el contrato a un licitador."@es , "Acuerdo de adjudicación"@es ;
+        sh:class        <http://contsem.unizar.es/def/sector-publico/pproc#ContractingBodyAgreement> ;
+        sh:description  "Indica el acuerdo del órgano de contratación donde se ha adjudicado el contrato a un licitador."@es , "Points to the body agreement where a tender has been awarded."@en ;
+        sh:name         "Award agreement"@en , "Acuerdo de adjudicación"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#awardAgreement> .
+
+<https://astrea.linkeddata.es/shapes#ca8ac0d270140f712c0f400086446f6a>
+        a            sh:PropertyShape ;
+        rdfs:label   "Puntuación máxima y mínima del criterio"@es , "Criterion maximum and minimum score"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Puntuación máxima y mínima del criterio"@es , "Criterion maximum and minimum score"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#criterionMaxAndMinScores> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#99e91f94c21fb2e2f298df6523c7ef36>
+        a                sh:PropertyShape ;
+        rdfs:label       "Maximum number of operators"@en , "Número máximo de participantes"@es ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:maxCount      1 ;
+        sh:minInclusive  0 ;
+        sh:name          "Número máximo de participantes"@es , "Maximum number of operators"@en ;
+        sh:nodeKind      sh:IRIOrLiteral , sh:Literal ;
+        sh:path          <http://contsem.unizar.es/def/sector-publico/pproc#maxNumberOfOperators> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#fc0d21c7fe9b204c74def05369881b16>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.org/> ;
+        rdfs:label        "Nombre"@es , "Name"@en ;
+        sh:name           "Nombre"@es , "Name"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://schema.org/name> .
+
+<https://astrea.linkeddata.es/shapes#efce4cf8798e01daa473280e7981c0ef>
+        a               sh:NodeShape ;
+        rdfs:label      "Renuncia del procedimiento"@es , "Procedure waive"@en ;
+        sh:name         "Renuncia del procedimiento"@es , "Procedure waive"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ProcedureWaive> .
+
+<https://astrea.linkeddata.es/shapes#09f17fcc61f87f9692f33bab42323734>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core#> ;
+        rdfs:label        "Más amplio"@es , "Broader"@en ;
+        sh:name           "Más amplio"@es , "Broader"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/2004/02/skos/core#broader> .
+
+<https://astrea.linkeddata.es/shapes#5a45f730f3f9e51407aa676783a619e5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core#> ;
+        rdfs:label        "Concepto superior"@es , "Top concept of"@en ;
+        sh:name           "Concepto superior"@es , "Top concept of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/2004/02/skos/core#topConceptOf> .
+
+<https://astrea.linkeddata.es/shapes#ca5c854714c6f2f395a2b2c982e35ab0>
+        a            sh:PropertyShape ;
+        sh:hasValue  0 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#numberOfLots> .
+
+<https://astrea.linkeddata.es/shapes#c1a4e57b0ca145b7ef674617ab839473>
+        a            sh:PropertyShape ;
+        rdfs:label   "Duración estimada"@es , "Estimated duration"@en ;
+        sh:maxCount  1 ;
+        sh:name      "Duración estimada"@es , "Estimated duration"@en ;
+        sh:nodeKind  sh:Literal , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#estimatedDuration> .
+
+<https://astrea.linkeddata.es/shapes#021709f3ea2566e2d10839be9f8b04de>
+        a            sh:PropertyShape ;
+        rdfs:label   "Lugar de realización del contrato"@es , "Place of contract's realization"@en ;
+        sh:class     <http://schema.org/Place> ;
+        sh:name      "Lugar de realización del contrato"@es , "Place of contract's realization"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#location> .
+
+<https://astrea.linkeddata.es/shapes#3bf85f67202329c856a261bbd7b4b406>
+        a            sh:PropertyShape ;
+        rdfs:label   "Plazo de ejecución ofertado"@es , "Offered duration"@en ;
+        sh:maxCount  1 ;
+        sh:name      "Plazo de ejecución ofertado"@es , "Offered duration"@en ;
+        sh:nodeKind  sh:Literal , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#offeredDuration> .
+
+<https://astrea.linkeddata.es/shapes#af06908b4ca3caac8030a7f8a795bb7e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/goodrelations/v1#> ;
+        rdfs:label        "Oferta"@es , "Offering"@en ;
+        sh:name           "Oferta"@es , "Offering"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#fedb65372dbfd05436b647242d815f62> ;
+        sh:targetClass    <http://purl.org/goodrelations/v1#Offering> .
+
+<https://astrea.linkeddata.es/shapes#52898030732b56ac06264b7949b2b4b8>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato derivado de un acuerdo marco"@es , "Framework derivative contract"@en ;
+        sh:description  "Clase de los contratos derivados de un acuerdo marco"@es , "Class describing contracts derived from a framework agreement."@en ;
+        sh:name         "Contrato derivado de un acuerdo marco"@es , "Framework derivative contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#FrameworkDerivativeContract> .
+
+<https://astrea.linkeddata.es/shapes#9d5575ef807eac4684aa679e87265765>
+        a               sh:NodeShape ;
+        rdfs:label      "Proveedor de información"@es , "Information provider"@en ;
+        sh:description  "Proveedor de información sobre la licitación del contrato."@es , "Class defining the provider of information about the contract."@en ;
+        sh:name         "Information provider"@en , "Proveedor de información"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#31bcb622b42eed814071fec55b37040a> , <https://astrea.linkeddata.es/shapes#fedb65372dbfd05436b647242d815f62> , <https://astrea.linkeddata.es/shapes#cad81acf6d9f4d043c61cf38063da682> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#InformationProvider> .
+
+<https://astrea.linkeddata.es/shapes#a9d91b710c3940d4ff1608b67e667ba8>
+        a            sh:PropertyShape ;
+        rdfs:label   "Acuerdo del órgano de contratación"@es , "Contracting body agreement"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#ContractingBodyAgreement> ;
+        sh:name      "Acuerdo del órgano de contratación"@es , "Contracting body agreement"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#contractingBodyAgreement> .
+
+<https://astrea.linkeddata.es/shapes#2147780b01d7553be3c9a3866bd2b823>
+        a               sh:PropertyShape ;
+        rdfs:label      "Forma de evaluación del criterio"@es , "Criterion evaluation mode"@en , "Propiedad para describir la forma de valoración del criterio."@es , "Property textually describing the criterion evaluarion mode."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Propiedad para describir la forma de valoración del criterio."@es , "Property textually describing the criterion evaluarion mode."@en ;
+        sh:name         "Forma de evaluación del criterio"@es , "Criterion evaluation mode"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#criterionEvaluationMode> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#feda1d30c2a4aaf5aebe979e5a0810da>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/dc/terms/> ;
+        rdfs:label        "Descripción"@es , "Description"@en ;
+        sh:name           "Descripción"@es , "Description"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/dc/terms/description> .
+
+<https://astrea.linkeddata.es/shapes#362f3d1c84e663976d46b6951b113c65>
+        a            sh:PropertyShape ;
+        rdfs:label   "Garantía provisional"@es , "Provisional financial guarantee"@en ;
+        sh:datatype  xsd:string ;
+        sh:maxCount  1 ;
+        sh:name      "Provisional financial guarantee"@en , "Garantía provisional"@es ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#provisionalFinancialGuarantee> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#520e9d06bcf19b7cb05cedc5f05836c2>
+        a               sh:PropertyShape ;
+        rdfs:label      "Indicated the role of a person inside the committee."@en , "Cargo en el comité de contratación"@es , "Indica el cargo que una persona ostenta dentro del comité del contratación."@es , "Tender committee role"@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Indica el cargo que una persona ostenta dentro del comité del contratación."@es , "Indicated the role of a person inside the committee."@en ;
+        sh:maxCount     1 ;
+        sh:name         "Cargo en el comité de contratación"@es , "Tender committee role"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#tenderCommitteeRole> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#a9c02ebe490eaa1a55e576103b71c814>
+        a            sh:PropertyShape ;
+        rdfs:label   "Condiciones para la modificación del contrato"@es , "Contract modification conditions"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#ContractModificationConditions> ;
+        sh:maxCount  1 ;
+        sh:name      "Contract modification conditions"@en , "Condiciones para la modificación del contrato"@es ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#contractModificationConditions> .
+
+<https://astrea.linkeddata.es/shapes#1c06f64788ceed887349df530cb225ed>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.org/> ;
+        rdfs:label        "Fecha de inicio"@es , "Start date"@en ;
+        sh:name           "Fecha de inicio"@es , "Start date"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://schema.org/startDate> .
+
+<https://astrea.linkeddata.es/shapes#6c8380f2a738fd52ae4e73da1721299a>
+        a               sh:NodeShape ;
+        rdfs:label      "Gestión interesada"@es , "Shared result agreement contract"@en ;
+        sh:description  "Clase de los contrato en cuya virtud la Administración y el empresario participarán en los resultados de la explotación del servicio en la proporción que se establezca en el contrato."@es , "Class describing contracts whose operation results are shared among the contracting authority and the tenderer."@en ;
+        sh:name         "Gestión interesada"@es , "Shared result agreement contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#SharedResultAgreementContract> .
+
+<https://astrea.linkeddata.es/shapes#ec72c74da206940223c47e12d0f44b5b>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato de compra"@es , "Buy contract"@en ;
+        sh:description  "Clase de los contratos de suministros cuyo objeto es la compra de bienes."@es , "Class to describe the supplies contracts aimed to buy supplies."@en ;
+        sh:name         "Contrato de compra"@es , "Buy contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#BuyContract> .
+
+<https://astrea.linkeddata.es/shapes#3d68a5047f9c0fe096a53de7a4789347>
+        a            sh:PropertyShape ;
+        rdfs:label   "Duración"@es , "Duration"@en ;
+        sh:datatype  xsd:duration ;
+        sh:name      "Duración"@es , "Duration"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#duration> ;
+        sh:pattern   "-?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S))))" .
+
+<https://astrea.linkeddata.es/shapes#fc0c5f89c6973238346fb9d162d3cf03>
+        a               sh:NodeShape ;
+        rdfs:label      "Desistimiento del procedimiento"@es , "Procedure resignation"@en ;
+        sh:name         "Desistimiento del procedimiento"@es , "Procedure resignation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ProcedureResignation> .
+
+<https://astrea.linkeddata.es/shapes#72957706d829564992ba37d7c29c54e0>
+        a            sh:PropertyShape ;
+        rdfs:label   "Otros requisitos"@es , "Other ability requisites"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Otros requisitos"@es , "Other ability requisites"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#otherAbilityRequisites> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#fedb65372dbfd05436b647242d815f62>
+        a            sh:PropertyShape ;
+        rdfs:label   "Fecha estimada de finalización"@es , "Estimated end date"@en ;
+        sh:datatype  xsd:date ;
+        sh:maxCount  1 ;
+        sh:name      "Estimated end date"@en , "Fecha estimada de finalización"@es ;
+        sh:nodeKind  sh:Literal , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#estimatedEndDate> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#51f818b4627611734c325a7b4be78a13>
+        a            sh:PropertyShape ;
+        rdfs:label   "Supuesto que ampara el uso del procedimiento elegido"@es , "Assumption protecting the chosen procedure type"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Supuesto que ampara el uso del procedimiento elegido"@es , "Assumption protecting the chosen procedure type"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#assumptionProtectingProcedureType> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#a12c6be45812284c9507109645bc21d9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/procurement/public-contracts#> ;
+        rdfs:label        "Oferta presentada"@es , "Submitted tender"@en ;
+        sh:name           "Oferta presentada"@es , "Submitted tender"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/procurement/public-contracts#tender> .
+
+<https://astrea.linkeddata.es/shapes#6fea52f071da028d4457ccaa74886bf7>
+        a            sh:PropertyShape ;
+        rdfs:label   "Resolución del recurso"@es , "Remedy resolution"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Resolución del recurso"@es , "Remedy resolution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#remedyResolution> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#a317bdf4560ca2432bfd47ad07a612f6>
+        a            sh:PropertyShape ;
+        rdfs:label   "Comité"@es , "Committee"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#Committee> ;
+        sh:name      "Comité"@es , "Committee"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#committee> .
+
+<https://astrea.linkeddata.es/shapes#93d070b8ad759e88c9582c6cfc390d63>
+        a               sh:PropertyShape ;
+        rdfs:label      "Indica la modificación efectuada en un contrato."@es , "Modificación de contrato"@es , "Points to contract modifications being made."@en , "Contract modification"@en ;
+        sh:class        <http://contsem.unizar.es/def/sector-publico/pproc#ContractModification> ;
+        sh:description  "Points to contract modifications being made."@en , "Indica la modificación efectuada en un contrato."@es ;
+        sh:name         "Modificación de contrato"@es , "Contract modification"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#contractModification> .
+
+<https://astrea.linkeddata.es/shapes#580659d3d4d3c9974e9dc36d00e6e6e8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/foaf/0.1/> ;
+        rdfs:label        "Miembro"@es , "Member"@en ;
+        sh:name           "Miembro"@es , "Member"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://xmlns.com/foaf/0.1/member> .
+
+<https://astrea.linkeddata.es/shapes#01e1f415fdae8b4e01dc0487440151bd>
+        a             sh:PropertyShape ;
+        rdfs:label    "Procedure type"@en , "Tipo de procedimiento"@es ;
+        rdfs:seeAlso  <http://contsem.unizar.es/def/sector-publico/pproc#ProcedureTypeScheme> ;
+        sh:class      <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:maxCount   1 ;
+        sh:name       "Tipo de procedimiento"@es , "Procedure type"@en ;
+        sh:nodeKind   sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path       <http://contsem.unizar.es/def/sector-publico/pproc#procedureType> .
+
+<https://astrea.linkeddata.es/shapes#e7ed1faa8e1f28af993b4239cdc3d1bb>
+        a            sh:PropertyShape ;
+        rdfs:label   "Solvencia técnica y profesional requerida"@es , "Required technical and professional ability"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Solvencia técnica y profesional requerida"@es , "Required technical and professional ability"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#requiredTechnicalAndProfessionalAbility> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#2cf34b0cba7de738d3fbd841c49e3a15>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/procurement/public-contracts#> ;
+        rdfs:label        "Entidad contratante"@es , "Contracting authority"@en ;
+        sh:name           "Entidad contratante"@es , "Contracting authority"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/procurement/public-contracts#contractingAuthority> .
+
+<https://astrea.linkeddata.es/shapes#a2238bb13aa10da59f96912cd7ea8102>
+        a               sh:NodeShape ;
+        rdfs:label      "Trámites del contrato"@es , "Contract activites"@en ;
+        sh:description  "Class describing all activities of a contract (e.g. meetings or agreements of the contracting body)."@en , "Clase que engloba todos los trámites de un contrato (e.g. reuniones ó acuerdos del órgano de contratación)."@es ;
+        sh:name         "Trámites del contrato"@es , "Contract activites"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#069fa77625a2af6d3de843b4f8a0c0e0> , <https://astrea.linkeddata.es/shapes#a9d91b710c3940d4ff1608b67e667ba8> , <https://astrea.linkeddata.es/shapes#a31b80cdf4a60f28c445dc96acfe5b2b> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ContractActivities> .
+
+<https://astrea.linkeddata.es/shapes#45ece5eb0fd8e5ad59389757fd9213ba>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/procurement/public-contracts#> ;
+        rdfs:label        "Criterio de adjudicación"@es , "Award criterion"@en ;
+        sh:name           "Criterio de adjudicación"@es , "Award criterion"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/procurement/public-contracts#awardCriterion> .
+
+<https://astrea.linkeddata.es/shapes#d000e4086076ec11c1a0400d1470962f>
+        a            sh:PropertyShape ;
+        rdfs:label   "Recurso interpuesto a"@es , "Remedy interposed to"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Recurso interpuesto a"@es , "Remedy interposed to"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#remedyInterposedTo> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#7d2f2e9ba9a6b9b0a4587d471024ede6>
+        a               sh:NodeShape ;
+        rdfs:label      "Oferta adjudicada"@es , "Awarded tender"@en ;
+        sh:description  "Clase para definir las oferta que han sido adjudicadas."@es , "Class describing the awarded tenders."@en ;
+        sh:name         "Oferta adjudicada"@es , "Awarded tender"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#AwardedTender> .
+
+<https://astrea.linkeddata.es/shapes#748be708530bd31267913ac2dec175b1>
+        a               sh:NodeShape ;
+        rdfs:label      "Condiciones de ejecución del contrato"@es , "Contract execution conditions"@en ;
+        sh:description  "Clase que define las condiciones de ejecución de un contrato (e.g. condiciones especiales ó subcontratación)."@es , "Class that defines the execution conditions of the contract (e.g. special execution conditions or subcontracting percentage amounts)."@en ;
+        sh:name         "Contract execution conditions"@en , "Condiciones de ejecución del contrato"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c7b71f19df82cc068f9fa9e29c925d2f> , <https://astrea.linkeddata.es/shapes#937238b5a851904044800ba270e7bb7a> , <https://astrea.linkeddata.es/shapes#60ce557be08c7a70034d74bfbf32995f> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ContractExecutionConditions> .
+
+<https://astrea.linkeddata.es/shapes#81bdb45b1820a207cfad72ddbf4e4ee1>
+        a            sh:PropertyShape ;
+        rdfs:label   "Reunión informativa"@es , "Briefing"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#Briefing> ;
+        sh:name      "Reunión informativa"@es , "Briefing"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#briefing> .
+
+<https://astrea.linkeddata.es/shapes#b314d2d6e3881d73a5a8f9292a04f7f1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core#> ;
+        rdfs:label        "Más concreto"@es , "Narrower"@en ;
+        sh:name           "Más concreto"@es , "Narrower"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/2004/02/skos/core#narrower> .
+
+<https://astrea.linkeddata.es/shapes#e47388852a051f9a00020ac1331f5eb9>
+        a            sh:PropertyShape ;
+        rdfs:label   "Notice web"@en , "Web del anuncio"@es ;
+        sh:class     <http://xmlns.com/foaf/0.1/Document> ;
+        sh:maxCount  1 ;
+        sh:name      "Web del anuncio"@es , "Notice web"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#noticeWeb> .
+
+<https://astrea.linkeddata.es/shapes#693f1a1b5227636f0f6d32dd5701bd2a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/procurement/public-contracts#> ;
+        rdfs:label        "Precio final"@es , "Actual price"@en ;
+        sh:name           "Precio final"@es , "Actual price"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/procurement/public-contracts#actualPrice> .
+
+<https://astrea.linkeddata.es/shapes#819669ae67b3272a8d656863521e0a33>
+        a            sh:PropertyShape ;
+        rdfs:label   "Early tramitation"@en , "Tramitación anticipada"@es ;
+        sh:datatype  xsd:boolean ;
+        sh:maxCount  1 ;
+        sh:name      "Early tramitation"@en , "Tramitación anticipada"@es ;
+        sh:nodeKind  sh:Literal , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#earlyTramitation> ;
+        sh:pattern   "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#42a736f3b1a4df195c42d80b2cf58c34>
+        a               sh:PropertyShape ;
+        rdfs:label      "Defines the necessary documentation a tender must include."@en , "Tender document needs"@en , "Define la documentación necesaria a presentar en las ofertas."@es , "Documentación a presentar"@es ;
+        sh:datatype     xsd:string ;
+        sh:description  "Define la documentación necesaria a presentar en las ofertas."@es , "Defines the necessary documentation a tender must include."@en ;
+        sh:name         "Tender document needs"@en , "Documentación a presentar"@es ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#tenderDocumentNeeds> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#b5af97affccf3805a49a14b22a0d672d>
+        a            sh:PropertyShape ;
+        rdfs:label   "Criterio"@es , "Criterion"@en ;
+        sh:class     <http://purl.org/procurement/public-contracts#AwardCriterion> ;
+        sh:maxCount  1 ;
+        sh:name      "Criterio"@es , "Criterion"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#criterion> .
+
+<https://astrea.linkeddata.es/shapes#6dfda30c746bf58e8949ead724e61d11>
+        a               sh:NodeShape ;
+        rdfs:label      "Criterion score"@en , "Valoración de criterio"@es ;
+        sh:description  "Class to describe an award criterion and its score."@en , "Clase para valorar individualmente un criterio de adjudicación. Esta formada por una puntuación (contsem:score) y un criterio (contsem:criterion)."@es ;
+        sh:name         "Criterion score"@en , "Valoración de criterio"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ef2708b999099c24d0b7b64b12bc1420> , <https://astrea.linkeddata.es/shapes#b5af97affccf3805a49a14b22a0d672d> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#CriterionScore> .
+
+<https://astrea.linkeddata.es/shapes#bfabca3ea37995518e446267257d7f46>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/procurement/public-contracts#> ;
+        rdfs:label        "Lote"@es , "Lot"@en ;
+        sh:name           "Lote"@es , "Lot"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/procurement/public-contracts#lot> .
+
+<https://astrea.linkeddata.es/shapes#470ea0d00e5faf6d3cb983cc5de1cbac>
+        a            sh:PropertyShape ;
+        rdfs:label   "Is negotiable"@en , "Es negociable"@es ;
+        sh:datatype  xsd:boolean ;
+        sh:maxCount  1 ;
+        sh:name      "Es negociable"@es , "Is negotiable"@en ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#isNegotiable> ;
+        sh:pattern   "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#67fd5667488404218967a55130a83c25>
+        a               sh:PropertyShape ;
+        rdfs:label      "Points to the authority that is delegating the contract."@en , "Entidad delegante"@es , "Indica la entidad que delega la licitación de este contrato."@es , "Delegating authority"@en ;
+        sh:class        <http://www.w3.org/ns/org#Organization> ;
+        sh:description  "Points to the authority that is delegating the contract."@en , "Indica la entidad que delega la licitación de este contrato."@es ;
+        sh:maxCount     1 ;
+        sh:name         "Delegating authority"@en , "Entidad delegante"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#delegatingAuthority> .
+
+<https://astrea.linkeddata.es/shapes#0c311c367cdc4edcae241095e94e8d60>
+        a               sh:NodeShape ;
+        rdfs:label      "Arrendamiento financiero"@es , "Lease contract"@en ;
+        sh:description  "Clase de los contratos de suministros cuyo objeto es el arrendamiento financiero de bienes.\n\nPopularmente conocido como 'renting' en España."@es , "Class defining supplies contracts aimed to lease supplies."@en ;
+        sh:name         "Arrendamiento financiero"@es , "Lease contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#LeaseContract> .
+
+<https://astrea.linkeddata.es/shapes#e03c17ac9d5d09d3e7695a35a35308a4>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato privado"@es , "Private contract"@en ;
+        sh:name         "Contrato privado"@es , "Private contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#PrivateContract> .
+
+<https://astrea.linkeddata.es/shapes#3be94d7fee0e1341aedfa36abe9d2948>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato de sociedad de economia mixta"@es , "Mixed capital company contract"@en ;
+        sh:description  "Los contrato de sociedad de economia mixta son aquellos en que la Administración participe, por sí o por medio de una entidad pública, en concurrencia con personas naturales o jurídicas."@es , "Class describing the contracts where the contracting authority participates concurrently with the natural or legal person."@en ;
+        sh:name         "Contrato de sociedad de economia mixta"@es , "Mixed capital company contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#MixedCapitalCompanyContract> .
+
+<https://astrea.linkeddata.es/shapes#f858ad1ab56ad5d6a71b9d190012ba84>
+        a               sh:NodeShape ;
+        rdfs:label      "Contract procedure"@en , "Procedimiento del contrato"@es ;
+        sh:description  "Clase que define las especificaciones del procedimiento de un contrato (e.g. tipo de procedimiento o de tramitación)."@es , "Class that specifies the procedure of a contract (e.g. type of procedure or its urgency)."@en ;
+        sh:name         "Procedimiento del contrato"@es , "Contract procedure"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#15c56721be61c58159433e4a10b3157b> , <https://astrea.linkeddata.es/shapes#81bdb45b1820a207cfad72ddbf4e4ee1> , <https://astrea.linkeddata.es/shapes#a9d91b710c3940d4ff1608b67e667ba8> , <https://astrea.linkeddata.es/shapes#9fddf425fab11a56fe34b158404b7888> , <https://astrea.linkeddata.es/shapes#6c53af5e5e8f1f6cc497c903497e2989> , <https://astrea.linkeddata.es/shapes#a31b80cdf4a60f28c445dc96acfe5b2b> , <https://astrea.linkeddata.es/shapes#42ef0b078f43667009a302789a4718ae> , <https://astrea.linkeddata.es/shapes#819669ae67b3272a8d656863521e0a33> , <https://astrea.linkeddata.es/shapes#b9fc903f6a56f643f7bd6bdec46d4e66> , <https://astrea.linkeddata.es/shapes#5666dbcf8589853a2f8137ffe7a01f69> , <https://astrea.linkeddata.es/shapes#567dbbbe3ab450ad4aa5135d22be3439> , <https://astrea.linkeddata.es/shapes#4b7689a47bd3ee216b85dc58cbf6731e> , <https://astrea.linkeddata.es/shapes#27d547919d4385492fa0d8399992a052> , <https://astrea.linkeddata.es/shapes#5ac02c396561d1bedfffe4257f5f78e8> , <https://astrea.linkeddata.es/shapes#7a65859998248898ee71172e406388a8> , <https://astrea.linkeddata.es/shapes#01e1f415fdae8b4e01dc0487440151bd> , <https://astrea.linkeddata.es/shapes#a8c7438c40f2b4fc180d022139ef16f6> , <https://astrea.linkeddata.es/shapes#9116049d45648676558a7afe0dc93283> , <https://astrea.linkeddata.es/shapes#51f818b4627611734c325a7b4be78a13> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ContractProcedureSpecifications> .
+
+<https://astrea.linkeddata.es/shapes#5d27003d8449013f8e1a36f3351ffd2a>
+        a            sh:PropertyShape ;
+        rdfs:label   "Recurso recurrente"@es , "Recurrent remedy"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Recurso recurrente"@es , "Recurrent remedy"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#recurrentRemedy> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#bf9cd88f393fed904e1c5c218a86d367>
+        a               sh:NodeShape ;
+        rdfs:label      "Acuerdo del órgano de contratación"@es , "Contracting body agreement"@en ;
+        sh:name         "Acuerdo del órgano de contratación"@es , "Contracting body agreement"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ContractingBodyAgreement> .
+
+<https://astrea.linkeddata.es/shapes#9c1fc0670b5307a2153ddf4d99c01a18>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato de obras"@es , "Works contract"@en ;
+        sh:name         "Contrato de obras"@es , "Works contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#WorksContract> .
+
+<https://astrea.linkeddata.es/shapes#7760b2762fffab4cbebeb9bd00e99026>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato de suministros"@es , "Supplies contract"@en ;
+        sh:description  "Clase de los contratos cuyo objeto es la adquisición de suministros. Esta adquisición puede ser bien mediante compra, alquiler o arrendamiento financiero."@es , "Class describing contracts whose object is the acquisition of supplies."@en ;
+        sh:name         "Contrato de suministros"@es , "Supplies contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#SuppliesContract> .
+
+<https://astrea.linkeddata.es/shapes#1765118d4d1ee92e7b1136165085200b>
+        a            sh:PropertyShape ;
+        rdfs:label   "Otras garantías"@es , "Other guarantee"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Otras garantías"@es , "Other guarantee"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#otherGuarantee> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#b9fc903f6a56f643f7bd6bdec46d4e66>
+        a            sh:PropertyShape ;
+        rdfs:label   "Número mínimo de invitaciones"@es , "Minimum number of invitations"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Número mínimo de invitaciones"@es , "Minimum number of invitations"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#minInvitations> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#560dd0b7700d306e22d465cdb6182779>
+        a               sh:PropertyShape ;
+        rdfs:label      "Notice site"@en , "Esta propiedad se refiere al medio donde ha publicado el anuncio. Habitualmente este será un boletín o diario oficial, por ejemplo, el DOUE, BOE o boletín autonómico correspondiente, pero puede ser que sea publicado en prensa u otros medios."@es , "Medio de publicación del anuncio"@es , "Property that indicates the sire where the notice is published. Normally it would be an official source, like the Official Jounral of the European Union, but it can be anywhere else, like press."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Esta propiedad se refiere al medio donde ha publicado el anuncio. Habitualmente este será un boletín o diario oficial, por ejemplo, el DOUE, BOE o boletín autonómico correspondiente, pero puede ser que sea publicado en prensa u otros medios."@es , "Property that indicates the sire where the notice is published. Normally it would be an official source, like the Official Jounral of the European Union, but it can be anywhere else, like press."@en ;
+        sh:name         "Notice site"@en , "Medio de publicación del anuncio"@es ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#noticeSite> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#d00c5203d6e6a14706bf58e0c944b3e5>
+        a               sh:NodeShape ;
+        rdfs:label      "Contract temporal conditions"@en , "Condiciones temporales del contrato"@es ;
+        sh:description  "Class that describes the temporal conditions of the contract."@en , "Clase que define las condiciones temporales de un contrato (e.g. plazo ó prórrogas)."@es ;
+        sh:name         "Condiciones temporales del contrato"@es , "Contract temporal conditions"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a222cba1ab8d18061a123c8834d41309> , <https://astrea.linkeddata.es/shapes#fedb65372dbfd05436b647242d815f62> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ContractTemporalConditions> .
+
+<https://astrea.linkeddata.es/shapes#937238b5a851904044800ba270e7bb7a>
+        a               sh:PropertyShape ;
+        rdfs:label      "Campo para definir las condiciones de ejecución del contrato si las hubiera (e.g. forma jurídica a adoptar por la agrupación de contratistas)"@es , "Property to define alternative execution requirements (e.g. legal form to be adopted by tenderers)."@en , "Condiciones de ejecución"@es , "Execution requeriments"@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Campo para definir las condiciones de ejecución del contrato si las hubiera (e.g. forma jurídica a adoptar por la agrupación de contratistas)"@es , "Property to define alternative execution requirements (e.g. legal form to be adopted by tenderers)."@en ;
+        sh:name         "Execution requeriments"@en , "Condiciones de ejecución"@es ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#executionRequeriments> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#d11433218234dbae6bb8d4e80585f12f>
+        a               sh:NodeShape ;
+        rdfs:label      "Requisitos para las ofertas"@es , "Tender requirements"@en ;
+        sh:description  "Clase que define los requisitos exigidos a las ofertas a presentar (e.g. plazo o documentación a presentar)."@es , "Class to define the tender requirements needed to submit a tender (e.g. tender document needs)."@en ;
+        sh:name         "Tender requirements"@en , "Requisitos para las ofertas"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#42a736f3b1a4df195c42d80b2cf58c34> , <https://astrea.linkeddata.es/shapes#b2e7302dfc20053f656147e6b8e1f0a6> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#TenderRequirements> .
+
+<https://astrea.linkeddata.es/shapes#9116049d45648676558a7afe0dc93283>
+        a            sh:PropertyShape ;
+        rdfs:label   "Start date of the tender dossier"@en , "Fecha de la resolución del inicio del expediente de contratación"@es ;
+        sh:datatype  xsd:date ;
+        sh:maxCount  1 ;
+        sh:name      "Start date of the tender dossier"@en , "Fecha de la resolución del inicio del expediente de contratación"@es ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#tenderDossierStartDate> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#f5f5d72567c7a393fecbbed41b1f2344>
+        a            sh:PropertyShape ;
+        rdfs:label   "Duración final"@es , "Actual duration"@en ;
+        sh:maxCount  1 ;
+        sh:name      "Duración final"@es , "Actual duration"@en ;
+        sh:nodeKind  sh:Literal , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#actualDuration> .
+
+<https://astrea.linkeddata.es/shapes#12e3dabfd45094e483b9d950cc504361>
+        a            sh:PropertyShape ;
+        rdfs:label   "Tender requirements"@en , "Requisitos para las ofertas"@es ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#TenderRequirements> ;
+        sh:maxCount  1 ;
+        sh:name      "Tender requirements"@en , "Requisitos para las ofertas"@es ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#tenderRequirements> .
+
+<https://astrea.linkeddata.es/shapes#087a978eb4694d2e8945b9bbe6b1cae0>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://contsem.unizar.es/def/sector-publico/pproc#lot> ;
+        sh:qualifiedMaxCount    "0"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <http://contsem.unizar.es/def/sector-publico/pproc#Lot> ] .
+
+<https://astrea.linkeddata.es/shapes#b8840ae319dd17775a4c3ff2c43caeca>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#8c3a6f22c2a50e9726f695a188ace0cb>
+        a               sh:NodeShape ;
+        rdfs:label      "Contract additional obligations"@en , "Obligaciones accesorias del contrato"@es ;
+        sh:description  "Class describing the additional obligations the contract needs (e.g. guarantees or advertisement costs)"@en , "Clase que define las obligaciones accesorias de un contrato (e.g. garantías ó gastos de publicidad)."@es ;
+        sh:name         "Contract additional obligations"@en , "Obligaciones accesorias del contrato"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1765118d4d1ee92e7b1136165085200b> , <https://astrea.linkeddata.es/shapes#e47e3b469768c8f592e814f181bbb22e> , <https://astrea.linkeddata.es/shapes#a8e6eb6d3935fd505cdc3676108bbc1e> , <https://astrea.linkeddata.es/shapes#362f3d1c84e663976d46b6951b113c65> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ContractAdditionalObligations> .
+
+<https://astrea.linkeddata.es/shapes#d6c9d6f8f41f5ab4d2d681b38ee57522>
+        a            sh:PropertyShape ;
+        rdfs:label   "Contract temporal conditions"@en , "Condiciones temporales del contrato"@es ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#ContractTemporalConditions> ;
+        sh:maxCount  1 ;
+        sh:name      "Condiciones temporales del contrato"@es , "Contract temporal conditions"@en ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#contractTemporalConditions> .
+
+<https://astrea.linkeddata.es/shapes#db9da41aa9a43f91b85b6f3799c60d18>
+        a            sh:PropertyShape ;
+        rdfs:label   "Fase de subasta electrónica"@es , "Electronic auction phase"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#ElectronicAuctionPhase> ;
+        sh:name      "Fase de subasta electrónica"@es , "Electronic auction phase"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#electronicAuctionPhase> .
+
+<https://astrea.linkeddata.es/shapes#df457cde2978d096a6383733f5ee9da8>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#frameworkAgreement> .
+
+<https://astrea.linkeddata.es/shapes#a20c259542ba4074a0ad7e9feec3a659>
+        a            sh:PropertyShape ;
+        rdfs:label   "Condiciones de ejecución del contrato"@es , "Contract execution conditions"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#ContractExecutionConditions> ;
+        sh:maxCount  1 ;
+        sh:name      "Condiciones de ejecución del contrato"@es , "Contract execution conditions"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#contractExecutionConditions> .
+
+<https://astrea.linkeddata.es/shapes#60ad156088fee7189d98f72994e35a10>
+        a               sh:NodeShape ;
+        rdfs:label      "Recurso administrativo ordinario"@es , "Ordinary administrative remedy"@en ;
+        sh:name         "Recurso administrativo ordinario"@es , "Ordinary administrative remedy"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#OrdinaryAdministrativeRemedy> .
+
+<https://astrea.linkeddata.es/shapes#d4f2313825f3718b4c5b620de6036f5f>
+        a            sh:PropertyShape ;
+        rdfs:label   "Modo de finalización"@es , "End mode"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Modo de finalización"@es , "End mode"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#endMode> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#2e684ff1bd307ab9650c701cb67d3b0f>
+        a               sh:PropertyShape ;
+        rdfs:label      "Construction subsidies"@en , "Descripción de las aportaciones públicas a la construcción."@es , "Aportaciones públicas"@es , "Description of the public subsidies to construction works contracts."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Descripción de las aportaciones públicas a la construcción."@es , "Description of the public subsidies to construction works contracts."@en ;
+        sh:name         "Construction subsidies"@en , "Aportaciones públicas"@es ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#constructionSubsidies> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#0b5cf941f04cd50ead008c8269ab5d95>
+        a            sh:PropertyShape ;
+        rdfs:label   "Procedimiento desierto"@es , "Procedure void"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#ProcedureVoid> ;
+        sh:name      "Procedimiento desierto"@es , "Procedure void"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#procedureVoid> .
+
+<https://astrea.linkeddata.es/shapes#c162faad7cfb9940edab5e622805e34f>
+        a            sh:PropertyShape ;
+        rdfs:label   "Lote" , "Lot"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#Lot> ;
+        sh:name      "Lote" , "Lot"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#lot> .
+
+<https://astrea.linkeddata.es/shapes#60719abd4dc1eb1475cf56d80087170d>
+        a            sh:PropertyShape ;
+        rdfs:label   "Adscripción de medios"@es , "Compulsory means for execution"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Adscripción de medios"@es , "Compulsory means for execution"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#compulsoryMeansForExecution> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#9ae668f30604e5571d8fcfe97cc3a8d8>
+        a               sh:NodeShape ;
+        rdfs:label      "Miembro del comité"@es , "Committee member"@en ;
+        sh:description  "Miembro perteneciente a un comité de contratación concreto."@es , "Class that describes the member a committee."@en ;
+        sh:name         "Committee member"@en , "Miembro del comité"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#520e9d06bcf19b7cb05cedc5f05836c2> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#CommitteeMember> .
+
+<https://astrea.linkeddata.es/shapes#efcf5d7f7715dca4d3ea5a917fa89ab7>
+        a               sh:NodeShape ;
+        rdfs:label      "Anuncio de información adicional"@es , "Additional information notice"@en ;
+        sh:name         "Anuncio de información adicional"@es , "Additional information notice"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#AdditionalInformationNotice> .
+
+<https://astrea.linkeddata.es/shapes#eaeda393cd60916fbe5c3f4fe48f8e5b>
+        a               sh:PropertyShape ;
+        rdfs:label      "Property that indicates the framework agreement in which the contract consists.\n\nThis property is used when the actual contract consist in the declaration of a framework agreement or a dynamic purchasing system."@en , "Framework agreement"@en , "Acuerdo marco o sistema dinámico de contratación"@es , "Señala al acuerdo marco o sistema dinámico de contratación en el cual consiste el contrato.\n\nEsta propiedad se utiliza cuando el actual contrato consista en la declaración de un acuerdo marco o un sistema dinámico de contratación."@es ;
+        sh:class        <http://contsem.unizar.es/def/sector-publico/pproc#FrameworkAgreement> ;
+        sh:description  "Property that indicates the framework agreement in which the contract consists.\n\nThis property is used when the actual contract consist in the declaration of a framework agreement or a dynamic purchasing system."@en , "Señala al acuerdo marco o sistema dinámico de contratación en el cual consiste el contrato.\n\nEsta propiedad se utiliza cuando el actual contrato consista en la declaración de un acuerdo marco o un sistema dinámico de contratación."@es ;
+        sh:maxCount     1 ;
+        sh:name         "Framework agreement"@en , "Acuerdo marco o sistema dinámico de contratación"@es ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#frameworkAgreement> .
+
+<https://astrea.linkeddata.es/shapes#9eae1ffd8bb6564c914f1baf98859f6a>
+        a            sh:PropertyShape ;
+        rdfs:label   "Otras condiciones de la adjudicación"@es , "Other award terms"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Otras condiciones de la adjudicación"@es , "Other award terms"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#otherAwardTerms> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#97d2dd9326916d7e92aca2dfa0561f5f>
+        a               sh:NodeShape ;
+        rdfs:label      "Compra pública pre-comercial"@es , "Precomercial procurement"@en ;
+        sh:name         "Compra pública pre-comercial"@es , "Precomercial procurement"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#PrecomercialProcurement> .
+
+<https://astrea.linkeddata.es/shapes#431581ce76e436a85bf6e9ce312c301e>
+        a               sh:PropertyShape ;
+        rdfs:label      "Contrato derivado de un acuerdo marco"@es , "Framework agreement derivative contract"@en ;
+        sh:class        <http://contsem.unizar.es/def/sector-publico/pproc#DerivativeContract> ;
+        sh:inversePath  <http://contsem.unizar.es/def/sector-publico/pproc#frameworkAgreementDerivativeContract> ;
+        sh:maxCount     1 ;
+        sh:name         "Framework agreement derivative contract"@en , "Contrato derivado de un acuerdo marco"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#frameworkAgreementDerivativeContract> .
+
+<https://astrea.linkeddata.es/shapes#ef2708b999099c24d0b7b64b12bc1420>
+        a               sh:PropertyShape ;
+        rdfs:label      "Valoración"@es , "Puntuación"@es , "Score"@en , "Indica la puntuación que ha recibido un criterio."@es ;
+        sh:datatype     xsd:float ;
+        sh:description  "Indica la puntuación que ha recibido un criterio."@es ;
+        sh:maxCount     1 ;
+        sh:name         "Puntuación"@es , "Score"@en , "Valoración"@es ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#score> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#42ef0b078f43667009a302789a4718ae>
+        a            sh:PropertyShape ;
+        rdfs:label   "Reunión sobre admisión de licitadores"@es , "Tender admission meeting"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#TenderMeeting> ;
+        sh:name      "Reunión sobre admisión de licitadores"@es , "Tender admission meeting"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#tenderAdmissionMeeting> .
+
+<https://astrea.linkeddata.es/shapes#b5ebb046bfba01a67426c32c51aed67f>
+        a               sh:NodeShape ;
+        rdfs:label      "Oferta excluída"@es , "Excluded tender"@en ;
+        sh:description  "Define las ofertas que han sido excluídas del proceso de licitación."@es , "Class that defines the tenders excluded from the procurement procedure."@en ;
+        sh:name         "Oferta excluída"@es , "Excluded tender"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ExcludedTender> .
+
+<https://astrea.linkeddata.es/shapes#c93b1979478f38613f1efea2266090ab>
+        a               sh:PropertyShape ;
+        rdfs:label      "Servicio perteneciente a la entidad contratante que se encarga de la publicación y administración de este contrato."@es , "Managing department"@en , "Property that indicates the managing departament responsible of the contract."@en , "Servicio gestor"@es ;
+        sh:class        <http://www.w3.org/ns/org#Organization> ;
+        sh:description  "Servicio perteneciente a la entidad contratante que se encarga de la publicación y administración de este contrato."@es , "Property that indicates the managing departament responsible of the contract."@en ;
+        sh:maxCount     1 ;
+        sh:name         "Managing department"@en , "Servicio gestor"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#managingDepartment> .
+
+<https://astrea.linkeddata.es/shapes#f2b5b387fe7779bb18cbddaaffcdb9f9>
+        a               sh:NodeShape ;
+        rdfs:label      "Contract modification"@en , "Modificación del contrato"@es ;
+        sh:description  "Durante un contrato se puede dar también la necesidad de modificarlo una vez iniciada su ejecución, para plasmar este tipo de casos se debe utilizar esta clase."@es , "During the execution of a contract it could happen that the contract should be modified, to describe these kind of situations we use this class."@en ;
+        sh:name         "Modificación del contrato"@es , "Contract modification"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#fe72148f1a340b96cfea9d77f80cd76d> , <https://astrea.linkeddata.es/shapes#cdc93306d557ea46f75403b48d60adcb> , <https://astrea.linkeddata.es/shapes#a9d91b710c3940d4ff1608b67e667ba8> , <https://astrea.linkeddata.es/shapes#a153a0282349c657e7fa139c3ed0f75a> , <https://astrea.linkeddata.es/shapes#6d386facfa559fee193d046e1c52cc9e> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ContractModification> .
+
+<https://astrea.linkeddata.es/shapes#f829aa462f6dcbcbcafb0e8eaa310fef>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato de colaboración público-privada"@es , "Public-private partnership contract"@en ;
+        sh:name         "Contrato de colaboración público-privada"@es , "Public-private partnership contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#PublicPrivatePartnershipContract> .
+
+<https://astrea.linkeddata.es/shapes#b6f09f0b23b4a9620ac9a5f677a2ad9f>
+        a               sh:NodeShape ;
+        rdfs:label      "Precio de paquete"@es , "Bundle price"@en ;
+        sh:description  "Clase que representa el precio de conjuntos de objetos o un paquete determinado.\n\nSe utiliza para especificar el precio de la clase gr:Offering cuando este precio se refiere al del conjunto de los objetos (y no a su precio unitario)."@es , "Class used to describe the price a set of objets.\n\nCan be used to define the total price of an gr:Offering. Its value must be equal to the gr:UnitPriceSpecification multiplied by the number of items."@en ;
+        sh:name         "Precio de paquete"@es , "Bundle price"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#BundlePriceSpecification> .
+
+<https://astrea.linkeddata.es/shapes#ad967f0776719520a2cc848c694b3a10>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.org/> ;
+        rdfs:label        "Localidad"@es , "Address locality"@en ;
+        sh:name           "Localidad"@es , "Address locality"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://schema.org/addressLocality> .
+
+<https://astrea.linkeddata.es/shapes#d74e552d0376e4e633301d7160a180cf>
+        a            sh:PropertyShape ;
+        rdfs:label   "Contract budget price"@en , "Presupuesto del contrato"@es ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#BundlePriceSpecification> ;
+        sh:maxCount  1 ;
+        sh:name      "Contract budget price"@en , "Presupuesto del contrato"@es ;
+        sh:nodeKind  sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#budgetPrice> .
+
+<https://astrea.linkeddata.es/shapes#7d482eb871622dc4066b4b983184ab78>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#15f5cce86b1ee344c68cc9f3c3d429ab>
+        a               sh:NodeShape ;
+        rdfs:label      "Contract with lots"@en , "Contrato con lotes"@es ;
+        sh:description  "Class of the contract that have lots."@en , "Clase de los contratos dividos en lotes.\n\nCuando un contrato de muy grande, este puede ser dividido en diversos lotes por la entidad contratante. Las empresas presentan las ofertas a estos lotes separadamente (y no al contrato \"raíz\"), realizándose la adjudicación de la misma manera."@es ;
+        sh:name         "Contrato con lotes"@es , "Contract with lots"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c162faad7cfb9940edab5e622805e34f> , <https://astrea.linkeddata.es/shapes#349bdfcc08670c1450a6e182a2147aa9> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ContractWithLots> .
+
+<https://astrea.linkeddata.es/shapes#b323cb24524a15861669f0af768fd0e4>
+        a            sh:PropertyShape ;
+        rdfs:label   "Requisitos de los licitadores"@es , "Tenderers requirements"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#TenderersRequirements> ;
+        sh:maxCount  1 ;
+        sh:name      "Requisitos de los licitadores"@es , "Tenderers requirements"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#tenderersRequirements> .
+
+<https://astrea.linkeddata.es/shapes#9868a6224a0e8909841207fbf698b8ea>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/procurement/public-contracts#> ;
+        rdfs:label        "Nombre del criterio"@es , "Criterion name"@en ;
+        sh:name           "Nombre del criterio"@es , "Criterion name"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/procurement/public-contracts#criteronName> .
+
+<https://astrea.linkeddata.es/shapes#837c7acfbc8ff05f93e6c52846b2c31f>
+        a               sh:NodeShape ;
+        rdfs:label      "Comité de expertos"@es , "Expert committee"@en ;
+        sh:name         "Comité de expertos"@es , "Expert committee"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ExpertCommittee> .
+
+<https://astrea.linkeddata.es/shapes#864f483e1b7ca322b07ff8fed3f0c548>
+        a            sh:PropertyShape ;
+        rdfs:label   "Pliego de prescripciones técnicas"@es , "Technical document reference"@en ;
+        sh:name      "Pliego de prescripciones técnicas"@es , "Technical document reference"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#39a35d26c1eb425e036f43fd88f17d31>
+        a            sh:PropertyShape ;
+        rdfs:label   "Desistimiento del procedimiento"@es , "Procedure resignation"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#ProcedureResignation> ;
+        sh:name      "Desistimiento del procedimiento"@es , "Procedure resignation"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#procedureResignation> .
+
+<https://astrea.linkeddata.es/shapes#14bd46f7b408380ec11454dad79f87bf>
+        a            sh:PropertyShape ;
+        rdfs:label   "Objeto del contrato"@es , "Object of the contract"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#ContractObject> ;
+        sh:maxCount  1 ;
+        sh:name      "Objeto del contrato"@es , "Object of the contract"@en ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#contractObject> .
+
+<https://astrea.linkeddata.es/shapes#74ac90c9c816d92423aaedea3c4d9dd8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/org#> ;
+        rdfs:label        "Organización"@es , "Organization"@en ;
+        sh:name           "Organización"@es , "Organization"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.w3.org/ns/org#Organization> .
+
+<https://astrea.linkeddata.es/shapes#8cb43a64005af1360c3d4c1b8f8902cb>
+        a               sh:PropertyShape ;
+        rdfs:label      "Miembro suplente"@es , "Miembro suplente en una mesa de contratación."@es , "Points to an alternate member of a committee."@en , "Alternate member"@en ;
+        sh:class        <http://contsem.unizar.es/def/sector-publico/pproc#CommitteeMember> ;
+        sh:description  "Points to an alternate member of a committee."@en , "Miembro suplente en una mesa de contratación."@es ;
+        sh:name         "Miembro suplente"@es , "Alternate member"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#alternateMember> .
+
+<https://astrea.linkeddata.es/shapes#5b8947dcb70a4acbba8a098535877f9f>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato administrativo especial"@es , "Special administrative contract"@en ;
+        sh:name         "Contrato administrativo especial"@es , "Special administrative contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#SpecialAdministrativeContract> .
+
+<https://astrea.linkeddata.es/shapes#de285ed9401e8b3b4d2b389f4b18cc36>
+        a               sh:NodeShape ;
+        rdfs:label      "Subasta electrónica"@es , "Electronic auction"@en ;
+        sh:description  "Clase para especificar la realización de una subasta electrónica de uno o más criterios de adjudicación."@es , "Class that specifies the existence of an electronic auction of one or more of the award criterions."@en ;
+        sh:name         "Electronic auction"@en , "Subasta electrónica"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#db9da41aa9a43f91b85b6f3799c60d18> , <https://astrea.linkeddata.es/shapes#6b9e427b1067f9fe7c21eba137b5780d> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ElectronicAuction> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#a20c259542ba4074a0ad7e9feec3a659> , <https://astrea.linkeddata.es/shapes#28ddc1b2b1253f219a6d8e51fc7ec381> , <https://astrea.linkeddata.es/shapes#1908e0cdcd27466dae14c21b4433425d> , <https://astrea.linkeddata.es/shapes#15c56721be61c58159433e4a10b3157b> , <https://astrea.linkeddata.es/shapes#021709f3ea2566e2d10839be9f8b04de> , <https://astrea.linkeddata.es/shapes#feda1d30c2a4aaf5aebe979e5a0810da> , <https://astrea.linkeddata.es/shapes#634682557f8fa304a97637ca3812ece0> , <https://astrea.linkeddata.es/shapes#cad81acf6d9f4d043c61cf38063da682> , <https://astrea.linkeddata.es/shapes#483cec8e7f3e6462f35177fd19966ed8> , <https://astrea.linkeddata.es/shapes#421f1cfdd7a65a94141edcfb522cb2fe> , <https://astrea.linkeddata.es/shapes#efcf5d7f7715dca4d3ea5a917fa89ab7> , <https://astrea.linkeddata.es/shapes#8e5a4255ad5c9ebf5acbb828132f6117> , <https://astrea.linkeddata.es/shapes#fc88b9e8c0949d30b2294a9ea9384717> , <https://astrea.linkeddata.es/shapes#fe72148f1a340b96cfea9d77f80cd76d> , <https://astrea.linkeddata.es/shapes#31bcb622b42eed814071fec55b37040a> , <https://astrea.linkeddata.es/shapes#09d9f67b94f6ca150a0f06910ecfae13> , <https://astrea.linkeddata.es/shapes#6fea52f071da028d4457ccaa74886bf7> , <https://astrea.linkeddata.es/shapes#fea714d8c045434e5f46b5eb0696935c> , <https://astrea.linkeddata.es/shapes#5ac02c396561d1bedfffe4257f5f78e8> , <https://astrea.linkeddata.es/shapes#795347c1e6f2852889ddcc534a607843> , <https://astrea.linkeddata.es/shapes#892ca2b8227c793d4d71f99e99dbaf98> , <https://astrea.linkeddata.es/shapes#45a5470724de4b705e79597bf7a47713> , <https://astrea.linkeddata.es/shapes#e47388852a051f9a00020ac1331f5eb9> , <https://astrea.linkeddata.es/shapes#5666dbcf8589853a2f8137ffe7a01f69> , <https://astrea.linkeddata.es/shapes#81bdb45b1820a207cfad72ddbf4e4ee1> , <https://astrea.linkeddata.es/shapes#aef1a78016b3598e01dd7671934b50b4> , <https://astrea.linkeddata.es/shapes#d3d61d8406079863e094a3db56af9188> , <https://astrea.linkeddata.es/shapes#c7b71f19df82cc068f9fa9e29c925d2f> , <https://astrea.linkeddata.es/shapes#500ce0967af8ffac70838d97e1101af6> , <https://astrea.linkeddata.es/shapes#ff8ca486f24324363d044ccaa1065b70> , <https://astrea.linkeddata.es/shapes#96a78558c1dfd66ce89354d39cf970f1> , <https://astrea.linkeddata.es/shapes#d00c5203d6e6a14706bf58e0c944b3e5> , <https://astrea.linkeddata.es/shapes#12e3dabfd45094e483b9d950cc504361> , <https://astrea.linkeddata.es/shapes#880a651ad4880a3644ae8912c4770f58> , <https://astrea.linkeddata.es/shapes#fc5419ed0682d5543e6c48cc1f22ad72> , <https://astrea.linkeddata.es/shapes#27d547919d4385492fa0d8399992a052> , <https://astrea.linkeddata.es/shapes#5c689719c23d0b78e9efdea42511d7df> , <https://astrea.linkeddata.es/shapes#72b3b4c6c283176101066ad947b806b8> , <https://astrea.linkeddata.es/shapes#fc0d21c7fe9b204c74def05369881b16> , <https://astrea.linkeddata.es/shapes#069fa77625a2af6d3de843b4f8a0c0e0> , <https://astrea.linkeddata.es/shapes#69bfc24827569ed9036ecae89a53d3c7> , <https://astrea.linkeddata.es/shapes#d74e552d0376e4e633301d7160a180cf> , <https://astrea.linkeddata.es/shapes#d000e4086076ec11c1a0400d1470962f> , <https://astrea.linkeddata.es/shapes#8c3a6f22c2a50e9726f695a188ace0cb> , <https://astrea.linkeddata.es/shapes#bf9cd88f393fed904e1c5c218a86d367> , <https://astrea.linkeddata.es/shapes#3d327119dbbf66457b16618948ee7648> , <https://astrea.linkeddata.es/shapes#ff90fd504031260406474629c299de77> , <https://astrea.linkeddata.es/shapes#af06908b4ca3caac8030a7f8a795bb7e> , <https://astrea.linkeddata.es/shapes#3787e8131e858e2d6376503d0cf9f4c3> , <https://astrea.linkeddata.es/shapes#7246f42eb51d12015d811865ed93b81c> , <https://astrea.linkeddata.es/shapes#ebcb9415ff574ee5e3ee682f0c63471f> , <https://astrea.linkeddata.es/shapes#d41d543b1b0c217fc8d492a11f9daae7> , <https://astrea.linkeddata.es/shapes#060663946be267e9333d622613dab045> , <https://astrea.linkeddata.es/shapes#937a45f8221342433548f0647949c019> , <https://astrea.linkeddata.es/shapes#f4ef291ed5effcfaa547bfe6bb215708> , <https://astrea.linkeddata.es/shapes#d7c4a7cb30bdd34ed9d85f3a51e1ade2> , <https://astrea.linkeddata.es/shapes#3be94d7fee0e1341aedfa36abe9d2948> , <https://astrea.linkeddata.es/shapes#7760b2762fffab4cbebeb9bd00e99026> , <https://astrea.linkeddata.es/shapes#d9213ac8d16166e8482f7ea0e89726dd> , <https://astrea.linkeddata.es/shapes#db9da41aa9a43f91b85b6f3799c60d18> , <https://astrea.linkeddata.es/shapes#bfabca3ea37995518e446267257d7f46> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#7d2f2e9ba9a6b9b0a4587d471024ede6> , <https://astrea.linkeddata.es/shapes#6656c8230c2b5d7e195183f45ba70cee> , <https://astrea.linkeddata.es/shapes#a8e6eb6d3935fd505cdc3676108bbc1e> , <https://astrea.linkeddata.es/shapes#b5af97affccf3805a49a14b22a0d672d> , <https://astrea.linkeddata.es/shapes#3e90260b796fdebf6311958ebf9fbe50> , <https://astrea.linkeddata.es/shapes#77c312b2e09086e6de9fe5c513fa19ac> , <https://astrea.linkeddata.es/shapes#4b201369ddd57b3bc369c9978bce20b5> , <https://astrea.linkeddata.es/shapes#50143ea3b6a86b03011eb726a4daaf4b> , <https://astrea.linkeddata.es/shapes#8cb43a64005af1360c3d4c1b8f8902cb> , <https://astrea.linkeddata.es/shapes#699f67ac42b420b1fa3b0716d7e4dfc8> , <https://astrea.linkeddata.es/shapes#ad5f85156c45e3f5cd5e920609f67202> , <https://astrea.linkeddata.es/shapes#cdc93306d557ea46f75403b48d60adcb> , <https://astrea.linkeddata.es/shapes#c3ba28ced6ae4ecd77a2d80b14e5bb9a> , <https://astrea.linkeddata.es/shapes#42ef0b078f43667009a302789a4718ae> , <https://astrea.linkeddata.es/shapes#b6f09f0b23b4a9620ac9a5f677a2ad9f> , <https://astrea.linkeddata.es/shapes#d6477f81edee78070bae11669e2eb7a9> , <https://astrea.linkeddata.es/shapes#a44a93f5de2a538af9f8969422434444> , <https://astrea.linkeddata.es/shapes#5d27003d8449013f8e1a36f3351ffd2a> , <https://astrea.linkeddata.es/shapes#86cbd7290e5f5998cc29025a5cb6186f> , <https://astrea.linkeddata.es/shapes#c2a816bc0020df4b59bf7e34d171659d> , <https://astrea.linkeddata.es/shapes#0b5cf941f04cd50ead008c8269ab5d95> , <https://astrea.linkeddata.es/shapes#d4f2313825f3718b4c5b620de6036f5f> , <https://astrea.linkeddata.es/shapes#7d482eb871622dc4066b4b983184ab78> , <https://astrea.linkeddata.es/shapes#9cae478fc19f65dd8352218de3602315> , <https://astrea.linkeddata.es/shapes#a31b80cdf4a60f28c445dc96acfe5b2b> , <https://astrea.linkeddata.es/shapes#21d5d67fe3f51dcf439984fbe0687be9> , <https://astrea.linkeddata.es/shapes#3f2ae919e9c05cd1b735ab4f438ab19b> , <https://astrea.linkeddata.es/shapes#69193c0bbb0c162be325235704f46967> , <https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5> , <https://astrea.linkeddata.es/shapes#45ece5eb0fd8e5ad59389757fd9213ba> , <https://astrea.linkeddata.es/shapes#7a65859998248898ee71172e406388a8> , <https://astrea.linkeddata.es/shapes#4b7689a47bd3ee216b85dc58cbf6731e> , <https://astrea.linkeddata.es/shapes#864f483e1b7ca322b07ff8fed3f0c548> , <https://astrea.linkeddata.es/shapes#6dfda30c746bf58e8949ead724e61d11> , <https://astrea.linkeddata.es/shapes#a12c6be45812284c9507109645bc21d9> , <https://astrea.linkeddata.es/shapes#d57dc6daa3929cb7f392e9add5f45303> , <https://astrea.linkeddata.es/shapes#50a5fa667bdaf06d11130087ba122284> , <https://astrea.linkeddata.es/shapes#ca8ac0d270140f712c0f400086446f6a> , <https://astrea.linkeddata.es/shapes#2c82fce6d8a2477cf0ff30ae4f8aee03> , <https://astrea.linkeddata.es/shapes#a153a0282349c657e7fa139c3ed0f75a> , <https://astrea.linkeddata.es/shapes#725b2386ee5e4c80307bffdfab0df90b> , <https://astrea.linkeddata.es/shapes#6a49280f349a775f46e727d9da0f8f32> , <https://astrea.linkeddata.es/shapes#b2e7302dfc20053f656147e6b8e1f0a6> , <https://astrea.linkeddata.es/shapes#5c5b0a21a6b11e032caaa2766a6dd9b5> , <https://astrea.linkeddata.es/shapes#f2b5b387fe7779bb18cbddaaffcdb9f9> , <https://astrea.linkeddata.es/shapes#5c3c8698ce3a97639f1f86bcdb44abc0> , <https://astrea.linkeddata.es/shapes#6c8380f2a738fd52ae4e73da1721299a> , <https://astrea.linkeddata.es/shapes#1154145b0ea564ed22e1f87c6428c7e7> , <https://astrea.linkeddata.es/shapes#a2238bb13aa10da59f96912cd7ea8102> , <https://astrea.linkeddata.es/shapes#891aa04a30575404dc30e3aae7e0e9ff> , <https://astrea.linkeddata.es/shapes#6c53af5e5e8f1f6cc497c903497e2989> , <https://astrea.linkeddata.es/shapes#892e36c8b727c9504cef4d094cdd4db1> , <https://astrea.linkeddata.es/shapes#9c48698c38e89fb3a6b7f56b6030aa72> , <https://astrea.linkeddata.es/shapes#60ce557be08c7a70034d74bfbf32995f> , <https://astrea.linkeddata.es/shapes#2274acbc88238184c15e7c2020364277> , <https://astrea.linkeddata.es/shapes#9b64955b4ddb68d6be7babef4e246e20> , <https://astrea.linkeddata.es/shapes#b314d2d6e3881d73a5a8f9292a04f7f1> , <https://astrea.linkeddata.es/shapes#366ac9c43f3418b6af86e04c3ff2708a> , <https://astrea.linkeddata.es/shapes#15f5cce86b1ee344c68cc9f3c3d429ab> , <https://astrea.linkeddata.es/shapes#9ae668f30604e5571d8fcfe97cc3a8d8> , <https://astrea.linkeddata.es/shapes#c1a4e57b0ca145b7ef674617ab839473> , <https://astrea.linkeddata.es/shapes#b323cb24524a15861669f0af768fd0e4> , <https://astrea.linkeddata.es/shapes#14bd46f7b408380ec11454dad79f87bf> , <https://astrea.linkeddata.es/shapes#01e1f415fdae8b4e01dc0487440151bd> , <https://astrea.linkeddata.es/shapes#d5bb7bc70d452f53b4039d73620afe36> , <https://astrea.linkeddata.es/shapes#d69cfd802a3109facc29ba42f10e6140> , <https://astrea.linkeddata.es/shapes#39a35d26c1eb425e036f43fd88f17d31> , <https://astrea.linkeddata.es/shapes#a222cba1ab8d18061a123c8834d41309> , <https://astrea.linkeddata.es/shapes#e2ee5b54f165e20c10f7a965873aaa87> , <https://astrea.linkeddata.es/shapes#349bdfcc08670c1450a6e182a2147aa9> , <https://astrea.linkeddata.es/shapes#719da7787fa9ca334755c685ab188687> , <https://astrea.linkeddata.es/shapes#09f17fcc61f87f9692f33bab42323734> , <https://astrea.linkeddata.es/shapes#8e2306f5a20f0b18766cc12bebdac739> , <https://astrea.linkeddata.es/shapes#93d070b8ad759e88c9582c6cfc390d63> , <https://astrea.linkeddata.es/shapes#9eae1ffd8bb6564c914f1baf98859f6a> , <https://astrea.linkeddata.es/shapes#5c4ad288d3e2c47356cc973c594ea813> , <https://astrea.linkeddata.es/shapes#bb122b835e717077038632090613f0f7> , <https://astrea.linkeddata.es/shapes#df457cde2978d096a6383733f5ee9da8> , <https://astrea.linkeddata.es/shapes#1fab0d0ee9ec7a3f47c8fc289a2ca00f> , <https://astrea.linkeddata.es/shapes#2cf34b0cba7de738d3fbd841c49e3a15> , <https://astrea.linkeddata.es/shapes#c93b1979478f38613f1efea2266090ab> , <https://astrea.linkeddata.es/shapes#3bf85f67202329c856a261bbd7b4b406> , <https://astrea.linkeddata.es/shapes#0c311c367cdc4edcae241095e94e8d60> , <https://astrea.linkeddata.es/shapes#ef2708b999099c24d0b7b64b12bc1420> , <https://astrea.linkeddata.es/shapes#f829aa462f6dcbcbcafb0e8eaa310fef> , <https://astrea.linkeddata.es/shapes#7bbe49560a36485e7dd9ed2792b05638> , <https://astrea.linkeddata.es/shapes#da02662b0d48da276023632810903234> , <https://astrea.linkeddata.es/shapes#1668a94f326660e342d790fb90323b1f> , <https://astrea.linkeddata.es/shapes#00e1cee4bbcaa155cba88f4e23826c24> , <https://astrea.linkeddata.es/shapes#a9c02ebe490eaa1a55e576103b71c814> , <https://astrea.linkeddata.es/shapes#d11433218234dbae6bb8d4e80585f12f> , <https://astrea.linkeddata.es/shapes#a9d91b710c3940d4ff1608b67e667ba8> , <https://astrea.linkeddata.es/shapes#520e9d06bcf19b7cb05cedc5f05836c2> , <https://astrea.linkeddata.es/shapes#97d2dd9326916d7e92aca2dfa0561f5f> , <https://astrea.linkeddata.es/shapes#a317bdf4560ca2432bfd47ad07a612f6> , <https://astrea.linkeddata.es/shapes#0fc34333fb2af0055e94a3159c17c36f> , <https://astrea.linkeddata.es/shapes#087a978eb4694d2e8945b9bbe6b1cae0> , <https://astrea.linkeddata.es/shapes#55a05e88e2f1bdf8b52fa7d0eb1efeca> , <https://astrea.linkeddata.es/shapes#c79bb7bf18ea22db9f50caab36ba4ba0> , <https://astrea.linkeddata.es/shapes#60719abd4dc1eb1475cf56d80087170d> , <https://astrea.linkeddata.es/shapes#72957706d829564992ba37d7c29c54e0> , <https://astrea.linkeddata.es/shapes#9116049d45648676558a7afe0dc93283> , <https://astrea.linkeddata.es/shapes#cf8b6f5062cffd1ef9ce5be03cfc926c> , <https://astrea.linkeddata.es/shapes#42a736f3b1a4df195c42d80b2cf58c34> , <https://astrea.linkeddata.es/shapes#2147780b01d7553be3c9a3866bd2b823> , <https://astrea.linkeddata.es/shapes#65564f6f7b1dba435467db69f937d93d> , <https://astrea.linkeddata.es/shapes#e47e3b469768c8f592e814f181bbb22e> , <https://astrea.linkeddata.es/shapes#52898030732b56ac06264b7949b2b4b8> , <https://astrea.linkeddata.es/shapes#851cd6955015b72fa6a16846bb3c7cf4> , <https://astrea.linkeddata.es/shapes#60ad156088fee7189d98f72994e35a10> , <https://astrea.linkeddata.es/shapes#abc5ce7f60b0f4e336e7ad2a833e13c1> , <https://astrea.linkeddata.es/shapes#04daf3dd0751d508500e255daa39f623> , <https://astrea.linkeddata.es/shapes#1e5adabcb28bcad16a7b1ab7d0ead155> , <https://astrea.linkeddata.es/shapes#90cf264afb3898b89239c6b6d8cf61fb> , <https://astrea.linkeddata.es/shapes#12221d208224f9e389fff8a5da8390e7> , <https://astrea.linkeddata.es/shapes#272fbe5d8ef88ffbebede231ccefeaf5> , <https://astrea.linkeddata.es/shapes#470ea0d00e5faf6d3cb983cc5de1cbac> , <https://astrea.linkeddata.es/shapes#1765118d4d1ee92e7b1136165085200b> , <https://astrea.linkeddata.es/shapes#9d5575ef807eac4684aa679e87265765> , <https://astrea.linkeddata.es/shapes#ea86434abaf5fe843911f8127fa51ccd> , <https://astrea.linkeddata.es/shapes#51f818b4627611734c325a7b4be78a13> , <https://astrea.linkeddata.es/shapes#230287f1150344a13cac7118f16fa99f> , <https://astrea.linkeddata.es/shapes#fedb65372dbfd05436b647242d815f62> , <https://astrea.linkeddata.es/shapes#c162faad7cfb9940edab5e622805e34f> , <https://astrea.linkeddata.es/shapes#6b9e427b1067f9fe7c21eba137b5780d> , <https://astrea.linkeddata.es/shapes#560dd0b7700d306e22d465cdb6182779> , <https://astrea.linkeddata.es/shapes#b8840ae319dd17775a4c3ff2c43caeca> , <https://astrea.linkeddata.es/shapes#2934c81705f32912ed9d5fd5e739cb91> , <https://astrea.linkeddata.es/shapes#9868a6224a0e8909841207fbf698b8ea> , <https://astrea.linkeddata.es/shapes#d56155d772eaf6c2879359db4d6b3440> , <https://astrea.linkeddata.es/shapes#d86ecf69db99e5a2e0e130ce0235f758> , <https://astrea.linkeddata.es/shapes#062c41162d495ad258c586db9e461452> , <https://astrea.linkeddata.es/shapes#2f858283a5e4e828c86ca4d2fb98191a> , <https://astrea.linkeddata.es/shapes#693f1a1b5227636f0f6d32dd5701bd2a> , <https://astrea.linkeddata.es/shapes#b0bc650dd253fca630c71efe917da31e> , <https://astrea.linkeddata.es/shapes#94f968bbd6b4647aebc63f9a5f031f09> , <https://astrea.linkeddata.es/shapes#fc0c5f89c6973238346fb9d162d3cf03> , <https://astrea.linkeddata.es/shapes#243e11baaf242f03b29ad4c25d826557> , <https://astrea.linkeddata.es/shapes#dada5ad4d7c446168197837aba55fc49> , <https://astrea.linkeddata.es/shapes#ec72c74da206940223c47e12d0f44b5b> , <https://astrea.linkeddata.es/shapes#89c6c6d3ca18ed101c4330ee21cc3995> , <https://astrea.linkeddata.es/shapes#ecfcad6fa1d0058a3bc405c0fa00d34c> , <https://astrea.linkeddata.es/shapes#37e73cfa60f70d68b23d018afc3372fd> , <https://astrea.linkeddata.es/shapes#62c55674eefe20ecbb08e7d2bdbb4b04> , <https://astrea.linkeddata.es/shapes#2ac7c5b4cd3405cb80285f8b1b6299b7> , <https://astrea.linkeddata.es/shapes#580659d3d4d3c9974e9dc36d00e6e6e8> , <https://astrea.linkeddata.es/shapes#e03c17ac9d5d09d3e7695a35a35308a4> , <https://astrea.linkeddata.es/shapes#013d442a1d9ca27371910bb9ad950a9b> , <https://astrea.linkeddata.es/shapes#d6c9d6f8f41f5ab4d2d681b38ee57522> , <https://astrea.linkeddata.es/shapes#5a45f730f3f9e51407aa676783a619e5> , <https://astrea.linkeddata.es/shapes#ca5c854714c6f2f395a2b2c982e35ab0> , <https://astrea.linkeddata.es/shapes#ad967f0776719520a2cc848c694b3a10> , <https://astrea.linkeddata.es/shapes#6147a1a53fd1cd49e4988c2c36a011d7> , <https://astrea.linkeddata.es/shapes#efce4cf8798e01daa473280e7981c0ef> , <https://astrea.linkeddata.es/shapes#390728335a90fa32fce15fc74c92292a> , <https://astrea.linkeddata.es/shapes#5b8947dcb70a4acbba8a098535877f9f> , <https://astrea.linkeddata.es/shapes#9fddf425fab11a56fe34b158404b7888> , <https://astrea.linkeddata.es/shapes#d5540942382daa981be234b164b54ad2> , <https://astrea.linkeddata.es/shapes#1965170afe1788c602e0c06ba974119e> , <https://astrea.linkeddata.es/shapes#74ac90c9c816d92423aaedea3c4d9dd8> , <https://astrea.linkeddata.es/shapes#67a4a69b669e59a31e45e3d685c4a677> , <https://astrea.linkeddata.es/shapes#9c1fc0670b5307a2153ddf4d99c01a18> , <https://astrea.linkeddata.es/shapes#3d68a5047f9c0fe096a53de7a4789347> , <https://astrea.linkeddata.es/shapes#748be708530bd31267913ac2dec175b1> , <https://astrea.linkeddata.es/shapes#fd7b1d0e495f0225da7c5180785effc3> , <https://astrea.linkeddata.es/shapes#0795908e2e7ddb97c76fd7e920980665> , <https://astrea.linkeddata.es/shapes#93c3f4a6f2af1e3fdfd7b009853aa6d1> , <https://astrea.linkeddata.es/shapes#2e684ff1bd307ab9650c701cb67d3b0f> , <https://astrea.linkeddata.es/shapes#fbac36e20b2f659fe36d0ba02bc366ef> , <https://astrea.linkeddata.es/shapes#11d3dace323ae43c74b1dbdf1c324666> , <https://astrea.linkeddata.es/shapes#ce615a8e850179fd07ff3eb55ff31a42> , <https://astrea.linkeddata.es/shapes#f858ad1ab56ad5d6a71b9d190012ba84> , <https://astrea.linkeddata.es/shapes#44d1470df4ad88d8c3bdbf9e02936dad> , <https://astrea.linkeddata.es/shapes#f390d5820815f2b4a4960dce48ba8c00> , <https://astrea.linkeddata.es/shapes#f5f5d72567c7a393fecbbed41b1f2344> , <https://astrea.linkeddata.es/shapes#1c06f64788ceed887349df530cb225ed> , <https://astrea.linkeddata.es/shapes#de285ed9401e8b3b4d2b389f4b18cc36> , <https://astrea.linkeddata.es/shapes#431581ce76e436a85bf6e9ce312c301e> , <https://astrea.linkeddata.es/shapes#6d386facfa559fee193d046e1c52cc9e> , <https://astrea.linkeddata.es/shapes#4f7aceebb588505fae05ddc2f9f7711d> , <https://astrea.linkeddata.es/shapes#67fd5667488404218967a55130a83c25> , <https://astrea.linkeddata.es/shapes#819669ae67b3272a8d656863521e0a33> , <https://astrea.linkeddata.es/shapes#64b9036a2206e9c7a0d38229aba4d53d> , <https://astrea.linkeddata.es/shapes#92ab65fdf1b26352427f76eae9010745> , <https://astrea.linkeddata.es/shapes#362f3d1c84e663976d46b6951b113c65> , <https://astrea.linkeddata.es/shapes#567dbbbe3ab450ad4aa5135d22be3439> , <https://astrea.linkeddata.es/shapes#99e91f94c21fb2e2f298df6523c7ef36> , <https://astrea.linkeddata.es/shapes#e7ed1faa8e1f28af993b4239cdc3d1bb> , <https://astrea.linkeddata.es/shapes#937238b5a851904044800ba270e7bb7a> , <https://astrea.linkeddata.es/shapes#1a3cbccb2498824c12a3d7a69feba804> , <https://astrea.linkeddata.es/shapes#b5ebb046bfba01a67426c32c51aed67f> , <https://astrea.linkeddata.es/shapes#cb1a993be3d36a57954f31acf6436f47> , <https://astrea.linkeddata.es/shapes#fa3f1eebdd1a573beb2c19a83b2ffe10> , <https://astrea.linkeddata.es/shapes#3bdfb9e34e77280390351d880383fcd2> , <https://astrea.linkeddata.es/shapes#eaeda393cd60916fbe5c3f4fe48f8e5b> , <https://astrea.linkeddata.es/shapes#a8c7438c40f2b4fc180d022139ef16f6> , <https://astrea.linkeddata.es/shapes#837c7acfbc8ff05f93e6c52846b2c31f> , <https://astrea.linkeddata.es/shapes#b9fc903f6a56f643f7bd6bdec46d4e66> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#390728335a90fa32fce15fc74c92292a>
+        a               sh:NodeShape ;
+        rdfs:label      "Criterio de adjudicación objetivo"@es , "Objective award criterion"@en ;
+        sh:description  "Clase para definir criterios que dependen de un juicio de valor."@es , "Class describing criterioa that depend on a value judgement."@en ;
+        sh:name         "Criterio de adjudicación objetivo"@es , "Objective award criterion"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ObjectiveAwardCriterion> .
+
+<https://astrea.linkeddata.es/shapes#93c3f4a6f2af1e3fdfd7b009853aa6d1>
+        a               sh:NodeShape ;
+        rdfs:label      "Tender committee"@en , "Comité de contratación"@es ;
+        sh:description  "Abstract class describing a set of persons in committee and its roles."@en , "Clase abstracta que representa un conjunto de personas en comité y sus roles dentro del esta agrupación."@es ;
+        sh:name         "Tender committee"@en , "Comité de contratación"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#069fa77625a2af6d3de843b4f8a0c0e0> , <https://astrea.linkeddata.es/shapes#8cb43a64005af1360c3d4c1b8f8902cb> , <https://astrea.linkeddata.es/shapes#d56155d772eaf6c2879359db4d6b3440> , <https://astrea.linkeddata.es/shapes#ce615a8e850179fd07ff3eb55ff31a42> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#Committee> .
+
+<https://astrea.linkeddata.es/shapes#ce615a8e850179fd07ff3eb55ff31a42>
+        a               sh:PropertyShape ;
+        rdfs:label      "Miembro titular"@es , "Points to a full member of a committee."@en , "Full member"@en , "Miembro titular en una mesa de contratación."@es ;
+        sh:class        <http://contsem.unizar.es/def/sector-publico/pproc#CommitteeMember> ;
+        sh:description  "Points to a full member of a committee."@en , "Miembro titular en una mesa de contratación."@es ;
+        sh:name         "Miembro titular"@es , "Full member"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#fullMember> .
+
+<https://astrea.linkeddata.es/shapes#2274acbc88238184c15e7c2020364277>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato de alquiler"@es , "Rent contract"@en ;
+        sh:description  "Clase de los contratos de suministros cuyo objeto es el alquiler de bienes."@es , "Class defining supplies contracts aimed to rent supplies."@en ;
+        sh:name         "Contrato de alquiler"@es , "Rent contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#RentContract> .
+
+<https://astrea.linkeddata.es/shapes#5c4ad288d3e2c47356cc973c594ea813>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato público"@es , "Public contract"@en ;
+        sh:name         "Contrato público"@es , "Public contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#93d070b8ad759e88c9582c6cfc390d63> , <https://astrea.linkeddata.es/shapes#d57dc6daa3929cb7f392e9add5f45303> , <https://astrea.linkeddata.es/shapes#4f7aceebb588505fae05ddc2f9f7711d> , <https://astrea.linkeddata.es/shapes#1a3cbccb2498824c12a3d7a69feba804> , <https://astrea.linkeddata.es/shapes#67fd5667488404218967a55130a83c25> , <https://astrea.linkeddata.es/shapes#fa3f1eebdd1a573beb2c19a83b2ffe10> , <https://astrea.linkeddata.es/shapes#50a5fa667bdaf06d11130087ba122284> , <https://astrea.linkeddata.es/shapes#b323cb24524a15861669f0af768fd0e4> , <https://astrea.linkeddata.es/shapes#45a5470724de4b705e79597bf7a47713> , <https://astrea.linkeddata.es/shapes#c93b1979478f38613f1efea2266090ab> , <https://astrea.linkeddata.es/shapes#eaeda393cd60916fbe5c3f4fe48f8e5b> , <https://astrea.linkeddata.es/shapes#28ddc1b2b1253f219a6d8e51fc7ec381> , <https://astrea.linkeddata.es/shapes#12e3dabfd45094e483b9d950cc504361> , <https://astrea.linkeddata.es/shapes#14bd46f7b408380ec11454dad79f87bf> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#Contract> .
+
+<https://astrea.linkeddata.es/shapes#69bfc24827569ed9036ecae89a53d3c7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core#> ;
+        rdfs:label        "En esquema"@es , "In scheme"@en ;
+        sh:name           "En esquema"@es , "In scheme"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/2004/02/skos/core#inScheme> .
+
+<https://astrea.linkeddata.es/shapes#a8c7438c40f2b4fc180d022139ef16f6>
+        a            sh:PropertyShape ;
+        rdfs:label   "Sede de presentación de las ofertas"@es , "Tender submission location"@en ;
+        sh:class     <http://schema.org/Place> ;
+        sh:name      "Sede de presentación de las ofertas"@es , "Tender submission location"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#tenderSubmissionLocation> .
+
+<https://astrea.linkeddata.es/shapes#4b201369ddd57b3bc369c9978bce20b5>
+        a               sh:PropertyShape ;
+        rdfs:label      "Propósito de la reunión"@es , "Tender purpose"@en , "Indicates the purpose of the meeting (e.g. opening of first envelope)."@en , "Indica, de manera textual, el propósito de la reunión de contratación (e.g. apertura de sobre A)"@es ;
+        sh:datatype     xsd:string ;
+        sh:description  "Indica, de manera textual, el propósito de la reunión de contratación (e.g. apertura de sobre A)"@es , "Indicates the purpose of the meeting (e.g. opening of first envelope)."@en ;
+        sh:name         "Tender purpose"@en , "Propósito de la reunión"@es ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#tenderPurpose> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#230287f1150344a13cac7118f16fa99f>
+        a               sh:PropertyShape ;
+        rdfs:label      "Lodged remedy date"@en , "Fecha en la cual se ha interpuesto el recurso ante el órgano oficial."@es , "Date where a remedy is lodged."@en , "Fecha de interposición del recurso"@es ;
+        sh:datatype     xsd:date ;
+        sh:description  "Fecha en la cual se ha interpuesto el recurso ante el órgano oficial."@es , "Date where a remedy is lodged."@en ;
+        sh:maxCount     1 ;
+        sh:name         "Lodged remedy date"@en , "Fecha de interposición del recurso"@es ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#lodgedRemedyDate> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#500ce0967af8ffac70838d97e1101af6>
+        a               sh:PropertyShape ;
+        rdfs:label      "The range of this property must be a percentage (i.e. float between 0.0 and 100.0)"@en , "El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0."@es , "Maximum final price change"@en , "Modificación máxima sobre precio final"@es ;
+        sh:datatype     xsd:float ;
+        sh:description  "El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0."@es , "The range of this property must be a percentage (i.e. float between 0.0 and 100.0)"@en ;
+        sh:maxCount     1 ;
+        sh:name         "Maximum final price change"@en , "Modificación máxima sobre precio final"@es ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#maxFinalPriceChange> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#c3ba28ced6ae4ecd77a2d80b14e5bb9a>
+        a             sh:PropertyShape ;
+        rdfs:label    "Resolución"@es , "Resolution document reference"@en ;
+        rdfs:seeAlso  <http://purl.org/procurement/public-contracts#agreement> ;
+        sh:name       "Resolución"@es , "Resolution document reference"@en ;
+        sh:nodeKind   sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#9c48698c38e89fb3a6b7f56b6030aa72>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato plurianual"@es , "Multiannual contract"@en ;
+        sh:description  "Clase de los contrato plurianuales (i.e. contratos cuya duración se extiende durante más de un ejercicio contable)."@es , "Class describing the multiannual contracts (i.e. contract whose duration extends over more than one financial year)."@en ;
+        sh:name         "Contrato plurianual"@es , "Multiannual contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#MultiannualContract> .
+
+<https://astrea.linkeddata.es/shapes#ebcb9415ff574ee5e3ee682f0c63471f>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato derivado"@es , "Derivative contract"@en ;
+        sh:description  "Clase de los contratos derivados de un acuerdo marco o un sistema dinámico de contratación."@es , "Class describing contracts derived from a framework agreement or a dynamic purchasing system."@en ;
+        sh:name         "Contrato derivado"@es , "Derivative contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#DerivativeContract> .
+
+<https://astrea.linkeddata.es/shapes#96a78558c1dfd66ce89354d39cf970f1>
+        a               sh:NodeShape ;
+        rdfs:label      "Recurso administrativo especial"@es , "Special administrative remedy"@en ;
+        sh:name         "Recurso administrativo especial"@es , "Special administrative remedy"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#SpecialAdministrativeRemedy> .
+
+<https://astrea.linkeddata.es/shapes#6656c8230c2b5d7e195183f45ba70cee>
+        a               sh:PropertyShape ;
+        rdfs:label      "Remedy result"@en , "Resultado del recurso"@es , "Contiene el resultado del recurso interpuesto en un contrato. Normalmente el valor de esta propiedad incluirá valores como \"Estimado\", \"Estimado parcialmente\" o \"Desestimado\"."@es , "Contains the result of a lodged remedy. Normally it would contains values like \"Estimated\", \"Rejected\" or \"Partially estimated\"."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Contains the result of a lodged remedy. Normally it would contains values like \"Estimated\", \"Rejected\" or \"Partially estimated\"."@en , "Contiene el resultado del recurso interpuesto en un contrato. Normalmente el valor de esta propiedad incluirá valores como \"Estimado\", \"Estimado parcialmente\" o \"Desestimado\"."@es ;
+        sh:name         "Resultado del recurso"@es , "Remedy result"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#remedyResult> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#cb1a993be3d36a57954f31acf6436f47>
+        a            sh:PropertyShape ;
+        rdfs:label   "Causa del recurso"@es , "Remedy reason"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Causa del recurso"@es , "Remedy reason"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#remedyReason> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#67a4a69b669e59a31e45e3d685c4a677>
+        a               sh:NodeShape ;
+        rdfs:label      "Anuncio de corrección"@es , "Correction notice"@en ;
+        sh:name         "Anuncio de corrección"@es , "Correction notice"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#CorrectionNotice> .
+
+<https://astrea.linkeddata.es/shapes#5ac02c396561d1bedfffe4257f5f78e8>
+        a            sh:PropertyShape ;
+        rdfs:label   "Contract activities"@en , "Trámites del contrato"@es ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#ContractActivities> ;
+        sh:maxCount  1 ;
+        sh:name      "Trámites del contrato"@es , "Contract activities"@en ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#contractActivites> .
+
+<https://astrea.linkeddata.es/shapes#a222cba1ab8d18061a123c8834d41309>
+        a                sh:PropertyShape ;
+        rdfs:label       "Prorogation number expected"@en , "Prórrogas previstas"@es ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:maxCount      1 ;
+        sh:minInclusive  0 ;
+        sh:name          "Prórrogas previstas"@es , "Prorogation number expected"@en ;
+        sh:nodeKind      sh:IRIOrLiteral , sh:Literal ;
+        sh:path          <http://contsem.unizar.es/def/sector-publico/pproc#prorogationsExpected> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#55a05e88e2f1bdf8b52fa7d0eb1efeca>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/foaf/0.1/> ;
+        rdfs:label        "Documento"@es , "Document"@en ;
+        sh:name           "Documento"@es , "Document"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://xmlns.com/foaf/0.1/Document> .
+
+<https://astrea.linkeddata.es/shapes#483cec8e7f3e6462f35177fd19966ed8>
+        a            sh:PropertyShape ;
+        rdfs:label   "Plazo de vigencia de las ofertas"@es , "Tender manteinance duration"@en ;
+        sh:maxCount  1 ;
+        sh:name      "Plazo de vigencia de las ofertas"@es , "Tender manteinance duration"@en ;
+        sh:nodeKind  sh:Literal , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#tenderManteinanceDuration> .
+
+<https://astrea.linkeddata.es/shapes#69193c0bbb0c162be325235704f46967>
+        a               sh:NodeShape ;
+        rdfs:label      "Contract or procedure extinction"@en , "Extinción del contrato o del procedimiento"@es ;
+        sh:description  "Clase abstracta. Existe una serie de circunstancias que derivan en la extinctión del contrato o procedimiento. Para describir estas situaciones se hace uso de una de sus subclases."@es , "Abstract class. There are some circumstances resulting in the extinction of the procedure of the contract or the contract itself. To describe that situations we may use one of its subclasses."@en ;
+        sh:name         "Extinción del contrato o del procedimiento"@es , "Contract or procedure extinction"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a9d91b710c3940d4ff1608b67e667ba8> , <https://astrea.linkeddata.es/shapes#719da7787fa9ca334755c685ab188687> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ContractOrProcedureExtinction> .
+
+<https://astrea.linkeddata.es/shapes#f4ef291ed5effcfaa547bfe6bb215708>
+        a               sh:NodeShape ;
+        rdfs:label      "Tenderers requirements"@en , "Requisitos de los licitadores"@es ;
+        sh:description  "Class defining the tenderers requirements (e.g. required classification or financial capability)."@en , "Clase que define los requisitos exigidos a los licitadores (e.g. clasificación profesional ó solvencia económica)."@es ;
+        sh:name         "Requisitos de los licitadores"@es , "Tenderers requirements"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#72957706d829564992ba37d7c29c54e0> , <https://astrea.linkeddata.es/shapes#2ac7c5b4cd3405cb80285f8b1b6299b7> , <https://astrea.linkeddata.es/shapes#60719abd4dc1eb1475cf56d80087170d> , <https://astrea.linkeddata.es/shapes#e7ed1faa8e1f28af993b4239cdc3d1bb> , <https://astrea.linkeddata.es/shapes#d5bb7bc70d452f53b4039d73620afe36> , <https://astrea.linkeddata.es/shapes#dada5ad4d7c446168197837aba55fc49> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#TenderersRequirements> .
+
+<https://astrea.linkeddata.es/shapes#a153a0282349c657e7fa139c3ed0f75a>
+        a               sh:PropertyShape ;
+        rdfs:label      "Price percentage change"@en , "Porcentaje de variación sobre el precio"@es , "The range of this property must be a percentage (i.e. float between 0.0 and 100.0)"@en , "El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0."@es ;
+        sh:datatype     xsd:float ;
+        sh:description  "The range of this property must be a percentage (i.e. float between 0.0 and 100.0)"@en , "El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0."@es ;
+        sh:maxCount     1 ;
+        sh:name         "Price percentage change"@en , "Porcentaje de variación sobre el precio"@es ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#pricePercentageChange> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#349bdfcc08670c1450a6e182a2147aa9>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#lot> .
+
+<https://astrea.linkeddata.es/shapes#892ca2b8227c793d4d71f99e99dbaf98>
+        a               sh:NodeShape ;
+        rdfs:label      "Notice"@en , "Anuncio"@es ;
+        sh:name         "Notice"@en , "Anuncio"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#44d1470df4ad88d8c3bdbf9e02936dad> , <https://astrea.linkeddata.es/shapes#e47388852a051f9a00020ac1331f5eb9> , <https://astrea.linkeddata.es/shapes#560dd0b7700d306e22d465cdb6182779> , <https://astrea.linkeddata.es/shapes#891aa04a30575404dc30e3aae7e0e9ff> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#Notice> .
+
+<https://astrea.linkeddata.es/shapes#31bcb622b42eed814071fec55b37040a>
+        a               sh:PropertyShape ;
+        rdfs:label      "Information kind"@en , "Tipo de información"@es , "Property pointing to the type of the information is provided."@en , "Indica el tipo de información que suministra un proveedor de información.\n\nEs posible utilizar esta propiedad numerosas veces para indicar diversos tipos de información."@es ;
+        rdfs:seeAlso    <http://contsem.unizar.es/def/sector-publico/pproc#InformationKindScheme> ;
+        sh:class        <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:description  "Indica el tipo de información que suministra un proveedor de información.\n\nEs posible utilizar esta propiedad numerosas veces para indicar diversos tipos de información."@es , "Property pointing to the type of the information is provided."@en ;
+        sh:name         "Tipo de información"@es , "Information kind"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#informationKind> .
+
+<https://astrea.linkeddata.es/shapes#abc5ce7f60b0f4e336e7ad2a833e13c1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/procurement/public-contracts#> ;
+        rdfs:label        "Peso del criterio"@es , "Criterion weight"@en ;
+        sh:name           "Peso del criterio"@es , "Criterion weight"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/procurement/public-contracts#criterionWeight> .
+
+<https://astrea.linkeddata.es/shapes#92ab65fdf1b26352427f76eae9010745>
+        a               sh:NodeShape ;
+        rdfs:label      "Organismo técnico"@es , "Technical committee"@en ;
+        sh:name         "Organismo técnico"@es , "Technical committee"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#TechnicalCommittee> .
+
+<https://astrea.linkeddata.es/shapes#f390d5820815f2b4a4960dce48ba8c00>
+        a               sh:NodeShape ;
+        rdfs:label      "Recurso"@es , "Remedy"@en ;
+        sh:description  "Recurso interpuesto sobre alguna de las resoluciones del proceso de licitación."@es , "Remedy lodged concerning a resolution about the procurement procedure."@en ;
+        sh:name         "Recurso"@es , "Remedy"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#230287f1150344a13cac7118f16fa99f> , <https://astrea.linkeddata.es/shapes#5d27003d8449013f8e1a36f3351ffd2a> , <https://astrea.linkeddata.es/shapes#cb1a993be3d36a57954f31acf6436f47> , <https://astrea.linkeddata.es/shapes#6fea52f071da028d4457ccaa74886bf7> , <https://astrea.linkeddata.es/shapes#d000e4086076ec11c1a0400d1470962f> , <https://astrea.linkeddata.es/shapes#6656c8230c2b5d7e195183f45ba70cee> , <https://astrea.linkeddata.es/shapes#11d3dace323ae43c74b1dbdf1c324666> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#Remedy> .
+
+<https://astrea.linkeddata.es/shapes#89c6c6d3ca18ed101c4330ee21cc3995>
+        a               sh:NodeShape ;
+        rdfs:label      "Procedimiento desierto"@es , "Procedure void"@en ;
+        sh:name         "Procedimiento desierto"@es , "Procedure void"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ProcedureVoid> .
+
+<https://astrea.linkeddata.es/shapes#44d1470df4ad88d8c3bdbf9e02936dad>
+        a            sh:PropertyShape ;
+        rdfs:label   "Fecha de envio del anuncio"@es , "Notice sent date"@en ;
+        sh:datatype  xsd:date ;
+        sh:maxCount  1 ;
+        sh:name      "Fecha de envio del anuncio"@es , "Notice sent date"@en ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#noticeSentDate> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#ad5f85156c45e3f5cd5e920609f67202>
+        a            sh:PropertyShape ;
+        rdfs:label   "Admisión de variantes"@es , "Variant admission"@en ;
+        sh:datatype  xsd:boolean ;
+        sh:maxCount  1 ;
+        sh:name      "Variant admission"@en , "Admisión de variantes"@es ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#variantAdmission> ;
+        sh:pattern   "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#1154145b0ea564ed22e1f87c6428c7e7>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato armonizado"@es , "Harmonized contract"@en ;
+        sh:description  "Clase de los contratos armonizados (i.e. contratos que alcanzan el umbral para actuar conforme a las Directivas del Parlamento Europeo y del Consejo en contratos públicos)"@es , "Class to describe harmonized contracts (i.e. contracts that reachs the threshold to be treated as highlighted in the procurement Directives of the European Commision and European Council)."@en ;
+        sh:name         "Contrato armonizado"@es , "Harmonized contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#HarmonizedContract> .
+
+<https://astrea.linkeddata.es/shapes#94f968bbd6b4647aebc63f9a5f031f09>
+        a               sh:PropertyShape ;
+        rdfs:label      "Descripción de las variantes"@es , "Campo para incluir la descripción, alcance, plazo u otros aspectos que están permitidos al presentar variantes en un contrato."@es , "Variant description"@en , "Property to describe the allowed variantes when submitting a variant of a contract."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Campo para incluir la descripción, alcance, plazo u otros aspectos que están permitidos al presentar variantes en un contrato."@es , "Property to describe the allowed variantes when submitting a variant of a contract."@en ;
+        sh:name         "Descripción de las variantes"@es , "Variant description"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#variantDescription> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core#> ;
+        rdfs:label        "Concepto"@es , "Concept"@en ;
+        sh:name           "Concepto"@es , "Concept"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.w3.org/2004/02/skos/core#Concept> .
+
+<https://astrea.linkeddata.es/shapes#00e1cee4bbcaa155cba88f4e23826c24>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.org/> ;
+        rdfs:label        "Calle"@es , "Street address"@en ;
+        sh:name           "Calle"@es , "Street address"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://schema.org/streetAddress> .
+
+<https://astrea.linkeddata.es/shapes#09d9f67b94f6ca150a0f06910ecfae13>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/procurement/public-contracts#> ;
+        rdfs:label        "Precio ofrecido"@es , "Offered price"@en ;
+        sh:name           "Precio ofrecido"@es , "Offered price"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/procurement/public-contracts#offeredPrice> .
+
+<https://astrea.linkeddata.es/shapes#fa3f1eebdd1a573beb2c19a83b2ffe10>
+        a            sh:PropertyShape ;
+        rdfs:label   "Reunión informativa"@es , "Tender briefing"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#Briefing> ;
+        sh:name      "Reunión informativa"@es , "Tender briefing"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#tenderBriefing> .
+
+<https://astrea.linkeddata.es/shapes#2c82fce6d8a2477cf0ff30ae4f8aee03>
+        a            sh:PropertyShape ;
+        rdfs:label   "Fórmula de revisión de precios"@es , "Price Review Index"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Fórmula de revisión de precios"@es , "Price Review Index"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#priceReviewIndex> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#12221d208224f9e389fff8a5da8390e7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/procurement/public-contracts#> ;
+        rdfs:label        "Fecha de finalización final"@es , "Actual end date"@en ;
+        sh:name           "Fecha de finalización final"@es , "Actual end date"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/procurement/public-contracts#actualEndDate> .
+
+<https://astrea.linkeddata.es/shapes#bb122b835e717077038632090613f0f7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/procurement/public-contracts#> ;
+        rdfs:label        "Combinación de criterios para la adjudicación"@es , "Award criteria combination"@en ;
+        sh:name           "Combinación de criterios para la adjudicación"@es , "Award criteria combination"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/procurement/public-contracts#awardCriteriaCombination> .
+
+<https://astrea.linkeddata.es/shapes#7a65859998248898ee71172e406388a8>
+        a            sh:PropertyShape ;
+        rdfs:label   "Número máximo de invitaciones"@es , "Maximum number of invitations"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Número máximo de invitaciones"@es , "Maximum number of invitations"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#maxInvitations> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#15c56721be61c58159433e4a10b3157b>
+        a            sh:PropertyShape ;
+        rdfs:label   "Time-limit for submission of tenders or requests to participate"@en , "Fecha límite para la presentación de ofertas o de peticiones a participar"@es ;
+        sh:datatype  xsd:dateTime ;
+        sh:maxCount  1 ;
+        sh:name      "Fecha límite para la presentación de ofertas o de peticiones a participar"@es , "Time-limit for submission of tenders or requests to participate"@en ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#tenderDeadline> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#d9213ac8d16166e8482f7ea0e89726dd>
+        a               sh:NodeShape ;
+        rdfs:label      "Condiciones económicas del contrato"@es , "Contract economic conditions"@en ;
+        sh:description  "Clase que define las condiciones económicas del contrato (e.g. presupuesto ó revisión de precios)."@es , "Class defining the actual economic conditions of the contract (e.g. budget or the formula that describes the revision of its price)."@en ;
+        sh:name         "Contract economic conditions"@en , "Condiciones económicas del contrato"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2c82fce6d8a2477cf0ff30ae4f8aee03> , <https://astrea.linkeddata.es/shapes#d74e552d0376e4e633301d7160a180cf> , <https://astrea.linkeddata.es/shapes#3e90260b796fdebf6311958ebf9fbe50> , <https://astrea.linkeddata.es/shapes#366ac9c43f3418b6af86e04c3ff2708a> , <https://astrea.linkeddata.es/shapes#2e684ff1bd307ab9650c701cb67d3b0f> , <https://astrea.linkeddata.es/shapes#fc5419ed0682d5543e6c48cc1f22ad72> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ContractEconomicConditions> .
+
+<https://astrea.linkeddata.es/shapes#a31b80cdf4a60f28c445dc96acfe5b2b>
+        a            sh:PropertyShape ;
+        rdfs:label   "Anuncio"@es , "Notice"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#Notice> ;
+        sh:name      "Anuncio"@es , "Notice"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#notice> .
+
+<https://astrea.linkeddata.es/shapes#062c41162d495ad258c586db9e461452>
+        a               sh:NodeShape ;
+        rdfs:label      "Resolución del contrato"@es , "Contract resolution"@en ;
+        sh:name         "Resolución del contrato"@es , "Contract resolution"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ContractResolution> .
+
+<https://astrea.linkeddata.es/shapes#d86ecf69db99e5a2e0e130ce0235f758>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato de establecimiento de un sistema dinámico de contratación"@es , "Dynamic purchasing system conclusion contract"@en ;
+        sh:description  "Clase de los contratos que consisten en el establecimiento de un sistema dinámico de contratación."@es , "Class describing the contracts consisting in the conclusion of a dynamic purchasing system."@en ;
+        sh:name         "Contrato de establecimiento de un sistema dinámico de contratación"@es , "Dynamic purchasing system conclusion contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#DynamicPurchasingSystemConclusionContract> .
+
+<https://astrea.linkeddata.es/shapes#21d5d67fe3f51dcf439984fbe0687be9>
+        a            sh:PropertyShape ;
+        rdfs:label   "Fecha de adjudicación"@es , "Date of award"@en ;
+        sh:datatype  xsd:date ;
+        sh:maxCount  1 ;
+        sh:name      "Fecha de adjudicación"@es , "Date of award"@en ;
+        sh:nodeKind  sh:Literal , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#awardDate> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#634682557f8fa304a97637ca3812ece0>
+        a            sh:PropertyShape ;
+        rdfs:label   "Offered end date"@en , "Fecha de finalización ofertada"@es ;
+        sh:datatype  xsd:date ;
+        sh:maxCount  1 ;
+        sh:name      "Offered end date"@en , "Fecha de finalización ofertada"@es ;
+        sh:nodeKind  sh:Literal , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#offeredEndDate> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#699f67ac42b420b1fa3b0716d7e4dfc8>
+        a            sh:PropertyShape ;
+        rdfs:label   "Acta"@es , "Minutes document reference"@en ;
+        sh:name      "Acta"@es , "Minutes document reference"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#b0bc650dd253fca630c71efe917da31e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://schema.org/> ;
+        rdfs:label        "Dirección postal"@es , "Postal address"@en ;
+        sh:name           "Dirección postal"@es , "Postal address"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://schema.org/PostalAddress> .
+
+<https://astrea.linkeddata.es/shapes#2ac7c5b4cd3405cb80285f8b1b6299b7>
+        a            sh:PropertyShape ;
+        rdfs:label   "Solvencia económica y financiera requerida"@es , "Required economic and financial standing"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Solvencia económica y financiera requerida"@es , "Required economic and financial standing"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#requiredEconomicAndFinancialStanding> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#d57dc6daa3929cb7f392e9add5f45303>
+        a               sh:PropertyShape ;
+        rdfs:label      "Relaciona un contrato con otro contrato complementario."@es , "Contrato complementario"@es , "Relates a contract with a complementary contract."@en , "Complementary contract"@en ;
+        sh:class        <http://contsem.unizar.es/def/sector-publico/pproc#Contract> ;
+        sh:description  "Relaciona un contrato con otro contrato complementario."@es , "Relates a contract with a complementary contract."@en ;
+        sh:name         "Contrato complementario"@es , "Complementary contract"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#complementaryContract> .
+
+<https://astrea.linkeddata.es/shapes#86cbd7290e5f5998cc29025a5cb6186f>
+        a            sh:PropertyShape ;
+        rdfs:label   "Resolución de contrato"@es , "Contract resolution"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#ContractResolution> ;
+        sh:name      "Resolución de contrato"@es , "Contract resolution"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#contractResolution> .
+
+<https://astrea.linkeddata.es/shapes#fd7b1d0e495f0225da7c5180785effc3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.org/> ;
+        rdfs:label        "Dirección postal"@es , "Postal address"@en ;
+        sh:name           "Dirección postal"@es , "Postal address"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://schema.org/postalAddress> .
+
+<https://astrea.linkeddata.es/shapes#fbac36e20b2f659fe36d0ba02bc366ef>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/goodrelations/v1#> ;
+        rdfs:label        "Especificación del precio"@es , "Price specification"@en ;
+        sh:name           "Especificación del precio"@es , "Price specification"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/goodrelations/v1#hasPriceSpecification> .
+
+<https://astrea.linkeddata.es/shapes#d69cfd802a3109facc29ba42f10e6140>
+        a               sh:PropertyShape ;
+        rdfs:label      "Objeto adicional del contrato"@es , "Property that points to the concept of the CPV code of an object.\n\nThe concept used should be a valid representation of a CPV code, as it is in http://cpv.data.ac.uk/."@en , "Representación CPV del objeto de un contrato.\n\nDebe apuntar a un concepto de objeto siguiendo la clasificación CPV de algún esquema de conceptos SKOS, como http://cpv.data.ac.uk/."@es , "Additional object of contract"@en ;
+        sh:class        <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:description  "Property that points to the concept of the CPV code of an object.\n\nThe concept used should be a valid representation of a CPV code, as it is in http://cpv.data.ac.uk/."@en , "Representación CPV del objeto de un contrato.\n\nDebe apuntar a un concepto de objeto siguiendo la clasificación CPV de algún esquema de conceptos SKOS, como http://cpv.data.ac.uk/."@es ;
+        sh:name         "Additional object of contract"@en , "Objeto adicional del contrato"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#additionalObject> .
+
+<https://astrea.linkeddata.es/shapes#421f1cfdd7a65a94141edcfb522cb2fe>
+        a            sh:PropertyShape ;
+        rdfs:label   "Prestación"@es , "Provision"@en ;
+        sh:class     <http://purl.org/goodrelations/v1#Offering> ;
+        sh:name      "Prestación"@es , "Provision"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#provision> .
+
+<https://astrea.linkeddata.es/shapes#d3d61d8406079863e094a3db56af9188>
+        a               sh:NodeShape ;
+        rdfs:label      "Mesa de contratación"@es , "Tender committee"@en ;
+        sh:name         "Mesa de contratación"@es , "Tender committee"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#TenderCommittee> .
+
+<https://astrea.linkeddata.es/shapes#2934c81705f32912ed9d5fd5e739cb91>
+        a               sh:NodeShape ;
+        rdfs:label      "Oferta admitida"@es , "Accepted tender"@en ;
+        sh:description  "Class describing the tenders accepted in the procurement public contract."@en , "Clase para definir las ofertas que se han admitido a licitación."@es ;
+        sh:name         "Oferta admitida"@es , "Accepted tender"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#e2ee5b54f165e20c10f7a965873aaa87> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#AcceptedTender> .
+
+<https://astrea.linkeddata.es/shapes#c79bb7bf18ea22db9f50caab36ba4ba0>
+        a               sh:NodeShape ;
+        rdfs:label      "Anuncio de información previa"@es , "Prior information notice"@en ;
+        sh:name         "Anuncio de información previa"@es , "Prior information notice"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#PriorInformationNotice> .
+
+<https://astrea.linkeddata.es/shapes#891aa04a30575404dc30e3aae7e0e9ff>
+        a            sh:PropertyShape ;
+        rdfs:label   "Fecha de publicación del anuncio"@es , "Date of notice publication"@en ;
+        sh:datatype  xsd:date ;
+        sh:maxCount  1 ;
+        sh:name      "Fecha de publicación del anuncio"@es , "Date of notice publication"@en ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#noticeDate> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#50143ea3b6a86b03011eb726a4daaf4b>
+        a            sh:PropertyShape ;
+        rdfs:label   "Renuncia del procedimiento"@es , "Procedure waive"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#ProcedureWaive> ;
+        sh:name      "Renuncia del procedimiento"@es , "Procedure waive"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#procedureWaive> .
+
+<https://astrea.linkeddata.es/shapes#3e90260b796fdebf6311958ebf9fbe50>
+        a            sh:PropertyShape ;
+        rdfs:label   "Canon"@es , "Fee"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#BundlePriceSpecification> ;
+        sh:maxCount  1 ;
+        sh:name      "Fee"@en , "Canon"@es ;
+        sh:nodeKind  sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#feePrice> .
+
+<https://astrea.linkeddata.es/shapes#ff8ca486f24324363d044ccaa1065b70>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/procurement/public-contracts#> ;
+        rdfs:label        "Award criterion"@en , "Criterio de adjudicación"@es ;
+        sh:name           "Award criterion"@en , "Criterio de adjudicación"@es ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ca8ac0d270140f712c0f400086446f6a> , <https://astrea.linkeddata.es/shapes#2147780b01d7553be3c9a3866bd2b823> , <https://astrea.linkeddata.es/shapes#470ea0d00e5faf6d3cb983cc5de1cbac> ;
+        sh:targetClass    <http://purl.org/procurement/public-contracts#AwardCriterion> .
+
+<https://astrea.linkeddata.es/shapes#719da7787fa9ca334755c685ab188687>
+        a            sh:PropertyShape ;
+        rdfs:label   "Causa de extinctión"@es , "Extinction cause"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Causa de extinctión"@es , "Extinction cause"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#extinctionCause> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#725b2386ee5e4c80307bffdfab0df90b>
+        a               sh:NodeShape ;
+        rdfs:label      "Lote"@es , "Lot"@en ;
+        sh:description  "Clase de los contratos que representan un lote perteneciente a otro contrato."@es , "Class describing contracts that are an actual lot of another contract."@en ;
+        sh:name         "Lote"@es , "Lot"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#Lot> .
+
+<https://astrea.linkeddata.es/shapes#ea86434abaf5fe843911f8127fa51ccd>
+        a               sh:NodeShape ;
+        rdfs:label      "Anuncio de adjudicación"@es , "Contract award notice"@en ;
+        sh:name         "Anuncio de adjudicación"@es , "Contract award notice"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ContractAwardNotice> .
+
+<https://astrea.linkeddata.es/shapes#1668a94f326660e342d790fb90323b1f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/procurement/public-contracts#> ;
+        rdfs:label        "Proveedor"@es , "Supplier"@en ;
+        sh:name           "Proveedor"@es , "Supplier"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/procurement/public-contracts#supplier> .
+
+<https://astrea.linkeddata.es/shapes#e2ee5b54f165e20c10f7a965873aaa87>
+        a         sh:PropertyShape ;
+        sh:class  <http://contsem.unizar.es/def/sector-publico/pproc#ExcludedTender> .
+
+<https://astrea.linkeddata.es/shapes#9fddf425fab11a56fe34b158404b7888>
+        a            sh:PropertyShape ;
+        rdfs:label   "Órganos del contrato"@es , "Contract bodies"@en ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#ContractBodies> ;
+        sh:maxCount  1 ;
+        sh:name      "Órganos del contrato"@es , "Contract bodies"@en ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#contractBodies> .
+
+<https://astrea.linkeddata.es/shapes#6c53af5e5e8f1f6cc497c903497e2989>
+        a            sh:PropertyShape ;
+        rdfs:label   "Electronic auction"@en , "Subasta electrónica"@es ;
+        sh:class     <http://contsem.unizar.es/def/sector-publico/pproc#ElectronicAuction> ;
+        sh:maxCount  1 ;
+        sh:name      "Subasta electrónica"@es , "Electronic auction"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#electronicAuction> .
+
+<https://astrea.linkeddata.es/shapes#4b7689a47bd3ee216b85dc58cbf6731e>
+        a             sh:PropertyShape ;
+        rdfs:label    "Urgency type"@en , "Tipo de tramitación"@es ;
+        rdfs:seeAlso  <http://contsem.unizar.es/def/sector-publico/pproc#UrgencyTypeScheme> ;
+        sh:class      <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:maxCount   1 ;
+        sh:name       "Tipo de tramitación"@es , "Urgency type"@en ;
+        sh:nodeKind   sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path       <http://contsem.unizar.es/def/sector-publico/pproc#urgencyType> .
+
+<https://astrea.linkeddata.es/shapes#11d3dace323ae43c74b1dbdf1c324666>
+        a            sh:PropertyShape ;
+        rdfs:label   "Remedy resolution date"@en , "Fecha de resolución del recurso"@es ;
+        sh:datatype  xsd:date ;
+        sh:maxCount  1 ;
+        sh:name      "Remedy resolution date"@en , "Fecha de resolución del recurso"@es ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#remedyResolutionDate> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#d7c4a7cb30bdd34ed9d85f3a51e1ade2>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato prorrogable"@es , "Extendable contract"@en ;
+        sh:description  "Contratos públicos cuya fecha de ejecución puede ser pospuesta o extendida."@es , "Class describing contracts whose end date can be extended."@en ;
+        sh:name         "Contrato prorrogable"@es , "Extendable contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ExtendableContract> .
+
+<https://astrea.linkeddata.es/shapes#8e2306f5a20f0b18766cc12bebdac739>
+        a            sh:PropertyShape ;
+        rdfs:label   "Fecha de formalización"@es , "Formalized date"@en ;
+        sh:datatype  xsd:date ;
+        sh:maxCount  1 ;
+        sh:name      "Fecha de formalización"@es , "Formalized date"@en ;
+        sh:nodeKind  sh:Literal , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#formalizedDate> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#0795908e2e7ddb97c76fd7e920980665>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato de concesión de obras públicas"@es , "Public works concession contract"@en ;
+        sh:name         "Contrato de concesión de obras públicas"@es , "Public works concession contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#PublicWorksConcessionContract> .
+
+<https://astrea.linkeddata.es/shapes#567dbbbe3ab450ad4aa5135d22be3439>
+        a            sh:PropertyShape ;
+        rdfs:label   "Modalidad de presentación"@es , "Tender submission mode"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Modalidad de presentación"@es , "Tender submission mode"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#tenderSubmissionMode> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#e47e3b469768c8f592e814f181bbb22e>
+        a            sh:PropertyShape ;
+        rdfs:label   "Gastos de publicidad"@es , "Advertisement amount"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Gastos de publicidad"@es , "Advertisement amount"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#advertisementAmount> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#72b3b4c6c283176101066ad947b806b8>
+        a               sh:PropertyShape ;
+        rdfs:label      "Criterion score"@en , "Valoración de criterio"@es , "Property that points to an unique criterion and its score."@en , "Especifica la valoración de un único criterio, por lo que se utilizará una vez por cada criterio de adjudicación presente en el contrato."@es ;
+        sh:class        <http://contsem.unizar.es/def/sector-publico/pproc#CriterionScore> ;
+        sh:description  "Property that points to an unique criterion and its score."@en , "Especifica la valoración de un único criterio, por lo que se utilizará una vez por cada criterio de adjudicación presente en el contrato."@es ;
+        sh:name         "Criterion score"@en , "Valoración de criterio"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#criterionScore> .
+
+<https://astrea.linkeddata.es/shapes#a8e6eb6d3935fd505cdc3676108bbc1e>
+        a               sh:PropertyShape ;
+        rdfs:label      "El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0."@es , "Garantía definitiva"@es , "The range of this property must be a percentage (i.e. float between 0.0 and 100.0)"@en , "Final financial guarantee"@en ;
+        sh:datatype     xsd:float ;
+        sh:description  "El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0."@es , "The range of this property must be a percentage (i.e. float between 0.0 and 100.0)"@en ;
+        sh:maxCount     1 ;
+        sh:name         "Final financial guarantee"@en , "Garantía definitiva"@es ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#finalFinancialGuarantee> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#a44a93f5de2a538af9f8969422434444>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato de gestión de servicios públicos"@es , "Public services management contract"@en ;
+        sh:name         "Contrato de gestión de servicios públicos"@es , "Public services management contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#PublicServicesManagementContract> .
+
+<https://astrea.linkeddata.es/shapes#d5bb7bc70d452f53b4039d73620afe36>
+        a            sh:PropertyShape ;
+        rdfs:label   "Contratos reservados"@es , "Reserved contract restrictions"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Contratos reservados"@es , "Reserved contract restrictions"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#reservedContractRestrictions> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#851cd6955015b72fa6a16846bb3c7cf4>
+        a               sh:NodeShape ;
+        rdfs:label      "Reunión de la mesa de contratación"@es , "Tender meeting"@en ;
+        sh:description  "Clase para describir las reuniones que la mesa de contratación, comité de expertos u organismos técnicas han realizado."@es , "Class describing the meetings of tender committee."@en ;
+        sh:name         "Reunión de la mesa de contratación"@es , "Tender meeting"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#4b201369ddd57b3bc369c9978bce20b5> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#TenderMeeting> .
+
+<https://astrea.linkeddata.es/shapes#1965170afe1788c602e0c06ba974119e>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato sin lotes"@es , "Contract without lots"@en ;
+        sh:description  "Clase de los contratos que no están dividos en lotes."@es , "Class to describe the contract not divided into lots."@en ;
+        sh:name         "Contrato sin lotes"@es , "Contract without lots"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ca5c854714c6f2f395a2b2c982e35ab0> , <https://astrea.linkeddata.es/shapes#087a978eb4694d2e8945b9bbe6b1cae0> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ContractWithoutLots> .
+
+<https://astrea.linkeddata.es/shapes#1a3cbccb2498824c12a3d7a69feba804>
+        a            sh:PropertyShape ;
+        rdfs:label   "Contracting body"@en , "Órgano de contratación"@es ;
+        sh:class     <http://www.w3.org/ns/org#Organization> ;
+        sh:maxCount  1 ;
+        sh:name      "Órgano de contratación"@es , "Contracting body"@en ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#contractingBody> .
+
+<https://astrea.linkeddata.es/shapes#90cf264afb3898b89239c6b6d8cf61fb>
+        a               sh:NodeShape ;
+        rdfs:label      "Concesión"@es , "Concession contract"@en ;
+        sh:description  "Clase de los contratos en los que el empresario gestionará el servicio a su propio riesgo y ventura."@es , "Class of the contracts in which the awarded tenderer manage the public service themselves."@en ;
+        sh:name         "Concesión"@es , "Concession contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#ConcessionContract> .
+
+<https://astrea.linkeddata.es/shapes#0fc34333fb2af0055e94a3159c17c36f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/procurement/public-contracts#> ;
+        rdfs:label        "Contrato"@es , "Contract"@en ;
+        sh:name           "Contrato"@es , "Contract"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/procurement/public-contracts#Contract> .
+
+<https://astrea.linkeddata.es/shapes#3787e8131e858e2d6376503d0cf9f4c3>
+        a            sh:PropertyShape ;
+        rdfs:label   "Causas previstas de modificación"@es , "Expected cause modification"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Causas previstas de modificación"@es , "Expected cause modification"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#expectedCauseModification> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#1908e0cdcd27466dae14c21b4433425d>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#formalizedDate> .
+
+<https://astrea.linkeddata.es/shapes#6d386facfa559fee193d046e1c52cc9e>
+        a            sh:PropertyShape ;
+        rdfs:label   "Justificación de la modificación"@es , "Modification reason"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Justificación de la modificación"@es , "Modification reason"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#modificationReason> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#c7b71f19df82cc068f9fa9e29c925d2f>
+        a               sh:PropertyShape ;
+        rdfs:label      "The range of this property must be a percentage (i.e. float between 0.0 and 100.0)"@en , "El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0."@es , "Subcontratación mínima"@es , "Minimum subcontracting"@en ;
+        sh:datatype     xsd:float ;
+        sh:description  "El rango en esta propiedad indica un porcentaje, por lo que el rango del número real a utilizar debe estar comprendido entre 0.0 y 100.0."@es , "The range of this property must be a percentage (i.e. float between 0.0 and 100.0)"@en ;
+        sh:maxCount     1 ;
+        sh:name         "Minimum subcontracting"@en , "Subcontratación mínima"@es ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
+        sh:path         <http://contsem.unizar.es/def/sector-publico/pproc#minSubcontracting> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#6147a1a53fd1cd49e4988c2c36a011d7>
+        a         sh:PropertyShape ;
+        sh:class  <http://contsem.unizar.es/def/sector-publico/pproc#DerivativeContract> .
+
+<https://astrea.linkeddata.es/shapes#d56155d772eaf6c2879359db4d6b3440>
+        a            sh:PropertyShape ;
+        rdfs:label   "Fecha de nombramiento"@es , "Tender committee appointment date"@en ;
+        sh:datatype  xsd:date ;
+        sh:maxCount  1 ;
+        sh:name      "Tender committee appointment date"@en , "Fecha de nombramiento"@es ;
+        sh:nodeKind  sh:Literal , sh:IRIOrLiteral ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#tenderCommitteeAppointmentDate> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#5c5b0a21a6b11e032caaa2766a6dd9b5>
+        a               sh:NodeShape ;
+        rdfs:label      "Oferta formalizada"@es , "Formalized tender"@en ;
+        sh:description  "Class describing tenders being formalized."@en , "Clase para definir la oferta que se ha formalizado."@es ;
+        sh:name         "Oferta formalizada"@es , "Formalized tender"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1908e0cdcd27466dae14c21b4433425d> ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#FormalizedTender> .
+
+<https://astrea.linkeddata.es/shapes#cf8b6f5062cffd1ef9ce5be03cfc926c>
+        a            sh:PropertyShape ;
+        rdfs:label   "Precio"@es , "Price"@en ;
+        sh:class     <http://purl.org/goodrelations/v1#PriceSpecification> ;
+        sh:name      "Precio"@es , "Price"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#price> .
+
+<https://astrea.linkeddata.es/shapes#013d442a1d9ca27371910bb9ad950a9b>
+        a            sh:PropertyShape ;
+        rdfs:label   "Pliego de cláusulas administrativas"@es , "Legal document reference"@en ;
+        sh:name      "Pliego de cláusulas administrativas"@es , "Legal document reference"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#ff90fd504031260406474629c299de77>
+        a               sh:NodeShape ;
+        rdfs:label      "Criterio de adjudicación subjetivo"@es , "Subjective award criterion"@en ;
+        sh:description  "Clase para especificar los criterios que dependen de una opinion subjetiva."@es , "Class used to describe criteria that depend on a subjetive opinion."@en ;
+        sh:name         "Criterio de adjudicación subjetivo"@es , "Subjective award criterion"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#SubjectiveAwardCriterion> .
+
+<https://astrea.linkeddata.es/shapes#aef1a78016b3598e01dd7671934b50b4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core#> ;
+        rdfs:label        "Esquema de conceptos"@es , "Concept scheme"@en ;
+        sh:name           "Esquema de conceptos"@es , "Concept scheme"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+
+<https://astrea.linkeddata.es/shapes#dada5ad4d7c446168197837aba55fc49>
+        a            sh:PropertyShape ;
+        rdfs:label   "Clasificación requerida"@es , "Required classification"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "Clasificación requerida"@es , "Required classification"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#requiredClassification> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#cad81acf6d9f4d043c61cf38063da682>
+        a            sh:PropertyShape ;
+        rdfs:label   "Web con información"@es , "Website with information"@en ;
+        sh:class     <http://xmlns.com/foaf/0.1/Document> ;
+        sh:name      "Web con información"@es , "Website with information"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://contsem.unizar.es/def/sector-publico/pproc#websiteWithInformation> .
+
+<https://astrea.linkeddata.es/shapes#6a49280f349a775f46e727d9da0f8f32>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/goodrelations/v1#> ;
+        rdfs:label        "Especificación del precio"@es , "Price specification"@en ;
+        sh:name           "Especificación del precio"@es , "Price specification"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/goodrelations/v1#PriceSpecification> .
+
+<https://astrea.linkeddata.es/shapes#fea714d8c045434e5f46b5eb0696935c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://schema.org/> ;
+        rdfs:label        "Dirección"@es , "Address"@en ;
+        sh:name           "Dirección"@es , "Address"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://schema.org/address> .
+
+<https://astrea.linkeddata.es/shapes#9b64955b4ddb68d6be7babef4e246e20>
+        a               sh:NodeShape ;
+        rdfs:label      "Contrato derivado de un sistema dinámico de contratación"@es , "Dynamic purchasing system derivative contract"@en ;
+        sh:description  "Clase de los contratos derivados de un sistema dinámico de contratación"@es , "Class describing contracts derived from a dynamic purchasing system."@en ;
+        sh:name         "Contrato derivado de un sistema dinámico de contratación"@es , "Dynamic purchasing system derivative contract"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#DynamicPurchasingSystemDerivativeContract> .
+
+<https://astrea.linkeddata.es/shapes#9cae478fc19f65dd8352218de3602315>
+        a               sh:NodeShape ;
+        rdfs:label      "Reunión informativa"@es , "Briefing"@en ;
+        sh:description  "Reunión informativa sobre la licitación del contrato."@es , "Informative meeting about the public procurement contract."@en ;
+        sh:name         "Reunión informativa"@es , "Briefing"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://contsem.unizar.es/def/sector-publico/pproc#Briefing> .

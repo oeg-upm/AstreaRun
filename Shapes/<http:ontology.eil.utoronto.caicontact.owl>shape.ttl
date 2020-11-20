@@ -1,0 +1,613 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#4a04a77bc9b246c17b1bf3ff7be02132>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.eil.utoronto.ca/icontact.owl#iContactThing> .
+
+<https://astrea.linkeddata.es/shapes#304a954f271056552ed48a6b7ca20303>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasAreaCode> .
+
+<https://astrea.linkeddata.es/shapes#ce51a4370c4b89a5ae343ad119a6656f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasStreetNumber> .
+
+<https://astrea.linkeddata.es/shapes#d169401cacc88b2f3fd221715a2d14da>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#addressDataProperty> .
+
+<https://astrea.linkeddata.es/shapes#f70b7beb018f057a1f036712b9687e19>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.w3.org/2003/01/geo/wgs84_pos#lat> .
+
+<https://astrea.linkeddata.es/shapes#e7990c6dd6a3dca6de078b32328bc4ef>
+        a            sh:PropertyShape ;
+        rdfs:label   "longitude"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "longitude"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.w3.org/2003/01/geo/wgs84_pos#long> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#e5f66b39d58aed69385c72f7c439f965>
+        a               sh:NodeShape ;
+        rdfs:label      "Street Type"@en ;
+        sh:name         "Street Type"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.eil.utoronto.ca/icontact.owl#StreetType> .
+
+<https://astrea.linkeddata.es/shapes#85538d09d327fc1229fd6b45955fd96c>
+        a            sh:PropertyShape ;
+        sh:hasValue  <http://ontology.eil.utoronto.ca/icontact.owl#FaxPhone> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasPhoneType> .
+
+<https://astrea.linkeddata.es/shapes#1d2b80b9378b0a2c2991b811f1a681b7>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://ontology.eil.utoronto.ca/icontact.owl#hasState> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <http://schema.org/State> ] .
+
+<https://astrea.linkeddata.es/shapes#2987d38a806881da98a0c385c01e0558>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Postal Code"@en ;
+        sh:name      "has Postal Code"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasPostalCode> .
+
+<https://astrea.linkeddata.es/shapes#f7e0a91373107c3fbc92f1bfe81dca01>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Country"@en ;
+        sh:name      "has Country"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasCountry> .
+
+<https://astrea.linkeddata.es/shapes#e64d1db5f953245bed304796e8b39c1c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#dayofWeek> .
+
+<https://astrea.linkeddata.es/shapes#2311c7a7f1cd0d2d3fb70ec3a004214a>
+        a               sh:NodeShape ;
+        rdfs:label      "Phone Type"@en ;
+        sh:name         "Phone Type"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.eil.utoronto.ca/icontact.owl#PhoneType> .
+
+<https://astrea.linkeddata.es/shapes#3a28a57a1a4159f03f5765eccb93563a>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.w3.org/2003/01/geo/wgs84_pos#long> .
+
+<https://astrea.linkeddata.es/shapes#ec6aa37eaeff38596e657a4a687a7104>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Date"@en ;
+        sh:datatype  xsd:dateTime ;
+        sh:name      "has Date"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasDate> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#3a6f41aa7f9f4edde547f091a3ab163e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#contactProperty> .
+
+<https://astrea.linkeddata.es/shapes#0758f0102935f3c315a38f28107a7949>
+        a               sh:NodeShape ;
+        rdfs:label      "Fax Telephone Number"@en ;
+        sh:name         "Fax Telephone Number"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#85538d09d327fc1229fd6b45955fd96c> ;
+        sh:targetClass  <http://ontology.eil.utoronto.ca/icontact.owl#FaxNumber> .
+
+<https://astrea.linkeddata.es/shapes#54bc6e83d71c09780baea20083d44fb6>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasClosingTime> .
+
+<https://astrea.linkeddata.es/shapes#26aea7781f482efdb8f70a0f74c44add>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasUnitNumber> .
+
+<https://astrea.linkeddata.es/shapes#b0d278bef41670f06f2fabd2c5e18336>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://schema.org/GeoCoordinates> .
+
+<https://astrea.linkeddata.es/shapes#710cf0c649c3f1540b65578cb165f5e2>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasPhoneNumber> .
+
+<https://astrea.linkeddata.es/shapes#ab9967d8acfcc4c8a8460c1bbe878839>
+        a               sh:NodeShape ;
+        rdfs:label      "Home Telephone Number"@en ;
+        sh:name         "Home Telephone Number"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#98c5186b6e987b8a8ed120e84ea76c3f> ;
+        sh:targetClass  <http://ontology.eil.utoronto.ca/icontact.owl#HomeNumber> .
+
+<https://astrea.linkeddata.es/shapes#334e6b0f3c9a234986ba1b00fad9f33f>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Work Email"@en ;
+        sh:name      "has Work Email"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasWorkEmail> .
+
+<https://astrea.linkeddata.es/shapes#a4b8b24adeb19aae5799c53abdf02822>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://ontology.eil.utoronto.ca/icontact.owl#hasCountry> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <http://schema.org/Country> ] .
+
+<https://astrea.linkeddata.es/shapes#19178a1c8336538fddde514a05ae751c>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.eil.utoronto.ca/icontact.owl#SchemaOrgThing> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#a12b13578961397a16c8a78c2c04866d>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#operatingDataProperty> .
+
+<https://astrea.linkeddata.es/shapes#f8042e0b1a98b0164d09cee7da025849>
+        a               sh:NodeShape ;
+        rdfs:label      "Phone Number"@en ;
+        sh:name         "Phone Number"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#304a954f271056552ed48a6b7ca20303> , <https://astrea.linkeddata.es/shapes#45ad395eaa4b0aaf9711821595ad712a> , <https://astrea.linkeddata.es/shapes#7a4dd49ae5c369434d35ebb1d5a47d3f> , <https://astrea.linkeddata.es/shapes#710cf0c649c3f1540b65578cb165f5e2> ;
+        sh:targetClass  <http://ontology.eil.utoronto.ca/icontact.owl#PhoneNumber> .
+
+<https://astrea.linkeddata.es/shapes#c590ab3df1b2ad64b777016a3458061d>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Telephone"@en ;
+        sh:name      "has Telephone"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasTelephone> .
+
+<https://astrea.linkeddata.es/shapes#d373339933006a6de03c89f6dc0f4eb8>
+        a            sh:PropertyShape ;
+        rdfs:label   "has State"@en ;
+        sh:name      "has State"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasState> .
+
+<https://astrea.linkeddata.es/shapes#0421bc17c45b7771ea8845a2370a237c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasCity> .
+
+<https://astrea.linkeddata.es/shapes#d25816981ae672d73b8d62355d4f38cf>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Country Code"@en ;
+        sh:name      "has Country Code"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasCountryCode> .
+
+<https://astrea.linkeddata.es/shapes#901bf7faae769b99988720f003f69b33>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Email"@en ;
+        sh:name      "has Email"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasEmail> .
+
+<https://astrea.linkeddata.es/shapes#7f0c3892190fdbb2a9d4d608fb399ce9>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasAddress links any class to the Address class."@en ;
+        sh:class        <http://ontology.eil.utoronto.ca/icontact.owl#Address> ;
+        sh:description  "hasAddress links any class to the Address class."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.eil.utoronto.ca/icontact.owl#hasAddress> .
+
+<https://astrea.linkeddata.es/shapes#256abc7cd18db803a19e62a831303dd7>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d5f95779971d3d2ce8ad99fea627df37> , <https://astrea.linkeddata.es/shapes#e64d1db5f953245bed304796e8b39c1c> , <https://astrea.linkeddata.es/shapes#54bc6e83d71c09780baea20083d44fb6> ;
+        sh:targetClass  <http://ontology.eil.utoronto.ca/icontact.owl#HoursOfOperation> .
+
+<https://astrea.linkeddata.es/shapes#0d184b35e71762bb554a2b6d70ceb5b0>
+        a               sh:NodeShape ;
+        rdfs:label      "Address"@en ;
+        sh:name         "Address"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a4b8b24adeb19aae5799c53abdf02822> , <https://astrea.linkeddata.es/shapes#1d2b80b9378b0a2c2991b811f1a681b7> , <https://astrea.linkeddata.es/shapes#eebe2ab9bb3ec0dcfb0753abddb52755> , <https://astrea.linkeddata.es/shapes#876b96f225bcfe0296f8da1ddb78e3ed> , <https://astrea.linkeddata.es/shapes#26aea7781f482efdb8f70a0f74c44add> , <https://astrea.linkeddata.es/shapes#f70b7beb018f057a1f036712b9687e19> , <https://astrea.linkeddata.es/shapes#0c1edf694e0db53789c11eaa79cd2536> , <https://astrea.linkeddata.es/shapes#1849eac5e2efd611cb143cbd0611f4a1> , <https://astrea.linkeddata.es/shapes#f227761ba702a25a402fda4a94ef4119> , <https://astrea.linkeddata.es/shapes#70b5d5f20903b254bd8dd830f121dbe4> , <https://astrea.linkeddata.es/shapes#e984d376304422b3cb14deba724f30a3> , <https://astrea.linkeddata.es/shapes#ce51a4370c4b89a5ae343ad119a6656f> , <https://astrea.linkeddata.es/shapes#ada7fdd0edeac6fb0a87a5033f66e811> , <https://astrea.linkeddata.es/shapes#3a28a57a1a4159f03f5765eccb93563a> , <https://astrea.linkeddata.es/shapes#24aac733ad930bcaaaf250f35bad8954> ;
+        sh:targetClass  <http://ontology.eil.utoronto.ca/icontact.owl#Address> .
+
+<https://astrea.linkeddata.es/shapes#479c57decd722a897c7af0f2ee28fba9>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#emailDataProperty> .
+
+<https://astrea.linkeddata.es/shapes#e356f789760b6176279206eb3721d748>
+        a               sh:NodeShape ;
+        rdfs:label      "Mobile Telephone Number"@en ;
+        sh:name         "Mobile Telephone Number"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5c3d944d63bde257938b06d510279947> ;
+        sh:targetClass  <http://ontology.eil.utoronto.ca/icontact.owl#CellNumber> .
+
+<https://astrea.linkeddata.es/shapes#0c1edf694e0db53789c11eaa79cd2536>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasBuilding> .
+
+<https://astrea.linkeddata.es/shapes#ad0190a7d2119aeee68a042f58d1a748>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#OperatingProperty> .
+
+<https://astrea.linkeddata.es/shapes#2ddea7eff0165600c9fe7ea85c5f92a5>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Operating Hours"@en ;
+        sh:class     <http://ontology.eil.utoronto.ca/icontact.owl#HoursOfOperation> ;
+        sh:name      "has Operating Hours"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasOperatingHours> .
+
+<https://astrea.linkeddata.es/shapes#870491c101b055074991e5abd1e9df2c>
+        a               sh:NodeShape ;
+        rdfs:label      "Work Address"@en ;
+        sh:name         "Work Address"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#6cd77dd7ca7b822e13cb317d4790d27c> ;
+        sh:targetClass  <http://ontology.eil.utoronto.ca/icontact.owl#WorkAddress> .
+
+<https://astrea.linkeddata.es/shapes#e9097dc85c02001ceb6f6c9e77926423>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://schema.org/Country> .
+
+<https://astrea.linkeddata.es/shapes#f227761ba702a25a402fda4a94ef4119>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasPostalCode> .
+
+<https://astrea.linkeddata.es/shapes#cfa5e1bfa7258809b0a3f64c8c46ff4a>
+        a               sh:NodeShape ;
+        rdfs:label      "Work Telephone Number"@en ;
+        sh:name         "Work Telephone Number"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#0b153a40aa5e451559f6e178efb3f104> ;
+        sh:targetClass  <http://ontology.eil.utoronto.ca/icontact.owl#WorkNumber> .
+
+<https://astrea.linkeddata.es/shapes#7c5feeb4f9f366b06585881569cf19d0>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Street Number"@en ;
+        sh:name      "has Street Number"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasStreetNumber> .
+
+<https://astrea.linkeddata.es/shapes#7159dbee5de08352f607c7bf0ae8f84b>
+        a            sh:PropertyShape ;
+        sh:hasValue  <http://ontology.eil.utoronto.ca/icontact.owl#Cottage> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasAddressType> .
+
+<https://astrea.linkeddata.es/shapes#6501941533691cfce8b7555515fb3771>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Opening Time"@en ;
+        sh:datatype  xsd:dateTime ;
+        sh:name      "has Opening Time"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasOpeningTime> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#812851f2c53900d619f0f7aab3e94207>
+        a               sh:PropertyShape ;
+        rdfs:label      "Specifies the day of the week, e.g., Monday, that the times apply to.  This is the default for that day and can be overidden by the \"hasDate\" property."@en ;
+        sh:class        <http://ontology.eil.utoronto.ca/icontact.owl#DaysOfWeek> ;
+        sh:description  "Specifies the day of the week, e.g., Monday, that the times apply to.  This is the default for that day and can be overidden by the \"hasDate\" property."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://ontology.eil.utoronto.ca/icontact.owl#dayofWeek> .
+
+<https://astrea.linkeddata.es/shapes#a10842149261722f68e999e427d5d2bd>
+        a               sh:NodeShape ;
+        rdfs:label      "Days of the Week"@en ;
+        sh:name         "Days of the Week"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.eil.utoronto.ca/icontact.owl#DaysOfWeek> .
+
+<https://astrea.linkeddata.es/shapes#d7961c3e156f4ff2dff28a02dae893b4>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Street"@en ;
+        sh:name      "has Street"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasStreet> .
+
+<https://astrea.linkeddata.es/shapes#172382a059e61f60b739a6e8d904fff3>
+        a            sh:PropertyShape ;
+        rdfs:label   "lattitude"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "lattitude"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#45ad395eaa4b0aaf9711821595ad712a>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://ontology.eil.utoronto.ca/icontact.owl#hasPhoneType> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <http://ontology.eil.utoronto.ca/icontact.owl#PhoneType> ] .
+
+<https://astrea.linkeddata.es/shapes#44c9ef3a041752e665da36bef62a6494>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#telephoneDataProperty> .
+
+<https://astrea.linkeddata.es/shapes#bc51309bd57ef2515fa472c08deab59f>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Geo Coordinates"@en ;
+        sh:name      "has Geo Coordinates"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasGeoCoordinates> .
+
+<https://astrea.linkeddata.es/shapes#cac37fa5b69b93a8dd1a9dc9674e428b>
+        a               sh:NodeShape ;
+        rdfs:label      "Cottage Address"@en ;
+        sh:name         "Cottage Address"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#7159dbee5de08352f607c7bf0ae8f84b> ;
+        sh:targetClass  <http://ontology.eil.utoronto.ca/icontact.owl#CottageAddress> .
+
+<https://astrea.linkeddata.es/shapes#9f7b9128f44ef71a9b5af74e81732fd7>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Web Site"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "has Web Site"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasWebSite> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#7d3603994e98dd0008286845f37be74d>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Phone Number"@en ;
+        sh:name      "has Phone Number"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasPhoneNumber> .
+
+<https://astrea.linkeddata.es/shapes#98c5186b6e987b8a8ed120e84ea76c3f>
+        a            sh:PropertyShape ;
+        sh:hasValue  <http://ontology.eil.utoronto.ca/icontact.owl#HomePhone> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasPhoneType> .
+
+<https://astrea.linkeddata.es/shapes#ada7fdd0edeac6fb0a87a5033f66e811>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasStreet> .
+
+<https://astrea.linkeddata.es/shapes#24aac733ad930bcaaaf250f35bad8954>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasCitySection> .
+
+<https://astrea.linkeddata.es/shapes#0b153a40aa5e451559f6e178efb3f104>
+        a            sh:PropertyShape ;
+        sh:hasValue  <http://ontology.eil.utoronto.ca/icontact.owl#WorkPhone> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasPhoneType> .
+
+<https://astrea.linkeddata.es/shapes#49b2f9294b41f094fa983274185cedb8>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Area Code"@en ;
+        sh:name      "has Area Code"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasAreaCode> .
+
+<https://astrea.linkeddata.es/shapes#876b96f225bcfe0296f8da1ddb78e3ed>
+        a            sh:PropertyShape ;
+        sh:class     <http://ontology.eil.utoronto.ca/icontact.owl#StreetDirection> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasStreetDirection> .
+
+<https://astrea.linkeddata.es/shapes#1849eac5e2efd611cb143cbd0611f4a1>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Street Type"@en ;
+        sh:class     <http://ontology.eil.utoronto.ca/icontact.owl#StreetType> ;
+        sh:name      "has Street Type"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasStreetType> .
+
+<https://astrea.linkeddata.es/shapes#8f967a5bd7af8f53039d3dbbe0a12dee>
+        a               sh:NodeShape ;
+        rdfs:label      "Home Address"@en ;
+        sh:name         "Home Address"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c6b391daf9de345d2cdf9ec9707b7031> ;
+        sh:targetClass  <http://ontology.eil.utoronto.ca/icontact.owl#HomeAddress> .
+
+<https://astrea.linkeddata.es/shapes#9127ca2186e9067c8e63e6c868b04b47>
+        a               sh:NodeShape ;
+        rdfs:label      "Street Direction"@en ;
+        sh:name         "Street Direction"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.eil.utoronto.ca/icontact.owl#StreetDirection> .
+
+<https://astrea.linkeddata.es/shapes#7d91d0bca0468177a9273e73aa3781f2>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasContactDataProperty> .
+
+<https://astrea.linkeddata.es/shapes#ec21c681ce17e4465dbc5f972bdbc12d>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Location"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "has Location"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasLocation> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#e984d376304422b3cb14deba724f30a3>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Street Direction"@en ;
+        sh:class     <http://ontology.eil.utoronto.ca/icontact.owl#StreetDirection> ;
+        sh:name      "has Street Direction"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasStreetDirection> .
+
+<https://astrea.linkeddata.es/shapes#148dceb5e6f89be5a1413da8651c6059>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#6bad2c8afb384cbae17e5e08fb1b160d>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://schema.org/State> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#e5f66b39d58aed69385c72f7c439f965> , <https://astrea.linkeddata.es/shapes#46fcdc75db4747a9c8a00d74c6d64ee3> , <https://astrea.linkeddata.es/shapes#263b30d2b010cba4a7793715351c684d> , <https://astrea.linkeddata.es/shapes#44c9ef3a041752e665da36bef62a6494> , <https://astrea.linkeddata.es/shapes#710cf0c649c3f1540b65578cb165f5e2> , <https://astrea.linkeddata.es/shapes#e7990c6dd6a3dca6de078b32328bc4ef> , <https://astrea.linkeddata.es/shapes#a57b381a19649e9a1ab9483f3fd7b408> , <https://astrea.linkeddata.es/shapes#e356f789760b6176279206eb3721d748> , <https://astrea.linkeddata.es/shapes#d373339933006a6de03c89f6dc0f4eb8> , <https://astrea.linkeddata.es/shapes#3e4eacc73709b22bf81cc8c480eabd9b> , <https://astrea.linkeddata.es/shapes#6501941533691cfce8b7555515fb3771> , <https://astrea.linkeddata.es/shapes#148dceb5e6f89be5a1413da8651c6059> , <https://astrea.linkeddata.es/shapes#1d2b80b9378b0a2c2991b811f1a681b7> , <https://astrea.linkeddata.es/shapes#70b5d5f20903b254bd8dd830f121dbe4> , <https://astrea.linkeddata.es/shapes#304a954f271056552ed48a6b7ca20303> , <https://astrea.linkeddata.es/shapes#a10842149261722f68e999e427d5d2bd> , <https://astrea.linkeddata.es/shapes#6cd77dd7ca7b822e13cb317d4790d27c> , <https://astrea.linkeddata.es/shapes#45ad395eaa4b0aaf9711821595ad712a> , <https://astrea.linkeddata.es/shapes#19178a1c8336538fddde514a05ae751c> , <https://astrea.linkeddata.es/shapes#8f967a5bd7af8f53039d3dbbe0a12dee> , <https://astrea.linkeddata.es/shapes#f70b7beb018f057a1f036712b9687e19> , <https://astrea.linkeddata.es/shapes#b0d278bef41670f06f2fabd2c5e18336> , <https://astrea.linkeddata.es/shapes#e64d1db5f953245bed304796e8b39c1c> , <https://astrea.linkeddata.es/shapes#acebdb5b08dd3dabd84eb0ce09e96340> , <https://astrea.linkeddata.es/shapes#54431f09a081f11f02d9130860d0cb0a> , <https://astrea.linkeddata.es/shapes#d169401cacc88b2f3fd221715a2d14da> , <https://astrea.linkeddata.es/shapes#c590ab3df1b2ad64b777016a3458061d> , <https://astrea.linkeddata.es/shapes#f227761ba702a25a402fda4a94ef4119> , <https://astrea.linkeddata.es/shapes#0d184b35e71762bb554a2b6d70ceb5b0> , <https://astrea.linkeddata.es/shapes#26aea7781f482efdb8f70a0f74c44add> , <https://astrea.linkeddata.es/shapes#1849eac5e2efd611cb143cbd0611f4a1> , <https://astrea.linkeddata.es/shapes#0b153a40aa5e451559f6e178efb3f104> , <https://astrea.linkeddata.es/shapes#2ddea7eff0165600c9fe7ea85c5f92a5> , <https://astrea.linkeddata.es/shapes#f8042e0b1a98b0164d09cee7da025849> , <https://astrea.linkeddata.es/shapes#7d91d0bca0468177a9273e73aa3781f2> , <https://astrea.linkeddata.es/shapes#d5f95779971d3d2ce8ad99fea627df37> , <https://astrea.linkeddata.es/shapes#9127ca2186e9067c8e63e6c868b04b47> , <https://astrea.linkeddata.es/shapes#6b3da4154921fe171afaa72df19cc795> , <https://astrea.linkeddata.es/shapes#d25816981ae672d73b8d62355d4f38cf> , <https://astrea.linkeddata.es/shapes#d7300ed029753e4d26b522e95c2627e4> , <https://astrea.linkeddata.es/shapes#2311c7a7f1cd0d2d3fb70ec3a004214a> , <https://astrea.linkeddata.es/shapes#cac37fa5b69b93a8dd1a9dc9674e428b> , <https://astrea.linkeddata.es/shapes#3a6f41aa7f9f4edde547f091a3ab163e> , <https://astrea.linkeddata.es/shapes#334e6b0f3c9a234986ba1b00fad9f33f> , <https://astrea.linkeddata.es/shapes#bc51309bd57ef2515fa472c08deab59f> , <https://astrea.linkeddata.es/shapes#4a04a77bc9b246c17b1bf3ff7be02132> , <https://astrea.linkeddata.es/shapes#e984d376304422b3cb14deba724f30a3> , <https://astrea.linkeddata.es/shapes#d7961c3e156f4ff2dff28a02dae893b4> , <https://astrea.linkeddata.es/shapes#cfa5e1bfa7258809b0a3f64c8c46ff4a> , <https://astrea.linkeddata.es/shapes#a4b8b24adeb19aae5799c53abdf02822> , <https://astrea.linkeddata.es/shapes#870491c101b055074991e5abd1e9df2c> , <https://astrea.linkeddata.es/shapes#7d3603994e98dd0008286845f37be74d> , <https://astrea.linkeddata.es/shapes#54bc6e83d71c09780baea20083d44fb6> , <https://astrea.linkeddata.es/shapes#6bad2c8afb384cbae17e5e08fb1b160d> , <https://astrea.linkeddata.es/shapes#7159dbee5de08352f607c7bf0ae8f84b> , <https://astrea.linkeddata.es/shapes#ce51a4370c4b89a5ae343ad119a6656f> , <https://astrea.linkeddata.es/shapes#172382a059e61f60b739a6e8d904fff3> , <https://astrea.linkeddata.es/shapes#901bf7faae769b99988720f003f69b33> , <https://astrea.linkeddata.es/shapes#98c5186b6e987b8a8ed120e84ea76c3f> , <https://astrea.linkeddata.es/shapes#e9097dc85c02001ceb6f6c9e77926423> , <https://astrea.linkeddata.es/shapes#ab9967d8acfcc4c8a8460c1bbe878839> , <https://astrea.linkeddata.es/shapes#24aac733ad930bcaaaf250f35bad8954> , <https://astrea.linkeddata.es/shapes#ec6aa37eaeff38596e657a4a687a7104> , <https://astrea.linkeddata.es/shapes#479c57decd722a897c7af0f2ee28fba9> , <https://astrea.linkeddata.es/shapes#9f7b9128f44ef71a9b5af74e81732fd7> , <https://astrea.linkeddata.es/shapes#7f0c3892190fdbb2a9d4d608fb399ce9> , <https://astrea.linkeddata.es/shapes#7c5feeb4f9f366b06585881569cf19d0> , <https://astrea.linkeddata.es/shapes#ec21c681ce17e4465dbc5f972bdbc12d> , <https://astrea.linkeddata.es/shapes#ada7fdd0edeac6fb0a87a5033f66e811> , <https://astrea.linkeddata.es/shapes#0758f0102935f3c315a38f28107a7949> , <https://astrea.linkeddata.es/shapes#876b96f225bcfe0296f8da1ddb78e3ed> , <https://astrea.linkeddata.es/shapes#0c1edf694e0db53789c11eaa79cd2536> , <https://astrea.linkeddata.es/shapes#a12b13578961397a16c8a78c2c04866d> , <https://astrea.linkeddata.es/shapes#256abc7cd18db803a19e62a831303dd7> , <https://astrea.linkeddata.es/shapes#21b5ac23e5e82adf47cf58ef136794b8> , <https://astrea.linkeddata.es/shapes#ad0190a7d2119aeee68a042f58d1a748> , <https://astrea.linkeddata.es/shapes#c6b391daf9de345d2cdf9ec9707b7031> , <https://astrea.linkeddata.es/shapes#7a4dd49ae5c369434d35ebb1d5a47d3f> , <https://astrea.linkeddata.es/shapes#5c3d944d63bde257938b06d510279947> , <https://astrea.linkeddata.es/shapes#abc738ff9feab1d37caf65958d7a4a07> , <https://astrea.linkeddata.es/shapes#2987d38a806881da98a0c385c01e0558> , <https://astrea.linkeddata.es/shapes#812851f2c53900d619f0f7aab3e94207> , <https://astrea.linkeddata.es/shapes#3a28a57a1a4159f03f5765eccb93563a> , <https://astrea.linkeddata.es/shapes#0421bc17c45b7771ea8845a2370a237c> , <https://astrea.linkeddata.es/shapes#85538d09d327fc1229fd6b45955fd96c> , <https://astrea.linkeddata.es/shapes#f7e0a91373107c3fbc92f1bfe81dca01> , <https://astrea.linkeddata.es/shapes#eebe2ab9bb3ec0dcfb0753abddb52755> , <https://astrea.linkeddata.es/shapes#49b2f9294b41f094fa983274185cedb8> , <https://astrea.linkeddata.es/shapes#2c9c86cd6df0e230b5fa9a7e0c28e6a2> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#d5f95779971d3d2ce8ad99fea627df37>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasOpeningTime> .
+
+<https://astrea.linkeddata.es/shapes#6b3da4154921fe171afaa72df19cc795>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Building"@en ;
+        sh:name      "has Building"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasBuilding> .
+
+<https://astrea.linkeddata.es/shapes#70b5d5f20903b254bd8dd830f121dbe4>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://ontology.eil.utoronto.ca/icontact.owl#hasCity> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <http://schema.org/City> ] .
+
+<https://astrea.linkeddata.es/shapes#21b5ac23e5e82adf47cf58ef136794b8>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Phone Type"@en ;
+        sh:class     <http://ontology.eil.utoronto.ca/icontact.owl#PhoneType> ;
+        sh:name      "has Phone Type"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasPhoneType> .
+
+<https://astrea.linkeddata.es/shapes#3e4eacc73709b22bf81cc8c480eabd9b>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Personal Email"@en ;
+        sh:name      "has Personal Email"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasPersonalEmail> .
+
+<https://astrea.linkeddata.es/shapes#5c3d944d63bde257938b06d510279947>
+        a            sh:PropertyShape ;
+        sh:hasValue  <http://ontology.eil.utoronto.ca/icontact.owl#CellPhone> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasPhoneType> .
+
+<https://astrea.linkeddata.es/shapes#7a4dd49ae5c369434d35ebb1d5a47d3f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasCountryCode> .
+
+<https://astrea.linkeddata.es/shapes#a57b381a19649e9a1ab9483f3fd7b408>
+        a            sh:PropertyShape ;
+        rdfs:label   "has City Section"@en ;
+        sh:name      "has City Section"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasCitySection> .
+
+<https://astrea.linkeddata.es/shapes#acebdb5b08dd3dabd84eb0ce09e96340>
+        a               sh:NodeShape ;
+        rdfs:label      "Toll  Free Telephone Number"@en ;
+        sh:name         "Toll  Free Telephone Number"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2c9c86cd6df0e230b5fa9a7e0c28e6a2> ;
+        sh:targetClass  <http://ontology.eil.utoronto.ca/icontact.owl#TollFreeNumber> .
+
+<https://astrea.linkeddata.es/shapes#2c9c86cd6df0e230b5fa9a7e0c28e6a2>
+        a            sh:PropertyShape ;
+        sh:hasValue  <http://ontology.eil.utoronto.ca/icontact.owl#TollFreePhone> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasPhoneType> .
+
+<https://astrea.linkeddata.es/shapes#6cd77dd7ca7b822e13cb317d4790d27c>
+        a            sh:PropertyShape ;
+        sh:hasValue  <http://ontology.eil.utoronto.ca/icontact.owl#Work> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasAddressType> .
+
+<https://astrea.linkeddata.es/shapes#d7300ed029753e4d26b522e95c2627e4>
+        a               sh:NodeShape ;
+        rdfs:label      "Address Type"@en ;
+        sh:name         "Address Type"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.eil.utoronto.ca/icontact.owl#AddressType> .
+
+<https://astrea.linkeddata.es/shapes#263b30d2b010cba4a7793715351c684d>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Closing Time"@en ;
+        sh:datatype  xsd:dateTime ;
+        sh:name      "has Closing Time"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasClosingTime> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#46fcdc75db4747a9c8a00d74c6d64ee3>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://schema.org/City> .
+
+<https://astrea.linkeddata.es/shapes#c6b391daf9de345d2cdf9ec9707b7031>
+        a            sh:PropertyShape ;
+        sh:hasValue  <http://ontology.eil.utoronto.ca/icontact.owl#Home> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasAddressType> .
+
+<https://astrea.linkeddata.es/shapes#eebe2ab9bb3ec0dcfb0753abddb52755>
+        a            sh:PropertyShape ;
+        sh:class     <http://ontology.eil.utoronto.ca/icontact.owl#StreetType> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasStreetType> .
+
+<https://astrea.linkeddata.es/shapes#54431f09a081f11f02d9130860d0cb0a>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Address Type"@en ;
+        sh:class     <http://ontology.eil.utoronto.ca/icontact.owl#AddressType> ;
+        sh:name      "has Address Type"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasAddressType> .
+
+<https://astrea.linkeddata.es/shapes#abc738ff9feab1d37caf65958d7a4a07>
+        a            sh:PropertyShape ;
+        rdfs:label   "has Unit Number"@en ;
+        sh:name      "has Unit Number"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.eil.utoronto.ca/icontact.owl#hasUnitNumber> .

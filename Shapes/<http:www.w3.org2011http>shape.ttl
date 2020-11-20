@@ -1,0 +1,531 @@
+@prefix :      <http://www.w3.org/2011/content#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix cnt:   <http://www.w3.org/2011/content#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#f2d213e7004589ac0c5f4f61a8956bd3>
+        a               sh:PropertyShape ;
+        rdfs:label      "Field value"@en , "The value of an HTTP header field."@en ;
+        sh:class        rdfs:Literal ;
+        sh:description  "The value of an HTTP header field."@en ;
+        sh:name         "Field value"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/2011/http#fieldValue> .
+
+<https://astrea.linkeddata.es/shapes#4ad36eecde1bd405d0385e5f01e934b6>
+        a               sh:PropertyShape ;
+        rdfs:label      "Public ID"@en , "The document type declarations's public identifier."@en ;
+        sh:class        rdfs:Literal ;
+        sh:description  "The document type declarations's public identifier."@en ;
+        sh:name         "Public ID"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         cnt:publicId .
+
+<https://astrea.linkeddata.es/shapes#854f2d7c39718cdb8ce9b1ec30563de2>
+        a               sh:PropertyShape ;
+        rdfs:label      "System ID"@en , "The document type declarations's system identifier (typed: xsd:anyURI)"@en ;
+        sh:class        xsd:anyURI ;
+        sh:description  "The document type declarations's system identifier (typed: xsd:anyURI)"@en ;
+        sh:name         "System ID"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         cnt:systemId .
+
+<https://astrea.linkeddata.es/shapes#6b9e68b42c501b8131ad30df0e5bb727>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.ietf.org/rfc/rfc2616.txt> ;
+        rdfs:label        "Reason phrase"@en , "The reason phrase (status text) of an HTTP response."@en ;
+        sh:class          rdfs:Literal ;
+        sh:description    "The reason phrase (status text) of an HTTP response."@en ;
+        sh:name           "Reason phrase"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/2011/http#reasonPhrase> .
+
+<https://astrea.linkeddata.es/shapes#edbf03df7d385650f10790b64c9b99ad>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.ietf.org/rfc/rfc2616.txt> ;
+        rdfs:label        "Message"@en ;
+        sh:description    "An HTTP message."@en ;
+        sh:name           "Message"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3504a42f46b276c89835063386ee8958> , <https://astrea.linkeddata.es/shapes#f4877c2bc7ac39831d842e7dcd96218b> ;
+        sh:targetClass    <http://www.w3.org/2011/http#Message> .
+
+<https://astrea.linkeddata.es/shapes#961260b937667aca3660b42e7f02173b>
+        a               sh:PropertyShape ;
+        rdfs:label      "Parameter name"@en , "The name of a parameter in a part of a deconstructed HTTP header value."@en ;
+        sh:class        rdfs:Literal ;
+        sh:description  "The name of a parameter in a part of a deconstructed HTTP header value."@en ;
+        sh:name         "Parameter name"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/2011/http#paramName> .
+
+<https://astrea.linkeddata.es/shapes#5de24544d80912c5c32930d0aae6c3be>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.ietf.org/rfc/rfc2616.txt> ;
+        rdfs:label        "Request URI"@en , "The request URI of an HTTP request."@en ;
+        sh:class          rdfs:Literal ;
+        sh:description    "The request URI of an HTTP request."@en ;
+        sh:name           "Request URI"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/2011/http#requestURI> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#42956e65b761feff5886d5c3cf81b20d>
+        a               sh:NodeShape ;
+        rdfs:label      "Content"@en ;
+        sh:description  "The content."@en ;
+        sh:name         "Content"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#7e91a347fe4f16ccf5de6fa48619cef5> ;
+        sh:targetClass  cnt:Content .
+
+<https://astrea.linkeddata.es/shapes#75f0b45f64be6d08c28aad73e0c9b931>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.ietf.org/rfc/rfc2616.txt> ;
+        rdfs:label        "Method"@en ;
+        sh:description    "The HTTP method used for the request."@en ;
+        sh:name           "Method"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.w3.org/2011/http#Method> .
+
+<https://astrea.linkeddata.es/shapes#7f67cee4b642d910ac34fce8a5a9f993>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.ietf.org/rfc/rfc2616.txt> ;
+        rdfs:label        "Method"@en , "The HTTP method used for the HTTP request."@en ;
+        sh:class          <http://www.w3.org/2011/http#Method> ;
+        sh:description    "The HTTP method used for the HTTP request."@en ;
+        sh:name           "Method"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/2011/http#mthd> .
+
+<https://astrea.linkeddata.es/shapes#0a1def6d975fb00908328bce6edded14>
+        a               sh:PropertyShape ;
+        rdfs:label      "Character sequence"@en , "The character sequence of the text content."@en ;
+        sh:class        rdfs:Literal ;
+        sh:description  "The character sequence of the text content."@en ;
+        sh:name         "Character sequence"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         cnt:chars .
+
+<https://astrea.linkeddata.es/shapes#612de6122e311ea0ecf3cf45b34491e8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.ietf.org/rfc/rfc2616.txt> ;
+        rdfs:label        "Requests"@en , "The HTTP requests made via a connection."@en ;
+        sh:description    "The HTTP requests made via a connection."@en ;
+        sh:name           "Requests"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#aff16af6256c5086665b993dc378d57c>
+        a               sh:PropertyShape ;
+        rdfs:label      "XML rest"@en , "The XML content following the document type declaration."@en ;
+        sh:class        rdfs:XMLLiteral ;
+        sh:description  "The XML content following the document type declaration."@en ;
+        sh:name         "XML rest"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         cnt:rest .
+
+<https://astrea.linkeddata.es/shapes#ea6dfa66357a5101db2b067af4e92cb2>
+        a               sh:PropertyShape ;
+        rdfs:label      "Header elements"@en , "The deconstructed parts of an HTTP header value."@en ;
+        sh:description  "The deconstructed parts of an HTTP header value."@en ;
+        sh:name         "Header elements"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#70d915c6c3c424490f1f2aaf0fb91a2a>
+        a               sh:PropertyShape ;
+        rdfs:label      "Connection authority"@en , "The authority of a connection used for the HTTP transfer."@en ;
+        sh:class        rdfs:Literal ;
+        sh:description  "The authority of a connection used for the HTTP transfer."@en ;
+        sh:name         "Connection authority"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/2011/http#connectionAuthority> .
+
+<https://astrea.linkeddata.es/report/02113868144>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/dc/terms/" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#d3ec4ae5925b45850424892966165a29>
+        a               sh:NodeShape ;
+        rdfs:label      "Parameter"@en ;
+        sh:description  "A parameter for a part of a header value."@en ;
+        sh:name         "Parameter"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#706023bc197c153129606b38dcecb9f0> , <https://astrea.linkeddata.es/shapes#961260b937667aca3660b42e7f02173b> ;
+        sh:targetClass  <http://www.w3.org/2011/http#Parameter> .
+
+<https://astrea.linkeddata.es/shapes#3677820da0f510552b2c05f3f0b02e76>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.ietf.org/rfc/rfc2616.txt> ;
+        rdfs:label        "Connection"@en ;
+        sh:description    "A connection used for HTTP transfer."@en ;
+        sh:name           "Connection"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#70d915c6c3c424490f1f2aaf0fb91a2a> ;
+        sh:targetClass    <http://www.w3.org/2011/http#Connection> .
+
+<https://astrea.linkeddata.es/shapes#d541b348b7f5e100be94cad24b31cd76>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.ietf.org/rfc/rfc2616.txt> ;
+        rdfs:label        "Response"@en ;
+        sh:description    "An HTTP response."@en ;
+        sh:name           "Response"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ec07dddc7c200028ff25e10d86b2d232> , <https://astrea.linkeddata.es/shapes#6b9e68b42c501b8131ad30df0e5bb727> , <https://astrea.linkeddata.es/shapes#ff23c03800a5360293bcc43daf344134> ;
+        sh:targetClass    <http://www.w3.org/2011/http#Response> .
+
+<https://astrea.linkeddata.es/shapes#97b77e84c4a926a8955170e445f376c2>
+        a               sh:NodeShape ;
+        rdfs:label      "Message Header"@en ;
+        sh:description  "A header in an HTTP message."@en ;
+        sh:name         "Message Header"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f2d213e7004589ac0c5f4f61a8956bd3> , <https://astrea.linkeddata.es/shapes#381bceac038f904573d5b00887642861> , <https://astrea.linkeddata.es/shapes#fb99980e6ad08c3df1ea71b4ed563c12> ;
+        sh:targetClass  <http://www.w3.org/2011/http#MessageHeader> .
+
+<https://astrea.linkeddata.es/shapes#3504a42f46b276c89835063386ee8958>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.ietf.org/rfc/rfc2616.txt> ;
+        rdfs:label        "Entity Body"@en , "The entity body of an HTTP message."@en ;
+        sh:class          cnt:ContentAsBase64 ;
+        sh:description    "The entity body of an HTTP message."@en ;
+        sh:name           "Entity Body"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/2011/http#body> .
+
+<https://astrea.linkeddata.es/shapes#debe189713902130722e7b71628a9243>
+        a               sh:PropertyShape ;
+        rdfs:label      "XML character encoding"@en , "The character encoding declared in the XML declaration."@en ;
+        sh:class        rdfs:Literal ;
+        sh:description  "The character encoding declared in the XML declaration."@en ;
+        sh:name         "XML character encoding"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         cnt:declaredEncoding .
+
+<https://astrea.linkeddata.es/shapes#19f0eae29ca62d05fee1c1c4802986f4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.ietf.org/rfc/rfc2616.txt> ;
+        rdfs:label        "Headers"@en , "The headers in an HTTP message."@en ;
+        sh:description    "The headers in an HTTP message."@en ;
+        sh:name           "Headers"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#60d7abf73785ba2d4a900e58d9ff7940>
+        a               sh:NodeShape ;
+        rdfs:label      "Response Header"@en ;
+        sh:description  "A header in an HTTP response message."@en ;
+        sh:name         "Response Header"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2011/http#ResponseHeader> .
+
+<https://astrea.linkeddata.es/shapes#ce9565ccaf2b280a09d2b4b4b697e942>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.ietf.org/rfc/rfc2616.txt> ;
+        rdfs:label        "Request"@en ;
+        sh:description    "An HTTP request."@en ;
+        sh:name           "Request"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#be8925b88207fc532c20bd6beede77da> , <https://astrea.linkeddata.es/shapes#5de24544d80912c5c32930d0aae6c3be> , <https://astrea.linkeddata.es/shapes#06659a1f462e76b9e01bd54f59b6de1a> , <https://astrea.linkeddata.es/shapes#7f67cee4b642d910ac34fce8a5a9f993> ;
+        sh:targetClass    <http://www.w3.org/2011/http#Request> .
+
+<https://astrea.linkeddata.es/shapes#aecdd9363561de4fc7bf92514e9eddcd>
+        a               sh:NodeShape ;
+        rdfs:label      "Text content"@en ;
+        sh:description  "The text content (can be used for text content)."@en ;
+        sh:name         "Text content"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#0a1def6d975fb00908328bce6edded14> ;
+        sh:targetClass  cnt:ContentAsText .
+
+<https://astrea.linkeddata.es/shapes#778e6d8932c1bc9733edbf0d6233c9fb>
+        a               sh:PropertyShape ;
+        rdfs:label      "Document type name"@en , "The document type name."@en ;
+        sh:class        rdfs:Literal ;
+        sh:description  "The document type name."@en ;
+        sh:name         "Document type name"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         cnt:doctypeName .
+
+<https://astrea.linkeddata.es/shapes#7e91a347fe4f16ccf5de6fa48619cef5>
+        a               sh:PropertyShape ;
+        rdfs:label      "Character encoding"@en , "The character encoding used to create a character sequence from a byte sequence or vice versa."@en ;
+        sh:class        rdfs:Literal ;
+        sh:description  "The character encoding used to create a character sequence from a byte sequence or vice versa."@en ;
+        sh:name         "Character encoding"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         cnt:characterEncoding .
+
+<https://astrea.linkeddata.es/shapes#f53c2d8ba1c3c2dce75fe3a48cf8821f>
+        a               sh:PropertyShape ;
+        rdfs:label      "Header element value"@en , "The value of a header element."@en ;
+        sh:class        rdfs:Literal ;
+        sh:description  "The value of a header element."@en ;
+        sh:name         "Header element value"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/2011/http#elementValue> .
+
+<https://astrea.linkeddata.es/shapes#be8925b88207fc532c20bd6beede77da>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.ietf.org/rfc/rfc2616.txt> ;
+        rdfs:label        "Method name"@en , "The HTTP method name used for the HTTP request."@en ;
+        sh:class          rdfs:Literal ;
+        sh:description    "The HTTP method name used for the HTTP request."@en ;
+        sh:name           "Method name"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/2011/http#methodName> .
+
+<https://astrea.linkeddata.es/shapes#fb99980e6ad08c3df1ea71b4ed563c12>
+        a               sh:PropertyShape ;
+        rdfs:label      "Field name"@en , "The name of an HTTP header field."@en ;
+        sh:class        rdfs:Literal ;
+        sh:description  "The name of an HTTP header field."@en ;
+        sh:name         "Field name"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/2011/http#fieldName> .
+
+<https://astrea.linkeddata.es/shapes#706023bc197c153129606b38dcecb9f0>
+        a               sh:PropertyShape ;
+        rdfs:label      "Parameter value"@en , "The value of a parameter in a part of a deconstructed HTTP header value."@en ;
+        sh:class        rdfs:Literal ;
+        sh:description  "The value of a parameter in a part of a deconstructed HTTP header value."@en ;
+        sh:name         "Parameter value"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/2011/http#paramValue> .
+
+<https://astrea.linkeddata.es/shapes#3b2eb247ff1d4ffa0f561377b929fe40>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.ietf.org/rfc/rfc2616.txt> ;
+        rdfs:label        "Status code"@en ;
+        sh:description    "The status code of an HTTP response."@en ;
+        sh:name           "Status code"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e7382975525e373bb350f87fc89edb54> ;
+        sh:targetClass    <http://www.w3.org/2011/http#StatusCode> .
+
+<https://astrea.linkeddata.es/shapes#a461b86d27974e6155c48200af87a030>
+        a               sh:NodeShape ;
+        rdfs:label      "XML content"@en ;
+        sh:description  "The XML content (can only be used for XML-wellformed content)."@en ;
+        sh:name         "XML content"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c2cf309ca7bbb4fe7212b4312253504a> , <https://astrea.linkeddata.es/shapes#4ce923309413abceec7545b82ad67bd4> , <https://astrea.linkeddata.es/shapes#0d653e2737e8b3038728002a284bd074> , <https://astrea.linkeddata.es/shapes#debe189713902130722e7b71628a9243> , <https://astrea.linkeddata.es/shapes#aff16af6256c5086665b993dc378d57c> , <https://astrea.linkeddata.es/shapes#e8e6698e42d415d1d3ca2030d48cffd5> ;
+        sh:targetClass  cnt:ContentAsXML .
+
+<https://astrea.linkeddata.es/shapes#381bceac038f904573d5b00887642861>
+        a               sh:PropertyShape ;
+        rdfs:label      "Header name"@en , "The name of an HTTP header."@en ;
+        sh:class        <http://www.w3.org/2011/http#HeaderName> ;
+        sh:description  "The name of an HTTP header."@en ;
+        sh:name         "Header name"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/2011/http#hdrName> .
+
+<https://astrea.linkeddata.es/shapes#ff23c03800a5360293bcc43daf344134>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.ietf.org/rfc/rfc2616.txt> ;
+        rdfs:label        "Status code"@en , "The status code of an HTTP response."@en ;
+        sh:class          <http://www.w3.org/2011/http#StatusCode> ;
+        sh:description    "The status code of an HTTP response."@en ;
+        sh:name           "Status code"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/2011/http#sc> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#e7382975525e373bb350f87fc89edb54> , <https://astrea.linkeddata.es/shapes#edbf03df7d385650f10790b64c9b99ad> , <https://astrea.linkeddata.es/shapes#ec07dddc7c200028ff25e10d86b2d232> , <https://astrea.linkeddata.es/shapes#f53c2d8ba1c3c2dce75fe3a48cf8821f> , <https://astrea.linkeddata.es/shapes#fb99980e6ad08c3df1ea71b4ed563c12> , <https://astrea.linkeddata.es/shapes#19f0eae29ca62d05fee1c1c4802986f4> , <https://astrea.linkeddata.es/shapes#21c298b73534c065299ae7449c3282b5> , <https://astrea.linkeddata.es/shapes#ce9565ccaf2b280a09d2b4b4b697e942> , <https://astrea.linkeddata.es/shapes#7f67cee4b642d910ac34fce8a5a9f993> , <https://astrea.linkeddata.es/shapes#d541b348b7f5e100be94cad24b31cd76> , <https://astrea.linkeddata.es/shapes#aecdd9363561de4fc7bf92514e9eddcd> , <https://astrea.linkeddata.es/shapes#0d653e2737e8b3038728002a284bd074> , <https://astrea.linkeddata.es/shapes#3504a42f46b276c89835063386ee8958> , <https://astrea.linkeddata.es/shapes#778e6d8932c1bc9733edbf0d6233c9fb> , <https://astrea.linkeddata.es/shapes#3b2eb247ff1d4ffa0f561377b929fe40> , <https://astrea.linkeddata.es/shapes#98a4127ae356311f6d6e72723813537e> , <https://astrea.linkeddata.es/shapes#9aa1fce2f7f1d38afb13be5f8ec6849e> , <https://astrea.linkeddata.es/shapes#b0552cb16225ebc9bd851b0af8525552> , <https://astrea.linkeddata.es/shapes#e8e6698e42d415d1d3ca2030d48cffd5> , <https://astrea.linkeddata.es/shapes#4fbe13649d0a9e0c60751ae1cc185aef> , <https://astrea.linkeddata.es/shapes#c2cf309ca7bbb4fe7212b4312253504a> , <https://astrea.linkeddata.es/shapes#4ad36eecde1bd405d0385e5f01e934b6> , <https://astrea.linkeddata.es/shapes#3677820da0f510552b2c05f3f0b02e76> , <https://astrea.linkeddata.es/shapes#a461b86d27974e6155c48200af87a030> , <https://astrea.linkeddata.es/shapes#0a1def6d975fb00908328bce6edded14> , <https://astrea.linkeddata.es/shapes#97b77e84c4a926a8955170e445f376c2> , <https://astrea.linkeddata.es/shapes#775352b65cbd6edbef4ed8d96042f69b> , <https://astrea.linkeddata.es/shapes#612de6122e311ea0ecf3cf45b34491e8> , <https://astrea.linkeddata.es/shapes#4c754a9621261efee1f9b72ad99fda38> , <https://astrea.linkeddata.es/shapes#75f0b45f64be6d08c28aad73e0c9b931> , <https://astrea.linkeddata.es/shapes#aff16af6256c5086665b993dc378d57c> , <https://astrea.linkeddata.es/shapes#42956e65b761feff5886d5c3cf81b20d> , <https://astrea.linkeddata.es/shapes#f4877c2bc7ac39831d842e7dcd96218b> , <https://astrea.linkeddata.es/shapes#f2d213e7004589ac0c5f4f61a8956bd3> , <https://astrea.linkeddata.es/shapes#70d915c6c3c424490f1f2aaf0fb91a2a> , <https://astrea.linkeddata.es/shapes#be8925b88207fc532c20bd6beede77da> , <https://astrea.linkeddata.es/shapes#ff23c03800a5360293bcc43daf344134> , <https://astrea.linkeddata.es/shapes#60d7abf73785ba2d4a900e58d9ff7940> , <https://astrea.linkeddata.es/shapes#854f2d7c39718cdb8ce9b1ec30563de2> , <https://astrea.linkeddata.es/shapes#06659a1f462e76b9e01bd54f59b6de1a> , <https://astrea.linkeddata.es/shapes#4ce923309413abceec7545b82ad67bd4> , <https://astrea.linkeddata.es/shapes#5de24544d80912c5c32930d0aae6c3be> , <https://astrea.linkeddata.es/shapes#7e91a347fe4f16ccf5de6fa48619cef5> , <https://astrea.linkeddata.es/shapes#381bceac038f904573d5b00887642861> , <https://astrea.linkeddata.es/shapes#706023bc197c153129606b38dcecb9f0> , <https://astrea.linkeddata.es/shapes#ea6dfa66357a5101db2b067af4e92cb2> , <https://astrea.linkeddata.es/shapes#2a98d8037a8864d6752bd70aa88aa644> , <https://astrea.linkeddata.es/shapes#87127e5ebc9ba03c0cc27e4f55b0de6a> , <https://astrea.linkeddata.es/shapes#961260b937667aca3660b42e7f02173b> , <https://astrea.linkeddata.es/shapes#28ce0a8ff9a856f1ad039a845d4c4e62> , <https://astrea.linkeddata.es/shapes#d3ec4ae5925b45850424892966165a29> , <https://astrea.linkeddata.es/shapes#debe189713902130722e7b71628a9243> , <https://astrea.linkeddata.es/shapes#cfe850634062e19c6cc30808059c074e> , <https://astrea.linkeddata.es/shapes#6b9e68b42c501b8131ad30df0e5bb727> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/02113868144> , <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/1216286247> .
+
+<https://astrea.linkeddata.es/shapes#4c754a9621261efee1f9b72ad99fda38>
+        a               sh:NodeShape ;
+        rdfs:label      "Document type declaration"@en ;
+        sh:description  "The document type declaration."@en ;
+        sh:name         "Document type declaration"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#cfe850634062e19c6cc30808059c074e> , <https://astrea.linkeddata.es/shapes#4ad36eecde1bd405d0385e5f01e934b6> , <https://astrea.linkeddata.es/shapes#778e6d8932c1bc9733edbf0d6233c9fb> , <https://astrea.linkeddata.es/shapes#854f2d7c39718cdb8ce9b1ec30563de2> ;
+        sh:targetClass  cnt:DoctypeDecl .
+
+<https://astrea.linkeddata.es/shapes#775352b65cbd6edbef4ed8d96042f69b>
+        a               sh:PropertyShape ;
+        rdfs:label      "Header element name"@en , "The name of a header element."@en ;
+        sh:class        rdfs:Literal ;
+        sh:description  "The name of a header element."@en ;
+        sh:name         "Header element name"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/2011/http#elementName> .
+
+<https://astrea.linkeddata.es/shapes#06659a1f462e76b9e01bd54f59b6de1a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.ietf.org/rfc/rfc2616.txt> ;
+        rdfs:label        "Response"@en , "The HTTP response sent in answer to an HTTP request."@en ;
+        sh:class          <http://www.w3.org/2011/http#Response> ;
+        sh:description    "The HTTP response sent in answer to an HTTP request."@en ;
+        sh:name           "Response"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/2011/http#resp> .
+
+<https://astrea.linkeddata.es/shapes#c2cf309ca7bbb4fe7212b4312253504a>
+        a               sh:PropertyShape ;
+        rdfs:label      "XML leading misc"@en , "The XML content preceding the document type declaration."@en ;
+        sh:class        rdfs:XMLLiteral ;
+        sh:description  "The XML content preceding the document type declaration."@en ;
+        sh:name         "XML leading misc"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         cnt:leadingMisc .
+
+<https://astrea.linkeddata.es/shapes#2a98d8037a8864d6752bd70aa88aa644>
+        a               sh:NodeShape ;
+        rdfs:label      "Request Header"@en ;
+        sh:description  "A header in an HTTP request message."@en ;
+        sh:name         "Request Header"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2011/http#RequestHeader> .
+
+<https://astrea.linkeddata.es/shapes#f4877c2bc7ac39831d842e7dcd96218b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.ietf.org/rfc/rfc2616.txt> ;
+        rdfs:label        "HTTP version"@en , "The HTTP version of an HTTP message."@en ;
+        sh:class          rdfs:Literal ;
+        sh:description    "The HTTP version of an HTTP message."@en ;
+        sh:name           "HTTP version"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/2011/http#httpVersion> .
+
+<https://astrea.linkeddata.es/shapes#0d653e2737e8b3038728002a284bd074>
+        a               sh:PropertyShape ;
+        rdfs:label      "XML standalone document declaration"@en , "The standalone declaration in the XML declaration."@en ;
+        sh:class        rdfs:Literal ;
+        sh:description  "The standalone declaration in the XML declaration."@en ;
+        sh:name         "XML standalone document declaration"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         cnt:standalone .
+
+<https://astrea.linkeddata.es/report/1216286247>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.w3.org/2011/content#" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#4fbe13649d0a9e0c60751ae1cc185aef>
+        a               sh:NodeShape ;
+        rdfs:label      "Header Name"@en ;
+        sh:description  "A header name."@en ;
+        sh:name         "Header Name"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2011/http#HeaderName> .
+
+<https://astrea.linkeddata.es/shapes#ec07dddc7c200028ff25e10d86b2d232>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.ietf.org/rfc/rfc2616.txt> ;
+        rdfs:label        "Status code"@en , "The status code value of an HTTP response."@en ;
+        sh:class          rdfs:Literal ;
+        sh:description    "The status code value of an HTTP response."@en ;
+        sh:name           "Status code"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/2011/http#statusCodeValue> .
+
+<https://astrea.linkeddata.es/shapes#98a4127ae356311f6d6e72723813537e>
+        a               sh:NodeShape ;
+        rdfs:label      "General Header"@en ;
+        sh:description  "A general header in an HTTP message."@en ;
+        sh:name         "General Header"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2011/http#GeneralHeader> .
+
+<https://astrea.linkeddata.es/shapes#e8e6698e42d415d1d3ca2030d48cffd5>
+        a               sh:PropertyShape ;
+        rdfs:label      "XML version"@en , "The XML version declared in the XML declaration."@en ;
+        sh:class        rdfs:Literal ;
+        sh:description  "The XML version declared in the XML declaration."@en ;
+        sh:name         "XML version"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         cnt:version .
+
+<https://astrea.linkeddata.es/shapes#21c298b73534c065299ae7449c3282b5>
+        a               sh:NodeShape ;
+        rdfs:label      "Base64 content"@en ;
+        sh:description  "The base64 encoded content (can be used for binary content)."@en ;
+        sh:name         "Base64 content"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#28ce0a8ff9a856f1ad039a845d4c4e62> ;
+        sh:targetClass  cnt:ContentAsBase64 .
+
+<https://astrea.linkeddata.es/shapes#cfe850634062e19c6cc30808059c074e>
+        a               sh:PropertyShape ;
+        rdfs:label      "Internal DTD subset"@en , "The internal document type definition subset within the document type declarations."@en ;
+        sh:class        rdfs:Literal ;
+        sh:description  "The internal document type definition subset within the document type declarations."@en ;
+        sh:name         "Internal DTD subset"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         cnt:internalSubset .
+
+<https://astrea.linkeddata.es/shapes#28ce0a8ff9a856f1ad039a845d4c4e62>
+        a               sh:PropertyShape ;
+        rdfs:label      "Base64 encoded byte sequence"@en , "The Base64 encoded byte sequence of the content."@en ;
+        sh:class        xsd:base64Binary ;
+        sh:description  "The Base64 encoded byte sequence of the content."@en ;
+        sh:name         "Base64 encoded byte sequence"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         cnt:bytes .
+
+<https://astrea.linkeddata.es/shapes#9aa1fce2f7f1d38afb13be5f8ec6849e>
+        a               sh:NodeShape ;
+        rdfs:label      "Header Element"@en ;
+        sh:description  "A part of a deconstructed header value."@en ;
+        sh:name         "Header Element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f53c2d8ba1c3c2dce75fe3a48cf8821f> , <https://astrea.linkeddata.es/shapes#775352b65cbd6edbef4ed8d96042f69b> ;
+        sh:targetClass  <http://www.w3.org/2011/http#HeaderElement> .
+
+<https://astrea.linkeddata.es/shapes#b0552cb16225ebc9bd851b0af8525552>
+        a               sh:PropertyShape ;
+        rdfs:label      "Header parameters"@en , "The parameters in a part of a deconstructed HTTP header value."@en ;
+        sh:description  "The parameters in a part of a deconstructed HTTP header value."@en ;
+        sh:name         "Header parameters"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#e7382975525e373bb350f87fc89edb54>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.ietf.org/rfc/rfc2616.txt> ;
+        rdfs:label        "Status code"@en , "The status code number."@en ;
+        sh:class          xsd:int ;
+        sh:description    "The status code number."@en ;
+        sh:name           "Status code"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/2011/http#statusCodeNumber> .
+
+<https://astrea.linkeddata.es/shapes#87127e5ebc9ba03c0cc27e4f55b0de6a>
+        a               sh:NodeShape ;
+        rdfs:label      "Entity Header"@en ;
+        sh:description  "An entity header in an HTTP message."@en ;
+        sh:name         "Entity Header"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2011/http#EntityHeader> .
+
+<https://astrea.linkeddata.es/shapes#4ce923309413abceec7545b82ad67bd4>
+        a               sh:PropertyShape ;
+        rdfs:label      "Document type declaration"@en , "The document type declaration."@en ;
+        sh:class        cnt:DoctypeDecl ;
+        sh:description  "The document type declaration."@en ;
+        sh:name         "Document type declaration"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         cnt:dtDecl .

@@ -1,0 +1,152 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#35ff777cf20cb215ff2456f17c79511b>
+        a               sh:PropertyShape ;
+        rdfs:label      "number of properties" , "The total number of distinct properties in a void:Dataset. In other words, the number of distinct resources that occur in the predicate position of triples in the dataset." ;
+        sh:datatype     xsd:integer ;
+        sh:description  "The total number of distinct properties in a void:Dataset. In other words, the number of distinct resources that occur in the predicate position of triples in the dataset." ;
+        sh:name         "number of properties" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://rdfs.org/ns/void#properties> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#9183ec4592778e350755956753ed1a12>
+        a               sh:PropertyShape ;
+        rdfs:label      "number of documents" , "The total number of documents, for datasets that are published as a set of individual documents, such as RDF/XML documents or RDFa-annotated web pages. Non-RDF documents, such as web pages in HTML or images, are usually not included in this count. This property is intended for datasets where the total number of triples or entities is hard to determine. void:triples or void:entities should be preferred where practical." ;
+        sh:datatype     xsd:integer ;
+        sh:description  "The total number of documents, for datasets that are published as a set of individual documents, such as RDF/XML documents or RDFa-annotated web pages. Non-RDF documents, such as web pages in HTML or images, are usually not included in this count. This property is intended for datasets where the total number of triples or entities is hard to determine. void:triples or void:entities should be preferred where practical." ;
+        sh:name         "number of documents" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://rdfs.org/ns/void#documents> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#79642af4a4c82f9c90611a6dc81fe11d> , <https://astrea.linkeddata.es/shapes#35ff777cf20cb215ff2456f17c79511b> , <https://astrea.linkeddata.es/shapes#766c8598d27d563e655cd92f85ce6781> , <https://astrea.linkeddata.es/shapes#9fe4bbe8211c6c07df05b0bd55772fb2> , <https://astrea.linkeddata.es/shapes#507c0da62f3f10af7c4400662c00f172> , <https://astrea.linkeddata.es/shapes#5656cf5bd273e6c9a546297659910424> , <https://astrea.linkeddata.es/shapes#a7f55a797fa1acb8f0b695a74ec14a48> , <https://astrea.linkeddata.es/shapes#3a190925aa3c02eab10d24a0904d162d> , <https://astrea.linkeddata.es/shapes#08f75ea57df785934b681cf2295e7bcf> , <https://astrea.linkeddata.es/shapes#52f602fa94ae482025750508e210f4d2> , <https://astrea.linkeddata.es/shapes#a9be4a45c3bfde1f4fb9acb6e19d42bf> , <https://astrea.linkeddata.es/shapes#583ee322e80e919bce2a2e4ebed8473b> , <https://astrea.linkeddata.es/shapes#9183ec4592778e350755956753ed1a12> , <https://astrea.linkeddata.es/shapes#3fb6ff86370e59e28c2d3851e5b3f004> , <https://astrea.linkeddata.es/shapes#a7c4971a4e53cdff4a576c265161294f> , <https://astrea.linkeddata.es/shapes#b5b091375b417dae7dbeaa5023094649> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#a7f55a797fa1acb8f0b695a74ec14a48>
+        a               sh:NodeShape ;
+        rdfs:label      "technical feature" ;
+        sh:description  "A technical feature of a void:Dataset, such as a supported RDF serialization format." ;
+        sh:name         "technical feature" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://rdfs.org/ns/void#TechnicalFeature> .
+
+<https://astrea.linkeddata.es/shapes#52f602fa94ae482025750508e210f4d2>
+        a               sh:PropertyShape ;
+        rdfs:label      "number of entities" , "The total number of entities that are described in a void:Dataset." ;
+        sh:datatype     xsd:integer ;
+        sh:description  "The total number of entities that are described in a void:Dataset." ;
+        sh:name         "number of entities" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://rdfs.org/ns/void#entities> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#a9be4a45c3bfde1f4fb9acb6e19d42bf>
+        a            sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral .
+
+<https://astrea.linkeddata.es/shapes#3a190925aa3c02eab10d24a0904d162d>
+        a               sh:PropertyShape ;
+        rdfs:label      "distinct objects" , "The total number of distinct objects in a void:Dataset. In other words, the number of distinct resources that occur in the object position of triples in the dataset. Literals are included in this count." ;
+        sh:datatype     xsd:integer ;
+        sh:description  "The total number of distinct objects in a void:Dataset. In other words, the number of distinct resources that occur in the object position of triples in the dataset. Literals are included in this count." ;
+        sh:name         "distinct objects" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://rdfs.org/ns/void#distinctObjects> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#3fb6ff86370e59e28c2d3851e5b3f004>
+        a               sh:NodeShape ;
+        rdfs:label      "dataset" ;
+        sh:description  "A set of RDF triples that are published, maintained or aggregated by a single provider." ;
+        sh:name         "dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#35ff777cf20cb215ff2456f17c79511b> , <https://astrea.linkeddata.es/shapes#3a190925aa3c02eab10d24a0904d162d> , <https://astrea.linkeddata.es/shapes#b5b091375b417dae7dbeaa5023094649> , <https://astrea.linkeddata.es/shapes#52f602fa94ae482025750508e210f4d2> , <https://astrea.linkeddata.es/shapes#08f75ea57df785934b681cf2295e7bcf> , <https://astrea.linkeddata.es/shapes#9fe4bbe8211c6c07df05b0bd55772fb2> , <https://astrea.linkeddata.es/shapes#a7c4971a4e53cdff4a576c265161294f> , <https://astrea.linkeddata.es/shapes#9183ec4592778e350755956753ed1a12> ;
+        sh:targetClass  <http://rdfs.org/ns/void#Dataset> .
+
+<https://astrea.linkeddata.es/shapes#79642af4a4c82f9c90611a6dc81fe11d>
+        a            sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral .
+
+<https://astrea.linkeddata.es/shapes#a7c4971a4e53cdff4a576c265161294f>
+        a               sh:PropertyShape ;
+        rdfs:label      "distinct subjects" , "The total number of distinct subjects in a void:Dataset. In other words, the number of distinct resources that occur in the subject position of triples in the dataset." ;
+        sh:datatype     xsd:integer ;
+        sh:description  "The total number of distinct subjects in a void:Dataset. In other words, the number of distinct resources that occur in the subject position of triples in the dataset." ;
+        sh:name         "distinct subjects" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://rdfs.org/ns/void#distinctSubjects> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#583ee322e80e919bce2a2e4ebed8473b>
+        a               sh:NodeShape ;
+        rdfs:label      "linkset" ;
+        sh:description  "A collection of RDF links between two void:Datasets." ;
+        sh:name         "linkset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://rdfs.org/ns/void#Linkset> .
+
+<https://astrea.linkeddata.es/shapes#b5b091375b417dae7dbeaa5023094649>
+        a               sh:PropertyShape ;
+        rdfs:label      "number of triples" , "The total number of triples contained in a void:Dataset." ;
+        sh:datatype     xsd:integer ;
+        sh:description  "The total number of triples contained in a void:Dataset." ;
+        sh:name         "number of triples" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://rdfs.org/ns/void#triples> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#9fe4bbe8211c6c07df05b0bd55772fb2>
+        a               sh:PropertyShape ;
+        rdfs:label      "URI space" , "A URI that is a common string prefix of all the entity URIs in a void:Dataset." ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "A URI that is a common string prefix of all the entity URIs in a void:Dataset." ;
+        sh:name         "URI space" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://rdfs.org/ns/void#uriSpace> .
+
+<https://astrea.linkeddata.es/shapes#5656cf5bd273e6c9a546297659910424>
+        a            sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral .
+
+<https://astrea.linkeddata.es/shapes#507c0da62f3f10af7c4400662c00f172>
+        a            sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral .
+
+<https://astrea.linkeddata.es/shapes#08f75ea57df785934b681cf2295e7bcf>
+        a               sh:PropertyShape ;
+        rdfs:label      "classes" , "The total number of distinct classes in a void:Dataset. In other words, the number of distinct resources occuring as objects of rdf:type triples in the dataset." ;
+        sh:datatype     xsd:integer ;
+        sh:description  "The total number of distinct classes in a void:Dataset. In other words, the number of distinct resources occuring as objects of rdf:type triples in the dataset." ;
+        sh:name         "classes" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://rdfs.org/ns/void#classes> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#766c8598d27d563e655cd92f85ce6781>
+        a               sh:NodeShape ;
+        rdfs:label      "dataset description" ;
+        sh:description  "A web resource whose foaf:primaryTopic or foaf:topics include void:Datasets." ;
+        sh:name         "dataset description" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://rdfs.org/ns/void#DatasetDescription> .

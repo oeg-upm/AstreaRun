@@ -1,0 +1,511 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#836e341951ea328795028afd3ca845bb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "Human readable keywords that may be used in a programmatic fashion e.g., manchester-city."@en-gb , "slug"@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "Human readable keywords that may be used in a programmatic fashion e.g., manchester-city."@en-gb ;
+        sh:name           "slug"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/coreconcepts/slug> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#ed95a53c8da40360b2317653fca838f4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "eventPerson" , "person as agent in an event"@en-gb ;
+        sh:class          <http://www.bbc.co.uk/ontologies/coreconcepts/Person> ;
+        sh:description    "person as agent in an event"@en-gb ;
+        sh:name           "eventPerson" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/coreconcepts/eventPerson> .
+
+<https://astrea.linkeddata.es/shapes#1fae42385bbb65bf26cf1c2f772eb29b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "product"@en-gb , "The reference to the product from which the dataset, graph was created. This is needed for dataset management permissions. Not to be confused with bbc:product."@en-gb ;
+        sh:class          <http://www.bbc.co.uk/ontologies/bbc/Product> ;
+        sh:description    "The reference to the product from which the dataset, graph was created. This is needed for dataset management permissions. Not to be confused with bbc:product."@en-gb ;
+        sh:name           "product"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/product> .
+
+<https://astrea.linkeddata.es/shapes#7319538eddf9cf7aa0cf4f21e7cc167c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "Transition Ontology"@en-gb ;
+        sh:description    "An ontology that is used to provide a transition feature for a parent ontology" ;
+        sh:name           "Transition Ontology"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/provenance/TransitionOntology> .
+
+<https://astrea.linkeddata.es/shapes#447f54eacf8df55d52d68e574d9661b1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "The a label for a thing. A thing may have one label per language."@en-gb , "label"@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "The a label for a thing. A thing may have one label per language."@en-gb ;
+        sh:name           "label"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/coreconcepts/label> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#bc04698cc9893bf3e0631420cd9e72e7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "version"@en-gb , "The version of the graph."@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "The version of the graph."@en-gb ;
+        sh:name           "version"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/version> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#04fea48dc850602207a8b090e1d840fa>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "eventTheme" , "theme as factor in an event"@en-gb ;
+        sh:class          <http://www.bbc.co.uk/ontologies/coreconcepts/Theme> ;
+        sh:description    "theme as factor in an event"@en-gb ;
+        sh:name           "eventTheme" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/coreconcepts/eventTheme> .
+
+<https://astrea.linkeddata.es/shapes#aa8e358c44ef5b5b198a7f8abb7fd343>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "managedBy"@en-gb , "Associates the thing graph of a cms:ManagedThing with its managing system. This is needed to solve cases where different systems can manage metadata about a shared thing. E.g., one thing graph from BBC News may have all the politics related metadata for David Cameron, while another thing graph managed by Knowledge and Learning may contain information about the historical role David Cameron has played as a conservative leader in British politics. Separating metadata into thing graphs is useful for managing information about shared things."@en-gb ;
+        sh:class          <http://www.bbc.co.uk/ontologies/cms/System> ;
+        sh:description    "Associates the thing graph of a cms:ManagedThing with its managing system. This is needed to solve cases where different systems can manage metadata about a shared thing. E.g., one thing graph from BBC News may have all the politics related metadata for David Cameron, while another thing graph managed by Knowledge and Learning may contain information about the historical role David Cameron has played as a conservative leader in British politics. Separating metadata into thing graphs is useful for managing information about shared things."@en-gb ;
+        sh:name           "managedBy"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/managedBy> .
+
+<https://astrea.linkeddata.es/shapes#d5f63ed033e3289b965f56524224af45>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "occupation"@en-gb , "This property associates a person with a thematic area he or she worked in, for example Annie Lennox with Music."@en-gb ;
+        sh:class          <http://www.bbc.co.uk/ontologies/coreconcepts/Theme> ;
+        sh:description    "This property associates a person with a thematic area he or she worked in, for example Annie Lennox with Music."@en-gb ;
+        sh:name           "occupation"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/coreconcepts/occupation> .
+
+<https://astrea.linkeddata.es/shapes#c14ca9ce54d12252ab5b4411c74e5da4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "Event"@en-gb ;
+        sh:description    "The class of events in the BBC. This is a generic class to represent events (music events, historic events, sports events, politics events, e.t.c.)."@en-gb ;
+        sh:name           "Event"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#b8772191b0b5b8534bd7c116fafd0726> , <https://astrea.linkeddata.es/shapes#ed95a53c8da40360b2317653fca838f4> , <https://astrea.linkeddata.es/shapes#b3aa9a0206c1fae55c2798ffdce59d37> , <https://astrea.linkeddata.es/shapes#04fea48dc850602207a8b090e1d840fa> ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/coreconcepts/Event> .
+
+<https://astrea.linkeddata.es/shapes#3a13194ecd60a71f923f92531b67448c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "primaryTopic"@en-gb , "Represents the fact that a thing (usually concept, e.g., Tom Daley) is the primary topic of a web document."@en-gb ;
+        sh:class          <http://www.bbc.co.uk/ontologies/coreconcepts/Thing> ;
+        sh:description    "Represents the fact that a thing (usually concept, e.g., Tom Daley) is the primary topic of a web document."@en-gb ;
+        sh:name           "primaryTopic"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/coreconcepts/primaryTopic> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#b0dc527a1b574758bc9ac08320a2f090>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "The canonical location where all the triples contained within the context (named graph) are stored in and can be referred to outside the triplestore."@en-gb , "canonicalLocation"@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "The canonical location where all the triples contained within the context (named graph) are stored in and can be referred to outside the triplestore."@en-gb ;
+        sh:name           "canonicalLocation"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/canonicalLocation> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#7c7d02660fbdfb116cf2bfa5108aca35>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "Ontology"@en-gb ;
+        sh:description    "Graphs that contain ontologies in the store are declared to be of type provenance:Ontology. The graph name in the store is identical to the ontology IRI."@en-gb ;
+        sh:name           "Ontology"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#953b687f55f4ad6f443b4b40b5f16b9d> ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/provenance/Ontology> .
+
+<https://astrea.linkeddata.es/shapes#6b546184c52fc2e610f19e7f87655066>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "A person's date of death."@en-gb , "dateOfDeath"@en-gb ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "A person's date of death."@en-gb ;
+        sh:name           "dateOfDeath"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/coreconcepts/dateOfDeath> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/report/1730027736>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.bbc.co.uk/ontologies/provenance" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#ab26688bc19a35d7edbfa7c1cc6f5324>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "This property indicates the owner of the data, i.e., the person or CMS who's responsible for managing and governing the data."@en-gb , "owner"@en-gb ;
+        sh:datatype       xsd:anyURI ;
+        sh:description    "This property indicates the owner of the data, i.e., the person or CMS who's responsible for managing and governing the data."@en-gb ;
+        sh:name           "owner"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/owner> ;
+        sh:pattern        "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#067014565ecdc68eef8ef4c8a6e47e33>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "Graph"@en-gb ;
+        sh:description    "The class of named graphs. All our data is stored in named graphs of different types depending on its provenance and management. These are specified by the subclasses of Graph."@en-gb ;
+        sh:name           "Graph"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7558699cc735bf805d7ea5605349caa6> , <https://astrea.linkeddata.es/shapes#ab26688bc19a35d7edbfa7c1cc6f5324> , <https://astrea.linkeddata.es/shapes#657b6c5ed4e1a6d42c1de87b759c059d> , <https://astrea.linkeddata.es/shapes#4fbefd9c1768a6cccae9b0736c9825ac> , <https://astrea.linkeddata.es/shapes#1fae42385bbb65bf26cf1c2f772eb29b> , <https://astrea.linkeddata.es/shapes#2a0cf70f2fcbd4c2224419be49e7de32> , <https://astrea.linkeddata.es/shapes#bc04698cc9893bf3e0631420cd9e72e7> , <https://astrea.linkeddata.es/shapes#b0dc527a1b574758bc9ac08320a2f090> ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/provenance/Graph> .
+
+<https://astrea.linkeddata.es/shapes#d0a60e7947b16204457c82ab3b1e54c9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "gender"@en-gb , "This property is required to distinguish people by gender."@en-gb ;
+        sh:description    "This property is required to distinguish people by gender."@en-gb ;
+        sh:name           "gender"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#8462f20b0aa79bc97afeabb8f0c400be>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "notablyAssociatedWith"@en-gb , "This is a high level property aiming to associate any core thing to any other core thing. For example that Tom Daley is notablyAssociatedWith diving or Glastonbury is notablyAssociatedWith music."@en-gb ;
+        sh:description    "This is a high level property aiming to associate any core thing to any other core thing. For example that Tom Daley is notablyAssociatedWith diving or Glastonbury is notablyAssociatedWith music."@en-gb ;
+        sh:name           "notablyAssociatedWith"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/coreconcepts/notablyAssociatedWith> .
+
+<https://astrea.linkeddata.es/shapes#d3c51aac39d674d6738b3920618442dd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "disambiguationHint"@en-gb , "One or two words to distinguish between entities that have similar labels - often displayed to both internal and external audiences."@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "One or two words to distinguish between entities that have similar labels - often displayed to both internal and external audiences."@en-gb ;
+        sh:name           "disambiguationHint"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/coreconcepts/disambiguationHint> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#bd575c567510867c637ca5bccdd7d96e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "Dataset"@en-gb ;
+        sh:description    "Dataset is a single graph which contains a collection of things that is managed together, e.g., \"the dataset of the BBC's News Regions\". The management of datasets involves editing RDF files and publishing them to the triplestore in a single action. This requires a good knowledge of semantic technologies therefore datasets are managed by experts."@en-gb ;
+        sh:name           "Dataset"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/provenance/Dataset> .
+
+<https://astrea.linkeddata.es/report/02113868144>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/dc/terms/" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/report/0455406837>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/dc/elements/1.1/" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#2a0cf70f2fcbd4c2224419be49e7de32>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "provided"@en-gb , "The date and time at which the data was provided to the triplestore."@en-gb ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "The date and time at which the data was provided to the triplestore."@en-gb ;
+        sh:name           "provided"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/provided> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#83c330a7d5049999050d4c4eabc012fa>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "dateOfBirth"@en-gb , "A person's date of birth."@en-gb ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "A person's date of birth."@en-gb ;
+        sh:name           "dateOfBirth"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/coreconcepts/dateOfBirth> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#4fbefd9c1768a6cccae9b0736c9825ac>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "public"@en-gb , "This predicate allows the distinction of ontologies that are appropriate for publishing from those ones that are currently kept internal, e.g., for testing purposes."@en-gb ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "This predicate allows the distinction of ontologies that are appropriate for publishing from those ones that are currently kept internal, e.g., for testing purposes."@en-gb ;
+        sh:name           "public"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/public> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#0e30d071723196d7da099894222eaf61>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "The date when a Thing was created."@en-gb , "created"@en-gb ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "The date when a Thing was created."@en-gb ;
+        sh:name           "created"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/created> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#953b687f55f4ad6f443b4b40b5f16b9d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "slug"@en-gb , "This is a short human readable identifier for the ontology."@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "This is a short human readable identifier for the ontology."@en-gb ;
+        sh:name           "slug"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/slug> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#317c8f3aafc10d424195cbd5e990bf07>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "placeOfBirth"@en-gb , "A person's place of birth."@en-gb ;
+        sh:class          <http://www.bbc.co.uk/ontologies/coreconcepts/Place> ;
+        sh:description    "A person's place of birth."@en-gb ;
+        sh:name           "placeOfBirth"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/coreconcepts/placeOfBirth> .
+
+<https://astrea.linkeddata.es/shapes#05e1dc08494ca575258e7d6b458c0207>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5694afa0f053a50de40e59e74dc9b0de> ;
+        sh:targetClass  rdfs:Property .
+
+<https://astrea.linkeddata.es/shapes#a043bba70c300fe54043dd596930c1b8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "primaryTopicOf"@en-gb , "Represents the fact that a thing (usually concept, e.g., Tom Daley) is the primary topic of a web document."@en-gb ;
+        sh:class          <http://www.bbc.co.uk/ontologies/bbc/WebDocument> ;
+        sh:description    "Represents the fact that a thing (usually concept, e.g., Tom Daley) is the primary topic of a web document."@en-gb ;
+        sh:name           "primaryTopicOf"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/coreconcepts/primaryTopicOf> .
+
+<https://astrea.linkeddata.es/shapes#1883afe0cee837205de41653bb427baf>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "deprecated"@en-gb , "A predicate to allow hiding of Things so as to not delete them and lose the reference object."@en-gb ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "A predicate to allow hiding of Things so as to not delete them and lose the reference object."@en-gb ;
+        sh:name           "deprecated"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/deprecated> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#b086df60e1876dc2778d417a19745ad2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "Thing"@en-gb ;
+        sh:description    "The superclass of all things the BBC creates or talks about."@en-gb ;
+        sh:name           "Thing"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#0e30d071723196d7da099894222eaf61> , <https://astrea.linkeddata.es/shapes#1883afe0cee837205de41653bb427baf> ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/coreconcepts/Thing> .
+
+<https://astrea.linkeddata.es/shapes#3c8b25c61bf609cc72686ccf0b64a53f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "Place"@en-gb ;
+        sh:description    "The class of places in the BBC."@en-gb ;
+        sh:name           "Place"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/coreconcepts/Place> .
+
+<https://astrea.linkeddata.es/shapes#6fcc8d97f835b6c9c52c86f5ce63a8b5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "Person"@en-gb ;
+        sh:description    "The class of people in the BBC. Subclasses of this can be all types of people such as politicians, athletes, historic figures, contributors in programmes e.t.c."@en-gb ;
+        sh:name           "Person"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#6b546184c52fc2e610f19e7f87655066> , <https://astrea.linkeddata.es/shapes#b0a09ec77398a54ee5dd4a5a32d680d5> , <https://astrea.linkeddata.es/shapes#6e6b39966598af42a6b444255c6097db> , <https://astrea.linkeddata.es/shapes#83c330a7d5049999050d4c4eabc012fa> , <https://astrea.linkeddata.es/shapes#317c8f3aafc10d424195cbd5e990bf07> , <https://astrea.linkeddata.es/shapes#d5f63ed033e3289b965f56524224af45> ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/coreconcepts/Person> .
+
+<https://astrea.linkeddata.es/shapes#b8772191b0b5b8534bd7c116fafd0726>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "eventOrganisation" , "organisation as agent in an event"@en-gb ;
+        sh:class          <http://www.bbc.co.uk/ontologies/coreconcepts/Organisation> ;
+        sh:description    "organisation as agent in an event"@en-gb ;
+        sh:name           "eventOrganisation" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/coreconcepts/eventOrganisation> .
+
+<https://astrea.linkeddata.es/shapes#c75d6393bb6426ede2987e1f1e44d7ff>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "Organisation"@en-gb ;
+        sh:description    "The class of organisations in the BBC. E.g., Businesses."@en-gb ;
+        sh:name           "Organisation"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/coreconcepts/Organisation> .
+
+<https://astrea.linkeddata.es/shapes#7558699cc735bf805d7ea5605349caa6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "The reason for the most recent change applied to the graph."@en-gb , "changeReason"@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "The reason for the most recent change applied to the graph."@en-gb ;
+        sh:name           "changeReason"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/changeReason> ;
+        sh:pattern        ".*" .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#c2dc5756363b84e54d58dbb05652e61d> , <https://astrea.linkeddata.es/shapes#8462f20b0aa79bc97afeabb8f0c400be> , <https://astrea.linkeddata.es/shapes#3a13194ecd60a71f923f92531b67448c> , <https://astrea.linkeddata.es/shapes#5694afa0f053a50de40e59e74dc9b0de> , <https://astrea.linkeddata.es/shapes#6b546184c52fc2e610f19e7f87655066> , <https://astrea.linkeddata.es/shapes#067014565ecdc68eef8ef4c8a6e47e33> , <https://astrea.linkeddata.es/shapes#7c7d02660fbdfb116cf2bfa5108aca35> , <https://astrea.linkeddata.es/shapes#d0a60e7947b16204457c82ab3b1e54c9> , <https://astrea.linkeddata.es/shapes#3c8b25c61bf609cc72686ccf0b64a53f> , <https://astrea.linkeddata.es/shapes#6e6b39966598af42a6b444255c6097db> , <https://astrea.linkeddata.es/shapes#6fcc8d97f835b6c9c52c86f5ce63a8b5> , <https://astrea.linkeddata.es/shapes#bd575c567510867c637ca5bccdd7d96e> , <https://astrea.linkeddata.es/shapes#bc04698cc9893bf3e0631420cd9e72e7> , <https://astrea.linkeddata.es/shapes#d5f63ed033e3289b965f56524224af45> , <https://astrea.linkeddata.es/shapes#d3c51aac39d674d6738b3920618442dd> , <https://astrea.linkeddata.es/shapes#317c8f3aafc10d424195cbd5e990bf07> , <https://astrea.linkeddata.es/shapes#4fbefd9c1768a6cccae9b0736c9825ac> , <https://astrea.linkeddata.es/shapes#7558699cc735bf805d7ea5605349caa6> , <https://astrea.linkeddata.es/shapes#836e341951ea328795028afd3ca845bb> , <https://astrea.linkeddata.es/shapes#6b202fa194808a89a68bf48c1356584e> , <https://astrea.linkeddata.es/shapes#953b687f55f4ad6f443b4b40b5f16b9d> , <https://astrea.linkeddata.es/shapes#c14ca9ce54d12252ab5b4411c74e5da4> , <https://astrea.linkeddata.es/shapes#c75d6393bb6426ede2987e1f1e44d7ff> , <https://astrea.linkeddata.es/shapes#a6b4c098ee70b8a13d9ecc746fc76d2a> , <https://astrea.linkeddata.es/shapes#b0a09ec77398a54ee5dd4a5a32d680d5> , <https://astrea.linkeddata.es/shapes#7da05842797a38a8684a764d275718dd> , <https://astrea.linkeddata.es/shapes#b086df60e1876dc2778d417a19745ad2> , <https://astrea.linkeddata.es/shapes#05e1dc08494ca575258e7d6b458c0207> , <https://astrea.linkeddata.es/shapes#aa8e358c44ef5b5b198a7f8abb7fd343> , <https://astrea.linkeddata.es/shapes#1fae42385bbb65bf26cf1c2f772eb29b> , <https://astrea.linkeddata.es/shapes#83c330a7d5049999050d4c4eabc012fa> , <https://astrea.linkeddata.es/shapes#0aa707aade0e3fd7e94280c3cee3ec6c> , <https://astrea.linkeddata.es/shapes#b3aa9a0206c1fae55c2798ffdce59d37> , <https://astrea.linkeddata.es/shapes#bd434e225f6594fe8d1223faeb1ba587> , <https://astrea.linkeddata.es/shapes#ab26688bc19a35d7edbfa7c1cc6f5324> , <https://astrea.linkeddata.es/shapes#04fea48dc850602207a8b090e1d840fa> , <https://astrea.linkeddata.es/shapes#ed95a53c8da40360b2317653fca838f4> , <https://astrea.linkeddata.es/shapes#447f54eacf8df55d52d68e574d9661b1> , <https://astrea.linkeddata.es/shapes#b0dc527a1b574758bc9ac08320a2f090> , <https://astrea.linkeddata.es/shapes#0e30d071723196d7da099894222eaf61> , <https://astrea.linkeddata.es/shapes#1883afe0cee837205de41653bb427baf> , <https://astrea.linkeddata.es/shapes#2a0cf70f2fcbd4c2224419be49e7de32> , <https://astrea.linkeddata.es/shapes#7319538eddf9cf7aa0cf4f21e7cc167c> , <https://astrea.linkeddata.es/shapes#657b6c5ed4e1a6d42c1de87b759c059d> , <https://astrea.linkeddata.es/shapes#b8772191b0b5b8534bd7c116fafd0726> , <https://astrea.linkeddata.es/shapes#a043bba70c300fe54043dd596930c1b8> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0455406837> , <https://astrea.linkeddata.es/report/1730027736> , <https://astrea.linkeddata.es/report/02113868144> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#657b6c5ed4e1a6d42c1de87b759c059d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "The email address extracted from the BBC SSL Certificate, indicating the person or system which directly interacted with the writer service to put the data in the store."@en-gb , "provider"@en-gb ;
+        sh:datatype       xsd:anyURI ;
+        sh:description    "The email address extracted from the BBC SSL Certificate, indicating the person or system which directly interacted with the writer service to put the data in the store."@en-gb ;
+        sh:name           "provider"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/provider> ;
+        sh:pattern        "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#bd434e225f6594fe8d1223faeb1ba587>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "Theme"@en-gb ;
+        sh:description    "This concept is used to represent intangible things or abstract concepts.  For example, Financial Crisis, Midwifery, Happiness."@en-gb ;
+        sh:name           "Theme"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/coreconcepts/Theme> .
+
+<https://astrea.linkeddata.es/shapes#0aa707aade0e3fd7e94280c3cee3ec6c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "ThingGraph"@en-gb ;
+        sh:description    "Thing graphs hold metadata about a single thing. Note the difference with Datasets, which hold metadata about many things. Thing graphs are usually exposed to user friendly tools which allow users with little on no RDF skills to specifically edit a metadata about a thing in a form. For example a thing graph can contain metadata about a football team such as its various names, LOD links for the team, a short disambiguation hint, e.t.c. Thing graphs are also used to store metadata about things obtained from a feed, for example store metadata about locations obtained from a Location Services feed."@en-gb ;
+        sh:name           "ThingGraph"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#aa8e358c44ef5b5b198a7f8abb7fd343> ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/provenance/ThingGraph> .
+
+<https://astrea.linkeddata.es/shapes#6b202fa194808a89a68bf48c1356584e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "The BBC editorially preferred label for a thing. A thing may have one and only one preferredLabel"@en-gb , "preferredLabel"@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "The BBC editorially preferred label for a thing. A thing may have one and only one preferredLabel"@en-gb ;
+        sh:name           "preferredLabel"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/coreconcepts/preferredLabel> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#5694afa0f053a50de40e59e74dc9b0de>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "transitions"@en-gb , "The property that this transition property is providing a transition for."@en-gb ;
+        sh:class          rdfs:Property ;
+        sh:description    "The property that this transition property is providing a transition for."@en-gb ;
+        sh:name           "transitions"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/provenance/transitions> .
+
+<https://astrea.linkeddata.es/shapes#a6b4c098ee70b8a13d9ecc746fc76d2a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "sameAs"@en-gb , "Indicates that something is the same as something else, but in a way that is slightly weaker than owl:sameAs. It's purpose is to connect separate identities of the same thing, whilst keeping separation between the original statements of each."@en-gb ;
+        sh:class          owl:Thing ;
+        sh:description    "Indicates that something is the same as something else, but in a way that is slightly weaker than owl:sameAs. It's purpose is to connect separate identities of the same thing, whilst keeping separation between the original statements of each."@en-gb ;
+        sh:name           "sameAs"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/coreconcepts/sameAs> .
+
+<https://astrea.linkeddata.es/shapes#b3aa9a0206c1fae55c2798ffdce59d37>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "eventPlace" , "place as location of an event"@en-gb ;
+        sh:class          <http://www.bbc.co.uk/ontologies/coreconcepts/Place> ;
+        sh:description    "place as location of an event"@en-gb ;
+        sh:name           "eventPlace" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/coreconcepts/eventPlace> .
+
+<https://astrea.linkeddata.es/shapes#7da05842797a38a8684a764d275718dd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "A short label for a thing usually needed for presentation purposes."@en-gb , "shortLabel"@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "A short label for a thing usually needed for presentation purposes."@en-gb ;
+        sh:name           "shortLabel"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/coreconcepts/shortLabel> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#c2dc5756363b84e54d58dbb05652e61d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/provenance> ;
+        rdfs:label        "CreativeWorkGraph"@en-gb ;
+        sh:description    "The class of named graphs which contain the metadata for the CreativeWorks. For example all the metadata for a news story provided by a CMS will be contained in a single CreativeWorkGraph instance."@en-gb ;
+        sh:name           "CreativeWorkGraph"@en-gb ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.bbc.co.uk/ontologies/provenance/CreativeWorkGraph> .
+
+<https://astrea.linkeddata.es/shapes#b0a09ec77398a54ee5dd4a5a32d680d5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "A short summary of what a person is notably known for"@en-gb , "knownFor"@en-gb ;
+        sh:datatype       xsd:string ;
+        sh:description    "A short summary of what a person is notably known for"@en-gb ;
+        sh:name           "knownFor"@en-gb ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://www.bbc.co.uk/ontologies/coreconcepts/knownFor> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#6e6b39966598af42a6b444255c6097db>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.bbc.co.uk/ontologies/coreconcepts> ;
+        rdfs:label        "placeOfDeath"@en-gb , "A person's place of death"@en-gb ;
+        sh:class          <http://www.bbc.co.uk/ontologies/coreconcepts/Place> ;
+        sh:description    "A person's place of death"@en-gb ;
+        sh:name           "placeOfDeath"@en-gb ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.bbc.co.uk/ontologies/coreconcepts/placeOfDeath> .

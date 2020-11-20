@@ -1,0 +1,676 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#c463b532073d795f36681ecf2862ee2f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "symbolicExpression" , "Symbolic expression of the quantity dimension's product of powers, in terms of symbols of the kinds of quantity that represent the base kinds of quantity and their exponents." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Data" ;
+        sh:datatype       xsd:string ;
+        sh:description    "Symbolic expression of the quantity dimension's product of powers, in terms of symbols of the kinds of quantity that represent the base kinds of quantity and their exponents." ;
+        sh:name           "symbolicExpression" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#symbolicExpression> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#4c4f3b83b8eb028ccc757e332d6e9f57>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "Derived ordered set of Dimension. The actual dimension of a QuantityKind depends on the list of baseQuantityKind that are specified in an actual SystemOfQuantities, see the DerivedDimensions constraint." , "dimension" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Quantity" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#Dimension> ;
+        sh:description    "Derived ordered set of Dimension. The actual dimension of a QuantityKind depends on the list of baseQuantityKind that are specified in an actual SystemOfQuantities, see the DerivedDimensions constraint." ;
+        sh:name           "dimension" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#dimension> .
+
+<https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  owl:Thing .
+
+<https://astrea.linkeddata.es/shapes#66277b8b569d2bcf2a451366fd7acf1e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "GeneralConversionUnit" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Unit" ;
+        sh:description    "A GeneralConversionUnit is a ConversionBasedUnit that represents a measurement unit that is defined with respect to another\nreference measurement unit through a conversion relationship expressed in some syntax through a general mathematical\nexpression.\nThe unit conversion relationship is defined by the following equation:\nvalueRU / valueCU = f(valueRU, valueCU)\nwhere:\nvalueRU is the quantity value expressed in the referenceUnit, and,\nvalueCU is the quantity value expressed in the GeneralConversionUnit, and,\nf(valueRU, valueCU) is a mathematical expression that includes valueRU and valueCU." ;
+        sh:name           "GeneralConversionUnit" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#257d1d4fb32144c6805c2c0cd390d6cd> ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#GeneralConversionUnit> .
+
+<https://astrea.linkeddata.es/shapes#2de172e4c22ca8c50616973487d2e701>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "scaleValueDefinition" , "Ordered set of ScaleValueDefinition that specifies the defined numerical value(s) and textual definition(s) for the measurement scale." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Scale" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#ScaleValueDefinition> ;
+        sh:description    "Ordered set of ScaleValueDefinition that specifies the defined numerical value(s) and textual definition(s) for the measurement scale." ;
+        sh:name           "scaleValueDefinition" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#scaleValueDefinition> .
+
+<https://astrea.linkeddata.es/shapes#39d1ecd631df57a466e1fc6925da9757>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/ssnx/qu/qu#conversionFactor> .
+
+<https://astrea.linkeddata.es/shapes#808bb94a225e8bf7ff74dd3f4500ec5f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "DimensionFactor" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Dimension" ;
+        sh:description    "A DimensionFactor represents a factor in the product of powers that defines a Dimension." ;
+        sh:name           "DimensionFactor" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#410eaae2da74d85bf8fb9ae30b8c2a32> ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#DimensionFactor> .
+
+<https://astrea.linkeddata.es/shapes#4a63813f935a62a88293b4e1006c1693>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "Prefix" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Unit" ;
+        sh:description    "A Prefix represents a named multiple or submultiple multiplication factor used in the specification of a PrefixedUnit. A\nSystemOfUnits may specify a set of prefixes." ;
+        sh:name           "Prefix" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#Prefix> .
+
+<https://astrea.linkeddata.es/shapes#451955837f2f3fb64b9de33a543020ff>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "DerivedUnit" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Unit" ;
+        sh:description    "A DerivedUnit is a Unit that represents a measurement unit that is defined as a product of powers of one or more other\nmeasurement units.\nFor example the measurement unit \"metre per second\" for \"velocity\" is specified as the product of \"metre\" to the power one\ntimes \"second\" to the power minus one" ;
+        sh:name           "DerivedUnit" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#f60e29fbf38423f9128662ce155fdc53> ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#DerivedUnit> .
+
+<https://astrea.linkeddata.es/shapes#0e9df4f49cf1f0a3373861594f2772a3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "QuantityKind" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Quantity" ;
+        sh:description    "A QuantityKind is an abstract classifier that represents the [VIM] concept of \"kind of quantity\" that is defined as \"aspect\ncommon to mutually comparable quantities.\" A QuantityKind represents the essence of a quantity without any numerical\nvalue or unit. Quantities of the same kind within a given system of quantities have the same quantity dimension. However,\nquantities of the same dimension are not necessarily of the same kind." ;
+        sh:name           "QuantityKind" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind> .
+
+<https://astrea.linkeddata.es/shapes#c7b7c4e4ab86f2561cb227663eacdc4f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "DerivedQuantityKind" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Quantity" ;
+        sh:description    "A DerivedQuantityKind is a QuantityKind that represents a kind of quantity that is defined as a product of powers of one or\nmore other kinds of quantity. A DerivedQuantityKind may also be used to define a synonym kind of quantity for another kind\nof quantity.\nFor example \"velocity\" can be specified as the product of \"length\" to the power one times \"time\" to the power minus one, and\nsubsequently \"speed\" can be specified as \"velocity\" to the power one." ;
+        sh:name           "DerivedQuantityKind" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#2d2aef11edecda777deba9f663cd2aaf> ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#DerivedQuantityKind> .
+
+<https://astrea.linkeddata.es/shapes#f92b3a74b332e8a8a7387cf080997918>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "symbol" , "Short symbolic name." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Data" ;
+        sh:datatype       xsd:string ;
+        sh:description    "Short symbolic name." ;
+        sh:name           "symbol" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#symbol> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#6efbad5dab330c319cc5133bbfd0a50f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "Rational number that specifies the offset in the unit conversion relationship." , "conversionOffset" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Data" ;
+        sh:datatype       xsd:double ;
+        sh:description    "Rational number that specifies the offset in the unit conversion relationship." ;
+        sh:name           "conversionOffset" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#conversionOffset> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#bb69f9714072d38c37219ae2170b632d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "factorQuantityKind" , "Specification of the associated QuantityKind." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Quantity" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind> ;
+        sh:description    "Specification of the associated QuantityKind." ;
+        sh:name           "factorQuantityKind" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#factorQuantityKind> .
+
+<https://astrea.linkeddata.es/shapes#eb8f17239ec2fed40fa1a6a768668eda>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "Ordered set of Unit that specifies the base units of the system of units. A \"base unit\" is defined in [VIM] as a \"measurement unit that is adopted by convention for a base quantity,\" i.e. it is the (preferred) unit in which base quantities of the associated systemOfQuantities are expressed." , "baseUnit" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Dimension" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#Unit> ;
+        sh:description    "Ordered set of Unit that specifies the base units of the system of units. A \"base unit\" is defined in [VIM] as a \"measurement unit that is adopted by convention for a base quantity,\" i.e. it is the (preferred) unit in which base quantities of the associated systemOfQuantities are expressed." ;
+        sh:name           "baseUnit" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#baseUnit> .
+
+<https://astrea.linkeddata.es/shapes#c76ba196dfc654e7d5a0061e7055c066>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "specificQuantityKind" , "A specialization relationship between two kinds of quantities." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Quantity" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind> , <http://purl.oclc.org/NET/ssnx/qu/qu#SpecializedQuantityKind> ;
+        sh:description    "A specialization relationship between two kinds of quantities." ;
+        sh:name           "specificQuantityKind" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#specificQuantityKind> .
+
+<https://astrea.linkeddata.es/shapes#3b03bab9f8bf5207ae7c517190972ec0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "PropertyKind" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Quantity" ;
+        sh:description    "A PropertyKind  is a meta-property which helps to characterise categories of properties e.g. scalar, vector" ;
+        sh:name           "PropertyKind" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#0ca183e17743880a2cdf5c24617b00f9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "unitComponent" , "Ordered set of Unit that specifies the units that are known in the system." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Dimension" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#Unit> ;
+        sh:description    "Ordered set of Unit that specifies the units that are known in the system." ;
+        sh:name           "unitComponent" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#unitComponent> .
+
+<https://astrea.linkeddata.es/shapes#689b2c96f4b3ecd0c4267d70c0fc2620>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "unitKind" , "Specification of the associated Unit \"Kind\"." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Unit" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#Unit> ;
+        sh:description    "Specification of the associated Unit \"Kind\"." ;
+        sh:name           "unitKind" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#unitKind> .
+
+<https://astrea.linkeddata.es/shapes#eeb016c42986216ec41a2da9c118ff0e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "Reference to the SystemOfQuantities for which the units are specified." , "systemOfQuantities" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Dimension" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#SystemOfQuantities> ;
+        sh:description    "Reference to the SystemOfQuantities for which the units are specified." ;
+        sh:name           "systemOfQuantities" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#systemOfQuantities> .
+
+<https://astrea.linkeddata.es/shapes#dd89ff14e086370dc5c0dcf6c31a7182>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "code" , "A code is a string that uniquely identifies an individual." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Data" ;
+        sh:datatype       xsd:string ;
+        sh:description    "A code is a string that uniquely identifies an individual." ;
+        sh:name           "code" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#code> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#ef9430edbb6f03b952872ba3a7898127>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "SpecializedQuantityKind" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Quantity" ;
+        sh:description    "A SpecializedQuantityKind is a QuantityKind that represents a kind of quantity that is a specialization of another kind of\nquantity.\nFor example, \"distance\", \"width\", \"depth\", \"radius\" and \"wavelength\" can all be specified as specializations of the \"length\"\nSimpleQuantityKind." ;
+        sh:name           "SpecializedQuantityKind" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c8c81abe5cf9187c1569ec55c4b86602> ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#SpecializedQuantityKind> .
+
+<https://astrea.linkeddata.es/shapes#c942d12c5bed2663eb227336ba3f7f5a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "numericalValue" , "Specifies the numerical value." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Data" ;
+        sh:datatype       xsd:double ;
+        sh:description    "Specifies the numerical value." ;
+        sh:name           "numericalValue" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#numericalValue> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#ae8c5ac5837d36975de840c60a822844>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "SystemOfQuantities" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Dimension" ;
+        sh:description    "A SystemOfQuantities represents the [VIM] concept of 'system of quantities' that is defined as a 'set of quantities together with a set of non-contradictory equations relating those quantities'. It collects a list of QuantityKind that specifies the kinds of quantity that are known in the system.\n\nThe International System of Quantities (ISQ) is an example of a SystemOfQuantities, defined in ISO 31 and ISO/IEC 80000." ;
+        sh:name           "SystemOfQuantities" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#SystemOfQuantities> .
+
+<https://astrea.linkeddata.es/shapes#37c075f87b776640dc062b79bb5c2a53>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "unitMultipleFactor" , "Specifies the multiple or submultiple multiplication factor." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Data" ;
+        sh:datatype       xsd:double ;
+        sh:description    "Specifies the multiple or submultiple multiplication factor." ;
+        sh:maxCount       1 ;
+        sh:name           "unitMultipleFactor" ;
+        sh:nodeKind       sh:Literal , sh:IRIOrLiteral ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#unitMultipleFactor> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#0ad78ef4a148458820fd268c84c3cffb>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "ScaleValueDefinition" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Scale" ;
+        sh:description    "A ScaleValueDefinition represents a specific value for a measurement scale." ;
+        sh:name           "ScaleValueDefinition" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#ScaleValueDefinition> .
+
+<https://astrea.linkeddata.es/shapes#c8c81abe5cf9187c1569ec55c4b86602>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://purl.oclc.org/NET/ssnx/qu/qu#generalQuantityKind> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind> ] ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind> ] .
+
+<https://astrea.linkeddata.es/shapes#aa82fa1bc8a3081b7a39871dcbc1f301>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "prefix" , "Ordered set of Prefix that specifies the prefixes for multiples and submultiples of units in the system" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Unit" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#Prefix> ;
+        sh:description    "Ordered set of Prefix that specifies the prefixes for multiples and submultiples of units in the system" ;
+        sh:name           "prefix" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#prefix> .
+
+<https://astrea.linkeddata.es/shapes#9f16489c93ddfe2236d2e2c2b6c4700f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "scale" , "Specification of a Scale that is associated to the QuantityKind." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Scale" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#Scale> ;
+        sh:description    "Specification of a Scale that is associated to the QuantityKind." ;
+        sh:name           "scale" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#scale> .
+
+<https://astrea.linkeddata.es/shapes#1a094022eb81b9d695efce6620198c95>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "dimension factor" , "Rational number that specifies the factor in the dimension conversion relationship." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Dimension" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#DimensionFactor> ;
+        sh:description    "Rational number that specifies the factor in the dimension conversion relationship." ;
+        sh:name           "dimension factor" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#dimensionFactor> .
+
+<https://astrea.linkeddata.es/shapes#f60e29fbf38423f9128662ce155fdc53>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/ssnx/qu/qu#unitFactor> .
+
+<https://astrea.linkeddata.es/shapes#5c7717c33067d857e389b65b223270fe>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "description" , "Textual description" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Data" ;
+        sh:datatype       xsd:string ;
+        sh:description    "Textual description" ;
+        sh:name           "description" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#description> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#b535da7230882d997bbb3971b733031b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "Dimension" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Dimension" ;
+        sh:description    "A Dimension represents the [VIM] concept of 'quantity dimension' that is defined as 'expression of the dependence of a quantity on the base quantities of a system of quantities as a product of powers of factors corresponding to the base quantities, omitting any numerical factor.'\n\nFor example in the ISQ the quantity dimension of 'force' is denoted by dim F = Lï¿½Mï¿½T^2, where 'F' is the symbol for 'force', and 'L', 'M', 'T' are the symbols for the ISQ base quantities 'length', 'mass' and 'time' respectively.\n\nThe Dimension of any QuantityKind can be derived through the algorithm that is defined in C.5.3.20 with SystemOfQuantities. The actual Dimension for a given QuantityKind depends on the choice of baseQuantityKind specified in a SystemOfQuantities." ;
+        sh:name           "Dimension" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#Dimension> .
+
+<https://astrea.linkeddata.es/shapes#a5a696e5b06bf30114a1356c733dc27d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "quantityComponent" , "Quantities attached to a system." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Dimension" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind> ;
+        sh:description    "Quantities attached to a system." ;
+        sh:name           "quantityComponent" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#quantityComponent> .
+
+<https://astrea.linkeddata.es/shapes#2ae928ab7bbe9850835343f5bb85f6a4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "QuantityKindFactor" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Quantity" ;
+        sh:description    "A QuantityKindFactor represents a factor in the product of powers that defines a DerivedQuantityKind." ;
+        sh:name           "QuantityKindFactor" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKindFactor> .
+
+<https://astrea.linkeddata.es/shapes#2aa953921b521e1eff447dd5561f95fa>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "Rational number that specifies the factor in the unit conversion relationship." , "unit factor" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Unit" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#UnitFactor> ;
+        sh:description    "Rational number that specifies the factor in the unit conversion relationship." ;
+        sh:name           "unit factor" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#unitFactor> .
+
+<https://astrea.linkeddata.es/shapes#379f09a741318a075ec1d1be4f9ae3c9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "referenceUnit" , "Specifies the unit with respect to which the ConversionBasedUnit is defined." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Unit" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#Unit> ;
+        sh:description    "Specifies the unit with respect to which the ConversionBasedUnit is defined." ;
+        sh:name           "referenceUnit" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#referenceUnit> .
+
+<https://astrea.linkeddata.es/shapes#410eaae2da74d85bf8fb9ae30b8c2a32>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://purl.oclc.org/NET/ssnx/qu/qu#baseDimension> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind> ] ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind> ] .
+
+<https://astrea.linkeddata.es/shapes#cc632e14c8ed1048c2f016b616a6454d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "SimpleUnit" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Unit" ;
+        sh:description    "A SimpleUnit is a Unit that represents a measurement unit that does not depend on any other Unit. Typically a base unit would\nbe specified as a SimpleUnit." ;
+        sh:name           "SimpleUnit" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#SimpleUnit> .
+
+<https://astrea.linkeddata.es/shapes#539f41797854d781d70decd8feed571d>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://purl.oclc.org/NET/ssnx/qu/qu#prefix> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.oclc.org/NET/ssnx/qu/qu#Prefix> ] ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.oclc.org/NET/ssnx/qu/qu#Prefix> ] .
+
+<https://astrea.linkeddata.es/shapes#257d1d4fb32144c6805c2c0cd390d6cd>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/ssnx/qu/qu#expression> .
+
+<https://astrea.linkeddata.es/shapes#0f23d0915625cb7cc2816127c2d186a0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "Rational number that specifies the factor in the quantity conversion relationship." , "quantity kind factor" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Quantity" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKindFactor> ;
+        sh:description    "Rational number that specifies the factor in the quantity conversion relationship." ;
+        sh:name           "quantity kind factor" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#quantityKindFactor> .
+
+<https://astrea.linkeddata.es/shapes#2d2aef11edecda777deba9f663cd2aaf>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/ssnx/qu/qu#quantityKindFactor> .
+
+<https://astrea.linkeddata.es/shapes#a423601afd6165ee21086ea8eaa15b1d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "unit" , "Specification of the associated Unit." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Unit" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#Unit> ;
+        sh:description    "Specification of the associated Unit." ;
+        sh:name           "unit" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#unit> .
+
+<https://astrea.linkeddata.es/shapes#41a8155d9eb158f2643e3bd1479e13d3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "A Reference to the QuantityKind that represents the base quantity dimension in the factor." , "baseDimension" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Dimension" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind> ;
+        sh:description    "A Reference to the QuantityKind that represents the base quantity dimension in the factor." ;
+        sh:name           "baseDimension" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#baseDimension> .
+
+<https://astrea.linkeddata.es/shapes#87ebd80fe327e6311afdcaaa6280ea90>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "SystemOfUnits" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Dimension" ;
+        sh:description    "A SystemOfUnits represents the [VIM] concept of 'system of units' that is defined as 'set of base units and derived units, together with their multiples and submultiples, defined in accordance with given rules, for a given system of quantities'. It collects a list of Unit that are known in the system. A SysML SystemOfUnits only optionally defines multiples and submultiples." ;
+        sh:name           "SystemOfUnits" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#SystemOfUnits> .
+
+<https://astrea.linkeddata.es/shapes#dcb836dc41e696a8522e9028968b48c7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "PrefixedUnit" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Unit" ;
+        sh:description    "A Prefix represents a named multiple or submultiple multiplication factor used in the specification of a PrefixedUnit. A\nSystemOfUnits may specify a set of prefixes." ;
+        sh:name           "PrefixedUnit" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#539f41797854d781d70decd8feed571d> ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#PrefixedUnit> .
+
+<https://astrea.linkeddata.es/shapes#05a2a0327adb57d04df61028a942a824>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "Rational number that specifies the factor in the unit conversion relationship." , "conversionFactor" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Data" ;
+        sh:datatype       xsd:double ;
+        sh:description    "Rational number that specifies the factor in the unit conversion relationship." ;
+        sh:name           "conversionFactor" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#conversionFactor> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#a88dc2248a9e2c46bf52ea803c7e76c2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "quantityKind" , "Specification of the associated QuantityKind." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Quantity" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind> ;
+        sh:description    "Specification of the associated QuantityKind." ;
+        sh:name           "quantityKind" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#quantityKind> .
+
+<https://astrea.linkeddata.es/shapes#2d378c42f164a2bb87a8311a9cc5c097>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "Unit" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Unit" ;
+        sh:description    "A Unit is an abstract classifier that represents the [VIM] concept of \"measurement unit\" that is defined as \"real scalar quantity,\ndefined and adopted by convention, with which any other quantity of the same kind can be compared to express the ratio of the\ntwo quantities as a number.\"" ;
+        sh:name           "Unit" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#Unit> .
+
+<https://astrea.linkeddata.es/shapes#c025879e0e4583bbf19131e096984e60>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "ConversionBasedUnit" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Unit" ;
+        sh:description    "A ConversionBasedUnit is an abstract classifier that is a Unit that represents a measurement unit that is defined with respect to\nanother reference unit through an explicit conversion relationship." ;
+        sh:name           "ConversionBasedUnit" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#5fd06c839186229be4ec2c930fc9f74d> ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#ConversionBasedUnit> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#0e9df4f49cf1f0a3373861594f2772a3> , <https://astrea.linkeddata.es/shapes#0ca183e17743880a2cdf5c24617b00f9> , <https://astrea.linkeddata.es/shapes#4a63813f935a62a88293b4e1006c1693> , <https://astrea.linkeddata.es/shapes#4c4f3b83b8eb028ccc757e332d6e9f57> , <https://astrea.linkeddata.es/shapes#c76ba196dfc654e7d5a0061e7055c066> , <https://astrea.linkeddata.es/shapes#607515d5b9ae633668b5c04525bd0db8> , <https://astrea.linkeddata.es/shapes#37c075f87b776640dc062b79bb5c2a53> , <https://astrea.linkeddata.es/shapes#46deb4072bf7272b8ec8fdba42635e4b> , <https://astrea.linkeddata.es/shapes#a423601afd6165ee21086ea8eaa15b1d> , <https://astrea.linkeddata.es/shapes#66277b8b569d2bcf2a451366fd7acf1e> , <https://astrea.linkeddata.es/shapes#eb8f17239ec2fed40fa1a6a768668eda> , <https://astrea.linkeddata.es/shapes#c942d12c5bed2663eb227336ba3f7f5a> , <https://astrea.linkeddata.es/shapes#0bebc2e37b964b598b618f6c7f41a3f3> , <https://astrea.linkeddata.es/shapes#1a094022eb81b9d695efce6620198c95> , <https://astrea.linkeddata.es/shapes#41a8155d9eb158f2643e3bd1479e13d3> , <https://astrea.linkeddata.es/shapes#2aa953921b521e1eff447dd5561f95fa> , <https://astrea.linkeddata.es/shapes#0ad78ef4a148458820fd268c84c3cffb> , <https://astrea.linkeddata.es/shapes#bb69f9714072d38c37219ae2170b632d> , <https://astrea.linkeddata.es/shapes#410eaae2da74d85bf8fb9ae30b8c2a32> , <https://astrea.linkeddata.es/shapes#dad58e91e147c45faec328d9577a92a5> , <https://astrea.linkeddata.es/shapes#379f09a741318a075ec1d1be4f9ae3c9> , <https://astrea.linkeddata.es/shapes#16d9766d2a0759a967d7ca0089fd80da> , <https://astrea.linkeddata.es/shapes#451955837f2f3fb64b9de33a543020ff> , <https://astrea.linkeddata.es/shapes#25572302a24cfe24f6f87d3ffc7b5d60> , <https://astrea.linkeddata.es/shapes#689b2c96f4b3ecd0c4267d70c0fc2620> , <https://astrea.linkeddata.es/shapes#9f16489c93ddfe2236d2e2c2b6c4700f> , <https://astrea.linkeddata.es/shapes#05a2a0327adb57d04df61028a942a824> , <https://astrea.linkeddata.es/shapes#2d2aef11edecda777deba9f663cd2aaf> , <https://astrea.linkeddata.es/shapes#74e67477b87aaf06f40669aecccc9e99> , <https://astrea.linkeddata.es/shapes#a88dc2248a9e2c46bf52ea803c7e76c2> , <https://astrea.linkeddata.es/shapes#539f41797854d781d70decd8feed571d> , <https://astrea.linkeddata.es/shapes#3b03bab9f8bf5207ae7c517190972ec0> , <https://astrea.linkeddata.es/shapes#808bb94a225e8bf7ff74dd3f4500ec5f> , <https://astrea.linkeddata.es/shapes#9b91556fe784bbe422cac71335042a93> , <https://astrea.linkeddata.es/shapes#cc632e14c8ed1048c2f016b616a6454d> , <https://astrea.linkeddata.es/shapes#39d1ecd631df57a466e1fc6925da9757> , <https://astrea.linkeddata.es/shapes#c025879e0e4583bbf19131e096984e60> , <https://astrea.linkeddata.es/shapes#c7b7c4e4ab86f2561cb227663eacdc4f> , <https://astrea.linkeddata.es/shapes#c463b532073d795f36681ecf2862ee2f> , <https://astrea.linkeddata.es/shapes#2de172e4c22ca8c50616973487d2e701> , <https://astrea.linkeddata.es/shapes#5c7717c33067d857e389b65b223270fe> , <https://astrea.linkeddata.es/shapes#87ebd80fe327e6311afdcaaa6280ea90> , <https://astrea.linkeddata.es/shapes#eeb016c42986216ec41a2da9c118ff0e> , <https://astrea.linkeddata.es/shapes#f60e29fbf38423f9128662ce155fdc53> , <https://astrea.linkeddata.es/shapes#5c47686cf45addd4ad6230c9b9d05605> , <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#a670d7e6c38c53c4e4aff3f37f1bf2f0> , <https://astrea.linkeddata.es/shapes#5fd06c839186229be4ec2c930fc9f74d> , <https://astrea.linkeddata.es/shapes#871a9caef8a8e750588ceb07d16c34ec> , <https://astrea.linkeddata.es/shapes#2d378c42f164a2bb87a8311a9cc5c097> , <https://astrea.linkeddata.es/shapes#ef9430edbb6f03b952872ba3a7898127> , <https://astrea.linkeddata.es/shapes#0f23d0915625cb7cc2816127c2d186a0> , <https://astrea.linkeddata.es/shapes#ae8c5ac5837d36975de840c60a822844> , <https://astrea.linkeddata.es/shapes#a5a696e5b06bf30114a1356c733dc27d> , <https://astrea.linkeddata.es/shapes#6efbad5dab330c319cc5133bbfd0a50f> , <https://astrea.linkeddata.es/shapes#257d1d4fb32144c6805c2c0cd390d6cd> , <https://astrea.linkeddata.es/shapes#aa82fa1bc8a3081b7a39871dcbc1f301> , <https://astrea.linkeddata.es/shapes#2ae928ab7bbe9850835343f5bb85f6a4> , <https://astrea.linkeddata.es/shapes#f92b3a74b332e8a8a7387cf080997918> , <https://astrea.linkeddata.es/shapes#dd89ff14e086370dc5c0dcf6c31a7182> , <https://astrea.linkeddata.es/shapes#c8c81abe5cf9187c1569ec55c4b86602> , <https://astrea.linkeddata.es/shapes#dcb836dc41e696a8522e9028968b48c7> , <https://astrea.linkeddata.es/shapes#b535da7230882d997bbb3971b733031b> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#74e67477b87aaf06f40669aecccc9e99>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "SimpleQuantityKind" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Quantity" ;
+        sh:description    "A SimpleQuantityKind is a QuantityKind that represents a kind of quantity that does not depend on any other QuantityKind.\nTypically a base quantity would be specified as a SimpleQuantityKind." ;
+        sh:name           "SimpleQuantityKind" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#SimpleQuantityKind> .
+
+<https://astrea.linkeddata.es/shapes#5fd06c839186229be4ec2c930fc9f74d>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://purl.oclc.org/NET/ssnx/qu/qu#referenceUnit> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.oclc.org/NET/ssnx/qu/qu#Unit> ] ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.oclc.org/NET/ssnx/qu/qu#Unit> ] .
+
+<https://astrea.linkeddata.es/shapes#a670d7e6c38c53c4e4aff3f37f1bf2f0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "definitionURI" , "URI that references an external definition." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Data" ;
+        sh:datatype       xsd:string ;
+        sh:description    "URI that references an external definition." ;
+        sh:maxCount       1 ;
+        sh:name           "definitionURI" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#definitionURI> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#25572302a24cfe24f6f87d3ffc7b5d60>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "name" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Data" ;
+        sh:datatype       xsd:string ;
+        sh:maxCount       1 ;
+        sh:name           "name" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#name> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#46deb4072bf7272b8ec8fdba42635e4b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "propertyType" , "Specification of the associated ProeprtyType." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Quantity" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#PropertyKind> ;
+        sh:description    "Specification of the associated ProeprtyType." ;
+        sh:name           "propertyType" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#propertyType> .
+
+<https://astrea.linkeddata.es/shapes#9b91556fe784bbe422cac71335042a93>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "exponent" , "Rational number that specifies the exponent of the power to which the unit is raised." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Data" ;
+        sh:datatype       xsd:double ;
+        sh:description    "Rational number that specifies the exponent of the power to which the unit is raised." ;
+        sh:name           "exponent" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#exponent> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#0bebc2e37b964b598b618f6c7f41a3f3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "baseQuantityKind" , "Ordered set of QuantityKind that specifies the base quantities of the system of quantities. This is a subset of the complete quantityKind list. The base quantities define the basis for the quantity dimension of a kind of quantity." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Dimension" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind> ;
+        sh:description    "Ordered set of QuantityKind that specifies the base quantities of the system of quantities. This is a subset of the complete quantityKind list. The base quantities define the basis for the quantity dimension of a kind of quantity." ;
+        sh:name           "baseQuantityKind" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#baseQuantityKind> .
+
+<https://astrea.linkeddata.es/shapes#16d9766d2a0759a967d7ca0089fd80da>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "LinearConversionUnit" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Unit" ;
+        sh:description    "A LinearConversionUnit is a ConversionBasedUnit that represents a measurement unit that is defined with respect to another\nmeasurement reference unit through a linear conversion relationship with a conversion factor.\nThe unit conversion relationship is defined by the following equation:\nvalueRU = factor · valueCU,\nwhere:\nvalueRU is the quantity value expressed in the referenceUnit, and,\nvalueCU is the quantity value expressed in the LinearConversionUnit." ;
+        sh:name           "LinearConversionUnit" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#39d1ecd631df57a466e1fc6925da9757> ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#LinearConversionUnit> .
+
+<https://astrea.linkeddata.es/shapes#5c47686cf45addd4ad6230c9b9d05605>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "conversionExpression" , "Specifies the unit conversion relationship in some expression syntax." ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Data" ;
+        sh:datatype       xsd:string ;
+        sh:description    "Specifies the unit conversion relationship in some expression syntax." ;
+        sh:name           "conversionExpression" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#expression> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#871a9caef8a8e750588ceb07d16c34ec>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "A generalization relationship between two kinds of quantities." , "generalQuantityKind" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Quantity" ;
+        sh:class          <http://purl.oclc.org/NET/ssnx/qu/qu#QuantityKind> ;
+        sh:description    "A generalization relationship between two kinds of quantities." ;
+        sh:name           "generalQuantityKind" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.oclc.org/NET/ssnx/qu/qu#generalQuantityKind> .
+
+<https://astrea.linkeddata.es/shapes#dad58e91e147c45faec328d9577a92a5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "Scale" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Scale" ;
+        sh:description    "A Scale represents the [VIM] concept of a \"measurement scale\" that is defined as an \"ordered set of quantity values of\nquantities of a given kind of quantity used in ranking, according to magnitude, quantities of that kind.\" A Scale specifies one\nor more fixed values that have a specific significance in the definition of the associating QuantityKind.\nFor example the \"thermodynamic temperature\" kind of quantity is defined by specifying the values of 0 and 273.16 kelvin as\nthe temperatures of absolute zero and the triple point of water respectively.\nA Scale does not always need to specify a unit. For example the \"Rockwell C Hardness Scale\" or the \"Beaufort Wind Force\nScale\" are ordinal scales that do not have a particular associated unit. Similarly, subjective scales for a \"priority\" or \"risk\" kind\nof quantity with e.g. value definitions 0 for \"low\", 1 for \"medium\" and 3 for \"high\" do not have a particular associated unit." ;
+        sh:name           "Scale" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#Scale> .
+
+<https://astrea.linkeddata.es/shapes#607515d5b9ae633668b5c04525bd0db8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
+        rdfs:label        "UnitFactor" ;
+        rdfs:seeAlso      "http://www.omgsysml.org/qudv#Unit" ;
+        sh:description    "A UnitFactor represents a factor in the product of powers that defines a DerivedUnit." ;
+        sh:name           "UnitFactor" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.oclc.org/NET/ssnx/qu/qu#UnitFactor> .

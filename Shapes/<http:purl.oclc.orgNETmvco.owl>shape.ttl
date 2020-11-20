@@ -1,0 +1,964 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#9f89eeea418447e5d2bf7cb8f3f60767>
+        a               sh:NodeShape ;
+        sh:description  "An object or event which is an expression of an Adaptation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#AdaptationManifestation> .
+
+<https://astrea.linkeddata.es/shapes#d4d8dc0e8aead0615d13368fe195fa03>
+        a               sh:NodeShape ;
+        sh:description  "Action of modifying a copy."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#ModifyCopy> .
+
+<https://astrea.linkeddata.es/shapes#67d6f1aa42d50f97362afc090d541c10>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#User> ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#issuedBy> .
+
+<https://astrea.linkeddata.es/shapes#b731d15037dc1a129482b82442dd3382>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.oclc.org/NET/mvco.owl#User> .
+
+<https://astrea.linkeddata.es/shapes#4c58f6b0d5fde061073e3a90110032a7>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#WorkInstanceCopy> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultsIn> .
+
+<https://astrea.linkeddata.es/shapes#5fcc3c87e3b5bbb32016d7542a129f63>
+        a               sh:PropertyShape ;
+        rdfs:label      "Declares who has issued a permission" ;
+        sh:class        <http://purl.oclc.org/NET/mvco.owl#User> ;
+        sh:description  "Declares who has issued a permission" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/mvco.owl#issuedBy> .
+
+<https://astrea.linkeddata.es/shapes#00ab73a6d407f0839855ecaf21dce646>
+        a               sh:PropertyShape ;
+        rdfs:label      "Relates a composite IPEntity with its constituent IPEntities"@en ;
+        sh:class        <http://purl.oclc.org/NET/mvco.owl#IPEntity> ;
+        sh:description  "Relates a composite IPEntity with its constituent IPEntities"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/mvco.owl#isMadeUpOf> .
+
+<https://astrea.linkeddata.es/shapes#cd9622fe1ab953e387448510e72b1f16>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#Product> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultsIn> .
+
+<https://astrea.linkeddata.es/shapes#f571a3ad8024ba00d5314ec394943d09>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultedFrom> .
+
+<https://astrea.linkeddata.es/shapes#3d15af7b6e437b87dfcfafdcae0b479d>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#Manifestation> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultsIn> .
+
+<https://astrea.linkeddata.es/shapes#4cc25b2c55d7efb7156e1423e6d02b05>
+        a               sh:NodeShape ;
+        sh:description  "A User who produces a Product from an Instance."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ad5af29ee252f331c440f97033fae1e1> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Producer> .
+
+<https://astrea.linkeddata.es/shapes#1eee4ae0f2f23fe843ef498fee3fccb4>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.oclc.org/NET/mvco.owl#Product> .
+
+<https://astrea.linkeddata.es/shapes#a7d7c96c38deace5649475ebe1545634>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#User> ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#hasRightsOwner> .
+
+<https://astrea.linkeddata.es/shapes#d2b696ef63ee299c5b5ecf814cba15e7>
+        a               sh:NodeShape ;
+        sh:description  "A copy of a WorkManifestation."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#WorkManifestationCopy> .
+
+<https://astrea.linkeddata.es/shapes#0b19e9a348790179f9007743c9d8fbf4>
+        a               sh:PropertyShape ;
+        rdfs:label      "distinguishes between digital management of both digital and non digital IP Entities" ;
+        sh:datatype     xsd:boolean ;
+        sh:description  "distinguishes between digital management of both digital and non digital IP Entities" ;
+        sh:maxCount     1 ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://purl.oclc.org/NET/mvco.owl#isDigital> ;
+        sh:pattern      "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#b2d6db6f15b0728c92737d8bf28d9195>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#WorkInstance> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultsIn> .
+
+<https://astrea.linkeddata.es/shapes#0ee86a388be6cadbf7a64784eff49ff2>
+        a               sh:NodeShape ;
+        sh:description  "The action of creating a Work."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#26b6b6f478b941cd5b8c8f7290eac5ad> , <https://astrea.linkeddata.es/shapes#322b57bcfe35dbece396b323c38349b7> , <https://astrea.linkeddata.es/shapes#ce94e3c4fc83c8e92c80debcb3ec7e33> , <https://astrea.linkeddata.es/shapes#ecf4dd00596ac3f8e61683a060ead316> , <https://astrea.linkeddata.es/shapes#a7246fcb4c6e88c9e7842079e2d1fe94> , <https://astrea.linkeddata.es/shapes#26ce78efb9a9d0e3c6842935111e4322> , <https://astrea.linkeddata.es/shapes#513c844e9068da8a0ee9d71882496f0d> , <https://astrea.linkeddata.es/shapes#971fa5323c66f2473535811628fbbc17> , <https://astrea.linkeddata.es/shapes#41d909545162ff1cd12411a099c58476> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#74559d0faeeb69bf9d479fe79cd11813> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#CreateWork> .
+
+<https://astrea.linkeddata.es/shapes#513c844e9068da8a0ee9d71882496f0d>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.oclc.org/NET/mvco.owl#PublicCommunication> .
+
+<https://astrea.linkeddata.es/shapes#15ee6dcda764a4dd3f7e72850997b3e6>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#AdaptationManifestationCopy> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultsIn> .
+
+<https://astrea.linkeddata.es/shapes#7af22ab1e16bafb6d54b4f72855497b9>
+        a               sh:NodeShape ;
+        sh:description  "The Action of making an Instance from a Work Manifestation."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b2d6db6f15b0728c92737d8bf28d9195> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#MakeWorkInstance> .
+
+<https://astrea.linkeddata.es/shapes#5a57b26b7bc6b5460b6745f1550172cf>
+        a               sh:NodeShape ;
+        sh:description  "The Action of making an AdaptationManifestationCopy" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#15ee6dcda764a4dd3f7e72850997b3e6> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#MakeAdaptationManifestationCopy> .
+
+<https://astrea.linkeddata.es/shapes#8005bfc5f9ba68d65c75f6a34db947d5>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#actedOver> .
+
+<https://astrea.linkeddata.es/shapes#20a6c4bfd4e3b583cf02ff578d6cb6f5>
+        a               sh:PropertyShape ;
+        rdfs:label      "Specifies which IPEntity is the object the Action" ;
+        sh:class        <http://purl.oclc.org/NET/mvco.owl#IPEntity> ;
+        sh:description  "Specifies which IPEntity is the object the Action" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/mvco.owl#actedOver> .
+
+<https://astrea.linkeddata.es/shapes#c056b0ede6f2afae812f40b6f6a60e61>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#AdaptationManifestation> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultsIn> .
+
+<https://astrea.linkeddata.es/shapes#d2ed9bca9e5374fa3a772e2cfeb260f9>
+        a               sh:NodeShape ;
+        sh:description  "A creation that retains intellectual or artistic attributes independently of its Manifestations"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#8a17094740475d9294bd1e24673531ba> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Work> .
+
+<https://astrea.linkeddata.es/shapes#cafac853528af3b6693c869121c1f5d6>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#isTrue> .
+
+<https://astrea.linkeddata.es/shapes#406001562edbca3916e0c0ad7214fbf0>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#Action> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultedFrom> .
+
+<https://astrea.linkeddata.es/shapes#20760c5fb56e8b970112f6b3a61d82af>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.oclc.org/NET/mvco.owl#Copy> .
+
+<https://astrea.linkeddata.es/shapes#96b49a50afec0b4b5f77159345694099>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#IPEntity> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#isMadeUpOf> .
+
+<https://astrea.linkeddata.es/shapes#971fa5323c66f2473535811628fbbc17>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.oclc.org/NET/mvco.owl#MakeInstance> .
+
+<https://astrea.linkeddata.es/shapes#c8ffdedb9bf7c402bf01676079b27b03>
+        a               sh:NodeShape ;
+        sh:description  "Types of IP Represented as Content: Work, Adaptation, Manifestation, Instance..."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#aa90c9416d6b0848e779e3cdc9c98026> , <https://astrea.linkeddata.es/shapes#b731d15037dc1a129482b82442dd3382> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#406001562edbca3916e0c0ad7214fbf0> , <https://astrea.linkeddata.es/shapes#c8bfc44c5d834d41e97644b20cbd62a0> , <https://astrea.linkeddata.es/shapes#567799ca1a92d1ed827f732a85c8b6f9> , <https://astrea.linkeddata.es/shapes#00ab73a6d407f0839855ecaf21dce646> , <https://astrea.linkeddata.es/shapes#96b49a50afec0b4b5f77159345694099> , <https://astrea.linkeddata.es/shapes#97630f795f9c18f296cbadcc80f01141> , <https://astrea.linkeddata.es/shapes#04e1fb9a4aad804d50627c6306414c48> , <https://astrea.linkeddata.es/shapes#a7d7c96c38deace5649475ebe1545634> , <https://astrea.linkeddata.es/shapes#0b19e9a348790179f9007743c9d8fbf4> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#IPEntity> .
+
+<https://astrea.linkeddata.es/shapes#48d805b2575feeaad7435495c0fefe51>
+        a               sh:NodeShape ;
+        sh:description  "An object or event which is an expression of a Manifestation of a Work"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#WorkManifestation> .
+
+<https://astrea.linkeddata.es/shapes#aa90c9416d6b0848e779e3cdc9c98026>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.oclc.org/NET/mvco.owl#Permission> .
+
+<https://astrea.linkeddata.es/shapes#0bb65ccc7a529326f31cd05a02e09110>
+        a               sh:NodeShape ;
+        sh:description  "The Function of Delivering Content to a Device where the transferred Content is Processed for Rendering only and not Stored"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Stream> .
+
+<https://astrea.linkeddata.es/shapes#7f96db57c220345606803fe654b2d456>
+        a               sh:NodeShape ;
+        sh:description  "Any person or legal entity in a Value-Chain connecting (and including) Creator and End-User."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b09a900831e70a2f6f5332d4cd667d80> , <https://astrea.linkeddata.es/shapes#06f8d73d4c683fa5f37b2fb9fbf72ebc> , <https://astrea.linkeddata.es/shapes#4c4127ae8157535b0bd402b334f1520d> , <https://astrea.linkeddata.es/shapes#f2caa74414f7e44163919960f3c61db6> , <https://astrea.linkeddata.es/shapes#6d6938953f8e7a10ca47069b49db5070> , <https://astrea.linkeddata.es/shapes#567799ca1a92d1ed827f732a85c8b6f9> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#User> .
+
+<https://astrea.linkeddata.es/shapes#55aa252bbab986da2c55465ebe95b60c>
+        a               sh:PropertyShape ;
+        rdfs:label      "Role who has executed the Action" ;
+        sh:class        <http://purl.oclc.org/NET/mvco.owl#User> ;
+        sh:description  "Role who has executed the Action" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/mvco.owl#actedBy> .
+
+<https://astrea.linkeddata.es/shapes#bdefe63d5cf2edeb40bcb3b20e908f13>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultedFrom> .
+
+<https://astrea.linkeddata.es/shapes#387aa31cb971bdf7e2fbc40f2ad16f89>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://purl.oclc.org/NET/mvco.owl#acts> ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.oclc.org/NET/mvco.owl#MakeInstance> ] .
+
+<https://astrea.linkeddata.es/shapes#8542fc8b8c8b6c7da608d71be6f1a549>
+        a               sh:NodeShape ;
+        sh:description  "A Work that is derived from another Work"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#521e878bc0af2eb77c5f59687c5d7274> , <https://astrea.linkeddata.es/shapes#20760c5fb56e8b970112f6b3a61d82af> , <https://astrea.linkeddata.es/shapes#38feb931062e1926bee7a0d9d531ba1c> , <https://astrea.linkeddata.es/shapes#f4d90086ecf0f30f992c4cfc1e4a8898> , <https://astrea.linkeddata.es/shapes#1eee4ae0f2f23fe843ef498fee3fccb4> ;
+        sh:or           ( [ sh:class  <http://purl.oclc.org/NET/mvco.owl#MakeAdaptation> ;
+                            sh:path   <http://purl.oclc.org/NET/mvco.owl#resultedFrom>
+                          ]
+                          [ sh:class  <http://purl.oclc.org/NET/mvco.owl#Synchronise> ;
+                            sh:path   <http://purl.oclc.org/NET/mvco.owl#resultedFrom>
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d7b946e75a66060182b35618ec483988> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Adaptation> .
+
+<https://astrea.linkeddata.es/shapes#671e17ef88c0980f65d6043e126af093>
+        a               sh:NodeShape ;
+        sh:description  "A copy of an AdaptationManifestation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#AdaptationManifestationCopy> .
+
+<https://astrea.linkeddata.es/shapes#74559d0faeeb69bf9d479fe79cd11813>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#Work> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultsIn> .
+
+<https://astrea.linkeddata.es/shapes#e0bfba2a5c33b79c93f832c6676cbbb0>
+        a               sh:NodeShape ;
+        sh:description  "Authorisation from one RightsOwner to one or more Users to perform one or more Actions on a given IPEntity."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#b731d15037dc1a129482b82442dd3382> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c92718ac91ad4b9b26cd9dba15e7e99d> , <https://astrea.linkeddata.es/shapes#67d6f1aa42d50f97362afc090d541c10> , <https://astrea.linkeddata.es/shapes#5fcc3c87e3b5bbb32016d7542a129f63> , <https://astrea.linkeddata.es/shapes#2df1868c97205ce16f8cb53076acd95f> , <https://astrea.linkeddata.es/shapes#f867e6515f9b1193d928830c40fa3d74> , <https://astrea.linkeddata.es/shapes#768e4cc2bbad2c1f6540ecb579aae713> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Permission> .
+
+<https://astrea.linkeddata.es/shapes#37e48f498a125ed35e36f6651ac8dfc1>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.oclc.org/NET/mvco.owl#IPEntity> .
+
+<https://astrea.linkeddata.es/shapes#7416eb50b4ebc9a91e6fde964bbd3cda>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#Product> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#actedOver> .
+
+<https://astrea.linkeddata.es/shapes#2df1868c97205ce16f8cb53076acd95f>
+        a               sh:PropertyShape ;
+        rdfs:label      "For a Permission to be valid, the Fact has to hold" ;
+        sh:class        <http://purl.oclc.org/NET/mvco.owl#Fact> ;
+        sh:description  "For a Permission to be valid, the Fact has to hold" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/mvco.owl#hasRequired> .
+
+<https://astrea.linkeddata.es/shapes#c8bfc44c5d834d41e97644b20cbd62a0>
+        a               sh:PropertyShape ;
+        rdfs:label      "The dependance of one IP Entity on another."@en ;
+        sh:class        <http://purl.oclc.org/NET/mvco.owl#Action> ;
+        sh:description  "The dependance of one IP Entity on another."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/mvco.owl#resultedFrom> .
+
+<https://astrea.linkeddata.es/shapes#b53e0c2cecad34403879d3e705238a13>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#AdaptationInstance> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultsIn> .
+
+<https://astrea.linkeddata.es/shapes#38feb931062e1926bee7a0d9d531ba1c>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.oclc.org/NET/mvco.owl#Work> .
+
+<https://astrea.linkeddata.es/shapes#5b91b68f89b621470d57b77aa5790d88>
+        a               sh:NodeShape ;
+        sh:description  "The action of making an AdaptationManifestation from an Adaptation."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c056b0ede6f2afae812f40b6f6a60e61> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#MakeAdaptationManifestation> .
+
+<https://astrea.linkeddata.es/shapes#b4dad61712b81efa7bd9263baf020025>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#actedOver> .
+
+<https://astrea.linkeddata.es/shapes#6d6938953f8e7a10ca47069b49db5070>
+        a               sh:PropertyShape ;
+        rdfs:label      "Declares who is the rights owner of this IP Entity" ;
+        sh:class        <http://purl.oclc.org/NET/mvco.owl#IPEntity> ;
+        sh:description  "Declares who is the rights owner of this IP Entity" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/mvco.owl#isRightsOwnerOf> .
+
+<https://astrea.linkeddata.es/shapes#e84861d19c6d10a02f981f33c0a65165>
+        a               sh:NodeShape ;
+        sh:description  "Set of two or more Users."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Collective> .
+
+<https://astrea.linkeddata.es/shapes#4d5c305e2fb32e73781d87380f685e3f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#actedOver> .
+
+<https://astrea.linkeddata.es/shapes#d610bb1b6fc6440e2a9ea866fbc7e711>
+        a               sh:NodeShape ;
+        sh:description  "The Function of selling, renting and lending"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#971fa5323c66f2473535811628fbbc17> , <https://astrea.linkeddata.es/shapes#322b57bcfe35dbece396b323c38349b7> , <https://astrea.linkeddata.es/shapes#26b6b6f478b941cd5b8c8f7290eac5ad> , <https://astrea.linkeddata.es/shapes#513c844e9068da8a0ee9d71882496f0d> , <https://astrea.linkeddata.es/shapes#26ce78efb9a9d0e3c6842935111e4322> , <https://astrea.linkeddata.es/shapes#ce94e3c4fc83c8e92c80debcb3ec7e33> , <https://astrea.linkeddata.es/shapes#41d909545162ff1cd12411a099c58476> , <https://astrea.linkeddata.es/shapes#ecf4dd00596ac3f8e61683a060ead316> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f09da70916221a0e3b025b5db475caa0> , <https://astrea.linkeddata.es/shapes#7416eb50b4ebc9a91e6fde964bbd3cda> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Distribute> .
+
+<https://astrea.linkeddata.es/shapes#ad5af29ee252f331c440f97033fae1e1>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://purl.oclc.org/NET/mvco.owl#acts> ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.oclc.org/NET/mvco.owl#Produce> ] .
+
+<https://astrea.linkeddata.es/shapes#213678596fa88b158bad488e0557ed62>
+        a               sh:NodeShape ;
+        sh:description  "Positive proposition." ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#b731d15037dc1a129482b82442dd3382> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#cafac853528af3b6693c869121c1f5d6> , <https://astrea.linkeddata.es/shapes#a8e85f3573a227357b699a2f252aee8b> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Fact> .
+
+<https://astrea.linkeddata.es/shapes#ce94e3c4fc83c8e92c80debcb3ec7e33>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.oclc.org/NET/mvco.owl#MakeAdaptation> .
+
+<https://astrea.linkeddata.es/shapes#8a17094740475d9294bd1e24673531ba>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#CreateWork> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultedFrom> .
+
+<https://astrea.linkeddata.es/shapes#658e9f0cab20452440dd84e7e473ebb7>
+        a               sh:NodeShape ;
+        sh:description  "Data documenting the functions Actions performed by a Device User on a content item and the associated context" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#b731d15037dc1a129482b82442dd3382> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#UseData> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#a7246fcb4c6e88c9e7842079e2d1fe94>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.oclc.org/NET/mvco.owl#Distribute> .
+
+<https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  owl:Thing .
+
+<https://astrea.linkeddata.es/shapes#278cd13e5c3203bff98ddfa005ec2533>
+        a               sh:NodeShape ;
+        sh:description  "A copy of a WorkInstance"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#WorkInstanceCopy> .
+
+<https://astrea.linkeddata.es/shapes#9853a6d26c52207983557507b9dd9632>
+        a               sh:NodeShape ;
+        sh:description  "A copy of an AdaptationInstance"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#AdaptationInstanceCopy> .
+
+<https://astrea.linkeddata.es/shapes#ee5368d68f4c0d4c253fd8353563caff>
+        a               sh:NodeShape ;
+        sh:description  "The Action of making an Instance from an AdaptationManifestation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b53e0c2cecad34403879d3e705238a13> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#MakeAdaptationInstance> .
+
+<https://astrea.linkeddata.es/shapes#5d4c79b106d22d95d77e633decbde76e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#actedOver> .
+
+<https://astrea.linkeddata.es/shapes#92b8919c10bfb25a3cf451908204b750>
+        a               sh:NodeShape ;
+        sh:description  "The Action of making an Instance from a Manifestation."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#41d909545162ff1cd12411a099c58476> , <https://astrea.linkeddata.es/shapes#ecf4dd00596ac3f8e61683a060ead316> , <https://astrea.linkeddata.es/shapes#513c844e9068da8a0ee9d71882496f0d> , <https://astrea.linkeddata.es/shapes#322b57bcfe35dbece396b323c38349b7> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#eacd7c8869019cce264e15570b2065cc> , <https://astrea.linkeddata.es/shapes#8005bfc5f9ba68d65c75f6a34db947d5> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#MakeInstance> .
+
+<https://astrea.linkeddata.es/shapes#ba55ca7da4e14a818d7a130a1068d928>
+        a               sh:PropertyShape ;
+        rdfs:label      "Declares which IPentity arises as a result of the execution of an Action. It is a functional relation."@en ;
+        sh:class        <http://purl.oclc.org/NET/mvco.owl#IPEntity> ;
+        sh:description  "Declares which IPentity arises as a result of the execution of an Action. It is a functional relation."@en ;
+        sh:maxCount     1 ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/mvco.owl#resultsIn> .
+
+<https://astrea.linkeddata.es/shapes#7fb894f679b7c8083ed821f88ccb5663>
+        a               sh:NodeShape ;
+        sh:description  "The Action of concurrently performing/displaying two distinct IP Entities each for a different human sense e.g. text and audio or video and song"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c0b38055e81f8de9f959b341c0a21b59> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Synchronise> .
+
+<https://astrea.linkeddata.es/shapes#f2c349bd309fd057b2a68a536cca630f>
+        a               sh:NodeShape ;
+        sh:description  "An object or event which is an expression of a Work."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#38feb931062e1926bee7a0d9d531ba1c> , <https://astrea.linkeddata.es/shapes#1eee4ae0f2f23fe843ef498fee3fccb4> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#bdefe63d5cf2edeb40bcb3b20e908f13> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Manifestation> .
+
+<https://astrea.linkeddata.es/shapes#ecf4dd00596ac3f8e61683a060ead316>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.oclc.org/NET/mvco.owl#Produce> .
+
+<https://astrea.linkeddata.es/shapes#d6279e7caa017353454e6585cf14f254>
+        a               sh:NodeShape ;
+        sh:description  "A User who generates a Work and makes its first Manifestation, also referred to as author"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#bb4b038c29b9fa31f1fddb9c2572013e> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Creator> .
+
+<https://astrea.linkeddata.es/shapes#bd0e9d1c39dc7e212fde5657b52749cc>
+        a               sh:NodeShape ;
+        sh:description  "The Action of transferring a file or program from a central computer to a smaller computer or to a computer at a remote location"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Download> .
+
+<https://astrea.linkeddata.es/shapes#aea7964c6330f05790db7160c318807f>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://purl.oclc.org/NET/mvco.owl#actOnBehalfOf> ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.oclc.org/NET/mvco.owl#User> ] .
+
+<https://astrea.linkeddata.es/shapes#b09a900831e70a2f6f5332d4cd667d80>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#Action> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#acts> .
+
+<https://astrea.linkeddata.es/shapes#3b26bae25ba7fdf2d78444211dd6d61f>
+        a               sh:NodeShape ;
+        sh:description  "The exercise of a Right."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#37e48f498a125ed35e36f6651ac8dfc1> , <https://astrea.linkeddata.es/shapes#b731d15037dc1a129482b82442dd3382> , <https://astrea.linkeddata.es/shapes#aa90c9416d6b0848e779e3cdc9c98026> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#20a6c4bfd4e3b583cf02ff578d6cb6f5> , <https://astrea.linkeddata.es/shapes#ba55ca7da4e14a818d7a130a1068d928> , <https://astrea.linkeddata.es/shapes#55aa252bbab986da2c55465ebe95b60c> , <https://astrea.linkeddata.es/shapes#6a2ea26b04952819c112708f4cd90d4f> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Action> .
+
+<https://astrea.linkeddata.es/shapes#768e4cc2bbad2c1f6540ecb579aae713>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#Fact> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#hasRequired> .
+
+<https://astrea.linkeddata.es/shapes#4c109e7c931fe4c062f57659b7971c6c>
+        a               sh:NodeShape ;
+        sh:description  "A User who produces an Adaptation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#21158dabf1efb545c353331c1520370c> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Adaptor> .
+
+<https://astrea.linkeddata.es/shapes#664e754a2b2dee50534307ace2744b12>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#actedOver> .
+
+<https://astrea.linkeddata.es/shapes#192ec0ac3e9580a5ffe56af50f6eb9d4>
+        a               sh:NodeShape ;
+        sh:description  "Action performed by an EndUser" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#322b57bcfe35dbece396b323c38349b7> , <https://astrea.linkeddata.es/shapes#ecf4dd00596ac3f8e61683a060ead316> , <https://astrea.linkeddata.es/shapes#41d909545162ff1cd12411a099c58476> , <https://astrea.linkeddata.es/shapes#513c844e9068da8a0ee9d71882496f0d> , <https://astrea.linkeddata.es/shapes#971fa5323c66f2473535811628fbbc17> , <https://astrea.linkeddata.es/shapes#ce94e3c4fc83c8e92c80debcb3ec7e33> , <https://astrea.linkeddata.es/shapes#26b6b6f478b941cd5b8c8f7290eac5ad> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#6851d224e0bdb8c025c01fbdf98c1d34> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#EndUserAction> .
+
+<https://astrea.linkeddata.es/shapes#149316f1da7c62b5f8aff3ef1ef25aac>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://purl.oclc.org/NET/mvco.owl#acts> ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.oclc.org/NET/mvco.owl#Distribute> ] .
+
+<https://astrea.linkeddata.es/shapes#90dd8512b063ac8636fa19cc12ebe0c4>
+        a               sh:NodeShape ;
+        sh:description  "User who is appointed to act on Content on behalf and within the scope and responsability of another User´s rights."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e865e6ce3a9d5ff889f5b5161363e51b> , <https://astrea.linkeddata.es/shapes#aea7964c6330f05790db7160c318807f> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#ContentHandler> .
+
+<https://astrea.linkeddata.es/shapes#8b4910683303827b9fdeacea8aa48692>
+        a               sh:NodeShape ;
+        sh:description  "An object or event which is an example of an Identified Adaptation Manifestation (e.g. a File)"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#AdaptationInstance> .
+
+<https://astrea.linkeddata.es/shapes#7ec127c2bc49394fd7a7087d7ac7cc37>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#AdaptationInstanceCopy> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultsIn> .
+
+<https://astrea.linkeddata.es/shapes#567799ca1a92d1ed827f732a85c8b6f9>
+        a               sh:PropertyShape ;
+        rdfs:label      "Attributes a social tag: text, commentary, critique, synopsis (e.g. FOAF)..." ;
+        sh:datatype     xsd:string ;
+        sh:description  "Attributes a social tag: text, commentary, critique, synopsis (e.g. FOAF)..." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.oclc.org/NET/mvco.owl#hasSocialTag> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#2e084becb0e04d0695af00e4773fa6bc>
+        a               sh:NodeShape ;
+        sh:description  "Fact related to the invokation of a CopyrightException" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#CopyrightExceptionFact> .
+
+<https://astrea.linkeddata.es/shapes#834b86ed92e30532cf926fcf270eedc9>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultedFrom> .
+
+<https://astrea.linkeddata.es/shapes#41d909545162ff1cd12411a099c58476>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.oclc.org/NET/mvco.owl#MakeManifestation> .
+
+<https://astrea.linkeddata.es/shapes#6a2ea26b04952819c112708f4cd90d4f>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#User> ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#actedBy> .
+
+<https://astrea.linkeddata.es/shapes#d1fdbdc05ec068afbaa7d1998036061e>
+        a               sh:NodeShape ;
+        sh:description  "The action of making a Manifestation from Work."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b39b9ee10999aae90fee4ac13807a888> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#MakeWorkManifestation> .
+
+<https://astrea.linkeddata.es/shapes#97630f795f9c18f296cbadcc80f01141>
+        a               sh:PropertyShape ;
+        rdfs:label      "It allows the identification information that is related to a Digital Item (or parts thereof)." ;
+        sh:datatype     xsd:string ;
+        sh:description  "It allows the identification information that is related to a Digital Item (or parts thereof)." ;
+        sh:maxCount     1 ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <urn:mpeg:mpeg21:2002:01-DII-NS#RelatedIdentifier> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#e865e6ce3a9d5ff889f5b5161363e51b>
+        a               sh:PropertyShape ;
+        rdfs:label      "Relates a ContentHandler with the User under the auspices of which the ContentHandler operates."@en ;
+        sh:class        <http://purl.oclc.org/NET/mvco.owl#User> ;
+        sh:description  "Relates a ContentHandler with the User under the auspices of which the ContentHandler operates."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/mvco.owl#actOnBehalfOf> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#eeb2edb4e0338747f9af1215ac879766> , <https://astrea.linkeddata.es/shapes#74559d0faeeb69bf9d479fe79cd11813> , <https://astrea.linkeddata.es/shapes#213678596fa88b158bad488e0557ed62> , <https://astrea.linkeddata.es/shapes#00ab73a6d407f0839855ecaf21dce646> , <https://astrea.linkeddata.es/shapes#15ee6dcda764a4dd3f7e72850997b3e6> , <https://astrea.linkeddata.es/shapes#b2d6db6f15b0728c92737d8bf28d9195> , <https://astrea.linkeddata.es/shapes#c056b0ede6f2afae812f40b6f6a60e61> , <https://astrea.linkeddata.es/shapes#6c34a3b91f269d421b31f41b26a40a00> , <https://astrea.linkeddata.es/shapes#d2b696ef63ee299c5b5ecf814cba15e7> , <https://astrea.linkeddata.es/shapes#6a4660b0188ad8de72445d58c3d2e6a4> , <https://astrea.linkeddata.es/shapes#dac31b7e16da4316ad01dbd207def6a4> , <https://astrea.linkeddata.es/shapes#d29f309ea9bfa320f49fa9a610f20981> , <https://astrea.linkeddata.es/shapes#b39b9ee10999aae90fee4ac13807a888> , <https://astrea.linkeddata.es/shapes#8a17094740475d9294bd1e24673531ba> , <https://astrea.linkeddata.es/shapes#f867e6515f9b1193d928830c40fa3d74> , <https://astrea.linkeddata.es/shapes#04e1fb9a4aad804d50627c6306414c48> , <https://astrea.linkeddata.es/shapes#21158dabf1efb545c353331c1520370c> , <https://astrea.linkeddata.es/shapes#658e9f0cab20452440dd84e7e473ebb7> , <https://astrea.linkeddata.es/shapes#ba55ca7da4e14a818d7a130a1068d928> , <https://astrea.linkeddata.es/shapes#35e81a506a64557578bd126f2fc6b815> , <https://astrea.linkeddata.es/shapes#ee5368d68f4c0d4c253fd8353563caff> , <https://astrea.linkeddata.es/shapes#84fc5f92cf2a3f7e09b6fad0c44f074c> , <https://astrea.linkeddata.es/shapes#d4d8dc0e8aead0615d13368fe195fa03> , <https://astrea.linkeddata.es/shapes#6d6938953f8e7a10ca47069b49db5070> , <https://astrea.linkeddata.es/shapes#a7d7c96c38deace5649475ebe1545634> , <https://astrea.linkeddata.es/shapes#16944fd0b46bb39259d19baa62550fb3> , <https://astrea.linkeddata.es/shapes#10a2b68e090fc22a4421947526be1e64> , <https://astrea.linkeddata.es/shapes#f4d90086ecf0f30f992c4cfc1e4a8898> , <https://astrea.linkeddata.es/shapes#4c58f6b0d5fde061073e3a90110032a7> , <https://astrea.linkeddata.es/shapes#3b26bae25ba7fdf2d78444211dd6d61f> , <https://astrea.linkeddata.es/shapes#d7b946e75a66060182b35618ec483988> , <https://astrea.linkeddata.es/shapes#7fb894f679b7c8083ed821f88ccb5663> , <https://astrea.linkeddata.es/shapes#20ce71303697b8d8dd67aeb7af24ba1d> , <https://astrea.linkeddata.es/shapes#f5e757320668290c73f1ee437f175174> , <https://astrea.linkeddata.es/shapes#f571a3ad8024ba00d5314ec394943d09> , <https://astrea.linkeddata.es/shapes#b4dad61712b81efa7bd9263baf020025> , <https://astrea.linkeddata.es/shapes#0b19e9a348790179f9007743c9d8fbf4> , <https://astrea.linkeddata.es/shapes#e865e6ce3a9d5ff889f5b5161363e51b> , <https://astrea.linkeddata.es/shapes#a7246fcb4c6e88c9e7842079e2d1fe94> , <https://astrea.linkeddata.es/shapes#567799ca1a92d1ed827f732a85c8b6f9> , <https://astrea.linkeddata.es/shapes#3c1ef4cc4c7977eb48d252b3daf2aa51> , <https://astrea.linkeddata.es/shapes#06f8d73d4c683fa5f37b2fb9fbf72ebc> , <https://astrea.linkeddata.es/shapes#01220be4232724e52aacf250d8242e72> , <https://astrea.linkeddata.es/shapes#971fa5323c66f2473535811628fbbc17> , <https://astrea.linkeddata.es/shapes#6b95617e06335b64f2485109319d4f16> , <https://astrea.linkeddata.es/shapes#37e48f498a125ed35e36f6651ac8dfc1> , <https://astrea.linkeddata.es/shapes#4c4127ae8157535b0bd402b334f1520d> , <https://astrea.linkeddata.es/shapes#387aa31cb971bdf7e2fbc40f2ad16f89> , <https://astrea.linkeddata.es/shapes#1eee4ae0f2f23fe843ef498fee3fccb4> , <https://astrea.linkeddata.es/shapes#38feb931062e1926bee7a0d9d531ba1c> , <https://astrea.linkeddata.es/shapes#0ee86a388be6cadbf7a64784eff49ff2> , <https://astrea.linkeddata.es/shapes#aea7964c6330f05790db7160c318807f> , <https://astrea.linkeddata.es/shapes#b09a900831e70a2f6f5332d4cd667d80> , <https://astrea.linkeddata.es/shapes#41d909545162ff1cd12411a099c58476> , <https://astrea.linkeddata.es/shapes#3d15af7b6e437b87dfcfafdcae0b479d> , <https://astrea.linkeddata.es/shapes#90dd8512b063ac8636fa19cc12ebe0c4> , <https://astrea.linkeddata.es/shapes#dba30ee3be49c7ae482bada88f2ecd71> , <https://astrea.linkeddata.es/shapes#d6279e7caa017353454e6585cf14f254> , <https://astrea.linkeddata.es/shapes#48d805b2575feeaad7435495c0fefe51> , <https://astrea.linkeddata.es/shapes#9f97974ab73ba646a179b9ee26d55972> , <https://astrea.linkeddata.es/shapes#8005bfc5f9ba68d65c75f6a34db947d5> , <https://astrea.linkeddata.es/shapes#266e8d7ceada4059cd2bdd1211204d46> , <https://astrea.linkeddata.es/shapes#6a2ea26b04952819c112708f4cd90d4f> , <https://astrea.linkeddata.es/shapes#26b6b6f478b941cd5b8c8f7290eac5ad> , <https://astrea.linkeddata.es/shapes#a8e85f3573a227357b699a2f252aee8b> , <https://astrea.linkeddata.es/shapes#d78d003b044bb4e28fa0cc70b72a5eb2> , <https://astrea.linkeddata.es/shapes#d610bb1b6fc6440e2a9ea866fbc7e711> , <https://astrea.linkeddata.es/shapes#6851d224e0bdb8c025c01fbdf98c1d34> , <https://astrea.linkeddata.es/shapes#26ce78efb9a9d0e3c6842935111e4322> , <https://astrea.linkeddata.es/shapes#f09da70916221a0e3b025b5db475caa0> , <https://astrea.linkeddata.es/shapes#c92718ac91ad4b9b26cd9dba15e7e99d> , <https://astrea.linkeddata.es/shapes#192ec0ac3e9580a5ffe56af50f6eb9d4> , <https://astrea.linkeddata.es/shapes#bd0e9d1c39dc7e212fde5657b52749cc> , <https://astrea.linkeddata.es/shapes#96b49a50afec0b4b5f77159345694099> , <https://astrea.linkeddata.es/shapes#e98d17e332b2d11587656fd50a46d8e7> , <https://astrea.linkeddata.es/shapes#b53e0c2cecad34403879d3e705238a13> , <https://astrea.linkeddata.es/shapes#9f89eeea418447e5d2bf7cb8f3f60767> , <https://astrea.linkeddata.es/shapes#406001562edbca3916e0c0ad7214fbf0> , <https://astrea.linkeddata.es/shapes#4d5c305e2fb32e73781d87380f685e3f> , <https://astrea.linkeddata.es/shapes#2df1868c97205ce16f8cb53076acd95f> , <https://astrea.linkeddata.es/shapes#fc9457d3a7bb30c0d9ae6739afea20de> , <https://astrea.linkeddata.es/shapes#b731d15037dc1a129482b82442dd3382> , <https://astrea.linkeddata.es/shapes#bb4b038c29b9fa31f1fddb9c2572013e> , <https://astrea.linkeddata.es/shapes#9853a6d26c52207983557507b9dd9632> , <https://astrea.linkeddata.es/shapes#bdefe63d5cf2edeb40bcb3b20e908f13> , <https://astrea.linkeddata.es/shapes#2e084becb0e04d0695af00e4773fa6bc> , <https://astrea.linkeddata.es/shapes#97630f795f9c18f296cbadcc80f01141> , <https://astrea.linkeddata.es/shapes#cafac853528af3b6693c869121c1f5d6> , <https://astrea.linkeddata.es/shapes#e0bfba2a5c33b79c93f832c6676cbbb0> , <https://astrea.linkeddata.es/shapes#f2caa74414f7e44163919960f3c61db6> , <https://astrea.linkeddata.es/shapes#671e17ef88c0980f65d6043e126af093> , <https://astrea.linkeddata.es/shapes#149316f1da7c62b5f8aff3ef1ef25aac> , <https://astrea.linkeddata.es/shapes#5d4c79b106d22d95d77e633decbde76e> , <https://astrea.linkeddata.es/shapes#834b86ed92e30532cf926fcf270eedc9> , <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#d2ed9bca9e5374fa3a772e2cfeb260f9> , <https://astrea.linkeddata.es/shapes#50b59993ddc4bf3b01b3a1c0e85d8ff9> , <https://astrea.linkeddata.es/shapes#5fcc3c87e3b5bbb32016d7542a129f63> , <https://astrea.linkeddata.es/shapes#cb0f9059aa7d3fb9be70d626e249b604> , <https://astrea.linkeddata.es/shapes#7ec127c2bc49394fd7a7087d7ac7cc37> , <https://astrea.linkeddata.es/shapes#278cd13e5c3203bff98ddfa005ec2533> , <https://astrea.linkeddata.es/shapes#20a6c4bfd4e3b583cf02ff578d6cb6f5> , <https://astrea.linkeddata.es/shapes#f2c349bd309fd057b2a68a536cca630f> , <https://astrea.linkeddata.es/shapes#664e754a2b2dee50534307ace2744b12> , <https://astrea.linkeddata.es/shapes#768e4cc2bbad2c1f6540ecb579aae713> , <https://astrea.linkeddata.es/shapes#5b91b68f89b621470d57b77aa5790d88> , <https://astrea.linkeddata.es/shapes#fd6bf0c8628922a9816c126b2811246c> , <https://astrea.linkeddata.es/shapes#7f96db57c220345606803fe654b2d456> , <https://astrea.linkeddata.es/shapes#c0b38055e81f8de9f959b341c0a21b59> , <https://astrea.linkeddata.es/shapes#20760c5fb56e8b970112f6b3a61d82af> , <https://astrea.linkeddata.es/shapes#f95571540e14b0262d3ada9d88d9da60> , <https://astrea.linkeddata.es/shapes#eacd7c8869019cce264e15570b2065cc> , <https://astrea.linkeddata.es/shapes#3761614f0ad8d877a7980e053a92d558> , <https://astrea.linkeddata.es/shapes#55aa252bbab986da2c55465ebe95b60c> , <https://astrea.linkeddata.es/shapes#d1fdbdc05ec068afbaa7d1998036061e> , <https://astrea.linkeddata.es/shapes#c8bfc44c5d834d41e97644b20cbd62a0> , <https://astrea.linkeddata.es/shapes#ce94e3c4fc83c8e92c80debcb3ec7e33> , <https://astrea.linkeddata.es/shapes#322b57bcfe35dbece396b323c38349b7> , <https://astrea.linkeddata.es/shapes#4cc25b2c55d7efb7156e1423e6d02b05> , <https://astrea.linkeddata.es/shapes#aa90c9416d6b0848e779e3cdc9c98026> , <https://astrea.linkeddata.es/shapes#b5ca866d723a5d77a1d013285b314266> , <https://astrea.linkeddata.es/shapes#513c844e9068da8a0ee9d71882496f0d> , <https://astrea.linkeddata.es/shapes#5a57b26b7bc6b5460b6745f1550172cf> , <https://astrea.linkeddata.es/shapes#e84861d19c6d10a02f981f33c0a65165> , <https://astrea.linkeddata.es/shapes#4c109e7c931fe4c062f57659b7971c6c> , <https://astrea.linkeddata.es/shapes#8b4910683303827b9fdeacea8aa48692> , <https://astrea.linkeddata.es/shapes#8542fc8b8c8b6c7da608d71be6f1a549> , <https://astrea.linkeddata.es/shapes#b55be9a0982cc5c982d3d51644b6b3bd> , <https://astrea.linkeddata.es/shapes#c8ffdedb9bf7c402bf01676079b27b03> , <https://astrea.linkeddata.es/shapes#67d6f1aa42d50f97362afc090d541c10> , <https://astrea.linkeddata.es/shapes#7af22ab1e16bafb6d54b4f72855497b9> , <https://astrea.linkeddata.es/shapes#92b8919c10bfb25a3cf451908204b750> , <https://astrea.linkeddata.es/shapes#7416eb50b4ebc9a91e6fde964bbd3cda> , <https://astrea.linkeddata.es/shapes#521e878bc0af2eb77c5f59687c5d7274> , <https://astrea.linkeddata.es/shapes#ecf4dd00596ac3f8e61683a060ead316> , <https://astrea.linkeddata.es/shapes#ad5af29ee252f331c440f97033fae1e1> , <https://astrea.linkeddata.es/shapes#cd9622fe1ab953e387448510e72b1f16> , <https://astrea.linkeddata.es/shapes#0bb65ccc7a529326f31cd05a02e09110> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#01220be4232724e52aacf250d8242e72>
+        a               sh:NodeShape ;
+        sh:description  "The Function of publicly displaying/performing, e.g. live performance, radio, television, internet streaming, multicast of Instances and Manifestations, and download"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#322b57bcfe35dbece396b323c38349b7> ;
+        sh:or           ( [ sh:class  <http://purl.oclc.org/NET/mvco.owl#Copy> ;
+                            sh:path   <http://purl.oclc.org/NET/mvco.owl#actedOver>
+                          ]
+                          [ sh:class  <http://purl.oclc.org/NET/mvco.owl#Instance> ;
+                            sh:path   <http://purl.oclc.org/NET/mvco.owl#actedOver>
+                          ]
+                          [ sh:class  <http://purl.oclc.org/NET/mvco.owl#Product> ;
+                            sh:path   <http://purl.oclc.org/NET/mvco.owl#actedOver>
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#664e754a2b2dee50534307ace2744b12> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#PublicCommunication> .
+
+<https://astrea.linkeddata.es/shapes#d78d003b044bb4e28fa0cc70b72a5eb2>
+        a               sh:NodeShape ;
+        sh:description  "Permission to invoke one right exceptionally." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#eeb2edb4e0338747f9af1215ac879766> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#CopyrightExceptionPermission> .
+
+<https://astrea.linkeddata.es/shapes#a8e85f3573a227357b699a2f252aee8b>
+        a               sh:PropertyShape ;
+        rdfs:label      "Truth of a proposition" ;
+        sh:datatype     xsd:boolean ;
+        sh:description  "Truth of a proposition" ;
+        sh:maxCount     1 ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://purl.oclc.org/NET/mvco.owl#isTrue> ;
+        sh:pattern      "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#6a4660b0188ad8de72445d58c3d2e6a4>
+        a               sh:NodeShape ;
+        sh:description  "A User in a Value-Chain who ultimately consumes Content."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f95571540e14b0262d3ada9d88d9da60> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#EndUser> .
+
+<https://astrea.linkeddata.es/shapes#f5e757320668290c73f1ee437f175174>
+        a               sh:NodeShape ;
+        sh:description  "The action of making a Manifestation."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#513c844e9068da8a0ee9d71882496f0d> , <https://astrea.linkeddata.es/shapes#ecf4dd00596ac3f8e61683a060ead316> , <https://astrea.linkeddata.es/shapes#322b57bcfe35dbece396b323c38349b7> ;
+        sh:or           ( [ sh:class  <http://purl.oclc.org/NET/mvco.owl#Adaptation> ;
+                            sh:path   <http://purl.oclc.org/NET/mvco.owl#actedOver>
+                          ]
+                          [ sh:class  <http://purl.oclc.org/NET/mvco.owl#Work> ;
+                            sh:path   <http://purl.oclc.org/NET/mvco.owl#actedOver>
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#3d15af7b6e437b87dfcfafdcae0b479d> , <https://astrea.linkeddata.es/shapes#4d5c305e2fb32e73781d87380f685e3f> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#MakeManifestation> .
+
+<https://astrea.linkeddata.es/shapes#06f8d73d4c683fa5f37b2fb9fbf72ebc>
+        a               sh:PropertyShape ;
+        rdfs:label      "Relates a User with a Collective"@en ;
+        sh:class        <http://purl.oclc.org/NET/mvco.owl#Collective> ;
+        sh:description  "Relates a User with a Collective"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/mvco.owl#belongsTo> .
+
+<https://astrea.linkeddata.es/shapes#f2caa74414f7e44163919960f3c61db6>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#Collective> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#belongsTo> .
+
+<https://astrea.linkeddata.es/shapes#eeb2edb4e0338747f9af1215ac879766>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#hasRequired> .
+
+<https://astrea.linkeddata.es/shapes#3761614f0ad8d877a7980e053a92d558>
+        a               sh:NodeShape ;
+        sh:description  "The Action of making an AdaptationInstanceCopy"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#7ec127c2bc49394fd7a7087d7ac7cc37> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#MakeAdaptationInstanceCopy> .
+
+<https://astrea.linkeddata.es/shapes#fd6bf0c8628922a9816c126b2811246c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#actedOver> .
+
+<https://astrea.linkeddata.es/shapes#eacd7c8869019cce264e15570b2065cc>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultsIn> .
+
+<https://astrea.linkeddata.es/shapes#fc9457d3a7bb30c0d9ae6739afea20de>
+        a               sh:NodeShape ;
+        sh:description  "The Action of generating a human-perceivable signal"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Render> .
+
+<https://astrea.linkeddata.es/shapes#cb0f9059aa7d3fb9be70d626e249b604>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#WorkManifestationCopy> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultsIn> .
+
+<https://astrea.linkeddata.es/shapes#f95571540e14b0262d3ada9d88d9da60>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://purl.oclc.org/NET/mvco.owl#acts> ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.oclc.org/NET/mvco.owl#EndUserAction> ] .
+
+<https://astrea.linkeddata.es/shapes#f4d90086ecf0f30f992c4cfc1e4a8898>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.oclc.org/NET/mvco.owl#Manifestation> .
+
+<https://astrea.linkeddata.es/shapes#6851d224e0bdb8c025c01fbdf98c1d34>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#Product> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#actedOver> .
+
+<https://astrea.linkeddata.es/shapes#3c1ef4cc4c7977eb48d252b3daf2aa51>
+        a               sh:NodeShape ;
+        sh:description  "The Action of making a Copy"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#971fa5323c66f2473535811628fbbc17> , <https://astrea.linkeddata.es/shapes#41d909545162ff1cd12411a099c58476> , <https://astrea.linkeddata.es/shapes#ecf4dd00596ac3f8e61683a060ead316> , <https://astrea.linkeddata.es/shapes#513c844e9068da8a0ee9d71882496f0d> , <https://astrea.linkeddata.es/shapes#322b57bcfe35dbece396b323c38349b7> ;
+        sh:or           ( [ sh:class  <http://purl.oclc.org/NET/mvco.owl#Instance> ;
+                            sh:path   <http://purl.oclc.org/NET/mvco.owl#actedOver>
+                          ]
+                          [ sh:class  <http://purl.oclc.org/NET/mvco.owl#Manifestation> ;
+                            sh:path   <http://purl.oclc.org/NET/mvco.owl#actedOver>
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#16944fd0b46bb39259d19baa62550fb3> , <https://astrea.linkeddata.es/shapes#5d4c79b106d22d95d77e633decbde76e> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#MakeCopy> .
+
+<https://astrea.linkeddata.es/shapes#f867e6515f9b1193d928830c40fa3d74>
+        a               sh:PropertyShape ;
+        rdfs:label      "Relation used to express the Actions that are allowed to be performed."@en ;
+        sh:class        <http://purl.oclc.org/NET/mvco.owl#Action> ;
+        sh:description  "Relation used to express the Actions that are allowed to be performed."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/mvco.owl#permitsAction> .
+
+<https://astrea.linkeddata.es/shapes#04e1fb9a4aad804d50627c6306414c48>
+        a               sh:PropertyShape ;
+        rdfs:label      "Defines the owner of the Rights over an IP Entity."@en ;
+        sh:class        <http://purl.oclc.org/NET/mvco.owl#User> ;
+        sh:description  "Defines the owner of the Rights over an IP Entity."@en ;
+        sh:maxCount     1 ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/mvco.owl#hasRightsOwner> .
+
+<https://astrea.linkeddata.es/shapes#21158dabf1efb545c353331c1520370c>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://purl.oclc.org/NET/mvco.owl#acts> ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.oclc.org/NET/mvco.owl#MakeAdaptation> ] .
+
+<https://astrea.linkeddata.es/shapes#b55be9a0982cc5c982d3d51644b6b3bd>
+        a               sh:NodeShape ;
+        sh:description  "The Function of making Products"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#513c844e9068da8a0ee9d71882496f0d> , <https://astrea.linkeddata.es/shapes#322b57bcfe35dbece396b323c38349b7> ;
+        sh:or           ( [ sh:class  <http://purl.oclc.org/NET/mvco.owl#Copy> ;
+                            sh:path   <http://purl.oclc.org/NET/mvco.owl#actedOver>
+                          ]
+                          [ sh:class  <http://purl.oclc.org/NET/mvco.owl#Instance> ;
+                            sh:path   <http://purl.oclc.org/NET/mvco.owl#actedOver>
+                          ]
+                          [ sh:class  <http://purl.oclc.org/NET/mvco.owl#Manifestation> ;
+                            sh:path   <http://purl.oclc.org/NET/mvco.owl#actedOver>
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#fd6bf0c8628922a9816c126b2811246c> , <https://astrea.linkeddata.es/shapes#cd9622fe1ab953e387448510e72b1f16> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Produce> .
+
+<https://astrea.linkeddata.es/shapes#16944fd0b46bb39259d19baa62550fb3>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#Copy> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultsIn> .
+
+<https://astrea.linkeddata.es/shapes#26b6b6f478b941cd5b8c8f7290eac5ad>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.oclc.org/NET/mvco.owl#MakeCopy> .
+
+<https://astrea.linkeddata.es/shapes#dba30ee3be49c7ae482bada88f2ecd71>
+        a               sh:NodeShape ;
+        sh:description  "The Action of making a WorkManifestationCopy"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#cb0f9059aa7d3fb9be70d626e249b604> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#MakeWorkManifestationCopy> .
+
+<https://astrea.linkeddata.es/shapes#f09da70916221a0e3b025b5db475caa0>
+        a            sh:PropertyShape ;
+        sh:maxCount  "0"^^xsd:nonNegativeInteger ;
+        sh:minCount  "0"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultsIn> .
+
+<https://astrea.linkeddata.es/shapes#50b59993ddc4bf3b01b3a1c0e85d8ff9>
+        a               sh:NodeShape ;
+        sh:description  "The Function that Delivers Content to a Device in a point-to-multipoint modality"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Broadcast> .
+
+<https://astrea.linkeddata.es/shapes#20ce71303697b8d8dd67aeb7af24ba1d>
+        a               sh:NodeShape ;
+        sh:description  "A Content Item that adds value to IP Entities by including them with an appropriate Licence for the purpose of Publishing"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#38feb931062e1926bee7a0d9d531ba1c> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#834b86ed92e30532cf926fcf270eedc9> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Product> .
+
+<https://astrea.linkeddata.es/shapes#4c4127ae8157535b0bd402b334f1520d>
+        a               sh:PropertyShape ;
+        rdfs:label      "Performance of an Action by a User" ;
+        sh:class        <http://purl.oclc.org/NET/mvco.owl#Action> ;
+        sh:description  "Performance of an Action by a User" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/mvco.owl#acts> .
+
+<https://astrea.linkeddata.es/shapes#266e8d7ceada4059cd2bdd1211204d46>
+        a               sh:NodeShape ;
+        sh:description  "The action of moving the location of a content"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#MoveContent> .
+
+<https://astrea.linkeddata.es/shapes#9f97974ab73ba646a179b9ee26d55972>
+        a               sh:NodeShape ;
+        sh:description  "The Action of making a WorkInstanceCopy"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#4c58f6b0d5fde061073e3a90110032a7> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#MakeWorkInstanceCopy> .
+
+<https://astrea.linkeddata.es/shapes#dac31b7e16da4316ad01dbd207def6a4>
+        a               sh:NodeShape ;
+        sh:description  "The Action of making an Adaptation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#513c844e9068da8a0ee9d71882496f0d> , <https://astrea.linkeddata.es/shapes#971fa5323c66f2473535811628fbbc17> , <https://astrea.linkeddata.es/shapes#ecf4dd00596ac3f8e61683a060ead316> , <https://astrea.linkeddata.es/shapes#322b57bcfe35dbece396b323c38349b7> , <https://astrea.linkeddata.es/shapes#26b6b6f478b941cd5b8c8f7290eac5ad> , <https://astrea.linkeddata.es/shapes#41d909545162ff1cd12411a099c58476> ;
+        sh:or           ( [ sh:class  <http://purl.oclc.org/NET/mvco.owl#Adaptation> ;
+                            sh:path   <http://purl.oclc.org/NET/mvco.owl#actedOver>
+                          ]
+                          [ sh:class  <http://purl.oclc.org/NET/mvco.owl#Work> ;
+                            sh:path   <http://purl.oclc.org/NET/mvco.owl#actedOver>
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b4dad61712b81efa7bd9263baf020025> , <https://astrea.linkeddata.es/shapes#b5ca866d723a5d77a1d013285b314266> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#MakeAdaptation> .
+
+<https://astrea.linkeddata.es/shapes#c0b38055e81f8de9f959b341c0a21b59>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#Work> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#actedOver> .
+
+<https://astrea.linkeddata.es/shapes#322b57bcfe35dbece396b323c38349b7>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.oclc.org/NET/mvco.owl#Synchronise> .
+
+<https://astrea.linkeddata.es/shapes#e98d17e332b2d11587656fd50a46d8e7>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultedFrom> .
+
+<https://astrea.linkeddata.es/shapes#26ce78efb9a9d0e3c6842935111e4322>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.oclc.org/NET/mvco.owl#EndUserAction> .
+
+<https://astrea.linkeddata.es/shapes#10a2b68e090fc22a4421947526be1e64>
+        a               sh:PropertyShape ;
+        rdfs:label      "Title of the ontology" ;
+        sh:datatype     xsd:string ;
+        sh:description  "Title of the ontology" ;
+        sh:maxCount     1 ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://purl.org/dc/elements/1.1/title> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#b39b9ee10999aae90fee4ac13807a888>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#WorkManifestation> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultsIn> .
+
+<https://astrea.linkeddata.es/shapes#bb4b038c29b9fa31f1fddb9c2572013e>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://purl.oclc.org/NET/mvco.owl#acts> ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.oclc.org/NET/mvco.owl#CreateWork> ] .
+
+<https://astrea.linkeddata.es/shapes#d7b946e75a66060182b35618ec483988>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultedFrom> .
+
+<https://astrea.linkeddata.es/shapes#84fc5f92cf2a3f7e09b6fad0c44f074c>
+        a               sh:NodeShape ;
+        sh:description  "A User who distributes a Product"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#149316f1da7c62b5f8aff3ef1ef25aac> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Distributor> .
+
+<https://astrea.linkeddata.es/shapes#521e878bc0af2eb77c5f59687c5d7274>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.oclc.org/NET/mvco.owl#Instance> .
+
+<https://astrea.linkeddata.es/shapes#b5ca866d723a5d77a1d013285b314266>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#Adaptation> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#resultsIn> .
+
+<https://astrea.linkeddata.es/shapes#6c34a3b91f269d421b31f41b26a40a00>
+        a               sh:NodeShape ;
+        sh:description  "An object or event which is an example of an Identified Manifestation of a Work (e.g. a File)"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#WorkInstance> .
+
+<https://astrea.linkeddata.es/shapes#c92718ac91ad4b9b26cd9dba15e7e99d>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/mvco.owl#Action> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.oclc.org/NET/mvco.owl#permitsAction> .
+
+<https://astrea.linkeddata.es/shapes#35e81a506a64557578bd126f2fc6b815>
+        a               sh:NodeShape ;
+        sh:description  "A mechanical reproduction of analogue or digital representations of a given IP Entity. In the case of digital Copies the result is virtually identical  while in the case of analogue Copies the results can vary considerably in quality."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#38feb931062e1926bee7a0d9d531ba1c> , <https://astrea.linkeddata.es/shapes#1eee4ae0f2f23fe843ef498fee3fccb4> , <https://astrea.linkeddata.es/shapes#f4d90086ecf0f30f992c4cfc1e4a8898> , <https://astrea.linkeddata.es/shapes#521e878bc0af2eb77c5f59687c5d7274> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e98d17e332b2d11587656fd50a46d8e7> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Copy> .
+
+<https://astrea.linkeddata.es/shapes#6b95617e06335b64f2485109319d4f16>
+        a               sh:NodeShape ;
+        sh:description  "A User who interprets a Manifestation of a Work making an Instance"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#387aa31cb971bdf7e2fbc40f2ad16f89> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Instantiator> .
+
+<https://astrea.linkeddata.es/shapes#d29f309ea9bfa320f49fa9a610f20981>
+        a               sh:NodeShape ;
+        sh:description  "An object or event which is an example of an Identified Manifestation (e.g. a File)"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#38feb931062e1926bee7a0d9d531ba1c> , <https://astrea.linkeddata.es/shapes#1eee4ae0f2f23fe843ef498fee3fccb4> , <https://astrea.linkeddata.es/shapes#f4d90086ecf0f30f992c4cfc1e4a8898> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f571a3ad8024ba00d5314ec394943d09> ;
+        sh:targetClass  <http://purl.oclc.org/NET/mvco.owl#Instance> .

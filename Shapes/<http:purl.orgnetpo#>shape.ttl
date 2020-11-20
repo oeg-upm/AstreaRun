@@ -1,0 +1,165 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#832c84eeb29eeae761c260b6055113b6>
+        a               sh:NodeShape ;
+        rdfs:label      "Playlist Entry"@en ;
+        sh:description  "A class for representing an entry from a playlist. One PlaylistEntry instance is connected to one Song instance and one Playlist instance. It contains information about the 'position' of the Song in the Playlist, for the specific 'week' of the 'year'. It also contains an URL of a 'photo' for the playlist entry."@en ;
+        sh:name         "Playlist Entry"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#57a4fed5229edcc5b39011fee85f5d86> , <https://astrea.linkeddata.es/shapes#73cc67d66aa997c540f1b287692e2ec2> , <https://astrea.linkeddata.es/shapes#ce427b84304bf92c42023041d2a27e01> , <https://astrea.linkeddata.es/shapes#55ada9ec527e898aeeb4a9b77366cbaf> , <https://astrea.linkeddata.es/shapes#444b690cc82ad72b45ca7893764465a4> , <https://astrea.linkeddata.es/shapes#5fb5bb1e85f7b4ddeace82de1318954b> , <https://astrea.linkeddata.es/shapes#8f2d5e23fec76ddaf14e9bd58c771ecf> , <https://astrea.linkeddata.es/shapes#486193665651513aeb3d2b7eebff9722> ;
+        sh:targetClass  <http://purl.org/net/po#PlaylistEntry> .
+
+<https://astrea.linkeddata.es/shapes#f0986f79b0560cf252aed9e7dbfa9946>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/ontology/mo/MusicArtist> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/net/po#artistInfo> .
+
+<https://astrea.linkeddata.es/shapes#ae430e8f2cf9859e43ef37c044697509>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/net/po#PlaylistEntry> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/net/po#featuredInPlaylistEntry> .
+
+<https://astrea.linkeddata.es/shapes#10a2b68e090fc22a4421947526be1e64>
+        a            sh:PropertyShape ;
+        sh:datatype  rdfs:Literal ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/dc/elements/1.1/title> .
+
+<https://astrea.linkeddata.es/shapes#444b690cc82ad72b45ca7893764465a4>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/net/po#Song> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/net/po#playlistEntrySong> .
+
+<https://astrea.linkeddata.es/shapes#90ec1f5276b38b0257ded78c543ae825>
+        a               sh:NodeShape ;
+        rdfs:label      "Song"@en ;
+        sh:description  "A class for representing a song. One Song instance is connected to one or more PlaylistEntry instances. It contains the name of the song and the name of the artist. It can also contain external links to mo:Track and/or mo:MusicArtist instances, for creating Linked Data."@en ;
+        sh:name         "Song"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ae430e8f2cf9859e43ef37c044697509> , <https://astrea.linkeddata.es/shapes#10a2b68e090fc22a4421947526be1e64> , <https://astrea.linkeddata.es/shapes#7ec5d6d11ef9e88f46c8b6e450ba42f2> , <https://astrea.linkeddata.es/shapes#893797ba8898177df5b817ba86554a38> , <https://astrea.linkeddata.es/shapes#f0986f79b0560cf252aed9e7dbfa9946> ;
+        sh:targetClass  <http://purl.org/net/po#Song> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#893797ba8898177df5b817ba86554a38> , <https://astrea.linkeddata.es/shapes#90ec1f5276b38b0257ded78c543ae825> , <https://astrea.linkeddata.es/shapes#ae430e8f2cf9859e43ef37c044697509> , <https://astrea.linkeddata.es/shapes#6388c3a4486ba00584665a6266a2b61c> , <https://astrea.linkeddata.es/shapes#f0986f79b0560cf252aed9e7dbfa9946> , <https://astrea.linkeddata.es/shapes#57a4fed5229edcc5b39011fee85f5d86> , <https://astrea.linkeddata.es/shapes#832c84eeb29eeae761c260b6055113b6> , <https://astrea.linkeddata.es/shapes#55ada9ec527e898aeeb4a9b77366cbaf> , <https://astrea.linkeddata.es/shapes#5fb5bb1e85f7b4ddeace82de1318954b> , <https://astrea.linkeddata.es/shapes#99d045fad3f58d8c1500177b918dacb8> , <https://astrea.linkeddata.es/shapes#ce427b84304bf92c42023041d2a27e01> , <https://astrea.linkeddata.es/shapes#73cc67d66aa997c540f1b287692e2ec2> , <https://astrea.linkeddata.es/shapes#10a2b68e090fc22a4421947526be1e64> , <https://astrea.linkeddata.es/shapes#486193665651513aeb3d2b7eebff9722> , <https://astrea.linkeddata.es/shapes#0992e2bab2f6c7f1b3f57d903a520d9c> , <https://astrea.linkeddata.es/shapes#8440848dd06a9b252fe95955f60fbbab> , <https://astrea.linkeddata.es/shapes#8f2d5e23fec76ddaf14e9bd58c771ecf> , <https://astrea.linkeddata.es/shapes#d755b6c8b2e5f0b99af22169f5badd75> , <https://astrea.linkeddata.es/shapes#444b690cc82ad72b45ca7893764465a4> , <https://astrea.linkeddata.es/shapes#96e219207d01001cdf21cde0d533b03b> , <https://astrea.linkeddata.es/shapes#7ec5d6d11ef9e88f46c8b6e450ba42f2> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#486193665651513aeb3d2b7eebff9722>
+        a                sh:PropertyShape ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:minInclusive  0 ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://purl.org/net/po#year> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#0992e2bab2f6c7f1b3f57d903a520d9c>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/net/po#PlaylistEntry> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/net/po#hasPlaylistEntry> .
+
+<https://astrea.linkeddata.es/shapes#57a4fed5229edcc5b39011fee85f5d86>
+        a                sh:PropertyShape ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:minInclusive  0 ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://purl.org/net/po#week> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#d755b6c8b2e5f0b99af22169f5badd75>
+        a            sh:PropertyShape ;
+        sh:datatype  rdfs:Literal ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/net/po#stationName> .
+
+<https://astrea.linkeddata.es/shapes#8f2d5e23fec76ddaf14e9bd58c771ecf>
+        a                sh:PropertyShape ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:minInclusive  0 ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://purl.org/net/po#position> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#96e219207d01001cdf21cde0d533b03b>
+        a               sh:NodeShape ;
+        rdfs:label      "Playlist"@en ;
+        sh:description  "A class for representing a playlist. One Playlist instance is connected to one or more PlaylistEntry instances. It contains the name of the playlist and the name of the radio station."@en ;
+        sh:name         "Playlist"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#0992e2bab2f6c7f1b3f57d903a520d9c> , <https://astrea.linkeddata.es/shapes#8440848dd06a9b252fe95955f60fbbab> , <https://astrea.linkeddata.es/shapes#d755b6c8b2e5f0b99af22169f5badd75> ;
+        sh:targetClass  <http://purl.org/net/po#Playlist> .
+
+<https://astrea.linkeddata.es/shapes#7ec5d6d11ef9e88f46c8b6e450ba42f2>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/ontology/mo/Track> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/net/po#songInfo> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#55ada9ec527e898aeeb4a9b77366cbaf>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/net/po#Playlist> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/net/po#partOfPlaylist> .
+
+<https://astrea.linkeddata.es/shapes#893797ba8898177df5b817ba86554a38>
+        a            sh:PropertyShape ;
+        sh:datatype  rdfs:Literal ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://xmlns.com/foaf/0.1/name> .
+
+<https://astrea.linkeddata.es/shapes#73cc67d66aa997c540f1b287692e2ec2>
+        a            sh:PropertyShape ;
+        sh:datatype  rdfs:Literal ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/net/po#photoURL> .
+
+<https://astrea.linkeddata.es/shapes#6388c3a4486ba00584665a6266a2b61c>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/mo/Track> .
+
+<https://astrea.linkeddata.es/shapes#ce427b84304bf92c42023041d2a27e01>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://purl.org/net/po#partOfPlaylist> ;
+        sh:qualifiedMaxCount    1 ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.org/net/po#Playlist> ] ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.org/net/po#Playlist> ] .
+
+<https://astrea.linkeddata.es/shapes#8440848dd06a9b252fe95955f60fbbab>
+        a            sh:PropertyShape ;
+        sh:datatype  rdfs:Literal ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/net/po#playlistName> .
+
+<https://astrea.linkeddata.es/shapes#5fb5bb1e85f7b4ddeace82de1318954b>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://purl.org/net/po#playlistEntrySong> ;
+        sh:qualifiedMaxCount    1 ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.org/net/po#Song> ] ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.org/net/po#Song> ] .
+
+<https://astrea.linkeddata.es/shapes#99d045fad3f58d8c1500177b918dacb8>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/ontology/mo/MusicArtist> .

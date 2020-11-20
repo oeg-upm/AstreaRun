@@ -1,0 +1,975 @@
+@prefix :      <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L1.owl#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix owl2xml: <http://www.w3.org/2006/12/owl2-xml#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix LMM_L1: <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L1.owl#> .
+@prefix DUL:   <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix IOLite: <http://www.ontologydesignpatterns.org/ont/dul/IOLite.owl#> .
+
+<https://astrea.linkeddata.es/shapes#fae62be70c5895228929be1a3d83c104>
+        a            sh:PropertyShape ;
+        sh:minCount  "2"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      DUL:hasComponent .
+
+<https://astrea.linkeddata.es/shapes#f0ec78e0b9d6017edae6764c0411ddc8>
+        a               sh:NodeShape ;
+        rdfs:label      "Syntactic context"@en ;
+        sh:description  "A lmm1:CoText that is equivalent to a neighborhood of a certain chunk of text, which can be built based on a syntagmatic rule, e.g. all words from the sentence where the chunk occurs." ;
+        sh:name         "Syntactic context"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b1687d960f0dbe08c962f906470757fd> ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#SyntacticContext> .
+
+<https://astrea.linkeddata.es/shapes#e9d3327438c0d1ff5db93166e2cd0497>
+        a               sh:PropertyShape ;
+        rdfs:label      "A catch-all property for all notions of Context considered in LMM." ;
+        sh:class        DUL:Entity ;
+        sh:description  "A catch-all property for all notions of Context considered in LMM." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         LMM_L1:hasContext .
+
+<https://astrea.linkeddata.es/shapes#e78884e671f1b74561dc18dcf8f2d031>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#isInstanceOf> .
+
+<https://astrea.linkeddata.es/shapes#5c60d578bb1008a9405af88b32a7b4a9>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isConcretelyExpressedBy .
+
+<https://astrea.linkeddata.es/shapes#e0921fb61ef01fe1fddbe1864117942e>
+        a               sh:PropertyShape ;
+        rdfs:label      "A relation between a dul:Entity and a dul:FormalEntity, which can be used to give a semiotic ('natural') counterpart to a formal entity, such as a Class, a Relation, a SetBuilder, etc. See also the ontology: FormalSemantics.owl" ;
+        sh:description  "A relation between a dul:Entity and a dul:FormalEntity, which can be used to give a semiotic ('natural') counterpart to a formal entity, such as a Class, a Relation, a SetBuilder, etc. See also the ontology: FormalSemantics.owl" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         IOLite:isGroundingFor .
+
+<https://astrea.linkeddata.es/shapes#eae5990963ffb67247068f5f1cf7ae66>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      IOLite:isCulturalGroundingFor .
+
+<https://astrea.linkeddata.es/shapes#0f02f99372a273901b3f3b60b3181f3d>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      DUL:isUnifiedBy .
+
+<https://astrea.linkeddata.es/shapes#a0ab629db91c2985db5cfc08fdefbd12>
+        a               sh:PropertyShape ;
+        rdfs:label      "is interpretant for"@en , "The Peircean interpretant relation, widely adopted in semiotics: a dul:InformationObject isInterpretantFor another, e.g. fourLeggedFriendOfHumans isInterpretantFor dog. \nSynonymy, associativity, and even topical proximity are all sources for interpretants, e.g.: domestic dog isInterpretantFor dog (synonymy); bark isInterpretantFor dog (associativity); veterinary isInterpretantFor dog (topical proximity).\nSemantic mechanisms such as metonymy depend on the interpretant relation.\nThe interpretant relation is here taken as very broad, also accepting realization of information as interpretants." ;
+        sh:description  "The Peircean interpretant relation, widely adopted in semiotics: a dul:InformationObject isInterpretantFor another, e.g. fourLeggedFriendOfHumans isInterpretantFor dog. \nSynonymy, associativity, and even topical proximity are all sources for interpretants, e.g.: domestic dog isInterpretantFor dog (synonymy); bark isInterpretantFor dog (associativity); veterinary isInterpretantFor dog (topical proximity).\nSemantic mechanisms such as metonymy depend on the interpretant relation.\nThe interpretant relation is here taken as very broad, also accepting realization of information as interpretants." ;
+        sh:name         "is interpretant for"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  DUL:InformationRealization ;
+                            sh:path   LMM_L1:isInterpretantFor
+                          ]
+                          [ sh:class  LMM_L1:Expression ;
+                            sh:path   LMM_L1:isInterpretantFor
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/shapes#93e2e629bb1266fef1683fdb377b33b9>
+        a               sh:NodeShape ;
+        rdfs:label      "Associative rule"@en ;
+        sh:name         "Associative rule"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#AssociativeRule> .
+
+<https://astrea.linkeddata.es/shapes#70e3229f0aecd9f3f5056318d213f7e1>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:expresses .
+
+<https://astrea.linkeddata.es/shapes#034dc2d7f4a472e93880a9b3cad17163>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:satisfies .
+
+<https://astrea.linkeddata.es/shapes#0df9080e49f106518ff7f93d2a5bf18d>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:Role .
+
+<https://astrea.linkeddata.es/shapes#1dba4f34afa448278533f9ec87bc93ac>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isCoveredBy .
+
+<https://astrea.linkeddata.es/shapes#f74ce72c72464980563c11c08fe86e7f>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 DUL:isExpressedBy ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  LMM_L1:Expression ] .
+
+<https://astrea.linkeddata.es/shapes#5058ca99e6e6cb02aedfb474a4079093>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isRelatedToConcept .
+
+<https://astrea.linkeddata.es/shapes#d05cc956de7b6fc42608e81ebb91bbb5>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isClassifiedBy .
+
+<https://astrea.linkeddata.es/shapes#1235545a79d8f8ed841a1353dbe0706f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      LMM_L1:isDenotedBy .
+
+<https://astrea.linkeddata.es/shapes#63bd87509518de6225ca58d831806d6f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      LMM_L1:denotes .
+
+<https://astrea.linkeddata.es/shapes#0689586086f979835d3a59807028eaed>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:hasPart .
+
+<https://astrea.linkeddata.es/shapes#09027c057dce4b9abc4785f480c29122>
+        a               sh:NodeShape ;
+        rdfs:label      "Paradigma {it}" , "Paradigm"@en ;
+        sh:description  "The context of an expressed Meaning" ;
+        sh:name         "Paradigma {it}" , "Paradigm"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#fae62be70c5895228929be1a3d83c104> ;
+        sh:targetClass  LMM_L1:Paradigm .
+
+<https://astrea.linkeddata.es/shapes#0f082fbf9e01de5c2bdaf0710d2a9caa>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:Description .
+
+<https://astrea.linkeddata.es/shapes#fa24da0564292af2d058a465dc54edac>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      DUL:isMemberOf .
+
+<https://astrea.linkeddata.es/shapes#58446375d14e89b6d1ee46471f435d41>
+        a               sh:PropertyShape ;
+        rdfs:label      "denotes"@en , "A relation between expressions and any Entity (including expressions). \nIt can be used to talk about e.g. entities denoted by proper nouns: the proper noun 'Leonardo da Vinci' denotes the Person Leonardo da Vinci; as well as to talk about sets of entities that can be described by a common noun: the common noun 'person' denotes the collection of all persons in a domain of discourse." ;
+        sh:class        LMM_L1:Reference ;
+        sh:description  "A relation between expressions and any Entity (including expressions). \nIt can be used to talk about e.g. entities denoted by proper nouns: the proper noun 'Leonardo da Vinci' denotes the Person Leonardo da Vinci; as well as to talk about sets of entities that can be described by a common noun: the common noun 'person' denotes the collection of all persons in a domain of discourse." ;
+        sh:name         "denotes"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         LMM_L1:denotes .
+
+<https://astrea.linkeddata.es/shapes#18899e330ebf62f288c29c0347a69025>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      IOLite:isLexicalizedBy .
+
+<https://astrea.linkeddata.es/shapes#fae639c5664002fafe19ad2a939444ea>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isAbout .
+
+<https://astrea.linkeddata.es/shapes#5f373f51113f5e9026cecba5dbe6c4ad>
+        a               sh:PropertyShape ;
+        rdfs:label      "has interpretant"@en , "The Peircean interpretant relation, widely adopted in semiotics: a dul:InformationObject isInterpretantFor another, e.g. fourLeggedFriendOfHumans isInterpretantFor dog. \nSynonymy, associativity, and even topical proximity are all sources for interpretants, e.g.: domestic dog isInterpretantFor dog (synonymy); bark isInterpretantFor dog (associativity); veterinary isInterpretantFor dog (topical proximity).\nSemantic mechanisms such as metonymy depend on the interpretant relation.\nThe interpretant relation is here taken as very broad, also accepting InformationRealization(s) as interpretants." ;
+        sh:description  "The Peircean interpretant relation, widely adopted in semiotics: a dul:InformationObject isInterpretantFor another, e.g. fourLeggedFriendOfHumans isInterpretantFor dog. \nSynonymy, associativity, and even topical proximity are all sources for interpretants, e.g.: domestic dog isInterpretantFor dog (synonymy); bark isInterpretantFor dog (associativity); veterinary isInterpretantFor dog (topical proximity).\nSemantic mechanisms such as metonymy depend on the interpretant relation.\nThe interpretant relation is here taken as very broad, also accepting InformationRealization(s) as interpretants." ;
+        sh:name         "has interpretant"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  DUL:InformationRealization ;
+                            sh:path   LMM_L1:hasInterpretant
+                          ]
+                          [ sh:class  LMM_L1:Meaning ;
+                            sh:path   LMM_L1:hasInterpretant
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/shapes#1162d0b72d91a70ece4fd3f139fd6a95>
+        a               sh:PropertyShape ;
+        rdfs:label      "A relation between a dul:Entity and a dul:FormalEntity, which can be used to give a semiotic ('natural') counterpart to a formal entity, such as a Class, a Relation, a SetBuilder, etc. See also the ontology: FormalSemantics.owl" ;
+        sh:description  "A relation between a dul:Entity and a dul:FormalEntity, which can be used to give a semiotic ('natural') counterpart to a formal entity, such as a Class, a Relation, a SetBuilder, etc. See also the ontology: FormalSemantics.owl" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         IOLite:hasGrounding .
+
+<https://astrea.linkeddata.es/shapes#672cf72f7c09a4db40981183845f557e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      LMM_L1:denotes .
+
+<https://astrea.linkeddata.es/shapes#b166053cdb87ba185bc6d61f1e40594d>
+        a            sh:PropertyShape ;
+        sh:minCount  "3"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      DUL:actsThrough .
+
+<https://astrea.linkeddata.es/report/0532311797>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.ontologydesignpatterns.org/ont/lmm/LMM_L1.owl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#1ae1c1e18a7618f49f3e5285d2cc7783>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:actsThrough .
+
+<https://astrea.linkeddata.es/shapes#3b118909e1157cbe00a4d77cd4fa338f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isMemberOf .
+
+<https://astrea.linkeddata.es/shapes#a5c50cda3b8a64cbc3633df952ca916c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isExpressedBy .
+
+<https://astrea.linkeddata.es/shapes#d817706528e87f15f36f1623736d0581>
+        a               sh:NodeShape ;
+        rdfs:label      "Simple concept expression"@en ;
+        sh:description  "A simple ConceptExpression that denotes a ClassReference, e.g. 'the nurses'." ;
+        sh:name         "Simple concept expression"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#672cf72f7c09a4db40981183845f557e> ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#SimpleConceptExpression> .
+
+<https://astrea.linkeddata.es/shapes#6c1a521911c6377de125915a3a1f3402>
+        a            sh:PropertyShape ;
+        rdfs:label   "has instance"@en ;
+        sh:class     LMM_L1:Reference ;
+        sh:name      "has instance"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#hasInstance> .
+
+<https://astrea.linkeddata.es/shapes#c0a3f836b870ed46aca00c4110d0fde9>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#hasSyntacticFunction> .
+
+<https://astrea.linkeddata.es/shapes#d3d2df2c2dff74fc0a804a95b559c11d>
+        a               sh:NodeShape ;
+        rdfs:label      "Reference" , "Reference"@en ;
+        sh:description  "Any Entity that isDenotedBy an Expression, or that hasInterpretation some Meaning" ;
+        sh:name         "Reference" , "Reference"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f5305a78bb2d650814b2c2cdb6001275> , <https://astrea.linkeddata.es/shapes#22f0952c974be3013108eb12565b955f> , <https://astrea.linkeddata.es/shapes#05a42654c4da73d6842c01313b1ca2bb> ;
+        sh:targetClass  LMM_L1:Reference ;
+        sh:targetClass  []  ;
+        sh:targetClass  []  .
+
+<https://astrea.linkeddata.es/shapes#c9e4bf771a856d16b17bbc347c21d4ba>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isRelatedToDescription .
+
+<https://astrea.linkeddata.es/shapes#005820e9956fa1f1dc8038941138e4b8>
+        a               sh:NodeShape ;
+        rdfs:label      "Polyrhematic concept expression"@en ;
+        sh:description  "A complex ConceptExpression that denotes a MultipleReference, e.g. 'the antique books'.\nA polyrhematic expression usually has an associated 'head word'." ;
+        sh:name         "Polyrhematic concept expression"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1ce76057a5211a990817420d2ba2a5eb> ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#PolyrhematicConceptExpression> .
+
+<https://astrea.linkeddata.es/shapes#d1052fbd1c9f83b7c8fd0ed13006da83>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isSpecializedBy .
+
+<https://astrea.linkeddata.es/shapes#22f0952c974be3013108eb12565b955f>
+        a            sh:PropertyShape ;
+        rdfs:label   "is denoted by"@en ;
+        sh:class     LMM_L1:Expression ;
+        sh:name      "is denoted by"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      LMM_L1:isDenotedBy .
+
+<https://astrea.linkeddata.es/shapes#bd31d36b1d0d0e39bfc39c4d3c132c48>
+        a            sh:PropertyShape ;
+        sh:class     LMM_L1:Meaning ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      DUL:specializes .
+
+<https://astrea.linkeddata.es/shapes#f0659635f8696bb276a29c3dfcabd5b8>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isLocationOf .
+
+<https://astrea.linkeddata.es/shapes#5e144893375d08b6b0421380e6818646>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      DUL:hasPart .
+
+<https://astrea.linkeddata.es/shapes#502da0c7c70a886e426e131d9eeaea62>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:describes .
+
+<https://astrea.linkeddata.es/shapes#d838193be0ee00703f87bd7b53f78bff>
+        a            sh:PropertyShape ;
+        rdfs:label   "OEis lexicalized by"@en ;
+        sh:class     IOLite:LinguisticObject ;
+        sh:name      "OEis lexicalized by"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#OEisLexicalizedBy> .
+
+<https://astrea.linkeddata.es/shapes#b8c13a03ca85f0f4fea515c8befa4a25>
+        a               sh:NodeShape ;
+        rdfs:label      "Extensional reference"@en ;
+        sh:description  "Extensional references are collections that require an extensional enumeration (e.g. 'John and Mary'), or an anaphora that allows to extract an implicit enumeration (e.g. 'the books on my table'). Hence, extensional references have individual references as members.\n\nIndividual references in the extensional reference must be in the setting of some Situation, which means that extensional references only exist if some fact is described by an observer/interpreter.\n\nThe terms expressing extensional references can be names or contextual expressions.\n\nThe extensional interpretation of Concept and Extensional references in a de-reified (abstract) model can be equivalent, reflecting the paraphrastic property of natural languages, e.g. the extensional interpretations of 'IberianCountry' and {Spain, Portugal, Andorra, Gibraltar} are equivalent. This corresponds to saying that concept expressions and contextual expressions can denote the same entities, while having different intensional interpretations (meanings)." ;
+        sh:name         "Extensional reference"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#681a62e1f4ab358d00d8c0f58e163631> , <https://astrea.linkeddata.es/shapes#20038bf918f3f5760b00ef3cc1bd74f5> ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#ExtensionalReference> .
+
+<https://astrea.linkeddata.es/shapes#a37568ae12768e73dfc2f3ffd67dec43>
+        a               sh:NodeShape ;
+        rdfs:label      "Latent context"@en ;
+        sh:name         "Latent context"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#0f02f99372a273901b3f3b60b3181f3d> ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#LatentContext> .
+
+<https://astrea.linkeddata.es/shapes#9ade981c836e590b58befcdb2a933c10>
+        a               sh:NodeShape ;
+        rdfs:label      "Associative context"@en ;
+        sh:description  "An associative rule is a lmm1:CoText where a neighborhood of a chunk of text is built out of the terms related to the chunk across the texts of a corpus, e.g. given a certain statistical threshold." ;
+        sh:name         "Associative context"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#121616f9ab74e76c96d6e3d3efbf737f> ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#AssociativeContext> .
+
+<https://astrea.linkeddata.es/shapes#7af9639f7bcbfb7bac3508ac9dc1c6ae>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:PhysicalArtifact .
+
+<https://astrea.linkeddata.es/shapes#19ec7a6f8a78325466049ac5f24cff9e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isConceptUsedIn .
+
+<https://astrea.linkeddata.es/shapes#2298532b87bde8e86d082814a6677921>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d838193be0ee00703f87bd7b53f78bff> ;
+        sh:targetClass  IOLite:FormalExpression .
+
+<https://astrea.linkeddata.es/shapes#05a42654c4da73d6842c01313b1ca2bb>
+        a               sh:PropertyShape ;
+        rdfs:label      "has interpretation"@en , "The relation between a Meaning and a Reference : a Meaning gives unity to a Collection of entities.\nA same Reference can be given different interpretations, for example, an old cradle can be given a unifying Meaning based on the original aesthetic design, the functionality it was built for, or a new aesthetic functionality in which it can be used as a flower pot.\nThis relation allows to generalize over the following DOLCE-Ultralite relations: dul:isClassifedBy, dul:isCoveredBy, dul:isDescribedBy, dul:isUnifiedBy, and dul:satisfies" ;
+        sh:class        LMM_L1:Meaning ;
+        sh:description  "The relation between a Meaning and a Reference : a Meaning gives unity to a Collection of entities.\nA same Reference can be given different interpretations, for example, an old cradle can be given a unifying Meaning based on the original aesthetic design, the functionality it was built for, or a new aesthetic functionality in which it can be used as a flower pot.\nThis relation allows to generalize over the following DOLCE-Ultralite relations: dul:isClassifedBy, dul:isCoveredBy, dul:isDescribedBy, dul:isUnifiedBy, and dul:satisfies" ;
+        sh:name         "has interpretation"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         LMM_L1:hasInterpretation .
+
+<https://astrea.linkeddata.es/shapes#d5bedb75cc60d33b7f14e1b003a2cc47>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:hasRole .
+
+<https://astrea.linkeddata.es/shapes#5761ee49d162fe0a8bd658600f926d0a>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      LMM_L1:denotes .
+
+<https://astrea.linkeddata.es/shapes#c7b3d5aa5a2592aea2b66f69af039258>
+        a               sh:NodeShape ;
+        rdfs:label      "Meaning" , "Meaning"@en ;
+        sh:description  "Any conceptualization that dul:isExpressedBy an Expression, or isInterpretationOf a Reference" ;
+        sh:name         "Meaning" , "Meaning"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#bd31d36b1d0d0e39bfc39c4d3c132c48> , <https://astrea.linkeddata.es/shapes#b3360f4887e12275e580ad08a68b2358> , <https://astrea.linkeddata.es/shapes#125d54f1f484f53d9dd76ca5ac431e84> , <https://astrea.linkeddata.es/shapes#f74ce72c72464980563c11c08fe86e7f> , <https://astrea.linkeddata.es/shapes#cac5b7d662ad34bb185acee3fd8a08fa> ;
+        sh:targetClass  LMM_L1:Meaning .
+
+<https://astrea.linkeddata.es/shapes#39ab4e1194d1dd11e0b092882685ce15>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      LMM_L1:isInterpretantFor .
+
+<https://astrea.linkeddata.es/shapes#e53bcdb30792c22d356fab4bc4e86ffc>
+        a               sh:NodeShape ;
+        rdfs:label      "Gloss" ;
+        sh:description  "A text used as an informal definition or comment to a term, lexeme, etc." ;
+        sh:name         "Gloss" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#39ab4e1194d1dd11e0b092882685ce15> ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#Gloss> .
+
+<https://astrea.linkeddata.es/shapes#1cfa156a24f71c8e8f19d03227e98ff7>
+        a            sh:PropertyShape ;
+        rdfs:label   "is syntactic function of"@en ;
+        sh:class     IOLite:LinguisticObject ;
+        sh:name      "is syntactic function of"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#isSyntacticFunctionOf> .
+
+<https://astrea.linkeddata.es/shapes#16ee78635ff959f88219ca07ee17f2f1>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:associatedWith .
+
+<https://astrea.linkeddata.es/shapes#b1687d960f0dbe08c962f906470757fd>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      DUL:isUnifiedBy .
+
+<https://astrea.linkeddata.es/shapes#c5a7485b1ec1c084552386eb8ba6213c>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:Collection .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#7b23d54513382da90077cfbc3c32f93a>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#6c1a521911c6377de125915a3a1f3402> ;
+        sh:targetClass  DUL:Concept .
+
+<https://astrea.linkeddata.es/shapes#2b540d313b29dd635de798fe2c3f6948>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:InformationObject .
+
+<https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  owl:Thing .
+
+<https://astrea.linkeddata.es/shapes#125d54f1f484f53d9dd76ca5ac431e84>
+        a               sh:PropertyShape ;
+        rdfs:label      "is interpretation of"@en , "The relation between a Meaning and a Reference : a Meaning gives unity to an Entity or to a Collection of entities.\nA same Reference can be given different interpretations, for example, an old cradle can be given a unifying Meaning based on the original aesthetic design, the functionality it was built for, or a new aesthetic functionality in which it can be used as a flower pot.\nThis relation allows to generalize over the following DOLCE-Ultralite relations: dul:classifies, dul:covers, dul:describes, dul:unifies, and dul:isSatisfiedBy" ;
+        sh:class        LMM_L1:Reference ;
+        sh:description  "The relation between a Meaning and a Reference : a Meaning gives unity to an Entity or to a Collection of entities.\nA same Reference can be given different interpretations, for example, an old cradle can be given a unifying Meaning based on the original aesthetic design, the functionality it was built for, or a new aesthetic functionality in which it can be used as a flower pot.\nThis relation allows to generalize over the following DOLCE-Ultralite relations: dul:classifies, dul:covers, dul:describes, dul:unifies, and dul:isSatisfiedBy" ;
+        sh:name         "is interpretation of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         LMM_L1:isInterpretationOf .
+
+<https://astrea.linkeddata.es/shapes#b6ae56d1891bbddd70347af79283b8ae>
+        a               sh:NodeShape ;
+        rdfs:label      "Experimental setting" ;
+        sh:description  "A plan modeled in order to carry out experiments. Roles ('features') can be defined for featured entities that provide evidence for classifying an entity, describing a behavior, etc." ;
+        sh:name         "Experimental setting" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#ExperimentalSetting> .
+
+<https://astrea.linkeddata.es/shapes#f81cb95fdeb703adb8b2db781a6b4d65>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isRoleOf .
+
+<https://astrea.linkeddata.es/shapes#b968c6fa81cedc8178781cf3cacf8b2f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:usesConcept .
+
+<https://astrea.linkeddata.es/shapes#bc025cfcd6fea7aa665b10e54735f142>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  IOLite:Term .
+
+<https://astrea.linkeddata.es/shapes#cfc5cfc0d76be17024a75288f59a721b>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      LMM_L1:denotes .
+
+<https://astrea.linkeddata.es/shapes#252961f7cf27b1e2f5b59c5831bc593e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isCharacterizedBy .
+
+<https://astrea.linkeddata.es/shapes#59eb33b48113ca2911459d06f1c412ad>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ff09b60925fe7c1bc22dd2d96d961527> , <https://astrea.linkeddata.es/shapes#e9d3327438c0d1ff5db93166e2cd0497> ;
+        sh:targetClass  DUL:Entity .
+
+<https://astrea.linkeddata.es/shapes#f35f620d5c0d5c43b52513b4284375db>
+        a               sh:NodeShape ;
+        rdfs:label      "Comunità di conoscenza {it}" , "Knowledge community"@en ;
+        sh:description  "The context of agents that conceptualize a same Paradigm. This restriction cannot be represented in OWL in general, but should be encoded for specific knowledge communities by stating the specific paradigm that agents acting for it must conceptualize." ;
+        sh:name         "Comunità di conoscenza {it}" , "Knowledge community"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  LMM_L1:KnowledgeCommunity .
+
+<https://astrea.linkeddata.es/shapes#14ceb292b14f1eada4279c41e73f346f>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:InformationRealization .
+
+<https://astrea.linkeddata.es/shapes#295d50969af520d79627f8a7fa4feca7>
+        a               sh:NodeShape ;
+        sh:description  "A description of how to build an entity. For example, a logical rule, a productive rule, a statistical algorithm, etc." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  LMM_L1:ConstructionRule .
+
+<https://astrea.linkeddata.es/shapes#7af49e931fe1bfbce1a0dd9e01baeb88>
+        a               sh:NodeShape ;
+        rdfs:label      "Concept reference"@en ;
+        sh:description  "A MultipleReference that is also a TypeCollection, i.e. a Collection whose members constitute the maximal set of individuals that share the same (named) type, i.e. a Concept . \nE.g. 'the Italians', 'the nurses', 'the automotive workers'. \n\nThe Expressions that denote such references are typically composed by a determiner ('the' in English), and a noun phrase in plural form.\n\nConcept references can be empty collections, e.g. 'the square circles'." ;
+        sh:name         "Concept reference"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1e5120208a2b5b0b84f53cda14e641dc> ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#ConceptReference> .
+
+<https://astrea.linkeddata.es/shapes#8dc3252ea21eaf0b33cd398e301d97a0>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      IOLite:lexicalizes .
+
+<https://astrea.linkeddata.es/shapes#a5ac311f914cfb98ae56449a942b6f05>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:Plan .
+
+<https://astrea.linkeddata.es/shapes#96885a7745a594bfad1443075d56000c>
+        a               sh:NodeShape ;
+        rdfs:label      "Name"@en ;
+        sh:description  "A proper noun that denotes an IndividualReference, e.g. 'John Zorn', 'Daimler Benz'." ;
+        sh:name         "Name"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:or           ( [ sh:class  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#ExtensionalReference> ;
+                            sh:path   LMM_L1:denotes
+                          ]
+                          [ sh:class  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#NamedEntity> ;
+                            sh:path   LMM_L1:denotes
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5a425e56746d1cdeb0a609bf35096464> , <https://astrea.linkeddata.es/shapes#f4a172b6b2655946de6fe167f3263d2a> ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#Name> .
+
+<https://astrea.linkeddata.es/shapes#20038bf918f3f5760b00ef3cc1bd74f5>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      LMM_L1:isDenotedBy .
+
+<https://astrea.linkeddata.es/shapes#121616f9ab74e76c96d6e3d3efbf737f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      DUL:isUnifiedBy .
+
+<https://astrea.linkeddata.es/shapes#1891d92c6d1b112bcc2a5778823e1319>
+        a               sh:NodeShape ;
+        rdfs:label      "LSA rule"@en ;
+        sh:name         "LSA rule"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#LSARule> .
+
+<https://astrea.linkeddata.es/shapes#ce4351b1c53ae2f8bbbd9340d10cd8b6>
+        a            sh:PropertyShape ;
+        rdfs:label   "has syntactic function"@en ;
+        sh:class     IOLite:LinguisticFunction ;
+        sh:name      "has syntactic function"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#hasSyntacticFunction> .
+
+<https://astrea.linkeddata.es/shapes#644d55f26e9a296db63a135ebb4a87ee>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#hasSyntacticFunction> .
+
+<https://astrea.linkeddata.es/shapes#943a99f371614ea11868b18c42b1c4c7>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      LMM_L1:isDenotedBy .
+
+<https://astrea.linkeddata.es/shapes#bce4dfa24e29cacb54942c90c7b2c3e8>
+        a               sh:NodeShape ;
+        rdfs:label      "Named entity"@en ;
+        sh:description  "An IndividualReference that is denoted by a Name, e.g. 'John_Zorn' (as an Entity)." ;
+        sh:name         "Named entity"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#943a99f371614ea11868b18c42b1c4c7> ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#NamedEntity> .
+
+<https://astrea.linkeddata.es/shapes#041bddc96ae271b160974636ccb57796>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:hasSetting .
+
+<https://astrea.linkeddata.es/shapes#f8a9d0e61b5b97f2e4e10eb536b923ee>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:SocialObject , LMM_L1:Meaning .
+
+<https://astrea.linkeddata.es/shapes#6218f98e1a906b6f8c8e71905672c4cb>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:Place .
+
+<https://astrea.linkeddata.es/shapes#b56d5be213d2dfd8b9ba9d69db048623>
+        a            sh:PropertyShape ;
+        sh:class     IOLite:LinguisticObject ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#isSyntacticFunctionOf> .
+
+<https://astrea.linkeddata.es/shapes#202e49c466afc0084d0cdee6772fdcc5>
+        a               sh:PropertyShape ;
+        rdfs:label      "lexicalizes oE"@en , "Lexicalization for ontology elements." ;
+        sh:class        IOLite:FormalExpression ;
+        sh:description  "Lexicalization for ontology elements." ;
+        sh:name         "lexicalizes oE"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#lexicalizesOE> .
+
+<https://astrea.linkeddata.es/shapes#b9827270a7a36d1d57dc5c9349f295c3>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isParticipantIn .
+
+<https://astrea.linkeddata.es/shapes#531774cf6fa4b18666376f0edae85d3d>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isUnifiedBy .
+
+<https://astrea.linkeddata.es/shapes#708445e5f32db073a801186724521d36>
+        a               sh:NodeShape ;
+        rdfs:label      "Analytic feature"@en ;
+        sh:description  "Any 'feature' used in automatic classification, learning, and in general in all feature-based analyses.\nIn NLP, this role can be applied to a LinguisticFunction, a PartOfSpeech, a graphical feature, etc.\nA feature role holds in the context of an ExperimentalSetting, where also parameters and operations on the featured enities can be defined." ;
+        sh:name         "Analytic feature"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f230fe1ca48c0f871ff7dd0cacb5ef82> ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#AnalyticFeature> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#2ba7e7b698aad4e5529afc47dad9574d> , <https://astrea.linkeddata.es/shapes#e78884e671f1b74561dc18dcf8f2d031> , <https://astrea.linkeddata.es/shapes#7af9639f7bcbfb7bac3508ac9dc1c6ae> , <https://astrea.linkeddata.es/shapes#f81cb95fdeb703adb8b2db781a6b4d65> , <https://astrea.linkeddata.es/shapes#19ec7a6f8a78325466049ac5f24cff9e> , <https://astrea.linkeddata.es/shapes#58446375d14e89b6d1ee46471f435d41> , <https://astrea.linkeddata.es/shapes#d838193be0ee00703f87bd7b53f78bff> , <https://astrea.linkeddata.es/shapes#f0397911ed031bc0edd93067096d9b07> , <https://astrea.linkeddata.es/shapes#39ab4e1194d1dd11e0b092882685ce15> , <https://astrea.linkeddata.es/shapes#0f02f99372a273901b3f3b60b3181f3d> , <https://astrea.linkeddata.es/shapes#b9827270a7a36d1d57dc5c9349f295c3> , <https://astrea.linkeddata.es/shapes#e53bcdb30792c22d356fab4bc4e86ffc> , <https://astrea.linkeddata.es/shapes#bce4dfa24e29cacb54942c90c7b2c3e8> , <https://astrea.linkeddata.es/shapes#bd31d36b1d0d0e39bfc39c4d3c132c48> , <https://astrea.linkeddata.es/shapes#708445e5f32db073a801186724521d36> , <https://astrea.linkeddata.es/shapes#ddb32605e3b716e06b40cb2eebb86c8c> , <https://astrea.linkeddata.es/shapes#ff09b60925fe7c1bc22dd2d96d961527> , <https://astrea.linkeddata.es/shapes#fae639c5664002fafe19ad2a939444ea> , <https://astrea.linkeddata.es/shapes#16ee78635ff959f88219ca07ee17f2f1> , <https://astrea.linkeddata.es/shapes#8dc3252ea21eaf0b33cd398e301d97a0> , <https://astrea.linkeddata.es/shapes#d3d2df2c2dff74fc0a804a95b559c11d> , <https://astrea.linkeddata.es/shapes#09027c057dce4b9abc4785f480c29122> , <https://astrea.linkeddata.es/shapes#c3ade30aae224caac5b7864ea3841943> , <https://astrea.linkeddata.es/shapes#e0921fb61ef01fe1fddbe1864117942e> , <https://astrea.linkeddata.es/shapes#718839e7bab83a5378a21dceefe480e0> , <https://astrea.linkeddata.es/shapes#acfd1585f972f8a0d8b03821b0c19f94> , <https://astrea.linkeddata.es/shapes#eae5990963ffb67247068f5f1cf7ae66> , <https://astrea.linkeddata.es/shapes#2298532b87bde8e86d082814a6677921> , <https://astrea.linkeddata.es/shapes#e82beec7ad2d9c53d65339ecd06f1971> , <https://astrea.linkeddata.es/shapes#18899e330ebf62f288c29c0347a69025> , <https://astrea.linkeddata.es/shapes#672cf72f7c09a4db40981183845f557e> , <https://astrea.linkeddata.es/shapes#2db53963ae7ab9b620534c12130262a9> , <https://astrea.linkeddata.es/shapes#f74ce72c72464980563c11c08fe86e7f> , <https://astrea.linkeddata.es/shapes#a37568ae12768e73dfc2f3ffd67dec43> , <https://astrea.linkeddata.es/shapes#f0659635f8696bb276a29c3dfcabd5b8> , <https://astrea.linkeddata.es/shapes#1ae1c1e18a7618f49f3e5285d2cc7783> , <https://astrea.linkeddata.es/shapes#1162d0b72d91a70ece4fd3f139fd6a95> , <https://astrea.linkeddata.es/shapes#fae62be70c5895228929be1a3d83c104> , <https://astrea.linkeddata.es/shapes#a5c50cda3b8a64cbc3633df952ca916c> , <https://astrea.linkeddata.es/shapes#f0ec78e0b9d6017edae6764c0411ddc8> , <https://astrea.linkeddata.es/shapes#affa294a9369e37adf9669902c94f27c> , <https://astrea.linkeddata.es/shapes#63bd87509518de6225ca58d831806d6f> , <https://astrea.linkeddata.es/shapes#5c60d578bb1008a9405af88b32a7b4a9> , <https://astrea.linkeddata.es/shapes#d05cc956de7b6fc42608e81ebb91bbb5> , <https://astrea.linkeddata.es/shapes#252961f7cf27b1e2f5b59c5831bc593e> , <https://astrea.linkeddata.es/shapes#5058ca99e6e6cb02aedfb474a4079093> , <https://astrea.linkeddata.es/shapes#1ce76057a5211a990817420d2ba2a5eb> , <https://astrea.linkeddata.es/shapes#1891d92c6d1b112bcc2a5778823e1319> , <https://astrea.linkeddata.es/shapes#1fe332766d48e0b7d31c3b28c827aae9> , <https://astrea.linkeddata.es/shapes#1cfa156a24f71c8e8f19d03227e98ff7> , <https://astrea.linkeddata.es/shapes#b8c13a03ca85f0f4fea515c8befa4a25> , <https://astrea.linkeddata.es/shapes#e5463dbea63e16478ded68d6b95a93aa> , <https://astrea.linkeddata.es/shapes#2b540d313b29dd635de798fe2c3f6948> , <https://astrea.linkeddata.es/shapes#005820e9956fa1f1dc8038941138e4b8> , <https://astrea.linkeddata.es/shapes#295d50969af520d79627f8a7fa4feca7> , <https://astrea.linkeddata.es/shapes#31dc6199187309e1e1f860cd91f29802> , <https://astrea.linkeddata.es/shapes#b56d5be213d2dfd8b9ba9d69db048623> , <https://astrea.linkeddata.es/shapes#b6ae56d1891bbddd70347af79283b8ae> , <https://astrea.linkeddata.es/shapes#f4a172b6b2655946de6fe167f3263d2a> , <https://astrea.linkeddata.es/shapes#e9d3327438c0d1ff5db93166e2cd0497> , <https://astrea.linkeddata.es/shapes#90f14db1eea70973a88efb7673a87a2c> , <https://astrea.linkeddata.es/shapes#f96cee9db69713729639578fbdc2f449> , <https://astrea.linkeddata.es/shapes#5e144893375d08b6b0421380e6818646> , <https://astrea.linkeddata.es/shapes#f8a9d0e61b5b97f2e4e10eb536b923ee> , <https://astrea.linkeddata.es/shapes#1f9e6274af03a76fcad07470bbb528fa> , <https://astrea.linkeddata.es/shapes#644d55f26e9a296db63a135ebb4a87ee> , <https://astrea.linkeddata.es/shapes#c7b3d5aa5a2592aea2b66f69af039258> , <https://astrea.linkeddata.es/shapes#7486a9914852f96244124731643fcf87> , <https://astrea.linkeddata.es/shapes#b1687d960f0dbe08c962f906470757fd> , <https://astrea.linkeddata.es/shapes#0689586086f979835d3a59807028eaed> , <https://astrea.linkeddata.es/shapes#0df9080e49f106518ff7f93d2a5bf18d> , <https://astrea.linkeddata.es/shapes#c9e4bf771a856d16b17bbc347c21d4ba> , <https://astrea.linkeddata.es/shapes#531774cf6fa4b18666376f0edae85d3d> , <https://astrea.linkeddata.es/shapes#be5a7d9134f040cf25fcfb1f3fcebeea> , <https://astrea.linkeddata.es/shapes#cac5b7d662ad34bb185acee3fd8a08fa> , <https://astrea.linkeddata.es/shapes#a0ab629db91c2985db5cfc08fdefbd12> , <https://astrea.linkeddata.es/shapes#a5ac311f914cfb98ae56449a942b6f05> , <https://astrea.linkeddata.es/shapes#b970396f8c8cea81cbec92edcb2a265e> , <https://astrea.linkeddata.es/shapes#f5305a78bb2d650814b2c2cdb6001275> , <https://astrea.linkeddata.es/shapes#041bddc96ae271b160974636ccb57796> , <https://astrea.linkeddata.es/shapes#bc025cfcd6fea7aa665b10e54735f142> , <https://astrea.linkeddata.es/shapes#22ae548bbc942d7f3a3db28ff2378f76> , <https://astrea.linkeddata.es/shapes#9ade981c836e590b58befcdb2a933c10> , <https://astrea.linkeddata.es/shapes#d817706528e87f15f36f1623736d0581> , <https://astrea.linkeddata.es/shapes#bb5a6a480f2da9e62c987dc348db1624> , <https://astrea.linkeddata.es/shapes#5761ee49d162fe0a8bd658600f926d0a> , <https://astrea.linkeddata.es/shapes#5f373f51113f5e9026cecba5dbe6c4ad> , <https://astrea.linkeddata.es/shapes#d5bedb75cc60d33b7f14e1b003a2cc47> , <https://astrea.linkeddata.es/shapes#bb4124497468cb11fbd731d11a89849d> , <https://astrea.linkeddata.es/shapes#cfc5cfc0d76be17024a75288f59a721b> , <https://astrea.linkeddata.es/shapes#034dc2d7f4a472e93880a9b3cad17163> , <https://astrea.linkeddata.es/shapes#681a62e1f4ab358d00d8c0f58e163631> , <https://astrea.linkeddata.es/shapes#14ceb292b14f1eada4279c41e73f346f> , <https://astrea.linkeddata.es/shapes#22f0952c974be3013108eb12565b955f> , <https://astrea.linkeddata.es/shapes#125d54f1f484f53d9dd76ca5ac431e84> , <https://astrea.linkeddata.es/shapes#7b23d54513382da90077cfbc3c32f93a> , <https://astrea.linkeddata.es/shapes#05a42654c4da73d6842c01313b1ca2bb> , <https://astrea.linkeddata.es/shapes#f230fe1ca48c0f871ff7dd0cacb5ef82> , <https://astrea.linkeddata.es/shapes#079d07ea134d3cb4cbea7907ff99a66f> , <https://astrea.linkeddata.es/shapes#a2c433ab1bae9f5d22d7ce0cad5e952f> , <https://astrea.linkeddata.es/shapes#fbf70c4afd3f4a8914b8d8c980401c4e> , <https://astrea.linkeddata.es/shapes#87f1f9a4b2713ebac0fff78217e96bf0> , <https://astrea.linkeddata.es/shapes#e02b04a08e633a35efd6d4cbf2ee3a0d> , <https://astrea.linkeddata.es/shapes#96885a7745a594bfad1443075d56000c> , <https://astrea.linkeddata.es/shapes#b166053cdb87ba185bc6d61f1e40594d> , <https://astrea.linkeddata.es/shapes#5a425e56746d1cdeb0a609bf35096464> , <https://astrea.linkeddata.es/shapes#1e5120208a2b5b0b84f53cda14e641dc> , <https://astrea.linkeddata.es/shapes#9040be4201fc1b849d1d134982c3653d> , <https://astrea.linkeddata.es/shapes#3815a117a827a0f7df2003110e36156e> , <https://astrea.linkeddata.es/shapes#1235545a79d8f8ed841a1353dbe0706f> , <https://astrea.linkeddata.es/shapes#121616f9ab74e76c96d6e3d3efbf737f> , <https://astrea.linkeddata.es/shapes#70e3229f0aecd9f3f5056318d213f7e1> , <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#c0a3f836b870ed46aca00c4110d0fde9> , <https://astrea.linkeddata.es/shapes#0f082fbf9e01de5c2bdaf0710d2a9caa> , <https://astrea.linkeddata.es/shapes#6c1a521911c6377de125915a3a1f3402> , <https://astrea.linkeddata.es/shapes#1cb19c56e3e3ac5c495bcdc5f9c67d6a> , <https://astrea.linkeddata.es/shapes#dcfeea09a734ee6b013625a3072a5050> , <https://astrea.linkeddata.es/shapes#b3360f4887e12275e580ad08a68b2358> , <https://astrea.linkeddata.es/shapes#00a34aa8c7502630b04fc98016106a84> , <https://astrea.linkeddata.es/shapes#9c4593926d94d35205f91b4f026a6ec1> , <https://astrea.linkeddata.es/shapes#ffcd51333b939d182688a6f661ea98ad> , <https://astrea.linkeddata.es/shapes#7af49e931fe1bfbce1a0dd9e01baeb88> , <https://astrea.linkeddata.es/shapes#502da0c7c70a886e426e131d9eeaea62> , <https://astrea.linkeddata.es/shapes#943a99f371614ea11868b18c42b1c4c7> , <https://astrea.linkeddata.es/shapes#202e49c466afc0084d0cdee6772fdcc5> , <https://astrea.linkeddata.es/shapes#ce4351b1c53ae2f8bbbd9340d10cd8b6> , <https://astrea.linkeddata.es/shapes#fa24da0564292af2d058a465dc54edac> , <https://astrea.linkeddata.es/shapes#08f78f8aa1431263ff3bf2252b73da90> , <https://astrea.linkeddata.es/shapes#04ab38023f939c2b63f985f45db9a828> , <https://astrea.linkeddata.es/shapes#0007a73366efd63459376e14d9947cb2> , <https://astrea.linkeddata.es/shapes#864c3913a81f06a29307221509c6f132> , <https://astrea.linkeddata.es/shapes#59eb33b48113ca2911459d06f1c412ad> , <https://astrea.linkeddata.es/shapes#b968c6fa81cedc8178781cf3cacf8b2f> , <https://astrea.linkeddata.es/shapes#1dba4f34afa448278533f9ec87bc93ac> , <https://astrea.linkeddata.es/shapes#c5a7485b1ec1c084552386eb8ba6213c> , <https://astrea.linkeddata.es/shapes#791d60535b0b07b08623c813c5d1e6e8> , <https://astrea.linkeddata.es/shapes#ca7c5ebf9adce78e39b0eb3f5ca38e06> , <https://astrea.linkeddata.es/shapes#6218f98e1a906b6f8c8e71905672c4cb> , <https://astrea.linkeddata.es/shapes#3b118909e1157cbe00a4d77cd4fa338f> , <https://astrea.linkeddata.es/shapes#52266b49d0a562ee224e1b2081b64dc8> , <https://astrea.linkeddata.es/shapes#f35f620d5c0d5c43b52513b4284375db> , <https://astrea.linkeddata.es/shapes#637acc5adf8d726b6fb92fb07f8de20e> , <https://astrea.linkeddata.es/shapes#d1052fbd1c9f83b7c8fd0ed13006da83> , <https://astrea.linkeddata.es/shapes#93e2e629bb1266fef1683fdb377b33b9> , <https://astrea.linkeddata.es/shapes#20038bf918f3f5760b00ef3cc1bd74f5> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0532311797> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#dcfeea09a734ee6b013625a3072a5050>
+        a               sh:NodeShape ;
+        rdfs:label      "Individual reference"@en ;
+        sh:description  "Any LMM1:Reference that isInstanceOf a dul:Concept" ;
+        sh:name         "Individual reference"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e78884e671f1b74561dc18dcf8f2d031> , <https://astrea.linkeddata.es/shapes#fa24da0564292af2d058a465dc54edac> ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#IndividualReference> .
+
+<https://astrea.linkeddata.es/shapes#f230fe1ca48c0f871ff7dd0cacb5ef82>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      DUL:isConceptUsedIn .
+
+<https://astrea.linkeddata.es/shapes#00a34aa8c7502630b04fc98016106a84>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 LMM_L1:isContextOf ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  DUL:Entity ] .
+
+<https://astrea.linkeddata.es/shapes#718839e7bab83a5378a21dceefe480e0>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:hasParticipant .
+
+<https://astrea.linkeddata.es/shapes#9040be4201fc1b849d1d134982c3653d>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:Situation .
+
+<https://astrea.linkeddata.es/shapes#31dc6199187309e1e1f860cd91f29802>
+        a               sh:NodeShape ;
+        rdfs:label      "Contesto {it}" , "Context"@en , "Contesto"@it ;
+        sh:description  "Any context, such as:\n\n- dul:Situation (the circumstantial context of denoted Entity(ies))\n- Paradigm (the cultural context of expressed Meaning(s))\n- CoText (the informational context of Expression(s))\n- dul:Description (the relational context of Concept(s))\n- KnowledgeCommunity (the social context of conceptualizing Agent(s))\n- dul:Place (the spatial context of Entity(ies))\n\nbut also a dul:PhysicalPlace, a dul:Event, etc. In practice, everything that is said to be a context for something else.\n\nNotice that certain contexts can be given independently from the entities that are contextualized (e.g. the ones listed above), others need a core entity and a rule to build its neighborhood, and still others can be classified as such when a certain relation is applied to them.\nFor example, a scientific theory is a dul:Description that works as a context for its dul:Concept(s), and can be given independently from the concepts, which can remain implicit to a certain extent. On the contrary, a CoText is actually a neighborhood of a certain chunk of text, which can be built based on a syntagmatic rule (all words from the sentence where the chunk occurs), an associative rule (all terms that are related to the chunk across the texts of a corpus, given a certain statistical threshold), etc.\nContexts can also emerge based on what relations are considered \"context triggers\". For example, in this ontology very different relations: part, participation, setting, membership, acting for, localization, etc. are considered context triggers by adding owl:subPropertyOf axioms to the property: isContextOf. Since the class Context has an equivalent axiom to isContextOf someValuesFrom dul:Entity, everything has a property that is declared subPropertyOf isContextOf, will be inferred to be a Context as well." ;
+        sh:name         "Contesto {it}" , "Contesto"@it , "Context"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#00a34aa8c7502630b04fc98016106a84> ;
+        sh:targetClass  LMM_L1:Context .
+
+<https://astrea.linkeddata.es/shapes#bb5a6a480f2da9e62c987dc348db1624>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:specializes .
+
+<https://astrea.linkeddata.es/shapes#3815a117a827a0f7df2003110e36156e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:characterizes .
+
+<https://astrea.linkeddata.es/shapes#87f1f9a4b2713ebac0fff78217e96bf0>
+        a               sh:NodeShape ;
+        rdfs:label      "Cotesto {it}" , "Co-text"@en ;
+        sh:description  "The context of an Expression .\nA CoText is a neighborhood of a certain chunk of text, which can be built based on a syntactic rule (all words from the sentence\nwhere the chunk occurs), an associative rule (all terms that are related to the chunk across the texts of a corpus, \ngiven a certain statistical threshold), etc." ;
+        sh:name         "Cotesto {it}" , "Co-text"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  LMM_L1:CoText .
+
+<https://astrea.linkeddata.es/shapes#637acc5adf8d726b6fb92fb07f8de20e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:unifies .
+
+<https://astrea.linkeddata.es/shapes#1ce76057a5211a990817420d2ba2a5eb>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      LMM_L1:denotes .
+
+<https://astrea.linkeddata.es/shapes#1f9e6274af03a76fcad07470bbb528fa>
+        a            sh:PropertyShape ;
+        sh:class     IOLite:LinguisticFunction ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#hasSyntacticFunction> .
+
+<https://astrea.linkeddata.es/shapes#b3360f4887e12275e580ad08a68b2358>
+        a               sh:PropertyShape ;
+        rdfs:label      "related meaning"@en , "A relation between any two meanings." ;
+        sh:class        LMM_L1:Meaning ;
+        sh:description  "A relation between any two meanings." ;
+        sh:name         "related meaning"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         LMM_L1:relatedMeaning .
+
+<https://astrea.linkeddata.es/shapes#791d60535b0b07b08623c813c5d1e6e8>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:classifies .
+
+<https://astrea.linkeddata.es/shapes#90f14db1eea70973a88efb7673a87a2c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:hasLocation .
+
+<https://astrea.linkeddata.es/shapes#22ae548bbc942d7f3a3db28ff2378f76>
+        a               sh:NodeShape ;
+        rdfs:label      "Multiple reference"@en ;
+        sh:description  "Any LMM1:Reference that is also a dul:Collection, and can have members that are individual references.\nAs a collection, a multiple reference can be covered by a dul:Concept, whose instances are the members of the MultipleReference . For example, JohnDoe (an IndividualReference) isMemberOf ACMEEmployees (a MultipleReference), that dul:isCoveredBy the Employee concept. It also holds that JohnDoe isInstanceOf Employee" ;
+        sh:name         "Multiple reference"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#MultipleReference> .
+
+<https://astrea.linkeddata.es/shapes#b970396f8c8cea81cbec92edcb2a265e>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#202e49c466afc0084d0cdee6772fdcc5> , <https://astrea.linkeddata.es/shapes#ce4351b1c53ae2f8bbbd9340d10cd8b6> , <https://astrea.linkeddata.es/shapes#1f9e6274af03a76fcad07470bbb528fa> ;
+        sh:targetClass  IOLite:LinguisticObject .
+
+<https://astrea.linkeddata.es/shapes#9c4593926d94d35205f91b4f026a6ec1>
+        a               sh:NodeShape ;
+        rdfs:label      "Concept expression"@en ;
+        sh:description  "A Term that expresses a Meaning, and denotes a MultipleReference, e.g. 'Dog', 'Black box'" ;
+        sh:name         "Concept expression"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#ddb32605e3b716e06b40cb2eebb86c8c> , <https://astrea.linkeddata.es/shapes#e02b04a08e633a35efd6d4cbf2ee3a0d> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#644d55f26e9a296db63a135ebb4a87ee> , <https://astrea.linkeddata.es/shapes#5761ee49d162fe0a8bd658600f926d0a> ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#ConceptExpression> .
+
+<https://astrea.linkeddata.es/shapes#ca7c5ebf9adce78e39b0eb3f5ca38e06>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  DUL:TypeCollection .
+
+<https://astrea.linkeddata.es/shapes#e5463dbea63e16478ded68d6b95a93aa>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isDescribedBy .
+
+<https://astrea.linkeddata.es/shapes#f5305a78bb2d650814b2c2cdb6001275>
+        a            sh:PropertyShape ;
+        rdfs:label   "is instance of"@en ;
+        sh:class     DUL:Concept ;
+        sh:name      "is instance of"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#isInstanceOf> .
+
+<https://astrea.linkeddata.es/shapes#1fe332766d48e0b7d31c3b28c827aae9>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isReferenceOf .
+
+<https://astrea.linkeddata.es/shapes#fbf70c4afd3f4a8914b8d8c980401c4e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:introduces .
+
+<https://astrea.linkeddata.es/shapes#079d07ea134d3cb4cbea7907ff99a66f>
+        a               sh:NodeShape ;
+        rdfs:label      "Contextual expression"@en ;
+        sh:description  "A Term that denotes a Reference via anaphora or deixis, e.g. 'the dog over there', 'all my family', 'the current ACME employees', 'the lion described above'." ;
+        sh:name         "Contextual expression"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#ddb32605e3b716e06b40cb2eebb86c8c> ;
+        sh:or           ( [ sh:class  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#ContextualReference> ;
+                            sh:path   LMM_L1:denotes
+                          ]
+                          [ sh:class  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#ExtensionalReference> ;
+                            sh:path   LMM_L1:denotes
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#63bd87509518de6225ca58d831806d6f> , <https://astrea.linkeddata.es/shapes#c0a3f836b870ed46aca00c4110d0fde9> ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#ContextualExpression> .
+
+<https://astrea.linkeddata.es/shapes#1cb19c56e3e3ac5c495bcdc5f9c67d6a>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:actsFor .
+
+<https://astrea.linkeddata.es/shapes#ff09b60925fe7c1bc22dd2d96d961527>
+        a            sh:PropertyShape ;
+        sh:class     DUL:Entity ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      LMM_L1:isContextOf .
+
+<https://astrea.linkeddata.es/shapes#e82beec7ad2d9c53d65339ecd06f1971>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isSettingFor .
+
+<https://astrea.linkeddata.es/shapes#f96cee9db69713729639578fbdc2f449>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      IOLite:hasCulturalMixingWith .
+
+<https://astrea.linkeddata.es/shapes#ffcd51333b939d182688a6f661ea98ad>
+        a               sh:NodeShape ;
+        rdfs:label      "Enumerated expression"@en ;
+        sh:description  "An AnaphoricExpression that denotes an enumerated PluralReference, e.g. 'John, Mary, and me'. Enumerated expressions typically have names and anaphoric expressions (e.g. pronouns) as parts." ;
+        sh:name         "Enumerated expression"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:or           ( [ sh:class  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#ContextualExpression> ;
+                            sh:path   DUL:hasPart
+                          ]
+                          [ sh:class  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#Name> ;
+                            sh:path   DUL:hasPart
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#cfc5cfc0d76be17024a75288f59a721b> , <https://astrea.linkeddata.es/shapes#5e144893375d08b6b0421380e6818646> ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#EnumeratedExpression> .
+
+<https://astrea.linkeddata.es/shapes#e02b04a08e633a35efd6d4cbf2ee3a0d>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#ContextualExpression> .
+
+<https://astrea.linkeddata.es/shapes#2db53963ae7ab9b620534c12130262a9>
+        a               sh:NodeShape ;
+        rdfs:label      "Expression" , "Expression"@en ;
+        sh:description  "Any information that either dul:expresses a Meaning or denotes a Reference" ;
+        sh:name         "Expression"@en , "Expression" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#58446375d14e89b6d1ee46471f435d41> ;
+        sh:targetClass  LMM_L1:Expression ;
+        sh:targetClass  []  ;
+        sh:targetClass  []  .
+
+<https://astrea.linkeddata.es/shapes#ddb32605e3b716e06b40cb2eebb86c8c>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#Name> .
+
+<https://astrea.linkeddata.es/shapes#681a62e1f4ab358d00d8c0f58e163631>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      DUL:hasMember .
+
+<https://astrea.linkeddata.es/shapes#864c3913a81f06a29307221509c6f132>
+        a               sh:NodeShape ;
+        rdfs:label      "Contextual reference"@en ;
+        sh:description  "An IndividualReference that is denoted by a ContextualExpression (anaphoric or deictic), e.g. 'the book in my bag', 'the book mentioned at the beginning of the story'.\nThe extensional interpretation of Named and Contextual references in a de-reified model can be equivalent, reflecting the paraphrastic property of natural languages, e.g. the extensional interpretations of 'Linosa' and 'the Italian most southern island' are equivalent. This corresponds to saying that names and contextual expressions can denote the same entities." ;
+        sh:name         "Contextual reference"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1235545a79d8f8ed841a1353dbe0706f> ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#ContextualReference> .
+
+<https://astrea.linkeddata.es/shapes#acfd1585f972f8a0d8b03821b0c19f94>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      IOLite:metaphoricallyBlendsWith .
+
+<https://astrea.linkeddata.es/shapes#be5a7d9134f040cf25fcfb1f3fcebeea>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:hasMember .
+
+<https://astrea.linkeddata.es/shapes#cac5b7d662ad34bb185acee3fd8a08fa>
+        a               sh:PropertyShape ;
+        rdfs:label      "has co-interpretant" , "A relation between two meanings that are both interpretant for a same information object." ;
+        sh:class        LMM_L1:Meaning ;
+        sh:description  "A relation between two meanings that are both interpretant for a same information object." ;
+        sh:name         "has co-interpretant" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#hasCoInterpretant> .
+
+<https://astrea.linkeddata.es/shapes#1e5120208a2b5b0b84f53cda14e641dc>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      LMM_L1:isDenotedBy .
+
+<https://astrea.linkeddata.es/shapes#04ab38023f939c2b63f985f45db9a828>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  IOLite:Text .
+
+<https://astrea.linkeddata.es/shapes#c3ade30aae224caac5b7864ea3841943>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isSatisfiedBy .
+
+<https://astrea.linkeddata.es/shapes#7486a9914852f96244124731643fcf87>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isPartOf .
+
+<https://astrea.linkeddata.es/shapes#f4a172b6b2655946de6fe167f3263d2a>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#hasSyntacticFunction> .
+
+<https://astrea.linkeddata.es/shapes#08f78f8aa1431263ff3bf2252b73da90>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:concretelyExpresses .
+
+<https://astrea.linkeddata.es/shapes#f0397911ed031bc0edd93067096d9b07>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:isIntroducedBy .
+
+<https://astrea.linkeddata.es/shapes#2ba7e7b698aad4e5529afc47dad9574d>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1cfa156a24f71c8e8f19d03227e98ff7> , <https://astrea.linkeddata.es/shapes#b56d5be213d2dfd8b9ba9d69db048623> ;
+        sh:targetClass  IOLite:LinguisticFunction .
+
+<https://astrea.linkeddata.es/shapes#52266b49d0a562ee224e1b2081b64dc8>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b166053cdb87ba185bc6d61f1e40594d> ;
+        sh:targetClass  DUL:Community .
+
+<https://astrea.linkeddata.es/shapes#0007a73366efd63459376e14d9947cb2>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:covers .
+
+<https://astrea.linkeddata.es/shapes#bb4124497468cb11fbd731d11a89849d>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      IOLite:hasCulturalGrounding .
+
+<https://astrea.linkeddata.es/shapes#5a425e56746d1cdeb0a609bf35096464>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      LMM_L1:denotes .
+
+<https://astrea.linkeddata.es/shapes#a2c433ab1bae9f5d22d7ce0cad5e952f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      DUL:hasComponent .
+
+<https://astrea.linkeddata.es/shapes#affa294a9369e37adf9669902c94f27c>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/ont/lmm/LMM_L2.owl#SyntacticRule> .

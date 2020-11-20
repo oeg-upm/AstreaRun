@@ -1,0 +1,1052 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#66bec6a2a9be5e60f296657bb07ba198>
+        a               sh:NodeShape ;
+        rdfs:label      "News event"@en , "Evento noticioso"@es ;
+        sh:description  "An event relevant from the point of view of journalism"@en , "Un evento de relevancia periodística"@es ;
+        sh:name         "News event"@en , "Evento noticioso"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/NewsEvent> .
+
+<https://astrea.linkeddata.es/shapes#84abb0b2c8d0df65eb7f09a2f59c3709>
+        a               sh:PropertyShape ;
+        rdfs:label      "Una organización académica (escuela, universidad) que participa de esta conexión"@es , "Organización académica participante"@es , "Academic organization participant"@en , "An academic organization (school, university) who is part of this connection"@en ;
+        sh:class        <http://dev.poderopedia.com/vocab/AcademicOrganization> ;
+        sh:description  "Una organización académica (escuela, universidad) que participa de esta conexión"@es , "An academic organization (school, university) who is part of this connection"@en ;
+        sh:name         "Organización académica participante"@es , "Academic organization participant"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/academicParticipant> .
+
+<https://astrea.linkeddata.es/shapes#841b9fed02b5607360714cf394054977>
+        a            sh:PropertyShape ;
+        rdfs:label   "Legal constitution"@en , "Constitución legal"@es ;
+        sh:class     <http://xmlns.com/foaf/0.1/Document> ;
+        sh:name      "Legal constitution"@en , "Constitución legal"@es ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://dev.poderopedia.com/vocab/hasLegalConstitution> .
+
+<https://astrea.linkeddata.es/shapes#cdc30b12d09322d39d536eda6246c725>
+        a               sh:NodeShape ;
+        rdfs:label      "Documentation"@en , "Documentación"@es ;
+        sh:description  "Class that describes documents related to a person or organization, including its release date"@en , "Clase que describe documentos relacionados con una persona u organización, incluyendo su fecha de publicación"@es ;
+        sh:name         "Documentation"@en , "Documentación"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#01c14f5ce3691ab5d536dedfe30d1767> ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/Documentation> .
+
+<https://astrea.linkeddata.es/shapes#c60a49ab35219858da68f2ceb80cf6bc>
+        a               sh:NodeShape ;
+        rdfs:label      "Empresa"@es , "Company"@en ;
+        sh:description  "Una organización con fines de lucro"@es , "A for profit organization" ;
+        sh:name         "Empresa"@es , "Company"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#324c8fa39a42a65752109600fba61b44> , <https://astrea.linkeddata.es/shapes#c95fb5f0503d2a343e21dfb4765014f0> , <https://astrea.linkeddata.es/shapes#841b9fed02b5607360714cf394054977> , <https://astrea.linkeddata.es/shapes#235d227cd1e4736050dba228445e445e> , <https://astrea.linkeddata.es/shapes#57d187a715e49a32656cff45dfdbfb1e> ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/Company> .
+
+<https://astrea.linkeddata.es/shapes#0e9b151e4e3c2c085a55e1e7b94430f3>
+        a               sh:PropertyShape ;
+        rdfs:label      "Connected via"@en , "Conectados via"@es , "Entidad por la cual 2 personas se conocen (colegio, universidad, iglesia, etc.)"@es , "Entity from where two persons know each other (school, college, church, etc.)"@en ;
+        sh:class        <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description  "Entidad por la cual 2 personas se conocen (colegio, universidad, iglesia, etc.)"@es , "Entity from where two persons know each other (school, college, church, etc.)"@en ;
+        sh:name         "Connected via"@en , "Conectados via"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/connectedVia> .
+
+<https://astrea.linkeddata.es/shapes#85126b82124208e230327b5f73af5420>
+        a               sh:PropertyShape ;
+        rdfs:label      "Estudiante"@es , "Student"@en , "Persona en una conexión educacional"@es , "Person involved in an Education Connection"@en ;
+        sh:class        <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description  "Persona en una conexión educacional"@es , "Person involved in an Education Connection"@en ;
+        sh:name         "Student"@en , "Estudiante"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasStudent> .
+
+<https://astrea.linkeddata.es/shapes#91cb76a6cb6fbf8a836dffd7d7acfdd3>
+        a               sh:NodeShape ;
+        rdfs:label      "Conexión con evento noticioso"@es , "News event connection"@en ;
+        sh:description  "Describes the relation of a person with a news event during a specific period of time"@en , "Describe la relación de una persona con un evento noticioso durante un período de tiempo"@es ;
+        sh:name         "Conexión con evento noticioso"@es , "News event connection"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#344c11ba7ff6e30c5c2e3f2ad46612b8> ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/NewsEventConnection> .
+
+<https://astrea.linkeddata.es/shapes#2aa868bf0819fdd3e6d9ac8857cecd94>
+        a               sh:NodeShape ;
+        rdfs:label      "Work role"@en , "Puesto de trabajo"@es ;
+        sh:name         "Work role"@en , "Puesto de trabajo"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/WorkRole> .
+
+<https://astrea.linkeddata.es/shapes#438c10f45d4a4cbe9e4c46c6616b4b1b>
+        a               sh:NodeShape ;
+        rdfs:label      "Restricted access organization"@en , "Organización de acceso restringido"@es ;
+        sh:description  "A restricted access organization, like social clubs, golf clubs, etc."@en , "Una organización de acceso restringod, como clubes sociales, de golf, etc."@es ;
+        sh:name         "Restricted access organization"@en , "Organización de acceso restringido"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/RestrictedAccessOrganization> .
+
+<https://astrea.linkeddata.es/shapes#e2f51543b8952575633bafd89c6aebad>
+        a            sh:PropertyShape ;
+        rdfs:label   "Buyer"@en , "Comprador"@es ;
+        sh:class     <http://dev.poderopedia.com/vocab/Company> ;
+        sh:name      "Buyer"@en , "Comprador"@es ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://dev.poderopedia.com/vocab/buyerCompany> .
+
+<https://astrea.linkeddata.es/shapes#5a4377c3837966e70f5f9a0c532a83fc>
+        a               sh:PropertyShape ;
+        rdfs:label      "Una organización académica (escuela, universidad) que participa de esta conexión"@es , "Participant organization"@en , "An academic organization (school, university) who is part of this connection"@en , "Organización participante"@es ;
+        sh:class        <http://xmlns.com/foaf/0.1/Organization> ;
+        sh:description  "Una organización académica (escuela, universidad) que participa de esta conexión"@es , "An academic organization (school, university) who is part of this connection"@en ;
+        sh:name         "Participant organization"@en , "Organización participante"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/organizationParticipant> .
+
+<https://astrea.linkeddata.es/shapes#3e2bd723509fa14e6ae90e4715e883b7>
+        a               sh:NodeShape ;
+        rdfs:label      "Company acquisition"@en , "Adquisición de empresa"@es ;
+        sh:name         "Company acquisition"@en , "Adquisición de empresa"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e2f51543b8952575633bafd89c6aebad> , <https://astrea.linkeddata.es/shapes#d1837fec887637bd107a088516c5d447> ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/AcquisitionCompanyConnection> .
+
+<https://astrea.linkeddata.es/shapes#06de54684d31bd1edc538f2b5b42a459>
+        a               sh:PropertyShape ;
+        rdfs:label      "Other last name, different from the first one"@en , "Otro apellido"@es , "Otro apellido, que no es el primero"@es , "Other last name"@en ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "Other last name, different from the first one"@en , "Otro apellido, que no es el primero"@es ;
+        sh:name         "Other last name"@en , "Otro apellido"@es ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://dev.poderopedia.com/vocab/otherLastName> .
+
+<https://astrea.linkeddata.es/shapes#eb00136c48bc0e0887341859c202826c>
+        a               sh:PropertyShape ;
+        rdfs:label      "Political Organizacion participant"@en , "Una organización política que participa de esta conexión"@es , "Organización política participante"@es , "A political organization who is part of this connection"@en ;
+        sh:class        <http://dev.poderopedia.com/vocab/PoliticalOrganization> ;
+        sh:description  "Una organización política que participa de esta conexión"@es , "A political organization who is part of this connection"@en ;
+        sh:name         "Political Organizacion participant"@en , "Organización política participante"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/politicalParticipant> .
+
+<https://astrea.linkeddata.es/shapes#edbd88100d2ce14cf8fdbd84d7e70377>
+        a               sh:NodeShape ;
+        rdfs:label      "Company Connection"@en , "Conexión entre compañías"@es ;
+        sh:description  "The connection between two companies"@en , "La relación entre dos compañías"@es ;
+        sh:name         "Company Connection"@en , "Conexión entre compañías"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/CompanyConnection> .
+
+<https://astrea.linkeddata.es/shapes#27cf5819100f93c493a97f2c7f55453f>
+        a            sh:PropertyShape ;
+        rdfs:label   "Merge company"@en , "Compañía fusionada"@es ;
+        sh:class     <http://dev.poderopedia.com/vocab/Company> ;
+        sh:name      "Merge company"@en , "Compañía fusionada"@es ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://dev.poderopedia.com/vocab/mergeCompany> .
+
+<https://astrea.linkeddata.es/shapes#baec3cf81b24e447031703d36e29d583>
+        a               sh:NodeShape ;
+        rdfs:label      "Country"@en , "País"@es ;
+        sh:description  "A region legally defined as a distinct entity in political geography"@en , "Área geográfica y una entidad políticamente independiente con su propio gobierno, administración, etc."@es ;
+        sh:name         "Country"@en , "País"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/Country> .
+
+<https://astrea.linkeddata.es/shapes#57d187a715e49a32656cff45dfdbfb1e>
+        a               sh:PropertyShape ;
+        rdfs:label      "Subsidiary company of"@en , "Relación entre empresas donde la primera es la filial de la segunda"@es , "Empresa filial de"@es , "Relation between companies where one is the subsidiary of the second"@en ;
+        sh:class        <http://dev.poderopedia.com/vocab/Company> ;
+        sh:description  "Relation between companies where one is the subsidiary of the second"@en , "Relación entre empresas donde la primera es la filial de la segunda"@es ;
+        sh:name         "Empresa filial de"@es , "Subsidiary company of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/subsidiaryCompanyOf> .
+
+<https://astrea.linkeddata.es/shapes#07d80fef580f793db68f8d9171e798c8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/vocab/bio/0.1/> ;
+        rdfs:label        "Participant"@en , "A person, group or organization that participates in a relationship for some time."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description    "A person, group or organization that participates in a relationship for some time."@en ;
+        sh:name           "Participant"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/vocab/bio/0.1/participant> .
+
+<https://astrea.linkeddata.es/shapes#aa0643dd88bc72455f340267cfb23f05>
+        a               sh:PropertyShape ;
+        rdfs:label      "Sectors related to NGOs"@en , "Sectores relationados a ONGs"@es , "Tiene área de filantropía"@es , "Has Philantropy Sector"@en ;
+        sh:class        <http://dev.poderopedia.com/vocab/PhilantropySector> ;
+        sh:description  "Sectores relationados a ONGs"@es , "Sectors related to NGOs"@en ;
+        sh:name         "Tiene área de filantropía"@es , "Has Philantropy Sector"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasPhilantropySector> .
+
+<https://astrea.linkeddata.es/shapes#b726056807c1828bab541533b93e19d2>
+        a               sh:NodeShape ;
+        rdfs:label      "Biografía larga"@es , "Long biography"@en ;
+        sh:description  "Descripción extendida de una persona, organización, etc"@es , "Long description of a person, organization, etc"@en ;
+        sh:name         "Biografía larga"@es , "Long biography"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#3f1e174b2592ca27e7e8019816496eb1> ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/LongBiography> .
+
+<https://astrea.linkeddata.es/shapes#01c14f5ce3691ab5d536dedfe30d1767>
+        a               sh:PropertyShape ;
+        rdfs:label      "Document URL"@en , "URL donde se encuentra el documento"@es , "URL de documento"@es , "URL where the document is located"@en ;
+        sh:class        <http://xmlns.com/foaf/0.1/Document> ;
+        sh:description  "URL donde se encuentra el documento"@es , "URL where the document is located"@en ;
+        sh:name         "URL de documento"@es , "Document URL"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasDocumentURL> .
+
+<https://astrea.linkeddata.es/shapes#9dd2d383293086620c3b227f11021e4f>
+        a               sh:NodeShape ;
+        rdfs:label      "Civil union"@en , "Unión civil"@es ;
+        sh:name         "Civil union"@en , "Unión civil"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/CivilUnion> .
+
+<https://astrea.linkeddata.es/shapes#2588fbc388a6fc11f9526439691159f2>
+        a               sh:PropertyShape ;
+        rdfs:label      "Razón social"@es , "Name"@en , "An alias for a person"@en , "Un alias de una persona"@es ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "Un alias de una persona"@es , "An alias for a person"@en ;
+        sh:name         "Razón social"@es , "Name"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasSocialReason> .
+
+<https://astrea.linkeddata.es/shapes#456dbb0e0e19eb54036e8f2de32d74e2>
+        a               sh:NodeShape ;
+        rdfs:label      "Marriage"@en , "Matrimonio"@es ;
+        sh:name         "Marriage"@en , "Matrimonio"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/Marriage> .
+
+<https://astrea.linkeddata.es/shapes#f45899f057054bce84ae6e97890a80ee>
+        a               sh:PropertyShape ;
+        rdfs:label      "Sexo de esta persona"@es , "Gender"@en , "Gender of this person"@en , "Sexo"@es ;
+        sh:class        <http://dev.poderopedia.com/vocab/Gender> ;
+        sh:description  "Gender of this person"@en , "Sexo de esta persona"@es ;
+        sh:name         "Sexo"@es , "Gender"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasGender> .
+
+<https://astrea.linkeddata.es/shapes#106d0d62877a4be2a0bc575ec7b9124d>
+        a               sh:NodeShape ;
+        rdfs:label      "Numeric datum"@en , "Dato numérico"@es ;
+        sh:description  "Numeric datum for an organization for a certain year"@en , "Información numérica para una organización, para cierto año"@es ;
+        sh:name         "Numeric datum"@en , "Dato numérico"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/NumericDatum> .
+
+<https://astrea.linkeddata.es/shapes#fb83c33ca5e9332623bd60424404960f>
+        a               sh:PropertyShape ;
+        rdfs:label      "Página web"@es , "Any URL related to this organization or person (including social media, corporate sites, etc.)"@en , "Has URL"@en , "Cualquier URL relaciontada con esa organización o persona (incluyendo social media, sitios corporativos, etc)"@es ;
+        sh:class        <http://xmlns.com/foaf/0.1/Document> ;
+        sh:description  "Cualquier URL relaciontada con esa organización o persona (incluyendo social media, sitios corporativos, etc)"@es , "Any URL related to this organization or person (including social media, corporate sites, etc.)"@en ;
+        sh:name         "Has URL"@en , "Página web"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasUrl> .
+
+<https://astrea.linkeddata.es/shapes#d0f6319e36dea76e53586c9e1c4860a8>
+        a               sh:PropertyShape ;
+        rdfs:label      "Organigram Documentation"@en , "Documents describing the organigram this agent"@en , "Documentación de organigrama"@es , "Documentos que describen el organigrama este agente"@es ;
+        sh:description  "Documents describing the organigram this agent"@en , "Documentos que describen el organigrama este agente"@es ;
+        sh:name         "Organigram Documentation"@en , "Documentación de organigrama"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasOrganigramDocumentation> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#8a3c6504c1f948b8383e90f978471a85>
+        a               sh:PropertyShape ;
+        rdfs:label      "Country of residence"@en , "País de residencia"@es , "Ubicación de los headquarters"@es , "Country where the organization's headquarters are located"@en ;
+        sh:class        <http://dev.poderopedia.com/vocab/Country> ;
+        sh:description  "Ubicación de los headquarters"@es , "Country where the organization's headquarters are located"@en ;
+        sh:name         "Country of residence"@en , "País de residencia"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/countryOfResidence> .
+
+<https://astrea.linkeddata.es/shapes#973b59f10205d5ad99cf36ba6ac6c4dc>
+        a               sh:PropertyShape ;
+        rdfs:label      "Describes relation where a person (object) is the child of the person's child"@en , "Describe la relación donde una persona (objeto) es hijo/a del hijo/a de la persona"@es , "Has grandchild"@en , "Nieto/a"@es ;
+        sh:class        <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description  "Describes relation where a person (object) is the child of the person's child"@en , "Describe la relación donde una persona (objeto) es hijo/a del hijo/a de la persona"@es ;
+        sh:name         "Nieto/a"@es , "Has grandchild"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasGrandChild> .
+
+<https://astrea.linkeddata.es/shapes#d4eebdc19a458c5f1cb7d382112969b4>
+        a               sh:PropertyShape ;
+        rdfs:label      "Main sector not listed in hasMainSector"@en , "Otro sector principal"@es , "Has other main sector"@en , "Sector principal no listado en hasMainSector"@es ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "Main sector not listed in hasMainSector"@en , "Sector principal no listado en hasMainSector"@es ;
+        sh:name         "Otro sector principal"@es , "Has other main sector"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasAlternativeMainSector> .
+
+<https://astrea.linkeddata.es/shapes#9511fbcf144a8f568858420642f83c36>
+        a               sh:NodeShape ;
+        rdfs:label      "Dating"@en , "Noviazgo"@es ;
+        sh:name         "Dating"@en , "Noviazgo"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/Dating> .
+
+<https://astrea.linkeddata.es/shapes#6ace7559c09873d57bb26d2909a563c6>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c882664618b695f2904264820a0c87a9> ;
+        sh:targetClass  <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+<https://astrea.linkeddata.es/shapes#4e04aeec4c0ee1a3e1e85d350f82fcf3>
+        a               sh:NodeShape ;
+        rdfs:label      "Educational connection"@en , "Conexión educacional (estudios)"@es ;
+        sh:description  "Esta relación indica que una persona estudió (al menos por un tiempo) en una institución académica"@es , "These connections reflects that a person studied (at least for some time) in an academic organization."@en ;
+        sh:name         "Educational connection"@en , "Conexión educacional (estudios)"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#48b81dd39f7881587578013f3ebd4b61> , <https://astrea.linkeddata.es/shapes#85126b82124208e230327b5f73af5420> ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/EducationalConnection> .
+
+<https://astrea.linkeddata.es/shapes#7f168f6edf0e61778a4950f4d346dcda>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/vocab/bio/0.1/> ;
+        rdfs:label        "Event"@en , "Evento"@es ;
+        sh:description    "Suceso importante en la vida de una persona, grupo u organización"@es , "An event is an occurrence that brings about a change in the state of affairs for one or more people and/or other agents. Events are assumed to occur over a period of time and may not have precise start and end points."@en ;
+        sh:name           "Evento"@es , "Event"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/vocab/bio/0.1/Event> .
+
+<https://astrea.linkeddata.es/shapes#ae796861fe424c135ab3a26ff5f5c02e>
+        a            sh:PropertyShape ;
+        rdfs:label   "Long biography"@en , "Biografía larga"@es ;
+        sh:class     <http://dev.poderopedia.com/vocab/LongBiography> ;
+        sh:name      "Long biography"@en , "Biografía larga"@es ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://dev.poderopedia.com/vocab/hasLongBiography> .
+
+<https://astrea.linkeddata.es/shapes#85206832203a874178a01c6d64ab1cbd>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/vocab/bio/0.1/principal> .
+
+<https://astrea.linkeddata.es/shapes#d3497b46b542b8b607a94b440629d9b2>
+        a               sh:NodeShape ;
+        rdfs:label      "Academic Connection"@en , "Conexión académica"@es ;
+        sh:description  "La relación entre una persona y una organización académica (colegio, universidad, etc)"@es , "The connection between a person and an Educational Organization (university, school, etc)"@en ;
+        sh:name         "Academic Connection"@en , "Conexión académica"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#84abb0b2c8d0df65eb7f09a2f59c3709> ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/AcademicConnection> .
+
+<https://astrea.linkeddata.es/shapes#7450c47b0d18059dfceec20bb383d6ae>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/vocab/bio/0.1/> ;
+        rdfs:label        "Death"@en ;
+        sh:description    "The event of a person's life ending."@en ;
+        sh:name           "Death"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/vocab/bio/0.1/Death> .
+
+<https://astrea.linkeddata.es/shapes#cfb5712d9d5befa2925cb8a6ab0f9915>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/vocab/bio/0.1/> ;
+        rdfs:label        "Individual Event"@en ;
+        sh:description    "A type of event that is principally about a single person, group or organization. Other agents may be involved but the event is most significant for the principal agent."@en ;
+        sh:name           "Individual Event"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#85206832203a874178a01c6d64ab1cbd> ;
+        sh:targetClass    <http://purl.org/vocab/bio/0.1/IndividualEvent> .
+
+<https://astrea.linkeddata.es/shapes#7ffd16a3d3b3101572d1f7845f600a01>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/vocab/bio/0.1/> ;
+        rdfs:label        "Muerte"@es , "El evento de la muerte de una persona, grupo u organización"@es , "Death Event"@en , "An death event associated with a person, group or organization."@en ;
+        sh:class          <http://purl.org/vocab/bio/0.1/Death> ;
+        sh:description    "El evento de la muerte de una persona, grupo u organización"@es , "An death event associated with a person, group or organization."@en ;
+        sh:name           "Muerte"@es , "Death Event"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/vocab/bio/0.1/death> .
+
+<https://astrea.linkeddata.es/shapes#ac67e3c2781435bc53aa1baa63741c6d>
+        a               sh:NodeShape ;
+        rdfs:label      "Generic biography"@en , "Biografía genérica"@es ;
+        sh:name         "Generic biography"@en , "Biografía genérica"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/Biography> .
+
+<https://astrea.linkeddata.es/shapes#71d0699fd5a6fdadffeaa967f5a01f40>
+        a               sh:NodeShape ;
+        rdfs:label      "Organización no gubernamental"@es , "Non Governmental Organization"@en ;
+        sh:description  "Una organización no gubernamental (ONG)"@es , "An non-governmental organization (NGO)"@en ;
+        sh:name         "Organización no gubernamental"@es , "Non Governmental Organization"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#aa0643dd88bc72455f340267cfb23f05> , <https://astrea.linkeddata.es/shapes#bc960fbb6a4c72f3853ce0f607f9cd29> ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/NonGovernmentalOrganization> .
+
+<https://astrea.linkeddata.es/shapes#8cdd470d75808850d28896738135e3c6>
+        a            sh:PropertyShape ;
+        rdfs:label   "Has numerical datum"@en , "Tiene dato numérico"@es ;
+        sh:class     <http://dev.poderopedia.com/vocab/NumericDatum> ;
+        sh:name      "Has numerical datum"@en , "Tiene dato numérico"@es ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://dev.poderopedia.com/vocab/hasNumericDatum> .
+
+<https://astrea.linkeddata.es/shapes#1d843b15d9c85739203d956418eec252>
+        a               sh:PropertyShape ;
+        rdfs:label      "Describes relation where a person (object) is the parent of the person's parent"@en , "Describe la relación donde una persona (objeto) es padre o madre del padre o madre de la persona"@es , "Has grandparent"@en , "Abuelo/a"@es ;
+        sh:class        <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description  "Describes relation where a person (object) is the parent of the person's parent"@en , "Describe la relación donde una persona (objeto) es padre o madre del padre o madre de la persona"@es ;
+        sh:name         "Abuelo/a"@es , "Has grandparent"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasGrandparent> .
+
+<https://astrea.linkeddata.es/shapes#3fa178c9a91dc791bfe57ba8e656f95c>
+        a         sh:PropertyShape ;
+        sh:class  <http://dev.poderopedia.com/vocab/LongBiography> .
+
+<https://astrea.linkeddata.es/shapes#a1a4ab4a82e64c22dc7d66ffd69d4687>
+        a               sh:NodeShape ;
+        rdfs:label      "International Organization"@en , "Organización internacional"@es ;
+        sh:description  "An international organization, like UN, UNESCO, etc."@en , "Una organización internacional, como NU, UNESCO, etc."@es ;
+        sh:name         "International Organization"@en , "Organización internacional"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/InternationalOrganization> .
+
+<https://astrea.linkeddata.es/shapes#af0eb50e30e82ff75d582451136e2d09>
+        a               sh:NodeShape ;
+        rdfs:label      "Student"@en , "Estudiante"@es ;
+        sh:name         "Student"@en , "Estudiante"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/StudentEducationalConnection> .
+
+<https://astrea.linkeddata.es/shapes#235d227cd1e4736050dba228445e445e>
+        a            sh:PropertyShape ;
+        rdfs:label   "Map"@en , "Mapa"@es ;
+        sh:class     <http://xmlns.com/foaf/0.1/Document> ;
+        sh:name      "Map"@en , "Mapa"@es ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://dev.poderopedia.com/vocab/hasMap> .
+
+<https://astrea.linkeddata.es/shapes#d1837fec887637bd107a088516c5d447>
+        a            sh:PropertyShape ;
+        rdfs:label   "Target company"@en , "Compañía target"@es ;
+        sh:class     <http://dev.poderopedia.com/vocab/Company> ;
+        sh:name      "Target company"@en , "Compañía target"@es ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://dev.poderopedia.com/vocab/targetCompany> .
+
+<https://astrea.linkeddata.es/shapes#c95fb5f0503d2a343e21dfb4765014f0>
+        a               sh:PropertyShape ;
+        rdfs:label      "Relation between companies where one is the subsidiary of the second"@en , "Representatens comerciales de"@es , "Commercial representatives of"@en , "Relación entre empresas donde la primera es la filial de la segunda"@es ;
+        sh:class        <http://dev.poderopedia.com/vocab/Company> ;
+        sh:description  "Relation between companies where one is the subsidiary of the second"@en , "Relación entre empresas donde la primera es la filial de la segunda"@es ;
+        sh:name         "Representatens comerciales de"@es , "Commercial representatives of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/commercialRepresentativesOf> .
+
+<https://astrea.linkeddata.es/shapes#6eae2c194b4bcf078367e1775d76ee00>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/vocab/bio/0.1/> ;
+        rdfs:label        "An event that marks the start of an interval and/or relationship. The event contributes to and/or causes of the state of affairs that hold during the interval. For example a period of study may be initiated by an Enrolment event."@en , "Initiating Event"@en , "Un evento que indica el comienzo de un intervalo o relación"@es , "Evento inicial"@es ;
+        sh:class          <http://purl.org/vocab/bio/0.1/Event> ;
+        sh:description    "An event that marks the start of an interval and/or relationship. The event contributes to and/or causes of the state of affairs that hold during the interval. For example a period of study may be initiated by an Enrolment event."@en , "Un evento que indica el comienzo de un intervalo o relación"@es ;
+        sh:name           "Evento inicial"@es , "Initiating Event"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/vocab/bio/0.1/initiatingEvent> .
+
+<https://astrea.linkeddata.es/shapes#324c8fa39a42a65752109600fba61b44>
+        a            sh:PropertyShape ;
+        rdfs:label   "Ticker symbol"@en , "Ticket de bolsa"@es ;
+        sh:datatype  rdfs:Literal ;
+        sh:name      "Ticker symbol"@en , "Ticket de bolsa"@es ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://dev.poderopedia.com/vocab/hasTickerSymbol> .
+
+<https://astrea.linkeddata.es/shapes#48b81dd39f7881587578013f3ebd4b61>
+        a               sh:PropertyShape ;
+        rdfs:label      "Organización académica"@es , "Entity from where two persons know each other (school, college, church, etc.)"@en , "Academic organization"@en , "Entidad por la cual 2 personas se conocen (colegio, universidad, iglesia, etc.)"@es ;
+        sh:class        <http://dev.poderopedia.com/vocab/AcademicOrganization> ;
+        sh:description  "Entity from where two persons know each other (school, college, church, etc.)"@en , "Entidad por la cual 2 personas se conocen (colegio, universidad, iglesia, etc.)"@es ;
+        sh:name         "Academic organization"@en , "Organización académica"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasAcademicOrganization> .
+
+<https://astrea.linkeddata.es/shapes#0a7edef82a17b4dcfec4fc5f5c12e0b6>
+        a               sh:PropertyShape ;
+        rdfs:label      "Logo de la organización"@es , "Logo"@en , "Logo"@es , "Logo of the organization"@en ;
+        sh:class        <http://xmlns.com/foaf/0.1/Image> ;
+        sh:description  "Logo de la organización"@es , "Logo of the organization"@en ;
+        sh:name         "Logo"@en , "Logo"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasLogo> .
+
+<https://astrea.linkeddata.es/shapes#344c11ba7ff6e30c5c2e3f2ad46612b8>
+        a               sh:PropertyShape ;
+        rdfs:label      "A news event participant in this connection"@en , "Evento noticioso participante"@es , "Un evento noticioso que participa de esta conexión"@es , "A news event which is part of this connection"@en ;
+        sh:class        <http://dev.poderopedia.com/vocab/NewsEvent> ;
+        sh:description  "Un evento noticioso que participa de esta conexión"@es , "A news event which is part of this connection"@en ;
+        sh:name         "A news event participant in this connection"@en , "Evento noticioso participante"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/newsEventParticipant> .
+
+<https://astrea.linkeddata.es/shapes#18a694d5c585500b5f8a60bd3985aa60>
+        a            sh:PropertyShape ;
+        rdfs:label   "First last name"@en , "Primer apellido"@es ;
+        sh:datatype  rdfs:Literal ;
+        sh:name      "First last name"@en , "Primer apellido"@es ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://dev.poderopedia.com/vocab/firstLastName> .
+
+<https://astrea.linkeddata.es/shapes#0965197263e2ea1ea3096ebad0616026>
+        a            sh:PropertyShape ;
+        rdfs:label   "Number of Employees"@en , "Número de empleados"@es ;
+        sh:name      "Number of Employees"@en , "Número de empleados"@es ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://dev.poderopedia.com/vocab/hasNumberEmployees> .
+
+<https://astrea.linkeddata.es/shapes#9016b3548d2d9edd0fa896583faa998a>
+        a               sh:NodeShape ;
+        rdfs:label      "Domestic partnership"@en , "Pareja de hecho"@es ;
+        sh:name         "Domestic partnership"@en , "Pareja de hecho"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/DomesticPartnership> .
+
+<https://astrea.linkeddata.es/shapes#00fd7bab0cf6c79916e67dd0ce665d5c>
+        a            sh:PropertyShape ;
+        rdfs:label   "Declaration of interests"@en , "Declaración de intereses"@es ;
+        sh:class     <http://xmlns.com/foaf/0.1/Document> ;
+        sh:name      "Declaration of interests"@en , "Declaración de intereses"@es ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://dev.poderopedia.com/vocab/declarationOfInterests> .
+
+<https://astrea.linkeddata.es/shapes#a0005af2635b82beb671b40f25536d31>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#dacf627f3d9075d7c805ce9d42521333> ;
+        sh:targetClass  rdfs:Resource .
+
+<https://astrea.linkeddata.es/shapes#39033a836c1b6f27835bdad3d4788b0d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/vocab/bio/0.1/> ;
+        rdfs:label        "An birth event associated with a person, group or organization."@en , "El evento del nacimiento de una persona, grupo u organización"@es , "Nacimiento"@es , "Birth Event"@en ;
+        sh:class          <http://purl.org/vocab/bio/0.1/Birth> ;
+        sh:description    "El evento del nacimiento de una persona, grupo u organización"@es , "An birth event associated with a person, group or organization."@en ;
+        sh:name           "Birth Event"@en , "Nacimiento"@es ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/vocab/bio/0.1/birth> .
+
+<https://astrea.linkeddata.es/shapes#518b2cc9ac2abca8b17ad5e0eda64974>
+        a               sh:NodeShape ;
+        rdfs:label      "Graduate"@en , "Titulado"@es ;
+        sh:name         "Graduate"@en , "Titulado"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/GraduateEducationalConnection> .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a               sh:NodeShape ;
+        rdfs:label      "Persona"@es , "Person"@en ;
+        sh:description  "Una persona"@es , "A person"@en ;
+        sh:name         "Persona"@es , "Person"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c79110ab6d8e9989d94c29e408cf5849> , <https://astrea.linkeddata.es/shapes#06de54684d31bd1edc538f2b5b42a459> , <https://astrea.linkeddata.es/shapes#1d843b15d9c85739203d956418eec252> , <https://astrea.linkeddata.es/shapes#973b59f10205d5ad99cf36ba6ac6c4dc> , <https://astrea.linkeddata.es/shapes#aeec6e20b85307fda1177e3171750e32> , <https://astrea.linkeddata.es/shapes#29c3a5d12df8ba4f3bb0b250a29218a8> , <https://astrea.linkeddata.es/shapes#f45899f057054bce84ae6e97890a80ee> , <https://astrea.linkeddata.es/shapes#21855e2521978d3f2f9caaf52bfaebe7> , <https://astrea.linkeddata.es/shapes#18a694d5c585500b5f8a60bd3985aa60> , <https://astrea.linkeddata.es/shapes#80b92cb3961a8672be76f3c9554f34ec> , <https://astrea.linkeddata.es/shapes#64a51482b9de1b1a46d25688a04acb2c> , <https://astrea.linkeddata.es/shapes#064eeb9f83bbf7ac6633b2d2c3489f1d> ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Person> .
+
+<https://astrea.linkeddata.es/shapes#8e7b845139e62bf8064daadee2c35686>
+        a               sh:NodeShape ;
+        rdfs:label      "Generic connection"@en , "Conexión genérica"@es ;
+        sh:description  "A generic connection between two or more entities during a certain period of time"@en , "Una conexión genérica entre dos o más entidades durante un cierto período de tiempo"@es ;
+        sh:name         "Generic connection"@en , "Conexión genérica"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/Connection> .
+
+<https://astrea.linkeddata.es/shapes#c882664618b695f2904264820a0c87a9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/foaf/0.1/> ;
+        rdfs:label        "based near" , "A location that something is based near, for some broadly human notion of near." ;
+        sh:class          <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+        sh:description    "A location that something is based near, for some broadly human notion of near." ;
+        sh:name           "based near" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://xmlns.com/foaf/0.1/based_near> .
+
+<https://astrea.linkeddata.es/shapes#5192bd4012546876e17387cec79301a1>
+        a               sh:NodeShape ;
+        rdfs:label      "Organization"@en , "Organización"@es ;
+        sh:name         "Organization"@en , "Organización"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#8cdd470d75808850d28896738135e3c6> , <https://astrea.linkeddata.es/shapes#2588fbc388a6fc11f9526439691159f2> , <https://astrea.linkeddata.es/shapes#0a7edef82a17b4dcfec4fc5f5c12e0b6> ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Organization> , <http://www.w3.org/ns/org#Organization> .
+
+<https://astrea.linkeddata.es/shapes#43595661dca0f9c13f51a37b4bc90a33>
+        a               sh:PropertyShape ;
+        rdfs:label      "ID que identifica a una organización o persona para efecto de los impuestos"@es , "ID that identifies an organization or person for tax purposes"@en , "Tax ID"@en , "Rol Único Tributario (RUT)"@es ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "ID que identifica a una organización o persona para efecto de los impuestos"@es , "ID that identifies an organization or person for tax purposes"@en ;
+        sh:name         "Tax ID"@en , "Rol Único Tributario (RUT)"@es ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasTaxId> .
+
+<https://astrea.linkeddata.es/shapes#05bf41dd30cb1cf3f93b344ada7ad557>
+        a               sh:NodeShape ;
+        rdfs:label      "Entidad con fuente"@es , "Sourced Entity"@en ;
+        sh:description  "Clase abstracta de caulquier entidad cuya información tenga una fuente"@es , "Abstract class  of any entity that has a source where its information was taken from"@en ;
+        sh:name         "Entidad con fuente"@es , "Sourced Entity"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#895823b613d111269e303ec8127c17e0> ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/SourcedEntity> .
+
+<https://astrea.linkeddata.es/shapes#bc7b6f906b98b4ca013a3569d199379e>
+        a               sh:NodeShape ;
+        rdfs:label      "Biografía corta"@es , "Short biography"@en ;
+        sh:description  "Short description of a person, organization, etc"@en , "Descripción abreviada de una persona, organización, etc"@es ;
+        sh:name         "Biografía corta"@es , "Short biography"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#3fa178c9a91dc791bfe57ba8e656f95c> ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/ShortBiography> .
+
+<https://astrea.linkeddata.es/shapes#d8347ee6f41776e9dbaee099c0a659b0>
+        a            sh:PropertyShape ;
+        rdfs:label   "Short biography"@en , "Biografía corta"@es ;
+        sh:class     <http://dev.poderopedia.com/vocab/ShortBiography> ;
+        sh:name      "Short biography"@en , "Biografía corta"@es ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://dev.poderopedia.com/vocab/hasShortBiography> .
+
+<https://astrea.linkeddata.es/shapes#bfa336a5276cc68f8a870a07dcf540cc>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/vocab/bio/0.1/> ;
+        rdfs:label        "Agent Relationship"@en ;
+        sh:description    "A particular type of connection existing between people, groups or organizations related to or having dealings with each other."@en ;
+        sh:name           "Agent Relationship"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#07d80fef580f793db68f8d9171e798c8> ;
+        sh:targetClass    <http://purl.org/vocab/bio/0.1/Relationship> .
+
+<https://astrea.linkeddata.es/shapes#7ef75657afbfde88291192c1099c3ef8>
+        a               sh:NodeShape ;
+        rdfs:label      "Social connection"@en , "Conexión social"@es ;
+        sh:description  "Connection between a two people, like friendship, acquaintances, etc."@en , "Relación entre dos personas descritas con un contexto (amistad, conocidos, etc)"@es ;
+        sh:name         "Social connection"@en , "Conexión social"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#0e9b151e4e3c2c085a55e1e7b94430f3> ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/SocialConnection> .
+
+<https://astrea.linkeddata.es/shapes#87bba38a34a7b47725c25a3189e31179>
+        a               sh:PropertyShape ;
+        rdfs:label      "Tiene documentación"@es , "Asocia un agente con documentación relacionada"@es , "Has documentation"@en , "Associates an agent with related documentation"@en ;
+        sh:class        <http://dev.poderopedia.com/vocab/Documentation> ;
+        sh:description  "Asocia un agente con documentación relacionada"@es , "Associates an agent with related documentation"@en ;
+        sh:name         "Tiene documentación"@es , "Has documentation"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasDocumentation> .
+
+<https://astrea.linkeddata.es/shapes#18f979110121fd12ba612be244d87458>
+        a               sh:NodeShape ;
+        rdfs:label      "Related Data"@en , "Datos relacionados"@es ;
+        sh:description  "Clase que describe datos relacionados con una organización, incluyendo su fecha relevante"@es , "Class that describes any type of data related to an organization including a relevant date"@en ;
+        sh:name         "Related Data"@en , "Datos relacionados"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1d67bed82e0916ab47b1821f70d5bd27> ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/RelatedData> .
+
+<https://astrea.linkeddata.es/shapes#203d9da8338ef84424932d27cb90f115>
+        a               sh:PropertyShape ;
+        rdfs:label      "Miscelaneous document related to this agent"@en , "Documentos misceláneos relacionadas con este agente"@es , "Other documentation"@en , "Otra documentación"@es ;
+        sh:description  "Miscelaneous document related to this agent"@en , "Documentos misceláneos relacionadas con este agente"@es ;
+        sh:name         "Otra documentación"@es , "Other documentation"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasOtherDocumentation> .
+
+<https://astrea.linkeddata.es/shapes#d6ea3ccd6b0a4725513a7c71af2507a8>
+        a               sh:NodeShape ;
+        rdfs:label      "Economic Connection"@en , "Conexión económica"@es ;
+        sh:description  "The connection between an entity and an Educational Organization (university, school, etc)"@en , "La relación entre una persona y una organización académica (colegio, universidad, etc)"@es ;
+        sh:name         "Economic Connection"@en , "Conexión económica"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#00fd7bab0cf6c79916e67dd0ce665d5c> , <https://astrea.linkeddata.es/shapes#becb410a3c0879c147c9ac942af5a2c4> , <https://astrea.linkeddata.es/shapes#b5cbe6c548537b60c1d55b5647f690fe> , <https://astrea.linkeddata.es/shapes#d56c4290ec99306d5f12cc6a2eb2134b> ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/WorkConnection> .
+
+<https://astrea.linkeddata.es/shapes#0647bc00aa5707826179be3186d297af>
+        a               sh:NodeShape ;
+        rdfs:label      "Marital Status"@en , "Estado civil"@es ;
+        sh:description  "Clase de los estados civiles en los que puede estar una persona"@es , "Class of possible marital status a person can be"@en ;
+        sh:name         "Estado civil"@es , "Marital Status"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ad8a94907c5a941ac63143807762f5bd> ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/SentimentalRelationshipConnection> .
+
+<https://astrea.linkeddata.es/shapes#29c3a5d12df8ba4f3bb0b250a29218a8>
+        a               sh:PropertyShape ;
+        rdfs:label      "El primer nombre de una persona"@es , "The first name of a person."@en , "firstName"@en , "Primer nombre"@es ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "El primer nombre de una persona"@es , "The first name of a person."@en ;
+        sh:name         "Primer nombre"@es , "firstName"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://xmlns.com/foaf/0.1/firstName> .
+
+<https://astrea.linkeddata.es/shapes#064eeb9f83bbf7ac6633b2d2c3489f1d>
+        a               sh:PropertyShape ;
+        rdfs:label      "Describes relation where a person (object) is the child of one of the siblings of this person"@en , "Describe la relación donde una persona (objeto) es el/la hijo/a de uno de los hermano/as de esta persona"@es , "Has niece or nephew"@en , "Sobrino/a"@es ;
+        sh:class        <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description  "Describe la relación donde una persona (objeto) es el/la hijo/a de uno de los hermano/as de esta persona"@es , "Describes relation where a person (object) is the child of one of the siblings of this person"@en ;
+        sh:name         "Sobrino/a"@es , "Has niece or nephew"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasNieceOrNephew> .
+
+<https://astrea.linkeddata.es/shapes#b5cbe6c548537b60c1d55b5647f690fe>
+        a            sh:PropertyShape ;
+        rdfs:label   "Declaration of Patrimony"@en , "Declaración de Patrimonio"@es ;
+        sh:class     <http://xmlns.com/foaf/0.1/Document> ;
+        sh:name      "Declaration of Patrimony"@en , "Declaración de Patrimonio"@es ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://dev.poderopedia.com/vocab/declarationOfPatrimony> .
+
+<https://astrea.linkeddata.es/shapes#2d1b6a1129853b1bbf35788bb5ec01ae>
+        a               sh:PropertyShape ;
+        rdfs:label      "Other sector not listed in hasOtherSector"@en , "Has other main sector"@en , "Otro sector secundario"@es , "Otro sector no listado en hasOtherSector"@es ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "Other sector not listed in hasOtherSector"@en , "Otro sector no listado en hasOtherSector"@es ;
+        sh:name         "Otro sector secundario"@es , "Has other main sector"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasAlternativeOtherSector> .
+
+<https://astrea.linkeddata.es/shapes#02646d9c6f75f84aba71dbe92dadf782>
+        a               sh:NodeShape ;
+        rdfs:label      "Gender"@en , "Sexo"@es ;
+        sh:description  "Gender of a person"@en , "Sexo de una persona"@es ;
+        sh:name         "Gender"@en , "Sexo"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/Gender> .
+
+<https://astrea.linkeddata.es/shapes#64a51482b9de1b1a46d25688a04acb2c>
+        a               sh:PropertyShape ;
+        rdfs:label      "Has sibling"@en , "Describes relation where a person (object) is the sibling (i.e., they have at least one parent in common) of this person"@en , "Describe la relación donde una persona (objeto) es el hermano o hermana (i.e, tienen al menos un padre en común) de esta persona"@es , "Hermano/a"@es ;
+        sh:class        <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description  "Describes relation where a person (object) is the sibling (i.e., they have at least one parent in common) of this person"@en , "Describe la relación donde una persona (objeto) es el hermano o hermana (i.e, tienen al menos un padre en común) de esta persona"@es ;
+        sh:name         "Has sibling"@en , "Hermano/a"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasSibling> .
+
+<https://astrea.linkeddata.es/shapes#fe08cb3d851883a74dcc8c0c85b79189>
+        a               sh:NodeShape ;
+        rdfs:label      "Political Organization"@en , "Organización política"@es ;
+        sh:description  "An Political organization, like parties."@en , "Una organización política, como partidos políticos."@es ;
+        sh:name         "Political Organization"@en , "Organización política"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/PoliticalOrganization> .
+
+<https://astrea.linkeddata.es/shapes#92372f8efe8414c37af60a53669c8c37>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/vocab/bio/0.1/> ;
+        rdfs:label        "Relationship"@en , "A relationship that a person, group or organization participates in for some time."@en ;
+        sh:class          <http://purl.org/vocab/bio/0.1/Relationship> ;
+        sh:description    "A relationship that a person, group or organization participates in for some time."@en ;
+        sh:name           "Relationship"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/vocab/bio/0.1/relationship> .
+
+<https://astrea.linkeddata.es/shapes#ebf5ba34fd7b9f1a13801b27816ed8ee>
+        a               sh:NodeShape ;
+        rdfs:label      "Sector"@en , "Sector"@es ;
+        sh:description  "Productive sector related to an agent"@en , "Sector productivo relacionado con una persona"@es ;
+        sh:name         "Sector"@en , "Sector"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/Sector> .
+
+<https://astrea.linkeddata.es/shapes#0394d6785921195a9538d5699552a257>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/vocab/bio/0.1/> ;
+        rdfs:label        "Birth"@en ;
+        sh:description    "The event of a person entering into life."@en ;
+        sh:name           "Birth"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/vocab/bio/0.1/Birth> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#064eeb9f83bbf7ac6633b2d2c3489f1d> , <https://astrea.linkeddata.es/shapes#2983a0fa4d212d4edbf635c3004f5301> , <https://astrea.linkeddata.es/shapes#85126b82124208e230327b5f73af5420> , <https://astrea.linkeddata.es/shapes#841b9fed02b5607360714cf394054977> , <https://astrea.linkeddata.es/shapes#05bf41dd30cb1cf3f93b344ada7ad557> , <https://astrea.linkeddata.es/shapes#4db84da99388d4bd4a0d8d121fa03a68> , <https://astrea.linkeddata.es/shapes#eb00136c48bc0e0887341859c202826c> , <https://astrea.linkeddata.es/shapes#1d67bed82e0916ab47b1821f70d5bd27> , <https://astrea.linkeddata.es/shapes#d3497b46b542b8b607a94b440629d9b2> , <https://astrea.linkeddata.es/shapes#518b2cc9ac2abca8b17ad5e0eda64974> , <https://astrea.linkeddata.es/shapes#84abb0b2c8d0df65eb7f09a2f59c3709> , <https://astrea.linkeddata.es/shapes#6eae2c194b4bcf078367e1775d76ee00> , <https://astrea.linkeddata.es/shapes#973b59f10205d5ad99cf36ba6ac6c4dc> , <https://astrea.linkeddata.es/shapes#bc960fbb6a4c72f3853ce0f607f9cd29> , <https://astrea.linkeddata.es/shapes#6ace7559c09873d57bb26d2909a563c6> , <https://astrea.linkeddata.es/shapes#aa0643dd88bc72455f340267cfb23f05> , <https://astrea.linkeddata.es/shapes#203d9da8338ef84424932d27cb90f115> , <https://astrea.linkeddata.es/shapes#324408266d67e612bfcdbc36fea7d54e> , <https://astrea.linkeddata.es/shapes#b0123261798ae66ce76ba1e977754b48> , <https://astrea.linkeddata.es/shapes#87bba38a34a7b47725c25a3189e31179> , <https://astrea.linkeddata.es/shapes#dacf627f3d9075d7c805ce9d42521333> , <https://astrea.linkeddata.es/shapes#b726056807c1828bab541533b93e19d2> , <https://astrea.linkeddata.es/shapes#4e04aeec4c0ee1a3e1e85d350f82fcf3> , <https://astrea.linkeddata.es/shapes#edbd88100d2ce14cf8fdbd84d7e70377> , <https://astrea.linkeddata.es/shapes#baec3cf81b24e447031703d36e29d583> , <https://astrea.linkeddata.es/shapes#9016b3548d2d9edd0fa896583faa998a> , <https://astrea.linkeddata.es/shapes#aeec6e20b85307fda1177e3171750e32> , <https://astrea.linkeddata.es/shapes#06de54684d31bd1edc538f2b5b42a459> , <https://astrea.linkeddata.es/shapes#ad8a94907c5a941ac63143807762f5bd> , <https://astrea.linkeddata.es/shapes#92372f8efe8414c37af60a53669c8c37> , <https://astrea.linkeddata.es/shapes#becb410a3c0879c147c9ac942af5a2c4> , <https://astrea.linkeddata.es/shapes#9dd2d383293086620c3b227f11021e4f> , <https://astrea.linkeddata.es/shapes#e1773a4c8970c8f7f1c802c027aea653> , <https://astrea.linkeddata.es/shapes#29c3a5d12df8ba4f3bb0b250a29218a8> , <https://astrea.linkeddata.es/shapes#cfb5712d9d5befa2925cb8a6ab0f9915> , <https://astrea.linkeddata.es/shapes#8c2125f59f63b0ec149e538764158a00> , <https://astrea.linkeddata.es/shapes#ae796861fe424c135ab3a26ff5f5c02e> , <https://astrea.linkeddata.es/shapes#d9aaaf93d69b70a12ab78afc8d19f7b6> , <https://astrea.linkeddata.es/shapes#344c11ba7ff6e30c5c2e3f2ad46612b8> , <https://astrea.linkeddata.es/shapes#d4eebdc19a458c5f1cb7d382112969b4> , <https://astrea.linkeddata.es/shapes#175d8d858040dd0681a1222e55277d38> , <https://astrea.linkeddata.es/shapes#d8347ee6f41776e9dbaee099c0a659b0> , <https://astrea.linkeddata.es/shapes#438c10f45d4a4cbe9e4c46c6616b4b1b> , <https://astrea.linkeddata.es/shapes#c60a49ab35219858da68f2ceb80cf6bc> , <https://astrea.linkeddata.es/shapes#5ab40baad4ff7877647c7dfbfbaf8ae3> , <https://astrea.linkeddata.es/shapes#915ca922a0f21d72852b9c6955bf73b2> , <https://astrea.linkeddata.es/shapes#2b41d2c507c585512e644772c3aa3906> , <https://astrea.linkeddata.es/shapes#2aa868bf0819fdd3e6d9ac8857cecd94> , <https://astrea.linkeddata.es/shapes#106d0d62877a4be2a0bc575ec7b9124d> , <https://astrea.linkeddata.es/shapes#2588fbc388a6fc11f9526439691159f2> , <https://astrea.linkeddata.es/shapes#f45899f057054bce84ae6e97890a80ee> , <https://astrea.linkeddata.es/shapes#39033a836c1b6f27835bdad3d4788b0d> , <https://astrea.linkeddata.es/shapes#57d187a715e49a32656cff45dfdbfb1e> , <https://astrea.linkeddata.es/shapes#6ef7cd7673b0f4cde3fd88c84e850357> , <https://astrea.linkeddata.es/shapes#e0149d9b41f69b0a8613766d53d1ffec> , <https://astrea.linkeddata.es/shapes#1d1e7ee8b21bafbd3b96de949ece7938> , <https://astrea.linkeddata.es/shapes#cdc30b12d09322d39d536eda6246c725> , <https://astrea.linkeddata.es/shapes#7ef75657afbfde88291192c1099c3ef8> , <https://astrea.linkeddata.es/shapes#01c14f5ce3691ab5d536dedfe30d1767> , <https://astrea.linkeddata.es/shapes#0394d6785921195a9538d5699552a257> , <https://astrea.linkeddata.es/shapes#93d3de9ebb21a052993f9858f8438e96> , <https://astrea.linkeddata.es/shapes#fb83c33ca5e9332623bd60424404960f> , <https://astrea.linkeddata.es/shapes#9511fbcf144a8f568858420642f83c36> , <https://astrea.linkeddata.es/shapes#0647bc00aa5707826179be3186d297af> , <https://astrea.linkeddata.es/shapes#a1a4ab4a82e64c22dc7d66ffd69d4687> , <https://astrea.linkeddata.es/shapes#d0f6319e36dea76e53586c9e1c4860a8> , <https://astrea.linkeddata.es/shapes#7f168f6edf0e61778a4950f4d346dcda> , <https://astrea.linkeddata.es/shapes#71d0699fd5a6fdadffeaa967f5a01f40> , <https://astrea.linkeddata.es/shapes#8cdd470d75808850d28896738135e3c6> , <https://astrea.linkeddata.es/shapes#21855e2521978d3f2f9caaf52bfaebe7> , <https://astrea.linkeddata.es/shapes#c95fb5f0503d2a343e21dfb4765014f0> , <https://astrea.linkeddata.es/shapes#ac67e3c2781435bc53aa1baa63741c6d> , <https://astrea.linkeddata.es/shapes#8a3c6504c1f948b8383e90f978471a85> , <https://astrea.linkeddata.es/shapes#43595661dca0f9c13f51a37b4bc90a33> , <https://astrea.linkeddata.es/shapes#2d1b6a1129853b1bbf35788bb5ec01ae> , <https://astrea.linkeddata.es/shapes#48b81dd39f7881587578013f3ebd4b61> , <https://astrea.linkeddata.es/shapes#c882664618b695f2904264820a0c87a9> , <https://astrea.linkeddata.es/shapes#64a51482b9de1b1a46d25688a04acb2c> , <https://astrea.linkeddata.es/shapes#895823b613d111269e303ec8127c17e0> , <https://astrea.linkeddata.es/shapes#d56c4290ec99306d5f12cc6a2eb2134b> , <https://astrea.linkeddata.es/shapes#324c8fa39a42a65752109600fba61b44> , <https://astrea.linkeddata.es/shapes#80b92cb3961a8672be76f3c9554f34ec> , <https://astrea.linkeddata.es/shapes#c79110ab6d8e9989d94c29e408cf5849> , <https://astrea.linkeddata.es/shapes#66bec6a2a9be5e60f296657bb07ba198> , <https://astrea.linkeddata.es/shapes#c83c642e69e957ead128005ade32bb4f> , <https://astrea.linkeddata.es/shapes#235d227cd1e4736050dba228445e445e> , <https://astrea.linkeddata.es/shapes#91cb76a6cb6fbf8a836dffd7d7acfdd3> , <https://astrea.linkeddata.es/shapes#a0005af2635b82beb671b40f25536d31> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#7450c47b0d18059dfceec20bb383d6ae> , <https://astrea.linkeddata.es/shapes#18f979110121fd12ba612be244d87458> , <https://astrea.linkeddata.es/shapes#00fd7bab0cf6c79916e67dd0ce665d5c> , <https://astrea.linkeddata.es/shapes#7ffd16a3d3b3101572d1f7845f600a01> , <https://astrea.linkeddata.es/shapes#3f1e174b2592ca27e7e8019816496eb1> , <https://astrea.linkeddata.es/shapes#27cf5819100f93c493a97f2c7f55453f> , <https://astrea.linkeddata.es/shapes#0e9b151e4e3c2c085a55e1e7b94430f3> , <https://astrea.linkeddata.es/shapes#bc7b6f906b98b4ca013a3569d199379e> , <https://astrea.linkeddata.es/shapes#5192bd4012546876e17387cec79301a1> , <https://astrea.linkeddata.es/shapes#af0eb50e30e82ff75d582451136e2d09> , <https://astrea.linkeddata.es/shapes#bfa336a5276cc68f8a870a07dcf540cc> , <https://astrea.linkeddata.es/shapes#d6ea3ccd6b0a4725513a7c71af2507a8> , <https://astrea.linkeddata.es/shapes#1d843b15d9c85739203d956418eec252> , <https://astrea.linkeddata.es/shapes#0965197263e2ea1ea3096ebad0616026> , <https://astrea.linkeddata.es/shapes#3fa178c9a91dc791bfe57ba8e656f95c> , <https://astrea.linkeddata.es/shapes#0a7edef82a17b4dcfec4fc5f5c12e0b6> , <https://astrea.linkeddata.es/shapes#b5cbe6c548537b60c1d55b5647f690fe> , <https://astrea.linkeddata.es/shapes#fe08cb3d851883a74dcc8c0c85b79189> , <https://astrea.linkeddata.es/shapes#85206832203a874178a01c6d64ab1cbd> , <https://astrea.linkeddata.es/shapes#07d80fef580f793db68f8d9171e798c8> , <https://astrea.linkeddata.es/shapes#ebf5ba34fd7b9f1a13801b27816ed8ee> , <https://astrea.linkeddata.es/shapes#ae48362a434e3b82d76a9875b5afb305> , <https://astrea.linkeddata.es/shapes#02646d9c6f75f84aba71dbe92dadf782> , <https://astrea.linkeddata.es/shapes#d1837fec887637bd107a088516c5d447> , <https://astrea.linkeddata.es/shapes#5a4377c3837966e70f5f9a0c532a83fc> , <https://astrea.linkeddata.es/shapes#e2f51543b8952575633bafd89c6aebad> , <https://astrea.linkeddata.es/shapes#8e7b845139e62bf8064daadee2c35686> , <https://astrea.linkeddata.es/shapes#0db2db6b119a93adeff13c61d0582640> , <https://astrea.linkeddata.es/shapes#18a694d5c585500b5f8a60bd3985aa60> , <https://astrea.linkeddata.es/shapes#456dbb0e0e19eb54036e8f2de32d74e2> , <https://astrea.linkeddata.es/shapes#3e2bd723509fa14e6ae90e4715e883b7> , <https://astrea.linkeddata.es/shapes#aa00ab047bf8f1b2e16519cfe7fe2937> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#3f1e174b2592ca27e7e8019816496eb1>
+        a         sh:PropertyShape ;
+        sh:class  <http://dev.poderopedia.com/vocab/ShortBiography> .
+
+<https://astrea.linkeddata.es/shapes#0db2db6b119a93adeff13c61d0582640>
+        a               sh:PropertyShape ;
+        rdfs:label      "A related resource from which the described resource is derived."@en , "Fuente"@es , "Un recurso relacionado de donde  resource from which the described resource is derived."@es , "Source"@en ;
+        sh:description  "Un recurso relacionado de donde  resource from which the described resource is derived."@es , "A related resource from which the described resource is derived."@en ;
+        sh:name         "Source"@en , "Fuente"@es ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/dc/terms/source> .
+
+<https://astrea.linkeddata.es/shapes#21855e2521978d3f2f9caaf52bfaebe7>
+        a               sh:PropertyShape ;
+        rdfs:label      "Padre/Madre"@es , "Has Parent"@en , "Describe la relación donde una persona (objeto) es el padre o madre de esta persona"@es , "Describes relation where a person (object) is a parent of this person"@en ;
+        sh:class        <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description  "Describes relation where a person (object) is a parent of this person"@en , "Describe la relación donde una persona (objeto) es el padre o madre de esta persona"@es ;
+        sh:name         "Has Parent"@en , "Padre/Madre"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasChild> .
+
+<https://astrea.linkeddata.es/shapes#ad8a94907c5a941ac63143807762f5bd>
+        a               sh:PropertyShape ;
+        rdfs:label      "Connection between two people that establishes a marriage, domestic partnership, civil union, sentimental relationship, etc."@en , "Connexión entre dos personas que establece un matrimonio, convivencia, unión civil, relación sentimental, etc."@es , "Spouse"@en , "Cónyuge"@es ;
+        sh:class        <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description  "Connection between two people that establishes a marriage, domestic partnership, civil union, sentimental relationship, etc."@en , "Connexión entre dos personas que establece un matrimonio, convivencia, unión civil, relación sentimental, etc."@es ;
+        sh:name         "Spouse"@en , "Cónyuge"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasSpouse> .
+
+<https://astrea.linkeddata.es/shapes#c83c642e69e957ead128005ade32bb4f>
+        a               sh:NodeShape ;
+        rdfs:label      "Alumni"@en , "Ex-alumno"@es ;
+        sh:name         "Alumni"@en , "Ex-alumno"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/AlumniEducationalConnection> .
+
+<https://astrea.linkeddata.es/shapes#aeec6e20b85307fda1177e3171750e32>
+        a               sh:PropertyShape ;
+        rdfs:label      "Describes relation where a person (object) is the cousin (their parents are siblings) of this person"@en , "Primo/a"@es , "Has cousin"@en , "Describe la relación donde una persona (objeto) es primo o prima de esta persona"@es ;
+        sh:class        <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description  "Describe la relación donde una persona (objeto) es primo o prima de esta persona"@es , "Describes relation where a person (object) is the cousin (their parents are siblings) of this person"@en ;
+        sh:name         "Has cousin"@en , "Primo/a"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasCousin> .
+
+<https://astrea.linkeddata.es/shapes#1d1e7ee8b21bafbd3b96de949ece7938>
+        a               sh:PropertyShape ;
+        rdfs:label      "Otros sectores relacionados con la organización"@es , "Other sector related to the organization"@en , "Sector secundario"@es , "Secondary sector"@en ;
+        sh:class        <http://dev.poderopedia.com/vocab/Sector> ;
+        sh:description  "Other sector related to the organization"@en , "Otros sectores relacionados con la organización"@es ;
+        sh:name         "Sector secundario"@es , "Secondary sector"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasOtherSector> .
+
+<https://astrea.linkeddata.es/shapes#e1773a4c8970c8f7f1c802c027aea653>
+        a               sh:PropertyShape ;
+        rdfs:label      "Connection end date"@en , "Fecha cuando temrinó la conexión entre entidades"@es , "Date when connection between entities ended"@en , "Fecha de fin de connección"@es ;
+        sh:description  "Date when connection between entities ended"@en , "Fecha cuando temrinó la conexión entre entidades"@es ;
+        sh:name         "Fecha de fin de connección"@es , "Connection end date"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#5ab40baad4ff7877647c7dfbfbaf8ae3>
+        a               sh:NodeShape ;
+        rdfs:label      "Academic Organization"@en , "Organización académica"@es ;
+        sh:description  "An educational organization, such a school or university"@en , "Una organización educational, como una escuela o una universidad"@es ;
+        sh:name         "Academic Organization"@en , "Organización académica"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/AcademicOrganization> .
+
+<https://astrea.linkeddata.es/shapes#324408266d67e612bfcdbc36fea7d54e>
+        a               sh:PropertyShape ;
+        rdfs:label      "Documentos que describen sanciones legales relacionadas con este agente"@es , "Documents about sanctions"@en , "Documents describing legal sanctions related to this agent"@en , "Documentación acerca de sanciones"@es ;
+        sh:description  "Documentos que describen sanciones legales relacionadas con este agente"@es , "Documents describing legal sanctions related to this agent"@en ;
+        sh:name         "Documentación acerca de sanciones"@es , "Documents about sanctions"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasSanctionDocumentation> .
+
+<https://astrea.linkeddata.es/shapes#ae48362a434e3b82d76a9875b5afb305>
+        a               sh:PropertyShape ;
+        rdfs:label      "Member person"@en , "Un miembro de una organización"@es , "A a member of an organization"@en , "Persona miembro"@es ;
+        sh:class        <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description  "A a member of an organization"@en , "Un miembro de una organización"@es ;
+        sh:name         "Persona miembro"@es , "Member person"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/personParticipant> .
+
+<https://astrea.linkeddata.es/shapes#aa00ab047bf8f1b2e16519cfe7fe2937>
+        a               sh:NodeShape ;
+        rdfs:label      "Political connection"@en , "Conexión política"@es ;
+        sh:description  "Connection between a political organization and other entities"@en , "Relación entre una organización política y otra entidad"@es ;
+        sh:name         "Political connection"@en , "Conexión política"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#eb00136c48bc0e0887341859c202826c> ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/PoliticalConnection> .
+
+<https://astrea.linkeddata.es/shapes#6ef7cd7673b0f4cde3fd88c84e850357>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://xmlns.com/foaf/0.1/> ;
+        rdfs:label        "Given name"@en , "Otro nombre"@es , "The given name of some person."@en , "El nombre dado a una persona"@es ;
+        sh:description    "El nombre dado a una persona"@es , "The given name of some person."@en ;
+        sh:name           "Given name"@en , "Otro nombre"@es ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://xmlns.com/foaf/0.1/givenName> .
+
+<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
+        a               sh:NodeShape ;
+        rdfs:label      "Agent"@en , "Agente"@es ;
+        sh:description  "Un agente (humano o no)"@es , "An agent (human or not)"@en ;
+        sh:name         "Agente"@es , "Agent"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2d1b6a1129853b1bbf35788bb5ec01ae> , <https://astrea.linkeddata.es/shapes#87bba38a34a7b47725c25a3189e31179> , <https://astrea.linkeddata.es/shapes#92372f8efe8414c37af60a53669c8c37> , <https://astrea.linkeddata.es/shapes#43595661dca0f9c13f51a37b4bc90a33> , <https://astrea.linkeddata.es/shapes#d4eebdc19a458c5f1cb7d382112969b4> , <https://astrea.linkeddata.es/shapes#7ffd16a3d3b3101572d1f7845f600a01> , <https://astrea.linkeddata.es/shapes#4db84da99388d4bd4a0d8d121fa03a68> , <https://astrea.linkeddata.es/shapes#d8347ee6f41776e9dbaee099c0a659b0> , <https://astrea.linkeddata.es/shapes#8c2125f59f63b0ec149e538764158a00> , <https://astrea.linkeddata.es/shapes#2983a0fa4d212d4edbf635c3004f5301> , <https://astrea.linkeddata.es/shapes#1d1e7ee8b21bafbd3b96de949ece7938> , <https://astrea.linkeddata.es/shapes#39033a836c1b6f27835bdad3d4788b0d> , <https://astrea.linkeddata.es/shapes#8a3c6504c1f948b8383e90f978471a85> , <https://astrea.linkeddata.es/shapes#fb83c33ca5e9332623bd60424404960f> , <https://astrea.linkeddata.es/shapes#ae796861fe424c135ab3a26ff5f5c02e> ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Agent> .
+
+<https://astrea.linkeddata.es/shapes#d9aaaf93d69b70a12ab78afc8d19f7b6>
+        a               sh:NodeShape ;
+        rdfs:label      "Economic Connection"@en , "Conexión económica"@es ;
+        sh:description  "The connection between an entity and an Educational Organization (university, school, etc)"@en , "La relación entre una persona y una organización académica (colegio, universidad, etc)"@es ;
+        sh:name         "Conexión económica"@es , "Economic Connection"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#27cf5819100f93c493a97f2c7f55453f> ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/MergeCompanyConnection> .
+
+<https://astrea.linkeddata.es/shapes#80b92cb3961a8672be76f3c9554f34ec>
+        a               sh:PropertyShape ;
+        rdfs:label      "Has Aunt or Uncle"@en , "Describe la relación donde una persona (objeto) es el/la hermano/a de uno de los padres de esta persona"@es , "Tío/a"@es , "Describes relation where a person (object) is the sibling of one of the parents of this person"@en ;
+        sh:class        <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description  "Describes relation where a person (object) is the sibling of one of the parents of this person"@en , "Describe la relación donde una persona (objeto) es el/la hermano/a de uno de los padres de esta persona"@es ;
+        sh:name         "Has Aunt or Uncle"@en , "Tío/a"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasAuntOrUncle> .
+
+<https://astrea.linkeddata.es/shapes#8c2125f59f63b0ec149e538764158a00>
+        a               sh:PropertyShape ;
+        rdfs:label      "Alias"@en , "Alias"@es , "Un alias de una persona"@es , "An alias for a person"@en ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "Un alias de una persona"@es , "An alias for a person"@en ;
+        sh:name         "Alias"@en , "Alias"@es ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://dev.poderopedia.com/vocab/alias> .
+
+<https://astrea.linkeddata.es/shapes#e0149d9b41f69b0a8613766d53d1ffec>
+        a               sh:PropertyShape ;
+        rdfs:label      "Date when connection between entities started"@en , "Fecha de inicio de connección"@es , "Connection start date"@en , "Fecha cuando comenzó la conexión entre entidades"@es ;
+        sh:description  "Fecha cuando comenzó la conexión entre entidades"@es , "Date when connection between entities started"@en ;
+        sh:name         "Connection start date"@en , "Fecha de inicio de connección"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#2b41d2c507c585512e644772c3aa3906>
+        a               sh:NodeShape ;
+        rdfs:label      "Conexión de asociación"@es , "Association Connection"@en ;
+        sh:description  "The connection between an entity and a Organization (Opus Dei, a Think Tank) without been affiliated to it necessarily"@en , "La relación entre una entidad y una organización (Opus Dei, un Think Tank) sin necesariamente estar afiliado"@es ;
+        sh:name         "Association Connection"@en , "Conexión de asociación"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5a4377c3837966e70f5f9a0c532a83fc> , <https://astrea.linkeddata.es/shapes#ae48362a434e3b82d76a9875b5afb305> ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/AssociationConnection> .
+
+<https://astrea.linkeddata.es/shapes#175d8d858040dd0681a1222e55277d38>
+        a               sh:NodeShape ;
+        rdfs:label      "Programmatic Organization"@en , "Organización programática"@es ;
+        sh:description  "An programmatic organization, like think tanks."@en , "Una organización programática, como los think tanks, etc."@es ;
+        sh:name         "Programmatic Organization"@en , "Organización programática"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/ProgrammaticOrganization> .
+
+<https://astrea.linkeddata.es/shapes#dacf627f3d9075d7c805ce9d42521333>
+        a               sh:PropertyShape ;
+        rdfs:label      "comment" , "A description of the subject resource." ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "A description of the subject resource." ;
+        sh:name         "comment" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         rdfs:comment .
+
+<https://astrea.linkeddata.es/shapes#1d67bed82e0916ab47b1821f70d5bd27>
+        a               sh:PropertyShape ;
+        rdfs:label      "Fecha relevante"@es , "Date related to this data (e.g., release date, last modification, etc.)"@en , "Fecha relevante a este dato (ej., fecha de publicación, última modificación, etc)"@es , "Relevant date"@en ;
+        sh:datatype     xsd:date ;
+        sh:description  "Date related to this data (e.g., release date, last modification, etc.)"@en , "Fecha relevante a este dato (ej., fecha de publicación, última modificación, etc)"@es ;
+        sh:name         "Fecha relevante"@es , "Relevant date"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasRelevantDate> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#c79110ab6d8e9989d94c29e408cf5849>
+        a               sh:PropertyShape ;
+        rdfs:label      "Has Parent"@en , "Describe la relación donde una persona (objeto) es el padre o madre de esta persona"@es , "Describes relation where a person (object) is a parent of this person"@en , "Padre/Madre"@es ;
+        sh:class        <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description  "Describes relation where a person (object) is a parent of this person"@en , "Describe la relación donde una persona (objeto) es el padre o madre de esta persona"@es ;
+        sh:name         "Has Parent"@en , "Padre/Madre"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasParent> .
+
+<https://astrea.linkeddata.es/shapes#895823b613d111269e303ec8127c17e0>
+        a               sh:PropertyShape ;
+        rdfs:label      "Fuente de donde se obtuvo la información acerca de una conexión"@es , "Source"@en , "Fuente"@es , "Source where the information about a connection was obtained"@en ;
+        sh:class        <http://xmlns.com/foaf/0.1/Document> ;
+        sh:description  "Fuente de donde se obtuvo la información acerca de una conexión"@es , "Source where the information about a connection was obtained"@en ;
+        sh:name         "Fuente"@es , "Source"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasSource> .
+
+<https://astrea.linkeddata.es/shapes#bc960fbb6a4c72f3853ce0f607f9cd29>
+        a               sh:PropertyShape ;
+        rdfs:label      "Sectors related to NGOs not lister previously"@en , "Tiene otro Sector Org No Gubernamentales]"@es , "Has another Non Government Organization Sector"@en , "Sectores relationados a ONGs no listados"@es ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "Sectors related to NGOs not lister previously"@en , "Sectores relationados a ONGs no listados"@es ;
+        sh:name         "Has another Non Government Organization Sector"@en , "Tiene otro Sector Org No Gubernamentales]"@es ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasAnotherPhilantropySector> .
+
+<https://astrea.linkeddata.es/shapes#b0123261798ae66ce76ba1e977754b48>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/vocab/bio/0.1/> ;
+        rdfs:label        "Evento final"@es , "Un evento que marca el final de un intervalo o relación"@es , "An event that marks the end of an interval and/or relationship. The event changes of the state of affairs that held during the interval. For example a period of study may be concluded by a Graduation event."@en , "Concluding Event"@en ;
+        sh:class          <http://purl.org/vocab/bio/0.1/Event> ;
+        sh:description    "Un evento que marca el final de un intervalo o relación"@es , "An event that marks the end of an interval and/or relationship. The event changes of the state of affairs that held during the interval. For example a period of study may be concluded by a Graduation event."@en ;
+        sh:name           "Concluding Event"@en , "Evento final"@es ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/vocab/bio/0.1/concludingEvent> .
+
+<https://astrea.linkeddata.es/shapes#93d3de9ebb21a052993f9858f8438e96>
+        a               sh:NodeShape ;
+        rdfs:label      "Financial Report"@en , "Información financiera"@es ;
+        sh:description  "Any financial information related to an organization (e.g., anual profit)"@en , "Cualquier información financiera relacionada con una organización (ej., utilidades anuales)"@es ;
+        sh:name         "Financial Report"@en , "Información financiera"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/FinancialInformation> .
+
+<https://astrea.linkeddata.es/shapes#915ca922a0f21d72852b9c6955bf73b2>
+        a               sh:NodeShape ;
+        rdfs:label      "Religious Organization"@en , "Organización religiosa"@es ;
+        sh:description  "An religious organization, like Opus Dei, Catholic church, etc."@en , "Una organización religiosa, como Opus Dei, Iglesia católica, etc."@es ;
+        sh:name         "Religious Organization"@en , "Organización religiosa"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dev.poderopedia.com/vocab/ReligiousOrganization> .
+
+<https://astrea.linkeddata.es/shapes#becb410a3c0879c147c9ac942af5a2c4>
+        a               sh:PropertyShape ;
+        rdfs:label      "Organización/empresa relacionada"@es , "Organización o empresa relacionada con esta connexión económica"@es , "Organization/Company involved"@en , "Organization or company associated with this economic connection"@en ;
+        sh:class        <http://xmlns.com/foaf/0.1/Organization> ;
+        sh:description  "Organization or company associated with this economic connection"@en , "Organización o empresa relacionada con esta connexión económica"@es ;
+        sh:name         "Organization/Company involved"@en , "Organización/empresa relacionada"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasEconomicOrganizationParticipant> .
+
+<https://astrea.linkeddata.es/shapes#4db84da99388d4bd4a0d8d121fa03a68>
+        a               sh:PropertyShape ;
+        rdfs:label      "Una representación visual de una persona u organización"@es , "imagen"@es , "A depiction of some organization or person."@en , "depiction"@en ;
+        sh:class        <http://xmlns.com/foaf/0.1/Document> ;
+        sh:description  "A depiction of some organization or person."@en , "Una representación visual de una persona u organización"@es ;
+        sh:name         "imagen"@es , "depiction"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/depiction> .
+
+<https://astrea.linkeddata.es/shapes#2983a0fa4d212d4edbf635c3004f5301>
+        a               sh:PropertyShape ;
+        rdfs:label      "Sector principal"@es , "Main sector related to the organization"@en , "Sector principal relacionado con la organización"@es , "Has main sector"@en ;
+        sh:class        <http://dev.poderopedia.com/vocab/Sector> ;
+        sh:description  "Sector principal relacionado con la organización"@es , "Main sector related to the organization"@en ;
+        sh:name         "Sector principal"@es , "Has main sector"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasMainSector> .
+
+<https://astrea.linkeddata.es/shapes#d56c4290ec99306d5f12cc6a2eb2134b>
+        a               sh:PropertyShape ;
+        rdfs:label      "Relación laboral"@es , "Puesto o rol de la persona en esta connexión económica"@es , "Work role"@en , "Position or role of the person in this economic connection"@en ;
+        sh:class        <http://dev.poderopedia.com/vocab/WorkRole> ;
+        sh:description  "Position or role of the person in this economic connection"@en , "Puesto o rol de la persona en esta connexión económica"@es ;
+        sh:name         "Work role"@en , "Relación laboral"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://dev.poderopedia.com/vocab/hasWorkRole> .

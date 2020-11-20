@@ -1,0 +1,345 @@
+@prefix :      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix geo:   <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix time:  <http://www.w3.org/2006/time#> .
+@prefix vann:  <http://purl.org/vocab/vann/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix vs:    <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<https://astrea.linkeddata.es/shapes#4754d29483b8116ecf5f1e114f2159ab>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:hasProduct .
+
+<https://astrea.linkeddata.es/report/747863238>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.w3.org/2003/06/sw-vocab-status/ns" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#bad5bc609a3861dd5cb2f3bbcf9f64dd>
+        a               sh:PropertyShape ;
+        rdfs:label      "product" , "\n\t\tRelates an event to something produced during the event---a sound, a pie, whatever...\n\t\t" ;
+        sh:description  "\n\t\tRelates an event to something produced during the event---a sound, a pie, whatever...\n\t\t" ;
+        sh:equals       event:hasProduct ;
+        sh:name         "product" ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#62b0ff2adb380366aba593c46dae4c0b>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 event:factor_of ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  event:Event ] .
+
+<https://astrea.linkeddata.es/shapes#2d391ff50efb3d89b41a50e4b35bdfeb>
+        a               sh:PropertyShape ;
+        rdfs:label      "time" , "\n\t\tRelates an event to a time object, classifying a time region (either instantaneous or having an extent).\n\t\tBy using the Timeline ontology here, you can define event happening on a recorded track or on any \n\t\tmedia with a temporal extent.\n\t\t" ;
+        sh:class        time:TemporalEntity ;
+        sh:description  "\n\t\tRelates an event to a time object, classifying a time region (either instantaneous or having an extent).\n\t\tBy using the Timeline ontology here, you can define event happening on a recorded track or on any \n\t\tmedia with a temporal extent.\n\t\t" ;
+        sh:name         "time" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         event:time .
+
+<https://astrea.linkeddata.es/shapes#54467171893479c12498c574eb64cd34>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/co/core#> ;
+        rdfs:label        "Links a counter resource to the actual count"@en , "has count"@en ;
+        sh:datatype       xsd:integer ;
+        sh:description    "Links a counter resource to the actual count"@en ;
+        sh:maxCount       1 ;
+        sh:name           "has count"@en ;
+        sh:nodeKind       sh:Literal , sh:IRIOrLiteral ;
+        sh:path           <http://purl.org/ontology/co/core#count> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#56a2f4fd0294e71c9fae1b626744425c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:agent_in .
+
+<https://astrea.linkeddata.es/shapes#c7af9fb0ed6a2f7881b206c0272ddcf7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/co/core#> ;
+        rdfs:label        "has scrobble object"@en , "A scrobble object of a scrobble event, e.g. a music track, a video or a described activity. That means a specific thing that is involved in this scrobbling action."@en ;
+        sh:description    "A scrobble object of a scrobble event, e.g. a music track, a video or a described activity. That means a specific thing that is involved in this scrobbling action."@en ;
+        sh:name           "has scrobble object"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#dc7b27d0e5f224b802f0b7b175e0a4b3>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      foaf:maker .
+
+<https://astrea.linkeddata.es/shapes#38e1536b72babc1a393bbfc37d7a86eb>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      dc:description .
+
+<https://astrea.linkeddata.es/shapes#4360875dc7488ab8d093a5b60c3b96e4>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      event:hasLiteralFactor .
+
+<https://astrea.linkeddata.es/shapes#077c0b6d40e75b34709a9b919cdbebe3>
+        a            sh:PropertyShape ;
+        rdfs:label   "factor of" ;
+        sh:equals    event:factor_of ;
+        sh:name      "factor of" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:isFactorOf .
+
+<https://astrea.linkeddata.es/shapes#a0bb35fc8e71afc8ae4d0183d5d0ae24>
+        a         sh:PropertyShape ;
+        sh:class  foaf:Agent .
+
+<https://astrea.linkeddata.es/shapes#da14d60e89d1bdb4bb2e04e5796e775e>
+        a               sh:PropertyShape ;
+        rdfs:label      "factor" , "\n\t\tRelates an event to a passive factor (a tool, an instrument, an abstract cause...)\n\t\t" ;
+        sh:description  "\n\t\tRelates an event to a passive factor (a tool, an instrument, an abstract cause...)\n\t\t" ;
+        sh:equals       event:hasFactor ;
+        sh:name         "factor" ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#6ace7559c09873d57bb26d2909a563c6>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  geo:SpatialThing .
+
+<https://astrea.linkeddata.es/shapes#ed9aa3948b4eb7de882047178c427084>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/co/core#> ;
+        rdfs:label        "has counter"@en , "Links an object to a counter resource. Please feel free to create further sub properties with more restricted domains."@en ;
+        sh:class          <http://purl.org/ontology/co/core#Counter> ;
+        sh:description    "Links an object to a counter resource. Please feel free to create further sub properties with more restricted domains."@en ;
+        sh:name           "has counter"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/co/core#counter> .
+
+<https://astrea.linkeddata.es/shapes#3fed5fee18ab242332cf6bd1761c4548>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/co/core#> ;
+        rdfs:label        "Scrobble Event"@en ;
+        sh:description    "An event corresponding to a scrobbling (counting an activity, which includes at least a specific factor and \na specific agent), e.g. a track being played by someone, a video watched by someone, a book read by \nsomeone, a sporting activity by someone, ..."@en ;
+        sh:name           "Scrobble Event"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/co/core#ScrobbleEvent> .
+
+<https://astrea.linkeddata.es/shapes#590c77b6411a703038a00d464fc47087>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/co/core#> ;
+        rdfs:label        "has object"@en , "Links a counter resource to an object. Please feel free to create further sub properties with more restricted ranges."@en ;
+        sh:description    "Links a counter resource to an object. Please feel free to create further sub properties with more restricted ranges."@en ;
+        sh:name           "has object"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/report/0455406837>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/dc/elements/1.1/" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#b7b1dee7d62b542a1bb2044241ae836c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:factor_of .
+
+<https://astrea.linkeddata.es/shapes#10a2b68e090fc22a4421947526be1e64>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      dc:title .
+
+<https://astrea.linkeddata.es/shapes#1da2369b4fae08b9ec533b951e3b6c23>
+        a               sh:NodeShape ;
+        rdfs:label      "Factor" ;
+        sh:description  "\n\t\tEverything used as a factor in an event\n\t\t" ;
+        sh:name         "Factor" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#a0bb35fc8e71afc8ae4d0183d5d0ae24> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#62b0ff2adb380366aba593c46dae4c0b> ;
+        sh:targetClass  event:Factor .
+
+<https://astrea.linkeddata.es/report/800486709>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/NET/c4dm/event.owl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#faeeb6444c2ed08c40ecc1880be289ca>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      dc:date .
+
+<https://astrea.linkeddata.es/shapes#48cfeedcde6ba04c7c20d74c0425b96f>
+        a            sh:PropertyShape ;
+        rdfs:label   "produced in" ;
+        sh:equals    event:produced_in ;
+        sh:name      "produced in" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:producedIn .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  foaf:Person .
+
+<https://astrea.linkeddata.es/shapes#66ace442617e5b3218217619092aeea8>
+        a               sh:PropertyShape ;
+        rdfs:label      "literal factor" , "\n\t\tRelates an event to a factor which can be described as a literal. This property\n\t\tshould not be used as-is, but should be subsumed by other, more specific, properties\n\t\t(like an hypothetic :weatherCelsius, linking an event to a temperature).\n\t\t" ;
+        sh:description  "\n\t\tRelates an event to a factor which can be described as a literal. This property\n\t\tshould not be used as-is, but should be subsumed by other, more specific, properties\n\t\t(like an hypothetic :weatherCelsius, linking an event to a temperature).\n\t\t" ;
+        sh:equals       event:hasLiteralFactor ;
+        sh:name         "literal factor" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         event:literal_factor .
+
+<https://astrea.linkeddata.es/shapes#3bd02ffd0b63fd4f2c812c0fccdb4143>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:hasFactor .
+
+<https://astrea.linkeddata.es/shapes#24a3fc4011bc7bfb34b2bdf694bee9b2>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ontology/co/core#count> .
+
+<https://astrea.linkeddata.es/shapes#5be2ecd5c7dd0790831a39f0242a12f2>
+        a            sh:PropertyShape ;
+        rdfs:label   "agent in" ;
+        sh:equals    event:agent_in ;
+        sh:name      "agent in" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:isAgentIn .
+
+<https://astrea.linkeddata.es/shapes#f3c4da4c2d3494cc4f0c9664c526c160>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/co/core#> ;
+        rdfs:label        "has event counter"@en , "Links events to a counter resource, where they where counted in."@en ;
+        sh:description    "Links events to a counter resource, where they where counted in."@en ;
+        sh:name           "has event counter"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#b797a66be398e4da2fd31941bf87ca6d>
+        a               sh:PropertyShape ;
+        rdfs:label      "place" , "\n\t\tRelates an event to a spatial object.\n\t\t" ;
+        sh:class        geo:SpatialThing ;
+        sh:description  "\n\t\tRelates an event to a spatial object.\n\t\t" ;
+        sh:name         "place" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         event:place .
+
+<https://astrea.linkeddata.es/shapes#e66ab4456056872a4a23c2d0dbbe0b20>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:hasAgent .
+
+<https://astrea.linkeddata.es/shapes#d225237d9f8f4a1d79d4d50882eb80eb>
+        a               sh:NodeShape ;
+        rdfs:label      "Event" ;
+        sh:description  "\n\t\tAn arbitrary classification of a space/time region, by a \n\t\tcognitive agent. An event may have actively participating agents,\n\t\tpassive factors, products, and a location in space/time.\n\t\t" ;
+        sh:name         "Event" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c7992661b604313f1d85a70aea6a0619> , <https://astrea.linkeddata.es/shapes#fa10e315094df89ca2c74627e940e474> , <https://astrea.linkeddata.es/shapes#2d391ff50efb3d89b41a50e4b35bdfeb> , <https://astrea.linkeddata.es/shapes#b797a66be398e4da2fd31941bf87ca6d> ;
+        sh:targetClass  event:Event .
+
+<https://astrea.linkeddata.es/shapes#09ce7e2467681ec8b429277fee94b517>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:produced_in .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#15c8c4ffea28c6471fc82fa0d0a52fc5> , <https://astrea.linkeddata.es/shapes#3bd02ffd0b63fd4f2c812c0fccdb4143> , <https://astrea.linkeddata.es/shapes#48cfeedcde6ba04c7c20d74c0425b96f> , <https://astrea.linkeddata.es/shapes#c6fa494d07984596aaf900224d0a7a93> , <https://astrea.linkeddata.es/shapes#c7af9fb0ed6a2f7881b206c0272ddcf7> , <https://astrea.linkeddata.es/shapes#ed9aa3948b4eb7de882047178c427084> , <https://astrea.linkeddata.es/shapes#faeeb6444c2ed08c40ecc1880be289ca> , <https://astrea.linkeddata.es/shapes#6ace7559c09873d57bb26d2909a563c6> , <https://astrea.linkeddata.es/shapes#077c0b6d40e75b34709a9b919cdbebe3> , <https://astrea.linkeddata.es/shapes#10a2b68e090fc22a4421947526be1e64> , <https://astrea.linkeddata.es/shapes#a0bb35fc8e71afc8ae4d0183d5d0ae24> , <https://astrea.linkeddata.es/shapes#5f9c0820aab862bc1444c13b94d08e10> , <https://astrea.linkeddata.es/shapes#d225237d9f8f4a1d79d4d50882eb80eb> , <https://astrea.linkeddata.es/shapes#3fed5fee18ab242332cf6bd1761c4548> , <https://astrea.linkeddata.es/shapes#24a3fc4011bc7bfb34b2bdf694bee9b2> , <https://astrea.linkeddata.es/shapes#590c77b6411a703038a00d464fc47087> , <https://astrea.linkeddata.es/shapes#1da2369b4fae08b9ec533b951e3b6c23> , <https://astrea.linkeddata.es/shapes#4754d29483b8116ecf5f1e114f2159ab> , <https://astrea.linkeddata.es/shapes#4360875dc7488ab8d093a5b60c3b96e4> , <https://astrea.linkeddata.es/shapes#54467171893479c12498c574eb64cd34> , <https://astrea.linkeddata.es/shapes#56a2f4fd0294e71c9fae1b626744425c> , <https://astrea.linkeddata.es/shapes#a3e81beceac4935c3e904696e03b0910> , <https://astrea.linkeddata.es/shapes#66ace442617e5b3218217619092aeea8> , <https://astrea.linkeddata.es/shapes#7b5301e7bf42eafbab52acc3b7ebd3d0> , <https://astrea.linkeddata.es/shapes#b797a66be398e4da2fd31941bf87ca6d> , <https://astrea.linkeddata.es/shapes#f3c4da4c2d3494cc4f0c9664c526c160> , <https://astrea.linkeddata.es/shapes#c7992661b604313f1d85a70aea6a0619> , <https://astrea.linkeddata.es/shapes#2d391ff50efb3d89b41a50e4b35bdfeb> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#b7b1dee7d62b542a1bb2044241ae836c> , <https://astrea.linkeddata.es/shapes#5be2ecd5c7dd0790831a39f0242a12f2> , <https://astrea.linkeddata.es/shapes#dc7b27d0e5f224b802f0b7b175e0a4b3> , <https://astrea.linkeddata.es/shapes#38e1536b72babc1a393bbfc37d7a86eb> , <https://astrea.linkeddata.es/shapes#bad5bc609a3861dd5cb2f3bbcf9f64dd> , <https://astrea.linkeddata.es/shapes#09ce7e2467681ec8b429277fee94b517> , <https://astrea.linkeddata.es/shapes#da14d60e89d1bdb4bb2e04e5796e775e> , <https://astrea.linkeddata.es/shapes#62b0ff2adb380366aba593c46dae4c0b> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> , <https://astrea.linkeddata.es/shapes#fa10e315094df89ca2c74627e940e474> , <https://astrea.linkeddata.es/shapes#e66ab4456056872a4a23c2d0dbbe0b20> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0455406837> , <https://astrea.linkeddata.es/report/747863238> , <https://astrea.linkeddata.es/report/800486709> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#15c8c4ffea28c6471fc82fa0d0a52fc5>
+        a               sh:NodeShape ;
+        rdfs:label      "Product" ;
+        sh:description  "\n\t\tEverything produced by an event\n\t\t" ;
+        sh:name         "Product" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a3e81beceac4935c3e904696e03b0910> ;
+        sh:targetClass  event:Product .
+
+<https://astrea.linkeddata.es/shapes#c6fa494d07984596aaf900224d0a7a93>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:hasSubEvent .
+
+<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  foaf:Agent .
+
+<https://astrea.linkeddata.es/shapes#fa10e315094df89ca2c74627e940e474>
+        a               sh:PropertyShape ;
+        rdfs:label      "agent" , "\n\t\tRelates an event to an active agent (a person, a computer, ... :-) )\n\t\t" ;
+        sh:class        foaf:Agent ;
+        sh:description  "\n\t\tRelates an event to an active agent (a person, a computer, ... :-) )\n\t\t" ;
+        sh:equals       event:hasAgent ;
+        sh:name         "agent" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         event:agent .
+
+<https://astrea.linkeddata.es/shapes#5f9c0820aab862bc1444c13b94d08e10>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/co/core#> ;
+        rdfs:label        "has event"@en , "Links counter resources to related events."@en ;
+        sh:class          event:Event ;
+        sh:description    "Links counter resources to related events."@en ;
+        sh:name           "has event"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/co/core#event> .
+
+<https://astrea.linkeddata.es/shapes#7b5301e7bf42eafbab52acc3b7ebd3d0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/co/core#> ;
+        rdfs:label        "Counter"@en ;
+        sh:description    "Counter of a given object/ given objects, which are related to that counter."@en ;
+        sh:name           "Counter"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#54467171893479c12498c574eb64cd34> , <https://astrea.linkeddata.es/shapes#24a3fc4011bc7bfb34b2bdf694bee9b2> ;
+        sh:targetClass    <http://purl.org/ontology/co/core#Counter> .
+
+<https://astrea.linkeddata.es/shapes#c7992661b604313f1d85a70aea6a0619>
+        a               sh:PropertyShape ;
+        rdfs:label      "sub-event" , "\n\t\tThis property provides a way to split a complex event (for example, a performance involving several \n\t\tmusicians) into simpler ones (one event per musician).\n\t\t" ;
+        sh:class        event:Event ;
+        sh:description  "\n\t\tThis property provides a way to split a complex event (for example, a performance involving several \n\t\tmusicians) into simpler ones (one event per musician).\n\t\t" ;
+        sh:equals       event:hasSubEvent ;
+        sh:name         "sub-event" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         event:sub_event .
+
+<https://astrea.linkeddata.es/shapes#a3e81beceac4935c3e904696e03b0910>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 event:produced_in ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  event:Event ] .

@@ -1,0 +1,392 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  owl:Thing .
+
+<https://astrea.linkeddata.es/shapes#1228507c2db4a0ca85a935d948f0b580>
+        a               sh:NodeShape ;
+        rdfs:label      "Problem"@en ;
+        sh:description  "The manifestation of a need. This is represented by a set of symptoms (general phenoma) affecting groups of things."@en ;
+        sh:name         "Problem"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#318d1e30dfa407582ea0305f2239c4c1> , <https://astrea.linkeddata.es/shapes#8be8484eac6c41c2970d6d733fa9092f> , <https://astrea.linkeddata.es/shapes#c16ea55e9a5b01c6e636177fd868f066> , <https://astrea.linkeddata.es/shapes#b4fc85b584e728f65fe0c424b77c8567> , <https://astrea.linkeddata.es/shapes#e8bf5ab2efe99e1205d606da66e1143f> , <https://astrea.linkeddata.es/shapes#bc394da352aa2f2e2399c355560990b2> , <https://astrea.linkeddata.es/shapes#b908cc029ff100cf1faa71d570560e5d> , <https://astrea.linkeddata.es/shapes#ca0d0789eb88bfd0666a2b3a9ff37b7a> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#9337b65fb91bf7dea857e8ebb4ad8bfa> , <https://astrea.linkeddata.es/shapes#8957908915f282e973c887f8f72fddc8> ;
+        sh:targetClass  <http://purl.org/innovation/ns#Problem> .
+
+<https://astrea.linkeddata.es/shapes#9e7cd273785043a75c66412d429e0fdd>
+        a               sh:PropertyShape ;
+        rdfs:label      "affects"@en , "The group of things affected by a problem. Again it is recommended that a SKOS model is used for such instances."@en ;
+        sh:description  "The group of things affected by a problem. Again it is recommended that a SKOS model is used for such instances."@en ;
+        sh:name         "affects"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#318d1e30dfa407582ea0305f2239c4c1>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/innovation/ns#Improvement> .
+
+<https://astrea.linkeddata.es/shapes#9dfb7d8f7652e2eebc4e24f902eee685>
+        a               sh:PropertyShape ;
+        rdfs:label      "fulfils"@en , "The applicabiity of an idea can be tested by its ability to fulfil a need. This property therefore links an innovation to a need."@en ;
+        sh:class        <http://purl.org/innovation/ns#Need> ;
+        sh:description  "The applicabiity of an idea can be tested by its ability to fulfil a need. This property therefore links an innovation to a need."@en ;
+        sh:name         "fulfils"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/innovation/ns#fulfils> .
+
+<https://astrea.linkeddata.es/shapes#3c79e97e1535d0e07b4673eb4ab69626>
+        a               sh:PropertyShape ;
+        rdfs:label      "usedWith"@en , "Where something is used in conjunction with something else."@en ;
+        sh:description  "Where something is used in conjunction with something else."@en ;
+        sh:name         "usedWith"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#d12b0e879807cd09d1947e7876687a72>
+        a               sh:NodeShape ;
+        rdfs:label      "Need"@en ;
+        sh:description  "A need of a particular group or indivual of or for something that is lacking or requires improvement or problem solving."@en ;
+        sh:name         "Need"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#8be8484eac6c41c2970d6d733fa9092f> , <https://astrea.linkeddata.es/shapes#318d1e30dfa407582ea0305f2239c4c1> , <https://astrea.linkeddata.es/shapes#9a63864ce734c43d26dcfa084160d733> , <https://astrea.linkeddata.es/shapes#bc394da352aa2f2e2399c355560990b2> , <https://astrea.linkeddata.es/shapes#b908cc029ff100cf1faa71d570560e5d> , <https://astrea.linkeddata.es/shapes#c16ea55e9a5b01c6e636177fd868f066> , <https://astrea.linkeddata.es/shapes#e8bf5ab2efe99e1205d606da66e1143f> , <https://astrea.linkeddata.es/shapes#b4fc85b584e728f65fe0c424b77c8567> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#68ef0e0ceddb6d2631f9e3dbff83b576> ;
+        sh:targetClass  <http://purl.org/innovation/ns#Need> .
+
+<https://astrea.linkeddata.es/shapes#262989c90fb3618d9504ec54135bc30f>
+        a               sh:PropertyShape ;
+        rdfs:label      "solves"@en , "Connects an innovation to the problems it solves. Generally speaking, innovations that solve a need do so by solving similar problems associated with the need."@en ;
+        sh:class        <http://purl.org/innovation/ns#Problem> ;
+        sh:description  "Connects an innovation to the problems it solves. Generally speaking, innovations that solve a need do so by solving similar problems associated with the need."@en ;
+        sh:name         "solves"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/innovation/ns#solves> .
+
+<https://astrea.linkeddata.es/shapes#5b1cf16f4cd41b91c4690d358b872f74>
+        a               sh:PropertyShape ;
+        rdfs:label      "developedBy"@en , "Relates an innovation to the innovator or innovators who developed it.\n\nInnovators are generally groups, organisations or people"@en ;
+        sh:class        <http://purl.org/innovation/ns#Innovator> ;
+        sh:description  "Relates an innovation to the innovator or innovators who developed it.\n\nInnovators are generally groups, organisations or people"@en ;
+        sh:name         "developedBy"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/innovation/ns#developedBy> .
+
+<https://astrea.linkeddata.es/shapes#0b989c370aee60e07cb29b1276d7c1b2>
+        a               sh:NodeShape ;
+        rdfs:label      "Innovation"@en ;
+        sh:description  "The innovation is a conceptual entity, concerned with the idea. Its application comes in the form of benefits and improvements and the things that embody it."@en ;
+        sh:name         "Innovation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#c16ea55e9a5b01c6e636177fd868f066> , <https://astrea.linkeddata.es/shapes#9a63864ce734c43d26dcfa084160d733> , <https://astrea.linkeddata.es/shapes#bc394da352aa2f2e2399c355560990b2> , <https://astrea.linkeddata.es/shapes#b4fc85b584e728f65fe0c424b77c8567> , <https://astrea.linkeddata.es/shapes#e8bf5ab2efe99e1205d606da66e1143f> , <https://astrea.linkeddata.es/shapes#318d1e30dfa407582ea0305f2239c4c1> , <https://astrea.linkeddata.es/shapes#8be8484eac6c41c2970d6d733fa9092f> , <https://astrea.linkeddata.es/shapes#ca0d0789eb88bfd0666a2b3a9ff37b7a> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f059330b6e82b1e42955ee8fcbfb2697> , <https://astrea.linkeddata.es/shapes#68f5837a485babb8f866ca677e75f7a3> , <https://astrea.linkeddata.es/shapes#c316dd663bc94ab9af538e6cf681ba12> , <https://astrea.linkeddata.es/shapes#c9837ab2ec677a99754af8b8ad1a7f75> , <https://astrea.linkeddata.es/shapes#6a4c00a2564c65799c8447549f9a372d> , <https://astrea.linkeddata.es/shapes#47e2cac80feb44d74199ff9d7398e643> , <https://astrea.linkeddata.es/shapes#1ac8a1b14665d2bf63f357b65fb11560> , <https://astrea.linkeddata.es/shapes#262989c90fb3618d9504ec54135bc30f> , <https://astrea.linkeddata.es/shapes#5b1cf16f4cd41b91c4690d358b872f74> ;
+        sh:targetClass  <http://purl.org/innovation/ns#Innovation> .
+
+<https://astrea.linkeddata.es/shapes#f059330b6e82b1e42955ee8fcbfb2697>
+        a               sh:PropertyShape ;
+        rdfs:label      "enables"@en , "Where one innovation enables a different innovation or innovations."@en ;
+        sh:class        <http://purl.org/innovation/ns#Innovation> ;
+        sh:description  "Where one innovation enables a different innovation or innovations."@en ;
+        sh:name         "enables"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/innovation/ns#enables> .
+
+<https://astrea.linkeddata.es/shapes#bc394da352aa2f2e2399c355560990b2>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/innovation/ns#Usage> .
+
+<https://astrea.linkeddata.es/shapes#68ef0e0ceddb6d2631f9e3dbff83b576>
+        a               sh:PropertyShape ;
+        rdfs:label      "manifestedBy"@en , "The problems that manifest a particular need. A need is generally described by its problems."@en ;
+        sh:class        <http://purl.org/innovation/ns#Problem> ;
+        sh:description  "The problems that manifest a particular need. A need is generally described by its problems."@en ;
+        sh:name         "manifestedBy"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/innovation/ns#manifestedBy> .
+
+<https://astrea.linkeddata.es/shapes#dfce2f8e8b5ffb980cabfafaf314b981>
+        a               sh:NodeShape ;
+        rdfs:label      "Usage"@en ;
+        sh:description  "The application or usage of a device or process.\n\nTypically this is described using the properties usedBy, usedOn and usedWith"@en ;
+        sh:name         "Usage"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#9a63864ce734c43d26dcfa084160d733> , <https://astrea.linkeddata.es/shapes#e8bf5ab2efe99e1205d606da66e1143f> , <https://astrea.linkeddata.es/shapes#c16ea55e9a5b01c6e636177fd868f066> , <https://astrea.linkeddata.es/shapes#8be8484eac6c41c2970d6d733fa9092f> , <https://astrea.linkeddata.es/shapes#318d1e30dfa407582ea0305f2239c4c1> , <https://astrea.linkeddata.es/shapes#b4fc85b584e728f65fe0c424b77c8567> , <https://astrea.linkeddata.es/shapes#ca0d0789eb88bfd0666a2b3a9ff37b7a> , <https://astrea.linkeddata.es/shapes#b908cc029ff100cf1faa71d570560e5d> ;
+        sh:targetClass  <http://purl.org/innovation/ns#Usage> .
+
+<https://astrea.linkeddata.es/shapes#b7a2403427f33817c2911023d50ec257>
+        a               sh:NodeShape ;
+        rdfs:label      "Improvement"@en ;
+        sh:description  "The class of things that are improvements to something i.e making something better than it was.\n\nSpecific improvements include those that provide improved efficiency, effectiveness, value or quality."@en ;
+        sh:name         "Improvement"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#bc394da352aa2f2e2399c355560990b2> , <https://astrea.linkeddata.es/shapes#8be8484eac6c41c2970d6d733fa9092f> , <https://astrea.linkeddata.es/shapes#e8bf5ab2efe99e1205d606da66e1143f> , <https://astrea.linkeddata.es/shapes#ca0d0789eb88bfd0666a2b3a9ff37b7a> , <https://astrea.linkeddata.es/shapes#c16ea55e9a5b01c6e636177fd868f066> , <https://astrea.linkeddata.es/shapes#b908cc029ff100cf1faa71d570560e5d> , <https://astrea.linkeddata.es/shapes#b4fc85b584e728f65fe0c424b77c8567> , <https://astrea.linkeddata.es/shapes#9a63864ce734c43d26dcfa084160d733> ;
+        sh:targetClass  <http://purl.org/innovation/ns#Improvement> .
+
+<https://astrea.linkeddata.es/shapes#fd6a54d3c84e6f23c73434f7ac9caf3b>
+        a               sh:NodeShape ;
+        rdfs:label      "Innovator"@en ;
+        sh:description  "A person, groups or organisation that can think out of the box, show great expertise or most importantly can find solutions to problems and meet the wants and needs of others."@en ;
+        sh:name         "Innovator"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#29e609561630dab303d35dc3b17cf47f> , <https://astrea.linkeddata.es/shapes#28c303c2b4cea4c2301e1b5af489c1e7> , <https://astrea.linkeddata.es/shapes#9dfb7d8f7652e2eebc4e24f902eee685> ;
+        sh:targetClass  <http://purl.org/innovation/ns#Innovator> .
+
+<https://astrea.linkeddata.es/shapes#3077c44fbfc33679ba1e7b825268ce93>
+        a               sh:PropertyShape ;
+        rdfs:label      "usedOn"@en , "Defines the recipient use."@en ;
+        sh:description  "Defines the recipient use."@en ;
+        sh:name         "usedOn"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#68f5837a485babb8f866ca677e75f7a3>
+        a               sh:PropertyShape ;
+        rdfs:label      "buildsOn"@en , "It is common for one innovation to build upon others. It doesn't neccessarily denote or infer that the subject has improvements on the object or is enabled by the object."@en ;
+        sh:class        <http://purl.org/innovation/ns#Innovation> ;
+        sh:description  "It is common for one innovation to build upon others. It doesn't neccessarily denote or infer that the subject has improvements on the object or is enabled by the object."@en ;
+        sh:name         "buildsOn"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/innovation/ns#buildsOn> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#40f5b989d848a140772c0ca9d6e958ab>
+        a               sh:PropertyShape ;
+        rdfs:label      "improves"@en , "Links an improvement to something it improves."@en ;
+        sh:description  "Links an improvement to something it improves."@en ;
+        sh:name         "improves"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#9a63864ce734c43d26dcfa084160d733>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/innovation/ns#Problem> .
+
+<https://astrea.linkeddata.es/shapes#fa05a9214a9a6e1ba659c4dcdaa07f07>
+        a               sh:PropertyShape ;
+        rdfs:label      "improvesValueOf"@en , "An improvement to the worth or value of the object i.e as a result of the improvement something becomes more valuable or worthwhile. \ne.g:\n\nNuclear Fission improves the value of Uranium.\nHTTP improves the value of the internet."@en ;
+        sh:description  "An improvement to the worth or value of the object i.e as a result of the improvement something becomes more valuable or worthwhile. \ne.g:\n\nNuclear Fission improves the value of Uranium.\nHTTP improves the value of the internet."@en ;
+        sh:name         "improvesValueOf"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#d3b33f30ba889ce1b7da23bb437ea420>
+        a               sh:PropertyShape ;
+        rdfs:label      "embodies"@en , "Relates a device, process, product, or service (make, model or brand) to an innovation that it embodies\n\ne.g The Firefox web browser embodies the innovation HTTP\ne.g Amoxicillin embodies the innovation Anibiotic"@en ;
+        sh:class        <http://purl.org/innovation/ns#Innovation> ;
+        sh:description  "Relates a device, process, product, or service (make, model or brand) to an innovation that it embodies\n\ne.g The Firefox web browser embodies the innovation HTTP\ne.g Amoxicillin embodies the innovation Anibiotic"@en ;
+        sh:name         "embodies"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/innovation/ns#embodies> .
+
+<https://astrea.linkeddata.es/shapes#9d1444f1708c1ce6e26813a4962ba807>
+        a               sh:NodeShape ;
+        rdfs:label      "Embodiment"@en ;
+        sh:description  "The physical or tangible manfestiation of some idea, invention or innovation.\nA device, process, service, or product that emobodies some idea, invention or innovation.\n\ne.g The Firefox web browser is an embodiment of the innovation HTTP\ne.g Amoxicillin is an embodiment of the innovation Anibiotic"@en ;
+        sh:name         "Embodiment"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#9a63864ce734c43d26dcfa084160d733> , <https://astrea.linkeddata.es/shapes#318d1e30dfa407582ea0305f2239c4c1> , <https://astrea.linkeddata.es/shapes#e8bf5ab2efe99e1205d606da66e1143f> , <https://astrea.linkeddata.es/shapes#b4fc85b584e728f65fe0c424b77c8567> , <https://astrea.linkeddata.es/shapes#c16ea55e9a5b01c6e636177fd868f066> , <https://astrea.linkeddata.es/shapes#ca0d0789eb88bfd0666a2b3a9ff37b7a> , <https://astrea.linkeddata.es/shapes#bc394da352aa2f2e2399c355560990b2> , <https://astrea.linkeddata.es/shapes#b908cc029ff100cf1faa71d570560e5d> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d3b33f30ba889ce1b7da23bb437ea420> , <https://astrea.linkeddata.es/shapes#eedd710b187b45f5baf2666a5f13f11a> ;
+        sh:targetClass  <http://purl.org/innovation/ns#Embodiment> .
+
+<https://astrea.linkeddata.es/shapes#9337b65fb91bf7dea857e8ebb4ad8bfa>
+        a               sh:PropertyShape ;
+        rdfs:label      "manifests"@en , "The problem that manifests a need. The problem defines the characteristics of the need."@en ;
+        sh:class        <http://purl.org/innovation/ns#Need> ;
+        sh:description  "The problem that manifests a need. The problem defines the characteristics of the need."@en ;
+        sh:name         "manifests"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/innovation/ns#manifests> .
+
+<https://astrea.linkeddata.es/shapes#e91bb9548eca9e845354888762a7ee55>
+        a               sh:NodeShape ;
+        rdfs:label      "Symptom"@en ;
+        sh:description  "A symptom of a problem. This class is intended to comprise of SKOS concepts belonging to different schemes."@en ;
+        sh:name         "Symptom"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#bc394da352aa2f2e2399c355560990b2> , <https://astrea.linkeddata.es/shapes#e8bf5ab2efe99e1205d606da66e1143f> , <https://astrea.linkeddata.es/shapes#318d1e30dfa407582ea0305f2239c4c1> , <https://astrea.linkeddata.es/shapes#ca0d0789eb88bfd0666a2b3a9ff37b7a> , <https://astrea.linkeddata.es/shapes#8be8484eac6c41c2970d6d733fa9092f> , <https://astrea.linkeddata.es/shapes#b4fc85b584e728f65fe0c424b77c8567> , <https://astrea.linkeddata.es/shapes#9a63864ce734c43d26dcfa084160d733> , <https://astrea.linkeddata.es/shapes#b908cc029ff100cf1faa71d570560e5d> ;
+        sh:targetClass  <http://purl.org/innovation/ns#Symptom> .
+
+<https://astrea.linkeddata.es/shapes#a2165ff6ca550840555995a93bf0570f>
+        a               sh:NodeShape ;
+        rdfs:label      "Benefit"@en ;
+        sh:description  "A benefit to something or someone."@en ;
+        sh:name         "Benefit"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#ca0d0789eb88bfd0666a2b3a9ff37b7a> , <https://astrea.linkeddata.es/shapes#b4fc85b584e728f65fe0c424b77c8567> , <https://astrea.linkeddata.es/shapes#8be8484eac6c41c2970d6d733fa9092f> , <https://astrea.linkeddata.es/shapes#318d1e30dfa407582ea0305f2239c4c1> , <https://astrea.linkeddata.es/shapes#b908cc029ff100cf1faa71d570560e5d> , <https://astrea.linkeddata.es/shapes#9a63864ce734c43d26dcfa084160d733> , <https://astrea.linkeddata.es/shapes#bc394da352aa2f2e2399c355560990b2> , <https://astrea.linkeddata.es/shapes#c16ea55e9a5b01c6e636177fd868f066> ;
+        sh:targetClass  <http://purl.org/innovation/ns#Benefit> .
+
+<https://astrea.linkeddata.es/shapes#e8bf5ab2efe99e1205d606da66e1143f>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/innovation/ns#Benefit> .
+
+<https://astrea.linkeddata.es/shapes#f841c93c1be48139b2b0a836a10aeb0c>
+        a               sh:PropertyShape ;
+        rdfs:label      "improvesEfficiencyOf"@en , "An improvement to the efficiency of the of the object. i.e reducing the cost, waste, time or skill required to produce the desired (same) results\n\ne.g\n\nCompared to other modes of transportation, a bicycle is efficient because it enables people to get to their destination with less effort."@en ;
+        sh:description  "An improvement to the efficiency of the of the object. i.e reducing the cost, waste, time or skill required to produce the desired (same) results\n\ne.g\n\nCompared to other modes of transportation, a bicycle is efficient because it enables people to get to their destination with less effort."@en ;
+        sh:name         "improvesEfficiencyOf"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#b908cc029ff100cf1faa71d570560e5d>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/innovation/ns#Innovation> .
+
+<https://astrea.linkeddata.es/shapes#a56778e370a8f8b6af096f1e77661fa6>
+        a               sh:NodeShape ;
+        rdfs:label      "DevelopmentStage"@en ;
+        sh:description  "A stage of development. An example set of development stages, but equally those used to describe software lifecylces, music production lifecylces or anything creative can be used.\n\ne.g\n\nDefine a need, \nDesign a solution, \nDevelop the opportunity, \nDemonstrate the benefits, \nDistribute the product.\n\n(taken from the 5 D's defined by the National Innovation Centre, 2011)"@en ;
+        sh:name         "DevelopmentStage"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#318d1e30dfa407582ea0305f2239c4c1> , <https://astrea.linkeddata.es/shapes#bc394da352aa2f2e2399c355560990b2> , <https://astrea.linkeddata.es/shapes#8be8484eac6c41c2970d6d733fa9092f> , <https://astrea.linkeddata.es/shapes#b908cc029ff100cf1faa71d570560e5d> , <https://astrea.linkeddata.es/shapes#b4fc85b584e728f65fe0c424b77c8567> , <https://astrea.linkeddata.es/shapes#9a63864ce734c43d26dcfa084160d733> , <https://astrea.linkeddata.es/shapes#e8bf5ab2efe99e1205d606da66e1143f> , <https://astrea.linkeddata.es/shapes#ca0d0789eb88bfd0666a2b3a9ff37b7a> , <https://astrea.linkeddata.es/shapes#c16ea55e9a5b01c6e636177fd868f066> ;
+        sh:targetClass  <http://purl.org/innovation/ns#DevelopmentStage> .
+
+<https://astrea.linkeddata.es/shapes#eedd710b187b45f5baf2666a5f13f11a>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasUsage"@en , "The problem or need of some individual, group or organisation."@en ;
+        sh:class        <http://purl.org/innovation/ns#Usage> ;
+        sh:description  "The problem or need of some individual, group or organisation."@en ;
+        sh:name         "hasUsage"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/innovation/ns#hasUsage> .
+
+<https://astrea.linkeddata.es/shapes#63f12179533e6fe8e467cf7ebd69da5f>
+        a               sh:PropertyShape ;
+        rdfs:label      "improvesQualityOf"@en , "An improvement to the reliability, durability, accessibility, usability or some other non-functional aspect of the object."@en ;
+        sh:description  "An improvement to the reliability, durability, accessibility, usability or some other non-functional aspect of the object."@en ;
+        sh:name         "improvesQualityOf"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#8d3b7b435bad00f06370e5537dceb0ca>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.w3.org/2004/02/skos/core#prefLabel> .
+
+<https://astrea.linkeddata.es/shapes#7259a09bddbf5c8e103c6e4f4a0c257e>
+        a               sh:PropertyShape ;
+        rdfs:label      "improvesEffectivenessOf"@en , "An improvement to the effectiveness of the object i.e effectuates an increase in the desired result.\n\ne.g the combustion engine improves the effectiveness of a vehicle.\n\nWithout consideration for cost of increase i.e does not necessitate an improvement in efficiciency."@en ;
+        sh:description  "An improvement to the effectiveness of the object i.e effectuates an increase in the desired result.\n\ne.g the combustion engine improves the effectiveness of a vehicle.\n\nWithout consideration for cost of increase i.e does not necessitate an improvement in efficiciency."@en ;
+        sh:name         "improvesEffectivenessOf"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#8be8484eac6c41c2970d6d733fa9092f>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/innovation/ns#Embodiment> .
+
+<https://astrea.linkeddata.es/shapes#c316dd663bc94ab9af538e6cf681ba12>
+        a               sh:PropertyShape ;
+        rdfs:label      "enabledBy"@en , "Where one innovation is enabled by another innovation or innovations. It is common for innovators to have a solution to a problem that is dependent on something else not yet known, discovered, invented or innovated."@en ;
+        sh:class        <http://purl.org/innovation/ns#Innovation> ;
+        sh:description  "Where one innovation is enabled by another innovation or innovations. It is common for innovators to have a solution to a problem that is dependent on something else not yet known, discovered, invented or innovated."@en ;
+        sh:name         "enabledBy"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/innovation/ns#enabledBy> .
+
+<https://astrea.linkeddata.es/shapes#f8f14eca1140bcd4adf3efd23b6cb2ce>
+        a               sh:PropertyShape ;
+        rdfs:label      "usedBy"@en , "Relates a usage node to the thing that makes use of the device or process i.e the activator or implementor."@en ;
+        sh:description  "Relates a usage node to the thing that makes use of the device or process i.e the activator or implementor."@en ;
+        sh:name         "usedBy"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#6a4c00a2564c65799c8447549f9a372d>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasBenefit"@en , "Relates an innovation to some benefit or benefts of that innovation."@en ;
+        sh:class        <http://purl.org/innovation/ns#Benefit> ;
+        sh:description  "Relates an innovation to some benefit or benefts of that innovation."@en ;
+        sh:name         "hasBenefit"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/innovation/ns#hasBenefit> .
+
+<https://astrea.linkeddata.es/shapes#69bfc24827569ed9036ecae89a53d3c7>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/2004/02/skos/core#inScheme> .
+
+<https://astrea.linkeddata.es/shapes#47e2cac80feb44d74199ff9d7398e643>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasImprovement"@en , "Links an innovation to some improvement or improvements it provides."@en ;
+        sh:class        <http://purl.org/innovation/ns#Improvement> ;
+        sh:description  "Links an innovation to some improvement or improvements it provides."@en ;
+        sh:name         "hasImprovement"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/innovation/ns#hasImprovement> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#f841c93c1be48139b2b0a836a10aeb0c> , <https://astrea.linkeddata.es/shapes#fd6a54d3c84e6f23c73434f7ac9caf3b> , <https://astrea.linkeddata.es/shapes#b908cc029ff100cf1faa71d570560e5d> , <https://astrea.linkeddata.es/shapes#b4fc85b584e728f65fe0c424b77c8567> , <https://astrea.linkeddata.es/shapes#6a4c00a2564c65799c8447549f9a372d> , <https://astrea.linkeddata.es/shapes#3c79e97e1535d0e07b4673eb4ab69626> , <https://astrea.linkeddata.es/shapes#9a63864ce734c43d26dcfa084160d733> , <https://astrea.linkeddata.es/shapes#c316dd663bc94ab9af538e6cf681ba12> , <https://astrea.linkeddata.es/shapes#f059330b6e82b1e42955ee8fcbfb2697> , <https://astrea.linkeddata.es/shapes#47e2cac80feb44d74199ff9d7398e643> , <https://astrea.linkeddata.es/shapes#29e609561630dab303d35dc3b17cf47f> , <https://astrea.linkeddata.es/shapes#b7a2403427f33817c2911023d50ec257> , <https://astrea.linkeddata.es/shapes#aef1a78016b3598e01dd7671934b50b4> , <https://astrea.linkeddata.es/shapes#f8f14eca1140bcd4adf3efd23b6cb2ce> , <https://astrea.linkeddata.es/shapes#dfce2f8e8b5ffb980cabfafaf314b981> , <https://astrea.linkeddata.es/shapes#a2165ff6ca550840555995a93bf0570f> , <https://astrea.linkeddata.es/shapes#9337b65fb91bf7dea857e8ebb4ad8bfa> , <https://astrea.linkeddata.es/shapes#eedd710b187b45f5baf2666a5f13f11a> , <https://astrea.linkeddata.es/shapes#d3b33f30ba889ce1b7da23bb437ea420> , <https://astrea.linkeddata.es/shapes#a56778e370a8f8b6af096f1e77661fa6> , <https://astrea.linkeddata.es/shapes#262989c90fb3618d9504ec54135bc30f> , <https://astrea.linkeddata.es/shapes#28c303c2b4cea4c2301e1b5af489c1e7> , <https://astrea.linkeddata.es/shapes#c9837ab2ec677a99754af8b8ad1a7f75> , <https://astrea.linkeddata.es/shapes#3077c44fbfc33679ba1e7b825268ce93> , <https://astrea.linkeddata.es/shapes#5b1cf16f4cd41b91c4690d358b872f74> , <https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5> , <https://astrea.linkeddata.es/shapes#7259a09bddbf5c8e103c6e4f4a0c257e> , <https://astrea.linkeddata.es/shapes#318d1e30dfa407582ea0305f2239c4c1> , <https://astrea.linkeddata.es/shapes#8d3b7b435bad00f06370e5537dceb0ca> , <https://astrea.linkeddata.es/shapes#68f5837a485babb8f866ca677e75f7a3> , <https://astrea.linkeddata.es/shapes#ca0d0789eb88bfd0666a2b3a9ff37b7a> , <https://astrea.linkeddata.es/shapes#8be8484eac6c41c2970d6d733fa9092f> , <https://astrea.linkeddata.es/shapes#bc394da352aa2f2e2399c355560990b2> , <https://astrea.linkeddata.es/shapes#c16ea55e9a5b01c6e636177fd868f066> , <https://astrea.linkeddata.es/shapes#1ac8a1b14665d2bf63f357b65fb11560> , <https://astrea.linkeddata.es/shapes#9dfb7d8f7652e2eebc4e24f902eee685> , <https://astrea.linkeddata.es/shapes#1228507c2db4a0ca85a935d948f0b580> , <https://astrea.linkeddata.es/shapes#9e7cd273785043a75c66412d429e0fdd> , <https://astrea.linkeddata.es/shapes#fa05a9214a9a6e1ba659c4dcdaa07f07> , <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#69bfc24827569ed9036ecae89a53d3c7> , <https://astrea.linkeddata.es/shapes#68ef0e0ceddb6d2631f9e3dbff83b576> , <https://astrea.linkeddata.es/shapes#e91bb9548eca9e845354888762a7ee55> , <https://astrea.linkeddata.es/shapes#0b989c370aee60e07cb29b1276d7c1b2> , <https://astrea.linkeddata.es/shapes#40f5b989d848a140772c0ca9d6e958ab> , <https://astrea.linkeddata.es/shapes#d12b0e879807cd09d1947e7876687a72> , <https://astrea.linkeddata.es/shapes#63f12179533e6fe8e467cf7ebd69da5f> , <https://astrea.linkeddata.es/shapes#e8bf5ab2efe99e1205d606da66e1143f> , <https://astrea.linkeddata.es/shapes#9d1444f1708c1ce6e26813a4962ba807> , <https://astrea.linkeddata.es/shapes#8957908915f282e973c887f8f72fddc8> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2004/02/skos/core#Concept> .
+
+<https://astrea.linkeddata.es/shapes#8957908915f282e973c887f8f72fddc8>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasSympton"@en , "A symptom of a problem. It is recommended that Symptoms follow a SKOS hierarchy."@en ;
+        sh:class        <http://purl.org/innovation/ns#Sympton> ;
+        sh:description  "A symptom of a problem. It is recommended that Symptoms follow a SKOS hierarchy."@en ;
+        sh:name         "hasSympton"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/innovation/ns#hasSympton> .
+
+<https://astrea.linkeddata.es/shapes#aef1a78016b3598e01dd7671934b50b4>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+
+<https://astrea.linkeddata.es/shapes#28c303c2b4cea4c2301e1b5af489c1e7>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasDeveloped"@en , "Relates innovator to the innovations they have developed.\n\nInnovators can be groups, organisations or people."@en ;
+        sh:class        <http://purl.org/innovation/ns#Innovation> ;
+        sh:description  "Relates innovator to the innovations they have developed.\n\nInnovators can be groups, organisations or people."@en ;
+        sh:name         "hasDeveloped"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/innovation/ns#hasDeveloped> .
+
+<https://astrea.linkeddata.es/shapes#29e609561630dab303d35dc3b17cf47f>
+        a               sh:PropertyShape ;
+        rdfs:label      "isDeveloping"@en , "Relates an innovator to a current innovation that they are developing."@en ;
+        sh:class        <http://purl.org/innovation/ns#Innovation> ;
+        sh:description  "Relates an innovator to a current innovation that they are developing."@en ;
+        sh:name         "isDeveloping"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/innovation/ns#isDeveloping> .
+
+<https://astrea.linkeddata.es/shapes#b4fc85b584e728f65fe0c424b77c8567>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/innovation/ns#DevelopmentStage> .
+
+<https://astrea.linkeddata.es/shapes#ca0d0789eb88bfd0666a2b3a9ff37b7a>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/innovation/ns#Need> .
+
+<https://astrea.linkeddata.es/shapes#c9837ab2ec677a99754af8b8ad1a7f75>
+        a               sh:PropertyShape ;
+        rdfs:label      "expectedMarketEntry"@en , "The expected date of introduction into the market. Mass production, commoditisation or  availability for sale."@en ;
+        sh:datatype     xsd:dateTime ;
+        sh:description  "The expected date of introduction into the market. Mass production, commoditisation or  availability for sale."@en ;
+        sh:name         "expectedMarketEntry"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/innovation/ns#expectedMarketEntry> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#1ac8a1b14665d2bf63f357b65fb11560>
+        a               sh:PropertyShape ;
+        rdfs:label      "embodiedBy"@en , "Relates an innovation to a device, process, product, or service (make, model or brand) that embodies the innovation\n\ne.g The innovation HTTP is emobdied by the browser Firefox\ne.g The innovation anibiotic is embodied by Amoxicillin"@en ;
+        sh:class        <http://purl.org/innovation/ns#Embodiment> ;
+        sh:description  "Relates an innovation to a device, process, product, or service (make, model or brand) that embodies the innovation\n\ne.g The innovation HTTP is emobdied by the browser Firefox\ne.g The innovation anibiotic is embodied by Amoxicillin"@en ;
+        sh:name         "embodiedBy"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/innovation/ns#embodiedBy> .
+
+<https://astrea.linkeddata.es/shapes#c16ea55e9a5b01c6e636177fd868f066>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/innovation/ns#Symptom> .

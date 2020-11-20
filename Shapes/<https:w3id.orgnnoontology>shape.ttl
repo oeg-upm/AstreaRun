@@ -1,0 +1,858 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#2fa3746e51d59c96f4b18bacb36f250c>
+        a               sh:NodeShape ;
+        rdfs:label      "Pooling Layer" ;
+        rdfs:seeAlso    "https://keras.io/layers/pooling/" ;
+        sh:name         "Pooling Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#PoolingLayer> .
+
+<https://astrea.linkeddata.es/shapes#8aeede9b75385c320a8d8b70de6a2582>
+        a               sh:NodeShape ;
+        rdfs:label      "Global Average Pooling 1D Layer" ;
+        sh:description  "Global average pooling operation for temporal data." ;
+        sh:name         "Global Average Pooling 1D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#GlobalAveragePooling1D> .
+
+<https://astrea.linkeddata.es/shapes#6e83ab52b934aadf2dfb29d152bccdac>
+        a               sh:NodeShape ;
+        rdfs:label      "Masking Layer" ;
+        sh:description  "Masks a sequence by using a mask value to skip timesteps." ;
+        sh:name         "Masking Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Masking> .
+
+<https://astrea.linkeddata.es/shapes#cdc3a5cf1a69520dc82e6c239dd786f3>
+        a               sh:NodeShape ;
+        rdfs:label      "Flatten Layer" ;
+        sh:description  "Flattens the input. Does not affect the batch size." ;
+        sh:name         "Flatten Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Flatten> .
+
+<https://astrea.linkeddata.es/shapes#c160a0c3f94d6326734aa77bcf96c27a>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#RNN> .
+
+<https://astrea.linkeddata.es/shapes#a182b2b1f6c10cb65480898d534d2523>
+        a               sh:NodeShape ;
+        rdfs:label      "Max Pooling 2D Layer" ;
+        sh:description  "Max pooling operation for spatial data." ;
+        sh:name         "Max Pooling 2D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#MaxPooling2D> .
+
+<https://astrea.linkeddata.es/shapes#2e2442fe484f22cb694eb90f03588959>
+        a               sh:NodeShape ;
+        rdfs:label      "Embedding Layer" ;
+        sh:description  "Turns positive integers (indexes) into dense vectors of fixed size." ;
+        sh:name         "Embedding Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Embedding> .
+
+<https://astrea.linkeddata.es/shapes#f924522cc46b3c0e8b7a9e817bfc9cd3>
+        a               sh:NodeShape ;
+        rdfs:label      "Locally-connected 1D Layer" ;
+        sh:description  "Locally-connected layer for 1D inputs." ;
+        sh:name         "Locally-connected 1D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#LocallyConnected1D> .
+
+<https://astrea.linkeddata.es/shapes#bc80ef5c24443a117bbe96f2277aa41b>
+        a               sh:NodeShape ;
+        rdfs:label      "Base Model" ;
+        sh:description  "Base model from keras application" ;
+        sh:name         "Base Model" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#BaseModel> .
+
+<https://astrea.linkeddata.es/shapes#3e2f60daa912b4bbfdda79d75fe2752b>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:dateTime ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/dc/terms/modified> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#b8e584f87edbe939764e722084dcb2ba>
+        a               sh:PropertyShape ;
+        rdfs:label      "indicates an assigned topic" ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "indicates an assigned topic" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://usefulinc.com/ns/doap#category> .
+
+<https://astrea.linkeddata.es/shapes#f38d5269816138ac990d96bf778d7cd1>
+        a               sh:NodeShape ;
+        rdfs:label      "Separable Convolutional 2D Layer" ;
+        sh:description  "Depthwise separable 2D convolution.\n\nSeparable convolutions consist in first performing a depthwise spatial convolution (which acts on each input channel separately) followed by a pointwise convolution which mixes together the resulting output channels.\n\nIntuitively, separable convolutions can be understood as a way to factorize a convolution kernel into two smaller kernels, or as an extreme version of an Inception block." ;
+        sh:name         "Separable Convolutional 2D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#SeparableConv2D> .
+
+<https://astrea.linkeddata.es/shapes#ec3045b0642a9b1a464610cf03a8bba0>
+        a               sh:PropertyShape ;
+        rdfs:label      "stars" , "indicates watchers count" ;
+        sh:datatype     xsd:integer ;
+        sh:description  "indicates watchers count" ;
+        sh:name         "stars" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://w3id.org/nno/ontology#stars> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#ad986c06bd0394461f3686db1c34a8f4>
+        a               sh:NodeShape ;
+        rdfs:label      "Upsampling 3D Layer" ;
+        sh:description  "Upsampling layer for 3D inputs.\n\nRepeats the 1st, 2nd and 3rd dimensions of the data by size[0], size[1] and size[2] respectively." ;
+        sh:name         "Upsampling 3D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#UpSampling3D> .
+
+<https://astrea.linkeddata.es/shapes#f782edbae2fb47fa5e05859c942a8c06>
+        a               sh:NodeShape ;
+        rdfs:label      "Permute Layer" ;
+        sh:description  "Permutes the dimensions of the input according to a given pattern.\n\nUseful for e.g. connecting RNNs and convnets together." ;
+        sh:name         "Permute Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Permute> .
+
+<https://astrea.linkeddata.es/shapes#21a2dcf7fdf35555e93aaa470a91892a>
+        a               sh:PropertyShape ;
+        rdfs:label      "has base model keywords" , "Keywords of base model" ;
+        sh:description  "Keywords of base model" ;
+        sh:name         "has base model keywords" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://w3id.org/nno/ontology#hasBaseModelKeywords> .
+
+<https://astrea.linkeddata.es/shapes#113688450f7bf6771861b65149edaaeb>
+        a               sh:NodeShape ;
+        rdfs:label      "Activity Regularization Layer" ;
+        sh:description  "Layer that applies an update to the cost function based input activity." ;
+        sh:name         "Activity Regularization Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#ActivityRegularization> .
+
+<https://astrea.linkeddata.es/shapes#f3122a163d748a9629986385cf704cf8>
+        a               sh:PropertyShape ;
+        rdfs:label      "data set" , "Describes the used dataset for training and evaluating" ;
+        sh:datatype     xsd:anyURI ;
+        sh:description  "Describes the used dataset for training and evaluating" ;
+        sh:name         "data set" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://w3id.org/nno/ontology#dataset> ;
+        sh:pattern      "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#4d65ff44d67a7a3c4011e996a11ae446>
+        a               sh:NodeShape ;
+        rdfs:label      "Spatial Dropout 1D Layer" ;
+        sh:description  "Spatial 1D version of Dropout.\n\nThis version performs the same function as Dropout, however it drops entire 1D feature maps instead of individual elements. If adjacent frames within feature maps are strongly correlated (as is normally the case in early convolution layers) then regular dropout will not regularize the activations and will otherwise just result in an effective learning rate decrease. In this case, SpatialDropout1D will help promote independence between feature maps and should be used instead." ;
+        sh:name         "Spatial Dropout 1D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#SpatialDropout1D> .
+
+<https://astrea.linkeddata.es/shapes#be1f8260d1ad4ad4b798542aa07687e3>
+        a               sh:PropertyShape ;
+        rdfs:label      "has metric" , "Reflects potential real-world impact of the Model.\nDetermines the Accuracy, Precision etc. of the model." ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "Reflects potential real-world impact of the Model.\nDetermines the Accuracy, Precision etc. of the model." ;
+        sh:name         "has metric" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://w3id.org/nno/ontology#hasMetric> .
+
+<https://astrea.linkeddata.es/shapes#5833296333103c040853fc9b894c8b7f>
+        a               sh:NodeShape ;
+        rdfs:label      "Input Layer" ;
+        sh:description  "Input() is used to instantiate a Keras tensor.\n\nA Keras tensor is a tensor object from the underlying backend (Theano, TensorFlow or CNTK), which we augment with certain attributes that allow us to build a Keras model just by knowing the inputs and outputs of the model." ;
+        sh:name         "Input Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Input> .
+
+<https://astrea.linkeddata.es/shapes#3c4ab4a12bc9e4017c20cbed4a841142>
+        a               sh:NodeShape ;
+        rdfs:label      "Average Pooling 2D Layer" ;
+        sh:description  "Average pooling operation for spatial data." ;
+        sh:name         "Average Pooling 2D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#AveragePooling2D> .
+
+<https://astrea.linkeddata.es/shapes#04f38a2c0ec37240b73856ab8f7b39c1>
+        a               sh:PropertyShape ;
+        rdfs:label      "has layer sequence" , "Specifies the sequence of the layers. Starts at 1, the number of layers is n-1, at n: Number of layers." ;
+        sh:datatype     xsd:integer ;
+        sh:description  "Specifies the sequence of the layers. Starts at 1, the number of layers is n-1, at n: Number of layers." ;
+        sh:name         "has layer sequence" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://w3id.org/nno/ontology#hasLayerSequence> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#42330ef277be92c41563e0c8dec0bd7e>
+        a               sh:NodeShape ;
+        rdfs:label      "Convolutional 3D Transpose Layer" ;
+        sh:description  "Transposed convolution layer (sometimes called Deconvolution).\n\nThe need for transposed convolutions generally arises from the desire to use a transformation going in the opposite direction of a normal convolution, i.e., from something that has the shape of the output of some convolution to something that has the shape of its input while maintaining a connectivity pattern that is compatible with said convolution." ;
+        sh:name         "Convolutional 3D Transpose Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Conv3DTranspose> .
+
+<https://astrea.linkeddata.es/shapes#46a1cad079088b9a700cdf34d6d62906>
+        a               sh:NodeShape ;
+        rdfs:label      "Locally-connected Layer" ;
+        rdfs:seeAlso    "https://keras.io/layers/local/" ;
+        sh:name         "Locally-connected Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Locally-connectedLayer> .
+
+<https://astrea.linkeddata.es/shapes#5a31bc1e1d897fa3b66c3aba9715e8f1>
+        a               sh:NodeShape ;
+        rdfs:label      "Global Max Pooling 1D Layer" ;
+        sh:description  "Global max pooling operation for temporal data." ;
+        sh:name         "Global Max Pooling 1D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#GlobalMaxPooling1D> .
+
+<https://astrea.linkeddata.es/shapes#1ba9cb6e07fe5a6faa207c2ac8872c64>
+        a               sh:NodeShape ;
+        rdfs:label      "Locally-connected 2D Layer" ;
+        sh:description  "Locally-connected layer for 2D inputs." ;
+        sh:name         "Locally-connected 2D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#LocallyConnected2D> .
+
+<https://astrea.linkeddata.es/shapes#718f8ef2a221613cac643c7f6b357fff>
+        a               sh:NodeShape ;
+        rdfs:label      "Optimizer" ;
+        sh:description  "Optimizer used by Neural Network." ;
+        sh:name         "Optimizer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Optimizer> .
+
+<https://astrea.linkeddata.es/shapes#65f7242ae16465c3eb485b1eebf42bac>
+        a               sh:PropertyShape ;
+        rdfs:label      "has intended use" , "Primary intended use and users (domain) for which the Neural Network was trained for." ;
+        sh:datatype     xsd:anyURI ;
+        sh:description  "Primary intended use and users (domain) for which the Neural Network was trained for." ;
+        sh:name         "has intended use" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://w3id.org/nno/ontology#hasintendedUse> ;
+        sh:pattern      "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#96c2f352bdd3e0f6930ae8ed3926026c>
+        a               sh:NodeShape ;
+        rdfs:label      "Zero-padding 2D Layer" ;
+        sh:description  "Zero-padding layer for 2D input (e.g. picture).\n\nThis layer can add rows and columns of zeros at the top, bottom, left and right side of an image tensor." ;
+        sh:name         "Zero-padding 2D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#ZeroPadding2D> .
+
+<https://astrea.linkeddata.es/shapes#e0c6443fd4fa3f888c8f33676b7a33a3>
+        a               sh:PropertyShape ;
+        rdfs:label      "has optimizer" , "Optimization function used by Neural Network (e.g. SGD, Adam or RMSprop)." ;
+        sh:class        <https://w3id.org/nno/ontology#Optimizer> ;
+        sh:description  "Optimization function used by Neural Network (e.g. SGD, Adam or RMSprop)." ;
+        sh:name         "has optimizer" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/nno/ontology#hasOptimizer> .
+
+<https://astrea.linkeddata.es/shapes#eb1a38bcb3f623a7f88ad028b60aa139>
+        a               sh:NodeShape ;
+        rdfs:label      "Convolutional 2D Transpose Layer" ;
+        sh:description  "Transposed convolution layer (sometimes called Deconvolution).\n\nThe need for transposed convolutions generally arises from the desire to use a transformation going in the opposite direction of a normal convolution, i.e., from something that has the shape of the output of some convolution to something that has the shape of its input while maintaining a connectivity pattern that is compatible with said convolution." ;
+        sh:name         "Convolutional 2D Transpose Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Conv2DTranspose> .
+
+<https://astrea.linkeddata.es/shapes#af509576b93562bd5c1376634b245a08>
+        a               sh:NodeShape ;
+        rdfs:label      "Upsampling 2D Layer" ;
+        sh:description  "Upsampling layer for 2D inputs.\n\nRepeats the rows and columns of the data by size[0] and size[1] respectively." ;
+        sh:name         "Upsampling 2D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#UpSampling2D> .
+
+<https://astrea.linkeddata.es/shapes#abcbc6c65cb325168fe715e373960e7c>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:anyURI ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/dc/terms/creator> ;
+        sh:pattern   "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#7ce2172ec68233a7f7613e3b7a7f6bde>
+        a               sh:NodeShape ;
+        rdfs:label      "CuDNN LSTM Layer" ;
+        rdfs:seeAlso    "https://developer.nvidia.com/cudnn" ;
+        sh:description  "Fast LSTM implementation with CuDNN.\n\nCan only be run on GPU, with the TensorFlow backend." ;
+        sh:name         "CuDNN LSTM Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#CuDNNLSTM> .
+
+<https://astrea.linkeddata.es/shapes#52f7d49ead2bcfba42d907823e1a2ded>
+        a               sh:NodeShape ;
+        rdfs:label      "Cropping 3D Layer" ;
+        sh:description  "Cropping layer for 3D data (e.g. spatial or spatio-temporal)." ;
+        sh:name         "Cropping 3D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Cropping3D> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#9ac880c994ddbc88ce2f02048418a891>
+        a               sh:NodeShape ;
+        rdfs:label      "Spatial Dropout 3D Layer" ;
+        sh:description  "Spatial 3D version of Dropout.\n\nThis version performs the same function as Dropout, however it drops entire 3D feature maps instead of individual elements. If adjacent pixels within feature maps are strongly correlated (as is normally the case in early convolution layers) then regular dropout will not regularize the activations and will otherwise just result in an effective learning rate decrease. In this case, SpatialDropout3D will help promote independence between feature maps and should be used instead." ;
+        sh:name         "Spatial Dropout 3D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#SpatialDropout3D> .
+
+<https://astrea.linkeddata.es/shapes#b50e9fdae9b407a35a1031ea3d8702ed>
+        a               sh:NodeShape ;
+        rdfs:label      "Neural Network" ;
+        sh:name         "Neural Network" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#3e2f60daa912b4bbfdda79d75fe2752b> , <https://astrea.linkeddata.es/shapes#65f7242ae16465c3eb485b1eebf42bac> , <https://astrea.linkeddata.es/shapes#9259d4c1ba62f9565e7a21a70687ecb1> , <https://astrea.linkeddata.es/shapes#b8e584f87edbe939764e722084dcb2ba> , <https://astrea.linkeddata.es/shapes#abcbc6c65cb325168fe715e373960e7c> , <https://astrea.linkeddata.es/shapes#feda1d30c2a4aaf5aebe979e5a0810da> , <https://astrea.linkeddata.es/shapes#f3122a163d748a9629986385cf704cf8> , <https://astrea.linkeddata.es/shapes#3494e2ce7122eeac1b765ba1aa7e89f7> , <https://astrea.linkeddata.es/shapes#ac99d93f9654afe6ee3c516419f6929d> , <https://astrea.linkeddata.es/shapes#ec3045b0642a9b1a464610cf03a8bba0> , <https://astrea.linkeddata.es/shapes#0ae0365bb2a28f1927dec5c51cea38bb> , <https://astrea.linkeddata.es/shapes#db178c0560af49377c2c05bc27f807f6> , <https://astrea.linkeddata.es/shapes#f31288f45557f654fc2db4a369bebfa7> , <https://astrea.linkeddata.es/shapes#b2becf969d5ff1bca20c4b4b4d6ea2e0> , <https://astrea.linkeddata.es/shapes#395bba41cfe801e7e0a9f0075b4360f9> ;
+        sh:targetClass  <https://w3id.org/nno/ontology#NeuralNetwork> .
+
+<https://astrea.linkeddata.es/shapes#b2becf969d5ff1bca20c4b4b4d6ea2e0>
+        a               sh:PropertyShape ;
+        rdfs:label      "has model" , "Model of the repository." ;
+        sh:class        <https://w3id.org/nno/ontology#Model> ;
+        sh:description  "Model of the repository." ;
+        sh:name         "has model" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/nno/ontology#hasModel> .
+
+<https://astrea.linkeddata.es/shapes#5bb572b50abd1cafa62c00ce6808e97a>
+        a               sh:NodeShape ;
+        rdfs:label      "Lambda Layer" ;
+        sh:description  "Wraps arbitrary expression as a Layer object." ;
+        sh:name         "Lambda Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Lambda> .
+
+<https://astrea.linkeddata.es/shapes#8cc680bc3dcc16e708c0b68a35d88374>
+        a               sh:NodeShape ;
+        rdfs:label      "LSTM Layer" ;
+        sh:description  "Long Short-Term Memory layer - Hochreiter 1997." ;
+        sh:name         "LSTM Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#LSTM> .
+
+<https://astrea.linkeddata.es/shapes#b603cb6a919e0696698c1160c74e9090>
+        a               sh:NodeShape ;
+        rdfs:label      "Max Pooling 3D Layer" ;
+        sh:description  "Max pooling operation for 3D data (spatial or spatio-temporal)." ;
+        sh:name         "Max Pooling 3D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#MaxPooling3D> .
+
+<https://astrea.linkeddata.es/shapes#dd68647f154cdd41204bc9946088dd80>
+        a               sh:PropertyShape ;
+        rdfs:label      "has layer keywords" , "Keywords of a layer" ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "Keywords of a layer" ;
+        sh:name         "has layer keywords" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://w3id.org/nno/ontology#hasLayerKeywords> .
+
+<https://astrea.linkeddata.es/shapes#76d70537893f6265c7b0564d96b5429f>
+        a               sh:NodeShape ;
+        rdfs:label      "Convolutional LSTM 2D Layer" ;
+        sh:description  "Convolutional LSTM.\n\nIt is similar to an LSTM layer, but the input transformations and recurrent transformations are both convolutional." ;
+        sh:name         "Convolutional LSTM 2D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#ConvLSTM2D> .
+
+<https://astrea.linkeddata.es/shapes#9c86890b44a80969a5cc5201e9af3505>
+        a               sh:NodeShape ;
+        rdfs:label      "Cropping 2D Layer" ;
+        sh:description  "Cropping layer for 2D input (e.g. picture).\n\nIt crops along spatial dimensions, i.e. height and width." ;
+        sh:name         "Cropping 2D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Cropping2D> .
+
+<https://astrea.linkeddata.es/shapes#0d7e60597866060e00cdb88ddfd6eee7>
+        a               sh:NodeShape ;
+        rdfs:label      "Model" ;
+        sh:description  "Model of the repository." ;
+        sh:name         "Model" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#decc9d022b0ce95cde1c4e5135aac9e8> , <https://astrea.linkeddata.es/shapes#e575580fc667c7a1a00f51b7393037d4> , <https://astrea.linkeddata.es/shapes#43b52d7c4c5cd6788ca4a9850ed5c521> , <https://astrea.linkeddata.es/shapes#e0c6443fd4fa3f888c8f33676b7a33a3> , <https://astrea.linkeddata.es/shapes#d79bc84ac9e479bd4562ae22a901f921> , <https://astrea.linkeddata.es/shapes#be1f8260d1ad4ad4b798542aa07687e3> ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Model> .
+
+<https://astrea.linkeddata.es/shapes#c23ca282331f4d7b6e753715e18eaf7b>
+        a               sh:NodeShape ;
+        rdfs:label      "Dense Layer" ;
+        sh:description  "Just your regular densely-connected NN layer." ;
+        sh:name         "Dense Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Dense> .
+
+<https://astrea.linkeddata.es/shapes#0c15ab61d1179e6ceaa050788fe6d636>
+        a               sh:PropertyShape ;
+        rdfs:label      "has base model" , "Base model from keras application" ;
+        sh:description  "Base model from keras application" ;
+        sh:name         "has base model" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://w3id.org/nno/ontology#hasBaseModel> .
+
+<https://astrea.linkeddata.es/shapes#3165efdec5843975bc7481bba410dc81>
+        a               sh:NodeShape ;
+        rdfs:label      "Spatial Dropout 2D Layer" ;
+        sh:description  "Spatial 2D version of Dropout.\n\nThis version performs the same function as Dropout, however it drops entire 2D feature maps instead of individual elements. If adjacent pixels within feature maps are strongly correlated (as is normally the case in early convolution layers) then regular dropout will not regularize the activations and will otherwise just result in an effective learning rate decrease. In this case, SpatialDropout2D will help promote independence between feature maps and should be used instead." ;
+        sh:name         "Spatial Dropout 2D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#SpatialDropout2D> .
+
+<https://astrea.linkeddata.es/shapes#2619863c8542b7ffb79e040a25b248b6>
+        a               sh:NodeShape ;
+        rdfs:label      "Global Average Pooling 3D Layer" ;
+        sh:description  "Global Average pooling operation for 3D data." ;
+        sh:name         "Global Average Pooling 3D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#GlobalAveragePooling3D> .
+
+<https://astrea.linkeddata.es/shapes#32de1715060a22134cb97f6aab2b0388>
+        a               sh:NodeShape ;
+        rdfs:label      "Dropout Layer" ;
+        sh:description  "Applies Dropout to the input." ;
+        sh:name         "Dropout Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Dropout> .
+
+<https://astrea.linkeddata.es/shapes#9c43b765c8bf346827ce453730b84f45>
+        a               sh:NodeShape ;
+        rdfs:label      "Repeat Vector Layer" ;
+        sh:description  "Repeats the input n times." ;
+        sh:name         "Repeat Vector Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#RepeatVector> .
+
+<https://astrea.linkeddata.es/shapes#92bd6ae910f1f24e3dec99e0d0a38526>
+        a               sh:NodeShape ;
+        rdfs:label      "Convolutional LSTM 2D Cell Layer" ;
+        sh:description  "Cell class for the ConvLSTM2D layer." ;
+        sh:name         "Convolutional LSTM 2D Cell Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#ConvLSTM2DCell> .
+
+<https://astrea.linkeddata.es/shapes#7235bc3aad16c2f7bebcf4c7fde12ef7>
+        a               sh:NodeShape ;
+        rdfs:label      "Global Average Pooling 2D Layer" ;
+        sh:description  "Global average pooling operation for spatial data." ;
+        sh:name         "Global Average Pooling 2D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#GlobalAveragePooling2D> .
+
+<https://astrea.linkeddata.es/shapes#942ca972fa51cb11c38ec14a280d4f53>
+        a               sh:NodeShape ;
+        rdfs:label      "Average Pooling 1D Layer" ;
+        sh:description  "Average pooling for temporal data." ;
+        sh:name         "Average Pooling 1D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#AveragePooling1D> .
+
+<https://astrea.linkeddata.es/shapes#edc7af6d6edada60272dc6ebb57c085b>
+        a               sh:NodeShape ;
+        rdfs:label      "Normalization Layer" ;
+        rdfs:seeAlso    "https://keras.io/layers/normalization/" ;
+        sh:name         "Normalization Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#NormalizationLayer> .
+
+<https://astrea.linkeddata.es/shapes#0d2c9b61888b22a73f833711793e8421>
+        a               sh:NodeShape ;
+        rdfs:label      "Embedding Layer" ;
+        rdfs:seeAlso    "https://keras.io/layers/embeddings/" ;
+        sh:name         "Embedding Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#EmbeddingLayer> .
+
+<https://astrea.linkeddata.es/shapes#e575580fc667c7a1a00f51b7393037d4>
+        a               sh:PropertyShape ;
+        rdfs:label      "has loss function" , "Loss function used by Neural Network." ;
+        sh:class        <https://w3id.org/nno/ontology#LossFunction> ;
+        sh:description  "Loss function used by Neural Network." ;
+        sh:name         "has loss function" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/nno/ontology#hasLossFunction> .
+
+<https://astrea.linkeddata.es/shapes#392e2c7449f1309e536179ef457b2313>
+        a               sh:NodeShape ;
+        rdfs:label      "Activation Layer" ;
+        sh:description  "Applies an activation function to an output." ;
+        sh:name         "Activation Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Activation> .
+
+<https://astrea.linkeddata.es/shapes#4aa46b05746f5d44cf441d5128eb1e60>
+        a               sh:NodeShape ;
+        rdfs:label      "Max Pooling 1D Layer" ;
+        sh:description  "Max pooling operation for temporal data." ;
+        sh:name         "Max Pooling 1D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#MaxPooling1D> .
+
+<https://astrea.linkeddata.es/shapes#a5a14646b8d4f563352dabfce52816cd>
+        a               sh:NodeShape ;
+        rdfs:label      "GRU Layer" ;
+        sh:description  "Gated Recurrent Unit - Cho et al. 2014.\n\nThere are two variants. The default one is based on 1406.1078v3 and has reset gate applied to hidden state before matrix multiplication. The other one is based on original 1406.1078v1 and has the order reversed." ;
+        sh:name         "GRU Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#GRU> .
+
+<https://astrea.linkeddata.es/shapes#5455be8594fc8809abbe514675c99a39>
+        a               sh:NodeShape ;
+        rdfs:label      "Convolutional 3D Layer" ;
+        sh:description  "3D convolution layer (e.g. spatial convolution over volumes).\n\nThis layer creates a convolution kernel that is convolved with the layer input to produce a tensor of outputs." ;
+        sh:name         "Convolutional 3D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Conv3D> .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a               sh:NodeShape ;
+        sh:description  "Person who makes this ontology." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Person> .
+
+<https://astrea.linkeddata.es/shapes#176fe8d412d1e40d6cbdae5ae5f0783c>
+        a               sh:NodeShape ;
+        rdfs:label      "Upsampling 1D Layer" ;
+        sh:description  "Upsampling layer for 1D inputs." ;
+        sh:name         "Upsampling 1D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#UpSampling1D> .
+
+<https://astrea.linkeddata.es/shapes#5192bd4012546876e17387cec79301a1>
+        a               sh:NodeShape ;
+        sh:description  "Organization the person belongs to." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Organization> .
+
+<https://astrea.linkeddata.es/shapes#9bc481ad2cc6bdf250cb5f1b242547ca>
+        a               sh:NodeShape ;
+        rdfs:label      "Separable Convolutional 1D Layer" ;
+        sh:description  "Depthwise separable 1D convolution.\n\nSeparable convolutions consist in first performing a depthwise spatial convolution (which acts on each input channel separately) followed by a pointwise convolution which mixes together the resulting output channels.\n\nIntuitively, separable convolutions can be understood as a way to factorize a convolution kernel into two smaller kernels, or as an extreme version of an Inception block." ;
+        sh:name         "Separable Convolutional 1D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#SeparableConv1D> .
+
+<https://astrea.linkeddata.es/shapes#38d3d439490d1a9457b41e0ac6062857>
+        a               sh:NodeShape ;
+        rdfs:label      "Recurrent Layer" ;
+        rdfs:seeAlso    "https://keras.io/layers/recurrent/" ;
+        sh:name         "Recurrent Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#RecurrentLayer> .
+
+<https://astrea.linkeddata.es/shapes#0a6132322c5761e7d86d673d9d76bcf1>
+        a               sh:NodeShape ;
+        rdfs:label      "Layer" ;
+        sh:description  "Layer of the neural network." ;
+        sh:name         "Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e5bab594b4e0e30d60c74d05caeb3ede> , <https://astrea.linkeddata.es/shapes#dd68647f154cdd41204bc9946088dd80> , <https://astrea.linkeddata.es/shapes#04f38a2c0ec37240b73856ab8f7b39c1> ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Layer> .
+
+<https://astrea.linkeddata.es/shapes#d44f02ab7b10dd03f8fcb7574ff63ed0>
+        a               sh:NodeShape ;
+        rdfs:label      "Loss Function" ;
+        sh:description  "Loss function used by Neural Network." ;
+        sh:name         "Loss Function" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#LossFunction> .
+
+<https://astrea.linkeddata.es/shapes#c78b22d223073b57c1ef54a2f70d6e23>
+        a               sh:NodeShape ;
+        rdfs:label      "Reshape Layer" ;
+        sh:description  "Reshapes an output to a certain shape." ;
+        sh:name         "Reshape Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Reshape> .
+
+<https://astrea.linkeddata.es/shapes#ed645855af95564963c3689886e2cc31>
+        a               sh:NodeShape ;
+        rdfs:label      "Global Max Pooling 3D Layer" ;
+        sh:description  "Global Max pooling operation for 3D data." ;
+        sh:name         "Global Max Pooling 3D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#GlobalMaxPooling3D> .
+
+<https://astrea.linkeddata.es/shapes#c41047aff529de09f8631b1da875d5e6>
+        a               sh:NodeShape ;
+        rdfs:label      "GRU Cell Layer" ;
+        sh:description  "Cell class for the GRU layer." ;
+        sh:name         "GRU Cell Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#GRUCell> .
+
+<https://astrea.linkeddata.es/shapes#feda1d30c2a4aaf5aebe979e5a0810da>
+        a            sh:PropertyShape ;
+        sh:datatype  rdfs:Literal ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/dc/terms/description> .
+
+<https://astrea.linkeddata.es/shapes#ac99d93f9654afe6ee3c516419f6929d>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:anyURI ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/dc/terms/references> ;
+        sh:pattern   "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#b1cdf22a2b56eaebc8bca25783ab5754>
+        a               sh:NodeShape ;
+        rdfs:label      "Cell class for the LSTM layer." , "LSTM Cell Layer" ;
+        sh:name         "Cell class for the LSTM layer." , "LSTM Cell Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#LSTMCell> .
+
+<https://astrea.linkeddata.es/shapes#0ae0365bb2a28f1927dec5c51cea38bb>
+        a               sh:PropertyShape ;
+        rdfs:label      "has repository link" , "Link to the respository (e.g. github) where the model and further information can be found." ;
+        sh:datatype     xsd:anyURI ;
+        sh:description  "Link to the respository (e.g. github) where the model and further information can be found." ;
+        sh:name         "has repository link" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://w3id.org/nno/ontology#hasRepositoryLink> ;
+        sh:pattern      "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#c8831c0874a3d176459234e2fc14a437>
+        a               sh:NodeShape ;
+        rdfs:label      "Custom Layer" ;
+        sh:description  "Custom layer defined by user" ;
+        sh:name         "Custom Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#CustomLayer> .
+
+<https://astrea.linkeddata.es/shapes#a885297ba9ef27688640a3682db538ab>
+        a               sh:NodeShape ;
+        rdfs:label      "CuDNN GRU Layer" ;
+        rdfs:seeAlso    "https://developer.nvidia.com/cudnn" ;
+        sh:description  "Fast GRU implementation backed by CuDNN.\n\nCan only be run on GPU, with the TensorFlow backend." ;
+        sh:name         "CuDNN GRU Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#CuDNNGRU> .
+
+<https://astrea.linkeddata.es/shapes#156b241d1c21e5a98b6398b7483a2acc>
+        a               sh:NodeShape ;
+        rdfs:label      "Batch Normalization Layer" ;
+        sh:description  "Batch normalization layer (Ioffe and Szegedy, 2014).\n\nNormalize the activations of the previous layer at each batch, i.e. applies a transformation that maintains the mean activation close to 0 and the activation standard deviation close to 1." ;
+        sh:name         "Batch Normalization Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#BatchNormalization> .
+
+<https://astrea.linkeddata.es/shapes#076076427b6e60f688fd00dc40bd8e23>
+        a               sh:NodeShape ;
+        rdfs:label      "Depthwise Convolutional 2D Layer" ;
+        sh:description  "Depthwise separable 2D convolution.\n\nDepthwise Separable convolutions consists in performing just the first step in a depthwise spatial convolution (which acts on each input channel separately)." ;
+        sh:name         "Depthwise Convolutional 2D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#DepthwiseConv2D> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#d44f02ab7b10dd03f8fcb7574ff63ed0> , <https://astrea.linkeddata.es/shapes#78bf75b866f8d75c2c8d5044c0e59d6e> , <https://astrea.linkeddata.es/shapes#a5a14646b8d4f563352dabfce52816cd> , <https://astrea.linkeddata.es/shapes#ed645855af95564963c3689886e2cc31> , <https://astrea.linkeddata.es/shapes#abcbc6c65cb325168fe715e373960e7c> , <https://astrea.linkeddata.es/shapes#b50e9fdae9b407a35a1031ea3d8702ed> , <https://astrea.linkeddata.es/shapes#0a3fe89459c69a5a1ce183df5cf0a7fc> , <https://astrea.linkeddata.es/shapes#db178c0560af49377c2c05bc27f807f6> , <https://astrea.linkeddata.es/shapes#113688450f7bf6771861b65149edaaeb> , <https://astrea.linkeddata.es/shapes#6e83ab52b934aadf2dfb29d152bccdac> , <https://astrea.linkeddata.es/shapes#585a99378c017370c6b392f18ec65aed> , <https://astrea.linkeddata.es/shapes#3e2f60daa912b4bbfdda79d75fe2752b> , <https://astrea.linkeddata.es/shapes#bc80ef5c24443a117bbe96f2277aa41b> , <https://astrea.linkeddata.es/shapes#42330ef277be92c41563e0c8dec0bd7e> , <https://astrea.linkeddata.es/shapes#2e2442fe484f22cb694eb90f03588959> , <https://astrea.linkeddata.es/shapes#2619863c8542b7ffb79e040a25b248b6> , <https://astrea.linkeddata.es/shapes#b603cb6a919e0696698c1160c74e9090> , <https://astrea.linkeddata.es/shapes#e575580fc667c7a1a00f51b7393037d4> , <https://astrea.linkeddata.es/shapes#46a1cad079088b9a700cdf34d6d62906> , <https://astrea.linkeddata.es/shapes#c160a0c3f94d6326734aa77bcf96c27a> , <https://astrea.linkeddata.es/shapes#2fa3746e51d59c96f4b18bacb36f250c> , <https://astrea.linkeddata.es/shapes#5455be8594fc8809abbe514675c99a39> , <https://astrea.linkeddata.es/shapes#4aa46b05746f5d44cf441d5128eb1e60> , <https://astrea.linkeddata.es/shapes#3c4ab4a12bc9e4017c20cbed4a841142> , <https://astrea.linkeddata.es/shapes#0c15ab61d1179e6ceaa050788fe6d636> , <https://astrea.linkeddata.es/shapes#e0c6443fd4fa3f888c8f33676b7a33a3> , <https://astrea.linkeddata.es/shapes#ad986c06bd0394461f3686db1c34a8f4> , <https://astrea.linkeddata.es/shapes#c8831c0874a3d176459234e2fc14a437> , <https://astrea.linkeddata.es/shapes#c41047aff529de09f8631b1da875d5e6> , <https://astrea.linkeddata.es/shapes#f3122a163d748a9629986385cf704cf8> , <https://astrea.linkeddata.es/shapes#718f8ef2a221613cac643c7f6b357fff> , <https://astrea.linkeddata.es/shapes#e5bab594b4e0e30d60c74d05caeb3ede> , <https://astrea.linkeddata.es/shapes#f782edbae2fb47fa5e05859c942a8c06> , <https://astrea.linkeddata.es/shapes#b2becf969d5ff1bca20c4b4b4d6ea2e0> , <https://astrea.linkeddata.es/shapes#ba668aee25693c8d2753932a31ee6bff> , <https://astrea.linkeddata.es/shapes#395bba41cfe801e7e0a9f0075b4360f9> , <https://astrea.linkeddata.es/shapes#f924522cc46b3c0e8b7a9e817bfc9cd3> , <https://astrea.linkeddata.es/shapes#8cc680bc3dcc16e708c0b68a35d88374> , <https://astrea.linkeddata.es/shapes#3494e2ce7122eeac1b765ba1aa7e89f7> , <https://astrea.linkeddata.es/shapes#392e2c7449f1309e536179ef457b2313> , <https://astrea.linkeddata.es/shapes#96c2f352bdd3e0f6930ae8ed3926026c> , <https://astrea.linkeddata.es/shapes#65f7242ae16465c3eb485b1eebf42bac> , <https://astrea.linkeddata.es/shapes#cdc3a5cf1a69520dc82e6c239dd786f3> , <https://astrea.linkeddata.es/shapes#52f7d49ead2bcfba42d907823e1a2ded> , <https://astrea.linkeddata.es/shapes#21a2dcf7fdf35555e93aaa470a91892a> , <https://astrea.linkeddata.es/shapes#b1cdf22a2b56eaebc8bca25783ab5754> , <https://astrea.linkeddata.es/shapes#c78b22d223073b57c1ef54a2f70d6e23> , <https://astrea.linkeddata.es/shapes#179213b6e05fc53638ebe5d8ffd3efd5> , <https://astrea.linkeddata.es/shapes#eb1a38bcb3f623a7f88ad028b60aa139> , <https://astrea.linkeddata.es/shapes#a182b2b1f6c10cb65480898d534d2523> , <https://astrea.linkeddata.es/shapes#9259d4c1ba62f9565e7a21a70687ecb1> , <https://astrea.linkeddata.es/shapes#156b241d1c21e5a98b6398b7483a2acc> , <https://astrea.linkeddata.es/shapes#5833296333103c040853fc9b894c8b7f> , <https://astrea.linkeddata.es/shapes#decc9d022b0ce95cde1c4e5135aac9e8> , <https://astrea.linkeddata.es/shapes#8e61279d65b127fdff20659d6eca42fc> , <https://astrea.linkeddata.es/shapes#38d3d439490d1a9457b41e0ac6062857> , <https://astrea.linkeddata.es/shapes#a885297ba9ef27688640a3682db538ab> , <https://astrea.linkeddata.es/shapes#be1f8260d1ad4ad4b798542aa07687e3> , <https://astrea.linkeddata.es/shapes#5bb572b50abd1cafa62c00ce6808e97a> , <https://astrea.linkeddata.es/shapes#176fe8d412d1e40d6cbdae5ae5f0783c> , <https://astrea.linkeddata.es/shapes#19e8dfcfa3b2e77bf0320bedfc5a0e65> , <https://astrea.linkeddata.es/shapes#0a6132322c5761e7d86d673d9d76bcf1> , <https://astrea.linkeddata.es/shapes#7ce2172ec68233a7f7613e3b7a7f6bde> , <https://astrea.linkeddata.es/shapes#2b1322956e6e41ea79d449ef0a65e71e> , <https://astrea.linkeddata.es/shapes#5898c55f3427210b41e0aae3c12795d4> , <https://astrea.linkeddata.es/shapes#04f38a2c0ec37240b73856ab8f7b39c1> , <https://astrea.linkeddata.es/shapes#3165efdec5843975bc7481bba410dc81> , <https://astrea.linkeddata.es/shapes#edc7af6d6edada60272dc6ebb57c085b> , <https://astrea.linkeddata.es/shapes#dd68647f154cdd41204bc9946088dd80> , <https://astrea.linkeddata.es/shapes#b3bc0b853369a86e771745c517f5c732> , <https://astrea.linkeddata.es/shapes#5a31bc1e1d897fa3b66c3aba9715e8f1> , <https://astrea.linkeddata.es/shapes#c23ca282331f4d7b6e753715e18eaf7b> , <https://astrea.linkeddata.es/shapes#0d7e60597866060e00cdb88ddfd6eee7> , <https://astrea.linkeddata.es/shapes#d79bc84ac9e479bd4562ae22a901f921> , <https://astrea.linkeddata.es/shapes#9ac880c994ddbc88ce2f02048418a891> , <https://astrea.linkeddata.es/shapes#f31288f45557f654fc2db4a369bebfa7> , <https://astrea.linkeddata.es/shapes#f38d5269816138ac990d96bf778d7cd1> , <https://astrea.linkeddata.es/shapes#43b52d7c4c5cd6788ca4a9850ed5c521> , <https://astrea.linkeddata.es/shapes#92bd6ae910f1f24e3dec99e0d0a38526> , <https://astrea.linkeddata.es/shapes#ef362a4b7c47697eb503b10a01e6ca86> , <https://astrea.linkeddata.es/shapes#1ba9cb6e07fe5a6faa207c2ac8872c64> , <https://astrea.linkeddata.es/shapes#ac99d93f9654afe6ee3c516419f6929d> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#1d96e150f9d46feea9a20e6ae10767bb> , <https://astrea.linkeddata.es/shapes#9c86890b44a80969a5cc5201e9af3505> , <https://astrea.linkeddata.es/shapes#5192bd4012546876e17387cec79301a1> , <https://astrea.linkeddata.es/shapes#0ae0365bb2a28f1927dec5c51cea38bb> , <https://astrea.linkeddata.es/shapes#b8e584f87edbe939764e722084dcb2ba> , <https://astrea.linkeddata.es/shapes#7235bc3aad16c2f7bebcf4c7fde12ef7> , <https://astrea.linkeddata.es/shapes#32de1715060a22134cb97f6aab2b0388> , <https://astrea.linkeddata.es/shapes#0331e2a874f4fb29677a013ab268d26c> , <https://astrea.linkeddata.es/shapes#8aeede9b75385c320a8d8b70de6a2582> , <https://astrea.linkeddata.es/shapes#76d70537893f6265c7b0564d96b5429f> , <https://astrea.linkeddata.es/shapes#0d2c9b61888b22a73f833711793e8421> , <https://astrea.linkeddata.es/shapes#076076427b6e60f688fd00dc40bd8e23> , <https://astrea.linkeddata.es/shapes#feda1d30c2a4aaf5aebe979e5a0810da> , <https://astrea.linkeddata.es/shapes#cfde8864a9f84bcf4590606eae7da817> , <https://astrea.linkeddata.es/shapes#9bc481ad2cc6bdf250cb5f1b242547ca> , <https://astrea.linkeddata.es/shapes#942ca972fa51cb11c38ec14a280d4f53> , <https://astrea.linkeddata.es/shapes#4d65ff44d67a7a3c4011e996a11ae446> , <https://astrea.linkeddata.es/shapes#9c43b765c8bf346827ce453730b84f45> , <https://astrea.linkeddata.es/shapes#ec3045b0642a9b1a464610cf03a8bba0> , <https://astrea.linkeddata.es/shapes#af509576b93562bd5c1376634b245a08> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#db178c0560af49377c2c05bc27f807f6>
+        a               sh:PropertyShape ;
+        rdfs:label      "used framework" , "Framework (e.g. Keras, Pandas, numpy, etc.) used to create this model." ;
+        sh:datatype     xsd:anyURI ;
+        sh:description  "Framework (e.g. Keras, Pandas, numpy, etc.) used to create this model." ;
+        sh:name         "used framework" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://w3id.org/nno/ontology#usedFramework> ;
+        sh:pattern      "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#19e8dfcfa3b2e77bf0320bedfc5a0e65>
+        a               sh:NodeShape ;
+        rdfs:label      "Convolutional Layer" ;
+        rdfs:seeAlso    "https://keras.io/layers/convolutional/" ;
+        sh:name         "Convolutional Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#ConvolutionalLayer> .
+
+<https://astrea.linkeddata.es/shapes#585a99378c017370c6b392f18ec65aed>
+        a               sh:NodeShape ;
+        rdfs:label      "Average Pooling 3D Layer" ;
+        sh:description  "Average pooling operation for 3D data (spatial or spatio-temporal)." ;
+        sh:name         "Average Pooling 3D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#AveragePooling3D> .
+
+<https://astrea.linkeddata.es/shapes#decc9d022b0ce95cde1c4e5135aac9e8>
+        a               sh:PropertyShape ;
+        rdfs:label      "has layer" , "Layer of the Neural Network." ;
+        sh:class        <https://w3id.org/nno/ontology#Layer> ;
+        sh:description  "Layer of the Neural Network." ;
+        sh:name         "has layer" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/nno/ontology#hasLayer> .
+
+<https://astrea.linkeddata.es/shapes#8e61279d65b127fdff20659d6eca42fc>
+        a               sh:NodeShape ;
+        rdfs:label      "Global Max Pooling 2D Layer" ;
+        sh:description  "Global max pooling operation for spatial data." ;
+        sh:name         "Global Max Pooling 2D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#GlobalMaxPooling2D> .
+
+<https://astrea.linkeddata.es/shapes#5898c55f3427210b41e0aae3c12795d4>
+        a               sh:NodeShape ;
+        rdfs:label      "Core Layer" ;
+        rdfs:seeAlso    "https://keras.io/layers/core/" ;
+        sh:name         "Core Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#CoreLayer> .
+
+<https://astrea.linkeddata.es/shapes#cfde8864a9f84bcf4590606eae7da817>
+        a               sh:NodeShape ;
+        rdfs:label      "Convolutional 2D Layer" ;
+        sh:description  "2D convolution layer (e.g. spatial convolution over images).\n\nThis layer creates a convolution kernel that is convolved with the layer input to produce a tensor of outputs." ;
+        sh:name         "Convolutional 2D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Conv2D> .
+
+<https://astrea.linkeddata.es/shapes#e5bab594b4e0e30d60c74d05caeb3ede>
+        a               sh:PropertyShape ;
+        rdfs:label      "has layer parameters" , "Parameters of a layer" ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "Parameters of a layer" ;
+        sh:name         "has layer parameters" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://w3id.org/nno/ontology#hasLayerParameters> .
+
+<https://astrea.linkeddata.es/shapes#78bf75b866f8d75c2c8d5044c0e59d6e>
+        a               sh:NodeShape ;
+        rdfs:label      "Convolutional 1D Layer" ;
+        sh:description  "1D convolution layer (e.g. temporal convolution).\n\nThis layer creates a convolution kernel that is convolved with the layer input over a single spatial (or temporal) dimension to produce a tensor of outputs." ;
+        sh:name         "Convolutional 1D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Conv1D> .
+
+<https://astrea.linkeddata.es/shapes#2b1322956e6e41ea79d449ef0a65e71e>
+        a               sh:NodeShape ;
+        rdfs:label      "Regression Loss Function" ;
+        sh:description  "Loss function typically used for regression problems." ;
+        sh:name         "Regression Loss Function" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#RegressiveLoss> .
+
+<https://astrea.linkeddata.es/shapes#1d96e150f9d46feea9a20e6ae10767bb>
+        a               sh:NodeShape ;
+        rdfs:label      "Zero-padding 3D Layer" ;
+        sh:description  "Zero-padding layer for 3D data (spatial or spatio-temporal)." ;
+        sh:name         "Zero-padding 3D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#ZeroPadding3D> .
+
+<https://astrea.linkeddata.es/shapes#43b52d7c4c5cd6788ca4a9850ed5c521>
+        a               sh:PropertyShape ;
+        rdfs:label      "has model sequence" , "Specifies the sequence of models, starts at 1" ;
+        sh:datatype     xsd:integer ;
+        sh:description  "Specifies the sequence of models, starts at 1" ;
+        sh:name         "has model sequence" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://w3id.org/nno/ontology#hasModelSequence> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#ef362a4b7c47697eb503b10a01e6ca86>
+        a               sh:NodeShape ;
+        rdfs:label      "Classification Loss Function" ;
+        sh:description  "Loss function typically used for classification problems." ;
+        sh:name         "Classification Loss Function" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#ClassificationLoss> .
+
+<https://astrea.linkeddata.es/shapes#f31288f45557f654fc2db4a369bebfa7>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:dateTime ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/dc/terms/created> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#9259d4c1ba62f9565e7a21a70687ecb1>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:anyURI ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/dc/terms/publisher> ;
+        sh:pattern   "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#395bba41cfe801e7e0a9f0075b4360f9>
+        a                sh:PropertyShape ;
+        rdfs:label       "has download count" , "Number of downloads for this particular model." ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "Number of downloads for this particular model." ;
+        sh:minInclusive  0 ;
+        sh:name          "has download count" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <https://w3id.org/nno/ontology#hasDownloadCount> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#ba668aee25693c8d2753932a31ee6bff>
+        a               sh:NodeShape ;
+        rdfs:label      "Simple RNN Cell Layer" ;
+        sh:description  "Cell class for SimpleRNN." ;
+        sh:name         "Simple RNN Cell Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#SimpleRNNCell> .
+
+<https://astrea.linkeddata.es/shapes#179213b6e05fc53638ebe5d8ffd3efd5>
+        a               sh:NodeShape ;
+        rdfs:label      "Cropping 1D Layer" ;
+        sh:description  "Cropping layer for 1D input (e.g. temporal sequence).\n\nIt crops along the time dimension (axis 1)." ;
+        sh:name         "Cropping 1D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#Cropping1D> .
+
+<https://astrea.linkeddata.es/shapes#0331e2a874f4fb29677a013ab268d26c>
+        a               sh:NodeShape ;
+        rdfs:label      "Zero-padding 1D Layer" ;
+        sh:description  "Zero-padding layer for 1D input (e.g. temporal sequence)." ;
+        sh:name         "Zero-padding 1D Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#ZeroPadding1D> .
+
+<https://astrea.linkeddata.es/shapes#d79bc84ac9e479bd4562ae22a901f921>
+        a               sh:PropertyShape ;
+        rdfs:label      "has model type" , "type of the model" ;
+        sh:datatype     xsd:anyURI ;
+        sh:description  "type of the model" ;
+        sh:name         "has model type" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://w3id.org/nno/ontology#hasModelType> ;
+        sh:pattern      "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#b3bc0b853369a86e771745c517f5c732>
+        a               sh:NodeShape ;
+        rdfs:label      "Simple RNN Layer" ;
+        sh:description  "Fully-connected RNN where the output is to be fed back to input." ;
+        sh:name         "Simple RNN Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#SimpleRNN> .
+
+<https://astrea.linkeddata.es/shapes#0a3fe89459c69a5a1ce183df5cf0a7fc>
+        a               sh:NodeShape ;
+        rdfs:label      "Input Layer" ;
+        sh:description  "Input (e.g. data set)." ;
+        sh:name         "Input Layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/nno/ontology#InputLayer> .
+
+<https://astrea.linkeddata.es/shapes#3494e2ce7122eeac1b765ba1aa7e89f7>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:anyURI ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/dc/terms/license> ;
+        sh:pattern   "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .

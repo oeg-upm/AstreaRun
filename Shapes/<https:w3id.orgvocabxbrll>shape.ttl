@@ -1,0 +1,229 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#1752cbe1b89abf6c999254daabdd32bb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/vocab/xbrll> ;
+        rdfs:label        "Report year"@en , "year of the report"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "year of the report"@en ;
+        sh:name           "Report year"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <https://w3id.org/vocab/xbrll#reportYear> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#6abee6a0178291b519107d9a09c65a7a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/vocab/xbrll> ;
+        rdfs:label        "Start date"@en , "Starting date of a period"@en ;
+        sh:datatype       xsd:date ;
+        sh:description    "Starting date of a period"@en ;
+        sh:name           "Start date"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <https://w3id.org/vocab/xbrll#startDate> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#d5acf15fea4bfe2ddbcefd810e7a68ca>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/vocab/xbrll> ;
+        rdfs:label        "Number of decimals used for a currency"@en , "Decimals"@en ;
+        sh:datatype       xsd:integer ;
+        sh:description    "Number of decimals used for a currency"@en ;
+        sh:name           "Decimals"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <https://w3id.org/vocab/xbrll#decimals> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#101859ca2305de655a5aae91535cc41b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/vocab/xbrll> ;
+        rdfs:label        "Is forever"@en , "Boolean telling the period is forever or not"@en ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "Boolean telling the period is forever or not"@en ;
+        sh:name           "Is forever"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <https://w3id.org/vocab/xbrll#isForever> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#00da871315592972a9ee27178e677c2d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/vocab/xbrll> ;
+        rdfs:label        "data point"@en ;
+        sh:description    "this define a fact in the report. A data point should have at least one context"@en ;
+        sh:name           "data point"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#5a201787bba888afd7d4be887d0e84de> , <https://astrea.linkeddata.es/shapes#16a661c8058eb99ffa3d9cfb617e7fb5> , <https://astrea.linkeddata.es/shapes#7c6c28b6bd7bf5c58c0f34fd2cca5350> ;
+        sh:targetClass    <https://w3id.org/vocab/xbrll#DataPoint> .
+
+<https://astrea.linkeddata.es/shapes#7c6c28b6bd7bf5c58c0f34fd2cca5350>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://w3id.org/vocab/xbrll#context> .
+
+<https://astrea.linkeddata.es/shapes#cf8d927e6bf440f71cf507d33d335da5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/vocab/xbrll> ;
+        rdfs:label        "boolean for the instant moment"@en , "Is instant"@en ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "boolean for the instant moment"@en ;
+        sh:name           "Is instant"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <https://w3id.org/vocab/xbrll#isInstant> ;
+        sh:pattern        "true|false|0|1" .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#7c6c28b6bd7bf5c58c0f34fd2cca5350> , <https://astrea.linkeddata.es/shapes#c484f5db3220f5b6bc5aa6304e3dd33f> , <https://astrea.linkeddata.es/shapes#8e06ba24679b81145ad0d84f32257161> , <https://astrea.linkeddata.es/shapes#d5acf15fea4bfe2ddbcefd810e7a68ca> , <https://astrea.linkeddata.es/shapes#d98924c5d8ec5749bf2091c8407befb6> , <https://astrea.linkeddata.es/shapes#6abee6a0178291b519107d9a09c65a7a> , <https://astrea.linkeddata.es/shapes#fd8347e8e86ceedc89bd7d4f88b7d85f> , <https://astrea.linkeddata.es/shapes#f06b17996230731185eb79a8c7a39a0d> , <https://astrea.linkeddata.es/shapes#3bc2caf771a47a7eea4d5549863cad6c> , <https://astrea.linkeddata.es/shapes#798a0e4894509bef2f07cabe05f3b87f> , <https://astrea.linkeddata.es/shapes#70fc85293c63e37b90dcb82f7dc04fa5> , <https://astrea.linkeddata.es/shapes#6f5c6210781764950ee27ac6c0a7f105> , <https://astrea.linkeddata.es/shapes#1752cbe1b89abf6c999254daabdd32bb> , <https://astrea.linkeddata.es/shapes#5a201787bba888afd7d4be887d0e84de> , <https://astrea.linkeddata.es/shapes#32f98ba892e056dd188d8231b885c82a> , <https://astrea.linkeddata.es/shapes#16a661c8058eb99ffa3d9cfb617e7fb5> , <https://astrea.linkeddata.es/shapes#00da871315592972a9ee27178e677c2d> , <https://astrea.linkeddata.es/shapes#7c593fa9272ca13d09f37b475fb7251c> , <https://astrea.linkeddata.es/shapes#571b45fad58ebf7682afef4d91a51738> , <https://astrea.linkeddata.es/shapes#d3bb49a11f1c48f7c299e56a0daa296f> , <https://astrea.linkeddata.es/shapes#cf8d927e6bf440f71cf507d33d335da5> , <https://astrea.linkeddata.es/shapes#f647d97ddde83b82e3d767d6f4220ac8> , <https://astrea.linkeddata.es/shapes#101859ca2305de655a5aae91535cc41b> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#32f98ba892e056dd188d8231b885c82a>
+        a            sh:PropertyShape ;
+        rdfs:label   "name currency EN"@en ;
+        sh:datatype  xsd:string ;
+        sh:name      "name currency EN"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://aims.fao.org/aos/geopolitical.owl#nameCurrencyEN> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#571b45fad58ebf7682afef4d91a51738>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/vocab/xbrll> ;
+        rdfs:label        "Context"@en ;
+        sh:description    "the context of a fact in a financial report"@en ;
+        sh:name           "Context"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/vocab/xbrll#Context> .
+
+<https://astrea.linkeddata.es/shapes#f647d97ddde83b82e3d767d6f4220ac8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/vocab/xbrll> ;
+        rdfs:label        "Has dimension"@en ;
+        sh:name           "Has dimension"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <https://w3id.org/vocab/xbrll#hasDimension> .
+
+<https://astrea.linkeddata.es/shapes#d98924c5d8ec5749bf2091c8407befb6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/vocab/xbrll> ;
+        rdfs:label        "Dimension"@en ;
+        sh:description    "The dimension defining whether the dimensions in the axis are explicit member or implicit ones"@en ;
+        sh:name           "Dimension"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/vocab/xbrll#Dimension> .
+
+<https://astrea.linkeddata.es/shapes#798a0e4894509bef2f07cabe05f3b87f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/vocab/xbrll> ;
+        rdfs:label        "Data point property"@en , "Data point property from a financial report"@en ;
+        sh:class          <https://w3id.org/vocab/xbrll#DataPoint> ;
+        sh:description    "Data point property from a financial report"@en ;
+        sh:name           "Data point property"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://w3id.org/vocab/xbrll#dataPoint> .
+
+<https://astrea.linkeddata.es/shapes#16a661c8058eb99ffa3d9cfb617e7fb5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/vocab/xbrll> ;
+        rdfs:label        "Context property"@en , "Context property from a data point"@en ;
+        sh:class          <https://w3id.org/vocab/xbrll#Context> ;
+        sh:description    "Context property from a data point"@en ;
+        sh:name           "Context property"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://w3id.org/vocab/xbrll#context> .
+
+<https://astrea.linkeddata.es/shapes#d3bb49a11f1c48f7c299e56a0daa296f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://w3id.org/vocab/xbrll#dataPoint> .
+
+<https://astrea.linkeddata.es/shapes#70fc85293c63e37b90dcb82f7dc04fa5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/vocab/xbrll> ;
+        rdfs:label        "Contact person"@en , "The person of contact in the metadata info of a company"@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description    "The person of contact in the metadata info of a company"@en ;
+        sh:name           "Contact person"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://w3id.org/vocab/xbrll#contactPerson> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#7c593fa9272ca13d09f37b475fb7251c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/vocab/xbrll> ;
+        rdfs:label        "End date of a period"@en , "End date"@en ;
+        sh:datatype       xsd:date ;
+        sh:description    "End date of a period"@en ;
+        sh:name           "End date"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <https://w3id.org/vocab/xbrll#endDate> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#8e06ba24679b81145ad0d84f32257161>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/vocab/xbrll> ;
+        rdfs:label        "Financial entity"@en ;
+        sh:name           "Financial entity"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/vocab/xbrll#FinancialEntity> .
+
+<https://astrea.linkeddata.es/shapes#3bc2caf771a47a7eea4d5549863cad6c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/vocab/xbrll> ;
+        rdfs:label        "End of fiscal year"@en , "Fiscal year"@en ;
+        sh:datatype       xsd:date ;
+        sh:description    "End of fiscal year"@en ;
+        sh:name           "Fiscal year"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <https://w3id.org/vocab/xbrll#fiscalYear> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#c484f5db3220f5b6bc5aa6304e3dd33f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/vocab/xbrll> ;
+        rdfs:label        "Period"@en ;
+        sh:class          <https://w3id.org/vocab/xbrll#Period> ;
+        sh:name           "Period"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://w3id.org/vocab/xbrll#period> .
+
+<https://astrea.linkeddata.es/shapes#5a201787bba888afd7d4be887d0e84de>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://w3id.org/vocab/xbrll#hasDimension> .
+
+<https://astrea.linkeddata.es/shapes#fd8347e8e86ceedc89bd7d4f88b7d85f>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://schema.org/Report> .
+
+<https://astrea.linkeddata.es/shapes#f06b17996230731185eb79a8c7a39a0d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/vocab/xbrll> ;
+        rdfs:label        "Financial report"@en , "informe financiero"@es ;
+        sh:description    "A financial report may content many data points that are facts"@en ;
+        sh:name           "Financial report"@en , "informe financiero"@es ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d3bb49a11f1c48f7c299e56a0daa296f> , <https://astrea.linkeddata.es/shapes#798a0e4894509bef2f07cabe05f3b87f> ;
+        sh:targetClass    <https://w3id.org/vocab/xbrll#FinancialReport> .
+
+<https://astrea.linkeddata.es/shapes#6f5c6210781764950ee27ac6c0a7f105>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/vocab/xbrll> ;
+        rdfs:label        "Period"@en ;
+        sh:name           "Period"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#cf8d927e6bf440f71cf507d33d335da5> , <https://astrea.linkeddata.es/shapes#6abee6a0178291b519107d9a09c65a7a> , <https://astrea.linkeddata.es/shapes#101859ca2305de655a5aae91535cc41b> , <https://astrea.linkeddata.es/shapes#7c593fa9272ca13d09f37b475fb7251c> ;
+        sh:targetClass    <https://w3id.org/vocab/xbrll#Period> .

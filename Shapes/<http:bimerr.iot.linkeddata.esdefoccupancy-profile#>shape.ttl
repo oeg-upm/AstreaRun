@@ -1,0 +1,1406 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#5577135072d3435e86c1f0d0889a030c>
+        a            sh:PropertyShape ;
+        sh:class     <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Meeting> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasMeeting> .
+
+<https://astrea.linkeddata.es/shapes#4dc2cf6a08a0472aaa1306690e20f385>
+        a               sh:NodeShape ;
+        rdfs:label      "Event"@en ;
+        sh:description  "Driver related to events that could be causing a behavior."@en ;
+        sh:name         "Event"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Event> .
+
+<https://astrea.linkeddata.es/shapes#ccd5beb7fd14f8ddac8184aa5af7bef6>
+        a               sh:NodeShape ;
+        rdfs:label      "Random movement"@en ;
+        sh:description  "Type of occupant movements inside a building or space."@en ;
+        sh:name         "Random movement"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#RandomMovement> .
+
+<https://astrea.linkeddata.es/shapes#ab6a030a17fbdf8b5436f9862c974869>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#maxRangeValue> .
+
+<https://astrea.linkeddata.es/shapes#817f1b544909b88ed2104b9613c7f41f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.w3.org/2004/02/skos/core#broader> .
+
+<https://astrea.linkeddata.es/shapes#e2931e7b6c2eb60ddface78eccba4bd9>
+        a               sh:NodeShape ;
+        rdfs:label      "Property"@en ;
+        sh:description  "An aspect of an entity that can be observable by a sensor."@en ;
+        sh:name         "Property"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/saref#Property> .
+
+<https://astrea.linkeddata.es/shapes#f2ec4a2944a81d57035b8492b3a1237b>
+        a               sh:PropertyShape ;
+        rdfs:label      "has space"@en , "Relation between a building or a building space and the spaces it can be divided into."@en ;
+        sh:description  "Relation between a building or a building space and the spaces it can be divided into."@en ;
+        sh:name         "has space"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/def/saref4building#hasSpace> .
+
+<https://astrea.linkeddata.es/shapes#948253316811e29dc09b9f7d65a25eac>
+        a               sh:PropertyShape ;
+        rdfs:label      "start time"@en , "The start time of an event or activity."@en ;
+        sh:datatype     xsd:dateTime ;
+        sh:description  "The start time of an event or activity."@en ;
+        sh:name         "start time"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#startTime> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#bc84571f9effef63a2e8940040310642>
+        a               sh:PropertyShape ;
+        rdfs:label      "has transition type"@en , "Relationship that indicates the type of status transition event."@en ;
+        sh:class        <http://bimerr.iot.linkeddata.es/def/occupancy-profile#StatusTransitionTypeConcept> ;
+        sh:description  "Relationship that indicates the type of status transition event."@en ;
+        sh:name         "has transition type"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasTransitionType> .
+
+<https://astrea.linkeddata.es/shapes#5e76c3f53284ebd48f46b2ff67abdfe3>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#leadsTo> .
+
+<https://astrea.linkeddata.es/shapes#943199aa0d5cedf47c551a244b99ebbb>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#startSeason> .
+
+<https://astrea.linkeddata.es/shapes#c17a2e927db0c6d769a8e9e7ccd0a26a>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#describesParameter> .
+
+<https://astrea.linkeddata.es/shapes#5f3330b1b1be0638dcac0037b14f7efb>
+        a               sh:PropertyShape ;
+        rdfs:label      "on holidays"@en , "Indicates which days that act as time drivers are holidays."@en ;
+        sh:datatype     xsd:date ;
+        sh:description  "Indicates which days that act as time drivers are holidays."@en ;
+        sh:name         "on holidays"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#onHolidays> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#cd08559248c252a87208e84a5e3878f9>
+        a               sh:NodeShape ;
+        rdfs:label      "Interaction Formula"@en ;
+        sh:description  "Formula to model the probability of interaction between ocupant and system."@en ;
+        sh:name         "Interaction Formula"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#0dbd9d5f5f3aa56cf5459f4bc3179139> , <https://astrea.linkeddata.es/shapes#3929bb0868c92463cc6af2ce9ba6702e> , <https://astrea.linkeddata.es/shapes#3495cc9166cb615cc7cded42f77fa48a> , <https://astrea.linkeddata.es/shapes#fabfd05a21af856f7b2807c4844869b3> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#InteractionFormula> .
+
+<https://astrea.linkeddata.es/shapes#ff747a2a5cbd80a219c0f21403ff6d5c>
+        a               sh:PropertyShape ;
+        rdfs:label      "specified by"@en , "Relates a transition event to a movement model that describe this action."@en ;
+        sh:description  "Relates a transition event to a movement model that describe this action."@en ;
+        sh:name         "specified by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#specifiedBy> .
+
+<https://astrea.linkeddata.es/shapes#139a64036a49d4e3f9466b60930d0de8>
+        a               sh:PropertyShape ;
+        rdfs:label      "has meeting"@en , "Indicates that a meeting can occur within a space."@en ;
+        sh:class        <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Meeting> ;
+        sh:description  "Indicates that a meeting can occur within a space."@en ;
+        sh:name         "has meeting"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasMeeting> .
+
+<https://astrea.linkeddata.es/shapes#0dbd9d5f5f3aa56cf5459f4bc3179139>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasCoefficient> .
+
+<https://astrea.linkeddata.es/shapes#a4a4a063c35285e0032c5eac5fa5d764>
+        a               sh:PropertyShape ;
+        rdfs:label      "early occur time"@en , "Earliest occurrence time of an event."@en ;
+        sh:datatype     xsd:time ;
+        sh:description  "Earliest occurrence time of an event."@en ;
+        sh:name         "early occur time"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#earlyOccurTime> ;
+        sh:pattern      "(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#1e45fb763f525e9e5a763e3d9fe8d460>
+        a               sh:NodeShape ;
+        rdfs:label      "Interaction concept"@en ;
+        sh:description  "Types of interactions between occupants and systems."@en ;
+        sh:name         "Interaction concept"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#InteractionConcept> .
+
+<https://astrea.linkeddata.es/shapes#45528c96b7c4f9db1bac1e91c95b3bda>
+        a               sh:PropertyShape ;
+        rdfs:label      "detailed by"@en , "Relates a spatial driver to an specific building space"@en ;
+        sh:description  "Relates a spatial driver to an specific building space"@en ;
+        sh:maxCount     1 ;
+        sh:name         "detailed by"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#detailedBy> .
+
+<https://astrea.linkeddata.es/shapes#09803cd78510d07f75c6c058af1d824e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#identifier> .
+
+<https://astrea.linkeddata.es/shapes#e6dcc7e5e4716bbf6c014393bb28fd04>
+        a               sh:PropertyShape ;
+        rdfs:label      "driven by"@en , "Property to link an occupant with a set of internal or external drivers that are controlling its interactions with building systems."@en ;
+        sh:class        <http://bimerr.iot.linkeddata.es/def/occupancy-profile#DriverSet> ;
+        sh:description  "Property to link an occupant with a set of internal or external drivers that are controlling its interactions with building systems."@en ;
+        sh:name         "driven by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#drivenBy> .
+
+<https://astrea.linkeddata.es/shapes#7a0174c43e3b80e4392fac021bdadf24>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#endTime> .
+
+<https://astrea.linkeddata.es/shapes#e49eea37ee064c1e6c145a7f64e5d8d9>
+        a               sh:NodeShape ;
+        rdfs:label      "Physical object"@en ;
+        sh:description  "Any Object that has a proper space region. (Definition extracted from DUL ontology)"@en ;
+        sh:name         "Physical object"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e6938ae4b307dcbea9c98a36b09651b1> , <https://astrea.linkeddata.es/shapes#8906c27e9034402cd682bfb41a8d2deb> ;
+        sh:targetClass  <https://w3id.org/def/saref4building#PhysicalObject> .
+
+<https://astrea.linkeddata.es/shapes#3a3005b2c519d854a568943e0dd7603e>
+        a               sh:NodeShape ;
+        rdfs:label      "Parameter Range"@en ;
+        sh:description  "Class to represent the minimum and maximm comfort values with respect to an environmental parameter."@en ;
+        sh:name         "Parameter Range"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#86eb9d4c4ead0e933d5248792711f0f5> , <https://astrea.linkeddata.es/shapes#ab6a030a17fbdf8b5436f9862c974869> , <https://astrea.linkeddata.es/shapes#b1ecfe7b8c69c8eee6d10603276bb3e3> , <https://astrea.linkeddata.es/shapes#c17a2e927db0c6d769a8e9e7ccd0a26a> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#ParameterRange> .
+
+<https://astrea.linkeddata.es/shapes#7cffda7668cbda1c5e694a8182f01490>
+        a               sh:NodeShape ;
+        rdfs:label      "Visual Need"@en ;
+        sh:description  "Range of parameter values where occupants do not feel visual discomfort and therefore, they don't carry out any actions."@en ;
+        sh:name         "Visual Need"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#VisualNeed> .
+
+<https://astrea.linkeddata.es/shapes#e6938ae4b307dcbea9c98a36b09651b1>
+        a               sh:PropertyShape ;
+        rdfs:label      "has operational mode"@en , "Relationship to indicate the type of control mode of a system, such as fixed or operable modes for a window."@en ;
+        sh:class        <http://bimerr.iot.linkeddata.es/def/occupancy-profile#OperationalModeConcept> ;
+        sh:description  "Relationship to indicate the type of control mode of a system, such as fixed or operable modes for a window."@en ;
+        sh:name         "has operational mode"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasOperationalMode> .
+
+<https://astrea.linkeddata.es/shapes#0875281831f93ec83c882ba79d6463ef>
+        a               sh:PropertyShape ;
+        rdfs:label      "Relationship that indicates the maximum number of occupants inside a space."@en , "max number occupants"@en ;
+        sh:datatype     xsd:integer ;
+        sh:description  "Relationship that indicates the maximum number of occupants inside a space."@en ;
+        sh:maxCount     1 ;
+        sh:name         "max number occupants"@en ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#maxNumberOccupants> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#91a0bed73af9abe67728f8a8c702b6ce>
+        a               sh:NodeShape ;
+        rdfs:label      "Time Of Day"@en ;
+        sh:description  "Relative time of day."@en ;
+        sh:name         "Time Of Day"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#8c8e312278cd608b55fef038d8025237> , <https://astrea.linkeddata.es/shapes#86a872b7699b5ca95a034d86a234b825> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#TimeOfDay> .
+
+<https://astrea.linkeddata.es/shapes#bd4439e49c8b2062db45ece48828fdce>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.w3.org/2004/02/skos/core#narrower> .
+
+<https://astrea.linkeddata.es/shapes#8906c27e9034402cd682bfb41a8d2deb>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasOperationalMode> .
+
+<https://astrea.linkeddata.es/shapes#0732c665fce47c5d30e4b4c049ada11a>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#occupantGender> .
+
+<https://astrea.linkeddata.es/shapes#22d7e2e6ae4d3d8a25a2b73c70166c3f>
+        a               sh:PropertyShape ;
+        rdfs:label      "typical duration"@en , "The typical duration of an event or activity."@en ;
+        sh:datatype     xsd:duration ;
+        sh:description  "The typical duration of an event or activity."@en ;
+        sh:name         "typical duration"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#typicalDuration> ;
+        sh:pattern      "-?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S))))" .
+
+<https://astrea.linkeddata.es/shapes#992b79cb8e10c5b9d03ea387b11b37c8>
+        a            sh:PropertyShape ;
+        sh:class     <http://bimerr.iot.linkeddata.es/def/occupancy-profile#TimeOfDay> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasTimeOfDay> .
+
+<https://astrea.linkeddata.es/shapes#083b93305b32c32f60e6a609a33778a2>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#composedOf> .
+
+<https://astrea.linkeddata.es/shapes#86eb9d4c4ead0e933d5248792711f0f5>
+        a               sh:PropertyShape ;
+        rdfs:label      "describes parameter"@en , "Relates a comfort envelop with an environmental parameter."@en ;
+        sh:class        <http://bimerr.iot.linkeddata.es/def/occupancy-profile#ParameterRange> ;
+        sh:description  "Relates a comfort envelop with an environmental parameter."@en ;
+        sh:maxCount     1 ;
+        sh:name         "describes parameter"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#describesParameter> .
+
+<https://astrea.linkeddata.es/shapes#e2fd910d58c5e90815284ab2832b9cc4>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#identifier> .
+
+<https://astrea.linkeddata.es/shapes#8e78a2ee1a17d25ff757884ffd67c90e>
+        a               sh:NodeShape ;
+        rdfs:label      "Building"@en ;
+        sh:description  "Building where the occupancy behaviors occur."@en ;
+        sh:name         "Building"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#7c81c8b952e20e4e6b0309a1c0036b70> , <https://astrea.linkeddata.es/shapes#a8a1f0b051675bcf57cb53df3647ec07> , <https://astrea.linkeddata.es/shapes#628f7804c15fbaca63ce0d57d76be51f> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/building#Building> .
+
+<https://astrea.linkeddata.es/shapes#ba51363a1b2f5b018e6548a9f571916f>
+        a               sh:PropertyShape ;
+        rdfs:label      "coefficient value"@en , "A relationship indicating the value of a coefficient."@en ;
+        sh:datatype     xsd:float ;
+        sh:description  "A relationship indicating the value of a coefficient."@en ;
+        sh:name         "coefficient value"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#coefficientValue> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#08fb6c137e039d941df47fd32fa2dd5a>
+        a         sh:PropertyShape ;
+        sh:class  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#PhysicalNeed> .
+
+<https://astrea.linkeddata.es/shapes#33c5775e0a62397ae736b4e83a34cdac>
+        a               sh:PropertyShape ;
+        rdfs:label      "Property to relate an interaction with a formula describing the probability of occurance."@en , "described by formula"@en ;
+        sh:class        <http://bimerr.iot.linkeddata.es/def/occupancy-profile#InteractionFormula> ;
+        sh:description  "Property to relate an interaction with a formula describing the probability of occurance."@en ;
+        sh:maxCount     1 ;
+        sh:name         "described by formula"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#describedByFormula> .
+
+<https://astrea.linkeddata.es/shapes#f44907ab442afb1ae67748d6e6a2de1f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#earlyOccurTime> .
+
+<https://astrea.linkeddata.es/shapes#40b0bb3df1ffe9890e1ca58714296b73>
+        a               sh:PropertyShape ;
+        rdfs:label      "occupant age"@en , "Age of an occupant"@en ;
+        sh:datatype     xsd:integer ;
+        sh:description  "Age of an occupant"@en ;
+        sh:maxCount     1 ;
+        sh:name         "occupant age"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#occupantAge> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#aa2b7452c92b0e8d6071dfd9dc681e78>
+        a               sh:NodeShape ;
+        rdfs:label      "Person"@en ;
+        sh:description  "The Person class represents people. Something is a Person if it is a person. We don't nitpic about whether they're alive, dead, real, or imaginary. (Definition taken from FOAF)"@en ;
+        sh:name         "Person"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1#Person> .
+
+<https://astrea.linkeddata.es/shapes#9086f90b3f430710fd7ac3ae0fa701ef>
+        a               sh:NodeShape ;
+        rdfs:label      "Environmental parameter"@en ;
+        sh:description  "Class that represent a physical variable of the environment where the driver occurs. It could represent variables that impact directly on the comfort levels of the occupant."@en ;
+        sh:name         "Environmental parameter"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5b5b80f969ad8f4e5284c65a9939c6fd> , <https://astrea.linkeddata.es/shapes#c0a142c4440c35939937c816a5844f7b> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#EnvironmentalParameter> .
+
+<https://astrea.linkeddata.es/shapes#bca62d36bb4cc3e071e8a8a6edc94b47>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasBehavior> .
+
+<https://astrea.linkeddata.es/shapes#62a306abfd9e06c9fa7704ad2176bbde>
+        a            sh:PropertyShape ;
+        sh:class     <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Need> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#influencedByNeed> .
+
+<https://astrea.linkeddata.es/shapes#402e55319214e126c692b0e348585cd4>
+        a               sh:PropertyShape ;
+        rdfs:label      "duration"@en , "Average duration of an event."@en ;
+        sh:datatype     xsd:duration ;
+        sh:description  "Average duration of an event."@en ;
+        sh:name         "duration"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#duration> ;
+        sh:pattern      "-?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S))))" .
+
+<https://astrea.linkeddata.es/shapes#09f17fcc61f87f9692f33bab42323734>
+        a            sh:PropertyShape ;
+        rdfs:label   "broader"@en ;
+        sh:class     <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:name      "broader"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/2004/02/skos/core#broader> .
+
+<https://astrea.linkeddata.es/shapes#63254d83e10fd5f5605083ca5300e458>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#endSeason> .
+
+<https://astrea.linkeddata.es/shapes#71a85b9f986a06ad45aac4d976909f46>
+        a               sh:NodeShape ;
+        rdfs:label      "Status transition"@en ;
+        sh:description  "Type of movements to represent transition events between spaces."@en ;
+        sh:name         "Status transition"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b9174cee6dc3a70961e79a71bb54b020> , <https://astrea.linkeddata.es/shapes#921b8e18c0df01ab83766fbf58a1b445> , <https://astrea.linkeddata.es/shapes#d127161332b106cf3a3e14864d7c1cf8> , <https://astrea.linkeddata.es/shapes#2bcfba2ad555b1940963341d1a4a5e34> , <https://astrea.linkeddata.es/shapes#bc84571f9effef63a2e8940040310642> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#StatusTransition> .
+
+<https://astrea.linkeddata.es/shapes#1b9caeb0ffc04856ae4db4cd22c42705>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#drivenBy> .
+
+<https://astrea.linkeddata.es/shapes#bb48a93dba07799ad735021b166af47a>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#2547e16768af842956682c664283c622>
+        a               sh:NodeShape ;
+        rdfs:label      "Interaction"@en ;
+        sh:description  "The Interaction class represent the interactions of occupants with systems within a space to recover their comfort."@en ;
+        sh:name         "Interaction"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f9a6cff8079553f191c6349dc2ae717c> , <https://astrea.linkeddata.es/shapes#33c5775e0a62397ae736b4e83a34cdac> , <https://astrea.linkeddata.es/shapes#5f0fc569b895d80a3b1d396d4191cb01> , <https://astrea.linkeddata.es/shapes#6373779cb811c35e69e03fd0a31c146b> , <https://astrea.linkeddata.es/shapes#05527a425caa4f9f5a599e7b1b1b4abb> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Interaction> .
+
+<https://astrea.linkeddata.es/shapes#ef62bc12ce02047cc5cc9f255ee779fa>
+        a               sh:NodeShape ;
+        rdfs:label      "Driver set"@en ;
+        sh:description  "Set of drivers that could be causing a behavior at a specific time."@en ;
+        sh:name         "Driver set"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#0edd9dabe3ee9b9546053f8c473547cc> , <https://astrea.linkeddata.es/shapes#083b93305b32c32f60e6a609a33778a2> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#DriverSet> .
+
+<https://astrea.linkeddata.es/shapes#eb926d214ba4ce1add48a4ee505d0542>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#probability> .
+
+<https://astrea.linkeddata.es/shapes#7f02db272ed9faf32415ba3e87c5a4c2>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#occupantLifestyle> .
+
+<https://astrea.linkeddata.es/shapes#7044a2aad7967e0b6a0e078a4c555e06>
+        a               sh:PropertyShape ;
+        rdfs:label      "related to space"@en , "Property that relates space occupancy events to an specific building space."@en ;
+        sh:class        <http://bimerr.iot.linkeddata.es/def/building#BuildingSpace> ;
+        sh:description  "Property that relates space occupancy events to an specific building space."@en ;
+        sh:name         "related to space"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#relatedToSpace> .
+
+<https://astrea.linkeddata.es/shapes#a0322116c76c85f79d3f3d556c0d50a7>
+        a               sh:NodeShape ;
+        rdfs:label      "Weibull Formula"@en ;
+        sh:description  "Class to represent weibull mathematical formulas."@en ;
+        sh:name         "Weibull Formula"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#WeibullFormula> .
+
+<https://astrea.linkeddata.es/shapes#1ecb58d638404e7f46a36fffa93b096c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#earlyOccurTime> .
+
+<https://astrea.linkeddata.es/shapes#cb137e3ea1dfcadb2d8d266b57691828>
+        a               sh:PropertyShape ;
+        rdfs:label      "probability"@en , "Relationship that links a probility to an event. For example the occurance probability of a meeting."@en ;
+        sh:datatype     xsd:float ;
+        sh:description  "Relationship that links a probility to an event. For example the occurance probability of a meeting."@en ;
+        sh:name         "probability"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#probability> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#2413873f30c9ba095e5d0b8d1922c085>
+        a               sh:PropertyShape ;
+        rdfs:label      "control value"@en , "A relationship indicating the magnitud of a control action over a building system."@en ;
+        sh:datatype     xsd:float ;
+        sh:description  "A relationship indicating the magnitud of a control action over a building system."@en ;
+        sh:name         "control value"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#controlValue> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#3593c1042bca9bd231fbc1dfdc3835de>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://w3id.org/def/saref4building#contains> .
+
+<https://astrea.linkeddata.es/shapes#9a2cc8eb99911d5d2292b8574ef37991>
+        a               sh:NodeShape ;
+        rdfs:label      "Operational mode concept"@en ;
+        sh:description  "Types of operational modes for space systems."@en ;
+        sh:name         "Operational mode concept"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#OperationalModeConcept> .
+
+<https://astrea.linkeddata.es/shapes#f5c8fa6dc1de2d33fe4ad0342519bca6>
+        a               sh:NodeShape ;
+        rdfs:label      "Space occupancy"@en ;
+        sh:description  "Occupancy percentage of staying in a specific space category in a building."@en ;
+        sh:name         "Space occupancy"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#700c4a52ed8f55d3469b0d304ddd3258> , <https://astrea.linkeddata.es/shapes#bef3a73ed6f08ad1c25b63c6cb8c18ea> , <https://astrea.linkeddata.es/shapes#1ea49f01c269d8886a522b00ffdb554a> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#SpaceOccupancy> .
+
+<https://astrea.linkeddata.es/shapes#41538d0575bfba9d7da357f416b02b0d>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#occupantJobtype> .
+
+<https://astrea.linkeddata.es/shapes#18032710ba9bea6918e256af44830b33>
+        a               sh:PropertyShape ;
+        rdfs:label      "Jobtype of an occupant"@en , "occupant jobtype"@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Jobtype of an occupant"@en ;
+        sh:maxCount     1 ;
+        sh:name         "occupant jobtype"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#occupantJobtype> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#8c8e312278cd608b55fef038d8025237>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#endTime> .
+
+<https://astrea.linkeddata.es/shapes#e93097110ce27ae8b478f7cfe5b8c66a>
+        a               sh:NodeShape ;
+        rdfs:label      "Logit Formula"@en ;
+        sh:description  "Class to represent logit mathematical formulas."@en ;
+        sh:name         "Logit Formula"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#LogitFormula> .
+
+<https://astrea.linkeddata.es/shapes#218e763ba15fc5630027f973f6845bc6>
+        a               sh:NodeShape ;
+        rdfs:label      "Coefficient"@en ;
+        sh:description  "Class to represent the value and name of coefficients inside mathematical formulas."@en ;
+        sh:name         "Coefficient"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c2965053001eaece2b149ced8fc45e12> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Coefficient> .
+
+<https://astrea.linkeddata.es/shapes#b314d2d6e3881d73a5a8f9292a04f7f1>
+        a            sh:PropertyShape ;
+        rdfs:label   "narrower"@en ;
+        sh:class     <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:name      "narrower"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/2004/02/skos/core#narrower> .
+
+<https://astrea.linkeddata.es/shapes#bd4e4693997af51e363f017a60c32137>
+        a               sh:PropertyShape ;
+        rdfs:label      "occupant gender"@en , "Gender of an occupant"@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Gender of an occupant"@en ;
+        sh:maxCount     1 ;
+        sh:name         "occupant gender"@en ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#occupantGender> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#59081e70c9be737f78db7fd501d946db>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#typicalTime> .
+
+<https://astrea.linkeddata.es/shapes#2bcfba2ad555b1940963341d1a4a5e34>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#specifiedBy> .
+
+<https://astrea.linkeddata.es/shapes#2e941901bc272587ea674e5e3480baa5>
+        a               sh:PropertyShape ;
+        rdfs:label      "end season"@en , "Relationship that indicates the month when a season ends."@en ;
+        sh:datatype     xsd:gMonthDay ;
+        sh:description  "Relationship that indicates the month when a season ends."@en ;
+        sh:name         "end season"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#endSeason> ;
+        sh:pattern      "--(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#489250123efd79b23c2d4e9b231cb5c2>
+        a               sh:NodeShape ;
+        rdfs:label      "Status transition scheme"@en ;
+        sh:description  "An aggregation of SKOS concepts regarding the status transition type of movements between spaces."@en ;
+        sh:name         "Status transition scheme"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#StatusTransitionScheme> .
+
+<https://astrea.linkeddata.es/shapes#869bfa4d4938c9425e442cea4093571e>
+        a               sh:PropertyShape ;
+        rdfs:label      "typical time"@en , "Typical occurrence time of an event."@en ;
+        sh:datatype     xsd:time ;
+        sh:description  "Typical occurrence time of an event."@en ;
+        sh:name         "typical time"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#typicalTime> ;
+        sh:pattern      "(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#53d1d52756d31a38c14dd2d37b37c8d3>
+        a               sh:NodeShape ;
+        rdfs:label      "Action"@en ;
+        sh:description  "Actions are the interactions with systems or activities that an occupant can conduct to achieve environmental comfort. Actions connect occupants' inside-world needs with the environmental outside world. (Defintion taken from obXML)"@en ;
+        sh:name         "Action"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Action> .
+
+<https://astrea.linkeddata.es/shapes#f3ba89c00eaff2723e9c8dd4dc560466>
+        a               sh:NodeShape ;
+        rdfs:label      "Meeting"@en ;
+        sh:description  "Class to represent a meeting inside a communal space."@en ;
+        sh:name         "Meeting"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#88edf5fbe61375da8495cbeb8592dcb9> , <https://astrea.linkeddata.es/shapes#fd8c4176c67e6424c56bcc5800cb1d86> , <https://astrea.linkeddata.es/shapes#7a0174c43e3b80e4392fac021bdadf24> , <https://astrea.linkeddata.es/shapes#eb926d214ba4ce1add48a4ee505d0542> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Meeting> .
+
+<https://astrea.linkeddata.es/shapes#9db7f080284ca5860d7cdfff1e3327bc>
+        a               sh:PropertyShape ;
+        rdfs:label      "building address"@en , "A relationship indicating the address of a building"@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "A relationship indicating the address of a building"@en ;
+        sh:name         "building address"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#buildingAddress> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#b822d3b2ab500eb515e310cef51846b1>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#identifier> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#7c7c05541c56ce93ab9d7b6831d74696>
+        a               sh:PropertyShape ;
+        rdfs:label      "Lifestyle of an occupant"@en , "occupant lifestyle"@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Lifestyle of an occupant"@en ;
+        sh:maxCount     1 ;
+        sh:name         "occupant lifestyle"@en ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#occupantLifestyle> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#628f7804c15fbaca63ce0d57d76be51f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#identifier> .
+
+<https://astrea.linkeddata.es/shapes#1136791b70bf4c256cbc66e95712687e>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:integer ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#occupantAge> .
+
+<https://astrea.linkeddata.es/shapes#2111a3f1dcc3c75421d0ae37db56bfe0>
+        a               sh:NodeShape ;
+        rdfs:label      "Normal probability model"@en ;
+        sh:description  "Class to represent instances of Normal probabilistic models."@en ;
+        sh:name         "Normal probability model"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f44907ab442afb1ae67748d6e6a2de1f> , <https://astrea.linkeddata.es/shapes#dfdef3a9276cf071163cacec729700e2> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#NormalProbabilityModel> .
+
+<https://astrea.linkeddata.es/shapes#78db3d6dc9cfbcb4ca40ad5ee707ccfe>
+        a               sh:PropertyShape ;
+        rdfs:label      "Relates an environmental parameter with a unit of measure."@en , "has unit of measure"@en ;
+        sh:class        <https://w3id.org/saref#UnitOfMeasure> ;
+        sh:description  "Relates an environmental parameter with a unit of measure."@en ;
+        sh:maxCount     1 ;
+        sh:name         "has unit of measure"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasUnitOfMeasure> .
+
+<https://astrea.linkeddata.es/shapes#e4acf16dccfeb317ee365baf24112411>
+        a               sh:PropertyShape ;
+        rdfs:label      "Indicates which seasons are behavioral drivers for an occupant."@en , "has season"@en ;
+        sh:class        <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Season> ;
+        sh:description  "Indicates which seasons are behavioral drivers for an occupant."@en ;
+        sh:maxCount     1 ;
+        sh:name         "has season"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasSeason> .
+
+<https://astrea.linkeddata.es/shapes#b8840ae319dd17775a4c3ff2c43caeca>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#97732eb43ea731dc2d3788609a498d3a>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:integer ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#maxNumberOccupants> .
+
+<https://astrea.linkeddata.es/shapes#9ec3de69b62a94b599fefbdb3e0607b5>
+        a               sh:PropertyShape ;
+        rdfs:label      "Upper boundary of a parameter range description."@en , "max range value"@en ;
+        sh:datatype     xsd:float ;
+        sh:description  "Upper boundary of a parameter range description."@en ;
+        sh:maxCount     1 ;
+        sh:name         "max range value"@en ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#maxRangeValue> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#d68db5bf14c04bcfe66eea6d53cfc655>
+        a               sh:NodeShape ;
+        rdfs:label      "HVAC"@en ;
+        sh:description  "Heating, Ventilation and Air Conditioning (HVAC) device that provides indoor environmental comfort. A saref:HVAC is typically used to accomplish saref:Comfort."@en ;
+        sh:name         "HVAC"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/saref#HVAC> .
+
+<https://astrea.linkeddata.es/shapes#f109dc4715d38b1c6c6f6f1081aa9731>
+        a               sh:NodeShape ;
+        rdfs:label      "Thermostat"@en ;
+        sh:description  "A thermostat is a component which senses the temperature of a physical space and performs actions so that the space temperature is maintained near a desired setpoint. (Definition adapted from Wikipedia)"@en ;
+        sh:name         "Thermostat"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Thermostat> .
+
+<https://astrea.linkeddata.es/shapes#adc0f3e91f0f2eea454fd400826280da>
+        a               sh:NodeShape ;
+        rdfs:label      "Habit"@en ;
+        sh:description  "Driver related to habits that could be causing a behavior."@en ;
+        sh:name         "Habit"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Habit> .
+
+<https://astrea.linkeddata.es/shapes#7c81c8b952e20e4e6b0309a1c0036b70>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://w3id.org/def/saref4building#hasSpace> .
+
+<https://astrea.linkeddata.es/shapes#c2965053001eaece2b149ced8fc45e12>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#coefficientValue> .
+
+<https://astrea.linkeddata.es/shapes#cd73af5de6242ac1515c67015f882431>
+        a               sh:NodeShape ;
+        rdfs:label      "Spatial"@en ;
+        sh:description  "Driver related to spatial conditions that could be causing a behavior."@en ;
+        sh:name         "Spatial"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a8c40d83375de7bcf0aad10e26089b91> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Spatial> .
+
+<https://astrea.linkeddata.es/shapes#bb13ce2f32026af23fbfb7e98f6b7b5d>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:date ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#onHolidays> .
+
+<https://astrea.linkeddata.es/shapes#f6468af62bd87b1f8688c66eb721f4ff>
+        a               sh:NodeShape ;
+        rdfs:label      "Window"@en ;
+        sh:description  "A window is an opening in a wall, door, roof or vehicle that allows the passage of light, sound, and sometimes air. (Definition taken from Wikipedia)"@en ;
+        sh:name         "Window"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Window> .
+
+<https://astrea.linkeddata.es/shapes#921b8e18c0df01ab83766fbf58a1b445>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#typicalDuration> .
+
+<https://astrea.linkeddata.es/shapes#e6baffdcaa58543ab6d8292cd0a91775>
+        a               sh:NodeShape ;
+        rdfs:label      "Accoustic Need"@en ;
+        sh:description  "Range of parameter values where occupants do not feel accoustic discomfort and therefore, they don't carry out any actions."@en ;
+        sh:name         "Accoustic Need"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#AccousticNeed> .
+
+<https://astrea.linkeddata.es/shapes#1dd388dfd18ec0c481643be0dd4fce63>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#dc3965fc64becaefa9b0b551b147d2d1>
+        a               sh:NodeShape ;
+        rdfs:label      "Time"@en ;
+        sh:description  "Driver related to time conditions that could be causing a behavior. It also describes the time when another type of driver occur."@en ;
+        sh:name         "Time"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#cae386d067fe0a06b696ddd3bcad4df7> , <https://astrea.linkeddata.es/shapes#bb13ce2f32026af23fbfb7e98f6b7b5d> , <https://astrea.linkeddata.es/shapes#992b79cb8e10c5b9d03ea387b11b37c8> , <https://astrea.linkeddata.es/shapes#2582e991e2ddef1146caca09fc8afe31> , <https://astrea.linkeddata.es/shapes#8f52375cf36c00ac6b3811920feae98a> , <https://astrea.linkeddata.es/shapes#e4acf16dccfeb317ee365baf24112411> , <https://astrea.linkeddata.es/shapes#70f692715c73aa6a050c06cd901b7161> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Time> .
+
+<https://astrea.linkeddata.es/shapes#d293de38c646ac6d53c5313d07ebca4c>
+        a               sh:PropertyShape ;
+        rdfs:label      "defined by range"@en , "Property used to describe occupant needs by defining comfort limits w.r.t. an environmental parameter."@en ;
+        sh:class        <http://bimerr.iot.linkeddata.es/def/occupancy-profile#ParameterRange> ;
+        sh:description  "Property used to describe occupant needs by defining comfort limits w.r.t. an environmental parameter."@en ;
+        sh:maxCount     1 ;
+        sh:name         "defined by range"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#definedByRange> .
+
+<https://astrea.linkeddata.es/shapes#5a0db13a84667465acb3201f459aac1c>
+        a               sh:NodeShape ;
+        rdfs:label      "Building object"@en ;
+        sh:description  "An object in the building that can be controlled by devices, such as a door or a window that can be automatically opened or closed by an actuator. (Definition taken from SAREF 1.0)"@en ;
+        sh:name         "Building object"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/def/saref4building#BuildingObject> .
+
+<https://astrea.linkeddata.es/shapes#18fedaccfff932632414afd5d74aac50>
+        a               sh:NodeShape ;
+        rdfs:label      "Movement Model"@en ;
+        sh:description  "Probabilistic model to define occupant movements inside and between spaces."@en ;
+        sh:name         "Movement Model"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#MovementModel> .
+
+<https://astrea.linkeddata.es/shapes#3495cc9166cb615cc7cded42f77fa48a>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasIndependentVariable> .
+
+<https://astrea.linkeddata.es/shapes#3929bb0868c92463cc6af2ce9ba6702e>
+        a               sh:PropertyShape ;
+        rdfs:label      "has coefficient"@en , "Relates a formula with a coefficient."@en ;
+        sh:class        <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Coefficient> ;
+        sh:description  "Relates a formula with a coefficient."@en ;
+        sh:name         "has coefficient"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasCoefficient> .
+
+<https://astrea.linkeddata.es/shapes#594f74f6d3574d66a70649871e0520f4>
+        a               sh:NodeShape ;
+        rdfs:label      "Report"@en ;
+        sh:description  "The Report class indicates that an occupant seeks assistance or files a complaint about their personal discomfort, but does not take direct action to satisfy their needs."@en ;
+        sh:name         "Report"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Report> .
+
+<https://astrea.linkeddata.es/shapes#7d482eb871622dc4066b4b983184ab78>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#88edf5fbe61375da8495cbeb8592dcb9>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#duration> .
+
+<https://astrea.linkeddata.es/shapes#17df36668c68a2b8ece07442c26e334b>
+        a               sh:NodeShape ;
+        rdfs:label      "Device"@en ;
+        sh:description  "A tangible object designed to accomplish a particular task in households, common public buildings or offices. In order to accomplish this task, the device performs one or more functions. For example, a washing machine is designed to wash (task) and to accomplish this task it performs the start and stop function."@en ;
+        sh:name         "Device"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/saref#Device> .
+
+<https://astrea.linkeddata.es/shapes#45f1df9073e9902eec5a6ca2a26b79db>
+        a               sh:NodeShape ;
+        rdfs:label      "Space"@en ;
+        sh:description  "Class to represent the different spaces the building have and where the occupant behaviors occur." ;
+        sh:name         "Space"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#139a64036a49d4e3f9466b60930d0de8> , <https://astrea.linkeddata.es/shapes#97732eb43ea731dc2d3788609a498d3a> , <https://astrea.linkeddata.es/shapes#87d971c3ca62f4c38c5b7cec913c94db> , <https://astrea.linkeddata.es/shapes#bde33bae36a544788143a8ececb42cc6> , <https://astrea.linkeddata.es/shapes#f12f819a7f63f7f151db09809471ecca> , <https://astrea.linkeddata.es/shapes#5577135072d3435e86c1f0d0889a030c> , <https://astrea.linkeddata.es/shapes#3593c1042bca9bd231fbc1dfdc3835de> , <https://astrea.linkeddata.es/shapes#e2fd910d58c5e90815284ab2832b9cc4> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/building#BuildingSpace> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#f5c8fa6dc1de2d33fe4ad0342519bca6> , <https://astrea.linkeddata.es/shapes#9f94c6fc842015b17da260ecb5b57902> , <https://astrea.linkeddata.es/shapes#6373779cb811c35e69e03fd0a31c146b> , <https://astrea.linkeddata.es/shapes#86eb9d4c4ead0e933d5248792711f0f5> , <https://astrea.linkeddata.es/shapes#943199aa0d5cedf47c551a244b99ebbb> , <https://astrea.linkeddata.es/shapes#7b89aac44ea5b0fe066be73870b2764b> , <https://astrea.linkeddata.es/shapes#2582e991e2ddef1146caca09fc8afe31> , <https://astrea.linkeddata.es/shapes#1e45fb763f525e9e5a763e3d9fe8d460> , <https://astrea.linkeddata.es/shapes#3a3005b2c519d854a568943e0dd7603e> , <https://astrea.linkeddata.es/shapes#ef62bc12ce02047cc5cc9f255ee779fa> , <https://astrea.linkeddata.es/shapes#0732c665fce47c5d30e4b4c049ada11a> , <https://astrea.linkeddata.es/shapes#856362e33fc9bcfda02d0caed6c73d75> , <https://astrea.linkeddata.es/shapes#e6938ae4b307dcbea9c98a36b09651b1> , <https://astrea.linkeddata.es/shapes#0875281831f93ec83c882ba79d6463ef> , <https://astrea.linkeddata.es/shapes#cb137e3ea1dfcadb2d8d266b57691828> , <https://astrea.linkeddata.es/shapes#a7ff0495300b7e74504ce354f114214f> , <https://astrea.linkeddata.es/shapes#45528c96b7c4f9db1bac1e91c95b3bda> , <https://astrea.linkeddata.es/shapes#083b93305b32c32f60e6a609a33778a2> , <https://astrea.linkeddata.es/shapes#3929bb0868c92463cc6af2ce9ba6702e> , <https://astrea.linkeddata.es/shapes#88edf5fbe61375da8495cbeb8592dcb9> , <https://astrea.linkeddata.es/shapes#45f1df9073e9902eec5a6ca2a26b79db> , <https://astrea.linkeddata.es/shapes#9db7f080284ca5860d7cdfff1e3327bc> , <https://astrea.linkeddata.es/shapes#aef1a78016b3598e01dd7671934b50b4> , <https://astrea.linkeddata.es/shapes#3bc75632653d060c2e3cd1a4d21c9178> , <https://astrea.linkeddata.es/shapes#f12f819a7f63f7f151db09809471ecca> , <https://astrea.linkeddata.es/shapes#7c7c05541c56ce93ab9d7b6831d74696> , <https://astrea.linkeddata.es/shapes#69bfc24827569ed9036ecae89a53d3c7> , <https://astrea.linkeddata.es/shapes#b1ecfe7b8c69c8eee6d10603276bb3e3> , <https://astrea.linkeddata.es/shapes#1dd388dfd18ec0c481643be0dd4fce63> , <https://astrea.linkeddata.es/shapes#40abdd690f80e62ede984844a98e2fe2> , <https://astrea.linkeddata.es/shapes#51bd8340fdb77f1f606937b654bcf0ea> , <https://astrea.linkeddata.es/shapes#cd73af5de6242ac1515c67015f882431> , <https://astrea.linkeddata.es/shapes#bd4e4693997af51e363f017a60c32137> , <https://astrea.linkeddata.es/shapes#bb48a93dba07799ad735021b166af47a> , <https://astrea.linkeddata.es/shapes#2111a3f1dcc3c75421d0ae37db56bfe0> , <https://astrea.linkeddata.es/shapes#dfdef3a9276cf071163cacec729700e2> , <https://astrea.linkeddata.es/shapes#09803cd78510d07f75c6c058af1d824e> , <https://astrea.linkeddata.es/shapes#402e55319214e126c692b0e348585cd4> , <https://astrea.linkeddata.es/shapes#9ec3de69b62a94b599fefbdb3e0607b5> , <https://astrea.linkeddata.es/shapes#f3ba89c00eaff2723e9c8dd4dc560466> , <https://astrea.linkeddata.es/shapes#c65974fe5cd6596745c1f2e8c56246a3> , <https://astrea.linkeddata.es/shapes#690e5d94ba0ff5355f79b5f17987560a> , <https://astrea.linkeddata.es/shapes#18fedaccfff932632414afd5d74aac50> , <https://astrea.linkeddata.es/shapes#742a5752f779fb7eaa21e0a76dff304b> , <https://astrea.linkeddata.es/shapes#7b4fa22a5cf1d8dc9e545189305173f2> , <https://astrea.linkeddata.es/shapes#1136791b70bf4c256cbc66e95712687e> , <https://astrea.linkeddata.es/shapes#bca62d36bb4cc3e071e8a8a6edc94b47> , <https://astrea.linkeddata.es/shapes#55d93c2cd8075c60d1f89c56f655dd8d> , <https://astrea.linkeddata.es/shapes#d293de38c646ac6d53c5313d07ebca4c> , <https://astrea.linkeddata.es/shapes#cae386d067fe0a06b696ddd3bcad4df7> , <https://astrea.linkeddata.es/shapes#9a2cc8eb99911d5d2292b8574ef37991> , <https://astrea.linkeddata.es/shapes#bc84571f9effef63a2e8940040310642> , <https://astrea.linkeddata.es/shapes#869bfa4d4938c9425e442cea4093571e> , <https://astrea.linkeddata.es/shapes#c2965053001eaece2b149ced8fc45e12> , <https://astrea.linkeddata.es/shapes#adc0f3e91f0f2eea454fd400826280da> , <https://astrea.linkeddata.es/shapes#9086f90b3f430710fd7ac3ae0fa701ef> , <https://astrea.linkeddata.es/shapes#a0322116c76c85f79d3f3d556c0d50a7> , <https://astrea.linkeddata.es/shapes#7f02db272ed9faf32415ba3e87c5a4c2> , <https://astrea.linkeddata.es/shapes#53d1d52756d31a38c14dd2d37b37c8d3> , <https://astrea.linkeddata.es/shapes#dc1f4395da4b067a42f430e8c4dca597> , <https://astrea.linkeddata.es/shapes#5218033c4a905f9e8a1839e951f16efd> , <https://astrea.linkeddata.es/shapes#4dc2cf6a08a0472aaa1306690e20f385> , <https://astrea.linkeddata.es/shapes#e475fc4b41d3de9c2ec3a4370db01614> , <https://astrea.linkeddata.es/shapes#b1540638dba627a12f7054f8cc1be8ec> , <https://astrea.linkeddata.es/shapes#97732eb43ea731dc2d3788609a498d3a> , <https://astrea.linkeddata.es/shapes#7d482eb871622dc4066b4b983184ab78> , <https://astrea.linkeddata.es/shapes#7cffda7668cbda1c5e694a8182f01490> , <https://astrea.linkeddata.es/shapes#0dfe50b1b2d105b4a5bb5246b87a8e77> , <https://astrea.linkeddata.es/shapes#7c81c8b952e20e4e6b0309a1c0036b70> , <https://astrea.linkeddata.es/shapes#1ecb58d638404e7f46a36fffa93b096c> , <https://astrea.linkeddata.es/shapes#10b17e364822fece3181155be9b0ebfe> , <https://astrea.linkeddata.es/shapes#992b79cb8e10c5b9d03ea387b11b37c8> , <https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5> , <https://astrea.linkeddata.es/shapes#139a64036a49d4e3f9466b60930d0de8> , <https://astrea.linkeddata.es/shapes#c0a142c4440c35939937c816a5844f7b> , <https://astrea.linkeddata.es/shapes#b15475e03fe975b7903081d405f2b10c> , <https://astrea.linkeddata.es/shapes#ba51363a1b2f5b018e6548a9f571916f> , <https://astrea.linkeddata.es/shapes#e6baffdcaa58543ab6d8292cd0a91775> , <https://astrea.linkeddata.es/shapes#83f86bbe49060807177a7de18d76b828> , <https://astrea.linkeddata.es/shapes#cc09267dd81ee82ddb8a809298c66f49> , <https://astrea.linkeddata.es/shapes#62a306abfd9e06c9fa7704ad2176bbde> , <https://astrea.linkeddata.es/shapes#3593c1042bca9bd231fbc1dfdc3835de> , <https://astrea.linkeddata.es/shapes#2bcfba2ad555b1940963341d1a4a5e34> , <https://astrea.linkeddata.es/shapes#b314d2d6e3881d73a5a8f9292a04f7f1> , <https://astrea.linkeddata.es/shapes#1b9caeb0ffc04856ae4db4cd22c42705> , <https://astrea.linkeddata.es/shapes#948253316811e29dc09b9f7d65a25eac> , <https://astrea.linkeddata.es/shapes#489250123efd79b23c2d4e9b231cb5c2> , <https://astrea.linkeddata.es/shapes#921b8e18c0df01ab83766fbf58a1b445> , <https://astrea.linkeddata.es/shapes#b2e0c6978d17a2c52af66e5b49bdf059> , <https://astrea.linkeddata.es/shapes#bd4439e49c8b2062db45ece48828fdce> , <https://astrea.linkeddata.es/shapes#700c4a52ed8f55d3469b0d304ddd3258> , <https://astrea.linkeddata.es/shapes#c17a2e927db0c6d769a8e9e7ccd0a26a> , <https://astrea.linkeddata.es/shapes#e49eea37ee064c1e6c145a7f64e5d8d9> , <https://astrea.linkeddata.es/shapes#09f17fcc61f87f9692f33bab42323734> , <https://astrea.linkeddata.es/shapes#ff747a2a5cbd80a219c0f21403ff6d5c> , <https://astrea.linkeddata.es/shapes#d127161332b106cf3a3e14864d7c1cf8> , <https://astrea.linkeddata.es/shapes#18032710ba9bea6918e256af44830b33> , <https://astrea.linkeddata.es/shapes#5f3330b1b1be0638dcac0037b14f7efb> , <https://astrea.linkeddata.es/shapes#5a0db13a84667465acb3201f459aac1c> , <https://astrea.linkeddata.es/shapes#6255301d77afa678bebd76e4393d5084> , <https://astrea.linkeddata.es/shapes#5577135072d3435e86c1f0d0889a030c> , <https://astrea.linkeddata.es/shapes#218e763ba15fc5630027f973f6845bc6> , <https://astrea.linkeddata.es/shapes#9ac11e9ade0148c19c9bbe140273a913> , <https://astrea.linkeddata.es/shapes#63254d83e10fd5f5605083ca5300e458> , <https://astrea.linkeddata.es/shapes#22d7e2e6ae4d3d8a25a2b73c70166c3f> , <https://astrea.linkeddata.es/shapes#2e941901bc272587ea674e5e3480baa5> , <https://astrea.linkeddata.es/shapes#40b0bb3df1ffe9890e1ca58714296b73> , <https://astrea.linkeddata.es/shapes#ab6a030a17fbdf8b5436f9862c974869> , <https://astrea.linkeddata.es/shapes#08fb6c137e039d941df47fd32fa2dd5a> , <https://astrea.linkeddata.es/shapes#f44907ab442afb1ae67748d6e6a2de1f> , <https://astrea.linkeddata.es/shapes#dc3965fc64becaefa9b0b551b147d2d1> , <https://astrea.linkeddata.es/shapes#e6dcc7e5e4716bbf6c014393bb28fd04> , <https://astrea.linkeddata.es/shapes#59081e70c9be737f78db7fd501d946db> , <https://astrea.linkeddata.es/shapes#5a3a9be03c38f5387830cc46c1361f36> , <https://astrea.linkeddata.es/shapes#2413873f30c9ba095e5d0b8d1922c085> , <https://astrea.linkeddata.es/shapes#8f52375cf36c00ac6b3811920feae98a> , <https://astrea.linkeddata.es/shapes#618a1d8f47205229e6a6685b564e6567> , <https://astrea.linkeddata.es/shapes#5b5b80f969ad8f4e5284c65a9939c6fd> , <https://astrea.linkeddata.es/shapes#ccd5beb7fd14f8ddac8184aa5af7bef6> , <https://astrea.linkeddata.es/shapes#e2fd910d58c5e90815284ab2832b9cc4> , <https://astrea.linkeddata.es/shapes#0edd9dabe3ee9b9546053f8c473547cc> , <https://astrea.linkeddata.es/shapes#e2931e7b6c2eb60ddface78eccba4bd9> , <https://astrea.linkeddata.es/shapes#2547e16768af842956682c664283c622> , <https://astrea.linkeddata.es/shapes#e93097110ce27ae8b478f7cfe5b8c66a> , <https://astrea.linkeddata.es/shapes#8906c27e9034402cd682bfb41a8d2deb> , <https://astrea.linkeddata.es/shapes#6f00ddc8013e9af569848205430ddbdd> , <https://astrea.linkeddata.es/shapes#628f7804c15fbaca63ce0d57d76be51f> , <https://astrea.linkeddata.es/shapes#78a067e7b6f69ec90de4171302ad2210> , <https://astrea.linkeddata.es/shapes#fabfd05a21af856f7b2807c4844869b3> , <https://astrea.linkeddata.es/shapes#7a0174c43e3b80e4392fac021bdadf24> , <https://astrea.linkeddata.es/shapes#5e76c3f53284ebd48f46b2ff67abdfe3> , <https://astrea.linkeddata.es/shapes#8c8e312278cd608b55fef038d8025237> , <https://astrea.linkeddata.es/shapes#b8840ae319dd17775a4c3ff2c43caeca> , <https://astrea.linkeddata.es/shapes#594f74f6d3574d66a70649871e0520f4> , <https://astrea.linkeddata.es/shapes#3495cc9166cb615cc7cded42f77fa48a> , <https://astrea.linkeddata.es/shapes#b822d3b2ab500eb515e310cef51846b1> , <https://astrea.linkeddata.es/shapes#e8e1bb87886460a775a461c68bb88f52> , <https://astrea.linkeddata.es/shapes#97cb4f20cc77ca0464737d62416bda01> , <https://astrea.linkeddata.es/shapes#decf15916c427c34d6004ca915b40a50> , <https://astrea.linkeddata.es/shapes#a99c3577370cbc06a41def49741f8500> , <https://astrea.linkeddata.es/shapes#41538d0575bfba9d7da357f416b02b0d> , <https://astrea.linkeddata.es/shapes#8adadce80bf80fb0d24df3d8e4419c50> , <https://astrea.linkeddata.es/shapes#8633d3210465ece7e3795aa9ec759c48> , <https://astrea.linkeddata.es/shapes#f65f5e061ba7a8fb2f1f974f5e1389f8> , <https://astrea.linkeddata.es/shapes#7044a2aad7967e0b6a0e078a4c555e06> , <https://astrea.linkeddata.es/shapes#d68db5bf14c04bcfe66eea6d53cfc655> , <https://astrea.linkeddata.es/shapes#817f1b544909b88ed2104b9613c7f41f> , <https://astrea.linkeddata.es/shapes#2924650fee247577906fb3d40ccbafd7> , <https://astrea.linkeddata.es/shapes#0dbd9d5f5f3aa56cf5459f4bc3179139> , <https://astrea.linkeddata.es/shapes#b9174cee6dc3a70961e79a71bb54b020> , <https://astrea.linkeddata.es/shapes#86a872b7699b5ca95a034d86a234b825> , <https://astrea.linkeddata.es/shapes#e9d469afa4a87882cd0da3b0de77ff5e> , <https://astrea.linkeddata.es/shapes#05527a425caa4f9f5a599e7b1b1b4abb> , <https://astrea.linkeddata.es/shapes#bb13ce2f32026af23fbfb7e98f6b7b5d> , <https://astrea.linkeddata.es/shapes#17df36668c68a2b8ece07442c26e334b> , <https://astrea.linkeddata.es/shapes#eb926d214ba4ce1add48a4ee505d0542> , <https://astrea.linkeddata.es/shapes#87d971c3ca62f4c38c5b7cec913c94db> , <https://astrea.linkeddata.es/shapes#f9a6cff8079553f191c6349dc2ae717c> , <https://astrea.linkeddata.es/shapes#49084f73d2925ed47adf003a45beac9c> , <https://astrea.linkeddata.es/shapes#89e42e0c8077ab6b0636c706e77b0212> , <https://astrea.linkeddata.es/shapes#f2ec4a2944a81d57035b8492b3a1237b> , <https://astrea.linkeddata.es/shapes#fd8c4176c67e6424c56bcc5800cb1d86> , <https://astrea.linkeddata.es/shapes#da4110d9c1d453f026c5ecbee80ff139> , <https://astrea.linkeddata.es/shapes#f6468af62bd87b1f8688c66eb721f4ff> , <https://astrea.linkeddata.es/shapes#f109dc4715d38b1c6c6f6f1081aa9731> , <https://astrea.linkeddata.es/shapes#1ea49f01c269d8886a522b00ffdb554a> , <https://astrea.linkeddata.es/shapes#8e78a2ee1a17d25ff757884ffd67c90e> , <https://astrea.linkeddata.es/shapes#bde33bae36a544788143a8ececb42cc6> , <https://astrea.linkeddata.es/shapes#f46a83099d61ba6757ac4f80917cad6b> , <https://astrea.linkeddata.es/shapes#33c5775e0a62397ae736b4e83a34cdac> , <https://astrea.linkeddata.es/shapes#aa2b7452c92b0e8d6071dfd9dc681e78> , <https://astrea.linkeddata.es/shapes#a8a1f0b051675bcf57cb53df3647ec07> , <https://astrea.linkeddata.es/shapes#bef3a73ed6f08ad1c25b63c6cb8c18ea> , <https://astrea.linkeddata.es/shapes#70f692715c73aa6a050c06cd901b7161> , <https://astrea.linkeddata.es/shapes#71a85b9f986a06ad45aac4d976909f46> , <https://astrea.linkeddata.es/shapes#cd08559248c252a87208e84a5e3878f9> , <https://astrea.linkeddata.es/shapes#5f0fc569b895d80a3b1d396d4191cb01> , <https://astrea.linkeddata.es/shapes#e4acf16dccfeb317ee365baf24112411> , <https://astrea.linkeddata.es/shapes#a4a4a063c35285e0032c5eac5fa5d764> , <https://astrea.linkeddata.es/shapes#2b6d87a189e3804ac6cdb39d9cfaaaad> , <https://astrea.linkeddata.es/shapes#91a0bed73af9abe67728f8a8c702b6ce> , <https://astrea.linkeddata.es/shapes#a8c40d83375de7bcf0aad10e26089b91> , <https://astrea.linkeddata.es/shapes#78db3d6dc9cfbcb4ca40ad5ee707ccfe> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#e8e1bb87886460a775a461c68bb88f52>
+        a               sh:PropertyShape ;
+        rdfs:label      "has environmental parameter"@en , "Relates and occupant environmental driver with an environmental property like temperature or illuminance."@en ;
+        sh:class        <http://bimerr.iot.linkeddata.es/def/occupancy-profile#EnvironmentalParameter> ;
+        sh:description  "Relates and occupant environmental driver with an environmental property like temperature or illuminance."@en ;
+        sh:name         "has environmental parameter"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasEnvironmentalParameter> .
+
+<https://astrea.linkeddata.es/shapes#89e42e0c8077ab6b0636c706e77b0212>
+        a               sh:NodeShape ;
+        rdfs:label      "Day of week"@en ;
+        sh:description  "The day of the week."@en ;
+        sh:name         "Day of week"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2006/time#DayOfWeek> .
+
+<https://astrea.linkeddata.es/shapes#55d93c2cd8075c60d1f89c56f655dd8d>
+        a               sh:NodeShape ;
+        rdfs:label      "Constant Value Formula"@en ;
+        sh:description  "Class to represent constant value mathematical formulas"@en ;
+        sh:name         "Constant Value Formula"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#ConstantValueFormula> .
+
+<https://astrea.linkeddata.es/shapes#7b4fa22a5cf1d8dc9e545189305173f2>
+        a               sh:NodeShape ;
+        rdfs:label      "Thermal Need"@en ;
+        sh:description  "Range of parameter values where occupants do not feel thermal discomfort and therefore, they don't carry out any actions."@en ;
+        sh:name         "Thermal Need"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#ThermalNeed> .
+
+<https://astrea.linkeddata.es/shapes#c0a142c4440c35939937c816a5844f7b>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#identifier> .
+
+<https://astrea.linkeddata.es/shapes#40abdd690f80e62ede984844a98e2fe2>
+        a               sh:NodeShape ;
+        rdfs:label      "Shading device"@en ;
+        sh:description  "Shading devices are purpose built devices to protect from the sunlight, from natural light, or screening them from view. Shading devices can form part of the facade or can be mounted inside the building, they can be fixed or operable. (Definition taken from S4BLDG ontology)"@en ;
+        sh:name         "Shading device"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/def/saref4building#ShadingDevice> .
+
+<https://astrea.linkeddata.es/shapes#70f692715c73aa6a050c06cd901b7161>
+        a               sh:PropertyShape ;
+        rdfs:label      "has day of week"@en , "Indicates which days of the week are behavioral drivers for an occupant."@en ;
+        sh:class        <http://www.w3.org/2006/time#DayOfWeek> ;
+        sh:description  "Indicates which days of the week are behavioral drivers for an occupant."@en ;
+        sh:maxCount     1 ;
+        sh:name         "has day of week"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasDayOfWeek> .
+
+<https://astrea.linkeddata.es/shapes#f9a6cff8079553f191c6349dc2ae717c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#describedByFormula> .
+
+<https://astrea.linkeddata.es/shapes#f12f819a7f63f7f151db09809471ecca>
+        a            sh:PropertyShape ;
+        sh:class     <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Occupant> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasOccupant> .
+
+<https://astrea.linkeddata.es/shapes#69bfc24827569ed9036ecae89a53d3c7>
+        a            sh:PropertyShape ;
+        rdfs:label   "in scheme"@en ;
+        sh:class     <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+        sh:name      "in scheme"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/2004/02/skos/core#inScheme> .
+
+<https://astrea.linkeddata.es/shapes#b1ecfe7b8c69c8eee6d10603276bb3e3>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#minRangeValue> .
+
+<https://astrea.linkeddata.es/shapes#5218033c4a905f9e8a1839e951f16efd>
+        a               sh:NodeShape ;
+        rdfs:label      "Unitary control element"@en ;
+        sh:description  "A unitary control element provides a housing for an aggregation of control or electrical distribution elements that, in combination, perform a singular (unitary) purpose. Each item in the aggregation may have its own geometric representation and location. (Definition taken from S4BLDG ontology)"@en ;
+        sh:name         "Unitary control element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/def/saref4building#UnitaryControlElement> .
+
+<https://astrea.linkeddata.es/shapes#856362e33fc9bcfda02d0caed6c73d75>
+        a               sh:NodeShape ;
+        rdfs:label      "Occupant"@en ;
+        sh:description  "Occupants or residents of a building."@en ;
+        sh:name         "Occupant"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#7c7c05541c56ce93ab9d7b6831d74696> , <https://astrea.linkeddata.es/shapes#18032710ba9bea6918e256af44830b33> , <https://astrea.linkeddata.es/shapes#b822d3b2ab500eb515e310cef51846b1> , <https://astrea.linkeddata.es/shapes#40b0bb3df1ffe9890e1ca58714296b73> , <https://astrea.linkeddata.es/shapes#bd4e4693997af51e363f017a60c32137> , <https://astrea.linkeddata.es/shapes#dc1f4395da4b067a42f430e8c4dca597> , <https://astrea.linkeddata.es/shapes#7f02db272ed9faf32415ba3e87c5a4c2> , <https://astrea.linkeddata.es/shapes#bca62d36bb4cc3e071e8a8a6edc94b47> , <https://astrea.linkeddata.es/shapes#0732c665fce47c5d30e4b4c049ada11a> , <https://astrea.linkeddata.es/shapes#1136791b70bf4c256cbc66e95712687e> , <https://astrea.linkeddata.es/shapes#41538d0575bfba9d7da357f416b02b0d> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Occupant> .
+
+<https://astrea.linkeddata.es/shapes#c65974fe5cd6596745c1f2e8c56246a3>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.w3.org/2004/02/skos/core#inScheme> .
+
+<https://astrea.linkeddata.es/shapes#51bd8340fdb77f1f606937b654bcf0ea>
+        a               sh:NodeShape ;
+        rdfs:label      "Status transition type concept"@en ;
+        sh:description  "One time event involving occupancy status transition in building level."@en ;
+        sh:name         "Status transition type concept"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#StatusTransitionTypeConcept> .
+
+<https://astrea.linkeddata.es/shapes#da4110d9c1d453f026c5ecbee80ff139>
+        a               sh:NodeShape ;
+        rdfs:label      "Movement"@en ;
+        sh:description  "The Movement class is used to represent the occupant's movements inside or between spaces."@en ;
+        sh:name         "Movement"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Movement> .
+
+<https://astrea.linkeddata.es/shapes#decf15916c427c34d6004ca915b40a50>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasEnvironmentalParameter> .
+
+<https://astrea.linkeddata.es/shapes#bef3a73ed6f08ad1c25b63c6cb8c18ea>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#duration> .
+
+<https://astrea.linkeddata.es/shapes#cae386d067fe0a06b696ddd3bcad4df7>
+        a               sh:PropertyShape ;
+        rdfs:label      "has time of day"@en , "Indicates which times during a day are behavioral drivers for an occupant."@en ;
+        sh:class        <http://bimerr.iot.linkeddata.es/def/occupancy-profile#TimeOfDay> ;
+        sh:description  "Indicates which times during a day are behavioral drivers for an occupant."@en ;
+        sh:maxCount     1 ;
+        sh:name         "has time of day"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasTimeOfDay> .
+
+<https://astrea.linkeddata.es/shapes#a8a1f0b051675bcf57cb53df3647ec07>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#buildingAddress> .
+
+<https://astrea.linkeddata.es/shapes#10b17e364822fece3181155be9b0ebfe>
+        a               sh:NodeShape ;
+        rdfs:label      "Equipment"@en ;
+        sh:description  "Class to represent electrical equipments occupants interact with but do not have influence over indoor thermal conditions. These systems contribute to the energy bugdet estimation."@en ;
+        sh:name         "Equipment"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Equipment> .
+
+<https://astrea.linkeddata.es/shapes#2582e991e2ddef1146caca09fc8afe31>
+        a            sh:PropertyShape ;
+        sh:class     <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Season> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasSeason> .
+
+<https://astrea.linkeddata.es/shapes#05527a425caa4f9f5a599e7b1b1b4abb>
+        a               sh:PropertyShape ;
+        rdfs:label      "Relationship that describes an interaction between an occupant and a building component or system."@en , "interacts over"@en ;
+        sh:class        <https://w3id.org/def/saref4building#PhysicalObject> ;
+        sh:description  "Relationship that describes an interaction between an occupant and a building component or system."@en ;
+        sh:maxCount     1 ;
+        sh:name         "interacts over"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#interactsOver> .
+
+<https://astrea.linkeddata.es/shapes#2b6d87a189e3804ac6cdb39d9cfaaaad>
+        a               sh:NodeShape ;
+        rdfs:label      "Non Physical Need"@en ;
+        sh:description  "Non physical comfort needs (e.g. privacy, status, etc) that could influence a behavior."@en ;
+        sh:name         "Non Physical Need"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#08fb6c137e039d941df47fd32fa2dd5a> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#NonPhysicalNeed> .
+
+<https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core#> ;
+        rdfs:label        "Concept"@en ;
+        sh:name           "Concept"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#bd4439e49c8b2062db45ece48828fdce> , <https://astrea.linkeddata.es/shapes#b314d2d6e3881d73a5a8f9292a04f7f1> , <https://astrea.linkeddata.es/shapes#c65974fe5cd6596745c1f2e8c56246a3> , <https://astrea.linkeddata.es/shapes#817f1b544909b88ed2104b9613c7f41f> , <https://astrea.linkeddata.es/shapes#69bfc24827569ed9036ecae89a53d3c7> , <https://astrea.linkeddata.es/shapes#09f17fcc61f87f9692f33bab42323734> ;
+        sh:targetClass    <http://www.w3.org/2004/02/skos/core#Concept> .
+
+<https://astrea.linkeddata.es/shapes#3bc75632653d060c2e3cd1a4d21c9178>
+        a               sh:PropertyShape ;
+        rdfs:label      "min range value"@en , "Lower boundary of a parameter range description."@en ;
+        sh:datatype     xsd:float ;
+        sh:description  "Lower boundary of a parameter range description."@en ;
+        sh:maxCount     1 ;
+        sh:name         "min range value"@en ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#minRangeValue> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#0dfe50b1b2d105b4a5bb5246b87a8e77>
+        a               sh:PropertyShape ;
+        rdfs:label      "leads to"@en , "Relationship to indicate the outcome of a behavior. It could lead to an action over a building system to recover comfort or to a passive acceptance of the environmental conditions."@en ;
+        sh:description  "Relationship to indicate the outcome of a behavior. It could lead to an action over a building system to recover comfort or to a passive acceptance of the environmental conditions."@en ;
+        sh:name         "leads to"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#6373779cb811c35e69e03fd0a31c146b>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#controlValue> .
+
+<https://astrea.linkeddata.es/shapes#700c4a52ed8f55d3469b0d304ddd3258>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#relatedToSpace> .
+
+<https://astrea.linkeddata.es/shapes#87d971c3ca62f4c38c5b7cec913c94db>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:integer ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#minNumberOccupants> .
+
+<https://astrea.linkeddata.es/shapes#a7ff0495300b7e74504ce354f114214f>
+        a               sh:NodeShape ;
+        rdfs:label      "Markov chain model"@en ;
+        sh:description  "Class to represent instances of Markov chain models."@en ;
+        sh:name         "Markov chain model"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1ecb58d638404e7f46a36fffa93b096c> , <https://astrea.linkeddata.es/shapes#59081e70c9be737f78db7fd501d946db> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#MarkovChainModel> .
+
+<https://astrea.linkeddata.es/shapes#5b5b80f969ad8f4e5284c65a9939c6fd>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasUnitOfMeasure> .
+
+<https://astrea.linkeddata.es/shapes#742a5752f779fb7eaa21e0a76dff304b>
+        a               sh:PropertyShape ;
+        rdfs:label      "minimal duration"@en , "The minimal duration of an event."@en ;
+        sh:datatype     xsd:duration ;
+        sh:description  "The minimal duration of an event."@en ;
+        sh:name         "minimal duration"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#minimalDuration> ;
+        sh:pattern      "-?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S))))" .
+
+<https://astrea.linkeddata.es/shapes#0edd9dabe3ee9b9546053f8c473547cc>
+        a               sh:PropertyShape ;
+        rdfs:label      "composed of"@en , "Relationship that indicates the composition of a set of drivers."@en ;
+        sh:class        <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Driver> ;
+        sh:description  "Relationship that indicates the composition of a set of drivers."@en ;
+        sh:name         "composed of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#composedOf> .
+
+<https://astrea.linkeddata.es/shapes#5a3a9be03c38f5387830cc46c1361f36>
+        a               sh:NodeShape ;
+        rdfs:label      "Physical Need"@en ;
+        sh:description  "Physical comfort need that could influence a behavior."@en ;
+        sh:name         "Physical Need"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d293de38c646ac6d53c5313d07ebca4c> , <https://astrea.linkeddata.es/shapes#2924650fee247577906fb3d40ccbafd7> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#PhysicalNeed> .
+
+<https://astrea.linkeddata.es/shapes#b2e0c6978d17a2c52af66e5b49bdf059>
+        a               sh:NodeShape ;
+        rdfs:label      "Inaction"@en ;
+        sh:description  "The Inaction class represents the decision of an occupant to not act and remain uncomfortable within a space."@en ;
+        sh:name         "Inaction"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Inaction> .
+
+<https://astrea.linkeddata.es/shapes#2924650fee247577906fb3d40ccbafd7>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#definedByRange> .
+
+<https://astrea.linkeddata.es/shapes#49084f73d2925ed47adf003a45beac9c>
+        a               sh:PropertyShape ;
+        rdfs:label      "percent time presence"@en , "Percentage of occupancy time in a space."@en ;
+        sh:datatype     xsd:float ;
+        sh:description  "Percentage of occupancy time in a space."@en ;
+        sh:name         "percent time presence"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#percentTimePresence> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#8633d3210465ece7e3795aa9ec759c48>
+        a               sh:PropertyShape ;
+        rdfs:label      "end time"@en , "The end time of an event or activity."@en ;
+        sh:datatype     xsd:dateTime ;
+        sh:description  "The end time of an event or activity."@en ;
+        sh:name         "end time"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#endTime> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#b9174cee6dc3a70961e79a71bb54b020>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasTransitionType> .
+
+<https://astrea.linkeddata.es/shapes#e475fc4b41d3de9c2ec3a4370db01614>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#probability> .
+
+<https://astrea.linkeddata.es/shapes#86a872b7699b5ca95a034d86a234b825>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#startTime> .
+
+<https://astrea.linkeddata.es/shapes#97cb4f20cc77ca0464737d62416bda01>
+        a               sh:NodeShape ;
+        rdfs:label      "Quadratic Formula"@en ;
+        sh:description  "Class to represent quadratic mathematical formulas."@en ;
+        sh:name         "Quadratic Formula"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#QuadraticFormula> .
+
+<https://astrea.linkeddata.es/shapes#6f00ddc8013e9af569848205430ddbdd>
+        a               sh:NodeShape ;
+        rdfs:label      "Driver"@en ;
+        sh:description  "A Driver represents the environmental factor from the outside world that stimulate occupants in their inside world to fulfill a physical, physiological or psychological need."@en ;
+        sh:name         "Driver"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Driver> .
+
+<https://astrea.linkeddata.es/shapes#8adadce80bf80fb0d24df3d8e4419c50>
+        a               sh:PropertyShape ;
+        rdfs:label      "contains"@en , "A relation between a physical space and the objects located in such space."@en ;
+        sh:description  "A relation between a physical space and the objects located in such space."@en ;
+        sh:name         "contains"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/def/saref4building#contains> .
+
+<https://astrea.linkeddata.es/shapes#9f94c6fc842015b17da260ecb5b57902>
+        a               sh:NodeShape ;
+        rdfs:label      "Lighting device"@en ;
+        sh:description  "A devide used for illumination."@en ;
+        sh:name         "Lighting device"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#LightingDevice> .
+
+<https://astrea.linkeddata.es/shapes#bde33bae36a544788143a8ececb42cc6>
+        a               sh:PropertyShape ;
+        rdfs:label      "has occupant"@en , "Relationship that indicates that an space can have an occupant."@en ;
+        sh:class        <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Occupant> ;
+        sh:description  "Relationship that indicates that an space can have an occupant."@en ;
+        sh:name         "has occupant"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasOccupant> .
+
+<https://astrea.linkeddata.es/shapes#cc09267dd81ee82ddb8a809298c66f49>
+        a               sh:NodeShape ;
+        rdfs:label      "Custom probability model"@en ;
+        sh:description  "Class to represent instances of custom probabilistic models."@en ;
+        sh:name         "Custom probability model"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e475fc4b41d3de9c2ec3a4370db01614> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#CustomProbabilityModel> .
+
+<https://astrea.linkeddata.es/shapes#e9d469afa4a87882cd0da3b0de77ff5e>
+        a               sh:NodeShape ;
+        rdfs:label      "Environment"@en ;
+        sh:description  "Driver related to the environmental conditions that could be causing a behavior."@en ;
+        sh:name         "Environment"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e8e1bb87886460a775a461c68bb88f52> , <https://astrea.linkeddata.es/shapes#decf15916c427c34d6004ca915b40a50> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Environment> .
+
+<https://astrea.linkeddata.es/shapes#a99c3577370cbc06a41def49741f8500>
+        a               sh:NodeShape ;
+        rdfs:label      "Season"@en ;
+        sh:description  "Season of the year."@en ;
+        sh:name         "Season"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#63254d83e10fd5f5605083ca5300e458> , <https://astrea.linkeddata.es/shapes#943199aa0d5cedf47c551a244b99ebbb> , <https://astrea.linkeddata.es/shapes#2e941901bc272587ea674e5e3480baa5> , <https://astrea.linkeddata.es/shapes#b1540638dba627a12f7054f8cc1be8ec> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Season> .
+
+<https://astrea.linkeddata.es/shapes#f46a83099d61ba6757ac4f80917cad6b>
+        a               sh:NodeShape ;
+        rdfs:label      "Need"@en ;
+        sh:description  "Needs represent the physical and non-physical requirements of the occupant's inside world that must be met in order to ensure the satisfaction of the occupant with their environment."@en ;
+        sh:name         "Need"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Need> .
+
+<https://astrea.linkeddata.es/shapes#6255301d77afa678bebd76e4393d5084>
+        a               sh:PropertyShape ;
+        rdfs:label      "identifier"@en , "Identifier of an element given in the obXML file. Attribute considered for backward compatibility."@en ;
+        sh:description  "Identifier of an element given in the obXML file. Attribute considered for backward compatibility."@en ;
+        sh:maxCount     1 ;
+        sh:name         "identifier"@en ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#identifier> .
+
+<https://astrea.linkeddata.es/shapes#dfdef3a9276cf071163cacec729700e2>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#typicalTime> .
+
+<https://astrea.linkeddata.es/shapes#fabfd05a21af856f7b2807c4844869b3>
+        a               sh:PropertyShape ;
+        rdfs:label      "has independent variable"@en , "Relates a formula with an independent variable."@en ;
+        sh:class        <http://bimerr.iot.linkeddata.es/def/occupancy-profile#EnvironmentalParameter> ;
+        sh:description  "Relates a formula with an independent variable."@en ;
+        sh:name         "has independent variable"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasIndependentVariable> .
+
+<https://astrea.linkeddata.es/shapes#7b89aac44ea5b0fe066be73870b2764b>
+        a               sh:PropertyShape ;
+        rdfs:label      "Relationship that indicates the minimum number of occupants inside a space."@en , "min number occupants"@en ;
+        sh:datatype     xsd:integer ;
+        sh:description  "Relationship that indicates the minimum number of occupants inside a space."@en ;
+        sh:maxCount     1 ;
+        sh:name         "min number occupants"@en ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#minNumberOccupants> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#1ea49f01c269d8886a522b00ffdb554a>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#percentTimePresence> .
+
+<https://astrea.linkeddata.es/shapes#a8c40d83375de7bcf0aad10e26089b91>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#detailedBy> .
+
+<https://astrea.linkeddata.es/shapes#f65f5e061ba7a8fb2f1f974f5e1389f8>
+        a               sh:NodeShape ;
+        rdfs:label      "Operational mode scheme"@en ;
+        sh:description  "An aggregation of SKOS concepts regarding the operational mode of space systems."@en ;
+        sh:name         "Operational mode scheme"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#OperationalModeConceptScheme> .
+
+<https://astrea.linkeddata.es/shapes#8f52375cf36c00ac6b3811920feae98a>
+        a            sh:PropertyShape ;
+        sh:class     <http://www.w3.org/2006/time#DayOfWeek> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasDayOfWeek> .
+
+<https://astrea.linkeddata.es/shapes#5f0fc569b895d80a3b1d396d4191cb01>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#interactsOver> .
+
+<https://astrea.linkeddata.es/shapes#690e5d94ba0ff5355f79b5f17987560a>
+        a               sh:NodeShape ;
+        rdfs:label      "Interaction scheme"@en ;
+        sh:description  "An aggregation of SKOS concepts regarding the interaction type between occupants and space systems"@en ;
+        sh:name         "Interaction scheme"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#InteractionScheme> .
+
+<https://astrea.linkeddata.es/shapes#83f86bbe49060807177a7de18d76b828>
+        a               sh:NodeShape ;
+        rdfs:label      "Linear Formula"@en ;
+        sh:description  "Class to represent linear mathematical formulas"@en ;
+        sh:name         "Linear Formula"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#LinearFormula> .
+
+<https://astrea.linkeddata.es/shapes#78a067e7b6f69ec90de4171302ad2210>
+        a               sh:PropertyShape ;
+        rdfs:label      "influenced by need"@en , "Indicates that a driver can be influenced by an occupant comfort need."@en ;
+        sh:class        <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Need> ;
+        sh:description  "Indicates that a driver can be influenced by an occupant comfort need."@en ;
+        sh:name         "influenced by need"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#influencedByNeed> .
+
+<https://astrea.linkeddata.es/shapes#b15475e03fe975b7903081d405f2b10c>
+        a               sh:NodeShape ;
+        rdfs:label      "Behavior"@en ;
+        sh:description  "Behavior related to the interaction with buildings"@en ;
+        sh:name         "Behavior"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:or           ( [ sh:class  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Action> ;
+                            sh:path   <http://bimerr.iot.linkeddata.es/def/occupancy-profile#leadsTo>
+                          ]
+                          [ sh:class  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Inaction> ;
+                            sh:path   <http://bimerr.iot.linkeddata.es/def/occupancy-profile#leadsTo>
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#62a306abfd9e06c9fa7704ad2176bbde> , <https://astrea.linkeddata.es/shapes#e6dcc7e5e4716bbf6c014393bb28fd04> , <https://astrea.linkeddata.es/shapes#5e76c3f53284ebd48f46b2ff67abdfe3> , <https://astrea.linkeddata.es/shapes#78a067e7b6f69ec90de4171302ad2210> , <https://astrea.linkeddata.es/shapes#09803cd78510d07f75c6c058af1d824e> , <https://astrea.linkeddata.es/shapes#1b9caeb0ffc04856ae4db4cd22c42705> ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Behavior> .
+
+<https://astrea.linkeddata.es/shapes#618a1d8f47205229e6a6685b564e6567>
+        a               sh:NodeShape ;
+        rdfs:label      "IAQ Need"@en ;
+        sh:description  "Range of parameter values where occupants do not feel indoor air quality discomfort and therefore, they don't carry out any actions."@en ;
+        sh:name         "IAQ Need"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://bimerr.iot.linkeddata.es/def/occupancy-profile#IAQNeed> .
+
+<https://astrea.linkeddata.es/shapes#b1540638dba627a12f7054f8cc1be8ec>
+        a               sh:PropertyShape ;
+        rdfs:label      "start season"@en , "Relationship that indicates the month when a season start."@en ;
+        sh:datatype     xsd:gMonthDay ;
+        sh:description  "Relationship that indicates the month when a season start."@en ;
+        sh:name         "start season"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#startSeason> ;
+        sh:pattern      "--(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#dc1f4395da4b067a42f430e8c4dca597>
+        a               sh:PropertyShape ;
+        rdfs:label      "has behavior"@en , "Property to indicate that an occupant has a behavior."@en ;
+        sh:class        <http://bimerr.iot.linkeddata.es/def/occupancy-profile#Behavior> ;
+        sh:description  "Property to indicate that an occupant has a behavior."@en ;
+        sh:name         "has behavior"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://bimerr.iot.linkeddata.es/def/occupancy-profile#hasBehavior> .
+
+<https://astrea.linkeddata.es/shapes#9ac11e9ade0148c19c9bbe140273a913>
+        a               sh:NodeShape ;
+        rdfs:label      "Unit of measure"@en ;
+        sh:description  "The unit of measure is a standard for measurement of a quantity, such as a Property. For example, Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of the Smart Appliances ontology, but this list can be extended."@en ;
+        sh:name         "Unit of measure"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/saref#UnitOfMeasure> .
+
+<https://astrea.linkeddata.es/shapes#aef1a78016b3598e01dd7671934b50b4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core#> ;
+        rdfs:label        "Concept Scheme"@en ;
+        sh:name           "Concept Scheme"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+
+<https://astrea.linkeddata.es/shapes#fd8c4176c67e6424c56bcc5800cb1d86>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#startTime> .
+
+<https://astrea.linkeddata.es/shapes#d127161332b106cf3a3e14864d7c1cf8>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://bimerr.iot.linkeddata.es/def/occupancy-profile#minimalDuration> .

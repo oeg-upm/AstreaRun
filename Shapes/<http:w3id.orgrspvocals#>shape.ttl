@@ -1,0 +1,534 @@
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix sdo:   <http://schema.org/> .
+
+<https://astrea.linkeddata.es/shapes#edfd37e3dd11b6070c886502c032e0c7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "Katalogizační záznam"@cs , "Record di catalogo"@it , "Καταγραφή καταλόγου"@el , "سجل"@ar , "Registre du catalogue"@fr , "Registro del catálogo"@es , "Catalog Record"@en , "カタログ・レコード"@ja ;
+        sh:description    "Μία καταγραφή ενός καταλόγου, η οποία περιγράφει ένα συγκεκριμένο σύνολο δεδομένων."@el , "Záznam v datovém katalogu popisující jednu datovou sadu či datovou službu."@cs , "1つのデータセットを記述したデータ・カタログ内のレコード。"@ja , "Un registro en un catálogo de datos que describe un solo conjunto de datos o un servicio de datos."@es , "Un record in un catalogo di dati che descrive un singolo dataset o servizio di dati."@it , "A record in a data catalog, describing the registration of a single dataset or data service."@en , "Un registre du catalogue ou une entrée du catalogue, décrivant un seul jeu de données."@fr ;
+        sh:name           "Record di catalogo"@it , "Catalog Record"@en , "Registro del catálogo"@es , "Registre du catalogue"@fr , "Καταγραφή καταλόγου"@el , "カタログ・レコード"@ja , "سجل"@ar , "Katalogizační záznam"@cs ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#1ba577f2e2aa38848f784328049039d0> ;
+        sh:targetClass    dcat:CatalogRecord .
+
+<https://astrea.linkeddata.es/shapes#6d609d7d22d203a62cba6157c406f9fe>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://w3id.org/rsp/vocals#> ;
+        rdfs:label        "A relationship between a Stream and a partition, or portion of elements streamed"@en , "hasPartition"@en ;
+        rdfs:seeAlso      <http://w3id.org/rsp/vocals#Stream> , <http://w3id.org/rsp/vocals#StreamPartition> ;
+        sh:class          <http://w3id.org/rsp/vocals#StreamPartition> ;
+        sh:description    "A relationship between a Stream and a partition, or portion of elements streamed"@en ;
+        sh:name           "hasPartition"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://w3id.org/rsp/vocals#hasPartition> .
+
+<https://astrea.linkeddata.es/shapes#3eb1053bfb8d8e3227c72df7638cd75d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "Distribuce"@cs , "Distribución"@es , "Distribution"@en , "التوزيع"@ar , "Distribution"@fr , "Διανομή"@el , "Distribuzione"@it , "配信"@ja ;
+        sh:description    "A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above)."@en , "Αναπαριστά μία συγκεκριμένη διαθέσιμη μορφή ενός συνόλου δεδομένων. Κάθε σύνολο δεδομενων μπορεί να είναι διαθέσιμο σε διαφορετικές μορφές, οι μορφές αυτές μπορεί να αναπαριστούν διαφορετικές μορφές αρχείων ή διαφορετικά σημεία διάθεσης. Παραδείγματα διανομών συμπεριλαμβάνουν ένα μεταφορτώσιμο αρχείο μορφής CSV, ένα API ή ένα RSS feed."@el , "Représente une forme spécifique d'un jeu de données. Caque jeu de données peut être disponible sous différentes formes, celles-ci pouvant représenter différents formats du jeu de données ou différents endpoint. Des exemples de distribution sont des fichirs CSV, des API ou des flux RSS."@fr , "شكل محدد لقائمة البيانات يمكن الوصول إليه. قائمة بيانات ما يمكن أن تكون متاحه باشكال و أنواع متعددة.  ملف يمكن تحميله أو واجهة برمجية يمكن من خلالها الوصول إلى البيانات هي أمثلة على ذلك."@ar , "Konkrétní reprezentace datové sady. Datová sada může být dostupná v různých serializacích, které se mohou navzájem lišit různými způsoby, mimo jiné přirozeným jazykem, media-typem či formátem, schematickou organizací, časovým a prostorovým rozlišením, úrovní detailu či profily (které mohou specifikovat některé či všechny tyto rozdíly)."@cs , "Rappresenta una forma disponibile e specifica del dataset. Ciascun dataset può essere disponibile in forme differenti, che possono rappresentare formati diversi o diversi punti di accesso per un dataset. Esempi di distribuzioni sono un file CSV scaricabile, una API o un RSS feed."@it , "Una representación específica de los datos. Cada conjunto de datos puede estar disponible en formas diferentes, las cuáles pueden variar en distintas formas, incluyendo el idioma, 'media-type' o formato, organización esquemática, resolución temporal y espacial, nivel de detalle o perfiles (que pueden especificar cualquiera o todas las diferencias anteriores)."@es , "データセットの特定の利用可能な形式を表わします。各データセットは、異なる形式で利用できることがあり、これらの形式は、データセットの異なる形式や、異なるエンドポイントを表わす可能性があります。配信の例には、ダウンロード可能なCSVファイル、API、RSSフィードが含まれます。"@ja ;
+        sh:name           "Distribución"@es , "Distribution"@en , "Distribution"@fr , "配信"@ja , "Distribuce"@cs , "Διανομή"@el , "التوزيع"@ar , "Distribuzione"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7e5a8ff5e2ed757ded35e5ff80789946> , <https://astrea.linkeddata.es/shapes#c5e9a52e5abdcc530106f263709eff35> , <https://astrea.linkeddata.es/shapes#e9031057f319ac21e6b87432a7dc0f95> , <https://astrea.linkeddata.es/shapes#fa92e9b0e6e2805da4179a8fbab7ff8e> , <https://astrea.linkeddata.es/shapes#bbec72e1685e8433f7543165b36ca94d> , <https://astrea.linkeddata.es/shapes#db9ebcedd5b8ad9b79603d480ee1477f> ;
+        sh:targetClass    dcat:Distribution .
+
+<https://astrea.linkeddata.es/shapes#1ba577f2e2aa38848f784328049039d0>
+        a            sh:PropertyShape ;
+        sh:class     dcat:Resource ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      foaf:primaryTopic .
+
+<https://astrea.linkeddata.es/shapes#f044933d93b16441a55dd02479407de3>
+        a               sh:PropertyShape ;
+        rdfs:label      "serve set di dati"@it , "Kolekce dat, kterou je tato Datová služba schopna poskytnout."@cs , "Una colección de datos que este Servicio de Datos puede distribuir."@es , "serves dataset"@en , "Una raccolta di dati che questo DataService può distribuire."@it , "provee conjunto de datos"@es , "poskytuje datovou sadu"@cs , "A collection of data that this DataService can distribute."@en ;
+        sh:class        dcat:Dataset ;
+        sh:description  "A collection of data that this DataService can distribute."@en , "Kolekce dat, kterou je tato Datová služba schopna poskytnout."@cs , "Una colección de datos que este Servicio de Datos puede distribuir."@es , "Una raccolta di dati che questo DataService può distribuire."@it ;
+        sh:name         "serve set di dati"@it , "poskytuje datovou sadu"@cs , "provee conjunto de datos"@es , "serves dataset"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         dcat:servesDataset .
+
+<https://astrea.linkeddata.es/shapes#44e48c092aada3b171ce899ffc6943a8>
+        a               sh:PropertyShape ;
+        rdfs:label      "This axiom needed so that Protege loads DCAT2 without errors." ;
+        sh:description  "This axiom needed so that Protege loads DCAT2 without errors." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         foaf:primaryTopic .
+
+<https://astrea.linkeddata.es/shapes#079e8ccf2a31bdcc3f086be7e11fda8b>
+        a               sh:PropertyShape ;
+        rdfs:label      "Un sito o end-point che dà accesso alla distribuzione del set di dati."@it , "servicio de acceso de datos"@es , "data access service"@en , "Umístění či přístupový bod zpřístupňující distribuci datové sady."@cs , "služba pro přístup k datům"@cs , "servizio di accesso ai dati"@it , "A site or end-point that gives access to the distribution of the dataset."@en , "Un sitio o end-point que da acceso a la distribución de un conjunto de datos."@es ;
+        sh:class        dcat:DataService ;
+        sh:description  "A site or end-point that gives access to the distribution of the dataset."@en , "Un sito o end-point che dà accesso alla distribuzione del set di dati."@it , "Un sitio o end-point que da acceso a la distribución de un conjunto de datos."@es , "Umístění či přístupový bod zpřístupňující distribuci datové sady."@cs ;
+        sh:name         "služba pro přístup k datům"@cs , "data access service"@en , "servizio di accesso ai dati"@it , "servicio de acceso de datos"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         dcat:accessService .
+
+<https://astrea.linkeddata.es/shapes#fb7f5642c308209410d1904425689bec>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://w3id.org/rsp/vocals#> ;
+        rdfs:label        "Stream"@en ;
+        rdfs:seeAlso      <http://w3id.org/rsp/vocals#StreamDistribution> ;
+        sh:description    "A potentially infinite sequence of data elements. A stream may be findable and accesible on the Web."@en ;
+        sh:name           "Stream"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#6d609d7d22d203a62cba6157c406f9fe> , <https://astrea.linkeddata.es/shapes#5141af94d2c35582a728ebda78a64029> ;
+        sh:targetClass    <http://w3id.org/rsp/vocals#Stream> .
+
+<https://astrea.linkeddata.es/shapes#d55bce606c0526cfdd110cccb06d33c4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "Connecte un jeu de données à des distributions disponibles."@fr , "distribuzione"@it , "データセット配信"@ja , "An available distribution of the dataset."@en , "διανομή"@el , "distribuce"@cs , "distribution"@en , "distribution"@fr , "distribución"@es , "Una distribuzione disponibile per il set di dati."@it , "Συνδέει ένα σύνολο δεδομένων με μία από τις διαθέσιμες διανομές του."@el , "توزيع"@ar , "Una distribución disponible del conjunto de datos."@es , "データセットを、その利用可能な配信に接続します。"@ja , "تربط قائمة البيانات بطريقة أو بشكل يسمح  الوصول الى البيانات"@ar , "Dostupná distribuce datové sady."@cs ;
+        sh:class          dcat:Distribution ;
+        sh:description    "データセットを、その利用可能な配信に接続します。"@ja , "Connecte un jeu de données à des distributions disponibles."@fr , "Συνδέει ένα σύνολο δεδομένων με μία από τις διαθέσιμες διανομές του."@el , "Una distribución disponible del conjunto de datos."@es , "تربط قائمة البيانات بطريقة أو بشكل يسمح  الوصول الى البيانات"@ar , "An available distribution of the dataset."@en , "Dostupná distribuce datové sady."@cs , "Una distribuzione disponibile per il set di dati."@it ;
+        sh:name           "توزيع"@ar , "distribuzione"@it , "distribuce"@cs , "διανομή"@el , "データセット配信"@ja , "distribución"@es , "distribution"@en , "distribution"@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:distribution .
+
+<https://astrea.linkeddata.es/shapes#3ea4d1b0dbfea5e5e60f2df41820cb86>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "landing page"@en , "A Web page that can be navigated to in a Web browser to gain access to the catalog, a dataset, its distributions and/or additional information."@en , "صفحة وصول"@ar , "página de destino"@es , "pagina di destinazione"@it , "Una pagina web che può essere navigata per ottenere l'accesso al catalogo, ad un dataset, alle distribuzioni del dataset e/o ad informazioni addizionali."@it , "vstupní stránka"@cs , "Une page Web accessible par un navigateur Web donnant accès au catalogue, un jeu de données, ses distributions et/ou des informations additionnelles."@fr , "Una página web que puede ser visitada en un explorador Web para tener acceso el catálogo, un conjunto de datos, sus distribuciones y/o información adicional."@es , "データセット、その配信および（または）追加情報にアクセスするためにウエブ・ブラウザでナビゲートできるウェブページ。"@ja , "ランディング・ページ"@ja , "page d'atterrissage"@fr , "Webová stránka, na kterou lze pro získání přístupu ke katalogu, datové sadě, jejím distribucím a/nebo dalším informacím přistoupit webovým prohlížečem."@cs , "ιστοσελίδα αρχικής πρόσβασης"@el , "Μία ιστοσελίδα πλοηγίσιμη μέσω ενός φυλλομετρητή (Web browser) που δίνει πρόσβαση στο σύνολο δεδομένων, τις διανομές αυτού ή/και επιπρόσθετες πληροφορίες."@el , "صفحة وب يمكن من خلالها الوصول الى قائمة البيانات أو إلى معلومات إضافية متعلقة بها "@ar ;
+        sh:class          foaf:Document ;
+        sh:description    "Webová stránka, na kterou lze pro získání přístupu ke katalogu, datové sadě, jejím distribucím a/nebo dalším informacím přistoupit webovým prohlížečem."@cs , "A Web page that can be navigated to in a Web browser to gain access to the catalog, a dataset, its distributions and/or additional information."@en , "データセット、その配信および（または）追加情報にアクセスするためにウエブ・ブラウザでナビゲートできるウェブページ。"@ja , "Una pagina web che può essere navigata per ottenere l'accesso al catalogo, ad un dataset, alle distribuzioni del dataset e/o ad informazioni addizionali."@it , "Μία ιστοσελίδα πλοηγίσιμη μέσω ενός φυλλομετρητή (Web browser) που δίνει πρόσβαση στο σύνολο δεδομένων, τις διανομές αυτού ή/και επιπρόσθετες πληροφορίες."@el , "Une page Web accessible par un navigateur Web donnant accès au catalogue, un jeu de données, ses distributions et/ou des informations additionnelles."@fr , "صفحة وب يمكن من خلالها الوصول الى قائمة البيانات أو إلى معلومات إضافية متعلقة بها "@ar , "Una página web que puede ser visitada en un explorador Web para tener acceso el catálogo, un conjunto de datos, sus distribuciones y/o información adicional."@es ;
+        sh:name           "landing page"@en , "vstupní stránka"@cs , "صفحة وصول"@ar , "ランディング・ページ"@ja , "página de destino"@es , "pagina di destinazione"@it , "page d'atterrissage"@fr , "ιστοσελίδα αρχικής πρόσβασης"@el ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:landingPage .
+
+<https://astrea.linkeddata.es/shapes#973ec0357c5a9cb8a8bdf52807e0191e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "Κατάλογος"@el , "فهرس قوائم البيانات"@ar , "カタログ"@ja , "Catalogue"@fr , "Katalog"@cs , "Catálogo"@es , "Catalogo"@it , "Catalog"@en ;
+        sh:description    "A curated collection of metadata about resources (e.g., datasets and data services in the context of a data catalog)."@en , "Una raccolta curata di metadati sulle risorse (ad es. sui dataset e relativi servizi nel contesto di cataloghi di dati)."@it , "Una colección curada de metadatos sobre recursos (por ejemplo, conjuntos de datos y servicios de datos en el contexto de un catálogo de datos)."@es , "データ・カタログは、データセットに関するキュレートされたメタデータの集合です。"@ja , "Μια επιμελημένη συλλογή μεταδεδομένων περί συνόλων δεδομένων"@el , "Řízená kolekce metadat o datových sadách a datových službách"@cs , "مجموعة من توصيفات قوائم البيانات"@ar , "Une collection élaborée de métadonnées sur les jeux de données"@fr ;
+        sh:name           "Catalog"@en , "Catalogo"@it , "Κατάλογος"@el , "Catalogue"@fr , "カタログ"@ja , "Catálogo"@es , "Katalog"@cs , "فهرس قوائم البيانات"@ar ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ce2894b6131d283adf943cbfdf3e9c89> , <https://astrea.linkeddata.es/shapes#a1bcf33cd786886f3c22f4ee0703d731> , <https://astrea.linkeddata.es/shapes#14655cf0dfb7f6af8cefe7bc6523d9a2> , <https://astrea.linkeddata.es/shapes#3c3101bf551703f83bd0a6af567da043> , <https://astrea.linkeddata.es/shapes#1a6410ea9f856660837771d16ac5a382> , <https://astrea.linkeddata.es/shapes#f262c4ca813df7b27f3078c11c60c84d> ;
+        sh:targetClass    dcat:Catalog .
+
+<https://astrea.linkeddata.es/shapes#876d0848d6eda4be132ec6464a06d3d2>
+        a               sh:NodeShape ;
+        rdfs:label      "Rol"@es , "Ruolo"@it , "Role"@cs , "Role"@en ;
+        rdfs:seeAlso    dcat:hadRole ;
+        sh:description  "Un ruolo è la funzione di una risorsa o di un agente rispetto ad un'altra risorsa, nel contesto dell'attribuzione delle risorse o delle relazioni tra risorse."@it , "Role je funkce zdroje či agenta ve vztahu k jinému zdroji, v kontextu přiřazení zdrojů či vztahů mezi zdroji."@cs , "A role is the function of a resource or agent with respect to another resource, in the context of resource attribution or resource relationships."@en , "Un rol es la función de un recurso o agente con respecto a otro recuros, en el contexto de atribución del recurso o de las relaciones entre recursos."@es ;
+        sh:name         "Role"@cs , "Role"@en , "Ruolo"@it , "Rol"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dcat:Role .
+
+<https://astrea.linkeddata.es/shapes#1aca4d21dcf2d0aa81a243dc2dbb6877>
+        a               sh:PropertyShape ;
+        rdfs:label      "Una descripción del end-point del servicio, incluyendo sus operaciones, parámetros, etc."@es , "description of service end-point"@en , "Una descrizione dell'endpoint del servizio, incluse le sue operazioni, parametri, ecc."@it , "A description of the service end-point, including its operations, parameters etc."@en , "descripción del end-point del servicio"@es , "popis přístupového bodu služby"@cs , "descrizione dell'endpoint del servizio"@it , "Popis přístupového bodu služby včetně operací, parametrů apod."@cs ;
+        sh:description  "Una descrizione dell'endpoint del servizio, incluse le sue operazioni, parametri, ecc."@it , "Una descripción del end-point del servicio, incluyendo sus operaciones, parámetros, etc."@es , "A description of the service end-point, including its operations, parameters etc."@en , "Popis přístupového bodu služby včetně operací, parametrů apod."@cs ;
+        sh:name         "descrizione dell'endpoint del servizio"@it , "popis přístupového bodu služby"@cs , "descripción del end-point del servicio"@es , "description of service end-point"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#ce2894b6131d283adf943cbfdf3e9c89>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "El sistema de organización del conocimiento utilizado para clasificar conjuntos de datos de catálogos."@es , "taxonomie témat"@cs , "Le systhème d'ogranisation de connaissances utilisé pour classifier les jeux de données du catalogue."@fr , "The knowledge organization system (KOS) used to classify catalog's datasets."@en , "テーマ"@ja , "Ταξινομία θεματικών κατηγοριών."@el , "قائمة التصنيفات"@ar , "theme taxonomy"@en , "カタログのデータセットを分類するために用いられる知識組織化体系（KOS；knowledge organization system）。"@ja , "Το σύστημα οργάνωσης γνώσης που χρησιμοποιείται για την κατηγοριοποίηση των συνόλων δεδομένων του καταλόγου."@el , "لائحة التصنيفات المستخدمه لتصنيف قوائم البيانات ضمن الفهرس"@ar , "Il sistema di organizzazione della conoscenza (KOS) usato per classificare i dataset del catalogo."@it , "taxonomía de temas"@es , "Systém organizace znalostí (KOS) použitý pro klasifikaci datových sad v katalogu."@cs , "tassonomia dei temi"@it , "taxonomie de thèmes"@fr ;
+        sh:class          rdfs:Resource ;
+        sh:description    "Il sistema di organizzazione della conoscenza (KOS) usato per classificare i dataset del catalogo."@it , "Le systhème d'ogranisation de connaissances utilisé pour classifier les jeux de données du catalogue."@fr , "Το σύστημα οργάνωσης γνώσης που χρησιμοποιείται για την κατηγοριοποίηση των συνόλων δεδομένων του καταλόγου."@el , "The knowledge organization system (KOS) used to classify catalog's datasets."@en , "El sistema de organización del conocimiento utilizado para clasificar conjuntos de datos de catálogos."@es , "カタログのデータセットを分類するために用いられる知識組織化体系（KOS；knowledge organization system）。"@ja , "Systém organizace znalostí (KOS) použitý pro klasifikaci datových sad v katalogu."@cs , "لائحة التصنيفات المستخدمه لتصنيف قوائم البيانات ضمن الفهرس"@ar ;
+        sh:name           "taxonomía de temas"@es , "theme taxonomy"@en , "Ταξινομία θεματικών κατηγοριών."@el , "tassonomia dei temi"@it , "テーマ"@ja , "قائمة التصنيفات"@ar , "taxonomie de thèmes"@fr , "taxonomie témat"@cs ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:themeTaxonomy .
+
+<https://astrea.linkeddata.es/shapes#d643f20f258506885998443162dbe6ba>
+        a            sh:PropertyShape ;
+        rdfs:label   "centroid"@en , "centroid"@cs , "centroide"@it , "centroide"@es ;
+        sh:datatype  rdfs:Literal ;
+        sh:name      "centroide"@it , "centroide"@es , "centroid"@cs , "centroid"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      dcat:centroid .
+
+<https://astrea.linkeddata.es/shapes#e9031057f319ac21e6b87432a7dc0f95>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "A URL of a resource that gives access to a distribution of the dataset. E.g. landing page, feed, SPARQL endpoint. Use for all cases except a simple download link, in which case downloadURL is preferred."@en , "أي رابط يتيح الوصول إلى البيانات. إذا كان الرابط هو ربط مباشر لملف يمكن تحميله استخدم الخاصية downloadURL"@ar , "access address"@en , "indirizzo di accesso"@it , "URL de acceso"@es , "データセットの配信にアクセス権を与えるランディング・ページ、フィード、SPARQLエンドポイント、その他の種類の資源。"@ja , "Un URL di una risorsa che consente di accedere a una distribuzione del set di dati. Per esempio, pagina di destinazione, feed, endpoint SPARQL. Da utilizzare per tutti i casi, tranne  quando  si tratta di un semplice link per il download nel qual caso è preferito downloadURL."@it , "přístupová adresa"@cs , "Ceci peut être tout type d'URL qui donne accès à une distribution du jeu de données. Par exemple, un lien à une page HTML contenant un lien au jeu de données, un Flux RSS, un point d'accès SPARQL. Utilisez le lorsque votre catalogue ne contient pas d'information sur quoi il est ou quand ce n'est pas téléchargeable."@fr , "URL zdroje, přes které je přístupná distribuce datové sady. Příkladem může být vstupní stránka, RSS kanál či SPARQL endpoint. Použijte ve všech případech kromě URL souboru ke stažení, pro které je lepší použít dcat:downloadURL."@cs , "رابط وصول"@ar , "URL πρόσβασης"@el , "URL d'accès"@fr , "アクセスURL"@ja , "Μπορεί να είναι οποιουδήποτε είδους URL που δίνει πρόσβαση στη διανομή ενός συνόλου δεδομένων. Π.χ. ιστοσελίδα αρχικής πρόσβασης, μεταφόρτωση, feed URL, σημείο διάθεσης SPARQL. Να χρησιμοποιείται όταν ο κατάλογος δεν περιέχει πληροφορίες εαν πρόκειται ή όχι για μεταφορτώσιμο αρχείο."@el , "Puede ser cualquier tipo de URL que de acceso a una distribución del conjunto de datos, e.g., página de destino, descarga, URL feed, punto de acceso SPARQL. Esta propriedad se debe usar cuando su catálogo de datos no tiene información sobre donde está o cuando no se puede descargar."@es ;
+        sh:class          rdfs:Resource ;
+        sh:description    "データセットの配信にアクセス権を与えるランディング・ページ、フィード、SPARQLエンドポイント、その他の種類の資源。"@ja , "URL zdroje, přes které je přístupná distribuce datové sady. Příkladem může být vstupní stránka, RSS kanál či SPARQL endpoint. Použijte ve všech případech kromě URL souboru ke stažení, pro které je lepší použít dcat:downloadURL."@cs , "A URL of a resource that gives access to a distribution of the dataset. E.g. landing page, feed, SPARQL endpoint. Use for all cases except a simple download link, in which case downloadURL is preferred."@en , "أي رابط يتيح الوصول إلى البيانات. إذا كان الرابط هو ربط مباشر لملف يمكن تحميله استخدم الخاصية downloadURL"@ar , "Μπορεί να είναι οποιουδήποτε είδους URL που δίνει πρόσβαση στη διανομή ενός συνόλου δεδομένων. Π.χ. ιστοσελίδα αρχικής πρόσβασης, μεταφόρτωση, feed URL, σημείο διάθεσης SPARQL. Να χρησιμοποιείται όταν ο κατάλογος δεν περιέχει πληροφορίες εαν πρόκειται ή όχι για μεταφορτώσιμο αρχείο."@el , "Un URL di una risorsa che consente di accedere a una distribuzione del set di dati. Per esempio, pagina di destinazione, feed, endpoint SPARQL. Da utilizzare per tutti i casi, tranne  quando  si tratta di un semplice link per il download nel qual caso è preferito downloadURL."@it , "Puede ser cualquier tipo de URL que de acceso a una distribución del conjunto de datos, e.g., página de destino, descarga, URL feed, punto de acceso SPARQL. Esta propriedad se debe usar cuando su catálogo de datos no tiene información sobre donde está o cuando no se puede descargar."@es , "Ceci peut être tout type d'URL qui donne accès à une distribution du jeu de données. Par exemple, un lien à une page HTML contenant un lien au jeu de données, un Flux RSS, un point d'accès SPARQL. Utilisez le lorsque votre catalogue ne contient pas d'information sur quoi il est ou quand ce n'est pas téléchargeable."@fr ;
+        sh:name           "アクセスURL"@ja , "URL d'accès"@fr , "přístupová adresa"@cs , "access address"@en , "رابط وصول"@ar , "URL de acceso"@es , "indirizzo di accesso"@it , "URL πρόσβασης"@el ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:accessURL .
+
+<https://astrea.linkeddata.es/shapes#e5a015b1bc617bc66543caa5eadc23f7>
+        a               sh:PropertyShape ;
+        rdfs:label      "risoluzione spaziale (metros)"@it , "mínima separacíon espacial disponible en un conjunto de datos, medida en metros."@es , "spatial resolution (meters)"@en-US , "minimum spatial separation resolvable in a dataset, measured in metres."@en-GB , "resolución espacial (metros)"@es , "separazione spaziale minima risolvibile in un set di dati, misurata in metri."@it , "spatial resolution (metres)"@en-GB , "minimum spatial separation resolvable in a dataset, measured in meters."@en-US , "prostorové rozlišení (metry)"@cs , "minimální prostorový rozestup rozeznatelný v datové sadě, měřeno v metrech."@cs ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "minimální prostorový rozestup rozeznatelný v datové sadě, měřeno v metrech."@cs , "mínima separacíon espacial disponible en un conjunto de datos, medida en metros."@es , "minimum spatial separation resolvable in a dataset, measured in metres."@en-GB , "separazione spaziale minima risolvibile in un set di dati, misurata in metri."@it , "minimum spatial separation resolvable in a dataset, measured in meters."@en-US ;
+        sh:name         "resolución espacial (metros)"@es , "risoluzione spaziale (metros)"@it , "prostorové rozlišení (metry)"@cs , "spatial resolution (meters)"@en-US , "spatial resolution (metres)"@en-GB ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         dcat:spatialResolutionInMeters ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#1a6f3fb731de1a44a331fab600863f8d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://w3id.org/rsp/vocals#> ;
+        rdfs:label        "StreamDistribution"@en ;
+        rdfs:seeAlso      <http://w3id.org/rsp/vocals#Stream> ;
+        sh:description    "Represents a specific available form of a stream. Each stream might be available in different forms, these forms might represent different access points of the stream. Examples of distributions include a WebSocket endpoint, an HTTP endpoint, a Server-Sent Events endpoint, MQTT, etc."@en ;
+        sh:name           "StreamDistribution"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://w3id.org/rsp/vocals#StreamDistribution> , <http://w3id.org/rsp/vocals#StreamEndpoint> .
+
+<https://astrea.linkeddata.es/shapes#c5e9a52e5abdcc530106f263709eff35>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "バイト・サイズ"@ja , "El tamaño de una distribución en bytes."@es , "La dimensione di una distribuzione in byte."@it , "Το μέγεθος μιας διανομής σε bytes."@el , "الحجم بالبايتات "@ar , "Velikost distribuce v bajtech."@cs , "byte size"@en , "tamaño en bytes"@es , "The size of a distribution in bytes."@en , "La taille de la distribution en octects"@fr , "الحجم بالبايت"@ar , "dimensione in byte"@it , "μέγεθος σε bytes"@el , "velikost v bajtech"@cs , "taille en octects"@fr , "バイトによる配信のサイズ。"@ja ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "La dimensione di una distribuzione in byte."@it , "الحجم بالبايتات "@ar , "バイトによる配信のサイズ。"@ja , "Το μέγεθος μιας διανομής σε bytes."@el , "La taille de la distribution en octects"@fr , "El tamaño de una distribución en bytes."@es , "Velikost distribuce v bajtech."@cs , "The size of a distribution in bytes."@en ;
+        sh:name           "バイト・サイズ"@ja , "dimensione in byte"@it , "tamaño en bytes"@es , "velikost v bajtech"@cs , "الحجم بالبايت"@ar , "taille en octects"@fr , "byte size"@en , "μέγεθος σε bytes"@el ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           dcat:byteSize .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#3dc3b84895d32d755cfe68f990e149b1>
+        a            sh:PropertyShape ;
+        rdfs:label   "quadro di delimitazione"@it , "ohraničení oblasti"@cs , "bounding box"@en , "cuadro delimitador"@es ;
+        sh:datatype  rdfs:Literal ;
+        sh:name      "bounding box"@en , "cuadro delimitador"@es , "ohraničení oblasti"@cs , "quadro di delimitazione"@it ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      dcat:bbox .
+
+<https://astrea.linkeddata.es/shapes#2a4e3c6b38c163d989e3539408b7d487>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      dcat:endpointURL .
+
+<https://astrea.linkeddata.es/shapes#652532405185e960135fcad29b4aac81>
+        a               sh:PropertyShape ;
+        rdfs:label      "service end-point"@en , "La locazione principale o l'endpoint primario del servizio (un IRI risolvibile via web)."@it , "The root location or primary endpoint of the service (a web-resolvable IRI)."@en , "end-point del servizio"@it , "přístupový bod služby"@cs , "end-point del servicio"@es , "Kořenové umístění nebo hlavní přístupový bod služby (IRI přístupné přes Web)."@cs , "La posición raíz o end-point principal del servicio (una IRI web)."@es ;
+        sh:class        rdfs:Resource ;
+        sh:description  "La posición raíz o end-point principal del servicio (una IRI web)."@es , "La locazione principale o l'endpoint primario del servizio (un IRI risolvibile via web)."@it , "The root location or primary endpoint of the service (a web-resolvable IRI)."@en , "Kořenové umístění nebo hlavní přístupový bod služby (IRI přístupné přes Web)."@cs ;
+        sh:name         "přístupový bod služby"@cs , "end-point del servizio"@it , "service end-point"@en , "end-point del servicio"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         dcat:endpointURL .
+
+<https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/vocommons/voaf#Vocabulary> .
+
+<https://astrea.linkeddata.es/shapes#7e5a8ff5e2ed757ded35e5ff80789946>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/TR/vocab-dcat-2/> ;
+        rdfs:label        "Il formato di impacchettamento della distribuzione in cui uno o più file di dati sono raggruppati insieme, ad es. per abilitare un insieme di file correlati da scaricare insieme."@it , "formato de empaquetado"@es , "formát balíčku"@cs , "Balíčkový formát souboru, ve kterém je jeden či více souborů seskupeno dohromady, např. aby bylo možné stáhnout sadu souvisejících souborů naráz."@cs , "packaging format"@en , "formato di impacchettamento"@it , "The package format of the distribution in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together."@en , "El formato del archivo en que se agrupan uno o más archivos de datos, e.g. para permitir que un conjunto de archivos relacionados se bajen juntos."@es ;
+        sh:class          dct:MediaType ;
+        sh:description    "The package format of the distribution in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together."@en , "Il formato di impacchettamento della distribuzione in cui uno o più file di dati sono raggruppati insieme, ad es. per abilitare un insieme di file correlati da scaricare insieme."@it , "El formato del archivo en que se agrupan uno o más archivos de datos, e.g. para permitir que un conjunto de archivos relacionados se bajen juntos."@es , "Balíčkový formát souboru, ve kterém je jeden či více souborů seskupeno dohromady, např. aby bylo možné stáhnout sadu souvisejících souborů naráz."@cs ;
+        sh:name           "formato de empaquetado"@es , "formát balíčku"@cs , "formato di impacchettamento"@it , "packaging format"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:packageFormat .
+
+<https://astrea.linkeddata.es/shapes#29615fb26eeaca456fa678f8d931c346>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://w3id.org/rsp/vocals#> ;
+        rdfs:label        "StreamDescriptor"@en ;
+        rdfs:seeAlso      <http://w3id.org/rsp/vocals#Stream> ;
+        sh:description    "A Stream Descriptor is a Web document that contains the description of a Stream."@en ;
+        sh:name           "StreamDescriptor"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://w3id.org/rsp/vocals#StreamDescriptor> .
+
+<https://astrea.linkeddata.es/shapes#7c97ba7dc792ae7e196f49b3ee71837e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://w3id.org/rsp/vocals#> ;
+        rdfs:label        "StreamEndpoint"@en ;
+        sh:description    "Represents a specific available form of a stream. Each stream might be available in different forms, these forms might represent different access points of the stream. Examples of endpoints include a WebSocket endpoint, an HTTP endpoint, a Server-Sent Events endpoint, MQTT, etc."@en ;
+        sh:name           "StreamEndpoint"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://w3id.org/rsp/vocals#StreamEndpoint> .
+
+<https://astrea.linkeddata.es/shapes#820fca5de3be4c95a254729d4f9eeda9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://w3id.org/rsp/vocals#> ;
+        rdfs:label        "StreamPartition"@en ;
+        rdfs:seeAlso      <http://w3id.org/rsp/vocals#previous> , <http://w3id.org/rsp/vocals#Stream> ;
+        sh:description    "A finite subset of the stream that are made available to be accessed and consumed by standard Linked Data services."@en ;
+        sh:name           "StreamPartition"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e97467b729db3d363dbcd3a7b40074ee> ;
+        sh:targetClass    <http://w3id.org/rsp/vocals#StreamPartition> .
+
+<https://astrea.linkeddata.es/shapes#665596f7d8d21e97cab489beb19294ac>
+        a               sh:PropertyShape ;
+        rdfs:label      "temporal resolution"@en , "minimální doba trvání rozlišitelná v datové sadě."@cs , "minimum time period resolvable in a dataset."@en , "periodo di tempo minimo risolvibile in un set di dati."@it , "risoluzione temporale"@it , "resolución temporal"@es , "časové rozlišení"@cs , "período de tiempo mínimo en el conjunto de datos."@es ;
+        sh:datatype     xsd:duration ;
+        sh:description  "período de tiempo mínimo en el conjunto de datos."@es , "minimální doba trvání rozlišitelná v datové sadě."@cs , "minimum time period resolvable in a dataset."@en , "periodo di tempo minimo risolvibile in un set di dati."@it ;
+        sh:name         "temporal resolution"@en , "resolución temporal"@es , "časové rozlišení"@cs , "risoluzione temporale"@it ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         dcat:temporalResolution ;
+        sh:pattern      "-?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S))))" .
+
+<https://astrea.linkeddata.es/shapes#a6424133cb645bfe4f96b660c4300cbb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "Una parola chiave o un'etichetta per descrivere la risorsa."@it , "Un mot-clé ou étiquette décrivant une ressource."@fr , "Klíčové slovo nebo značka popisující zdroj."@cs , "Una palabra clave o etiqueta que describe un recurso."@es , "キーワード/タグ"@ja , "كلمة  مفتاحيه توصف قائمة البيانات"@ar , "كلمة  مفتاحية "@ar , "palabra clave"@es , "keyword"@en , "parola chiave"@it , "データセットを記述しているキーワードまたはタグ。"@ja , "klíčové slovo"@cs , "λέξη-κλειδί"@el , "Μία λέξη-κλειδί ή μία ετικέτα που περιγράφει το σύνολο δεδομένων."@el , "mot-clés "@fr , "A keyword or tag describing a resource."@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "Una parola chiave o un'etichetta per descrivere la risorsa."@it , "Μία λέξη-κλειδί ή μία ετικέτα που περιγράφει το σύνολο δεδομένων."@el , "A keyword or tag describing a resource."@en , "كلمة  مفتاحيه توصف قائمة البيانات"@ar , "Una palabra clave o etiqueta que describe un recurso."@es , "Un mot-clé ou étiquette décrivant une ressource."@fr , "Klíčové slovo nebo značka popisující zdroj."@cs , "データセットを記述しているキーワードまたはタグ。"@ja ;
+        sh:name           "keyword"@en , "parola chiave"@it , "λέξη-κλειδί"@el , "キーワード/タグ"@ja , "palabra clave"@es , "كلمة  مفتاحية "@ar , "klíčové slovo"@cs , "mot-clés "@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           dcat:keyword .
+
+<https://astrea.linkeddata.es/shapes#5141af94d2c35582a728ebda78a64029>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://w3id.org/rsp/vocals#> ;
+        rdfs:label        "A relationship between a Stream and a StreamEndpoint. A stream may have several endpoints through which its contents can be accessible."@en , "hasEndpoint"@en ;
+        rdfs:seeAlso      <http://w3id.org/rsp/vocals#Stream> , <http://w3id.org/rsp/vocals#StreamEndpoint> ;
+        sh:class          <http://w3id.org/rsp/vocals#StreamEndpoint> ;
+        sh:description    "A relationship between a Stream and a StreamEndpoint. A stream may have several endpoints through which its contents can be accessible."@en ;
+        sh:name           "hasEndpoint"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://w3id.org/rsp/vocals#hasEndpoint> .
+
+<https://astrea.linkeddata.es/shapes#1300e4b50895c3a8edf990bfeb6b200c>
+        a               sh:NodeShape ;
+        rdfs:label      "Servizio di dati"@it , "Servicio de datos"@es , "Data service"@en ;
+        sh:description  "Un sito o end-point che fornisce operazioni relative alla scoperta, all'accesso o all'elaborazione di funzioni su dati o risorse correlate."@it , "A site or end-point providing operations related to the discovery of, access to, or processing functions on, data or related resources."@en , "Umístění či přístupový bod poskytující operace související s hledáním, přistupem k, či výkonem funkcí na datech či souvisejících zdrojích."@cs , "Un sitio o end-point que provee operaciones relacionadas a funciones de descubrimiento, acceso, o procesamiento de datos o recursos relacionados."@es ;
+        sh:name         "Servizio di dati"@it , "Servicio de datos"@es , "Data service"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#652532405185e960135fcad29b4aac81> , <https://astrea.linkeddata.es/shapes#2a4e3c6b38c163d989e3539408b7d487> , <https://astrea.linkeddata.es/shapes#f044933d93b16441a55dd02479407de3> ;
+        sh:targetClass  dcat:DataService .
+
+<https://astrea.linkeddata.es/shapes#badc33ad6c319f57a588f1c1c5d850ee>
+        a               sh:PropertyShape ;
+        rdfs:label      "Odkaz na popis vztahu s jiným zdrojem."@cs , "Link a una descrizione di una relazione con un'altra risorsa."@it , "qualified relation"@en , "kvalifikovaný vztah"@cs , "relazione qualificata"@it , "Enlace a una descripción de la relación con otro recurso."@es , "relación calificada"@es , "Link to a description of a relationship with another resource."@en ;
+        sh:class        dcat:Relationship ;
+        sh:description  "Link a una descrizione di una relazione con un'altra risorsa."@it , "Link to a description of a relationship with another resource."@en , "Enlace a una descripción de la relación con otro recurso."@es , "Odkaz na popis vztahu s jiným zdrojem."@cs ;
+        sh:name         "qualified relation"@en , "relación calificada"@es , "kvalifikovaný vztah"@cs , "relazione qualificata"@it ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         dcat:qualifiedRelation .
+
+<https://astrea.linkeddata.es/shapes#14655cf0dfb7f6af8cefe7bc6523d9a2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "Relie un catalogue à ses registres."@fr , "Un record che descrive la registrazione di un singolo set di dati o di un servizio dati che fa parte del catalogo."@it , "カタログ・レコード"@ja , "záznam"@cs , "registre"@fr , "καταγραφή"@el , "Συνδέει έναν κατάλογο με τις καταγραφές του."@el , "Describe la registración de un conjunto de datos o un servicio de datos en el catálogo."@es , "カタログの一部であるカタログ・レコード。"@ja , "registro"@es , "Záznam popisující registraci jedné datové sady či datové služby jakožto součásti katalogu."@cs , "A record describing the registration of a single dataset or data service that is part of the catalog."@en , "سجل"@ar , "record"@en , "record"@it , "Propojuje katalog a jeho záznamy."@cs , "تربط الفهرس بسجل ضمنه"@ar ;
+        sh:class          dcat:CatalogRecord ;
+        sh:description    "Záznam popisující registraci jedné datové sady či datové služby jakožto součásti katalogu."@cs , "Propojuje katalog a jeho záznamy."@cs , "تربط الفهرس بسجل ضمنه"@ar , "Describe la registración de un conjunto de datos o un servicio de datos en el catálogo."@es , "Συνδέει έναν κατάλογο με τις καταγραφές του."@el , "カタログの一部であるカタログ・レコード。"@ja , "Relie un catalogue à ses registres."@fr , "Un record che descrive la registrazione di un singolo set di dati o di un servizio dati che fa parte del catalogo."@it , "A record describing the registration of a single dataset or data service that is part of the catalog."@en ;
+        sh:name           "record"@en , "record"@it , "سجل"@ar , "カタログ・レコード"@ja , "καταγραφή"@el , "registre"@fr , "záznam"@cs , "registro"@es ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:record .
+
+<https://astrea.linkeddata.es/shapes#e97467b729db3d363dbcd3a7b40074ee>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://w3id.org/rsp/vocals#> ;
+        rdfs:label        "previous"@en , "Relationship between a stream partition and the previous partition in the stream. it connects stream partitions in order"@en ;
+        rdfs:seeAlso      <http://w3id.org/rsp/vocals#StreamPartition> ;
+        sh:class          <http://w3id.org/rsp/vocals#StreamPartition> ;
+        sh:description    "Relationship between a stream partition and the previous partition in the stream. it connects stream partitions in order"@en ;
+        sh:name           "previous"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://w3id.org/rsp/vocals#previous> .
+
+<https://astrea.linkeddata.es/shapes#bbec72e1685e8433f7543165b36ca94d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "Questo è un link diretto al file scaricabile in un dato formato. E.g. un file CSV o un file RDF. Il formato è descritto dal dct:format e/o dal dcat:mediaType della distribuzione."@it , "download URL"@en , "Ceci est un lien direct à un fichier téléchargeable en un format donnée. Exple fichier CSV ou RDF. Le format est décrit par les propriétés de distribution dct:format et/ou dcat:mediaType."@fr , "ダウンロードURL"@ja , "The URL of the downloadable file in a given format. E.g. CSV file or RDF file. The format is indicated by the distribution's dct:format and/or dcat:mediaType."@en , "URL souboru ke stažení v daném formátu, například CSV nebo RDF soubor. Formát je popsán vlastností distribuce dct:format a/nebo dcat:mediaType."@cs , "URL souboru ke stažení"@cs , "URL di scarico"@it , "dcat:downloadURLはdcat:accessURLの特定の形式です。しかし、DCATプロファイルが非ダウンロード・ロケーションに対してのみaccessURLを用いる場合には、より強い分離を課すことを望む可能性があるため、この含意を強化しないように、DCATは、dcat:downloadURLをdcat:accessURLのサブプロパティーであると定義しません。"@ja , "رابط تحميل"@ar , "URL μεταφόρτωσης"@el , "Είναι ένας σύνδεσμος άμεσης μεταφόρτωσης ενός αρχείου σε μια δεδομένη μορφή. Π.χ. ένα αρχείο CSV ή RDF. Η μορφη αρχείου περιγράφεται από τις ιδιότητες dct:format ή/και dcat:mediaType της διανομής."@el , "URL de téléchargement"@fr , "La URL de un archivo descargable en el formato dato. Por ejemplo, archivo CSV o archivo RDF. El formato se describe con las propiedades de la distribución dct:format y/o dcat:mediaType."@es , "URL de descarga"@es , "رابط مباشر لملف يمكن تحميله. نوع الملف يتم توصيفه باستخدام الخاصية dct:format dcat:mediaType "@ar ;
+        sh:class          rdfs:Resource ;
+        sh:description    "The URL of the downloadable file in a given format. E.g. CSV file or RDF file. The format is indicated by the distribution's dct:format and/or dcat:mediaType."@en , "dcat:downloadURLはdcat:accessURLの特定の形式です。しかし、DCATプロファイルが非ダウンロード・ロケーションに対してのみaccessURLを用いる場合には、より強い分離を課すことを望む可能性があるため、この含意を強化しないように、DCATは、dcat:downloadURLをdcat:accessURLのサブプロパティーであると定義しません。"@ja , "URL souboru ke stažení v daném formátu, například CSV nebo RDF soubor. Formát je popsán vlastností distribuce dct:format a/nebo dcat:mediaType."@cs , "رابط مباشر لملف يمكن تحميله. نوع الملف يتم توصيفه باستخدام الخاصية dct:format dcat:mediaType "@ar , "Είναι ένας σύνδεσμος άμεσης μεταφόρτωσης ενός αρχείου σε μια δεδομένη μορφή. Π.χ. ένα αρχείο CSV ή RDF. Η μορφη αρχείου περιγράφεται από τις ιδιότητες dct:format ή/και dcat:mediaType της διανομής."@el , "La URL de un archivo descargable en el formato dato. Por ejemplo, archivo CSV o archivo RDF. El formato se describe con las propiedades de la distribución dct:format y/o dcat:mediaType."@es , "Ceci est un lien direct à un fichier téléchargeable en un format donnée. Exple fichier CSV ou RDF. Le format est décrit par les propriétés de distribution dct:format et/ou dcat:mediaType."@fr , "Questo è un link diretto al file scaricabile in un dato formato. E.g. un file CSV o un file RDF. Il formato è descritto dal dct:format e/o dal dcat:mediaType della distribuzione."@it ;
+        sh:name           "ダウンロードURL"@ja , "download URL"@en , "URL de descarga"@es , "URL de téléchargement"@fr , "URL souboru ke stažení"@cs , "رابط تحميل"@ar , "URL μεταφόρτωσης"@el , "URL di scarico"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:downloadURL .
+
+<https://astrea.linkeddata.es/shapes#db9ebcedd5b8ad9b79603d480ee1477f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/TR/vocab-dcat-2/> ;
+        rdfs:label        "formato di compressione"@it , "Il formato di compressione della distribuzione nel quale i dati sono in forma compressa, ad es. per ridurre le dimensioni del file da scaricare."@it , "formato de compresión"@es , "formát komprese"@cs , "compression format"@en , "El formato de la distribución en el que los datos están en forma comprimida, e.g. para reducir el tamaño del archivo a bajar."@es , "Formát komprese souboru, ve kterém jsou data poskytována v komprimované podobě, např. ke snížení velikosti souboru ke stažení."@cs , "The compression format of the distribution in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file."@en ;
+        sh:class          dct:MediaType ;
+        sh:description    "Il formato di compressione della distribuzione nel quale i dati sono in forma compressa, ad es. per ridurre le dimensioni del file da scaricare."@it , "Formát komprese souboru, ve kterém jsou data poskytována v komprimované podobě, např. ke snížení velikosti souboru ke stažení."@cs , "El formato de la distribución en el que los datos están en forma comprimida, e.g. para reducir el tamaño del archivo a bajar."@es , "The compression format of the distribution in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file."@en ;
+        sh:name           "formát komprese"@cs , "formato de compresión"@es , "formato di compressione"@it , "compression format"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:compressFormat .
+
+<https://astrea.linkeddata.es/shapes#38062f408dc8b9bfa3cafa1eeef355c4>
+        a               sh:PropertyShape ;
+        rdfs:label      "haRuolo"@it , "La función de una entidad o agente con respecto a otra entidad o recurso."@es , "The function of an entity or agent with respect to another entity or resource."@en , "tiene rol"@it , "Funkce entity či agenta ve vztahu k jiné entitě či zdroji."@cs , "sehraná role"@cs , "hadRole"@en , "La funzione di un'entità o un agente rispetto ad un'altra entità o risorsa."@it ;
+        sh:class        dcat:Role ;
+        sh:description  "La función de una entidad o agente con respecto a otra entidad o recurso."@es , "La funzione di un'entità o un agente rispetto ad un'altra entità o risorsa."@it , "Funkce entity či agenta ve vztahu k jiné entitě či zdroji."@cs , "The function of an entity or agent with respect to another entity or resource."@en ;
+        sh:name         "tiene rol"@it , "sehraná role"@cs , "haRuolo"@it , "hadRole"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         dcat:hadRole .
+
+<https://astrea.linkeddata.es/shapes#f262c4ca813df7b27f3078c11c60c84d>
+        a            sh:PropertyShape ;
+        sh:class     dcat:Resource ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      dct:hasPart .
+
+<https://astrea.linkeddata.es/shapes#0ce6b231410bfe6db622a3e8ae338a4f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "thème"@fr , "A main category of the resource. A resource can have multiple themes."@en , "التصنيف الرئيسي لقائمة البيانات. قائمة البيانات يمكن أن تملك أكثر من تصنيف رئيسي واحد."@ar , "La categoría principal del recurso. Un recurso puede tener varios temas."@es , "التصنيف"@ar , "Θέμα"@el , "Η κύρια κατηγορία του συνόλου δεδομένων. Ένα σύνολο δεδομένων δύναται να έχει πολλαπλά θέματα."@el , "データセットの主要カテゴリー。データセットは複数のテーマを持つことができます。"@ja , "theme"@en , "La catégorie principale de la ressource. Une ressource peut avoir plusieurs thèmes."@fr , "Hlavní téma zdroje. Zdroj může mít více témat."@cs , "テーマ/カテゴリー"@ja , "tema"@es , "tema"@it , "La categoria principale della risorsa. Una risorsa può avere più temi."@it , "téma"@cs ;
+        sh:class          skos:Concept ;
+        sh:description    "Hlavní téma zdroje. Zdroj může mít více témat."@cs , "データセットの主要カテゴリー。データセットは複数のテーマを持つことができます。"@ja , "التصنيف الرئيسي لقائمة البيانات. قائمة البيانات يمكن أن تملك أكثر من تصنيف رئيسي واحد."@ar , "A main category of the resource. A resource can have multiple themes."@en , "Η κύρια κατηγορία του συνόλου δεδομένων. Ένα σύνολο δεδομένων δύναται να έχει πολλαπλά θέματα."@el , "La catégorie principale de la ressource. Une ressource peut avoir plusieurs thèmes."@fr , "La categoría principal del recurso. Un recurso puede tener varios temas."@es , "La categoria principale della risorsa. Una risorsa può avere più temi."@it ;
+        sh:name           "tema"@es , "tema"@it , "téma"@cs , "テーマ/カテゴリー"@ja , "theme"@en , "Θέμα"@el , "التصنيف"@ar , "thème"@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:theme .
+
+<https://astrea.linkeddata.es/shapes#1a6410ea9f856660837771d16ac5a382>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "Συνδέει έναν κατάλογο με ένα σύνολο δεδομένων το οποίο ανήκει στον εν λόγω κατάλογο."@el , "Una raccolta di dati che è elencata nel catalogo."@it , "jeu de données"@fr , "قائمة بيانات"@ar , "تربط الفهرس بقائمة بيانات ضمنه"@ar , "σύνολο δεδομένων"@el , "datová sada"@cs , "カタログの一部であるデータセット。"@ja , "Relie un catalogue à un jeu de données faisant partie de ce catalogue."@fr , "dataset"@en , "dataset"@it , "Kolekce dat, která je katalogizována v katalogu."@cs , "conjunto de datos"@es , "データセット"@ja , "A collection of data that is listed in the catalog."@en , "Un conjunto de datos que se lista en el catálogo."@es ;
+        sh:class          dcat:Dataset ;
+        sh:description    "A collection of data that is listed in the catalog."@en , "Relie un catalogue à un jeu de données faisant partie de ce catalogue."@fr , "تربط الفهرس بقائمة بيانات ضمنه"@ar , "Συνδέει έναν κατάλογο με ένα σύνολο δεδομένων το οποίο ανήκει στον εν λόγω κατάλογο."@el , "Una raccolta di dati che è elencata nel catalogo."@it , "Kolekce dat, která je katalogizována v katalogu."@cs , "カタログの一部であるデータセット。"@ja , "Un conjunto de datos que se lista en el catálogo."@es ;
+        sh:name           "σύνολο δεδομένων"@el , "dataset"@en , "dataset"@it , "jeu de données"@fr , "datová sada"@cs , "データセット"@ja , "قائمة بيانات"@ar , "conjunto de datos"@es ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:dataset .
+
+<https://astrea.linkeddata.es/shapes#e3aae312f686e7f84098f019c4b4c461>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "Relevant contact information for the catalogued resource. Use of vCard is recommended."@en , "Relevantní kontaktní informace pro katalogizovaný zdroj. Doporučuje se použít slovník VCard."@cs , "punto di contatto"@it , "Συνδέει ένα σύνολο δεδομένων με ένα σχετικό σημείο επικοινωνίας, μέσω VCard."@el , "Relie un jeu de données à une information de contact utile en utilisant VCard."@fr , "データセットを、VCardを用いて提供されている適切な連絡先情報にリンクします。"@ja , "contact point"@en , "σημείο επικοινωνίας"@el , "Informazioni di contatto rilevanti per la risorsa catalogata. Si raccomanda l'uso di vCard."@it , "Punto de contacto"@es , "عنوان اتصال"@ar , "point de contact"@fr , "تربط قائمة البيانات بعنوان اتصال موصف  باستخدام VCard"@ar , "窓口"@ja , "Información relevante de contacto para el recurso catalogado. Se recomienda el uso de vCard."@es , "kontaktní bod"@cs ;
+        sh:class          vcard:Kind ;
+        sh:description    "Relevant contact information for the catalogued resource. Use of vCard is recommended."@en , "Información relevante de contacto para el recurso catalogado. Se recomienda el uso de vCard."@es , "Informazioni di contatto rilevanti per la risorsa catalogata. Si raccomanda l'uso di vCard."@it , "Relie un jeu de données à une information de contact utile en utilisant VCard."@fr , "データセットを、VCardを用いて提供されている適切な連絡先情報にリンクします。"@ja , "تربط قائمة البيانات بعنوان اتصال موصف  باستخدام VCard"@ar , "Relevantní kontaktní informace pro katalogizovaný zdroj. Doporučuje se použít slovník VCard."@cs , "Συνδέει ένα σύνολο δεδομένων με ένα σχετικό σημείο επικοινωνίας, μέσω VCard."@el ;
+        sh:name           "point de contact"@fr , "kontaktní bod"@cs , "عنوان اتصال"@ar , "Punto de contacto"@es , "窓口"@ja , "punto di contatto"@it , "σημείο επικοινωνίας"@el , "contact point"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:contactPoint .
+
+<https://astrea.linkeddata.es/shapes#5f3541c4151e1d2badd92f9253d8464a>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#73dbf469f8089d0ea1ee0a41dc3d4c68> , <https://astrea.linkeddata.es/shapes#7d01e96cfe23f446398e3d338b76d4c2> ;
+        sh:targetClass  dct:PeriodOfTime .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#badc33ad6c319f57a588f1c1c5d850ee> , <https://astrea.linkeddata.es/shapes#7c97ba7dc792ae7e196f49b3ee71837e> , <https://astrea.linkeddata.es/shapes#e97467b729db3d363dbcd3a7b40074ee> , <https://astrea.linkeddata.es/shapes#ce2894b6131d283adf943cbfdf3e9c89> , <https://astrea.linkeddata.es/shapes#a1bcf33cd786886f3c22f4ee0703d731> , <https://astrea.linkeddata.es/shapes#e5a015b1bc617bc66543caa5eadc23f7> , <https://astrea.linkeddata.es/shapes#3ea4d1b0dbfea5e5e60f2df41820cb86> , <https://astrea.linkeddata.es/shapes#5141af94d2c35582a728ebda78a64029> , <https://astrea.linkeddata.es/shapes#f262c4ca813df7b27f3078c11c60c84d> , <https://astrea.linkeddata.es/shapes#29615fb26eeaca456fa678f8d931c346> , <https://astrea.linkeddata.es/shapes#55a05e88e2f1bdf8b52fa7d0eb1efeca> , <https://astrea.linkeddata.es/shapes#8082b03c4908f9fa8c9b24d8b485bc47> , <https://astrea.linkeddata.es/shapes#38062f408dc8b9bfa3cafa1eeef355c4> , <https://astrea.linkeddata.es/shapes#5f3541c4151e1d2badd92f9253d8464a> , <https://astrea.linkeddata.es/shapes#3eb1053bfb8d8e3227c72df7638cd75d> , <https://astrea.linkeddata.es/shapes#bbec72e1685e8433f7543165b36ca94d> , <https://astrea.linkeddata.es/shapes#1a6f3fb731de1a44a331fab600863f8d> , <https://astrea.linkeddata.es/shapes#0ce6b231410bfe6db622a3e8ae338a4f> , <https://astrea.linkeddata.es/shapes#fb30bb71d1a1d49fdd281dfb4ea6c70a> , <https://astrea.linkeddata.es/shapes#973ec0357c5a9cb8a8bdf52807e0191e> , <https://astrea.linkeddata.es/shapes#a6424133cb645bfe4f96b660c4300cbb> , <https://astrea.linkeddata.es/shapes#665596f7d8d21e97cab489beb19294ac> , <https://astrea.linkeddata.es/shapes#c5e9a52e5abdcc530106f263709eff35> , <https://astrea.linkeddata.es/shapes#3dc3b84895d32d755cfe68f990e149b1> , <https://astrea.linkeddata.es/shapes#820fca5de3be4c95a254729d4f9eeda9> , <https://astrea.linkeddata.es/shapes#1300e4b50895c3a8edf990bfeb6b200c> , <https://astrea.linkeddata.es/shapes#14655cf0dfb7f6af8cefe7bc6523d9a2> , <https://astrea.linkeddata.es/shapes#1a6410ea9f856660837771d16ac5a382> , <https://astrea.linkeddata.es/shapes#bed21b12435bd1a3b0277246cb92f4d2> , <https://astrea.linkeddata.es/shapes#0d30180e88607a9b9f3e7efdf6a5a920> , <https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f> , <https://astrea.linkeddata.es/shapes#652532405185e960135fcad29b4aac81> , <https://astrea.linkeddata.es/shapes#7e5a8ff5e2ed757ded35e5ff80789946> , <https://astrea.linkeddata.es/shapes#6ee70de456486138e203e0bd96789ce3> , <https://astrea.linkeddata.es/shapes#2a4e3c6b38c163d989e3539408b7d487> , <https://astrea.linkeddata.es/shapes#3c3101bf551703f83bd0a6af567da043> , <https://astrea.linkeddata.es/shapes#fa92e9b0e6e2805da4179a8fbab7ff8e> , <https://astrea.linkeddata.es/shapes#1ba577f2e2aa38848f784328049039d0> , <https://astrea.linkeddata.es/shapes#e3aae312f686e7f84098f019c4b4c461> , <https://astrea.linkeddata.es/shapes#1d0770434caf34ee3aebad793117868a> , <https://astrea.linkeddata.es/shapes#1aca4d21dcf2d0aa81a243dc2dbb6877> , <https://astrea.linkeddata.es/shapes#73dbf469f8089d0ea1ee0a41dc3d4c68> , <https://astrea.linkeddata.es/shapes#7d01e96cfe23f446398e3d338b76d4c2> , <https://astrea.linkeddata.es/shapes#e9031057f319ac21e6b87432a7dc0f95> , <https://astrea.linkeddata.es/shapes#44e48c092aada3b171ce899ffc6943a8> , <https://astrea.linkeddata.es/shapes#edfd37e3dd11b6070c886502c032e0c7> , <https://astrea.linkeddata.es/shapes#d2d6ec1b2c8351002142b79fec459c44> , <https://astrea.linkeddata.es/shapes#d55bce606c0526cfdd110cccb06d33c4> , <https://astrea.linkeddata.es/shapes#876d0848d6eda4be132ec6464a06d3d2> , <https://astrea.linkeddata.es/shapes#6d609d7d22d203a62cba6157c406f9fe> , <https://astrea.linkeddata.es/shapes#9b45c11c376f6a2b3213ddd14dfaa71d> , <https://astrea.linkeddata.es/shapes#fb7f5642c308209410d1904425689bec> , <https://astrea.linkeddata.es/shapes#d643f20f258506885998443162dbe6ba> , <https://astrea.linkeddata.es/shapes#f044933d93b16441a55dd02479407de3> , <https://astrea.linkeddata.es/shapes#079e8ccf2a31bdcc3f086be7e11fda8b> , <https://astrea.linkeddata.es/shapes#db9ebcedd5b8ad9b79603d480ee1477f> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/547424219> .
+
+<https://astrea.linkeddata.es/shapes#7d01e96cfe23f446398e3d338b76d4c2>
+        a            sh:PropertyShape ;
+        rdfs:label   "end date"@en , "data di fine"@it , "fecha final"@es , "datum konce"@cs ;
+        sh:datatype  rdfs:Literal ;
+        sh:name      "fecha final"@es , "datum konce"@cs , "end date"@en , "data di fine"@it ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      dcat:endDate .
+
+<https://astrea.linkeddata.es/shapes#6ee70de456486138e203e0bd96789ce3>
+        a               sh:NodeShape ;
+        rdfs:label      "Relationship"@en , "Relación"@es , "Relazione"@it , "Vztah"@cs ;
+        sh:description  "Una clase de asociación para adjuntar información adicional a una relación entre recursos DCAT."@es , "Una classe di associazione per il collegamento di informazioni aggiuntive a una relazione tra le risorse DCAT."@it , "An association class for attaching additional information to a relationship between DCAT Resources."@en , "Asociační třída pro připojení dodatečných informací ke vztahu mezi zdroji DCAT."@cs ;
+        sh:name         "Vztah"@cs , "Relationship"@en , "Relazione"@it , "Relación"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#38062f408dc8b9bfa3cafa1eeef355c4> , <https://astrea.linkeddata.es/shapes#fb30bb71d1a1d49fdd281dfb4ea6c70a> ;
+        sh:targetClass  dcat:Relationship .
+
+<https://astrea.linkeddata.es/shapes#bed21b12435bd1a3b0277246cb92f4d2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "データセット"@ja , "Datová sada"@cs , "Conjunto de datos"@es , "Σύνολο Δεδομένων"@el , "Jeu de données"@fr , "Dataset"@en , "Dataset"@it , "قائمة بيانات"@ar ;
+        sh:description    "Una colección de datos, publicados o conservados por una única fuente, y disponibles para ser accedidos o descargados en uno o más formatos."@es , "قائمة بيانات منشورة أو مجموعة من قبل مصدر ما و متاح الوصول إليها أو تحميلها"@ar , "Μία συλλογή από δεδομένα, δημοσιευμένη ή επιμελημένη από μία και μόνο πηγή, διαθέσιμη δε προς πρόσβαση ή μεταφόρτωση σε μία ή περισσότερες μορφές."@el , "Une collection de données, publiée ou élaborée par une seule source, et disponible pour accès ou téléchargement dans un ou plusieurs formats."@fr , "Kolekce dat poskytovaná či řízená jedním zdrojem, která je k dispozici pro přístup či stažení v jednom či více formátech."@cs , "Raccolta di dati, pubblicati o curati da un'unica fonte, disponibili per l'accesso o il download in uno o più formati."@it , "A collection of data, published or curated by a single source, and available for access or download in one or more represenations."@en , "1つのエージェントによって公開またはキュレートされ、1つ以上の形式でアクセスまたはダウンロードできるデータの集合。"@ja ;
+        sh:name           "Dataset"@en , "Dataset"@it , "データセット"@ja , "Jeu de données"@fr , "قائمة بيانات"@ar , "Σύνολο Δεδομένων"@el , "Datová sada"@cs , "Conjunto de datos"@es ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d55bce606c0526cfdd110cccb06d33c4> ;
+        sh:targetClass    dcat:Dataset .
+
+<https://astrea.linkeddata.es/shapes#fa92e9b0e6e2805da4179a8fbab7ff8e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/TR/vocab-dcat/> ;
+        rdfs:label        "Esta propiedad debe ser usada cuando está definido el tipo de media de la distribución en IANA, de otra manera dct:format puede ser utilizado con diferentes valores"@es , "τύπος μέσου"@el , "نوع الميديا"@ar , "Cette propriété doit être utilisée quand c'est définit le type de média de la distribution en IANA, sinon dct:format DOIT être utilisé avec différentes valeurs."@fr , "tipo di media"@it , "Il tipo di media della distribuzione come definito da IANA"@it , "type de média"@fr , "メディア・タイプ"@ja , "media type"@en , "Typ média distribuce definovaný v IANA."@cs , "يجب استخدام هذه الخاصية إذا كان نوع الملف معرف ضمن IANA"@ar , "The media type of the distribution as defined by IANA"@en , "tipo de media"@es , "typ média"@cs , "このプロパティーは、配信のメディア・タイプがIANAで定義されているときに使用すべきで（SHOULD）、そうでない場合には、dct:formatを様々な値と共に使用できます（MAY）。"@ja , "Η ιδιότητα αυτή ΘΑ ΠΡΕΠΕΙ να χρησιμοποιείται όταν ο τύπος μέσου μίας διανομής είναι ορισμένος στο IANA, αλλιώς η ιδιότητα dct:format ΔΥΝΑΤΑΙ να χρησιμοποιηθεί με διαφορετικές τιμές."@el ;
+        sh:class          dct:MediaType ;
+        sh:description    "يجب استخدام هذه الخاصية إذا كان نوع الملف معرف ضمن IANA"@ar , "Esta propiedad debe ser usada cuando está definido el tipo de media de la distribución en IANA, de otra manera dct:format puede ser utilizado con diferentes valores"@es , "Η ιδιότητα αυτή ΘΑ ΠΡΕΠΕΙ να χρησιμοποιείται όταν ο τύπος μέσου μίας διανομής είναι ορισμένος στο IANA, αλλιώς η ιδιότητα dct:format ΔΥΝΑΤΑΙ να χρησιμοποιηθεί με διαφορετικές τιμές."@el , "このプロパティーは、配信のメディア・タイプがIANAで定義されているときに使用すべきで（SHOULD）、そうでない場合には、dct:formatを様々な値と共に使用できます（MAY）。"@ja , "Il tipo di media della distribuzione come definito da IANA"@it , "The media type of the distribution as defined by IANA"@en , "Cette propriété doit être utilisée quand c'est définit le type de média de la distribution en IANA, sinon dct:format DOIT être utilisé avec différentes valeurs."@fr , "Typ média distribuce definovaný v IANA."@cs ;
+        sh:name           "typ média"@cs , "メディア・タイプ"@ja , "نوع الميديا"@ar , "tipo de media"@es , "media type"@en , "tipo di media"@it , "type de média"@fr , "τύπος μέσου"@el ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           dcat:mediaType .
+
+<https://astrea.linkeddata.es/shapes#fb30bb71d1a1d49fdd281dfb4ea6c70a>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      dct:relation .
+
+<https://astrea.linkeddata.es/shapes#8082b03c4908f9fa8c9b24d8b485bc47>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d643f20f258506885998443162dbe6ba> , <https://astrea.linkeddata.es/shapes#3dc3b84895d32d755cfe68f990e149b1> ;
+        sh:targetClass  dct:Location .
+
+<https://astrea.linkeddata.es/shapes#0d30180e88607a9b9f3e7efdf6a5a920>
+        a               sh:PropertyShape ;
+        rdfs:label      "This axiom needed so that Protege loads DCAT2 without errors." ;
+        sh:description  "This axiom needed so that Protege loads DCAT2 without errors." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         foaf:homepage .
+
+<https://astrea.linkeddata.es/shapes#1d0770434caf34ee3aebad793117868a>
+        a               sh:NodeShape ;
+        rdfs:label      "Katalogizovaný zdroj"@cs , "Recurso catalogado"@es , "Risorsa catalogata"@it , "Catalogued resource"@en ;
+        sh:description  "Resource published or curated by a single agent."@en , "Recurso publicado o curado por un agente único."@es , "Zdroj publikovaný či řízený jediným činitelem."@cs , "Risorsa pubblicata o curata da un singolo agente."@it ;
+        sh:name         "Risorsa catalogata"@it , "Catalogued resource"@en , "Recurso catalogado"@es , "Katalogizovaný zdroj"@cs ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#badc33ad6c319f57a588f1c1c5d850ee> ;
+        sh:targetClass  dcat:Resource .
+
+<https://astrea.linkeddata.es/shapes#d2d6ec1b2c8351002142b79fec459c44>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#38062f408dc8b9bfa3cafa1eeef355c4> ;
+        sh:targetClass  prov:Attribution .
+
+<https://astrea.linkeddata.es/shapes#9b45c11c376f6a2b3213ddd14dfaa71d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://w3id.org/rsp/vocals#> ;
+        rdfs:label        "RDFStream"@en ;
+        rdfs:seeAlso      <http://w3id.org/rsp/vocals#Stream> ;
+        sh:description    "A stream composed of RDF data elements, i.e. RDF graphs and/or triples."@en ;
+        sh:name           "RDFStream"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://w3id.org/rsp/vocals#RDFStream> .
+
+<https://astrea.linkeddata.es/shapes#55a05e88e2f1bdf8b52fa7d0eb1efeca>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  foaf:Document .
+
+<https://astrea.linkeddata.es/report/547424219>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.w3.org/ns/dcat#" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#73dbf469f8089d0ea1ee0a41dc3d4c68>
+        a            sh:PropertyShape ;
+        rdfs:label   "datum začátku"@cs , "data di inizio"@it , "start date"@en ;
+        sh:datatype  rdfs:Literal ;
+        sh:name      "data di inizio"@it , "datum začátku"@cs , "start date"@en ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      dcat:startDate .
+
+<https://astrea.linkeddata.es/shapes#a1bcf33cd786886f3c22f4ee0703d731>
+        a               sh:PropertyShape ;
+        rdfs:label      "Umístění či přístupový bod registrovaný v katalogu."@cs , "služba"@cs , "Un sitio o 'endpoint' que está listado en el catálogo."@es , "servizio"@it , "servicio"@es , "A site or endpoint that is listed in the catalog."@en , "service"@en , "Un sito o endpoint elencato nel catalogo."@it ;
+        sh:class        dcat:DataService ;
+        sh:description  "Umístění či přístupový bod registrovaný v katalogu."@cs , "A site or endpoint that is listed in the catalog."@en , "Un sitio o 'endpoint' que está listado en el catálogo."@es , "Un sito o endpoint elencato nel catalogo."@it ;
+        sh:name         "servicio"@es , "service"@en , "služba"@cs , "servizio"@it ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         dcat:service .
+
+<https://astrea.linkeddata.es/shapes#3c3101bf551703f83bd0a6af567da043>
+        a               sh:PropertyShape ;
+        rdfs:label      "catalog"@en , "A catalog whose contents are of interest in the context of this catalog."@en , "Un catalogo i cui contenuti sono di interesse nel contesto di questo catalogo."@it , "Katalog, jehož obsah je v kontextu tohoto katalogu zajímavý."@cs , "catalogo"@it , "catálogo"@es , "Un catálogo cuyo contenido es de interés en el contexto del catálogo que está siendo descripto."@es , "katalog"@cs ;
+        sh:class        dcat:Catalog ;
+        sh:description  "Un catálogo cuyo contenido es de interés en el contexto del catálogo que está siendo descripto."@es , "A catalog whose contents are of interest in the context of this catalog."@en , "Katalog, jehož obsah je v kontextu tohoto katalogu zajímavý."@cs , "Un catalogo i cui contenuti sono di interesse nel contesto di questo catalogo."@it ;
+        sh:name         "katalog"@cs , "catalogo"@it , "catalog"@en , "catálogo"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         dcat:catalog .

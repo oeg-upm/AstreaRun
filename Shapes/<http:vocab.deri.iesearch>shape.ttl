@@ -1,0 +1,98 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#4a6e1cdad983825d7eaf0b9f7ca5fdd7> , <https://astrea.linkeddata.es/shapes#11a3f847de4d32eb4be4a56f6d92d0ac> , <https://astrea.linkeddata.es/shapes#c2f6d9df2624c2ff1d39ebf96d6f3c84> , <https://astrea.linkeddata.es/shapes#d04155e5df6feeba80c2b891305dce30> , <https://astrea.linkeddata.es/shapes#bbea38d140b8e31915da85d3eb0582e0> , <https://astrea.linkeddata.es/shapes#ed0b2070d3b36ac624fdd790cd165907> , <https://astrea.linkeddata.es/shapes#525afa3a88c285e3501201fca5922d97> , <https://astrea.linkeddata.es/shapes#a0005af2635b82beb671b40f25536d31> , <https://astrea.linkeddata.es/shapes#ff75f70a82595ce62883eebb9c398c98> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#c2f6d9df2624c2ff1d39ebf96d6f3c84>
+        a               sh:PropertyShape ;
+        rdfs:label      "Search Terms" , "The search terms used in a search query" ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "The search terms used in a search query" ;
+        sh:name         "Search Terms" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://sindice.com/vocab/search#searchTerms> .
+
+<https://astrea.linkeddata.es/shapes#11a3f847de4d32eb4be4a56f6d92d0ac>
+        a               sh:PropertyShape ;
+        rdfs:label      "Items per Page" , "The number of items found on each page in a paged list of search results" ;
+        sh:datatype     xsd:integer ;
+        sh:description  "The number of items found on each page in a paged list of search results" ;
+        sh:name         "Items per Page" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://sindice.com/vocab/search#itemsPerPage> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#ff75f70a82595ce62883eebb9c398c98>
+        a               sh:NodeShape ;
+        rdfs:label      "Page" ;
+        sh:description  "A page in a paged list of search results" ;
+        sh:name         "Page" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://sindice.com/vocab/search#Page> .
+
+<https://astrea.linkeddata.es/shapes#bbea38d140b8e31915da85d3eb0582e0>
+        a               sh:PropertyShape ;
+        rdfs:label      "Rank" , "The rank (or index) of an individual search result item within the list of search results" ;
+        sh:datatype     xsd:integer ;
+        sh:description  "The rank (or index) of an individual search result item within the list of search results" ;
+        sh:name         "Rank" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://sindice.com/vocab/search#rank> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#ed0b2070d3b36ac624fdd790cd165907>
+        a               sh:NodeShape ;
+        rdfs:label      "Result" ;
+        sh:description  "An individual result in a list of ranked search results to a search query" ;
+        sh:name         "Result" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://sindice.com/vocab/search#Result> .
+
+<https://astrea.linkeddata.es/shapes#4a6e1cdad983825d7eaf0b9f7ca5fdd7>
+        a               sh:PropertyShape ;
+        rdfs:label      "Start Index" , "The rank (or index) of the first result on a page of search results" ;
+        sh:datatype     xsd:integer ;
+        sh:description  "The rank (or index) of the first result on a page of search results" ;
+        sh:name         "Start Index" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://sindice.com/vocab/search#startIndex> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#d04155e5df6feeba80c2b891305dce30>
+        a               sh:PropertyShape ;
+        rdfs:label      "Total Results" , "The total number of results of a search query" ;
+        sh:datatype     xsd:integer ;
+        sh:description  "The total number of results of a search query" ;
+        sh:name         "Total Results" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://sindice.com/vocab/search#totalResults> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#525afa3a88c285e3501201fca5922d97>
+        a               sh:NodeShape ;
+        rdfs:label      "Query" ;
+        sh:description  "A search query" ;
+        sh:name         "Query" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://sindice.com/vocab/search#Query> .
+
+<https://astrea.linkeddata.es/shapes#a0005af2635b82beb671b40f25536d31>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#bbea38d140b8e31915da85d3eb0582e0> , <https://astrea.linkeddata.es/shapes#c2f6d9df2624c2ff1d39ebf96d6f3c84> , <https://astrea.linkeddata.es/shapes#d04155e5df6feeba80c2b891305dce30> , <https://astrea.linkeddata.es/shapes#11a3f847de4d32eb4be4a56f6d92d0ac> , <https://astrea.linkeddata.es/shapes#4a6e1cdad983825d7eaf0b9f7ca5fdd7> ;
+        sh:targetClass  rdfs:Resource .
