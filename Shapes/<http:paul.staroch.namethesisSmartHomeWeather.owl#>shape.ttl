@@ -245,6 +245,29 @@
         sh:nodeKind     sh:IRI ;
         sh:targetClass  <http://paul.staroch.name/thesis/SmartHomeWeather.owl#SunBelowHorizon> .
 
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   :before
+                   ] ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   :hasTime
+                   ] ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   :after
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   :before
+                                ] ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   :hasTime
+                                ] ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   :after
+                                ] ;
+                     rdf:rest   ()
+                   ] .
+
 <https://astrea.linkeddata.es/shapes#2d988f1c8b0005c04ae1c8d179fd7cb2>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
@@ -838,6 +861,12 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      :hasTRS .
 
+<https://astrea.linkeddata.es/shapes#0f4ef71546e356675bf78c9870c1e070>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :monthOfYear .
+
 <https://astrea.linkeddata.es/shapes#d20f298b7c2d9c2de13f69561ab29955>
         a               sh:NodeShape ;
         rdfs:label      "unidad de tiempo"@es , "Temporal unit"@en ;
@@ -845,12 +874,6 @@
         sh:name         "unidad de tiempo"@es , "Temporal unit"@en ;
         sh:nodeKind     sh:IRI ;
         sh:targetClass  :TemporalUnit .
-
-<https://astrea.linkeddata.es/shapes#0f4ef71546e356675bf78c9870c1e070>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      :monthOfYear .
 
 <https://astrea.linkeddata.es/shapes#12a9d2b1f7c88644b438c995ea1fa921>
         a               sh:NodeShape ;
@@ -1599,34 +1622,6 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         :timeZone .
 
-<https://astrea.linkeddata.es/shapes#2569690b676349ec5d17d29dea7263a8>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://paul.staroch.name/thesis/SmartHomeWeather.owl#MediumRain> .
-
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   :before
-                   ] ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   :hasTime
-                   ] ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   :after
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   :before
-                                ] ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   :hasTime
-                                ] ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   :after
-                                ] ;
-                     rdf:rest   ()
-                   ] .
-
 <https://astrea.linkeddata.es/shapes#3e9967331f86ce1d8f93369975788b02>
         a                sh:PropertyShape ;
         rdfs:label       "Specifies the priority of a WeatherState (a positive integer). The higher this value is compared to another WeatherState's priority, the more the WeatherState takes precedence over the other WeatherState." ;
@@ -1638,12 +1633,10 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:path          <http://paul.staroch.name/thesis/SmartHomeWeather.owl#hasPriority> ;
         sh:pattern       "[\\-+]?[0-9]+" .
 
-<https://astrea.linkeddata.es/shapes#419d7c365a0b0be6367d0d85b3a84259>
+<https://astrea.linkeddata.es/shapes#2569690b676349ec5d17d29dea7263a8>
         a               sh:NodeShape ;
-        rdfs:seeAlso    <http://paul.staroch.name/thesis/SmartHomeWeather.owl#CurrentWeatherState> , <http://paul.staroch.name/thesis/SmartHomeWeather.owl#WeatherState> , <http://paul.staroch.name/thesis/SmartHomeWeather.owl#WeatherStateFromService> ;
-        sh:description  "A WeatherState about the current weather based on data retrieved from an internet service, e.g. it is connected to an instance of ServiceSource via the hasSource property." ;
         sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://paul.staroch.name/thesis/SmartHomeWeather.owl#CurrentWeatherReportFromService> .
+        sh:targetClass  <http://paul.staroch.name/thesis/SmartHomeWeather.owl#MediumRain> .
 
 <https://astrea.linkeddata.es/shapes#d78458d7120ccc82396ff7702f7c6455>
         a               sh:NodeShape ;
@@ -1718,6 +1711,13 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
         sh:targetClass  <http://paul.staroch.name/thesis/SmartHomeWeather.owl#WeatherReportFromService> .
+
+<https://astrea.linkeddata.es/shapes#419d7c365a0b0be6367d0d85b3a84259>
+        a               sh:NodeShape ;
+        rdfs:seeAlso    <http://paul.staroch.name/thesis/SmartHomeWeather.owl#CurrentWeatherState> , <http://paul.staroch.name/thesis/SmartHomeWeather.owl#WeatherState> , <http://paul.staroch.name/thesis/SmartHomeWeather.owl#WeatherStateFromService> ;
+        sh:description  "A WeatherState about the current weather based on data retrieved from an internet service, e.g. it is connected to an instance of ServiceSource via the hasSource property." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://paul.staroch.name/thesis/SmartHomeWeather.owl#CurrentWeatherReportFromService> .
 
 <https://astrea.linkeddata.es/shapes#f2526c45dc254ba90dc191589bdcc37f>
         a                sh:PropertyShape ;

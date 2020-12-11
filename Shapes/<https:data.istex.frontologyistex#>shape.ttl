@@ -485,16 +485,6 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foaf:tipjar .
 
-<https://astrea.linkeddata.es/shapes#2dccd18f8533b85b51e9d52893c076fe>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  "http://purl.org/ontology/bibo/"^^xsd:anyURI ;
-        rdfs:label        "volume"@en , "A volume number"@en ;
-        sh:datatype       rdfs:Literal ;
-        sh:description    "A volume number"@en ;
-        sh:name           "volume"@en ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           bibo:volume .
-
 <https://astrea.linkeddata.es/shapes#ccb0432e1e204d702f880d1b98a5e410>
         a            sh:PropertyShape ;
         sh:nodeKind  sh:BlankNodeOrIRI ;
@@ -530,6 +520,16 @@
         sh:name           "topic_interest" ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foaf:topic_interest .
+
+<https://astrea.linkeddata.es/shapes#2dccd18f8533b85b51e9d52893c076fe>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.org/ontology/bibo/"^^xsd:anyURI ;
+        rdfs:label        "volume"@en , "A volume number"@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "A volume number"@en ;
+        sh:name           "volume"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           bibo:volume .
 
 <https://astrea.linkeddata.es/shapes#29c3a5d12df8ba4f3bb0b250a29218a8>
         a                 sh:PropertyShape ;
@@ -823,6 +823,12 @@
         a         sh:PropertyShape ;
         sh:class  foaf:Document .
 
+<https://astrea.linkeddata.es/shapes#90737f73355b205ce17d58b070ffe4fd>
+        a            sh:PropertyShape ;
+        sh:datatype  rdfs:Literal ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      bibo:asin .
+
 <https://astrea.linkeddata.es/shapes#ac006cbb419e606da5f2f354c5454539>
         a               sh:PropertyShape ;
         rdfs:label      "istex:quantityOfItems"@en , "Indique le nombre de titres bibliographiques par corpus ISTEX"@fr ;
@@ -831,12 +837,6 @@
         sh:name         "istex:quantityOfItems"@en ;
         sh:nodeKind     sh:Literal ;
         sh:path         <https://data.istex.fr/ontology/istex#quantityOfItems> .
-
-<https://astrea.linkeddata.es/shapes#90737f73355b205ce17d58b070ffe4fd>
-        a            sh:PropertyShape ;
-        sh:datatype  rdfs:Literal ;
-        sh:nodeKind  sh:Literal ;
-        sh:path      bibo:asin .
 
 <https://astrea.linkeddata.es/shapes#1e0d9d3eafb20ea106fd206aabb482c7>
         a            sh:PropertyShape ;
@@ -1100,6 +1100,10 @@
         sh:nodeKind  sh:BlankNodeOrIRI ;
         sh:path      dcterms:isVersionOf .
 
+<https://astrea.linkeddata.es/shapes#3e3eb125f4c49b5c7078aec3641b370e>
+        a         sh:PropertyShape ;
+        sh:class  prov:InstantaneousEvent .
+
 <https://astrea.linkeddata.es/shapes#bffe587b650112f9f08d61033ecf7c82>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  "http://purl.org/ontology/bibo/"^^xsd:anyURI ;
@@ -1108,10 +1112,6 @@
         sh:name           "Patent"@en ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    bibo:Patent .
-
-<https://astrea.linkeddata.es/shapes#3e3eb125f4c49b5c7078aec3641b370e>
-        a         sh:PropertyShape ;
-        sh:class  prov:InstantaneousEvent .
 
 <https://astrea.linkeddata.es/shapes#5f3541c4151e1d2badd92f9253d8464a>
         a               sh:NodeShape ;
@@ -1390,16 +1390,6 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         <https://data.istex.fr/ontology/istex#subjectScopus> .
 
-<https://astrea.linkeddata.es/shapes#a545e9aeaf17d0242ae410474b327d04>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  foaf: ;
-        rdfs:label        "page" , "A page or document about this thing." ;
-        sh:class          foaf:Document ;
-        sh:description    "A page or document about this thing." ;
-        sh:name           "page" ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foaf:page .
-
 <https://astrea.linkeddata.es/shapes#c86e1300081580fd7066f7bfd3f7fc11>
         a            sh:PropertyShape ;
         sh:nodeKind  sh:Literal ;
@@ -1414,6 +1404,16 @@
         sh:nodeKind       sh:IRI ;
         sh:property       <https://astrea.linkeddata.es/shapes#aae5ddc1c08c39140f8212d2ce43eb98> ;
         sh:targetClass    bibo:Note .
+
+<https://astrea.linkeddata.es/shapes#a545e9aeaf17d0242ae410474b327d04>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "page" , "A page or document about this thing." ;
+        sh:class          foaf:Document ;
+        sh:description    "A page or document about this thing." ;
+        sh:name           "page" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:page .
 
 <https://astrea.linkeddata.es/shapes#6a1974d815a5f075748325cb36ce0c52>
         a                 sh:PropertyShape ;
@@ -1826,15 +1826,6 @@
         sh:nodeKind  sh:Literal ;
         sh:path      dcat:startDate .
 
-<https://astrea.linkeddata.es/shapes#1d0770434caf34ee3aebad793117868a>
-        a               sh:NodeShape ;
-        rdfs:label      "Katalogizovaný zdroj"@cs , "Recurso catalogado"@es , "Risorsa catalogata"@it , "Catalogued resource"@en ;
-        sh:description  "Resource published or curated by a single agent."@en , "Recurso publicado o curado por un agente único."@es , "Zdroj publikovaný či řízený jediným činitelem."@cs , "Risorsa pubblicata o curata da un singolo agente."@it ;
-        sh:name         "Risorsa catalogata"@it , "Catalogued resource"@en , "Recurso catalogado"@es , "Katalogizovaný zdroj"@cs ;
-        sh:nodeKind     sh:IRI ;
-        sh:property     <https://astrea.linkeddata.es/shapes#badc33ad6c319f57a588f1c1c5d850ee> ;
-        sh:targetClass  dcat:Resource .
-
 <https://astrea.linkeddata.es/shapes#24c6cc762a5afc6be099f3fc5c4f5432>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  "http://purl.org/ontology/bibo/"^^xsd:anyURI ;
@@ -1852,6 +1843,15 @@
         sh:name           "Given name" ;
         sh:nodeKind       sh:Literal ;
         sh:path           foaf:givenName .
+
+<https://astrea.linkeddata.es/shapes#1d0770434caf34ee3aebad793117868a>
+        a               sh:NodeShape ;
+        rdfs:label      "Katalogizovaný zdroj"@cs , "Recurso catalogado"@es , "Risorsa catalogata"@it , "Catalogued resource"@en ;
+        sh:description  "Resource published or curated by a single agent."@en , "Recurso publicado o curado por un agente único."@es , "Zdroj publikovaný či řízený jediným činitelem."@cs , "Risorsa pubblicata o curata da un singolo agente."@it ;
+        sh:name         "Risorsa catalogata"@it , "Catalogued resource"@en , "Recurso catalogado"@es , "Katalogizovaný zdroj"@cs ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#badc33ad6c319f57a588f1c1c5d850ee> ;
+        sh:targetClass  dcat:Resource .
 
 <https://astrea.linkeddata.es/shapes#fadac7ceeeb747176ed685af535ebc3f>
         a                 sh:PropertyShape ;
@@ -1881,6 +1881,16 @@
         sh:nodeKind     sh:Literal ;
         sh:path         <https://data.istex.fr/ontology/istex#affiliation> .
 
+<https://astrea.linkeddata.es/shapes#aef1a78016b3598e01dd7671934b50b4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "Concept Scheme"@en ;
+        sh:name           "Concept Scheme"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#baf2e500f0b9580cab6426c147fd8462> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e4cb9b05fdc517e6d47d17a4ecc33a90> ;
+        sh:targetClass    skos:ConceptScheme .
+
 <https://astrea.linkeddata.es/shapes#080c994f008182ae0438f0e8c4ef7c26>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
@@ -1891,15 +1901,14 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           prov:actedOnBehalfOf .
 
-<https://astrea.linkeddata.es/shapes#aef1a78016b3598e01dd7671934b50b4>
+<https://astrea.linkeddata.es/shapes#5e3e70f703355041e62e5d95e1076a9a>
         a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
-        rdfs:label        "Concept Scheme"@en ;
-        sh:name           "Concept Scheme"@en ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "PrimarySource" ;
+        sh:description    "An instance of prov:PrimarySource provides additional descriptions about the binary prov:hadPrimarySource relation from some secondary prov:Entity to an earlier, primary prov:Entity. For example, :blog prov:hadPrimarySource :newsArticle; prov:qualifiedPrimarySource [ a prov:PrimarySource; prov:entity :newsArticle; :foo :bar ] ."@en ;
+        sh:name           "PrimarySource" ;
         sh:nodeKind       sh:IRI ;
-        sh:not            <https://astrea.linkeddata.es/shapes#baf2e500f0b9580cab6426c147fd8462> ;
-        sh:property       <https://astrea.linkeddata.es/shapes#e4cb9b05fdc517e6d47d17a4ecc33a90> ;
-        sh:targetClass    skos:ConceptScheme .
+        sh:targetClass    prov:PrimarySource .
 
 <https://astrea.linkeddata.es/shapes#203c6db8a73c7732f2bbe00ba1273a34>
         a                 sh:PropertyShape ;
@@ -1911,15 +1920,6 @@
         sh:nodeKind       sh:Literal ;
         sh:path           foaf:surname .
 
-<https://astrea.linkeddata.es/shapes#5e3e70f703355041e62e5d95e1076a9a>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
-        rdfs:label        "PrimarySource" ;
-        sh:description    "An instance of prov:PrimarySource provides additional descriptions about the binary prov:hadPrimarySource relation from some secondary prov:Entity to an earlier, primary prov:Entity. For example, :blog prov:hadPrimarySource :newsArticle; prov:qualifiedPrimarySource [ a prov:PrimarySource; prov:entity :newsArticle; :foo :bar ] ."@en ;
-        sh:name           "PrimarySource" ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    prov:PrimarySource .
-
 <https://astrea.linkeddata.es/shapes#3324ab311a8904ebb9b4612a04e0bbaa>
         a               sh:NodeShape ;
         rdfs:label      "istex:NamedEntityConcept"@en ;
@@ -1927,16 +1927,6 @@
         sh:name         "istex:NamedEntityConcept"@en ;
         sh:nodeKind     sh:IRI ;
         sh:targetClass  <https://data.istex.fr/ontology/istex#NamedEntityConcept> .
-
-<https://astrea.linkeddata.es/shapes#caba1d6abfcdf5b1e3085188f4db2a98>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
-        rdfs:label        "Activity" ;
-        sh:name           "Activity" ;
-        sh:nodeKind       sh:IRI ;
-        sh:not            <https://astrea.linkeddata.es/shapes#575fba19c3d01370075e04647f571640> ;
-        sh:property       <https://astrea.linkeddata.es/shapes#02593da342b5a364b87413f58db28026> , <https://astrea.linkeddata.es/shapes#e19a16d1c0b26ad48604c0987879fd5a> , <https://astrea.linkeddata.es/shapes#5d0e27a10f755e8b845321ffc3e82361> , <https://astrea.linkeddata.es/shapes#5a9206803db160bd9e016cc72e257fbc> , <https://astrea.linkeddata.es/shapes#682193f88fb7d007707c6d260bff6090> , <https://astrea.linkeddata.es/shapes#2de597cb7d80eaba04f3978aa12b7927> , <https://astrea.linkeddata.es/shapes#6a1974d815a5f075748325cb36ce0c52> , <https://astrea.linkeddata.es/shapes#b4bb1ef019edd73334ff2058f271166f> , <https://astrea.linkeddata.es/shapes#fe046c7725e6cec8d50201ebd8bf1be1> , <https://astrea.linkeddata.es/shapes#196ea8d0591502158fa42bcdeb09377d> , <https://astrea.linkeddata.es/shapes#f22ce93d0249c47b1cfa20098aa89e23> , <https://astrea.linkeddata.es/shapes#b35aeacc9e82b413789511fd15997611> , <https://astrea.linkeddata.es/shapes#564c4f38e42665fd1f1febce682c48f7> , <https://astrea.linkeddata.es/shapes#55ad425f2ce15142da1b679c17bb5545> , <https://astrea.linkeddata.es/shapes#be9967e653e04a76660895f4c48a4796> , <https://astrea.linkeddata.es/shapes#d18a97a852a607a0308fb5f8582bafcd> , <https://astrea.linkeddata.es/shapes#880bd27facd6ed453d3ba0a7b69536cd> ;
-        sh:targetClass    prov:Activity .
 
 <https://astrea.linkeddata.es/shapes#1419df973c6c6e811413c10a823e5a22>
         a                 sh:PropertyShape ;
@@ -1947,6 +1937,16 @@
         sh:name           "number of pages"@en ;
         sh:nodeKind       sh:Literal ;
         sh:path           bibo:numPages .
+
+<https://astrea.linkeddata.es/shapes#caba1d6abfcdf5b1e3085188f4db2a98>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "Activity" ;
+        sh:name           "Activity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#575fba19c3d01370075e04647f571640> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#02593da342b5a364b87413f58db28026> , <https://astrea.linkeddata.es/shapes#e19a16d1c0b26ad48604c0987879fd5a> , <https://astrea.linkeddata.es/shapes#5d0e27a10f755e8b845321ffc3e82361> , <https://astrea.linkeddata.es/shapes#5a9206803db160bd9e016cc72e257fbc> , <https://astrea.linkeddata.es/shapes#682193f88fb7d007707c6d260bff6090> , <https://astrea.linkeddata.es/shapes#2de597cb7d80eaba04f3978aa12b7927> , <https://astrea.linkeddata.es/shapes#6a1974d815a5f075748325cb36ce0c52> , <https://astrea.linkeddata.es/shapes#b4bb1ef019edd73334ff2058f271166f> , <https://astrea.linkeddata.es/shapes#fe046c7725e6cec8d50201ebd8bf1be1> , <https://astrea.linkeddata.es/shapes#196ea8d0591502158fa42bcdeb09377d> , <https://astrea.linkeddata.es/shapes#f22ce93d0249c47b1cfa20098aa89e23> , <https://astrea.linkeddata.es/shapes#b35aeacc9e82b413789511fd15997611> , <https://astrea.linkeddata.es/shapes#564c4f38e42665fd1f1febce682c48f7> , <https://astrea.linkeddata.es/shapes#55ad425f2ce15142da1b679c17bb5545> , <https://astrea.linkeddata.es/shapes#be9967e653e04a76660895f4c48a4796> , <https://astrea.linkeddata.es/shapes#d18a97a852a607a0308fb5f8582bafcd> , <https://astrea.linkeddata.es/shapes#880bd27facd6ed453d3ba0a7b69536cd> ;
+        sh:targetClass    prov:Activity .
 
 <https://astrea.linkeddata.es/shapes#f1569d82a24734f2d5df36acdacf01bc>
         a                 sh:NodeShape ;
@@ -2771,20 +2771,6 @@
         sh:property       <https://astrea.linkeddata.es/shapes#9a74d9164b7e3537797f1bc9d501e961> ;
         sh:targetClass    bibo:Series .
 
-<https://astrea.linkeddata.es/shapes#0509b61f7a7ebedc081ee69f212b7fa0>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
-        rdfs:label        "has member"@en ;
-        sh:name           "has member"@en ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:or             ( [ sh:class  skos:Concept ;
-                              sh:path   skos:member
-                            ]
-                            [ sh:class  skos:Collection ;
-                              sh:path   skos:member
-                            ]
-                          ) .
-
 <https://astrea.linkeddata.es/shapes#6b9038cdae642483bf87853d93c46b60>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
@@ -2805,6 +2791,20 @@
         sh:nodeKind       sh:IRI ;
         sh:property       <https://astrea.linkeddata.es/shapes#9a8a0226c5954fa63712b4fb21be554c> ;
         sh:targetClass    bibo:CollectedDocument .
+
+<https://astrea.linkeddata.es/shapes#0509b61f7a7ebedc081ee69f212b7fa0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
+        rdfs:label        "has member"@en ;
+        sh:name           "has member"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:or             ( [ sh:class  skos:Concept ;
+                              sh:path   skos:member
+                            ]
+                            [ sh:class  skos:Collection ;
+                              sh:path   skos:member
+                            ]
+                          ) .
 
 <https://astrea.linkeddata.es/shapes#a973489eac9b6439d893e2483f231c15>
         a                 sh:NodeShape ;
@@ -3488,6 +3488,11 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    bibo:Manuscript .
 
+<https://astrea.linkeddata.es/shapes#fb362de2c8b1561b85e816384fd860dd>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      dcterms:language .
+
 <https://astrea.linkeddata.es/shapes#c3650eac30caf0390a88fe10625be4fd>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  "http://purl.org/ontology/bibo/"^^xsd:anyURI ;
@@ -3497,11 +3502,6 @@
         sh:name           "edition"@en ;
         sh:nodeKind       sh:Literal ;
         sh:path           bibo:edition .
-
-<https://astrea.linkeddata.es/shapes#fb362de2c8b1561b85e816384fd860dd>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      dcterms:language .
 
 <https://astrea.linkeddata.es/shapes#a4ff509b562f9607bc3c9a15f12b0ba1>
         a            sh:PropertyShape ;

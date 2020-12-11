@@ -42,11 +42,11 @@
 <https://astrea.linkeddata.es/report/800486709>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
-                "Shapes generated with no errors" ;
+                "2020-12-11 19:28:59.302  INFO 1 --- [nio-8080-exec-8] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.org:80: The target server failed to respond2020-12-11 19:28:59.302  INFO 1 --- [nio-8080-exec-8] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.org:80\n" ;
         <https://w3id.org/def/astrea#source>
                 "http://purl.org/NET/c4dm/event.owl" ;
         <https://w3id.org/def/astrea#statusCode>
-                "200"^^xsd:int .
+                "206"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#1e2f8ef8bba7efc6b52b2fc88eb2e29c>
         a                 sh:PropertyShape ;
@@ -179,7 +179,7 @@
 <https://astrea.linkeddata.es/report/0859463256>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
-                "2020-11-20 15:58:51.473  INFO 1 --- [nio-8080-exec-9] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.org:80: The target server failed to respond2020-11-20 15:58:51.473  INFO 1 --- [nio-8080-exec-9] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.org:80\n" ;
+                "2020-12-11 19:29:03.666  INFO 1 --- [nio-8080-exec-8] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.org:80: The target server failed to respond2020-12-11 19:29:03.666  INFO 1 --- [nio-8080-exec-8] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.org:80\n" ;
         <https://w3id.org/def/astrea#source>
                 "http://purl.org/ontology/ao/core" ;
         <https://w3id.org/def/astrea#statusCode>
@@ -308,16 +308,6 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      time:day .
 
-<https://astrea.linkeddata.es/shapes#fabc187d844000bd2477a93073025e1e>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  foaf: ;
-        rdfs:label        "lastName" , "The last name of a person." ;
-        sh:datatype       rdfs:Literal ;
-        sh:description    "The last name of a person." ;
-        sh:name           "lastName" ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           foaf:lastName .
-
 <https://astrea.linkeddata.es/shapes#b797a66be398e4da2fd31941bf87ca6d>
         a               sh:PropertyShape ;
         rdfs:label      "place" , "\n\t\tRelates an event to a spatial object.\n\t\t" ;
@@ -352,11 +342,15 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      time:seconds .
 
-<https://astrea.linkeddata.es/shapes#ac20b9ffbdb3e2db130f042d629b582d>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      time:years .
+<https://astrea.linkeddata.es/shapes#fabc187d844000bd2477a93073025e1e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "lastName" , "The last name of a person." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The last name of a person." ;
+        sh:name           "lastName" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           foaf:lastName .
 
 <https://astrea.linkeddata.es/shapes#754bf685634357d4bd86f1f862a7c52f>
         a                 sh:NodeShape ;
@@ -440,6 +434,21 @@
         <https://w3id.org/def/astrea#statusCode>
                 "400"^^xsd:int .
 
+<https://astrea.linkeddata.es/shapes#ac20b9ffbdb3e2db130f042d629b582d>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      time:years .
+
+<https://astrea.linkeddata.es/shapes#1ee7441db13b9bb9f861a412312baac6>
+        a               sh:PropertyShape ;
+        rdfs:label      "posición temporal"@es , "Temporal position"@en , "Posición de un instante de tiempo."@es , "Position of a time instant"@en ;
+        sh:class        time:TemporalPosition ;
+        sh:description  "Posición de un instante de tiempo."@es , "Position of a time instant"@en ;
+        sh:name         "Temporal position"@en , "posición temporal"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         time:inTemporalPosition .
+
 <https://astrea.linkeddata.es/shapes#8c5d7cf264893582483ca9dc3e2cbf11>
         a            sh:PropertyShape ;
         sh:hasValue  <http://www.opengis.net/def/uom/ISO-8601/0/Gregorian> ;
@@ -478,14 +487,10 @@
         sh:path         time:inXSDgYearMonth ;
         sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
 
-<https://astrea.linkeddata.es/shapes#1ee7441db13b9bb9f861a412312baac6>
-        a               sh:PropertyShape ;
-        rdfs:label      "posición temporal"@es , "Temporal position"@en , "Posición de un instante de tiempo."@es , "Position of a time instant"@en ;
-        sh:class        time:TemporalPosition ;
-        sh:description  "Posición de un instante de tiempo."@es , "Position of a time instant"@en ;
-        sh:name         "Temporal position"@en , "posición temporal"@es ;
-        sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:path         time:inTemporalPosition .
+<https://astrea.linkeddata.es/shapes#b7b1dee7d62b542a1bb2044241ae836c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:factor_of .
 
 <https://astrea.linkeddata.es/shapes#d962715fbf72868c0c9961959a58b34e>
         a               sh:PropertyShape ;
@@ -496,11 +501,6 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:or           _:b0 ;
         sh:path         time:hasTime .
-
-<https://astrea.linkeddata.es/shapes#b7b1dee7d62b542a1bb2044241ae836c>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:path      event:factor_of .
 
 <https://astrea.linkeddata.es/report/02113868144>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
@@ -863,16 +863,6 @@
         sh:nodeKind     sh:Literal ;
         sh:path         time:inXSDDateTimeStamp .
 
-<https://astrea.linkeddata.es/shapes#5580a9301e2d7a6ab2e5bb7e3243a9d1>
-        a               sh:PropertyShape ;
-        rdfs:label      "Longitud de, o elemento de la longitud de, una extensión temporal expresada en años."@es , "length of, or element of the length of, a temporal extent expressed in years"@en , "years duration"@en , "duración en años"@es ;
-        sh:datatype     xsd:decimal ;
-        sh:description  "length of, or element of the length of, a temporal extent expressed in years"@en , "Longitud de, o elemento de la longitud de, una extensión temporal expresada en años."@es ;
-        sh:name         "duración en años"@es , "years duration"@en ;
-        sh:nodeKind     sh:Literal ;
-        sh:path         time:years ;
-        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
-
 <https://astrea.linkeddata.es/shapes#f916ec82c7f195a468b0f73d548712d5>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  foaf: ;
@@ -884,6 +874,16 @@
         sh:name           "AIM chat ID" ;
         sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
         sh:path           foaf:aimChatID .
+
+<https://astrea.linkeddata.es/shapes#5580a9301e2d7a6ab2e5bb7e3243a9d1>
+        a               sh:PropertyShape ;
+        rdfs:label      "Longitud de, o elemento de la longitud de, una extensión temporal expresada en años."@es , "length of, or element of the length of, a temporal extent expressed in years"@en , "years duration"@en , "duración en años"@es ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "length of, or element of the length of, a temporal extent expressed in years"@en , "Longitud de, o elemento de la longitud de, una extensión temporal expresada en años."@es ;
+        sh:name         "duración en años"@es , "years duration"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         time:years ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
 
 <https://astrea.linkeddata.es/shapes#0a5669f09c8114428ec27cd377fa3636>
         a               sh:PropertyShape ;
@@ -989,6 +989,15 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         time:intervalOverlappedBy .
 
+<https://astrea.linkeddata.es/shapes#3a395ec3e21b248e5090ab7f46684af0>
+        a               sh:PropertyShape ;
+        rdfs:label      "intervalo termina"@es , "Si un intervalo propio T1 termina otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 coincide con el final de T2."@es , "If a proper interval T1 is intervalFinishes another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2."@en , "interval finishes"@en ;
+        sh:class        time:ProperInterval ;
+        sh:description  "Si un intervalo propio T1 termina otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 coincide con el final de T2."@es , "If a proper interval T1 is intervalFinishes another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2."@en ;
+        sh:name         "interval finishes"@en , "intervalo termina"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         time:intervalFinishes .
+
 <https://astrea.linkeddata.es/shapes#52f128cdcfef8aa1c487b4073ecd44bd>
         a               sh:PropertyShape ;
         rdfs:label      "Month position in a calendar-clock system.\n\nThe range of this property is not specified, so can be replaced by any specific representation of a calendar month from any calendar. "@en , "Posición de mes en un sistema calendario-reloj.\n    El rango de esta propiedad no está especificado, por tanto, se puede reemplazar por cualquier representación específica de un mes de calendario de un calendario cualquiera."@es , "mes"@es , "month"@en ;
@@ -1001,14 +1010,13 @@
         a         sh:PropertyShape ;
         sh:class  foaf:Project .
 
-<https://astrea.linkeddata.es/shapes#3a395ec3e21b248e5090ab7f46684af0>
-        a               sh:PropertyShape ;
-        rdfs:label      "intervalo termina"@es , "Si un intervalo propio T1 termina otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 coincide con el final de T2."@es , "If a proper interval T1 is intervalFinishes another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2."@en , "interval finishes"@en ;
-        sh:class        time:ProperInterval ;
-        sh:description  "Si un intervalo propio T1 termina otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 coincide con el final de T2."@es , "If a proper interval T1 is intervalFinishes another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2."@en ;
-        sh:name         "interval finishes"@en , "intervalo termina"@es ;
-        sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:path         time:intervalFinishes .
+<https://astrea.linkeddata.es/shapes#6faafb04de1902ec015ef1a42136f6f4>
+        a               sh:NodeShape ;
+        rdfs:label      "Temporal Reference System"@en , "sistema de referencia temporal"@es ;
+        sh:description  "A temporal reference system, such as a temporal coordinate system (with an origin, direction, and scale), a calendar-clock combination, or a (possibly hierarchical) ordinal system. \n\nThis is a stub class, representing the set of all temporal reference systems."@en , "Un sistema de referencia temporal, tal como un sistema de coordenadas temporales (con un origen, una dirección y una escala), una combinación calendario-reloj, o un sistema ordinal (posiblemente jerárquico).\n        Esta clase comodín representa el conjunto de todos los sistemas de referencia temporal."@es ;
+        sh:name         "Temporal Reference System"@en , "sistema de referencia temporal"@es ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  time:TRS .
 
 <https://astrea.linkeddata.es/shapes#0ee4c4cd4914e31ddcd12c39efccc855>
         a               sh:NodeShape ;
@@ -1017,14 +1025,6 @@
         sh:name         "Item" ;
         sh:nodeKind     sh:IRI ;
         sh:targetClass  scovo:Item .
-
-<https://astrea.linkeddata.es/shapes#6faafb04de1902ec015ef1a42136f6f4>
-        a               sh:NodeShape ;
-        rdfs:label      "Temporal Reference System"@en , "sistema de referencia temporal"@es ;
-        sh:description  "A temporal reference system, such as a temporal coordinate system (with an origin, direction, and scale), a calendar-clock combination, or a (possibly hierarchical) ordinal system. \n\nThis is a stub class, representing the set of all temporal reference systems."@en , "Un sistema de referencia temporal, tal como un sistema de coordenadas temporales (con un origen, una dirección y una escala), una combinación calendario-reloj, o un sistema ordinal (posiblemente jerárquico).\n        Esta clase comodín representa el conjunto de todos los sistemas de referencia temporal."@es ;
-        sh:name         "Temporal Reference System"@en , "sistema de referencia temporal"@es ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  time:TRS .
 
 <https://astrea.linkeddata.es/shapes#5a3ff89436d3af704599082a177ee619>
         a               sh:PropertyShape ;
@@ -1340,11 +1340,12 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         time:intervalStarts .
 
-<https://astrea.linkeddata.es/shapes#5ecbef531ad9fc5b270c9cd5dea65d57>
+<https://astrea.linkeddata.es/shapes#ad361356f94325106c2581448f2ccc15>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
         sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      time:seconds .
+        sh:path      time:month .
 
 <https://astrea.linkeddata.es/shapes#47427181ba878100c93867a4606fafbb>
         a            sh:PropertyShape ;
@@ -1373,12 +1374,11 @@
         sh:not            <https://astrea.linkeddata.es/shapes#1b029595b6c9f13e6782755fc4355c3e> , <https://astrea.linkeddata.es/shapes#34bdf5930c6edb6fdb1d16d232c918a4> ;
         sh:targetClass    foaf:Organization .
 
-<https://astrea.linkeddata.es/shapes#ad361356f94325106c2581448f2ccc15>
+<https://astrea.linkeddata.es/shapes#5ecbef531ad9fc5b270c9cd5dea65d57>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-        sh:minCount  "1"^^xsd:nonNegativeInteger ;
         sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      time:month .
+        sh:path      time:seconds .
 
 <https://astrea.linkeddata.es/shapes#26ac97ba65e5786c94352d3eb5b7507e>
         a            sh:PropertyShape ;
@@ -1395,7 +1395,7 @@
 <https://astrea.linkeddata.es/report/1485748542>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
-                "2020-11-20 15:58:54.103  INFO 1 --- [nio-8080-exec-9] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.org:80: The target server failed to respond2020-11-20 15:58:54.103  INFO 1 --- [nio-8080-exec-9] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.org:80\n" ;
+                "2020-12-11 19:29:06.429  INFO 1 --- [nio-8080-exec-8] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.org:80: The target server failed to respond2020-12-11 19:29:06.429  INFO 1 --- [nio-8080-exec-8] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.org:80\n" ;
         <https://w3id.org/def/astrea#source>
                 "http://purl.org/ontology/wo/core" ;
         <https://w3id.org/def/astrea#statusCode>
@@ -1614,6 +1614,20 @@
         sh:nodeKind     sh:IRI ;
         sh:targetClass  time:TimeZone .
 
+<https://astrea.linkeddata.es/shapes#0b2e058c83f220ff56baa73fc6d9b1be>
+        a            sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral .
+
+<https://astrea.linkeddata.es/shapes#81b759a8483192d015f90455d1de1c30>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/cco/core#> ;
+        rdfs:label        "has skill"@en , "The ability or skill to (be able to) do something, e.g. to walk, to play the piano or to work in a team."@en ;
+        sh:description    "The ability or skill to (be able to) do something, e.g. to walk, to play the piano or to work in a team."@en ;
+        sh:name           "has skill"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/cco/core#skill> .
+
 _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
         rdf:first  [ sh:class  time:Instant ;
                      sh:path   time:before
@@ -1642,20 +1656,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
                                 ] ;
                      rdf:rest   ()
                    ] .
-
-<https://astrea.linkeddata.es/shapes#0b2e058c83f220ff56baa73fc6d9b1be>
-        a            sh:PropertyShape ;
-        sh:maxCount  1 ;
-        sh:nodeKind  sh:IRIOrLiteral .
-
-<https://astrea.linkeddata.es/shapes#81b759a8483192d015f90455d1de1c30>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://purl.org/ontology/cco/core#> ;
-        rdfs:label        "has skill"@en , "The ability or skill to (be able to) do something, e.g. to walk, to play the piano or to work in a team."@en ;
-        sh:description    "The ability or skill to (be able to) do something, e.g. to walk, to play the piano or to work in a team."@en ;
-        sh:name           "has skill"@en ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           <http://purl.org/ontology/cco/core#skill> .
 
 <https://astrea.linkeddata.es/shapes#fc10065b6ef556d7a15dcc7d41a46877>
         a                 sh:NodeShape ;
@@ -2248,7 +2248,7 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
 <https://astrea.linkeddata.es/report/0939339906>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
-                "2020-11-20 15:58:49.152  INFO 1 --- [nio-8080-exec-9] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.org:80: The target server failed to respond2020-11-20 15:58:49.152  INFO 1 --- [nio-8080-exec-9] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.org:80\n2020-11-20 15:58:51.182  WARN 1 --- [nio-8080-exec-9] o.a.h.c.protocol.ResponseProcessCookies  : Invalid cookie header: \"Set-Cookie: SESS972ddc872c5c8bd5c673d923b3fb5ebf=119838375cd3763504a73352ec9f4c9d; expires=Sun, 13 Dec 2020 19:43:24 GMT; path=/; domain=.vocab.deri.ie\". Invalid 'expires' attribute: Sun, 13 Dec 2020 19:43:24 GMT\n" ;
+                "2020-12-11 19:29:01.024  INFO 1 --- [nio-8080-exec-8] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.org:80: The target server failed to respond2020-12-11 19:29:01.024  INFO 1 --- [nio-8080-exec-8] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.org:80\n2020-12-11 19:29:03.360  WARN 1 --- [nio-8080-exec-8] o.a.h.c.protocol.ResponseProcessCookies  : Invalid cookie header: \"Set-Cookie: SESS972ddc872c5c8bd5c673d923b3fb5ebf=39e2307d2ca4cd3dae7cae646320ee55; expires=Sun, 03 Jan 2021 23:15:29 GMT; path=/; domain=.vocab.deri.ie\". Invalid 'expires' attribute: Sun, 03 Jan 2021 23:15:29 GMT\n" ;
         <https://w3id.org/def/astrea#source>
                 "http://purl.org/NET/scovo" ;
         <https://w3id.org/def/astrea#statusCode>

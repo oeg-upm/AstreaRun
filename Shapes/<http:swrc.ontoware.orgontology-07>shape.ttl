@@ -217,17 +217,21 @@
         sh:nodeKind     sh:Literal ;
         sh:path         <http://purl.org/dc/elements/1.1/identifier> .
 
+<https://astrea.linkeddata.es/shapes#2c151c2ec880da026130937bb73b3263>
+        a            sh:PropertyShape ;
+        sh:class     <http://swrc.ontoware.org/ontology#Publication> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://swrc.ontoware.org/ontology#projectInfo> .
+
 <https://astrea.linkeddata.es/shapes#095d56f50cef6229ba83f93284cee850>
         a            sh:PropertyShape ;
         sh:class     <http://swrc.ontoware.org/ontology#Project> ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://swrc.ontoware.org/ontology#carriesOut> .
 
-<https://astrea.linkeddata.es/shapes#2c151c2ec880da026130937bb73b3263>
-        a            sh:PropertyShape ;
-        sh:class     <http://swrc.ontoware.org/ontology#Publication> ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://swrc.ontoware.org/ontology#projectInfo> .
+<https://astrea.linkeddata.es/shapes#54db77dc4abb2e6c0a1ac5fa729b4bd0>
+        a         sh:PropertyShape ;
+        sh:class  <http://swrc.ontoware.org/ontology#Institute> .
 
 <https://astrea.linkeddata.es/shapes#7ae6edc4dc7d6ff7991746c895a80b2a>
         a            sh:PropertyShape ;
@@ -241,10 +245,6 @@
                          sh:path   <http://swrc.ontoware.org/ontology#vendor>
                        ]
                      ) .
-
-<https://astrea.linkeddata.es/shapes#54db77dc4abb2e6c0a1ac5fa729b4bd0>
-        a         sh:PropertyShape ;
-        sh:class  <http://swrc.ontoware.org/ontology#Institute> .
 
 <https://astrea.linkeddata.es/shapes#c72e8624e87a325b8c35a8604b493587>
         a            sh:PropertyShape ;
@@ -304,6 +304,12 @@
         sh:nodeKind  sh:BlankNodeOrIRI ;
         sh:path      <http://swrc.ontoware.org/ontology#organizerOrChairOf> .
 
+<https://astrea.linkeddata.es/shapes#cafe4c6f592529b9254484b6c58e3378>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:anyURI ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://swrc.ontoware.org/ontology#homepage> .
+
 <https://astrea.linkeddata.es/shapes#2b270b924b82d1e4bc51cf3abacbc696>
         a         sh:PropertyShape ;
         sh:class  <http://swrc.ontoware.org/ontology#PhDThesis> .
@@ -320,12 +326,6 @@
         a            sh:PropertyShape ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://purl.org/dc/elements/1.1/contributor> .
-
-<https://astrea.linkeddata.es/shapes#cafe4c6f592529b9254484b6c58e3378>
-        a            sh:PropertyShape ;
-        sh:datatype  xsd:anyURI ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://swrc.ontoware.org/ontology#homepage> .
 
 <https://astrea.linkeddata.es/shapes#4438d6906f26775f9ed69ac784dd054e>
         a               sh:NodeShape ;
@@ -432,6 +432,13 @@
         sh:path      <http://swrc.ontoware.org/ontology#abstract> ;
         sh:pattern   ".*" .
 
+<https://astrea.linkeddata.es/shapes#11a0038fdb5162f5d4fa6ae84d7c1b04>
+        a            sh:PropertyShape ;
+        rdfs:label   "foto"@de ;
+        sh:name      "foto"@de ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://swrc.ontoware.org/ontology#photo> .
+
 <https://astrea.linkeddata.es/shapes#6f45130d8bb0f97ac43868fdd364b2c3>
         a               sh:PropertyShape ;
         rdfs:label      "einrichtung"@de , "meaning not clear\nPhilipp: Hmm, I didn't create that property, therefore i don't know the intention of it." ;
@@ -439,13 +446,6 @@
         sh:name         "einrichtung"@de ;
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         <http://swrc.ontoware.org/ontology#institution> .
-
-<https://astrea.linkeddata.es/shapes#11a0038fdb5162f5d4fa6ae84d7c1b04>
-        a            sh:PropertyShape ;
-        rdfs:label   "foto"@de ;
-        sh:name      "foto"@de ;
-        sh:nodeKind  sh:Literal ;
-        sh:path      <http://swrc.ontoware.org/ontology#photo> .
 
 <https://astrea.linkeddata.es/shapes#a0ed12d8445fc1fa36a0154fb6629399>
         a            sh:PropertyShape ;
@@ -665,6 +665,13 @@
         sh:name         "Dokument"@de ;
         sh:nodeKind     sh:IRI ;
         sh:or           ( [ sh:class  <http://swrc.ontoware.org/ontology#Person> ;
+                            sh:path   <http://purl.org/dc/elements/1.1/publisher>
+                          ]
+                          [ sh:class  <http://swrc.ontoware.org/ontology#Organization> ;
+                            sh:path   <http://purl.org/dc/elements/1.1/publisher>
+                          ]
+                        ) ;
+        sh:or           ( [ sh:class  <http://swrc.ontoware.org/ontology#Person> ;
                             sh:path   <http://purl.org/dc/elements/1.1/creator>
                           ]
                           [ sh:class  <http://swrc.ontoware.org/ontology#Organization> ;
@@ -678,14 +685,7 @@
                             sh:path   <http://purl.org/dc/elements/1.1/contributor>
                           ]
                         ) ;
-        sh:or           ( [ sh:class  <http://swrc.ontoware.org/ontology#Person> ;
-                            sh:path   <http://purl.org/dc/elements/1.1/publisher>
-                          ]
-                          [ sh:class  <http://swrc.ontoware.org/ontology#Organization> ;
-                            sh:path   <http://purl.org/dc/elements/1.1/publisher>
-                          ]
-                        ) ;
-        sh:property     <https://astrea.linkeddata.es/shapes#04c9a11b1f15633d1d8d592cc17a7d82> , <https://astrea.linkeddata.es/shapes#6b57711f4a1f1636dd4fb0e4734300dd> , <https://astrea.linkeddata.es/shapes#8a1258837b7b30cf3aca80ec256eee52> , <https://astrea.linkeddata.es/shapes#22ecad02e9c1f57f78223a05f61da454> , <https://astrea.linkeddata.es/shapes#5090774e21f8d203091eea6cd7749123> , <https://astrea.linkeddata.es/shapes#f2531699347b78b4929221779b105d6c> , <https://astrea.linkeddata.es/shapes#9522ec8fd201a8711a7566253836fe4a> , <https://astrea.linkeddata.es/shapes#c582b81047d67e9d79b3d04d02c66e6d> , <https://astrea.linkeddata.es/shapes#fb585fd3c76c6ccd72eeec31b027787a> , <https://astrea.linkeddata.es/shapes#255a02a32a8f684b43b97b313e3fa448> , <https://astrea.linkeddata.es/shapes#4f5fbcdcf89831266a447705ae656fca> , <https://astrea.linkeddata.es/shapes#5bebef59c1192af975bb1a6f5ad7c386> , <https://astrea.linkeddata.es/shapes#056e8de6980fd5f493efc296691d400e> , <https://astrea.linkeddata.es/shapes#be3b36584c82104556b5d2cb73d8afe5> , <https://astrea.linkeddata.es/shapes#2d47b346cc8571547342af523e728ff4> , <https://astrea.linkeddata.es/shapes#990b8288a272df1cec6e2f7e454187bd> , <https://astrea.linkeddata.es/shapes#295ab391d568a38d7e5da26afe3a545f> , <https://astrea.linkeddata.es/shapes#de34647928909ab5535b346c8b2679b3> , <https://astrea.linkeddata.es/shapes#23ada4b5e16571a56c2be33962369470> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#04c9a11b1f15633d1d8d592cc17a7d82> , <https://astrea.linkeddata.es/shapes#6b57711f4a1f1636dd4fb0e4734300dd> , <https://astrea.linkeddata.es/shapes#8a1258837b7b30cf3aca80ec256eee52> , <https://astrea.linkeddata.es/shapes#22ecad02e9c1f57f78223a05f61da454> , <https://astrea.linkeddata.es/shapes#5090774e21f8d203091eea6cd7749123> , <https://astrea.linkeddata.es/shapes#f2531699347b78b4929221779b105d6c> , <https://astrea.linkeddata.es/shapes#9522ec8fd201a8711a7566253836fe4a> , <https://astrea.linkeddata.es/shapes#c582b81047d67e9d79b3d04d02c66e6d> , <https://astrea.linkeddata.es/shapes#5bebef59c1192af975bb1a6f5ad7c386> , <https://astrea.linkeddata.es/shapes#255a02a32a8f684b43b97b313e3fa448> , <https://astrea.linkeddata.es/shapes#4f5fbcdcf89831266a447705ae656fca> , <https://astrea.linkeddata.es/shapes#fb585fd3c76c6ccd72eeec31b027787a> , <https://astrea.linkeddata.es/shapes#056e8de6980fd5f493efc296691d400e> , <https://astrea.linkeddata.es/shapes#be3b36584c82104556b5d2cb73d8afe5> , <https://astrea.linkeddata.es/shapes#2d47b346cc8571547342af523e728ff4> , <https://astrea.linkeddata.es/shapes#990b8288a272df1cec6e2f7e454187bd> , <https://astrea.linkeddata.es/shapes#295ab391d568a38d7e5da26afe3a545f> , <https://astrea.linkeddata.es/shapes#de34647928909ab5535b346c8b2679b3> , <https://astrea.linkeddata.es/shapes#23ada4b5e16571a56c2be33962369470> ;
         sh:targetClass  <http://swrc.ontoware.org/ontology#Document> .
 
 <https://astrea.linkeddata.es/shapes#6a062186e40ffeb616303a25ddab8634>
@@ -1502,6 +1502,12 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://swrc.ontoware.org/ontology#cite> .
 
+<https://astrea.linkeddata.es/shapes#8db67aca4d307bdea0777270db6c3f27>
+        a            sh:PropertyShape ;
+        sh:class     <http://swrc.ontoware.org/ontology#Person> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://swrc.ontoware.org/ontology#participant> .
+
 <https://astrea.linkeddata.es/shapes#f3d5831b842c255aea22c0bb7c0060b4>
         a         sh:PropertyShape ;
         sh:class  <http://swrc.ontoware.org/ontology#GraduateClass> .
@@ -1513,12 +1519,6 @@
         sh:name         "Format"@de ;
         sh:nodeKind     sh:Literal ;
         sh:path         <http://purl.org/dc/elements/1.1/format> .
-
-<https://astrea.linkeddata.es/shapes#8db67aca4d307bdea0777270db6c3f27>
-        a            sh:PropertyShape ;
-        sh:class     <http://swrc.ontoware.org/ontology#Person> ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://swrc.ontoware.org/ontology#participant> .
 
 <https://astrea.linkeddata.es/shapes#bd8599301c08967fee687e131464bc4f>
         a            sh:PropertyShape ;

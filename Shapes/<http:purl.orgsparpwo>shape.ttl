@@ -86,29 +86,6 @@
         sh:nodeKind     sh:IRI ;
         sh:targetClass  basicplandescription:Goal .
 
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
-        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
-                     sh:path   <http://www.w3.org/2006/time#before>
-                   ] ;
-        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
-                     sh:path   <http://www.w3.org/2006/time#hasTime>
-                   ] ;
-        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
-                     sh:path   <http://www.w3.org/2006/time#after>
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
-                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
-                                  sh:path   <http://www.w3.org/2006/time#before>
-                                ] ;
-                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
-                                  sh:path   <http://www.w3.org/2006/time#hasTime>
-                                ] ;
-                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
-                                  sh:path   <http://www.w3.org/2006/time#after>
-                                ] ;
-                     rdf:rest   ()
-                   ] .
-
 <https://astrea.linkeddata.es/shapes#5c065fa559ca2ddccc8a10f13b91dbaf>
         a               sh:PropertyShape ;
         rdfs:label      "posición de tiempo"@es , "Position of an instant, expressed as a temporal coordinate or nominal value"@en , "Time position"@en , "Posición de un instante, expresada como una coordenada temporal o un valor nominal."@es ;
@@ -340,15 +317,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.w3.org/2006/time#hasTRS> .
 
-<https://astrea.linkeddata.es/shapes#1ee7441db13b9bb9f861a412312baac6>
-        a               sh:PropertyShape ;
-        rdfs:label      "posición temporal"@es , "Temporal position"@en , "Posición de un instante de tiempo."@es , "Position of a time instant"@en ;
-        sh:class        <http://www.w3.org/2006/time#TemporalPosition> ;
-        sh:description  "Posición de un instante de tiempo."@es , "Position of a time instant"@en ;
-        sh:name         "Temporal position"@en , "posición temporal"@es ;
-        sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:path         <http://www.w3.org/2006/time#inTemporalPosition> .
-
 <https://astrea.linkeddata.es/shapes#a631c84768ff3e5f04fb1d6567ba75be>
         a               sh:PropertyShape ;
         rdfs:label      "in XSD g-YearMonth"@en , "Posición de un instante, expresado utilizando xsd:gYearMonth."@es , "Position of an instant, expressed using xsd:gYearMonth"@en , "en año-mes gregoriano XSD"@es ;
@@ -358,6 +326,15 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind     sh:Literal ;
         sh:path         <http://www.w3.org/2006/time#inXSDgYearMonth> ;
         sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#1ee7441db13b9bb9f861a412312baac6>
+        a               sh:PropertyShape ;
+        rdfs:label      "posición temporal"@es , "Temporal position"@en , "Posición de un instante de tiempo."@es , "Position of a time instant"@en ;
+        sh:class        <http://www.w3.org/2006/time#TemporalPosition> ;
+        sh:description  "Posición de un instante de tiempo."@es , "Position of a time instant"@en ;
+        sh:name         "Temporal position"@en , "posición temporal"@es ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/2006/time#inTemporalPosition> .
 
 <https://astrea.linkeddata.es/shapes#d962715fbf72868c0c9961959a58b34e>
         a               sh:PropertyShape ;
@@ -1171,14 +1148,37 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:property     <https://astrea.linkeddata.es/shapes#eb5044991c88dbccf9e95bc98e0d16a9> , <https://astrea.linkeddata.es/shapes#578458b384a57eb21c16ddc00f4bba22> ;
         sh:targetClass  <http://purl.org/spar/pwo/Workflow> .
 
-<https://astrea.linkeddata.es/shapes#99530b77e5b63731cb464bb0406f3223>
-        a         sh:PropertyShape ;
-        sh:class  situation:Situation .
-
 <https://astrea.linkeddata.es/shapes#f818e46aefe5253ce8ba45a8ac83c342>
         a            sh:PropertyShape ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      sequence:directlyFollows .
+
+<https://astrea.linkeddata.es/shapes#99530b77e5b63731cb464bb0406f3223>
+        a         sh:PropertyShape ;
+        sh:class  situation:Situation .
+
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
+        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
+                     sh:path   <http://www.w3.org/2006/time#before>
+                   ] ;
+        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
+                     sh:path   <http://www.w3.org/2006/time#hasTime>
+                   ] ;
+        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
+                     sh:path   <http://www.w3.org/2006/time#after>
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
+                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
+                                  sh:path   <http://www.w3.org/2006/time#before>
+                                ] ;
+                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
+                                  sh:path   <http://www.w3.org/2006/time#hasTime>
+                                ] ;
+                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
+                                  sh:path   <http://www.w3.org/2006/time#after>
+                                ] ;
+                     rdf:rest   ()
+                   ] .
 
 <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b>
         a               sh:NodeShape ;
@@ -1189,6 +1189,11 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:property     <https://astrea.linkeddata.es/shapes#992bd07b229ef8b467c2a8f390d8629e> , <https://astrea.linkeddata.es/shapes#a631c84768ff3e5f04fb1d6567ba75be> , <https://astrea.linkeddata.es/shapes#5c065fa559ca2ddccc8a10f13b91dbaf> , <https://astrea.linkeddata.es/shapes#aac0fca4f06adcfd03a59ed4e468ce5d> , <https://astrea.linkeddata.es/shapes#90d8aef2f1bd778682f0a2b55286a36d> , <https://astrea.linkeddata.es/shapes#2a6076262293386b0f5a33236dd1e1bc> , <https://astrea.linkeddata.es/shapes#1ee7441db13b9bb9f861a412312baac6> , <https://astrea.linkeddata.es/shapes#54d31883388335bc143215bf49c965ea> , <https://astrea.linkeddata.es/shapes#bbd81b2a447a4f83adb7050dd5ef40f9> , <https://astrea.linkeddata.es/shapes#2532894d090d3f1667f7f7b6da65df98> , <https://astrea.linkeddata.es/shapes#75b684fc1c2b1d96cee32ddf1e4e2934> , <https://astrea.linkeddata.es/shapes#3f59f1b6c34ba4ed74f02d3eeb279ca7> , <https://astrea.linkeddata.es/shapes#6fdcb6fa74959cc52414f19ced544249> , <https://astrea.linkeddata.es/shapes#8d26f56ec9e75266434f08dc7f5c2047> ;
         sh:targetClass  <http://www.w3.org/2006/time#Instant> .
 
+<https://astrea.linkeddata.es/shapes#7c715191780712332e004f6e33e6642b>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      taskexecution:executesTask .
+
 <https://astrea.linkeddata.es/shapes#dd82a69ccbcc58e980e4b804851ca7bd>
         a                       sh:PropertyShape ;
         sh:nodeKind             sh:IRIOrLiteral ;
@@ -1196,11 +1201,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
         sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
         sh:qualifiedValueShape  [ sh:class  <http://www.w3.org/2006/time#DurationDescription> ] .
-
-<https://astrea.linkeddata.es/shapes#7c715191780712332e004f6e33e6642b>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:path      taskexecution:executesTask .
 
 <https://astrea.linkeddata.es/report/840530196>
         a       <https://w3id.org/def/astrea#ReportEntry> ;

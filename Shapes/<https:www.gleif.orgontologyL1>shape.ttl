@@ -326,11 +326,6 @@
         sh:nodeKind       sh:Literal ;
         sh:path           gleif-base:hasNamePreviousLegal .
 
-<https://astrea.linkeddata.es/shapes#79b00004cb4224588e7c5a50f39adbad>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      gleif-base:hasCoverageArea .
-
 <https://astrea.linkeddata.es/shapes#c4b37c02e5b6d9815a4e91155a259570>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <https://www.gleif.org/ontology/L1/> ;
@@ -339,6 +334,11 @@
         sh:nodeKind       sh:IRI ;
         sh:property       <https://astrea.linkeddata.es/shapes#56bcfd4adca6565bc0cf64e16cc5b26e> , <https://astrea.linkeddata.es/shapes#79718a847035fc6a239ada2e78827740> , <https://astrea.linkeddata.es/shapes#50a94e046a8ccc4227b5eb2eb243e0c5> , <https://astrea.linkeddata.es/shapes#6f49a0de27e39316a431e9f03fcdaf90> , <https://astrea.linkeddata.es/shapes#d49a9f8b35ac3107c526ae4746823a54> , <https://astrea.linkeddata.es/shapes#f5fb2668173e765774634b07c0dcb079> , <https://astrea.linkeddata.es/shapes#93c9be0ac9f2f532e36b18b508b69d60> , <https://astrea.linkeddata.es/shapes#4a6dbb28975c135d8d12e6dc6b60f0a4> , <https://astrea.linkeddata.es/shapes#a50715baffa37deeb473f22fe7885432> , <https://astrea.linkeddata.es/shapes#6895a05d4c8d1b7013bbbfd90520d7e3> ;
         sh:targetClass    <https://www.gleif.org/ontology/L1/LegalEntityIdentifierRegistryEntry> .
+
+<https://astrea.linkeddata.es/shapes#79b00004cb4224588e7c5a50f39adbad>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      gleif-base:hasCoverageArea .
 
 <https://astrea.linkeddata.es/shapes#c365371038af358dd3ae6475658dd82a>
         a                 sh:PropertyShape ;
@@ -505,6 +505,13 @@
         sh:nodeKind       sh:Literal ;
         sh:path           gleif-base:hasAdditionalAddressLine .
 
+<https://astrea.linkeddata.es/shapes#658ab0f772a6d92b4bb4541f40496f80>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 gleif-base:hasEntityExpirationReason ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  gleif-base:EntityExpirationReason ] .
+
 <https://astrea.linkeddata.es/shapes#3e40653699bb157f299ef7e658fc796a>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://www.gleif.org/ontology/L1/> ;
@@ -512,13 +519,6 @@
         sh:name           "has preferred ASCII transliterated legal address" ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           <https://www.gleif.org/ontology/L1/hasPreferredASCIITransliteratedLegalAddress> .
-
-<https://astrea.linkeddata.es/shapes#658ab0f772a6d92b4bb4541f40496f80>
-        a                       sh:PropertyShape ;
-        sh:nodeKind             sh:IRIOrLiteral ;
-        sh:path                 gleif-base:hasEntityExpirationReason ;
-        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
-        sh:qualifiedValueShape  [ sh:class  gleif-base:EntityExpirationReason ] .
 
 <https://astrea.linkeddata.es/shapes#0c71f331ea9bbe5613cb3611d883cfbf>
         a            sh:PropertyShape ;
@@ -541,16 +541,6 @@
         sh:nodeKind       sh:Literal ;
         sh:path           gleif-base:hasCity .
 
-<https://astrea.linkeddata.es/shapes#56d043b44f4979e12d535a6d2155e7d7>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  gleif-base: ;
-        rdfs:label        "has target" ;
-        sh:class          gleif-base:Entity ;
-        sh:maxCount       1 ;
-        sh:name           "has target" ;
-        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
-        sh:path           gleif-base:hasTarget .
-
 <https://astrea.linkeddata.es/shapes#6dedb42efd9c3c065b3e54fbfa0b1cb7>
         a            sh:PropertyShape ;
         sh:maxCount  "1" ;
@@ -561,6 +551,16 @@
         a            sh:PropertyShape ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      gleif-base:hasInitialRegistrationDate .
+
+<https://astrea.linkeddata.es/shapes#56d043b44f4979e12d535a6d2155e7d7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has target" ;
+        sh:class          gleif-base:Entity ;
+        sh:maxCount       1 ;
+        sh:name           "has target" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:hasTarget .
 
 <https://astrea.linkeddata.es/shapes#3fd3a50932c0ecd000c8d742a653f869>
         a            sh:PropertyShape ;
@@ -725,6 +725,15 @@
         sh:path           gleif-base:hasTag ;
         sh:pattern        ".*" .
 
+<https://astrea.linkeddata.es/shapes#f090fd9ae0f7cc2b6f6e4de3324567d3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  gleif-base: ;
+        rdfs:label        "has country" ;
+        sh:class          lcc-cr:Country ;
+        sh:name           "has country" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gleif-base:hasCountry .
+
 <https://astrea.linkeddata.es/shapes#d2affd71e43b735c9d3d58201a5ad5ae>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <https://www.gleif.org/ontology/L1/> ;
@@ -744,15 +753,6 @@
         sh:minCount  "1"^^xsd:nonNegativeInteger ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      gleif-base:hasNameTransliterated .
-
-<https://astrea.linkeddata.es/shapes#f090fd9ae0f7cc2b6f6e4de3324567d3>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  gleif-base: ;
-        rdfs:label        "has country" ;
-        sh:class          lcc-cr:Country ;
-        sh:name           "has country" ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           gleif-base:hasCountry .
 
 <https://astrea.linkeddata.es/shapes#6e30955e53f4095340f00ca9199f99f1>
         a                 sh:PropertyShape ;

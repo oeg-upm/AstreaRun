@@ -425,35 +425,6 @@
         sh:path         :years ;
         sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
 
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   :before
-                   ] ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   <http://purl.org/NET/c4dm/event.owl#time>
-                   ] ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   :hasTime
-                   ] ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   :after
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   :before
-                                ] ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   <http://purl.org/NET/c4dm/event.owl#time>
-                                ] ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   :hasTime
-                                ] ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   :after
-                                ] ;
-                     rdf:rest   ()
-                   ] .
-
 <https://astrea.linkeddata.es/shapes#0a5669f09c8114428ec27cd377fa3636>
         a               sh:PropertyShape ;
         rdfs:label      "If a proper interval T1 is intervalStarted another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is after the end of T2."@en , "Si un intervalo propio T1 es empezado por otro intervalo propio T2, entonces el principio de T1 coincide con el principio de T2, y el final de T1 es posterior al final de T2."@es , "interval started by"@en ;
@@ -1162,17 +1133,46 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         :hasTemporalDuration .
 
-<https://astrea.linkeddata.es/shapes#4360875dc7488ab8d093a5b60c3b96e4>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:Literal ;
-        sh:path      <http://purl.org/NET/c4dm/event.owl#hasLiteralFactor> .
-
 <https://astrea.linkeddata.es/shapes#4f4d56e35e5114b5f3bda769dc0d8989>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:nonNegativeInteger ;
         sh:minCount  "1"^^xsd:nonNegativeInteger ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      :hasTRS .
+
+<https://astrea.linkeddata.es/shapes#4360875dc7488ab8d093a5b60c3b96e4>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/NET/c4dm/event.owl#hasLiteralFactor> .
+
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   :before
+                   ] ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   <http://purl.org/NET/c4dm/event.owl#time>
+                   ] ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   :hasTime
+                   ] ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   :after
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   :before
+                                ] ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   <http://purl.org/NET/c4dm/event.owl#time>
+                                ] ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   :hasTime
+                                ] ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   :after
+                                ] ;
+                     rdf:rest   ()
+                   ] .
 
 <https://astrea.linkeddata.es/shapes#da14d60e89d1bdb4bb2e04e5796e775e>
         a               sh:PropertyShape ;

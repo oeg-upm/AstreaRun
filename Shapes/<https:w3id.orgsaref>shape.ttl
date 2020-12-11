@@ -388,6 +388,14 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         <https://w3id.org/saref#hasThresholdMeasurement> .
 
+<https://astrea.linkeddata.es/shapes#e99322833d42d63386c87c9e65ce623b>
+        a               sh:NodeShape ;
+        rdfs:label      "Light" ;
+        sh:description  "A saref:Property related to some measurements that are characterized by a certain value that is measured in a illuminance unit (lux)" ;
+        sh:name         "Light" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/saref#Light> .
+
 <https://astrea.linkeddata.es/shapes#4012686c84815fd55c7e1c4bc133b40d>
         a               sh:NodeShape ;
         rdfs:label      "Proper interval"@en , "intervalo propio"@es ;
@@ -397,14 +405,6 @@
         sh:not          <https://astrea.linkeddata.es/shapes#41a4abdcd704a84a9e7fbe5496831ccd> ;
         sh:property     <https://astrea.linkeddata.es/shapes#13f9476a0c7ae2f5dcc4e00710373e41> , <https://astrea.linkeddata.es/shapes#3a395ec3e21b248e5090ab7f46684af0> , <https://astrea.linkeddata.es/shapes#7b8cb5945507570d890e9126919026b1> , <https://astrea.linkeddata.es/shapes#dc2b0a317baee602614d50eedaf4851c> , <https://astrea.linkeddata.es/shapes#a1ecba995aef4ada322156e17bc0998c> , <https://astrea.linkeddata.es/shapes#9e79b5e219290a5e9fb5027725c82561> , <https://astrea.linkeddata.es/shapes#b88fb6d8e93bd7f9ee36f24b5217f709> , <https://astrea.linkeddata.es/shapes#42e9383f73110098b5a3c7d8124eef66> , <https://astrea.linkeddata.es/shapes#c9d36d72813a9f9d52557d884a394687> , <https://astrea.linkeddata.es/shapes#dc24c4066862bdc7332888fa7a79e16f> , <https://astrea.linkeddata.es/shapes#86060dad8e610cc630f8338c216d2e0a> , <https://astrea.linkeddata.es/shapes#0a5669f09c8114428ec27cd377fa3636> , <https://astrea.linkeddata.es/shapes#7dc8fd3a0404e02b3dc34d6d1a444872> , <https://astrea.linkeddata.es/shapes#c158bca83e4fe84d554b4ef79360ea70> , <https://astrea.linkeddata.es/shapes#667f96646acc77b4933b121f900b1456> ;
         sh:targetClass  :ProperInterval .
-
-<https://astrea.linkeddata.es/shapes#e99322833d42d63386c87c9e65ce623b>
-        a               sh:NodeShape ;
-        rdfs:label      "Light" ;
-        sh:description  "A saref:Property related to some measurements that are characterized by a certain value that is measured in a illuminance unit (lux)" ;
-        sh:name         "Light" ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  <https://w3id.org/saref#Light> .
 
 <https://astrea.linkeddata.es/shapes#e4642e23b38422e11d63eda349ed93be>
         a            sh:PropertyShape ;
@@ -1196,6 +1196,13 @@
         sh:description  "A function that allows to get data from a meter, such as current meter reading or instantaneous demand" ;
         sh:name         "Metering function" ;
         sh:nodeKind     sh:IRI ;
+        sh:or           ( [ sh:class  <https://w3id.org/saref#Commodity> ;
+                            sh:path   <https://w3id.org/saref#hasMeterReadingType>
+                          ]
+                          [ sh:class  <https://w3id.org/saref#Property> ;
+                            sh:path   <https://w3id.org/saref#hasMeterReadingType>
+                          ]
+                        ) ;
         sh:or           ( [ sh:class  <https://w3id.org/saref#GetCurrentMeterValueCommand> ;
                             sh:path   <https://w3id.org/saref#hasCommand>
                           ]
@@ -1204,13 +1211,6 @@
                           ]
                           [ sh:class  <https://w3id.org/saref#GetMeterHistoryCommand> ;
                             sh:path   <https://w3id.org/saref#hasCommand>
-                          ]
-                        ) ;
-        sh:or           ( [ sh:class  <https://w3id.org/saref#Commodity> ;
-                            sh:path   <https://w3id.org/saref#hasMeterReadingType>
-                          ]
-                          [ sh:class  <https://w3id.org/saref#Property> ;
-                            sh:path   <https://w3id.org/saref#hasMeterReadingType>
                           ]
                         ) ;
         sh:property     <https://astrea.linkeddata.es/shapes#d4eb42a3214d2e6288bf7e4ed9acc398> , <https://astrea.linkeddata.es/shapes#54d78d2ef08bbece51ef04d5edd58ffe> , <https://astrea.linkeddata.es/shapes#3bf1ed481b0d98867f9c7ad060c9301b> ;
@@ -1648,15 +1648,6 @@
         sh:nodeKind     sh:IRI ;
         sh:targetClass  <https://w3id.org/saref#StartStopState> .
 
-<https://astrea.linkeddata.es/shapes#9ac11e9ade0148c19c9bbe140273a913>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://www.wurvoc.org/vocabularies/om-1.6/Unit_of_measure> ;
-        rdfs:label        "Unit of measure" ;
-        sh:description    "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM)." ;
-        sh:name           "Unit of measure" ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    <https://w3id.org/saref#UnitOfMeasure> .
-
 <https://astrea.linkeddata.es/shapes#a16265634ac997240a1878dfd5416e61>
         a                sh:PropertyShape ;
         rdfs:label       "Posición de minuto en un sistema calendario-reloj."@es , "Minute position in a calendar-clock system."@en , "minute"@en , "minuto"@es ;
@@ -1711,6 +1702,15 @@
         sh:minCount  1 ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      :years .
+
+<https://astrea.linkeddata.es/shapes#9ac11e9ade0148c19c9bbe140273a913>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.wurvoc.org/vocabularies/om-1.6/Unit_of_measure> ;
+        rdfs:label        "Unit of measure" ;
+        sh:description    "The unit of measure is a standard for measurement of a quantity, such as a Property. For example,  Power is a property and Watt is a unit of power that represents a definite predetermined power: when we say 10 Watt, we actually mean 10 times the definite predetermined power called \"watt\". Our definition is based on the definition of unit of measure in the Ontology of units of Measure (OM). We propose here a list of some units of measure that are relevant for the purpose of SAREF, but this list can be extended, also using some other ontologies rather than the Ontology of units of Measure (OM)." ;
+        sh:name           "Unit of measure" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://w3id.org/saref#UnitOfMeasure> .
 
 <https://astrea.linkeddata.es/shapes#a63054539d67b719c20627268921009f>
         a            sh:PropertyShape ;
@@ -1919,6 +1919,35 @@
         sh:nodeKind     sh:Literal ;
         sh:path         :hours ;
         sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   :before
+                   ] ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   :hasTime
+                   ] ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   :after
+                   ] ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   <https://w3id.org/saref#consistsOf>
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   :before
+                                ] ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   :hasTime
+                                ] ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   :after
+                                ] ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   <https://w3id.org/saref#consistsOf>
+                                ] ;
+                     rdf:rest   ()
+                   ] .
 
 <https://astrea.linkeddata.es/shapes#80ac542d05037be9e1b5881c0bdcf1f7>
         a               sh:NodeShape ;
@@ -2164,6 +2193,14 @@
         sh:property     <https://astrea.linkeddata.es/shapes#b86ef9430c7d9114e680abe5bda48aae> ;
         sh:targetClass  <https://w3id.org/saref#Task> .
 
+<https://astrea.linkeddata.es/shapes#4c030077aa447210569bad795fa706f7>
+        a               sh:PropertyShape ;
+        rdfs:label      "has function" , "A relationship identifying the type of function of a device" ;
+        sh:description  "A relationship identifying the type of function of a device" ;
+        sh:name         "has function" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/saref#hasFunction> .
+
 <https://astrea.linkeddata.es/shapes#99353e91dda760f245e7ddc669d6b90e>
         a               sh:PropertyShape ;
         rdfs:label      "Valor de intervalo de fecha-hora expresado como un valor estructurado. El principio y el final del intervalo coincide con los límites del elemento más corto en la descripción."@es , "has Date-Time description"@en , "Value of DateTimeInterval expressed as a structured value. The beginning and end of the interval coincide with the limits of the shortest element in the description."@en , "tiene descripción fecha-hora"@es ;
@@ -2172,14 +2209,6 @@
         sh:name         "tiene descripción fecha-hora"@es , "has Date-Time description"@en ;
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         :hasDateTimeDescription .
-
-<https://astrea.linkeddata.es/shapes#4c030077aa447210569bad795fa706f7>
-        a               sh:PropertyShape ;
-        rdfs:label      "has function" , "A relationship identifying the type of function of a device" ;
-        sh:description  "A relationship identifying the type of function of a device" ;
-        sh:name         "has function" ;
-        sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:path         <https://w3id.org/saref#hasFunction> .
 
 <https://astrea.linkeddata.es/shapes#9faee879f5c6fb2805dd49d88da5dd8f>
         a            sh:PropertyShape ;
@@ -2569,35 +2598,6 @@
         sh:property     <https://astrea.linkeddata.es/shapes#bbd81b2a447a4f83adb7050dd5ef40f9> , <https://astrea.linkeddata.es/shapes#2a6076262293386b0f5a33236dd1e1bc> , <https://astrea.linkeddata.es/shapes#aac0fca4f06adcfd03a59ed4e468ce5d> , <https://astrea.linkeddata.es/shapes#8d26f56ec9e75266434f08dc7f5c2047> , <https://astrea.linkeddata.es/shapes#2532894d090d3f1667f7f7b6da65df98> , <https://astrea.linkeddata.es/shapes#75b684fc1c2b1d96cee32ddf1e4e2934> ;
         sh:targetClass  :TemporalEntity .
 
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   :before
-                   ] ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   :hasTime
-                   ] ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   :after
-                   ] ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   <https://w3id.org/saref#consistsOf>
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   :before
-                                ] ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   :hasTime
-                                ] ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   :after
-                                ] ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   <https://w3id.org/saref#consistsOf>
-                                ] ;
-                     rdf:rest   ()
-                   ] .
-
 <https://astrea.linkeddata.es/shapes#7dc8fd3a0404e02b3dc34d6d1a444872>
         a               sh:PropertyShape ;
         rdfs:label      "intervalo se encuentra"@es , "Si un intervalo propio T1 se encuentra con otro intervalo propio T2, entonces el final de T1 coincide con el principio de T2."@es , "If a proper interval T1 is intervalMeets another proper interval T2, then the end of T1 is coincident with the beginning of T2."@en , "interval meets"@en ;
@@ -2735,16 +2735,16 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         :timeZone .
 
+<https://astrea.linkeddata.es/shapes#98d2c68148c99faa90891194c403210e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://w3id.org/saref#consistsOf> .
+
 <https://astrea.linkeddata.es/shapes#cebe638a518f8b9e21c7dc04ae61b255>
         a            sh:PropertyShape ;
         sh:class     <https://w3id.org/saref#OnOffState> ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <https://w3id.org/saref#actsUpon> .
-
-<https://astrea.linkeddata.es/shapes#98d2c68148c99faa90891194c403210e>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <https://w3id.org/saref#consistsOf> .
 
 <https://astrea.linkeddata.es/shapes#df8c377ccad4ca847cedf1d1bf05948a>
         a            sh:PropertyShape ;

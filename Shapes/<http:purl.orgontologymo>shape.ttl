@@ -724,6 +724,41 @@
         sh:property     <https://astrea.linkeddata.es/shapes#0bf9a398485caa648ac1051d53c2d892> , <https://astrea.linkeddata.es/shapes#a06d7d97a09b3981bdafd6bed5e161e0> ;
         sh:targetClass  sim:Association .
 
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:hasTime
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   <http://purl.org/ontology/mo/time>
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:before
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:after
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   event:time
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:hasTime
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   <http://purl.org/ontology/mo/time>
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:before
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:after
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   event:time
+                                ] ;
+                     rdf:rest   ()
+                   ] .
+
 <https://astrea.linkeddata.es/shapes#55a05e88e2f1bdf8b52fa7d0eb1efeca>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  foaf: ;
@@ -1987,6 +2022,11 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      time:unitType .
 
+<https://astrea.linkeddata.es/shapes#3bd02ffd0b63fd4f2c812c0fccdb4143>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:hasFactor .
+
 <https://astrea.linkeddata.es/report/01034086778>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
@@ -1995,11 +2035,6 @@
                 "http://purl.org/vocab/frbr/core" ;
         <https://w3id.org/def/astrea#statusCode>
                 "400"^^xsd:int .
-
-<https://astrea.linkeddata.es/shapes#3bd02ffd0b63fd4f2c812c0fccdb4143>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:path      event:hasFactor .
 
 <https://astrea.linkeddata.es/shapes#f1c39c4aefc4e8f4c767a7259dd1c5cb>
         a                 sh:PropertyShape ;
@@ -2563,6 +2598,13 @@
         sh:nodeKind  sh:BlankNodeOrIRI ;
         sh:path      <http://purl.org/ontology/mo/publicationOf> .
 
+<https://astrea.linkeddata.es/shapes#62b0ff2adb380366aba593c46dae4c0b>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 event:factor_of ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  event:Event ] .
+
 <https://astrea.linkeddata.es/shapes#fa10e315094df89ca2c74627e940e474>
         a               sh:PropertyShape ;
         rdfs:label      "agent" , "\n\t\tRelates an event to an active agent (a person, a computer, ... :-) )\n\t\t" ;
@@ -2582,13 +2624,6 @@
         sh:name           "produced work" ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           <http://purl.org/ontology/mo/produced_work> .
-
-<https://astrea.linkeddata.es/shapes#62b0ff2adb380366aba593c46dae4c0b>
-        a                       sh:PropertyShape ;
-        sh:nodeKind             sh:IRIOrLiteral ;
-        sh:path                 event:factor_of ;
-        sh:qualifiedMinCount    1 ;
-        sh:qualifiedValueShape  [ sh:class  event:Event ] .
 
 <https://astrea.linkeddata.es/shapes#cb47ae4bdec3e4bc50afe12479911c32>
         a               sh:PropertyShape ;
@@ -2711,6 +2746,12 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      time:years .
 
+<https://astrea.linkeddata.es/shapes#a4ea75b59108a12eb951878bc6832cff>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      time:minutes .
+
 <https://astrea.linkeddata.es/shapes#a16265634ac997240a1878dfd5416e61>
         a                sh:PropertyShape ;
         rdfs:label       "Posición de minuto en un sistema calendario-reloj."@es , "Minute position in a calendar-clock system."@en , "minute"@en , "minuto"@es ;
@@ -2721,12 +2762,6 @@
         sh:nodeKind      sh:Literal ;
         sh:path          time:minute ;
         sh:pattern       "[\\-+]?[0-9]+" .
-
-<https://astrea.linkeddata.es/shapes#a4ea75b59108a12eb951878bc6832cff>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      time:minutes .
 
 <https://astrea.linkeddata.es/shapes#e1e039d66a4437ff48c652da80b8c17a>
         a                 sh:NodeShape ;
@@ -4388,41 +4423,6 @@
         sh:nodeKind       sh:Literal ;
         sh:path           <http://purl.org/ontology/mo/tempo> ;
         sh:pattern        ".*" .
-
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:hasTime
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   <http://purl.org/ontology/mo/time>
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:before
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:after
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   event:time
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:hasTime
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   <http://purl.org/ontology/mo/time>
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:before
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:after
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   event:time
-                                ] ;
-                     rdf:rest   ()
-                   ] .
 
 <https://astrea.linkeddata.es/shapes#5501c1e912c21df3e2bd407c25d79f46>
         a                 sh:PropertyShape ;

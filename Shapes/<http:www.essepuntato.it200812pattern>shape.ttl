@@ -142,6 +142,14 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.essepuntato.it/2008/12/pattern#contains> .
 
+<https://astrea.linkeddata.es/shapes#c96ccd5e404147ec36f814e9171b0af4>
+        a               sh:NodeShape ;
+        rdfs:label      "marker element"@en ;
+        sh:description  "The class of elements that can contain neither text nodes nor elements."@en ;
+        sh:name         "marker element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Marker> .
+
 <https://astrea.linkeddata.es/shapes#4a648e1b24bd67145d221b8d48b484f9>
         a         sh:PropertyShape ;
         sh:class  <http://www.essepuntato.it/2008/12/pattern#Mixed> .
@@ -150,14 +158,6 @@
         a            sh:PropertyShape ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.essepuntato.it/2008/12/pattern#isContainedBy> .
-
-<https://astrea.linkeddata.es/shapes#c96ccd5e404147ec36f814e9171b0af4>
-        a               sh:NodeShape ;
-        rdfs:label      "marker element"@en ;
-        sh:description  "The class of elements that can contain neither text nodes nor elements."@en ;
-        sh:name         "marker element"@en ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Marker> .
 
 <https://astrea.linkeddata.es/shapes#a1a702d44e36ca6f717d6516b45fc85d>
         a               sh:PropertyShape ;
@@ -224,15 +224,6 @@
         a         sh:PropertyShape ;
         sh:class  <http://www.essepuntato.it/2008/12/pattern#Field> .
 
-<https://astrea.linkeddata.es/shapes#423e85a1480497b886fbff7b464761ed>
-        a         sh:PropertyShape ;
-        sh:class  <http://www.essepuntato.it/2008/12/pattern#Marker> .
-
-<https://astrea.linkeddata.es/shapes#5ab927282f35b40c77f07df975adcb92>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://www.essepuntato.it/2008/12/pattern#isContainedBy> .
-
 <https://astrea.linkeddata.es/shapes#756058b2d7aefcfab645004d30961fc9>
         a               sh:PropertyShape ;
         rdfs:label      "can contain homonymous elements"@en , "A hierarchical-based entity contains al least two entities that share the same name."@en ;
@@ -243,6 +234,15 @@
         sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
         sh:path         <http://www.essepuntato.it/2008/12/pattern#canContainHomonymousElements> ;
         sh:pattern      "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#5ab927282f35b40c77f07df975adcb92>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.essepuntato.it/2008/12/pattern#isContainedBy> .
+
+<https://astrea.linkeddata.es/shapes#423e85a1480497b886fbff7b464761ed>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.essepuntato.it/2008/12/pattern#Marker> .
 
 <https://astrea.linkeddata.es/shapes#cc17e64fc84b0930e01126027d029e96>
         a               sh:NodeShape ;
@@ -377,13 +377,6 @@
         sh:name         "popup element"@en ;
         sh:nodeKind     sh:IRI ;
         sh:or           ( [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Block> ;
-                            sh:path   <http://www.essepuntato.it/2008/12/pattern#isContainedBy>
-                          ]
-                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Inline> ;
-                            sh:path   <http://www.essepuntato.it/2008/12/pattern#isContainedBy>
-                          ]
-                        ) ;
-        sh:or           ( [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Block> ;
                             sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
                           ]
                           [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Container> ;
@@ -394,6 +387,13 @@
                           ]
                           [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Meta> ;
                             sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
+                          ]
+                        ) ;
+        sh:or           ( [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Block> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#isContainedBy>
+                          ]
+                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Inline> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#isContainedBy>
                           ]
                         ) ;
         sh:property     <https://astrea.linkeddata.es/shapes#d5f28be688f5a6e5931b903a7aa1c044> , <https://astrea.linkeddata.es/shapes#6f2ec3e5cc17c3d9b698e1495d49f741> ;

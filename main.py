@@ -29,7 +29,7 @@ def create_folders(clean):
 
 def divide(filename):
 
-    print('Dividing file...')
+    print('Dividing file into ontologies...')
     with open(filename, 'r') as fid:
         fid_content = fid.read()
         # fid_content = fid_content.replace("\\", "\\\\")  # escape \
@@ -629,16 +629,16 @@ def analysis(shape):
 
 def main():
 
-    # create_folders(clean=True)
+    create_folders(clean=True)
     # input value clean = True to erase previous ontology and shapes folder before creating the new ones
 
-    # divide('lov.nq')
-    # input filename to divide = "lov.nq" or "test.nq"...
+    divide('lov.nq')
+    # input filename to divide into ontologies = "lov.nq" or "test.nq"...
 
-    # convert_triple(filename='all')
+    convert_triple(filename='all')
     # converts input file .nq to .nt (main.py folder level) or all files with ='all' (Ontologies folder)
 
-    # run_astrea(ontofile='all')
+    run_astrea(ontofile='all')
     # automatically generate shape files from filename or 'all' vocabularies with Astrea (same folder logic as above)
 
     analysis(shape='all')

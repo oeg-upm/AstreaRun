@@ -172,22 +172,45 @@
         sh:path          <http://www.w3.org/2006/time#dayOfYear> ;
         sh:pattern       "[\\-+]?[0-9]+" .
 
-<https://astrea.linkeddata.es/shapes#c6bdb50f0e3892ad93e7dbabcfdea7a9>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:path      time-entry:intAfter .
-
 <https://astrea.linkeddata.es/shapes#582369aed934d049d72a08373376d8c2>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:nonNegativeInteger ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.w3.org/2006/time#minute> .
 
+<https://astrea.linkeddata.es/shapes#c6bdb50f0e3892ad93e7dbabcfdea7a9>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      time-entry:intAfter .
+
 <https://astrea.linkeddata.es/shapes#26eb2e1c9018ff0b3e60fd12beb5ade2>
         a            sh:PropertyShape ;
         sh:equals    <http://www.w3.org/2006/time#intervalOverlaps> ;
         sh:nodeKind  sh:BlankNodeOrIRI ;
         sh:path      <http://purl.org/NET/c4dm/timeline.owl#overlaps> .
+
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
+        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
+                     sh:path   <http://www.w3.org/2006/time#before>
+                   ] ;
+        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
+                     sh:path   <http://www.w3.org/2006/time#hasTime>
+                   ] ;
+        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
+                     sh:path   <http://www.w3.org/2006/time#after>
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
+                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
+                                  sh:path   <http://www.w3.org/2006/time#before>
+                                ] ;
+                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
+                                  sh:path   <http://www.w3.org/2006/time#hasTime>
+                                ] ;
+                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
+                                  sh:path   <http://www.w3.org/2006/time#after>
+                                ] ;
+                     rdf:rest   ()
+                   ] .
 
 <https://astrea.linkeddata.es/shapes#fa3e86d505c7c032cef8f60e29a25533>
         a            sh:PropertyShape ;
@@ -251,17 +274,17 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         <http://www.w3.org/2006/time#intervalAfter> .
 
-<https://astrea.linkeddata.es/shapes#aa6f1abc5252d8da44eb07c6883e5572>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://www.w3.org/2006/time#month> .
-
 <https://astrea.linkeddata.es/shapes#0d11c827fe0a2d8cfa5362af73bfde8d>
         a            sh:PropertyShape ;
         sh:datatype  xsd:decimal ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.w3.org/2006/time#weeks> .
+
+<https://astrea.linkeddata.es/shapes#aa6f1abc5252d8da44eb07c6883e5572>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.w3.org/2006/time#month> .
 
 <https://astrea.linkeddata.es/shapes#e0c369dbec9c02b2e7d2f4a770de2926>
         a               sh:NodeShape ;
@@ -388,6 +411,12 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.w3.org/2006/time#unitType> .
 
+<https://astrea.linkeddata.es/shapes#95f8c442a616e2a148cb00346dde448f>
+        a            sh:PropertyShape ;
+        sh:equals    <http://www.w3.org/2006/time#intervalMeets> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/NET/c4dm/timeline.owl#meets> .
+
 <https://astrea.linkeddata.es/shapes#24a8d25bea8b13e66ce7d76398ac116f>
         a               sh:NodeShape ;
         rdfs:label      "relative interval" ;
@@ -404,12 +433,6 @@
         sh:nodeKind     sh:IRI ;
         sh:property     <https://astrea.linkeddata.es/shapes#57fa74f2cee6dfae669fa9d7644f7fad> ;
         sh:targetClass  <http://purl.org/NET/c4dm/timeline.owl#DiscreteInstant> .
-
-<https://astrea.linkeddata.es/shapes#95f8c442a616e2a148cb00346dde448f>
-        a            sh:PropertyShape ;
-        sh:equals    <http://www.w3.org/2006/time#intervalMeets> ;
-        sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:path      <http://purl.org/NET/c4dm/timeline.owl#meets> .
 
 <https://astrea.linkeddata.es/shapes#4635a42b00666f90e4b2900e0c98654e>
         a            sh:PropertyShape ;
@@ -441,6 +464,17 @@
         sh:nodeKind     sh:Literal ;
         sh:path         <http://purl.org/NET/c4dm/timeline.owl#atDate> ;
         sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+_:b2    rdf:first  <https://astrea.linkeddata.es/shapes#6141ed68fc18035c7265c93a3289cd0d> ;
+        rdf:first  [ sh:class  time-entry:InstantThing ;
+                     sh:path   time-entry:before
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#8f05dcd84581f59c2ca0c879a7c317da> ;
+                     rdf:first  [ sh:class  time-entry:IntervalThing ;
+                                  sh:path   time-entry:before
+                                ] ;
+                     rdf:rest   ()
+                   ] .
 
 <https://astrea.linkeddata.es/shapes#a6fac1385c91bcfef6833b82411f9517>
         a               sh:NodeShape ;
@@ -765,29 +799,6 @@
         a            sh:PropertyShape ;
         sh:nodeKind  sh:BlankNodeOrIRI ;
         sh:path      time-entry:intOverlappedBy .
-
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
-        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
-                     sh:path   <http://www.w3.org/2006/time#before>
-                   ] ;
-        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
-                     sh:path   <http://www.w3.org/2006/time#hasTime>
-                   ] ;
-        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
-                     sh:path   <http://www.w3.org/2006/time#after>
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
-                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
-                                  sh:path   <http://www.w3.org/2006/time#before>
-                                ] ;
-                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
-                                  sh:path   <http://www.w3.org/2006/time#hasTime>
-                                ] ;
-                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
-                                  sh:path   <http://www.w3.org/2006/time#after>
-                                ] ;
-                     rdf:rest   ()
-                   ] .
 
 <https://astrea.linkeddata.es/shapes#872fdf9f1718dc1f61bed35b23ed9f27>
         a            sh:PropertyShape ;
@@ -1173,17 +1184,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         <http://www.w3.org/2006/time#intervalDisjoint> .
 
-_:b2    rdf:first  <https://astrea.linkeddata.es/shapes#6141ed68fc18035c7265c93a3289cd0d> ;
-        rdf:first  [ sh:class  time-entry:InstantThing ;
-                     sh:path   time-entry:before
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#8f05dcd84581f59c2ca0c879a7c317da> ;
-                     rdf:first  [ sh:class  time-entry:IntervalThing ;
-                                  sh:path   time-entry:before
-                                ] ;
-                     rdf:rest   ()
-                   ] .
-
 <https://astrea.linkeddata.es/shapes#e99c608768d1a21143d8c4cb414661c6>
         a         sh:PropertyShape ;
         sh:class  <http://purl.org/NET/c4dm/timeline.owl#ContinuousTimeLine> .
@@ -1397,6 +1397,13 @@ _:b2    rdf:first  <https://astrea.linkeddata.es/shapes#6141ed68fc18035c7265c93a
         sh:path          <http://purl.org/NET/c4dm/timeline.owl#windowLength> ;
         sh:pattern       "[\\-+]?[0-9]+" .
 
+<https://astrea.linkeddata.es/shapes#e729da3944f0a58fb5f4fec6126ca4e5>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/NET/c4dm/timeline.owl#atDateTime> .
+
 <https://astrea.linkeddata.es/shapes#14445e09a08162f6021561a9ee70928d>
         a            sh:PropertyShape ;
         sh:datatype  xsd:gDay ;
@@ -1415,13 +1422,6 @@ _:b2    rdf:first  <https://astrea.linkeddata.es/shapes#6141ed68fc18035c7265c93a
         sh:nodeKind     sh:IRI ;
         sh:or           ( <https://astrea.linkeddata.es/shapes#3e927b38f47235da556c0270fb98fcb6> <https://astrea.linkeddata.es/shapes#557bc124848ec14bf023f029b7d1313b> ) ;
         sh:targetClass  time-entry:Event .
-
-<https://astrea.linkeddata.es/shapes#e729da3944f0a58fb5f4fec6126ca4e5>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://purl.org/NET/c4dm/timeline.owl#atDateTime> .
 
 <https://astrea.linkeddata.es/shapes#c2fa6e1ef089653c758068f1fc5e628c>
         a            sh:PropertyShape ;
@@ -1584,41 +1584,6 @@ _:b2    rdf:first  <https://astrea.linkeddata.es/shapes#6141ed68fc18035c7265c93a
         sh:maxCount  "1"^^xsd:nonNegativeInteger ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      time-entry:week .
-
-_:b1    rdf:first  <https://astrea.linkeddata.es/shapes#7488b0c66e5902ee62b22b731bfaa370> ;
-        rdf:first  [ sh:class  time-entry:Instant ;
-                     sh:path   time-entry:secondInstantThing
-                   ] ;
-        rdf:first  [ sh:class  time-entry:Instant ;
-                     sh:path   time-entry:begins
-                   ] ;
-        rdf:first  [ sh:class  time-entry:Instant ;
-                     sh:path   time-entry:inside
-                   ] ;
-        rdf:first  [ sh:class  time-entry:Instant ;
-                     sh:path   time-entry:firstInstantThing
-                   ] ;
-        rdf:first  [ sh:class  time-entry:Instant ;
-                     sh:path   time-entry:ends
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#3e927b38f47235da556c0270fb98fcb6> ;
-                     rdf:first  [ sh:class  time-entry:InstantEvent ;
-                                  sh:path   time-entry:secondInstantThing
-                                ] ;
-                     rdf:first  [ sh:class  time-entry:InstantEvent ;
-                                  sh:path   time-entry:begins
-                                ] ;
-                     rdf:first  [ sh:class  time-entry:InstantEvent ;
-                                  sh:path   time-entry:inside
-                                ] ;
-                     rdf:first  [ sh:class  time-entry:InstantEvent ;
-                                  sh:path   time-entry:firstInstantThing
-                                ] ;
-                     rdf:first  [ sh:class  time-entry:InstantEvent ;
-                                  sh:path   time-entry:ends
-                                ] ;
-                     rdf:rest   ()
-                   ] .
 
 <https://astrea.linkeddata.es/shapes#042aa38e6fcc0623de8a80d457f7e111>
         a            sh:PropertyShape ;
@@ -2129,6 +2094,41 @@ _:b1    rdf:first  <https://astrea.linkeddata.es/shapes#7488b0c66e5902ee62b22b73
         sh:class     time-entry:ProperIntervalThing ;
         sh:nodeKind  sh:BlankNodeOrIRI ;
         sh:path      time-entry:intFinishes .
+
+_:b1    rdf:first  <https://astrea.linkeddata.es/shapes#7488b0c66e5902ee62b22b731bfaa370> ;
+        rdf:first  [ sh:class  time-entry:Instant ;
+                     sh:path   time-entry:secondInstantThing
+                   ] ;
+        rdf:first  [ sh:class  time-entry:Instant ;
+                     sh:path   time-entry:begins
+                   ] ;
+        rdf:first  [ sh:class  time-entry:Instant ;
+                     sh:path   time-entry:inside
+                   ] ;
+        rdf:first  [ sh:class  time-entry:Instant ;
+                     sh:path   time-entry:firstInstantThing
+                   ] ;
+        rdf:first  [ sh:class  time-entry:Instant ;
+                     sh:path   time-entry:ends
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#3e927b38f47235da556c0270fb98fcb6> ;
+                     rdf:first  [ sh:class  time-entry:InstantEvent ;
+                                  sh:path   time-entry:secondInstantThing
+                                ] ;
+                     rdf:first  [ sh:class  time-entry:InstantEvent ;
+                                  sh:path   time-entry:begins
+                                ] ;
+                     rdf:first  [ sh:class  time-entry:InstantEvent ;
+                                  sh:path   time-entry:inside
+                                ] ;
+                     rdf:first  [ sh:class  time-entry:InstantEvent ;
+                                  sh:path   time-entry:firstInstantThing
+                                ] ;
+                     rdf:first  [ sh:class  time-entry:InstantEvent ;
+                                  sh:path   time-entry:ends
+                                ] ;
+                     rdf:rest   ()
+                   ] .
 
 <https://astrea.linkeddata.es/shapes#21434c0c7d9e24de6b6e95555977b21b>
         a               sh:PropertyShape ;

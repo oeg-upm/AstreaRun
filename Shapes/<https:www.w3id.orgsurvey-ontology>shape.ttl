@@ -255,14 +255,6 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           prov:alternateOf .
 
-<https://astrea.linkeddata.es/shapes#5c2cb6875e68fc9c93a61d74351d0ee8>
-        a               sh:PropertyShape ;
-        rdfs:label      "wfprov:wasEnactedBy associates a wfprov:ProcessRun with a wfprov:WorkflowEngine, specifying that the execution of the process was enacted by the engine."@en ;
-        sh:class        wfprov:WorkflowEngine ;
-        sh:description  "wfprov:wasEnactedBy associates a wfprov:ProcessRun with a wfprov:WorkflowEngine, specifying that the execution of the process was enacted by the engine."@en ;
-        sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:path         wfprov:wasEnactedBy .
-
 <https://astrea.linkeddata.es/shapes#8039c5b998ce5507fef3f197592cfe07>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
@@ -272,6 +264,14 @@
         sh:nodeKind       sh:IRI ;
         sh:property       <https://astrea.linkeddata.es/shapes#23f29c3c88729cbbfdca4f8d496ac5c5> , <https://astrea.linkeddata.es/shapes#50ee12d03373a78308e5484bd860ad98> ;
         sh:targetClass    prov:Association .
+
+<https://astrea.linkeddata.es/shapes#5c2cb6875e68fc9c93a61d74351d0ee8>
+        a               sh:PropertyShape ;
+        rdfs:label      "wfprov:wasEnactedBy associates a wfprov:ProcessRun with a wfprov:WorkflowEngine, specifying that the execution of the process was enacted by the engine."@en ;
+        sh:class        wfprov:WorkflowEngine ;
+        sh:description  "wfprov:wasEnactedBy associates a wfprov:ProcessRun with a wfprov:WorkflowEngine, specifying that the execution of the process was enacted by the engine."@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         wfprov:wasEnactedBy .
 
 <https://astrea.linkeddata.es/shapes#02593da342b5a364b87413f58db28026>
         a                 sh:PropertyShape ;
@@ -691,11 +691,11 @@
 <https://astrea.linkeddata.es/report/01295346249>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
-                "Shapes generated with no errors" ;
+                "2020-12-11 19:45:02.600  INFO 1 --- [io-8080-exec-10] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.org:80: The target server failed to respond2020-12-11 19:45:02.600  INFO 1 --- [io-8080-exec-10] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.org:80\n" ;
         <https://w3id.org/def/astrea#source>
                 "http://purl.org/wf4ever/wfprov#" ;
         <https://w3id.org/def/astrea#statusCode>
-                "200"^^xsd:int .
+                "206"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#95ed33636e9496527da5ad91e86227af>
         a               sh:PropertyShape ;
@@ -1143,12 +1143,13 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://purl.org/ao/annotatesResource> .
 
-<https://astrea.linkeddata.es/shapes#19263ef19ae67c06e6f7ae11ac10d3c2>
-        a               sh:NodeShape ;
-        rdfs:label      "Survey" ;
-        sh:name         "Survey" ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  <https://w3id.org/survey-ontology#Survey> .
+<https://astrea.linkeddata.es/shapes#1525d686c1caefc0c00d5da44b142f6e>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property specifies that a wfprov:Artifact was generated as an output from a wfprov:ProcessRun"@en ;
+        sh:class        wfprov:ProcessRun ;
+        sh:description  "This property specifies that a wfprov:Artifact was generated as an output from a wfprov:ProcessRun"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         wfprov:wasOutputFrom .
 
 <https://astrea.linkeddata.es/shapes#ee8566cf23b83ab3fc20aa78e270762d>
         a               sh:NodeShape ;
@@ -1158,13 +1159,12 @@
         sh:property     <https://astrea.linkeddata.es/shapes#a6425b9cb9275dbdd996c7dd379879f9> , <https://astrea.linkeddata.es/shapes#bf3fbc3114923f0359cecddb721b20b5> , <https://astrea.linkeddata.es/shapes#7188caed13d0d41eb1ab65ae01865387> , <https://astrea.linkeddata.es/shapes#7a641340bc9a4de3d988688b7df4f21d> , <https://astrea.linkeddata.es/shapes#828115c69b9465b4f55ce3a6a26fcccd> ;
         sh:targetClass  <https://w3id.org/survey-ontology#CompletedQuestion> .
 
-<https://astrea.linkeddata.es/shapes#1525d686c1caefc0c00d5da44b142f6e>
-        a               sh:PropertyShape ;
-        rdfs:label      "This property specifies that a wfprov:Artifact was generated as an output from a wfprov:ProcessRun"@en ;
-        sh:class        wfprov:ProcessRun ;
-        sh:description  "This property specifies that a wfprov:Artifact was generated as an output from a wfprov:ProcessRun"@en ;
-        sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:path         wfprov:wasOutputFrom .
+<https://astrea.linkeddata.es/shapes#19263ef19ae67c06e6f7ae11ac10d3c2>
+        a               sh:NodeShape ;
+        rdfs:label      "Survey" ;
+        sh:name         "Survey" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/survey-ontology#Survey> .
 
 <https://astrea.linkeddata.es/shapes#333269e95b74fe277c6479e44d8c0d11>
         a            sh:PropertyShape ;
@@ -1577,6 +1577,17 @@
         sh:nodeKind  sh:BlankNodeOrIRI ;
         sh:path      <http://w3id.org/rv-ontology#dataSource> .
 
+<https://astrea.linkeddata.es/shapes#2de597cb7d80eaba04f3978aa12b7927>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "endedAtTime" , "The time at which an activity ended. See also prov:startedAtTime."@en ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "The time at which an activity ended. See also prov:startedAtTime."@en ;
+        sh:name           "endedAtTime" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           prov:endedAtTime ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
 <https://astrea.linkeddata.es/shapes#ad89e8dc7487648b0158a2f47b7303e3>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
@@ -1601,26 +1612,6 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           prov:hadMember .
 
-<https://astrea.linkeddata.es/shapes#2de597cb7d80eaba04f3978aa12b7927>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
-        rdfs:label        "endedAtTime" , "The time at which an activity ended. See also prov:startedAtTime."@en ;
-        sh:datatype       xsd:dateTime ;
-        sh:description    "The time at which an activity ended. See also prov:startedAtTime."@en ;
-        sh:name           "endedAtTime" ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           prov:endedAtTime ;
-        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
-
-<https://astrea.linkeddata.es/shapes#831d0dbc30ede58dbbe817cc390b35a2>
-        a            sh:PropertyShape ;
-        rdfs:label   "has title" ;
-        sh:datatype  xsd:string ;
-        sh:name      "has title" ;
-        sh:nodeKind  sh:Literal ;
-        sh:path      <https://w3id.org/survey-ontology#hasTitle> ;
-        sh:pattern   ".*" .
-
 <https://astrea.linkeddata.es/shapes#6b9038cdae642483bf87853d93c46b60>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
@@ -1640,6 +1631,15 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    prov:EmptyCollection .
 
+<https://astrea.linkeddata.es/shapes#831d0dbc30ede58dbbe817cc390b35a2>
+        a            sh:PropertyShape ;
+        rdfs:label   "has title" ;
+        sh:datatype  xsd:string ;
+        sh:name      "has title" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <https://w3id.org/survey-ontology#hasTitle> ;
+        sh:pattern   ".*" .
+
 <https://astrea.linkeddata.es/shapes#b35aeacc9e82b413789511fd15997611>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
@@ -1649,6 +1649,12 @@
         sh:name           "qualifiedCommunication" ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           prov:qualifiedCommunication .
+
+<https://astrea.linkeddata.es/shapes#86026d3e85060129603ac5df88e7213c>
+        a            sh:PropertyShape ;
+        sh:datatype  rdfs:Literal ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://w3id.org/rv-ontology#measureReferenceInDatasource> .
 
 <https://astrea.linkeddata.es/shapes#aa84f03c9b056a437f94fc73f7bc5a65>
         a                 sh:NodeShape ;
@@ -1660,12 +1666,6 @@
         sh:nodeKind       sh:IRI ;
         sh:property       <https://astrea.linkeddata.es/shapes#e1f33209247ac6680cb19a492d35d0c2> ;
         sh:targetClass    prov:AgentInfluence .
-
-<https://astrea.linkeddata.es/shapes#86026d3e85060129603ac5df88e7213c>
-        a            sh:PropertyShape ;
-        sh:datatype  rdfs:Literal ;
-        sh:nodeKind  sh:Literal ;
-        sh:path      <http://w3id.org/rv-ontology#measureReferenceInDatasource> .
 
 <https://astrea.linkeddata.es/shapes#1f968ccf420a6d2679b0faf3e53d1122>
         a         sh:PropertyShape ;
@@ -1731,11 +1731,11 @@
 <https://astrea.linkeddata.es/report/733819090>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
-                "[line: 8, col: 65] {W136} Relative URIs are not permitted in RDF: specifically <version>\n[line: 8, col: 65] {W102} Unqualified property attributes are not allowed. Property treated as a relative URI.\n[line: 9, col: 52] {W136} Relative URIs are not permitted in RDF: specifically <profile>\n[line: 9, col: 52] {W102} Unqualified property attributes are not allowed. Property treated as a relative URI.\n[line: 10, col: 4 ] {E201} The attributes on this property element, are not permitted with any content; expecting end element tag.\n" ;
+                "Shapes generated with no errors" ;
         <https://w3id.org/def/astrea#source>
                 "http://purl.org/wf4ever/ro#" ;
         <https://w3id.org/def/astrea#statusCode>
-                "206"^^xsd:int .
+                "200"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#568d4a6d899c8c07d98f2ef05b94ff86>
         a            sh:PropertyShape ;
@@ -1924,6 +1924,10 @@
         sh:nodeKind     sh:IRI ;
         sh:targetClass  <http://w3id.org/rv-ontology#LinkType> .
 
+<https://astrea.linkeddata.es/shapes#38d2b22e0b5e00b3f0400161454df4f6>
+        a         sh:PropertyShape ;
+        sh:class  prov:EntityInfluence .
+
 <https://astrea.linkeddata.es/shapes#6ca4480095c83f9268c312e1feb1197c>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
@@ -1942,10 +1946,6 @@
         sh:name           "qualifiedInsertion" ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           prov:qualifiedInsertion .
-
-<https://astrea.linkeddata.es/shapes#38d2b22e0b5e00b3f0400161454df4f6>
-        a         sh:PropertyShape ;
-        sh:class  prov:EntityInfluence .
 
 <https://astrea.linkeddata.es/shapes#57fc012ee9dd507b1f7da424f8c4c5bb>
         a                 sh:PropertyShape ;

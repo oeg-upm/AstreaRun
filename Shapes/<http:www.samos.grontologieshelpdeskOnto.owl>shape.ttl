@@ -201,11 +201,6 @@
         a         sh:PropertyShape ;
         sh:class  gr:UnitPriceSpecification .
 
-<https://astrea.linkeddata.es/shapes#9b113553882333b9a4705b1f1dfca69f>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant> .
-
 <https://astrea.linkeddata.es/shapes#1d09b75917e4d05f646f5907b188a5f5>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://purl.org/goodrelations/v1> ;
@@ -218,6 +213,11 @@
         sh:nodeKind       sh:Literal ;
         sh:path           gr:hasNAICS ;
         sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#9b113553882333b9a4705b1f1dfca69f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasParticipant> .
 
 <https://astrea.linkeddata.es/shapes#767d830b54f54bb71437226842a49933>
         a         sh:PropertyShape ;
@@ -925,10 +925,6 @@
         sh:property       <https://astrea.linkeddata.es/shapes#5a7e53c49f0169a55efe9b3bd799521f> , <https://astrea.linkeddata.es/shapes#e11615e0d8ef3aa0d328c2447261fdcd> , <https://astrea.linkeddata.es/shapes#64e4ddbf67c15e20029e424ec2ff0738> , <https://astrea.linkeddata.es/shapes#a447f3ef93670eee18058ebd46128909> ;
         sh:targetClass    <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Transition> .
 
-<https://astrea.linkeddata.es/shapes#a9aa484c2c28c59c5503d6e1e1be94c9>
-        a         sh:PropertyShape ;
-        sh:class  gr:PriceSpecification .
-
 <https://astrea.linkeddata.es/shapes#2f45dbc58c8fc724e7651021ef45abac>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://purl.org/goodrelations/v1> ;
@@ -938,6 +934,10 @@
         sh:name           "color (0..1)"@en ;
         sh:nodeKind       sh:Literal ;
         sh:path           gr:color .
+
+<https://astrea.linkeddata.es/shapes#a9aa484c2c28c59c5503d6e1e1be94c9>
+        a         sh:PropertyShape ;
+        sh:class  gr:PriceSpecification .
 
 <https://astrea.linkeddata.es/shapes#aa9f258ba112bd420e867adb2339ac10>
         a            sh:PropertyShape ;
@@ -966,6 +966,16 @@
         sh:class     <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject> ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isRegionFor> .
+
+<https://astrea.linkeddata.es/shapes#4631e83326b176fb6b26673c3ec3c02d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/goodrelations/v1> ;
+        rdfs:label        "includes object (0..*)"@en , "This object property links a gr:Offering to one or multiple gr:TypeAndQuantityNode or nodes that specify the components that are included in the respective offer."@en ;
+        sh:class          gr:TypeAndQuantityNode ;
+        sh:description    "This object property links a gr:Offering to one or multiple gr:TypeAndQuantityNode or nodes that specify the components that are included in the respective offer."@en ;
+        sh:name           "includes object (0..*)"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gr:includesObject .
 
 <https://astrea.linkeddata.es/shapes#a28f1fd271c43a2651b620920832d5db>
         a                 sh:PropertyShape ;
@@ -996,15 +1006,15 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart> .
 
-<https://astrea.linkeddata.es/shapes#4631e83326b176fb6b26673c3ec3c02d>
+<https://astrea.linkeddata.es/shapes#4b37a70e42f1dce726373868650a0144>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://purl.org/goodrelations/v1> ;
-        rdfs:label        "includes object (0..*)"@en , "This object property links a gr:Offering to one or multiple gr:TypeAndQuantityNode or nodes that specify the components that are included in the respective offer."@en ;
-        sh:class          gr:TypeAndQuantityNode ;
-        sh:description    "This object property links a gr:Offering to one or multiple gr:TypeAndQuantityNode or nodes that specify the components that are included in the respective offer."@en ;
-        sh:name           "includes object (0..*)"@en ;
+        rdfs:isDefinedBy  <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+        rdfs:label        "ha qualità"@it , "has quality"@en , "A relation between entities and qualities, e.g. 'Dmitri's skin is yellowish'." ;
+        sh:class          <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> ;
+        sh:description    "A relation between entities and qualities, e.g. 'Dmitri's skin is yellowish'." ;
+        sh:name           "has quality"@en , "ha qualità"@it ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           gr:includesObject .
+        sh:path           <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality> .
 
 <https://astrea.linkeddata.es/shapes#74ac90c9c816d92423aaedea3c4d9dd8>
         a                 sh:NodeShape ;
@@ -1016,16 +1026,6 @@
         sh:not            <https://astrea.linkeddata.es/shapes#c68b955f301c53a5c46c9deecb1e8995> , <https://astrea.linkeddata.es/shapes#b61c3f73e93cb877a8b09ae54f5f8b4b> , <https://astrea.linkeddata.es/shapes#5657758b18708f0504ed4be3ea91e717> , <https://astrea.linkeddata.es/shapes#535ee9750369ec82189359c818116a5b> ;
         sh:property       <https://astrea.linkeddata.es/shapes#f8feeb45678e50c5e5b457bd530b9000> , <https://astrea.linkeddata.es/shapes#713410d42c4a6677f5b28a845ce2cd1b> , <https://astrea.linkeddata.es/shapes#d7e688c13e5b3988befc2ff3cfaedc93> , <https://astrea.linkeddata.es/shapes#0830e1db2ea33558f7231b17cd1cc37a> , <https://astrea.linkeddata.es/shapes#a1b04521453403be73e5ee73f935c41d> , <https://astrea.linkeddata.es/shapes#fb99f7b599d968e4338ac60b63907694> , <https://astrea.linkeddata.es/shapes#5016112edb19faf7383482f3d2e2811c> , <https://astrea.linkeddata.es/shapes#90fe7bc60494acfd97d819de3ba2f4ce> , <https://astrea.linkeddata.es/shapes#7efb15d01cbb6a6dec5b156fd216bed7> , <https://astrea.linkeddata.es/shapes#49b28c75bc3ebff9c23f1fcfe55fd4be> , <https://astrea.linkeddata.es/shapes#7590a0a7df166337b5e5e25089c4da3d> ;
         sh:targetClass    org:Organization , foaf:Organization .
-
-<https://astrea.linkeddata.es/shapes#4b37a70e42f1dce726373868650a0144>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
-        rdfs:label        "ha qualità"@it , "has quality"@en , "A relation between entities and qualities, e.g. 'Dmitri's skin is yellowish'." ;
-        sh:class          <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> ;
-        sh:description    "A relation between entities and qualities, e.g. 'Dmitri's skin is yellowish'." ;
-        sh:name           "has quality"@en , "ha qualità"@it ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality> .
 
 <https://astrea.linkeddata.es/shapes#da87f38dd4355aaa85cd4b246cf3e7f7>
         a                 sh:PropertyShape ;
@@ -1156,15 +1156,6 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#parametrizes> .
 
-<https://astrea.linkeddata.es/shapes#6a40065d4de20ddc755e3423f9de1da8>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
-        rdfs:label        "Norm"@en , "Norma"@it ;
-        sh:description    "A social norm." ;
-        sh:name           "Norm"@en , "Norma"@it ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Norm> .
-
 <https://astrea.linkeddata.es/shapes#e17b34adcea84e2849d74120980c121c>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://purl.org/goodrelations/v1> ;
@@ -1184,6 +1175,15 @@
         sh:nodeKind       sh:IRI ;
         sh:property       <https://astrea.linkeddata.es/shapes#6531d95176422f4d45b6b2947cb34e94> , <https://astrea.linkeddata.es/shapes#5d219e8ab57ec931b5f46f58fe2e7f67> ;
         sh:targetClass    <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Right> .
+
+<https://astrea.linkeddata.es/shapes#6a40065d4de20ddc755e3423f9de1da8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+        rdfs:label        "Norm"@en , "Norma"@it ;
+        sh:description    "A social norm." ;
+        sh:name           "Norm"@en , "Norma"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Norm> .
 
 <https://astrea.linkeddata.es/shapes#62e885c2c6eebf5b9e8d075588d5c086>
         a                 sh:PropertyShape ;
@@ -1651,6 +1651,10 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasConstituent> .
 
+<https://astrea.linkeddata.es/shapes#38e4d888f78b976e513f066f21471208>
+        a         sh:PropertyShape ;
+        sh:class  gr:TypeAndQuantityNode .
+
 <https://astrea.linkeddata.es/shapes#4c0d5b23d32e8068863b7887848c7d4e>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://www.w3.org/ns/org> ;
@@ -1661,10 +1665,6 @@
         sh:nodeKind       sh:Literal ;
         sh:path           org:location ;
         sh:pattern        ".*" .
-
-<https://astrea.linkeddata.es/shapes#38e4d888f78b976e513f066f21471208>
-        a         sh:PropertyShape ;
-        sh:class  gr:TypeAndQuantityNode .
 
 <https://astrea.linkeddata.es/shapes#ace5804be46a9159663b321ad25c32b3>
         a                 sh:PropertyShape ;
@@ -1755,16 +1755,6 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSettingFor> .
 
-<https://astrea.linkeddata.es/shapes#19597add4973f20f1955c34c5952da5f>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://www.w3.org/ns/org> ;
-        rdfs:label        "Formal Organization"@en , "Organisation Formelle"@fr , "Organizzazione formale"@it , "organización formal"@es ;
-        sh:description    "Une Organisation reconnue, en particulier par les juridictions locales, ayant des droits et des responsabilités. Exemples : entreprises, association à but non-lucratif, collectivité, église. Notez que c'est une super-classe de `gr:BusinessEntity` et qu'il est recommandé d'utiliser le vocabulaire GoodRelations pour indiquer les classifications économiques comme le code NACE."@fr , "An Organization which is recognized in the world at large, in particular in legal jurisdictions, with associated rights and responsibilities. Examples include a Corporation, Charity, Government or Church. Note that this is a super class of `gr:BusinessEntity` and it is recommended to use the GoodRelations vocabulary to denote Business classifications such as DUNS or NAICS."@en , "Un'organizzazione che è riconosciuta a livello mondiale o, in generale, all'interno di una qualche giurisdizione, e che quindi possiede diritti e responsabilità. Ad esempio aziende, enti governativi, associazioni di volontariato. Si noti che questa è una superclasse di `gr:BusinessEntity` e che quindi è raccomandabile usare il vocabolario GoodRelations per esprimere classificazioni di tipo industriale e commerciale come DUNS e NAICS."@it , "Organización reconocida a nivel mundial, en particular en jurisdicciones legales, con derechos y responsabilidades asociadas. Algunos ejemplos son: organización corporativa, organización benéfica, organización gubernamental, organización religiosa. Se debe tener en cuenta que ésta es una superclase de `gr:BusinessEntity` y que se recomienda el uso del vocabulario GoodRelations para referirse a clasificaciones de negocios tales como DUNS o NAICS."@es , "関連する権利と責任を有する（特に法的管轄区域において）世界中に広く認識されている組織。例には、企業、慈善団体、政府や教会が含まれます。"@ja ;
-        sh:name           "Organisation Formelle"@fr , "Organizzazione formale"@it , "organización formal"@es , "Formal Organization"@en ;
-        sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#e606ddb8b57bba638a160ed178420062> , <https://astrea.linkeddata.es/shapes#9f7bf1912e5b7d7b576cb95146d48c81> ;
-        sh:targetClass    org:FormalOrganization .
-
 <https://astrea.linkeddata.es/shapes#16ee78635ff959f88219ca07ee17f2f1>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
@@ -1774,6 +1764,16 @@
         sh:name           "associatedWith" ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith> .
+
+<https://astrea.linkeddata.es/shapes#19597add4973f20f1955c34c5952da5f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/org> ;
+        rdfs:label        "Formal Organization"@en , "Organisation Formelle"@fr , "Organizzazione formale"@it , "organización formal"@es ;
+        sh:description    "Une Organisation reconnue, en particulier par les juridictions locales, ayant des droits et des responsabilités. Exemples : entreprises, association à but non-lucratif, collectivité, église. Notez que c'est une super-classe de `gr:BusinessEntity` et qu'il est recommandé d'utiliser le vocabulaire GoodRelations pour indiquer les classifications économiques comme le code NACE."@fr , "An Organization which is recognized in the world at large, in particular in legal jurisdictions, with associated rights and responsibilities. Examples include a Corporation, Charity, Government or Church. Note that this is a super class of `gr:BusinessEntity` and it is recommended to use the GoodRelations vocabulary to denote Business classifications such as DUNS or NAICS."@en , "Un'organizzazione che è riconosciuta a livello mondiale o, in generale, all'interno di una qualche giurisdizione, e che quindi possiede diritti e responsabilità. Ad esempio aziende, enti governativi, associazioni di volontariato. Si noti che questa è una superclasse di `gr:BusinessEntity` e che quindi è raccomandabile usare il vocabolario GoodRelations per esprimere classificazioni di tipo industriale e commerciale come DUNS e NAICS."@it , "Organización reconocida a nivel mundial, en particular en jurisdicciones legales, con derechos y responsabilidades asociadas. Algunos ejemplos son: organización corporativa, organización benéfica, organización gubernamental, organización religiosa. Se debe tener en cuenta que ésta es una superclase de `gr:BusinessEntity` y que se recomienda el uso del vocabulario GoodRelations para referirse a clasificaciones de negocios tales como DUNS o NAICS."@es , "関連する権利と責任を有する（特に法的管轄区域において）世界中に広く認識されている組織。例には、企業、慈善団体、政府や教会が含まれます。"@ja ;
+        sh:name           "Organisation Formelle"@fr , "Organizzazione formale"@it , "organización formal"@es , "Formal Organization"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e606ddb8b57bba638a160ed178420062> , <https://astrea.linkeddata.es/shapes#9f7bf1912e5b7d7b576cb95146d48c81> ;
+        sh:targetClass    org:FormalOrganization .
 
 <https://astrea.linkeddata.es/shapes#b9827270a7a36d1d57dc5c9349f295c3>
         a                 sh:PropertyShape ;
@@ -2597,16 +2597,6 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isExecutedIn> .
 
-<https://astrea.linkeddata.es/shapes#70e3229f0aecd9f3f5056318d213f7e1>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
-        rdfs:label        "A relation between an InformationObject and a 'meaning', generalized here as a 'SocialObject'. For example: 'A Beehive is a structure in which bees are kept, typically in the form of a dome or box.' (Oxford dictionary)'; 'the term Beehive expresses the concept Beehive in my apiculture ontology'.\nThe intuition for 'meaning' is intended to be very broad. A separate, large comment is included for those who want to investigate more on what kind of meaning can be represented in what form." , "esprime"@it , "expresses"@en , "This is a large comment field for those who want to investigate the different uses of the 'expresses' relation for modeling different approaches to meaning characterization and modeling.\nFor example, in all these cases, some aspect of meaning is involved:\n\n- Beehive means \"a structure in which bees are kept, typically in the form of a dome or box.\" (Oxford dictionary)\n- 'Beehive' is a synonym in noun synset 09218159 \"beehive|hive\" (WordNet)\n- 'the term Beehive can be interpreted as the fact of 'being a beehive', i.e. a relation that holds for concepts such as Bee, Honey, Hosting, etc.'\n- 'the text of Italian apiculture regulation expresses a rule by which beehives should be kept at least one kilometer away from inhabited areas'\n- 'the term Beehive expresses the concept Beehive'\n- ''Beehive' for apiculturists does not express the same meaning as for, say, fishermen'\n- 'Your meaning of 'Beautiful' does not seem to fit mine'\n- ''Beehive' is formally interpreted as the set of all beehives'\n- 'from the term 'Beehive', we can build a vector space of statistically significant cooccurring terms in the documents that contain it'\n- the lexeme 'Belly' expresses the role 'Body_Part' in the frame 'ObservableBodyParts' (FrameNet)\n\nAs the examples suggest, the 'meaning of meaning' is dependent on the background approach/theory that one assumes. One can hardly make a summary of the too many approaches and theories of meaning, therefore this relation is maybe the most controversial and difficult to explain; normally, in such cases it would be better to give up formalizing. \nHowever, the usefulness of having a 'semantic abstraction' in modeling information objects is so high (e.g. for the semantic web, interoperability, reengineering, etc.), that we accept this challenging task, although without taking any particular position in the debate. \nWe provide here some examples, which we want to generalize upon when using the 'expresses' relation to model semantic aspects of social reality.\n\nIn the most common approach, lexicographers that write dictionaries, glossaries, etc. assume that the meaning of a term is a paraphrase (or 'gloss', or 'definition'). \nAnother approach is provided by concept schemes like thesauri and lexicons, which assume that the meaning of a term is a 'concept', encoded as a 'lemma', 'synset', or 'descriptor'.\nStill another approach is that of psychologists and cognitive scientists, which often assume that the meaning of an information object is a concept encoded in the mind or cognitive system of an agent. \nA radically different approach is taken by social scientists and semioticians, who usually assume that meanings of an information object are spread across the communication practices in which members of a community use that object.\nAnother approach that tackles the distributed nature of meaning is assumed by geometrical models of semantics, which assume that the meaning of an InformationObject (e.g. a word) results from the set of informational contexts (e.g. within texts) in which that object is used similarly.\nThe logical approach to meaning is still different, since it assumes that the meaning of e.g. a term is equivalent to the set of individuals that the term can be applied to; for example, the meaning of 'Ali' is e.g. an individual person called Ali, the meaning of 'Airplane' is e.g. the set of airplanes, etc. \nFinally, an approach taken by structuralist linguistics and frame semantics is that a meaning is the relational context in which an information object can be applied; for example, a meaning of 'Airplane' is situated e.g. in the context ('frame') of passenger airline flights.\n\nThese different approaches are not necessarily conflicting, and they mostly talk about different aspects of so-called 'semantics'. They can be summarized and modelled within DOLCE-Ultralite as follows (notice that such list is far from exhaustive):\n\n(1) Informal meaning (as for linguistic or commonsense semantics: a distinction is assumed between (informal) meaning and reference; see isAbout for an alternative pattern on reference)\n\t- Paraphrase meaning (as for lexicographic semantics). Here it is modelled as the expresses relation between instances of InformationObject and different instances of InformationObject that act as 'paraphrases'\n\t- Conceptual meaning (as for 'concept scheme' semantics). Here it is modelled as the expresses relation between instances of InformationObject and instances of Concept\n\t- Relational meaning (as for frame semantics). Here it is modelled as the expresses relation between instances of InformationObject and instances of Description\n\t- Cognitive meaning (as for 'psychological' semantics). Here it is modelled as the expresses relation between any instance of InformationObject and any different instance of InformationObject that isRealizedBy a mental, cognitive or neural state (depending on which theory of mind is assumed). Such states can be considered here as instances of Process (occurring in the mind, cognitive system, or neural system of an agent)\n\t- Cultural meaning (as for 'social science' semantics). Here it is modelled as the expresses relation between instances of InformationObject and instances of SocialObject (institutions, cultural paradigms, norms, social practices, etc.)\n\t- Distributional meaning (as for geometrical models of meaning). Here it is modelled as the expresses relation between any instance of InformationObject and any different instance of InformationObject that isFormallyRepresentedIn some (geometrical) Region (e.g. a vector space)\n\n(2) Formal meaning (as for logic and formal semantics: no distinction is assumed between informal meaning and reference, therefore between 'expresses' and 'isAbout', which can be used interchangeably)\n\t- Object-level formal meaning (as in the traditional first-order logic semantics). Here it is modelled as the expresses relation between an instance of InformationObject and an instance of Collection that isGroundingFor (in most cases) a Set; isGroundingFor is defined in the ontology: http://www.ontologydesignpatterns.org/ont/dul/IOLite.owl\n\t- Modal formal meaning (as in possible-world semantics). Here it is modelled as the expresses relation between an instance of InformationObject and an instance of Collection that isGroundingFor a Set, and which isPartOf some different instance of Collection that isGroundingFor a PossibleWorld\n\nThis is only a first step to provide a framework, in which one can model different aspects of meaning. A more developed ontology should approach the problem of integrating the different uses of 'expresses', so that different theories, resources, methods can interoperate." ;
-        sh:class          <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject> ;
-        sh:description    "This is a large comment field for those who want to investigate the different uses of the 'expresses' relation for modeling different approaches to meaning characterization and modeling.\nFor example, in all these cases, some aspect of meaning is involved:\n\n- Beehive means \"a structure in which bees are kept, typically in the form of a dome or box.\" (Oxford dictionary)\n- 'Beehive' is a synonym in noun synset 09218159 \"beehive|hive\" (WordNet)\n- 'the term Beehive can be interpreted as the fact of 'being a beehive', i.e. a relation that holds for concepts such as Bee, Honey, Hosting, etc.'\n- 'the text of Italian apiculture regulation expresses a rule by which beehives should be kept at least one kilometer away from inhabited areas'\n- 'the term Beehive expresses the concept Beehive'\n- ''Beehive' for apiculturists does not express the same meaning as for, say, fishermen'\n- 'Your meaning of 'Beautiful' does not seem to fit mine'\n- ''Beehive' is formally interpreted as the set of all beehives'\n- 'from the term 'Beehive', we can build a vector space of statistically significant cooccurring terms in the documents that contain it'\n- the lexeme 'Belly' expresses the role 'Body_Part' in the frame 'ObservableBodyParts' (FrameNet)\n\nAs the examples suggest, the 'meaning of meaning' is dependent on the background approach/theory that one assumes. One can hardly make a summary of the too many approaches and theories of meaning, therefore this relation is maybe the most controversial and difficult to explain; normally, in such cases it would be better to give up formalizing. \nHowever, the usefulness of having a 'semantic abstraction' in modeling information objects is so high (e.g. for the semantic web, interoperability, reengineering, etc.), that we accept this challenging task, although without taking any particular position in the debate. \nWe provide here some examples, which we want to generalize upon when using the 'expresses' relation to model semantic aspects of social reality.\n\nIn the most common approach, lexicographers that write dictionaries, glossaries, etc. assume that the meaning of a term is a paraphrase (or 'gloss', or 'definition'). \nAnother approach is provided by concept schemes like thesauri and lexicons, which assume that the meaning of a term is a 'concept', encoded as a 'lemma', 'synset', or 'descriptor'.\nStill another approach is that of psychologists and cognitive scientists, which often assume that the meaning of an information object is a concept encoded in the mind or cognitive system of an agent. \nA radically different approach is taken by social scientists and semioticians, who usually assume that meanings of an information object are spread across the communication practices in which members of a community use that object.\nAnother approach that tackles the distributed nature of meaning is assumed by geometrical models of semantics, which assume that the meaning of an InformationObject (e.g. a word) results from the set of informational contexts (e.g. within texts) in which that object is used similarly.\nThe logical approach to meaning is still different, since it assumes that the meaning of e.g. a term is equivalent to the set of individuals that the term can be applied to; for example, the meaning of 'Ali' is e.g. an individual person called Ali, the meaning of 'Airplane' is e.g. the set of airplanes, etc. \nFinally, an approach taken by structuralist linguistics and frame semantics is that a meaning is the relational context in which an information object can be applied; for example, a meaning of 'Airplane' is situated e.g. in the context ('frame') of passenger airline flights.\n\nThese different approaches are not necessarily conflicting, and they mostly talk about different aspects of so-called 'semantics'. They can be summarized and modelled within DOLCE-Ultralite as follows (notice that such list is far from exhaustive):\n\n(1) Informal meaning (as for linguistic or commonsense semantics: a distinction is assumed between (informal) meaning and reference; see isAbout for an alternative pattern on reference)\n\t- Paraphrase meaning (as for lexicographic semantics). Here it is modelled as the expresses relation between instances of InformationObject and different instances of InformationObject that act as 'paraphrases'\n\t- Conceptual meaning (as for 'concept scheme' semantics). Here it is modelled as the expresses relation between instances of InformationObject and instances of Concept\n\t- Relational meaning (as for frame semantics). Here it is modelled as the expresses relation between instances of InformationObject and instances of Description\n\t- Cognitive meaning (as for 'psychological' semantics). Here it is modelled as the expresses relation between any instance of InformationObject and any different instance of InformationObject that isRealizedBy a mental, cognitive or neural state (depending on which theory of mind is assumed). Such states can be considered here as instances of Process (occurring in the mind, cognitive system, or neural system of an agent)\n\t- Cultural meaning (as for 'social science' semantics). Here it is modelled as the expresses relation between instances of InformationObject and instances of SocialObject (institutions, cultural paradigms, norms, social practices, etc.)\n\t- Distributional meaning (as for geometrical models of meaning). Here it is modelled as the expresses relation between any instance of InformationObject and any different instance of InformationObject that isFormallyRepresentedIn some (geometrical) Region (e.g. a vector space)\n\n(2) Formal meaning (as for logic and formal semantics: no distinction is assumed between informal meaning and reference, therefore between 'expresses' and 'isAbout', which can be used interchangeably)\n\t- Object-level formal meaning (as in the traditional first-order logic semantics). Here it is modelled as the expresses relation between an instance of InformationObject and an instance of Collection that isGroundingFor (in most cases) a Set; isGroundingFor is defined in the ontology: http://www.ontologydesignpatterns.org/ont/dul/IOLite.owl\n\t- Modal formal meaning (as in possible-world semantics). Here it is modelled as the expresses relation between an instance of InformationObject and an instance of Collection that isGroundingFor a Set, and which isPartOf some different instance of Collection that isGroundingFor a PossibleWorld\n\nThis is only a first step to provide a framework, in which one can model different aspects of meaning. A more developed ontology should approach the problem of integrating the different uses of 'expresses', so that different theories, resources, methods can interoperate." , "A relation between an InformationObject and a 'meaning', generalized here as a 'SocialObject'. For example: 'A Beehive is a structure in which bees are kept, typically in the form of a dome or box.' (Oxford dictionary)'; 'the term Beehive expresses the concept Beehive in my apiculture ontology'.\nThe intuition for 'meaning' is intended to be very broad. A separate, large comment is included for those who want to investigate more on what kind of meaning can be represented in what form." ;
-        sh:name           "expresses"@en , "esprime"@it ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expresses> .
-
 <https://astrea.linkeddata.es/shapes#18abcf602c139a15abbdd68cfac8d535>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  "http://www.samos.gr/ontologies/helpdeskOnto.owl" ;
@@ -2617,15 +2607,15 @@
         sh:property       <https://astrea.linkeddata.es/shapes#ccb85e537c37ee4bbbc53da54d345633> , <https://astrea.linkeddata.es/shapes#a984406be2f00b3f8cf0abaf056e37ca> , <https://astrea.linkeddata.es/shapes#c243fff424c6a555b27dd6f32a537de1> , <https://astrea.linkeddata.es/shapes#b7f9d365c8e57406a0bf4906b88bdf4d> ;
         sh:targetClass    <http://www.samos.gr/ontologies/helpdeskOnto.owl#ItSupportTask> .
 
-<https://astrea.linkeddata.es/shapes#992501a2bc15f345e51f66cefb1ea72d>
+<https://astrea.linkeddata.es/shapes#70e3229f0aecd9f3f5056318d213f7e1>
         a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://purl.org/goodrelations/v1> ;
-        rdfs:label        "has min value (0..1)"@en , "This property captures the lower limit of a gr:QuantitativeValue instance."@en ;
-        sh:datatype       rdfs:Literal ;
-        sh:description    "This property captures the lower limit of a gr:QuantitativeValue instance."@en ;
-        sh:name           "has min value (0..1)"@en ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           gr:hasMinValue .
+        rdfs:isDefinedBy  <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+        rdfs:label        "A relation between an InformationObject and a 'meaning', generalized here as a 'SocialObject'. For example: 'A Beehive is a structure in which bees are kept, typically in the form of a dome or box.' (Oxford dictionary)'; 'the term Beehive expresses the concept Beehive in my apiculture ontology'.\nThe intuition for 'meaning' is intended to be very broad. A separate, large comment is included for those who want to investigate more on what kind of meaning can be represented in what form." , "esprime"@it , "expresses"@en , "This is a large comment field for those who want to investigate the different uses of the 'expresses' relation for modeling different approaches to meaning characterization and modeling.\nFor example, in all these cases, some aspect of meaning is involved:\n\n- Beehive means \"a structure in which bees are kept, typically in the form of a dome or box.\" (Oxford dictionary)\n- 'Beehive' is a synonym in noun synset 09218159 \"beehive|hive\" (WordNet)\n- 'the term Beehive can be interpreted as the fact of 'being a beehive', i.e. a relation that holds for concepts such as Bee, Honey, Hosting, etc.'\n- 'the text of Italian apiculture regulation expresses a rule by which beehives should be kept at least one kilometer away from inhabited areas'\n- 'the term Beehive expresses the concept Beehive'\n- ''Beehive' for apiculturists does not express the same meaning as for, say, fishermen'\n- 'Your meaning of 'Beautiful' does not seem to fit mine'\n- ''Beehive' is formally interpreted as the set of all beehives'\n- 'from the term 'Beehive', we can build a vector space of statistically significant cooccurring terms in the documents that contain it'\n- the lexeme 'Belly' expresses the role 'Body_Part' in the frame 'ObservableBodyParts' (FrameNet)\n\nAs the examples suggest, the 'meaning of meaning' is dependent on the background approach/theory that one assumes. One can hardly make a summary of the too many approaches and theories of meaning, therefore this relation is maybe the most controversial and difficult to explain; normally, in such cases it would be better to give up formalizing. \nHowever, the usefulness of having a 'semantic abstraction' in modeling information objects is so high (e.g. for the semantic web, interoperability, reengineering, etc.), that we accept this challenging task, although without taking any particular position in the debate. \nWe provide here some examples, which we want to generalize upon when using the 'expresses' relation to model semantic aspects of social reality.\n\nIn the most common approach, lexicographers that write dictionaries, glossaries, etc. assume that the meaning of a term is a paraphrase (or 'gloss', or 'definition'). \nAnother approach is provided by concept schemes like thesauri and lexicons, which assume that the meaning of a term is a 'concept', encoded as a 'lemma', 'synset', or 'descriptor'.\nStill another approach is that of psychologists and cognitive scientists, which often assume that the meaning of an information object is a concept encoded in the mind or cognitive system of an agent. \nA radically different approach is taken by social scientists and semioticians, who usually assume that meanings of an information object are spread across the communication practices in which members of a community use that object.\nAnother approach that tackles the distributed nature of meaning is assumed by geometrical models of semantics, which assume that the meaning of an InformationObject (e.g. a word) results from the set of informational contexts (e.g. within texts) in which that object is used similarly.\nThe logical approach to meaning is still different, since it assumes that the meaning of e.g. a term is equivalent to the set of individuals that the term can be applied to; for example, the meaning of 'Ali' is e.g. an individual person called Ali, the meaning of 'Airplane' is e.g. the set of airplanes, etc. \nFinally, an approach taken by structuralist linguistics and frame semantics is that a meaning is the relational context in which an information object can be applied; for example, a meaning of 'Airplane' is situated e.g. in the context ('frame') of passenger airline flights.\n\nThese different approaches are not necessarily conflicting, and they mostly talk about different aspects of so-called 'semantics'. They can be summarized and modelled within DOLCE-Ultralite as follows (notice that such list is far from exhaustive):\n\n(1) Informal meaning (as for linguistic or commonsense semantics: a distinction is assumed between (informal) meaning and reference; see isAbout for an alternative pattern on reference)\n\t- Paraphrase meaning (as for lexicographic semantics). Here it is modelled as the expresses relation between instances of InformationObject and different instances of InformationObject that act as 'paraphrases'\n\t- Conceptual meaning (as for 'concept scheme' semantics). Here it is modelled as the expresses relation between instances of InformationObject and instances of Concept\n\t- Relational meaning (as for frame semantics). Here it is modelled as the expresses relation between instances of InformationObject and instances of Description\n\t- Cognitive meaning (as for 'psychological' semantics). Here it is modelled as the expresses relation between any instance of InformationObject and any different instance of InformationObject that isRealizedBy a mental, cognitive or neural state (depending on which theory of mind is assumed). Such states can be considered here as instances of Process (occurring in the mind, cognitive system, or neural system of an agent)\n\t- Cultural meaning (as for 'social science' semantics). Here it is modelled as the expresses relation between instances of InformationObject and instances of SocialObject (institutions, cultural paradigms, norms, social practices, etc.)\n\t- Distributional meaning (as for geometrical models of meaning). Here it is modelled as the expresses relation between any instance of InformationObject and any different instance of InformationObject that isFormallyRepresentedIn some (geometrical) Region (e.g. a vector space)\n\n(2) Formal meaning (as for logic and formal semantics: no distinction is assumed between informal meaning and reference, therefore between 'expresses' and 'isAbout', which can be used interchangeably)\n\t- Object-level formal meaning (as in the traditional first-order logic semantics). Here it is modelled as the expresses relation between an instance of InformationObject and an instance of Collection that isGroundingFor (in most cases) a Set; isGroundingFor is defined in the ontology: http://www.ontologydesignpatterns.org/ont/dul/IOLite.owl\n\t- Modal formal meaning (as in possible-world semantics). Here it is modelled as the expresses relation between an instance of InformationObject and an instance of Collection that isGroundingFor a Set, and which isPartOf some different instance of Collection that isGroundingFor a PossibleWorld\n\nThis is only a first step to provide a framework, in which one can model different aspects of meaning. A more developed ontology should approach the problem of integrating the different uses of 'expresses', so that different theories, resources, methods can interoperate." ;
+        sh:class          <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject> ;
+        sh:description    "This is a large comment field for those who want to investigate the different uses of the 'expresses' relation for modeling different approaches to meaning characterization and modeling.\nFor example, in all these cases, some aspect of meaning is involved:\n\n- Beehive means \"a structure in which bees are kept, typically in the form of a dome or box.\" (Oxford dictionary)\n- 'Beehive' is a synonym in noun synset 09218159 \"beehive|hive\" (WordNet)\n- 'the term Beehive can be interpreted as the fact of 'being a beehive', i.e. a relation that holds for concepts such as Bee, Honey, Hosting, etc.'\n- 'the text of Italian apiculture regulation expresses a rule by which beehives should be kept at least one kilometer away from inhabited areas'\n- 'the term Beehive expresses the concept Beehive'\n- ''Beehive' for apiculturists does not express the same meaning as for, say, fishermen'\n- 'Your meaning of 'Beautiful' does not seem to fit mine'\n- ''Beehive' is formally interpreted as the set of all beehives'\n- 'from the term 'Beehive', we can build a vector space of statistically significant cooccurring terms in the documents that contain it'\n- the lexeme 'Belly' expresses the role 'Body_Part' in the frame 'ObservableBodyParts' (FrameNet)\n\nAs the examples suggest, the 'meaning of meaning' is dependent on the background approach/theory that one assumes. One can hardly make a summary of the too many approaches and theories of meaning, therefore this relation is maybe the most controversial and difficult to explain; normally, in such cases it would be better to give up formalizing. \nHowever, the usefulness of having a 'semantic abstraction' in modeling information objects is so high (e.g. for the semantic web, interoperability, reengineering, etc.), that we accept this challenging task, although without taking any particular position in the debate. \nWe provide here some examples, which we want to generalize upon when using the 'expresses' relation to model semantic aspects of social reality.\n\nIn the most common approach, lexicographers that write dictionaries, glossaries, etc. assume that the meaning of a term is a paraphrase (or 'gloss', or 'definition'). \nAnother approach is provided by concept schemes like thesauri and lexicons, which assume that the meaning of a term is a 'concept', encoded as a 'lemma', 'synset', or 'descriptor'.\nStill another approach is that of psychologists and cognitive scientists, which often assume that the meaning of an information object is a concept encoded in the mind or cognitive system of an agent. \nA radically different approach is taken by social scientists and semioticians, who usually assume that meanings of an information object are spread across the communication practices in which members of a community use that object.\nAnother approach that tackles the distributed nature of meaning is assumed by geometrical models of semantics, which assume that the meaning of an InformationObject (e.g. a word) results from the set of informational contexts (e.g. within texts) in which that object is used similarly.\nThe logical approach to meaning is still different, since it assumes that the meaning of e.g. a term is equivalent to the set of individuals that the term can be applied to; for example, the meaning of 'Ali' is e.g. an individual person called Ali, the meaning of 'Airplane' is e.g. the set of airplanes, etc. \nFinally, an approach taken by structuralist linguistics and frame semantics is that a meaning is the relational context in which an information object can be applied; for example, a meaning of 'Airplane' is situated e.g. in the context ('frame') of passenger airline flights.\n\nThese different approaches are not necessarily conflicting, and they mostly talk about different aspects of so-called 'semantics'. They can be summarized and modelled within DOLCE-Ultralite as follows (notice that such list is far from exhaustive):\n\n(1) Informal meaning (as for linguistic or commonsense semantics: a distinction is assumed between (informal) meaning and reference; see isAbout for an alternative pattern on reference)\n\t- Paraphrase meaning (as for lexicographic semantics). Here it is modelled as the expresses relation between instances of InformationObject and different instances of InformationObject that act as 'paraphrases'\n\t- Conceptual meaning (as for 'concept scheme' semantics). Here it is modelled as the expresses relation between instances of InformationObject and instances of Concept\n\t- Relational meaning (as for frame semantics). Here it is modelled as the expresses relation between instances of InformationObject and instances of Description\n\t- Cognitive meaning (as for 'psychological' semantics). Here it is modelled as the expresses relation between any instance of InformationObject and any different instance of InformationObject that isRealizedBy a mental, cognitive or neural state (depending on which theory of mind is assumed). Such states can be considered here as instances of Process (occurring in the mind, cognitive system, or neural system of an agent)\n\t- Cultural meaning (as for 'social science' semantics). Here it is modelled as the expresses relation between instances of InformationObject and instances of SocialObject (institutions, cultural paradigms, norms, social practices, etc.)\n\t- Distributional meaning (as for geometrical models of meaning). Here it is modelled as the expresses relation between any instance of InformationObject and any different instance of InformationObject that isFormallyRepresentedIn some (geometrical) Region (e.g. a vector space)\n\n(2) Formal meaning (as for logic and formal semantics: no distinction is assumed between informal meaning and reference, therefore between 'expresses' and 'isAbout', which can be used interchangeably)\n\t- Object-level formal meaning (as in the traditional first-order logic semantics). Here it is modelled as the expresses relation between an instance of InformationObject and an instance of Collection that isGroundingFor (in most cases) a Set; isGroundingFor is defined in the ontology: http://www.ontologydesignpatterns.org/ont/dul/IOLite.owl\n\t- Modal formal meaning (as in possible-world semantics). Here it is modelled as the expresses relation between an instance of InformationObject and an instance of Collection that isGroundingFor a Set, and which isPartOf some different instance of Collection that isGroundingFor a PossibleWorld\n\nThis is only a first step to provide a framework, in which one can model different aspects of meaning. A more developed ontology should approach the problem of integrating the different uses of 'expresses', so that different theories, resources, methods can interoperate." , "A relation between an InformationObject and a 'meaning', generalized here as a 'SocialObject'. For example: 'A Beehive is a structure in which bees are kept, typically in the form of a dome or box.' (Oxford dictionary)'; 'the term Beehive expresses the concept Beehive in my apiculture ontology'.\nThe intuition for 'meaning' is intended to be very broad. A separate, large comment is included for those who want to investigate more on what kind of meaning can be represented in what form." ;
+        sh:name           "expresses"@en , "esprime"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#expresses> .
 
 <https://astrea.linkeddata.es/shapes#2de0faaf7145e3451fe276ce0f3f8c4a>
         a                 sh:PropertyShape ;
@@ -2636,6 +2626,16 @@
         sh:name           "legal name"@en ;
         sh:nodeKind       sh:Literal ;
         sh:path           rov:legalName .
+
+<https://astrea.linkeddata.es/shapes#992501a2bc15f345e51f66cefb1ea72d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/goodrelations/v1> ;
+        rdfs:label        "has min value (0..1)"@en , "This property captures the lower limit of a gr:QuantitativeValue instance."@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "This property captures the lower limit of a gr:QuantitativeValue instance."@en ;
+        sh:name           "has min value (0..1)"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gr:hasMinValue .
 
 <https://astrea.linkeddata.es/shapes#041bddc96ae271b160974636ccb57796>
         a                 sh:PropertyShape ;
@@ -2779,10 +2779,6 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#definesTask> .
 
-<https://astrea.linkeddata.es/shapes#e9180b4703eae1566cde47d371a2cbf8>
-        a         sh:PropertyShape ;
-        sh:class  gr:PaymentMethod .
-
 <https://astrea.linkeddata.es/shapes#082143ec622338e73f05943bdc29a21e>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
@@ -2813,6 +2809,10 @@
                               sh:path   <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isPostconditionOf>
                             ]
                           ) .
+
+<https://astrea.linkeddata.es/shapes#e9180b4703eae1566cde47d371a2cbf8>
+        a         sh:PropertyShape ;
+        sh:class  gr:PaymentMethod .
 
 <https://astrea.linkeddata.es/shapes#90f14db1eea70973a88efb7673a87a2c>
         a                 sh:PropertyShape ;
@@ -3910,6 +3910,11 @@
         sh:property       <https://astrea.linkeddata.es/shapes#9a0e25fbb0f018305411111766bb648b> , <https://astrea.linkeddata.es/shapes#73c490ebab302abf8e7573ac572b307a> , <https://astrea.linkeddata.es/shapes#5fdadfa698e31d96d3c1ce186bb59221> , <https://astrea.linkeddata.es/shapes#372fbab15fbe887da674110f2d46c2ac> ;
         sh:targetClass    <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality> .
 
+<https://astrea.linkeddata.es/shapes#0a9fb0e96f34a7e2a56bd5721af445a1>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation> .
+
 <https://astrea.linkeddata.es/shapes#7b23d54513382da90077cfbc3c32f93a>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
@@ -3926,11 +3931,6 @@
         sh:class     <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasPart> .
-
-<https://astrea.linkeddata.es/shapes#0a9fb0e96f34a7e2a56bd5721af445a1>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasLocation> .
 
 <https://astrea.linkeddata.es/shapes#637acc5adf8d726b6fb92fb07f8de20e>
         a                 sh:PropertyShape ;

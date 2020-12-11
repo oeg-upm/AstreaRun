@@ -133,14 +133,6 @@
         sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
         sh:qualifiedValueShape  [ sh:class  ontolex:LexicalConcept ] .
 
-<https://astrea.linkeddata.es/shapes#e07e94e74ef2d30b083be0f9e70ca9e0>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://www.w3.org/ns/lemon/ontolex> ;
-        rdfs:label        "patron morphologique"@fr , "motivo morfologico"@it , "морфологическая модель"@ru , "model morfologic"@ro , "Свойство 'морфологическая модель' обозначает морфологический класс слова."@ru , "morfologiskt mönster"@sv , "morfologische patroon"@nl , "morphologisches Muster"@de , "patrón morfológico"@es , "morphological pattern"@en , "The 'morphological pattern' property indicates the morphological class of a word."@en , "morfologiese patroon"@af ;
-        sh:description    "Свойство 'морфологическая модель' обозначает морфологический класс слова."@ru , "The 'morphological pattern' property indicates the morphological class of a word."@en ;
-        sh:name           "patron morphologique"@fr , "patrón morfológico"@es , "model morfologic"@ro , "морфологическая модель"@ru , "motivo morfologico"@it , "morphological pattern"@en , "morfologische patroon"@nl , "morfologiskt mönster"@sv , "morphologisches Muster"@de , "morfologiese patroon"@af ;
-        sh:nodeKind       sh:BlankNodeOrIRI .
-
 <https://astrea.linkeddata.es/shapes#dda549256107e54a9e1e3c71676aa71e>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://www.w3.org/ns/lemon/ontolex> ;
@@ -150,6 +142,14 @@
         sh:name           "word opgeroep deur"@af , "è evocato da"@it , "este evocat de"@ro , "порождается"@ru , "es evocado por"@es , "wordt uitgelokt door"@nl , "is evoked by"@en , "est évoqué par"@fr , "wird hervorgerufen von"@de , "framkallas av "@sv ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           ontolex:isEvokedBy .
+
+<https://astrea.linkeddata.es/shapes#e07e94e74ef2d30b083be0f9e70ca9e0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/lemon/ontolex> ;
+        rdfs:label        "patron morphologique"@fr , "motivo morfologico"@it , "морфологическая модель"@ru , "model morfologic"@ro , "Свойство 'морфологическая модель' обозначает морфологический класс слова."@ru , "morfologiskt mönster"@sv , "morfologische patroon"@nl , "morphologisches Muster"@de , "patrón morfológico"@es , "morphological pattern"@en , "The 'morphological pattern' property indicates the morphological class of a word."@en , "morfologiese patroon"@af ;
+        sh:description    "Свойство 'морфологическая модель' обозначает морфологический класс слова."@ru , "The 'morphological pattern' property indicates the morphological class of a word."@en ;
+        sh:name           "patron morphologique"@fr , "patrón morfológico"@es , "model morfologic"@ro , "морфологическая модель"@ru , "motivo morfologico"@it , "morphological pattern"@en , "morfologische patroon"@nl , "morfologiskt mönster"@sv , "morphologisches Muster"@de , "morfologiese patroon"@af ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
 
 <https://astrea.linkeddata.es/shapes#b41ac14f8d90a2f8ce676f2e4f2ed9eb>
         a            sh:PropertyShape ;
@@ -518,6 +518,8 @@
         sh:property     <https://astrea.linkeddata.es/shapes#c3961d27fb3e0315d799cfb09bd38c1e> ;
         sh:targetClass  synsem:OntoMap .
 
+[ sh:class  pmo:AnnotationSet ] .
+
 <https://astrea.linkeddata.es/shapes#142213fcc1e65be48389313cb30b78c6>
         a               sh:NodeShape ;
         rdfs:label      "Secondary Agent"@en ;
@@ -540,8 +542,6 @@
         sh:path                 pmo:item ;
         sh:qualifiedMinCount    "2"^^xsd:nonNegativeInteger ;
         sh:qualifiedValueShape  [ sh:class  skos:Concept ] .
-
-[ sh:class  pmo:AnnotationSet ] .
 
 <https://astrea.linkeddata.es/shapes#bf7c6029b782cb78c1912e583a98a139>
         a            sh:PropertyShape ;
@@ -804,13 +804,9 @@
         sh:property       <https://astrea.linkeddata.es/shapes#86a12621f525aa8d937221f978fc0927> ;
         sh:targetClass    ontolex:ConceptSet .
 
-<https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5>
-        a               sh:NodeShape ;
-        rdfs:label      "concept"@en ;
-        sh:name         "concept"@en ;
-        sh:nodeKind     sh:IRI ;
-        sh:property     <https://astrea.linkeddata.es/shapes#ac79a3630b7022805f3d6c83f65fe51c> ;
-        sh:targetClass  skos:Concept .
+<https://astrea.linkeddata.es/shapes#a293c1c4f80b12331668319d522ad018>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal .
 
 <https://astrea.linkeddata.es/shapes#6e39af5e8b021825c5086e77ce3fffc9>
         a               sh:NodeShape ;
@@ -821,9 +817,13 @@
         sh:property     <https://astrea.linkeddata.es/shapes#f67a0a0dd3e7653f7dd2b051059b2e61> , <https://astrea.linkeddata.es/shapes#528e3d9182bb874ef3e41976789429f4> ;
         sh:targetClass  pmo:SemanticClassMapping .
 
-<https://astrea.linkeddata.es/shapes#a293c1c4f80b12331668319d522ad018>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:Literal .
+<https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5>
+        a               sh:NodeShape ;
+        rdfs:label      "concept"@en ;
+        sh:name         "concept"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ac79a3630b7022805f3d6c83f65fe51c> ;
+        sh:targetClass  skos:Concept .
 
 <https://astrea.linkeddata.es/shapes#6755d6798794f307987019b5f53d43c2>
         a            sh:PropertyShape ;

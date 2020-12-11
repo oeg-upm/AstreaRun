@@ -193,18 +193,18 @@
         rdfs:label      "NP Syntactic Item"@en ;
         sh:name         "NP Syntactic Item"@en ;
         sh:nodeKind     sh:IRI ;
-        sh:or           ( [ sh:class  pmovn:RoleSelectionalRestriction ;
-                            sh:path   pmovn:restriction
-                          ]
-                          [ sh:class  pmovn:SyntacticRestriction ;
-                            sh:path   pmovn:restriction
-                          ]
-                        ) ;
         sh:or           ( [ sh:class  pmovn:AuxnpType ;
                             sh:path   pmo:valueObj
                           ]
                           [ sh:class  pmovn:SemanticRole ;
                             sh:path   pmo:valueObj
+                          ]
+                        ) ;
+        sh:or           ( [ sh:class  pmovn:RoleSelectionalRestriction ;
+                            sh:path   pmovn:restriction
+                          ]
+                          [ sh:class  pmovn:SyntacticRestriction ;
+                            sh:path   pmovn:restriction
                           ]
                         ) ;
         sh:property     <https://astrea.linkeddata.es/shapes#b36290d17e6b73d5a3197cbb7fb52d53> , <https://astrea.linkeddata.es/shapes#df7c1039e40075851eca876cfb20bf10> , <https://astrea.linkeddata.es/shapes#a6b9f005371f32b6a4fc5e479f65437e> ;
@@ -824,8 +824,6 @@
         sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
         sh:qualifiedValueShape  [ sh:class  pmo:Example ] .
 
-[ sh:class  pmo:AnnotationSet ] .
-
 <https://astrea.linkeddata.es/shapes#a0005af2635b82beb671b40f25536d31>
         a               sh:NodeShape ;
         sh:property     <https://astrea.linkeddata.es/shapes#001d5afdea6e61a40a0652b3112c108c> ;
@@ -1228,6 +1226,8 @@
         sh:property     <https://astrea.linkeddata.es/shapes#d408dea1421ce2d9fe2d81cc97f72afc> ;
         sh:targetClass  pmo:SemanticRole .
 
+[ sh:class  pmo:AnnotationSet ] .
+
 <https://astrea.linkeddata.es/shapes#1ec8618902ed358c3e0ef8e8de66b01f>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://www.w3.org/ns/lemon/ontolex> ;
@@ -1328,14 +1328,6 @@
         sh:property     <https://astrea.linkeddata.es/shapes#02af0c189ae7e32d303a1c7123179626> , <https://astrea.linkeddata.es/shapes#387e4890811749377a75f517066cb277> ;
         sh:targetClass  pmovn:SyntacticRestriction .
 
-<https://astrea.linkeddata.es/shapes#bb48470fd0f5d5de5f8500fda48dfbb0>
-        a            sh:PropertyShape ;
-        rdfs:label   "subclass of"@en ;
-        sh:class     pmovn:VerbClass ;
-        sh:name      "subclass of"@en ;
-        sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:path      pmovn:subclassOf .
-
 <https://astrea.linkeddata.es/shapes#a6b9f005371f32b6a4fc5e479f65437e>
         a            sh:PropertyShape ;
         rdfs:label   "restriction"@en ;
@@ -1343,6 +1335,14 @@
         sh:name      "restriction"@en ;
         sh:nodeKind  sh:BlankNodeOrIRI ;
         sh:path      pmovn:restriction .
+
+<https://astrea.linkeddata.es/shapes#bb48470fd0f5d5de5f8500fda48dfbb0>
+        a            sh:PropertyShape ;
+        rdfs:label   "subclass of"@en ;
+        sh:class     pmovn:VerbClass ;
+        sh:name      "subclass of"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      pmovn:subclassOf .
 
 <https://astrea.linkeddata.es/shapes#86a12621f525aa8d937221f978fc0927>
         a            sh:PropertyShape ;

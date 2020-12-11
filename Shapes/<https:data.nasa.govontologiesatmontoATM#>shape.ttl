@@ -88,16 +88,6 @@
         sh:path         nas:hasTRACONcity ;
         sh:pattern      ".*" .
 
-<https://astrea.linkeddata.es/shapes#8b41ce5ab277e5de71b21f8b69aaa2f9>
-        a               sh:PropertyShape ;
-        rdfs:label      "country of registry" , "The country name of the airline registration." ;
-        sh:datatype     xsd:string ;
-        sh:description  "The country name of the airline registration." ;
-        sh:name         "country of registry" ;
-        sh:nodeKind     sh:Literal ;
-        sh:path         nas:countryOfRegistry ;
-        sh:pattern      ".*" .
-
 <https://astrea.linkeddata.es/shapes#ab97dada1d6a89cfcacbaa4cb04b7675>
         a               sh:PropertyShape ;
         rdfs:label      "manufacturer full name" , "The full name of the manufacturer." ;
@@ -118,6 +108,16 @@
         sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
         sh:path         nas:startingTime ;
         sh:pattern      "(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#8b41ce5ab277e5de71b21f8b69aaa2f9>
+        a               sh:PropertyShape ;
+        rdfs:label      "country of registry" , "The country name of the airline registration." ;
+        sh:datatype     xsd:string ;
+        sh:description  "The country name of the airline registration." ;
+        sh:name         "country of registry" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         nas:countryOfRegistry ;
+        sh:pattern      ".*" .
 
 <https://astrea.linkeddata.es/shapes#e8d5b12f186b778a062dcf67c04cac95>
         a               sh:NodeShape ;
@@ -403,6 +403,16 @@
         sh:path         atm:initiativeComments ;
         sh:pattern      ".*" .
 
+<https://astrea.linkeddata.es/shapes#89cf843b4c8454152b40ccf82c16522b>
+        a               sh:PropertyShape ;
+        rdfs:label      "departure scope" , "Links a Ground Delay Program (GDP) or a Ground Stop (GS) to a specification of the departure airport(s) participating in the traffic management initiative (TMI)." ;
+        sh:class        atm:AirportSpec ;
+        sh:description  "Links a Ground Delay Program (GDP) or a Ground Stop (GS) to a specification of the departure airport(s) participating in the traffic management initiative (TMI)." ;
+        sh:maxCount     1 ;
+        sh:name         "departure scope" ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         atm:departureScope .
+
 <https://astrea.linkeddata.es/shapes#8d62dbdad55dbc2a193183c50231f9e9>
         a               sh:PropertyShape ;
         rdfs:label      "has runway" , "Links an airport to a physical runway for that airport." ;
@@ -431,16 +441,6 @@
         sh:nodeKind     sh:Literal ;
         sh:path         nas:sidstarID ;
         sh:pattern      ".*" .
-
-<https://astrea.linkeddata.es/shapes#89cf843b4c8454152b40ccf82c16522b>
-        a               sh:PropertyShape ;
-        rdfs:label      "departure scope" , "Links a Ground Delay Program (GDP) or a Ground Stop (GS) to a specification of the departure airport(s) participating in the traffic management initiative (TMI)." ;
-        sh:class        atm:AirportSpec ;
-        sh:description  "Links a Ground Delay Program (GDP) or a Ground Stop (GS) to a specification of the departure airport(s) participating in the traffic management initiative (TMI)." ;
-        sh:maxCount     1 ;
-        sh:name         "departure scope" ;
-        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
-        sh:path         atm:departureScope .
 
 <https://astrea.linkeddata.es/shapes#bfb5af2868357d024e5af5324c527764>
         a            sh:PropertyShape ;
@@ -2763,15 +2763,6 @@
         sh:path         atm:reRouteReason ;
         sh:pattern      ".*" .
 
-<https://astrea.linkeddata.es/shapes#89d748dfde3e5fdff84ea4c533bebde9>
-        a               sh:NodeShape ;
-        rdfs:label      "Ground Stop (GS)" ;
-        sh:description  "A Ground Stop (GS) traffic management initiative (TMI). A ground stop is a procedure requiring aircraft that meet specific criteria to remain on the ground. The GS may be airport specific, related to a geographical area, or equipment related." ;
-        sh:name         "Ground Stop (GS)" ;
-        sh:nodeKind     sh:IRI ;
-        sh:property     <https://astrea.linkeddata.es/shapes#011338be8c3538b69021a1af61785cf7> , <https://astrea.linkeddata.es/shapes#ad1cc19547795cfff1bac1e8fc244f60> , <https://astrea.linkeddata.es/shapes#5b49190036b942841905f428c5633387> , <https://astrea.linkeddata.es/shapes#f1f92cb07765e475fdd320d20b59728b> , <https://astrea.linkeddata.es/shapes#89cf843b4c8454152b40ccf82c16522b> , <https://astrea.linkeddata.es/shapes#8919ecfdb189ad02d98ce0d803c22625> ;
-        sh:targetClass  atm:GroundStopTMI .
-
 <https://astrea.linkeddata.es/shapes#9b1762cf486994ac1eecbda214870952>
         a               sh:PropertyShape ;
         rdfs:label      "ICAO airport code" , "The four-letter ICAO code assignied to the airport. Contrast with the IATA and FAA airport codes." ;
@@ -2782,6 +2773,15 @@
         sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
         sh:path         nas:icaoAirportCode ;
         sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#89d748dfde3e5fdff84ea4c533bebde9>
+        a               sh:NodeShape ;
+        rdfs:label      "Ground Stop (GS)" ;
+        sh:description  "A Ground Stop (GS) traffic management initiative (TMI). A ground stop is a procedure requiring aircraft that meet specific criteria to remain on the ground. The GS may be airport specific, related to a geographical area, or equipment related." ;
+        sh:name         "Ground Stop (GS)" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#011338be8c3538b69021a1af61785cf7> , <https://astrea.linkeddata.es/shapes#ad1cc19547795cfff1bac1e8fc244f60> , <https://astrea.linkeddata.es/shapes#5b49190036b942841905f428c5633387> , <https://astrea.linkeddata.es/shapes#f1f92cb07765e475fdd320d20b59728b> , <https://astrea.linkeddata.es/shapes#89cf843b4c8454152b40ccf82c16522b> , <https://astrea.linkeddata.es/shapes#8919ecfdb189ad02d98ce0d803c22625> ;
+        sh:targetClass  atm:GroundStopTMI .
 
 <https://astrea.linkeddata.es/shapes#ec9ffb9159c63f74e8b8b5363b6a06de>
         a            sh:PropertyShape ;

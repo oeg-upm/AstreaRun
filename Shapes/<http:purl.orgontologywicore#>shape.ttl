@@ -85,6 +85,13 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         time:inTimePosition .
 
+<https://astrea.linkeddata.es/shapes#66c34eaa519bc79aa0fa03ddfd08ba63>
+        a            sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      time:years .
+
 <https://astrea.linkeddata.es/shapes#243fcfd6594e978871b743a5ffe3b681>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  foaf: ;
@@ -94,13 +101,6 @@
         sh:name           "thumbnail" ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foaf:thumbnail .
-
-<https://astrea.linkeddata.es/shapes#66c34eaa519bc79aa0fa03ddfd08ba63>
-        a            sh:PropertyShape ;
-        sh:maxCount  1 ;
-        sh:minCount  1 ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      time:years .
 
 <https://astrea.linkeddata.es/shapes#fd7653ba9a62527d8598e36f22b52215>
         a                 sh:PropertyShape ;
@@ -146,15 +146,6 @@
         sh:nodeKind  sh:Literal ;
         sh:path      dc:date .
 
-<https://astrea.linkeddata.es/shapes#1377a804ab16f79f4e60f3db4f2f150d>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://purl.org/ontology/wi/core#> ;
-        rdfs:label        "has overall weight"@en , "This weight reflects the overall interest in a topic and should be different from the actual weight of interest."@en ;
-        sh:description    "This weight reflects the overall interest in a topic and should be different from the actual weight of interest."@en ;
-        sh:maxCount       1 ;
-        sh:name           "has overall weight"@en ;
-        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI .
-
 <https://astrea.linkeddata.es/shapes#21ddcd1406ba873d28fafc724fdb6de9>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  foaf: ;
@@ -163,6 +154,15 @@
         sh:name           "sha1sum (hex)" ;
         sh:nodeKind       sh:Literal ;
         sh:path           foaf:sha1 .
+
+<https://astrea.linkeddata.es/shapes#1377a804ab16f79f4e60f3db4f2f150d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/wi/core#> ;
+        rdfs:label        "has overall weight"@en , "This weight reflects the overall interest in a topic and should be different from the actual weight of interest."@en ;
+        sh:description    "This weight reflects the overall interest in a topic and should be different from the actual weight of interest."@en ;
+        sh:maxCount       1 ;
+        sh:name           "has overall weight"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI .
 
 <https://astrea.linkeddata.es/shapes#bd851bd791b544c23ccdcb0180fd0e3b>
         a               sh:NodeShape ;
@@ -592,11 +592,6 @@
         sh:name         "product" ;
         sh:nodeKind     sh:BlankNodeOrIRI .
 
-<https://astrea.linkeddata.es/shapes#09ce7e2467681ec8b429277fee94b517>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:path      event:produced_in .
-
 <https://astrea.linkeddata.es/shapes#f70ce2480f0ce737b96a0b0bc258d6a6>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  wo: ;
@@ -607,6 +602,17 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           wo:weight .
 
+<https://astrea.linkeddata.es/shapes#6ace7559c09873d57bb26d2909a563c6>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c882664618b695f2904264820a0c87a9> ;
+        sh:targetClass  geo:SpatialThing .
+
+<https://astrea.linkeddata.es/shapes#09ce7e2467681ec8b429277fee94b517>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:produced_in .
+
 <https://astrea.linkeddata.es/shapes#a0a1b20d2fffb49af882535b54f99030>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  foaf: ;
@@ -616,12 +622,6 @@
         sh:name           "Skype ID" ;
         sh:nodeKind       sh:Literal ;
         sh:path           foaf:skypeID .
-
-<https://astrea.linkeddata.es/shapes#6ace7559c09873d57bb26d2909a563c6>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:property     <https://astrea.linkeddata.es/shapes#c882664618b695f2904264820a0c87a9> ;
-        sh:targetClass  geo:SpatialThing .
 
 <https://astrea.linkeddata.es/shapes#3e18b0f9fac2d3bdcd51a2fdadcbda53>
         a               sh:NodeShape ;
@@ -666,6 +666,14 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foaf:interest .
 
+<https://astrea.linkeddata.es/shapes#42bd267915a2621be5a1348b7f04409e>
+        a               sh:NodeShape ;
+        rdfs:label      "Dataset" ;
+        sh:description  "a statistical dataset" ;
+        sh:name         "Dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  scovo:Dataset .
+
 <https://astrea.linkeddata.es/shapes#04601be35c7c14db95ba3030ca69bba4>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  foaf: ;
@@ -677,14 +685,6 @@
         sh:name           "MSN chat ID" ;
         sh:nodeKind       sh:Literal , sh:IRIOrLiteral ;
         sh:path           foaf:msnChatID .
-
-<https://astrea.linkeddata.es/shapes#42bd267915a2621be5a1348b7f04409e>
-        a               sh:NodeShape ;
-        rdfs:label      "Dataset" ;
-        sh:description  "a statistical dataset" ;
-        sh:name         "Dataset" ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  scovo:Dataset .
 
 <https://astrea.linkeddata.es/shapes#bbd81b2a447a4f83adb7050dd5ef40f9>
         a               sh:PropertyShape ;
@@ -1256,35 +1256,6 @@
         sh:nodeKind     sh:Literal ;
         sh:path         time:day .
 
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:before
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   event:time
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:hasTime
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:after
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:before
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   event:time
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:hasTime
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:after
-                                ] ;
-                     rdf:rest   ()
-                   ] .
-
 <https://astrea.linkeddata.es/shapes#c9d36d72813a9f9d52557d884a394687>
         a               sh:PropertyShape ;
         rdfs:label      "If a proper interval T1 is intervalAfter another proper interval T2, then the beginning of T1 is after the end of T2."@en , "interval after"@en , "Si un intervalo propio T1 es posterior a otro intervalo propio T2, entonces el principio de T1 está después que el final de T2." , "intervalo posterior"@es ;
@@ -1358,7 +1329,7 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
 <https://astrea.linkeddata.es/report/1485748542>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
-                "2020-11-20 16:10:50.147  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.org:80: The target server failed to respond2020-11-20 16:10:50.147  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.org:80\n" ;
+                "2020-12-11 19:42:44.274  INFO 1 --- [io-8080-exec-10] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.org:80: The target server failed to respond2020-12-11 19:42:44.274  INFO 1 --- [io-8080-exec-10] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.org:80\n" ;
         <https://w3id.org/def/astrea#source>
                 "http://purl.org/ontology/wo/core" ;
         <https://w3id.org/def/astrea#statusCode>
@@ -1930,6 +1901,17 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      time:second .
 
+<https://astrea.linkeddata.es/shapes#f2526c45dc254ba90dc191589bdcc37f>
+        a                sh:PropertyShape ;
+        rdfs:label       "The number of the day within the year"@en , "day of year"@en , "día del año"@es , "El número de día en el año."@es ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "El número de día en el año."@es , "The number of the day within the year"@en ;
+        sh:minInclusive  0 ;
+        sh:name          "día del año"@es , "day of year"@en ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          time:dayOfYear ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
 <https://astrea.linkeddata.es/shapes#147c715eadc8092c3ea626a8d4488d35>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  foaf: ;
@@ -1950,16 +1932,34 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:path         time:hasXSDDuration ;
         sh:pattern      "-?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S))))" .
 
-<https://astrea.linkeddata.es/shapes#f2526c45dc254ba90dc191589bdcc37f>
-        a                sh:PropertyShape ;
-        rdfs:label       "The number of the day within the year"@en , "day of year"@en , "día del año"@es , "El número de día en el año."@es ;
-        sh:datatype      xsd:nonNegativeInteger ;
-        sh:description   "El número de día en el año."@es , "The number of the day within the year"@en ;
-        sh:minInclusive  0 ;
-        sh:name          "día del año"@es , "day of year"@en ;
-        sh:nodeKind      sh:Literal ;
-        sh:path          time:dayOfYear ;
-        sh:pattern       "[\\-+]?[0-9]+" .
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:before
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   event:time
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:hasTime
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:after
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:before
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   event:time
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:hasTime
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:after
+                                ] ;
+                     rdf:rest   ()
+                   ] .
 
 <https://astrea.linkeddata.es/shapes#3ff72c89256c1921ca6727c5aac88714>
         a                 sh:PropertyShape ;
@@ -2143,7 +2143,7 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
 <https://astrea.linkeddata.es/report/0939339906>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
-                "2020-11-20 16:10:47.673  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.org:80: The target server failed to respond2020-11-20 16:10:47.673  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.org:80\n2020-11-20 16:10:49.444  WARN 1 --- [nio-8080-exec-7] o.a.h.c.protocol.ResponseProcessCookies  : Invalid cookie header: \"Set-Cookie: SESS972ddc872c5c8bd5c673d923b3fb5ebf=2f19e81d0c47826a522db1574cecef5d; expires=Sun, 13 Dec 2020 19:55:23 GMT; path=/; domain=.vocab.deri.ie\". Invalid 'expires' attribute: Sun, 13 Dec 2020 19:55:23 GMT\n" ;
+                "2020-12-11 19:42:41.523  INFO 1 --- [io-8080-exec-10] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.org:80: The target server failed to respond2020-12-11 19:42:41.524  INFO 1 --- [io-8080-exec-10] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.org:80\n2020-12-11 19:42:43.490  WARN 1 --- [io-8080-exec-10] o.a.h.c.protocol.ResponseProcessCookies  : Invalid cookie header: \"Set-Cookie: SESS972ddc872c5c8bd5c673d923b3fb5ebf=e68c120083cd6c1e79ef899c60447919; expires=Sun, 03 Jan 2021 23:29:09 GMT; path=/; domain=.vocab.deri.ie\". Invalid 'expires' attribute: Sun, 03 Jan 2021 23:29:09 GMT\n" ;
         <https://w3id.org/def/astrea#source>
                 "http://purl.org/NET/scovo" ;
         <https://w3id.org/def/astrea#statusCode>

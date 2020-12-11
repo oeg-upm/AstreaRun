@@ -100,6 +100,15 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      :numericDuration .
 
+<https://astrea.linkeddata.es/shapes#3f2d9c5087e98a48aa4682b9baf493dd>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://www.demcare.eu/ontologies/demlab.owl#hasClinicalDiagnosis> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <http://www.demcare.eu/ontologies/demlab.owl#DiagnosisType> ] ;
+        sh:qualifiedValueShape  [ sh:class  <http://www.demcare.eu/ontologies/demlab.owl#DiagnosisType> ] .
+
 <https://astrea.linkeddata.es/shapes#3e18b0f9fac2d3bdcd51a2fdadcbda53>
         a               sh:NodeShape ;
         rdfs:label      "Temporal entity"@en , "entidad temporal"@es ;
@@ -109,15 +118,6 @@
         sh:or           _:b0 ;
         sh:property     <https://astrea.linkeddata.es/shapes#bbd81b2a447a4f83adb7050dd5ef40f9> , <https://astrea.linkeddata.es/shapes#2a6076262293386b0f5a33236dd1e1bc> , <https://astrea.linkeddata.es/shapes#aac0fca4f06adcfd03a59ed4e468ce5d> , <https://astrea.linkeddata.es/shapes#8d26f56ec9e75266434f08dc7f5c2047> , <https://astrea.linkeddata.es/shapes#2532894d090d3f1667f7f7b6da65df98> , <https://astrea.linkeddata.es/shapes#75b684fc1c2b1d96cee32ddf1e4e2934> ;
         sh:targetClass  :TemporalEntity .
-
-<https://astrea.linkeddata.es/shapes#3f2d9c5087e98a48aa4682b9baf493dd>
-        a                       sh:PropertyShape ;
-        sh:nodeKind             sh:IRIOrLiteral ;
-        sh:path                 <http://www.demcare.eu/ontologies/demlab.owl#hasClinicalDiagnosis> ;
-        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
-        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
-        sh:qualifiedValueShape  [ sh:class  <http://www.demcare.eu/ontologies/demlab.owl#DiagnosisType> ] ;
-        sh:qualifiedValueShape  [ sh:class  <http://www.demcare.eu/ontologies/demlab.owl#DiagnosisType> ] .
 
 <https://astrea.linkeddata.es/shapes#cb5874712e699cb9d7e8ddac3c8596e0>
         a               sh:NodeShape ;
@@ -152,13 +152,6 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.demcare.eu/ontologies/demlab.owl#measuredData> .
 
-<https://astrea.linkeddata.es/shapes#8b82278178b01acfed6d902b883dd791>
-        a            sh:PropertyShape ;
-        sh:maxCount  "0"^^xsd:nonNegativeInteger ;
-        sh:minCount  "0"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      :day .
-
 <https://astrea.linkeddata.es/shapes#900d286b872c375c48e3f0a772ccd9c7>
         a               sh:PropertyShape ;
         rdfs:label      "length of, or element of the length of, a temporal extent expressed in hours"@en , "Longitud de, o elemento de la longitud de, una extensión temporal expresada en horas."@es , "hours duration"@en , "duración en horas"@es ;
@@ -168,6 +161,13 @@
         sh:nodeKind     sh:Literal ;
         sh:path         :hours ;
         sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#8b82278178b01acfed6d902b883dd791>
+        a            sh:PropertyShape ;
+        sh:maxCount  "0"^^xsd:nonNegativeInteger ;
+        sh:minCount  "0"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :day .
 
 <https://astrea.linkeddata.es/shapes#875e318a7a80b9f6b5f03d85120610d7>
         a            sh:PropertyShape ;
@@ -1045,13 +1045,6 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           dcterms:accrualMethod .
 
-<https://astrea.linkeddata.es/shapes#61f497fb7b893646fd8bb999d9696ece>
-        a               sh:NodeShape ;
-        sh:description  "Explore stress level"@en ;
-        sh:nodeKind     sh:IRI ;
-        sh:property     <https://astrea.linkeddata.es/shapes#69f5aab928a27c966ed55de2ec42b1e5> ;
-        sh:targetClass  <http://www.demcare.eu/ontologies/demlab.owl#StressData> .
-
 <https://astrea.linkeddata.es/shapes#9999dd05ca9112eae827c5991c7500bb>
         a               sh:NodeShape ;
         sh:description  "(MonoTask) The clinician asks the participant to walk 4 meters across the room, to turn and then to come back (total walking distance: 8m).\n\nThis task is used for assessing:\n- Gait: walking speed, step length, etc.\n- Latency: time of latency between the end of instructions (stimulation) and the beginning of the task\n- Stress level"@en ;
@@ -1082,6 +1075,13 @@
 <https://astrea.linkeddata.es/shapes#95367c1d6b9f60d610de8a964de33047>
         a         sh:PropertyShape ;
         sh:class  foaf:Project .
+
+<https://astrea.linkeddata.es/shapes#61f497fb7b893646fd8bb999d9696ece>
+        a               sh:NodeShape ;
+        sh:description  "Explore stress level"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#69f5aab928a27c966ed55de2ec42b1e5> ;
+        sh:targetClass  <http://www.demcare.eu/ontologies/demlab.owl#StressData> .
 
 <https://astrea.linkeddata.es/shapes#ba9842d28b48f24c97704865479b7e80>
         a               sh:NodeShape ;
@@ -1301,7 +1301,7 @@
         a               sh:NodeShape ;
         sh:description  "Gait assessment and impact of a cognitive activity on gait performance"@en ;
         sh:nodeKind     sh:IRI ;
-        sh:property     <https://astrea.linkeddata.es/shapes#d0a92c5469a19a0555b07fddcc8e9bd1> , <https://astrea.linkeddata.es/shapes#e146f62ae77e9e86e2f4fb76ddbcf6fa> , <https://astrea.linkeddata.es/shapes#cb66b86b2f62fe7b4f4d38bea81e100b> , <https://astrea.linkeddata.es/shapes#322c638a7447eea5728f56ddb908ca00> , <https://astrea.linkeddata.es/shapes#c8d5e76eb02bd18cbb6d3e439b7dbe16> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#322c638a7447eea5728f56ddb908ca00> , <https://astrea.linkeddata.es/shapes#e146f62ae77e9e86e2f4fb76ddbcf6fa> , <https://astrea.linkeddata.es/shapes#c8d5e76eb02bd18cbb6d3e439b7dbe16> , <https://astrea.linkeddata.es/shapes#cb66b86b2f62fe7b4f4d38bea81e100b> , <https://astrea.linkeddata.es/shapes#d0a92c5469a19a0555b07fddcc8e9bd1> ;
         sh:targetClass  <http://www.demcare.eu/ontologies/demlab.owl#GaitData> .
 
 <https://astrea.linkeddata.es/shapes#203c6db8a73c7732f2bbe00ba1273a34>
@@ -1329,29 +1329,6 @@
         sh:nodeKind     sh:IRI ;
         sh:property     <https://astrea.linkeddata.es/shapes#0651f01c1d2db1e8c1245a738814f2b0> , <https://astrea.linkeddata.es/shapes#0dc984c9f8ddaf19f860107dec95626d> , <https://astrea.linkeddata.es/shapes#cb187afc2df1c203ad18dfb4fcc36d98> , <https://astrea.linkeddata.es/shapes#ba1407d86ce97764f69080767deb6d81> , <https://astrea.linkeddata.es/shapes#c1cba833a49e314941bdd409d73f346e> , <https://astrea.linkeddata.es/shapes#5a7736370599e1600bea299952739b96> ;
         sh:targetClass  <http://www.demcare.eu/ontologies/demlab.owl#VoiceData> .
-
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   :before
-                   ] ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   :hasTime
-                   ] ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   :after
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   :before
-                                ] ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   :hasTime
-                                ] ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   :after
-                                ] ;
-                     rdf:rest   ()
-                   ] .
 
 <https://astrea.linkeddata.es/shapes#c5d266981c6d2193321af758e29ba921>
         a                 sh:NodeShape ;
@@ -2160,18 +2137,18 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.demcare.eu/ontologies/demlab.owl#involvesTask> .
 
-<https://astrea.linkeddata.es/shapes#4867b27706b1ad61e7b534678f3ddb91>
-        a            sh:PropertyShape ;
-        sh:hasValue  :unitMonth ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      :unitType .
-
 <https://astrea.linkeddata.es/shapes#f2bca439737a217a5a883cd9d2a7cd6f>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:nonNegativeInteger ;
         sh:minCount  "1"^^xsd:nonNegativeInteger ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.demcare.eu/ontologies/demlab.owl#fabScore> .
+
+<https://astrea.linkeddata.es/shapes#4867b27706b1ad61e7b534678f3ddb91>
+        a            sh:PropertyShape ;
+        sh:hasValue  :unitMonth ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :unitType .
 
 <https://astrea.linkeddata.es/report/0620946147>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
@@ -3243,6 +3220,29 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         :intervalBefore .
 
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   :before
+                   ] ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   :hasTime
+                   ] ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   :after
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   :before
+                                ] ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   :hasTime
+                                ] ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   :after
+                                ] ;
+                     rdf:rest   ()
+                   ] .
+
 <https://astrea.linkeddata.es/shapes#254bf0f7cb396fa2d84e9e6a8adafb9c>
         a               sh:NodeShape ;
         sh:description  "- Three bills (Electricity/Gaz/Phone) are proposed. The account balance is given. \n- The participant has to establish the amount balance after having taken into account the three bills."@en ;
@@ -3644,15 +3644,11 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:path         :hasXSDDuration ;
         sh:pattern      "-?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S))))" .
 
-<https://astrea.linkeddata.es/shapes#a9557cbafb854e7ffcdc46ca0d24b6e8>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  foaf: ;
-        rdfs:label        "Group" ;
-        sh:description    "A class of Agents." ;
-        sh:name           "Group" ;
-        sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#580659d3d4d3c9974e9dc36d00e6e6e8> ;
-        sh:targetClass    foaf:Group .
+<https://astrea.linkeddata.es/shapes#0892fd503d1cf030ba9951da0e377e20>
+        a               sh:NodeShape ;
+        sh:description  "- 4 types of drugs are proposed to the participant. \n- The participant has to respect the posology prescribed (2 types of drugs at different moment of the day) and the date (day and moment of the day)."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.demcare.eu/ontologies/demlab.owl#PrepareDrugBoxTask> .
 
 <https://astrea.linkeddata.es/shapes#d017154b31e57561723b7f43691140e9>
         a               sh:NodeShape ;
@@ -3662,11 +3658,15 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:property     <https://astrea.linkeddata.es/shapes#86dc64c93566a493e5a3ceb885125516> , <https://astrea.linkeddata.es/shapes#ce8bb90f64bb68b362c9365ce22668e1> , <https://astrea.linkeddata.es/shapes#f2bca439737a217a5a883cd9d2a7cd6f> , <https://astrea.linkeddata.es/shapes#f67f6c58854f10708e0fd4067d01637f> , <https://astrea.linkeddata.es/shapes#7aeebc0a22b8db80a69f2d822e75d712> ;
         sh:targetClass  <http://www.demcare.eu/ontologies/demlab.owl#CognitiveAbilitiesAssessment> .
 
-<https://astrea.linkeddata.es/shapes#0892fd503d1cf030ba9951da0e377e20>
-        a               sh:NodeShape ;
-        sh:description  "- 4 types of drugs are proposed to the participant. \n- The participant has to respect the posology prescribed (2 types of drugs at different moment of the day) and the date (day and moment of the day)."@en ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://www.demcare.eu/ontologies/demlab.owl#PrepareDrugBoxTask> .
+<https://astrea.linkeddata.es/shapes#a9557cbafb854e7ffcdc46ca0d24b6e8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "Group" ;
+        sh:description    "A class of Agents." ;
+        sh:name           "Group" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#580659d3d4d3c9974e9dc36d00e6e6e8> ;
+        sh:targetClass    foaf:Group .
 
 <https://astrea.linkeddata.es/shapes#147c715eadc8092c3ea626a8d4488d35>
         a                 sh:PropertyShape ;
