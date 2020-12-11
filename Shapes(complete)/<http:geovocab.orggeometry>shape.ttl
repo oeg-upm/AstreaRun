@@ -1,0 +1,226 @@
+@prefix :      <http://geovocab.org/mappings/dbpedia-fao-mapping#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#f91552f706f0f3487d64e33d443b2669>
+        a               sh:NodeShape ;
+        rdfs:label      "Geometry" ;
+        sh:description  "Super-class grouping all geometrical representations (also ones in non-RDF formats, such as KML, GML, WKT...)." ;
+        sh:name         "Geometry" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5072f2202ef92e8c7d011f7b0b9e3103> ;
+        sh:targetClass  <http://geovocab.org/geometry#Geometry> .
+
+<https://astrea.linkeddata.es/shapes#1feb0edc2cd86d5c96f10eeda19009fa>
+        a               sh:NodeShape ;
+        rdfs:label      "MultiPolygon" ;
+        sh:description  "Describes a geometric shape composed of several Polygon resources." ;
+        sh:name         "MultiPolygon" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#0025d87365a94c8b18f94db1a6799a5e> ;
+        sh:targetClass  <http://geovocab.org/geometry#MultiPolygon> .
+
+<https://astrea.linkeddata.es/shapes#00107c24eac18e7660615274e64ec04f>
+        a               sh:PropertyShape ;
+        rdfs:label      "Point member" , "Links a Point simple geometry to a MultiPoint composite Geometry." ;
+        sh:class        <http://www.w3.org/2003/01/geo/wgs84_pos#Point> ;
+        sh:description  "Links a Point simple geometry to a MultiPoint composite Geometry." ;
+        sh:name         "Point member" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://geovocab.org/geometry#pointMember> .
+
+<https://astrea.linkeddata.es/shapes#4b6361646aed524b2560847d7244e475>
+        a               sh:NodeShape ;
+        rdfs:label      "MultiLineString" ;
+        sh:description  "Describes a geometric shape composed of several LineString resources." ;
+        sh:name         "MultiLineString" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#9230fc87a2e5488e85036a349d0b8e52> ;
+        sh:targetClass  <http://geovocab.org/geometry#MultiLineString> .
+
+<https://astrea.linkeddata.es/shapes#c2fbfaa7cb14485153b9409239d1f3d4>
+        a               sh:PropertyShape ;
+        rdfs:label      "boundary" , "Super-property that groups all properties defining a polygon's boundaries." ;
+        sh:class        <http://geovocab.org/geometry#LinearRing> ;
+        sh:description  "Super-property that groups all properties defining a polygon's boundaries." ;
+        sh:name         "boundary" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://geovocab.org/geometry#boundary> .
+
+<https://astrea.linkeddata.es/shapes#ebc53f2c105e71fa2ebb69a617410a52>
+        a               sh:PropertyShape ;
+        rdfs:label      "exterior" , "Defines a polygon's outer boundary." ;
+        sh:class        <http://geovocab.org/geometry#LinearRing> ;
+        sh:description  "Defines a polygon's outer boundary." ;
+        sh:name         "exterior" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://geovocab.org/geometry#exterior> .
+
+<https://astrea.linkeddata.es/shapes#25ac6ff5a5dc65cf3c412b443e441898>
+        a               sh:NodeShape ;
+        rdfs:label      "LineString" ;
+        sh:description  "Represents a series of points connected by straight lines." ;
+        sh:name         "LineString" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://geovocab.org/geometry#LineString> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#4d401d4a928296cbc486c8e5216e6571> , <https://astrea.linkeddata.es/shapes#ebc53f2c105e71fa2ebb69a617410a52> , <https://astrea.linkeddata.es/shapes#72e18db1e8891b1bdea4c9d8cc4cd25c> , <https://astrea.linkeddata.es/shapes#25ac6ff5a5dc65cf3c412b443e441898> , <https://astrea.linkeddata.es/shapes#5072f2202ef92e8c7d011f7b0b9e3103> , <https://astrea.linkeddata.es/shapes#c2fbfaa7cb14485153b9409239d1f3d4> , <https://astrea.linkeddata.es/shapes#f91552f706f0f3487d64e33d443b2669> , <https://astrea.linkeddata.es/shapes#a62f1a2e37be8f014437893d1457bded> , <https://astrea.linkeddata.es/shapes#3dedfbdef37b137990c945cd0334f595> , <https://astrea.linkeddata.es/shapes#a2c361ddcbaacc5073863adf24b863c0> , <https://astrea.linkeddata.es/shapes#1861dcd4ca9f4cc0c101dcd8a774c075> , <https://astrea.linkeddata.es/shapes#6dda5207d8856057fb887183797583bb> , <https://astrea.linkeddata.es/shapes#af9064f742592f991ddc0fc2ae0731ef> , <https://astrea.linkeddata.es/shapes#1feb0edc2cd86d5c96f10eeda19009fa> , <https://astrea.linkeddata.es/shapes#3ef793712378e097aac823894a277e63> , <https://astrea.linkeddata.es/shapes#942679b6f9bcc70ce455e642ac989294> , <https://astrea.linkeddata.es/shapes#00107c24eac18e7660615274e64ec04f> , <https://astrea.linkeddata.es/shapes#0025d87365a94c8b18f94db1a6799a5e> , <https://astrea.linkeddata.es/shapes#4b6361646aed524b2560847d7244e475> , <https://astrea.linkeddata.es/shapes#9230fc87a2e5488e85036a349d0b8e52> , <https://astrea.linkeddata.es/shapes#b8025e39e295acb4033e6b6c40525b5f> , <https://astrea.linkeddata.es/shapes#74d4ded2da4fa91fe01bac3e34120142> , <https://astrea.linkeddata.es/shapes#cfdac951b2944911d7bd0d6fe28a3842> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/01863225137> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#942679b6f9bcc70ce455e642ac989294>
+        a               sh:PropertyShape ;
+        rdfs:label      "As WKT" , "WKT serialization of the geometry." ;
+        sh:description  "WKT serialization of the geometry." ;
+        sh:name         "As WKT" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://geovocab.org/geometry#asWKT> .
+
+<https://astrea.linkeddata.es/shapes#72e18db1e8891b1bdea4c9d8cc4cd25c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://geovocab.org/geometry#interior> .
+
+<https://astrea.linkeddata.es/shapes#cfdac951b2944911d7bd0d6fe28a3842>
+        a               sh:NodeShape ;
+        rdfs:label      "Geometry Collection" ;
+        sh:description  "Super-class grouping all composite geometrical representations." ;
+        sh:name         "Geometry Collection" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://geovocab.org/geometry#GeometryCollection> .
+
+<https://astrea.linkeddata.es/shapes#a62f1a2e37be8f014437893d1457bded>
+        a               sh:PropertyShape ;
+        rdfs:label      "geometry" , "Relates a resource to its geometric shape." ;
+        sh:class        <http://geovocab.org/geometry#Geometry> ;
+        sh:description  "Relates a resource to its geometric shape." ;
+        sh:name         "geometry" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://geovocab.org/geometry#geometry> .
+
+<https://astrea.linkeddata.es/report/01863225137>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://geovocab.org/mappings/geometry" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#5072f2202ef92e8c7d011f7b0b9e3103>
+        a               sh:PropertyShape ;
+        rdfs:label      "bounding box" , "Relates a Geometry to its Bounding Box." ;
+        sh:class        <http://geovocab.org/geometry#BoundingBox> ;
+        sh:description  "Relates a Geometry to its Bounding Box." ;
+        sh:name         "bounding box" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://geovocab.org/geometry#bbox> .
+
+<https://astrea.linkeddata.es/shapes#3ef793712378e097aac823894a277e63>
+        a               sh:NodeShape ;
+        rdfs:label      "Point" ;
+        sh:name         "Point" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1861dcd4ca9f4cc0c101dcd8a774c075> ;
+        sh:targetClass  <http://www.w3.org/2003/01/geo/wgs84_pos#Point> .
+
+<https://astrea.linkeddata.es/shapes#af9064f742592f991ddc0fc2ae0731ef>
+        a               sh:PropertyShape ;
+        rdfs:label      "position list" , "Relates a LineString or LinearRing to the points that define them." ;
+        sh:description  "Relates a LineString or LinearRing to the points that define them." ;
+        sh:name         "position list" ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#9230fc87a2e5488e85036a349d0b8e52>
+        a               sh:PropertyShape ;
+        rdfs:label      "LineString member" , "Links a LineString simple geometry to a MultiLineString composite geometry." ;
+        sh:class        <http://geovocab.org/geometry#LineString> ;
+        sh:description  "Links a LineString simple geometry to a MultiLineString composite geometry." ;
+        sh:name         "LineString member" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://geovocab.org/geometry#lineStringMember> .
+
+<https://astrea.linkeddata.es/shapes#3dedfbdef37b137990c945cd0334f595>
+        a               sh:PropertyShape ;
+        rdfs:label      "interior" , "Defines an polygon's boundary within its outer boundary, i.e. a polygon with 'holes' in it." ;
+        sh:class        <http://geovocab.org/geometry#LinearRing> ;
+        sh:description  "Defines an polygon's boundary within its outer boundary, i.e. a polygon with 'holes' in it." ;
+        sh:name         "interior" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://geovocab.org/geometry#interior> .
+
+<https://astrea.linkeddata.es/shapes#6dda5207d8856057fb887183797583bb>
+        a               sh:NodeShape ;
+        rdfs:label      "LinearRing" ;
+        sh:description  "Represents a series of points connected by straight lines, which form a closed shape. Last point must be the same as the first point." ;
+        sh:name         "LinearRing" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://geovocab.org/geometry#LinearRing> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#b8025e39e295acb4033e6b6c40525b5f>
+        a               sh:NodeShape ;
+        rdfs:label      "Polygon" ;
+        sh:description  "A closed area defined by an exterior boundary, and optionally one or more interior boundaries." ;
+        sh:name         "Polygon" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#3dedfbdef37b137990c945cd0334f595> , <https://astrea.linkeddata.es/shapes#72e18db1e8891b1bdea4c9d8cc4cd25c> , <https://astrea.linkeddata.es/shapes#4d401d4a928296cbc486c8e5216e6571> , <https://astrea.linkeddata.es/shapes#c2fbfaa7cb14485153b9409239d1f3d4> , <https://astrea.linkeddata.es/shapes#ebc53f2c105e71fa2ebb69a617410a52> ;
+        sh:targetClass  <http://geovocab.org/geometry#Polygon> .
+
+<https://astrea.linkeddata.es/shapes#74d4ded2da4fa91fe01bac3e34120142>
+        a               sh:NodeShape ;
+        rdfs:label      "Bounding Box" ;
+        sh:description  "Represents a bounding box composed by four line segments." ;
+        sh:name         "Bounding Box" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://geovocab.org/geometry#BoundingBox> .
+
+<https://astrea.linkeddata.es/shapes#0025d87365a94c8b18f94db1a6799a5e>
+        a               sh:PropertyShape ;
+        rdfs:label      "Polygon member" , "Links a Polygon simple geometry to a MultiPolygon composite geometry." ;
+        sh:class        <http://geovocab.org/geometry#Polygon> ;
+        sh:description  "Links a Polygon simple geometry to a MultiPolygon composite geometry." ;
+        sh:name         "Polygon member" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://geovocab.org/geometry#polygonMember> .
+
+<https://astrea.linkeddata.es/shapes#4d401d4a928296cbc486c8e5216e6571>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://geovocab.org/geometry#exterior> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <http://geovocab.org/geometry#LinearRing> ] .
+
+<https://astrea.linkeddata.es/shapes#1861dcd4ca9f4cc0c101dcd8a774c075>
+        a               sh:PropertyShape ;
+        rdfs:label      "part of" , "Relates a point to a geometric shape's boundary." ;
+        sh:class        <http://geovocab.org/geometry#LineString> ;
+        sh:description  "Relates a point to a geometric shape's boundary." ;
+        sh:name         "part of" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://geovocab.org/geometry#partOf> .
+
+<https://astrea.linkeddata.es/shapes#a2c361ddcbaacc5073863adf24b863c0>
+        a               sh:NodeShape ;
+        rdfs:label      "MultiPoint" ;
+        sh:description  "Describes a collection of Point resources, which define a resource's geometric representation." ;
+        sh:name         "MultiPoint" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#00107c24eac18e7660615274e64ec04f> ;
+        sh:targetClass  <http://geovocab.org/geometry#MultiPoint> .

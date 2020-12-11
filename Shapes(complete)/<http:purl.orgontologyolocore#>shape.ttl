@@ -1,0 +1,147 @@
+@prefix :      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann:  <http://purl.org/vocab/vann/> .
+@prefix vs:    <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#1f45c460471d853114756e20a64f0434> , <https://astrea.linkeddata.es/shapes#7a4d146903a4ae9cdb0c19eebe8b5990> , <https://astrea.linkeddata.es/shapes#43084f9408000c6e755a1ca5708193d4> , <https://astrea.linkeddata.es/shapes#4726250e1ac98f4b09b9f5aebb7d4a0f> , <https://astrea.linkeddata.es/shapes#364b504a53a3cb85c07c49d89e35bcc1> , <https://astrea.linkeddata.es/shapes#5e7c59384bafd36e0e342132bb00d1ff> , <https://astrea.linkeddata.es/shapes#95f343e3c7d5be12019e1e9e01f8b7b1> , <https://astrea.linkeddata.es/shapes#526f4b0dbceafe745daf122dc49ec079> , <https://astrea.linkeddata.es/shapes#34d1afe4e7806cfa4f93b45bdbbd801b> , <https://astrea.linkeddata.es/shapes#9f2b1fba53e8cd65e73f5181c2c9b836> , <https://astrea.linkeddata.es/shapes#f695eeaf241d9a3b8845964211ae7a9a> , <https://astrea.linkeddata.es/shapes#9032382281155a313c1481dcf4008c76> , <https://astrea.linkeddata.es/shapes#c65a50ba36b6a4826462613a6447bc96> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/0455406837> , <https://astrea.linkeddata.es/report/747863238> .
+
+<https://astrea.linkeddata.es/report/0455406837>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/dc/elements/1.1/" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#4726250e1ac98f4b09b9f5aebb7d4a0f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/olo/core#> ;
+        rdfs:label        "has length"@en , "The length of an ordered list."@en ;
+        sh:datatype       xsd:nonNegativeInteger ;
+        sh:description    "The length of an ordered list."@en ;
+        sh:maxCount       1 ;
+        sh:minInclusive   0 ;
+        sh:name           "has length"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
+        sh:path           <http://purl.org/ontology/olo/core#length> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/report/747863238>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.w3.org/2003/06/sw-vocab-status/ns" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#364b504a53a3cb85c07c49d89e35bcc1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/olo/core#> ;
+        rdfs:label        "An index of a slot in an ordered list."@en , "has index"@en ;
+        sh:datatype       xsd:positiveInteger ;
+        sh:description    "An index of a slot in an ordered list."@en ;
+        sh:maxCount       1 ;
+        sh:minInclusive   1 ;
+        sh:name           "has index"@en ;
+        sh:nodeKind       sh:Literal , sh:IRIOrLiteral ;
+        sh:path           <http://purl.org/ontology/olo/core#index> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#f695eeaf241d9a3b8845964211ae7a9a>
+        a            sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral .
+
+<https://astrea.linkeddata.es/shapes#7a4d146903a4ae9cdb0c19eebe8b5990>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/olo/core#> ;
+        rdfs:label        "Slot"@en ;
+        sh:description    "A slot in an ordered list with a fixed index."@en ;
+        sh:name           "Slot"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#9f2b1fba53e8cd65e73f5181c2c9b836> , <https://astrea.linkeddata.es/shapes#43084f9408000c6e755a1ca5708193d4> , <https://astrea.linkeddata.es/shapes#34d1afe4e7806cfa4f93b45bdbbd801b> , <https://astrea.linkeddata.es/shapes#1f45c460471d853114756e20a64f0434> , <https://astrea.linkeddata.es/shapes#364b504a53a3cb85c07c49d89e35bcc1> ;
+        sh:targetClass    <http://purl.org/ontology/olo/core#Slot> .
+
+<https://astrea.linkeddata.es/shapes#34d1afe4e7806cfa4f93b45bdbbd801b>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ontology/olo/core#index> .
+
+<https://astrea.linkeddata.es/shapes#95f343e3c7d5be12019e1e9e01f8b7b1>
+        a               sh:PropertyShape ;
+        sh:inversePath  <http://purl.org/ontology/olo/core#previous> ;
+        sh:maxCount     1 ;
+        sh:nodeKind     sh:IRIOrLiteral .
+
+<https://astrea.linkeddata.es/shapes#1f45c460471d853114756e20a64f0434>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ontology/olo/core#ordered_list> .
+
+<https://astrea.linkeddata.es/shapes#5e7c59384bafd36e0e342132bb00d1ff>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/olo/core#> ;
+        rdfs:label        "Ordered List"@en ;
+        sh:description    "An ordered list with a given length an indexed items."@en ;
+        sh:name           "Ordered List"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#526f4b0dbceafe745daf122dc49ec079> , <https://astrea.linkeddata.es/shapes#4726250e1ac98f4b09b9f5aebb7d4a0f> , <https://astrea.linkeddata.es/shapes#c65a50ba36b6a4826462613a6447bc96> ;
+        sh:targetClass    <http://purl.org/ontology/olo/core#OrderedList> .
+
+<https://astrea.linkeddata.es/shapes#9f2b1fba53e8cd65e73f5181c2c9b836>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ontology/olo/core#next> .
+
+<https://astrea.linkeddata.es/shapes#9032382281155a313c1481dcf4008c76>
+        a            sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral .
+
+<https://astrea.linkeddata.es/shapes#43084f9408000c6e755a1ca5708193d4>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ontology/olo/core#previous> .
+
+<https://astrea.linkeddata.es/shapes#526f4b0dbceafe745daf122dc49ec079>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/ontology/olo/core#length> .
+
+<https://astrea.linkeddata.es/shapes#c65a50ba36b6a4826462613a6447bc96>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/olo/core#> ;
+        rdfs:label        "has slot"@en , "A slot in an ordered list."@en ;
+        sh:class          <http://purl.org/ontology/olo/core#Slot> ;
+        sh:description    "A slot in an ordered list."@en ;
+        sh:name           "has slot"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/olo/core#slot> .

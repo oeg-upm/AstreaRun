@@ -1,0 +1,646 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#3d4ea17c71289d7824f39dc88a6ec7d8>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dati.san.beniculturali.it/SAN/strumento> .
+
+<https://astrea.linkeddata.es/shapes#fbe7099a5bc76b9ba7e1486f0747b87f>
+        a               sh:NodeShape ;
+        rdfs:label      "Unità of descrizione"@it , "Unit of description"@en ;
+        sh:description  "La classe uod rappresenta la descrizione della risorsa archivistica"@it ;
+        sh:name         "Unità of descrizione"@it , "Unit of description"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://culturalis.org/oad#UoD> .
+
+<https://astrea.linkeddata.es/shapes#378478097669661be65e170b9b72dbac>
+        a               sh:PropertyShape ;
+        rdfs:label      "The property links an instance to information about extent and medium"@en , "Ha estensione e supporto"@it , "Has extent and medium"@en , "La proprietà collega l'istanziazione di una risorsa archivistica alle informazioni relative all'estensione e al supporto"@it ;
+        sh:class        <http://culturalis.org/oad#ExtentAndMedium> ;
+        sh:description  "La proprietà collega l'istanziazione di una risorsa archivistica alle informazioni relative all'estensione e al supporto"@it , "The property links an instance to information about extent and medium"@en ;
+        sh:name         "Has extent and medium"@en , "Ha estensione e supporto"@it ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://culturalis.org/oad#hasExtentAndMedium> .
+
+<https://astrea.linkeddata.es/shapes#8e8ba0346906f7ceb7b4488f73d34ed3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.4.1_conditions_governing_access> ;
+        rdfs:label        "Condizioni che regolano l’accesso"@it , "Conditions governing access"@en , "La proprietà rappresenta le informazioni relative alle condizioni che regolano l'accesso della risorsa archivistica descritta"@it , "The property represents condition governing access of the instance"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "La proprietà rappresenta le informazioni relative alle condizioni che regolano l'accesso della risorsa archivistica descritta"@it , "The property represents condition governing access of the instance"@en ;
+        sh:name           "Conditions governing access"@en , "Condizioni che regolano l’accesso"@it ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://culturalis.org/oad#conditionsGoverningAccess> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#9eb4e85d45ff4dbffb3dbc275ae58920>
+        a               sh:NodeShape ;
+        rdfs:label      "Produzione"@it , "Production"@en ;
+        sh:name         "Produzione"@it , "Production"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://culturalis.org/oad#production> .
+
+<https://astrea.linkeddata.es/shapes#2cefc0f07baec1d27f055213b8948fab>
+        a               sh:PropertyShape ;
+        rdfs:label      "Use EAD element or attribute"@en , "La proprietà collega una organizzazione all'elemento dello schema EAD utilizzato"@it , "Utilizza l'elemento o attributo di EAD"@it ;
+        sh:class        <http://culturalis.org/oad#EadElement> ;
+        sh:description  "La proprietà collega una organizzazione all'elemento dello schema EAD utilizzato"@it ;
+        sh:name         "Utilizza l'elemento o attributo di EAD"@it , "Use EAD element or attribute"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://culturalis.org/oad#useEadElement> .
+
+<https://astrea.linkeddata.es/shapes#04aa8cf6483e377bdd42b801c5848997>
+        a               sh:PropertyShape ;
+        rdfs:label      "La proprietà collega l'istanziazione di una risorsa archivistica alla sua successiva gerarchicamente"@it , "Has next in sequence"@en , "The property links an instance to the following sibling"@en , "Ha successivo"@it ;
+        sh:class        <http://culturalis.org/oad#Instance> ;
+        sh:description  "The property links an instance to the following sibling"@en , "La proprietà collega l'istanziazione di una risorsa archivistica alla sua successiva gerarchicamente"@it ;
+        sh:name         "Ha successivo"@it , "Has next in sequence"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://culturalis.org/oad#hasNextInSequence> .
+
+<https://astrea.linkeddata.es/shapes#c8232fc46e2ad98ec61dd181083ee849>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.3.4_system_of_arrangement> ;
+        rdfs:label        "Criteri di ordinamento"@it , "System of arrangement"@en , "La proprietà rappresenta le informazioni relative ai criteri di ordinamento della risorsa archivistica descritta"@it , "The property represents the internal structure, the order and/or the system of classification of the described resource"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "The property represents the internal structure, the order and/or the system of classification of the described resource"@en , "La proprietà rappresenta le informazioni relative ai criteri di ordinamento della risorsa archivistica descritta"@it ;
+        sh:name           "System of arrangement"@en , "Criteri di ordinamento"@it ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://culturalis.org/oad#systemOfArrangement> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#0a9c4e699f44f5266bf2f5cb62a7a53d>
+        a            sh:PropertyShape ;
+        rdfs:label   "Entità collegata"@it , "Has Entity"@en ;
+        sh:class     <http://culturalis.org/eac-cpf#Entity> ;
+        sh:name      "Entità collegata"@it , "Has Entity"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://culturalis.org/oad#hasEntity> .
+
+<https://astrea.linkeddata.es/shapes#fd2e1c7b016001b10882a562d0a18527>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.2.2_administrative_biographical_history> ;
+        rdfs:label        "The property links and instace to information about administrative and biographica history."@en , "Has administrative / biographical history"@en , "La proprietà collega una scheda descrittiva alle informazioni relative alla storia amministrativa o biografica"@it , "Ha storia amministrativa / biografica"@it ;
+        sh:class          <http://culturalis.org/oad#AdministrativeBiographicalHistory> ;
+        sh:description    "La proprietà collega una scheda descrittiva alle informazioni relative alla storia amministrativa o biografica"@it , "The property links and instace to information about administrative and biographica history."@en ;
+        sh:name           "Has administrative / biographical history"@en , "Ha storia amministrativa / biografica"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://culturalis.org/oad#hasAdministrativeBiographicalHistory> .
+
+<https://astrea.linkeddata.es/shapes#5335418c1564332e4b041501507c7dcd>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://culturalis.org/eac-cpf#Entity> .
+
+<https://astrea.linkeddata.es/shapes#83bb9c32de5fd584f26e07b91962a602>
+        a               sh:NodeShape ;
+        rdfs:label      "Conservazione"@it , "Custody"@en ;
+        sh:name         "Conservazione"@it , "Custody"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://culturalis.org/oad#custody> .
+
+<https://astrea.linkeddata.es/shapes#cfa8132594e14c33f991bab3a65c42c2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.1.5_extent_and_medium_of_the_unit_of_description> ;
+        rdfs:label        "Consistenza e supporto dell'unità di descrizione"@it , "La proprietà rappresenta le informazioni relative alla consistenza e al supporto della risorsa archivistica descritta"@it , "Extent and medium of the unit of description (quantity, bulk, or size)"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "La proprietà rappresenta le informazioni relative alla consistenza e al supporto della risorsa archivistica descritta"@it ;
+        sh:name           "Consistenza e supporto dell'unità di descrizione"@it , "Extent and medium of the unit of description (quantity, bulk, or size)"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://culturalis.org/oad#extentAndMedium> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#0db6a21dbdce6a06d8f1c153f3038f17>
+        a               sh:PropertyShape ;
+        rdfs:label      "Contiene"@it , "Inverse property of oad:isContainedIn"@en , "Contains"@en , "Proprietà inversa di 'isContainedIn'."@it ;
+        sh:description  "Inverse property of oad:isContainedIn"@en , "Proprietà inversa di 'isContainedIn'."@it ;
+        sh:name         "Contains"@en , "Contiene"@it ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  <http://culturalis.org/eac-cpf#Instance> ;
+                            sh:path   <http://culturalis.org/oad#contains>
+                          ]
+                          [ sh:class  <http://culturalis.org/oad#Instance> ;
+                            sh:path   <http://culturalis.org/oad#contains>
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/shapes#53129483ba920fc44442a32ab2d99ed6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.4.2_conditions_governing_reproduction> ;
+        rdfs:label        "La proprietà rappresenta le informazioni relative alle condizioni che regolano la riproduzione della risorsa archivistica descritta"@it , "Condizioni che regolano la riproduzione"@it , "Conditions governing reproduction"@en , "The property represents condition governing reproduction of the instance"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "The property represents condition governing reproduction of the instance"@en , "La proprietà rappresenta le informazioni relative alle condizioni che regolano la riproduzione della risorsa archivistica descritta"@it ;
+        sh:name           "Conditions governing reproduction"@en , "Condizioni che regolano la riproduzione"@it ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://culturalis.org/oad#conditionsGoverningReproduction> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#31c0f945a88f32fd5b8b5ea772a1bce4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.3.1_scope_and_content> ;
+        rdfs:label        "Scope and content"@en , "Ambiti e contenuto"@it , "The property represents the scope and the content of the described resource"@en , "La proprietà rappresenta le informazioni relative ad ambiti e contenuto della risorsa archivistica descritta"@it ;
+        sh:datatype       xsd:string ;
+        sh:description    "La proprietà rappresenta le informazioni relative ad ambiti e contenuto della risorsa archivistica descritta"@it , "The property represents the scope and the content of the described resource"@en ;
+        sh:name           "Ambiti e contenuto"@it , "Scope and content"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://culturalis.org/oad#scopeAndContent> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#56d48dac712355bca6b22d802715226f>
+        a               sh:PropertyShape ;
+        rdfs:label      "Has key access point"@en , "The property represents an access point"@en , "Ha chiave di indice"@it , "La proprietà rappresenta le informazioni relative alle chiavi di accesso"@it ;
+        sh:description  "The property represents an access point"@en , "La proprietà rappresenta le informazioni relative alle chiavi di accesso"@it ;
+        sh:name         "Ha chiave di indice"@it , "Has key access point"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  <http://culturalis.org/eac-cpf#Entity> ;
+                            sh:path   <http://culturalis.org/oad#hasAccessPoint>
+                          ]
+                          [ sh:class  <http://culturalis.org/oad#Place> ;
+                            sh:path   <http://culturalis.org/oad#hasAccessPoint>
+                          ]
+                          [ sh:class  <http://www.w3.org/2004/02/skos/core#Concept> ;
+                            sh:path   <http://culturalis.org/oad#hasAccessPoint>
+                          ]
+                          [ sh:class  <http://xmlns.com/foaf/0.1/Organization> ;
+                            sh:path   <http://culturalis.org/oad#hasAccessPoint>
+                          ]
+                          [ sh:class  <http://xmlns.com/foaf/0.1/Person> ;
+                            sh:path   <http://culturalis.org/oad#hasAccessPoint>
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#24a9f9ed7ac121212d74106b8f4fb2a3>
+        a            sh:PropertyShape ;
+        rdfs:label   "Soggetto conservatore"@it , "Has repository"@en ;
+        sh:class     <http://culturalis.org/eac-cpf#Entity> ;
+        sh:name      "Soggetto conservatore"@it , "Has repository"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://culturalis.org/oad#hasRepository> .
+
+<https://astrea.linkeddata.es/shapes#cb78cafed1b9c0850c9ac9a311ebabb8>
+        a               sh:NodeShape ;
+        rdfs:label      "Luogo"@it , "Place"@en ;
+        sh:description  "La classe rappresenta un luogo"@it , "The class represents a physical place"@en ;
+        sh:name         "Luogo"@it , "Place"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://culturalis.org/oad#Place> .
+
+<https://astrea.linkeddata.es/shapes#97d2207249ce36cf550cb7dcd944c037>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.1.1_reference_codes> ;
+        rdfs:label        "Reference code"@en , "Segnatura o codice identificativo"@it , "The property represents an identification code of the described resource"@en , "La proprietà rappresenta le informazioni relative al codice identificativo riportato in una scheda descrittiva"@it ;
+        sh:datatype       xsd:string ;
+        sh:description    "La proprietà rappresenta le informazioni relative al codice identificativo riportato in una scheda descrittiva"@it , "The property represents an identification code of the described resource"@en ;
+        sh:name           "Reference code"@en , "Segnatura o codice identificativo"@it ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://culturalis.org/oad#referenceCode> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#df88f3a0cd18ba7586f7b1745140675a>
+        a               sh:PropertyShape ;
+        rdfs:label      "File Plan"@en , "Sistema di classificazione"@it , "La proprietà collega una archival instance ad un sistema di classificazione"@it , "The property links an instance to a classification system"@en ;
+        sh:class        <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:description  "La proprietà collega una archival instance ad un sistema di classificazione"@it , "The property links an instance to a classification system"@en ;
+        sh:name         "File Plan"@en , "Sistema di classificazione"@it ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://culturalis.org/oad#hasFilePlan> .
+
+<https://astrea.linkeddata.es/shapes#74ba57fac6ddc4e9a1e0fbbfcf56cab6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.4.3_language_scripts_of_material> ;
+        rdfs:label        "Ha lingua/scrittura della documentazione"@it , "Has language/scripts of material"@en , "The property links an instance to its language information"@en , "La proprietà collega una archival instance alle informazioni relative alla lingua"@it ;
+        sh:class          <http://id.loc.gov/vocabulary/iso639-1/iso639-1_Language> ;
+        sh:description    "La proprietà collega una archival instance alle informazioni relative alla lingua"@it , "The property links an instance to its language information"@en ;
+        sh:name           "Has language/scripts of material"@en , "Ha lingua/scrittura della documentazione"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://culturalis.org/oad#hasLanguageScriptsOfMaterial> .
+
+<https://astrea.linkeddata.es/shapes#feae68a26f9c0c04e5b1eadec80337c8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.1.2_title> ;
+        rdfs:label        "Title"@en , "Denominazione o titolo"@it , "The property represents the name shown in a description"@en , "La proprietà rappresenta le informazioni relative alla denominazione riportata in una scheda descrittiva"@it ;
+        sh:datatype       xsd:string ;
+        sh:description    "The property represents the name shown in a description"@en , "La proprietà rappresenta le informazioni relative alla denominazione riportata in una scheda descrittiva"@it ;
+        sh:name           "Denominazione o titolo"@it , "Title"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://culturalis.org/oad#title> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#9ffa19a91e93bb289912707ba1fc6bb1>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#0a9c4e699f44f5266bf2f5cb62a7a53d> ;
+        sh:targetClass  <http://culturalis.org/oad#Custody> .
+
+<https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/vocommons/voaf#Vocabulary> .
+
+<https://astrea.linkeddata.es/shapes#0c880f4a486700ce04cac8baa0a4168c>
+        a               sh:PropertyShape ;
+        rdfs:label      "Is entry of"@en , "È scheda descrittiva di"@it , "La proprietà mette in relazione l'istanziazione di una risorsa archivistica alla risorsa archivistica oggetto della descrizione"@it , "The property links an instance to an archival resource"@en ;
+        sh:class        <http://culturalis.org/oad#ArchivalResource> ;
+        sh:description  "The property links an instance to an archival resource"@en , "La proprietà mette in relazione l'istanziazione di una risorsa archivistica alla risorsa archivistica oggetto della descrizione"@it ;
+        sh:name         "Is entry of"@en , "È scheda descrittiva di"@it ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://culturalis.org/oad#isEntryOf> .
+
+<https://astrea.linkeddata.es/shapes#897eced2721588ba24506b52f1f862e4>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dati.san.beniculturali.it/SAN/complessoArchivistico> .
+
+<https://astrea.linkeddata.es/shapes#a556dbf06335e807de64973d33e15df7>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#ef896791b38cf86b24f51f30469d0f19>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://culturalis.org/oad#hasAccessPointCorporateBody> .
+
+<https://astrea.linkeddata.es/shapes#5bed33d8db88bcc4f8a29e3acf61d049>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.2.3_archival_history> ;
+        rdfs:label        "The property represents information about the history of the instance"@en , "Storia archivistica"@it , "Archival history"@en , "La proprietà rappresenta le informazioni relative alla storia archivistica della risorsa archivistica descritta"@it ;
+        sh:datatype       xsd:string ;
+        sh:description    "La proprietà rappresenta le informazioni relative alla storia archivistica della risorsa archivistica descritta"@it , "The property represents information about the history of the instance"@en ;
+        sh:name           "Archival history"@en , "Storia archivistica"@it ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://culturalis.org/oad#archivalHistory> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#312f75525ee3efdc5b91484dd9ae775f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.3.3_accruals> ;
+        rdfs:label        "La proprietà rappresenta le informazioni relative agli incrementi previsti."@it , "Accruals"@en , "Incrementi previsti"@it , "The property represents expected increase."@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "La proprietà rappresenta le informazioni relative agli incrementi previsti."@it , "The property represents expected increase."@en ;
+        sh:name           "Accruals"@en , "Incrementi previsti"@it ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://culturalis.org/oad#accruals> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#431e5c289d8cdc8952877ec0c61e524d>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://culturalis.org/cult/0.1/#Catalogue> .
+
+<https://astrea.linkeddata.es/shapes#6ddc0b40525de8d44aa81deabedaa0bf>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.geonames.org/ontology#Feature> .
+
+<https://astrea.linkeddata.es/shapes#50bdd2bcb13b5656d69c40689518c263>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.5.1_existence_and_location_of_originals> ;
+        rdfs:label        "The property represents the existence and location of originals"@en , "Esistenza e localizzazione degli originali"@it , "Existence and location of originals"@en , "La proprietà rappresenta le informazioni relative all'esistenza e alla localizzazione degli originali della risorsa archivistica descritta"@it ;
+        sh:datatype       xsd:string ;
+        sh:description    "La proprietà rappresenta le informazioni relative all'esistenza e alla localizzazione degli originali della risorsa archivistica descritta"@it , "The property represents the existence and location of originals"@en ;
+        sh:name           "Esistenza e localizzazione degli originali"@it , "Existence and location of originals"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://culturalis.org/oad#existenceAndLocationOfOriginals> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#583ca9a9c6c31a3fa54acf72f26f6558>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#3c00edf052f33600c5c737f24402f259> ;
+        sh:targetClass  <http://culturalis.org/eac-cpf#Instance> .
+
+<https://astrea.linkeddata.es/shapes#d7717e11fa1166ffff0b323d6d2e5f4e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.5.2_existence_and_location_of_copies> ;
+        rdfs:label        "Esistenza e localizzazione di copie"@it , "La proprietà rappresenta le informazioni relative all'esistenza e alla localizzazione di copie della risorsa archivistica descritta"@it , "The property represents the existence and location of copies"@en , "Existence and location of copies"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "The property represents the existence and location of copies"@en , "La proprietà rappresenta le informazioni relative all'esistenza e alla localizzazione di copie della risorsa archivistica descritta"@it ;
+        sh:name           "Esistenza e localizzazione di copie"@it , "Existence and location of copies"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://culturalis.org/oad#existenceAndLocationOfCopies> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#f7ace63156327b331373c44f1ba47d90>
+        a               sh:NodeShape ;
+        rdfs:label      "Risorsa archivistica"@it , "Archival resource"@en ;
+        sh:description  "oad:ArchivalResource is the class that represents the object of the description (i.e., a single document or a set of document)."@en , "La classe Archival resource indica un corpus documentale oggetto di descrizione"@it ;
+        sh:name         "Risorsa archivistica"@it , "Archival resource"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#341353ae907c7515ccaee5c9e2acab1a> , <https://astrea.linkeddata.es/shapes#3774fb38b811381b6084bd9232a1e534> , <https://astrea.linkeddata.es/shapes#703b53aab695271f0177de3ee9e117e2> ;
+        sh:targetClass  <http://dati.san.beniculturali.it/SAN/complessoArchivistico> , <http://culturalis.org/oad#ArchivalResource> .
+
+<https://astrea.linkeddata.es/shapes#07400150f1801af50c2761ec1b81c42b>
+        a               sh:NodeShape ;
+        rdfs:label      "Extent and medium"@en , "Consistenza e supporto"@it ;
+        sh:description  "La classe Extent and medium rappresenta la descrizione dell'estensione e del supporto"@it , "The class represents the description about extent and medium."@en ;
+        sh:name         "Extent and medium"@en , "Consistenza e supporto"@it ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d4657db4401535ab8748adf88a4db366> ;
+        sh:targetClass  <http://culturalis.org/oad#ExtentAndMedium> .
+
+<https://astrea.linkeddata.es/shapes#703b53aab695271f0177de3ee9e117e2>
+        a               sh:PropertyShape ;
+        rdfs:label      "Is described by"@en , "Inverse property of oad:describes"@en , "Proprietà inversa di 'describes'."@it , "Descritta da"@it ;
+        sh:class        <http://culturalis.org/oad#FindingAid> ;
+        sh:description  "Inverse property of oad:describes"@en , "Proprietà inversa di 'describes'."@it ;
+        sh:name         "Descritta da"@it , "Is described by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://culturalis.org/oad#isDescribedBy> .
+
+<https://astrea.linkeddata.es/shapes#59396a13b8c40b6159778ef7aed94e5e>
+        a               sh:NodeShape ;
+        rdfs:label      "Instanza archivistica"@it , "Archival instance"@en ;
+        sh:description  "The class represents the descriptive entry of an archival resource"@en , "La classe Archival instance rappresenta l'istanziazione dell'archival resource"@it ;
+        sh:name         "Instanza archivistica"@it , "Archival instance"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#870879e85305977e25cb264b254b2b34> , <https://astrea.linkeddata.es/shapes#04aa8cf6483e377bdd42b801c5848997> , <https://astrea.linkeddata.es/shapes#4fb9279839b23e019aaf683f40266f31> , <https://astrea.linkeddata.es/shapes#cd28f5efb1d1c4921f5a22132f7f9d9c> , <https://astrea.linkeddata.es/shapes#d7717e11fa1166ffff0b323d6d2e5f4e> , <https://astrea.linkeddata.es/shapes#d6dde70dcaaea02bbf1c4b0924ea2b71> , <https://astrea.linkeddata.es/shapes#0c880f4a486700ce04cac8baa0a4168c> , <https://astrea.linkeddata.es/shapes#df88f3a0cd18ba7586f7b1745140675a> , <https://astrea.linkeddata.es/shapes#2465f46db6cc7835baea0aa24c03db86> , <https://astrea.linkeddata.es/shapes#b8f42a15995c5926e3f5cb7835fa9081> , <https://astrea.linkeddata.es/shapes#378478097669661be65e170b9b72dbac> , <https://astrea.linkeddata.es/shapes#74ba57fac6ddc4e9a1e0fbbfcf56cab6> , <https://astrea.linkeddata.es/shapes#9f11a13b7f74a99112a4f08ba5bb87e6> , <https://astrea.linkeddata.es/shapes#3c00edf052f33600c5c737f24402f259> , <https://astrea.linkeddata.es/shapes#fed15b13e9812f3c9b26d98f43306136> , <https://astrea.linkeddata.es/shapes#eeb5bd9e90621a2c15e5e1ae40fc0eae> , <https://astrea.linkeddata.es/shapes#63a03c0e4fa6462af305dde2f8c27c9e> , <https://astrea.linkeddata.es/shapes#668ed0c44416079cb32f1384a17d5518> , <https://astrea.linkeddata.es/shapes#c8232fc46e2ad98ec61dd181083ee849> , <https://astrea.linkeddata.es/shapes#53129483ba920fc44442a32ab2d99ed6> , <https://astrea.linkeddata.es/shapes#312f75525ee3efdc5b91484dd9ae775f> , <https://astrea.linkeddata.es/shapes#feae68a26f9c0c04e5b1eadec80337c8> , <https://astrea.linkeddata.es/shapes#8e8ba0346906f7ceb7b4488f73d34ed3> , <https://astrea.linkeddata.es/shapes#5bed33d8db88bcc4f8a29e3acf61d049> , <https://astrea.linkeddata.es/shapes#50bdd2bcb13b5656d69c40689518c263> , <https://astrea.linkeddata.es/shapes#fd2e1c7b016001b10882a562d0a18527> , <https://astrea.linkeddata.es/shapes#1893f12376c42e13ecd18f2513986deb> , <https://astrea.linkeddata.es/shapes#64136454530f11d679f797b8a7d9dbca> , <https://astrea.linkeddata.es/shapes#1ccd7a255c3121a2206db3a95e8c3b30> , <https://astrea.linkeddata.es/shapes#24a9f9ed7ac121212d74106b8f4fb2a3> , <https://astrea.linkeddata.es/shapes#cfa8132594e14c33f991bab3a65c42c2> , <https://astrea.linkeddata.es/shapes#31c0f945a88f32fd5b8b5ea772a1bce4> , <https://astrea.linkeddata.es/shapes#97d2207249ce36cf550cb7dcd944c037> ;
+        sh:targetClass  <http://culturalis.org/oad#Instance> .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Person> .
+
+<https://astrea.linkeddata.es/shapes#1ccd7a255c3121a2206db3a95e8c3b30>
+        a               sh:PropertyShape ;
+        rdfs:label      "Altro livello di descrizione"@it , "The property represents an otherlevel of description"@en , "La proprietà rappresenta le informazioni relative ad un altro livello di descrizione della risorsa archivistica descritta"@it , "Other Level of description"@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The property represents an otherlevel of description"@en , "La proprietà rappresenta le informazioni relative ad un altro livello di descrizione della risorsa archivistica descritta"@it ;
+        sh:name         "Other Level of description"@en , "Altro livello di descrizione"@it ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://culturalis.org/oad#otherlevel> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#b8f42a15995c5926e3f5cb7835fa9081>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.2.4_immediate_source_of_acquisition_or_transfer> ;
+        rdfs:label        "La proprietà rappresenta le informazioni relative alla modalità di acquisizione o versamento della risorsa archivistica descritta"@it , "The property represents an immediate source of acquisition or transfer"@en , "Immediate source of acquisition or transfer"@en , "Modalità di acquisizione o versamento"@it ;
+        sh:datatype       xsd:string ;
+        sh:description    "The property represents an immediate source of acquisition or transfer"@en , "La proprietà rappresenta le informazioni relative alla modalità di acquisizione o versamento della risorsa archivistica descritta"@it ;
+        sh:name           "Modalità di acquisizione o versamento"@it , "Immediate source of acquisition or transfer"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://culturalis.org/oad#immediateSourceOfAcquisitionOrTransfer> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#4aa3452a1221ed0aff1135ed32ac0d64>
+        a               sh:NodeShape ;
+        rdfs:label      "Strumento di ricerca"@it , "Finding aid"@en ;
+        sh:description  "La classe rappresenta lo strumento di ricerca"@it , "The class represents a finding aid."@en ;
+        sh:name         "Strumento di ricerca"@it , "Finding aid"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5aa572913065292eead3a29639c23173> ;
+        sh:targetClass  <http://dati.san.beniculturali.it/SAN/strumento> , <http://culturalis.org/oad#FindingAid> .
+
+<https://astrea.linkeddata.es/shapes#5aa572913065292eead3a29639c23173>
+        a               sh:PropertyShape ;
+        rdfs:label      "Descrive"@it , "La proprietà collega uno strumento di ricerca alla risorsa archivistica descritta"@it , "This functional property links a finding aid to the archival resource described"@en , "Describes"@en ;
+        sh:class        <http://culturalis.org/oad#ArchivalResource> ;
+        sh:description  "La proprietà collega uno strumento di ricerca alla risorsa archivistica descritta"@it , "This functional property links a finding aid to the archival resource described"@en ;
+        sh:maxCount     1 ;
+        sh:name         "Descrive"@it , "Describes"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path         <http://culturalis.org/oad#describes> .
+
+<https://astrea.linkeddata.es/shapes#5192bd4012546876e17387cec79301a1>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2cefc0f07baec1d27f055213b8948fab> ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Organization> .
+
+<https://astrea.linkeddata.es/shapes#4fb9279839b23e019aaf683f40266f31>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.4.5_finding_aids> ;
+        rdfs:label        "La proprietà collega una archival instance allo strumento di ricerca che la contiene"@it , "Has finding aid"@en , "Ha strumento di ricerca"@it ;
+        sh:class          <http://culturalis.org/oad#FindingAid> ;
+        sh:description    "La proprietà collega una archival instance allo strumento di ricerca che la contiene"@it ;
+        sh:name           "Ha strumento di ricerca"@it , "Has finding aid"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://culturalis.org/oad#hasFindingAid> .
+
+<https://astrea.linkeddata.es/shapes#870879e85305977e25cb264b254b2b34>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.3.2_appraisal_destruction_and_scheduling_information> ;
+        rdfs:label        "La proprietà rappresenta le informazioni relative alle procedure, ai tempi e ai criteri di valutazione e scarto della risorsa archivistica descritta"@it , "The property represents appraisal, destruction and scheduling information"@en , "Appraisal, destruction and scheduling information"@en , "Procedure, tempi e criteri di valutazione e scarto"@it ;
+        sh:datatype       xsd:string ;
+        sh:description    "The property represents appraisal, destruction and scheduling information"@en , "La proprietà rappresenta le informazioni relative alle procedure, ai tempi e ai criteri di valutazione e scarto della risorsa archivistica descritta"@it ;
+        sh:name           "Appraisal, destruction and scheduling information"@en , "Procedure, tempi e criteri di valutazione e scarto"@it ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://culturalis.org/oad#appraisalDestructionAndSchedulingInformation> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#77a75b8bfbf0d7da70f47e4ca1a0f15c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://culturalis.org/oad#hasAccessPointFamily> .
+
+<https://astrea.linkeddata.es/shapes#a9f96b7d53625d40af5d2b0e32252ecc>
+        a               sh:NodeShape ;
+        rdfs:label      "Elemento o attributo dello Schema EAD"@it , "EAD Schema's element or attribute"@en ;
+        sh:description  "La classe è utilizzata per mappare le classi e le proprietà dell'ontologia OAD con gli elementi dello schema EAD"@it ;
+        sh:name         "Elemento o attributo dello Schema EAD"@it , "EAD Schema's element or attribute"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://culturalis.org/oad#EadElement> .
+
+<https://astrea.linkeddata.es/shapes#fed15b13e9812f3c9b26d98f43306136>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.1.4_level_of_description> ;
+        rdfs:label        "The property links an archival resource to its level of description"@en , "Has level of description"@en , "La proprietà collega una unità di descrizione al livello di descrizione archivistica"@it , "Ha livello di descrizione"@it ;
+        sh:class          <http://culturalis.org/oad#LevelOfDescription> ;
+        sh:description    "The property links an archival resource to its level of description"@en , "La proprietà collega una unità di descrizione al livello di descrizione archivistica"@it ;
+        sh:name           "Ha livello di descrizione"@it , "Has level of description"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://culturalis.org/oad#hasLevel> .
+
+<https://astrea.linkeddata.es/shapes#d4657db4401535ab8748adf88a4db366>
+        a               sh:PropertyShape ;
+        rdfs:label      "La proprietà rappresenta le informazioni relative alla tipologia di estensione e punta ad un vocabolario skos"@it , "Ha tipo di estensione"@it , "The property represents an extent type and it is related to a skos vocabulary"@en , "Has extent type"@en ;
+        sh:class        <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:description  "La proprietà rappresenta le informazioni relative alla tipologia di estensione e punta ad un vocabolario skos"@it , "The property represents an extent type and it is related to a skos vocabulary"@en ;
+        sh:name         "Has extent type"@en , "Ha tipo di estensione"@it ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://culturalis.org/oad#hasExtentType> .
+
+<https://astrea.linkeddata.es/shapes#668ed0c44416079cb32f1384a17d5518>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.5.3_related_units_of_description> ;
+        rdfs:label        "The property links two or more instances related"@en , "La proprietà collega tra loro due o più istanze archivistiche"@it , "Ha scheda descrittiva collegata"@it , "Has related instance"@en ;
+        sh:class          <http://culturalis.org/oad#Instance> ;
+        sh:description    "The property links two or more instances related"@en , "La proprietà collega tra loro due o più istanze archivistiche"@it ;
+        sh:name           "Ha scheda descrittiva collegata"@it , "Has related instance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://culturalis.org/oad#hasRelatedInstance> .
+
+<https://astrea.linkeddata.es/shapes#75ea4a87ea97be7ef5fdcdd156866efe>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://id.loc.gov/vocabulary/iso639-1/iso639-1_Language> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#4fb9279839b23e019aaf683f40266f31> , <https://astrea.linkeddata.es/shapes#24a9f9ed7ac121212d74106b8f4fb2a3> , <https://astrea.linkeddata.es/shapes#50bdd2bcb13b5656d69c40689518c263> , <https://astrea.linkeddata.es/shapes#583ca9a9c6c31a3fa54acf72f26f6558> , <https://astrea.linkeddata.es/shapes#0a9c4e699f44f5266bf2f5cb62a7a53d> , <https://astrea.linkeddata.es/shapes#07400150f1801af50c2761ec1b81c42b> , <https://astrea.linkeddata.es/shapes#c5289a197611f237614c3d36235044ac> , <https://astrea.linkeddata.es/shapes#04aa8cf6483e377bdd42b801c5848997> , <https://astrea.linkeddata.es/shapes#3774fb38b811381b6084bd9232a1e534> , <https://astrea.linkeddata.es/shapes#312f75525ee3efdc5b91484dd9ae775f> , <https://astrea.linkeddata.es/shapes#378478097669661be65e170b9b72dbac> , <https://astrea.linkeddata.es/shapes#64136454530f11d679f797b8a7d9dbca> , <https://astrea.linkeddata.es/shapes#6ddc0b40525de8d44aa81deabedaa0bf> , <https://astrea.linkeddata.es/shapes#9ffa19a91e93bb289912707ba1fc6bb1> , <https://astrea.linkeddata.es/shapes#74ba57fac6ddc4e9a1e0fbbfcf56cab6> , <https://astrea.linkeddata.es/shapes#ef896791b38cf86b24f51f30469d0f19> , <https://astrea.linkeddata.es/shapes#1893f12376c42e13ecd18f2513986deb> , <https://astrea.linkeddata.es/shapes#83bb9c32de5fd584f26e07b91962a602> , <https://astrea.linkeddata.es/shapes#a556dbf06335e807de64973d33e15df7> , <https://astrea.linkeddata.es/shapes#df88f3a0cd18ba7586f7b1745140675a> , <https://astrea.linkeddata.es/shapes#97d2207249ce36cf550cb7dcd944c037> , <https://astrea.linkeddata.es/shapes#59396a13b8c40b6159778ef7aed94e5e> , <https://astrea.linkeddata.es/shapes#fbe7099a5bc76b9ba7e1486f0747b87f> , <https://astrea.linkeddata.es/shapes#75ea4a87ea97be7ef5fdcdd156866efe> , <https://astrea.linkeddata.es/shapes#d7717e11fa1166ffff0b323d6d2e5f4e> , <https://astrea.linkeddata.es/shapes#fed15b13e9812f3c9b26d98f43306136> , <https://astrea.linkeddata.es/shapes#cd28f5efb1d1c4921f5a22132f7f9d9c> , <https://astrea.linkeddata.es/shapes#77a75b8bfbf0d7da70f47e4ca1a0f15c> , <https://astrea.linkeddata.es/shapes#9f11a13b7f74a99112a4f08ba5bb87e6> , <https://astrea.linkeddata.es/shapes#feae68a26f9c0c04e5b1eadec80337c8> , <https://astrea.linkeddata.es/shapes#dc027518547638d1f2a893a146cee16e> , <https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5> , <https://astrea.linkeddata.es/shapes#d6dde70dcaaea02bbf1c4b0924ea2b71> , <https://astrea.linkeddata.es/shapes#a9f96b7d53625d40af5d2b0e32252ecc> , <https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f> , <https://astrea.linkeddata.es/shapes#5bed33d8db88bcc4f8a29e3acf61d049> , <https://astrea.linkeddata.es/shapes#703b53aab695271f0177de3ee9e117e2> , <https://astrea.linkeddata.es/shapes#cb78cafed1b9c0850c9ac9a311ebabb8> , <https://astrea.linkeddata.es/shapes#897eced2721588ba24506b52f1f862e4> , <https://astrea.linkeddata.es/shapes#31c0f945a88f32fd5b8b5ea772a1bce4> , <https://astrea.linkeddata.es/shapes#3d4ea17c71289d7824f39dc88a6ec7d8> , <https://astrea.linkeddata.es/shapes#3c00edf052f33600c5c737f24402f259> , <https://astrea.linkeddata.es/shapes#2465f46db6cc7835baea0aa24c03db86> , <https://astrea.linkeddata.es/shapes#ec1ffb6e5e4839f9b276283d86c11b7b> , <https://astrea.linkeddata.es/shapes#5aa572913065292eead3a29639c23173> , <https://astrea.linkeddata.es/shapes#5335418c1564332e4b041501507c7dcd> , <https://astrea.linkeddata.es/shapes#431e5c289d8cdc8952877ec0c61e524d> , <https://astrea.linkeddata.es/shapes#b32436b2b29ea67e736ad860212d8518> , <https://astrea.linkeddata.es/shapes#56d48dac712355bca6b22d802715226f> , <https://astrea.linkeddata.es/shapes#eeb5bd9e90621a2c15e5e1ae40fc0eae> , <https://astrea.linkeddata.es/shapes#b8f42a15995c5926e3f5cb7835fa9081> , <https://astrea.linkeddata.es/shapes#c8232fc46e2ad98ec61dd181083ee849> , <https://astrea.linkeddata.es/shapes#d4657db4401535ab8748adf88a4db366> , <https://astrea.linkeddata.es/shapes#f7ace63156327b331373c44f1ba47d90> , <https://astrea.linkeddata.es/shapes#1ccd7a255c3121a2206db3a95e8c3b30> , <https://astrea.linkeddata.es/shapes#0db6a21dbdce6a06d8f1c153f3038f17> , <https://astrea.linkeddata.es/shapes#870879e85305977e25cb264b254b2b34> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#0c880f4a486700ce04cac8baa0a4168c> , <https://astrea.linkeddata.es/shapes#4aa3452a1221ed0aff1135ed32ac0d64> , <https://astrea.linkeddata.es/shapes#668ed0c44416079cb32f1384a17d5518> , <https://astrea.linkeddata.es/shapes#fd2e1c7b016001b10882a562d0a18527> , <https://astrea.linkeddata.es/shapes#5192bd4012546876e17387cec79301a1> , <https://astrea.linkeddata.es/shapes#53129483ba920fc44442a32ab2d99ed6> , <https://astrea.linkeddata.es/shapes#cfa8132594e14c33f991bab3a65c42c2> , <https://astrea.linkeddata.es/shapes#63a03c0e4fa6462af305dde2f8c27c9e> , <https://astrea.linkeddata.es/shapes#341353ae907c7515ccaee5c9e2acab1a> , <https://astrea.linkeddata.es/shapes#732e354e6b934551ad42d2feb87f65a9> , <https://astrea.linkeddata.es/shapes#8e8ba0346906f7ceb7b4488f73d34ed3> , <https://astrea.linkeddata.es/shapes#9eb4e85d45ff4dbffb3dbc275ae58920> , <https://astrea.linkeddata.es/shapes#2cefc0f07baec1d27f055213b8948fab> , <https://astrea.linkeddata.es/shapes#ed6184b8089d904bc88a902fe77c15d9> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#b32436b2b29ea67e736ad860212d8518>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#0a9c4e699f44f5266bf2f5cb62a7a53d> ;
+        sh:targetClass  <http://culturalis.org/oad#Production> .
+
+<https://astrea.linkeddata.es/shapes#c5289a197611f237614c3d36235044ac>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://culturalis.org/oad#hasAccessPointPerson> .
+
+<https://astrea.linkeddata.es/shapes#cd28f5efb1d1c4921f5a22132f7f9d9c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.2.1_name_of_creators> ;
+        rdfs:label        "Nome del soggetto produttore"@it , "Name of creator(s)"@en ;
+        sh:class          <http://culturalis.org/eac-cpf#Entity> ;
+        sh:name           "Nome del soggetto produttore"@it , "Name of creator(s)"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://culturalis.org/oad#hasNameOfCreator> .
+
+<https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2004/02/skos/core#Concept> .
+
+<https://astrea.linkeddata.es/shapes#ec1ffb6e5e4839f9b276283d86c11b7b>
+        a               sh:NodeShape ;
+        rdfs:label      "Storia istituzionale/ amministrativa o biografia"@it , "Administrative / Biographical history"@en ;
+        sh:description  "La classe rappresenta le informazioni relative alla storia istituzionale, amministrativa o biografica"@it , "The class represents the administrative and biographical history."@en ;
+        sh:name         "Storia istituzionale/ amministrativa o biografia"@it , "Administrative / Biographical history"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://culturalis.org/oad#AdministrativeBiographicalHistory> .
+
+<https://astrea.linkeddata.es/shapes#63a03c0e4fa6462af305dde2f8c27c9e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.5.4_publication_note> ;
+        rdfs:label        "Has publication note"@en , "La proprietà collega una scheda descrittiva alle informazioni relative alla pubblicazione"@it , "The property links an instance to its bibliography information"@en , "Ha bibliografia"@it ;
+        sh:class          <http://culturalis.org/oad#PublicationNote> ;
+        sh:description    "La proprietà collega una scheda descrittiva alle informazioni relative alla pubblicazione"@it , "The property links an instance to its bibliography information"@en ;
+        sh:name           "Has publication note"@en , "Ha bibliografia"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://culturalis.org/oad#hasPublicationNote> .
+
+<https://astrea.linkeddata.es/shapes#64136454530f11d679f797b8a7d9dbca>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.6.1_note> ;
+        rdfs:label        "La proprietà rappresenta le informazioni relative alle note della risorsa archivistica descritta"@it , "Note"@it , "Note"@en , "The property represents information that cannot be accommodated in any of the other properties."@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "The property represents information that cannot be accommodated in any of the other properties."@en , "La proprietà rappresenta le informazioni relative alle note della risorsa archivistica descritta"@it ;
+        sh:name           "Note"@it , "Note"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://culturalis.org/oad#note> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#732e354e6b934551ad42d2feb87f65a9>
+        a               sh:NodeShape ;
+        rdfs:label      "Livello di descrizione"@it , "Level of description"@en ;
+        sh:description  "La classe rappresenta il livello della descrizione archivistica"@it , "The class represents the archival description level"@en ;
+        sh:name         "Livello di descrizione"@it , "Level of description"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://culturalis.org/oad#LevelOfDescription> .
+
+<https://astrea.linkeddata.es/shapes#3774fb38b811381b6084bd9232a1e534>
+        a               sh:PropertyShape ;
+        rdfs:label      "Has entry"@en , "Ha scheda descrittiva"@it , "Proprietà inversa di 'isEntryOf'."@it ;
+        sh:class        <http://culturalis.org/oad#Instance> ;
+        sh:description  "Proprietà inversa di 'isEntryOf'."@it ;
+        sh:name         "Has entry"@en , "Ha scheda descrittiva"@it ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://culturalis.org/oad#hasEntry> .
+
+<https://astrea.linkeddata.es/shapes#341353ae907c7515ccaee5c9e2acab1a>
+        a               sh:PropertyShape ;
+        rdfs:label      "The property links the archival resource described to the entity responsible for the production of the resource"@en , "La proprietà collega la risorsa archivistica descritta alla entity responsabile della sua produzione"@it , "Is produced by"@en , "È prodotta da"@it ;
+        sh:class        <http://culturalis.org/eac-cpf#Entity> ;
+        sh:description  "La proprietà collega la risorsa archivistica descritta alla entity responsabile della sua produzione"@it , "The property links the archival resource described to the entity responsible for the production of the resource"@en ;
+        sh:name         "È prodotta da"@it , "Is produced by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://culturalis.org/oad#isProducedBy> .
+
+<https://astrea.linkeddata.es/shapes#1893f12376c42e13ecd18f2513986deb>
+        a            sh:PropertyShape ;
+        rdfs:label   "Conservato da"@it , "Has Custody"@en ;
+        sh:class     <http://culturalis.org/oad#Custody> ;
+        sh:name      "Conservato da"@it , "Has Custody"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://culturalis.org/oad#hasCustody> .
+
+<https://astrea.linkeddata.es/shapes#d6dde70dcaaea02bbf1c4b0924ea2b71>
+        a            sh:PropertyShape ;
+        rdfs:label   "Prodotto da"@it , "Has Production"@en ;
+        sh:class     <http://culturalis.org/oad#Production> ;
+        sh:name      "Prodotto da"@it , "Has Production"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://culturalis.org/oad#hasProduction> .
+
+<https://astrea.linkeddata.es/shapes#dc027518547638d1f2a893a146cee16e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://culturalis.org/oad#hasAccessPointPlace> .
+
+<https://astrea.linkeddata.es/shapes#eeb5bd9e90621a2c15e5e1ae40fc0eae>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.1.3_dates> ;
+        rdfs:label        "La proprietà rappresenta le informazioni relative alla datazione della risorsa archivistica descritta"@it , "Date(s)"@en , "Data/e"@it , "The property represents a date"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "La proprietà rappresenta le informazioni relative alla datazione della risorsa archivistica descritta"@it , "The property represents a date"@en ;
+        sh:name           "Date(s)"@en , "Data/e"@it ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://culturalis.org/oad#date> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#9f11a13b7f74a99112a4f08ba5bb87e6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.7.1_archivist_s_note> ;
+        rdfs:label        "Nota dell'archivista"@it , "La proprietà rappresenta le informazioni relative alle note dell'archivista della risorsa archivistica descritta"@it , "Archivist's Note"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "La proprietà rappresenta le informazioni relative alle note dell'archivista della risorsa archivistica descritta"@it ;
+        sh:name           "Nota dell'archivista"@it , "Archivist's Note"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://culturalis.org/oad#archivistsNote> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#2465f46db6cc7835baea0aa24c03db86>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://lod.xdams.org/reload/oad/isadOntology/isad_3.4.4_physical_characteristics_and_technical_requirements> ;
+        rdfs:label        "La proprietà rappresenta le informazioni relative alle caratteristiche materiali e ai requisiti tecnici della risorsa archivistica descritta"@it , "The property represents physical characteristics and technical requirements"@en , "Caratteristiche materiali e requisiti tecnici"@it , "Physical characteristics and technical requirements"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "La proprietà rappresenta le informazioni relative alle caratteristiche materiali e ai requisiti tecnici della risorsa archivistica descritta"@it , "The property represents physical characteristics and technical requirements"@en ;
+        sh:name           "Caratteristiche materiali e requisiti tecnici"@it , "Physical characteristics and technical requirements"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://culturalis.org/oad#physicalCharacteristicsAndTechnicalRequirements> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#3c00edf052f33600c5c737f24402f259>
+        a               sh:PropertyShape ;
+        rdfs:label      "È contenuta in"@it , "The property represents the relationship between an instance and the finding aid in which it is contained"@en , "Is contained in"@en , "La proprietà descrive la relazione tra l'istanziazione di una risorsa archivistica o di un'entity e lo strumento di ricerca in cui è contenuta"@it ;
+        sh:class        <http://culturalis.org/oad#FindingAid> ;
+        sh:description  "La proprietà descrive la relazione tra l'istanziazione di una risorsa archivistica o di un'entity e lo strumento di ricerca in cui è contenuta"@it , "The property represents the relationship between an instance and the finding aid in which it is contained"@en ;
+        sh:name         "È contenuta in"@it , "Is contained in"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://culturalis.org/oad#isContainedIn> .
+
+<https://astrea.linkeddata.es/shapes#ed6184b8089d904bc88a902fe77c15d9>
+        a               sh:NodeShape ;
+        rdfs:label      "Bibliografia"@it , "Publication note"@en ;
+        sh:description  "La classe rappresenta la bibliografia"@it , "The class represents a bibliography"@en ;
+        sh:name         "Bibliografia"@it , "Publication note"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://culturalis.org/oad#PublicationNote> .

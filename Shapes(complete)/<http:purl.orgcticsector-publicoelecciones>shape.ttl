@@ -1,0 +1,300 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#e1eeeaa84460ae94156acfb5ee30af3f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Tiene candidatura"@es , "Una votación puede tener muchas candidaturas"@es ;
+        sh:class          <http://purl.org/ctic/sector-publico/elecciones#Candidatura> ;
+        sh:description    "Una votación puede tener muchas candidaturas"@es ;
+        sh:name           "Tiene candidatura"@es ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#tieneCandidatura> .
+
+<https://astrea.linkeddata.es/shapes#23ba5ccf8819d753a38ba3d1be73675b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Es votación de"@es , "Una votación pertenece a un proceso electoral"@es ;
+        sh:class          <http://purl.org/ctic/sector-publico/elecciones#ProcesoElectoral> ;
+        sh:description    "Una votación pertenece a un proceso electoral"@es ;
+        sh:name           "Es votación de"@es ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#esVotacionDe> .
+
+<https://astrea.linkeddata.es/shapes#1dbac3e82a51343a3f313e3feaa37250>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Número de votos en blanco en una votación"@es , "Votos en blanco"@es ;
+        sh:datatype       xsd:integer ;
+        sh:description    "Número de votos en blanco en una votación"@es ;
+        sh:name           "Votos en blanco"@es ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#votosEnBlanco> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#0da63839454867905e9268949ab77030>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Área electoral"@es ;
+        sh:description    "Una región o área geográfica donde se lleva a cabo una votación"@es ;
+        sh:name           "Área electoral"@es ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ctic/sector-publico/elecciones#AreaElectoral> .
+
+<https://astrea.linkeddata.es/shapes#82d37a1eafc159dae640e7f54027b7df>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Tiene área electoral"@es , "Una votación se realiza sobre un área electoral"@es ;
+        sh:class          <http://purl.org/ctic/sector-publico/elecciones#AreaElectoral> ;
+        sh:description    "Una votación se realiza sobre un área electoral"@es ;
+        sh:name           "Tiene área electoral"@es ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#tieneAreaElectoral> .
+
+<https://astrea.linkeddata.es/shapes#380f79986e3c2eb5d0c7aba36ade4933>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Tiene candidato"@es , "Una candidatura especifica es de un partido político"@es ;
+        sh:class          <http://purl.org/ctic/sector-publico/elecciones#Candidato> ;
+        sh:description    "Una candidatura especifica es de un partido político"@es ;
+        sh:name           "Tiene candidato"@es ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#tieneCandidato> .
+
+<https://astrea.linkeddata.es/shapes#af6318dc72c9cb100b3599bfba6186e0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Votos emitidos"@es , "Número de votos emitidos en una votación"@es ;
+        sh:datatype       xsd:integer ;
+        sh:description    "Número de votos emitidos en una votación"@es ;
+        sh:name           "Votos emitidos"@es ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#votosEmitidos> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#d78b734ccec3331dc6e75c838357eeff>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Tiene votación"@es , "Un proceso electoral tiene una votación"@es ;
+        sh:class          <http://purl.org/ctic/sector-publico/elecciones#Votacion> ;
+        sh:description    "Un proceso electoral tiene una votación"@es ;
+        sh:name           "Tiene votación"@es ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#tieneVotacion> .
+
+<https://astrea.linkeddata.es/shapes#eb2589be3d07d036301fa807a109b77f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Número de representantes obtenidos (diputados, escaños,...) que consigue una candidatura seleccionada"@es , "Representantes obtenidos"@es ;
+        sh:datatype       xsd:integer ;
+        sh:description    "Número de representantes obtenidos (diputados, escaños,...) que consigue una candidatura seleccionada"@es ;
+        sh:name           "Representantes obtenidos"@es ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#representantesObtenidos> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#df728a235c562c2cfb3a993bb5d88108>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Candidato"@es ;
+        sh:description    "Candidato de una formación política que se presenta a una votación"@es ;
+        sh:name           "Candidato"@es ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ctic/sector-publico/elecciones#Candidato> .
+
+<https://astrea.linkeddata.es/shapes#fd3dae03f82dde21eb3985877e507ace>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <dctype:Event> .
+
+<https://astrea.linkeddata.es/shapes#602531e351c435482b79322fc57c3fd7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Número de votos nulos en una votación"@es , "Votos nulos"@es ;
+        sh:datatype       xsd:integer ;
+        sh:description    "Número de votos nulos en una votación"@es ;
+        sh:name           "Votos nulos"@es ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#votosNulos> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#73c96784d41273e706318fa4ab33443b> , <https://astrea.linkeddata.es/shapes#380f79986e3c2eb5d0c7aba36ade4933> , <https://astrea.linkeddata.es/shapes#d78b734ccec3331dc6e75c838357eeff> , <https://astrea.linkeddata.es/shapes#cedfff7c081062cf539932f8e3545900> , <https://astrea.linkeddata.es/shapes#eb2589be3d07d036301fa807a109b77f> , <https://astrea.linkeddata.es/shapes#4ed066c156a1cb5ac379a89594448867> , <https://astrea.linkeddata.es/shapes#7ed7b2640454594a291cadffbef8d246> , <https://astrea.linkeddata.es/shapes#fd3dae03f82dde21eb3985877e507ace> , <https://astrea.linkeddata.es/shapes#a0af57b0a6e9ab2e319656828a0ac921> , <https://astrea.linkeddata.es/shapes#b4ac155b4c9d51893c67f11fa6ce35e4> , <https://astrea.linkeddata.es/shapes#602531e351c435482b79322fc57c3fd7> , <https://astrea.linkeddata.es/shapes#97b6fd5bd322f540c5ff964f9f57fc86> , <https://astrea.linkeddata.es/shapes#82d37a1eafc159dae640e7f54027b7df> , <https://astrea.linkeddata.es/shapes#56b93182f1fdd1e54b4c7d4d674018b4> , <https://astrea.linkeddata.es/shapes#7c3e71bb0bd26cefe4512bb68cbae590> , <https://astrea.linkeddata.es/shapes#df728a235c562c2cfb3a993bb5d88108> , <https://astrea.linkeddata.es/shapes#0da63839454867905e9268949ab77030> , <https://astrea.linkeddata.es/shapes#5ed280da9433d6ad38a625e6d6371a41> , <https://astrea.linkeddata.es/shapes#71cf9c7be111265e37614c7268c6853b> , <https://astrea.linkeddata.es/shapes#e5d22a85ced8e97db4a7ed239cbb2eff> , <https://astrea.linkeddata.es/shapes#af6318dc72c9cb100b3599bfba6186e0> , <https://astrea.linkeddata.es/shapes#8bc6c45ef1358a3935f1ce3922726474> , <https://astrea.linkeddata.es/shapes#23ba5ccf8819d753a38ba3d1be73675b> , <https://astrea.linkeddata.es/shapes#e1eeeaa84460ae94156acfb5ee30af3f> , <https://astrea.linkeddata.es/shapes#54fde65783d60a7779b461c3b77c91ac> , <https://astrea.linkeddata.es/shapes#ed4f2d7faaf9020f4c012bb93d5a44f5> , <https://astrea.linkeddata.es/shapes#1dbac3e82a51343a3f313e3feaa37250> , <https://astrea.linkeddata.es/shapes#449ffffdec06cd5ff3f20af3f1a4fe72> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#e5d22a85ced8e97db4a7ed239cbb2eff>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Porcentaje de votos nulos"@es , "Porcentaje de votos nulos respecto a los votos emitidos en una votación"@es ;
+        sh:datatype       xsd:decimal ;
+        sh:description    "Porcentaje de votos nulos respecto a los votos emitidos en una votación"@es ;
+        sh:name           "Porcentaje de votos nulos"@es ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#votosNulosPorcentaje> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#97b6fd5bd322f540c5ff964f9f57fc86>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Partido tiene candidatura"@es , "Un partido político puede tener varias candidaturas"@es ;
+        sh:class          <http://purl.org/ctic/sector-publico/elecciones#Candidatura> ;
+        sh:description    "Un partido político puede tener varias candidaturas"@es ;
+        sh:name           "Partido tiene candidatura"@es ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#partidoTieneCandidatura> .
+
+<https://astrea.linkeddata.es/shapes#73c96784d41273e706318fa4ab33443b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Porcentaje de participación (votos emitidos en relación al número de electores) en una votación"@es , "Porcentaje de participación"@es ;
+        sh:datatype       xsd:decimal ;
+        sh:description    "Porcentaje de participación (votos emitidos en relación al número de electores) en una votación"@es ;
+        sh:name           "Porcentaje de participación"@es ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#participacion> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#56b93182f1fdd1e54b4c7d4d674018b4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Partido político"@es ;
+        sh:description    "Una formación política que se presenta a una votación"@es ;
+        sh:name           "Partido político"@es ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#97b6fd5bd322f540c5ff964f9f57fc86> ;
+        sh:targetClass    <http://purl.org/ctic/sector-publico/elecciones#Partido> .
+
+<https://astrea.linkeddata.es/shapes#7c3e71bb0bd26cefe4512bb68cbae590>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <event:Event> .
+
+<https://astrea.linkeddata.es/shapes#b4ac155b4c9d51893c67f11fa6ce35e4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Votos recibidos"@es , "Número de votos recibidos por una candidatura en una votación"@es ;
+        sh:datatype       xsd:integer ;
+        sh:description    "Número de votos recibidos por una candidatura en una votación"@es ;
+        sh:name           "Votos recibidos"@es ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#votosRecibidos> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#71cf9c7be111265e37614c7268c6853b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Es seleccionada"@es , "Si la candidatura ha sido seleccionada como resultado de la votación"@es ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "Si la candidatura ha sido seleccionada como resultado de la votación"@es ;
+        sh:name           "Es seleccionada"@es ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#esSeleccionada> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#cedfff7c081062cf539932f8e3545900>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Es candidatura de"@es , "Una candidatura pertenece a una votación específica"@es ;
+        sh:class          <http://purl.org/ctic/sector-publico/elecciones#Votacion> ;
+        sh:description    "Una candidatura pertenece a una votación específica"@es ;
+        sh:name           "Es candidatura de"@es ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#esCandidaturaDe> .
+
+<https://astrea.linkeddata.es/shapes#ed4f2d7faaf9020f4c012bb93d5a44f5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Votación"@es ;
+        sh:description    "Una votación específica, dentro de un proceso electoral, para seleccionar una representación o dirimir un referendum"@es ;
+        sh:name           "Votación"@es ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e5d22a85ced8e97db4a7ed239cbb2eff> , <https://astrea.linkeddata.es/shapes#af6318dc72c9cb100b3599bfba6186e0> , <https://astrea.linkeddata.es/shapes#602531e351c435482b79322fc57c3fd7> , <https://astrea.linkeddata.es/shapes#7ed7b2640454594a291cadffbef8d246> , <https://astrea.linkeddata.es/shapes#23ba5ccf8819d753a38ba3d1be73675b> , <https://astrea.linkeddata.es/shapes#e1eeeaa84460ae94156acfb5ee30af3f> , <https://astrea.linkeddata.es/shapes#a0af57b0a6e9ab2e319656828a0ac921> , <https://astrea.linkeddata.es/shapes#1dbac3e82a51343a3f313e3feaa37250> , <https://astrea.linkeddata.es/shapes#73c96784d41273e706318fa4ab33443b> , <https://astrea.linkeddata.es/shapes#82d37a1eafc159dae640e7f54027b7df> , <https://astrea.linkeddata.es/shapes#4ed066c156a1cb5ac379a89594448867> ;
+        sh:targetClass    <http://purl.org/ctic/sector-publico/elecciones#Votacion> .
+
+<https://astrea.linkeddata.es/shapes#4ed066c156a1cb5ac379a89594448867>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Porcentaje de votos en blanco respecto a los votos emitidos en una votación"@es , "Porcentaje de votos en blanco"@es ;
+        sh:datatype       xsd:decimal ;
+        sh:description    "Porcentaje de votos en blanco respecto a los votos emitidos en una votación"@es ;
+        sh:name           "Porcentaje de votos en blanco"@es ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#votosEnBlancoPorcentaje> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#5ed280da9433d6ad38a625e6d6371a41>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Candidatura"@es ;
+        sh:description    "Una candidatura para una votación correspondiente a un partido político"@es ;
+        sh:name           "Candidatura"@es ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#cedfff7c081062cf539932f8e3545900> , <https://astrea.linkeddata.es/shapes#54fde65783d60a7779b461c3b77c91ac> , <https://astrea.linkeddata.es/shapes#380f79986e3c2eb5d0c7aba36ade4933> , <https://astrea.linkeddata.es/shapes#eb2589be3d07d036301fa807a109b77f> , <https://astrea.linkeddata.es/shapes#71cf9c7be111265e37614c7268c6853b> , <https://astrea.linkeddata.es/shapes#b4ac155b4c9d51893c67f11fa6ce35e4> , <https://astrea.linkeddata.es/shapes#449ffffdec06cd5ff3f20af3f1a4fe72> ;
+        sh:targetClass    <http://purl.org/ctic/sector-publico/elecciones#Candidatura> .
+
+<https://astrea.linkeddata.es/shapes#7ed7b2640454594a291cadffbef8d246>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Censo electoral"@es , "Número de personas con derecho a voto en una votación"@es ;
+        sh:datatype       xsd:integer ;
+        sh:description    "Número de personas con derecho a voto en una votación"@es ;
+        sh:name           "Censo electoral"@es ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#censoElectoral> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#8bc6c45ef1358a3935f1ce3922726474>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Proceso electoral"@es ;
+        sh:description    "Un proceso electoral diferenciado en un periodo de tiempo que incluye una o varias votaciones"@es ;
+        sh:name           "Proceso electoral"@es ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d78b734ccec3331dc6e75c838357eeff> ;
+        sh:targetClass    <http://purl.org/ctic/sector-publico/elecciones#ProcesoElectoral> .
+
+<https://astrea.linkeddata.es/shapes#449ffffdec06cd5ff3f20af3f1a4fe72>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Es candidatura del partido"@es , "Una candidatura especifica es de un partido político"@es ;
+        sh:class          <http://purl.org/ctic/sector-publico/elecciones#Partido> ;
+        sh:description    "Una candidatura especifica es de un partido político"@es ;
+        sh:name           "Es candidatura del partido"@es ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#esCandidaturaDelPartido> .
+
+<https://astrea.linkeddata.es/shapes#54fde65783d60a7779b461c3b77c91ac>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Porcentaje de votos recibidos por una candidatura en una votación sobre el total de votantes"@es , "Porcentaje de votos recibidos sobre el total de votantes"@es , "Porcentaje de votos recibidos sobre el total de electores"@es , "Porcentaje de votos recibidos por una candidatura en una votación sobre el total de electores"@es ;
+        sh:datatype       xsd:decimal ;
+        sh:description    "Porcentaje de votos recibidos por una candidatura en una votación sobre el total de electores"@es , "Porcentaje de votos recibidos por una candidatura en una votación sobre el total de votantes"@es ;
+        sh:name           "Porcentaje de votos recibidos sobre el total de electores"@es , "Porcentaje de votos recibidos sobre el total de votantes"@es ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#votosPorcentajeSobreElectores> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#a0af57b0a6e9ab2e319656828a0ac921>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ctic/sector-publico/elecciones> ;
+        rdfs:label        "Número de votos válidos en una votación"@es , "Votos válidos"@es ;
+        sh:datatype       xsd:integer ;
+        sh:description    "Número de votos válidos en una votación"@es ;
+        sh:name           "Votos válidos"@es ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ctic/sector-publico/elecciones#votosValidos> ;
+        sh:pattern        "[\\-+]?[0-9]+" .

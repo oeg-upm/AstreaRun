@@ -1,0 +1,316 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#2f0831c9718b532deea8dcb8712fc033>
+        a         sh:PropertyShape ;
+        sh:class  <http://biohackathon.org/resource/faldo#C-TerminalPosition> .
+
+<https://astrea.linkeddata.es/shapes#78e11dc3a93aaaa576d424584e8ff4ef>
+        a         sh:PropertyShape ;
+        sh:class  <http://biohackathon.org/resource/faldo#ReverseStrandPosition> .
+
+<https://astrea.linkeddata.es/shapes#2605d74db08ee188b552506987effe2a>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      rdfs:member .
+
+<https://astrea.linkeddata.es/shapes#23948bc4ab84370275144b0e781c7bb4>
+        a               sh:NodeShape ;
+        rdfs:label      "C-Terminal position" ;
+        rdfs:seeAlso    <http://en.wikipedia.org/wiki/C-terminus> ;
+        sh:description  "The C-terminus is the end of an amino acid chain (protein or polypeptide), terminated by a free carboxyl group (-COOH)." ;
+        sh:name         "C-Terminal position" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#e1504d797c217ce9fec31ec46091cb35> ;
+        sh:targetClass  <http://biohackathon.org/resource/faldo#C-TerminalPosition> .
+
+<https://astrea.linkeddata.es/shapes#391d731be5239d7a6e17d8a20d20cc64>
+        a               sh:NodeShape ;
+        rdfs:label      "One of positions" ;
+        sh:description  "The position is known to be one of the more detailed positions listed by the location predicate." ;
+        sh:name         "One of positions" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#d678013819fd9261b0506e3b5df4b2f6> , <https://astrea.linkeddata.es/shapes#2aae9e544914778805fe5d7051a28636> , <https://astrea.linkeddata.es/shapes#d2d32ec0475b49f4ab0d4b7989fc96f3> ;
+        sh:targetClass  <http://biohackathon.org/resource/faldo#OneOfPosition> .
+
+<https://astrea.linkeddata.es/shapes#583efc6f2fa1e0db47dcd3fda52816a0>
+        a               sh:NodeShape ;
+        rdfs:label      "Exact position" ;
+        sh:description  "A position that is exactly known." ;
+        sh:name         "Exact position" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#d678013819fd9261b0506e3b5df4b2f6> , <https://astrea.linkeddata.es/shapes#2aae9e544914778805fe5d7051a28636> , <https://astrea.linkeddata.es/shapes#991046f84269f924b937861f23d3eb8d> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#6eee859226812b87d98790d5e440348f> ;
+        sh:targetClass  <http://biohackathon.org/resource/faldo#ExactPosition> .
+
+<https://astrea.linkeddata.es/shapes#3287909f4120704219ecde28b502c1db>
+        a               sh:PropertyShape ;
+        rdfs:label      "end" , "The inclusive end of the position." ;
+        sh:class        <http://biohackathon.org/resource/faldo#Position> ;
+        sh:description  "The inclusive end of the position." ;
+        sh:name         "end" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://biohackathon.org/resource/faldo#end> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#b91777470c025260b15c204c6561f495>
+        a               sh:NodeShape ;
+        rdfs:label      "Region" ;
+        sh:description  "A region describes a length of sequence with a start position and end position that represents a feature on a sequence, e.g. a gene." ;
+        sh:name         "Region" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1bd2487a002262f7fff0de145afe4470> ;
+        sh:targetClass  <http://biohackathon.org/resource/faldo#Region> .
+
+<https://astrea.linkeddata.es/shapes#b7fb4385b3be28eedd0b3b5b283e479f>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://biohackathon.org/resource/faldo#reference> .
+
+<https://astrea.linkeddata.es/shapes#af0f5efe5be4686d35c7f5d025f14497>
+        a               sh:PropertyShape ;
+        rdfs:label      "beginOf" , "This is the inverse of the begin:property. It is included to make it easier to write a number of OWL axioms. You should rarely use this in your raw data." ;
+        sh:description  "This is the inverse of the begin:property. It is included to make it easier to write a number of OWL axioms. You should rarely use this in your raw data." ;
+        sh:name         "beginOf" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://biohackathon.org/resource/faldo#beginOf> .
+
+<https://astrea.linkeddata.es/shapes#29791a19c4f9aaa8826e174e46913a0f>
+        a               sh:PropertyShape ;
+        rdfs:label      "after" , "This predicate is used when you want to describe a non-inclusive range. Only used in the InBetweenPosition to say it is after a nucleotide, but before the next one." ;
+        sh:class        <http://biohackathon.org/resource/faldo#ExactPosition> ;
+        sh:description  "This predicate is used when you want to describe a non-inclusive range. Only used in the InBetweenPosition to say it is after a nucleotide, but before the next one." ;
+        sh:name         "after" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://biohackathon.org/resource/faldo#after> .
+
+<https://astrea.linkeddata.es/shapes#2aae9e544914778805fe5d7051a28636>
+        a         sh:PropertyShape ;
+        sh:class  <http://biohackathon.org/resource/faldo#InBetweenPosition> .
+
+<https://astrea.linkeddata.es/shapes#393e1820ed8b2c557e7fa9d9853734a1>
+        a               sh:NodeShape ;
+        rdfs:label      "In between positions" ;
+        sh:description  "This indicates that a feature is between two other positions that are both known exactly and that are next to each other. An example is a restriction enzyme cutting site. The cut is after one position and before the other position (hence, in between)." ;
+        sh:name         "In between positions" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#d678013819fd9261b0506e3b5df4b2f6> , <https://astrea.linkeddata.es/shapes#d2d32ec0475b49f4ab0d4b7989fc96f3> , <https://astrea.linkeddata.es/shapes#991046f84269f924b937861f23d3eb8d> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c3baf9202c88efabfe20560a7ed0a3a9> , <https://astrea.linkeddata.es/shapes#29791a19c4f9aaa8826e174e46913a0f> ;
+        sh:targetClass  <http://biohackathon.org/resource/faldo#InBetweenPosition> .
+
+<https://astrea.linkeddata.es/shapes#5e405e64df26c3393c3518ebc85b6dfd>
+        a               sh:NodeShape ;
+        rdfs:label      "Forward/positive strand position" ;
+        sh:description  "The position is on the forward (positive, 5' to 3') strand. Shown as a '+' in GFF3 and GTF." ;
+        sh:name         "Forward/positive strand position" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#78e11dc3a93aaaa576d424584e8ff4ef> , <https://astrea.linkeddata.es/shapes#6b66bbf7c71b5fc62588c08e3e05c9f4> ;
+        sh:targetClass  <http://biohackathon.org/resource/faldo#ForwardStrandPosition> .
+
+<https://astrea.linkeddata.es/shapes#da5daa2669fc16fac40ff539ce4d98fe>
+        a               sh:PropertyShape ;
+        rdfs:label      "location" , "This is the link between the concept whose location you are annotating and its range or position. For example, when annotating the region that describes an exon, the exon would be the subject and the region would be the object of the triple or: 'active site' 'location' [is] 'position 3'." ;
+        sh:description  "This is the link between the concept whose location you are annotating and its range or position. For example, when annotating the region that describes an exon, the exon would be the subject and the region would be the object of the triple or: 'active site' 'location' [is] 'position 3'." ;
+        sh:name         "location" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           ( [ sh:class  <http://biohackathon.org/resource/faldo#CollectionOfRegions> ;
+                            sh:path   <http://biohackathon.org/resource/faldo#location>
+                          ]
+                          [ sh:class  <http://biohackathon.org/resource/faldo#Region> ;
+                            sh:path   <http://biohackathon.org/resource/faldo#location>
+                          ]
+                          [ sh:class  <http://biohackathon.org/resource/faldo#Position> ;
+                            sh:path   <http://biohackathon.org/resource/faldo#location>
+                          ]
+                        ) .
+
+<https://astrea.linkeddata.es/shapes#6919acc5803ff5b90f56559fbcd28986>
+        a               sh:NodeShape ;
+        rdfs:label      "Collection of regions" ;
+        sh:description  "Sometimes a location of a feature is defined by a collection of regions e.g. join() and order() in INSDC records. One should always try to model the semantics more accurately than this, these are fallback options to encode legacy data." ;
+        sh:name         "Collection of regions" ;
+        sh:nodeKind     sh:IRI ;
+        sh:or           ( [ sh:class  <http://biohackathon.org/resource/faldo#Region> ;
+                            sh:path   rdfs:member
+                          ]
+                          [ sh:class  <http://biohackathon.org/resource/faldo#CollectionOfRegions> ;
+                            sh:path   rdfs:member
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2605d74db08ee188b552506987effe2a> ;
+        sh:targetClass  <http://biohackathon.org/resource/faldo#CollectionOfRegions> .
+
+<https://astrea.linkeddata.es/shapes#6eee859226812b87d98790d5e440348f>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://biohackathon.org/resource/faldo#position> .
+
+<https://astrea.linkeddata.es/shapes#d12ce66da584df665cad54ae96537402>
+        a               sh:PropertyShape ;
+        rdfs:label      "reference" , "The reference is the resource that the position value is anchored to.  For example, a contig or chromosome in a genome assembly." ;
+        sh:description  "The reference is the resource that the position value is anchored to.  For example, a contig or chromosome in a genome assembly." ;
+        sh:name         "reference" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://biohackathon.org/resource/faldo#reference> .
+
+<https://astrea.linkeddata.es/shapes#c3baf9202c88efabfe20560a7ed0a3a9>
+        a               sh:PropertyShape ;
+        rdfs:label      "before" , "This predicate is used to indicate that the feature is found before the exact position. Use to indicate, for example, a cleavage site. The cleavage happens between two amino acids before one and after the other." ;
+        sh:class        <http://biohackathon.org/resource/faldo#ExactPosition> ;
+        sh:description  "This predicate is used to indicate that the feature is found before the exact position. Use to indicate, for example, a cleavage site. The cleavage happens between two amino acids before one and after the other." ;
+        sh:name         "before" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://biohackathon.org/resource/faldo#before> .
+
+<https://astrea.linkeddata.es/shapes#6782d9e5fed9b763245acb566f7721a3>
+        a               sh:NodeShape ;
+        rdfs:label      "Negative/reverse strand position" ;
+        sh:description  "The position is on the reverse (complement, 3' to 5') strand of the sequence. Shown as '-' in GTF and GFF3." ;
+        sh:name         "Negative/reverse strand position" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#dc59d172acc5ce736aa4edb656e2e527> , <https://astrea.linkeddata.es/shapes#6b66bbf7c71b5fc62588c08e3e05c9f4> ;
+        sh:targetClass  <http://biohackathon.org/resource/faldo#ReverseStrandPosition> .
+
+<https://astrea.linkeddata.es/shapes#aca838dd2abd5a6a868d2e5e34bd3459>
+        a               sh:PropertyShape ;
+        rdfs:label      "endOf" , "This is the inverse of the begin:end. It is included to make it easier to write a number of OWL axioms. You should rarely use this in your raw data." ;
+        sh:description  "This is the inverse of the begin:end. It is included to make it easier to write a number of OWL axioms. You should rarely use this in your raw data." ;
+        sh:name         "endOf" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://biohackathon.org/resource/faldo#endOf> .
+
+<https://astrea.linkeddata.es/shapes#991046f84269f924b937861f23d3eb8d>
+        a         sh:PropertyShape ;
+        sh:class  <http://biohackathon.org/resource/faldo#OneOfPosition> .
+
+<https://astrea.linkeddata.es/shapes#ba9e314d8f216b9b0a5b0fc22dbc2341>
+        a               sh:NodeShape ;
+        rdfs:label      "List of regions" ;
+        rdfs:seeAlso    <http://www.insdc.org/files/feature_table.html> ;
+        sh:description  "Should be used when the location of a region is defined by an ordered list of Regions. However, try to avoid using these types in favor of using more explicit semantics about why the order is important." , "As an ordered list of regions (but the list might not be complete)." ;
+        sh:name         "List of regions" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://biohackathon.org/resource/faldo#ListOfRegions> .
+
+<https://astrea.linkeddata.es/shapes#d2d32ec0475b49f4ab0d4b7989fc96f3>
+        a         sh:PropertyShape ;
+        sh:class  <http://biohackathon.org/resource/faldo#ExactPosition> .
+
+<https://astrea.linkeddata.es/shapes#1b813379436ed6ee62ab2643012c4ef4>
+        a         sh:PropertyShape ;
+        sh:class  <http://biohackathon.org/resource/faldo#StrandedPosition> .
+
+<https://astrea.linkeddata.es/shapes#bd6fb3b55dd6787437bfb11dc0519f0d>
+        a               sh:NodeShape ;
+        rdfs:label      "Fuzzy position" ;
+        sh:description  "A position that lacks exact data." ;
+        sh:name         "Fuzzy position" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://biohackathon.org/resource/faldo#FuzzyPosition> .
+
+<https://astrea.linkeddata.es/shapes#e1504d797c217ce9fec31ec46091cb35>
+        a         sh:PropertyShape ;
+        sh:class  <http://biohackathon.org/resource/faldo#N-TerminalPosition> .
+
+<https://astrea.linkeddata.es/shapes#f0db3377a67b8d65e8db2696d27d5986>
+        a               sh:NodeShape ;
+        rdfs:label      "Stranded position" ;
+        sh:description  "Part of the coordinate system denoting on which strand the feature can be found. If you do not yet know which stand the feature is on, you should tag the position with just this class. If you know more you should use one of the subclasses. This means a region described with a '.' in GFF3. A GFF3 unstranded position does not have this type in FALDO -- those are just a 'position'." ;
+        sh:name         "Stranded position" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://biohackathon.org/resource/faldo#StrandedPosition> .
+
+<https://astrea.linkeddata.es/shapes#c1c0ce3d487cd5879f9d6f1ac6f2222a>
+        a               sh:NodeShape ;
+        rdfs:label      "Bag of regions" ;
+        rdfs:seeAlso    <http://www.insdc.org/files/feature_table.html> ;
+        sh:description  "Used to describe a location that consists of a number of Regions but where the order is not known. e.g. the oddly named order() keyword in a INSDC file." ;
+        sh:name         "Bag of regions" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://biohackathon.org/resource/faldo#BagOfRegions> .
+
+<https://astrea.linkeddata.es/shapes#66c4fe04c64138a9c2275541ddda6f27>
+        a               sh:NodeShape ;
+        rdfs:label      "Both strands position" ;
+        sh:description  "The 'both strands position' indicates a region that is best described as being on 'both' strands of a double-stranded sequence, rather than one or the other." ;
+        sh:name         "Both strands position" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#78e11dc3a93aaaa576d424584e8ff4ef> , <https://astrea.linkeddata.es/shapes#dc59d172acc5ce736aa4edb656e2e527> ;
+        sh:targetClass  <http://biohackathon.org/resource/faldo#BothStrandsPosition> .
+
+<https://astrea.linkeddata.es/shapes#3ab674f98f7bbef50efbd4a711e71e50>
+        a               sh:NodeShape ;
+        rdfs:label      "Indeterminate position within a range" ;
+        sh:description  "Use when you have an idea of the range in which you can find the position, but you cannot be sure about the exact position." ;
+        sh:name         "Indeterminate position within a range" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#991046f84269f924b937861f23d3eb8d> , <https://astrea.linkeddata.es/shapes#1b813379436ed6ee62ab2643012c4ef4> , <https://astrea.linkeddata.es/shapes#d2d32ec0475b49f4ab0d4b7989fc96f3> , <https://astrea.linkeddata.es/shapes#2aae9e544914778805fe5d7051a28636> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1bd2487a002262f7fff0de145afe4470> ;
+        sh:targetClass  <http://biohackathon.org/resource/faldo#InRangePosition> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#b7fb4385b3be28eedd0b3b5b283e479f> , <https://astrea.linkeddata.es/shapes#b91777470c025260b15c204c6561f495> , <https://astrea.linkeddata.es/shapes#ba9e314d8f216b9b0a5b0fc22dbc2341> , <https://astrea.linkeddata.es/shapes#2aae9e544914778805fe5d7051a28636> , <https://astrea.linkeddata.es/shapes#7c0cae77eca52763dc573555fae0964c> , <https://astrea.linkeddata.es/shapes#c1c0ce3d487cd5879f9d6f1ac6f2222a> , <https://astrea.linkeddata.es/shapes#da5daa2669fc16fac40ff539ce4d98fe> , <https://astrea.linkeddata.es/shapes#393e1820ed8b2c557e7fa9d9853734a1> , <https://astrea.linkeddata.es/shapes#991046f84269f924b937861f23d3eb8d> , <https://astrea.linkeddata.es/shapes#d12ce66da584df665cad54ae96537402> , <https://astrea.linkeddata.es/shapes#0f015fd89605ff0e7d69c611b7956b3b> , <https://astrea.linkeddata.es/shapes#0c3fc3510f3528cfc695d6c2771d772b> , <https://astrea.linkeddata.es/shapes#78e11dc3a93aaaa576d424584e8ff4ef> , <https://astrea.linkeddata.es/shapes#6782d9e5fed9b763245acb566f7721a3> , <https://astrea.linkeddata.es/shapes#66c4fe04c64138a9c2275541ddda6f27> , <https://astrea.linkeddata.es/shapes#583efc6f2fa1e0db47dcd3fda52816a0> , <https://astrea.linkeddata.es/shapes#2f0831c9718b532deea8dcb8712fc033> , <https://astrea.linkeddata.es/shapes#29791a19c4f9aaa8826e174e46913a0f> , <https://astrea.linkeddata.es/shapes#391d731be5239d7a6e17d8a20d20cc64> , <https://astrea.linkeddata.es/shapes#d678013819fd9261b0506e3b5df4b2f6> , <https://astrea.linkeddata.es/shapes#23948bc4ab84370275144b0e781c7bb4> , <https://astrea.linkeddata.es/shapes#d2d32ec0475b49f4ab0d4b7989fc96f3> , <https://astrea.linkeddata.es/shapes#aca838dd2abd5a6a868d2e5e34bd3459> , <https://astrea.linkeddata.es/shapes#c3baf9202c88efabfe20560a7ed0a3a9> , <https://astrea.linkeddata.es/shapes#f0db3377a67b8d65e8db2696d27d5986> , <https://astrea.linkeddata.es/shapes#e1504d797c217ce9fec31ec46091cb35> , <https://astrea.linkeddata.es/shapes#dc59d172acc5ce736aa4edb656e2e527> , <https://astrea.linkeddata.es/shapes#1b813379436ed6ee62ab2643012c4ef4> , <https://astrea.linkeddata.es/shapes#af0f5efe5be4686d35c7f5d025f14497> , <https://astrea.linkeddata.es/shapes#bd6fb3b55dd6787437bfb11dc0519f0d> , <https://astrea.linkeddata.es/shapes#2605d74db08ee188b552506987effe2a> , <https://astrea.linkeddata.es/shapes#3287909f4120704219ecde28b502c1db> , <https://astrea.linkeddata.es/shapes#6b66bbf7c71b5fc62588c08e3e05c9f4> , <https://astrea.linkeddata.es/shapes#6eee859226812b87d98790d5e440348f> , <https://astrea.linkeddata.es/shapes#5e405e64df26c3393c3518ebc85b6dfd> , <https://astrea.linkeddata.es/shapes#3ab674f98f7bbef50efbd4a711e71e50> , <https://astrea.linkeddata.es/shapes#6919acc5803ff5b90f56559fbcd28986> , <https://astrea.linkeddata.es/shapes#1bd2487a002262f7fff0de145afe4470> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#0c3fc3510f3528cfc695d6c2771d772b>
+        a               sh:PropertyShape ;
+        rdfs:label      "position" , "The position value is the offset along the reference where this position is found. Thus the only the position value in combination with the reference determines where a position is." , "Denoted in 1-based closed coordinates, i.e. the position on the first amino acid or nucleotide of a sequence has the value 1. For nucleotide sequences we count from the 5'end of the sequence, while for Aminoacid sequences we start counting from the N-Terminus." ;
+        sh:description  "The position value is the offset along the reference where this position is found. Thus the only the position value in combination with the reference determines where a position is." , "Denoted in 1-based closed coordinates, i.e. the position on the first amino acid or nucleotide of a sequence has the value 1. For nucleotide sequences we count from the 5'end of the sequence, while for Aminoacid sequences we start counting from the N-Terminus." ;
+        sh:name         "position" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://biohackathon.org/resource/faldo#position> .
+
+<https://astrea.linkeddata.es/shapes#d678013819fd9261b0506e3b5df4b2f6>
+        a         sh:PropertyShape ;
+        sh:class  <http://biohackathon.org/resource/faldo#InRangePosition> .
+
+<https://astrea.linkeddata.es/shapes#0f015fd89605ff0e7d69c611b7956b3b>
+        a               sh:NodeShape ;
+        rdfs:seeAlso    <http://en.wikipedia.org/wiki/N-terminus> ;
+        sh:description  "The position of the starting amino-acid a protein or polypeptide terminated by an amino acid with a free amine group (-NH2). The convention for writing peptide sequences is to put the N-terminus on the left and write the sequence from N- to C-terminus. Instances of this class are often used when the reference sequence is not complete " ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#2f0831c9718b532deea8dcb8712fc033> ;
+        sh:targetClass  <http://biohackathon.org/resource/faldo#N-TerminalPosition> .
+
+<https://astrea.linkeddata.es/shapes#1bd2487a002262f7fff0de145afe4470>
+        a               sh:PropertyShape ;
+        rdfs:label      "begin" , "The inclusive beginning of a position. Also known as start." ;
+        sh:class        <http://biohackathon.org/resource/faldo#Position> ;
+        sh:description  "The inclusive beginning of a position. Also known as start." ;
+        sh:name         "begin" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://biohackathon.org/resource/faldo#begin> .
+
+<https://astrea.linkeddata.es/shapes#6b66bbf7c71b5fc62588c08e3e05c9f4>
+        a         sh:PropertyShape ;
+        sh:class  <http://biohackathon.org/resource/faldo#BothStrandsPosition> .
+
+<https://astrea.linkeddata.es/shapes#dc59d172acc5ce736aa4edb656e2e527>
+        a         sh:PropertyShape ;
+        sh:class  <http://biohackathon.org/resource/faldo#ForwardStrandPosition> .
+
+<https://astrea.linkeddata.es/shapes#7c0cae77eca52763dc573555fae0964c>
+        a               sh:NodeShape ;
+        rdfs:label      "Position" ;
+        sh:description  "Superclass for the general concept of a position on a sequence. The sequence is designated with the reference predicate." ;
+        sh:name         "Position" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b7fb4385b3be28eedd0b3b5b283e479f> ;
+        sh:targetClass  <http://biohackathon.org/resource/faldo#Position> .

@@ -1,0 +1,1264 @@
+@prefix :      <https://w3id.org/scholarlydata/ontology/conference-ontology.owl#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix schor: <https://w3id.org/scholarlydata/role/> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<https://astrea.linkeddata.es/shapes#f12a0bc4d6a7d145a4f607abf162eecc>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :name .
+
+<https://astrea.linkeddata.es/shapes#d3c03c3c2cee5e89fb18b0b253e0c5a1>
+        a               sh:PropertyShape ;
+        rdfs:label      "is document related to"@en ;
+        sh:description  "is document related to"@en ;
+        sh:name         "is document related to"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :isDocumentRelatedTo .
+
+<https://astrea.linkeddata.es/shapes#2643bf3b90b1ff53b06452dbfe081aae>
+        a            sh:PropertyShape ;
+        sh:class     :Proceedings ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :hasProceedings .
+
+<https://astrea.linkeddata.es/shapes#20b42a28050d67bbe5f3fd3f6dd4eeb3>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasAuthorList .
+
+<https://astrea.linkeddata.es/shapes#ce135b7aaaaf37105f02435f5aedab57>
+        a               sh:NodeShape ;
+        sh:description  "A list."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#0a3df795afcd7ffad002ae16ca0b55ff> , <https://astrea.linkeddata.es/shapes#c901994b3fbec613130d2a4c588cce88> , <https://astrea.linkeddata.es/shapes#f4c18e5435523422eb591cf2e828f7b1> ;
+        sh:targetClass  :List .
+
+<https://astrea.linkeddata.es/shapes#a9836b3e7f9f3da72c8eb091075e0743>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasContent .
+
+<https://astrea.linkeddata.es/shapes#0a99e8a3614107a9ab01b16736b71781>
+        a               sh:PropertyShape ;
+        rdfs:label      "at time"@en ;
+        sh:datatype     xsd:dateTime ;
+        sh:description  "at time"@en ;
+        sh:name         "at time"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :atTime ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#08522a8792a4148765fa9d111516e8d4>
+        a               sh:NodeShape ;
+        sh:description  "In-Use track provides researchers to discuss novel research taken to the market."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/seo/In-useTrack> .
+
+<https://astrea.linkeddata.es/shapes#df2d96996a92ad5b614ed37b85ce2c8a>
+        a            sh:PropertyShape ;
+        sh:class     rdfs:Literal ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :address .
+
+<https://astrea.linkeddata.es/shapes#cc12bcf3ce0fa06c37b653ea03a0062b>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :during .
+
+<https://astrea.linkeddata.es/shapes#92c8d8255507c64cafbee15f323c7331>
+        a               sh:PropertyShape ;
+        rdfs:label      "The deadline of abstract submission." ;
+        sh:datatype     xsd:dateTime ;
+        sh:description  "The deadline of abstract submission." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/seo/abstractDeadline> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#44cea6c1370892bcac20aae763cd20f2>
+        a               sh:PropertyShape ;
+        rdfs:label      "is part of"@en ;
+        sh:description  "is part of"@en ;
+        sh:name         "is part of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :isPartOf .
+
+<https://astrea.linkeddata.es/shapes#e4bf70bf0a4463dec54cb501ee102ea7>
+        a               sh:PropertyShape ;
+        rdfs:label      "has part"@en ;
+        sh:class        owl:Thing ;
+        sh:description  "has part"@en ;
+        sh:name         "has part"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :hasPart .
+
+<https://astrea.linkeddata.es/shapes#66bf0162117fa4a0987a7178e0d2d9df>
+        a            sh:PropertyShape ;
+        sh:class     :ConferenceSeries ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasSeries .
+
+<https://astrea.linkeddata.es/shapes#91b4dec8628ac5c1a17b872a13e08425>
+        a               sh:PropertyShape ;
+        rdfs:label      "relates to document"@en ;
+        sh:class        :Document ;
+        sh:description  "relates to document"@en ;
+        sh:name         "relates to document"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :relatesToDocument .
+
+<https://astrea.linkeddata.es/shapes#09e00a9833865bb5cda5c57c2fef0a6b>
+        a               sh:PropertyShape ;
+        rdfs:label      "The webpage of the submission to event." ;
+        sh:description  "The webpage of the submission to event." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/seo/submissionWebPage> .
+
+<https://astrea.linkeddata.es/shapes#e8044ce9c432f2034cfedd77347afb10>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :withRole .
+
+<https://astrea.linkeddata.es/shapes#b84ef47736a0cc871fe7c208cfba6a4a>
+        a               sh:NodeShape ;
+        rdfs:label      "Symposiums series"@en ;
+        sh:description  "A series of symposiums."@en ;
+        sh:name         "Symposiums series"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/seo/SymposiumSeries> .
+
+<https://astrea.linkeddata.es/shapes#e0dd448b37a738341853231d9e1b9d8b>
+        a            sh:PropertyShape ;
+        sh:class     :RoleDuringEvent ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :holdsRole .
+
+<https://astrea.linkeddata.es/shapes#1eddee927fb91b001237c66d24d4e05d>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:dateTime ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/seo/notificationDate> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#b0d7373021fa0b29d6194a8f2fe00766>
+        a               sh:NodeShape ;
+        rdfs:label      "Organisational role during event"@en ;
+        sh:description  "A time indexed situation that expresses a role held by an agent in the organisation of a conference."@en ;
+        sh:name         "Organisational role during event"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#37875b53f9cd3a131a4946dadcff8753> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ca6785ecc6b4e83105cbc260515e4c40> ;
+        sh:targetClass  :OrganisationalRoleDuringEvent .
+
+<https://astrea.linkeddata.es/shapes#0f452813b6c016c34f2c17cbfedc7e3d>
+        a            sh:PropertyShape ;
+        sh:class     :OrganisedEvent ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasSubEvent .
+
+<https://astrea.linkeddata.es/shapes#61b5acdb609ce4a917211f8e40844e6d>
+        a               sh:NodeShape ;
+        rdfs:label      "Proceedings"@en ;
+        sh:description  "The collection of conference proceedings."@en ;
+        sh:name         "Proceedings"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#30425eced2fdc85fb18485c87d9638ea> , <https://astrea.linkeddata.es/shapes#08a68cb5a6b28d8c9d6bf5556cf7c669> ;
+        sh:targetClass  :Proceedings .
+
+<https://astrea.linkeddata.es/shapes#c901994b3fbec613130d2a4c588cce88>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 :hasLastItem ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  :ListItem ] .
+
+<https://astrea.linkeddata.es/shapes#02f61acd4709f08cd79fa64f5061933d>
+        a               sh:NodeShape ;
+        rdfs:label      "Break"@en ;
+        sh:description  "A break event."@en ;
+        sh:name         "Break"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :Break .
+
+<https://astrea.linkeddata.es/shapes#a6bebc742a05f20d0a6c646204cd9492>
+        a               sh:NodeShape ;
+        sh:description  "A list item."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#48ec99f8beb76e8367eb5cfccec5fee4> , <https://astrea.linkeddata.es/shapes#7c63859c22cae9ff8b9808735ab0e0c4> , <https://astrea.linkeddata.es/shapes#b6d1862cf25383933ea40fef40c40d28> , <https://astrea.linkeddata.es/shapes#a9836b3e7f9f3da72c8eb091075e0743> ;
+        sh:targetClass  :ListItem .
+
+<https://astrea.linkeddata.es/shapes#13cb700d306b41fa4a74ab861cc6861f>
+        a               sh:NodeShape ;
+        rdfs:label      "Time indexed situation"@en ;
+        sh:description  "A Situation that is explicitly indexed at some time."@en ;
+        sh:name         "Time indexed situation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#fbd436d47b24dd5b8d15195aed836282> ;
+        sh:targetClass  :TimeIndexedSituation .
+
+<https://astrea.linkeddata.es/shapes#8b2c7bd121961799662266c4495ad430>
+        a               sh:NodeShape ;
+        rdfs:label      "Agent"@en ;
+        sh:description  "Any agentive Object , either physical (e.g. a whale, a robot, an oak), or social (e.g. a corporation, an institution, a community)."@en ;
+        sh:name         "Agent"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#0fa38ced62c6dab02ab8763788aa8538> , <https://astrea.linkeddata.es/shapes#15415c30ffa2dac27544e0d1ac4648e3> , <https://astrea.linkeddata.es/shapes#f12a0bc4d6a7d145a4f607abf162eecc> ;
+        sh:targetClass  :Agent .
+
+<https://astrea.linkeddata.es/shapes#1c3f9455688a237e486c34439998fb91>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :isAffiliationOf .
+
+<https://astrea.linkeddata.es/shapes#9da4772c5b3a71ef4ebb78373f443157>
+        a               sh:PropertyShape ;
+        rdfs:label      "doi"@en ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "doi"@en ;
+        sh:name         "doi"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :doi .
+
+<https://astrea.linkeddata.es/shapes#12fa26302e6d5f8b82dee55d53fc0122>
+        a            sh:PropertyShape ;
+        sh:class     :EventSeries ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :hasSeries .
+
+<https://astrea.linkeddata.es/shapes#e9e9bea427642485e114d30c9446a22c>
+        a               sh:NodeShape ;
+        rdfs:label      "Panel"@en ;
+        sh:description  "A panel event."@en ;
+        sh:name         "Panel"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :Panel .
+
+<https://astrea.linkeddata.es/shapes#90af4ca054a10ebcc24bbe6a151be706>
+        a               sh:PropertyShape ;
+        rdfs:label      "The state of the city in which the event takes place."@en ;
+        sh:description  "The state of the city in which the event takes place."@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/seo/state> .
+
+<https://astrea.linkeddata.es/shapes#088b9c6df321b3b3eaa458c2f78efe16>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :isProceedingsOf .
+
+<https://astrea.linkeddata.es/shapes#09f17fcc61f87f9692f33bab42323734>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      skos:broader .
+
+<https://astrea.linkeddata.es/shapes#594ce5f50197a22e7361f3d43796f71c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :title .
+
+<https://astrea.linkeddata.es/shapes#9bd5c8422e3f43b8f201eeca8dc8e66d>
+        a               sh:PropertyShape ;
+        rdfs:label      "has sub event"@en ;
+        sh:class        :OrganisedEvent ;
+        sh:description  "has sub event"@en ;
+        sh:name         "has sub event"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :hasSubEvent .
+
+<https://astrea.linkeddata.es/shapes#9095488fa14500fbca08d074e58ac5f3>
+        a               sh:PropertyShape ;
+        rdfs:label      "is topic of"@en ;
+        sh:description  "is topic of"@en ;
+        sh:name         "is topic of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :isTopicOf .
+
+<https://astrea.linkeddata.es/shapes#c44b3d885519d50b454042f5006cabad>
+        a               sh:NodeShape ;
+        rdfs:label      "In proceedings"@en ;
+        sh:description  "The expession of a paper as an in proceedings."@en ;
+        sh:name         "In proceedings"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ae4c3db37f9834d0b3c8447314aba417> ;
+        sh:targetClass  :InProceedings .
+
+<https://astrea.linkeddata.es/shapes#89acf03a254a54cea04ecab33df3e67c>
+        a            sh:PropertyShape ;
+        sh:class     :Topic ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasTopic .
+
+<https://astrea.linkeddata.es/shapes#87ea13bf9bb305e0b7adc42e2cd0c64a>
+        a               sh:PropertyShape ;
+        rdfs:label      "has last item"@en ;
+        sh:description  "has last item"@en ;
+        sh:maxCount     1 ;
+        sh:name         "has last item"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#69c49d65e1e93c6c30343aa3cdf79c81>
+        a               sh:PropertyShape ;
+        rdfs:label      "is last item of"@en ;
+        sh:description  "is last item of"@en ;
+        sh:name         "is last item of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :isLastItemOf .
+
+<https://astrea.linkeddata.es/shapes#ded62617fb6b7595a7262c01bed7a010>
+        a               sh:PropertyShape ;
+        rdfs:label      "with role"@en ;
+        sh:class        :Role ;
+        sh:description  "with role"@en ;
+        sh:name         "with role"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :withRole .
+
+<https://astrea.linkeddata.es/shapes#05477732ddc453a8e740cd381eac134a>
+        a               sh:NodeShape ;
+        sh:description  "Provide PhD students an opportunity to share and develop their research ideas in a critical but supportive environment."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/seo/DoctoralConsortium> .
+
+<https://astrea.linkeddata.es/shapes#54ab3a8803fd0c7d2d970deb41ce33a0>
+        a               sh:PropertyShape ;
+        rdfs:label      "is first item of"@en ;
+        sh:description  "is first item of"@en ;
+        sh:name         "is first item of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :isFirstItemOf .
+
+<https://astrea.linkeddata.es/shapes#e30488f63d2d74917e1671d6766b43df>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :isSeriesOf .
+
+<https://astrea.linkeddata.es/shapes#2a6a196d32d13c90d78e25e11584119a>
+        a               sh:PropertyShape ;
+        rdfs:label      "This propoerty shows the sponsor of an event." ;
+        sh:class        <http://purl.org/seo/Sponsor> ;
+        sh:description  "This propoerty shows the sponsor of an event." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/seo/hasSponsor> .
+
+<https://astrea.linkeddata.es/shapes#5688a9328424639462a41c92c4117c78>
+        a               sh:NodeShape ;
+        rdfs:label      "Session"@en ;
+        sh:description  "A session event."@en ;
+        sh:name         "Session"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :Session .
+
+<https://astrea.linkeddata.es/shapes#03bbf586eb2015962a12ad0ef7e22480>
+        a               sh:PropertyShape ;
+        rdfs:label      "has address"@en ;
+        sh:description  "has address"@en ;
+        sh:name         "has address"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#903778944e3f0d7771b66b7500c9c7dd>
+        a               sh:PropertyShape ;
+        rdfs:label      "end date"@en ;
+        sh:datatype     xsd:dateTime ;
+        sh:description  "end date"@en ;
+        sh:name         "end date"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :endDate ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#c30df7c81fb9b815b3570fad4b40f9c9>
+        a               sh:NodeShape ;
+        sh:description  "The track for fundamental research, innovative technology, and applications concerning the research topic of the event."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/seo/ResearchTrack> .
+
+<https://astrea.linkeddata.es/shapes#0b5e8f3df81865fe08977023c7ef262e>
+        a               sh:NodeShape ;
+        rdfs:label      "Affiliation role"@en ;
+        sh:description  "A role expressing an affilition."@en ;
+        sh:name         "Affiliation role"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :AffiliationRole .
+
+<https://astrea.linkeddata.es/shapes#0654bc78c0dac9402bfc4f986b01c193>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :endDate .
+
+<https://astrea.linkeddata.es/shapes#88503e323397f7d726f6da45e2814186>
+        a               sh:PropertyShape ;
+        rdfs:label      "in affiliation during event"@en ;
+        sh:description  "in affiliation during event"@en ;
+        sh:name         "in affiliation during event"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :inAffiliationDuringEvent .
+
+<https://astrea.linkeddata.es/shapes#2821bd99c416b95c344a28127f0a1bf7>
+        a            sh:PropertyShape ;
+        sh:class     rdfs:Literal ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :keyword .
+
+<https://astrea.linkeddata.es/shapes#23af52dbdd391374e1fb13b687635a60>
+        a         sh:PropertyShape ;
+        sh:class  :RoleDuringEvent .
+
+<https://astrea.linkeddata.es/shapes#93d16c19b492eb5a5013ce5d540a417f>
+        a            sh:PropertyShape ;
+        sh:class     :TutorialSeries ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasSeries .
+
+<https://astrea.linkeddata.es/shapes#79a67999acd3fc1e8a7f207eb66e9096>
+        a            sh:PropertyShape ;
+        rdfs:label   "is series of"@en ;
+        sh:class     :OrganisedEvent ;
+        sh:name      "is series of"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :isSeriesOf .
+
+<https://astrea.linkeddata.es/shapes#a8f219acfad4da4153d6591901e9c89d>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :atTime .
+
+<https://astrea.linkeddata.es/shapes#b314d2d6e3881d73a5a8f9292a04f7f1>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      skos:narrower .
+
+<https://astrea.linkeddata.es/shapes#0a3df795afcd7ffad002ae16ca0b55ff>
+        a               sh:PropertyShape ;
+        rdfs:label      "has item"@en ;
+        sh:class        :ListItem ;
+        sh:description  "has item"@en ;
+        sh:name         "has item"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :hasItem .
+
+<https://astrea.linkeddata.es/shapes#ae4c3db37f9834d0b3c8447314aba417>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :isPartOf .
+
+<https://astrea.linkeddata.es/shapes#9241be5341a3229776d877ad67997d1f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :isAffiliationOf .
+
+<https://astrea.linkeddata.es/shapes#96b6d750aebdca6f2d4c7f228022394e>
+        a               sh:NodeShape ;
+        rdfs:label      "Meal"@en ;
+        sh:description  "A meal event."@en ;
+        sh:name         "Meal"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :Meal .
+
+<https://astrea.linkeddata.es/shapes#85c25c73daaad5ededd76a300d132e6e>
+        a            sh:PropertyShape ;
+        sh:class     :Site ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasSite .
+
+<https://astrea.linkeddata.es/shapes#0d77926faeecaed88c61aca070b92a8a>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :during .
+
+<https://astrea.linkeddata.es/shapes#26e13ea5f2009aa96a200f865bfb122f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :isSeriesOf .
+
+<https://astrea.linkeddata.es/shapes#47af8e0ebe48b9cda86f55812b45c4aa>
+        a         sh:PropertyShape ;
+        sh:class  :PublishingRole .
+
+<https://astrea.linkeddata.es/shapes#1adc843a89404d06dc5ee8e2782d8f4c>
+        a               sh:PropertyShape ;
+        rdfs:label      "is held by"@en , "is hed by"@en ;
+        sh:class        :Agent ;
+        sh:description  "is hed by"@en ;
+        sh:name         "is held by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :isHeldBy .
+
+<https://astrea.linkeddata.es/shapes#4fdba4190ba666d7493796214f56e8e1>
+        a               sh:NodeShape ;
+        sh:description  "Present research contributions as panels."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/seo/PanelsTrack> .
+
+<https://astrea.linkeddata.es/shapes#68bbcf02153a48fc2044b5e870aa7560>
+        a               sh:PropertyShape ;
+        rdfs:label      "title"@en ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "title"@en ;
+        sh:name         "title"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :title .
+
+<https://astrea.linkeddata.es/shapes#2af92af6c7ccf365ddecce13bb00ca30>
+        a               sh:PropertyShape ;
+        rdfs:label      "has first item"@en ;
+        sh:description  "has first item"@en ;
+        sh:maxCount     1 ;
+        sh:name         "has first item"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#318c4efba0c1d8d76e8c885726c630ee> , <https://astrea.linkeddata.es/shapes#e4bf70bf0a4463dec54cb501ee102ea7> , <https://astrea.linkeddata.es/shapes#57f0c4cc2d15a2d65e56a28b55483a15> , <https://astrea.linkeddata.es/shapes#475588f11b7bf80aca1eb14f91eda6cb> , <https://astrea.linkeddata.es/shapes#0a99e8a3614107a9ab01b16736b71781> ;
+        sh:targetClass  owl:Thing .
+
+<https://astrea.linkeddata.es/shapes#76e6c6b54588752c499bc8f76b4f4ee8>
+        a               sh:PropertyShape ;
+        rdfs:label      "has author list"@en ;
+        sh:class        :List ;
+        sh:description  "has author list"@en ;
+        sh:name         "has author list"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :hasAuthorList .
+
+<https://astrea.linkeddata.es/shapes#b6d1862cf25383933ea40fef40c40d28>
+        a               sh:PropertyShape ;
+        rdfs:label      "has content"@en ;
+        sh:class        owl:Thing ;
+        sh:description  "has content"@en ;
+        sh:name         "has content"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :hasContent .
+
+<https://astrea.linkeddata.es/shapes#9b7fc68ab03de0c018a509d137ddddd7>
+        a               sh:NodeShape ;
+        rdfs:label      "Conference series"@en ;
+        sh:description  "A series of conferences."@en ;
+        sh:name         "Conference series"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e30488f63d2d74917e1671d6766b43df> ;
+        sh:targetClass  :ConferenceSeries .
+
+<https://astrea.linkeddata.es/shapes#bf4db5e5aa3ae3522cb402898a3bb4a6>
+        a               sh:PropertyShape ;
+        rdfs:label      "is location for"@en ;
+        sh:description  "is location for"@en ;
+        sh:name         "is location for"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :isLocationFor .
+
+<https://astrea.linkeddata.es/shapes#37875b53f9cd3a131a4946dadcff8753>
+        a         sh:PropertyShape ;
+        sh:class  :PublishingRoleDuringEvent .
+
+<https://astrea.linkeddata.es/report/01006613797>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://w3id.org/scholarlydata/ontology/conference-ontology.owl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#663ec9b044a5671c40c15ac9700b5c21>
+        a               sh:NodeShape ;
+        rdfs:label      "Publishing role during event"@en ;
+        sh:description  "A time indexed situation that expresses a publishing role held by an agent at a conference."@en ;
+        sh:name         "Publishing role during event"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#91b4dec8628ac5c1a17b872a13e08425> , <https://astrea.linkeddata.es/shapes#6126dc97bb68b006efdb76bc2a33e06c> ;
+        sh:targetClass  :PublishingRoleDuringEvent .
+
+<https://astrea.linkeddata.es/shapes#7c63859c22cae9ff8b9808735ab0e0c4>
+        a               sh:PropertyShape ;
+        rdfs:label      "previous"@en ;
+        sh:class        :ListItem ;
+        sh:description  "previous"@en ;
+        sh:name         "previous"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :previous .
+
+<https://astrea.linkeddata.es/shapes#a86544f2d48dd7558742ed933b404bbb>
+        a               sh:PropertyShape ;
+        rdfs:label      "duration"@en ;
+        sh:description  "duration"@en ;
+        sh:name         "duration"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :duration .
+
+<https://astrea.linkeddata.es/shapes#920aadd740ccb2688beba4eb6b37e077>
+        a               sh:NodeShape ;
+        sh:description  "Country"@en , "The country hosts the event."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/seo/Country> .
+
+<https://astrea.linkeddata.es/shapes#859be351013bca3215f8a37af23ed521>
+        a               sh:PropertyShape ;
+        rdfs:label      "belongsToSeries"@en , "This property shows the series which an event belongs to."@en ;
+        sh:class        :EventSeries ;
+        sh:description  "This property shows the series which an event belongs to."@en ;
+        sh:name         "belongsToSeries"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/seo/belongsToSeries> .
+
+<https://astrea.linkeddata.es/shapes#f104891e26838d9c19dcd778d16155e0>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :isSeriesOf .
+
+<https://astrea.linkeddata.es/shapes#86543bbaf72e7c611bf484daa9b58b21>
+        a               sh:PropertyShape ;
+        rdfs:label      "given name"@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "given name"@en ;
+        sh:name         "given name"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :givenName ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#d1804ac3ec65fb335870758cd4c360f4>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property links an event to another one which is co-located with." ;
+        sh:class        :AcademicEvent ;
+        sh:description  "This property links an event to another one which is co-located with." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/seo/colocatedWith> .
+
+<https://astrea.linkeddata.es/shapes#03ebfaa782117258977187a10ca6de3b>
+        a               sh:NodeShape ;
+        rdfs:label      "Track"@en ;
+        sh:description  "A track event."@en ;
+        sh:name         "Track"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :Track .
+
+<https://astrea.linkeddata.es/shapes#6126dc97bb68b006efdb76bc2a33e06c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :withRole .
+
+<https://astrea.linkeddata.es/shapes#fbd436d47b24dd5b8d15195aed836282>
+        a               sh:PropertyShape ;
+        rdfs:label      "during"@en ;
+        sh:class        :OrganisedEvent ;
+        sh:description  "during"@en ;
+        sh:name         "during"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :during .
+
+<https://astrea.linkeddata.es/shapes#911bfbc641a2aaf3a4b5fb2f0e7d0536>
+        a                sh:PropertyShape ;
+        rdfs:label       "The number of accepted papers in the event."@en ;
+        sh:datatype      xsd:unsignedInt ;
+        sh:description   "The number of accepted papers in the event."@en ;
+        sh:maxInclusive  4294967295 ;
+        sh:minInclusive  0 ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://purl.org/seo/acceptedPapers> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#c7197b38d7112d90cfbe20759d75f3bb>
+        a               sh:PropertyShape ;
+        rdfs:label      "The deadline of paper submission." ;
+        sh:description  "The deadline of paper submission." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/seo/submissionDeadline> .
+
+<https://astrea.linkeddata.es/shapes#cdd674dc6ac1cd6b6cde919c916dd7ab>
+        a               sh:NodeShape ;
+        rdfs:label      "Document"@en ;
+        sh:description  "A Document related to the conference."@en ;
+        sh:name         "Document"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#7d834cefc36e8865b93986178ab679d9> , <https://astrea.linkeddata.es/shapes#20b42a28050d67bbe5f3fd3f6dd4eeb3> , <https://astrea.linkeddata.es/shapes#5241c3565aa6b8850f15ec780d8de6c7> , <https://astrea.linkeddata.es/shapes#9da4772c5b3a71ef4ebb78373f443157> , <https://astrea.linkeddata.es/shapes#76e6c6b54588752c499bc8f76b4f4ee8> , <https://astrea.linkeddata.es/shapes#b2b378ba52e5c87703b4618e0ca5f1f0> , <https://astrea.linkeddata.es/shapes#68bbcf02153a48fc2044b5e870aa7560> , <https://astrea.linkeddata.es/shapes#50533b565b32cc64d5402a03eba77290> , <https://astrea.linkeddata.es/shapes#594ce5f50197a22e7361f3d43796f71c> , <https://astrea.linkeddata.es/shapes#2821bd99c416b95c344a28127f0a1bf7> , <https://astrea.linkeddata.es/shapes#89acf03a254a54cea04ecab33df3e67c> ;
+        sh:targetClass  :Document .
+
+<https://astrea.linkeddata.es/shapes#0795663fe6a9b82e57be971adcec814d>
+        a               sh:NodeShape ;
+        rdfs:label      "Publisher"@en ;
+        sh:description  "The publisher of the event proceedings."@en ;
+        sh:name         "Publisher"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/seo/Publisher> .
+
+<https://astrea.linkeddata.es/shapes#5241c3565aa6b8850f15ec780d8de6c7>
+        a               sh:PropertyShape ;
+        rdfs:label      "keyword"@en ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "keyword"@en ;
+        sh:name         "keyword"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :keyword .
+
+<https://astrea.linkeddata.es/shapes#2d31f63a542a7f6af6165db31b6a2cd3>
+        a            sh:PropertyShape ;
+        sh:class     rdfs:Literal ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :description .
+
+<https://astrea.linkeddata.es/shapes#ca6785ecc6b4e83105cbc260515e4c40>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :withRole .
+
+<https://astrea.linkeddata.es/shapes#7d834cefc36e8865b93986178ab679d9>
+        a               sh:PropertyShape ;
+        rdfs:label      "abstract"@en ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "abstract"@en ;
+        sh:name         "abstract"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :abstract .
+
+<https://astrea.linkeddata.es/shapes#c413bde74a5067eb8da3dcaa995bc4bb>
+        a            sh:PropertyShape ;
+        sh:class     :Site ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasSite .
+
+<https://astrea.linkeddata.es/shapes#d8f6be3d3bf3ec0eea88d5a4bd503069>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :startDate .
+
+<https://astrea.linkeddata.es/shapes#07436955bdaabbaf9ab974c372eb35b3>
+        a               sh:PropertyShape ;
+        rdfs:label      "family name"@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "family name"@en ;
+        sh:name         "family name"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :familyName ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#7be7c88d43cefdcf0a55e5192332b0ce>
+        a               sh:NodeShape ;
+        rdfs:label      "Role"@en ;
+        sh:description  "A Concept that classifies an Object."@en ;
+        sh:name         "Role"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :Role .
+
+<https://astrea.linkeddata.es/shapes#15415c30ffa2dac27544e0d1ac4648e3>
+        a               sh:PropertyShape ;
+        rdfs:label      "name"@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "name"@en ;
+        sh:name         "name"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :name ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#4c56136427342380452eb0ad4d9f15f7>
+        a               sh:NodeShape ;
+        sh:description  "The industry track seeks to present research contributions in industrial settings."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/seo/IndustryTrack> .
+
+<https://astrea.linkeddata.es/shapes#50533b565b32cc64d5402a03eba77290>
+        a            sh:PropertyShape ;
+        sh:class     :Document ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :isPartOf .
+
+<https://astrea.linkeddata.es/shapes#90af57250baaf82bb0f5cb75e13edfbe>
+        a               sh:PropertyShape ;
+        rdfs:label      "has location"@en ;
+        sh:class        :Site , <http://purl.org/seo/Country> ;
+        sh:description  "has location"@en ;
+        sh:name         "has location"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :hasLocation .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#074f95135999f9bcc6bc5e372a2f84e4> , <https://astrea.linkeddata.es/shapes#2e955c9e87bb3a60f7a8984b900e19b7> , <https://astrea.linkeddata.es/shapes#6ad2a31975085e5a596a7a61a6457d76> , <https://astrea.linkeddata.es/shapes#30425eced2fdc85fb18485c87d9638ea> , <https://astrea.linkeddata.es/shapes#773c6e3e86472c5e0b53940dfd3246bd> , <https://astrea.linkeddata.es/shapes#318c4efba0c1d8d76e8c885726c630ee> , <https://astrea.linkeddata.es/shapes#1c3f9455688a237e486c34439998fb91> , <https://astrea.linkeddata.es/shapes#c30df7c81fb9b815b3570fad4b40f9c9> , <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#df2d96996a92ad5b614ed37b85ce2c8a> , <https://astrea.linkeddata.es/shapes#7ba959cfa8ec3ccfbd1b0c4710119a87> , <https://astrea.linkeddata.es/shapes#12fa26302e6d5f8b82dee55d53fc0122> , <https://astrea.linkeddata.es/shapes#05912cbebad507d15dc08c8f4662d0fe> , <https://astrea.linkeddata.es/shapes#9bd5c8422e3f43b8f201eeca8dc8e66d> , <https://astrea.linkeddata.es/shapes#8c44bc14575fd4e39f07e233458d8480> , <https://astrea.linkeddata.es/shapes#6c3850eff160010211cffca048d084b5> , <https://astrea.linkeddata.es/shapes#bff83e1a81814adaeed85d1b71dab6ce> , <https://astrea.linkeddata.es/shapes#9a1c122854579d69675f954a29935295> , <https://astrea.linkeddata.es/shapes#0fa38ced62c6dab02ab8763788aa8538> , <https://astrea.linkeddata.es/shapes#f0fc15d54c63a890b2613b0973acd25a> , <https://astrea.linkeddata.es/shapes#fbd436d47b24dd5b8d15195aed836282> , <https://astrea.linkeddata.es/shapes#c44b3d885519d50b454042f5006cabad> , <https://astrea.linkeddata.es/shapes#b545bcbca0527bfc5861ddd804c2ae34> , <https://astrea.linkeddata.es/shapes#ce135b7aaaaf37105f02435f5aedab57> , <https://astrea.linkeddata.es/shapes#911bfbc641a2aaf3a4b5fb2f0e7d0536> , <https://astrea.linkeddata.es/shapes#6bb00edb0418aa2265f76daa6a96df1f> , <https://astrea.linkeddata.es/shapes#23af52dbdd391374e1fb13b687635a60> , <https://astrea.linkeddata.es/shapes#b522cab6eb3007ead2a746b10c591380> , <https://astrea.linkeddata.es/shapes#61b5acdb609ce4a917211f8e40844e6d> , <https://astrea.linkeddata.es/shapes#15ecff84fab1ec708ef7bc84c207fcb6> , <https://astrea.linkeddata.es/shapes#8b2c7bd121961799662266c4495ad430> , <https://astrea.linkeddata.es/shapes#c901994b3fbec613130d2a4c588cce88> , <https://astrea.linkeddata.es/shapes#b0d7373021fa0b29d6194a8f2fe00766> , <https://astrea.linkeddata.es/shapes#8399c6b7e6982324628f64a570a813fd> , <https://astrea.linkeddata.es/shapes#89acf03a254a54cea04ecab33df3e67c> , <https://astrea.linkeddata.es/shapes#9b7fc68ab03de0c018a509d137ddddd7> , <https://astrea.linkeddata.es/shapes#44cea6c1370892bcac20aae763cd20f2> , <https://astrea.linkeddata.es/shapes#d8f6be3d3bf3ec0eea88d5a4bd503069> , <https://astrea.linkeddata.es/shapes#e9e9bea427642485e114d30c9446a22c> , <https://astrea.linkeddata.es/shapes#93d16c19b492eb5a5013ce5d540a417f> , <https://astrea.linkeddata.es/shapes#09e00a9833865bb5cda5c57c2fef0a6b> , <https://astrea.linkeddata.es/shapes#13cb700d306b41fa4a74ab861cc6861f> , <https://astrea.linkeddata.es/shapes#ce07808d307427777a289f20926e8195> , <https://astrea.linkeddata.es/shapes#d75dfaf19333023ceba73b2d8a96acb7> , <https://astrea.linkeddata.es/shapes#e0dd448b37a738341853231d9e1b9d8b> , <https://astrea.linkeddata.es/shapes#47af8e0ebe48b9cda86f55812b45c4aa> , <https://astrea.linkeddata.es/shapes#2643bf3b90b1ff53b06452dbfe081aae> , <https://astrea.linkeddata.es/shapes#0d77926faeecaed88c61aca070b92a8a> , <https://astrea.linkeddata.es/shapes#b03667842589b3ed557e2ad0cf2387ef> , <https://astrea.linkeddata.es/shapes#cdd674dc6ac1cd6b6cde919c916dd7ab> , <https://astrea.linkeddata.es/shapes#79a67999acd3fc1e8a7f207eb66e9096> , <https://astrea.linkeddata.es/shapes#1eddee927fb91b001237c66d24d4e05d> , <https://astrea.linkeddata.es/shapes#0b5e8f3df81865fe08977023c7ef262e> , <https://astrea.linkeddata.es/shapes#a86544f2d48dd7558742ed933b404bbb> , <https://astrea.linkeddata.es/shapes#0795663fe6a9b82e57be971adcec814d> , <https://astrea.linkeddata.es/shapes#02f61acd4709f08cd79fa64f5061933d> , <https://astrea.linkeddata.es/shapes#088b9c6df321b3b3eaa458c2f78efe16> , <https://astrea.linkeddata.es/shapes#8d21b1ed50ead0b29a1380b4a592dd10> , <https://astrea.linkeddata.es/shapes#08888d8a45093d7491add9caeb3178ad> , <https://astrea.linkeddata.es/shapes#f4c18e5435523422eb591cf2e828f7b1> , <https://astrea.linkeddata.es/shapes#235707cf8cdd6d9ba84eb5e13439165e> , <https://astrea.linkeddata.es/shapes#0a99e8a3614107a9ab01b16736b71781> , <https://astrea.linkeddata.es/shapes#b9b757989aa0a5b9a2bfc5289f0bff92> , <https://astrea.linkeddata.es/shapes#57f0c4cc2d15a2d65e56a28b55483a15> , <https://astrea.linkeddata.es/shapes#b314d2d6e3881d73a5a8f9292a04f7f1> , <https://astrea.linkeddata.es/shapes#920aadd740ccb2688beba4eb6b37e077> , <https://astrea.linkeddata.es/shapes#66bf0162117fa4a0987a7178e0d2d9df> , <https://astrea.linkeddata.es/shapes#a6bebc742a05f20d0a6c646204cd9492> , <https://astrea.linkeddata.es/shapes#1adc843a89404d06dc5ee8e2782d8f4c> , <https://astrea.linkeddata.es/shapes#86543bbaf72e7c611bf484daa9b58b21> , <https://astrea.linkeddata.es/shapes#c3cd15eeefb1a9ba311241685e2c5ce2> , <https://astrea.linkeddata.es/shapes#684ff6ae26a17d278a507199648516a9> , <https://astrea.linkeddata.es/shapes#37875b53f9cd3a131a4946dadcff8753> , <https://astrea.linkeddata.es/shapes#553d125156ef732750baa03e9d9c2409> , <https://astrea.linkeddata.es/shapes#88503e323397f7d726f6da45e2814186> , <https://astrea.linkeddata.es/shapes#ded62617fb6b7595a7262c01bed7a010> , <https://astrea.linkeddata.es/shapes#e8932f4a1c0e23f18947ba95770249b2> , <https://astrea.linkeddata.es/shapes#09f17fcc61f87f9692f33bab42323734> , <https://astrea.linkeddata.es/shapes#92c8d8255507c64cafbee15f323c7331> , <https://astrea.linkeddata.es/shapes#07436955bdaabbaf9ab974c372eb35b3> , <https://astrea.linkeddata.es/shapes#e4bf70bf0a4463dec54cb501ee102ea7> , <https://astrea.linkeddata.es/shapes#0f452813b6c016c34f2c17cbfedc7e3d> , <https://astrea.linkeddata.es/shapes#9da4772c5b3a71ef4ebb78373f443157> , <https://astrea.linkeddata.es/shapes#c7197b38d7112d90cfbe20759d75f3bb> , <https://astrea.linkeddata.es/shapes#903778944e3f0d7771b66b7500c9c7dd> , <https://astrea.linkeddata.es/shapes#d5d9a78b71314e50aacd02cef91ab856> , <https://astrea.linkeddata.es/shapes#678783616ad70fd07d0c979f78da9eb4> , <https://astrea.linkeddata.es/shapes#d1804ac3ec65fb335870758cd4c360f4> , <https://astrea.linkeddata.es/shapes#a8f219acfad4da4153d6591901e9c89d> , <https://astrea.linkeddata.es/shapes#ae4c3db37f9834d0b3c8447314aba417> , <https://astrea.linkeddata.es/shapes#832b592d310556e20f67990e25c26326> , <https://astrea.linkeddata.es/shapes#663ec9b044a5671c40c15ac9700b5c21> , <https://astrea.linkeddata.es/shapes#7a9a004f9a13c1daf1a9fd14009ded40> , <https://astrea.linkeddata.es/shapes#03ebfaa782117258977187a10ca6de3b> , <https://astrea.linkeddata.es/shapes#68bbcf02153a48fc2044b5e870aa7560> , <https://astrea.linkeddata.es/shapes#08a68cb5a6b28d8c9d6bf5556cf7c669> , <https://astrea.linkeddata.es/shapes#6126dc97bb68b006efdb76bc2a33e06c> , <https://astrea.linkeddata.es/shapes#d3c03c3c2cee5e89fb18b0b253e0c5a1> , <https://astrea.linkeddata.es/shapes#a9836b3e7f9f3da72c8eb091075e0743> , <https://astrea.linkeddata.es/shapes#50533b565b32cc64d5402a03eba77290> , <https://astrea.linkeddata.es/shapes#85c25c73daaad5ededd76a300d132e6e> , <https://astrea.linkeddata.es/shapes#4c56136427342380452eb0ad4d9f15f7> , <https://astrea.linkeddata.es/shapes#dffbb999720da47b714a52c75d352b53> , <https://astrea.linkeddata.es/shapes#26e13ea5f2009aa96a200f865bfb122f> , <https://astrea.linkeddata.es/shapes#7b9b581ec1d6c8fa18e7112d08a48937> , <https://astrea.linkeddata.es/shapes#cc12bcf3ce0fa06c37b653ea03a0062b> , <https://astrea.linkeddata.es/shapes#3744961256fe36a8e11a1cca25e193ca> , <https://astrea.linkeddata.es/shapes#48ec99f8beb76e8367eb5cfccec5fee4> , <https://astrea.linkeddata.es/shapes#1638696d9461a14f2301e07970204aa0> , <https://astrea.linkeddata.es/shapes#15415c30ffa2dac27544e0d1ac4648e3> , <https://astrea.linkeddata.es/shapes#76aa6fe6280d33294b07209fd0448cc1> , <https://astrea.linkeddata.es/shapes#4fdba4190ba666d7493796214f56e8e1> , <https://astrea.linkeddata.es/shapes#7d834cefc36e8865b93986178ab679d9> , <https://astrea.linkeddata.es/shapes#f259ae37be0832381eb0fa251f1915ef> , <https://astrea.linkeddata.es/shapes#e30488f63d2d74917e1671d6766b43df> , <https://astrea.linkeddata.es/shapes#b6d1862cf25383933ea40fef40c40d28> , <https://astrea.linkeddata.es/shapes#e752527dbc5267a83e9f53050ee1fda4> , <https://astrea.linkeddata.es/shapes#475588f11b7bf80aca1eb14f91eda6cb> , <https://astrea.linkeddata.es/shapes#05477732ddc453a8e740cd381eac134a> , <https://astrea.linkeddata.es/shapes#76e6c6b54588752c499bc8f76b4f4ee8> , <https://astrea.linkeddata.es/shapes#17bb0d6a573d7e52da130abc2d37920a> , <https://astrea.linkeddata.es/shapes#7c63859c22cae9ff8b9808735ab0e0c4> , <https://astrea.linkeddata.es/shapes#5157973f6ea1b917b85cfe858780b2cf> , <https://astrea.linkeddata.es/shapes#f104891e26838d9c19dcd778d16155e0> , <https://astrea.linkeddata.es/shapes#9241be5341a3229776d877ad67997d1f> , <https://astrea.linkeddata.es/shapes#a9e27f46796ec7f51c8c9a4c1ca0ec95> , <https://astrea.linkeddata.es/shapes#b2b378ba52e5c87703b4618e0ca5f1f0> , <https://astrea.linkeddata.es/shapes#20b42a28050d67bbe5f3fd3f6dd4eeb3> , <https://astrea.linkeddata.es/shapes#2af92af6c7ccf365ddecce13bb00ca30> , <https://astrea.linkeddata.es/shapes#75b002e0d22b17e9a13073569a2bf893> , <https://astrea.linkeddata.es/shapes#2a6a196d32d13c90d78e25e11584119a> , <https://astrea.linkeddata.es/shapes#90af4ca054a10ebcc24bbe6a151be706> , <https://astrea.linkeddata.es/shapes#20216f3195daafd3c726dde14be4853f> , <https://astrea.linkeddata.es/shapes#859be351013bca3215f8a37af23ed521> , <https://astrea.linkeddata.es/shapes#91b4dec8628ac5c1a17b872a13e08425> , <https://astrea.linkeddata.es/shapes#87ea13bf9bb305e0b7adc42e2cd0c64a> , <https://astrea.linkeddata.es/shapes#2d31f63a542a7f6af6165db31b6a2cd3> , <https://astrea.linkeddata.es/shapes#03bbf586eb2015962a12ad0ef7e22480> , <https://astrea.linkeddata.es/shapes#bf4db5e5aa3ae3522cb402898a3bb4a6> , <https://astrea.linkeddata.es/shapes#f12a0bc4d6a7d145a4f607abf162eecc> , <https://astrea.linkeddata.es/shapes#805edfc68dfec41eacce39eed8810a59> , <https://astrea.linkeddata.es/shapes#2de260636556fb7c737e6f97dedabb6e> , <https://astrea.linkeddata.es/shapes#e41d6ed41b751a7b21d44ae24386da5b> , <https://astrea.linkeddata.es/shapes#08522a8792a4148765fa9d111516e8d4> , <https://astrea.linkeddata.es/shapes#0a3df795afcd7ffad002ae16ca0b55ff> , <https://astrea.linkeddata.es/shapes#9e93e5898b0ba5e6f47150101ad0bd8f> , <https://astrea.linkeddata.es/shapes#90af57250baaf82bb0f5cb75e13edfbe> , <https://astrea.linkeddata.es/shapes#54ab3a8803fd0c7d2d970deb41ce33a0> , <https://astrea.linkeddata.es/shapes#c2c9de292518fa6078dddbeedbc41cb7> , <https://astrea.linkeddata.es/shapes#9095488fa14500fbca08d074e58ac5f3> , <https://astrea.linkeddata.es/shapes#c413bde74a5067eb8da3dcaa995bc4bb> , <https://astrea.linkeddata.es/shapes#7be7c88d43cefdcf0a55e5192332b0ce> , <https://astrea.linkeddata.es/shapes#69c49d65e1e93c6c30343aa3cdf79c81> , <https://astrea.linkeddata.es/shapes#5241c3565aa6b8850f15ec780d8de6c7> , <https://astrea.linkeddata.es/shapes#0654bc78c0dac9402bfc4f986b01c193> , <https://astrea.linkeddata.es/shapes#337c09e2ec7513bb479238e2054a7c39> , <https://astrea.linkeddata.es/shapes#b84ef47736a0cc871fe7c208cfba6a4a> , <https://astrea.linkeddata.es/shapes#594ce5f50197a22e7361f3d43796f71c> , <https://astrea.linkeddata.es/shapes#2821bd99c416b95c344a28127f0a1bf7> , <https://astrea.linkeddata.es/shapes#66c0b1a9cb09fa8154f0ec1bf1b6d212> , <https://astrea.linkeddata.es/shapes#96b6d750aebdca6f2d4c7f228022394e> , <https://astrea.linkeddata.es/shapes#ca6785ecc6b4e83105cbc260515e4c40> , <https://astrea.linkeddata.es/shapes#e8044ce9c432f2034cfedd77347afb10> , <https://astrea.linkeddata.es/shapes#5688a9328424639462a41c92c4117c78> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/01006613797> .
+
+<https://astrea.linkeddata.es/shapes#805edfc68dfec41eacce39eed8810a59>
+        a               sh:NodeShape ;
+        rdfs:label      "Affiliation during event"@en ;
+        sh:description  "A time indexed situation that expresses an affiliation of a person to an organisation."@en ;
+        sh:name         "Affiliation during event"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#23af52dbdd391374e1fb13b687635a60> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#7a9a004f9a13c1daf1a9fd14009ded40> , <https://astrea.linkeddata.es/shapes#a9e27f46796ec7f51c8c9a4c1ca0ec95> , <https://astrea.linkeddata.es/shapes#cc12bcf3ce0fa06c37b653ea03a0062b> , <https://astrea.linkeddata.es/shapes#b9b757989aa0a5b9a2bfc5289f0bff92> , <https://astrea.linkeddata.es/shapes#ded62617fb6b7595a7262c01bed7a010> , <https://astrea.linkeddata.es/shapes#1c3f9455688a237e486c34439998fb91> ;
+        sh:targetClass  :AffiliationDuringEvent .
+
+<https://astrea.linkeddata.es/shapes#b2b378ba52e5c87703b4618e0ca5f1f0>
+        a            sh:PropertyShape ;
+        sh:class     :Document ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasPart .
+
+<https://astrea.linkeddata.es/shapes#17bb0d6a573d7e52da130abc2d37920a>
+        a               sh:NodeShape ;
+        rdfs:label      "Event Track"@en ;
+        sh:description  "A categorization of research contributions submitted to an academic event."@en ;
+        sh:name         "Event Track"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/seo/Track> .
+
+<https://astrea.linkeddata.es/shapes#d75dfaf19333023ceba73b2d8a96acb7>
+        a               sh:NodeShape ;
+        rdfs:label      "Organisation"@en ;
+        sh:description  "An organisation (e.g., University of Bologna, Apple Inc.)."@en ;
+        sh:name         "Organisation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#85c25c73daaad5ededd76a300d132e6e> ;
+        sh:targetClass  :Organisation .
+
+<https://astrea.linkeddata.es/shapes#30425eced2fdc85fb18485c87d9638ea>
+        a               sh:PropertyShape ;
+        rdfs:label      "This propoerty shows the publisher of a proceedings." ;
+        sh:class        <http://purl.org/seo/Publisher> ;
+        sh:description  "This propoerty shows the publisher of a proceedings." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/seo/hasPublisher> .
+
+<https://astrea.linkeddata.es/shapes#20216f3195daafd3c726dde14be4853f>
+        a               sh:PropertyShape ;
+        rdfs:label      "This propoerty shows the available tracks of an event." ;
+        sh:class        <http://purl.org/seo/Track> ;
+        sh:description  "This propoerty shows the available tracks of an event." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/seo/hasTrack> .
+
+<https://astrea.linkeddata.es/shapes#9e93e5898b0ba5e6f47150101ad0bd8f>
+        a               sh:NodeShape ;
+        rdfs:label      "Workshop"@en ;
+        sh:description  "A workshop event."@en ;
+        sh:name         "Workshop"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2643bf3b90b1ff53b06452dbfe081aae> , <https://astrea.linkeddata.es/shapes#e752527dbc5267a83e9f53050ee1fda4> ;
+        sh:targetClass  :Workshop .
+
+<https://astrea.linkeddata.es/shapes#66c0b1a9cb09fa8154f0ec1bf1b6d212>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :isHeldBy .
+
+<https://astrea.linkeddata.es/shapes#f0fc15d54c63a890b2613b0973acd25a>
+        a               sh:NodeShape ;
+        rdfs:label      "Workshop series"@en ;
+        sh:description  "A series of workshops."@en ;
+        sh:name         "Workshop series"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f104891e26838d9c19dcd778d16155e0> ;
+        sh:targetClass  :WorkshopSeries .
+
+<https://astrea.linkeddata.es/shapes#553d125156ef732750baa03e9d9c2409>
+        a               sh:NodeShape ;
+        rdfs:label      "Academic event"@en ;
+        sh:description  "Academic events are e.g. conferences and conference-like events, and all the sub-events of those which are about the topic or theme of the conference, such as talks or panels."@en ;
+        sh:name         "Academic event"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b522cab6eb3007ead2a746b10c591380> , <https://astrea.linkeddata.es/shapes#d1804ac3ec65fb335870758cd4c360f4> , <https://astrea.linkeddata.es/shapes#20216f3195daafd3c726dde14be4853f> , <https://astrea.linkeddata.es/shapes#859be351013bca3215f8a37af23ed521> , <https://astrea.linkeddata.es/shapes#1eddee927fb91b001237c66d24d4e05d> , <https://astrea.linkeddata.es/shapes#7b9b581ec1d6c8fa18e7112d08a48937> , <https://astrea.linkeddata.es/shapes#92c8d8255507c64cafbee15f323c7331> , <https://astrea.linkeddata.es/shapes#911bfbc641a2aaf3a4b5fb2f0e7d0536> , <https://astrea.linkeddata.es/shapes#e41d6ed41b751a7b21d44ae24386da5b> , <https://astrea.linkeddata.es/shapes#8d21b1ed50ead0b29a1380b4a592dd10> ;
+        sh:targetClass  :AcademicEvent .
+
+<https://astrea.linkeddata.es/shapes#e41d6ed41b751a7b21d44ae24386da5b>
+        a               sh:PropertyShape ;
+        rdfs:label      "The webpage of the event."@en ;
+        sh:datatype     xsd:anyURI ;
+        sh:description  "The webpage of the event."@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/seo/EventWebpage> ;
+        sh:pattern      "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#7ba959cfa8ec3ccfbd1b0c4710119a87>
+        a               sh:NodeShape ;
+        rdfs:label      "Conference"@en ;
+        sh:description  "A conference event."@en ;
+        sh:name         "Conference"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2643bf3b90b1ff53b06452dbfe081aae> , <https://astrea.linkeddata.es/shapes#66bf0162117fa4a0987a7178e0d2d9df> ;
+        sh:targetClass  :Conference .
+
+<https://astrea.linkeddata.es/shapes#832b592d310556e20f67990e25c26326>
+        a               sh:NodeShape ;
+        rdfs:label      "Site"@en ;
+        sh:description  "A phisyscal site or location."@en ;
+        sh:name         "Site"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#9a1c122854579d69675f954a29935295> , <https://astrea.linkeddata.es/shapes#2d31f63a542a7f6af6165db31b6a2cd3> , <https://astrea.linkeddata.es/shapes#df2d96996a92ad5b614ed37b85ce2c8a> ;
+        sh:targetClass  :Site .
+
+<https://astrea.linkeddata.es/shapes#48ec99f8beb76e8367eb5cfccec5fee4>
+        a               sh:PropertyShape ;
+        rdfs:label      "next"@en ;
+        sh:class        :ListItem ;
+        sh:description  "next"@en ;
+        sh:name         "next"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :next .
+
+<https://astrea.linkeddata.es/shapes#e8932f4a1c0e23f18947ba95770249b2>
+        a               sh:PropertyShape ;
+        rdfs:label      "start date"@en ;
+        sh:datatype     xsd:dateTime ;
+        sh:description  "start date"@en ;
+        sh:name         "start date"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :startDate ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#f4c18e5435523422eb591cf2e828f7b1>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 :hasFirstItem ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  :ListItem ] .
+
+<https://astrea.linkeddata.es/shapes#9a1c122854579d69675f954a29935295>
+        a               sh:PropertyShape ;
+        rdfs:label      "address"@en ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "address"@en ;
+        sh:name         "address"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :address .
+
+<https://astrea.linkeddata.es/shapes#2de260636556fb7c737e6f97dedabb6e>
+        a               sh:NodeShape ;
+        rdfs:label      "Tutorial series"@en ;
+        sh:description  "A series of tutorials."@en ;
+        sh:name         "Tutorial series"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#26e13ea5f2009aa96a200f865bfb122f> ;
+        sh:targetClass  :TutorialSeries .
+
+<https://astrea.linkeddata.es/shapes#b9b757989aa0a5b9a2bfc5289f0bff92>
+        a               sh:PropertyShape ;
+        rdfs:label      "with organisation"@en ;
+        sh:class        :Organisation ;
+        sh:description  "with organisation"@en ;
+        sh:name         "with organisation"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :withOrganisation .
+
+<https://astrea.linkeddata.es/shapes#5157973f6ea1b917b85cfe858780b2cf>
+        a               sh:PropertyShape ;
+        rdfs:label      "The twitter account of the event." ;
+        sh:datatype     xsd:anyURI ;
+        sh:description  "The twitter account of the event." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/seo/hasTwitter> ;
+        sh:pattern      "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#318c4efba0c1d8d76e8c885726c630ee>
+        a               sh:PropertyShape ;
+        rdfs:label      "has topic"@en ;
+        sh:class        :Topic ;
+        sh:description  "has topic"@en ;
+        sh:name         "has topic"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :hasTopic .
+
+<https://astrea.linkeddata.es/shapes#d5d9a78b71314e50aacd02cef91ab856>
+        a               sh:NodeShape ;
+        rdfs:label      "Role during event"@en ;
+        sh:description  "A time indexed situation that expresses a role held by an agent at conference."@en ;
+        sh:name         "Role during event"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:or           ( [ sh:class  :OrganisingRole ;
+                            sh:path   :withRole
+                          ]
+                          [ sh:class  :PublishingRole ;
+                            sh:path   :withRole
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#0d77926faeecaed88c61aca070b92a8a> , <https://astrea.linkeddata.es/shapes#ded62617fb6b7595a7262c01bed7a010> , <https://astrea.linkeddata.es/shapes#66c0b1a9cb09fa8154f0ec1bf1b6d212> , <https://astrea.linkeddata.es/shapes#1adc843a89404d06dc5ee8e2782d8f4c> , <https://astrea.linkeddata.es/shapes#f259ae37be0832381eb0fa251f1915ef> ;
+        sh:targetClass  :RoleDuringEvent .
+
+<https://astrea.linkeddata.es/shapes#6ad2a31975085e5a596a7a61a6457d76>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e8044ce9c432f2034cfedd77347afb10> , <https://astrea.linkeddata.es/shapes#9241be5341a3229776d877ad67997d1f> , <https://astrea.linkeddata.es/shapes#a8f219acfad4da4153d6591901e9c89d> ;
+        sh:targetClass  :AffiliationAtTimeOfSubmission .
+
+<https://astrea.linkeddata.es/shapes#f259ae37be0832381eb0fa251f1915ef>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :withRole .
+
+<https://astrea.linkeddata.es/shapes#337c09e2ec7513bb479238e2054a7c39>
+        a            sh:PropertyShape ;
+        sh:class     :AffiliationDuringEvent ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasAffiliation .
+
+<https://astrea.linkeddata.es/shapes#8399c6b7e6982324628f64a570a813fd>
+        a               sh:NodeShape ;
+        sh:description  "Proposal on a research topic relevant to the event audience."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/seo/TutorialProposals> .
+
+<https://astrea.linkeddata.es/shapes#c3cd15eeefb1a9ba311241685e2c5ce2>
+        a               sh:NodeShape ;
+        rdfs:label      "Organising role"@en ;
+        sh:description  "A role played by an agent in the organisation of an event."@en ;
+        sh:name         "Organising role"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#47af8e0ebe48b9cda86f55812b45c4aa> ;
+        sh:targetClass  :OrganisingRole .
+
+<https://astrea.linkeddata.es/shapes#8d21b1ed50ead0b29a1380b4a592dd10>
+        a               sh:PropertyShape ;
+        rdfs:label      "The city in which the event takes place."@en ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "The city in which the event takes place."@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/seo/city> .
+
+<https://astrea.linkeddata.es/shapes#e752527dbc5267a83e9f53050ee1fda4>
+        a            sh:PropertyShape ;
+        sh:class     :WorkshopSeries ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasSeries .
+
+<https://astrea.linkeddata.es/shapes#08888d8a45093d7491add9caeb3178ad>
+        a               sh:NodeShape ;
+        rdfs:label      "Publishing role"@en ;
+        sh:description  "A publishing role (e.g., author, presenter)."@en ;
+        sh:name         "Publishing role"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :PublishingRole .
+
+<https://astrea.linkeddata.es/shapes#3744961256fe36a8e11a1cca25e193ca>
+        a               sh:NodeShape ;
+        rdfs:label      "Sponsor"@en ;
+        sh:description  "The Sponsor of the event (i.e. company, university ... etc.)."@en ;
+        sh:name         "Sponsor"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/seo/Sponsor> .
+
+<https://astrea.linkeddata.es/shapes#b545bcbca0527bfc5861ddd804c2ae34>
+        a               sh:NodeShape ;
+        rdfs:label      "Event series"@en ;
+        sh:description  "A series of organised events."@en ;
+        sh:name         "Event series"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2a6a196d32d13c90d78e25e11584119a> , <https://astrea.linkeddata.es/shapes#79a67999acd3fc1e8a7f207eb66e9096> , <https://astrea.linkeddata.es/shapes#5157973f6ea1b917b85cfe858780b2cf> ;
+        sh:targetClass  :EventSeries .
+
+<https://astrea.linkeddata.es/shapes#773c6e3e86472c5e0b53940dfd3246bd>
+        a               sh:PropertyShape ;
+        rdfs:label      "is sub event of"@en ;
+        sh:description  "is sub event of"@en ;
+        sh:name         "is sub event of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :isSubEventOf .
+
+<https://astrea.linkeddata.es/shapes#6c3850eff160010211cffca048d084b5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/seo/Symposium> .
+
+<https://astrea.linkeddata.es/shapes#05912cbebad507d15dc08c8f4662d0fe>
+        a               sh:NodeShape ;
+        rdfs:label      "Person"@en ;
+        sh:description  "Persons in commonsense intuition."@en ;
+        sh:name         "Person"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#07436955bdaabbaf9ab974c372eb35b3> , <https://astrea.linkeddata.es/shapes#337c09e2ec7513bb479238e2054a7c39> , <https://astrea.linkeddata.es/shapes#e0dd448b37a738341853231d9e1b9d8b> , <https://astrea.linkeddata.es/shapes#1638696d9461a14f2301e07970204aa0> , <https://astrea.linkeddata.es/shapes#86543bbaf72e7c611bf484daa9b58b21> ;
+        sh:targetClass  :Person .
+
+<https://astrea.linkeddata.es/shapes#c2c9de292518fa6078dddbeedbc41cb7>
+        a               sh:NodeShape ;
+        rdfs:label      "Tutorial"@en ;
+        sh:description  "A tutorial event."@en ;
+        sh:name         "Tutorial"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#93d16c19b492eb5a5013ce5d540a417f> ;
+        sh:targetClass  :Tutorial .
+
+<https://astrea.linkeddata.es/shapes#76aa6fe6280d33294b07209fd0448cc1>
+        a               sh:PropertyShape ;
+        rdfs:label      "acronym"@en , "The acronym of an object."@en ;
+        sh:description  "The acronym of an object."@en ;
+        sh:name         "acronym"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :acronym .
+
+<https://astrea.linkeddata.es/shapes#8c44bc14575fd4e39f07e233458d8480>
+        a               sh:NodeShape ;
+        sh:description  "Present research contributions as posters."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/seo/PostersTrack> .
+
+<https://astrea.linkeddata.es/shapes#678783616ad70fd07d0c979f78da9eb4>
+        a               sh:NodeShape ;
+        rdfs:label      "Talk"@en ;
+        sh:description  "A talk event."@en ;
+        sh:name         "Talk"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :Talk .
+
+<https://astrea.linkeddata.es/shapes#a9e27f46796ec7f51c8c9a4c1ca0ec95>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :withRole .
+
+<https://astrea.linkeddata.es/shapes#475588f11b7bf80aca1eb14f91eda6cb>
+        a               sh:PropertyShape ;
+        rdfs:label      "description"@en ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "description"@en ;
+        sh:name         "description"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         :description .
+
+<https://astrea.linkeddata.es/shapes#0fa38ced62c6dab02ab8763788aa8538>
+        a               sh:PropertyShape ;
+        rdfs:label      "holds role"@en ;
+        sh:class        :RoleDuringEvent ;
+        sh:description  "holds role"@en ;
+        sh:name         "holds role"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :holdsRole .
+
+<https://astrea.linkeddata.es/shapes#15ecff84fab1ec708ef7bc84c207fcb6>
+        a               sh:PropertyShape ;
+        rdfs:label      "is address of"@en ;
+        sh:description  "is address of"@en ;
+        sh:name         "is address of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :isAddressOf .
+
+<https://astrea.linkeddata.es/shapes#235707cf8cdd6d9ba84eb5e13439165e>
+        a               sh:PropertyShape ;
+        rdfs:label      "is item of"@en ;
+        sh:description  "is item of"@en ;
+        sh:name         "is item of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :isItemOf .
+
+<https://astrea.linkeddata.es/shapes#7a9a004f9a13c1daf1a9fd14009ded40>
+        a               sh:PropertyShape ;
+        rdfs:label      "is affiliation of"@en ;
+        sh:class        :Person ;
+        sh:description  "is affiliation of"@en ;
+        sh:name         "is affiliation of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :isAffiliationOf .
+
+<https://astrea.linkeddata.es/shapes#6bb00edb0418aa2265f76daa6a96df1f>
+        a               sh:NodeShape ;
+        sh:description  "The Resources Track aims to promote the sharing of resources including: datasets, ontologies, vocabularies, ... etc"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/seo/ResourceTrack> .
+
+<https://astrea.linkeddata.es/shapes#bff83e1a81814adaeed85d1b71dab6ce>
+        a               sh:NodeShape ;
+        rdfs:label      "Non academic event"@en ;
+        sh:description  "Any event without academic nature that can occur in a conference. Examples are coffee breaks, social dinners, etc."@en ;
+        sh:name         "Non academic event"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :NonAcademicEvent .
+
+<https://astrea.linkeddata.es/shapes#ce07808d307427777a289f20926e8195>
+        a               sh:NodeShape ;
+        rdfs:label      "Social event"@en ;
+        sh:description  "A social event."@en ;
+        sh:name         "Social event"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :SocialEvent .
+
+<https://astrea.linkeddata.es/shapes#dffbb999720da47b714a52c75d352b53>
+        a               sh:NodeShape ;
+        sh:description  "Proposals for workshops on topics related to the general theme of the conference."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/seo/WorkshopProposals> .
+
+<https://astrea.linkeddata.es/shapes#08a68cb5a6b28d8c9d6bf5556cf7c669>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasPart .
+
+<https://astrea.linkeddata.es/shapes#75b002e0d22b17e9a13073569a2bf893>
+        a               sh:PropertyShape ;
+        rdfs:label      "is site of"@en ;
+        sh:description  "is site of"@en ;
+        sh:name         "is site of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :isSiteOf .
+
+<https://astrea.linkeddata.es/shapes#57f0c4cc2d15a2d65e56a28b55483a15>
+        a               sh:PropertyShape ;
+        rdfs:label      "has site"@en ;
+        sh:class        :Site ;
+        sh:description  "has site"@en ;
+        sh:name         "has site"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :hasSite .
+
+<https://astrea.linkeddata.es/shapes#684ff6ae26a17d278a507199648516a9>
+        a               sh:NodeShape ;
+        rdfs:label      "Organised event"@en ;
+        sh:description  "Any kind of organised event having a start and an end date."@en ;
+        sh:name         "Organised event"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#90af57250baaf82bb0f5cb75e13edfbe> , <https://astrea.linkeddata.es/shapes#d8f6be3d3bf3ec0eea88d5a4bd503069> , <https://astrea.linkeddata.es/shapes#c413bde74a5067eb8da3dcaa995bc4bb> , <https://astrea.linkeddata.es/shapes#9bd5c8422e3f43b8f201eeca8dc8e66d> , <https://astrea.linkeddata.es/shapes#0654bc78c0dac9402bfc4f986b01c193> , <https://astrea.linkeddata.es/shapes#b03667842589b3ed557e2ad0cf2387ef> , <https://astrea.linkeddata.es/shapes#903778944e3f0d7771b66b7500c9c7dd> , <https://astrea.linkeddata.es/shapes#12fa26302e6d5f8b82dee55d53fc0122> , <https://astrea.linkeddata.es/shapes#e8932f4a1c0e23f18947ba95770249b2> , <https://astrea.linkeddata.es/shapes#0f452813b6c016c34f2c17cbfedc7e3d> ;
+        sh:targetClass  :OrganisedEvent .
+
+<https://astrea.linkeddata.es/shapes#074f95135999f9bcc6bc5e372a2f84e4>
+        a               sh:NodeShape ;
+        sh:description  "Offer an opportunity for presenting late-breaking research results, on-going research projects, and speculative or innovative work in progress."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/seo/DemosTrack> .
+
+<https://astrea.linkeddata.es/shapes#b03667842589b3ed557e2ad0cf2387ef>
+        a            sh:PropertyShape ;
+        sh:class     rdfs:Literal ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :description .
+
+<https://astrea.linkeddata.es/shapes#b522cab6eb3007ead2a746b10c591380>
+        a               sh:PropertyShape ;
+        rdfs:label      "The acceptance rate of the event in a particular year."@en ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "The acceptance rate of the event in a particular year."@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/seo/acceptanceRate> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#2e955c9e87bb3a60f7a8984b900e19b7>
+        a               sh:NodeShape ;
+        rdfs:label      "Topic"@en ;
+        sh:description  "A concept expressing a research topic or scientific area."@en ;
+        sh:name         "Topic"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :Topic .
+
+<https://astrea.linkeddata.es/shapes#1638696d9461a14f2301e07970204aa0>
+        a               sh:PropertyShape ;
+        rdfs:label      "has affiliation"@en ;
+        sh:class        :AffiliationDuringEvent ;
+        sh:description  "has affiliation"@en ;
+        sh:name         "has affiliation"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         :hasAffiliation .
+
+<https://astrea.linkeddata.es/shapes#7b9b581ec1d6c8fa18e7112d08a48937>
+        a                sh:PropertyShape ;
+        rdfs:label       "The number of submitted papers to the event."@en ;
+        sh:datatype      xsd:unsignedInt ;
+        sh:description   "The number of submitted papers to the event."@en ;
+        sh:maxInclusive  4294967295 ;
+        sh:minInclusive  0 ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://purl.org/seo/submittedPapers> ;
+        sh:pattern       "[\\-+]?[0-9]+" .

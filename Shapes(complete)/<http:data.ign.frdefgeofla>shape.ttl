@@ -1,0 +1,272 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#93b265e8e6f3b0ece7429ad355e644ba>
+        a               sh:PropertyShape ;
+        rdfs:label      "population"@fr , "population"@en , "Chiffre de population sans doubles comptes au dernier recensement, en milliers d'habitants, à une décimale. "@fr ;
+        sh:datatype     xsd:double ;
+        sh:description  "Chiffre de population sans doubles comptes au dernier recensement, en milliers d'habitants, à une décimale. "@fr ;
+        sh:name         "population"@en , "population"@fr ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.ign.fr/def/geofla#population> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#469a42f1ee7c6721c8d09eda4067034e>
+        a               sh:PropertyShape ;
+        rdfs:label      "geographic code of the department"@en , "Code géographique du département (texte de deux caractères)."@fr , "code géographique du département"@fr ;
+        sh:datatype     xsd:string ;
+        sh:description  "Code géographique du département (texte de deux caractères)."@fr ;
+        sh:name         "code géographique du département"@fr , "geographic code of the department"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.ign.fr/def/geofla#codeDpt> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#5bc29885501daa1de60ccabef8ea462d>
+        a               sh:PropertyShape ;
+        rdfs:label      "Code géographique de la région (texte de deux caractères)."@fr , "code géographique de la région"@fr , "geographic code of the region"@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Code géographique de la région (texte de deux caractères)."@fr ;
+        sh:name         "code géographique de la région"@fr , "geographic code of the region"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.ign.fr/def/geofla#codeReg> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#97f379d4cafad94ad59997f3c85fc82c>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a9b7cb1eb1ce3cfa41f4165c66f6b841> ;
+        sh:targetClass  <http://data.ign.fr/def/geofla#ArrondissementMunicipal> .
+
+<https://astrea.linkeddata.es/shapes#f4c883fbee30f66fbb45ac9c6b26de2b>
+        a               sh:PropertyShape ;
+        rdfs:label      "code géographique du canton"@fr , "geographic code of the canton"@en , "Il s'agit du code géographique permettant d'identifier le canton dans son département d'appartenance (texte de deux caractères)."@fr ;
+        sh:datatype     xsd:string ;
+        sh:description  "Il s'agit du code géographique permettant d'identifier le canton dans son département d'appartenance (texte de deux caractères)."@fr ;
+        sh:name         "code géographique du canton"@fr , "geographic code of the canton"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.ign.fr/def/geofla#codeCant> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#fcb184e54b0cd6ff65e0da50a441ee81>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/geofla> ;
+        rdfs:label        "Canton"@fr , "Canton"@en ;
+        sh:description    "Les cantons contenus dans les différentes bases de données de l'IGN sont des cantons au sens INSEE du terme, appelés pseudo-cantons. Un pseudo-canton, quant à lui, est un regroupement d'une ou plusieurs communes entières."@fr ;
+        sh:name           "Canton"@fr , "Canton"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#f4c883fbee30f66fbb45ac9c6b26de2b> , <https://astrea.linkeddata.es/shapes#2aec217d688cd02f696b8ea0d19c8f92> , <https://astrea.linkeddata.es/shapes#1d22869d8bd3eb340be8929169a418f2> , <https://astrea.linkeddata.es/shapes#c551381f31886bb9f192041a84b54fed> , <https://astrea.linkeddata.es/shapes#a5ba70bf31aad5e1ea66284627b4310e> , <https://astrea.linkeddata.es/shapes#10365ab2d56d7b02c13245f3e9a5f58d> ;
+        sh:targetClass    <http://rdf.insee.fr/def/geo#CantonOuVille> , <http://data.ign.fr/def/geofla#Canton> .
+
+<https://astrea.linkeddata.es/shapes#89829ac7b23f3d259689055c0c0b7bea>
+        a            sh:PropertyShape ;
+        rdfs:label   "status"@en , "statut"@fr ;
+        sh:name      "status"@en , "statut"@fr ;
+        sh:nodeKind  sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#f0f317c711b870f91e4fd90d41e0f93a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/geofla> ;
+        rdfs:label        "Region"@en , "Région"@fr ;
+        sh:description    "Cette classe contient l'ensemble des régions."@fr ;
+        sh:name           "Region"@en , "Région"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#abacbf99355fbf0917ac351747862c70> , <https://astrea.linkeddata.es/shapes#5bc29885501daa1de60ccabef8ea462d> ;
+        sh:targetClass    <http://rdf.insee.fr/def/geo#Region> , <http://data.ign.fr/def/geofla#Region> .
+
+<https://astrea.linkeddata.es/shapes#a9b7cb1eb1ce3cfa41f4165c66f6b841>
+        a               sh:PropertyShape ;
+        rdfs:label      "altitude moyenne"@fr , "mean altitude"@en , "Altitude moyenne de la commune en mètres."@fr ;
+        sh:datatype     xsd:integer ;
+        sh:description  "Altitude moyenne de la commune en mètres."@fr ;
+        sh:name         "mean altitude"@en , "altitude moyenne"@fr ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.ign.fr/def/geofla#zMoyen> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#bbb2386cdc24ce9337927c926c961a5d>
+        a               sh:PropertyShape ;
+        rdfs:label      "geographic code of the commune"@en , "code géographique de la commune"@fr , "Il s'agit du code géographique permettant d'identifier la commune dans son département d'appartenance (texte de trois caractères)."@fr ;
+        sh:datatype     xsd:string ;
+        sh:description  "Il s'agit du code géographique permettant d'identifier la commune dans son département d'appartenance (texte de trois caractères)."@fr ;
+        sh:name         "code géographique de la commune"@fr , "geographic code of the commune"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.ign.fr/def/geofla#codeComm> ;
+        sh:pattern      ".*" .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#1722720eac530eb8b95557fbb0dead7b> , <https://astrea.linkeddata.es/shapes#10365ab2d56d7b02c13245f3e9a5f58d> , <https://astrea.linkeddata.es/shapes#d63ac04c69487b16ac3a9a3ff020f472> , <https://astrea.linkeddata.es/shapes#c4cf2e794d93b3c402f8b88ad2c7705a> , <https://astrea.linkeddata.es/shapes#1d22869d8bd3eb340be8929169a418f2> , <https://astrea.linkeddata.es/shapes#13187079e63880434d01b80b1083c24a> , <https://astrea.linkeddata.es/shapes#3da6d12d198f120e4bcd6b7125262ba6> , <https://astrea.linkeddata.es/shapes#689545e91ea6a55514015f3185839772> , <https://astrea.linkeddata.es/shapes#bbb2386cdc24ce9337927c926c961a5d> , <https://astrea.linkeddata.es/shapes#89829ac7b23f3d259689055c0c0b7bea> , <https://astrea.linkeddata.es/shapes#a65ef0fc5a696b9235a8884cd1884ca5> , <https://astrea.linkeddata.es/shapes#2aec217d688cd02f696b8ea0d19c8f92> , <https://astrea.linkeddata.es/shapes#93b265e8e6f3b0ece7429ad355e644ba> , <https://astrea.linkeddata.es/shapes#97f379d4cafad94ad59997f3c85fc82c> , <https://astrea.linkeddata.es/shapes#5bc29885501daa1de60ccabef8ea462d> , <https://astrea.linkeddata.es/shapes#4fcf3a4361318268d7f4db34c3f98eab> , <https://astrea.linkeddata.es/shapes#4e3af3f570795633b022508ac574d34f> , <https://astrea.linkeddata.es/shapes#777410ee0d134ae102c9de39a011b037> , <https://astrea.linkeddata.es/shapes#abacbf99355fbf0917ac351747862c70> , <https://astrea.linkeddata.es/shapes#fcb184e54b0cd6ff65e0da50a441ee81> , <https://astrea.linkeddata.es/shapes#f4c883fbee30f66fbb45ac9c6b26de2b> , <https://astrea.linkeddata.es/shapes#9b4a9ab18cbf607f74fa86b01d08f55c> , <https://astrea.linkeddata.es/shapes#dc5efca95a3274498edfe544e00860ec> , <https://astrea.linkeddata.es/shapes#9f18f963c1fbd39f6c844e31fc9dadff> , <https://astrea.linkeddata.es/shapes#469a42f1ee7c6721c8d09eda4067034e> , <https://astrea.linkeddata.es/shapes#c551381f31886bb9f192041a84b54fed> , <https://astrea.linkeddata.es/shapes#f0f317c711b870f91e4fd90d41e0f93a> , <https://astrea.linkeddata.es/shapes#a9b7cb1eb1ce3cfa41f4165c66f6b841> , <https://astrea.linkeddata.es/shapes#a5ba70bf31aad5e1ea66284627b4310e> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#2aec217d688cd02f696b8ea0d19c8f92>
+        a               sh:PropertyShape ;
+        rdfs:label      "belongs to arrondisssement"@en , "Arrondissement auquel appartient l'unité administrative."@fr , "appartient à l'arrondisssement"@fr ;
+        sh:class        <http://data.ign.fr/def/geofla#Arrondissement> ;
+        sh:description  "Arrondissement auquel appartient l'unité administrative."@fr ;
+        sh:name         "appartient à l'arrondisssement"@fr , "belongs to arrondisssement"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.ign.fr/def/geofla#arr> .
+
+<https://astrea.linkeddata.es/shapes#10365ab2d56d7b02c13245f3e9a5f58d>
+        a               sh:PropertyShape ;
+        rdfs:label      "belongs to department"@en , "Département auquel appartient l'unité administrative"@fr , "appartient au département"@fr ;
+        sh:class        <http://data.ign.fr/def/geofla#Departement> ;
+        sh:description  "Département auquel appartient l'unité administrative"@fr ;
+        sh:name         "belongs to department"@en , "appartient au département"@fr ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.ign.fr/def/geofla#dpt> .
+
+<https://astrea.linkeddata.es/shapes#4e3af3f570795633b022508ac574d34f>
+        a            sh:PropertyShape ;
+        sh:hasValue  <http://www.geonames.org/ontology#A.ADM2> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.geonames.org/ontology#featureCode> .
+
+<https://astrea.linkeddata.es/shapes#777410ee0d134ae102c9de39a011b037>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/geofla> ;
+        rdfs:label        "Commune"@fr , "Commune"@en ;
+        sh:description    "Cette classe contient l'ensemble des communes métropolitaines, des 5 départements d'outre-mer (Guadeloupe, Martinique, Guyane, La Réunion et Mayotte)."@fr ;
+        sh:name           "Commune"@fr , "Commune"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#13187079e63880434d01b80b1083c24a> , <https://astrea.linkeddata.es/shapes#c551381f31886bb9f192041a84b54fed> , <https://astrea.linkeddata.es/shapes#c4cf2e794d93b3c402f8b88ad2c7705a> , <https://astrea.linkeddata.es/shapes#bbb2386cdc24ce9337927c926c961a5d> , <https://astrea.linkeddata.es/shapes#a65ef0fc5a696b9235a8884cd1884ca5> , <https://astrea.linkeddata.es/shapes#689545e91ea6a55514015f3185839772> , <https://astrea.linkeddata.es/shapes#93b265e8e6f3b0ece7429ad355e644ba> , <https://astrea.linkeddata.es/shapes#2aec217d688cd02f696b8ea0d19c8f92> , <https://astrea.linkeddata.es/shapes#10365ab2d56d7b02c13245f3e9a5f58d> , <https://astrea.linkeddata.es/shapes#a5ba70bf31aad5e1ea66284627b4310e> , <https://astrea.linkeddata.es/shapes#a9b7cb1eb1ce3cfa41f4165c66f6b841> ;
+        sh:targetClass    <http://rdf.insee.fr/def/geo#Commune> , <http://data.ign.fr/def/geofla#Commune> .
+
+<https://astrea.linkeddata.es/shapes#4fcf3a4361318268d7f4db34c3f98eab>
+        a               sh:NodeShape ;
+        rdfs:label      "Type of commune"@en , "Type de commune"@fr ;
+        sh:name         "Type of commune"@en , "Type de commune"@fr ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.ign.fr/def/geofla#TypeDeCommune> .
+
+<https://astrea.linkeddata.es/shapes#a65ef0fc5a696b9235a8884cd1884ca5>
+        a            sh:PropertyShape ;
+        sh:hasValue  <http://www.geonames.org/ontology#A.ADM4> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.geonames.org/ontology#featureCode> .
+
+<https://astrea.linkeddata.es/shapes#9b4a9ab18cbf607f74fa86b01d08f55c>
+        a               sh:PropertyShape ;
+        rdfs:label      "code géographique de l'arrondissement"@fr , "Code géographique de l'arrondissement (texte d'un caractère)."@fr , "geographic code of the arrondissement"@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Code géographique de l'arrondissement (texte d'un caractère)."@fr ;
+        sh:name         "code géographique de l'arrondissement"@fr , "geographic code of the arrondissement"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.ign.fr/def/geofla#codeArr> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#abacbf99355fbf0917ac351747862c70>
+        a            sh:PropertyShape ;
+        sh:hasValue  <http://www.geonames.org/ontology#A.ADM1> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.geonames.org/ontology#featureCode> .
+
+<https://astrea.linkeddata.es/shapes#1722720eac530eb8b95557fbb0dead7b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/geofla> ;
+        rdfs:label        "Unité administrative"@fr , "Administrative subdivision"@en ;
+        sh:description    "Objet géographique résultant du découpage administratif du territoire français."@fr ;
+        sh:name           "Unité administrative"@fr , "Administrative subdivision"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/geofla#UniteAdministrative> .
+
+<https://astrea.linkeddata.es/shapes#3da6d12d198f120e4bcd6b7125262ba6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/geofla> ;
+        rdfs:label        "Département"@fr , "Department"@en ;
+        sh:description    "Cette classe contient l'ensemble des départements."@fr ;
+        sh:name           "Department"@en , "Département"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#469a42f1ee7c6721c8d09eda4067034e> , <https://astrea.linkeddata.es/shapes#c551381f31886bb9f192041a84b54fed> , <https://astrea.linkeddata.es/shapes#4e3af3f570795633b022508ac574d34f> , <https://astrea.linkeddata.es/shapes#a5ba70bf31aad5e1ea66284627b4310e> , <https://astrea.linkeddata.es/shapes#1d22869d8bd3eb340be8929169a418f2> ;
+        sh:targetClass    <http://rdf.insee.fr/def/geo#Departement> , <http://data.ign.fr/def/geofla#Departement> .
+
+<https://astrea.linkeddata.es/shapes#a5ba70bf31aad5e1ea66284627b4310e>
+        a               sh:PropertyShape ;
+        rdfs:label      "appartient à la région"@fr , "Région à laquelle appartient l'unité administrative."@fr , "belongs to region"@en ;
+        sh:class        <http://data.ign.fr/def/geofla#Region> ;
+        sh:description  "Région à laquelle appartient l'unité administrative."@fr ;
+        sh:name         "appartient à la région"@fr , "belongs to region"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.ign.fr/def/geofla#region> .
+
+<https://astrea.linkeddata.es/shapes#1d22869d8bd3eb340be8929169a418f2>
+        a               sh:PropertyShape ;
+        rdfs:label      "capital of the administrative subdivision"@en , "Chef-lieu de l'unité administrative lorsqu'il existe (un canton ne possède pas toujours de chef-lieu. Cela arrive dans le cas de cantons situés à la périphérie d'une ville importante constituant à elle seule un canton non précisé.)"@fr , "chef-lieu de l'unité administrative"@fr ;
+        sh:class        <http://data.ign.fr/def/geofla#Commune> ;
+        sh:description  "Chef-lieu de l'unité administrative lorsqu'il existe (un canton ne possède pas toujours de chef-lieu. Cela arrive dans le cas de cantons situés à la périphérie d'une ville importante constituant à elle seule un canton non précisé.)"@fr ;
+        sh:name         "chef-lieu de l'unité administrative"@fr , "capital of the administrative subdivision"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.ign.fr/def/geofla#chefLieu> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#13187079e63880434d01b80b1083c24a>
+        a               sh:PropertyShape ;
+        rdfs:label      "superficie en hectares"@fr , "area in hectares"@en , "Superficie de la commune en hectares."@fr ;
+        sh:datatype     xsd:integer ;
+        sh:description  "Superficie de la commune en hectares."@fr ;
+        sh:name         "area in hectares"@en , "superficie en hectares"@fr ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.ign.fr/def/geofla#superficieHa> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#dc5efca95a3274498edfe544e00860ec>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/geofla> ;
+        rdfs:label        "Arrondissement"@fr , "Arrondissement"@en ;
+        sh:description    "Cette classe contient l'ensemble des arrondissements (ce sont les arrondissements au sens INSEE, et non les arrondissements municipaux)."@fr ;
+        sh:name           "Arrondissement"@fr , "Arrondissement"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#10365ab2d56d7b02c13245f3e9a5f58d> , <https://astrea.linkeddata.es/shapes#9f18f963c1fbd39f6c844e31fc9dadff> , <https://astrea.linkeddata.es/shapes#c551381f31886bb9f192041a84b54fed> , <https://astrea.linkeddata.es/shapes#9b4a9ab18cbf607f74fa86b01d08f55c> , <https://astrea.linkeddata.es/shapes#a5ba70bf31aad5e1ea66284627b4310e> , <https://astrea.linkeddata.es/shapes#1d22869d8bd3eb340be8929169a418f2> ;
+        sh:targetClass    <http://data.ign.fr/def/geofla#Arrondissement> , <http://rdf.insee.fr/def/geo#Arrondissement> .
+
+<https://astrea.linkeddata.es/shapes#d63ac04c69487b16ac3a9a3ff020f472>
+        a               sh:NodeShape ;
+        rdfs:label      "Topographic entity"@en , "Entité topographique"@fr ;
+        sh:name         "Topographic entity"@en , "Entité topographique"@fr ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.ign.fr/def/topo#EntiteTopographique> .
+
+<https://astrea.linkeddata.es/shapes#689545e91ea6a55514015f3185839772>
+        a               sh:PropertyShape ;
+        rdfs:label      "belongs to canton"@en , "appartient au canton"@fr , "Canton auquel appartient l'unité administrative."@fr ;
+        sh:class        <http://data.ign.fr/def/geofla#Canton> ;
+        sh:description  "Canton auquel appartient l'unité administrative."@fr ;
+        sh:name         "belongs to canton"@en , "appartient au canton"@fr ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.ign.fr/def/geofla#cant> .
+
+<https://astrea.linkeddata.es/shapes#c4cf2e794d93b3c402f8b88ad2c7705a>
+        a               sh:PropertyShape ;
+        rdfs:label      "insee identifier of the commune"@en , "Il s'agit d'un numéro de 5 caractères : le code du département suivi du code géographique de la commune. Pour les DOM, le 3ème caractère est commun au numéro de département et au numéro de commune."@fr , "numéro insee de la commune"@fr ;
+        sh:datatype     xsd:string ;
+        sh:description  "Il s'agit d'un numéro de 5 caractères : le code du département suivi du code géographique de la commune. Pour les DOM, le 3ème caractère est commun au numéro de département et au numéro de commune."@fr ;
+        sh:name         "insee identifier of the commune"@en , "numéro insee de la commune"@fr ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.ign.fr/def/geofla#numInsee> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#c551381f31886bb9f192041a84b54fed>
+        a               sh:PropertyShape ;
+        rdfs:label      "head office of the capital"@en , "Point qui représente la localisation du siège du chef-lieu de l'unité administrative."@fr , "siège du chef-lieu"@fr ;
+        sh:class        <http://data.ign.fr/def/geometrie#Point> ;
+        sh:description  "Point qui représente la localisation du siège du chef-lieu de l'unité administrative."@fr ;
+        sh:name         "head office of the capital"@en , "siège du chef-lieu"@fr ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.ign.fr/def/geofla#siegeDuChefLieu> .
+
+<https://astrea.linkeddata.es/shapes#9f18f963c1fbd39f6c844e31fc9dadff>
+        a            sh:PropertyShape ;
+        sh:hasValue  <http://www.geonames.org/ontology#A.ADM3> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.geonames.org/ontology#featureCode> .

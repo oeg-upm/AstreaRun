@@ -1,0 +1,234 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#21feca0aa2ac782b9be4ee7f6439de32>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/p-plan#> ;
+        rdfs:label        "Variable"@en ;
+        sh:name           "Variable"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e8692b3f00b2273975897069f2c476a4> , <https://astrea.linkeddata.es/shapes#4129e1209d2136474f30ca22542e6e47> , <https://astrea.linkeddata.es/shapes#e5fc3ebd0584eda1c245ba28bd17fc89> ;
+        sh:targetClass    <http://purl.org/net/p-plan#Variable> .
+
+<https://astrea.linkeddata.es/shapes#26452bf219c1052eeb57e20b0cca77fd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/p-plan#> ;
+        rdfs:label        "hasOutputVar"@en ;
+        sh:class          <http://purl.org/net/p-plan#Variable> ;
+        sh:name           "hasOutputVar"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/p-plan#hasOutputVar> .
+
+<https://astrea.linkeddata.es/shapes#e5fc3ebd0584eda1c245ba28bd17fc89>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/p-plan#> ;
+        rdfs:label        "isOutputVarOf"@en ;
+        sh:class          <http://purl.org/net/p-plan#Step> ;
+        sh:maxCount       1 ;
+        sh:name           "isOutputVarOf"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/p-plan#isOutputVarOf> .
+
+<https://astrea.linkeddata.es/shapes#8f99343de5298d9519fffde0241fec54>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/p-plan#> ;
+        rdfs:label        "hasInputVar"@en ;
+        sh:class          <http://purl.org/net/p-plan#Variable> ;
+        sh:name           "hasInputVar"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/p-plan#hasInputVar> .
+
+<https://astrea.linkeddata.es/shapes#caba1d6abfcdf5b1e3085188f4db2a98>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov#> ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#564c4f38e42665fd1f1febce682c48f7> ;
+        sh:targetClass    <http://www.w3.org/ns/prov#Activity> .
+
+<https://astrea.linkeddata.es/shapes#1af93870b96633124e6a3b51c78852cb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/p-plan#> ;
+        rdfs:label        "correspondsToStep"@en ;
+        sh:class          <http://purl.org/net/p-plan#Step> ;
+        sh:maxCount       1 ;
+        sh:name           "correspondsToStep"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/p-plan#correspondsToStep> .
+
+<https://astrea.linkeddata.es/shapes#c3719f07614b52dddd7ee3569095785e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/p-plan#> ;
+        rdfs:label        "Activity"@en ;
+        sh:description    "A p-plan:Activity represents the execution process planned in a p-plan:Step"@en ;
+        sh:name           "Activity"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#1af93870b96633124e6a3b51c78852cb> ;
+        sh:targetClass    <http://purl.org/net/p-plan#Activity> .
+
+<https://astrea.linkeddata.es/shapes#03c8fc4fc8f3fb92bd37a47413c71deb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "Property that asserts which Step preceeds the current one."@en ;
+        rdfs:label        "isPreceededBy"@en ;
+        rdfs:label        <http://purl.org/net/p-plan#> ;
+        sh:class          <http://purl.org/net/p-plan#Step> ;
+        sh:description    <http://purl.org/net/p-plan#> ;
+        sh:name           "isPreceededBy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/p-plan#isPreceededBy> .
+
+<https://astrea.linkeddata.es/shapes#e8692b3f00b2273975897069f2c476a4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/p-plan#> ;
+        rdfs:label        "isInputVarOf"@en ;
+        sh:class          <http://purl.org/net/p-plan#Step> ;
+        sh:name           "isInputVarOf"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/p-plan#isInputVarOf> .
+
+<https://astrea.linkeddata.es/shapes#f828c6af14fb4677ad73168c26e8eb6b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/p-plan#> ;
+        rdfs:label        "isStepOfPlan"@en ;
+        sh:class          <http://purl.org/net/p-plan#Plan> ;
+        sh:name           "isStepOfPlan"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/p-plan#isStepOfPlan> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#8f99343de5298d9519fffde0241fec54> , <https://astrea.linkeddata.es/shapes#f828c6af14fb4677ad73168c26e8eb6b> , <https://astrea.linkeddata.es/shapes#126c5ececc6c8a294961e605c4f7f0d0> , <https://astrea.linkeddata.es/shapes#2f0f84d952d7b4659c26ca0b27ca21f0> , <https://astrea.linkeddata.es/shapes#564c4f38e42665fd1f1febce682c48f7> , <https://astrea.linkeddata.es/shapes#6cd4316d087f731eb38b74fd02f94d5d> , <https://astrea.linkeddata.es/shapes#e8692b3f00b2273975897069f2c476a4> , <https://astrea.linkeddata.es/shapes#eafdf3594e784d85493b04c0a5ed43c9> , <https://astrea.linkeddata.es/shapes#c3719f07614b52dddd7ee3569095785e> , <https://astrea.linkeddata.es/shapes#51e8435703d048632323dab0de1704b9> , <https://astrea.linkeddata.es/shapes#c6f53d10d323d929a8e9e365b3616ebd> , <https://astrea.linkeddata.es/shapes#e5fc3ebd0584eda1c245ba28bd17fc89> , <https://astrea.linkeddata.es/shapes#26452bf219c1052eeb57e20b0cca77fd> , <https://astrea.linkeddata.es/shapes#14b1c987931e94e55126e0f264d12f97> , <https://astrea.linkeddata.es/shapes#ad89e8dc7487648b0158a2f47b7303e3> , <https://astrea.linkeddata.es/shapes#1af93870b96633124e6a3b51c78852cb> , <https://astrea.linkeddata.es/shapes#a2bd4cfbdf7fa540bd9605ae76db2ff0> , <https://astrea.linkeddata.es/shapes#cbdd83028fff6b8bbd067d6abd095476> , <https://astrea.linkeddata.es/shapes#9cc1b8cec6cf9efd4dfdfc8c461d6c8c> , <https://astrea.linkeddata.es/shapes#caba1d6abfcdf5b1e3085188f4db2a98> , <https://astrea.linkeddata.es/shapes#21feca0aa2ac782b9be4ee7f6439de32> , <https://astrea.linkeddata.es/shapes#4129e1209d2136474f30ca22542e6e47> , <https://astrea.linkeddata.es/shapes#03c8fc4fc8f3fb92bd37a47413c71deb> , <https://astrea.linkeddata.es/shapes#1b3ed913c94b13b6b05fd041cb56e1d0> , <https://astrea.linkeddata.es/shapes#dfcd5fc30011d551739f9877c244fb84> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#14b1c987931e94e55126e0f264d12f97>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/p-plan#> ;
+        rdfs:label        "Entity"@en ;
+        sh:name           "Entity"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#6cd4316d087f731eb38b74fd02f94d5d> ;
+        sh:targetClass    <http://purl.org/net/p-plan#Entity> .
+
+<https://astrea.linkeddata.es/shapes#a2bd4cfbdf7fa540bd9605ae76db2ff0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/p-plan#> ;
+        rdfs:label        "isSubPlanOfPlan"@en ;
+        sh:class          <http://purl.org/net/p-plan#Plan> ;
+        sh:name           "isSubPlanOfPlan"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/p-plan#isSubPlanOfPlan> .
+
+<https://astrea.linkeddata.es/shapes#cbdd83028fff6b8bbd067d6abd095476>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov#> ;
+        sh:class          <http://www.w3.org/ns/prov#Activity> ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/ns/prov#wasGeneratedBy> .
+
+<https://astrea.linkeddata.es/shapes#6cd4316d087f731eb38b74fd02f94d5d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/p-plan#> ;
+        rdfs:label        "correspondsToVariable"@en ;
+        sh:class          <http://purl.org/net/p-plan#Variable> ;
+        sh:maxCount       1 ;
+        sh:name           "correspondsToVariable"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/p-plan#correspondsToVariable> .
+
+<https://astrea.linkeddata.es/shapes#1b3ed913c94b13b6b05fd041cb56e1d0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/p-plan#> ;
+        rdfs:label        "MultiStep"@en ;
+        sh:name           "MultiStep"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#9cc1b8cec6cf9efd4dfdfc8c461d6c8c> ;
+        sh:targetClass    <http://purl.org/net/p-plan#MultiStep> .
+
+<https://astrea.linkeddata.es/shapes#564c4f38e42665fd1f1febce682c48f7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov#> ;
+        sh:class          <http://www.w3.org/ns/prov#Entity> ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/ns/prov#used> .
+
+<https://astrea.linkeddata.es/shapes#c6f53d10d323d929a8e9e365b3616ebd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov#> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.w3.org/ns/prov#Plan> .
+
+<https://astrea.linkeddata.es/shapes#126c5ececc6c8a294961e605c4f7f0d0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/p-plan#> ;
+        rdfs:label        "Step"@en ;
+        sh:name           "Step"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#03c8fc4fc8f3fb92bd37a47413c71deb> , <https://astrea.linkeddata.es/shapes#8f99343de5298d9519fffde0241fec54> , <https://astrea.linkeddata.es/shapes#f828c6af14fb4677ad73168c26e8eb6b> , <https://astrea.linkeddata.es/shapes#26452bf219c1052eeb57e20b0cca77fd> ;
+        sh:targetClass    <http://purl.org/net/p-plan#Step> .
+
+<https://astrea.linkeddata.es/shapes#9cc1b8cec6cf9efd4dfdfc8c461d6c8c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/p-plan#> ;
+        rdfs:label        "isDecomposedAsPlan"@en ;
+        sh:class          <http://purl.org/net/p-plan#Plan> ;
+        sh:name           "isDecomposedAsPlan"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/p-plan#isDecomposedAsPlan> .
+
+<https://astrea.linkeddata.es/shapes#dfcd5fc30011d551739f9877c244fb84>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov#> ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#eafdf3594e784d85493b04c0a5ed43c9> , <https://astrea.linkeddata.es/shapes#cbdd83028fff6b8bbd067d6abd095476> ;
+        sh:targetClass    <http://www.w3.org/ns/prov#Entity> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#2f0f84d952d7b4659c26ca0b27ca21f0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/p-plan#> ;
+        rdfs:label        "Bundle"@en ;
+        sh:name           "Bundle"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/net/p-plan#Bundle> .
+
+<https://astrea.linkeddata.es/shapes#ad89e8dc7487648b0158a2f47b7303e3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov#> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://www.w3.org/ns/prov#Bundle> .
+
+<https://astrea.linkeddata.es/shapes#51e8435703d048632323dab0de1704b9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/p-plan#> ;
+        rdfs:label        "Plan"@en ;
+        sh:name           "Plan"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#a2bd4cfbdf7fa540bd9605ae76db2ff0> ;
+        sh:targetClass    <http://purl.org/net/p-plan#Plan> .
+
+<https://astrea.linkeddata.es/shapes#4129e1209d2136474f30ca22542e6e47>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/p-plan#> ;
+        rdfs:label        "isVariableofPlan"@en ;
+        sh:class          <http://purl.org/net/p-plan#Plan> ;
+        sh:name           "isVariableofPlan"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/p-plan#isVariableOfPlan> .
+
+<https://astrea.linkeddata.es/shapes#eafdf3594e784d85493b04c0a5ed43c9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov#> ;
+        sh:class          <http://www.w3.org/ns/prov#Entity> ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://www.w3.org/ns/prov#wasDerivedFrom> .

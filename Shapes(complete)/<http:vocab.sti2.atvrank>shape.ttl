@@ -1,0 +1,127 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#4d9b87396232e44611b54e179c045124>
+        a               sh:PropertyShape ;
+        rdfs:label      "has rank value" , "The numerical value associated to a vrank:Rank." ;
+        sh:datatype     xsd:float ;
+        sh:description  "The numerical value associated to a vrank:Rank." ;
+        sh:maxCount     1 ;
+        sh:name         "has rank value" ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://purl.org/voc/vrank#rankValue> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#a642efe9c5191bce85fd8fccc31407c6> , <https://astrea.linkeddata.es/shapes#366176018a9430eaf0b50c9cebeba080> , <https://astrea.linkeddata.es/shapes#565e804ca0c68b9c3a29ef5db574359d> , <https://astrea.linkeddata.es/shapes#1677cbff95c94c771cd354e9068ff1f3> , <https://astrea.linkeddata.es/shapes#9a9fc54a41a35d0ec4dc07498a2569ee> , <https://astrea.linkeddata.es/shapes#2f4cb4dd3654758fa6c3cc8a38900c2e> , <https://astrea.linkeddata.es/shapes#e96bff56ea336444b238a4511a5fc79b> , <https://astrea.linkeddata.es/shapes#cdbc98490c2c128fc5eb1e01e9868dd8> , <https://astrea.linkeddata.es/shapes#39f96abc1338b84864381a309e248ed5> , <https://astrea.linkeddata.es/shapes#fff22f954c2f013bb17596f855827d9d> , <https://astrea.linkeddata.es/shapes#4d9b87396232e44611b54e179c045124> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#1677cbff95c94c771cd354e9068ff1f3>
+        a               sh:NodeShape ;
+        rdfs:label      "parameter" ;
+        sh:description  "A parameter of a vrank:Algorithm such as number of iterations or damping factor." ;
+        sh:name         "parameter" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a642efe9c5191bce85fd8fccc31407c6> , <https://astrea.linkeddata.es/shapes#2f4cb4dd3654758fa6c3cc8a38900c2e> ;
+        sh:targetClass  <http://purl.org/voc/vrank#Parameter> .
+
+<https://astrea.linkeddata.es/shapes#2f4cb4dd3654758fa6c3cc8a38900c2e>
+        a               sh:PropertyShape ;
+        rdfs:label      "parameter value" , "The value associated to a vrank:Parameter." ;
+        sh:datatype     xsd:string ;
+        sh:description  "The value associated to a vrank:Parameter." ;
+        sh:maxCount     1 ;
+        sh:name         "parameter value" ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
+        sh:path         <http://purl.org/voc/vrank#paramValue> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#565e804ca0c68b9c3a29ef5db574359d>
+        a            sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#9a9fc54a41a35d0ec4dc07498a2569ee>
+        a               sh:PropertyShape ;
+        rdfs:label      "The id associated to a vrank:Feature." , "feature id" ;
+        sh:datatype     xsd:string ;
+        sh:description  "The id associated to a vrank:Feature." ;
+        sh:maxCount     1 ;
+        sh:name         "feature id" ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://purl.org/voc/vrank#featureId> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#366176018a9430eaf0b50c9cebeba080>
+        a               sh:PropertyShape ;
+        rdfs:label      "A vrank:Algorithm has a name." , "has name" ;
+        sh:datatype     xsd:string ;
+        sh:description  "A vrank:Algorithm has a name." ;
+        sh:maxCount     1 ;
+        sh:name         "has name" ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
+        sh:path         <http://purl.org/voc/vrank#hasName> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#cdbc98490c2c128fc5eb1e01e9868dd8>
+        a               sh:NodeShape ;
+        rdfs:label      "feature" ;
+        sh:description  "A feature of a vrank:Algorithm such as Granularity, RankingFactor, etc." ;
+        sh:name         "feature" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#9a9fc54a41a35d0ec4dc07498a2569ee> , <https://astrea.linkeddata.es/shapes#39f96abc1338b84864381a309e248ed5> ;
+        sh:targetClass  <http://purl.org/voc/vrank#Feature> .
+
+<https://astrea.linkeddata.es/shapes#a642efe9c5191bce85fd8fccc31407c6>
+        a               sh:PropertyShape ;
+        rdfs:label      "The id associated to a vrank:Parameter." , "parameter id" ;
+        sh:datatype     xsd:string ;
+        sh:description  "The id associated to a vrank:Parameter." ;
+        sh:maxCount     1 ;
+        sh:name         "parameter id" ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
+        sh:path         <http://purl.org/voc/vrank#paramId> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#e96bff56ea336444b238a4511a5fc79b>
+        a               sh:NodeShape ;
+        rdfs:label      "algorithm" ;
+        sh:description  "A ranking algorithm used to compute the ranking scores associated with an item (vrank:Rank)." ;
+        sh:name         "algorithm" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#366176018a9430eaf0b50c9cebeba080> ;
+        sh:targetClass  <http://purl.org/voc/vrank#Algorithm> .
+
+<https://astrea.linkeddata.es/shapes#fff22f954c2f013bb17596f855827d9d>
+        a               sh:NodeShape ;
+        rdfs:label      "rank" ;
+        sh:description  "Represents a ranking score associated with an item." ;
+        sh:name         "rank" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#4d9b87396232e44611b54e179c045124> ;
+        sh:targetClass  <http://purl.org/voc/vrank#Rank> .
+
+<https://astrea.linkeddata.es/shapes#39f96abc1338b84864381a309e248ed5>
+        a               sh:PropertyShape ;
+        rdfs:label      "feature value" , "The value associated to a vrank:Feature." ;
+        sh:datatype     xsd:string ;
+        sh:description  "The value associated to a vrank:Feature." ;
+        sh:maxCount     1 ;
+        sh:name         "feature value" ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
+        sh:path         <http://purl.org/voc/vrank#featureValue> ;
+        sh:pattern      ".*" .

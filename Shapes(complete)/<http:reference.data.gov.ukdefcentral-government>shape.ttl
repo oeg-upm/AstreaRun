@@ -1,0 +1,997 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#ff4a9d969aec856b0c60251d97969b72>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Non-departmental public body"@en ;
+        rdfs:seeAlso      <http://dbpedia.org/resource/Non-departmental_public_body> ;
+        sh:description    "A body which has a role in the processes of national Government, but is not a Government Department or part of one, and which accordingly operates to a greater or lesser extent at arm’s length from Ministers."@en ;
+        sh:name           "Non-departmental public body"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#a6632c5f6f21149463a21b766a9c9385> , <https://astrea.linkeddata.es/shapes#0e18e10d8a3c0997f046cb70f554a785> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e719248cafd7e1b5a8272c3a372fec9f> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/NonDepartmentalPublicBody> .
+
+<https://astrea.linkeddata.es/shapes#1579a95406c7d0708f77042a3a092760>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Honorific Post"@en ;
+        sh:name           "Honorific Post"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/HonorificPost> .
+
+<https://astrea.linkeddata.es/shapes#7ab825d06d9fa2adb8c3bb9fb42de987>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://reference.data.gov.uk/def/senior-civil-service-pay-band/payBand> .
+
+<https://astrea.linkeddata.es/shapes#dc6221ee279575f08bdb32d3d047ab2c>
+        a         sh:PropertyShape ;
+        sh:class  <http://reference.data.gov.uk/def/central-government/ExecutiveNDPB> .
+
+<https://astrea.linkeddata.es/shapes#7ad997245368633e0c8095c0517e80b7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Corporation Sole"@en ;
+        rdfs:seeAlso      <http://dbpedia.org/resource/Corporation_sole> ;
+        sh:description    "A legal entity consisting of a single ('sole') incorporated office, occupied by a single ('sole') man or woman."@en ;
+        sh:name           "Corporation Sole"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/CorporationSole> .
+
+<https://astrea.linkeddata.es/shapes#120ff10a7f206750da9df1def70a8ff3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Cabinet Committee Of"@en , "The government that this is a cabinet committee for."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/Government> ;
+        sh:description    "The government that this is a cabinet committee for."@en ;
+        sh:name           "Cabinet Committee Of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/cabinetCommitteeOf> .
+
+<https://astrea.linkeddata.es/shapes#34deaf7c7f03b4086a24501848f85a28>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Working Time"@en , "The contracted minimum working time for the position."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/WorkingTime> ;
+        sh:description    "The contracted minimum working time for the position."@en ;
+        sh:name           "Working Time"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/workingTime> .
+
+<https://astrea.linkeddata.es/shapes#d65960bae98478f6ae1e0aa1c5286bac>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Deputy Director"@en ;
+        sh:name           "Deputy Director"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#59d0eabfad4756fdddbd0a04f3cbc6ca> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/DeputyDirector> .
+
+<https://astrea.linkeddata.es/shapes#c6645c579148bbed5ecf3627ace40f93>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Devolved Government"@en ;
+        sh:name           "Devolved Government"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/DevolvedGovernment> .
+
+<https://astrea.linkeddata.es/shapes#e9c6ee4c336d81ef29ca551389dd2068>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Cabinet Committee"@en , "A cabinet committee for this government."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/CabinetCommittee> ;
+        sh:description    "A cabinet committee for this government."@en ;
+        sh:name           "Cabinet Committee"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/hasCabinetCommittee> .
+
+<https://astrea.linkeddata.es/shapes#6bf5d6b74a5db58894ccf1f0bfc1edd1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Salary Range"@en ;
+        sh:description    "A salary range."@en ;
+        sh:name           "Salary Range"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3b300f94e80e353f74b38d29c79019ae> , <https://astrea.linkeddata.es/shapes#2ebb1b8f421e993b110489d317f18b13> , <https://astrea.linkeddata.es/shapes#e25807bf071c3a6fd75aa3e79e7ae432> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/SalaryRange> .
+
+<https://astrea.linkeddata.es/shapes#963d84105b797ff23a02b2865b9f006d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Parliamentary Counsel"@en ;
+        sh:name           "Parliamentary Counsel"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#bb67654a5c2564b3948b0e3289a0173d> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/ParliamentaryCounsel> .
+
+<https://astrea.linkeddata.es/shapes#b5b83865c20cfab101652ca34084a222>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Cabinet"@en , "The cabinet of this government."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/Cabinet> ;
+        sh:description    "The cabinet of this government."@en ;
+        sh:name           "Cabinet"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/hasCabinet> .
+
+<https://astrea.linkeddata.es/shapes#1c1814793dbfe3414aff956f379dc560>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Head of Government"@en , "The head of this government (the Prime Minister or First Minister)."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description    "The head of this government (the Prime Minister or First Minister)."@en ;
+        sh:name           "Head of Government"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/hasGovernmentHead> .
+
+<https://astrea.linkeddata.es/shapes#ceaf36c094208e4ff5249da01896e95f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Executive NDPB"@en ;
+        sh:description    "Typically established in statute and carrying out executive, administrative, regulatory and/or commercial functions.Examples include the Environment Agency, Regional Development Agencies and national museums and galleries"@en ;
+        sh:name           "Executive NDPB"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#d3d1635931a9edf38dbeb46d90447eaa> , <https://astrea.linkeddata.es/shapes#6dcb6183bd257edfba0941ef86bedf17> , <https://astrea.linkeddata.es/shapes#e97f1865881bafbf10e4cc0a902ea83d> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/ExecutiveNDPB> .
+
+<https://astrea.linkeddata.es/shapes#2086a7cb5d14b2871c98835632a8b4f4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Senior Assistant Parliamentary Counsel"@en ;
+        sh:name           "Senior Assistant Parliamentary Counsel"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#827ff87a46b5cac6341d6cf2d7446d63> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/SeniorAssistantParliamentaryCounsel> .
+
+<https://astrea.linkeddata.es/shapes#06eab3a31faa0070f36eed6c2d8e8c7e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Tribunal NDPB"@en ;
+        sh:description    "Tribunal NDPBs have jurisdiction in a specialised field of law. Examples include Valuation Tribunals."@en ;
+        sh:name           "Tribunal NDPB"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#6dcb6183bd257edfba0941ef86bedf17> , <https://astrea.linkeddata.es/shapes#d3d1635931a9edf38dbeb46d90447eaa> , <https://astrea.linkeddata.es/shapes#dc6221ee279575f08bdb32d3d047ab2c> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/TribunalNDPB> .
+
+<https://astrea.linkeddata.es/shapes#ab644b22029cf81f780f414af503338a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "The amount of time spent by the postholder in the post; a full-time equivalent of 1 indicates a full-time post."@en , "Full-Time Equivalent"@en ;
+        sh:datatype       xsd:decimal ;
+        sh:description    "The amount of time spent by the postholder in the post; a full-time equivalent of 1 indicates a full-time post."@en ;
+        sh:name           "Full-Time Equivalent"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/fullTimeEquivalent> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#5781a407484ea3d238e065d182cb28e7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Serves"@en , "The Government that this government (as an organisation) serves."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/Government> ;
+        sh:description    "The Government that this government (as an organisation) serves."@en ;
+        sh:name           "Serves"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/serves> .
+
+<https://astrea.linkeddata.es/shapes#01f17695b85452be3e75d21c9ab5bd07>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Tenure"@en ;
+        sh:description    "The tenure of an individual in a particular Post. This is used to provide some extra information about the period of time during which an individual held a post, or the salary they received, and so on."@en ;
+        sh:name           "Tenure"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#f9d25513c268ce92c3121a7aebb9b920> , <https://astrea.linkeddata.es/shapes#31e41e7e9e33bd4ef92efda1778384d0> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/Tenure> .
+
+<https://astrea.linkeddata.es/shapes#f47463731cd2ad421ffcfee1ff4f8676>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Attends Cabinet"@en , "The cabinet that this person attends (not as a full member)."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/Cabinet> ;
+        sh:description    "The cabinet that this person attends (not as a full member)."@en ;
+        sh:name           "Attends Cabinet"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/attendsCabinet> .
+
+<https://astrea.linkeddata.es/shapes#e719248cafd7e1b5a8272c3a372fec9f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "parent department"@en , "A relation between an NDPB or an Executive Agency and their parent Government Department."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/Department> ;
+        sh:description    "A relation between an NDPB or an Executive Agency and their parent Government Department."@en ;
+        sh:maxCount       1 ;
+        sh:name           "parent department"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/parentDepartment> .
+
+<https://astrea.linkeddata.es/shapes#684096a413b3b1b7416dbc63867b490f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Tenure"@en , "A description of the relationship between an individual and the post that they occupy."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/Tenure> ;
+        sh:description    "A description of the relationship between an individual and the post that they occupy."@en ;
+        sh:name           "Tenure"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/tenure> .
+
+<https://astrea.linkeddata.es/shapes#7fc426e5f158c04d19103c75319dee30>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "UK Public body"@en ;
+        sh:description    "A class whose for UK Government related public bodies comprised of Executive Agenices, Ministerial and Non-Ministerial Departments and Non-departmental public bodies."@en ;
+        sh:name           "UK Public body"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/PublicBody> .
+
+<https://astrea.linkeddata.es/shapes#e04eee81dd4422617bcc64fc0d9bf888>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Salary Excluding Benefits"@en , "Salary, not including taxable benefits, and not adjusted based on working time."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/SalaryRange> ;
+        sh:description    "Salary, not including taxable benefits, and not adjusted based on working time."@en ;
+        sh:name           "Salary Excluding Benefits"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/salaryExcludingBenefits> .
+
+<https://astrea.linkeddata.es/shapes#ff5cade0e8f4b6872ef152e38d4c52c4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Government"@en ;
+        sh:description    "Organisations that administer public policy. They serve Governments, and persist as organisations through multiple Governments."@en ;
+        sh:name           "Government"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3a580a24e05fe4648b3705ff3620cfa3> , <https://astrea.linkeddata.es/shapes#a06e2531910105bb7a8e8809ee1778a3> , <https://astrea.linkeddata.es/shapes#5781a407484ea3d238e065d182cb28e7> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/GovernmentOrganisation> .
+
+<https://astrea.linkeddata.es/shapes#a39b8d589594d5fd94de7ad7be7cf8ae>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Civil Service Committee"@en ;
+        sh:description    "A committee made up of civil servants."@en ;
+        sh:name           "Civil Service Committee"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/CivilServiceCommittee> .
+
+<https://astrea.linkeddata.es/shapes#a67f70308f3bfde5510f5879e5fd4a3f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Salary Range"@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/SalaryRange> ;
+        sh:name           "Salary Range"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/salaryRange> .
+
+<https://astrea.linkeddata.es/shapes#b714f39f8ce80350efccd8b299d5995d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Devolved From"@en , "A government organisation that this devolved government organisation is devolved from."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/GovernmentOrganisation> ;
+        sh:description    "A government organisation that this devolved government organisation is devolved from."@en ;
+        sh:name           "Devolved From"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/devolvedFrom> .
+
+<https://astrea.linkeddata.es/shapes#c0ddb0c85ae13f343c1fc5ce893f4c4b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Served By"@en , "The government (organisation) that this Government is served by."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/GovernmentOrganisation> ;
+        sh:description    "The government (organisation) that this Government is served by."@en ;
+        sh:name           "Served By"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/servedBy> .
+
+<https://astrea.linkeddata.es/shapes#e97f1865881bafbf10e4cc0a902ea83d>
+        a         sh:PropertyShape ;
+        sh:class  <http://reference.data.gov.uk/def/central-government/TribunalNDPB> .
+
+<https://astrea.linkeddata.es/shapes#c2afdebea0ec20ffb846e2912686bb47>
+        a         sh:PropertyShape ;
+        sh:class  <http://reference.data.gov.uk/def/central-government/NonMinisterialDepartment> .
+
+<https://astrea.linkeddata.es/shapes#121b816c24f3e1f9a4d5f7ad8d282f78>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "related body"@en , "A relation between Minsiterial Departments and their associated Executive Agencies and NDPBs"@en ;
+        sh:description    "A relation between Minsiterial Departments and their associated Executive Agencies and NDPBs"@en ;
+        sh:name           "related body"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:or             ( [ sh:class  <http://reference.data.gov.uk/def/central-government/ExecutiveAgency> ;
+                              sh:path   <http://reference.data.gov.uk/def/central-government/relatedBody>
+                            ]
+                            [ sh:class  <http://reference.data.gov.uk/def/central-government/NonDepartmentalPublicBody> ;
+                              sh:path   <http://reference.data.gov.uk/def/central-government/relatedBody>
+                            ]
+                          ) .
+
+<https://astrea.linkeddata.es/shapes#85cc8fcc936269d10631ae686763709d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Parliamentary Under-Secretary"@en ;
+        sh:name           "Parliamentary Under-Secretary"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/ParliamentaryUnderSecretary> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#0ff84a5fdb86888028d5d4eff154f147>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Permanent Secretary"@en ;
+        rdfs:seeAlso      <http://www.civilservice.gov.uk/about/leadership/index.aspx> ;
+        sh:description    "The most senior civil servant in a department is a permanent secretary. Each supports the government minister who heads their department and who is accountable to Parliament for the department’s actions and performance."@en ;
+        sh:name           "Permanent Secretary"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#798c5e24d10a05a83f733acaebb735c0> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/PermanentSecretary> .
+
+<https://astrea.linkeddata.es/shapes#35781b344f45fe48f222a213dd4a41e8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Committee"@en ;
+        sh:description    "A committee is a kind of organisation that consists purely of meetings."@en ;
+        sh:name           "Committee"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#b5abd09d73594dadf42ece9a824fd883> , <https://astrea.linkeddata.es/shapes#72c822d81801f4ee0b6a5bbe3090c854> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/Committee> .
+
+<https://astrea.linkeddata.es/shapes#bb67654a5c2564b3948b0e3289a0173d>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://reference.data.gov.uk/def/senior-civil-service-pay-band/payBand> .
+
+<https://astrea.linkeddata.es/shapes#4b630e9c905f0605387204d701b27f8b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Organisation"@en , "Indicates the organisation that this is a post within."@en ;
+        sh:class          <http://www.w3.org/ns/org#Organization> ;
+        sh:description    "Indicates the organisation that this is a post within."@en ;
+        sh:name           "Organisation"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/postIn> .
+
+<https://astrea.linkeddata.es/shapes#2523125b6f661dfc6fd7a88e4e68b53f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Executive agency"@en ;
+        rdfs:seeAlso      <http://dbpedia.org/resource/Executive_agency> ;
+        sh:description    "An executive agency, also known as a next-step agency, is a part of a government department that is treated as managerially and budgetarily separate in order to carry out some part of the executive functions of the United Kingdom government, Scottish Government, Welsh Assembly or Northern Ireland Executive"@en ;
+        sh:name           "Executive agency"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#91d86201c5939aed3acc59eedb7de547> , <https://astrea.linkeddata.es/shapes#25d051505aee45e95a3c6ba63e8c3c67> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e719248cafd7e1b5a8272c3a372fec9f> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/ExecutiveAgency> .
+
+<https://astrea.linkeddata.es/shapes#f9d25513c268ce92c3121a7aebb9b920>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Post"@en , "The post held in this Tenure"@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/Post> ;
+        sh:description    "The post held in this Tenure"@en ;
+        sh:name           "Post"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/post> .
+
+<https://astrea.linkeddata.es/shapes#d90fd3ce6cf59a92f1e0ed81b9b173f1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Cabinet Of"@en , "The government or executive that this is the cabinet of."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/Government> ;
+        sh:description    "The government or executive that this is the cabinet of."@en ;
+        sh:name           "Cabinet Of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/cabinetOf> .
+
+<https://astrea.linkeddata.es/shapes#069a46a743d3dd61ba72dc80b2388722>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Minister of State"@en ;
+        sh:name           "Minister of State"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/MinisterOfState> .
+
+<https://astrea.linkeddata.es/shapes#be31e0504d2b5f3ce6add7ed14dbd80a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Salary Including Benefits"@en , "Salary including taxable benefits, not adjusted based on working time."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/SalaryRange> ;
+        sh:description    "Salary including taxable benefits, not adjusted based on working time."@en ;
+        sh:name           "Salary Including Benefits"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/salaryIncludingBenefits> .
+
+<https://astrea.linkeddata.es/shapes#7e3359dac558bdc7ac9b7132cb34222a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Great Officer of State"@en ;
+        rdfs:seeAlso      <http://dbpedia.org/resource/Great_Officer_of_State> ;
+        sh:name           "Great Officer of State"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/GreatOfficerOfState> .
+
+<https://astrea.linkeddata.es/shapes#91d86201c5939aed3acc59eedb7de547>
+        a         sh:PropertyShape ;
+        sh:class  <http://reference.data.gov.uk/def/central-government/NonDepartmentalPublicBody> .
+
+<https://astrea.linkeddata.es/shapes#bdb7b74759b5b62b16c57e2049ca4aa5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Post"@en ;
+        sh:description    "A post that may be occupied by a one or more individuals at a time. This is used for when people are members of organisations ex officio. For example, the Secretary of State for Scotland attends Cabinet by virtue of being the Secretary of State for Scotland, not as an individual person."@en ;
+        sh:name           "Post"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#4694b31adc24c5ccd7fc956f105ef3fe> , <https://astrea.linkeddata.es/shapes#f47463731cd2ad421ffcfee1ff4f8676> , <https://astrea.linkeddata.es/shapes#4b630e9c905f0605387204d701b27f8b> , <https://astrea.linkeddata.es/shapes#91a25dc1ee1ec0adad87aba8a9e9c1e3> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/Post> .
+
+<https://astrea.linkeddata.es/shapes#677cd0eb4a03cdb9471216f03dc270ab>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/Minister> .
+
+<https://astrea.linkeddata.es/shapes#aa79e902d11464d3ebe3e6d8342a990a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Government"@en ;
+        sh:description    "A group of ministers, headed by a Prime Minister or First Minister. In America, this would be called an Administration. Each general election brings about the creation of a new Government."@en ;
+        sh:name           "Government"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#1c1814793dbfe3414aff956f379dc560> , <https://astrea.linkeddata.es/shapes#3ea4cf01f5c80f2a54d50b7055a6f664> , <https://astrea.linkeddata.es/shapes#b5b83865c20cfab101652ca34084a222> , <https://astrea.linkeddata.es/shapes#c0ddb0c85ae13f343c1fc5ce893f4c4b> , <https://astrea.linkeddata.es/shapes#e9c6ee4c336d81ef29ca551389dd2068> , <https://astrea.linkeddata.es/shapes#81df698a8819882ae811a293043fc915> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/Government> .
+
+<https://astrea.linkeddata.es/shapes#34f5a8aca8a902495fa228dd5de8fd35>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Civil Service"@en ;
+        sh:description    "A civil service. In the UK there are three: the Home Civil Service, the Northern Ireland Civil Service and the Foreign Service."@en ;
+        sh:name           "Civil Service"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/CivilService> .
+
+<https://astrea.linkeddata.es/shapes#59d0eabfad4756fdddbd0a04f3cbc6ca>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://reference.data.gov.uk/def/senior-civil-service-pay-band/payBand> .
+
+<https://astrea.linkeddata.es/shapes#0e18e10d8a3c0997f046cb70f554a785>
+        a         sh:PropertyShape ;
+        sh:class  <http://reference.data.gov.uk/def/central-government/ExecutiveAgency> .
+
+<https://astrea.linkeddata.es/shapes#d3d1635931a9edf38dbeb46d90447eaa>
+        a         sh:PropertyShape ;
+        sh:class  <http://reference.data.gov.uk/def/central-government/MonitoringNDPB> .
+
+<https://astrea.linkeddata.es/shapes#ba2a1bd3a56816dfbd1b44cdac70848d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Senior Civil Service Post"@en ;
+        sh:description    "A senior post within the civil service"@en ;
+        sh:name           "Senior Civil Service Post"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/SeniorCivilServicePost> .
+
+<https://astrea.linkeddata.es/shapes#c7349f64bae2abd7e895c868127b1d90>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Director General"@en ;
+        sh:name           "Director General"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#5d24e27b78c5e8cafcb0ed15b026c455> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/DirectorGeneral> .
+
+<https://astrea.linkeddata.es/shapes#058ebb36aa0c3af3154ba8615d828e4f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Deputy Chair Of"@en , "The committee that this person is the deputy chair of."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/Committee> ;
+        sh:description    "The committee that this person is the deputy chair of."@en ;
+        sh:name           "Deputy Chair Of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/deputyChairOf> .
+
+<https://astrea.linkeddata.es/shapes#22f1e9617ffea547e7c43ae42f725304>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Devolved Government"@en ;
+        sh:name           "Devolved Government"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#b714f39f8ce80350efccd8b299d5995d> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/DevolvedGovernmentOrganisation> .
+
+<https://astrea.linkeddata.es/shapes#e25807bf071c3a6fd75aa3e79e7ae432>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Currency"@en ;
+        sh:class          <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:name           "Currency"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/currency> .
+
+<https://astrea.linkeddata.es/shapes#2679593db23396d26f5795dbdb8f4631>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Supports"@en , "This organisation provides support the object organisation."@en ;
+        sh:class          <http://www.w3.org/ns/org#Organization> ;
+        sh:description    "This organisation provides support the object organisation."@en ;
+        sh:name           "Supports"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/supports> .
+
+<https://astrea.linkeddata.es/shapes#c182ded17ffd114a7bb18f52ff7d7947>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Monitoring NDPBs"@en ;
+        sh:description    "Independent Monitoring Boards of Prisons, Immigration Removal Centres and Immigration Holding Rooms formerly known as Boards of Visitors, these are independent watchdogs of the prison system."@en ;
+        sh:name           "Monitoring NDPBs"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#dc6221ee279575f08bdb32d3d047ab2c> , <https://astrea.linkeddata.es/shapes#6dcb6183bd257edfba0941ef86bedf17> , <https://astrea.linkeddata.es/shapes#e97f1865881bafbf10e4cc0a902ea83d> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/MonitoringNDPB> .
+
+<https://astrea.linkeddata.es/shapes#87d78e6efd4826d3a66e04ef48910d0b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Principal Secretary of State"@en ;
+        sh:description    "Principal Secretaries of State are the highest-ranking ministers in the government, and most government departments have one Principal Secretary of State (or more). Most Principal Secretaries of State are titled 'Secretary of State' – although some have traditional titles, such as the Chancellor of the Exchequer and the Chief Whip."@en ;
+        sh:name           "Principal Secretary of State"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/PrincipalSecretaryOfState> .
+
+<https://astrea.linkeddata.es/shapes#3ea4cf01f5c80f2a54d50b7055a6f664>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Formed At"@en , "The time at which the Government was formed."@en ;
+        sh:class          <http://www.w3.org/2006/time#Instant> ;
+        sh:description    "The time at which the Government was formed."@en ;
+        sh:name           "Formed At"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/formedAt> .
+
+<https://astrea.linkeddata.es/shapes#043dcac7af7a56fe4cc273d7a877db07>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Cabinet Committee"@en ;
+        sh:description    "These are modelled as being units within government that report to a Cabinet."@en , "Cabinet committees reduce the burden on Cabinet by enabling collective decisions to be taken by a smaller group of ministers."@en ;
+        sh:name           "Cabinet Committee"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#120ff10a7f206750da9df1def70a8ff3> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/CabinetCommittee> .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#058ebb36aa0c3af3154ba8615d828e4f> , <https://astrea.linkeddata.es/shapes#185bfc0242574d63fad3005b800ea6a9> , <https://astrea.linkeddata.es/shapes#8df91144ccb5c08d464fb0de9b53fbcc> , <https://astrea.linkeddata.es/shapes#6c928abeaaa7e74784e8843efacbc48c> ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Person> .
+
+<https://astrea.linkeddata.es/shapes#a6d79684d199520b8b2fe0cdb1380d4a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Time Period"@en , "The amount of time spent working."@en ;
+        sh:class          <http://www.w3.org/2006/time#DurationDescription> ;
+        sh:description    "The amount of time spent working."@en ;
+        sh:name           "Time Period"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/timePeriod> .
+
+<https://astrea.linkeddata.es/shapes#3b300f94e80e353f74b38d29c79019ae>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "The lower bound of a salary range."@en , "Lower Bound"@en ;
+        sh:datatype       xsd:decimal ;
+        sh:description    "The lower bound of a salary range."@en ;
+        sh:name           "Lower Bound"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/lowerBound> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#82f32f8c010c78c89d6234b852d37e90>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Post"@en , "Indicates a post within the organisation."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/Post> ;
+        sh:description    "Indicates a post within the organisation."@en ;
+        sh:name           "Post"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/hasPost> .
+
+<https://astrea.linkeddata.es/shapes#b5abd09d73594dadf42ece9a824fd883>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Chair"@en , "The chair of this committee."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description    "The chair of this committee."@en ;
+        sh:name           "Chair"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/hasChair> .
+
+<https://astrea.linkeddata.es/shapes#41ba1eda0f40b7116acd1ca3c17027b4>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e04eee81dd4422617bcc64fc0d9bf888> , <https://astrea.linkeddata.es/shapes#be31e0504d2b5f3ce6add7ed14dbd80a> , <https://astrea.linkeddata.es/shapes#3babd676d2f00cb09e813676001bcc64> , <https://astrea.linkeddata.es/shapes#34deaf7c7f03b4086a24501848f85a28> , <https://astrea.linkeddata.es/shapes#e3b362157b4660acfbd9bdd22aacf989> , <https://astrea.linkeddata.es/shapes#ab644b22029cf81f780f414af503338a> ;
+        sh:targetClass  <http://www.w3.org/ns/org#Membership> .
+
+<https://astrea.linkeddata.es/shapes#72c822d81801f4ee0b6a5bbe3090c854>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Deputy Chair"@en , "The deputy chair of this committee."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description    "The deputy chair of this committee."@en ;
+        sh:name           "Deputy Chair"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/hasDeputyChair> .
+
+<https://astrea.linkeddata.es/shapes#e0d29ce07b3a6ca351721dbd725dd75c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Supported By"@en , "This organisation is supported by object organisation."@en ;
+        sh:class          <http://www.w3.org/ns/org#Organization> ;
+        sh:description    "This organisation is supported by object organisation."@en ;
+        sh:name           "Supported By"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/supportedBy> .
+
+<https://astrea.linkeddata.es/shapes#2f5b40a4de321758071fcee58e750be1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Working Time"@en ;
+        sh:description    "A representation of the amount that someone works."@en ;
+        sh:name           "Working Time"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#1887bfe0743b178320113dab8e56ddb2> , <https://astrea.linkeddata.es/shapes#a6d79684d199520b8b2fe0cdb1380d4a> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/WorkingTime> .
+
+<https://astrea.linkeddata.es/shapes#5d24e27b78c5e8cafcb0ed15b026c455>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://reference.data.gov.uk/def/senior-civil-service-pay-band/payBand> .
+
+<https://astrea.linkeddata.es/shapes#a06e2531910105bb7a8e8809ee1778a3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Devolves To"@en , "A devolved government organisation that this government organisation devolves power to."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/DevolvedGovernmentOrganisation> ;
+        sh:description    "A devolved government organisation that this government organisation devolves power to."@en ;
+        sh:name           "Devolves To"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/devolvesTo> .
+
+<https://astrea.linkeddata.es/shapes#f262bd7e1ceda7e8ff239b4b5dd2c251>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Deputy Parliamentary Counsel"@en ;
+        sh:name           "Deputy Parliamentary Counsel"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7ab825d06d9fa2adb8c3bb9fb42de987> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/DeputyParliamentaryCounsel> .
+
+<https://astrea.linkeddata.es/shapes#d78e6f4076518eed692c6cf30a7d0b80>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Ministerial Committee"@en ;
+        sh:description    "A committee made up of ministers."@en ;
+        sh:name           "Ministerial Committee"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/MinisterialCommittee> .
+
+<https://astrea.linkeddata.es/shapes#6c928abeaaa7e74784e8843efacbc48c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Deputy Head of Government"@en , "The government that this person (the Deputy Prime Minister or Deputy First Minister) is the head of."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/Government> ;
+        sh:description    "The government that this person (the Deputy Prime Minister or Deputy First Minister) is the head of."@en ;
+        sh:name           "Deputy Head of Government"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/deputyHeadOfGovernment> .
+
+<https://astrea.linkeddata.es/shapes#ee1cdef8c842a10ac2097d50a2901770>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://reference.data.gov.uk/def/senior-civil-service-pay-band/payBand> .
+
+<https://astrea.linkeddata.es/shapes#98892bdbd38ad6fb2c03172a80279892>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Non-Disclosure"@en ;
+        sh:description    "A representation of the non-disclosure of a piece of information."@en ;
+        sh:name           "Non-Disclosure"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/NonDisclosure> .
+
+<https://astrea.linkeddata.es/shapes#a681291cdceb8db39890d8e342927d78>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Cabinet Attendee"@en , "An attendee of this cabinet."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/Post> ;
+        sh:description    "An attendee of this cabinet."@en ;
+        sh:name           "Cabinet Attendee"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/hasCabinetAttendee> .
+
+<https://astrea.linkeddata.es/shapes#adeed5fe912e80ecfe63766dc2c674dd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Sinecure"@en ;
+        sh:name           "Sinecure"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/Sinecure> .
+
+<https://astrea.linkeddata.es/shapes#6dcb6183bd257edfba0941ef86bedf17>
+        a         sh:PropertyShape ;
+        sh:class  <http://reference.data.gov.uk/def/central-government/AdvisoryNDPB> .
+
+<https://astrea.linkeddata.es/shapes#bf978f8df02a670f5dc33d1736c4c573>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Government Department"@en ;
+        sh:name           "Government Department"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#91d86201c5939aed3acc59eedb7de547> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/Department> .
+
+<https://astrea.linkeddata.es/shapes#df3e89d5cec91819e5b081893fb92bed>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Member of Cabinet"@en , "A member of this cabinet."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/Post> ;
+        sh:description    "A member of this cabinet."@en ;
+        sh:name           "Member of Cabinet"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/hasCabinetMember> .
+
+<https://astrea.linkeddata.es/shapes#a616d67dd363833da505a86e28592843>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Civil Service Post"@en ;
+        sh:description    "A post within the civil service"@en ;
+        sh:name           "Civil Service Post"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/CivilServicePost> .
+
+<https://astrea.linkeddata.es/shapes#798c5e24d10a05a83f733acaebb735c0>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://reference.data.gov.uk/def/senior-civil-service-pay-band/payBand> .
+
+<https://astrea.linkeddata.es/shapes#81df698a8819882ae811a293043fc915>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Deputy Head of Government"@en , "The deputy head of this government (the Deputy Prime Minister or Deputy First Minister)."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description    "The deputy head of this government (the Deputy Prime Minister or Deputy First Minister)."@en ;
+        sh:name           "Deputy Head of Government"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/hasGovernmentDeputyHead> .
+
+<https://astrea.linkeddata.es/shapes#a87f54dfb818e14b135f7fa4ac4b5217>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Cabinet"@en ;
+        sh:description    "Cabinet is the supreme decision-making body in government, dealing with the big issues of the day and the Government’s overall strategy."@en ;
+        sh:name           "Cabinet"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#df3e89d5cec91819e5b081893fb92bed> , <https://astrea.linkeddata.es/shapes#a681291cdceb8db39890d8e342927d78> , <https://astrea.linkeddata.es/shapes#d90fd3ce6cf59a92f1e0ed81b9b173f1> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/Cabinet> .
+
+<https://astrea.linkeddata.es/shapes#02fe1a8324853f80b5b96375df8116eb>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Director"@en ;
+        sh:name           "Director"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ee1cdef8c842a10ac2097d50a2901770> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/Director> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#d3d1635931a9edf38dbeb46d90447eaa> , <https://astrea.linkeddata.es/shapes#9a5f2b5b9bbd75a293ac75dbcb551755> , <https://astrea.linkeddata.es/shapes#d65960bae98478f6ae1e0aa1c5286bac> , <https://astrea.linkeddata.es/shapes#e9c6ee4c336d81ef29ca551389dd2068> , <https://astrea.linkeddata.es/shapes#a681291cdceb8db39890d8e342927d78> , <https://astrea.linkeddata.es/shapes#5781a407484ea3d238e065d182cb28e7> , <https://astrea.linkeddata.es/shapes#dc6221ee279575f08bdb32d3d047ab2c> , <https://astrea.linkeddata.es/shapes#e719248cafd7e1b5a8272c3a372fec9f> , <https://astrea.linkeddata.es/shapes#f5aef88b76c918fbf07a839c83ab2009> , <https://astrea.linkeddata.es/shapes#e97f1865881bafbf10e4cc0a902ea83d> , <https://astrea.linkeddata.es/shapes#34f5a8aca8a902495fa228dd5de8fd35> , <https://astrea.linkeddata.es/shapes#bf978f8df02a670f5dc33d1736c4c573> , <https://astrea.linkeddata.es/shapes#85cc8fcc936269d10631ae686763709d> , <https://astrea.linkeddata.es/shapes#7ab825d06d9fa2adb8c3bb9fb42de987> , <https://astrea.linkeddata.es/shapes#4e9837a9751776b6b46da6855bc4859f> , <https://astrea.linkeddata.es/shapes#b714f39f8ce80350efccd8b299d5995d> , <https://astrea.linkeddata.es/shapes#e25807bf071c3a6fd75aa3e79e7ae432> , <https://astrea.linkeddata.es/shapes#ba2a1bd3a56816dfbd1b44cdac70848d> , <https://astrea.linkeddata.es/shapes#91d86201c5939aed3acc59eedb7de547> , <https://astrea.linkeddata.es/shapes#120ff10a7f206750da9df1def70a8ff3> , <https://astrea.linkeddata.es/shapes#d78e6f4076518eed692c6cf30a7d0b80> , <https://astrea.linkeddata.es/shapes#be31e0504d2b5f3ce6add7ed14dbd80a> , <https://astrea.linkeddata.es/shapes#a6d79684d199520b8b2fe0cdb1380d4a> , <https://astrea.linkeddata.es/shapes#2f5b40a4de321758071fcee58e750be1> , <https://astrea.linkeddata.es/shapes#c7349f64bae2abd7e895c868127b1d90> , <https://astrea.linkeddata.es/shapes#ceaf36c094208e4ff5249da01896e95f> , <https://astrea.linkeddata.es/shapes#7e3359dac558bdc7ac9b7132cb34222a> , <https://astrea.linkeddata.es/shapes#a616d67dd363833da505a86e28592843> , <https://astrea.linkeddata.es/shapes#a06e2531910105bb7a8e8809ee1778a3> , <https://astrea.linkeddata.es/shapes#6c928abeaaa7e74784e8843efacbc48c> , <https://astrea.linkeddata.es/shapes#ff5cade0e8f4b6872ef152e38d4c52c4> , <https://astrea.linkeddata.es/shapes#ff4a9d969aec856b0c60251d97969b72> , <https://astrea.linkeddata.es/shapes#a8b7caf935e3a9013b914f50e66f10e0> , <https://astrea.linkeddata.es/shapes#02fe1a8324853f80b5b96375df8116eb> , <https://astrea.linkeddata.es/shapes#8df91144ccb5c08d464fb0de9b53fbcc> , <https://astrea.linkeddata.es/shapes#06eab3a31faa0070f36eed6c2d8e8c7e> , <https://astrea.linkeddata.es/shapes#f262bd7e1ceda7e8ff239b4b5dd2c251> , <https://astrea.linkeddata.es/shapes#f47463731cd2ad421ffcfee1ff4f8676> , <https://astrea.linkeddata.es/shapes#e30fc819aaacb0dcc283846b70a6a367> , <https://astrea.linkeddata.es/shapes#069a46a743d3dd61ba72dc80b2388722> , <https://astrea.linkeddata.es/shapes#121b816c24f3e1f9a4d5f7ad8d282f78> , <https://astrea.linkeddata.es/shapes#a87f54dfb818e14b135f7fa4ac4b5217> , <https://astrea.linkeddata.es/shapes#e3b362157b4660acfbd9bdd22aacf989> , <https://astrea.linkeddata.es/shapes#b5b83865c20cfab101652ca34084a222> , <https://astrea.linkeddata.es/shapes#2523125b6f661dfc6fd7a88e4e68b53f> , <https://astrea.linkeddata.es/shapes#82f32f8c010c78c89d6234b852d37e90> , <https://astrea.linkeddata.es/shapes#6dcb6183bd257edfba0941ef86bedf17> , <https://astrea.linkeddata.es/shapes#6bf5d6b74a5db58894ccf1f0bfc1edd1> , <https://astrea.linkeddata.es/shapes#91a25dc1ee1ec0adad87aba8a9e9c1e3> , <https://astrea.linkeddata.es/shapes#bb67654a5c2564b3948b0e3289a0173d> , <https://astrea.linkeddata.es/shapes#e04eee81dd4422617bcc64fc0d9bf888> , <https://astrea.linkeddata.es/shapes#7ad997245368633e0c8095c0517e80b7> , <https://astrea.linkeddata.es/shapes#59d0eabfad4756fdddbd0a04f3cbc6ca> , <https://astrea.linkeddata.es/shapes#aa79e902d11464d3ebe3e6d8342a990a> , <https://astrea.linkeddata.es/shapes#31e41e7e9e33bd4ef92efda1778384d0> , <https://astrea.linkeddata.es/shapes#3a580a24e05fe4648b3705ff3620cfa3> , <https://astrea.linkeddata.es/shapes#185bfc0242574d63fad3005b800ea6a9> , <https://astrea.linkeddata.es/shapes#c0ddb0c85ae13f343c1fc5ce893f4c4b> , <https://astrea.linkeddata.es/shapes#b5abd09d73594dadf42ece9a824fd883> , <https://astrea.linkeddata.es/shapes#5d24e27b78c5e8cafcb0ed15b026c455> , <https://astrea.linkeddata.es/shapes#058ebb36aa0c3af3154ba8615d828e4f> , <https://astrea.linkeddata.es/shapes#c182ded17ffd114a7bb18f52ff7d7947> , <https://astrea.linkeddata.es/shapes#34deaf7c7f03b4086a24501848f85a28> , <https://astrea.linkeddata.es/shapes#0e18e10d8a3c0997f046cb70f554a785> , <https://astrea.linkeddata.es/shapes#7fc426e5f158c04d19103c75319dee30> , <https://astrea.linkeddata.es/shapes#1c1814793dbfe3414aff956f379dc560> , <https://astrea.linkeddata.es/shapes#798c5e24d10a05a83f733acaebb735c0> , <https://astrea.linkeddata.es/shapes#0ff84a5fdb86888028d5d4eff154f147> , <https://astrea.linkeddata.es/shapes#01f17695b85452be3e75d21c9ab5bd07> , <https://astrea.linkeddata.es/shapes#87d78e6efd4826d3a66e04ef48910d0b> , <https://astrea.linkeddata.es/shapes#1579a95406c7d0708f77042a3a092760> , <https://astrea.linkeddata.es/shapes#ab644b22029cf81f780f414af503338a> , <https://astrea.linkeddata.es/shapes#e0d29ce07b3a6ca351721dbd725dd75c> , <https://astrea.linkeddata.es/shapes#3ea4cf01f5c80f2a54d50b7055a6f664> , <https://astrea.linkeddata.es/shapes#c6645c579148bbed5ecf3627ace40f93> , <https://astrea.linkeddata.es/shapes#043dcac7af7a56fe4cc273d7a877db07> , <https://astrea.linkeddata.es/shapes#2679593db23396d26f5795dbdb8f4631> , <https://astrea.linkeddata.es/shapes#4694b31adc24c5ccd7fc956f105ef3fe> , <https://astrea.linkeddata.es/shapes#74ac90c9c816d92423aaedea3c4d9dd8> , <https://astrea.linkeddata.es/shapes#df3e89d5cec91819e5b081893fb92bed> , <https://astrea.linkeddata.es/shapes#ae3a03958b9937646a979297e5651bc0> , <https://astrea.linkeddata.es/shapes#41ba1eda0f40b7116acd1ca3c17027b4> , <https://astrea.linkeddata.es/shapes#3babd676d2f00cb09e813676001bcc64> , <https://astrea.linkeddata.es/shapes#d90fd3ce6cf59a92f1e0ed81b9b173f1> , <https://astrea.linkeddata.es/shapes#81df698a8819882ae811a293043fc915> , <https://astrea.linkeddata.es/shapes#7e9dd46ad4e47a2a0114e67e27ccd9f4> , <https://astrea.linkeddata.es/shapes#f9d25513c268ce92c3121a7aebb9b920> , <https://astrea.linkeddata.es/shapes#bdb7b74759b5b62b16c57e2049ca4aa5> , <https://astrea.linkeddata.es/shapes#677cd0eb4a03cdb9471216f03dc270ab> , <https://astrea.linkeddata.es/shapes#a39b8d589594d5fd94de7ad7be7cf8ae> , <https://astrea.linkeddata.es/shapes#a6632c5f6f21149463a21b766a9c9385> , <https://astrea.linkeddata.es/shapes#ee1cdef8c842a10ac2097d50a2901770> , <https://astrea.linkeddata.es/shapes#1887bfe0743b178320113dab8e56ddb2> , <https://astrea.linkeddata.es/shapes#703c63527d6e39a24224641336fa1ef7> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#2086a7cb5d14b2871c98835632a8b4f4> , <https://astrea.linkeddata.es/shapes#2ebb1b8f421e993b110489d317f18b13> , <https://astrea.linkeddata.es/shapes#c2afdebea0ec20ffb846e2912686bb47> , <https://astrea.linkeddata.es/shapes#98892bdbd38ad6fb2c03172a80279892> , <https://astrea.linkeddata.es/shapes#a67f70308f3bfde5510f5879e5fd4a3f> , <https://astrea.linkeddata.es/shapes#4b630e9c905f0605387204d701b27f8b> , <https://astrea.linkeddata.es/shapes#25d051505aee45e95a3c6ba63e8c3c67> , <https://astrea.linkeddata.es/shapes#22f1e9617ffea547e7c43ae42f725304> , <https://astrea.linkeddata.es/shapes#72c822d81801f4ee0b6a5bbe3090c854> , <https://astrea.linkeddata.es/shapes#684096a413b3b1b7416dbc63867b490f> , <https://astrea.linkeddata.es/shapes#963d84105b797ff23a02b2865b9f006d> , <https://astrea.linkeddata.es/shapes#827ff87a46b5cac6341d6cf2d7446d63> , <https://astrea.linkeddata.es/shapes#3b300f94e80e353f74b38d29c79019ae> , <https://astrea.linkeddata.es/shapes#adeed5fe912e80ecfe63766dc2c674dd> , <https://astrea.linkeddata.es/shapes#35781b344f45fe48f222a213dd4a41e8> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#ae3a03958b9937646a979297e5651bc0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Machinery of Government Change"@en ;
+        sh:description    "A change in one or more public bodies that may involve a renaming, a reallocation of responsibilities, the transfer of a unit, or various other changes that take place within government structure. Often these changes don't bring about "@en ;
+        sh:name           "Machinery of Government Change"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/MachineryOfGovernmentChangeEvent> .
+
+<https://astrea.linkeddata.es/shapes#3a580a24e05fe4648b3705ff3620cfa3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Government Organisation Of"@en , "The legislature that this government organisation is associated with."@en ;
+        sh:class          <http://reference.data.gov.uk/def/parliament/Legislature> ;
+        sh:description    "The legislature that this government organisation is associated with."@en ;
+        sh:name           "Government Organisation Of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/governmentOrganisationOf> .
+
+<https://astrea.linkeddata.es/shapes#74ac90c9c816d92423aaedea3c4d9dd8>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#82f32f8c010c78c89d6234b852d37e90> , <https://astrea.linkeddata.es/shapes#2679593db23396d26f5795dbdb8f4631> , <https://astrea.linkeddata.es/shapes#e0d29ce07b3a6ca351721dbd725dd75c> ;
+        sh:targetClass  <http://www.w3.org/ns/org#Organization> .
+
+<https://astrea.linkeddata.es/shapes#2ebb1b8f421e993b110489d317f18b13>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "The upper bound of a salary range."@en , "Upper Bound"@en ;
+        sh:datatype       xsd:decimal ;
+        sh:description    "The upper bound of a salary range."@en ;
+        sh:name           "Upper Bound"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/upperBound> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#a8b7caf935e3a9013b914f50e66f10e0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Secretariat"@en ;
+        sh:description    "An organisation that provides advice and support to another organisation, often a committee."@en ;
+        sh:name           "Secretariat"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/Secretariat> .
+
+<https://astrea.linkeddata.es/shapes#25d051505aee45e95a3c6ba63e8c3c67>
+        a         sh:PropertyShape ;
+        sh:class  <http://reference.data.gov.uk/def/central-government/MinisterialDepartment> .
+
+<https://astrea.linkeddata.es/shapes#31e41e7e9e33bd4ef92efda1778384d0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Postholder"@en , "The postholder in this Tenure"@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description    "The postholder in this Tenure"@en ;
+        sh:name           "Postholder"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/postholder> .
+
+<https://astrea.linkeddata.es/shapes#e30fc819aaacb0dcc283846b70a6a367>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Assistant Parliamentary Counsel"@en ;
+        sh:name           "Assistant Parliamentary Counsel"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/AssistantParliamentaryCounsel> .
+
+<https://astrea.linkeddata.es/shapes#91a25dc1ee1ec0adad87aba8a9e9c1e3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Postholder"@en , "Indicates the agent who holds the post."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description    "Indicates the agent who holds the post."@en ;
+        sh:name           "Postholder"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/heldBy> .
+
+<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#684096a413b3b1b7416dbc63867b490f> , <https://astrea.linkeddata.es/shapes#7e9dd46ad4e47a2a0114e67e27ccd9f4> ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Agent> .
+
+<https://astrea.linkeddata.es/shapes#e3b362157b4660acfbd9bdd22aacf989>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Salary"@en ;
+        sh:datatype       xsd:decimal ;
+        sh:name           "Salary"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/salary> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#9a5f2b5b9bbd75a293ac75dbcb551755>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Advisory NDPB"@en ;
+        sh:description    "Advisory NDPBs – provide independent, expert advice to Ministers on a wide range of issues.  Examples include the Low Pay Commission and the Committee on Standards in Public Life;"@en ;
+        sh:name           "Advisory NDPB"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#d3d1635931a9edf38dbeb46d90447eaa> , <https://astrea.linkeddata.es/shapes#e97f1865881bafbf10e4cc0a902ea83d> , <https://astrea.linkeddata.es/shapes#dc6221ee279575f08bdb32d3d047ab2c> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/AdvisoryNDPB> .
+
+<https://astrea.linkeddata.es/shapes#4694b31adc24c5ccd7fc956f105ef3fe>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Member of Cabinet"@en , "The cabinet that this person a member of."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/Cabinet> ;
+        sh:description    "The cabinet that this person a member of."@en ;
+        sh:name           "Member of Cabinet"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/memberOfCabinet> .
+
+<https://astrea.linkeddata.es/shapes#7e9dd46ad4e47a2a0114e67e27ccd9f4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Post"@en , "Indicates a post held by someone."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/Post> ;
+        sh:description    "Indicates a post held by someone."@en ;
+        sh:name           "Post"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/holdsPost> .
+
+<https://astrea.linkeddata.es/shapes#185bfc0242574d63fad3005b800ea6a9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Chairs"@en , "The committee that this person chairs."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/Committee> ;
+        sh:description    "The committee that this person chairs."@en ;
+        sh:name           "Chairs"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/chairOf> .
+
+<https://astrea.linkeddata.es/shapes#827ff87a46b5cac6341d6cf2d7446d63>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://reference.data.gov.uk/def/senior-civil-service-pay-band/payBand> .
+
+<https://astrea.linkeddata.es/shapes#f5aef88b76c918fbf07a839c83ab2009>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Parliamentary Counsel"@en ;
+        rdfs:seeAlso      <http://en.wikipedia.org/wiki/Parliamentary_Counsel> ;
+        sh:name           "Parliamentary Counsel"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/Counsel> .
+
+<https://astrea.linkeddata.es/shapes#4e9837a9751776b6b46da6855bc4859f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Ministerial department"@en ;
+        rdfs:seeAlso      <http://dbpedia.org/resource/Departments_of_the_United_Kingdom_Government> ;
+        sh:description    "Ministerial Departments are led politically by a Government Minister, normally a member of the Cabinet and cover matters that require direct political oversight."@en ;
+        sh:name           "Ministerial department"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#c2afdebea0ec20ffb846e2912686bb47> , <https://astrea.linkeddata.es/shapes#0e18e10d8a3c0997f046cb70f554a785> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/MinisterialDepartment> .
+
+<https://astrea.linkeddata.es/shapes#a6632c5f6f21149463a21b766a9c9385>
+        a         sh:PropertyShape ;
+        sh:class  <http://reference.data.gov.uk/def/central-government/Department> .
+
+<https://astrea.linkeddata.es/shapes#3babd676d2f00cb09e813676001bcc64>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Full-time Equivalent Salary"@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/SalaryRange> ;
+        sh:name           "Full-time Equivalent Salary"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/fullTimeEquivalentSalary> .
+
+<https://astrea.linkeddata.es/shapes#703c63527d6e39a24224641336fa1ef7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Non-ministerial department"@en ;
+        sh:description    "A non-ministerial government department is a department or ministry of a government that is not headed by a Government Minister or Government Secretary, and answers directly to a legislature"@en ;
+        sh:name           "Non-ministerial department"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#25d051505aee45e95a3c6ba63e8c3c67> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/central-government/NonMinisterialDepartment> .
+
+<https://astrea.linkeddata.es/shapes#8df91144ccb5c08d464fb0de9b53fbcc>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "Head of Government"@en , "The government that this person (the Prime Minister or First Minister) is the head of."@en ;
+        sh:class          <http://reference.data.gov.uk/def/central-government/Government> ;
+        sh:description    "The government that this person (the Prime Minister or First Minister) is the head of."@en ;
+        sh:name           "Head of Government"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/headOfGovernment> .
+
+<https://astrea.linkeddata.es/shapes#1887bfe0743b178320113dab8e56ddb2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/central-government> ;
+        rdfs:label        "For Every"@en , "The base period over which the amount of time spent working is measured."@en ;
+        sh:class          <http://www.w3.org/2006/time#DurationDescription> ;
+        sh:description    "The base period over which the amount of time spent working is measured."@en ;
+        sh:name           "For Every"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/central-government/forEvery> .

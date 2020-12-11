@@ -1,0 +1,317 @@
+@prefix participation: <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#> .
+@prefix :      <http://www.ontologydesignpatterns.org/cp/owl/participation.owl#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#807f4760dac4c49a76dda5bd57a88b45>
+        a               sh:PropertyShape ;
+        rdfs:label      "is status in"@en , "The property relating the definition of a specific status to the situation of the document, a dataset or something else holding that status at a specific time."@en ;
+        sh:class        <http://purl.org/spar/pso/StatusInTime> ;
+        sh:description  "The property relating the definition of a specific status to the situation of the document, a dataset or something else holding that status at a specific time."@en ;
+        sh:name         "is status in"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/pso/isStatusIn> .
+
+<https://astrea.linkeddata.es/shapes#5761c0d0c9ca7a0843ebf2204d77184a>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      participation:isParticipantIn .
+
+<https://astrea.linkeddata.es/shapes#686651187cc2f741d879fbfc88b9e7c5>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/spar/pso/isStatusHeldBy> .
+
+<https://astrea.linkeddata.es/shapes#6763df21ae69ca78da94236ebcce1d69>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalStartDate> .
+
+<https://astrea.linkeddata.es/shapes#8e9b8c41fdc6b12c8165928326232332>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalEndDate> .
+
+<https://astrea.linkeddata.es/shapes#8f0066227cc79dcc4e8845807899ff1c>
+        a               sh:NodeShape ;
+        rdfs:label      "publishing status"@en ;
+        sh:description  "A state or condition that a document may have that relates to the publication of such document."@en ;
+        sh:name         "publishing status"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/spar/pso/PublicationStatus> .
+
+<https://astrea.linkeddata.es/shapes#49f47577666a276f525bf77d1e3b2219>
+        a               sh:NodeShape ;
+        rdfs:label      "time interval"@en ;
+        sh:description  "Two (starting and ending) points in time that define a particular period of time."@en ;
+        sh:name         "time interval"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#TimeInterval> .
+
+<https://astrea.linkeddata.es/shapes#d4925b6c7c1cb98008ba2f643e8a61c2>
+        a               sh:PropertyShape ;
+        rdfs:label      "is acquired as consequence of"@en , "The property relating a particular publishing status to the event that causes its acquisition."@en ;
+        sh:class        participation:Event ;
+        sh:description  "The property relating a particular publishing status to the event that causes its acquisition."@en ;
+        sh:name         "is acquired as consequence of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/pso/isAcquiredAsConsequenceOf> .
+
+<https://astrea.linkeddata.es/shapes#8b291b9bab88f120c1ee0ee2405a1d53>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl#hasIntervalDate> .
+
+<https://astrea.linkeddata.es/report/602882191>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/swan/2.0/foaf-essential/" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#29e495ca07d62c49cab666507a6b965a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.ontologydesignpatterns.org/cp/owl/participation.owl> ;
+        rdfs:label        "event"@en , "Event"@en ;
+        sh:description    "An event that may happen during a publishing process, such as writing a draft, sending a preprint, publishing a paper, etc."@en , "Any physical, social, or mental process, event, or state." ;
+        sh:name           "event"@en , "Event"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#7b594ebd9e457a475e9b6d1791096c7b> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#6982f51d0387102cef8a0b0dd04b19a4> , <https://astrea.linkeddata.es/shapes#ac4ba199129adf8622b36867293dc318> ;
+        sh:targetClass    participation:Event .
+
+<https://astrea.linkeddata.es/shapes#f7aac932cdecace6dab3ef114fc94e6d>
+        a               sh:NodeShape ;
+        rdfs:label      "status in time"@en ;
+        sh:description  "A particular situation that describe a state or condition some documents may have at a particular time as consequence of one or more events."@en ;
+        sh:name         "status in time"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#21cc77905939b7515e6f817b54fada14> , <https://astrea.linkeddata.es/shapes#686651187cc2f741d879fbfc88b9e7c5> , <https://astrea.linkeddata.es/shapes#d4925b6c7c1cb98008ba2f643e8a61c2> , <https://astrea.linkeddata.es/shapes#b427508ac4a2bb15f98fcd2d7f18a172> , <https://astrea.linkeddata.es/shapes#d56aace98ba0f2b1c32f20d3185dbd3c> , <https://astrea.linkeddata.es/shapes#0a899da1032c7b155a44da5b1ead5371> ;
+        sh:targetClass  <http://purl.org/spar/pso/StatusInTime> .
+
+<https://astrea.linkeddata.es/shapes#2f2977f2cd80e859a80ab63158e7d78b>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.essepuntato.it/2012/04/tvc/withValue> .
+
+<https://astrea.linkeddata.es/shapes#4be2e1f98b42cd0ded1413113ec46e81>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#TimeIndexedSituation> .
+
+<https://astrea.linkeddata.es/shapes#b427508ac4a2bb15f98fcd2d7f18a172>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.essepuntato.it/2012/04/tvc/atTime> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#564782b294dc0150685620c41d5797d3>
+        a               sh:PropertyShape ;
+        rdfs:label      "holds status in time"@en , "A property relating a document, a dataset or some other thing to a status that it holds at a specific time."@en ;
+        sh:class        <http://purl.org/spar/pso/StatusInTime> ;
+        sh:description  "A property relating a document, a dataset or some other thing to a status that it holds at a specific time."@en ;
+        sh:name         "holds status in time"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/pso/holdsStatusInTime> .
+
+<https://astrea.linkeddata.es/shapes#09c49729f5de404625e1f93dd33894fc>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.essepuntato.it/2012/04/tvc/hasValue> .
+
+<https://astrea.linkeddata.es/shapes#0a899da1032c7b155a44da5b1ead5371>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/spar/pso/isAcquiredAsConsequenceOf> .
+
+<https://astrea.linkeddata.es/shapes#067012b2cb1eb8f954152ca732c663e1>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.essepuntato.it/2012/04/tvc/atTime> .
+
+<https://astrea.linkeddata.es/shapes#21cc77905939b7515e6f817b54fada14>
+        a               sh:PropertyShape ;
+        rdfs:label      "is lost as consequence of"@en , "The property relating a particular publishing status to the event that causes its loss."@en ;
+        sh:class        participation:Event ;
+        sh:description  "The property relating a particular publishing status to the event that causes its loss."@en ;
+        sh:name         "is lost as consequence of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/pso/isLostAsConsequenceOf> .
+
+<https://astrea.linkeddata.es/shapes#ac4ba199129adf8622b36867293dc318>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      participation:hasParticipant .
+
+<https://astrea.linkeddata.es/shapes#0fb8d9ab6675a6d0404d69263299d860>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#hasTimeIndexedSetting> .
+
+<https://astrea.linkeddata.es/shapes#7b594ebd9e457a475e9b6d1791096c7b>
+        a         sh:PropertyShape ;
+        sh:class  participation:Object .
+
+<https://astrea.linkeddata.es/shapes#d13263fe55df219224a20825a8dacfec>
+        a               sh:NodeShape ;
+        rdfs:label      "status"@en ;
+        sh:description  "A state or condition that a document may have."@en ;
+        sh:name         "status"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/spar/pso/Status> .
+
+<https://astrea.linkeddata.es/shapes#6982f51d0387102cef8a0b0dd04b19a4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.ontologydesignpatterns.org/cp/owl/participation.owl> ;
+        rdfs:label        "has participant"@en ;
+        sh:class          participation:Object ;
+        sh:name           "has participant"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           participation:hasParticipant .
+
+<https://astrea.linkeddata.es/shapes#d56aace98ba0f2b1c32f20d3185dbd3c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/spar/pso/withStatus> .
+
+<https://astrea.linkeddata.es/shapes#94f2cb154b384c2c63af1e17ffe519e0>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#forEntity> .
+
+<https://astrea.linkeddata.es/shapes#2610f2af17eab9dbb03e64c66c72f945>
+        a               sh:NodeShape ;
+        rdfs:label      "article processing charge status"@en ;
+        sh:description  "A state or condition that a document may have that relates to a fee levied by a publisher on an author or an institution to cover the cost of publishing an Open Access journal article."@en ;
+        sh:name         "article processing charge status"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/spar/pso/ArticleProcessingChargeStatus> .
+
+<https://astrea.linkeddata.es/shapes#61ecb830007ba0fec33a7577a8ec080d>
+        a               sh:PropertyShape ;
+        rdfs:label      "with status"@en , "The property relating the holding of a status by a document, a dataset or something else at a specific time to the definition of that status."@en ;
+        sh:description  "The property relating the holding of a status by a document, a dataset or something else at a specific time to the definition of that status."@en ;
+        sh:name         "with status"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#74e5da4c835e6ab7f74bdc6022dfd5b1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.ontologydesignpatterns.org/cp/owl/participation.owl> ;
+        rdfs:label        "is participant in"@en ;
+        sh:class          participation:Event ;
+        sh:name           "is participant in"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           participation:isParticipantIn .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#09c49729f5de404625e1f93dd33894fc> , <https://astrea.linkeddata.es/shapes#0fb8d9ab6675a6d0404d69263299d860> , <https://astrea.linkeddata.es/shapes#0a899da1032c7b155a44da5b1ead5371> , <https://astrea.linkeddata.es/shapes#1a3ad963c168a140661ec5bbce9c00cf> , <https://astrea.linkeddata.es/shapes#d56aace98ba0f2b1c32f20d3185dbd3c> , <https://astrea.linkeddata.es/shapes#45a5d8a00aee9881938e0e2f94df749b> , <https://astrea.linkeddata.es/shapes#29e495ca07d62c49cab666507a6b965a> , <https://astrea.linkeddata.es/shapes#5ccbd0a5bed2419aecd3bda120f6d00f> , <https://astrea.linkeddata.es/shapes#55a05e88e2f1bdf8b52fa7d0eb1efeca> , <https://astrea.linkeddata.es/shapes#b427508ac4a2bb15f98fcd2d7f18a172> , <https://astrea.linkeddata.es/shapes#2610f2af17eab9dbb03e64c66c72f945> , <https://astrea.linkeddata.es/shapes#634528f59c5551d518be3c094e24e8fb> , <https://astrea.linkeddata.es/shapes#4be2e1f98b42cd0ded1413113ec46e81> , <https://astrea.linkeddata.es/shapes#5761c0d0c9ca7a0843ebf2204d77184a> , <https://astrea.linkeddata.es/shapes#61ecb830007ba0fec33a7577a8ec080d> , <https://astrea.linkeddata.es/shapes#21cc77905939b7515e6f817b54fada14> , <https://astrea.linkeddata.es/shapes#564782b294dc0150685620c41d5797d3> , <https://astrea.linkeddata.es/shapes#49f47577666a276f525bf77d1e3b2219> , <https://astrea.linkeddata.es/shapes#d13263fe55df219224a20825a8dacfec> , <https://astrea.linkeddata.es/shapes#8f0066227cc79dcc4e8845807899ff1c> , <https://astrea.linkeddata.es/shapes#3e2b4c683453a1107e482c48de7ed012> , <https://astrea.linkeddata.es/shapes#59f4ebe50bbc6531a29f136f224e4a55> , <https://astrea.linkeddata.es/shapes#8e9b8c41fdc6b12c8165928326232332> , <https://astrea.linkeddata.es/shapes#7b594ebd9e457a475e9b6d1791096c7b> , <https://astrea.linkeddata.es/shapes#8278c25b4c553e14124d8cc48a222b90> , <https://astrea.linkeddata.es/shapes#a6bca39bdfd1f130b0d1dbf8df04e8ad> , <https://astrea.linkeddata.es/shapes#f7aac932cdecace6dab3ef114fc94e6d> , <https://astrea.linkeddata.es/shapes#686651187cc2f741d879fbfc88b9e7c5> , <https://astrea.linkeddata.es/shapes#8b291b9bab88f120c1ee0ee2405a1d53> , <https://astrea.linkeddata.es/shapes#067012b2cb1eb8f954152ca732c663e1> , <https://astrea.linkeddata.es/shapes#6982f51d0387102cef8a0b0dd04b19a4> , <https://astrea.linkeddata.es/shapes#74e5da4c835e6ab7f74bdc6022dfd5b1> , <https://astrea.linkeddata.es/shapes#94f2cb154b384c2c63af1e17ffe519e0> , <https://astrea.linkeddata.es/shapes#ac4ba199129adf8622b36867293dc318> , <https://astrea.linkeddata.es/shapes#d4925b6c7c1cb98008ba2f643e8a61c2> , <https://astrea.linkeddata.es/shapes#2f2977f2cd80e859a80ab63158e7d78b> , <https://astrea.linkeddata.es/shapes#807f4760dac4c49a76dda5bd57a88b45> , <https://astrea.linkeddata.es/shapes#6763df21ae69ca78da94236ebcce1d69> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/2072926858> , <https://astrea.linkeddata.es/report/602882191> , <https://astrea.linkeddata.es/report/01091694584> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#8278c25b4c553e14124d8cc48a222b90>
+        a               sh:NodeShape ;
+        rdfs:label      "agent"@en ;
+        sh:description  "An entity, such as a person, a group, an organization or a software agent, involved in one or more events."@en ;
+        sh:name         "agent"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/spar/pso/Agent> .
+
+<https://astrea.linkeddata.es/report/2072926858>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.ontologydesignpatterns.org/cp/owl/participation.owl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/report/01091694584>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.essepuntato.it/2012/04/tvc" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#45a5d8a00aee9881938e0e2f94df749b>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.essepuntato.it/2012/04/tvc/ValueInTime> .
+
+<https://astrea.linkeddata.es/shapes#634528f59c5551d518be3c094e24e8fb>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.essepuntato.it/2012/04/tvc/withinContext> .
+
+<https://astrea.linkeddata.es/shapes#1a3ad963c168a140661ec5bbce9c00cf>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.ontologydesignpatterns.org/cp/owl/participation.owl> ;
+        rdfs:label        "Object"@en ;
+        sh:description    "Any physical, social, or mental object, or substance" ;
+        sh:name           "Object"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#74e5da4c835e6ab7f74bdc6022dfd5b1> , <https://astrea.linkeddata.es/shapes#5761c0d0c9ca7a0843ebf2204d77184a> ;
+        sh:targetClass    participation:Object .
+
+<https://astrea.linkeddata.es/shapes#3e2b4c683453a1107e482c48de7ed012>
+        a               sh:PropertyShape ;
+        rdfs:label      "is status held by"@en , "A property relating a status held at a specific time to the document, dataset or other thing holding that status."@en ;
+        sh:description  "A property relating a status held at a specific time to the document, dataset or other thing holding that status."@en ;
+        sh:name         "is status held by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Agent> .
+
+<https://astrea.linkeddata.es/shapes#55a05e88e2f1bdf8b52fa7d0eb1efeca>
+        a               sh:NodeShape ;
+        rdfs:label      "document"@en ;
+        sh:description  "An abstract class defining any kinds of publishing work."@en ;
+        sh:name         "document"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Document> .
+
+<https://astrea.linkeddata.es/shapes#5ccbd0a5bed2419aecd3bda120f6d00f>
+        a               sh:PropertyShape ;
+        rdfs:label      "results in losing"@en , "The property relating an event to the consequential loss of a particular publishing status."@en ;
+        sh:description  "The property relating an event to the consequential loss of a particular publishing status."@en ;
+        sh:name         "results in losing"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/pso/resultsInLosing> .
+
+<https://astrea.linkeddata.es/shapes#a6bca39bdfd1f130b0d1dbf8df04e8ad>
+        a               sh:PropertyShape ;
+        rdfs:label      "results in acquiring"@en , "The property relating an event to the consequential acquisition of a particular publishing status."@en ;
+        sh:description  "The property relating an event to the consequential acquisition of a particular publishing status."@en ;
+        sh:name         "results in acquiring"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/pso/resultsInAcquiring> .
+
+<https://astrea.linkeddata.es/shapes#59f4ebe50bbc6531a29f136f224e4a55>
+        a               sh:PropertyShape ;
+        rdfs:label      "at time"@en , "A time interval during which a status is held by a document."@en ;
+        sh:description  "A time interval during which a status is held by a document."@en ;
+        sh:maxCount     1 ;
+        sh:name         "at time"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl#atTime> .

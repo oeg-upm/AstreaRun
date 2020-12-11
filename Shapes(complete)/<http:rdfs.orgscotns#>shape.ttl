@@ -1,0 +1,451 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#adf761548578a4c9447199d0faa20688>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "spelling variant"@en , "A variation in the way in which a word is spelled."@en ;
+        sh:class          <http://rdfs.org/scot/ns#Tag> ;
+        sh:description    "A variation in the way in which a word is spelled."@en ;
+        sh:name           "spelling variant"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#spelling_variant> .
+
+<https://astrea.linkeddata.es/shapes#b2ed27a4ce455ed37ea25cf9cc3053c1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "own absolute frequency"@en , "An absolute frequency of a particular tag in a Tagcloud."@en ;
+        sh:datatype       xsd:float ;
+        sh:description    "An absolute frequency of a particular tag in a Tagcloud."@en ;
+        sh:name           "own absolute frequency"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/scot/ns#own_afrequency> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#0835101a93f952bb441d00a3c057952c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "composed of"@en , "A SCOT Tagcloud that is part of this Tagcloud(especially one Tagcloud in a group SCOT Tagcloud)."@en ;
+        sh:class          <http://rdfs.org/scot/ns#Tagcloud> ;
+        sh:description    "A SCOT Tagcloud that is part of this Tagcloud(especially one Tagcloud in a group SCOT Tagcloud)."@en ;
+        sh:name           "composed of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#composed_of> .
+
+<https://astrea.linkeddata.es/shapes#842825769088e60c26f70bc5e65da91e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "spaced"@en , "A type of phrase in which each piece of word is separated by a space."@en ;
+        sh:class          <http://rdfs.org/scot/ns#Tag> ;
+        sh:description    "A type of phrase in which each piece of word is separated by a space."@en ;
+        sh:name           "spaced"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#spaced> .
+
+<https://astrea.linkeddata.es/shapes#b8ecc9992720b061361e94cf6ddd9afe>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "has usergroup"@en , "The Usergroup that this Tagcloud is associated with."@en ;
+        sh:class          <http://rdfs.org/sioc/ns#Usergroup> ;
+        sh:description    "The Usergroup that this Tagcloud is associated with."@en ;
+        sh:name           "has usergroup"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#has_usergroup> .
+
+<https://astrea.linkeddata.es/shapes#f16f7a4c4c06b6c05e8d181108dd9382>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "has tag"@en , "An item has one and more tags."@en ;
+        sh:class          <http://rdfs.org/scot/ns#Tag> ;
+        sh:description    "An item has one and more tags."@en ;
+        sh:name           "has tag"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#has_tag> .
+
+<https://astrea.linkeddata.es/shapes#9eb34ebee6a8a111ae0d57e1da22f5cc>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "Tag" ;
+        sh:description    "A free-text keyword which is used to annotate a resource "@en ;
+        sh:name           "Tag" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#30f081a1cfa412c2aeb5a1ea179fbd42> , <https://astrea.linkeddata.es/shapes#340db7db0816df66d2a66a731779052b> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ced238cab011e3a80292f95e9d91ce57> , <https://astrea.linkeddata.es/shapes#a1d7bb3509f54ffb2a17e8591f1cad85> , <https://astrea.linkeddata.es/shapes#965a5cb5941ef25ccce8ead5628e06c8> , <https://astrea.linkeddata.es/shapes#842825769088e60c26f70bc5e65da91e> , <https://astrea.linkeddata.es/shapes#db43463bcc64192c0220dc138c161057> , <https://astrea.linkeddata.es/shapes#3b86a1e9d713b098438833dd8b5ee103> , <https://astrea.linkeddata.es/shapes#adf761548578a4c9447199d0faa20688> , <https://astrea.linkeddata.es/shapes#6126a3e6758e56f8025efe0e4aec5f40> , <https://astrea.linkeddata.es/shapes#dd50698adf81f0b47898f379659d1dd0> , <https://astrea.linkeddata.es/shapes#b2ed27a4ce455ed37ea25cf9cc3053c1> , <https://astrea.linkeddata.es/shapes#21fed50d7c23fc10fdcc4f1a747cdcad> , <https://astrea.linkeddata.es/shapes#92927fa6f286abfb091cd1a05098b1ed> , <https://astrea.linkeddata.es/shapes#4a1375c0b1eaa5831cd0aebeaf1da31a> , <https://astrea.linkeddata.es/shapes#362f090c04c9c91664e6b0085bc2f8ca> , <https://astrea.linkeddata.es/shapes#38be80de45a09115d83f6d934c80fcc6> , <https://astrea.linkeddata.es/shapes#9b99aecbc10d7c470e33bab8981b5a77> , <https://astrea.linkeddata.es/shapes#218b0867105dd65a4561405fa62edc72> , <https://astrea.linkeddata.es/shapes#6aa71a4b70ff019acfd78d343b7d3eeb> ;
+        sh:targetClass    <http://rdfs.org/scot/ns#Tag> .
+
+<https://astrea.linkeddata.es/shapes#c875bd08c69e585e85a4a808e8ce90a6>
+        a         sh:PropertyShape ;
+        sh:class  <http://rdfs.org/scot/ns#Tag> .
+
+<https://astrea.linkeddata.es/shapes#aef3b4c8692fc872adb6de9ff373b856>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "associated by"@en , "An agent who makes a synonym relationship between the tags."@en ;
+        sh:datatype       <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description    "An agent who makes a synonym relationship between the tags."@en ;
+        sh:name           "associated by"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/scot/ns#associated_by> .
+
+<https://astrea.linkeddata.es/shapes#38be80de45a09115d83f6d934c80fcc6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "singular"@en , "Refers to one thing."@en ;
+        sh:class          <http://rdfs.org/scot/ns#Tag> ;
+        sh:description    "Refers to one thing."@en ;
+        sh:name           "singular"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#singular> .
+
+<https://astrea.linkeddata.es/shapes#250b8d524ea32d351c7f2642d8525a6f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "total tag frequency"@en , "A number of total frequency for all Tags in a Tagcloud."@en ;
+        sh:datatype       xsd:float ;
+        sh:description    "A number of total frequency for all Tags in a Tagcloud."@en ;
+        sh:name           "total tag frequency"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/scot/ns#total_tag_frequency> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#362f090c04c9c91664e6b0085bc2f8ca>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "delimited"@en , "A type of phrase in which each word is separated by a certain character."@en ;
+        sh:class          <http://rdfs.org/scot/ns#Tag> ;
+        sh:description    "A type of phrase in which each word is separated by a certain character."@en ;
+        sh:name           "delimited"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#delimited> .
+
+<https://astrea.linkeddata.es/shapes#098e2afebc3e066bbf0cc7d31613c988>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "tag space"@en , "The environment where the tagging happens."@en ;
+        sh:class          <http://rdfs.org/sioc/ns#Site> ;
+        sh:description    "The environment where the tagging happens."@en ;
+        sh:name           "tag space"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#tagspace> .
+
+<https://astrea.linkeddata.es/shapes#e065c42813b0a4e1240ef202c99759f2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "total tags"@en , "The total number of Tags in a Tagcloud."@en ;
+        sh:datatype       xsd:float ;
+        sh:description    "The total number of Tags in a Tagcloud."@en ;
+        sh:name           "total tags"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/scot/ns#total_tags> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#afab0dea22c979f0d9750a1dbe4e2e42>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#aef3b4c8692fc872adb6de9ff373b856> ;
+        sh:targetClass  rdf:Statement .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#a1d7bb3509f54ffb2a17e8591f1cad85>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "synonym"@en , "Word which means the same as another word."@en ;
+        sh:class          <http://rdfs.org/scot/ns#Tag> ;
+        sh:description    "Word which means the same as another word."@en ;
+        sh:name           "synonym"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#synonym> .
+
+<https://astrea.linkeddata.es/shapes#92927fa6f286abfb091cd1a05098b1ed>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "contained in"@en , "An aggregated tag is contained in a tagcloud."@en ;
+        sh:class          <http://rdfs.org/scot/ns#Tagcloud> ;
+        sh:description    "An aggregated tag is contained in a tagcloud."@en ;
+        sh:name           "contained in"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#contained_in> .
+
+<https://astrea.linkeddata.es/shapes#dd50698adf81f0b47898f379659d1dd0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "underscored"@en , "A type of pharse in which each word is separated by an underscore."@en ;
+        sh:class          <http://rdfs.org/scot/ns#Tag> ;
+        sh:description    "A type of pharse in which each word is separated by an underscore."@en ;
+        sh:name           "underscored"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#underscored> .
+
+<https://astrea.linkeddata.es/shapes#ced238cab011e3a80292f95e9d91ce57>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "slashed"@en , "A type of phrase in which each word is separated by a slash."@en ;
+        sh:class          <http://rdfs.org/scot/ns#Tag> ;
+        sh:description    "A type of phrase in which each word is separated by a slash."@en ;
+        sh:name           "slashed"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#slashed> .
+
+<https://astrea.linkeddata.es/shapes#218b0867105dd65a4561405fa62edc72>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "own relative frequency"@en , "A percentage frequency of a tag for a particular Tagcloud relative to the total of all Tag frequencies in that Tagcloud.."@en ;
+        sh:datatype       xsd:float ;
+        sh:description    "A percentage frequency of a tag for a particular Tagcloud relative to the total of all Tag frequencies in that Tagcloud.."@en ;
+        sh:name           "own relative frequency"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/scot/ns#own_rfrequency> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#6aa71a4b70ff019acfd78d343b7d3eeb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "cooccurs in"@en , "This property is used to represent relations among two or more tags."@en ;
+        sh:class          <http://rdfs.org/scot/ns#Cooccurrence> ;
+        sh:description    "This property is used to represent relations among two or more tags."@en ;
+        sh:name           "cooccurs in"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#cooccurs_in> .
+
+<https://astrea.linkeddata.es/shapes#4a1375c0b1eaa5831cd0aebeaf1da31a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "hypenated"@en , "A type of phrase in which each word is separated by a hyphen."@en ;
+        sh:class          <http://rdfs.org/scot/ns#Tag> ;
+        sh:description    "A type of phrase in which each word is separated by a hyphen."@en ;
+        sh:name           "hypenated"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#hypenated> .
+
+<https://astrea.linkeddata.es/shapes#cbd2e1de2d831741e27ac7fdf5324051>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "Tagcloud"@en ;
+        sh:description    "Tagcloud consists of metadata related to tagging activities connecting to the basic components such as users, tags, resources. "@en ;
+        sh:name           "Tagcloud"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#340db7db0816df66d2a66a731779052b> , <https://astrea.linkeddata.es/shapes#c875bd08c69e585e85a4a808e8ce90a6> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ef7d47b103e58f92433c97f105c9e674> , <https://astrea.linkeddata.es/shapes#250b8d524ea32d351c7f2642d8525a6f> , <https://astrea.linkeddata.es/shapes#e955ec32f5ccd1522deb3e8c7245dfda> , <https://astrea.linkeddata.es/shapes#b8ecc9992720b061361e94cf6ddd9afe> , <https://astrea.linkeddata.es/shapes#61ccd8c4fb2d0597bd27bba76d32864b> , <https://astrea.linkeddata.es/shapes#d30f8c3db85be4284c57b045c42d669b> , <https://astrea.linkeddata.es/shapes#165d9f744ee92cc1af19041ac6bf2400> , <https://astrea.linkeddata.es/shapes#0835101a93f952bb441d00a3c057952c> , <https://astrea.linkeddata.es/shapes#e065c42813b0a4e1240ef202c99759f2> , <https://astrea.linkeddata.es/shapes#098e2afebc3e066bbf0cc7d31613c988> , <https://astrea.linkeddata.es/shapes#8612bbe023f042d5bad0cfe51f4ef51b> , <https://astrea.linkeddata.es/shapes#0db656a03ec19e3295813b7c124bc548> ;
+        sh:targetClass    <http://rdfs.org/scot/ns#Tagcloud> .
+
+<https://astrea.linkeddata.es/shapes#3b86a1e9d713b098438833dd8b5ee103>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "tag of"@en , "Indicates that a tag is assigned to the sioc:Item."@en ;
+        sh:class          <http://rdfs.org/sioc/ns#Item> ;
+        sh:description    "Indicates that a tag is assigned to the sioc:Item."@en ;
+        sh:name           "tag of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#tag_of> .
+
+<https://astrea.linkeddata.es/shapes#d30f8c3db85be4284c57b045c42d669b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "contains"@en , "The relationship between a tagcloud and a tag. The object is a tag which is aggregated from a tagging instance."@en ;
+        sh:class          <http://rdfs.org/scot/ns#Tag> ;
+        sh:description    "The relationship between a tagcloud and a tag. The object is a tag which is aggregated from a tagging instance."@en ;
+        sh:name           "contains"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#contains> .
+
+<https://astrea.linkeddata.es/shapes#30f081a1cfa412c2aeb5a1ea179fbd42>
+        a         sh:PropertyShape ;
+        sh:class  <http://rdfs.org/scot/ns#Tagcloud> .
+
+<https://astrea.linkeddata.es/shapes#ef7d47b103e58f92433c97f105c9e674>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "total cooccur frequency"@en , "A number of total frequency for all cooccurring tag sets in a Tagcloud"@en ;
+        sh:datatype       xsd:float ;
+        sh:description    "A number of total frequency for all cooccurring tag sets in a Tagcloud"@en ;
+        sh:name           "total cooccur frequency"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/scot/ns#total_cooccur_frequency> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#e3989b080bb62f9112f84be1833d9559>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "A percentage frequency of cooccurring set of tags relative to the sum of frequencies of cooccurrence."@en , "cooccur absolute frequency"@en ;
+        sh:datatype       xsd:float ;
+        sh:description    "A percentage frequency of cooccurring set of tags relative to the sum of frequencies of cooccurrence."@en ;
+        sh:name           "cooccur absolute frequency"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/scot/ns#cooccur_rfrequency> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#8612bbe023f042d5bad0cfe51f4ef51b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "tagging activity"@en , "The relationship between a tagcloud and a tagging. Note that a tagcloud allows us to contain one or more tagging instances."@en ;
+        sh:class          <http://www.holygoat.co.uk/owl/redwood/0.1/tags/Tagging> ;
+        sh:description    "The relationship between a tagcloud and a tagging. Note that a tagcloud allows us to contain one or more tagging instances."@en ;
+        sh:name           "tagging activity"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#tagging_activity> .
+
+<https://astrea.linkeddata.es/shapes#1cab14bee34a5679a81ace9e7de5fa38>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a0c7219842fe9a23eefb485f4e757b56> ;
+        sh:targetClass  <http://www.holygoat.co.uk/owl/redwood/0.1/tags/Tagging> .
+
+<https://astrea.linkeddata.es/shapes#965a5cb5941ef25ccce8ead5628e06c8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "plural"@en , "Refers to more than one thing."@en ;
+        sh:class          <http://rdfs.org/scot/ns#Tag> ;
+        sh:description    "Refers to more than one thing."@en ;
+        sh:name           "plural"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#plural> .
+
+<https://astrea.linkeddata.es/shapes#0db656a03ec19e3295813b7c124bc548>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "total items"@en , "A number of posted items with an associated Tagcloud."@en ;
+        sh:datatype       xsd:float ;
+        sh:description    "A number of posted items with an associated Tagcloud."@en ;
+        sh:name           "total items"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/scot/ns#total_items> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#e955ec32f5ccd1522deb3e8c7245dfda>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "created by"@en , "Indicates that an agent as type of a foaf:Agent, who generates a Tagcloud."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description    "Indicates that an agent as type of a foaf:Agent, who generates a Tagcloud."@en ;
+        sh:name           "created by"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#created_by> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#21fed50d7c23fc10fdcc4f1a747cdcad> , <https://astrea.linkeddata.es/shapes#61ccd8c4fb2d0597bd27bba76d32864b> , <https://astrea.linkeddata.es/shapes#92927fa6f286abfb091cd1a05098b1ed> , <https://astrea.linkeddata.es/shapes#dd50698adf81f0b47898f379659d1dd0> , <https://astrea.linkeddata.es/shapes#db43463bcc64192c0220dc138c161057> , <https://astrea.linkeddata.es/shapes#f16f7a4c4c06b6c05e8d181108dd9382> , <https://astrea.linkeddata.es/shapes#cbd2e1de2d831741e27ac7fdf5324051> , <https://astrea.linkeddata.es/shapes#57915702333d3c4011eb3bfa935ff3e0> , <https://astrea.linkeddata.es/shapes#afab0dea22c979f0d9750a1dbe4e2e42> , <https://astrea.linkeddata.es/shapes#6126a3e6758e56f8025efe0e4aec5f40> , <https://astrea.linkeddata.es/shapes#38be80de45a09115d83f6d934c80fcc6> , <https://astrea.linkeddata.es/shapes#165d9f744ee92cc1af19041ac6bf2400> , <https://astrea.linkeddata.es/shapes#adf761548578a4c9447199d0faa20688> , <https://astrea.linkeddata.es/shapes#30f081a1cfa412c2aeb5a1ea179fbd42> , <https://astrea.linkeddata.es/shapes#aef3b4c8692fc872adb6de9ff373b856> , <https://astrea.linkeddata.es/shapes#8612bbe023f042d5bad0cfe51f4ef51b> , <https://astrea.linkeddata.es/shapes#098e2afebc3e066bbf0cc7d31613c988> , <https://astrea.linkeddata.es/shapes#ced238cab011e3a80292f95e9d91ce57> , <https://astrea.linkeddata.es/shapes#ef7d47b103e58f92433c97f105c9e674> , <https://astrea.linkeddata.es/shapes#a1d7bb3509f54ffb2a17e8591f1cad85> , <https://astrea.linkeddata.es/shapes#d30f8c3db85be4284c57b045c42d669b> , <https://astrea.linkeddata.es/shapes#1cab14bee34a5679a81ace9e7de5fa38> , <https://astrea.linkeddata.es/shapes#3b86a1e9d713b098438833dd8b5ee103> , <https://astrea.linkeddata.es/shapes#362f090c04c9c91664e6b0085bc2f8ca> , <https://astrea.linkeddata.es/shapes#218b0867105dd65a4561405fa62edc72> , <https://astrea.linkeddata.es/shapes#b8ecc9992720b061361e94cf6ddd9afe> , <https://astrea.linkeddata.es/shapes#e065c42813b0a4e1240ef202c99759f2> , <https://astrea.linkeddata.es/shapes#a0c7219842fe9a23eefb485f4e757b56> , <https://astrea.linkeddata.es/shapes#910791efd1c178284626a3073b72a0f8> , <https://astrea.linkeddata.es/shapes#4a1375c0b1eaa5831cd0aebeaf1da31a> , <https://astrea.linkeddata.es/shapes#965a5cb5941ef25ccce8ead5628e06c8> , <https://astrea.linkeddata.es/shapes#250b8d524ea32d351c7f2642d8525a6f> , <https://astrea.linkeddata.es/shapes#b2ed27a4ce455ed37ea25cf9cc3053c1> , <https://astrea.linkeddata.es/shapes#d3c24b1c6bf29fe2317f31045db5abda> , <https://astrea.linkeddata.es/shapes#e955ec32f5ccd1522deb3e8c7245dfda> , <https://astrea.linkeddata.es/shapes#e3989b080bb62f9112f84be1833d9559> , <https://astrea.linkeddata.es/shapes#340db7db0816df66d2a66a731779052b> , <https://astrea.linkeddata.es/shapes#842825769088e60c26f70bc5e65da91e> , <https://astrea.linkeddata.es/shapes#9eb34ebee6a8a111ae0d57e1da22f5cc> , <https://astrea.linkeddata.es/shapes#6aa71a4b70ff019acfd78d343b7d3eeb> , <https://astrea.linkeddata.es/shapes#66ca1c7e7a8612eb8ca842b42fcfb42b> , <https://astrea.linkeddata.es/shapes#c875bd08c69e585e85a4a808e8ce90a6> , <https://astrea.linkeddata.es/shapes#0835101a93f952bb441d00a3c057952c> , <https://astrea.linkeddata.es/shapes#9b99aecbc10d7c470e33bab8981b5a77> , <https://astrea.linkeddata.es/shapes#0db656a03ec19e3295813b7c124bc548> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#9b99aecbc10d7c470e33bab8981b5a77>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "A last date on which a particular tag is used ."@en , "last used"@en ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "A last date on which a particular tag is used ."@en ;
+        sh:name           "last used"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/scot/ns#last_used> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#21fed50d7c23fc10fdcc4f1a747cdcad>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "aggregated tag"@en , "A tag in tags:Tagging is collected to scot:Tag."@en ;
+        sh:class          <http://rdfs.org/scot/ns#Tag> ;
+        sh:description    "A tag in tags:Tagging is collected to scot:Tag."@en ;
+        sh:name           "aggregated tag"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#aggregated_tag> .
+
+<https://astrea.linkeddata.es/shapes#6126a3e6758e56f8025efe0e4aec5f40>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "used by"@en , "Refers to the sioc:User who uses or creates a tag."@en ;
+        sh:class          <http://rdfs.org/sioc/ns#User> ;
+        sh:description    "Refers to the sioc:User who uses or creates a tag."@en ;
+        sh:name           "used by"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#used_by> .
+
+<https://astrea.linkeddata.es/shapes#57915702333d3c4011eb3bfa935ff3e0>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#f16f7a4c4c06b6c05e8d181108dd9382> ;
+        sh:targetClass  <http://rdfs.org/sioc/ns#Item> .
+
+<https://astrea.linkeddata.es/shapes#66ca1c7e7a8612eb8ca842b42fcfb42b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "Cooccurrence" ;
+        sh:description    "More than two tags are assigned to one resource. This class defines cooccurring tags and the cooccurring frequency between the tags" ;
+        sh:name           "Cooccurrence" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#c875bd08c69e585e85a4a808e8ce90a6> , <https://astrea.linkeddata.es/shapes#30f081a1cfa412c2aeb5a1ea179fbd42> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e3989b080bb62f9112f84be1833d9559> , <https://astrea.linkeddata.es/shapes#910791efd1c178284626a3073b72a0f8> , <https://astrea.linkeddata.es/shapes#d3c24b1c6bf29fe2317f31045db5abda> ;
+        sh:targetClass    <http://rdfs.org/scot/ns#Cooccurrence> .
+
+<https://astrea.linkeddata.es/shapes#d3c24b1c6bf29fe2317f31045db5abda>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "cooccurs with"@en , "This property is used to represent relations among two or more tags."@en ;
+        sh:class          <http://rdfs.org/scot/ns#Tag> ;
+        sh:description    "This property is used to represent relations among two or more tags."@en ;
+        sh:name           "cooccurs with"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#cooccurs_with> .
+
+<https://astrea.linkeddata.es/shapes#910791efd1c178284626a3073b72a0f8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "An absolute frequency of a particular cooccurring set of tags."@en , "cooccur absolute frequency"@en ;
+        sh:datatype       xsd:float ;
+        sh:description    "An absolute frequency of a particular cooccurring set of tags."@en ;
+        sh:name           "cooccur absolute frequency"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/scot/ns#cooccur_afrequency> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#db43463bcc64192c0220dc138c161057>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "acronym"@en , "An abbreviation formed by the first letters of the compound word."@en ;
+        sh:class          <http://rdfs.org/scot/ns#Tag> ;
+        sh:description    "An abbreviation formed by the first letters of the compound word."@en ;
+        sh:name           "acronym"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#acronym> .
+
+<https://astrea.linkeddata.es/shapes#165d9f744ee92cc1af19041ac6bf2400>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "Date on which a Tagcloud is updated."@en , "updated date"@en ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "Date on which a Tagcloud is updated."@en ;
+        sh:name           "updated date"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/scot/ns#updated> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#61ccd8c4fb2d0597bd27bba76d32864b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "total cooccur tags"@en , "The total number of cooccuring tags in a Tagcloud."@en ;
+        sh:datatype       xsd:float ;
+        sh:description    "The total number of cooccuring tags in a Tagcloud."@en ;
+        sh:name           "total cooccur tags"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdfs.org/scot/ns#total_cooccur_tags> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#340db7db0816df66d2a66a731779052b>
+        a         sh:PropertyShape ;
+        sh:class  <http://rdfs.org/scot/ns#Cooccurrence> .
+
+<https://astrea.linkeddata.es/shapes#a0c7219842fe9a23eefb485f4e757b56>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdfs.org/scot/ns#> ;
+        rdfs:label        "tagging account"@en , "The relationship between an agent and an account held by this agent."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/OnlineAccount> ;
+        sh:description    "The relationship between an agent and an account held by this agent."@en ;
+        sh:name           "tagging account"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdfs.org/scot/ns#tagging_account> .

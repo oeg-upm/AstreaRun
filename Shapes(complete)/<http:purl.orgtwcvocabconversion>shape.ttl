@@ -1,0 +1,1267 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#d8cbf2191ae6982e2a240bcbabb65ec9>
+        a               sh:NodeShape ;
+        rdfs:label      "CSV2RDF4LOD_environment_variables" ;
+        sh:description  "A shell script that sets https://github.com/timrdf/csv2rdf4lod-automation/wiki/CSV2RDF4LOD-environment-variables to control the behavior of csv2rdf4lod-automation." ;
+        sh:name         "CSV2RDF4LOD_environment_variables" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/CSV2RDF4LOD_environment_variables> .
+
+<https://astrea.linkeddata.es/shapes#5970eff1185339ca6a11e551bc30385f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Resource promotion enhancement" ;
+        sh:description    "Superclass of enhancements which promote values from a plain literal to a resource." ;
+        sh:name           "Resource promotion enhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c3aed8b3c7b837f962670743eebccffb> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/ResourcePromotionEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#077bdebad7d31eae091135120988ac54>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Object sameAs enahncements" ;
+        sh:description    "Asserts owl:sameAs relationships between resources and external URIs based on the instances' values of a specific property and their interpretation by a mapping specified by conversion:linksVia. How this mapping is performed based on this value is unspecified, but may be based on aligning with (e.g. SKOS) labels or the edit distance between the property value and instances in a known ontology." ;
+        sh:name           "Object sameAs enahncements" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/ObjectSameAsEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#6c2cd81f1851d573632006f5478c085d>
+        a               sh:NodeShape ;
+        sh:description  "" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/Deprecated> .
+
+<https://astrea.linkeddata.es/shapes#3e1924ed117678f988efbe2e9ca4031d>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/twc/vocab/conversion/ImplicitBundleEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#076476f4f1bcec42b6f0e51e24b90b88>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        sh:datatype       rdfs:Literal ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/twc/vocab/conversion/date_pattern> .
+
+<https://astrea.linkeddata.es/shapes#5471fb5029459c5124c1497713b57953>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "conversion_process" , "A conversion process that led to the creation or modification of an RDF dataset." ;
+        sh:class          <http://purl.org/twc/vocab/conversion/ConversionProcess> ;
+        sh:description    "A conversion process that led to the creation or modification of an RDF dataset." ;
+        sh:name           "conversion_process" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/twc/vocab/conversion/conversion_process> .
+
+<https://astrea.linkeddata.es/shapes#0c04df62e375fe295bc8749ee701cd28>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "source_identifier" , "The name of the organization to which the dataset being converted belongs." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The name of the organization to which the dataset being converted belongs." ;
+        sh:name           "source_identifier" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/twc/vocab/conversion/source_identifier> .
+
+<https://astrea.linkeddata.es/shapes#50b86e719bf310ef47a1422480efb391>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "SubjectEnhancement" ;
+        sh:description    "An Enhancement that modifies the subject of the resulting triple." ;
+        sh:name           "SubjectEnhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/SubjectEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#4f19f9d0b8bb3da6a78cb269567c8582>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Subproperty enhancement" ;
+        sh:description    "Asserts that an existing property in the dataset is a subproperty of an external property specified by conversion:subproperty_of. This enhancement will materialize the subproperty entailments for all instances." ;
+        sh:name           "Subproperty enhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#b2c4d15dcfd07546bdcb95bea7879d74> , <https://astrea.linkeddata.es/shapes#f2498ae21e1b523c58b182fd795b9433> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/SubPropertyEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#0a84c385479add7b991f58489b4f6795>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/subject_of> .
+
+<https://astrea.linkeddata.es/shapes#5071ab0962007315b3e528cce200c55d>
+        a                sh:PropertyShape ;
+        rdfs:label       "First column is column 1; i.e., human-based indexing." ;
+        sh:datatype      xsd:positiveInteger ;
+        sh:description   "First column is column 1; i.e., human-based indexing." ;
+        sh:minInclusive  1 ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://open.vocab.org/terms/csvCol> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#0f0f1ccbb84ad149e73071a616eaf130>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "bundled_by" ;
+        sh:class          rdfs:Resource ;
+        sh:name           "bundled_by" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/twc/vocab/conversion/bundled_by> .
+
+<https://astrea.linkeddata.es/shapes#c3aed8b3c7b837f962670743eebccffb>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/range> .
+
+<https://astrea.linkeddata.es/shapes#1c9789c910ad430f9051360637346a66>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Property comment enhancement" ;
+        sh:description    "Uses the object of the conversion:comment property and asserts it as the value of rdfs:comment on the property definition. The value of conversion:comment typically comes from the original csv header (that was too long), or from an ancillary file accompanying the csv file." ;
+        sh:name           "Property comment enhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3904062641bee4142b217210652bba9c> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/PropertyCommentEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#7d43328a3daefedf98b3140a68c1c874>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/range> .
+
+<https://astrea.linkeddata.es/shapes#376fe6f1f084b3c44066662c85bea2e3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Subclass enhancement" ;
+        sh:description    "Asserts that an existing class in the dataset, specified by name with conversion:class_name,  is a subclass of an external class specified by conversion:subclass_of. This enhancement will materialize the rdf:type entailments for all instances." ;
+        sh:name           "Subclass enhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#fee7ff96ae6cd98c384c9e64ee29298c> , <https://astrea.linkeddata.es/shapes#2efd1d90442939833e95aca98387e2f7> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/SubClassEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#6247c4c0f9728dae535b109ba214d8b5>
+        a               sh:PropertyShape ;
+        rdfs:label      "ov:csvCol OR conversion:property_name should be used to refer to the property being enhanced - NOT BOTH." ;
+        sh:description  "ov:csvCol OR conversion:property_name should be used to refer to the property being enhanced - NOT BOTH." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/twc/vocab/conversion/predicate_identifier> .
+
+<https://astrea.linkeddata.es/shapes#020bb0a45ce6ed6793566c9e46352062>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/twc/vocab/conversion/SameAsDataset> .
+
+<https://astrea.linkeddata.es/shapes#cfaa4da4b88091ff0899012fba5bd7de>
+        a             sh:PropertyShape ;
+        rdfs:seeAlso  <https://github.com/timrdf/csv2rdf4lod-automation/wiki/Script:-cr-test-conversion.sh> ;
+        sh:nodeKind   sh:BlankNodeOrIRI ;
+        sh:path       <http://purl.org/twc/vocab/conversion/testable_by> .
+
+<https://astrea.linkeddata.es/shapes#286f49ea8373c4413b7c51dff56472f2>
+        a            sh:PropertyShape ;
+        rdfs:label   "conversion_identifier" ;
+        sh:name      "conversion_identifier" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/twc/vocab/conversion/conversion_identifier> .
+
+<https://astrea.linkeddata.es/shapes#8467d1183096906523ed35f2de47eb4d>
+        a            sh:PropertyShape ;
+        rdfs:label   "A measure of conceptual depth using the URI's 'depth' within the source/dataset/version contextualization scheme used by csv2rdf4lod's data aggretation naming scheme." ;
+        sh:name      "A measure of conceptual depth using the URI's 'depth' within the source/dataset/version contextualization scheme used by csv2rdf4lod's data aggretation naming scheme." ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/twc/vocab/conversion/conceptual_depth> .
+
+<https://astrea.linkeddata.es/shapes#dd33a45425dd3c9e4776b59bee30f9da>
+        a               sh:PropertyShape ;
+        rdfs:label      "symbol" , "" ;
+        rdfs:seeAlso    <https://github.com/timrdf/csv2rdf4lod-automation/wiki/conversion%3Ainterpret> ;
+        sh:description  "" ;
+        sh:name         "symbol" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/twc/vocab/conversion/symbol> .
+
+<https://astrea.linkeddata.es/shapes#4a964cb5b060586529389ab5f3e7832a>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/twc/vocab/conversion/LayerDataset> .
+
+<https://astrea.linkeddata.es/shapes#1cf94c820865c700b6b78f54165188f7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "PredicateEnhancement" ;
+        sh:description    "An Enhancement that modifies the predicate of the resulting triple." ;
+        sh:name           "PredicateEnhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/PredicateEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#ee0e1b8dfc31f3bc4173042bdab75c4d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "The local name of a property within this dataset-specific namespace." , "property_name" , "The property name on which an enhancement takes place." ;
+        rdfs:seeAlso      <https://github.com/timrdf/csv2rdf4lod-automation/wiki/conversion:ImplicitBundle> ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The property name on which an enhancement takes place." , "The local name of a property within this dataset-specific namespace." ;
+        sh:name           "property_name" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/twc/vocab/conversion/property_name> .
+
+<https://astrea.linkeddata.es/shapes#8677a1dee574c1f67fa635c9b25d794c>
+        a            sh:PropertyShape ;
+        sh:maxCount  1 ;
+        sh:minCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/interpretation> .
+
+<https://astrea.linkeddata.es/shapes#4ec065e72ced7b36472e2f7560273296>
+        a               sh:NodeShape ;
+        rdfs:label      "SameAs Dataset" ;
+        sh:description  "" ;
+        sh:name         "SameAs Dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#6efc8535a7e65d5ca91b422244b67655> ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/SameAsDataset> .
+
+<https://astrea.linkeddata.es/shapes#1585faa4e3658a93a9202365bf36b2d8>
+        a               sh:NodeShape ;
+        rdfs:label      "Dataset Catalog" ;
+        sh:description  "A dataset that lists other datasets as its entries." ;
+        sh:name         "Dataset Catalog" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/DatasetCatalog> .
+
+<https://astrea.linkeddata.es/shapes#affe293a0d5080bd12dd66330b2b8073>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "The local name of an internal class." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The local name of an internal class." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/twc/vocab/conversion/range_name> .
+
+<https://astrea.linkeddata.es/shapes#32e8b1c4109455dd927d9c455f1a581d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Multiplier enhancement" ;
+        sh:description    "After datatype promotion to an XSD numeric type, multiplies the value by the multiplicand specified with the conversion:multiplier property." ;
+        sh:name           "Multiplier enhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#b62756f952fbca60379a636aa2ab72ae> , <https://astrea.linkeddata.es/shapes#a6f9c5fb5dab2304a132b8b735f144b4> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/MultiplierEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#9f81ccea32164a7a2ccf8400a7c57b88>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "ObjectEnhancement" ;
+        sh:description    "An Enhancement that modifies the object of the resulting triple." , "Superclass of enhancements which promote values from a plain literal to more complex terms (resources or typed literals)." ;
+        sh:name           "ObjectEnhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d91953aabc0765ec404ae680fef5f0cf> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/ObjectEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#64a944ce8fef9b8e71de77d159bed5e9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Superclass for different conversion processes." ;
+        sh:name           "Superclass for different conversion processes." ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#883dbb0dc4455db060eadcbf11c5f3d7> , <https://astrea.linkeddata.es/shapes#cba9e047c1ddae282c120d9de754a011> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/ConversionProcess> .
+
+<https://astrea.linkeddata.es/shapes#af28eff58286ed9935194ee6f2955324>
+        a               sh:NodeShape ;
+        sh:description  "Done by pcurl.sh" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/HTTPHeader> .
+
+<https://astrea.linkeddata.es/shapes#83f62058d2b894f58c5bfaef462adbdb>
+        a               sh:PropertyShape ;
+        rdfs:label      "subsetT" , "A transitive version of void:subset" ;
+        rdfs:seeAlso    <https://github.com/timrdf/csv2rdf4lod-automation/issues/173> ;
+        sh:description  "A transitive version of void:subset" ;
+        sh:name         "subsetT" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/twc/vocab/conversion/subseT> .
+
+<https://astrea.linkeddata.es/shapes#900b6596402ea407b8abef8e7ec3f6e8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "The character encoding of a dataset document." ;
+        sh:description    "The character encoding of a dataset document." ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/twc/vocab/conversion/encoding> .
+
+<https://astrea.linkeddata.es/shapes#6309d6d95843d834596e3342be33ca86>
+        a               sh:PropertyShape ;
+        rdfs:label      "Information Resource (e.g. a file) used as input for the test case" ;
+        sh:description  "Information Resource (e.g. a file) used as input for the test case" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.w3.org/2006/03/test-description#informationResourceInput> .
+
+<https://astrea.linkeddata.es/shapes#b9bf4415e20feef73a650faae2bd2c34>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Typed resource promotion enhancement" ;
+        sh:description    "Constructs a URI from the concatenation of a dataset-specific URI, a type token specified with conversion:range_name, and the raw literal value. Additionally asserts an rdf:type for the new resource with the class named with conversion:range_name. The type name will be lowercased for use in the URI and have the first letter uppercased for use as the class name. For example, the value 'AK' with conversion:range_name 'state' would be promoted to </source/SSS/dataset/DDD/type/state/AK> with an rdf:type of </source/SSS/dataset/DDD/vocab/State>." ;
+        sh:name           "Typed resource promotion enhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#403838840cb72f4c0a30eebb6572ed6d> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/TypedResourcePromotionEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#49033040cd316df5e53b965d8578cf33>
+        a            sh:PropertyShape ;
+        sh:maxCount  "0"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/enhancement_identifier> .
+
+<https://astrea.linkeddata.es/shapes#19fbad003b5e8b493087c5591eedc821>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://rdfs.org/ns/void#subset> .
+
+<https://astrea.linkeddata.es/shapes#2c96dffbf2b3d4c502678f2c56e5265d>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/enhancement_identifier> .
+
+<https://astrea.linkeddata.es/shapes#a786119c95f40ae1341919c88976c7b2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "SubjectAnnotation" ;
+        sh:description    "add a predicate-object description to the subject of a triple created." ;
+        sh:name           "SubjectAnnotation" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/SubjectAnnotation> .
+
+<https://astrea.linkeddata.es/shapes#0ab072b2654ee39eb3361cd93ced1e23>
+        a            sh:PropertyShape ;
+        sh:minCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/symbol> .
+
+<https://astrea.linkeddata.es/shapes#b2c4d15dcfd07546bdcb95bea7879d74>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/property_name> .
+
+<https://astrea.linkeddata.es/shapes#2eed4751b71d6e10df86628d623a650f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Implicit bundle enhancement" ;
+        sh:description    "Reasserts the property-value pair to belong to a new resource specified by the conversion:bundled_by property. An example of this enhancement would be the introduction of a geo:Point instance based on latitude and longitude properties." ;
+        sh:name           "Implicit bundle enhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#34f6fa542ade170453d373470d0739a1> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/ImplicitBundleEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#d8c86ab663d58187316675620109eaa0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Subject sameAs enahncements via Lookup" ;
+        sh:description    "Asserts owl:sameAs relationships based on the values in the mapping of the property specified by conversion:subject_of." ;
+        sh:name           "Subject sameAs enahncements via Lookup" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#0a84c385479add7b991f58489b4f6795> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/SubjectSameAsEnhancementViaLookup> .
+
+<https://astrea.linkeddata.es/shapes#c4001d4217c0c40d3b996f99135be130>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "The state of a document at a point in time." ;
+        sh:name           "The state of a document at a point in time." ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#daa7ee5f5809614bed7d61e9d7239fd3> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/DocumentState> .
+
+<https://astrea.linkeddata.es/shapes#692980c3dc7d15b3301003b96c9d83fe>
+        a               sh:NodeShape ;
+        sh:description  "http://www.w3.org/TR/sparql11-service-description/ does not specify a range, but we want to refer to it" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/ServiceEndpoint> .
+
+<https://astrea.linkeddata.es/shapes#85ade757b6bb320006ec9de94b61ef52>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/type_name> .
+
+<https://astrea.linkeddata.es/shapes#f2498ae21e1b523c58b182fd795b9433>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/subproperty_of> .
+
+<https://astrea.linkeddata.es/shapes#92fc0698dabc760ab917cd4000613941>
+        a            sh:PropertyShape ;
+        rdfs:label   "enhancement_identifier" ;
+        sh:name      "enhancement_identifier" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/twc/vocab/conversion/enhancement_identifier> .
+
+<https://astrea.linkeddata.es/shapes#403838840cb72f4c0a30eebb6572ed6d>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/range_name> .
+
+<https://astrea.linkeddata.es/shapes#68e540a98209105e7057824d1d89a3d2>
+        a               sh:NodeShape ;
+        rdfs:label      "Versioned Dataset" ;
+        sh:description  "A materialized (captured in time) dataset -- something is now on disk. Union of all LayerDatasets created by different conversion parameters." ;
+        sh:name         "Versioned Dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#f13be04e5e36b1ee022d97a84370e8ef> , <https://astrea.linkeddata.es/shapes#4a964cb5b060586529389ab5f3e7832a> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d6e57112ebd167d8ce0db9b25bf6c871> ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/VersionedDataset> .
+
+<https://astrea.linkeddata.es/shapes#e5b5838013fc92f1da54752b961484c9>
+        a               sh:NodeShape ;
+        rdfs:label      "IndirectSameAsEnhancement" ;
+        sh:description  "Refer to a local URI, which then has a single owl:sameAs triple pointing to external LOD bubbles. Depends on owl:sameAs inference OR extra graph patterns in SPARQL queries." ;
+        sh:name         "IndirectSameAsEnhancement" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/IndirectSameAsEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#3395daeae97dc593ca1bc3d834c81ff4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Boolean promotion enhancement" ;
+        sh:description    "Casts raw literal values into xsd:boolean datatyped values. The default recognized lexical representations are (case insensitive): 'yes', 'no', 'true', 'false', '0', and '1'. The conversion:boolean_true and conversion:boolean_false properties may be used to add additional lexical forms." ;
+        sh:name           "Boolean promotion enhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d9f0c34ec36a9e62dfe6936060800a37> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/BooleanPromotionEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#6c31a7333998555d6a53d3024436c95e>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/twc/vocab/conversion/ResourcePromotionEnhancement> ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/bundled_by> .
+
+<https://astrea.linkeddata.es/shapes#6ba685ae2c165dfbc1726c881481648d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "DateTime promotion enhancement" ;
+        sh:description    "Casts raw literal values into W3CDTF values typed as xsd:dateTime based on a strftime pattern specified with the conversion:datetime_pattern. If the property values follow different patterns, multiple conversion:datetime_pattern values may specified. The first matching pattern (of a nondeterministic ordering) will be applied. An optional conversion:datetime_timezone may be specified if no timezone information is present in the datetime pattern." ;
+        sh:name           "DateTime promotion enhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7d43328a3daefedf98b3140a68c1c874> , <https://astrea.linkeddata.es/shapes#b3c0b767111cbb5d40e5332f9827bb10> , <https://astrea.linkeddata.es/shapes#804da36fd8625e41c8f8a84ee3bc917e> , <https://astrea.linkeddata.es/shapes#99a5d8561431e68c741bd6d2b5fa34ad> , <https://astrea.linkeddata.es/shapes#35031e4070c7a25395857e69a86dffc9> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/DateTimePromotionEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#a496e11ce1142468c159416f4ab58c16>
+        a               sh:NodeShape ;
+        rdfs:label      "SymbolInterpretation" ;
+        rdfs:seeAlso    <https://github.com/timrdf/csv2rdf4lod-automation/wiki/conversion%3Ainterpret> ;
+        sh:description  "Pairs a collection of symbols with how they should be interpreted. For example, 'S' should be interpreted as http://dbpedia.org/resource/United_States_Senate." ;
+        sh:name         "SymbolInterpretation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#8677a1dee574c1f67fa635c9b25d794c> , <https://astrea.linkeddata.es/shapes#0ab072b2654ee39eb3361cd93ced1e23> ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/SymbolInterpretation> .
+
+<https://astrea.linkeddata.es/shapes#dff6ff2bc64def7c8c16697ea7058130>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Subject sameAs enahncements" ;
+        sh:description    "Asserts owl:sameAs relationships between instances and external URIs based on the instances' values of a specific property and their interpretation by a mapping specified by conversion:linksVia. How this mapping is performed based on this value is unspecified, but may be based on aligning with (e.g. SKOS) labels or the edit distance between the property value and instances in a known ontology." ;
+        sh:name           "Subject sameAs enahncements" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/SubjectSameAsEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#426e794d08059855e55b0a8846d84704>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "DataEndRow" ;
+        sh:name           "DataEndRow" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/DataEndRow> .
+
+<https://astrea.linkeddata.es/shapes#37957abf7cacaf466a7cd4886ca8c757>
+        a               sh:PropertyShape ;
+        rdfs:label      "Number of invocation logs" , "Number of docs/logs/* captured by convert-aggregate.sh" ;
+        sh:description  "Number of docs/logs/* captured by convert-aggregate.sh" ;
+        sh:name         "Number of invocation logs" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/twc/vocab/conversion/num_invocation_logs> .
+
+<https://astrea.linkeddata.es/shapes#74a999dc078b8f9c017cf49f6f40cc3e>
+        a               sh:NodeShape ;
+        rdfs:seeAlso    <http://purl.org/twc/vocab/conversion/LODLinks> ;
+        sh:description  "Any enhnacment with a conversion:links_via can also be a conversion:IncludesLODLinks. When so, include the LODLinks graph in the converted output." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/IncludesLODLinks> .
+
+<https://astrea.linkeddata.es/shapes#074001d304bbaa499130f69f8ded9ba3>
+        a               sh:NodeShape ;
+        rdfs:label      "ConversionTrigger" ;
+        rdfs:seeAlso    <https://github.com/timrdf/csv2rdf4lod-automation/blob/master/bin/cr-create-convert-sh.sh> , <https://github.com/timrdf/csv2rdf4lod-automation/wiki/Conversion-cockpit> ;
+        sh:description  "In csv2rdf4lod-automation, the conversion trigger is a shell script situated within the conversion cockpit that initiates conversion of source data to RDF." ;
+        sh:name         "ConversionTrigger" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/ConversionTrigger> .
+
+<https://astrea.linkeddata.es/shapes#78cc2773c33d3f8efcd48de44abae8ce>
+        a               sh:NodeShape ;
+        sh:description  "An RDF Graph of resources with identifiers (dcterms:identifer, etc) that is used to link to resources created during conversion." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/LODLinks> .
+
+<https://astrea.linkeddata.es/shapes#0b6178b73eb7e8afa378c1cf3e0fad3e>
+        a            sh:PropertyShape ;
+        rdfs:label   "triples_per_minute" ;
+        sh:name      "triples_per_minute" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/twc/vocab/conversion/triples_per_minute> .
+
+<https://astrea.linkeddata.es/shapes#83bb2dac5cda15745b0984fa9e6fe489>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "version_identifier" , "The version of conversion being performed per dataset." , "The version_identifier should only change during a 'raw' conversion when the underlying dataset has changed." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The version_identifier should only change during a 'raw' conversion when the underlying dataset has changed." , "The version of conversion being performed per dataset." ;
+        sh:name           "version_identifier" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/twc/vocab/conversion/version_identifier> .
+
+<https://astrea.linkeddata.es/shapes#46cbf17a860751653487b9586ec5e344>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "links_via" ;
+        sh:class          rdfs:Resource , <http://purl.org/twc/vocab/conversion/LODLinks> ;
+        sh:name           "links_via" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/twc/vocab/conversion/links_via> .
+
+<https://astrea.linkeddata.es/shapes#3f762191256cedf07f367d5501de4de1>
+        a               sh:NodeShape ;
+        rdfs:label      "IndirectSameAsEnhancement" ;
+        sh:description  "For any Resource that became owl:sameAs another Resource in an external LOD bubble, use ALL external URIs instead of the local resource." ;
+        sh:name         "IndirectSameAsEnhancement" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/DirectSameAsEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#492a5eede9d858a6aefbcf97955fad27>
+        a            sh:PropertyShape ;
+        rdfs:label   "pattern" ;
+        sh:name      "pattern" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/twc/vocab/conversion/pattern> .
+
+<https://astrea.linkeddata.es/shapes#096354edba3fc15e501ae44aacb748ee>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "label" , "A human-friendly label (like rdfs:label) that will be used to create the property local name when creating the property URI. The exact value of conversion:label will also be used for the rdfs:label of the property created." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "A human-friendly label (like rdfs:label) that will be used to create the property local name when creating the property URI. The exact value of conversion:label will also be used for the rdfs:label of the property created." ;
+        sh:name           "label" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/twc/vocab/conversion/label> .
+
+<https://astrea.linkeddata.es/shapes#aeb384767af0e9e50dad2395f25c4227>
+        a               sh:NodeShape ;
+        rdfs:label      "Abstract Dataset" ;
+        sh:description  "Dataset with source and dataset identifiers, but not version. Before any version is materialized (captured in time), and the union of all VersionedDatasets." ;
+        sh:name         "Abstract Dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#703bc05de9cd519d4de68decd2ac042f> , <https://astrea.linkeddata.es/shapes#4a964cb5b060586529389ab5f3e7832a> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#df182a69282063fb330e818e5c4e3271> ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/AbstractDataset> .
+
+<https://astrea.linkeddata.es/shapes#35031e4070c7a25395857e69a86dffc9>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/datetime_timezone> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#c844962612cce763267c52757a6a041d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "An enhancement of an RDF dataset that adds new RDF triples" ;
+        sh:name           "An enhancement of an RDF dataset that adds new RDF triples" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#1f84454b0707abc4fc1ab4bcb64ea81b> , <https://astrea.linkeddata.es/shapes#2c96dffbf2b3d4c502678f2c56e5265d> , <https://astrea.linkeddata.es/shapes#f3307c72210e23a69ef593d9afb34b96> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/EnhancementProcess> .
+
+<https://astrea.linkeddata.es/shapes#80dd12e1722b0393926e18c223b3bcda>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/twc/vocab/conversion/Dataset> .
+
+<https://astrea.linkeddata.es/shapes#3745fb872981600ae5c4b544be74f7e5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "domain_name" , "The local type that should be asserted for the subjects of raw triples." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The local type that should be asserted for the subjects of raw triples." ;
+        sh:name           "domain_name" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/twc/vocab/conversion/domain_name> .
+
+<https://astrea.linkeddata.es/shapes#bc0049a23fec318f5b3bc13c6d8f7e70>
+        a            sh:PropertyShape ;
+        sh:minCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://usefulinc.com/ns/doap#repository> .
+
+<https://astrea.linkeddata.es/shapes#6238801e90354f77b4d57d0f638a7d79>
+        a               sh:NodeShape ;
+        rdfs:label      "ExampleResource" ;
+        rdfs:seeAlso    <http://rdfs.org/ns/void#exampleResource> ;
+        sh:description  "Cites a row that contains an exemplary resource or structure; 'highlighting' it for increased attention. e.g., Jim Hendler or Bill O'Reilly in a White House Visitor Record." ;
+        sh:name         "ExampleResource" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/ExampleResource> .
+
+<https://astrea.linkeddata.es/shapes#6041d9b0e7c486a8ffbc9c9aecc98c16>
+        a               sh:PropertyShape ;
+        rdfs:label      "range template" , "" ;
+        sh:description  "" ;
+        sh:name         "range template" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/twc/vocab/conversion/range_template> .
+
+<https://astrea.linkeddata.es/shapes#c62e5a8f3b4cb4f4d51c964c618c04ab>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Implicit Bundle" ;
+        sh:description    "Represents the structural template for an implicit bundle enhancement. The conversion:property_name specifies the property name by which a bundle is attached to an instance. An optional conversion:type_name may be specified for the bundle to indicate the rdf:type of the new resource." ;
+        sh:name           "Implicit Bundle" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#3e1924ed117678f988efbe2e9ca4031d> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#85ade757b6bb320006ec9de94b61ef52> , <https://astrea.linkeddata.es/shapes#c87c21647e57e58d3b3c3890e33ac732> , <https://astrea.linkeddata.es/shapes#ee0e1b8dfc31f3bc4173042bdab75c4d> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/ImplicitBundle> .
+
+<https://astrea.linkeddata.es/shapes#e9114b91e9a51ba5756708196ca4fec5>
+        a               sh:NodeShape ;
+        sh:description  "A CatalogedDataset is any kind of dataset, in the most general sense and regardless of how it is encoded (RDF, Relational, Tabular, XML, SPS, etc.). If someone says to you, 'yea, NASA has a Mars imagery dataset, talk to Joe about it and visit its homepage', you just instantiated a CatalogedDataset. There are MANY CatalogedDatasets that are NOT conversion:Datasets and NOT void:Datasets, since both of these are RDF-based datasets. The purpose of CatalogedDataset is to maintain a list of 'TODO' items that could be explored, converted, and published as RDF. Once a CatalogedDataset IS investigated, named, and converted, it also becomes a conversion:Dataset (and thus a void:Datast)." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/CatalogedDataset> .
+
+<https://astrea.linkeddata.es/shapes#f3307c72210e23a69ef593d9afb34b96>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/enhance> .
+
+<https://astrea.linkeddata.es/shapes#9eb0a7a670e205cf98c647be070fe852>
+        a               sh:NodeShape ;
+        rdfs:label      "Dataset" ;
+        sh:description  "Asserted by the converter." ;
+        sh:name         "Dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#3c1ff457564c8493087931705e3f4c05> , <https://astrea.linkeddata.es/shapes#937ba29c2642b77586c88c2202c9ec70> , <https://astrea.linkeddata.es/shapes#0c04df62e375fe295bc8749ee701cd28> , <https://astrea.linkeddata.es/shapes#83bb2dac5cda15745b0984fa9e6fe489> ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/Dataset> .
+
+<https://astrea.linkeddata.es/shapes#3c1ff457564c8493087931705e3f4c05>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "dataset_identifier" , "The identifier of the dataset being converted. Ideally provided by source_identifier." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "The identifier of the dataset being converted. Ideally provided by source_identifier." ;
+        sh:name           "dataset_identifier" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/twc/vocab/conversion/dataset_identifier> .
+
+<https://astrea.linkeddata.es/shapes#856941cf9a35092711a9f7cc1ad685e8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Label Rename Enhancement" ;
+        sh:description    "Renames an existing property in the dataset." ;
+        sh:name           "Label Rename Enhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#096354edba3fc15e501ae44aacb748ee> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/LabelRenameEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#9a7ab530498967a128229b4e1257fe68>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/predicate_identifier> .
+
+<https://astrea.linkeddata.es/shapes#74f80a57b6e0d2d01c7b692e497f2484>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Literal datatype promotion enhancement" ;
+        sh:description    "Promotes the raw literal value to a datatyped literal using the datatype specified with the conversion:range property." ;
+        sh:name           "Literal datatype promotion enhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#efc0d9c0ce7b80db2eefed09ca91da63> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/DatatypePromotionEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#a373ff13691516e91932c7408060481c>
+        a               sh:NodeShape ;
+        rdfs:label      "Dataset Sample" ;
+        sh:description  "A potentially incomplete subset of a void:Dataset" ;
+        sh:name         "Dataset Sample" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/DatasetSample> .
+
+<https://astrea.linkeddata.es/shapes#76bae5aa8a2013f113211b328e519e10>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://rdfs.org/ns/void#subset> ;
+        sh:qualifiedMinCount    0 ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.org/twc/vocab/conversion/DatasetSample> ] ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.org/twc/vocab/conversion/DatasetSample> ] .
+
+<https://astrea.linkeddata.es/shapes#8a932f54d43ce5ea6f8eb5c4e5cf4c43>
+        a               sh:NodeShape ;
+        sh:description  "Any SymbolInterpretation that interprets to true or false is a BooleanSymbolInterpretation." ;
+        sh:nodeKind     sh:IRI ;
+        sh:or           ( [] 
+                          [] 
+                        ) ;
+        sh:or           ( [] 
+                          [] 
+                        ) ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/BooleanSymbolInterpretation> .
+
+<https://astrea.linkeddata.es/shapes#937ba29c2642b77586c88c2202c9ec70>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://purl.org/dc/terms/contributor> ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.org/twc/vocab/conversion/Source> ] ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.org/twc/vocab/conversion/Source> ] .
+
+<https://astrea.linkeddata.es/shapes#c8d5ef1a36b98d07fa7dd17cfcea137f>
+        a               sh:NodeShape ;
+        rdfs:label      "LargeValue" ;
+        sh:description  "Used to denote that the value of a cell is 'large', where 'large' is loosely defined by the implementing system. For example, javacsv thinks 100,000 characters is Large and requires a setting to permit more than that." ;
+        sh:name         "LargeValue" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/LargeValue> .
+
+<https://astrea.linkeddata.es/shapes#7ba93fd26c7fafb919586d96a77e39a4>
+        a            sh:PropertyShape ;
+        rdfs:label   "object_search" ;
+        sh:name      "object_search" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/twc/vocab/conversion/object_search> .
+
+<https://astrea.linkeddata.es/shapes#7e084dea392d954f53639396685bcc62>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Property-scoped resource promotion enhancement" ;
+        sh:description    "Appends raw literal values to the dataset-property-specific value space URI. For example, the value 'AK' for property 'origin_state' would be promoted to </source/SSS/dataset/DDD/value/origin_state/AK>." ;
+        sh:name           "Property-scoped resource promotion enhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/PropertyScopedResourcePromotionEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#c87c21647e57e58d3b3c3890e33ac732>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/property_name> .
+
+<https://astrea.linkeddata.es/shapes#bc7cc74f5649130689049a122dd37bd6>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/domain_name> .
+
+<https://astrea.linkeddata.es/shapes#f13be04e5e36b1ee022d97a84370e8ef>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/twc/vocab/conversion/AbstractDataset> .
+
+<https://astrea.linkeddata.es/shapes#7d63e6743975ba65ee12fcf60f0a38b6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "DataStartRow" ;
+        sh:name           "DataStartRow" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/DataStartRow> .
+
+<https://astrea.linkeddata.es/shapes#6efc8535a7e65d5ca91b422244b67655>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/twc/vocab/conversion/MetaDataset> .
+
+<https://astrea.linkeddata.es/shapes#c0d1063a9431fc33c57b3ef13c1021d6>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/AuxiliaryDataset> .
+
+<https://astrea.linkeddata.es/shapes#3f4df78492c048876d40fa961c3c8b4c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        sh:description    "Omit all triples from this column." ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/Omitted> .
+
+<https://astrea.linkeddata.es/shapes#90f4a985bd9781f35909c95325fb59c2>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/links_via> .
+
+<https://astrea.linkeddata.es/shapes#daa7ee5f5809614bed7d61e9d7239fd3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "The URL of a dataset document." ;
+        sh:class          <http://xmlns.com/foaf/0.1/Document> ;
+        sh:description    "The URL of a dataset document." ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/twc/vocab/conversion/dataset_file> .
+
+<https://astrea.linkeddata.es/shapes#a14d5eb7941d23b61422187e61914b4a>
+        a            sh:PropertyShape ;
+        sh:minCount  "0"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://open.vocab.org/terms/csvCol> .
+
+<https://astrea.linkeddata.es/shapes#fee7ff96ae6cd98c384c9e64ee29298c>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/class_name> .
+
+<https://astrea.linkeddata.es/shapes#703bc05de9cd519d4de68decd2ac042f>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/twc/vocab/conversion/VersionedDataset> .
+
+<https://astrea.linkeddata.es/shapes#6c78bc2ac26431900c0ee7ce388dd5e1>
+        a            sh:PropertyShape ;
+        rdfs:label   "num_triples" ;
+        sh:equals    <http://rdfs.org/ns/void#triples> ;
+        sh:name      "num_triples" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/twc/vocab/conversion/num_triples> .
+
+<https://astrea.linkeddata.es/shapes#136034325f14aed83c90ac2f6c1626bd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "range" , "The rdfs:range of the property after enhancement. For raw conversions, it is always rdfs:Literal. More interesting things happen during enhancements." ;
+        sh:class          rdfs:Resource ;
+        sh:description    "The rdfs:range of the property after enhancement. For raw conversions, it is always rdfs:Literal. More interesting things happen during enhancements." ;
+        sh:name           "range" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/twc/vocab/conversion/range> .
+
+<https://astrea.linkeddata.es/shapes#64a8e9377c8b6bb0505ef88585c121cb>
+        a            sh:PropertyShape ;
+        rdfs:label   "name_template" ;
+        sh:name      "name_template" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/twc/vocab/conversion/name_template> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#aa0b0295de02923c4ea0fb6739fb3e3f> , <https://astrea.linkeddata.es/shapes#6247c4c0f9728dae535b109ba214d8b5> , <https://astrea.linkeddata.es/shapes#426e794d08059855e55b0a8846d84704> , <https://astrea.linkeddata.es/shapes#e5b5838013fc92f1da54752b961484c9> , <https://astrea.linkeddata.es/shapes#9804c2b5aca40f03ca3ce5f0bea4cd9d> , <https://astrea.linkeddata.es/shapes#9f81ccea32164a7a2ccf8400a7c57b88> , <https://astrea.linkeddata.es/shapes#efc0d9c0ce7b80db2eefed09ca91da63> , <https://astrea.linkeddata.es/shapes#6e94103f64c5a9e678376e2a39360644> , <https://astrea.linkeddata.es/shapes#7ba93fd26c7fafb919586d96a77e39a4> , <https://astrea.linkeddata.es/shapes#daa7ee5f5809614bed7d61e9d7239fd3> , <https://astrea.linkeddata.es/shapes#6c31a7333998555d6a53d3024436c95e> , <https://astrea.linkeddata.es/shapes#affe293a0d5080bd12dd66330b2b8073> , <https://astrea.linkeddata.es/shapes#9eb0a7a670e205cf98c647be070fe852> , <https://astrea.linkeddata.es/shapes#99a5d8561431e68c741bd6d2b5fa34ad> , <https://astrea.linkeddata.es/shapes#92fc0698dabc760ab917cd4000613941> , <https://astrea.linkeddata.es/shapes#758421234c9649082dc94a6735efb72b> , <https://astrea.linkeddata.es/shapes#4a964cb5b060586529389ab5f3e7832a> , <https://astrea.linkeddata.es/shapes#fbf61e9158cbd56091cd278a36b11782> , <https://astrea.linkeddata.es/shapes#0b6178b73eb7e8afa378c1cf3e0fad3e> , <https://astrea.linkeddata.es/shapes#b3c0b767111cbb5d40e5332f9827bb10> , <https://astrea.linkeddata.es/shapes#ba3f62c4e02d64e538006dbbf750b7c6> , <https://astrea.linkeddata.es/shapes#f35860033dab190454bde5fb7f3922cf> , <https://astrea.linkeddata.es/shapes#a14d5eb7941d23b61422187e61914b4a> , <https://astrea.linkeddata.es/shapes#b2c4d15dcfd07546bdcb95bea7879d74> , <https://astrea.linkeddata.es/shapes#b9bf4415e20feef73a650faae2bd2c34> , <https://astrea.linkeddata.es/shapes#76bae5aa8a2013f113211b328e519e10> , <https://astrea.linkeddata.es/shapes#3395daeae97dc593ca1bc3d834c81ff4> , <https://astrea.linkeddata.es/shapes#20108985700715c526c20f899407027c> , <https://astrea.linkeddata.es/shapes#c68d03044e63f67766c5aa0141310e59> , <https://astrea.linkeddata.es/shapes#d91953aabc0765ec404ae680fef5f0cf> , <https://astrea.linkeddata.es/shapes#804da36fd8625e41c8f8a84ee3bc917e> , <https://astrea.linkeddata.es/shapes#6041d9b0e7c486a8ffbc9c9aecc98c16> , <https://astrea.linkeddata.es/shapes#c0d1063a9431fc33c57b3ef13c1021d6> , <https://astrea.linkeddata.es/shapes#376fe6f1f084b3c44066662c85bea2e3> , <https://astrea.linkeddata.es/shapes#19fbad003b5e8b493087c5591eedc821> , <https://astrea.linkeddata.es/shapes#49033040cd316df5e53b965d8578cf33> , <https://astrea.linkeddata.es/shapes#900b6596402ea407b8abef8e7ec3f6e8> , <https://astrea.linkeddata.es/shapes#cab356e7126bc3e385cfa828bd43bbb5> , <https://astrea.linkeddata.es/shapes#5071ab0962007315b3e528cce200c55d> , <https://astrea.linkeddata.es/shapes#4f19f9d0b8bb3da6a78cb269567c8582> , <https://astrea.linkeddata.es/shapes#8677a1dee574c1f67fa635c9b25d794c> , <https://astrea.linkeddata.es/shapes#7a8384996eeac195b1d51fb8d191dd00> , <https://astrea.linkeddata.es/shapes#074001d304bbaa499130f69f8ded9ba3> , <https://astrea.linkeddata.es/shapes#096354edba3fc15e501ae44aacb748ee> , <https://astrea.linkeddata.es/shapes#f3307c72210e23a69ef593d9afb34b96> , <https://astrea.linkeddata.es/shapes#5d5c03a7c7b3063e1cc5faec36306dc1> , <https://astrea.linkeddata.es/shapes#68e540a98209105e7057824d1d89a3d2> , <https://astrea.linkeddata.es/shapes#f2498ae21e1b523c58b182fd795b9433> , <https://astrea.linkeddata.es/shapes#5471fb5029459c5124c1497713b57953> , <https://astrea.linkeddata.es/shapes#5970eff1185339ca6a11e551bc30385f> , <https://astrea.linkeddata.es/shapes#44d6e85cf81fed0b5cab3ad350e7bb13> , <https://astrea.linkeddata.es/shapes#856941cf9a35092711a9f7cc1ad685e8> , <https://astrea.linkeddata.es/shapes#a373ff13691516e91932c7408060481c> , <https://astrea.linkeddata.es/shapes#dff6ff2bc64def7c8c16697ea7058130> , <https://astrea.linkeddata.es/shapes#6c78bc2ac26431900c0ee7ce388dd5e1> , <https://astrea.linkeddata.es/shapes#8467d1183096906523ed35f2de47eb4d> , <https://astrea.linkeddata.es/shapes#883dbb0dc4455db060eadcbf11c5f3d7> , <https://astrea.linkeddata.es/shapes#1ee21a7ff24a2dcc63516e857b33351d> , <https://astrea.linkeddata.es/shapes#7d0d6fff4096696d1c388561161cfa5a> , <https://astrea.linkeddata.es/shapes#74f80a57b6e0d2d01c7b692e497f2484> , <https://astrea.linkeddata.es/shapes#a786119c95f40ae1341919c88976c7b2> , <https://astrea.linkeddata.es/shapes#427b6a288677912aab290cdf15709a57> , <https://astrea.linkeddata.es/shapes#1f84454b0707abc4fc1ab4bcb64ea81b> , <https://astrea.linkeddata.es/shapes#d6e57112ebd167d8ce0db9b25bf6c871> , <https://astrea.linkeddata.es/shapes#077bdebad7d31eae091135120988ac54> , <https://astrea.linkeddata.es/shapes#c844962612cce763267c52757a6a041d> , <https://astrea.linkeddata.es/shapes#fee7ff96ae6cd98c384c9e64ee29298c> , <https://astrea.linkeddata.es/shapes#abc19e58b8068c075444b646b03cd924> , <https://astrea.linkeddata.es/shapes#c8d5ef1a36b98d07fa7dd17cfcea137f> , <https://astrea.linkeddata.es/shapes#703bc05de9cd519d4de68decd2ac042f> , <https://astrea.linkeddata.es/shapes#d7db75b25b32fbfac812fc85bab289f1> , <https://astrea.linkeddata.es/shapes#2c5b2c44688a6bc5f2eed0ecbe9edc6b> , <https://astrea.linkeddata.es/shapes#3c1ff457564c8493087931705e3f4c05> , <https://astrea.linkeddata.es/shapes#ee0e1b8dfc31f3bc4173042bdab75c4d> , <https://astrea.linkeddata.es/shapes#0a84c385479add7b991f58489b4f6795> , <https://astrea.linkeddata.es/shapes#b0bb81709ffef8f8eec2ae5a42c553c6> , <https://astrea.linkeddata.es/shapes#bc0049a23fec318f5b3bc13c6d8f7e70> , <https://astrea.linkeddata.es/shapes#83bb2dac5cda15745b0984fa9e6fe489> , <https://astrea.linkeddata.es/shapes#35ac19fbe134c9bfe98dbce1abe02d1b> , <https://astrea.linkeddata.es/shapes#286f49ea8373c4413b7c51dff56472f2> , <https://astrea.linkeddata.es/shapes#f6f8129af95f7cb95299fee89793ee3b> , <https://astrea.linkeddata.es/shapes#0c04df62e375fe295bc8749ee701cd28> , <https://astrea.linkeddata.es/shapes#df182a69282063fb330e818e5c4e3271> , <https://astrea.linkeddata.es/shapes#d9f0c34ec36a9e62dfe6936060800a37> , <https://astrea.linkeddata.es/shapes#af28eff58286ed9935194ee6f2955324> , <https://astrea.linkeddata.es/shapes#6efc8535a7e65d5ca91b422244b67655> , <https://astrea.linkeddata.es/shapes#937ba29c2642b77586c88c2202c9ec70> , <https://astrea.linkeddata.es/shapes#dd33a45425dd3c9e4776b59bee30f9da> , <https://astrea.linkeddata.es/shapes#3f4df78492c048876d40fa961c3c8b4c> , <https://astrea.linkeddata.es/shapes#7d43328a3daefedf98b3140a68c1c874> , <https://astrea.linkeddata.es/shapes#f13be04e5e36b1ee022d97a84370e8ef> , <https://astrea.linkeddata.es/shapes#cfaa4da4b88091ff0899012fba5bd7de> , <https://astrea.linkeddata.es/shapes#1c9789c910ad430f9051360637346a66> , <https://astrea.linkeddata.es/shapes#c3aed8b3c7b837f962670743eebccffb> , <https://astrea.linkeddata.es/shapes#9cd9a788d58b60513e316a031fcb7f37> , <https://astrea.linkeddata.es/shapes#d8cbf2191ae6982e2a240bcbabb65ec9> , <https://astrea.linkeddata.es/shapes#1cf94c820865c700b6b78f54165188f7> , <https://astrea.linkeddata.es/shapes#a6f9c5fb5dab2304a132b8b735f144b4> , <https://astrea.linkeddata.es/shapes#74a999dc078b8f9c017cf49f6f40cc3e> , <https://astrea.linkeddata.es/shapes#7d63e6743975ba65ee12fcf60f0a38b6> , <https://astrea.linkeddata.es/shapes#daf121a876680dfaa8587a77d1e22316> , <https://astrea.linkeddata.es/shapes#2efd1d90442939833e95aca98387e2f7> , <https://astrea.linkeddata.es/shapes#6c2cd81f1851d573632006f5478c085d> , <https://astrea.linkeddata.es/shapes#3a7d1cade1500723480b1222fa0a667a> , <https://astrea.linkeddata.es/shapes#d8c86ab663d58187316675620109eaa0> , <https://astrea.linkeddata.es/shapes#6238801e90354f77b4d57d0f638a7d79> , <https://astrea.linkeddata.es/shapes#e9114b91e9a51ba5756708196ca4fec5> , <https://astrea.linkeddata.es/shapes#5a3e1816f02dfc01ae97f211520f4cd4> , <https://astrea.linkeddata.es/shapes#a496e11ce1142468c159416f4ab58c16> , <https://astrea.linkeddata.es/shapes#32e8b1c4109455dd927d9c455f1a581d> , <https://astrea.linkeddata.es/shapes#bc7cc74f5649130689049a122dd37bd6> , <https://astrea.linkeddata.es/shapes#2eed4751b71d6e10df86628d623a650f> , <https://astrea.linkeddata.es/shapes#20fc4067113d1bf1f1e064f7cefb62d6> , <https://astrea.linkeddata.es/shapes#6ba685ae2c165dfbc1726c881481648d> , <https://astrea.linkeddata.es/shapes#b858c3462062cbb1ce4d62dbdc690939> , <https://astrea.linkeddata.es/shapes#b62756f952fbca60379a636aa2ab72ae> , <https://astrea.linkeddata.es/shapes#64a944ce8fef9b8e71de77d159bed5e9> , <https://astrea.linkeddata.es/shapes#8a932f54d43ce5ea6f8eb5c4e5cf4c43> , <https://astrea.linkeddata.es/shapes#7e084dea392d954f53639396685bcc62> , <https://astrea.linkeddata.es/shapes#37957abf7cacaf466a7cd4886ca8c757> , <https://astrea.linkeddata.es/shapes#50b86e719bf310ef47a1422480efb391> , <https://astrea.linkeddata.es/shapes#4ec065e72ced7b36472e2f7560273296> , <https://astrea.linkeddata.es/shapes#58d99ac5efd9e1a81f399eb9071569ed> , <https://astrea.linkeddata.es/shapes#64a8e9377c8b6bb0505ef88585c121cb> , <https://astrea.linkeddata.es/shapes#492a5eede9d858a6aefbcf97955fad27> , <https://astrea.linkeddata.es/shapes#82ec67d88bc2268e397b6b4d096db1f9> , <https://astrea.linkeddata.es/shapes#9a7ab530498967a128229b4e1257fe68> , <https://astrea.linkeddata.es/shapes#f50057d13f7a4f210982e7101d3496ed> , <https://astrea.linkeddata.es/shapes#5aced1dfbc722db34a04316d3357e4a6> , <https://astrea.linkeddata.es/shapes#46cbf17a860751653487b9586ec5e344> , <https://astrea.linkeddata.es/shapes#c87c21647e57e58d3b3c3890e33ac732> , <https://astrea.linkeddata.es/shapes#076476f4f1bcec42b6f0e51e24b90b88> , <https://astrea.linkeddata.es/shapes#403838840cb72f4c0a30eebb6572ed6d> , <https://astrea.linkeddata.es/shapes#78cc2773c33d3f8efcd48de44abae8ce> , <https://astrea.linkeddata.es/shapes#1585faa4e3658a93a9202365bf36b2d8> , <https://astrea.linkeddata.es/shapes#35031e4070c7a25395857e69a86dffc9> , <https://astrea.linkeddata.es/shapes#aeb384767af0e9e50dad2395f25c4227> , <https://astrea.linkeddata.es/shapes#3745fb872981600ae5c4b544be74f7e5> , <https://astrea.linkeddata.es/shapes#c4001d4217c0c40d3b996f99135be130> , <https://astrea.linkeddata.es/shapes#a5948986506f5e20cd5a76cfdf2af819> , <https://astrea.linkeddata.es/shapes#6309d6d95843d834596e3342be33ca86> , <https://astrea.linkeddata.es/shapes#83f62058d2b894f58c5bfaef462adbdb> , <https://astrea.linkeddata.es/shapes#65b644fb84d329eb4652e4f5415b4b1b> , <https://astrea.linkeddata.es/shapes#c62e5a8f3b4cb4f4d51c964c618c04ab> , <https://astrea.linkeddata.es/shapes#136034325f14aed83c90ac2f6c1626bd> , <https://astrea.linkeddata.es/shapes#692980c3dc7d15b3301003b96c9d83fe> , <https://astrea.linkeddata.es/shapes#85ade757b6bb320006ec9de94b61ef52> , <https://astrea.linkeddata.es/shapes#90f4a985bd9781f35909c95325fb59c2> , <https://astrea.linkeddata.es/shapes#3e1924ed117678f988efbe2e9ca4031d> , <https://astrea.linkeddata.es/shapes#80dd12e1722b0393926e18c223b3bcda> , <https://astrea.linkeddata.es/shapes#020bb0a45ce6ed6793566c9e46352062> , <https://astrea.linkeddata.es/shapes#0f0f1ccbb84ad149e73071a616eaf130> , <https://astrea.linkeddata.es/shapes#2c96dffbf2b3d4c502678f2c56e5265d> , <https://astrea.linkeddata.es/shapes#3904062641bee4142b217210652bba9c> , <https://astrea.linkeddata.es/shapes#cba9e047c1ddae282c120d9de754a011> , <https://astrea.linkeddata.es/shapes#0ab072b2654ee39eb3361cd93ced1e23> , <https://astrea.linkeddata.es/shapes#3f762191256cedf07f367d5501de4de1> , <https://astrea.linkeddata.es/shapes#34f6fa542ade170453d373470d0739a1> , <https://astrea.linkeddata.es/shapes#4350f275beee89b986a1a625add4b8b8> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#9804c2b5aca40f03ca3ce5f0bea4cd9d>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/template_pattern> .
+
+<https://astrea.linkeddata.es/shapes#82ec67d88bc2268e397b6b4d096db1f9>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/date_pattern> .
+
+<https://astrea.linkeddata.es/shapes#883dbb0dc4455db060eadcbf11c5f3d7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "The source of data for a conversion process." ;
+        sh:class          <http://purl.org/twc/vocab/conversion/DocumentState> ;
+        sh:description    "The source of data for a conversion process." ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/twc/vocab/conversion/source_data> .
+
+<https://astrea.linkeddata.es/shapes#a6f9c5fb5dab2304a132b8b735f144b4>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/multiplier> .
+
+<https://astrea.linkeddata.es/shapes#3a7d1cade1500723480b1222fa0a667a>
+        a               sh:PropertyShape ;
+        rdfs:label      "interpret" , "" ;
+        rdfs:seeAlso    <https://github.com/timrdf/csv2rdf4lod-automation/wiki/conversion%3Ainterpret> ;
+        sh:class        <http://purl.org/twc/vocab/conversion/SymbolInterpretation> ;
+        sh:description  "" ;
+        sh:name         "interpret" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/twc/vocab/conversion/interpret> .
+
+<https://astrea.linkeddata.es/shapes#58d99ac5efd9e1a81f399eb9071569ed>
+        a               sh:NodeShape ;
+        rdfs:label      "Curl" ;
+        sh:description  "Asserted by pcurl.sh" ;
+        sh:name         "Curl" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/Curl> .
+
+<https://astrea.linkeddata.es/shapes#b858c3462062cbb1ce4d62dbdc690939>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/range> .
+
+<https://astrea.linkeddata.es/shapes#f35860033dab190454bde5fb7f3922cf>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "domain_template" , "TODO, cannot happen: :cp a conversion:EnhancementConversionProcess; conversion:enhance [ ov:csvCol 1; conversion:domain_template 'a' ], [ ov:csvCol 2; conversion:domain_template 'b' ] (col 1 and col 2 make the enhancements distinct, and an EnhancementConversionProcess can only have one domain_templated enhancement.)" , "Template to name the subject of the triple produced." ;
+        sh:description    "TODO, cannot happen: :cp a conversion:EnhancementConversionProcess; conversion:enhance [ ov:csvCol 1; conversion:domain_template 'a' ], [ ov:csvCol 2; conversion:domain_template 'b' ] (col 1 and col 2 make the enhancements distinct, and an EnhancementConversionProcess can only have one domain_templated enhancement.)" , "Template to name the subject of the triple produced." ;
+        sh:name           "domain_template" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/twc/vocab/conversion/domain_template> .
+
+<https://astrea.linkeddata.es/shapes#5d5c03a7c7b3063e1cc5faec36306dc1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "The superclass of all enhancements. When the enhancement is referring to a particular property, the property's local name or originating column number may be used (using conversion:property_name and ov:csvCol, respectively)." ;
+        sh:name           "The superclass of all enhancements. When the enhancement is referring to a particular property, the property's local name or originating column number may be used (using conversion:property_name and ov:csvCol, respectively)." ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#b0bb81709ffef8f8eec2ae5a42c553c6> , <https://astrea.linkeddata.es/shapes#9a7ab530498967a128229b4e1257fe68> , <https://astrea.linkeddata.es/shapes#136034325f14aed83c90ac2f6c1626bd> , <https://astrea.linkeddata.es/shapes#ee0e1b8dfc31f3bc4173042bdab75c4d> , <https://astrea.linkeddata.es/shapes#a14d5eb7941d23b61422187e61914b4a> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/Enhancement> .
+
+<https://astrea.linkeddata.es/shapes#9cd9a788d58b60513e316a031fcb7f37>
+        a            sh:PropertyShape ;
+        rdfs:label   "regex" ;
+        sh:name      "regex" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/twc/vocab/conversion/regex> .
+
+<https://astrea.linkeddata.es/shapes#34f6fa542ade170453d373470d0739a1>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/bundled_by> .
+
+<https://astrea.linkeddata.es/shapes#758421234c9649082dc94a6735efb72b>
+        a               sh:NodeShape ;
+        rdfs:label      "UnitTestedDatset" ;
+        rdfs:seeAlso    <https://github.com/timrdf/csv2rdf4lod-automation/wiki/Script:-cr-test-conversion.sh> ;
+        sh:description  "An RDF dataset tested with SPARQL queries verifying the presense or absence of particular triples." , "UnitTestedDatasets should cite locations for their unit tests." ;
+        sh:name         "UnitTestedDatset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5a3e1816f02dfc01ae97f211520f4cd4> ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/UnitTestedDataset> .
+
+<https://astrea.linkeddata.es/shapes#f6f8129af95f7cb95299fee89793ee3b>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/subject_of> .
+
+<https://astrea.linkeddata.es/shapes#1ee21a7ff24a2dcc63516e857b33351d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Existing bundle enhancement" ;
+        sh:description    "Reasserts the property-value pair to belong to the existing resource specified by the conversion:bundled_by property." ;
+        sh:name           "Existing bundle enhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#6c31a7333998555d6a53d3024436c95e> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/ExistingBundleEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#ba3f62c4e02d64e538006dbbf750b7c6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Superclass for sameAs enahncements" ;
+        sh:name           "Superclass for sameAs enahncements" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#90f4a985bd9781f35909c95325fb59c2> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/SameAsEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#5aced1dfbc722db34a04316d3357e4a6>
+        a               sh:NodeShape ;
+        rdfs:label      "ConversionMetaDataset" ;
+        sh:description  "Metadata for a dataset that is created during the dataset's conversion invocation." ;
+        sh:name         "ConversionMetaDataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/ConversionMetaDataset> .
+
+<https://astrea.linkeddata.es/shapes#1f84454b0707abc4fc1ab4bcb64ea81b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "enhance" ;
+        sh:class          <http://purl.org/twc/vocab/conversion/Enhancement> ;
+        sh:name           "enhance" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/twc/vocab/conversion/enhance> .
+
+<https://astrea.linkeddata.es/shapes#7d0d6fff4096696d1c388561161cfa5a>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      rdf:value .
+
+<https://astrea.linkeddata.es/shapes#b3c0b767111cbb5d40e5332f9827bb10>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/datetime_pattern> .
+
+<https://astrea.linkeddata.es/shapes#aa0b0295de02923c4ea0fb6739fb3e3f>
+        a               sh:NodeShape ;
+        rdfs:label      "Layer Dataset" ;
+        sh:description  "A conversion of a VersionedDataset using a particular set of conversion parameters." ;
+        sh:name         "Layer Dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#703bc05de9cd519d4de68decd2ac042f> , <https://astrea.linkeddata.es/shapes#f13be04e5e36b1ee022d97a84370e8ef> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#76bae5aa8a2013f113211b328e519e10> , <https://astrea.linkeddata.es/shapes#5471fb5029459c5124c1497713b57953> ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/LayerDataset> .
+
+<https://astrea.linkeddata.es/shapes#804da36fd8625e41c8f8a84ee3bc917e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        sh:datatype       rdfs:Literal ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/twc/vocab/conversion/datetime_pattern> .
+
+<https://astrea.linkeddata.es/shapes#44d6e85cf81fed0b5cab3ad350e7bb13>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Subject type enhancement" ;
+        sh:description    "Asserts that the subject instance is of a specific type, specified by name with conversion:domain_name. Also asserts that the type is a owl:Class." ;
+        sh:name           "Subject type enhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3745fb872981600ae5c4b544be74f7e5> , <https://astrea.linkeddata.es/shapes#bc7cc74f5649130689049a122dd37bd6> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/SubjectTypeEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#a5948986506f5e20cd5a76cfdf2af819>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        sh:description    "Repeat value of last non-empty cell in this column for the current cell." ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/Repeat_previous_if_empty_column> .
+
+<https://astrea.linkeddata.es/shapes#d6e57112ebd167d8ce0db9b25bf6c871>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://rdfs.org/ns/void#subset> ;
+        sh:qualifiedMinCount    0 ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.org/twc/vocab/conversion/LayerDataset> ] ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.org/twc/vocab/conversion/LayerDataset> ] .
+
+<https://astrea.linkeddata.es/shapes#3904062641bee4142b217210652bba9c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "comment" , "A comment (like rdfs:comment) that will be applied to the property created during conversion." ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "A comment (like rdfs:comment) that will be applied to the property created during conversion." ;
+        sh:name           "comment" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/twc/vocab/conversion/comment> .
+
+<https://astrea.linkeddata.es/shapes#427b6a288677912aab290cdf15709a57>
+        a               sh:NodeShape ;
+        rdfs:label      "Source" ;
+        sh:description  "A person, organization, or agent from which a dataset is retrieved." ;
+        sh:name         "Source" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#80dd12e1722b0393926e18c223b3bcda> ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/Source> .
+
+<https://astrea.linkeddata.es/shapes#d9f0c34ec36a9e62dfe6936060800a37>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/range> .
+
+<https://astrea.linkeddata.es/shapes#2efd1d90442939833e95aca98387e2f7>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/subclass_of> .
+
+<https://astrea.linkeddata.es/shapes#99a5d8561431e68c741bd6d2b5fa34ad>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        sh:datatype       rdfs:Literal ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/twc/vocab/conversion/datetime_timezone> .
+
+<https://astrea.linkeddata.es/shapes#7a8384996eeac195b1d51fb8d191dd00>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "delimits_object" , "A regular expression specifiying how the object literal should be delimited to produce multiple object values." ;
+        sh:description    "A regular expression specifiying how the object literal should be delimited to produce multiple object values." ;
+        sh:name           "delimits_object" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/twc/vocab/conversion/delimits_object> .
+
+<https://astrea.linkeddata.es/shapes#daf121a876680dfaa8587a77d1e22316>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Resource cast enhancement" ;
+        sh:description    "Casts raw literal values directly into a URI." ;
+        sh:name           "Resource cast enhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/ResourceCastEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#abc19e58b8068c075444b646b03cd924>
+        a               sh:NodeShape ;
+        sh:description  "Ignore string case when attempting to match identifiers between the input table and the identifiers in the LODLinks graph" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/CaseInsensitiveLODLink> .
+
+<https://astrea.linkeddata.es/shapes#65b644fb84d329eb4652e4f5415b4b1b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "A raw conversion process from CSV to RDF" ;
+        sh:name           "A raw conversion process from CSV to RDF" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#49033040cd316df5e53b965d8578cf33> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/RawConversionProcess> .
+
+<https://astrea.linkeddata.es/shapes#6e94103f64c5a9e678376e2a39360644>
+        a               sh:NodeShape ;
+        rdfs:label      "TripleStore" ;
+        sh:description  "" ;
+        sh:name         "TripleStore" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/TripleStore> .
+
+<https://astrea.linkeddata.es/shapes#b62756f952fbca60379a636aa2ab72ae>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        sh:datatype       rdfs:Literal ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/twc/vocab/conversion/multiplier> .
+
+<https://astrea.linkeddata.es/shapes#b0bb81709ffef8f8eec2ae5a42c553c6>
+        a            sh:PropertyShape ;
+        sh:minCount  "0"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/property_name> .
+
+<https://astrea.linkeddata.es/shapes#fbf61e9158cbd56091cd278a36b11782>
+        a               sh:NodeShape ;
+        rdfs:label      "Meta Dataset" ;
+        sh:description  "Data about another Dataset. Can contain VoID, PML, OPM, provenance, Dublin Core, etc." ;
+        sh:name         "Meta Dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#020bb0a45ce6ed6793566c9e46352062> ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/MetaDataset> .
+
+<https://astrea.linkeddata.es/shapes#efc0d9c0ce7b80db2eefed09ca91da63>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/twc/vocab/conversion/ResourcePromotionEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#20fc4067113d1bf1f1e064f7cefb62d6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:seeAlso      <https://github.com/timrdf/csv2rdf4lod-automation/wiki/conversion:Only_if_column> , <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#condition> ;
+        sh:description    "Omit triple if there is no value in the cell of the given column." ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/Only_if_column> .
+
+<https://astrea.linkeddata.es/shapes#d7db75b25b32fbfac812fc85bab289f1>
+        a               sh:NodeShape ;
+        rdfs:label      "VersionControlledDataset" ;
+        rdfs:seeAlso    <https://github.com/timrdf/csv2rdf4lod-automation/wiki/Version-control-strategies:-only-the-essential-minimum-is-needed> ;
+        sh:description  "A conversion:Dataset whose data skeleton is available from a version control system." ;
+        sh:name         "VersionControlledDataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#bc0049a23fec318f5b3bc13c6d8f7e70> ;
+        sh:targetClass  <http://purl.org/twc/vocab/conversion/VersionControlledDataset> .
+
+<https://astrea.linkeddata.es/shapes#4350f275beee89b986a1a625add4b8b8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "HeaderRow" ;
+        sh:name           "HeaderRow" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/HeaderRow> .
+
+<https://astrea.linkeddata.es/shapes#d91953aabc0765ec404ae680fef5f0cf>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/interpret> .
+
+<https://astrea.linkeddata.es/shapes#5a3e1816f02dfc01ae97f211520f4cd4>
+        a            sh:PropertyShape ;
+        sh:minCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/twc/vocab/conversion/testable_by> .
+
+<https://astrea.linkeddata.es/shapes#cab356e7126bc3e385cfa828bd43bbb5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Template resource promotion enhancement" ;
+        sh:description    "Converts raw literal values into URIs by replacing in the template (specified by the conversion:template_pattern property) the substring '[value]'." ;
+        sh:name           "Template resource promotion enhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#9804c2b5aca40f03ca3ce5f0bea4cd9d> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/TemplateResourcePromotionEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#35ac19fbe134c9bfe98dbce1abe02d1b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Object sameAs enahncements via Lookup" ;
+        sh:description    "Asserts owl:sameAs relationships based on the values in the mapping of the property specified by conversion:subject_of." ;
+        sh:name           "Object sameAs enahncements via Lookup" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#f6f8129af95f7cb95299fee89793ee3b> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/ObjectSameAsEnhancementViaLookup> .
+
+<https://astrea.linkeddata.es/shapes#c68d03044e63f67766c5aa0141310e59>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "Date promotion enhancement" ;
+        sh:description    "For each value, all DateTimePromotionEnhancement patterns are attempted before attempting any DatePromotionEnhancement patterns specified for the same property." , "Casts raw literal values into W3CDTF values typed as xsd:date based on a strftime pattern specified with the conversion:date_pattern. If the property values follow different patterns, multiple conversion:date_pattern values may specified." ;
+        sh:name           "Date promotion enhancement" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#076476f4f1bcec42b6f0e51e24b90b88> , <https://astrea.linkeddata.es/shapes#82ec67d88bc2268e397b6b4d096db1f9> , <https://astrea.linkeddata.es/shapes#b858c3462062cbb1ce4d62dbdc690939> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/DatePromotionEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#2c5b2c44688a6bc5f2eed0ecbe9edc6b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        rdfs:label        "equivalent_property" ;
+        sh:name           "equivalent_property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/equivalent_property> .
+
+<https://astrea.linkeddata.es/shapes#20108985700715c526c20f899407027c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        sh:class          rdfs:Resource ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/twc/vocab/conversion/subject_of> .
+
+<https://astrea.linkeddata.es/shapes#df182a69282063fb330e818e5c4e3271>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://rdfs.org/ns/void#subset> ;
+        sh:qualifiedMinCount    0 ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.org/twc/vocab/conversion/VersionedDataset> ] ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.org/twc/vocab/conversion/VersionedDataset> ] .
+
+<https://astrea.linkeddata.es/shapes#f50057d13f7a4f210982e7101d3496ed>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/twc/vocab/conversion/> ;
+        sh:description    "Prevents triples with objects of a certain value. Prevents values specified by rdf:value." ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7d0d6fff4096696d1c388561161cfa5a> ;
+        sh:targetClass    <http://purl.org/twc/vocab/conversion/InterpretedAsNullEnhancement> .
+
+<https://astrea.linkeddata.es/shapes#cba9e047c1ddae282c120d9de754a011>
+        a               sh:PropertyShape ;
+        rdfs:label      "delimits_cell" , "The delimiter that should be used to separate cells in a row." ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "The delimiter that should be used to separate cells in a row." ;
+        sh:name         "delimits_cell" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/twc/vocab/conversion/delimits_cell> .

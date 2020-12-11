@@ -1,0 +1,204 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#5e339a6f7382b20b1ec74eb78ab2cd7b>
+        a               sh:PropertyShape ;
+        rdfs:label      "scopes" , "Set of authorization scope identifiers provided as an array.  These are provided in tokens returned by an authorization server and associated with forms in order to identify what resources a client may access and how.  The values associated with a form should be chosen from those defined in an <code>OAuth2SecurityScheme</code> active on that form.  <br/>This feature is at risk."@en ;
+        sh:description  "Set of authorization scope identifiers provided as an array.  These are provided in tokens returned by an authorization server and associated with forms in order to identify what resources a client may access and how.  The values associated with a form should be chosen from those defined in an <code>OAuth2SecurityScheme</code> active on that form.  <br/>This feature is at risk."@en ;
+        sh:name         "scopes" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://www.w3.org/2019/wot/security#scopes> .
+
+<https://astrea.linkeddata.es/shapes#782bf104b23af02c1eb105d3d95a44d0>
+        a               sh:PropertyShape ;
+        rdfs:label      "proxy" , "URI of the proxy server this security configuration provides access to.  If not given, the corresponding security configuration is for the endpoint.  <br/>This feature is at risk."@en ;
+        sh:description  "URI of the proxy server this security configuration provides access to.  If not given, the corresponding security configuration is for the endpoint.  <br/>This feature is at risk."@en ;
+        sh:name         "proxy" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://www.w3.org/2019/wot/security#proxy> .
+
+<https://astrea.linkeddata.es/shapes#891935a49ae4dcfab5376b731ff846f4>
+        a               sh:NodeShape ;
+        rdfs:label      "PublicSecurityScheme" ;
+        sh:description  "Raw public key asymmetric key security configuration identified by the term <code>public</code> (i.e., <code>\"scheme\": \"public\"</code>)." ;
+        sh:name         "PublicSecurityScheme" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://www.w3.org/2019/wot/security#PublicSecurityScheme> .
+
+<https://astrea.linkeddata.es/shapes#2328df55ed213f05e626e4b4986469d5>
+        a               sh:PropertyShape ;
+        rdfs:label      "flow" , "Authorization flow."@en ;
+        sh:description  "Authorization flow."@en ;
+        sh:name         "flow" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://www.w3.org/2019/wot/security#flow> .
+
+<https://astrea.linkeddata.es/shapes#00b0b7bd86d82ba29c4ede8de525bcd3>
+        a               sh:NodeShape ;
+        rdfs:label      "BasicSecurityScheme" ;
+        sh:description  "Basic authentication security configuration identified by the term <code>basic</code> (i.e., <code>\"scheme\": \"basic\"</code>), using an unencrypted username and password.  This scheme should be used with some other security mechanism providing confidentiality, for example, TLS."@en ;
+        sh:name         "BasicSecurityScheme" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://www.w3.org/2019/wot/security#BasicSecurityScheme> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#d1d181db7a2d2b64f318c479bcd8596c> , <https://astrea.linkeddata.es/shapes#891935a49ae4dcfab5376b731ff846f4> , <https://astrea.linkeddata.es/shapes#d21979193b47d4fd896431ffd0c25ec6> , <https://astrea.linkeddata.es/shapes#3b693f26d803dd0e00c717ebae6b1194> , <https://astrea.linkeddata.es/shapes#ad68eb22c03437fd4529c90aa529907b> , <https://astrea.linkeddata.es/shapes#1e97c7a144414d24677af382c2cf7980> , <https://astrea.linkeddata.es/shapes#7a0cc305b100b26a38759942fd23982f> , <https://astrea.linkeddata.es/shapes#577ee2ff1aef69bc87ddd515a5cf4466> , <https://astrea.linkeddata.es/shapes#ada4d05467326d07ec01be0e04442aa2> , <https://astrea.linkeddata.es/shapes#825db97ba543e9d82b278f171c77acb9> , <https://astrea.linkeddata.es/shapes#2328df55ed213f05e626e4b4986469d5> , <https://astrea.linkeddata.es/shapes#f7e042054eb93c159667b424e5a273a7> , <https://astrea.linkeddata.es/shapes#782bf104b23af02c1eb105d3d95a44d0> , <https://astrea.linkeddata.es/shapes#5e339a6f7382b20b1ec74eb78ab2cd7b> , <https://astrea.linkeddata.es/shapes#55bd677bdb143650d59cbf26ecbb21a9> , <https://astrea.linkeddata.es/shapes#a0548f3f58079346da5751ca70927148> , <https://astrea.linkeddata.es/shapes#c2beaa7305b0e432c27dcb88ffe34bfb> , <https://astrea.linkeddata.es/shapes#c571e64aa9810b51443f43e745a97d25> , <https://astrea.linkeddata.es/shapes#8d9d261158189efaba9c325b71126961> , <https://astrea.linkeddata.es/shapes#08ffa02a7a113ba0db2d00378eb72f2b> , <https://astrea.linkeddata.es/shapes#fa1c5aa1c06ad926d9c79fbb5a0297a2> , <https://astrea.linkeddata.es/shapes#00b0b7bd86d82ba29c4ede8de525bcd3> , <https://astrea.linkeddata.es/shapes#5ec19d01e8a3458ba051118b2ce97346> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#d21979193b47d4fd896431ffd0c25ec6>
+        a               sh:PropertyShape ;
+        rdfs:label      "token" , "URI of the token server."@en ;
+        sh:description  "URI of the token server."@en ;
+        sh:name         "token" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://www.w3.org/2019/wot/security#token> .
+
+<https://astrea.linkeddata.es/shapes#5ec19d01e8a3458ba051118b2ce97346>
+        a               sh:NodeShape ;
+        rdfs:label      "OAuth2SecurityScheme" ;
+        sh:description  "OAuth2 authentication security configuration for systems conformant with !RFC6749 and !RFC8252, identified by the term <code>oauth2</code> (i.e., <code>\"scheme\": \"oauth2\"</code>).  <span class=\"rfc2119-assertion\" id=\"td-security-oauth2-implicit-flow\">For the <code>implicit</code> flow <code>authorization</code> MUST be included.</span>  <span class=\"rfc2119-assertion\" id=\"td-security-oauth2-password-client-flow\">For the <code>password</code> and <code>client</code> flows <code>token</code> MUST be included.</span>  <span class=\"rfc2119-assertion\" id=\"td-security-oauth2-code-flow\">For the <code>code</code> flow both <code>authorization</code> and <code>token</code> MUST be included.</span>  If no <code>scopes</code> are defined in the <code>SecurityScheme</code> then they are considered to be empty."@en ;
+        sh:name         "OAuth2SecurityScheme" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://www.w3.org/2019/wot/security#OAuth2SecurityScheme> .
+
+<https://astrea.linkeddata.es/shapes#08ffa02a7a113ba0db2d00378eb72f2b>
+        a               sh:PropertyShape ;
+        rdfs:label      "qop" , "Quality of protection.  <br/>This feature is at risk." ;
+        sh:description  "Quality of protection.  <br/>This feature is at risk." ;
+        sh:name         "qop" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://www.w3.org/2019/wot/security#qop> .
+
+<https://astrea.linkeddata.es/shapes#55bd677bdb143650d59cbf26ecbb21a9>
+        a               sh:PropertyShape ;
+        rdfs:label      "alg" , "Encoding, encryption, or digest algorithm."@en ;
+        sh:description  "Encoding, encryption, or digest algorithm."@en ;
+        sh:name         "alg" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://www.w3.org/2019/wot/security#alg> .
+
+<https://astrea.linkeddata.es/shapes#c2beaa7305b0e432c27dcb88ffe34bfb>
+        a               sh:PropertyShape ;
+        rdfs:label      "authorization" , "URI of the authorization server."@en ;
+        sh:description  "URI of the authorization server."@en ;
+        sh:name         "authorization" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://www.w3.org/2019/wot/security#authorization> .
+
+<https://astrea.linkeddata.es/shapes#3b693f26d803dd0e00c717ebae6b1194>
+        a               sh:PropertyShape ;
+        rdfs:label      "name" , "Name for query, header, or cookie parameters." ;
+        sh:description  "Name for query, header, or cookie parameters." ;
+        sh:name         "name" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://www.w3.org/2019/wot/security#name> .
+
+<https://astrea.linkeddata.es/shapes#577ee2ff1aef69bc87ddd515a5cf4466>
+        a               sh:NodeShape ;
+        rdfs:label      "PSKSecurityScheme" ;
+        sh:description  "Pre-shared key authentication security configuration identified by the term <code>psk</code> (i.e., <code>\"scheme\": \"psk\"</code>)." ;
+        sh:name         "PSKSecurityScheme" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://www.w3.org/2019/wot/security#PSKSecurityScheme> .
+
+<https://astrea.linkeddata.es/shapes#1e97c7a144414d24677af382c2cf7980>
+        a               sh:PropertyShape ;
+        rdfs:label      "format" , "Specifies format of security authentication information."@en ;
+        sh:description  "Specifies format of security authentication information."@en ;
+        sh:name         "format" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://www.w3.org/2019/wot/security#format> .
+
+<https://astrea.linkeddata.es/shapes#c571e64aa9810b51443f43e745a97d25>
+        a               sh:NodeShape ;
+        rdfs:label      "BearerSecurityScheme" ;
+        sh:description  "Bearer token authentication security configuration identified by the term <code>bearer</code> (i.e., <code>\"scheme\": \"bearer\"</code>).  This scheme is intended for situations where bearer tokens are used independently of OAuth2.  If the <code>oauth2</code> scheme is specified it is not generally necessary to specify this scheme as well as it is implied.  For <code>format</code>, the value <code>jwt</code> indicates conformance with RFC7519, <code>jws</code> indicates conformance with RFC7797, <code>cwt</code> indicates conformance with RFC8392, and <code>jwe</code> indicates conformance with !RFC7516, with values for <code>alg</code> interpreted consistently with those standards. <span class=\"rfc2119-assertion\" id=\"td-security-bearer-format-extensions\">Other formats and algorithms for bearer tokens MAY be specified in vocabulary extensions.</span>" ;
+        sh:name         "BearerSecurityScheme" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://www.w3.org/2019/wot/security#BearerSecurityScheme> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#d1d181db7a2d2b64f318c479bcd8596c>
+        a               sh:NodeShape ;
+        rdfs:label      "SecurityScheme" ;
+        sh:description  "Metadata describing the configuration of a security mechanism.  <span class=\"rfc2119-assertion\" id=\"td-security-scheme-name\">The value assigned to the name <code>scheme</code> MUST be defined within a vocabulary included in the Thing Description, either in the present vocabulary or in a TD context extension." ;
+        sh:name         "SecurityScheme" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://www.w3.org/2019/wot/security#SecurityScheme> .
+
+<https://astrea.linkeddata.es/shapes#825db97ba543e9d82b278f171c77acb9>
+        a               sh:NodeShape ;
+        rdfs:label      "DigestSecurityScheme" ;
+        sh:description  "Digest authentication security configuration identified by the term <code>digest</code> (i.e., <code>\"scheme\": \"digest\"</code>). This scheme is similar to basic authentication but with added features to avoid man-in-the-middle attacks." ;
+        sh:name         "DigestSecurityScheme" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://www.w3.org/2019/wot/security#DigestSecurityScheme> .
+
+<https://astrea.linkeddata.es/shapes#8d9d261158189efaba9c325b71126961>
+        a               sh:PropertyShape ;
+        rdfs:label      "refresh" , "URI of the refresh server."@en ;
+        sh:description  "URI of the refresh server."@en ;
+        sh:name         "refresh" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://www.w3.org/2019/wot/security#refresh> .
+
+<https://astrea.linkeddata.es/shapes#fa1c5aa1c06ad926d9c79fbb5a0297a2>
+        a               sh:NodeShape ;
+        rdfs:label      "CertSecurityScheme" ;
+        sh:description  "Certificate-based asymmetric key security configuration conformant with X509V3 identified by the term <code>cert</code> (i.e., <code>\"scheme\": \"cert\"</code>)." ;
+        sh:name         "CertSecurityScheme" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://www.w3.org/2019/wot/security#CertSecurityScheme> .
+
+<https://astrea.linkeddata.es/shapes#a0548f3f58079346da5751ca70927148>
+        a               sh:PropertyShape ;
+        rdfs:label      "in" , "Specifies the location of security authentication information."@en ;
+        sh:description  "Specifies the location of security authentication information."@en ;
+        sh:name         "in" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://www.w3.org/2019/wot/security#in> .
+
+<https://astrea.linkeddata.es/shapes#ada4d05467326d07ec01be0e04442aa2>
+        a               sh:NodeShape ;
+        rdfs:label      "APIKeySecurityScheme" ;
+        sh:description  "API key authentication security configuration identified by the term <code>apikey</code> (i.e., <code>\"scheme\": \"apikey\"</code>).  This is for the case where the access token is opaque and is not using a standard token format."@en ;
+        sh:name         "APIKeySecurityScheme" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://www.w3.org/2019/wot/security#APIKeySecurityScheme> .
+
+<https://astrea.linkeddata.es/shapes#7a0cc305b100b26a38759942fd23982f>
+        a               sh:NodeShape ;
+        rdfs:label      "PoPSecurityScheme" ;
+        sh:description  "Proof-of-possession (PoP) token authentication security configuration identified by the term <code>pop</code> (i.e., <code>\"scheme\": \"pop\"</code>). Here <code>jwt</code> indicates conformance with !RFC7519, <code>jws</code> indicates conformance with !RFC7797, <code>cwt</code> indicates conformance with !RFC8392, and <code>jwe</code> indicates conformance with RFC7516, with values for <code>alg</code> interpreted consistently with those standards. <span class=\"rfc2119-assertion\" id=\"td-security-pop-format-extensions\">Other formats and algorithms for PoP tokens MAY be specified in vocabulary extensions.</span>" ;
+        sh:name         "PoPSecurityScheme" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://www.w3.org/2019/wot/security#PoPSecurityScheme> .
+
+<https://astrea.linkeddata.es/shapes#f7e042054eb93c159667b424e5a273a7>
+        a               sh:PropertyShape ;
+        rdfs:label      "identity" , "Identifier providing information which can be used for selection or confirmation." ;
+        sh:description  "Identifier providing information which can be used for selection or confirmation." ;
+        sh:name         "identity" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://www.w3.org/2019/wot/security#identity> .
+
+<https://astrea.linkeddata.es/shapes#ad68eb22c03437fd4529c90aa529907b>
+        a               sh:NodeShape ;
+        rdfs:label      "NoSecurityScheme" ;
+        sh:description  "A security configuration corresponding to identified by the term <code>nosec</code> (i.e., <code>\"scheme\": \"nosec\"</code>), indicating there is no authentication or other mechanism required to access the resource."@en ;
+        sh:name         "NoSecurityScheme" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://www.w3.org/2019/wot/security#NoSecurityScheme> .

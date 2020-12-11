@@ -1,0 +1,129 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#f09530f3a31875479c49c18db012d712>
+        a               sh:NodeShape ;
+        rdfs:label      "SPARQL request"@en ;
+        sh:name         "SPARQL request"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/vocab/sdm#SPARQLRequest> .
+
+<https://astrea.linkeddata.es/shapes#603b5f5c816768c95141fccd1e6b0195>
+        a               sh:NodeShape ;
+        rdfs:label      "EndPoint feature extension"@fr ;
+        sh:description  "Principal class extending the sd:Feature for providing more metadata on an endpoint service. "@en ;
+        sh:name         "EndPoint feature extension"@fr ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#db0e5a8697a0c33645d2543d054a9fe0> , <https://astrea.linkeddata.es/shapes#bca448d85db38c4a2fb579f332c0792e> , <https://astrea.linkeddata.es/shapes#d51ddf9f8f4409642f266adb118356f5> , <https://astrea.linkeddata.es/shapes#e66aa2ad2e99c3d8999d09f7c540d884> , <https://astrea.linkeddata.es/shapes#2308e83ae0925a738c1922d292970069> , <https://astrea.linkeddata.es/shapes#3d2452306d2a6bab3e4a0f9d45d3f685> , <https://astrea.linkeddata.es/shapes#78a00bbc84ea8f5e015998114e0ad713> , <https://astrea.linkeddata.es/shapes#104ffaf372319b92834b7f4d91a2a5a8> ;
+        sh:targetClass  <https://w3id.org/vocab/sdm#EndPointFeatureExtension> .
+
+<https://astrea.linkeddata.es/shapes#d51ddf9f8f4409642f266adb118356f5>
+        a               sh:PropertyShape ;
+        rdfs:label      "mirror"@en , "URI of a mirror of the endpoint service"@en ;
+        sh:datatype     xsd:anyURI ;
+        sh:description  "URI of a mirror of the endpoint service"@en ;
+        sh:name         "mirror"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://w3id.org/vocab/sdm#mirror> ;
+        sh:pattern      "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#4f1241e6772a8c0bbfc862ef66a469b6>
+        a               sh:NodeShape ;
+        rdfs:label      "Triple store"@en ;
+        sh:name         "Triple store"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#52c19993e69f5b4ce05dee71b7ba772f> ;
+        sh:targetClass  <https://w3id.org/vocab/sdm#TripleStore> .
+
+<https://astrea.linkeddata.es/shapes#52c19993e69f5b4ce05dee71b7ba772f>
+        a               sh:PropertyShape ;
+        rdfs:label      "developer"@en , "Developer of the triple store"@en ;
+        sh:class        <http://www.w3.org/ns/org#Organization> ;
+        sh:description  "Developer of the triple store"@en ;
+        sh:name         "developer"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/vocab/sdm#developer> .
+
+<https://astrea.linkeddata.es/shapes#104ffaf372319b92834b7f4d91a2a5a8>
+        a               sh:PropertyShape ;
+        rdfs:label      "query time out"@en , "The timeout of a query in milliseconds"@en ;
+        sh:datatype     xsd:integer ;
+        sh:description  "The timeout of a query in milliseconds"@en ;
+        sh:name         "query time out"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://w3id.org/vocab/sdm#queryTimeOut> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#db0e5a8697a0c33645d2543d054a9fe0>
+        a               sh:PropertyShape ;
+        rdfs:label      "tripleStore"@en , "Links to a given software acting as a triple store"@en ;
+        sh:class        <https://w3id.org/vocab/sdm#TripleStore> ;
+        sh:description  "Links to a given software acting as a triple store"@en ;
+        sh:name         "tripleStore"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/vocab/sdm#tripleStore> .
+
+<https://astrea.linkeddata.es/shapes#e66aa2ad2e99c3d8999d09f7c540d884>
+        a               sh:PropertyShape ;
+        rdfs:label      "scheduled downtime"@en , "Links to an interval period time"@en ;
+        sh:class        <http://reference.data.gov.uk/def/intervals/CalendarInterval> ;
+        sh:description  "Links to an interval period time"@en ;
+        sh:name         "scheduled downtime"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/vocab/sdm#scheduledDowntime> .
+
+<https://astrea.linkeddata.es/shapes#bca448d85db38c4a2fb579f332c0792e>
+        a               sh:PropertyShape ;
+        rdfs:label      "http message"@en , "Links to the message of an http connection, and helps to connect with http:httpVersion which is a rdfs:Literal"@en ;
+        sh:class        <http://www.w3.org/2011/http#Message> ;
+        sh:description  "Links to the message of an http connection, and helps to connect with http:httpVersion which is a rdfs:Literal"@en ;
+        sh:name         "http message"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/vocab/sdm#httpMessage> .
+
+<https://astrea.linkeddata.es/shapes#3d2452306d2a6bab3e4a0f9d45d3f685>
+        a               sh:PropertyShape ;
+        rdfs:label      "requests"@en , "Links to a SPARQL request"@en ;
+        sh:class        <https://w3id.org/vocab/sdm#SPARQLRequest> ;
+        sh:description  "Links to a SPARQL request"@en ;
+        sh:name         "requests"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <https://w3id.org/vocab/sdm#request> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#3d2452306d2a6bab3e4a0f9d45d3f685> , <https://astrea.linkeddata.es/shapes#52c19993e69f5b4ce05dee71b7ba772f> , <https://astrea.linkeddata.es/shapes#4f1241e6772a8c0bbfc862ef66a469b6> , <https://astrea.linkeddata.es/shapes#db0e5a8697a0c33645d2543d054a9fe0> , <https://astrea.linkeddata.es/shapes#bca448d85db38c4a2fb579f332c0792e> , <https://astrea.linkeddata.es/shapes#104ffaf372319b92834b7f4d91a2a5a8> , <https://astrea.linkeddata.es/shapes#e66aa2ad2e99c3d8999d09f7c540d884> , <https://astrea.linkeddata.es/shapes#d51ddf9f8f4409642f266adb118356f5> , <https://astrea.linkeddata.es/shapes#2308e83ae0925a738c1922d292970069> , <https://astrea.linkeddata.es/shapes#78a00bbc84ea8f5e015998114e0ad713> , <https://astrea.linkeddata.es/shapes#f09530f3a31875479c49c18db012d712> , <https://astrea.linkeddata.es/shapes#603b5f5c816768c95141fccd1e6b0195> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#2308e83ae0925a738c1922d292970069>
+        a               sh:PropertyShape ;
+        rdfs:label      "Max results per request"@en , "The limit of the maximum results for the endpoint service"@en ;
+        sh:datatype     xsd:integer ;
+        sh:description  "The limit of the maximum results for the endpoint service"@en ;
+        sh:name         "Max results per request"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://w3id.org/vocab/sdm#maxResultPerRequest> ;
+        sh:pattern      "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#78a00bbc84ea8f5e015998114e0ad713>
+        a               sh:PropertyShape ;
+        rdfs:label      "Remaining per request"@en , "The remaining results for a given request"@en ;
+        sh:datatype     xsd:integer ;
+        sh:description  "The remaining results for a given request"@en ;
+        sh:name         "Remaining per request"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <https://w3id.org/vocab/sdm#remainingPerRequest> ;
+        sh:pattern      "[\\-+]?[0-9]+" .

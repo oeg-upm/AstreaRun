@@ -1,0 +1,1991 @@
+@prefix :      <https://w3id.org/arco/ontology/core/> .
+@prefix opla:  <http://ontologydesignpatterns.org/opla/> .
+@prefix l0:    <https://w3id.org/italia/onto/l0/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix ns:    <http://www.w3.org/2006/vcard/ns#> .
+@prefix a-cat: <https://w3id.org/arco/ontology/catalogue/> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cis:   <http://dati.beniculturali.it/cis/> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ADMS:  <https://w3id.org/italia/onto/ADMS/> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix ro:    <https://w3id.org/italia/onto/RO/> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<https://astrea.linkeddata.es/shapes#9fef19cab589c301aadbfe664ae8ea3f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Scheda catalografica su bene culturale complesso"@it , "Complex cultural property catalogue record"@en ;
+        sh:description    "This class represents a catalogue record describing a complex cultural property."@en , "Questa classe rappresenta una scheda catalografica che descrive un bene culturale complesso, a prescindere dal trattamento catalografico applicato (scheda unica/scheda d'insieme)."@it ;
+        sh:name           "Scheda catalografica su bene culturale complesso"@it , "Complex cultural property catalogue record"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:ComplexCPCatalogueRecord .
+
+<https://astrea.linkeddata.es/shapes#b05943ec0f499e973247936ff24d6cdb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "è descritto da"@it , "is described by"@en , "Questa proprietà, inversa di \"descrive\", permette di associare un bene culturale alla scheda di catalogo che lo descrive."@it , "This property, inverse of \"describes\", is used to associate a cultural property with the catalogue record that describes it."@en ;
+        sh:class          a-cat:CatalogueRecord ;
+        sh:description    "This property, inverse of \"describes\", is used to associate a cultural property with the catalogue record that describes it."@en , "Questa proprietà, inversa di \"descrive\", permette di associare un bene culturale alla scheda di catalogo che lo descrive."@it ;
+        sh:name           "è descritto da"@it , "is described by"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isDescribedByCatalogueRecord .
+
+<https://astrea.linkeddata.es/shapes#77dc455442d01996e50e6eafd2794342>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "is type of"@en , "The object property that associates a type to any object."@en , "La object property che associa un tipo a un qualunque oggetto."@it , "è tipo di"@it ;
+        sh:class          owl:Thing ;
+        sh:description    "The object property that associates a type to any object."@en , "La object property che associa un tipo a un qualunque oggetto."@it ;
+        sh:name           "is type of"@en , "è tipo di"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :isTypeOf .
+
+<https://astrea.linkeddata.es/shapes#e4eec10b47c5908bb677e7d61630dcde>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Questa è la proprietà inversa a \"ha funzionario responsabile\"."@it , "This is the inverse property of \"has official in charge\"."@en , "è funzionario responsabile di"@it , "is official in charge of"@en ;
+        sh:class          a-cat:CatalogueRecordVersion ;
+        sh:description    "Questa è la proprietà inversa a \"ha funzionario responsabile\"."@it , "This is the inverse property of \"has official in charge\"."@en ;
+        sh:name           "is official in charge of"@en , "è funzionario responsabile di"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isOfficialInChargeOf .
+
+<https://astrea.linkeddata.es/shapes#12381fb7929f1e2691556343513c2f5e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <https://w3id.org/arco/ontology/context-description/hasRelatedAgent> .
+
+<https://astrea.linkeddata.es/shapes#6735274c2e353589ee18719394901b35>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Property used to associate a catalogue record version with the time interval in which it was edited."@en , "edited at time"@en , "Proprietà che associa una versione di una scheda di catalogo all'intervallo temporale in cui è stata compilata."@it , "compilato al tempo"@it ;
+        sh:class          <https://w3id.org/italia/onto/TI/TimeInterval> ;
+        sh:description    "Property used to associate a catalogue record version with the time interval in which it was edited."@en , "Proprietà che associa una versione di una scheda di catalogo all'intervallo temporale in cui è stata compilata."@it ;
+        sh:name           "compilato al tempo"@it , "edited at time"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:editedAtTime .
+
+<https://astrea.linkeddata.es/shapes#5f3f3d64c6266f0f6d6ab7b3b17798fa>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Natural heritage - planetary science catalogue record"@en , "Scheda Beni naturalistici-Planetologia"@it ;
+        sh:description    "This class represents the catalogue record describing Natural heritage - planetary science."@en , "Questa classe rappresenta la scheda catalografica che descrive beni naturalistici-Planetologia."@it ;
+        sh:name           "Scheda Beni naturalistici-Planetologia"@it , "Natural heritage - planetary science catalogue record"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordBNPL .
+
+<https://astrea.linkeddata.es/shapes#03ceb9e89f352f5803aa59c3ec27aa61>
+        a         sh:PropertyShape ;
+        sh:class  a-cat:InformationForm .
+
+<https://astrea.linkeddata.es/shapes#1cc070f5a9f5fd7dd70227055f35cdc3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "involves agent"@en , "This property represents an agent partecipation"@en , "Questa proprietà rappresenta la partecipazione di un agente."@it , "coinvolge agente"@it ;
+        sh:class          l0:Agent ;
+        sh:description    "This property represents an agent partecipation"@en , "Questa proprietà rappresenta la partecipazione di un agente."@it ;
+        sh:name           "coinvolge agente"@it , "involves agent"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :involvesAgent .
+
+<https://astrea.linkeddata.es/shapes#f1f97f9e0150f97c0977a0903c670920>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "Classification in time"@en , "Classificazione nel tempo"@it ;
+        sh:description    "Questa classe rappresenta una classificazione nel tempo"@it , "This class represents a classification in time"@en ;
+        sh:name           "Classification in time"@en , "Classificazione nel tempo"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#fbb75530d31cec3075c92321d3c8315b> ;
+        sh:targetClass    :ClassificationInTime .
+
+<https://astrea.linkeddata.es/shapes#1a058370b943ec29cc47c654c05e55e8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Questa proprietà associa una versione di una scheda a una sua versione successiva."@it , "is previous version of"@en , "è versione precedente di"@it , "Property used to associate a catalogue record version one of its next version."@en ;
+        sh:class          a-cat:CatalogueRecordVersion ;
+        sh:description    "Property used to associate a catalogue record version one of its next version."@en , "Questa proprietà associa una versione di una scheda a una sua versione successiva."@it ;
+        sh:name           "è versione precedente di"@it , "is previous version of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isPreviousVersionOf .
+
+<https://astrea.linkeddata.es/shapes#4a875782e165b75057567a35d48b42b9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "is agent involved in"@en , "Questa proprietà rappresenta la partecipazione di un agente."@it , "This property represents an agent partecipation"@en , "è agente coinvolto in"@it ;
+        sh:class          l0:EventOrSituation ;
+        sh:description    "Questa proprietà rappresenta la partecipazione di un agente."@it , "This property represents an agent partecipation"@en ;
+        sh:name           "è agente coinvolto in"@it , "is agent involved in"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :isAgentInvolvedIn .
+
+<https://astrea.linkeddata.es/shapes#af23554d024b020bdea3dbbdb7a492fb>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Archaeological objects catalogue record"@en , "Scheda Reperti archeologici"@it ;
+        sh:description    "Questa classe rappresenta la scheda catalografica che descrive reperti archeologici."@it , "This class represents the catalogue record describing Archaeological objects."@en ;
+        sh:name           "Scheda Reperti archeologici"@it , "Archaeological objects catalogue record"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordRA .
+
+<https://astrea.linkeddata.es/shapes#2709b672bce2b036cd72a15d47c1fa47>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "This property relates an entity to a situation in which an agent holds a role connected to that entity."@en , "ha ruolo ricoperto da agente"@it , "Questa proprietà collega un'entità a una situazione in cui un agente ricopre un ruolo."@it , "has agent role"@en ;
+        sh:class          :AgentRole ;
+        sh:description    "Questa proprietà collega un'entità a una situazione in cui un agente ricopre un ruolo."@it , "This property relates an entity to a situation in which an agent holds a role connected to that entity."@en ;
+        sh:name           "has agent role"@en , "ha ruolo ricoperto da agente"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :hasAgentRole .
+
+<https://astrea.linkeddata.es/shapes#2291cfcd5b8f9ecc677755b6474d5325>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "ha responsabile di ricerca e redazione di aggiornamento"@it , "has update responsible research and compilation"@en , "Questa proprietà rappresenta la relazione che collega una versione aggiornata di una scheda di catalogo al relativo responsabile ricerca e redazione. La relazione tra il ruolo e l'ente che lo riveste è espressa nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l'ente, il suo ruolo e la sua corrispondente estensione temporale."@it ;
+        sh:class          l0:Agent ;
+        sh:description    "Questa proprietà rappresenta la relazione che collega una versione aggiornata di una scheda di catalogo al relativo responsabile ricerca e redazione. La relazione tra il ruolo e l'ente che lo riveste è espressa nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l'ente, il suo ruolo e la sua corrispondente estensione temporale."@it ;
+        sh:name           "has update responsible research and compilation"@en , "ha responsabile di ricerca e redazione di aggiornamento"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasUpdateResponsibleResearchAndCompilation .
+
+<https://astrea.linkeddata.es/shapes#5f120d89c5393bdc4d9efc329e98469b>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:culturalPropertyRecordIdentifier .
+
+<https://astrea.linkeddata.es/shapes#052cf45925067a4b0f918c26e852251b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Questa è la proprietà inversa di \"ha altro codice identificativo\"."@it , "è altro codice identificativo di"@it , "is alternative identifier of"@en , "This is the inverse property of \"has alternative identifier\"."@en ;
+        sh:class          a-cat:CatalogueRecord ;
+        sh:description    "This is the inverse property of \"has alternative identifier\"."@en , "Questa è la proprietà inversa di \"ha altro codice identificativo\"."@it ;
+        sh:name           "is alternative identifier of"@en , "è altro codice identificativo di"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isAlternativeIdentifierOf .
+
+<https://astrea.linkeddata.es/shapes#33fbc03e314a88503e9cf8777a6394cb>
+        a            sh:PropertyShape ;
+        sh:class     ro:TimeIndexedRole ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:hasCatalogueRecordVersionRiT .
+
+<https://astrea.linkeddata.es/shapes#bfb958c9b243025dbad38d361bc741ea>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "This property is used to associate a catalogue record to an agent playing a role in cataloguing activities."@en , "Questa proprietà rappresenta la relazione che collega una versione di una scheda di catalogo a un agente che riveste un ruolo nelle attività di catalogazione di quella scheda. La relazione tra il ruolo e l'agente che lo riveste è espressa, in maniera generica, nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Questa relazione è poi specializzata da sottoproprietà. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l’ente, il suo ruolo e la sua corrispondente estensione temporale."@it , "ha agente coinvolto nella catalogazione"@it , "has cataloguing agent"@en ;
+        sh:class          l0:Agent ;
+        sh:description    "Questa proprietà rappresenta la relazione che collega una versione di una scheda di catalogo a un agente che riveste un ruolo nelle attività di catalogazione di quella scheda. La relazione tra il ruolo e l'agente che lo riveste è espressa, in maniera generica, nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Questa relazione è poi specializzata da sottoproprietà. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l’ente, il suo ruolo e la sua corrispondente estensione temporale."@it , "This property is used to associate a catalogue record to an agent playing a role in cataloguing activities."@en ;
+        sh:name           "ha agente coinvolto nella catalogazione"@it , "has cataloguing agent"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasCataloguingAgent .
+
+<https://astrea.linkeddata.es/shapes#10bac1519f40f1e3b4125d76a43297b5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "è responsabile di ricerca e redazione di aggiornamento di"@it , "This is the inverse property of \"has update responsible research and compilation\"."@en , "is update responsible research and compilation of"@en , "Questa è la proprietà inversa a \"ha responsabile di ricerca e redazione di aggiornamento\"."@it ;
+        sh:class          a-cat:CatalogueRecordVersion ;
+        sh:description    "Questa è la proprietà inversa a \"ha responsabile di ricerca e redazione di aggiornamento\"."@it , "This is the inverse property of \"has update responsible research and compilation\"."@en ;
+        sh:name           "è responsabile di ricerca e redazione di aggiornamento di"@it , "is update responsible research and compilation of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isUpdateResponsibleResearchAndCompilationOf .
+
+<https://astrea.linkeddata.es/shapes#3c751bd0e15afade7ce17c2ea8b5a559>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  ns:Organization .
+
+<https://astrea.linkeddata.es/shapes#99a5c60a2eac688f46e580ea2710adda>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "ha responsabile di modulo di approfondimento"@it , "This property relates an additional form to the responsible agent of that form in the SIGECweb."@en , "Questa proprietà collega un modulo di approfondimento all'ente/il soggetto responsabile nel SIGECweb della redazione del modulo."@it , "has additional form responsible agent"@en ;
+        sh:class          l0:Agent ;
+        sh:description    "Questa proprietà collega un modulo di approfondimento all'ente/il soggetto responsabile nel SIGECweb della redazione del modulo."@it , "This property relates an additional form to the responsible agent of that form in the SIGECweb."@en ;
+        sh:name           "has additional form responsible agent"@en , "ha responsabile di modulo di approfondimento"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasAdditionalFormResponsibleAgent .
+
+<https://astrea.linkeddata.es/shapes#f56c5c155e39112518a5de193262381d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Contemporary artworks catalogue record"@en , "Scheda opere/oggetti d'arte contemporanea"@it ;
+        sh:description    "Questa classe rappresenta la scheda catalografica che descrive opere/oggetti d'arte contemporanea."@it , "This class represents the catalogue record describing Contemporary artworks."@en ;
+        sh:name           "Scheda opere/oggetti d'arte contemporanea"@it , "Contemporary artworks catalogue record"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordOAC .
+
+<https://astrea.linkeddata.es/shapes#2163a1f2470ae86fbf9292340175f477>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Ethnology catalogue record"@en , "Scheda Etnologia"@it ;
+        sh:description    "This class represents the catalogue record describing Ethnology."@en , "Questa classe rappresenta la scheda catalografica che descrive etnologia. Nell'ambito delle normative ICCD, è una scheda considerata obsoleta."@it ;
+        sh:name           "Ethnology catalogue record"@en , "Scheda Etnologia"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordE .
+
+<https://astrea.linkeddata.es/shapes#26f608448997f4005f5417f901edf30e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "Situation"@en , "Situazione"@it ;
+        sh:description    "La classe che rappresenta il generico concetto di situazione."@it , "The class representing the generic concept of situation."@en ;
+        sh:name           "Situazione"@it , "Situation"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e3ade677dee9e84af2d9f4ca2a98fd4e> , <https://astrea.linkeddata.es/shapes#669adecf6bb7cd63c7c911c3042cea86> , <https://astrea.linkeddata.es/shapes#66048c25b12188780ec9bea0a9fdd77a> ;
+        sh:targetClass    :Situation .
+
+<https://astrea.linkeddata.es/shapes#1bb577eadd4bb909c5907f01f02b55f0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Tangible demo-ethno-anthropological heritage catalogue record"@en , "Scheda Beni demoetnoantropologici materiali"@it ;
+        sh:description    "Questa classe rappresenta la scheda catalografica che descrive beni demoetnoantropologici materiali."@it , "This class represents the catalogue record describing Tangible demo-ethno-anthropological heritage."@en ;
+        sh:name           "Scheda Beni demoetnoantropologici materiali"@it , "Tangible demo-ethno-anthropological heritage catalogue record"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordBDM .
+
+<https://astrea.linkeddata.es/shapes#905224204f3359064a19083c2f6cdc42>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "è responsabile ricerca e redazione di"@it , "This is the inverse property of \"has responsible research and compilation\"."@en , "Questa è la proprietà inversa a \"ha responsabile ricerca e redazione\"."@it , "is responsible research and compilation of"@en ;
+        sh:class          a-cat:CatalogueRecordVersion ;
+        sh:description    "This is the inverse property of \"has responsible research and compilation\"."@en , "Questa è la proprietà inversa a \"ha responsabile ricerca e redazione\"."@it ;
+        sh:name           "è responsabile ricerca e redazione di"@it , "is responsible research and compilation of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isResponsibleResearchAndCompilationOf .
+
+<https://astrea.linkeddata.es/shapes#6b7115c06d5912348e473f1d5f42ad22>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "is cataloguing agent of"@en , "è agente coinvolto nella catalogazione di"@it , "This property, inverse of \"has cataloguin agent\", is used to associate an agent playing a role in cataloguing activities to the catalogue record."@en , "Questa proprietà, inversa a \"ha agente coinvolto nella catalogazione\", rappresenta la relazione che collega un agente che riveste un ruolo nelle attività di catalogazione di una scheda di catalogo alla scheda stessa."@it ;
+        sh:class          a-cat:CatalogueRecordVersion ;
+        sh:description    "This property, inverse of \"has cataloguin agent\", is used to associate an agent playing a role in cataloguing activities to the catalogue record."@en , "Questa proprietà, inversa a \"ha agente coinvolto nella catalogazione\", rappresenta la relazione che collega un agente che riveste un ruolo nelle attività di catalogazione di una scheda di catalogo alla scheda stessa."@it ;
+        sh:name           "è agente coinvolto nella catalogazione di"@it , "is cataloguing agent of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isCataloguingAgentOf .
+
+<https://astrea.linkeddata.es/shapes#a5c78839d29a501fab601cb76da4fefd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Catalogue record version"@en , "Versione della scheda"@it ;
+        sh:description    "This class represents a version (after creation, editing, updating) of a catalogue record on a cultural property."@en , "Rappresenta una versione (relativa a operazioni di redazione, aggiornamento, revisione) di una scheda di catalogo, cioè un modello descrittivo che raccoglie in modo organizzato le informazioni sui beni."@it ;
+        sh:name           "Versione della scheda"@it , "Catalogue record version"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#bd420fa579a251cdc3c2bb3230f9b137> , <https://astrea.linkeddata.es/shapes#b8634cf1e38275540a891f6ba31d911a> , <https://astrea.linkeddata.es/shapes#aae65de38f0f875b335f585f5329872c> , <https://astrea.linkeddata.es/shapes#1a0e399df1d611970004f7347d226539> , <https://astrea.linkeddata.es/shapes#cad255a530a7c785b8cf8d8189bf5b6c> , <https://astrea.linkeddata.es/shapes#72d65e95fddb07745bbf4932c20726d5> , <https://astrea.linkeddata.es/shapes#1a058370b943ec29cc47c654c05e55e8> , <https://astrea.linkeddata.es/shapes#6735274c2e353589ee18719394901b35> , <https://astrea.linkeddata.es/shapes#88e44bbcf05f2fd35681e7faf73c9398> , <https://astrea.linkeddata.es/shapes#35ec46993023b37c2d861fcf7072241f> , <https://astrea.linkeddata.es/shapes#eff955862b54cbb24036e7cfab02f518> , <https://astrea.linkeddata.es/shapes#5da0f0c2a0bab703125d0089013b4e15> , <https://astrea.linkeddata.es/shapes#884fdf40463790e4ee2a2b3674c1c759> , <https://astrea.linkeddata.es/shapes#1bd875a182238982896f4705aecc09fc> , <https://astrea.linkeddata.es/shapes#52aaad183f460483cb868a5c9354ea53> , <https://astrea.linkeddata.es/shapes#9cdb841827780ee70e53f540c76e0a42> , <https://astrea.linkeddata.es/shapes#acb9a15bf9d724888ee02c1b05d2413f> , <https://astrea.linkeddata.es/shapes#2291cfcd5b8f9ecc677755b6474d5325> , <https://astrea.linkeddata.es/shapes#f2f9ef076701140c34329b9a47853f29> , <https://astrea.linkeddata.es/shapes#5348bdd3eba7d77105a456d0afbcde58> , <https://astrea.linkeddata.es/shapes#a4ec24b3b08633eea60c0a764842f80e> , <https://astrea.linkeddata.es/shapes#8d5678c143eabdeae9ca58a6e71e7f2a> , <https://astrea.linkeddata.es/shapes#bfb958c9b243025dbad38d361bc741ea> , <https://astrea.linkeddata.es/shapes#33fbc03e314a88503e9cf8777a6394cb> , <https://astrea.linkeddata.es/shapes#820f8333c1401d3417f1bb84ab75de9e> ;
+        sh:targetClass    a-cat:CatalogueRecordVersion .
+
+<https://astrea.linkeddata.es/shapes#76a3633538ce179c7c73e97dd31b3cb3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "has cataloguing level"@en , "Questa proprietà permette di associare una scheda di catalogo al suo livello di catalogazione."@it , "ha livello di catalogazione"@it ;
+        sh:class          a-cat:CataloguingLevel ;
+        sh:description    "Questa proprietà permette di associare una scheda di catalogo al suo livello di catalogazione."@it ;
+        sh:name           "has cataloguing level"@en , "ha livello di catalogazione"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasCataloguingLevel .
+
+<https://astrea.linkeddata.es/shapes#abe51d40fe766dad738654dbf5b04c00>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "catalogue record identifier"@en , "Questa proprietà permette di associare l'identificativo a una scheda catalografica che descrive un bene culturale."@it , "This property represents the identifier of a catalogue record describing a cultural property."@en , "identificativo della scheda di catalogo"@it ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "Questa proprietà permette di associare l'identificativo a una scheda catalografica che descrive un bene culturale."@it , "This property represents the identifier of a catalogue record describing a cultural property."@en ;
+        sh:maxCount       1 ;
+        sh:name           "catalogue record identifier"@en , "identificativo della scheda di catalogo"@it ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
+        sh:path           a-cat:catalogueRecordIdentifier .
+
+<https://astrea.linkeddata.es/shapes#0ab7a95abb601dbc12cc07d2a6c08949>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "ha motivazione di riservatezza"@it , "has privacy reason"@en , "Questa proprietà collega uno specifico profilo d'accesso ai dati di una scheda catalografica alla motivazione che ha determinato l'adozione di quel profilo d'accesso (es.: scheda contenente dati liberamente accessibili, scheda contenente dati personali, scheda di bene di proprietà privata, scheda di bene a rischio, scheda di bene non adeguatamente sorvegliabile)"@it ;
+        sh:class          a-cat:PrivacyReason ;
+        sh:description    "Questa proprietà collega uno specifico profilo d'accesso ai dati di una scheda catalografica alla motivazione che ha determinato l'adozione di quel profilo d'accesso (es.: scheda contenente dati liberamente accessibili, scheda contenente dati personali, scheda di bene di proprietà privata, scheda di bene a rischio, scheda di bene non adeguatamente sorvegliabile)"@it ;
+        sh:name           "has privacy reason"@en , "ha motivazione di riservatezza"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasPrivacyReason .
+
+<https://astrea.linkeddata.es/shapes#88d591e907715e5389a83f74fd84df34>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <https://w3id.org/arco/ontology/context-description/isAgentRelatedTo> .
+
+<https://astrea.linkeddata.es/shapes#9dc8da90d67c97be607ed690a7ee18d5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Scheda Beni demoetnoantropologici immateriali"@it , "Intangible demo-ethno-anthropological heritage catalogue record"@en ;
+        sh:description    "Questa classe rappresenta la scheda catalografica che descrive beni demoetnoantropologici immateriali."@it , "This class represents the catalogue record describing Intangible demo-ethno-anthropological heritage."@en ;
+        sh:name           "Intangible demo-ethno-anthropological heritage catalogue record"@en , "Scheda Beni demoetnoantropologici immateriali"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordBDI .
+
+<https://astrea.linkeddata.es/shapes#4e1ee5f75ddadc801db13c9a750f1fe1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Questa proprietà rappresenta il progetto nell'ambito del quale è stata prodotta una scheda, quella a cui si associa un codice alternativo, assegnato da enti diversi da ICCD, o quella che analizza un bene culturale per finalità diverse da quella specifica della catalogazione del patrimonio culturale."@it , "This property represents the reference project of a record about a cultural property."@en , "progetto di riferimento"@it , "reference project"@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "This property represents the reference project of a record about a cultural property."@en , "Questa proprietà rappresenta il progetto nell'ambito del quale è stata prodotta una scheda, quella a cui si associa un codice alternativo, assegnato da enti diversi da ICCD, o quella che analizza un bene culturale per finalità diverse da quella specifica della catalogazione del patrimonio culturale."@it ;
+        sh:name           "reference project"@en , "progetto di riferimento"@it ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           a-cat:referenceProject .
+
+<https://astrea.linkeddata.es/shapes#eb40fef9aeef81dd630a03a6db05a6f1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Scheda Vestimenti antichi/contemporanei"@it , "Historic and contemporary garments catalogue record"@en ;
+        sh:description    "Questa classe rappresenta la scheda catalografica che descrive vestimenti antichi/contemporanei."@it , "This class represents the catalogue record describing Historic and contemporary garments."@en ;
+        sh:name           "Historic and contemporary garments catalogue record"@en , "Scheda Vestimenti antichi/contemporanei"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordVeAC .
+
+<https://astrea.linkeddata.es/shapes#720f6dd62cfae34c644a90a422c3cfdd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Photographic Fonds catalogue record"@en , "Scheda Fondi fotografici"@it ;
+        sh:description    "Questa classe rappresenta la scheda catalografica che descrive fondi fotografici."@it , "This class represents the catalogue record describing Photographic Fonds."@en ;
+        sh:name           "Photographic Fonds catalogue record"@en , "Scheda Fondi fotografici"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordFF .
+
+<https://astrea.linkeddata.es/shapes#c46f108eea8824662663bbfd988a9dca>
+        a            sh:PropertyShape ;
+        sh:class     rdfs:Literal ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:informationFormIdentifier .
+
+<https://astrea.linkeddata.es/shapes#d1593a1c14c1624f1c5215414a2f55a6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Property used to associate the catalogue record with the cultural property that the catalogue record describes."@en , "descrive"@it , "describes"@en , "Proprietà che consente di associare la scheda di catalogo al bene culturale che essa descrive."@it ;
+        sh:class          cis:CulturalEntity ;
+        sh:description    "Proprietà che consente di associare la scheda di catalogo al bene culturale che essa descrive."@it , "Property used to associate the catalogue record with the cultural property that the catalogue record describes."@en ;
+        sh:name           "describes"@en , "descrive"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:describesCulturalProperty .
+
+<https://astrea.linkeddata.es/shapes#3274c6c2abb60c6f80abe3004f80cd49>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:isAdditionalFormTypeOf .
+
+<https://astrea.linkeddata.es/shapes#5e2a2f35cb10b3ecf41fa1ba679d8ad9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "has situation"@en , "The property that links any object to a situation."@en , "La proprietà che collega un qualsiasi oggetto a una situazione."@it , "ha situazione"@it ;
+        sh:class          :Situation ;
+        sh:description    "La proprietà che collega un qualsiasi oggetto a una situazione."@it , "The property that links any object to a situation."@en ;
+        sh:name           "has situation"@en , "ha situazione"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :hasSituation .
+
+<https://astrea.linkeddata.es/shapes#e87771d9d59967e043f276c881c6a52d>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dati.gov.it/onto/dcatapit#Organization> , ns:Organization .
+
+<https://astrea.linkeddata.es/shapes#6fc6e216738f8cab9e0ac730f0400391>
+        a            sh:PropertyShape ;
+        sh:class     a-cat:CatalogueRecordVersion ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:hasCatalogueRecordVersion .
+
+<https://astrea.linkeddata.es/shapes#22e9c1fe27af96eb13eb0f75d79f4492>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "Evento"@it , "Event"@en ;
+        sh:description    "This class represents any physical, social, or mental process, event, or state."@en , "Questa classe rappresenta qualsiasi processo, evento o stato mentale, fisico o sociale."@it ;
+        sh:name           "Event"@en , "Evento"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    :Event .
+
+<https://astrea.linkeddata.es/shapes#dde9c5d6cd3d8e498a4b8503caf4c443>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Archaeological sites catalogue record"@en , "Scheda Siti archeologici"@it ;
+        sh:description    "This class represents the catalogue record describing Archaeological sites."@en , "Questa classe rappresenta la scheda catalografica che descrive siti archeologici."@it ;
+        sh:name           "Scheda Siti archeologici"@it , "Archaeological sites catalogue record"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordSI .
+
+<https://astrea.linkeddata.es/shapes#3e112a71c4b288fa7a5b4969ad6b91f0>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  cis:Site .
+
+<https://astrea.linkeddata.es/shapes#cc7ef62bf94d7b6834398d1c30446e66>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Questa proprietà rappresenta un codice ICCD eventualmente soppresso per motivi di diversa natura, utile per poter ricercare e consultare le schede pregresse nell'Archivio storico gestito dall'Istituto o da altri Enti."@it , "This property represents the ICCD's identifier deleted for many reasons, used to search for obsolete catalogue records."@en , "codice ICCD soppresso"@it , "deleted ICCD identifier"@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "This property represents the ICCD's identifier deleted for many reasons, used to search for obsolete catalogue records."@en , "Questa proprietà rappresenta un codice ICCD eventualmente soppresso per motivi di diversa natura, utile per poter ricercare e consultare le schede pregresse nell'Archivio storico gestito dall'Istituto o da altri Enti."@it ;
+        sh:name           "deleted ICCD identifier"@en , "codice ICCD soppresso"@it ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           a-cat:deletedICCDIdentifier .
+
+<https://astrea.linkeddata.es/shapes#cbde63754ba7f97b3c15f8c224c6181f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "This property relates an additional form to its type (Stratigraphic Unit, Epigraphy, Wall Typology)."@en , "ha tipo di modulo di approfondimento"@it , "has additional form type"@en , "Questa proprietà collega un modulo di approfondimento al tipo di modulo (Unità Stratigrafica, Tipo Murario, Epigrafia)."@it ;
+        sh:class          a-cat:AdditionalFormType ;
+        sh:description    "Questa proprietà collega un modulo di approfondimento al tipo di modulo (Unità Stratigrafica, Tipo Murario, Epigrafia)."@it , "This property relates an additional form to its type (Stratigraphic Unit, Epigraphy, Wall Typology)."@en ;
+        sh:name           "ha tipo di modulo di approfondimento"@it , "has additional form type"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasAdditionalFormType .
+
+<https://astrea.linkeddata.es/shapes#e88dd11a52281fa917d03117ad812b1a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "is update scientific revisor of"@en , "è referente verifica scientifica di aggiornamento di"@it , "This is the inverse property of \"has update scientific revisor\"."@en , "Questa è la proprietà inversa a \"ha referente verifica scientifica di aggiornamento\"."@it ;
+        sh:class          a-cat:CatalogueRecordVersion ;
+        sh:description    "This is the inverse property of \"has update scientific revisor\"."@en , "Questa è la proprietà inversa a \"ha referente verifica scientifica di aggiornamento\"."@it ;
+        sh:name           "è referente verifica scientifica di aggiornamento di"@it , "is update scientific revisor of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isUpdateScientificRevisorOf .
+
+<https://astrea.linkeddata.es/shapes#e609b93a62069f7576928c3842e07fa7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Questa proprietà permette di associare un identificativo a un modulo di approfondimento."@it , "identificativo del modulo di approfondimento"@it , "additional form identifier"@en , "This property represents the additional form identifier."@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "This property represents the additional form identifier."@en , "Questa proprietà permette di associare un identificativo a un modulo di approfondimento."@it ;
+        sh:maxCount       1 ;
+        sh:name           "additional form identifier"@en , "identificativo del modulo di approfondimento"@it ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
+        sh:path           a-cat:additionalFormIdentifier .
+
+<https://astrea.linkeddata.es/shapes#95758dfe0b56e75ab0cabcc2792dc1ad>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "This property represents a keyword related to an entity, used to search for that entity."@en , "parola chiave"@it , "Questa proprietà rappresenta una parola chiave relativa a un'entità, che può essere utilizzata per la ricerca dell'entità."@it , "keyword"@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "Questa proprietà rappresenta una parola chiave relativa a un'entità, che può essere utilizzata per la ricerca dell'entità."@it , "This property represents a keyword related to an entity, used to search for that entity."@en ;
+        sh:maxCount       1 ;
+        sh:name           "keyword"@en , "parola chiave"@it ;
+        sh:nodeKind       sh:Literal , sh:IRIOrLiteral ;
+        sh:path           :keyword .
+
+<https://astrea.linkeddata.es/shapes#72c64d600b887cda41053160ad9e1f1e>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b8c2e32bf211b043226453b1691dbcac> ;
+        sh:targetClass  ro:Role .
+
+<https://astrea.linkeddata.es/shapes#35ec46993023b37c2d861fcf7072241f>
+        a            sh:PropertyShape ;
+        sh:class     a-cat:CatalogueRecord ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:isCatalogueRecordVersionOf .
+
+<https://astrea.linkeddata.es/shapes#5c76a7e0df17561aeec1b47e94772db6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Questa è la proprietà inversa di \"ha motivazione di riservatezza\"."@it , "This is the inverse property of \"has privacy reason\"."@en , "is privacy reason of"@en , "è motivazione di riservatezza di"@it ;
+        sh:class          a-cat:AccessProfile ;
+        sh:description    "Questa è la proprietà inversa di \"ha motivazione di riservatezza\"."@it , "This is the inverse property of \"has privacy reason\"."@en ;
+        sh:name           "is privacy reason of"@en , "è motivazione di riservatezza di"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isPrivacyReasonOf .
+
+<https://astrea.linkeddata.es/shapes#3f87f5bea1fc7ad2da57e2c1a5a51c03>
+        a            sh:PropertyShape ;
+        sh:class     rdfs:Literal ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:systemRecordCode .
+
+<https://astrea.linkeddata.es/shapes#3519cc7e150f387b04eed75f107ceca8>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      l0:hasDescription .
+
+<https://astrea.linkeddata.es/shapes#5346c9e813e856844434cf4422dbc35e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Scheda su bene culturale"@it , "Catalogue property record"@en ;
+        sh:description    "This class represents a record describing a cultural property for purposes other than cataloguing cultural heritage."@en , "Questa classe rappresenta una scheda che analizza il bene in esame per finalità diverse da quella specifica della catalogazione del patrimonio culturale."@it ;
+        sh:name           "Scheda su bene culturale"@it , "Catalogue property record"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#4e1ee5f75ddadc801db13c9a750f1fe1> , <https://astrea.linkeddata.es/shapes#5f120d89c5393bdc4d9efc329e98469b> , <https://astrea.linkeddata.es/shapes#0566c97ea89bcc90786b49ebffa02337> , <https://astrea.linkeddata.es/shapes#9d01a24e24a0161fbb64e152e98f752c> , <https://astrea.linkeddata.es/shapes#e32cc9a5df1d4af3f5dceb7b626e5055> , <https://astrea.linkeddata.es/shapes#4212314fd3dad9f601154759f2d9ef05> ;
+        sh:targetClass    a-cat:CulturalPropertyRecord .
+
+<https://astrea.linkeddata.es/shapes#788967ed128c63cd203d453e3a4e203e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Drawings catalogue record"@en , "Scheda Disegni"@it ;
+        sh:description    "This class represents the catalogue record describing Natural heritage - drawings."@en , "Questa classe rappresenta la scheda catalografica che descrive disegni."@it ;
+        sh:name           "Scheda Disegni"@it , "Drawings catalogue record"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordD .
+
+<https://astrea.linkeddata.es/shapes#6f888216595ec7d4ea385de7babde8f1>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  l0:Object .
+
+<https://astrea.linkeddata.es/shapes#2dd95ed313fc2100b7e7c0f27143f92d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "has version"@en , "Property used to associate a catalogue record to one of its versions (e.g. after update)"@en , "Proprietà che permette di collegare una scheda di catalogo, intesa come oggetto informativo che descrive un bene culturale, a una sua versione (corrispondente a un particolare stato dovuto a operazioni di redazione, aggiornamento, revisione)."@it , "ha versione"@it ;
+        sh:class          a-cat:CatalogueRecordVersion ;
+        sh:description    "Proprietà che permette di collegare una scheda di catalogo, intesa come oggetto informativo che descrive un bene culturale, a una sua versione (corrispondente a un particolare stato dovuto a operazioni di redazione, aggiornamento, revisione)."@it , "Property used to associate a catalogue record to one of its versions (e.g. after update)"@en ;
+        sh:name           "has version"@en , "ha versione"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasCatalogueRecordVersion .
+
+<https://astrea.linkeddata.es/shapes#68b3374e14d6bf2964cd010eef7ae44f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Questa è la proprietà inversa di \"ha profilo di accesso\"."@it , "This is the inverse property of \"has access profile\"."@en , "è profilo di accesso di"@it , "is access profile of"@en ;
+        sh:class          a-cat:CatalogueRecord ;
+        sh:description    "This is the inverse property of \"has access profile\"."@en , "Questa è la proprietà inversa di \"ha profilo di accesso\"."@it ;
+        sh:name           "is access profile of"@en , "è profilo di accesso di"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isAccessProfileOf .
+
+<https://astrea.linkeddata.es/shapes#3d58f1cc26a8539fd0e907f05e83c18d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "is digital transcription operator of"@en , "This is the inverse property of \"has digital transcription operator\"."@en , "è operatore di trascrizione per informatizzazione di"@it , "Questa è la proprietà inversa a \"ha operatore di trascrizione per informatizzazione\"."@it ;
+        sh:class          a-cat:CatalogueRecordVersion ;
+        sh:description    "Questa è la proprietà inversa a \"ha operatore di trascrizione per informatizzazione\"."@it , "This is the inverse property of \"has digital transcription operator\"."@en ;
+        sh:name           "is digital transcription operator of"@en , "è operatore di trascrizione per informatizzazione di"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isDigitalTranscriptionOperatorOf .
+
+<https://astrea.linkeddata.es/shapes#0566c97ea89bcc90786b49ebffa02337>
+        a            sh:PropertyShape ;
+        sh:class     rdfs:Literal ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:referenceProject .
+
+<https://astrea.linkeddata.es/shapes#ec5b731c85db9bf71b69253262cc4d0d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "The property that links a time indexed situation to any object. The property is modelled as inverse object property of hasTimeIndexedSituation."@en , "is time indexed situation of"@en , "è situazione nel tempo di"@it , "La proprietà che collega una situazione indicizzata nel tempo ad un qualsiasi oggetto. La proprietà è modellata come proprietà inversa di hasTimeIndexedSituation."@it ;
+        sh:class          owl:Thing ;
+        sh:description    "The property that links a time indexed situation to any object. The property is modelled as inverse object property of hasTimeIndexedSituation."@en , "La proprietà che collega una situazione indicizzata nel tempo ad un qualsiasi oggetto. La proprietà è modellata come proprietà inversa di hasTimeIndexedSituation."@it ;
+        sh:name           "è situazione nel tempo di"@it , "is time indexed situation of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :isTimeIndexedSituationOf .
+
+<https://astrea.linkeddata.es/shapes#c351d35508cd244e27f780a3489871ad>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Scheda Architettura"@it , "Architecture catalogue record"@en ;
+        sh:description    "Questa classe rappresenta la scheda catalografica che descrive architettura."@it , "This class represents the catalogue record describing Architecture."@en ;
+        sh:name           "Scheda Architettura"@it , "Architecture catalogue record"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordA .
+
+<https://astrea.linkeddata.es/shapes#ccbb9277e2e6b93d3ca381ee5ef72429>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "La proprietà inversa di hasClassification, che collega un oggetto a una sua classificazione."@it , "The inverse object property of hasClassification, that links an object to a classification."@en , "è classificazione di"@it , "is classification of"@en ;
+        sh:class          owl:Thing ;
+        sh:description    "La proprietà inversa di hasClassification, che collega un oggetto a una sua classificazione."@it , "The inverse object property of hasClassification, that links an object to a classification."@en ;
+        sh:name           "is classification of"@en , "è classificazione di"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :isClassificationOf .
+
+<https://astrea.linkeddata.es/shapes#d9c124fb121ffafe2726a627dcb33d21>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:isCataloguingLevelOf .
+
+<https://astrea.linkeddata.es/shapes#a3334e776743c9b8d60890f9e1f9abb5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "https://w3id.org/arco/ontology/core" ;
+        rdfs:label        "This property relates an entity to a classification in time"@en , "ha classificazione nel tempo"@it , "Questa proprietà collega un'entità ad una classificazione nel tempo"@it , "has classification in time"@en ;
+        sh:class          :ClassificationInTime ;
+        sh:description    "This property relates an entity to a classification in time"@en , "Questa proprietà collega un'entità ad una classificazione nel tempo"@it ;
+        sh:name           "ha classificazione nel tempo"@it , "has classification in time"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :hasClassificationInTime .
+
+<https://astrea.linkeddata.es/shapes#e6c1e432bd298b5949bf3915d81dbb34>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Scheda Beni numismatici"@it , "Numismatic properties catalogue record"@en ;
+        sh:description    "This class represents the catalogue record describing Numismatic properties."@en , "Questa classe rappresenta la scheda catalografica che descrive beni numismatici."@it ;
+        sh:name           "Scheda Beni numismatici"@it , "Numismatic properties catalogue record"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordNU .
+
+<https://astrea.linkeddata.es/shapes#2139ea4820ae06a5736c2e7b2861f509>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "ha luogo"@it , "The object property that associates an entity to a location."@en , "has location"@en , "La object property che collega un'entità a un luogo in cui si trova."@it ;
+        sh:class          l0:Location ;
+        sh:description    "The object property that associates an entity to a location."@en , "La object property che collega un'entità a un luogo in cui si trova."@it ;
+        sh:name           "has location"@en , "ha luogo"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :hasLocation .
+
+<https://astrea.linkeddata.es/shapes#1a0e399df1d611970004f7347d226539>
+        a            sh:PropertyShape ;
+        sh:class     a-cat:CatalogueRecordVersion ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:hasPreviousVersion .
+
+<https://astrea.linkeddata.es/shapes#2f4936e5f3ffd876ba8b28e47092db19>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "The inverse property of hasConcept, that relates a concept to any object."@en , "è concetto di"@it , "is concept of"@en , "La proprietà inversa di hasConcept, che collega un concetto a un qualunque oggetto."@it ;
+        sh:class          owl:Thing ;
+        sh:description    "The inverse property of hasConcept, that relates a concept to any object."@en , "La proprietà inversa di hasConcept, che collega un concetto a un qualunque oggetto."@it ;
+        sh:name           "is concept of"@en , "è concetto di"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :isConceptOf .
+
+<https://astrea.linkeddata.es/shapes#63400ddd39f195d33fe657d9b19a8ce0>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#a86aef1e8f78a335f920885e0ff6350a> ;
+        sh:targetClass  cis:CulturalEvent .
+
+<https://astrea.linkeddata.es/shapes#4c51210ea40f08c270570e677c1f6c69>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "is cataloguing level of"@en , "Questa è la proprietà inversa di \"ha livello di catalogazione\"."@it , "è livello di catalogazione di"@it , "This is the inverse property of \"has cataloguing level\"."@en ;
+        sh:class          a-cat:CatalogueRecord ;
+        sh:description    "This is the inverse property of \"has cataloguing level\"."@en , "Questa è la proprietà inversa di \"ha livello di catalogazione\"."@it ;
+        sh:name           "è livello di catalogazione di"@it , "is cataloguing level of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isCataloguingLevelOf .
+
+<https://astrea.linkeddata.es/shapes#4a8462b42f79d781a4d8a213a8a7d359>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "Cultural Entity Characteristic"@en , "Caratteristica di Entità Culturale"@it ;
+        sh:description    "The class representing the characteristic of a cultural entity (e.g. a cultural property)."@en , "La classe che rappresenta una caratteristica di un'entità di carattere culturale come ad esempio un bene culturale."@it ;
+        sh:name           "Cultural Entity Characteristic"@en , "Caratteristica di Entità Culturale"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#843657b25a26fd2bc45f6016c3ab2777> ;
+        sh:targetClass    :CulturalEntityCharacteristic .
+
+<https://astrea.linkeddata.es/shapes#26e86458434863afbae443d1643f0cc8>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  l0:Entity .
+
+<https://astrea.linkeddata.es/shapes#9d01a24e24a0161fbb64e152e98f752c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:describes .
+
+<https://astrea.linkeddata.es/shapes#0218b71a439368db8e31024634f11542>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "is additional form responsible agent of"@en , "This is the inverse property of \"has additional form responsible agent\""@en , "è responsabile di modulo di approfondimento"@it , "Questa è la proprietà inversa di \"ha responsabile di modulo di approfondimento\"."@it ;
+        sh:class          a-cat:AdditionalForm ;
+        sh:description    "This is the inverse property of \"has additional form responsible agent\""@en , "Questa è la proprietà inversa di \"ha responsabile di modulo di approfondimento\"."@it ;
+        sh:name           "è responsabile di modulo di approfondimento"@it , "is additional form responsible agent of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isAdditionalFormResponsibleAgentOf .
+
+<https://astrea.linkeddata.es/shapes#d3f44c3aebe04b953b2dceb85305ac62>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "Agent Role"@en , "Ruolo ricoperto da agente"@it ;
+        sh:description    "This class represents a situation in which an agent holds a role, regardless of the timing."@en , "Questa classe rappresenta una situazione relativa a un agente che ricopre un ruolo, senza la specificazione della dimensione tempo."@it ;
+        sh:name           "Ruolo ricoperto da agente"@it , "Agent Role"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#a2d6ffe0214bb4e9fa5024390503b8ee> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#1c7c33ace89dc74cd303c29db951c549> , <https://astrea.linkeddata.es/shapes#b29e2451f257b6f08f22ca2a909fddb7> , <https://astrea.linkeddata.es/shapes#1f33f310fae72cc5aacfe5389489dd13> , <https://astrea.linkeddata.es/shapes#4bc49d47b5a55aeed73263dfbb1d8676> , <https://astrea.linkeddata.es/shapes#c4d80d40e2f0b382538eb80a0f908a1e> ;
+        sh:targetClass    :AgentRole .
+
+<https://astrea.linkeddata.es/shapes#426e7092bd6af16d45c0817d3afac0f9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "ha caratteristica"@it , "The object property that links an entity to one of its characteristics."@en , "La object property che collega un'entità a una sua caratteristica."@it , "has characteristic"@en ;
+        sh:class          l0:Characteristic ;
+        sh:description    "The object property that links an entity to one of its characteristics."@en , "La object property che collega un'entità a una sua caratteristica."@it ;
+        sh:name           "ha caratteristica"@it , "has characteristic"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :hasCharacteristic .
+
+<https://astrea.linkeddata.es/shapes#b01dd3ffaad10cf9771257f04d50e3bb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Questa è la proprietà inversa a \"ha funzionario responsabile di aggiornamento\"."@it , "This is the inverse property of \"has update official in charge\"."@en , "is update official in charge of"@en , "è funzionario responsabile di aggiornamento di"@it ;
+        sh:class          a-cat:CatalogueRecordVersion ;
+        sh:description    "This is the inverse property of \"has update official in charge\"."@en , "Questa è la proprietà inversa a \"ha funzionario responsabile di aggiornamento\"."@it ;
+        sh:name           "is update official in charge of"@en , "è funzionario responsabile di aggiornamento di"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isUpdateOfficialInChargeOf .
+
+<https://astrea.linkeddata.es/shapes#855d161f7aeeffc5397d4346219c3d86>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "is update responsible agent of"@en , "This is the inverse property of \"has update responsible agent\","@en , "Questa è la proprietà inversa a \"ha ente o soggetto responsabile di aggiornamento\"."@it , "è ente o soggetto responsabile di aggiornamento di"@it ;
+        sh:class          a-cat:CatalogueRecordVersion ;
+        sh:description    "This is the inverse property of \"has update responsible agent\","@en , "Questa è la proprietà inversa a \"ha ente o soggetto responsabile di aggiornamento\"."@it ;
+        sh:name           "is update responsible agent of"@en , "è ente o soggetto responsabile di aggiornamento di"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isUpdateResponsibleAgentOf .
+
+<https://astrea.linkeddata.es/shapes#71d931ae0c59a1e9263b3c39bf7ab3ee>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Scheda Saggi stratigrafici"@it , "Stratigraphic records catalogue record"@en ;
+        sh:description    "Questa classe rappresenta la scheda catalografica che descrive saggi stratigrafici."@it , "This class represents the catalogue record describing Stratigraphic records."@en ;
+        sh:name           "Stratigraphic records catalogue record"@en , "Scheda Saggi stratigrafici"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordSAS .
+
+<https://astrea.linkeddata.es/shapes#fbb75530d31cec3075c92321d3c8315b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "https://w3id.org/arco/ontology/core" ;
+        rdfs:label        "is classification in time of"@en , "è classificazione nel tempo di"@it , "This property relates a classification in time to an entity"@en , "Questa proprietà collega una classificazione nel tempo ad un'entità"@it ;
+        sh:class          owl:Thing ;
+        sh:description    "This property relates a classification in time to an entity"@en , "Questa proprietà collega una classificazione nel tempo ad un'entità"@it ;
+        sh:name           "è classificazione nel tempo di"@it , "is classification in time of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :isClassificationInTimeOf .
+
+<https://astrea.linkeddata.es/shapes#a9d367f91219f865c298f272d7585571>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "The property that links any object to a time indexed situation."@en , "ha situazione nel tempo"@it , "La proprietà che collega un qualsiasi oggetto a una situazione indicizzata nel tempo."@it , "has time indexed situation"@en ;
+        sh:class          :TimeIndexedSituation ;
+        sh:description    "The property that links any object to a time indexed situation."@en , "La proprietà che collega un qualsiasi oggetto a una situazione indicizzata nel tempo."@it ;
+        sh:name           "ha situazione nel tempo"@it , "has time indexed situation"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :hasTimeIndexedSituation .
+
+<https://astrea.linkeddata.es/shapes#843657b25a26fd2bc45f6016c3ab2777>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "The object property that links a cultural entity characteristic to the cultural entity."@it , "La object property che collega una caratteristica di una cultural entity alla cultural entity."@it , "è caratteristica di entità culturale di"@it , "is cultural entity characteristic of"@en ;
+        sh:class          cis:CulturalEntity ;
+        sh:description    "La object property che collega una caratteristica di una cultural entity alla cultural entity."@it , "The object property that links a cultural entity characteristic to the cultural entity."@it ;
+        sh:name           "is cultural entity characteristic of"@en , "è caratteristica di entità culturale di"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :isCulturalEntityCharacteristicOf .
+
+<https://astrea.linkeddata.es/shapes#4bbe25e1175529ef11f7f4d53a7466f6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Cataloguing level"@en , "Livello catalogazione"@it ;
+        sh:description    "Questa classe rappresenta il livello catalogazione, cioè la sigla che individua il grado di approfondimento dell'indagine condotta sul bene in esame (I corrisponde al livello di inventario, P al livello di precatalogo, C al livello di catalogo)"@it , "This class represents the cataloguing level, defining the level of detail of the survey carried out on the cultural property (Minimum, Medium, Detailed)"@en ;
+        sh:name           "Cataloguing level"@en , "Livello catalogazione"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d9c124fb121ffafe2726a627dcb33d21> , <https://astrea.linkeddata.es/shapes#4c51210ea40f08c270570e677c1f6c69> ;
+        sh:targetClass    a-cat:CataloguingLevel .
+
+<https://astrea.linkeddata.es/shapes#8d5678c143eabdeae9ca58a6e71e7f2a>
+        a            sh:PropertyShape ;
+        sh:class     a-cat:CatalogueRecordVersion ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:isImmediatePreviousVersionOf .
+
+<https://astrea.linkeddata.es/shapes#e34223f00da8c7c081459bfe9d0e5a65>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      ro:hasRiT .
+
+<https://astrea.linkeddata.es/shapes#66c9402d6a647e805e2a2b63166c28c8>
+        a            sh:PropertyShape ;
+        sh:class     rdfs:Literal ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:referenceProject .
+
+<https://astrea.linkeddata.es/shapes#26acfdc97ae770d5c818dbcaf0804c4c>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1cc070f5a9f5fd7dd70227055f35cdc3> ;
+        sh:targetClass  l0:EventOrSituation .
+
+<https://astrea.linkeddata.es/shapes#902cb5e58b737c0778d7ef429381de78>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:hasPrivacyLevel .
+
+<https://astrea.linkeddata.es/shapes#39283ba0f93733a9885b32d2ca2ca09c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Scheda Beni naturalistici-Petrologia"@it , "Natural heritage - petrology catalogue record"@en ;
+        sh:description    "This class represents the catalogue record describing Natural heritage - petrology."@en , "Questa classe rappresenta la scheda catalografica che descrive beni naturalistici-Petrologia."@it ;
+        sh:name           "Natural heritage - petrology catalogue record"@en , "Scheda Beni naturalistici-Petrologia"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordBNPE .
+
+<https://astrea.linkeddata.es/shapes#f2f9ef076701140c34329b9a47853f29>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "has digital transcription operator"@en , "Questa proprietà rappresenta la relazione che collega una versione, relativa a trascrizione per informatizzazione, di una scheda di catalogo al relativo operatore. La relazione tra il ruolo e l'ente che lo riveste è espressa nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l'ente, il suo ruolo e la sua corrispondente estensione temporale."@it , "ha operatore di trascrizione per informatizzazione"@it ;
+        sh:class          l0:Agent ;
+        sh:description    "Questa proprietà rappresenta la relazione che collega una versione, relativa a trascrizione per informatizzazione, di una scheda di catalogo al relativo operatore. La relazione tra il ruolo e l'ente che lo riveste è espressa nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l'ente, il suo ruolo e la sua corrispondente estensione temporale."@it ;
+        sh:name           "has digital transcription operator"@en , "ha operatore di trascrizione per informatizzazione"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasDigitalTranscriptionOperator .
+
+<https://astrea.linkeddata.es/shapes#e32cc9a5df1d4af3f5dceb7b626e5055>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property is used to associate the identifier to a catalogue record that analyze the cultural property for reasons other than cataloguing the cultural heritage."@en , "identificativo di scheda su bene culturale"@it , "Questa proprietà permette di associare l'identificativo a una scheda in cui si analizza un bene culturale per finalità diverse da quella specificazione della catalogazione del patrimonio culturale."@it , "cultural property record identifier"@en ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "This property is used to associate the identifier to a catalogue record that analyze the cultural property for reasons other than cataloguing the cultural heritage."@en , "Questa proprietà permette di associare l'identificativo a una scheda in cui si analizza un bene culturale per finalità diverse da quella specificazione della catalogazione del patrimonio culturale."@it ;
+        sh:name         "identificativo di scheda su bene culturale"@it , "cultural property record identifier"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         a-cat:culturalPropertyRecordIdentifier .
+
+<https://astrea.linkeddata.es/shapes#7d2c0f5768ece59fefb908be1548c1a2>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      l0:isDescriptionOf .
+
+<https://astrea.linkeddata.es/shapes#5c03f5e35a4942060fd9d9f7ad6a654e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:describes .
+
+<https://astrea.linkeddata.es/shapes#b29e2451f257b6f08f22ca2a909fddb7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "This property relates a situation in which an agent holds a role to that agent."@en , "ha agente"@it , "Questa proprietà collega una situazione in cui un ruolo viene ricoperto da un agente all'agente che lo ricopre."@it , "has agent"@en ;
+        sh:class          l0:Agent ;
+        sh:description    "Questa proprietà collega una situazione in cui un ruolo viene ricoperto da un agente all'agente che lo ricopre."@it , "This property relates a situation in which an agent holds a role to that agent."@en ;
+        sh:name           "has agent"@en , "ha agente"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :hasAgent .
+
+<https://astrea.linkeddata.es/shapes#8801a3cc58d6c06d76ac6d56c077775a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Profilo di accesso"@it , "Access profile"@en ;
+        sh:description    "This class represents the access profile to the data recorded in a catalogue record, giving instructions for public dissemination of data on the web."@en , "Questa classe rappresenta il profilo di accesso ai dati contenuti in una scheda catalografica, con cui si forniscono indicazioni circa la diffusione pubblica dei dati catalografici sul web."@it ;
+        sh:name           "Profilo di accesso"@it , "Access profile"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#6bbe311ae04852c83c9207db741f82f2> , <https://astrea.linkeddata.es/shapes#b331252bb82a39614f134e50cee2d2a8> , <https://astrea.linkeddata.es/shapes#902cb5e58b737c0778d7ef429381de78> , <https://astrea.linkeddata.es/shapes#2a755b00281e3f7939fc100ff900e7fa> , <https://astrea.linkeddata.es/shapes#06c61b866b983878bf34f6d08d55d473> , <https://astrea.linkeddata.es/shapes#68b3374e14d6bf2964cd010eef7ae44f> , <https://astrea.linkeddata.es/shapes#0ab7a95abb601dbc12cc07d2a6c08949> ;
+        sh:targetClass    a-cat:AccessProfile .
+
+<https://astrea.linkeddata.es/shapes#abc68fc34999cdcdb15278989afb079c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Parks/Gardens catalogue record"@en , "Scheda Parchi/giardini"@it ;
+        sh:description    "Questa classe rappresenta la scheda catalografica che descrive parchi/giardini."@it , "This class represents the catalogue record describing Parks / Gardens."@en ;
+        sh:name           "Scheda Parchi/giardini"@it , "Parks/Gardens catalogue record"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordPG .
+
+<https://astrea.linkeddata.es/shapes#eff955862b54cbb24036e7cfab02f518>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Proprietà, inversa di \"ha versione\", che permette di collegare una versione  (corrispondente a un particolare stato dovuto a operazioni di redazione, aggiornamento, revisione) di una scheda di catalogo alla scheda di catalogo intesa come oggetto informativo che descrive un bene culturale."@it , "è versione di"@it , "is catalogue record version of"@en , "Property, inverse of \"has catalogue record version\", used to associate a catalogue record version (e.g. after update) to the catalogue record."@en ;
+        sh:class          a-cat:CatalogueRecord ;
+        sh:description    "Proprietà, inversa di \"ha versione\", che permette di collegare una versione  (corrispondente a un particolare stato dovuto a operazioni di redazione, aggiornamento, revisione) di una scheda di catalogo alla scheda di catalogo intesa come oggetto informativo che descrive un bene culturale."@it , "Property, inverse of \"has catalogue record version\", used to associate a catalogue record version (e.g. after update) to the catalogue record."@en ;
+        sh:name           "è versione di"@it , "is catalogue record version of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isCatalogueRecordVersionOf .
+
+<https://astrea.linkeddata.es/shapes#2c0b33b52d160bcfa1facbe468138232>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "The object property that associates a category to any object."@en , "è categoria di"@it , "is category of"@en , "La object property che associa una categoria a un qualunque oggetto."@it ;
+        sh:class          :Category ;
+        sh:description    "La object property che associa una categoria a un qualunque oggetto."@it , "The object property that associates a category to any object."@en ;
+        sh:name           "è categoria di"@it , "is category of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :isCategoryOf .
+
+<https://astrea.linkeddata.es/shapes#bee5f07514373a82bc78b1e318d0985a>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#3d58f1cc26a8539fd0e907f05e83c18d> , <https://astrea.linkeddata.es/shapes#05e3e16e9daf1dd7788adedf8e8fb2e7> , <https://astrea.linkeddata.es/shapes#b01dd3ffaad10cf9771257f04d50e3bb> , <https://astrea.linkeddata.es/shapes#855d161f7aeeffc5397d4346219c3d86> , <https://astrea.linkeddata.es/shapes#6c730ae8177bc6461c01ef3f1974faf4> , <https://astrea.linkeddata.es/shapes#79b4140ab879bb05dabf9ac48a42fb43> , <https://astrea.linkeddata.es/shapes#905224204f3359064a19083c2f6cdc42> , <https://astrea.linkeddata.es/shapes#0218b71a439368db8e31024634f11542> , <https://astrea.linkeddata.es/shapes#10bac1519f40f1e3b4125d76a43297b5> , <https://astrea.linkeddata.es/shapes#4a875782e165b75057567a35d48b42b9> , <https://astrea.linkeddata.es/shapes#6b7115c06d5912348e473f1d5f42ad22> , <https://astrea.linkeddata.es/shapes#e4eec10b47c5908bb677e7d61630dcde> , <https://astrea.linkeddata.es/shapes#048a0814932aa7aac796ed55b436ffcf> , <https://astrea.linkeddata.es/shapes#e88dd11a52281fa917d03117ad812b1a> ;
+        sh:targetClass  l0:Agent .
+
+<https://astrea.linkeddata.es/shapes#42e3c90c8d1558e42db698bbcab2b7d6>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  l0:Description .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#bb6886a9bf4b5665a6c1ab2cd665f4e9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "This is the inverse property of \"edited at time\"."@en , "editing time of"@en , "Questa è la proprietà inversa di \"compilato al tempo\"."@it , "tempo di compilazione di"@it ;
+        sh:class          a-cat:CatalogueRecordVersion ;
+        sh:description    "Questa è la proprietà inversa di \"compilato al tempo\"."@it , "This is the inverse property of \"edited at time\"."@en ;
+        sh:name           "editing time of"@en , "tempo di compilazione di"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:editingTimeOf .
+
+<https://astrea.linkeddata.es/shapes#b1b70c7a0407149d2f08121843e903dd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "This property represents the identifier assigned to a cultural property by ICCD."@en , "ICCD identifier"@en , "Questa proprietà rappresenta un codice assegnato a un'entità dall'ICCD. Si specializza in sottoproprietà (es.: codice univoco ICCD dell'autore, codice univoco ICCD del riferimento bibliografico, etc.)"@it , "codice univoco ICCD"@it ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "This property represents the identifier assigned to a cultural property by ICCD."@en , "Questa proprietà rappresenta un codice assegnato a un'entità dall'ICCD. Si specializza in sottoproprietà (es.: codice univoco ICCD dell'autore, codice univoco ICCD del riferimento bibliografico, etc.)"@it ;
+        sh:maxCount       1 ;
+        sh:name           "codice univoco ICCD"@it , "ICCD identifier"@en ;
+        sh:nodeKind       sh:Literal , sh:IRIOrLiteral ;
+        sh:path           a-cat:ICCDIdentifier .
+
+<https://astrea.linkeddata.es/shapes#0c566cc8424cbb1d4adfabb14088237d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Scheda Fotografia"@it , "Photograph catalogue record"@en ;
+        sh:description    "Questa classe rappresenta la scheda catalografica che descrive fotografia."@it , "This class represents the catalogue record describing Photography."@en ;
+        sh:name           "Photograph catalogue record"@en , "Scheda Fotografia"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordF .
+
+<https://astrea.linkeddata.es/shapes#e2d1f639a719cefdecb09040d961e2f5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Scheda Beni naturalistici-Botanica"@it , "Natural heritage - botany catalogue record"@en ;
+        sh:description    "Questa classe rappresenta la scheda catalografica che descrive beni naturalistici-Botanica."@it , "This class represents the catalogue record describing Natural heritage - botany."@en ;
+        sh:name           "Scheda Beni naturalistici-Botanica"@it , "Natural heritage - botany catalogue record"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordBNB .
+
+<https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2139ea4820ae06a5736c2e7b2861f509> , <https://astrea.linkeddata.es/shapes#997484023cd4c535f6625fc0994899b6> , <https://astrea.linkeddata.es/shapes#55088c411b008e3c01b67480a33650f0> , <https://astrea.linkeddata.es/shapes#426e7092bd6af16d45c0817d3afac0f9> , <https://astrea.linkeddata.es/shapes#2709b672bce2b036cd72a15d47c1fa47> , <https://astrea.linkeddata.es/shapes#ab16908346ed6c40d3523c69abef9434> , <https://astrea.linkeddata.es/shapes#61fe60c59d82405bb228fecbad41777d> , <https://astrea.linkeddata.es/shapes#f62a484cf2aa048054c2c788e7980860> , <https://astrea.linkeddata.es/shapes#a9d367f91219f865c298f272d7585571> , <https://astrea.linkeddata.es/shapes#07dcc3b9277336d87d8565155701ac98> , <https://astrea.linkeddata.es/shapes#2c0b33b52d160bcfa1facbe468138232> , <https://astrea.linkeddata.es/shapes#59920c6bb793c7ad832a0cc1f2449963> , <https://astrea.linkeddata.es/shapes#df8a4f2372c0421a96c2a4fd5b23254c> , <https://astrea.linkeddata.es/shapes#a3334e776743c9b8d60890f9e1f9abb5> , <https://astrea.linkeddata.es/shapes#988e9c680fef606814e44d6bdb49692a> , <https://astrea.linkeddata.es/shapes#98f8db9d9fccae72a93b847e4f702194> , <https://astrea.linkeddata.es/shapes#9679fb249c4969595c748c6c9841ec55> , <https://astrea.linkeddata.es/shapes#838b15e9f56dd8bcc5bc81c2275d7e30> , <https://astrea.linkeddata.es/shapes#b82f5ee34c2da91cc726fc8f8a22b2f1> , <https://astrea.linkeddata.es/shapes#5e2a2f35cb10b3ecf41fa1ba679d8ad9> , <https://astrea.linkeddata.es/shapes#95758dfe0b56e75ab0cabcc2792dc1ad> , <https://astrea.linkeddata.es/shapes#86aa93aec96b5d133e6fd5884f39553a> , <https://astrea.linkeddata.es/shapes#9c5494a4e748c88edc94282d493f41a9> , <https://astrea.linkeddata.es/shapes#5b129384917c0bb412f7da96b023b804> , <https://astrea.linkeddata.es/shapes#c5672c9454b023586e87c9a7579e99d8> , <https://astrea.linkeddata.es/shapes#2a04a687a4e78d1e8e539d14adc06bd0> , <https://astrea.linkeddata.es/shapes#b1b70c7a0407149d2f08121843e903dd> ;
+        sh:targetClass  owl:Thing .
+
+<https://astrea.linkeddata.es/shapes#675a9dce05e95af1edfe5cd4e1fd4f38>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "Concept"@en , "Concetto"@it ;
+        sh:description    "La classe che rappresenta un concetto."@it , "The class representing a concept."@en ;
+        sh:name           "Concept"@en , "Concetto"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#2f4936e5f3ffd876ba8b28e47092db19> , <https://astrea.linkeddata.es/shapes#9f2c69978d5aed357fd6788441434947> ;
+        sh:targetClass    :Concept , l0:Concept .
+
+<https://astrea.linkeddata.es/shapes#ba113f9b87c2de93e61db552862fc25c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Scheda Patrimonio scientifico e tecnologico"@it , "Scientific and technological heritage catalogue record"@en ;
+        sh:description    "Questa classe rappresenta la scheda catalografica che descrive il patrimonio scientifico e tecnologico."@it , "This class represents the catalogue record describing Scientific and technological heritage."@en ;
+        sh:name           "Scientific and technological heritage catalogue record"@en , "Scheda Patrimonio scientifico e tecnologico"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordPST .
+
+<https://astrea.linkeddata.es/shapes#1c7c33ace89dc74cd303c29db951c549>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "is agent role of"@en , "Questa proprietà collega una situazione in cui un agente ricopre un ruolo relativo a un'entità all'entità."@it , "This property relates a situation in which an agent holds a role connected to an entity to that entity."@en , "è ruolo ricoperto da agente di"@it ;
+        sh:class          owl:Thing ;
+        sh:description    "This property relates a situation in which an agent holds a role connected to an entity to that entity."@en , "Questa proprietà collega una situazione in cui un agente ricopre un ruolo relativo a un'entità all'entità."@it ;
+        sh:name           "is agent role of"@en , "è ruolo ricoperto da agente di"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :isAgentRoleOf .
+
+<https://astrea.linkeddata.es/shapes#9679fb249c4969595c748c6c9841ec55>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "has method"@en , "The object property that links an entity to a method."@en , "ha metodo"@it , "L'object property che collega un'entità a un metodo."@it ;
+        sh:class          :Method ;
+        sh:description    "The object property that links an entity to a method."@en , "L'object property che collega un'entità a un metodo."@it ;
+        sh:name           "has method"@en , "ha metodo"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :hasMethod .
+
+<https://astrea.linkeddata.es/shapes#ab497ef692f72fff99ca0872aa16216d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "La object property che collega un luogo a un'entità che si trova in quel luogo."@it , "è luogo di"@it , "The object property that associates a location to an entity located there."@en , "is location of"@en ;
+        sh:class          owl:Thing ;
+        sh:description    "The object property that associates a location to an entity located there."@en , "La object property che collega un luogo a un'entità che si trova in quel luogo."@it ;
+        sh:name           "è luogo di"@it , "is location of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :isLocationOf .
+
+<https://astrea.linkeddata.es/shapes#884fdf40463790e4ee2a2b3674c1c759>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Questa proprietà rappresenta la relazione che collega la prima versione di una scheda di catalogo al relativo funzionario responsabile. La relazione tra il ruolo e l'ente che lo riveste è espressa nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l'ente, il suo ruolo e la sua corrispondente estensione temporale."@it , "has official in charge"@en , "ha funzionario responsabile"@it ;
+        sh:class          l0:Agent ;
+        sh:description    "Questa proprietà rappresenta la relazione che collega la prima versione di una scheda di catalogo al relativo funzionario responsabile. La relazione tra il ruolo e l'ente che lo riveste è espressa nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l'ente, il suo ruolo e la sua corrispondente estensione temporale."@it ;
+        sh:name           "ha funzionario responsabile"@it , "has official in charge"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasOfficialInCharge .
+
+<https://astrea.linkeddata.es/shapes#66048c25b12188780ec9bea0a9fdd77a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "is situation of"@en , "The property that links a situation to any object. The property is modelled as inverse object property of hasSituation."@en , "La proprietà che collega una situazione ad un qualsiasi oggetto. La proprietà è modellata come proprietà inversa di hasSituation."@it , "è situazione di"@it ;
+        sh:class          owl:Thing ;
+        sh:description    "The property that links a situation to any object. The property is modelled as inverse object property of hasSituation."@en , "La proprietà che collega una situazione ad un qualsiasi oggetto. La proprietà è modellata come proprietà inversa di hasSituation."@it ;
+        sh:name           "è situazione di"@it , "is situation of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :isSituationOf .
+
+<https://astrea.linkeddata.es/shapes#35e085df75729bdf0fde7b8149d94da4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "Category"@en , "Categoria"@it ;
+        sh:description    "The class representing a category."@en , "La classe che rappresenta una categoria."@it ;
+        sh:name           "Category"@en , "Categoria"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    :Category .
+
+<https://astrea.linkeddata.es/shapes#79b4140ab879bb05dabf9ac48a42fb43>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "This is the inverse property of \"has digital transcription responsible agent\"."@en , "è ente o soggetto responsabile di trascrizione per informatizzazione di"@it , "Questa è la proprietà inversa a \"ha ente o soggetto responsabile di trascrizione per informatizzazione\"."@it , "is digital transcription responsible agent of"@en ;
+        sh:class          a-cat:CatalogueRecordVersion ;
+        sh:description    "Questa è la proprietà inversa a \"ha ente o soggetto responsabile di trascrizione per informatizzazione\"."@it , "This is the inverse property of \"has digital transcription responsible agent\"."@en ;
+        sh:name           "is digital transcription responsible agent of"@en , "è ente o soggetto responsabile di trascrizione per informatizzazione di"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isDigitalTranscriptionResponsibleAgentOf .
+
+<https://astrea.linkeddata.es/shapes#988e9c680fef606814e44d6bdb49692a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "This property represents the consequence of something"@en , "è conseguenza di"@it , "Questa proprietà rappresenta la conseguenza di qualcosa"@it , "is consequence of"@en ;
+        sh:class          owl:Thing ;
+        sh:description    "This property represents the consequence of something"@en , "Questa proprietà rappresenta la conseguenza di qualcosa"@it ;
+        sh:name           "is consequence of"@en , "è conseguenza di"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :isConsequenceOf .
+
+<https://astrea.linkeddata.es/shapes#f62a484cf2aa048054c2c788e7980860>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "This property was created as a generic property for specific subproperties, and represents the relationship between an entity that describes another entity."@en , "descrive"@it , "describes"@en , "Questa proprietà è stata creata come proprietà generica di sottoproprietà specifiche, e rappresenta la relazione tra un'entità che descrive un'altra entità."@it ;
+        sh:class          owl:Thing ;
+        sh:description    "Questa proprietà è stata creata come proprietà generica di sottoproprietà specifiche, e rappresenta la relazione tra un'entità che descrive un'altra entità."@it , "This property was created as a generic property for specific subproperties, and represents the relationship between an entity that describes another entity."@en ;
+        sh:name           "descrive"@it , "describes"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:describes .
+
+<https://astrea.linkeddata.es/shapes#2f71b8430dfdeae45eb1152c25ef93ba>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:hasAccessProfile .
+
+<https://astrea.linkeddata.es/shapes#4212314fd3dad9f601154759f2d9ef05>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "has cultural property record responsible agent"@en , "This property relates a cultural property record to the agency or the person that created that record or manages the database where the record is."@en , "Questa proprietà collega una scheda in cui si analizza un bene culturale per finalità diverse da quella della catalogazione del patrimonio all'Ente o al soggetto che ha prodotto la scheda o che gestisce la banca dati di cui la scheda fa parte."@it , "ha agente responsabile della scheda su bene culturale"@it ;
+        sh:class          l0:Agent ;
+        sh:description    "Questa proprietà collega una scheda in cui si analizza un bene culturale per finalità diverse da quella della catalogazione del patrimonio all'Ente o al soggetto che ha prodotto la scheda o che gestisce la banca dati di cui la scheda fa parte."@it , "This property relates a cultural property record to the agency or the person that created that record or manages the database where the record is."@en ;
+        sh:name           "has cultural property record responsible agent"@en , "ha agente responsabile della scheda su bene culturale"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasCulturalPropertyRecordResponsibleAgent .
+
+<https://astrea.linkeddata.es/shapes#5826142f13776fb908489c0edcb94408>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Livello di riservatezza"@it , "Privacy level"@en ;
+        sh:description    "This class represents the privacy level of the data recorded in a catalogue record (Minimum, Medium, Maximum)."@en , "Questa classe rappresenta il livello di riservatezza dei dati contenuti in una scheda catalografica (1 livello basso di riservatezza, 2 livello medio di riservatezza, 3 livello alto di riservatezza)"@it ;
+        sh:name           "Privacy level"@en , "Livello di riservatezza"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#539cd8b98c18eedfe340a3edd108b63a> , <https://astrea.linkeddata.es/shapes#fb18bd9cc6eb734e60bc20d598dcbc31> ;
+        sh:targetClass    a-cat:PrivacyLevel .
+
+<https://astrea.linkeddata.es/shapes#98f8db9d9fccae72a93b847e4f702194>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "This property represents specifications associated to a piece of information."@en , "specifiche"@it , "specifications"@en , "Questa proprietà rappresenta eventuali specifiche, relative a una certa informazione."@it ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "This property represents specifications associated to a piece of information."@en , "Questa proprietà rappresenta eventuali specifiche, relative a una certa informazione."@it ;
+        sh:name           "specifiche"@it , "specifications"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           :specifications .
+
+<https://astrea.linkeddata.es/shapes#cad255a530a7c785b8cf8d8189bf5b6c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "è la versione precedente di"@it , "is immediate previous version of"@en , "Questa proprietà associa una versione di una scheda alla sua versione immediatamente successiva."@it , "Property used to associate a catalogue record version to its immediate next version."@en ;
+        sh:class          a-cat:CatalogueRecordVersion ;
+        sh:description    "Property used to associate a catalogue record version to its immediate next version."@en , "Questa proprietà associa una versione di una scheda alla sua versione immediatamente successiva."@it ;
+        sh:maxCount       1 ;
+        sh:name           "is immediate previous version of"@en , "è la versione precedente di"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           a-cat:isImmediatePreviousVersionOf .
+
+<https://astrea.linkeddata.es/shapes#2a755b00281e3f7939fc100ff900e7fa>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:isAccessProfileOf .
+
+<https://astrea.linkeddata.es/shapes#9c5494a4e748c88edc94282d493f41a9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Questa proprietà rappresenta un identificativo che individua un'entità in modo univoco nell'ambito di un repertorio locale. Si specializza in sottoproprietà (es.: identificativo dell'autore nell'ambito di un repertorio locale, identificativo dell'indagine archeologica nell'ambito di un repertorio locale, etc.)"@it , "local identifier"@it , "identificativo di repertorio locale"@it , "This property represents a unique identifier of an entity, within a local inventory."@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "Questa proprietà rappresenta un identificativo che individua un'entità in modo univoco nell'ambito di un repertorio locale. Si specializza in sottoproprietà (es.: identificativo dell'autore nell'ambito di un repertorio locale, identificativo dell'indagine archeologica nell'ambito di un repertorio locale, etc.)"@it , "This property represents a unique identifier of an entity, within a local inventory."@en ;
+        sh:maxCount       1 ;
+        sh:name           "local identifier"@it , "identificativo di repertorio locale"@it ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
+        sh:path           a-cat:localIdentifier .
+
+<https://astrea.linkeddata.es/shapes#0b9758119314bba1359adf0b9f272998>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Scheda Centri/nuclei storici"@it , "Historic cities / town centres catalogue record"@en ;
+        sh:description    "This class represents the catalogue record describing Natural heritage - historic cities / town centres."@en , "Questa classe rappresenta la scheda catalografica che descrive centri/nuclei storici."@it ;
+        sh:name           "Historic cities / town centres catalogue record"@en , "Scheda Centri/nuclei storici"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordCNS .
+
+<https://astrea.linkeddata.es/shapes#c4d80d40e2f0b382538eb80a0f908a1e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasRole .
+
+<https://astrea.linkeddata.es/shapes#aae65de38f0f875b335f585f5329872c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "ha ente o soggetto responsabile di aggiornamento"@it , "has update responsible agency or person"@en , "Questa proprietà rappresenta la relazione che collega una versione aggiornata di una scheda di catalogo al relativo ente/soggetto responsabile. La relazione tra il ruolo e l'ente che lo riveste è espressa nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l'ente, il suo ruolo e la sua corrispondente estensione temporale."@it ;
+        sh:class          l0:Agent ;
+        sh:description    "Questa proprietà rappresenta la relazione che collega una versione aggiornata di una scheda di catalogo al relativo ente/soggetto responsabile. La relazione tra il ruolo e l'ente che lo riveste è espressa nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l'ente, il suo ruolo e la sua corrispondente estensione temporale."@it ;
+        sh:name           "has update responsible agency or person"@en , "ha ente o soggetto responsabile di aggiornamento"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasUpdateResponsibleAgent .
+
+<https://astrea.linkeddata.es/shapes#80753f42b8269a46acc6430f342bf7a6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "is method of"@en , "è metodo di"@it , "L'object property che collega un metodo a un'entità."@it , "The object property that links a method to an entity."@en ;
+        sh:class          owl:Thing ;
+        sh:description    "The object property that links a method to an entity."@en , "L'object property che collega un metodo a un'entità."@it ;
+        sh:name           "è metodo di"@it , "is method of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :isMethodOf .
+
+<https://astrea.linkeddata.es/shapes#90c29c7db4a9b173e1ff28888f469c35>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  cis:NameInTime .
+
+<https://astrea.linkeddata.es/shapes#5f6bb3ac44a933b1f386ed86f59651bf>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ab497ef692f72fff99ca0872aa16216d> ;
+        sh:targetClass  l0:Location .
+
+<https://astrea.linkeddata.es/shapes#9646e22178b6d0438f692d9f48a198ac>
+        a            sh:PropertyShape ;
+        sh:class     cis:CulturalEntity ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:describesCulturalProperty .
+
+<https://astrea.linkeddata.es/shapes#df8a4f2372c0421a96c2a4fd5b23254c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "The object property that associates any object with a concept, classifying it."@en , "La object property che associa un qualunque oggetto a un concetto, che lo classifica."@it , "has concept"@en , "ha concetto"@it ;
+        sh:class          :Concept ;
+        sh:description    "The object property that associates any object with a concept, classifying it."@en , "La object property che associa un qualunque oggetto a un concetto, che lo classifica."@it ;
+        sh:name           "has concept"@en , "ha concetto"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :hasConcept .
+
+<https://astrea.linkeddata.es/shapes#be6d6d739eb15c4874b8134b9a9c2324>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      l0:hasTopic .
+
+<https://astrea.linkeddata.es/shapes#b82f5ee34c2da91cc726fc8f8a22b2f1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "has consequence"@en , "This property represents the consequence of something"@en , "ha conseguenza"@it , "Questa proprietà rappresenta la conseguenza di qualcosa"@it ;
+        sh:class          owl:Thing ;
+        sh:description    "This property represents the consequence of something"@en , "Questa proprietà rappresenta la conseguenza di qualcosa"@it ;
+        sh:name           "has consequence"@en , "ha conseguenza"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :hasConsequence .
+
+<https://astrea.linkeddata.es/shapes#a4ec24b3b08633eea60c0a764842f80e>
+        a            sh:PropertyShape ;
+        sh:class     l0:Agent ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:hasCataloguingAgent .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#294d87bf7dd23c56dce0be32b835fc44> , <https://astrea.linkeddata.es/shapes#4bbe25e1175529ef11f7f4d53a7466f6> , <https://astrea.linkeddata.es/shapes#cd96bebd1c4143873bda0dfa1c0f937f> , <https://astrea.linkeddata.es/shapes#9cdb841827780ee70e53f540c76e0a42> , <https://astrea.linkeddata.es/shapes#052cf45925067a4b0f918c26e852251b> , <https://astrea.linkeddata.es/shapes#5da0f0c2a0bab703125d0089013b4e15> , <https://astrea.linkeddata.es/shapes#0566c97ea89bcc90786b49ebffa02337> , <https://astrea.linkeddata.es/shapes#05e3e16e9daf1dd7788adedf8e8fb2e7> , <https://astrea.linkeddata.es/shapes#05c8af9ea05e1a058ef67f39c6b04126> , <https://astrea.linkeddata.es/shapes#fb18bd9cc6eb734e60bc20d598dcbc31> , <https://astrea.linkeddata.es/shapes#aae65de38f0f875b335f585f5329872c> , <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#5b129384917c0bb412f7da96b023b804> , <https://astrea.linkeddata.es/shapes#752424a0be66402e3c59ed2b4bcef82f> , <https://astrea.linkeddata.es/shapes#820f8333c1401d3417f1bb84ab75de9e> , <https://astrea.linkeddata.es/shapes#838b15e9f56dd8bcc5bc81c2275d7e30> , <https://astrea.linkeddata.es/shapes#988e9c680fef606814e44d6bdb49692a> , <https://astrea.linkeddata.es/shapes#bc9ce3975425cc3a2f60fe7ccef0e171> , <https://astrea.linkeddata.es/shapes#125ec62e8430b6ecb6d055ef34f377d1> , <https://astrea.linkeddata.es/shapes#6fc6e216738f8cab9e0ac730f0400391> , <https://astrea.linkeddata.es/shapes#0b9758119314bba1359adf0b9f272998> , <https://astrea.linkeddata.es/shapes#eff955862b54cbb24036e7cfab02f518> , <https://astrea.linkeddata.es/shapes#f2f9ef076701140c34329b9a47853f29> , <https://astrea.linkeddata.es/shapes#59920c6bb793c7ad832a0cc1f2449963> , <https://astrea.linkeddata.es/shapes#42e3c90c8d1558e42db698bbcab2b7d6> , <https://astrea.linkeddata.es/shapes#048a0814932aa7aac796ed55b436ffcf> , <https://astrea.linkeddata.es/shapes#b29e2451f257b6f08f22ca2a909fddb7> , <https://astrea.linkeddata.es/shapes#cc7ef62bf94d7b6834398d1c30446e66> , <https://astrea.linkeddata.es/shapes#88d591e907715e5389a83f74fd84df34> , <https://astrea.linkeddata.es/shapes#0218b71a439368db8e31024634f11542> , <https://astrea.linkeddata.es/shapes#c351d35508cd244e27f780a3489871ad> , <https://astrea.linkeddata.es/shapes#e34223f00da8c7c081459bfe9d0e5a65> , <https://astrea.linkeddata.es/shapes#9fef19cab589c301aadbfe664ae8ea3f> , <https://astrea.linkeddata.es/shapes#3d58f1cc26a8539fd0e907f05e83c18d> , <https://astrea.linkeddata.es/shapes#f226fb908c82f15b8174f29d0501b989> , <https://astrea.linkeddata.es/shapes#4a8462b42f79d781a4d8a213a8a7d359> , <https://astrea.linkeddata.es/shapes#ccbb9277e2e6b93d3ca381ee5ef72429> , <https://astrea.linkeddata.es/shapes#2a04a687a4e78d1e8e539d14adc06bd0> , <https://astrea.linkeddata.es/shapes#905224204f3359064a19083c2f6cdc42> , <https://astrea.linkeddata.es/shapes#d9c124fb121ffafe2726a627dcb33d21> , <https://astrea.linkeddata.es/shapes#cccfbbf74bdf587c9f89bce6597512c8> , <https://astrea.linkeddata.es/shapes#6bbe311ae04852c83c9207db741f82f2> , <https://astrea.linkeddata.es/shapes#4c51210ea40f08c270570e677c1f6c69> , <https://astrea.linkeddata.es/shapes#997484023cd4c535f6625fc0994899b6> , <https://astrea.linkeddata.es/shapes#35e085df75729bdf0fde7b8149d94da4> , <https://astrea.linkeddata.es/shapes#855d161f7aeeffc5397d4346219c3d86> , <https://astrea.linkeddata.es/shapes#da9f9201f621c7143097c69310ec10d3> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> , <https://astrea.linkeddata.es/shapes#024e4f9d1fe93f2132239cc63a64b39b> , <https://astrea.linkeddata.es/shapes#2163a1f2470ae86fbf9292340175f477> , <https://astrea.linkeddata.es/shapes#6983c31a7183d9ce2245539f1a53567c> , <https://astrea.linkeddata.es/shapes#eb40fef9aeef81dd630a03a6db05a6f1> , <https://astrea.linkeddata.es/shapes#a9d367f91219f865c298f272d7585571> , <https://astrea.linkeddata.es/shapes#bb6886a9bf4b5665a6c1ab2cd665f4e9> , <https://astrea.linkeddata.es/shapes#1bb577eadd4bb909c5907f01f02b55f0> , <https://astrea.linkeddata.es/shapes#bfb958c9b243025dbad38d361bc741ea> , <https://astrea.linkeddata.es/shapes#be6d6d739eb15c4874b8134b9a9c2324> , <https://astrea.linkeddata.es/shapes#eada53fc05130fe475adbca7cad240af> , <https://astrea.linkeddata.es/shapes#72c64d600b887cda41053160ad9e1f1e> , <https://astrea.linkeddata.es/shapes#90c29c7db4a9b173e1ff28888f469c35> , <https://astrea.linkeddata.es/shapes#902cb5e58b737c0778d7ef429381de78> , <https://astrea.linkeddata.es/shapes#5e2a2f35cb10b3ecf41fa1ba679d8ad9> , <https://astrea.linkeddata.es/shapes#26acfdc97ae770d5c818dbcaf0804c4c> , <https://astrea.linkeddata.es/shapes#539cd8b98c18eedfe340a3edd108b63a> , <https://astrea.linkeddata.es/shapes#720f6dd62cfae34c644a90a422c3cfdd> , <https://astrea.linkeddata.es/shapes#426e7092bd6af16d45c0817d3afac0f9> , <https://astrea.linkeddata.es/shapes#0ab7a95abb601dbc12cc07d2a6c08949> , <https://astrea.linkeddata.es/shapes#9679fb249c4969595c748c6c9841ec55> , <https://astrea.linkeddata.es/shapes#f62a484cf2aa048054c2c788e7980860> , <https://astrea.linkeddata.es/shapes#3519cc7e150f387b04eed75f107ceca8> , <https://astrea.linkeddata.es/shapes#f154216e2765bf214ae22e21673b846d> , <https://astrea.linkeddata.es/shapes#98f8db9d9fccae72a93b847e4f702194> , <https://astrea.linkeddata.es/shapes#72d65e95fddb07745bbf4932c20726d5> , <https://astrea.linkeddata.es/shapes#af3a62fece3038be6ee3aa4bdedd324a> , <https://astrea.linkeddata.es/shapes#66c9402d6a647e805e2a2b63166c28c8> , <https://astrea.linkeddata.es/shapes#cbde63754ba7f97b3c15f8c224c6181f> , <https://astrea.linkeddata.es/shapes#8997d33946e3bedf4881f15be93a472f> , <https://astrea.linkeddata.es/shapes#f56c5c155e39112518a5de193262381d> , <https://astrea.linkeddata.es/shapes#9f2c69978d5aed357fd6788441434947> , <https://astrea.linkeddata.es/shapes#5f606bbfbfa562e2b3df5e3b4cb2d3c4> , <https://astrea.linkeddata.es/shapes#8801a3cc58d6c06d76ac6d56c077775a> , <https://astrea.linkeddata.es/shapes#df8a4f2372c0421a96c2a4fd5b23254c> , <https://astrea.linkeddata.es/shapes#76a3633538ce179c7c73e97dd31b3cb3> , <https://astrea.linkeddata.es/shapes#6735274c2e353589ee18719394901b35> , <https://astrea.linkeddata.es/shapes#c4d80d40e2f0b382538eb80a0f908a1e> , <https://astrea.linkeddata.es/shapes#79ee67a07a6c6e2309aa615f6ea2e7ce> , <https://astrea.linkeddata.es/shapes#f3bb0a9ad1d488017754f41f7db1069b> , <https://astrea.linkeddata.es/shapes#a1b9cb84bc028a28b09a6d01c826c795> , <https://astrea.linkeddata.es/shapes#ba113f9b87c2de93e61db552862fc25c> , <https://astrea.linkeddata.es/shapes#26f608448997f4005f5417f901edf30e> , <https://astrea.linkeddata.es/shapes#b01dd3ffaad10cf9771257f04d50e3bb> , <https://astrea.linkeddata.es/shapes#c1db686b742b862f12e63936ec731334> , <https://astrea.linkeddata.es/shapes#977ce5caffa6bbc767b90265188b5a9e> , <https://astrea.linkeddata.es/shapes#2dd95ed313fc2100b7e7c0f27143f92d> , <https://astrea.linkeddata.es/shapes#2709b672bce2b036cd72a15d47c1fa47> , <https://astrea.linkeddata.es/shapes#745c34a3f19cb168f4c7f6d8507fb8b6> , <https://astrea.linkeddata.es/shapes#2139ea4820ae06a5736c2e7b2861f509> , <https://astrea.linkeddata.es/shapes#a2d6ffe0214bb4e9fa5024390503b8ee> , <https://astrea.linkeddata.es/shapes#d3f44c3aebe04b953b2dceb85305ac62> , <https://astrea.linkeddata.es/shapes#c8c81515f930a73ecd6d75223f31c151> , <https://astrea.linkeddata.es/shapes#b05943ec0f499e973247936ff24d6cdb> , <https://astrea.linkeddata.es/shapes#89cab1ce21d36683b0214589cc2c78f4> , <https://astrea.linkeddata.es/shapes#843657b25a26fd2bc45f6016c3ab2777> , <https://astrea.linkeddata.es/shapes#39283ba0f93733a9885b32d2ca2ca09c> , <https://astrea.linkeddata.es/shapes#a85096abccbf54c509dc69d24c2fd432> , <https://astrea.linkeddata.es/shapes#675a9dce05e95af1edfe5cd4e1fd4f38> , <https://astrea.linkeddata.es/shapes#bd420fa579a251cdc3c2bb3230f9b137> , <https://astrea.linkeddata.es/shapes#d95e1488bb5ecd006171743f59772a11> , <https://astrea.linkeddata.es/shapes#af23554d024b020bdea3dbbdb7a492fb> , <https://astrea.linkeddata.es/shapes#9c5494a4e748c88edc94282d493f41a9> , <https://astrea.linkeddata.es/shapes#b3286c9e55d05adaa8b6ca2df5592a2a> , <https://astrea.linkeddata.es/shapes#b82f5ee34c2da91cc726fc8f8a22b2f1> , <https://astrea.linkeddata.es/shapes#ab497ef692f72fff99ca0872aa16216d> , <https://astrea.linkeddata.es/shapes#b8634cf1e38275540a891f6ba31d911a> , <https://astrea.linkeddata.es/shapes#a56e97f3e75fed874613c918d64bb81d> , <https://astrea.linkeddata.es/shapes#a5c78839d29a501fab601cb76da4fefd> , <https://astrea.linkeddata.es/shapes#10bac1519f40f1e3b4125d76a43297b5> , <https://astrea.linkeddata.es/shapes#884fdf40463790e4ee2a2b3674c1c759> , <https://astrea.linkeddata.es/shapes#ae2b75c6f9770228f8e0b395d0c1b7c4> , <https://astrea.linkeddata.es/shapes#3c751bd0e15afade7ce17c2ea8b5a559> , <https://astrea.linkeddata.es/shapes#ec5b731c85db9bf71b69253262cc4d0d> , <https://astrea.linkeddata.es/shapes#9646e22178b6d0438f692d9f48a198ac> , <https://astrea.linkeddata.es/shapes#669adecf6bb7cd63c7c911c3042cea86> , <https://astrea.linkeddata.es/shapes#2a755b00281e3f7939fc100ff900e7fa> , <https://astrea.linkeddata.es/shapes#2c0b33b52d160bcfa1facbe468138232> , <https://astrea.linkeddata.es/shapes#5f3f3d64c6266f0f6d6ab7b3b17798fa> , <https://astrea.linkeddata.es/shapes#5826142f13776fb908489c0edcb94408> , <https://astrea.linkeddata.es/shapes#ab16908346ed6c40d3523c69abef9434> , <https://astrea.linkeddata.es/shapes#8d5678c143eabdeae9ca58a6e71e7f2a> , <https://astrea.linkeddata.es/shapes#68b3374e14d6bf2964cd010eef7ae44f> , <https://astrea.linkeddata.es/shapes#e32cc9a5df1d4af3f5dceb7b626e5055> , <https://astrea.linkeddata.es/shapes#5f6bb3ac44a933b1f386ed86f59651bf> , <https://astrea.linkeddata.es/shapes#2f71b8430dfdeae45eb1152c25ef93ba> , <https://astrea.linkeddata.es/shapes#2cdcecb8837412ca5c4969dc61296a6a> , <https://astrea.linkeddata.es/shapes#e2c615344d72a1a2bf66dc13044630f1> , <https://astrea.linkeddata.es/shapes#d96339378518bfb329cdca1835b26768> , <https://astrea.linkeddata.es/shapes#abc68fc34999cdcdb15278989afb079c> , <https://astrea.linkeddata.es/shapes#cad255a530a7c785b8cf8d8189bf5b6c> , <https://astrea.linkeddata.es/shapes#acb9a15bf9d724888ee02c1b05d2413f> , <https://astrea.linkeddata.es/shapes#a3334e776743c9b8d60890f9e1f9abb5> , <https://astrea.linkeddata.es/shapes#12381fb7929f1e2691556343513c2f5e> , <https://astrea.linkeddata.es/shapes#99a5c60a2eac688f46e580ea2710adda> , <https://astrea.linkeddata.es/shapes#a86aef1e8f78a335f920885e0ff6350a> , <https://astrea.linkeddata.es/shapes#03ceb9e89f352f5803aa59c3ec27aa61> , <https://astrea.linkeddata.es/shapes#b8c2e32bf211b043226453b1691dbcac> , <https://astrea.linkeddata.es/shapes#77dc455442d01996e50e6eafd2794342> , <https://astrea.linkeddata.es/shapes#c46f108eea8824662663bbfd988a9dca> , <https://astrea.linkeddata.es/shapes#32e1948df6c54e417bc75b6d07e961be> , <https://astrea.linkeddata.es/shapes#9e43c1749111745497b9b808f96d27d3> , <https://astrea.linkeddata.es/shapes#9d01a24e24a0161fbb64e152e98f752c> , <https://astrea.linkeddata.es/shapes#bae9f1c0e0dd76cd4dd874e294d76883> , <https://astrea.linkeddata.es/shapes#c09efb4cf308dfe6b8cfa8a4d3f8ec5a> , <https://astrea.linkeddata.es/shapes#162d45bb0fdb6fc85de9b89d98c7f09f> , <https://astrea.linkeddata.es/shapes#72b22f84f0deb2e4cd5ae4d1ce8be17f> , <https://astrea.linkeddata.es/shapes#e87771d9d59967e043f276c881c6a52d> , <https://astrea.linkeddata.es/shapes#7d2c0f5768ece59fefb908be1548c1a2> , <https://astrea.linkeddata.es/shapes#4e1ee5f75ddadc801db13c9a750f1fe1> , <https://astrea.linkeddata.es/shapes#dde9c5d6cd3d8e498a4b8503caf4c443> , <https://astrea.linkeddata.es/shapes#1f33f310fae72cc5aacfe5389489dd13> , <https://astrea.linkeddata.es/shapes#b1b70c7a0407149d2f08121843e903dd> , <https://astrea.linkeddata.es/shapes#abe51d40fe766dad738654dbf5b04c00> , <https://astrea.linkeddata.es/shapes#3e112a71c4b288fa7a5b4969ad6b91f0> , <https://astrea.linkeddata.es/shapes#f1f97f9e0150f97c0977a0903c670920> , <https://astrea.linkeddata.es/shapes#4a875782e165b75057567a35d48b42b9> , <https://astrea.linkeddata.es/shapes#88ffacb93fcd90b11c5b90cf1328ad46> , <https://astrea.linkeddata.es/shapes#a918b15e0a0f99ff1368ecd1c43c0cd0> , <https://astrea.linkeddata.es/shapes#80753f42b8269a46acc6430f342bf7a6> , <https://astrea.linkeddata.es/shapes#1cc070f5a9f5fd7dd70227055f35cdc3> , <https://astrea.linkeddata.es/shapes#d1593a1c14c1624f1c5215414a2f55a6> , <https://astrea.linkeddata.es/shapes#7193fab807562f935a0ee3ec0e8ec9c1> , <https://astrea.linkeddata.es/shapes#2f4936e5f3ffd876ba8b28e47092db19> , <https://astrea.linkeddata.es/shapes#b331252bb82a39614f134e50cee2d2a8> , <https://astrea.linkeddata.es/shapes#5c03f5e35a4942060fd9d9f7ad6a654e> , <https://astrea.linkeddata.es/shapes#e6c1e432bd298b5949bf3915d81dbb34> , <https://astrea.linkeddata.es/shapes#4212314fd3dad9f601154759f2d9ef05> , <https://astrea.linkeddata.es/shapes#c5672c9454b023586e87c9a7579e99d8> , <https://astrea.linkeddata.es/shapes#71d931ae0c59a1e9263b3c39bf7ab3ee> , <https://astrea.linkeddata.es/shapes#1bd875a182238982896f4705aecc09fc> , <https://astrea.linkeddata.es/shapes#2291cfcd5b8f9ecc677755b6474d5325> , <https://astrea.linkeddata.es/shapes#5c6ec21ac44095ef4a87772ee88b1b10> , <https://astrea.linkeddata.es/shapes#3f87f5bea1fc7ad2da57e2c1a5a51c03> , <https://astrea.linkeddata.es/shapes#5348bdd3eba7d77105a456d0afbcde58> , <https://astrea.linkeddata.es/shapes#6c730ae8177bc6461c01ef3f1974faf4> , <https://astrea.linkeddata.es/shapes#07dcc3b9277336d87d8565155701ac98> , <https://astrea.linkeddata.es/shapes#35ec46993023b37c2d861fcf7072241f> , <https://astrea.linkeddata.es/shapes#fb0cb6dc339b07d99aa9a2fed47bc58c> , <https://astrea.linkeddata.es/shapes#2d6bf8c1a0184ef06607cbf7c4a053d2> , <https://astrea.linkeddata.es/shapes#1c7c33ace89dc74cd303c29db951c549> , <https://astrea.linkeddata.es/shapes#1a058370b943ec29cc47c654c05e55e8> , <https://astrea.linkeddata.es/shapes#4bc49d47b5a55aeed73263dfbb1d8676> , <https://astrea.linkeddata.es/shapes#63400ddd39f195d33fe657d9b19a8ce0> , <https://astrea.linkeddata.es/shapes#090fc005767e1f124be8a368816f7ce3> , <https://astrea.linkeddata.es/shapes#06c61b866b983878bf34f6d08d55d473> , <https://astrea.linkeddata.es/shapes#6b7115c06d5912348e473f1d5f42ad22> , <https://astrea.linkeddata.es/shapes#3274c6c2abb60c6f80abe3004f80cd49> , <https://astrea.linkeddata.es/shapes#5346c9e813e856844434cf4422dbc35e> , <https://astrea.linkeddata.es/shapes#55088c411b008e3c01b67480a33650f0> , <https://astrea.linkeddata.es/shapes#788967ed128c63cd203d453e3a4e203e> , <https://astrea.linkeddata.es/shapes#79b4140ab879bb05dabf9ac48a42fb43> , <https://astrea.linkeddata.es/shapes#1d6b4c4802c445bb8cc6bb1cfa774d57> , <https://astrea.linkeddata.es/shapes#e609b93a62069f7576928c3842e07fa7> , <https://astrea.linkeddata.es/shapes#95758dfe0b56e75ab0cabcc2792dc1ad> , <https://astrea.linkeddata.es/shapes#66048c25b12188780ec9bea0a9fdd77a> , <https://astrea.linkeddata.es/shapes#22e9c1fe27af96eb13eb0f75d79f4492> , <https://astrea.linkeddata.es/shapes#33fbc03e314a88503e9cf8777a6394cb> , <https://astrea.linkeddata.es/shapes#bee5f07514373a82bc78b1e318d0985a> , <https://astrea.linkeddata.es/shapes#1bd9419669ecf1e32e4461511e6bba5a> , <https://astrea.linkeddata.es/shapes#9dc8da90d67c97be607ed690a7ee18d5> , <https://astrea.linkeddata.es/shapes#26e86458434863afbae443d1643f0cc8> , <https://astrea.linkeddata.es/shapes#0c566cc8424cbb1d4adfabb14088237d> , <https://astrea.linkeddata.es/shapes#96cc71380d0f98326f44aeb1823e7b54> , <https://astrea.linkeddata.es/shapes#e88dd11a52281fa917d03117ad812b1a> , <https://astrea.linkeddata.es/shapes#e3ade677dee9e84af2d9f4ca2a98fd4e> , <https://astrea.linkeddata.es/shapes#d69960b8fe8c3cc30c4f82616d0ca135> , <https://astrea.linkeddata.es/shapes#0d81868d64602376996b2eeb70ea1f7b> , <https://astrea.linkeddata.es/shapes#78c75816dfb6c51a721c49da33c3d56a> , <https://astrea.linkeddata.es/shapes#e2d1f639a719cefdecb09040d961e2f5> , <https://astrea.linkeddata.es/shapes#6f888216595ec7d4ea385de7babde8f1> , <https://astrea.linkeddata.es/shapes#e0fc277a86670f78977dabfa329a0216> , <https://astrea.linkeddata.es/shapes#1a0e399df1d611970004f7347d226539> , <https://astrea.linkeddata.es/shapes#5c76a7e0df17561aeec1b47e94772db6> , <https://astrea.linkeddata.es/shapes#86aa93aec96b5d133e6fd5884f39553a> , <https://astrea.linkeddata.es/shapes#88e44bbcf05f2fd35681e7faf73c9398> , <https://astrea.linkeddata.es/shapes#a4ec24b3b08633eea60c0a764842f80e> , <https://astrea.linkeddata.es/shapes#61fe60c59d82405bb228fecbad41777d> , <https://astrea.linkeddata.es/shapes#fbb75530d31cec3075c92321d3c8315b> , <https://astrea.linkeddata.es/shapes#3f3a05ac08b7379a27e0256f2cd0a853> , <https://astrea.linkeddata.es/shapes#26cd44352dc75f0dedf2ef102e800282> , <https://astrea.linkeddata.es/shapes#e4eec10b47c5908bb677e7d61630dcde> , <https://astrea.linkeddata.es/shapes#52aaad183f460483cb868a5c9354ea53> , <https://astrea.linkeddata.es/shapes#5f120d89c5393bdc4d9efc329e98469b> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/805937696> .
+
+<https://astrea.linkeddata.es/shapes#da9f9201f621c7143097c69310ec10d3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Additional form"@en , "Modulo di approfondimento"@it ;
+        sh:description    "This class represents an additional form, that describes specific information about a cultural property (epigraphic documents, stratigraphy, unit, wall typology)"@en , "Questa classe rappresenta un modulo di approfondimento, utile a trattare secondo un approccio specialistico specifici aspetti del bene in esame (Documenti Epigrafici; Tipi Murari, Unità Stratigrafiche)"@it ;
+        sh:name           "Additional form"@en , "Modulo di approfondimento"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#03ceb9e89f352f5803aa59c3ec27aa61> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e609b93a62069f7576928c3842e07fa7> , <https://astrea.linkeddata.es/shapes#88ffacb93fcd90b11c5b90cf1328ad46> , <https://astrea.linkeddata.es/shapes#5c03f5e35a4942060fd9d9f7ad6a654e> , <https://astrea.linkeddata.es/shapes#05c8af9ea05e1a058ef67f39c6b04126> , <https://astrea.linkeddata.es/shapes#cbde63754ba7f97b3c15f8c224c6181f> , <https://astrea.linkeddata.es/shapes#99a5c60a2eac688f46e580ea2710adda> ;
+        sh:targetClass    a-cat:AdditionalForm .
+
+<https://astrea.linkeddata.es/shapes#752424a0be66402e3c59ed2b4bcef82f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Modulo informativo"@it , "Information form"@en ;
+        sh:description    "Questa classe rappresenta un modulo informativo, uno standard ICCD per attività di censimento e segnalazione di beni culturali, utilizzato per acquisire informazioni per qualsiasi tipo di entità, con un set minimo di dati standardizzati obbligatori."@it , "This class represents an information form, an ICCD standard for cultural heritage census and reporting activities, used to acquire information for any type of entity, with a minimum set of mandatory standardized data."@en ;
+        sh:name           "Modulo informativo"@it , "Information form"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c8c81515f930a73ecd6d75223f31c151> , <https://astrea.linkeddata.es/shapes#c46f108eea8824662663bbfd988a9dca> , <https://astrea.linkeddata.es/shapes#e2c615344d72a1a2bf66dc13044630f1> ;
+        sh:targetClass    a-cat:InformationForm .
+
+<https://astrea.linkeddata.es/shapes#a56e97f3e75fed874613c918d64bb81d>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  cis:CulturalInstituteOrSite .
+
+<https://astrea.linkeddata.es/shapes#2a04a687a4e78d1e8e539d14adc06bd0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "has classification"@en , "La object property che permette di aggiungere una classificazione a un qualsiasi oggetto."@it , "ha classificazione"@it , "The object property that allows to add a classification to any object."@en ;
+        sh:class          :Classification ;
+        sh:description    "La object property che permette di aggiungere una classificazione a un qualsiasi oggetto."@it , "The object property that allows to add a classification to any object."@en ;
+        sh:name           "ha classificazione"@it , "has classification"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :hasClassification .
+
+<https://astrea.linkeddata.es/shapes#090fc005767e1f124be8a368816f7ce3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Privacy reason"@en , "Motivo di riservatezza"@it ;
+        sh:description    "This class represents the reason for the adoption of a specific access profile for a catalogue record."@en , "Questa classe rappresenta la motivazione che ha determinato l'adozione di un profilo di accesso relativamente ai dati contenuti in una scheda catalografica."@it ;
+        sh:name           "Privacy reason"@en , "Motivo di riservatezza"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#5c76a7e0df17561aeec1b47e94772db6> , <https://astrea.linkeddata.es/shapes#9e43c1749111745497b9b808f96d27d3> ;
+        sh:targetClass    a-cat:PrivacyReason .
+
+<https://astrea.linkeddata.es/shapes#838b15e9f56dd8bcc5bc81c2275d7e30>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "Questa proprietà rappresenta eventuali note, relative a una certa informazione."@it , "note"@en , "note"@it , "This property represents notes associated to a piece of information."@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "Questa proprietà rappresenta eventuali note, relative a una certa informazione."@it , "This property represents notes associated to a piece of information."@en ;
+        sh:name           "note"@en , "note"@it ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           :note .
+
+<https://astrea.linkeddata.es/shapes#acb9a15bf9d724888ee02c1b05d2413f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "has update scientific revisor"@en , "Questa proprietà rappresenta la relazione che collega una versione aggiornata di una scheda di catalogo al relativo referente verifica scientifica. La relazione tra il ruolo e l'ente che lo riveste è espressa nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l'ente, il suo ruolo e la sua corrispondente estensione temporale."@it , "ha referente verifica scientifica di aggiornamento"@it ;
+        sh:class          l0:Agent ;
+        sh:description    "Questa proprietà rappresenta la relazione che collega una versione aggiornata di una scheda di catalogo al relativo referente verifica scientifica. La relazione tra il ruolo e l'ente che lo riveste è espressa nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l'ente, il suo ruolo e la sua corrispondente estensione temporale."@it ;
+        sh:name           "ha referente verifica scientifica di aggiornamento"@it , "has update scientific revisor"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasUpdateScientificRevisor .
+
+<https://astrea.linkeddata.es/shapes#5da0f0c2a0bab703125d0089013b4e15>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "has scientific director"@en , "ha referente verifica scientifica"@it , "Questa proprietà rappresenta la relazione che collega la prima versione di una scheda di catalogo al relativo referente verifica scientifica. La relazione tra il ruolo e l'ente che lo riveste è espressa nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l'ente, il suo ruolo e la sua corrispondente estensione temporale."@it ;
+        sh:class          l0:Agent ;
+        sh:description    "Questa proprietà rappresenta la relazione che collega la prima versione di una scheda di catalogo al relativo referente verifica scientifica. La relazione tra il ruolo e l'ente che lo riveste è espressa nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l'ente, il suo ruolo e la sua corrispondente estensione temporale."@it ;
+        sh:name           "has scientific director"@en , "ha referente verifica scientifica"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasScientificDirector .
+
+<https://astrea.linkeddata.es/shapes#a1b9cb84bc028a28b09a6d01c826c795>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Natural heritage - paleontology catalogue record"@en , "Scheda Beni naturalistici-Paleontologia"@it ;
+        sh:description    "This class represents the catalogue record describing Natural heritage - paleontology."@en , "Questa classe rappresenta la scheda catalografica che descrive beni naturalistici-Paleontologia."@it ;
+        sh:name           "Natural heritage - paleontology catalogue record"@en , "Scheda Beni naturalistici-Paleontologia"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordBNP .
+
+<https://astrea.linkeddata.es/shapes#fb0cb6dc339b07d99aa9a2fed47bc58c>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  l0:Concept .
+
+<https://astrea.linkeddata.es/shapes#6c730ae8177bc6461c01ef3f1974faf4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "This property relates an agent to a situation in which that agent holds a role."@en , "is agent of"@en , "è agente in"@it , "Questa proprietà, inversa a \"ha agente\", collega un agente alla situazione in cui l'agente ha ricoperto un ruolo."@it ;
+        sh:class          :AgentRole ;
+        sh:description    "This property relates an agent to a situation in which that agent holds a role."@en , "Questa proprietà, inversa a \"ha agente\", collega un agente alla situazione in cui l'agente ha ricoperto un ruolo."@it ;
+        sh:name           "is agent of"@en , "è agente in"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :isAgentOf .
+
+<https://astrea.linkeddata.es/shapes#539cd8b98c18eedfe340a3edd108b63a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "is privacy level of"@en , "This is the inverse property of \"has privacy level\"."@en , "Questa è la proprietà inversa di \"ha livello di riservatezza\"."@it , "è livello di riservatezza di"@it ;
+        sh:class          a-cat:AccessProfile ;
+        sh:description    "Questa è la proprietà inversa di \"ha livello di riservatezza\"."@it , "This is the inverse property of \"has privacy level\"."@en ;
+        sh:name           "is privacy level of"@en , "è livello di riservatezza di"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isPrivacyLevelOf .
+
+<https://astrea.linkeddata.es/shapes#977ce5caffa6bbc767b90265188b5a9e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      l0:precedes .
+
+<https://astrea.linkeddata.es/shapes#88e44bbcf05f2fd35681e7faf73c9398>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Questa proprietà associa una versione di una scheda alla sua versione immediatamente precedente."@it , "Property used to associate a catalogue record version to its immediate previous version."@en , "ha la versione precedente"@it , "has immediate previous version"@en ;
+        sh:class          a-cat:CatalogueRecordVersion ;
+        sh:description    "Questa proprietà associa una versione di una scheda alla sua versione immediatamente precedente."@it , "Property used to associate a catalogue record version to its immediate previous version."@en ;
+        sh:maxCount       1 ;
+        sh:name           "ha la versione precedente"@it , "has immediate previous version"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasImmediatePreviousVersion .
+
+<https://astrea.linkeddata.es/report/805937696>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "https://w3id.org/arco/ontology/core" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#07dcc3b9277336d87d8565155701ac98>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "This property relates an entity to its part."@en , "Questa proprietà collega un'entità a una sua parte."@it , "has part"@en , "ha parte"@it ;
+        sh:class          owl:Thing ;
+        sh:description    "This property relates an entity to its part."@en , "Questa proprietà collega un'entità a una sua parte."@it ;
+        sh:name           "has part"@en , "ha parte"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :hasPart .
+
+<https://astrea.linkeddata.es/shapes#bd420fa579a251cdc3c2bb3230f9b137>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "ha ente o soggetto responsabile di trascrizione per informatizzazione"@it , "Questa proprietà rappresenta la relazione che collega una versione, relativa a trascrizione per informatizzazione, di una scheda di catalogo al relativo ente/soggetto responsabile. La relazione tra il ruolo e l'ente che lo riveste è espressa nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l'ente, il suo ruolo e la sua corrispondente estensione temporale."@it , "has digital transcription responsible agent"@en ;
+        sh:class          l0:Agent ;
+        sh:description    "Questa proprietà rappresenta la relazione che collega una versione, relativa a trascrizione per informatizzazione, di una scheda di catalogo al relativo ente/soggetto responsabile. La relazione tra il ruolo e l'ente che lo riveste è espressa nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l'ente, il suo ruolo e la sua corrispondente estensione temporale."@it ;
+        sh:name           "has digital transcription responsible agent"@en , "ha ente o soggetto responsabile di trascrizione per informatizzazione"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasDigitalTranscriptionResponsibleAgent .
+
+<https://astrea.linkeddata.es/shapes#05e3e16e9daf1dd7788adedf8e8fb2e7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Questa proprietà, inversa a \"ha agente responsabile di scheda su bene culturale\", collega l'Ente o il soggetto che ha prodotto la scheda o che gestisce la banca dati di cui la scheda fa parte alla scheda stessa."@it , "è ente responsabile della scheda su bene culturale"@it , "is responsible agent of cultural property record"@en , "This property, inverse of \"has cultural property record responsible agent\", relates the agency or the person that created the record or manages the database where the record is to the record itself."@en ;
+        sh:class          a-cat:CulturalPropertyRecord ;
+        sh:description    "Questa proprietà, inversa a \"ha agente responsabile di scheda su bene culturale\", collega l'Ente o il soggetto che ha prodotto la scheda o che gestisce la banca dati di cui la scheda fa parte alla scheda stessa."@it , "This property, inverse of \"has cultural property record responsible agent\", relates the agency or the person that created the record or manages the database where the record is to the record itself."@en ;
+        sh:name           "is responsible agent of cultural property record"@en , "è ente responsabile della scheda su bene culturale"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isResponsibleAgentOfCulturalPropertyRecord .
+
+<https://astrea.linkeddata.es/shapes#72b22f84f0deb2e4cd5ae4d1ce8be17f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "This property relates a cultural property to an additional form."@en , "Questa proprietà collega un bene culturale a un modulo di approfondimento in relazione con il bene in esame."@it , "è collegato a modulo di approfondimento"@it , "is related to additional form"@en ;
+        sh:class          a-cat:AdditionalForm ;
+        sh:description    "Questa proprietà collega un bene culturale a un modulo di approfondimento in relazione con il bene in esame."@it , "This property relates a cultural property to an additional form."@en ;
+        sh:name           "è collegato a modulo di approfondimento"@it , "is related to additional form"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isRelatedToAdditionalForm .
+
+<https://astrea.linkeddata.es/shapes#f3bb0a9ad1d488017754f41f7db1069b>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      l0:isTopicOf .
+
+<https://astrea.linkeddata.es/shapes#61fe60c59d82405bb228fecbad41777d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "La object property che associa un qualunque oggetto a una categoria."@it , "ha categoria"@it , "The object property that associates any object with a category."@en , "has category"@en ;
+        sh:class          :Category ;
+        sh:description    "La object property che associa un qualunque oggetto a una categoria."@it , "The object property that associates any object with a category."@en ;
+        sh:name           "ha categoria"@it , "has category"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :hasCategory .
+
+<https://astrea.linkeddata.es/shapes#e3ade677dee9e84af2d9f4ca2a98fd4e>
+        a            sh:PropertyShape ;
+        sh:class     l0:Agent ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :involvesAgent .
+
+<https://astrea.linkeddata.es/shapes#b8c2e32bf211b043226453b1691dbcac>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "is role of"@en , "è ruolo in"@it , "This property relates a role to a situation in which an agent holds that role."@en , "Questa proprietà collega un ruolo a una situazione in cui il ruolo viene ricoperto da un agente."@it ;
+        sh:class          :AgentRole ;
+        sh:description    "This property relates a role to a situation in which an agent holds that role."@en , "Questa proprietà collega un ruolo a una situazione in cui il ruolo viene ricoperto da un agente."@it ;
+        sh:name           "is role of"@en , "è ruolo in"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :isRoleOf .
+
+<https://astrea.linkeddata.es/shapes#06c61b866b983878bf34f6d08d55d473>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:hasPrivacyReason .
+
+<https://astrea.linkeddata.es/shapes#86aa93aec96b5d133e6fd5884f39553a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "è parte di"@it , "Questa proprietà collega una parte di un'entità all'entità."@it , "is part of"@en , "This property relates the part of an entity to that entity."@en ;
+        sh:class          owl:Thing ;
+        sh:description    "This property relates the part of an entity to that entity."@en , "Questa proprietà collega una parte di un'entità all'entità."@it ;
+        sh:name           "è parte di"@it , "is part of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :isPartOf .
+
+<https://astrea.linkeddata.es/shapes#5348bdd3eba7d77105a456d0afbcde58>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "ha responsabile ricerca e redazione"@it , "Questa proprietà rappresenta la relazione che collega la prima versione di una scheda di catalogo al relativo responsabile ricerca e redazione. La relazione tra il ruolo e l'ente che lo riveste è espressa nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l'ente, il suo ruolo e la sua corrispondente estensione temporale."@it , "has responsible research and compilation"@en ;
+        sh:class          l0:Agent ;
+        sh:description    "Questa proprietà rappresenta la relazione che collega la prima versione di una scheda di catalogo al relativo responsabile ricerca e redazione. La relazione tra il ruolo e l'ente che lo riveste è espressa nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l'ente, il suo ruolo e la sua corrispondente estensione temporale."@it ;
+        sh:name           "has responsible research and compilation"@en , "ha responsabile ricerca e redazione"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasResponsibleResearchAndCompilation .
+
+<https://astrea.linkeddata.es/shapes#b3286c9e55d05adaa8b6ca2df5592a2a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Questa proprietà collega un bene culturale a un modulo informativo in relazione con il bene in esame."@it , "è collegato a modulo informativo"@it , "is related to information form"@en , "This property relates a cultural property to an information form."@en ;
+        sh:class          a-cat:InformationForm ;
+        sh:description    "This property relates a cultural property to an information form."@en , "Questa proprietà collega un bene culturale a un modulo informativo in relazione con il bene in esame."@it ;
+        sh:name           "is related to information form"@en , "è collegato a modulo informativo"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isRelatedToInformationForm .
+
+<https://astrea.linkeddata.es/shapes#78c75816dfb6c51a721c49da33c3d56a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Scheda Strumenti musicali"@it , "Musical instruments catalogue record"@en ;
+        sh:description    "This class represents the catalogue record describing Musical instruments."@en , "Questa classe rappresenta la scheda catalografica che descrive strumenti musicali."@it ;
+        sh:name           "Musical instruments catalogue record"@en , "Scheda Strumenti musicali"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordSM .
+
+<https://astrea.linkeddata.es/shapes#59920c6bb793c7ad832a0cc1f2449963>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "ha tipo"@it , "has type"@en , "The object property that associates any object with a type."@en , "La object property che associa un qualunque oggetto a un tipo."@it ;
+        sh:class          :Type ;
+        sh:description    "The object property that associates any object with a type."@en , "La object property che associa un qualunque oggetto a un tipo."@it ;
+        sh:name           "has type"@en , "ha tipo"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :hasType .
+
+<https://astrea.linkeddata.es/shapes#d95e1488bb5ecd006171743f59772a11>
+        a            sh:PropertyShape ;
+        sh:class     rdfs:Literal ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:catalogueRecordIdentifier .
+
+<https://astrea.linkeddata.es/shapes#1bd9419669ecf1e32e4461511e6bba5a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "is characteristic of"@en , "The object property that links an entity characteristic to the entity."@en , "La object property che collega una caratteristica di un'entità all'entità stessa."@it , "è caratteristica di"@it ;
+        sh:class          owl:Thing ;
+        sh:description    "La object property che collega una caratteristica di un'entità all'entità stessa."@it , "The object property that links an entity characteristic to the entity."@en ;
+        sh:name           "è caratteristica di"@it , "is characteristic of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :isCharacteristicOf .
+
+<https://astrea.linkeddata.es/shapes#1f33f310fae72cc5aacfe5389489dd13>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasAgent .
+
+<https://astrea.linkeddata.es/shapes#88ffacb93fcd90b11c5b90cf1328ad46>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:additionalFormIdentifier .
+
+<https://astrea.linkeddata.es/shapes#79ee67a07a6c6e2309aa615f6ea2e7ce>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "è tipo di modulo di approfondimento di"@it , "is additional form type of"@en , "This is the inverse property of \"has additional form type\"."@en , "Questa è la proprietà inversa di \"ha tipo di modulo di approfondimento\"."@it ;
+        sh:class          a-cat:AdditionalForm ;
+        sh:description    "Questa è la proprietà inversa di \"ha tipo di modulo di approfondimento\"."@it , "This is the inverse property of \"has additional form type\"."@en ;
+        sh:name           "is additional form type of"@en , "è tipo di modulo di approfondimento di"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isAdditionalFormTypeOf .
+
+<https://astrea.linkeddata.es/shapes#eada53fc05130fe475adbca7cad240af>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1bd9419669ecf1e32e4461511e6bba5a> ;
+        sh:targetClass  l0:Characteristic .
+
+<https://astrea.linkeddata.es/shapes#ab16908346ed6c40d3523c69abef9434>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "descrizione"@it , "description"@en , "Questa proprietà rappresenta una descrizione associata a una certa entità, che viene arricchita con ulteriori dettagli che la descrivono."@it , "This property relates a description associated to an entity, in order to add details and some more information."@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "Questa proprietà rappresenta una descrizione associata a una certa entità, che viene arricchita con ulteriori dettagli che la descrivono."@it , "This property relates a description associated to an entity, in order to add details and some more information."@en ;
+        sh:name           "descrizione"@it , "description"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           :description .
+
+<https://astrea.linkeddata.es/shapes#b331252bb82a39614f134e50cee2d2a8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "ha livello di riservatezza"@it , "Questa proprietà collega il profilo di accesso di una scheda catalografica al livello di riservatezza dei dati contenutevi (basso livello di riservatezza, alto livello di riservatezza, medio livello di riservatezza)."@it , "has privacy level"@en ;
+        sh:class          a-cat:PrivacyLevel ;
+        sh:description    "Questa proprietà collega il profilo di accesso di una scheda catalografica al livello di riservatezza dei dati contenutevi (basso livello di riservatezza, alto livello di riservatezza, medio livello di riservatezza)."@it ;
+        sh:name           "has privacy level"@en , "ha livello di riservatezza"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasPrivacyLevel .
+
+<https://astrea.linkeddata.es/shapes#5b129384917c0bb412f7da96b023b804>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "This property relates an entity and a concept"@en , "is classified by"@en , "è classificato da"@it , "Questa proprietà collega un'entità ad un concetto"@it ;
+        sh:class          :Concept ;
+        sh:description    "Questa proprietà collega un'entità ad un concetto"@it , "This property relates an entity and a concept"@en ;
+        sh:name           "is classified by"@en , "è classificato da"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :isClassifiedBy .
+
+<https://astrea.linkeddata.es/shapes#5f606bbfbfa562e2b3df5e3b4cb2d3c4>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <https://w3id.org/arco/ontology/context-description/expiryDate> .
+
+<https://astrea.linkeddata.es/shapes#bae9f1c0e0dd76cd4dd874e294d76883>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Archaeological materials tables catalogue record"@en , "Scheda Tabella materiali archeologici"@it ;
+        sh:description    "Questa classe rappresenta la scheda catalografica che descrive tabella materiali archeologici."@it , "This class represents the catalogue record describing Archaeological materials tables."@en ;
+        sh:name           "Scheda Tabella materiali archeologici"@it , "Archaeological materials tables catalogue record"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordTMA .
+
+<https://astrea.linkeddata.es/shapes#745c34a3f19cb168f4c7f6d8507fb8b6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Printing plates catalogue record"@en , "Scheda Matrici incise"@it ;
+        sh:description    "Questa classe rappresenta la scheda catalografica che descrive matrici incise."@it , "This class represents the catalogue record describing Printing plates."@en ;
+        sh:name           "Printing plates catalogue record"@en , "Scheda Matrici incise"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordMI .
+
+<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  foaf:Agent , l0:Agent .
+
+<https://astrea.linkeddata.es/shapes#024e4f9d1fe93f2132239cc63a64b39b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Scheda Beni naturalistici-Mineralogia"@it , "Natural heritage - mineralogy catalogue record"@en ;
+        sh:description    "Questa classe rappresenta la scheda catalografica che descrive beni naturalistici-Mineralogia."@it , "This class represents the catalogue record describing Natural heritage - mineralogy."@en ;
+        sh:name           "Natural heritage - mineralogy catalogue record"@en , "Scheda Beni naturalistici-Mineralogia"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordBNM .
+
+<https://astrea.linkeddata.es/shapes#05c8af9ea05e1a058ef67f39c6b04126>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:hasAdditionalFormType .
+
+<https://astrea.linkeddata.es/shapes#d96339378518bfb329cdca1835b26768>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "dati pregressi recuperati"@it , "This property represents information extracted from versions of a catalogue record using obsolete standards."@en , "Questa proprietà rappresenta eventuali informazioni provenienti da schede pregresse redatte sulla base di standard obsoleti, per le quali non è stato possibile effettuare il trasferimento nel tracciato della scheda aggiornato, secondo la sintassi: “acronimocampo: valore; acronimocampo: valore”"@it , "recovered data"@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "Questa proprietà rappresenta eventuali informazioni provenienti da schede pregresse redatte sulla base di standard obsoleti, per le quali non è stato possibile effettuare il trasferimento nel tracciato della scheda aggiornato, secondo la sintassi: “acronimocampo: valore; acronimocampo: valore”"@it , "This property represents information extracted from versions of a catalogue record using obsolete standards."@en ;
+        sh:name           "recovered data"@en , "dati pregressi recuperati"@it ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           a-cat:recoveredData .
+
+<https://astrea.linkeddata.es/shapes#bc9ce3975425cc3a2f60fe7ccef0e171>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "identificativo di sistema"@it , "Questa proprietà rappresenta l'identificativo di sistema che viene associato all'interno del sistema Sigec al file xml contenente una scheda di catalogo."@it , "system record code"@en , "This property represents the identifier associated in the context of the SIGECweb to the xml file containing a catalogue record."@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "This property represents the identifier associated in the context of the SIGECweb to the xml file containing a catalogue record."@en , "Questa proprietà rappresenta l'identificativo di sistema che viene associato all'interno del sistema Sigec al file xml contenente una scheda di catalogo."@it ;
+        sh:maxCount       1 ;
+        sh:name           "identificativo di sistema"@it , "system record code"@en ;
+        sh:nodeKind       sh:Literal , sh:IRIOrLiteral ;
+        sh:path           a-cat:systemRecordCode .
+
+<https://astrea.linkeddata.es/shapes#a86aef1e8f78a335f920885e0ff6350a>
+        a         sh:PropertyShape ;
+        sh:class  cis:NameInTime .
+
+<https://astrea.linkeddata.es/shapes#3f3a05ac08b7379a27e0256f2cd0a853>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "has alternative identifier"@en , "ha altro codice identificativo"@it , "Questa proprietà collega una scheda di catalogo a un codice che identifica la scheda di catalogo nell'ambito di altri sistemi informativi, assegnato da enti diversi da ICCD."@it , "Property used to associate a catalogue record with an identifier created in the context of information systems other than ICCD's SIGECweb."@en ;
+        sh:class          a-cat:AlternativeIdentifier ;
+        sh:description    "Questa proprietà collega una scheda di catalogo a un codice che identifica la scheda di catalogo nell'ambito di altri sistemi informativi, assegnato da enti diversi da ICCD."@it , "Property used to associate a catalogue record with an identifier created in the context of information systems other than ICCD's SIGECweb."@en ;
+        sh:name           "has alternative identifier"@en , "ha altro codice identificativo"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasAlternativeIdentifier .
+
+<https://astrea.linkeddata.es/shapes#2cdcecb8837412ca5c4969dc61296a6a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "Type"@en , "Tipo"@it ;
+        sh:description    "Classe che rappresenta il concetto di tipo."@it , "The class representing the concept of type."@en ;
+        sh:name           "Tipo"@it , "Type"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#77dc455442d01996e50e6eafd2794342> ;
+        sh:targetClass    :Type .
+
+<https://astrea.linkeddata.es/shapes#162d45bb0fdb6fc85de9b89d98c7f09f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      ro:isRoleInTimeOf .
+
+<https://astrea.linkeddata.es/shapes#e0fc277a86670f78977dabfa329a0216>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Property, inverse of \"has catalogue record version role in time\", used to associate a role in time to the agent playing that role, in the updating of a particular version of a catalogue record."@en , "Questa proprietà, inversa a \"ha ruolo nel tempo\", permette di associare il ruolo nel tempo che un agente esercita nell'ambito della redazione, dell'aggiornamento o revisione della scheda a una particolare versione di una scheda."@it , "is role in time of"@en , "è ruolo nel tempo di"@it ;
+        sh:class          a-cat:CatalogueRecordVersion ;
+        sh:description    "Property, inverse of \"has catalogue record version role in time\", used to associate a role in time to the agent playing that role, in the updating of a particular version of a catalogue record."@en , "Questa proprietà, inversa a \"ha ruolo nel tempo\", permette di associare il ruolo nel tempo che un agente esercita nell'ambito della redazione, dell'aggiornamento o revisione della scheda a una particolare versione di una scheda."@it ;
+        sh:name           "è ruolo nel tempo di"@it , "is role in time of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isCatalogueRecordVersionRiTOf .
+
+<https://astrea.linkeddata.es/shapes#fb18bd9cc6eb734e60bc20d598dcbc31>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:isPrivacyLevelOf .
+
+<https://astrea.linkeddata.es/shapes#5c6ec21ac44095ef4a87772ee88b1b10>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      l0:follows .
+
+<https://astrea.linkeddata.es/shapes#a2d6ffe0214bb4e9fa5024390503b8ee>
+        a         sh:PropertyShape ;
+        sh:class  :Classification .
+
+<https://astrea.linkeddata.es/shapes#b8634cf1e38275540a891f6ba31d911a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Questa proprietà rappresenta la relazione che collega una versione aggiornata di una scheda di catalogo al relativo funzionario responsabile. La relazione tra il ruolo e l'ente che lo riveste è espressa nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l'ente, il suo ruolo e la sua corrispondente estensione temporale."@it , "has update official in charge"@en , "ha funzionario responsabile di aggiornamento"@it ;
+        sh:class          l0:Agent ;
+        sh:description    "Questa proprietà rappresenta la relazione che collega una versione aggiornata di una scheda di catalogo al relativo funzionario responsabile. La relazione tra il ruolo e l'ente che lo riveste è espressa nel nome della proprietà, che quindi ne fornisce una rappresentazione semplificata, con ridotta espressività. Nell'ontologia questa relazione è modellata anche, in maniera più espressiva, dalla classe TimeIndexedRole, che permette di collegare l'ente, il suo ruolo e la sua corrispondente estensione temporale."@it ;
+        sh:name           "has update official in charge"@en , "ha funzionario responsabile di aggiornamento"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasUpdateOfficialInCharge .
+
+<https://astrea.linkeddata.es/shapes#d69960b8fe8c3cc30c4f82616d0ca135>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e0fc277a86670f78977dabfa329a0216> ;
+        sh:targetClass  ro:TimeIndexedRole .
+
+<https://astrea.linkeddata.es/shapes#669adecf6bb7cd63c7c911c3042cea86>
+        a            sh:PropertyShape ;
+        sh:class     <https://w3id.org/italia/onto/TI/TimeInterval> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://w3id.org/italia/onto/TI/atTime> .
+
+<https://astrea.linkeddata.es/shapes#294d87bf7dd23c56dce0be32b835fc44>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Natural heritage - zoology catalogue record"@en , "Scheda Beni naturalistici-Zoologia"@it ;
+        sh:description    "Questa classe rappresenta la scheda catalografica che descrive beni naturalistici-Zoologia."@it , "This class represents the catalogue record describing Natural heritage - zoology."@en ;
+        sh:name           "Natural heritage - zoology catalogue record"@en , "Scheda Beni naturalistici-Zoologia"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordBNZ .
+
+<https://astrea.linkeddata.es/shapes#96cc71380d0f98326f44aeb1823e7b54>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "Time indexed situation"@en , "Situazione nel tempo"@it ;
+        sh:description    "The class representing the generic concept of time indexed situation."@en , "La classe che rappresenta il generico concetto di situazione indicizzata nel tempo."@it ;
+        sh:name           "Time indexed situation"@en , "Situazione nel tempo"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ec5b731c85db9bf71b69253262cc4d0d> ;
+        sh:targetClass    :TimeIndexedSituation .
+
+<https://astrea.linkeddata.es/shapes#9f2c69978d5aed357fd6788441434947>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "classifies"@en , "This property relates a concept to an entity"@en , "classifica"@it , "Questa proprietà collega un concetto ad un'entità"@it ;
+        sh:class          owl:Thing ;
+        sh:description    "This property relates a concept to an entity"@en , "Questa proprietà collega un concetto ad un'entità"@it ;
+        sh:name           "classifica"@it , "classifies"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :classifies .
+
+<https://astrea.linkeddata.es/shapes#e2c615344d72a1a2bf66dc13044630f1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "identificativo del modulo informativo"@it , "information form identifier"@en , "Questa proprietà permette di associare l'identificativo a un modulo informativo che è collegato a un bene culturale."@it , "This property links an identifier to an information form related to a cultural property."@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "Questa proprietà permette di associare l'identificativo a un modulo informativo che è collegato a un bene culturale."@it , "This property links an identifier to an information form related to a cultural property."@en ;
+        sh:maxCount       1 ;
+        sh:name           "information form identifier"@en , "identificativo del modulo informativo"@it ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
+        sh:path           a-cat:informationFormIdentifier .
+
+<https://astrea.linkeddata.es/shapes#048a0814932aa7aac796ed55b436ffcf>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Questa è la proprietà inversa a \"ha referente verifica scientifica\"."@it , "is scientific director of"@en , "This is the inverse property of \"has scientific director\"."@en , "è referente verifica scientifica di"@it ;
+        sh:class          a-cat:CatalogueRecordVersion ;
+        sh:description    "Questa è la proprietà inversa a \"ha referente verifica scientifica\"."@it , "This is the inverse property of \"has scientific director\"."@en ;
+        sh:name           "è referente verifica scientifica di"@it , "is scientific director of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isScientificDirectorOf .
+
+<https://astrea.linkeddata.es/shapes#9e43c1749111745497b9b808f96d27d3>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:isPrivacyReasonOf .
+
+<https://astrea.linkeddata.es/shapes#26cd44352dc75f0dedf2ef102e800282>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Additional form type"@en , "Tipo di modulo di approfondimento"@it ;
+        sh:description    "This class represents the additional form type (Stratigraphic Unit, Wall Typology, Epigraphy)"@en , "Questa classe rappresenta il tipo di modulo di approfondimento (Unità Stratigrafica, Tipo Murario, Epigrafia)"@it ;
+        sh:name           "Tipo di modulo di approfondimento"@it , "Additional form type"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3274c6c2abb60c6f80abe3004f80cd49> , <https://astrea.linkeddata.es/shapes#79ee67a07a6c6e2309aa615f6ea2e7ce> ;
+        sh:targetClass    a-cat:AdditionalFormType .
+
+<https://astrea.linkeddata.es/shapes#55088c411b008e3c01b67480a33650f0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "is described by"@en , "Questa proprietà, inversa della proprietà \"descrive\", è stata creata come proprietà generica di sottoproprietà specifiche, e rappresenta la relazione tra un'entità descritta da un'altra entità."@it , "è descritto da"@it , "This property, inverse property of \"describes\", was created as a generic property for specific subproperties, and represents the relationship between an entity described by another entity."@en ;
+        sh:class          owl:Thing ;
+        sh:description    "Questa proprietà, inversa della proprietà \"descrive\", è stata creata come proprietà generica di sottoproprietà specifiche, e rappresenta la relazione tra un'entità descritta da un'altra entità."@it , "This property, inverse property of \"describes\", was created as a generic property for specific subproperties, and represents the relationship between an entity described by another entity."@en ;
+        sh:name           "is described by"@en , "è descritto da"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:isDescribedBy .
+
+<https://astrea.linkeddata.es/shapes#6983c31a7183d9ce2245539f1a53567c>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#bb6886a9bf4b5665a6c1ab2cd665f4e9> ;
+        sh:targetClass  <https://w3id.org/italia/onto/TI/TimeInterval> .
+
+<https://astrea.linkeddata.es/shapes#0d81868d64602376996b2eeb70ea1f7b>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      l0:identifier .
+
+<https://astrea.linkeddata.es/shapes#c8c81515f930a73ecd6d75223f31c151>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:describes .
+
+<https://astrea.linkeddata.es/shapes#a918b15e0a0f99ff1368ecd1c43c0cd0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Scheda di catalogo"@it , "Catalogue record"@en ;
+        sh:description    "Rappresenta una scheda di catalogo, cioè un modello descrittivo che raccoglie in modo organizzato le informazioni sui beni, e che può avere più versioni (in seguito ad aggiornamenti e revisioni)."@it , "This class represents a catalogue record, that is a descriptive model collecting and organising information on a cultural property, and which can have more than one version (after editing and updating)."@en ;
+        sh:name           "Catalogue record"@en , "Scheda di catalogo"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#cccfbbf74bdf587c9f89bce6597512c8> , <https://astrea.linkeddata.es/shapes#d95e1488bb5ecd006171743f59772a11> , <https://astrea.linkeddata.es/shapes#d1593a1c14c1624f1c5215414a2f55a6> , <https://astrea.linkeddata.es/shapes#3f3a05ac08b7379a27e0256f2cd0a853> , <https://astrea.linkeddata.es/shapes#abe51d40fe766dad738654dbf5b04c00> , <https://astrea.linkeddata.es/shapes#6fc6e216738f8cab9e0ac730f0400391> , <https://astrea.linkeddata.es/shapes#9646e22178b6d0438f692d9f48a198ac> , <https://astrea.linkeddata.es/shapes#76a3633538ce179c7c73e97dd31b3cb3> , <https://astrea.linkeddata.es/shapes#2f71b8430dfdeae45eb1152c25ef93ba> , <https://astrea.linkeddata.es/shapes#bc9ce3975425cc3a2f60fe7ccef0e171> , <https://astrea.linkeddata.es/shapes#2dd95ed313fc2100b7e7c0f27143f92d> , <https://astrea.linkeddata.es/shapes#cc7ef62bf94d7b6834398d1c30446e66> , <https://astrea.linkeddata.es/shapes#d96339378518bfb329cdca1835b26768> , <https://astrea.linkeddata.es/shapes#3f87f5bea1fc7ad2da57e2c1a5a51c03> ;
+        sh:targetClass    a-cat:CatalogueRecord .
+
+<https://astrea.linkeddata.es/shapes#c1db686b742b862f12e63936ec731334>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "Metodo"@it , "Method"@en ;
+        sh:description    "Classe che rappresenta il concetto di metodo."@it , "The class representing the concept of method."@en ;
+        sh:name           "Metodo"@it , "Method"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#80753f42b8269a46acc6430f342bf7a6> ;
+        sh:targetClass    :Method .
+
+<https://astrea.linkeddata.es/shapes#820f8333c1401d3417f1bb84ab75de9e>
+        a            sh:PropertyShape ;
+        sh:class     <https://w3id.org/italia/onto/TI/TimeInterval> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:editedAtTime .
+
+<https://astrea.linkeddata.es/shapes#ae2b75c6f9770228f8e0b395d0c1b7c4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Scheda Opere/oggetti d'arte"@it , "Artworks catalogue record"@en ;
+        sh:description    "Questa classe rappresenta la scheda catalografica che descrive opere/oggetti d'arte."@it , "This class represents the catalogue record describing Artworks."@en ;
+        sh:name           "Scheda Opere/oggetti d'arte"@it , "Artworks catalogue record"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordOA .
+
+<https://astrea.linkeddata.es/shapes#c5672c9454b023586e87c9a7579e99d8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "This property relates, non-transitively, an entity to a component."@en , "Questa proprietà collega, in maniera non-transitiva, un'entità a un suo componente."@it , "ha componente"@it , "has component"@en ;
+        sh:class          owl:Thing ;
+        sh:description    "This property relates, non-transitively, an entity to a component."@en , "Questa proprietà collega, in maniera non-transitiva, un'entità a un suo componente."@it ;
+        sh:name           "has component"@en , "ha componente"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :hasComponent .
+
+<https://astrea.linkeddata.es/shapes#a85096abccbf54c509dc69d24c2fd432>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Alternative Identifier"@en , "Codice alternativo"@it ;
+        sh:description    "Questa classe rappresenta un codice che identifica la scheda di catalogo nell'ambito di altri sistemi informativi, assegnato da enti diversi da ICCD."@it , "This class represents an identifier of a catalogue record in information systems other than ICCD."@en ;
+        sh:name           "Alternative Identifier"@en , "Codice alternativo"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#4e1ee5f75ddadc801db13c9a750f1fe1> , <https://astrea.linkeddata.es/shapes#32e1948df6c54e417bc75b6d07e961be> , <https://astrea.linkeddata.es/shapes#052cf45925067a4b0f918c26e852251b> , <https://astrea.linkeddata.es/shapes#66c9402d6a647e805e2a2b63166c28c8> ;
+        sh:targetClass    a-cat:AlternativeIdentifier .
+
+<https://astrea.linkeddata.es/shapes#52aaad183f460483cb868a5c9354ea53>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "ha ruolo nel tempo"@it , "Questa proprietà permette di associare una particolare versione di una scheda al ruolo nel tempo che un agente esercita nell'ambito della redazione, dell'aggiornamento o revisione della scheda."@it , "has role in time"@en , "This property is used to associate a particular version of a catalogue record to the role in time of an agent that plays a role in updating the catalogue record."@en ;
+        sh:class          ro:TimeIndexedRole ;
+        sh:description    "This property is used to associate a particular version of a catalogue record to the role in time of an agent that plays a role in updating the catalogue record."@en , "Questa proprietà permette di associare una particolare versione di una scheda al ruolo nel tempo che un agente esercita nell'ambito della redazione, dell'aggiornamento o revisione della scheda."@it ;
+        sh:name           "has role in time"@en , "ha ruolo nel tempo"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasCatalogueRecordVersionRiT .
+
+<https://astrea.linkeddata.es/shapes#7193fab807562f935a0ee3ec0e8ec9c1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "Classification"@en , "Classificazione"@it ;
+        sh:description    "La classe che rappresenta il concetto di classificazione."@it , "The class that models the concept of classification."@en ;
+        sh:name           "Classification"@en , "Classificazione"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ccbb9277e2e6b93d3ca381ee5ef72429> ;
+        sh:targetClass    :Classification .
+
+<https://astrea.linkeddata.es/shapes#f226fb908c82f15b8174f29d0501b989>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Prints catalogue record"@en , "Scheda Stampe"@it ;
+        sh:description    "This class represents the catalogue record describing Prints."@en , "Questa classe rappresenta la scheda catalografica che descrive stampe."@it ;
+        sh:name           "Prints catalogue record"@en , "Scheda Stampe"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordS .
+
+<https://astrea.linkeddata.es/shapes#cd96bebd1c4143873bda0dfa1c0f937f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Musical instruments - Organs catalogue record"@en , "Scheda Strumenti musicali-Organo"@it ;
+        sh:description    "Questa classe rappresenta la scheda catalografica che descrive strumenti musicali-organo."@it , "This class represents the catalogue record describing Organs."@en ;
+        sh:name           "Scheda Strumenti musicali-Organo"@it , "Musical instruments - Organs catalogue record"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordSMO .
+
+<https://astrea.linkeddata.es/shapes#89cab1ce21d36683b0214589cc2c78f4>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <https://w3id.org/italia/onto/TI/atTime> .
+
+<https://astrea.linkeddata.es/shapes#cccfbbf74bdf587c9f89bce6597512c8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "has access profile"@en , "ha profilo di accesso"@it , "Questa proprietà collega una scheda di catalogo al profilo di accesso ai dati (basso, medio, alto)."@it ;
+        sh:class          a-cat:AccessProfile ;
+        sh:description    "Questa proprietà collega una scheda di catalogo al profilo di accesso ai dati (basso, medio, alto)."@it ;
+        sh:name           "has access profile"@en , "ha profilo di accesso"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasAccessProfile .
+
+<https://astrea.linkeddata.es/shapes#1d6b4c4802c445bb8cc6bb1cfa774d57>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "Cultural entity classification"@en , "Classificazione relativa a bene culturale"@it ;
+        sh:description    "La classe che rappresenta il concetto di classificazione di un'entità culturale."@it , "The class that models the concept of cultural entity classification."@en ;
+        sh:name           "Cultural entity classification"@en , "Classificazione relativa a bene culturale"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    :CulturalEntityClassification .
+
+<https://astrea.linkeddata.es/shapes#9cdb841827780ee70e53f540c76e0a42>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Questa proprietà associa una versione di una scheda a una sua versione precedente."@it , "ha versione precedente"@it , "has previous version"@en , "Property used to associate a catalogue record version to its previous version."@en ;
+        sh:class          a-cat:CatalogueRecordVersion ;
+        sh:description    "Questa proprietà associa una versione di una scheda a una sua versione precedente."@it , "Property used to associate a catalogue record version to its previous version."@en ;
+        sh:name           "ha versione precedente"@it , "has previous version"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           a-cat:hasPreviousVersion .
+
+<https://astrea.linkeddata.es/shapes#32e1948df6c54e417bc75b6d07e961be>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:isAlternativeIdentifierOf .
+
+<https://astrea.linkeddata.es/shapes#c09efb4cf308dfe6b8cfa8a4d3f8ec5a>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://dati.gov.it/onto/dcatapit#Agent> , l0:Agent .
+
+<https://astrea.linkeddata.es/shapes#997484023cd4c535f6625fc0994899b6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "Questa proprietà collega, in maniera non-transitiva, un componente a un'entità di cui è componente."@it , "is component of"@en , "è componente di"@it , "This property relates, non-transitively, a component to an entity of which it is component."@en ;
+        sh:class          owl:Thing ;
+        sh:description    "Questa proprietà collega, in maniera non-transitiva, un componente a un'entità di cui è componente."@it , "This property relates, non-transitively, a component to an entity of which it is component."@en ;
+        sh:name           "is component of"@en , "è componente di"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :isComponentOf .
+
+<https://astrea.linkeddata.es/shapes#8997d33946e3bedf4881f15be93a472f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Archaeological monuments catalogue record"@en , "Scheda Monumenti archeologici"@it ;
+        sh:description    "This class represents the catalogue record describing Archaeological monuments."@en , "Questa classe rappresenta la scheda catalografica che descrive monumenti archeologici."@it ;
+        sh:name           "Scheda Monumenti archeologici"@it , "Archaeological monuments catalogue record"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordMA .
+
+<https://astrea.linkeddata.es/shapes#6bbe311ae04852c83c9207db741f82f2>
+        a            sh:PropertyShape ;
+        sh:class     rdfs:Literal ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://w3id.org/arco/ontology/context-description/expiryDate> .
+
+<https://astrea.linkeddata.es/shapes#4bc49d47b5a55aeed73263dfbb1d8676>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "ha ruolo"@it , "has role"@en , "Questa proprietà collega una situazione in cui un ruolo viene ricoperto da un agente al ruolo stesso."@it , "This property relates a situation in which an agent holds a role to that role."@en ;
+        sh:class          ro:Role ;
+        sh:description    "This property relates a situation in which an agent holds a role to that role."@en , "Questa proprietà collega una situazione in cui un ruolo viene ricoperto da un agente al ruolo stesso."@it ;
+        sh:name           "ha ruolo"@it , "has role"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :hasRole .
+
+<https://astrea.linkeddata.es/shapes#af3a62fece3038be6ee3aa4bdedd324a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Anthropological materials catalogue record"@en , "Scheda Reperti antropologici"@it ;
+        sh:description    "This class represents the catalogue record describing Anthropological materials."@en , "Questa classe rappresenta la scheda catalografica che descrive reperti antropologici."@it ;
+        sh:name           "Anthropological materials catalogue record"@en , "Scheda Reperti antropologici"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordAT .
+
+<https://astrea.linkeddata.es/shapes#125ec62e8430b6ecb6d055ef34f377d1>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b05943ec0f499e973247936ff24d6cdb> , <https://astrea.linkeddata.es/shapes#2d6bf8c1a0184ef06607cbf7c4a053d2> , <https://astrea.linkeddata.es/shapes#b3286c9e55d05adaa8b6ca2df5592a2a> , <https://astrea.linkeddata.es/shapes#72b22f84f0deb2e4cd5ae4d1ce8be17f> ;
+        sh:targetClass  cis:CulturalEntity .
+
+<https://astrea.linkeddata.es/shapes#f154216e2765bf214ae22e21673b846d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/catalogue> ;
+        rdfs:label        "Scheda Complessi archeologici"@it , "Archaeological complexes catalogue record"@en ;
+        sh:description    "Questa classe rappresenta la scheda catalografica che descrive complessi archeologici."@it , "This class represents the catalogue record describing Natural heritage - archaeological complexes."@en ;
+        sh:name           "Archaeological complexes catalogue record"@en , "Scheda Complessi archeologici"@it ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    a-cat:CatalogueRecordCA .
+
+<https://astrea.linkeddata.es/shapes#2d6bf8c1a0184ef06607cbf7c4a053d2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://w3id.org/arco/ontology/core> ;
+        rdfs:label        "has cultural entity characteristic"@en , "La object property che collega una cultural entity a una sua caratteristica."@it , "ha caratteristica di entità culturale"@it , "The object property that links a cultural entity to one of its characteristics."@en ;
+        sh:class          :CulturalEntityCharacteristic ;
+        sh:description    "La object property che collega una cultural entity a una sua caratteristica."@it , "The object property that links a cultural entity to one of its characteristics."@en ;
+        sh:name           "has cultural entity characteristic"@en , "ha caratteristica di entità culturale"@it ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           :hasCulturalEntityCharacteristic .
+
+<https://astrea.linkeddata.es/shapes#72d65e95fddb07745bbf4932c20726d5>
+        a            sh:PropertyShape ;
+        sh:class     a-cat:CatalogueRecordVersion ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:isPreviousVersionOf .
+
+<https://astrea.linkeddata.es/shapes#1bd875a182238982896f4705aecc09fc>
+        a            sh:PropertyShape ;
+        sh:class     a-cat:CatalogueRecordVersion ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      a-cat:hasImmediatePreviousVersion .

@@ -1,0 +1,721 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#11a2d8339766273525d31e992d1b4f77>
+        a               sh:NodeShape ;
+        rdfs:label      "Position de l'article" ;
+        sh:description  "La classe \"PositionArticle\" indique dans quel partie du texte de loi est contenu l'article correspondant." ;
+        sh:name         "Position de l'article" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5> , <https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529> , <https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9> , <https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24> , <https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04> , <https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad> , <https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4> , <https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337> , <https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6> , <https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360> , <https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620> , <https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d> , <https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1> , <https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3> , <https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0> , <https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b> , <https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3> , <https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044> ;
+        sh:targetClass  <http://data.lirmm.fr/ontologies/oan/PositionArticle> .
+
+<https://astrea.linkeddata.es/shapes#960838096fcbbc96d7153265ff6af918>
+        a               sh:PropertyShape ;
+        rdfs:label      "fonctionIntervenant" , "La propriété \"fonctionIntervenant\" représente la fonction du député qui intervient durant une séance d'un quelconque organisme." ;
+        sh:datatype     xsd:string ;
+        sh:description  "La propriété \"fonctionIntervenant\" représente la fonction du député qui intervient durant une séance d'un quelconque organisme." ;
+        sh:name         "fonctionIntervenant" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/fonctionIntervenant> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#fae5c4dc15d997468c9f70c04e1cf033>
+        a               sh:PropertyShape ;
+        rdfs:label      "motifRetrait" , "La propriété \"motifRetrait\" représente le motif pour lequel la question écrite a été supprimé." ;
+        sh:datatype     xsd:string ;
+        sh:description  "La propriété \"motifRetrait\" représente le motif pour lequel la question écrite a été supprimé." ;
+        sh:name         "motifRetrait" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/motifRetrait> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.lirmm.fr/ontologies/oan/Organisme> .
+
+<https://astrea.linkeddata.es/shapes#9e827fbbc114dc0c51656f60538c18e9>
+        a               sh:PropertyShape ;
+        rdfs:label      "debutMandat" , "La propriété \"debutMandat\" représente le début du mandat d'un député." ;
+        sh:datatype     xsd:date ;
+        sh:description  "La propriété \"debutMandat\" représente le début du mandat d'un député." ;
+        sh:name         "debutMandat" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/debutMandat> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.lirmm.fr/ontologies/oan/PreuvePresence> .
+
+<https://astrea.linkeddata.es/shapes#95f7d94defda2e1b9bf5f4cd981cb208>
+        a               sh:PropertyShape ;
+        rdfs:label      "dateEcriture" , "La propriété \"dateEcriture\" représente la date à laquelle a été émise la question écrite." ;
+        sh:datatype     xsd:date ;
+        sh:description  "La propriété \"dateEcriture\" représente la date à laquelle a été émise la question écrite." ;
+        sh:name         "dateEcriture" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/dateEcriture> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.lirmm.fr/ontologies/oan/Chapitre> .
+
+<https://astrea.linkeddata.es/shapes#5afbfdf1137bb6f27c5aed087855211a>
+        a               sh:PropertyShape ;
+        rdfs:label      "nomMandat" , "La propriété \"nomMandat\" représente le nom du mandat que peut avoir un député." ;
+        sh:datatype     xsd:string ;
+        sh:description  "La propriété \"nomMandat\" représente le nom du mandat que peut avoir un député." ;
+        sh:name         "nomMandat" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/nomMandat> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#536eebf5ab46c73e15f7f26fa7483841>
+        a               sh:PropertyShape ;
+        rdfs:label      "pourMinistere" , "La propriété \"pourMinistere\" représente le nom du ministère pour lequel la lettre a été écrite." ;
+        sh:datatype     xsd:string ;
+        sh:description  "La propriété \"pourMinistere\" représente le nom du ministère pour lequel la lettre a été écrite." ;
+        sh:name         "pourMinistere" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/pourMinistere> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#4f084b627bebbe5b004d9a8c5733e7d6>
+        a               sh:NodeShape ;
+        rdfs:label      "Loi" ;
+        sh:description  "La classe \"Loi\" sert à représenter la notion de loi établi par les députés lors de différents hémicycles. Une loi est une règle juridique défini lors de différents rassemblements de l'assemblée nationale par les députés et les membres du gouvernements. Un projet de loi émane d'un membre du grouvernement et une proposition de loi émane d'un parlementaire." ;
+        sh:name         "Loi" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d> , <https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9> , <https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3> , <https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3> , <https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24> , <https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04> , <https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0> , <https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360> , <https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044> , <https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1> , <https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b> , <https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6> , <https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad> , <https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7> , <https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5> , <https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4> , <https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337> , <https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529> ;
+        sh:targetClass  <http://data.lirmm.fr/ontologies/oan/Loi> .
+
+<https://astrea.linkeddata.es/shapes#50afd5d777b883fe10d0ff20659cd55e>
+        a                sh:PropertyShape ;
+        rdfs:label       "numeroQuestion" , "La propriété \"numeorQuestion\" représente le numéro de la question écrite." ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "La propriété \"numeorQuestion\" représente le numéro de la question écrite." ;
+        sh:minInclusive  0 ;
+        sh:name          "numeroQuestion" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://data.lirmm.fr/ontologies/oan/numeroQuestion> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#9af84ddf2392f6a97bc5aa80a73cbab4>
+        a               sh:PropertyShape ;
+        rdfs:label      "texteReponse" , "La propriété \"texteReponse\" représente le texte de la réponse à une question écrite émise par un ministre." ;
+        sh:datatype     xsd:string ;
+        sh:description  "La propriété \"texteReponse\" représente le texte de la réponse à une question écrite émise par un ministre." ;
+        sh:name         "texteReponse" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/texteReponse> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#866c769a5d19ed161fc44817b916764b>
+        a               sh:PropertyShape ;
+        rdfs:label      "themeQuestion" , "La propriété \"themeQuestion\" représente le thème de la question écrite émise par le député pour un ministre." ;
+        sh:datatype     xsd:string ;
+        sh:description  "La propriété \"themeQuestion\" représente le thème de la question écrite émise par le député pour un ministre." ;
+        sh:name         "themeQuestion" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/themeQuestion> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#2a99eb683b377fdd4a247e7bfa9e8165>
+        a               sh:PropertyShape ;
+        rdfs:label      "dateIntervention" , "La propriété \"dateIntervention\" représente la date à laquelle est faite l'intervention." ;
+        sh:datatype     xsd:date ;
+        sh:description  "La propriété \"dateIntervention\" représente la date à laquelle est faite l'intervention." ;
+        sh:name         "dateIntervention" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/dateIntervention> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#523e17f689c20e230d83960b50b3a90a>
+        a               sh:NodeShape ;
+        rdfs:label      "Intervention" ;
+        sh:description  "La classe \"Intervention\" représente l'intervention d'un député lors d'un rassemblement à l'assemblée nationale ou bien lors d'une commission." ;
+        sh:name         "Intervention" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044> , <https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5> , <https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04> , <https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337> , <https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7> , <https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3> , <https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529> , <https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0> , <https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620> , <https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24> , <https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4> , <https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3> , <https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360> , <https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b> , <https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9> , <https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6> , <https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d> , <https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#9c0cbe6858dfe0ef61ee5e3ba16cd45b> , <https://astrea.linkeddata.es/shapes#2a99eb683b377fdd4a247e7bfa9e8165> , <https://astrea.linkeddata.es/shapes#635c9412ceb13da9611190bfbebddaa4> , <https://astrea.linkeddata.es/shapes#960838096fcbbc96d7153265ff6af918> ;
+        sh:targetClass  <http://data.lirmm.fr/ontologies/oan/Intervention> .
+
+<https://astrea.linkeddata.es/shapes#9c77ee6552fbea1af8a797cdbdb1460d>
+        a               sh:PropertyShape ;
+        rdfs:label      "datePresence" , "La propriété \"datePresence\" représente la date à laquelle a été faite la présence." ;
+        sh:datatype     xsd:date ;
+        sh:description  "La propriété \"datePresence\" représente la date à laquelle a été faite la présence." ;
+        sh:name         "datePresence" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/datePresence> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#0e34d79d86d98182f460368f6a149a41>
+        a               sh:NodeShape ;
+        rdfs:label      "Article" ;
+        sh:description  "La classe \"Article\" représente les différents articles qui peuvent être contenus dans un texte de loi." ;
+        sh:name         "Article" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6> , <https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad> , <https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5> , <https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9> , <https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337> , <https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b> , <https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620> , <https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4> , <https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d> , <https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044> , <https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529> , <https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360> , <https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7> , <https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3> , <https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3> , <https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24> , <https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1> , <https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b12d77de3ad361c323dd3d5338036e46> , <https://astrea.linkeddata.es/shapes#c24bff3c42a7da7e63124c586d3b734a> , <https://astrea.linkeddata.es/shapes#ad68b1afbb3fc8938019a9484d8c7332> ;
+        sh:targetClass  <http://data.lirmm.fr/ontologies/oan/Article> .
+
+<https://astrea.linkeddata.es/shapes#b929a5d2f20fd5cacdf8b714d7844ccc>
+        a                sh:PropertyShape ;
+        rdfs:label       "placeHemicycle" , "La propriété \"placeHemicycle\" représente le numéro de la place qu'occupe le député à l'assemblée nationale." ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "La propriété \"placeHemicycle\" représente le numéro de la place qu'occupe le député à l'assemblée nationale." ;
+        sh:minInclusive  0 ;
+        sh:name          "placeHemicycle" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://data.lirmm.fr/ontologies/oan/placeHemicycle> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#7536430a78becd4170b5b2e3a91243e3>
+        a               sh:PropertyShape ;
+        rdfs:label      "titreChapitre" , "La propriété \"titrechapitre\" représente le titre d'un chapitre contenu dans un texte de loi." ;
+        sh:datatype     xsd:string ;
+        sh:description  "La propriété \"titrechapitre\" représente le titre d'un chapitre contenu dans un texte de loi." ;
+        sh:name         "titreChapitre" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/titreChapitre> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#7ac2bad998cbe7575027b9c5845865c8>
+        a               sh:PropertyShape ;
+        rdfs:label      "dateRapport" , "La propriété \"dateRapport\" représente la date à laquel le rapport a été créé." ;
+        sh:datatype     xsd:date ;
+        sh:description  "La propriété \"dateRapport\" représente la date à laquel le rapport a été créé." ;
+        sh:name         "dateRapport" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/dateRapport> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#db4a77c25dde6e1b4afca65bd12f4028>
+        a               sh:PropertyShape ;
+        rdfs:label      "metier" , "La propriété \"metier\" représente le métier du député. Cette propriété a été rajouté à la super classe \"foaf:Person\" car c'était plus convenable de procéder de cette manière." ;
+        sh:datatype     xsd:string ;
+        sh:description  "La propriété \"metier\" représente le métier du député. Cette propriété a été rajouté à la super classe \"foaf:Person\" car c'était plus convenable de procéder de cette manière." ;
+        sh:name         "metier" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/metier> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.lirmm.fr/ontologies/oan/Article> .
+
+<https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.lirmm.fr/ontologies/oan/Section> .
+
+<https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.lirmm.fr/ontologies/oan/Seance> .
+
+<https://astrea.linkeddata.es/shapes#a1ce2b6b7c78f2cc1eb3df534b19b199>
+        a                sh:PropertyShape ;
+        rdfs:label       "La propriété \"amendementNbFoisRectifier\" représente le nombre de fois qu'un amendement a été rectifier par l'assemblée nationale." , "amendementNbFoisRectifier" ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "La propriété \"amendementNbFoisRectifier\" représente le nombre de fois qu'un amendement a été rectifier par l'assemblée nationale." ;
+        sh:minInclusive  0 ;
+        sh:name          "amendementNbFoisRectifier" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://data.lirmm.fr/ontologies/oan/amendementNbFoisRectifier> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#c99d428c6b4bc16997484b4b08563452>
+        a                sh:PropertyShape ;
+        rdfs:label       "legislatureAmendement" , "La propriété \"legislatureAmendement\" représente la législature sous laquelle a été créé l'amendement." ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "La propriété \"legislatureAmendement\" représente la législature sous laquelle a été créé l'amendement." ;
+        sh:minInclusive  0 ;
+        sh:name          "legislatureAmendement" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://data.lirmm.fr/ontologies/oan/legislatureAmendement> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.lirmm.fr/ontologies/oan/Loi> .
+
+<https://astrea.linkeddata.es/shapes#880c468e0d085d80c1abb512d4229f4f>
+        a               sh:NodeShape ;
+        rdfs:label      "Réponse" ;
+        sh:description  "La classe \"Reponse\" représente la réponse des ministres aux différentes questions écrites émises par les députés." ;
+        sh:name         "Réponse" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b> , <https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044> , <https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04> , <https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360> , <https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7> , <https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9> , <https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3> , <https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5> , <https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0> , <https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24> , <https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d> , <https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337> , <https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3> , <https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620> , <https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1> , <https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529> , <https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6> , <https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#9af84ddf2392f6a97bc5aa80a73cbab4> , <https://astrea.linkeddata.es/shapes#523e0301930734bcb1a930d74f562054> ;
+        sh:targetClass  <http://data.lirmm.fr/ontologies/oan/Reponse> .
+
+<https://astrea.linkeddata.es/shapes#c8daf722b1fdb6f8733c7398ed208c57>
+        a               sh:NodeShape ;
+        rdfs:label      "Séance" ;
+        sh:description  "La classe \"Seance\" représente les différents rassemblements auxquels un député assiste. Ces rassemblements sont généralements les sessions de l'assemblée nationale et les commissions." ;
+        sh:name         "Séance" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24> , <https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360> , <https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3> , <https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620> , <https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337> , <https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04> , <https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad> , <https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6> , <https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3> , <https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7> , <https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0> , <https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4> , <https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9> , <https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1> , <https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529> , <https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5> , <https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044> , <https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#8ef7439cd29079454ad95839977bb401> , <https://astrea.linkeddata.es/shapes#aebc370f1c8275d69b1eb65d4ef9f985> , <https://astrea.linkeddata.es/shapes#5d4d5c9067bdba11901f281856292884> ;
+        sh:targetClass  <http://data.lirmm.fr/ontologies/oan/Seance> .
+
+<https://astrea.linkeddata.es/shapes#a740c5b8fa23bf9bfecbc0b737610c0f>
+        a               sh:NodeShape ;
+        rdfs:label      "Rapport" ;
+        sh:description  "La classe \"Rapport\" sert à représenter la notion de rapport écrit par les députés lors de commission ou d'hémicycle. Un rapport est établi dans le but de proposer des solutions à un problème." ;
+        sh:name         "Rapport" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337> , <https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5> , <https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b> , <https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04> , <https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3> , <https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360> , <https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044> , <https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4> , <https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3> , <https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529> , <https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6> , <https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1> , <https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0> , <https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d> , <https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7> , <https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620> , <https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9> , <https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#7ac2bad998cbe7575027b9c5845865c8> , <https://astrea.linkeddata.es/shapes#3b6242b2ba112a252dafa8d8c4daaaad> ;
+        sh:targetClass  <http://data.lirmm.fr/ontologies/oan/Rapport> .
+
+<https://astrea.linkeddata.es/shapes#84b9962464a1e7e08e72bd1aad755092>
+        a                sh:PropertyShape ;
+        rdfs:label       "alineaNumero" , "La propriété \"alineaNumero\" représente le numéro d'un alinéa." ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "La propriété \"alineaNumero\" représente le numéro d'un alinéa." ;
+        sh:minInclusive  0 ;
+        sh:name          "alineaNumero" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://data.lirmm.fr/ontologies/oan/alineaNumero> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.lirmm.fr/ontologies/oan/TexteLoi> .
+
+<https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.lirmm.fr/ontologies/oan/QuestionEcrite> .
+
+<https://astrea.linkeddata.es/shapes#9c0cbe6858dfe0ef61ee5e3ba16cd45b>
+        a                sh:PropertyShape ;
+        rdfs:label       "nbMots" , "La propriété \"nbMots\" représente le nombre de mots que contient l'intervention d'un député." ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "La propriété \"nbMots\" représente le nombre de mots que contient l'intervention d'un député." ;
+        sh:minInclusive  0 ;
+        sh:name          "nbMots" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://data.lirmm.fr/ontologies/oan/nbMots> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#7c560e236054560e20780d7aceae5aa6>
+        a               sh:NodeShape ;
+        rdfs:label      "Chapitre" ;
+        sh:description  "La classe \"Chapitre\" représente les différents chapitres contenus dans un texte de loi." ;
+        sh:name         "Chapitre" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0> , <https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7> , <https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529> , <https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1> , <https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b> , <https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3> , <https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04> , <https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3> , <https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360> , <https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4> , <https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337> , <https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5> , <https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad> , <https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24> , <https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6> , <https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d> , <https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044> , <https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#7536430a78becd4170b5b2e3a91243e3> ;
+        sh:targetClass  <http://data.lirmm.fr/ontologies/oan/Chapitre> .
+
+<https://astrea.linkeddata.es/shapes#3e5df927013c9c4a27405a1130d28d65>
+        a               sh:PropertyShape ;
+        rdfs:label      "titreSousSection" , "La propriété \"titreSousSection\" représente le titre d'une sous section contenu dans une section d'un chapitre d'un texte de loi." ;
+        sh:datatype     xsd:string ;
+        sh:description  "La propriété \"titreSousSection\" représente le titre d'une sous section contenu dans une section d'un chapitre d'un texte de loi." ;
+        sh:name         "titreSousSection" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/titreSousSection> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#3a0ab3b84412bae6004b3b68263b065b>
+        a                sh:PropertyShape ;
+        rdfs:label       "La propriété \"nbIntervention\" représente le nombre d'interventions qu'il y a eu pour une section." , "nbIntervention" ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "La propriété \"nbIntervention\" représente le nombre d'interventions qu'il y a eu pour une section." ;
+        sh:minInclusive  0 ;
+        sh:name          "nbIntervention" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://data.lirmm.fr/ontologies/oan/nbIntervention> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#ed32bd1688069fe3e588575e39bfe467>
+        a                sh:PropertyShape ;
+        rdfs:label       "La propriété \"nbPreuvesPresence\" représente le nombre de preuves d'une présence que peut avoir un député." , "nbPreuvesPresence" ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "La propriété \"nbPreuvesPresence\" représente le nombre de preuves d'une présence que peut avoir un député." ;
+        sh:minInclusive  0 ;
+        sh:name          "nbPreuvesPresence" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://data.lirmm.fr/ontologies/oan/nbPreuvesPresence> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#8c0f5a79399e9ee16dbe946e86286d9f>
+        a               sh:NodeShape ;
+        rdfs:label      "Texte de Loi" ;
+        sh:description  "La classe \"TexteLoi\" représente le texte contenu dans une loi. Pour plus de détails voir la classe \"Loi\"." ;
+        sh:name         "Texte de Loi" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360> , <https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3> , <https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044> , <https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529> , <https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6> , <https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad> , <https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4> , <https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5> , <https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0> , <https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1> , <https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b> , <https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7> , <https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620> , <https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337> , <https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9> , <https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d> , <https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3> , <https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24> ;
+        sh:targetClass  <http://data.lirmm.fr/ontologies/oan/TexteLoi> .
+
+<https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.lirmm.fr/ontologies/oan/Alinea> .
+
+<https://astrea.linkeddata.es/shapes#1cde524981615a2c5e2de474e2d98ed3>
+        a                sh:PropertyShape ;
+        rdfs:label       "La propriété \"numeroAmendement\" représente le numéro donné à un amendement." , "numeroAmendement" ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "La propriété \"numeroAmendement\" représente le numéro donné à un amendement." ;
+        sh:minInclusive  0 ;
+        sh:name          "numeroAmendement" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://data.lirmm.fr/ontologies/oan/numeroAmendement> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#db4a77c25dde6e1b4afca65bd12f4028> ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Person> .
+
+<https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.lirmm.fr/ontologies/oan/Intervention> .
+
+<https://astrea.linkeddata.es/shapes#4e1157dc1dda22995c0f21cfba8e06e6>
+        a               sh:NodeShape ;
+        rdfs:label      "Organisme" ;
+        sh:description  "La classe \"Organisme\" représente les différents organismes possibles auxquels un député peut appartenir." ;
+        sh:name         "Organisme" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529> , <https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04> , <https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360> , <https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d> , <https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044> , <https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0> , <https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24> , <https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7> , <https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620> , <https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6> , <https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3> , <https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5> , <https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337> , <https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad> , <https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9> , <https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4> , <https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1> , <https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#84400d5ac15805b0305fa9096df7f0db> ;
+        sh:targetClass  <http://data.lirmm.fr/ontologies/oan/Organisme> .
+
+<https://astrea.linkeddata.es/shapes#3b6242b2ba112a252dafa8d8c4daaaad>
+        a                sh:PropertyShape ;
+        rdfs:label       "La propriété \"numeroRapport\" représente le numéro donné au rapport par les différents organismes qu'il concerne." , "numeroRapport" ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "La propriété \"numeroRapport\" représente le numéro donné au rapport par les différents organismes qu'il concerne." ;
+        sh:minInclusive  0 ;
+        sh:name          "numeroRapport" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://data.lirmm.fr/ontologies/oan/numeroRapport> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#c26a5c8678937d3db352cd163258f61d>
+        a               sh:PropertyShape ;
+        rdfs:label      "exposeAmendement" , "La propriété \"exposeAmendement\" représente un petit texte résumé de cet amendement." ;
+        sh:datatype     xsd:string ;
+        sh:description  "La propriété \"exposeAmendement\" représente un petit texte résumé de cet amendement." ;
+        sh:name         "exposeAmendement" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/exposeAmendement> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#635c9412ceb13da9611190bfbebddaa4>
+        a               sh:PropertyShape ;
+        rdfs:label      "texteIntervention" , "La propriété \"texteIntervention\" représente le texte de l'intervention." ;
+        sh:datatype     xsd:string ;
+        sh:description  "La propriété \"texteIntervention\" représente le texte de l'intervention." ;
+        sh:name         "texteIntervention" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/texteIntervention> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.lirmm.fr/ontologies/oan/Depute> .
+
+<https://astrea.linkeddata.es/shapes#84400d5ac15805b0305fa9096df7f0db>
+        a               sh:PropertyShape ;
+        rdfs:label      "nomOrganisme" , "La propriété \"nomOrganisme\" représente le nom d'un organisme." ;
+        sh:datatype     xsd:string ;
+        sh:description  "La propriété \"nomOrganisme\" représente le nom d'un organisme." ;
+        sh:name         "nomOrganisme" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/nomOrganisme> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#c28e34dc5926b522ba9b23c1845e5d44>
+        a                sh:PropertyShape ;
+        rdfs:label       "La propriété \"legislatureQuestion\" représente la législature sous laquelle la question écrite à été émise." , "legislatureQuestion" ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "La propriété \"legislatureQuestion\" représente la législature sous laquelle la question écrite à été émise." ;
+        sh:minInclusive  0 ;
+        sh:name          "legislatureQuestion" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://data.lirmm.fr/ontologies/oan/legislatureQuestion> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#aebc370f1c8275d69b1eb65d4ef9f985>
+        a                sh:PropertyShape ;
+        rdfs:label       "numeroSemaineSeance" , "La propriété \"numeroSemaineSeance\" représente le numéro de la semaine à laquelle à lieu la séance." ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "La propriété \"numeroSemaineSeance\" représente le numéro de la semaine à laquelle à lieu la séance." ;
+        sh:minInclusive  0 ;
+        sh:name          "numeroSemaineSeance" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://data.lirmm.fr/ontologies/oan/numeroSemaineSeance> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#8ef7439cd29079454ad95839977bb401>
+        a               sh:PropertyShape ;
+        rdfs:label      "heureDebutSeance" , "La propriété \"heureDebutSeance\" représente l'heure à laquelle débute une séance." ;
+        sh:datatype     xsd:string ;
+        sh:description  "La propriété \"heureDebutSeance\" représente l'heure à laquelle débute une séance." ;
+        sh:name         "heureDebutSeance" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/heureDebutSeance> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#02718f127ac3de01286d6099c8e75ac5>
+        a               sh:NodeShape ;
+        rdfs:label      "Alinea" ;
+        sh:description  "La classe \"Alinea\" représente les différents alinéas qui sont contenus dans un article." ;
+        sh:name         "Alinea" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24> , <https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9> , <https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3> , <https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b> , <https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04> , <https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad> , <https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044> , <https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7> , <https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6> , <https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1> , <https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337> , <https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4> , <https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620> , <https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0> , <https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5> , <https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360> , <https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d> , <https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#dabb102074c4c4d9a785bc54e5d071a3> , <https://astrea.linkeddata.es/shapes#84b9962464a1e7e08e72bd1aad755092> ;
+        sh:targetClass  <http://data.lirmm.fr/ontologies/oan/Alinea> .
+
+<https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.lirmm.fr/ontologies/oan/PositionArticle> .
+
+<https://astrea.linkeddata.es/shapes#5d4d5c9067bdba11901f281856292884>
+        a               sh:PropertyShape ;
+        rdfs:label      "dateSeance" , "La propriété \"dateSeance\" représente la date à laquelle à lieu une séance d'un quelconque organisme." ;
+        sh:datatype     xsd:date ;
+        sh:description  "La propriété \"dateSeance\" représente la date à laquelle à lieu une séance d'un quelconque organisme." ;
+        sh:name         "dateSeance" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/dateSeance> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5> , <https://astrea.linkeddata.es/shapes#523e0301930734bcb1a930d74f562054> , <https://astrea.linkeddata.es/shapes#c24bff3c42a7da7e63124c586d3b734a> , <https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6> , <https://astrea.linkeddata.es/shapes#9af84ddf2392f6a97bc5aa80a73cbab4> , <https://astrea.linkeddata.es/shapes#c8daf722b1fdb6f8733c7398ed208c57> , <https://astrea.linkeddata.es/shapes#aebc370f1c8275d69b1eb65d4ef9f985> , <https://astrea.linkeddata.es/shapes#bbbfd31b8a8baa399841374428e74865> , <https://astrea.linkeddata.es/shapes#3b6242b2ba112a252dafa8d8c4daaaad> , <https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04> , <https://astrea.linkeddata.es/shapes#866c769a5d19ed161fc44817b916764b> , <https://astrea.linkeddata.es/shapes#ad68b1afbb3fc8938019a9484d8c7332> , <https://astrea.linkeddata.es/shapes#7c560e236054560e20780d7aceae5aa6> , <https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620> , <https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529> , <https://astrea.linkeddata.es/shapes#a1ce2b6b7c78f2cc1eb3df534b19b199> , <https://astrea.linkeddata.es/shapes#536eebf5ab46c73e15f7f26fa7483841> , <https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3> , <https://astrea.linkeddata.es/shapes#4f084b627bebbe5b004d9a8c5733e7d6> , <https://astrea.linkeddata.es/shapes#b12d77de3ad361c323dd3d5338036e46> , <https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3> , <https://astrea.linkeddata.es/shapes#bdcb08219c8b9e4f6cb10f8532e83331> , <https://astrea.linkeddata.es/shapes#c99d428c6b4bc16997484b4b08563452> , <https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24> , <https://astrea.linkeddata.es/shapes#f0f007687a311450ee88360746d97052> , <https://astrea.linkeddata.es/shapes#73b8567220fb222848bf5518c54a51d2> , <https://astrea.linkeddata.es/shapes#35e395c57e6335bbd9e0ef953b16117e> , <https://astrea.linkeddata.es/shapes#8c0f5a79399e9ee16dbe946e86286d9f> , <https://astrea.linkeddata.es/shapes#84400d5ac15805b0305fa9096df7f0db> , <https://astrea.linkeddata.es/shapes#84b9962464a1e7e08e72bd1aad755092> , <https://astrea.linkeddata.es/shapes#c26a5c8678937d3db352cd163258f61d> , <https://astrea.linkeddata.es/shapes#ed32bd1688069fe3e588575e39bfe467> , <https://astrea.linkeddata.es/shapes#db4a77c25dde6e1b4afca65bd12f4028> , <https://astrea.linkeddata.es/shapes#2a99eb683b377fdd4a247e7bfa9e8165> , <https://astrea.linkeddata.es/shapes#1cde524981615a2c5e2de474e2d98ed3> , <https://astrea.linkeddata.es/shapes#a740c5b8fa23bf9bfecbc0b737610c0f> , <https://astrea.linkeddata.es/shapes#6e525437dcd09da4cf636d48fc986c9a> , <https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1> , <https://astrea.linkeddata.es/shapes#11a2d8339766273525d31e992d1b4f77> , <https://astrea.linkeddata.es/shapes#f3f3c6a69d79c1b55e4d827f29081cea> , <https://astrea.linkeddata.es/shapes#9c0cbe6858dfe0ef61ee5e3ba16cd45b> , <https://astrea.linkeddata.es/shapes#960838096fcbbc96d7153265ff6af918> , <https://astrea.linkeddata.es/shapes#3a0ab3b84412bae6004b3b68263b065b> , <https://astrea.linkeddata.es/shapes#547192c1b10612482696fd6f07940207> , <https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7> , <https://astrea.linkeddata.es/shapes#70f777b1829fec8f91a8a70f5e028137> , <https://astrea.linkeddata.es/shapes#02718f127ac3de01286d6099c8e75ac5> , <https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b> , <https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360> , <https://astrea.linkeddata.es/shapes#3e5df927013c9c4a27405a1130d28d65> , <https://astrea.linkeddata.es/shapes#dabb102074c4c4d9a785bc54e5d071a3> , <https://astrea.linkeddata.es/shapes#9e827fbbc114dc0c51656f60538c18e9> , <https://astrea.linkeddata.es/shapes#523e17f689c20e230d83960b50b3a90a> , <https://astrea.linkeddata.es/shapes#8ef7439cd29079454ad95839977bb401> , <https://astrea.linkeddata.es/shapes#0e34d79d86d98182f460368f6a149a41> , <https://astrea.linkeddata.es/shapes#635c9412ceb13da9611190bfbebddaa4> , <https://astrea.linkeddata.es/shapes#50afd5d777b883fe10d0ff20659cd55e> , <https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0> , <https://astrea.linkeddata.es/shapes#7536430a78becd4170b5b2e3a91243e3> , <https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9> , <https://astrea.linkeddata.es/shapes#880c468e0d085d80c1abb512d4229f4f> , <https://astrea.linkeddata.es/shapes#62bda413397536afa095caaacf41cb09> , <https://astrea.linkeddata.es/shapes#5afbfdf1137bb6f27c5aed087855211a> , <https://astrea.linkeddata.es/shapes#78b075df65985cf37190993d330772d9> , <https://astrea.linkeddata.es/shapes#127aacb22ab3c0272bbff3b0ab0389cf> , <https://astrea.linkeddata.es/shapes#7c3b801c72f658dec32f70f1462a5216> , <https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044> , <https://astrea.linkeddata.es/shapes#95f7d94defda2e1b9bf5f4cd981cb208> , <https://astrea.linkeddata.es/shapes#fae5c4dc15d997468c9f70c04e1cf033> , <https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad> , <https://astrea.linkeddata.es/shapes#4e1157dc1dda22995c0f21cfba8e06e6> , <https://astrea.linkeddata.es/shapes#b929a5d2f20fd5cacdf8b714d7844ccc> , <https://astrea.linkeddata.es/shapes#b19207223b45369cc4c1a44365406fb0> , <https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4> , <https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d> , <https://astrea.linkeddata.es/shapes#c28e34dc5926b522ba9b23c1845e5d44> , <https://astrea.linkeddata.es/shapes#9c77ee6552fbea1af8a797cdbdb1460d> , <https://astrea.linkeddata.es/shapes#5d4d5c9067bdba11901f281856292884> , <https://astrea.linkeddata.es/shapes#7ac2bad998cbe7575027b9c5845865c8> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#f0f007687a311450ee88360746d97052>
+        a               sh:NodeShape ;
+        rdfs:label      "Sous Section" ;
+        sh:description  "La classe \"SousSection\" représente les sous sections contenus dans un texte de loi." ;
+        sh:name         "Sous Section" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360> , <https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5> , <https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529> , <https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620> , <https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337> , <https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6> , <https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0> , <https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4> , <https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3> , <https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d> , <https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad> , <https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24> , <https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04> , <https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7> , <https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1> , <https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9> , <https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044> , <https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#3e5df927013c9c4a27405a1130d28d65> ;
+        sh:targetClass  <http://data.lirmm.fr/ontologies/oan/SousSection> .
+
+<https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.lirmm.fr/ontologies/oan/SousSection> .
+
+<https://astrea.linkeddata.es/shapes#bdcb08219c8b9e4f6cb10f8532e83331>
+        a               sh:NodeShape ;
+        rdfs:label      "Preuve de Présence" ;
+        sh:description  "La classe \"PreuvePresence\" représente les différentes types de preuves qu'il est possible d'avoir afin de prouver la présence d'un député à une commission ou à une session de l'assemblée nationale." ;
+        sh:name         "Preuve de Présence" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337> , <https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4> , <https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0> , <https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7> , <https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d> , <https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b> , <https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1> , <https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6> , <https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad> , <https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5> , <https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044> , <https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24> , <https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3> , <https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620> , <https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3> , <https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529> , <https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04> , <https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9> ;
+        sh:targetClass  <http://data.lirmm.fr/ontologies/oan/PreuvePresence> .
+
+<https://astrea.linkeddata.es/shapes#ad68b1afbb3fc8938019a9484d8c7332>
+        a               sh:PropertyShape ;
+        rdfs:label      "exposeArticle" , "La propriété \"exposeArticle\" représente un petit résumé de l'article." ;
+        sh:datatype     xsd:string ;
+        sh:description  "La propriété \"exposeArticle\" représente un petit résumé de l'article." ;
+        sh:name         "exposeArticle" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/exposeArticle> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#127aacb22ab3c0272bbff3b0ab0389cf>
+        a               sh:NodeShape ;
+        rdfs:label      "Présence" ;
+        sh:description  "La classe \"Presence\" représente la présence d'un député lors d'une commission ou d'une session de l'assemblée nationale." ;
+        sh:name         "Présence" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1> , <https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360> , <https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3> , <https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04> , <https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad> , <https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529> , <https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9> , <https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24> , <https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d> , <https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6> , <https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620> , <https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4> , <https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5> , <https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3> , <https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b> , <https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7> , <https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0> , <https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#9c77ee6552fbea1af8a797cdbdb1460d> , <https://astrea.linkeddata.es/shapes#ed32bd1688069fe3e588575e39bfe467> ;
+        sh:targetClass  <http://data.lirmm.fr/ontologies/oan/Presence> .
+
+<https://astrea.linkeddata.es/shapes#78b075df65985cf37190993d330772d9>
+        a               sh:PropertyShape ;
+        rdfs:label      "finMandat" , "La propriété \"finMandat\" représente la fin du mandat d'un député." ;
+        sh:datatype     xsd:date ;
+        sh:description  "La propriété \"finMandat\" représente la fin du mandat d'un député." ;
+        sh:name         "finMandat" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/finMandat> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#523e0301930734bcb1a930d74f562054>
+        a               sh:PropertyShape ;
+        rdfs:label      "dateReponse" , "La propriété \"dateReponse\" représente la data à laquelle a été émise la réponse à une question écrite." ;
+        sh:datatype     xsd:date ;
+        sh:description  "La propriété \"dateReponse\" représente la data à laquelle a été émise la réponse à une question écrite." ;
+        sh:name         "dateReponse" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/dateReponse> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#c24bff3c42a7da7e63124c586d3b734a>
+        a               sh:PropertyShape ;
+        rdfs:label      "titreArticle" , "La propriété \"titreArticle\" représente le titre d'un article." ;
+        sh:datatype     xsd:string ;
+        sh:description  "La propriété \"titreArticle\" représente le titre d'un article." ;
+        sh:name         "titreArticle" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/titreArticle> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.lirmm.fr/ontologies/oan/Reponse> .
+
+<https://astrea.linkeddata.es/shapes#73b8567220fb222848bf5518c54a51d2>
+        a               sh:NodeShape ;
+        rdfs:label      "Amendement" ;
+        sh:description  "La classe \"Amendement\" sert à représenter la notion d'amendement. Un amendement est une demande de modification d'une loi existante." ;
+        sh:name         "Amendement" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529> , <https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04> , <https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6> , <https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044> , <https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620> , <https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4> , <https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b> , <https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7> , <https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24> , <https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0> , <https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1> , <https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d> , <https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360> , <https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3> , <https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9> , <https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3> , <https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337> , <https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#35e395c57e6335bbd9e0ef953b16117e> , <https://astrea.linkeddata.es/shapes#1cde524981615a2c5e2de474e2d98ed3> , <https://astrea.linkeddata.es/shapes#c26a5c8678937d3db352cd163258f61d> , <https://astrea.linkeddata.es/shapes#a1ce2b6b7c78f2cc1eb3df534b19b199> , <https://astrea.linkeddata.es/shapes#7c3b801c72f658dec32f70f1462a5216> , <https://astrea.linkeddata.es/shapes#c99d428c6b4bc16997484b4b08563452> ;
+        sh:targetClass  <http://data.lirmm.fr/ontologies/oan/Amendement> .
+
+<https://astrea.linkeddata.es/shapes#70f777b1829fec8f91a8a70f5e028137>
+        a               sh:PropertyShape ;
+        rdfs:label      "texteQuestion" , "La propriété \"texteQuestion\" représente le texte de la question écrite émise par le député pour un ministre." ;
+        sh:datatype     xsd:string ;
+        sh:description  "La propriété \"texteQuestion\" représente le texte de la question écrite émise par le député pour un ministre." ;
+        sh:name         "texteQuestion" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/texteQuestion> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#35e395c57e6335bbd9e0ef953b16117e>
+        a               sh:PropertyShape ;
+        rdfs:label      "texteAmendement" , "La propriété \"texteAmendement\" représente le texte de l'amendement." ;
+        sh:datatype     xsd:string ;
+        sh:description  "La propriété \"texteAmendement\" représente le texte de l'amendement." ;
+        sh:name         "texteAmendement" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/texteAmendement> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#547192c1b10612482696fd6f07940207>
+        a               sh:NodeShape ;
+        rdfs:label      "Question Ecrite" ;
+        sh:description  "La classe \"QuestionEcrite\" représente les différentes question qui sont écrites par un député pour les ministres du gouvernements." ;
+        sh:name         "Question Ecrite" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24> , <https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360> , <https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9> , <https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337> , <https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529> , <https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620> , <https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4> , <https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1> , <https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b> , <https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04> , <https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044> , <https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d> , <https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5> , <https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6> , <https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3> , <https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad> , <https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7> , <https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#95f7d94defda2e1b9bf5f4cd981cb208> , <https://astrea.linkeddata.es/shapes#fae5c4dc15d997468c9f70c04e1cf033> , <https://astrea.linkeddata.es/shapes#70f777b1829fec8f91a8a70f5e028137> , <https://astrea.linkeddata.es/shapes#866c769a5d19ed161fc44817b916764b> , <https://astrea.linkeddata.es/shapes#50afd5d777b883fe10d0ff20659cd55e> , <https://astrea.linkeddata.es/shapes#c28e34dc5926b522ba9b23c1845e5d44> , <https://astrea.linkeddata.es/shapes#536eebf5ab46c73e15f7f26fa7483841> ;
+        sh:targetClass  <http://data.lirmm.fr/ontologies/oan/QuestionEcrite> .
+
+<https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.lirmm.fr/ontologies/oan/Amendement> .
+
+<https://astrea.linkeddata.es/shapes#b12d77de3ad361c323dd3d5338036e46>
+        a                sh:PropertyShape ;
+        rdfs:label       "numeroArticle" , "La propriété \"numeroArticle\" représente le numéro d'un article." ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "La propriété \"numeroArticle\" représente le numéro d'un article." ;
+        sh:minInclusive  0 ;
+        sh:name          "numeroArticle" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://data.lirmm.fr/ontologies/oan/numeroArticle> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#b19207223b45369cc4c1a44365406fb0>
+        a               sh:PropertyShape ;
+        rdfs:label      "titreSection" , "La propriété \"titreSection\" représente le titre d'une section contenu dans un chapitre d'un texte de loi." ;
+        sh:datatype     xsd:string ;
+        sh:description  "La propriété \"titreSection\" représente le titre d'une section contenu dans un chapitre d'un texte de loi." ;
+        sh:name         "titreSection" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/titreSection> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.lirmm.fr/ontologies/oan/Presence> .
+
+<https://astrea.linkeddata.es/shapes#bbbfd31b8a8baa399841374428e74865>
+        a                sh:PropertyShape ;
+        rdfs:label       "numCirco" , "La propriété \"numCirco\" représente le numéro de la circonscription dont le député est responsable." ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "La propriété \"numCirco\" représente le numéro de la circonscription dont le député est responsable." ;
+        sh:minInclusive  0 ;
+        sh:name          "numCirco" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://data.lirmm.fr/ontologies/oan/numCirco> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#7c3b801c72f658dec32f70f1462a5216>
+        a               sh:PropertyShape ;
+        rdfs:label      "dateCreationAmendement" , "La propriété \"dateCreationAmendement\" représente la date à laquelle est créé l'amendement." ;
+        sh:datatype     xsd:date ;
+        sh:description  "La propriété \"dateCreationAmendement\" représente la date à laquelle est créé l'amendement." ;
+        sh:name         "dateCreationAmendement" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/dateCreationAmendement> ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.lirmm.fr/ontologies/oan/Rapport> .
+
+<https://astrea.linkeddata.es/shapes#dabb102074c4c4d9a785bc54e5d071a3>
+        a               sh:PropertyShape ;
+        rdfs:label      "texteAlinea" , "La propriété \"texteAlinea\" représente le texte d'un alinéa." ;
+        sh:datatype     xsd:string ;
+        sh:description  "La propriété \"texteAlinea\" représente le texte d'un alinéa." ;
+        sh:name         "texteAlinea" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://data.lirmm.fr/ontologies/oan/texteAlinea> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#f3f3c6a69d79c1b55e4d827f29081cea>
+        a               sh:NodeShape ;
+        rdfs:label      "Mandat" ;
+        sh:description  "La classe \"Mandat\" représente les différents mandats qu'il est possible d'avoir pour un député." ;
+        sh:name         "Mandat" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337> , <https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d> , <https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529> , <https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3> , <https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4> , <https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9> , <https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0> , <https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6> , <https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1> , <https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620> , <https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5> , <https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3> , <https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad> , <https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7> , <https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24> , <https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360> , <https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b> , <https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#9e827fbbc114dc0c51656f60538c18e9> , <https://astrea.linkeddata.es/shapes#78b075df65985cf37190993d330772d9> , <https://astrea.linkeddata.es/shapes#5afbfdf1137bb6f27c5aed087855211a> ;
+        sh:targetClass  <http://data.lirmm.fr/ontologies/oan/Mandat> .
+
+<https://astrea.linkeddata.es/shapes#6e525437dcd09da4cf636d48fc986c9a>
+        a               sh:NodeShape ;
+        rdfs:label      "Section" ;
+        sh:description  "La classe \"Section\" représente les différentes sections contenus dans un texte de loi." ;
+        sh:name         "Section" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360> , <https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337> , <https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9> , <https://astrea.linkeddata.es/shapes#8b025bba99b1ef17c2a5c5914fa60b24> , <https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5> , <https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529> , <https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044> , <https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad> , <https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3> , <https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0> , <https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3> , <https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620> , <https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7> , <https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04> , <https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d> , <https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4> , <https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b> , <https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#3a0ab3b84412bae6004b3b68263b065b> , <https://astrea.linkeddata.es/shapes#b19207223b45369cc4c1a44365406fb0> ;
+        sh:targetClass  <http://data.lirmm.fr/ontologies/oan/Section> .
+
+<https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.lirmm.fr/ontologies/oan/Mandat> .
+
+<https://astrea.linkeddata.es/shapes#62bda413397536afa095caaacf41cb09>
+        a               sh:NodeShape ;
+        rdfs:label      "Député" ;
+        sh:description  "La classe \"Depute\" sert à représenter la notion de député siégeant à l'assemblée nationale. Un député est un représentant auprès de l'assemblée nationale élu par le peuple." ;
+        sh:name         "Député" ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#eba1d9426a008546bd175315aa7c83c4> , <https://astrea.linkeddata.es/shapes#a43bf530de1da789ceae8d4586d2e337> , <https://astrea.linkeddata.es/shapes#f54e4db291366911a7bf3a0e2e37bcb5> , <https://astrea.linkeddata.es/shapes#ce2e457cf7829f74a1230ad26bf3aa04> , <https://astrea.linkeddata.es/shapes#203b7669e6cdd75a582a664a65aae360> , <https://astrea.linkeddata.es/shapes#9de0be486a984c3bcca62318a23f3b3b> , <https://astrea.linkeddata.es/shapes#2b316bab86e4213255227f819ab17ae9> , <https://astrea.linkeddata.es/shapes#485bec6d73b531307cf6ef6392d238c6> , <https://astrea.linkeddata.es/shapes#12a65d7dfb46d2e4246f5e30d9b59044> , <https://astrea.linkeddata.es/shapes#34fe2e001162ac4ebfcf23e29a3f85e3> , <https://astrea.linkeddata.es/shapes#2353f67cf40f2facee7de3eec994e529> , <https://astrea.linkeddata.es/shapes#97736357f67fcdd1fe67fa82a36974a7> , <https://astrea.linkeddata.es/shapes#1e9e2f5c0a6be2dbb284f52d624275f3> , <https://astrea.linkeddata.es/shapes#418788a3a1bdb35fe3f3c57a32246620> , <https://astrea.linkeddata.es/shapes#7f564943b11f3d12e7b9a89d456a8eb0> , <https://astrea.linkeddata.es/shapes#5f1de953ce5835898020806d248458ad> , <https://astrea.linkeddata.es/shapes#45a7b371cb1adc760ff77ac16dce446d> , <https://astrea.linkeddata.es/shapes#053e81035e221c3c1a073b460c31aba1> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#bbbfd31b8a8baa399841374428e74865> , <https://astrea.linkeddata.es/shapes#b929a5d2f20fd5cacdf8b714d7844ccc> ;
+        sh:targetClass  <http://data.lirmm.fr/ontologies/oan/Depute> .

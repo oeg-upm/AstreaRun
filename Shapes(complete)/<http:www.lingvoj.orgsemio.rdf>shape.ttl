@@ -1,0 +1,199 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#89cdc9f0fe530c0b880031ab33611d56>
+        a               sh:PropertyShape ;
+        rdfs:label      "signifier data"@en , "A data which is the signifier, such as a word, code or any kind of identifier. URI strings can be used as signifiers. In such a case, the default signified is the resource identified by the URI."@en ;
+        sh:description  "A data which is the signifier, such as a word, code or any kind of identifier. URI strings can be used as signifiers. In such a case, the default signified is the resource identified by the URI."@en ;
+        sh:name         "signifier data"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.lingvoj.org/semio#signifierData> .
+
+<https://astrea.linkeddata.es/shapes#c2238ee98d73bd43d400776bef973b32>
+        a               sh:NodeShape ;
+        rdfs:label      "Data Sign"@en ;
+        sh:description  "A sign of which signifier is defined as the value of the Datatype Property 'signifierData'"@en ;
+        sh:name         "Data Sign"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d8a4b5caa9ea75890da666337095868d> ;
+        sh:targetClass  <http://www.lingvoj.org/semio#DataSign> .
+
+<https://astrea.linkeddata.es/shapes#427437a634f48ee2fb9996bf356d1f1a>
+        a               sh:NodeShape ;
+        rdfs:label      "Sound"@en ;
+        sh:description  "Typically, the sound rendering of a phrase"@en ;
+        sh:name         "Sound"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.lingvoj.org/semio#Sound> .
+
+<https://astrea.linkeddata.es/shapes#8a83d53a46f270fc1d52e41b6c4738fa>
+        a               sh:PropertyShape ;
+        rdfs:label      "Typically, the context ressource should be constructed as a blank node"@en , "signification context"@en , "A resource defining the signification context, in the scope of which the signifier-signified association is asserted as valid."@en ;
+        sh:class        <http://www.lingvoj.org/semio#Context> ;
+        sh:description  "Typically, the context ressource should be constructed as a blank node"@en , "A resource defining the signification context, in the scope of which the signifier-signified association is asserted as valid."@en ;
+        sh:name         "signification context"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.lingvoj.org/semio#significationContext> .
+
+<https://astrea.linkeddata.es/shapes#1f5d595368e8082b4736374e8c186306>
+        a               sh:PropertyShape ;
+        rdfs:label      "Use this property for signs defined in different contexts"@en , "coreference"@en , "Links two signs considered as having the same referent, even if they have different signifiers. Useful to link different and possibly inconsistent views of the referent."@en ;
+        sh:class        <http://www.lingvoj.org/semio#Sign> ;
+        sh:description  "Use this property for signs defined in different contexts"@en , "Links two signs considered as having the same referent, even if they have different signifiers. Useful to link different and possibly inconsistent views of the referent."@en ;
+        sh:name         "coreference"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.lingvoj.org/semio#coreferentWith> .
+
+<https://astrea.linkeddata.es/shapes#2c85bb3f0473c96cb339ec4fe0233260>
+        a               sh:PropertyShape ;
+        rdfs:label      "Links to an alternative, non-preferred sign for the same signified"@en , "Use this property for signs defined in the same context"@en , "used for"@en ;
+        sh:class        <http://www.lingvoj.org/semio#Sign> ;
+        sh:description  "Use this property for signs defined in the same context"@en , "Links to an alternative, non-preferred sign for the same signified"@en ;
+        sh:name         "used for"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.lingvoj.org/semio#UF> .
+
+<https://astrea.linkeddata.es/shapes#f7ccdf5c69230cc241117b00ef3463d3>
+        a               sh:NodeShape ;
+        rdfs:label      "Multimedia"@en ;
+        sh:description  "For example a video representation"@en ;
+        sh:name         "Multimedia"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.lingvoj.org/semio#Multimedia> .
+
+<https://astrea.linkeddata.es/shapes#aabd1babc1a7442295341d1582f80001>
+        a            sh:PropertyShape ;
+        rdfs:label   "translation"@en ;
+        sh:class     <http://www.lingvoj.org/semio#Phrase> ;
+        sh:name      "translation"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.lingvoj.org/semio#translation> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#89cdc9f0fe530c0b880031ab33611d56> , <https://astrea.linkeddata.es/shapes#8f92cbb31dff8118d307f5b130466371> , <https://astrea.linkeddata.es/shapes#f7ccdf5c69230cc241117b00ef3463d3> , <https://astrea.linkeddata.es/shapes#43bb6a96280c96e606e783ea17f89c04> , <https://astrea.linkeddata.es/shapes#427437a634f48ee2fb9996bf356d1f1a> , <https://astrea.linkeddata.es/shapes#d8a4b5caa9ea75890da666337095868d> , <https://astrea.linkeddata.es/shapes#8a83d53a46f270fc1d52e41b6c4738fa> , <https://astrea.linkeddata.es/shapes#f8953c1da6258a83c7ee5b1a16d6eeb8> , <https://astrea.linkeddata.es/shapes#712be27416f4b6c05ddde6c3322d21c2> , <https://astrea.linkeddata.es/shapes#c0642335f71f8e87b82db14a8439c428> , <https://astrea.linkeddata.es/shapes#d7f20f76973f84150820ee66d4795d9c> , <https://astrea.linkeddata.es/shapes#92e64f2f6ffa31fe956a674846e7876f> , <https://astrea.linkeddata.es/shapes#886bb30c49bec429e1eb6a558bcae388> , <https://astrea.linkeddata.es/shapes#1f5d595368e8082b4736374e8c186306> , <https://astrea.linkeddata.es/shapes#1a1f82d0e77e46f1abe8c1e96ef3ae96> , <https://astrea.linkeddata.es/shapes#aabd1babc1a7442295341d1582f80001> , <https://astrea.linkeddata.es/shapes#11fd59e8d2ebe59f924637f4ffd6fdcd> , <https://astrea.linkeddata.es/shapes#19415f2fb4f1f44489525848d8ad245c> , <https://astrea.linkeddata.es/shapes#897758deaf39f59dde91b6af61a35c36> , <https://astrea.linkeddata.es/shapes#a60fac6fdfb841bb173437b9bf661492> , <https://astrea.linkeddata.es/shapes#2c85bb3f0473c96cb339ec4fe0233260> , <https://astrea.linkeddata.es/shapes#c2238ee98d73bd43d400776bef973b32> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#886bb30c49bec429e1eb6a558bcae388>
+        a               sh:NodeShape ;
+        rdfs:label      "Phrase"@en ;
+        sh:description  "A string making sense in some natural language. Typically a term from a vocabulary. Other exemples include assertions, slogans, taglines ..."@en ;
+        sh:name         "Phrase"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#aabd1babc1a7442295341d1582f80001> ;
+        sh:targetClass  <http://www.lingvoj.org/semio#Phrase> .
+
+<https://astrea.linkeddata.es/shapes#897758deaf39f59dde91b6af61a35c36>
+        a               sh:NodeShape ;
+        rdfs:label      "Uniform Resource Identifier"@en ;
+        sh:description  "A URI is a code used in the context of the Web"@en ;
+        sh:name         "Uniform Resource Identifier"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.lingvoj.org/semio#URI> .
+
+<https://astrea.linkeddata.es/shapes#712be27416f4b6c05ddde6c3322d21c2>
+        a               sh:NodeShape ;
+        rdfs:label      "Image"@en ;
+        sh:description  "Any image used as a sign. Either by direct denotation (a photograph of a cat for the concept of cat), or symbolic conotation (icons)."@en ;
+        sh:name         "Image"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.lingvoj.org/semio#Image> .
+
+<https://astrea.linkeddata.es/shapes#43bb6a96280c96e606e783ea17f89c04>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.lingvoj.org/semio#signifierObject> .
+
+<https://astrea.linkeddata.es/shapes#8f92cbb31dff8118d307f5b130466371>
+        a               sh:NodeShape ;
+        rdfs:label      "Code"@en ;
+        sh:description  "A string of characters, generally intended to be a unique identifier in some context"@en ;
+        sh:name         "Code"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.lingvoj.org/semio#Code> .
+
+<https://astrea.linkeddata.es/shapes#a60fac6fdfb841bb173437b9bf661492>
+        a               sh:PropertyShape ;
+        rdfs:label      "Links to a preferred sign for the same signified"@en , "use"@en , "Use this property for signs defined in the same context"@en ;
+        sh:class        <http://www.lingvoj.org/semio#Sign> ;
+        sh:description  "Use this property for signs defined in the same context"@en , "Links to a preferred sign for the same signified"@en ;
+        sh:maxCount     1 ;
+        sh:name         "use"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <http://www.lingvoj.org/semio#USE> .
+
+<https://astrea.linkeddata.es/shapes#f8953c1da6258a83c7ee5b1a16d6eeb8>
+        a               sh:PropertyShape ;
+        rdfs:label      "Translation is considered as a particular case of transcription (debatable)"@en , "transcription"@en , "A transcription links two signs with the same signified in different formats or supports. For example a phrase to its sound rendering, or a trade mark to a logo."@en ;
+        sh:class        <http://www.lingvoj.org/semio#Sign> ;
+        sh:description  "A transcription links two signs with the same signified in different formats or supports. For example a phrase to its sound rendering, or a trade mark to a logo."@en , "Translation is considered as a particular case of transcription (debatable)"@en ;
+        sh:name         "transcription"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.lingvoj.org/semio#transcription> .
+
+<https://astrea.linkeddata.es/shapes#d7f20f76973f84150820ee66d4795d9c>
+        a               sh:NodeShape ;
+        rdfs:label      "Sign"@en ;
+        sh:description  "Something that stands for something else in a given context. A sign has a signifier (physical data which can be communicated), a signified (a concept, or formal representation), both indicating a referent, which is outside the language scope, and a context in which the signification is asserted."@en , "A sign is an information resource. As such, it can be useful to attach metadata using Dublin Core attributes such as creator, creation date etc ..."@en , "A sign has exactly one signifier, either 'signifier data' or 'signifier resource' attribute"@en ;
+        sh:name         "Sign"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#8a83d53a46f270fc1d52e41b6c4738fa> , <https://astrea.linkeddata.es/shapes#f8953c1da6258a83c7ee5b1a16d6eeb8> , <https://astrea.linkeddata.es/shapes#a60fac6fdfb841bb173437b9bf661492> , <https://astrea.linkeddata.es/shapes#1f5d595368e8082b4736374e8c186306> , <https://astrea.linkeddata.es/shapes#2c85bb3f0473c96cb339ec4fe0233260> ;
+        sh:targetClass  <http://www.lingvoj.org/semio#Sign> .
+
+<https://astrea.linkeddata.es/shapes#d8a4b5caa9ea75890da666337095868d>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.lingvoj.org/semio#signifierData> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#c0642335f71f8e87b82db14a8439c428>
+        a               sh:NodeShape ;
+        rdfs:label      "Context"@en ;
+        sh:description  "A resource describing the context. May gather any relevant piece of information: linguistic system context, space-time restrictions, information system, community of users ... "@en ;
+        sh:name         "Context"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.lingvoj.org/semio#Context> .
+
+<https://astrea.linkeddata.es/shapes#92e64f2f6ffa31fe956a674846e7876f>
+        a               sh:PropertyShape ;
+        rdfs:label      "signified"@en , "The resource for which the sign stands for"@en ;
+        sh:description  "The resource for which the sign stands for"@en ;
+        sh:maxCount     1 ;
+        sh:name         "signified"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#1a1f82d0e77e46f1abe8c1e96ef3ae96>
+        a               sh:NodeShape ;
+        rdfs:label      "Object Sign"@en ;
+        sh:description  "A sign of which signifier is defined as the value of the Object Property 'signifierObject'"@en ;
+        sh:name         "Object Sign"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#43bb6a96280c96e606e783ea17f89c04> ;
+        sh:targetClass  <http://www.lingvoj.org/semio#ObjectSign> .
+
+<https://astrea.linkeddata.es/shapes#19415f2fb4f1f44489525848d8ad245c>
+        a               sh:NodeShape ;
+        rdfs:label      "Icon"@en ;
+        sh:description  "An image which is a symbolic representation of something. Flags, logos, coat of arms ..."@en ;
+        sh:name         "Icon"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.lingvoj.org/semio#Icon> .
+
+<https://astrea.linkeddata.es/shapes#11fd59e8d2ebe59f924637f4ffd6fdcd>
+        a               sh:PropertyShape ;
+        rdfs:label      "signifier object"@en , "A resource which is the signifier. Typical examples include images or icons, or sound tracks for natural language words."@en ;
+        sh:description  "A resource which is the signifier. Typical examples include images or icons, or sound tracks for natural language words."@en ;
+        sh:name         "signifier object"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .

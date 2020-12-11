@@ -1,0 +1,226 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#0b49400ea3f78ceb32f67fcbce74dfe8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "Party Leader"@en ;
+        sh:description    "Represents the leader of the political party"@en ;
+        sh:name           "Party Leader"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#1f31b13535f878c09435e155868ddf8d> , <https://astrea.linkeddata.es/shapes#b1d081c46d5f90f5f1951565bf102bcd> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/parliament/Leader> .
+
+<https://astrea.linkeddata.es/shapes#61fa19538dd7c9df7e38dba3e2f94789>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "Held By"@en , "Indicates the person holding this seat in parliament."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description    "Indicates the person holding this seat in parliament."@en ;
+        sh:name           "Held By"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/parliament/seatHeldBy> .
+
+<https://astrea.linkeddata.es/shapes#84ace0d26c266ea80d71411f8a8e124e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "Member"@en , "A member of this parliament."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description    "A member of this parliament."@en ;
+        sh:name           "Member"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/parliament/hasMember> .
+
+<https://astrea.linkeddata.es/shapes#b4c02783f1a2cb1bef0a4eb49138397b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "Leader"@en , "Indicates the Leader of this political party."@en ;
+        sh:class          <http://reference.data.gov.uk/def/parliament/Leader> ;
+        sh:description    "Indicates the Leader of this political party."@en ;
+        sh:name           "Leader"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/parliament/hasPartyLeader> .
+
+<https://astrea.linkeddata.es/shapes#a25a32125097316649248f6db0e0c7ed>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "Holds Leadership"@en , "This property indicates that a person holds the leadership of a political party."@en ;
+        sh:class          <http://reference.data.gov.uk/def/parliament/Leader> ;
+        sh:description    "This property indicates that a person holds the leadership of a political party."@en ;
+        sh:name           "Holds Leadership"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/parliament/holdsLeadership> .
+
+<https://astrea.linkeddata.es/shapes#1f31b13535f878c09435e155868ddf8d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "Leader of"@en , "Indicates that a Leader is the leader of a political party."@en ;
+        sh:class          <http://reference.data.gov.uk/def/parliament/PoliticalParty> ;
+        sh:description    "Indicates that a Leader is the leader of a political party."@en ;
+        sh:name           "Leader of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/parliament/partyLeaderOf> .
+
+<https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#61d402b3d71b16b3cf71b6c3853fe388> , <https://astrea.linkeddata.es/shapes#a25a32125097316649248f6db0e0c7ed> , <https://astrea.linkeddata.es/shapes#be4472e0cbf1d83d1d75a13a884b1af2> ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Person> .
+
+<https://astrea.linkeddata.es/shapes#eab1793b68fe9a58ad21d9a677fb181f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "Devolved administration"@en ;
+        sh:description    "Defines an administration to which independent law-making powers have been delegated.  Example instances are The Scottish Parliament and The Welsh Assembly"@en ;
+        sh:name           "Devolved administration"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d74abdf73500951eef892f187d0422ed> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/parliament/DevolvedParliament> .
+
+<https://astrea.linkeddata.es/shapes#097bf869bbd5ac6a4d86b74881c27d9a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "Member"@en , "Indicates that a political party has a person as member."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description    "Indicates that a political party has a person as member."@en ;
+        sh:name           "Member"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/parliament/hasPartyMember> .
+
+<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#783349bb93b278ee2de2784cdc493edb> ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Agent> .
+
+<https://astrea.linkeddata.es/shapes#be4472e0cbf1d83d1d75a13a884b1af2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "Member of"@en ;
+        sh:class          <http://reference.data.gov.uk/def/parliament/PoliticalParty> ;
+        sh:name           "Member of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/parliament/partyMemberOf> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#c239c6a5a75e54d0e8a9971a9b0fbb07> , <https://astrea.linkeddata.es/shapes#f7e4f8f196e6d3df421f47ef9900a3da> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#0b49400ea3f78ceb32f67fcbce74dfe8> , <https://astrea.linkeddata.es/shapes#1f31b13535f878c09435e155868ddf8d> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> , <https://astrea.linkeddata.es/shapes#b4c02783f1a2cb1bef0a4eb49138397b> , <https://astrea.linkeddata.es/shapes#02f678e9183b4aacdfb1fd731b1b4b90> , <https://astrea.linkeddata.es/shapes#b1d081c46d5f90f5f1951565bf102bcd> , <https://astrea.linkeddata.es/shapes#61d402b3d71b16b3cf71b6c3853fe388> , <https://astrea.linkeddata.es/shapes#eab1793b68fe9a58ad21d9a677fb181f> , <https://astrea.linkeddata.es/shapes#783349bb93b278ee2de2784cdc493edb> , <https://astrea.linkeddata.es/shapes#84ace0d26c266ea80d71411f8a8e124e> , <https://astrea.linkeddata.es/shapes#a25a32125097316649248f6db0e0c7ed> , <https://astrea.linkeddata.es/shapes#097bf869bbd5ac6a4d86b74881c27d9a> , <https://astrea.linkeddata.es/shapes#4d6595c67236cc837058684ab1dabaf0> , <https://astrea.linkeddata.es/shapes#61fa19538dd7c9df7e38dba3e2f94789> , <https://astrea.linkeddata.es/shapes#520c35e73f55ef827c37f729bbec539a> , <https://astrea.linkeddata.es/shapes#084fbe912a3fb0bd5f40d960b82dd66c> , <https://astrea.linkeddata.es/shapes#d74abdf73500951eef892f187d0422ed> , <https://astrea.linkeddata.es/shapes#be4472e0cbf1d83d1d75a13a884b1af2> , <https://astrea.linkeddata.es/shapes#2efeea4e4ab3c97c0186e64b479d4a8c> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#d74abdf73500951eef892f187d0422ed>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "devolved from"@en , "A property linking a Devolved Assembly to the Parliament from which it was devolved."@en ;
+        sh:class          <http://reference.data.gov.uk/def/parliament/Parliament> ;
+        sh:description    "A property linking a Devolved Assembly to the Parliament from which it was devolved."@en ;
+        sh:name           "devolved from"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/parliament/devolvedFrom> .
+
+<https://astrea.linkeddata.es/shapes#f7e4f8f196e6d3df421f47ef9900a3da>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "Post"@en ;
+        sh:name           "Post"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/parliament/Post> .
+
+<https://astrea.linkeddata.es/shapes#783349bb93b278ee2de2784cdc493edb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "Member of"@en , "The parliament this person or post is a member of."@en ;
+        sh:class          <http://www.w3.org/ns/org#Parliament> ;
+        sh:description    "The parliament this person or post is a member of."@en ;
+        sh:name           "Member of"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/parliament/memberOf> .
+
+<https://astrea.linkeddata.es/shapes#61d402b3d71b16b3cf71b6c3853fe388>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "Seat"@en , "Indicates the seat in parliament that this person holds."@en ;
+        sh:class          <http://reference.data.gov.uk/def/parliament/Seat> ;
+        sh:description    "Indicates the seat in parliament that this person holds."@en ;
+        sh:name           "Seat"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/parliament/holdsSeat> .
+
+<https://astrea.linkeddata.es/shapes#c239c6a5a75e54d0e8a9971a9b0fbb07>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "Seat"@en ;
+        sh:description    "A seat in a Parliament" ;
+        sh:name           "Seat"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#61fa19538dd7c9df7e38dba3e2f94789> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/parliament/Seat> .
+
+<https://astrea.linkeddata.es/shapes#084fbe912a3fb0bd5f40d960b82dd66c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "Chamber"@en ;
+        sh:description    "Defines the chambers with instances like The House of Commons and The House of Lords." ;
+        sh:name           "Chamber"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/parliament/Chamber> .
+
+<https://astrea.linkeddata.es/shapes#b1d081c46d5f90f5f1951565bf102bcd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "Holds Leadership"@en , "This property indicates that a person holds the leadership of a political party."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description    "This property indicates that a person holds the leadership of a political party."@en ;
+        sh:name           "Holds Leadership"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/parliament/leadershipHeldBy> .
+
+<https://astrea.linkeddata.es/shapes#2efeea4e4ab3c97c0186e64b479d4a8c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "Links a Parliament to a Devolved Assembly to which has devolved powers."@en , "devolves to"@en ;
+        rdfs:seeAlso      <http://www.direct.gov.uk/en/Governmentcitizensandrights/UKgovernment/Devolvedgovernment/DG_073306> ;
+        sh:class          <http://reference.data.gov.uk/def/parliament/DevolvedParliament> ;
+        sh:description    "Links a Parliament to a Devolved Assembly to which has devolved powers."@en ;
+        sh:name           "devolves to"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/parliament/devolvesTo> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#4d6595c67236cc837058684ab1dabaf0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "Represents"@en , "The constituency that the MP holding this seat in parliament represents."@en ;
+        sh:description    "The constituency that the MP holding this seat in parliament represents."@en ;
+        sh:name           "Represents"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#02f678e9183b4aacdfb1fd731b1b4b90>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "Parliament"@en ;
+        sh:description    "Defines a parliament, the law-making assembly of a nation.  Examples are Westminster, The Welsh Assembly, The Scottish Parliament and Northern Ireland Assembly."@en ;
+        sh:name           "Parliament"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#84ace0d26c266ea80d71411f8a8e124e> , <https://astrea.linkeddata.es/shapes#2efeea4e4ab3c97c0186e64b479d4a8c> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/parliament/Parliament> .
+
+<https://astrea.linkeddata.es/shapes#520c35e73f55ef827c37f729bbec539a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/parliament> ;
+        rdfs:label        "Political party" ;
+        rdfs:seeAlso      <http://www.direct.gov.uk/en/Governmentcitizensandrights/UKgovernment/Politicalpartiesandelections/DG_073226> ;
+        sh:description    "A Political party such as The Conservative Party or The Labour Party." ;
+        sh:name           "Political party" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#097bf869bbd5ac6a4d86b74881c27d9a> , <https://astrea.linkeddata.es/shapes#b4c02783f1a2cb1bef0a4eb49138397b> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/parliament/PoliticalParty> .

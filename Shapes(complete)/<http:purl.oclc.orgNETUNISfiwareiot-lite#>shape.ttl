@@ -1,0 +1,304 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#ee302a4c8cd4e5f9cbc58b9ed90dec9d>
+        a               sh:NodeShape ;
+        sh:description  "Device that can actuate over an object or QuantityKind."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#ActuatingDevice> .
+
+<https://astrea.linkeddata.es/shapes#0ff1baf4bfd5ac2054350ab16045d658>
+        a               sh:PropertyShape ;
+        rdfs:label      "For service-oriented queries. The inverse of exposedBy." ;
+        sh:class        <http://purl.oclc.org/NET/ssnx/ssn#Device> ;
+        sh:description  "For service-oriented queries. The inverse of exposedBy." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#exposes> .
+
+<https://astrea.linkeddata.es/shapes#d6e611967ec915344c8701b70258d9ed>
+        a               sh:PropertyShape ;
+        rdfs:label      "Defines the associations between objects and sensors (e.g. A table (object) has an attribute (temperature at the table) which is associated with a sensor (the temperature sensor of the room). " ;
+        sh:class        <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service> ;
+        sh:description  "Defines the associations between objects and sensors (e.g. A table (object) has an attribute (temperature at the table) which is associated with a sensor (the temperature sensor of the room). " ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#isAssociatedWith> .
+
+<https://astrea.linkeddata.es/shapes#de80cdc2a2f82dd3d37a742d02a6e4a2>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/ssnx/ssn#SensingDevice> .
+
+<https://astrea.linkeddata.es/shapes#d4657f8d29bb80da6eebd238a4ee0165>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/ssnx/ssn#System> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.oclc.org/NET/ssnx/ssn#hasSubSystem> .
+
+<https://astrea.linkeddata.es/shapes#4e04f9b146c39ba7a276a3d55c6e0dc8>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#VirtualEntity> .
+
+<https://astrea.linkeddata.es/shapes#374cad88880b2c30f002f73f317bec4d>
+        a               sh:NodeShape ;
+        sh:description  "Tag Device such as QR code or bar code."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#TagDevice> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#7e531a18c895d77d9420d1bb16f9a958>
+        a               sh:PropertyShape ;
+        rdfs:label      "Links the devices with their coverages." ;
+        sh:class        <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Coverage> ;
+        sh:description  "Links the devices with their coverages." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasCoverage> .
+
+<https://astrea.linkeddata.es/shapes#1beb33c07a5bddd6b0a7cc8c5d1e9807>
+        a               sh:NodeShape ;
+        sh:description  "An attribute of an IoT object that can be exposed by an IoT service (i.e. a room (IoT Object) has a temperature (Attribute), that can be exposed by a temperature sensor (IoT device)."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1ab9a46844801ac026efa4231984a316> ;
+        sh:targetClass  <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Attribute> .
+
+<https://astrea.linkeddata.es/shapes#ef8865a9e83ea1987f44c5c3bca873d8>
+        a               sh:PropertyShape ;
+        rdfs:label      "Links any concept with metadata about that concept." ;
+        sh:class        <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Metadata> ;
+        sh:description  "Links any concept with metadata about that concept." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasMetadata> .
+
+<https://astrea.linkeddata.es/shapes#81503ac28fc765c6afba7a8369be7fd1>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:boolean ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#isMobile> ;
+        sh:pattern   "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#f06d84a321ca3fca905d03e3950924a0>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#7e531a18c895d77d9420d1bb16f9a958> , <https://astrea.linkeddata.es/shapes#24b3e291fa295a97a1c27f29572c7394> , <https://astrea.linkeddata.es/shapes#77ad991b474dceaddb1de8bf865861fa> ;
+        sh:targetClass  <http://purl.oclc.org/NET/ssnx/ssn#Device> .
+
+<https://astrea.linkeddata.es/shapes#f4dc277c24797b78fac1bdf9da3ab99d>
+        a               sh:PropertyShape ;
+        rdfs:label      "Links the sensor with the units of the quantity kind it measures (e.g. A sensor -sensor1- measures temperature in Celsius: senso1 hasUnit celsius)." ;
+        sh:class        <http://purl.org/NET/ssnx/qu/qu#Unit> ;
+        sh:description  "Links the sensor with the units of the quantity kind it measures (e.g. A sensor -sensor1- measures temperature in Celsius: senso1 hasUnit celsius)." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasUnit> .
+
+<https://astrea.linkeddata.es/shapes#6b8766f769054fdac90b9c2643f5f77b>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d4657f8d29bb80da6eebd238a4ee0165> , <https://astrea.linkeddata.es/shapes#b9e4b4ce764a66d4dc778db20d331b3b> , <https://astrea.linkeddata.es/shapes#fc25ef3a0f596853b38b54a7c8fd3e7e> ;
+        sh:targetClass  <http://purl.oclc.org/NET/ssnx/ssn#System> .
+
+<https://astrea.linkeddata.es/shapes#24b3e291fa295a97a1c27f29572c7394>
+        a               sh:PropertyShape ;
+        rdfs:label      "A device is exposed by a service." ;
+        sh:class        <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service> ;
+        sh:description  "A device is exposed by a service." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#exposedBy> .
+
+<https://astrea.linkeddata.es/shapes#77e9715df2ac2c013e25ebbf380c8d7f>
+        a               sh:NodeShape ;
+        sh:description  "The coverage of an IoT device (i.e. a temperature sensor inside a room has a coverage of that room)."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Coverage> .
+
+<https://astrea.linkeddata.es/shapes#77ad991b474dceaddb1de8bf865861fa>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#id> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#bbd8377684f5841c5a19f10d0ae66b37>
+        a               sh:NodeShape ;
+        sh:description  "Teh coverage is made up by giving two points which are the oposite corners of a rentangle."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Rectangle> .
+
+<https://astrea.linkeddata.es/shapes#2219e9df1535d80b1c5adfb14f6f4962>
+        a               sh:PropertyShape ;
+        rdfs:label      "Defines the type pf the metadata value (e.g. resolution of the sensor)." ;
+        sh:datatype     xsd:string ;
+        sh:description  "Defines the type pf the metadata value (e.g. resolution of the sensor)." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#metadataType> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#7616f788ee3c5f019b58562205298236>
+        a               sh:PropertyShape ;
+        rdfs:label      "Links the devices with their attributes." ;
+        sh:class        <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Attribute> ;
+        sh:description  "Links the devices with their attributes." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasAttribute> .
+
+<https://astrea.linkeddata.es/shapes#b9e4b4ce764a66d4dc778db20d331b3b>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/ssnx/ssn#System> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#isSubSystemOf> .
+
+<https://astrea.linkeddata.es/shapes#af9186bf621fb3a56d74852c1544ede3>
+        a               sh:NodeShape ;
+        sh:description  "Class used to describe properties that cannot be described by QuantityKind and Units. i.e. the resolution of a sensor."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2219e9df1535d80b1c5adfb14f6f4962> , <https://astrea.linkeddata.es/shapes#4098af86166b192b1f3e5275296a6120> ;
+        sh:targetClass  <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Metadata> .
+
+<https://astrea.linkeddata.es/shapes#f311436bf732661165b8eff33a47457f>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d6e611967ec915344c8701b70258d9ed> , <https://astrea.linkeddata.es/shapes#7616f788ee3c5f019b58562205298236> ;
+        sh:targetClass  <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Entity> , <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Object> .
+
+<https://astrea.linkeddata.es/shapes#d8d8e845077b000fe38371bff6ad7f7b>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/NET/ssnx/qu/qu#Unit> .
+
+<https://astrea.linkeddata.es/shapes#3ef793712378e097aac823894a277e63>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2003/01/geo/wgs84_pos#Point> .
+
+<https://astrea.linkeddata.es/shapes#ebcb4790b14b1cf497806e5ab2adfe1f>
+        a               sh:PropertyShape ;
+        rdfs:label      "Links a sensor with a sensing device the same way as SSN." ;
+        sh:class        <http://purl.oclc.org/NET/ssnx/ssn#SensingDevice> ;
+        sh:description  "Links a sensor with a sensing device the same way as SSN." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasSensingDevice> .
+
+<https://astrea.linkeddata.es/shapes#4098af86166b192b1f3e5275296a6120>
+        a               sh:PropertyShape ;
+        rdfs:label      "Value of the metadata" ;
+        sh:datatype     xsd:string ;
+        sh:description  "Value of the metadata" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#metadataValue> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#45a5ea8980842e0e1f00168fe9130c56>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/NET/ssnx/qu/qu#QuantityKind> .
+
+<https://astrea.linkeddata.es/shapes#ffa627c90b2f93431bad38fc95750b9e>
+        a            sh:PropertyShape ;
+        sh:class     <http://www.w3.org/2003/01/geo/wgs84_pos#Point> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/2003/01/geo/wgs84_pos#location> .
+
+<https://astrea.linkeddata.es/shapes#9d14c31ce79a692c59d7a5fbacfabb14>
+        a               sh:NodeShape ;
+        sh:description  "The coverage is made up by linking several points by strait lines."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Polygon> .
+
+<https://astrea.linkeddata.es/shapes#e650fcd80168809cb4ed1c7c0d440250>
+        a               sh:PropertyShape ;
+        rdfs:label      "Specifies the radius of a circle coverage defined by a point -the center of the circle- and its radius." ;
+        sh:datatype     xsd:double ;
+        sh:description  "Specifies the radius of a circle coverage defined by a point -the center of the circle- and its radius." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#radius> ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#1ab9a46844801ac026efa4231984a316>
+        a               sh:PropertyShape ;
+        rdfs:label      "Links a sensor or an attribute with the quantity  kind it measures (e.g. A sensor -sensor1- measures temperature: sensor1 hasQuantityKind temperature)." ;
+        sh:class        <http://purl.org/NET/ssnx/qu/qu#QuantityKind> ;
+        sh:description  "Links a sensor or an attribute with the quantity  kind it measures (e.g. A sensor -sensor1- measures temperature: sensor1 hasQuantityKind temperature)." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasQuantityKind> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#4098af86166b192b1f3e5275296a6120> , <https://astrea.linkeddata.es/shapes#af9186bf621fb3a56d74852c1544ede3> , <https://astrea.linkeddata.es/shapes#9d14c31ce79a692c59d7a5fbacfabb14> , <https://astrea.linkeddata.es/shapes#307eb2eb9240e433ffaa76a288d1cbfa> , <https://astrea.linkeddata.es/shapes#1beb33c07a5bddd6b0a7cc8c5d1e9807> , <https://astrea.linkeddata.es/shapes#bbd8377684f5841c5a19f10d0ae66b37> , <https://astrea.linkeddata.es/shapes#4b7d97d16042ca14dce7a46c15ec3d97> , <https://astrea.linkeddata.es/shapes#81503ac28fc765c6afba7a8369be7fd1> , <https://astrea.linkeddata.es/shapes#ef8865a9e83ea1987f44c5c3bca873d8> , <https://astrea.linkeddata.es/shapes#ebcb4790b14b1cf497806e5ab2adfe1f> , <https://astrea.linkeddata.es/shapes#ee302a4c8cd4e5f9cbc58b9ed90dec9d> , <https://astrea.linkeddata.es/shapes#7e531a18c895d77d9420d1bb16f9a958> , <https://astrea.linkeddata.es/shapes#d4657f8d29bb80da6eebd238a4ee0165> , <https://astrea.linkeddata.es/shapes#cfb85be4583af7af6f0c0bf8eed2d021> , <https://astrea.linkeddata.es/shapes#1ab9a46844801ac026efa4231984a316> , <https://astrea.linkeddata.es/shapes#77ad991b474dceaddb1de8bf865861fa> , <https://astrea.linkeddata.es/shapes#7fd31f229628015478224f36f5feed48> , <https://astrea.linkeddata.es/shapes#374cad88880b2c30f002f73f317bec4d> , <https://astrea.linkeddata.es/shapes#b9e4b4ce764a66d4dc778db20d331b3b> , <https://astrea.linkeddata.es/shapes#45a5ea8980842e0e1f00168fe9130c56> , <https://astrea.linkeddata.es/shapes#de80cdc2a2f82dd3d37a742d02a6e4a2> , <https://astrea.linkeddata.es/shapes#ffa627c90b2f93431bad38fc95750b9e> , <https://astrea.linkeddata.es/shapes#f4dc277c24797b78fac1bdf9da3ab99d> , <https://astrea.linkeddata.es/shapes#311bdf1a968591d45be3d3fac5772379> , <https://astrea.linkeddata.es/shapes#dee7cedbd2501bb64b9669615b133c21> , <https://astrea.linkeddata.es/shapes#2219e9df1535d80b1c5adfb14f6f4962> , <https://astrea.linkeddata.es/shapes#f311436bf732661165b8eff33a47457f> , <https://astrea.linkeddata.es/shapes#4e04f9b146c39ba7a276a3d55c6e0dc8> , <https://astrea.linkeddata.es/shapes#24b3e291fa295a97a1c27f29572c7394> , <https://astrea.linkeddata.es/shapes#e94382f85a56ae31eb41bb70f50a0590> , <https://astrea.linkeddata.es/shapes#d6e611967ec915344c8701b70258d9ed> , <https://astrea.linkeddata.es/shapes#d8d8e845077b000fe38371bff6ad7f7b> , <https://astrea.linkeddata.es/shapes#b76e9fb9379a90a53d812ba8422538a1> , <https://astrea.linkeddata.es/shapes#e650fcd80168809cb4ed1c7c0d440250> , <https://astrea.linkeddata.es/shapes#77e9715df2ac2c013e25ebbf380c8d7f> , <https://astrea.linkeddata.es/shapes#fc25ef3a0f596853b38b54a7c8fd3e7e> , <https://astrea.linkeddata.es/shapes#3ef793712378e097aac823894a277e63> , <https://astrea.linkeddata.es/shapes#f06d84a321ca3fca905d03e3950924a0> , <https://astrea.linkeddata.es/shapes#6b8766f769054fdac90b9c2643f5f77b> , <https://astrea.linkeddata.es/shapes#0ff1baf4bfd5ac2054350ab16045d658> , <https://astrea.linkeddata.es/shapes#7616f788ee3c5f019b58562205298236> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#e94382f85a56ae31eb41bb70f50a0590>
+        a               sh:NodeShape ;
+        sh:description  "Circle coverage it needs the location of the sensor as the centre of the circle and the radius as a DataProperty."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e650fcd80168809cb4ed1c7c0d440250> ;
+        sh:targetClass  <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Circle> .
+
+<https://astrea.linkeddata.es/shapes#b76e9fb9379a90a53d812ba8422538a1>
+        a               sh:PropertyShape ;
+        rdfs:label      "Endpoint of the service. It is usually a URL where the service is available." ;
+        sh:datatype     xsd:anyURI ;
+        sh:description  "Endpoint of the service. It is usually a URL where the service is available." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#endpoint> ;
+        sh:pattern      "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#311bdf1a968591d45be3d3fac5772379>
+        a               sh:PropertyShape ;
+        rdfs:label      "Defines the type of interface of the service endpoint." ;
+        sh:datatype     xsd:string ;
+        sh:description  "Defines the type of interface of the service endpoint." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#interfaceType> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#fc25ef3a0f596853b38b54a7c8fd3e7e>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.oclc.org/NET/ssnx/ssn#Platform> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.oclc.org/NET/ssnx/ssn#onPlatform> .
+
+<https://astrea.linkeddata.es/shapes#dee7cedbd2501bb64b9669615b133c21>
+        a               sh:NodeShape ;
+        sh:description  "Service provided by an IoT Device"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#0ff1baf4bfd5ac2054350ab16045d658> , <https://astrea.linkeddata.es/shapes#307eb2eb9240e433ffaa76a288d1cbfa> , <https://astrea.linkeddata.es/shapes#b76e9fb9379a90a53d812ba8422538a1> , <https://astrea.linkeddata.es/shapes#311bdf1a968591d45be3d3fac5772379> ;
+        sh:targetClass  <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service> .
+
+<https://astrea.linkeddata.es/shapes#cfb85be4583af7af6f0c0bf8eed2d021>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ebcb4790b14b1cf497806e5ab2adfe1f> , <https://astrea.linkeddata.es/shapes#f4dc277c24797b78fac1bdf9da3ab99d> , <https://astrea.linkeddata.es/shapes#1ab9a46844801ac026efa4231984a316> ;
+        sh:targetClass  <http://purl.oclc.org/NET/ssnx/ssn#Sensor> .
+
+<https://astrea.linkeddata.es/shapes#307eb2eb9240e433ffaa76a288d1cbfa>
+        a               sh:PropertyShape ;
+        rdfs:label      "Description of the service." ;
+        sh:datatype     xsd:anyURI ;
+        sh:description  "Description of the service." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#interfaceDescription> ;
+        sh:pattern      "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#4b7d97d16042ca14dce7a46c15ec3d97>
+        a               sh:NodeShape ;
+        sh:description  "IoT entity"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d6e611967ec915344c8701b70258d9ed> , <https://astrea.linkeddata.es/shapes#7616f788ee3c5f019b58562205298236> ;
+        sh:targetClass  <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Object> .
+
+<https://astrea.linkeddata.es/shapes#7fd31f229628015478224f36f5feed48>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#81503ac28fc765c6afba7a8369be7fd1> ;
+        sh:targetClass  <http://purl.oclc.org/NET/ssnx/ssn#Platform> .

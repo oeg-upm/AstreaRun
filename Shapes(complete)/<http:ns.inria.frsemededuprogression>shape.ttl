@@ -1,0 +1,162 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#31a6b9d5983eaace320bace9017d4923> , <https://astrea.linkeddata.es/shapes#5f19a233fb39f766087a06909a91e8a2> , <https://astrea.linkeddata.es/shapes#d351dea63c55771805c6fbdc0fc4e6a1> , <https://astrea.linkeddata.es/shapes#337392e9339adfa0b99515877b87028f> , <https://astrea.linkeddata.es/shapes#c250812c8a73d7e5292f8c078507cf8b> , <https://astrea.linkeddata.es/shapes#041b7f12d9e7ba363f4ab14f7fb0c433> , <https://astrea.linkeddata.es/shapes#97dbc7b7eeb8ec288f16178bfbead8a8> , <https://astrea.linkeddata.es/shapes#6e0f0e1eb5f6c649a359837cc6c15f15> , <https://astrea.linkeddata.es/shapes#9de0bf3067b11c9eae84347b1d75c345> , <https://astrea.linkeddata.es/shapes#8611dadc7861e2d857c2ee5ce758d2ef> , <https://astrea.linkeddata.es/shapes#ea226a0a73a1e5b56de16e3f054eed0b> , <https://astrea.linkeddata.es/shapes#316ff3b4c3b3752e3cc42a5b5ea89a97> , <https://astrea.linkeddata.es/shapes#726b27bcd643062c9623b66de4fcf29f> , <https://astrea.linkeddata.es/shapes#205282f00fbbf5e70921b08e0e2cae18> , <https://astrea.linkeddata.es/shapes#8889b8b156ddd5ef7bdc4e3d387ca489> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#726b27bcd643062c9623b66de4fcf29f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://ns.inria.fr/semed/eduprogression#> ;
+        rdfs:label        "Has knowledge"@en , "Relates an instance of EKS to an instance of Knowledge."@en ;
+        sh:class          <http://ns.inria.fr/semed/eduprogression/v1#Knowledge> ;
+        sh:description    "Relates an instance of EKS to an instance of Knowledge."@en ;
+        sh:name           "Has knowledge"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://ns.inria.fr/semed/eduprogression/v1#hasKnowledge> .
+
+<https://astrea.linkeddata.es/shapes#ea226a0a73a1e5b56de16e3f054eed0b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://ns.inria.fr/semed/eduprogression#> ;
+        rdfs:label        "Skill"@en , "Competence"@fr ;
+        sh:description    "It is represented by class Skill and described as well by using the Dublin Core and RDFS vocabularies. An instance of EKS is related to an instance of Skill through property hasSkill."@en ;
+        sh:name           "Skill"@en , "Competence"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://ns.inria.fr/semed/eduprogression/v1#Skill> .
+
+<https://astrea.linkeddata.es/shapes#5f19a233fb39f766087a06909a91e8a2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://ns.inria.fr/semed/eduprogression#> ;
+        rdfs:label        "Learning domain"@en , "Domaine d'enseignement"@fr ;
+        sh:description    "A learning domain is represented by an instance of the LearningDomain class, and it is also an instance of skos:Concept that is part of (only) one skos:ConceptScheme containing the only learning domains of a progression. Also, as they are SKOS concepts, learning domains are hierarchically structured by using the skos:broader and/or skos:narrower properties. A learning domain can be associated to a Progression or to an EKS."@en ;
+        sh:name           "Learning domain"@en , "Domaine d'enseignement"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://ns.inria.fr/semed/eduprogression/v1#LearningDomain> .
+
+<https://astrea.linkeddata.es/shapes#6e0f0e1eb5f6c649a359837cc6c15f15>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://ns.inria.fr/semed/eduprogression#> ;
+        rdfs:label        "Has course"@en , "Relates an instance of EKS to an instance of Course."@en ;
+        sh:class          <http://ns.inria.fr/semed/eduprogression/v1#Course> ;
+        sh:description    "Relates an instance of EKS to an instance of Course."@en ;
+        sh:name           "Has course"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://ns.inria.fr/semed/eduprogression/v1#hasCourse> .
+
+<https://astrea.linkeddata.es/shapes#337392e9339adfa0b99515877b87028f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://ns.inria.fr/semed/eduprogression#> ;
+        rdfs:label        "Has skill"@en , "Relates an instance of EKS to an instance of Skill."@en ;
+        sh:class          <http://ns.inria.fr/semed/eduprogression/v1#Skill> ;
+        sh:description    "Relates an instance of EKS to an instance of Skill."@en ;
+        sh:name           "Has skill"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://ns.inria.fr/semed/eduprogression/v1#hasSkill> .
+
+<https://astrea.linkeddata.es/shapes#205282f00fbbf5e70921b08e0e2cae18>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://ns.inria.fr/semed/eduprogression#> ;
+        rdfs:label        "Has a vocabulary item"@en , "Relates an instance of EKS to an instance of the class VocabularyItem."@en ;
+        sh:class          <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:description    "Relates an instance of EKS to an instance of the class VocabularyItem."@en ;
+        sh:name           "Has a vocabulary item"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://ns.inria.fr/semed/eduprogression/v1#hasVocabularyItem> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#c250812c8a73d7e5292f8c078507cf8b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://ns.inria.fr/semed/eduprogression#> ;
+        rdfs:label        "Progression"@fr , "Progression"@en ;
+        sh:description    "A progression is represented by an instance of class Progression. It can be further described by using the Dublin Core or RDFS vocabularies. A progression can be associated to an existing learning domain (through the hasLearningDomain property) and to one or several EKSs (through the hasEKS property)."@en ;
+        sh:name           "Progression"@fr , "Progression"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d351dea63c55771805c6fbdc0fc4e6a1> ;
+        sh:targetClass    <http://ns.inria.fr/semed/eduprogression/v1#Progression> .
+
+<https://astrea.linkeddata.es/shapes#316ff3b4c3b3752e3cc42a5b5ea89a97>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://ns.inria.fr/semed/eduprogression#> ;
+        rdfs:label        "Has point of reference"@en , "Relates an instance of EKS to an instance of class PointOfReference."@en ;
+        sh:description    "Relates an instance of EKS to an instance of class PointOfReference."@en ;
+        sh:name           "Has point of reference"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#31a6b9d5983eaace320bace9017d4923>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://ns.inria.fr/semed/eduprogression#> ;
+        rdfs:label        "Has realted resource on DBpedia"@en , "Associates an instance of a class with a resource on DBpedia"@en ;
+        sh:description    "Associates an instance of a class with a resource on DBpedia"@en ;
+        sh:name           "Has realted resource on DBpedia"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://ns.inria.fr/semed/eduprogression/v1#hasRelatedResource> .
+
+<https://astrea.linkeddata.es/shapes#8611dadc7861e2d857c2ee5ce758d2ef>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://ns.inria.fr/semed/eduprogression#> ;
+        rdfs:label        "Has a learning sub domain"@en , "Associates a learning domain to a Progression or to an EKS."@en ;
+        sh:class          <http://ns.inria.fr/semed/eduprogression/v1#LearningDomain> ;
+        sh:description    "Associates a learning domain to a Progression or to an EKS."@en ;
+        sh:name           "Has a learning sub domain"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://ns.inria.fr/semed/eduprogression/v1#hasLearningDomain> .
+
+<https://astrea.linkeddata.es/shapes#d351dea63c55771805c6fbdc0fc4e6a1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://ns.inria.fr/semed/eduprogression#> ;
+        rdfs:label        "Has an associated EKS "@en , "Allows a progression to be associated to one or several EKSs."@en ;
+        sh:class          <http://ns.inria.fr/semed/eduprogression/v1#EKS> ;
+        sh:description    "Allows a progression to be associated to one or several EKSs."@en ;
+        sh:name           "Has an associated EKS "@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://ns.inria.fr/semed/eduprogression/v1#hasEKS> .
+
+<https://astrea.linkeddata.es/shapes#97dbc7b7eeb8ec288f16178bfbead8a8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://ns.inria.fr/semed/eduprogression#> ;
+        rdfs:label        "Repère"@fr , "Point of reference"@en ;
+        sh:description    "An instance of class PointOfReference represents an educational reference element on a specific element of knowledge and skills (an instance of EKS). An instance of EKS is related to an instance of class PointOfReference through the property hasPointOfReference."@en ;
+        sh:name           "Repère"@fr , "Point of reference"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://ns.inria.fr/semed/eduprogression/v1#PointOfReference> .
+
+<https://astrea.linkeddata.es/shapes#8889b8b156ddd5ef7bdc4e3d387ca489>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://ns.inria.fr/semed/eduprogression#> ;
+        rdfs:label        "Element de connaissances et de competences"@fr , "Element of knowledge and skills "@en ;
+        sh:description    "An element of knowledge and skills is an instance of this class and it is associated to a set of knowledge pieces (class Knowledge) and skills (class Skill) for a specific French school cycle (class Course) containing reference points (class PointOfReference) and also a vocabulary of associated terms (class Vocabulary)."@en ;
+        sh:name           "Element de connaissances et de competences"@fr , "Element of knowledge and skills "@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#726b27bcd643062c9623b66de4fcf29f> , <https://astrea.linkeddata.es/shapes#205282f00fbbf5e70921b08e0e2cae18> , <https://astrea.linkeddata.es/shapes#337392e9339adfa0b99515877b87028f> , <https://astrea.linkeddata.es/shapes#6e0f0e1eb5f6c649a359837cc6c15f15> ;
+        sh:targetClass    <http://ns.inria.fr/semed/eduprogression/v1#EKS> .
+
+<https://astrea.linkeddata.es/shapes#9de0bf3067b11c9eae84347b1d75c345>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://ns.inria.fr/semed/eduprogression#> ;
+        rdfs:label        "Knowledge "@en , "Connaissance"@fr ;
+        sh:description    "It is represented by class Knowledge and each of its instances is a skos:Concept that is part of a skos:ConceptScheme that contains all the knowledge pieces of a given progression. An instance of EKS is related to an instance of Knowledge through property hasKnowledge."@en ;
+        sh:name           "Knowledge "@en , "Connaissance"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://ns.inria.fr/semed/eduprogression/v1#Knowledge> .
+
+<https://astrea.linkeddata.es/shapes#041b7f12d9e7ba363f4ab14f7fb0c433>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://ns.inria.fr/semed/eduprogression#> ;
+        rdfs:label        "Course "@en , "Cours"@fr ;
+        sh:description    "In the French educational system, skills that students are expected to develop, are defined by cycle and each cycle is organized into course."@en ;
+        sh:name           "Course "@en , "Cours"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://ns.inria.fr/semed/eduprogression/v1#Course> .

@@ -1,0 +1,235 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#86112cce6b03ee6f95833d657cc76adc>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "Plate forme"@fr , "Platform"@en ;
+        sh:description    "The platform where to host or use the application, could be on the web (firefox, chrome, IE, etc..) or mobile (android, etc..) or event desktop"@en ;
+        sh:name           "Plate forme"@fr , "Platform"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#29acb1e38544a44388a0723d2f9fff11> ;
+        sh:targetClass    <http://purl.org/ontology/dvia#Platform> .
+
+<https://astrea.linkeddata.es/shapes#b9c4bcf1cf754b8857ef5fa941c6aaf6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "utilise l'outil"@fr , "This property links to the tools or libraries used for the application"@en , "uses Tool"@en ;
+        sh:class          <http://purl.org/ontology/dvia#VisualTool> ;
+        sh:description    "This property links to the tools or libraries used for the application"@en ;
+        sh:name           "utilise l'outil"@fr , "uses Tool"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/dvia#usesTool> .
+
+<https://astrea.linkeddata.es/shapes#d91ffd2710fc65a733eeae41a4e11672>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "navigateur alternatif"@fr , "alternative navigator"@en , "The name of the alternate navigator if applicable"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "The name of the alternate navigator if applicable"@en ;
+        sh:name           "alternative navigator"@en , "navigateur alternatif"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/dvia#alternativeNavigator> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#29acb1e38544a44388a0723d2f9fff11>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "The operating system where the application runs."@en , "syst�me"@fr , "system"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "The operating system where the application runs."@en ;
+        sh:name           "system"@en , "syst�me"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/dvia#system> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#26d090cb17602cee7f57fc025785043b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "The name of the preferred navigator to be usd by the application"@en , "navigateur pr�f�rr�"@fr , "preferred navigator"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "The name of the preferred navigator to be usd by the application"@en ;
+        sh:name           "preferred navigator"@en , "navigateur pr�f�rr�"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/dvia#preferredNavigator> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#067dc2e4931483d6de22f7ea9b976cb4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "Application"@fr , "Application"@en ;
+        sh:description    "The aplication or the mashup developed for demo-ing or consuming data in LD fashion"@en ;
+        sh:name           "Application"@en , "Application"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#21b06b410e688e2f1ffc2ea75bd03134> , <https://astrea.linkeddata.es/shapes#b20185c18e0082651c0c0a4c5e532e85> , <https://astrea.linkeddata.es/shapes#b9c4bcf1cf754b8857ef5fa941c6aaf6> , <https://astrea.linkeddata.es/shapes#48207f04a23a4a57546bd3bb46e424a9> , <https://astrea.linkeddata.es/shapes#f4716a359d83872fb9b38366824aae21> , <https://astrea.linkeddata.es/shapes#17a76641f86e690296d0de1d0f771088> , <https://astrea.linkeddata.es/shapes#fc86d0efe4427e9076f8506ff3bb86c7> , <https://astrea.linkeddata.es/shapes#ac6cfab5edbc5f38d93dbfc9104e5a0f> , <https://astrea.linkeddata.es/shapes#c0e63fdba642f21d96a51342c31ee2bd> , <https://astrea.linkeddata.es/shapes#b58021cd61f17462baebcb98ebafcf3f> , <https://astrea.linkeddata.es/shapes#0f59d08450924580538b15fe78bb6f60> ;
+        sh:targetClass    <http://purl.org/ontology/dvia#Application> .
+
+<https://astrea.linkeddata.es/shapes#c0e63fdba642f21d96a51342c31ee2bd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "hasLicense"@en , "a pour license"@fr , "This property links to the license of the application"@en ;
+        sh:class          <http://purl.org/dc/terms/License> ;
+        sh:description    "This property links to the license of the application"@en ;
+        sh:name           "hasLicense"@en , "a pour license"@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/dvia#hasLicense> .
+
+<https://astrea.linkeddata.es/shapes#2e8c25855e11cf8bd0722fd3d592529b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "download url"@en , "url t�l�chargement"@fr , "The download url of the tool for visualization."@en ;
+        sh:datatype       xsd:anyURI ;
+        sh:description    "The download url of the tool for visualization."@en ;
+        sh:name           "download url"@en , "url t�l�chargement"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/dvia#downloadUrl> ;
+        sh:pattern        "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#442ff01b40a0e7bc3eb20c54f4145af0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "description du jeu de donn�es"@fr , "Property for a given descriptive informations of the datasets used for making the application. It could be used when no more details are given on the datasets like URL, formats, etc."@en , "dataset description"@en ;
+        sh:description    "Property for a given descriptive informations of the datasets used for making the application. It could be used when no more details are given on the datasets like URL, formats, etc."@en ;
+        sh:name           "dataset description"@en , "description du jeu de donn�es"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/dvia#datasetDescription> .
+
+<https://astrea.linkeddata.es/shapes#48207f04a23a4a57546bd3bb46e424a9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "mot cl�"@fr , "keyword"@en , "keywords used for the application."@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "keywords used for the application."@en ;
+        sh:name           "keyword"@en , "mot cl�"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/dvia#keyword> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#21b06b410e688e2f1ffc2ea75bd03134>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "author"@en , "auteur"@fr , "links to the authors of the application or the tools, libraries"@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Person> ;
+        sh:description    "links to the authors of the application or the tools, libraries"@en ;
+        sh:name           "author"@en , "auteur"@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/dvia#author> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#17a76641f86e690296d0de1d0f771088> , <https://astrea.linkeddata.es/shapes#ac6cfab5edbc5f38d93dbfc9104e5a0f> , <https://astrea.linkeddata.es/shapes#0f59d08450924580538b15fe78bb6f60> , <https://astrea.linkeddata.es/shapes#29acb1e38544a44388a0723d2f9fff11> , <https://astrea.linkeddata.es/shapes#442ff01b40a0e7bc3eb20c54f4145af0> , <https://astrea.linkeddata.es/shapes#86112cce6b03ee6f95833d657cc76adc> , <https://astrea.linkeddata.es/shapes#26d090cb17602cee7f57fc025785043b> , <https://astrea.linkeddata.es/shapes#b20185c18e0082651c0c0a4c5e532e85> , <https://astrea.linkeddata.es/shapes#b9c4bcf1cf754b8857ef5fa941c6aaf6> , <https://astrea.linkeddata.es/shapes#7ce4b75dc1557909a448e1c38fe233a7> , <https://astrea.linkeddata.es/shapes#fc86d0efe4427e9076f8506ff3bb86c7> , <https://astrea.linkeddata.es/shapes#d91ffd2710fc65a733eeae41a4e11672> , <https://astrea.linkeddata.es/shapes#f4716a359d83872fb9b38366824aae21> , <https://astrea.linkeddata.es/shapes#b58021cd61f17462baebcb98ebafcf3f> , <https://astrea.linkeddata.es/shapes#c0e63fdba642f21d96a51342c31ee2bd> , <https://astrea.linkeddata.es/shapes#48207f04a23a4a57546bd3bb46e424a9> , <https://astrea.linkeddata.es/shapes#5fa025955008f13b996069fde163b668> , <https://astrea.linkeddata.es/shapes#2e8c25855e11cf8bd0722fd3d592529b> , <https://astrea.linkeddata.es/shapes#21b06b410e688e2f1ffc2ea75bd03134> , <https://astrea.linkeddata.es/shapes#1d95d0884e22dbc90d85810252243a30> , <https://astrea.linkeddata.es/shapes#067dc2e4931483d6de22f7ea9b976cb4> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#fc86d0efe4427e9076f8506ff3bb86c7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "view"@en , "vue"@fr , "The types of view available in the application, such as maps, charts, graphs, etc."@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "The types of view available in the application, such as maps, charts, graphs, etc."@en ;
+        sh:name           "view"@en , "vue"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/dvia#view> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#5fa025955008f13b996069fde163b668>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "url de la librairie"@fr , "The url to the page describing the library or the tool for visualization."@en , "library url"@en ;
+        sh:datatype       xsd:anyURI ;
+        sh:description    "The url to the page describing the library or the tool for visualization."@en ;
+        sh:name           "library url"@en , "url de la librairie"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/dvia#libUrl> ;
+        sh:pattern        "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#1d95d0884e22dbc90d85810252243a30>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "visual Tool"@en , "Outil de visualisation"@fr ;
+        sh:description    "The tool or library used to build the application"@en ;
+        sh:name           "Outil de visualisation"@fr , "visual Tool"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#7ce4b75dc1557909a448e1c38fe233a7> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#2e8c25855e11cf8bd0722fd3d592529b> , <https://astrea.linkeddata.es/shapes#5fa025955008f13b996069fde163b668> ;
+        sh:targetClass    <http://purl.org/ontology/dvia#VisualTool> .
+
+<https://astrea.linkeddata.es/shapes#b20185c18e0082651c0c0a4c5e532e85>
+        a                 sh:NodeShape , sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "platform"@en , "plate forme"@fr , "This property links the application to a platform to actually use the application."@en ;
+        sh:class          <http://purl.org/ontology/dvia#Platform> ;
+        sh:description    "This property links the application to a platform to actually use the application."@en ;
+        sh:name           "platform"@en , "plate forme"@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/dvia#platform> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d91ffd2710fc65a733eeae41a4e11672> , <https://astrea.linkeddata.es/shapes#26d090cb17602cee7f57fc025785043b> ;
+        sh:targetClass    <http://purl.org/ontology/dvia#platform> .
+
+<https://astrea.linkeddata.es/shapes#ac6cfab5edbc5f38d93dbfc9104e5a0f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "design By"@en , "impl�menter par"@fr , "links to the organization which builds the application"@en ;
+        sh:class          <http://www.w3.org/ns/org#Organization> ;
+        sh:description    "links to the organization which builds the application"@en ;
+        sh:name           "impl�menter par"@fr , "design By"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/dvia#designBy> .
+
+<https://astrea.linkeddata.es/shapes#0f59d08450924580538b15fe78bb6f60>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "scope"@en , "The scope or domain of the application."@en , "domain d'usage"@fr ;
+        sh:datatype       <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:description    "The scope or domain of the application."@en ;
+        sh:name           "scope"@en , "domain d'usage"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/dvia#scope> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#17a76641f86e690296d0de1d0f771088>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "links to the dataset used to make the application, and could be of different types or formats"@en , "consomme"@fr , "consumes"@en ;
+        sh:class          <http://www.w3.org/ns/dcat#Dataset> ;
+        sh:description    "links to the dataset used to make the application, and could be of different types or formats"@en ;
+        sh:name           "consomme"@fr , "consumes"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/dvia#consumes> .
+
+<https://astrea.linkeddata.es/shapes#f4716a359d83872fb9b38366824aae21>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "url"@en , "url"@fr , "the url of the application."@en ;
+        sh:datatype       xsd:anyURI ;
+        sh:description    "the url of the application."@en ;
+        sh:name           "url"@en , "url"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/dvia#url> ;
+        sh:pattern        "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#7ce4b75dc1557909a448e1c38fe233a7>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/ontology/dvia#Application> .
+
+<https://astrea.linkeddata.es/shapes#b58021cd61f17462baebcb98ebafcf3f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dvia> ;
+        rdfs:label        "The business value of the application; generally could be commercial of free. Also depending on the license"@en , "businessValue"@en , "valeur commerciale"@fr ;
+        sh:datatype       xsd:string ;
+        sh:description    "The business value of the application; generally could be commercial of free. Also depending on the license"@en ;
+        sh:name           "valeur commerciale"@fr , "businessValue"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/dvia#businessValue> ;
+        sh:pattern        ".*" .

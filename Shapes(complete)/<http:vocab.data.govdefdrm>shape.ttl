@@ -1,0 +1,259 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#0d739cac8629ec5eaa1e2d3a36cfb1ec>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Stewardship" ;
+        sh:description    "The concept of managing a data resource" ;
+        sh:name           "Stewardship" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#Stewardship> .
+
+<https://astrea.linkeddata.es/shapes#4c034094f94879828425ed1061a3904d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Structured data resource" ;
+        sh:description    "A Digital Data Resource containing structured data. This data can be accessed in a uniform manner, independent of data values, once the Data Schema is known." ;
+        sh:name           "Structured data resource" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#StructuredDataResource> .
+
+<https://astrea.linkeddata.es/shapes#c0751b2dd174bf7a44253ad7222397e5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Supplier" ;
+        sh:description    "An entity (person or organization) that supplies data to a Consumer." ;
+        sh:name           "Supplier" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#Supplier> .
+
+<https://astrea.linkeddata.es/shapes#c44d19b5a704897bf7e52804a24e3668>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Semistructured data resource" ;
+        sh:description    "A Digital Data Resource containing semi-structured data. This will generally consist in part of structured data and in part of unstructured data." ;
+        sh:name           "Semistructured data resource" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#SemistructuredDataResource> .
+
+<https://astrea.linkeddata.es/shapes#bf3ec0c14eb508e4693354e6bc36cc58>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "geospatial enabled" , "Designates whether or not the Data Asset supports or provides Geospatial data." ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "Designates whether or not the Data Asset supports or provides Geospatial data." ;
+        sh:name           "geospatial enabled" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://vocab.data.gov/def/drm#geospatialEnabled> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#6fc61edc643a4950fb8acf8d1e391602>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Topic" ;
+        sh:description    "A category within a Taxonomy. A Topic is the central concept for applying context to data. For example, an agency may have a Taxonomy that represents their organizational structure. In such a Taxonomy, each role in the organizational structure (e.g. CIO) represents a Topic. Topic is often synonymous with “node”." ;
+        sh:name           "Topic" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#Topic> .
+
+<https://astrea.linkeddata.es/shapes#e13b587efc71087bc7e38923e78f3944>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Data schema" ;
+        sh:description    "A representation of metadata, often in the form of data artifacts such as logical data models or conceptual data models. The Data Schema concept group is comprised of those concepts pertaining to the representation of structured data. A Data Schema provides a means to provision data sharing services that is independent of the values of the data in the data resource that it describes." ;
+        sh:name           "Data schema" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#DataSchema> .
+
+<https://astrea.linkeddata.es/shapes#d5c14bb3209e224f282572648c95694f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Query point" ;
+        sh:description    "An endpoint that provides an interface for accessing and querying a Data Asset. A concrete representation of a Query Point may be a specific URL at which a query Web Service may be invoked." ;
+        sh:name           "Query point" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#QueryPoint> .
+
+<https://astrea.linkeddata.es/shapes#0255d79cfbe2455c56cdfdef9c8d497f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Attribute" ;
+        sh:description    "Example: The “SSN” Attribute of a “Person” Entity may have a Data Type of “string” (if hyphens are included with the SSN) or “integer” (if hyphens are not included)." ;
+        sh:name           "Attribute" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#Attribute> .
+
+<https://astrea.linkeddata.es/shapes#b6efc20c0f01d216e3c9958d6d2b765c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Data steward" ;
+        sh:description    "A person responsible for managing a Data Asset." ;
+        sh:name           "Data steward" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3f5fd879a3fad14a0a3fe13a8ed6322b> ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#DataSteward> .
+
+<https://astrea.linkeddata.es/shapes#5702da8034e62778151903e70782ea17>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Taxonomy" ;
+        sh:description    "A collection of controlled vocabulary terms organized into a hierarchical structure. Taxonomies provide a means for categorizing or classifying information within a reasonably well-defined associative structure, in which each term in a Taxonomy is in one or more parent/child (broader/narrower) relationships to other terms in the Taxonomy." ;
+        sh:name           "Taxonomy" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#Taxonomy> .
+
+<https://astrea.linkeddata.es/shapes#ac479c5ca97d4756dfc0528336a6116a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Consumer" ;
+        sh:description    "An entity (person or organization) that consumes data that is supplied by a Supplier." ;
+        sh:name           "Consumer" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#Consumer> .
+
+<https://astrea.linkeddata.es/shapes#d26fec9d2570598f448f128f06f7ab7b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Data type" ;
+        sh:description    "A constraint on the type of data that an instance of an Attribute may hold (e.g. \"string\" or \"integer\")." ;
+        sh:name           "Data type" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#DataType> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#ac479c5ca97d4756dfc0528336a6116a> , <https://astrea.linkeddata.es/shapes#3f5fd879a3fad14a0a3fe13a8ed6322b> , <https://astrea.linkeddata.es/shapes#78dac3aac8d07c25d20cc280301ac09f> , <https://astrea.linkeddata.es/shapes#c43e3ce35c0537491556ea4a3ab1345b> , <https://astrea.linkeddata.es/shapes#0d739cac8629ec5eaa1e2d3a36cfb1ec> , <https://astrea.linkeddata.es/shapes#4c034094f94879828425ed1061a3904d> , <https://astrea.linkeddata.es/shapes#22f781320e92e3f1c313a309fc46e682> , <https://astrea.linkeddata.es/shapes#5da17dbdc873dff99fc1bfdb167277f6> , <https://astrea.linkeddata.es/shapes#5702da8034e62778151903e70782ea17> , <https://astrea.linkeddata.es/shapes#75e2409443532e7fbb6a37cceab43dae> , <https://astrea.linkeddata.es/shapes#d26fec9d2570598f448f128f06f7ab7b> , <https://astrea.linkeddata.es/shapes#380684109bb3db178c432aae486c98da> , <https://astrea.linkeddata.es/shapes#5e1a73cc57cae4db72fc4b77eae683b2> , <https://astrea.linkeddata.es/shapes#2d30271db3ae56fcd3c80a8c402d4e67> , <https://astrea.linkeddata.es/shapes#a8c45e8922052a6789d1a233ef769adc> , <https://astrea.linkeddata.es/shapes#d80f65945e5fe1f21117e13e285e7e88> , <https://astrea.linkeddata.es/shapes#c44d19b5a704897bf7e52804a24e3668> , <https://astrea.linkeddata.es/shapes#6fc61edc643a4950fb8acf8d1e391602> , <https://astrea.linkeddata.es/shapes#c0751b2dd174bf7a44253ad7222397e5> , <https://astrea.linkeddata.es/shapes#d5c14bb3209e224f282572648c95694f> , <https://astrea.linkeddata.es/shapes#b6efc20c0f01d216e3c9958d6d2b765c> , <https://astrea.linkeddata.es/shapes#ec63aee3ed191554fff1611592015166> , <https://astrea.linkeddata.es/shapes#e13b587efc71087bc7e38923e78f3944> , <https://astrea.linkeddata.es/shapes#bf3ec0c14eb508e4693354e6bc36cc58> , <https://astrea.linkeddata.es/shapes#0255d79cfbe2455c56cdfdef9c8d497f> , <https://astrea.linkeddata.es/shapes#17b324eeb34724addff3e2d6e11d5dda> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#380684109bb3db178c432aae486c98da>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Internal data schema" ;
+        sh:description    "This is the data schema described using DRM built-in concepts" ;
+        sh:name           "Internal data schema" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#InternalDataSchema> .
+
+<https://astrea.linkeddata.es/shapes#78dac3aac8d07c25d20cc280301ac09f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Exchange package" ;
+        sh:description    "A description of a specific recurring data exchange between a Supplier and a Consumer. An Exchange Package contains information (metadata) relating to the exchange (such as Supplier ID, Consumer ID, validity period for data, etc.), as well as a reference to the Payload (message content) for the exchange. An Exchange Package can also be used to define the result format for a query that is accepted and processed by a Query Point in a data sharing scenario." ;
+        sh:name           "Exchange package" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#ExchangePackage> .
+
+<https://astrea.linkeddata.es/shapes#22f781320e92e3f1c313a309fc46e682>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "External data schema" ;
+        sh:description    "This is a schema not described using DRM built-in concepts, but just pointed to. For example, XML Schema file" ;
+        sh:name           "External data schema" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#ExternalDataSchema> .
+
+<https://astrea.linkeddata.es/shapes#3f5fd879a3fad14a0a3fe13a8ed6322b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "initial date" , "The date that the Data Steward became associated with the Data Asset." ;
+        sh:datatype       xsd:date ;
+        sh:description    "The date that the Data Steward became associated with the Data Asset." ;
+        sh:name           "initial date" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://vocab.data.gov/def/drm#initialDate> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#c43e3ce35c0537491556ea4a3ab1345b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Payload definition" ;
+        sh:description    "Example: A specific message set expressed as an XML schema or an EDI transaction set that contains information about a “Person” entity." ;
+        sh:name           "Payload definition" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#PayloadDefinition> .
+
+<https://astrea.linkeddata.es/shapes#5da17dbdc873dff99fc1bfdb167277f6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Entity" ;
+        sh:description    "An abstraction for a person, place, object, event, or concept described (or characterized) by common Attributes. For example, “Person” and “Agency” are Entities. An instance of an Entity represents one particular occurrence of the Entity, such as a specific person or a specific agency." ;
+        sh:name           "Entity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#Entity> .
+
+<https://astrea.linkeddata.es/shapes#d80f65945e5fe1f21117e13e285e7e88>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Data asset" ;
+        sh:description    "The term “data asset” is synonymous with “data source”" ;
+        sh:name           "Data asset" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#bf3ec0c14eb508e4693354e6bc36cc58> ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#DataAsset> .
+
+<https://astrea.linkeddata.es/shapes#5e1a73cc57cae4db72fc4b77eae683b2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Relationship" ;
+        sh:description    "Describes the relationship between two Entities." ;
+        sh:name           "Relationship" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#Relationship> .
+
+<https://astrea.linkeddata.es/shapes#ec63aee3ed191554fff1611592015166>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Data access" ;
+        sh:description    "Requests for data services, such as a query of a Data Asset.  These requests are supported by Data Access Services" ;
+        sh:name           "Data access" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#DataAccess> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#a8c45e8922052a6789d1a233ef769adc>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Document" ;
+        sh:description    "While a Document can contain structured data, it normally has explanatory material included, which would cause it to therefore be considered semi-structured.  It is for this reason that there is no “contains” relationship from Document to Structured Data Resource. It is very important to separate Documents from Structured Data Resources because they are processed very differently. The difference between a Document and a Digital Data Resource, therefore, is that a Digital Data Resource can contained structured data." ;
+        sh:name           "Document" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#Document> .
+
+<https://astrea.linkeddata.es/shapes#17b324eeb34724addff3e2d6e11d5dda>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Unstructured data resource" ;
+        sh:description    "A Digital Data Resource containing unstructured data. Unstructured data is collection of data values that are likely to be processed only by specialized application programs." ;
+        sh:name           "Unstructured data resource" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#UnstructuredDataResource> .
+
+<https://astrea.linkeddata.es/shapes#75e2409443532e7fbb6a37cceab43dae>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Digital data resource" ;
+        sh:description    "A digital container of information, typically known as a file. A Digital Data Resource may be one of three specific types of data resources, each corresponding to one of the three types of data described earlier, and each described below (see “Structured Data Resource”, “Semi-Structured Data Resource”, and “Unstructured Data Resource”). It will be a container for the metadata about the data resource." ;
+        sh:name           "Digital data resource" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#DigitalDataResource> .
+
+<https://astrea.linkeddata.es/shapes#2d30271db3ae56fcd3c80a8c402d4e67>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://vocab.data.gov/def/drm> ;
+        rdfs:label        "Person" ;
+        sh:name           "Person" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://vocab.data.gov/def/drm#Person> .

@@ -1,0 +1,662 @@
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix arg:   <http://spinrdf.org/arg#> .
+@prefix spin:  <http://spinrdf.org/spin#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sp:    <http://spinrdf.org/sp#> .
+@prefix spl:   <http://spinrdf.org/spl#> .
+
+<https://astrea.linkeddata.es/shapes#b7b2f7f444e4527356bca1a4d6cee0d4>
+        a            sh:PropertyShape ;
+        rdfs:label   "creation date" ;
+        sh:datatype  <http://www.oegov.org/core/owl/gc#DateUnion> ;
+        sh:name      "creation date" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#creationDate> .
+
+<https://astrea.linkeddata.es/shapes#24c8a9c2bfe3e17e229b725e06084f37>
+        a            sh:PropertyShape ;
+        rdfs:label   "updated date" ;
+        sh:datatype  xsd:date ;
+        sh:name      "updated date" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#updatedDate> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#8d558fb1114259496727e3e3c228700b>
+        a            sh:PropertyShape ;
+        rdfs:label   "currency" ;
+        sh:name      "currency" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.oegov.org/core/owl/gc#currency> .
+
+<https://astrea.linkeddata.es/shapes#f1c571f173419d87389596ba7c37ea30>
+        a            sh:PropertyShape ;
+        rdfs:label   "cause" ;
+        sh:name      "cause" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.oegov.org/core/owl/gc#cause> .
+
+<https://astrea.linkeddata.es/shapes#94d9f7827fc760ebd7f3dccaec75a47e>
+        a            sh:PropertyShape ;
+        rdfs:label   "submission date" ;
+        sh:datatype  xsd:date ;
+        sh:name      "submission date" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#submissionDate> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#d1dcc21865b0f3f2b0d8f9329fdaa007>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://creativecommons.org/ns#morePermissions> .
+
+<https://astrea.linkeddata.es/shapes#13f930e284c9bc0a6a06267a10c5cfae>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://creativecommons.org/ns#jurisdiction> .
+
+<https://astrea.linkeddata.es/shapes#b18e4d8e14a714c8520c9d16fbcf06b2>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://creativecommons.org/ns#requires> .
+
+<https://astrea.linkeddata.es/shapes#37255a19b4e12ec04c12ba4992002610>
+        a               sh:NodeShape ;
+        rdfs:label      "Quarter" ;
+        sh:in           ( <https://astrea.linkeddata.es/shapes#8859a0df0565a7e7a7f0fb4559793a9d> <https://astrea.linkeddata.es/shapes#49ed53cd3461476c8d66f37162e77ff6> <https://astrea.linkeddata.es/shapes#5f1e6ea16f6928ddbf5e0088070f0ba3> <https://astrea.linkeddata.es/shapes#57f80db407244df35b79c10c7929f485> ) ;
+        sh:name         "Quarter" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.oegov.org/core/owl/gc#Quarter> .
+
+<https://astrea.linkeddata.es/shapes#a20ce8b3946394409462072abf93d360>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:anyURI ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.oegov.org/core/owl/gc#url> .
+
+<https://astrea.linkeddata.es/shapes#285378b54daf9b8d3216481106d4b1f1>
+        a               sh:NodeShape ;
+        rdfs:label      "Template" ;
+        sh:description  "The metaclass of SPIN templates. Templates are classes that are instances of this class. A template represents a reusable SPARQL query or update request that can be parameterized with arguments. Templates can be instantiated in places where normally a SPARQL query or update request is used, in particular as spin:rules and spin:constraints." ;
+        sh:name         "Template" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:Template .
+
+<https://astrea.linkeddata.es/shapes#ad620678879ac844265d04bc077ca423>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:anyURI ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://creativecommons.org/ns#attributionURL> ;
+        sh:pattern   "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#e77a84e4475df4cb5e3bd88a73f8d3e1>
+        a            sh:PropertyShape ;
+        rdfs:label   "status" ;
+        sh:name      "status" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.oegov.org/core/owl/gc#status> .
+
+<https://astrea.linkeddata.es/shapes#022c0845f9349cbe65f31ea86501b63d>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.oegov.org/core/owl/gc#Democracy> .
+
+<https://astrea.linkeddata.es/shapes#20f2c430ab50688ef3b42e7e0a24c417>
+        a               sh:NodeShape ;
+        rdfs:label      "Column" ;
+        sh:description  "Provides metadata about a column in the result set of a (SPARQL) query, for example of the body queries of SPIN templates. Columns can define human-readable labels that serve as column titles, using rdfs:label." ;
+        sh:name         "Column" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:Column .
+
+<https://astrea.linkeddata.es/shapes#f13df49ac12aed7c99d90e53caae9d4b>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.oegov.org/core/owl/gc#Republic> .
+
+<https://astrea.linkeddata.es/shapes#0e9541a83e26b43d44670c8e89acbacc>
+        a               sh:NodeShape ;
+        rdfs:label      "Module" ;
+        sh:description  "An abstract building block of a SPARQL system. A Module can take Arguments as input and applies them on an input RDF Graph. The Arguments should be declared as spin:constraints." ;
+        sh:name         "Module" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:Module .
+
+<https://astrea.linkeddata.es/report/1139847195>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://spinrdf.org/spin" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#1167d11a2fce270d81387444fae346f4>
+        a            sh:PropertyShape ;
+        rdfs:label   "result" ;
+        sh:name      "result" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.oegov.org/core/owl/gc#result> .
+
+<https://astrea.linkeddata.es/shapes#094f0fa84c79c0ffc2b129345468a005>
+        a               sh:NodeShape ;
+        rdfs:label      "Library ontology" ;
+        sh:description  "A marker class that can be attached to base URIs (ontologies) to instruct SPIN engines that this ontology only contains a library of SPIN declarations. Library Ontologies should be ignored by SPIN inference engines even if they have been imported by a domain model. For example, a SPIN version of OWL RL may contain all the OWL RL axioms, attached to owl:Thing, but nothing else. However, when executed, these axioms should not be executed over themselves, because we don't want the system to reason about the SPIN triples to speed up things." ;
+        sh:name         "Library ontology" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:LibraryOntology .
+
+<https://astrea.linkeddata.es/shapes#1276d00b32120bc510b12f20871dd149>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://creativecommons.org/ns#attributionURL> .
+
+<https://astrea.linkeddata.es/shapes#eb6b70c1674b1241fb360e8da35296e6>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.oegov.org/core/owl/gc#Theocracy> .
+
+<https://astrea.linkeddata.es/shapes#0d0a4526adc8429d548beb531316f6b5>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.oegov.org/core/owl/gc#hashtag> .
+
+<https://astrea.linkeddata.es/shapes#f174a2a34a803c6c5784e1661f6870cc>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.oegov.org/core/owl/gc#Dictatorship> .
+
+<https://astrea.linkeddata.es/shapes#e8a399a7db92659e02d0d2ca2d93b6df>
+        a            sh:PropertyShape ;
+        rdfs:label   "member" ;
+        sh:name      "member" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.oegov.org/core/owl/gc#member> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#0d7916681fa01b3d1168710c71434fea>
+        a               sh:NodeShape ;
+        rdfs:label      "Magic property" ;
+        sh:name         "Magic property" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:MagicProperty .
+
+<https://astrea.linkeddata.es/shapes#b4b6579ecd468ca768f995adfcfa5e44>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.oegov.org/core/owl/gc#Monarchy> .
+
+<https://astrea.linkeddata.es/shapes#0020d0896258f8cabe793b49582f1be3>
+        a            sh:PropertyShape ;
+        rdfs:label   "url" ;
+        sh:datatype  xsd:anyURI ;
+        sh:name      "url" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#url> ;
+        sh:pattern   "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#ac01d541d4b94c0ca91ccd470b12ca06>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.oegov.org/core/owl/gc#Tribal> .
+
+<https://astrea.linkeddata.es/shapes#3b094d58104580724618949ca1a45ab8>
+        a            sh:PropertyShape ;
+        rdfs:label   "sub category" ;
+        sh:name      "sub category" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.oegov.org/core/owl/gc#subCategory> .
+
+<https://astrea.linkeddata.es/shapes#073cfb19dd05d8376b194cb19bccec65>
+        a            sh:PropertyShape ;
+        rdfs:label   "end date" ;
+        sh:datatype  xsd:date ;
+        sh:name      "end date" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#endDate> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#71df446d806a1f488f429562270f9559>
+        a            sh:PropertyShape ;
+        rdfs:label   "point of contact" ;
+        sh:datatype  xsd:string ;
+        sh:name      "point of contact" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#pointOfContact> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#257fe127e19decb8f6e62de5948656cd>
+        a            sh:PropertyShape ;
+        rdfs:label   "released date" ;
+        sh:datatype  <http://www.oegov.org/core/owl/gc#DateUnion> ;
+        sh:name      "released date" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#releasedDate> .
+
+<https://astrea.linkeddata.es/shapes#decf0aaf7d8bd0dade987e98c96cba31>
+        a            sh:PropertyShape ;
+        rdfs:label   "licence" ;
+        sh:datatype  xsd:string ;
+        sh:name      "licence" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#licence> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#1b26409180e6bd5a056ad26365fe8b19>
+        a            sh:PropertyShape ;
+        rdfs:label   "date" ;
+        sh:datatype  <http://www.oegov.org/core/owl/gc#DateUnion> ;
+        sh:name      "date" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#date> .
+
+<https://astrea.linkeddata.es/report/1298970289>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.oegov.org/core/owl/cc" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#3b132bf5d55bbf78e87dd0a08140a065>
+        a            sh:PropertyShape ;
+        rdfs:label   "award date" ;
+        sh:datatype  <http://www.oegov.org/core/owl/gc#DateUnion> ;
+        sh:name      "award date" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#awardDate> .
+
+<https://astrea.linkeddata.es/shapes#d4ccf945d1da97196af136a92103f104>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://creativecommons.org/ns#attributionName> .
+
+<https://astrea.linkeddata.es/shapes#a52129080c27a7aee4f186bd96660fa8>
+        a            sh:PropertyShape ;
+        rdfs:label   "hashtag" ;
+        sh:datatype  xsd:string ;
+        sh:name      "hashtag" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#hashtag> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#062d3360f97cf551136cb879b2678493>
+        a            sh:PropertyShape ;
+        rdfs:label   "founded on" ;
+        sh:datatype  <http://www.oegov.org/core/owl/gc#DateUnion> ;
+        sh:name      "founded on" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#foundedOn> .
+
+<https://astrea.linkeddata.es/shapes#d49095a1a706b3a3e298e64650de803f>
+        a            sh:PropertyShape ;
+        rdfs:label   "summary" ;
+        sh:datatype  xsd:string ;
+        sh:name      "summary" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#summary> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#406948dc4ca7cc746eac5e55eb5490ab>
+        a               sh:NodeShape ;
+        rdfs:label      "Update template" ;
+        sh:description  "A SPIN template that has an UPDATE command as its body." ;
+        sh:name         "Update template" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:UpdateTemplate .
+
+<https://astrea.linkeddata.es/shapes#3f0cfab52736032aeb6b092331450055>
+        a            sh:PropertyShape ;
+        rdfs:label   "text" ;
+        sh:datatype  xsd:string ;
+        sh:name      "text" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#text> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/report/0455406837>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/dc/elements/1.1/" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#8ff2ecf72edf2dca1f35c17816ae9df8>
+        a            sh:PropertyShape ;
+        rdfs:label   "short title" ;
+        sh:datatype  xsd:string ;
+        sh:name      "short title" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#shortTitle> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#fe839be0bfe588b0d14c821427353e46>
+        a            sh:PropertyShape ;
+        sh:class     <http://www.oegov.org/core/owl/gc#Category> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.oegov.org/core/owl/gc#subCategory> .
+
+<https://astrea.linkeddata.es/shapes#0cb99e42181ed49d2ca4d99e409c9145>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://creativecommons.org/ns#permits> .
+
+<https://astrea.linkeddata.es/shapes#60626e73450c81d8b2f8a45f22d45f89>
+        a               sh:NodeShape ;
+        rdfs:label      "Constraint violation" ;
+        sh:description  "An object that can be created by spin:constraints to provide information about a constraint violation." ;
+        sh:name         "Constraint violation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:ConstraintViolation .
+
+<https://astrea.linkeddata.es/shapes#9d4318f52429cb8f860f7f6496b918cd>
+        a                sh:PropertyShape ;
+        rdfs:label       "number" ;
+        sh:datatype      xsd:int ;
+        sh:maxInclusive  2147483647 ;
+        sh:minInclusive  -2147483648 ;
+        sh:name          "number" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://www.oegov.org/core/owl/gc#number> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#d01467a91e6108d9f810aa735ea994a7>
+        a            sh:PropertyShape ;
+        rdfs:label   "cessation date" ;
+        sh:datatype  <http://www.oegov.org/core/owl/gc#DateUnion> ;
+        sh:name      "cessation date" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#cessationDate> .
+
+<https://astrea.linkeddata.es/shapes#64c139ca1eca998191ef675cf87eea2f>
+        a            sh:PropertyShape ;
+        rdfs:label   "archive URL" ;
+        sh:datatype  xsd:anyURI ;
+        sh:name      "archive URL" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#archiveURL> ;
+        sh:pattern   "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?" .
+
+<https://astrea.linkeddata.es/shapes#f0ab516d39451145f89cc1fe74a2a7ba>
+        a               sh:NodeShape ;
+        rdfs:label      "Function" ;
+        sh:description  "Metaclass for functions that can be used in SPARQL expressions (e.g. FILTER or BIND). The function themselves are classes that are instances of this metaclass. Function calls are instances of the function classes, with property values for the arguments." ;
+        sh:name         "Function" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:Function .
+
+<https://astrea.linkeddata.es/shapes#52fdbb3ce6aed0db04d47c96fec55043>
+        a            sh:PropertyShape ;
+        rdfs:label   "clause" ;
+        sh:name      "clause" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.oegov.org/core/owl/gc#clause> .
+
+<https://astrea.linkeddata.es/shapes#9ea492854fd0ce1355ec51f40bb4dad2>
+        a               sh:NodeShape ;
+        rdfs:label      "Modules" ;
+        sh:description  "An \"artificial\" parent class for all Functions and Templates." ;
+        sh:name         "Modules" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:Modules .
+
+<https://astrea.linkeddata.es/shapes#81909491039b9d216c74cab9e07acb8d>
+        a            sh:PropertyShape ;
+        rdfs:label   "section" ;
+        sh:name      "section" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.oegov.org/core/owl/gc#section> .
+
+<https://astrea.linkeddata.es/shapes#9bcc778a8671d06ff144ecbb1d51a8bd>
+        a               sh:NodeShape ;
+        rdfs:label      "Political system" ;
+        sh:name         "Political system" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.oegov.org/core/owl/gc#PoliticalSystem> .
+
+<https://astrea.linkeddata.es/shapes#bea3cfbafa1ccfa215f0b0cbe34ada0f>
+        a            sh:PropertyShape ;
+        rdfs:label   "category" ;
+        sh:name      "category" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.oegov.org/core/owl/gc#category> .
+
+<https://astrea.linkeddata.es/shapes#dcec0f9f8e832907ac6a20896b962770>
+        a               sh:NodeShape ;
+        rdfs:label      "Entity" ;
+        sh:name         "Entity" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a20ce8b3946394409462072abf93d360> , <https://astrea.linkeddata.es/shapes#0d0a4526adc8429d548beb531316f6b5> ;
+        sh:targetClass  <http://www.oegov.org/core/owl/gc#Entity> .
+
+<https://astrea.linkeddata.es/shapes#20b957ff9d5e43dac462a56d1f435018>
+        a               sh:NodeShape ;
+        rdfs:label      "Constraint violation level" ;
+        sh:description  "The type of the supported levels of constraint violations, including spin:Error and spin:Warning." ;
+        sh:name         "Constraint violation level" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:ConstraintViolationLevel .
+
+<https://astrea.linkeddata.es/shapes#5f54dfa5a334ea7b47ff6f4db1e2ee3d>
+        a            sh:PropertyShape ;
+        rdfs:label   "start date" ;
+        sh:datatype  xsd:date ;
+        sh:name      "start date" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#startDate> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#a55dd6b23c0ec79a01e77a55d19bc0fa>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://creativecommons.org/ns#license> .
+
+<https://astrea.linkeddata.es/shapes#0e491afb7954eb50b16c28debcc78cc7>
+        a               sh:NodeShape ;
+        rdfs:label      "Construct template" ;
+        sh:name         "Construct template" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:ConstructTemplate .
+
+<https://astrea.linkeddata.es/shapes#8f6759d58bcfdbd5b1fcc2c89177d739>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#80bb52a346292c70e1ace9eabd2491bc>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:string ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.oegov.org/core/owl/gc#pointOfContact> .
+
+<https://astrea.linkeddata.es/shapes#18d03652d72138768717c649c33b5bdd>
+        a            sh:PropertyShape ;
+        rdfs:label   "format" ;
+        sh:name      "format" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.oegov.org/core/owl/gc#format> .
+
+<https://astrea.linkeddata.es/shapes#f8969b07ede277929792094f88cafb5d>
+        a               sh:NodeShape ;
+        rdfs:label      "Period" ;
+        sh:name         "Period" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.oegov.org/core/owl/gc#Period> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#8ff2ecf72edf2dca1f35c17816ae9df8> , <https://astrea.linkeddata.es/shapes#d49095a1a706b3a3e298e64650de803f> , <https://astrea.linkeddata.es/shapes#3f0cfab52736032aeb6b092331450055> , <https://astrea.linkeddata.es/shapes#b18e4d8e14a714c8520c9d16fbcf06b2> , <https://astrea.linkeddata.es/shapes#dbec8ca8599b3b7deee7add4383cf277> , <https://astrea.linkeddata.es/shapes#1276d00b32120bc510b12f20871dd149> , <https://astrea.linkeddata.es/shapes#aa84d6e22f47719d1906f5de8d10f160> , <https://astrea.linkeddata.es/shapes#ed514966b122e6fe7ba0a14229062150> , <https://astrea.linkeddata.es/shapes#60626e73450c81d8b2f8a45f22d45f89> , <https://astrea.linkeddata.es/shapes#094f0fa84c79c0ffc2b129345468a005> , <https://astrea.linkeddata.es/shapes#4ba6fed2dd926293ce8afba593296f17> , <https://astrea.linkeddata.es/shapes#f13df49ac12aed7c99d90e53caae9d4b> , <https://astrea.linkeddata.es/shapes#5f54dfa5a334ea7b47ff6f4db1e2ee3d> , <https://astrea.linkeddata.es/shapes#073cfb19dd05d8376b194cb19bccec65> , <https://astrea.linkeddata.es/shapes#f8969b07ede277929792094f88cafb5d> , <https://astrea.linkeddata.es/shapes#8f6759d58bcfdbd5b1fcc2c89177d739> , <https://astrea.linkeddata.es/shapes#71df446d806a1f488f429562270f9559> , <https://astrea.linkeddata.es/shapes#dcec0f9f8e832907ac6a20896b962770> , <https://astrea.linkeddata.es/shapes#a20ce8b3946394409462072abf93d360> , <https://astrea.linkeddata.es/shapes#022c0845f9349cbe65f31ea86501b63d> , <https://astrea.linkeddata.es/shapes#f0ab516d39451145f89cc1fe74a2a7ba> , <https://astrea.linkeddata.es/shapes#3b094d58104580724618949ca1a45ab8> , <https://astrea.linkeddata.es/shapes#d4ccf945d1da97196af136a92103f104> , <https://astrea.linkeddata.es/shapes#fe839be0bfe588b0d14c821427353e46> , <https://astrea.linkeddata.es/shapes#ca6f2631e85f6e452963379f1629d3e5> , <https://astrea.linkeddata.es/shapes#80bb52a346292c70e1ace9eabd2491bc> , <https://astrea.linkeddata.es/shapes#d1dcc21865b0f3f2b0d8f9329fdaa007> , <https://astrea.linkeddata.es/shapes#257fe127e19decb8f6e62de5948656cd> , <https://astrea.linkeddata.es/shapes#9ea492854fd0ce1355ec51f40bb4dad2> , <https://astrea.linkeddata.es/shapes#20f2c430ab50688ef3b42e7e0a24c417> , <https://astrea.linkeddata.es/shapes#0cb99e42181ed49d2ca4d99e409c9145> , <https://astrea.linkeddata.es/shapes#b7b2f7f444e4527356bca1a4d6cee0d4> , <https://astrea.linkeddata.es/shapes#9bcc778a8671d06ff144ecbb1d51a8bd> , <https://astrea.linkeddata.es/shapes#0e9541a83e26b43d44670c8e89acbacc> , <https://astrea.linkeddata.es/shapes#94d9f7827fc760ebd7f3dccaec75a47e> , <https://astrea.linkeddata.es/shapes#ad620678879ac844265d04bc077ca423> , <https://astrea.linkeddata.es/shapes#1167d11a2fce270d81387444fae346f4> , <https://astrea.linkeddata.es/shapes#54d5e3d710129b04f2e8dce264277352> , <https://astrea.linkeddata.es/shapes#46575024ea1a0028a9b028691411ffe3> , <https://astrea.linkeddata.es/shapes#64c139ca1eca998191ef675cf87eea2f> , <https://astrea.linkeddata.es/shapes#b4b6579ecd468ca768f995adfcfa5e44> , <https://astrea.linkeddata.es/shapes#18d03652d72138768717c649c33b5bdd> , <https://astrea.linkeddata.es/shapes#8d558fb1114259496727e3e3c228700b> , <https://astrea.linkeddata.es/shapes#c46992718ebd8bda1b5b83b83d385255> , <https://astrea.linkeddata.es/shapes#a55dd6b23c0ec79a01e77a55d19bc0fa> , <https://astrea.linkeddata.es/shapes#3b132bf5d55bbf78e87dd0a08140a065> , <https://astrea.linkeddata.es/shapes#decf0aaf7d8bd0dade987e98c96cba31> , <https://astrea.linkeddata.es/shapes#37255a19b4e12ec04c12ba4992002610> , <https://astrea.linkeddata.es/shapes#0e491afb7954eb50b16c28debcc78cc7> , <https://astrea.linkeddata.es/shapes#401c009a88661683a3ff0fcd2c6c863b> , <https://astrea.linkeddata.es/shapes#0020d0896258f8cabe793b49582f1be3> , <https://astrea.linkeddata.es/shapes#24c8a9c2bfe3e17e229b725e06084f37> , <https://astrea.linkeddata.es/shapes#e77a84e4475df4cb5e3bd88a73f8d3e1> , <https://astrea.linkeddata.es/shapes#ac01d541d4b94c0ca91ccd470b12ca06> , <https://astrea.linkeddata.es/shapes#ff18edbdddb165630a9468ca2e1111ba> , <https://astrea.linkeddata.es/shapes#81909491039b9d216c74cab9e07acb8d> , <https://astrea.linkeddata.es/shapes#13f930e284c9bc0a6a06267a10c5cfae> , <https://astrea.linkeddata.es/shapes#4875df0078f989c26ac5edd02e4fdc51> , <https://astrea.linkeddata.es/shapes#062d3360f97cf551136cb879b2678493> , <https://astrea.linkeddata.es/shapes#20b957ff9d5e43dac462a56d1f435018> , <https://astrea.linkeddata.es/shapes#bea3cfbafa1ccfa215f0b0cbe34ada0f> , <https://astrea.linkeddata.es/shapes#f174a2a34a803c6c5784e1661f6870cc> , <https://astrea.linkeddata.es/shapes#cd13b8beb5e8ad31b50c83260cfefaae> , <https://astrea.linkeddata.es/shapes#1b26409180e6bd5a056ad26365fe8b19> , <https://astrea.linkeddata.es/shapes#7b5178ea57347e5fc5a0c8f68e95b835> , <https://astrea.linkeddata.es/shapes#e8a399a7db92659e02d0d2ca2d93b6df> , <https://astrea.linkeddata.es/shapes#f1c571f173419d87389596ba7c37ea30> , <https://astrea.linkeddata.es/shapes#0d7916681fa01b3d1168710c71434fea> , <https://astrea.linkeddata.es/shapes#87be7a6c83cb7877ce9c1765b9807417> , <https://astrea.linkeddata.es/shapes#c7ba6430092ea538bc4c228e696caa8d> , <https://astrea.linkeddata.es/shapes#9d4318f52429cb8f860f7f6496b918cd> , <https://astrea.linkeddata.es/shapes#285378b54daf9b8d3216481106d4b1f1> , <https://astrea.linkeddata.es/shapes#0d0a4526adc8429d548beb531316f6b5> , <https://astrea.linkeddata.es/shapes#9da3d38707ae874f844eba3ce4dfca82> , <https://astrea.linkeddata.es/shapes#d01467a91e6108d9f810aa735ea994a7> , <https://astrea.linkeddata.es/shapes#406948dc4ca7cc746eac5e55eb5490ab> , <https://astrea.linkeddata.es/shapes#e5883a4470be2b254b9a37fbda7b9680> , <https://astrea.linkeddata.es/shapes#52fdbb3ce6aed0db04d47c96fec55043> , <https://astrea.linkeddata.es/shapes#a52129080c27a7aee4f186bd96660fa8> , <https://astrea.linkeddata.es/shapes#ba32f1e45c403f704b461e735ef5dc51> , <https://astrea.linkeddata.es/shapes#43248b0ecb33616d50003e84fa43639a> , <https://astrea.linkeddata.es/shapes#eb6b70c1674b1241fb360e8da35296e6> , <https://astrea.linkeddata.es/shapes#d48f867a0414273e6e5b7e9e094a4fca> , <https://astrea.linkeddata.es/shapes#fe2354fcc143976e552f106243d7ac52> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/1298970289> , <https://astrea.linkeddata.es/report/0455406837> , <https://astrea.linkeddata.es/report/01084181895> , <https://astrea.linkeddata.es/report/1139847195> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#d48f867a0414273e6e5b7e9e094a4fca>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://creativecommons.org/ns#image> .
+
+<https://astrea.linkeddata.es/shapes#e5883a4470be2b254b9a37fbda7b9680>
+        a               sh:NodeShape ;
+        rdfs:label      "Attributed Source" ;
+        sh:description  "The name, url and other details of an attribution." ;
+        sh:name         "Attributed Source" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d4ccf945d1da97196af136a92103f104> , <https://astrea.linkeddata.es/shapes#1276d00b32120bc510b12f20871dd149> , <https://astrea.linkeddata.es/shapes#80bb52a346292c70e1ace9eabd2491bc> ;
+        sh:targetClass  <http://www.oegov.org/core/owl/gc#AttributedSource> .
+
+<https://astrea.linkeddata.es/shapes#ed514966b122e6fe7ba0a14229062150>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://creativecommons.org/ns#legalcode> .
+
+<https://astrea.linkeddata.es/shapes#4ba6fed2dd926293ce8afba593296f17>
+        a               sh:NodeShape ;
+        rdfs:label      "Rule property" ;
+        sh:description  "The metaclass of spin:rule and its subproperties. spin:RuleProperties can have additional metadata attached to them." ;
+        sh:name         "Rule property" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:RuleProperty .
+
+<https://astrea.linkeddata.es/shapes#401c009a88661683a3ff0fcd2c6c863b>
+        a            sh:PropertyShape ;
+        rdfs:label   "identifier" ;
+        sh:datatype  xsd:anySimpleType ;
+        sh:name      "identifier" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#identifier> .
+
+<https://astrea.linkeddata.es/shapes#cd13b8beb5e8ad31b50c83260cfefaae>
+        a            sh:PropertyShape ;
+        rdfs:label   "year" ;
+        sh:datatype  xsd:gYear ;
+        sh:name      "year" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#year> ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#c7ba6430092ea538bc4c228e696caa8d>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.oegov.org/core/owl/gc#SocialistState> .
+
+<https://astrea.linkeddata.es/shapes#46575024ea1a0028a9b028691411ffe3>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.oegov.org/core/owl/gc#CommunistState> .
+
+<https://astrea.linkeddata.es/shapes#ba32f1e45c403f704b461e735ef5dc51>
+        a               sh:NodeShape ;
+        rdfs:label      "Data Format" ;
+        sh:name         "Data Format" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.oegov.org/core/owl/gc#DataFormat> .
+
+<https://astrea.linkeddata.es/report/01084181895>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://creativecommons.org/schema.rdf" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#7b5178ea57347e5fc5a0c8f68e95b835>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://creativecommons.org/ns#prohibits> .
+
+<https://astrea.linkeddata.es/shapes#87be7a6c83cb7877ce9c1765b9807417>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://creativecommons.org/ns#attributionName> .
+
+<https://astrea.linkeddata.es/shapes#ff18edbdddb165630a9468ca2e1111ba>
+        a               sh:NodeShape ;
+        rdfs:label      "Category" ;
+        sh:name         "Category" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#fe839be0bfe588b0d14c821427353e46> ;
+        sh:targetClass  <http://www.oegov.org/core/owl/gc#Category> .
+
+<https://astrea.linkeddata.es/shapes#dbec8ca8599b3b7deee7add4383cf277>
+        a               sh:NodeShape ;
+        rdfs:label      "Ask template" ;
+        sh:description  "A SPIN template that wraps an ASK query." ;
+        sh:name         "Ask template" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:AskTemplate .
+
+<https://astrea.linkeddata.es/shapes#ca6f2631e85f6e452963379f1629d3e5>
+        a            sh:PropertyShape ;
+        rdfs:label   "attributed source" ;
+        sh:name      "attributed source" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.oegov.org/core/owl/gc#attributedSource> .
+
+<https://astrea.linkeddata.es/shapes#aa84d6e22f47719d1906f5de8d10f160>
+        a            sh:PropertyShape ;
+        rdfs:label   "person" ;
+        sh:name      "person" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.oegov.org/core/owl/gc#person> .
+
+<https://astrea.linkeddata.es/shapes#fe2354fcc143976e552f106243d7ac52>
+        a               sh:NodeShape ;
+        rdfs:label      "Table data provider" ;
+        sh:description  "An abstraction of objects that can produce tabular data. This serves as a base class of spin:SelectTemplate, because SELECT queries can produce tables with columns for each result variable. However, other types of TableDataProviders are conceivable by other frameworks, and this class may prove as a useful shared foundation.\n\nTableDataProviders can link to definitions of columns via spin:column, and these definitions can inform rendering engines." ;
+        sh:name         "Table data provider" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:TableDataProvider .
+
+<https://astrea.linkeddata.es/shapes#54d5e3d710129b04f2e8dce264277352>
+        a            sh:PropertyShape ;
+        rdfs:label   "title" ;
+        sh:datatype  xsd:string ;
+        sh:name      "title" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.oegov.org/core/owl/gc#title> ;
+        sh:pattern   ".*" .
+
+<https://astrea.linkeddata.es/shapes#9da3d38707ae874f844eba3ce4dfca82>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.oegov.org/core/owl/gc#Anarcy> .
+
+<https://astrea.linkeddata.es/shapes#c46992718ebd8bda1b5b83b83d385255>
+        a               sh:NodeShape ;
+        rdfs:label      "Select template" ;
+        sh:description  "A SPIN template that wraps a SELECT query." ;
+        sh:name         "Select template" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:SelectTemplate .
+
+<https://astrea.linkeddata.es/shapes#43248b0ecb33616d50003e84fa43639a>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d48f867a0414273e6e5b7e9e094a4fca> ;
+        sh:targetClass  <http://creativecommons.org/ns#License> .
+
+<https://astrea.linkeddata.es/shapes#4875df0078f989c26ac5edd02e4fdc51>
+        a               sh:NodeShape ;
+        rdfs:label      "Rule" ;
+        sh:description  "Groups together the kinds of SPARQL commands that can appear as SPIN rules and constructors: CONSTRUCT, DELETE WHERE and DELETE/INSERT. This class is never to be instantiated directly." ;
+        sh:name         "Rule" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:Rule .

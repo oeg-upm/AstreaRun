@@ -1,0 +1,437 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#6898a841939ffda11b6467120e39b54e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Hindab õpitulemuse saavutatust"@et , "Ülesanne hindab mil määral on õpitulemus omandatud. Küsimus hindab kas konkreetse küsimusega seotud õpitulemus on saavutatud või mitte."@et ;
+        sh:class          <https://schema.edu.ee/Opitulemus> ;
+        sh:description    "Ülesanne hindab mil määral on õpitulemus omandatud. Küsimus hindab kas konkreetse küsimusega seotud õpitulemus on saavutatud või mitte."@et ;
+        sh:name           "Hindab õpitulemuse saavutatust"@et ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://schema.edu.ee/hindabOpitulemust> .
+
+<https://astrea.linkeddata.es/shapes#c8b607fa449cd06853245e46deecfb99>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Test koosneb ülesannetest"@et , "Test koosneb vähemalt ühest ülesandest."@et ;
+        sh:class          <https://schema.edu.ee/Ulesanne> ;
+        sh:description    "Test koosneb vähemalt ühest ülesandest."@et ;
+        sh:name           "Test koosneb ülesannetest"@et ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://schema.edu.ee/testKoosneb> .
+
+<https://astrea.linkeddata.es/shapes#afcdb5c17d1cc5b5f5c0a94cd88ee77e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Õppeaine"@et , "Subject"@en ;
+        sh:description    "Õppeasutuses õpetatav teadus-, tehnika-, kunsti- vm ala."@et ;
+        sh:name           "Õppeaine"@et , "Subject"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/Oppeaine> .
+
+<https://astrea.linkeddata.es/shapes#08d6a4254229a8d603f2938dc6caf316>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#bbaaf58b8d013e8f64addd77c6738c69> , <https://astrea.linkeddata.es/shapes#a5ef7cd5e8e7688f6effa4d6719b3731> , <https://astrea.linkeddata.es/shapes#4e5224d7ec094243eb81a63ed9930b21> , <https://astrea.linkeddata.es/shapes#dcf22e9eaa85df1683bda55d44684199> , <https://astrea.linkeddata.es/shapes#f140702168d593ab6d0369362fde857b> ;
+        sh:targetClass  <https://schema.edu.ee/#Opivaljund> .
+
+<https://astrea.linkeddata.es/shapes#4ca425c001dabf103e700c6a674e8673>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#bbaaf58b8d013e8f64addd77c6738c69> , <https://astrea.linkeddata.es/shapes#a5ef7cd5e8e7688f6effa4d6719b3731> , <https://astrea.linkeddata.es/shapes#4e5224d7ec094243eb81a63ed9930b21> , <https://astrea.linkeddata.es/shapes#dcf22e9eaa85df1683bda55d44684199> , <https://astrea.linkeddata.es/shapes#f140702168d593ab6d0369362fde857b> ;
+        sh:targetClass  <https://schema.edu.ee/#Oppematerjal> .
+
+<https://astrea.linkeddata.es/shapes#f140702168d593ab6d0369362fde857b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Õppematerjali või õpiväljundiga seotud haridusaste"@et , "Õppematerjal on mõeldud või õpiväljund on planeeritud konkreetsele haridusastmele."@et ;
+        sh:class          <https://schema.edu.ee/Haridusaste> ;
+        sh:description    "Õppematerjal on mõeldud või õpiväljund on planeeritud konkreetsele haridusastmele."@et ;
+        sh:name           "Õppematerjali või õpiväljundiga seotud haridusaste"@et ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://schema.edu.ee/seotudHaridusaste> .
+
+<https://astrea.linkeddata.es/shapes#ceb56005d720fdbaf5362be7facecdce>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Teema"@et , "Topic"@en ;
+        sh:description    "Aine sisuühik, mida õpetatakse a'la \"2. maailmasõda ajaloos\" või \"Geomeetria\". Teemad on kasutusel õppematerjalide lõimimiseks. NB alignmentType = educationalSubject."@et ;
+        sh:name           "Topic"@en , "Teema"@et ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#bf35c036dfd1db11c6534b12d4f79e41> ;
+        sh:targetClass    <https://schema.edu.ee/Teema> .
+
+<https://astrea.linkeddata.es/shapes#8527bc040fcff4feb26ad7f62dba59ee>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Kooliaste"@et , "Hariduse omandamise järjestikune alajaotus, selle iga (järgnev) osa.\n\nKooliastmed on:\n1) I kooliaste – 1.–3. klass;\n2) II kooliaste – 4.–6. klass;\n3) III kooliaste – 7.–9. klass;\n4) gümnaasium – 10.–12. klass.\n\nPõhikooli kooliastmed on:\n1) I kooliaste – 1.–3. klass;\n2) II kooliaste – 4.–6. klass;\n3) III kooliaste – 7.–9. klass."@et ;
+        sh:datatype       rdfs:Literal ;
+        sh:description    "Hariduse omandamise järjestikune alajaotus, selle iga (järgnev) osa.\n\nKooliastmed on:\n1) I kooliaste – 1.–3. klass;\n2) II kooliaste – 4.–6. klass;\n3) III kooliaste – 7.–9. klass;\n4) gümnaasium – 10.–12. klass.\n\nPõhikooli kooliastmed on:\n1) I kooliaste – 1.–3. klass;\n2) II kooliaste – 4.–6. klass;\n3) III kooliaste – 7.–9. klass."@et ;
+        sh:name           "Kooliaste"@et ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <https://schema.edu.ee/kooliaste> .
+
+<https://astrea.linkeddata.es/shapes#706347d288c5c3c27e6e4ef18eb219e0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Teadmine"@et , "Knowledge"@en ;
+        sh:description    "Õpingutega või kogemustest omandatud faktide, reeglite, seaduspärasuste jms tundmine."@et ;
+        sh:name           "Teadmine"@et , "Knowledge"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/Teadmine> .
+
+<https://astrea.linkeddata.es/shapes#96fbbab40cf13c7684c5be12b4c85224>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Õpitulemus"@et , "Learning assessment"@en ;
+        sh:description    "Kellegi teadmistele, oskustele, võimetele, töötulemustele antud hinnang, mida väljendatakse numbrites, tähtedes, punktides vm hindamisühikutes. Lihtsustatult, õpitulemus esitab õpiväljundi saavutatuse taset. Eksami või arvestuse sooritus."@et ;
+        sh:name           "Õpitulemus"@et , "Learning assessment"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/Opitulemus> .
+
+<https://astrea.linkeddata.es/shapes#10d92251ae97a2b18bc1aa52ae0d597c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Ainevaldkonna pädevus"@et ;
+        sh:name           "Ainevaldkonna pädevus"@et ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/AinevaldkonnaPadevus> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#edfba0c5f6e70368558cf29381beb44d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Õppekava"@et , "Curriculum"@en ;
+        sh:description    "Õppe ja kasvatuse alusdokument, mis määrab õppe- ja kasvatuseesmärgid, õppe sisu ja mahu, metoodika põhimõtted ning hindamise alused, nõuded õppekeskkonnale vms."@et ;
+        sh:name           "Õppekava"@et , "Curriculum"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/Oppekava> .
+
+<https://astrea.linkeddata.es/shapes#bbaaf58b8d013e8f64addd77c6738c69>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Teema, mille raames õpiväljundit või teemat käsitletakse"@et , "Õpiväljund ei pea olema ühegi teemaga, kuid teema raames käsitletakse vähemalt ühte õpiväljundit. Õppematerjal võib olla seotud teemadega."@et ;
+        sh:class          <https://schema.edu.ee/Teema> ;
+        sh:description    "Õpiväljund ei pea olema ühegi teemaga, kuid teema raames käsitletakse vähemalt ühte õpiväljundit. Õppematerjal võib olla seotud teemadega."@et ;
+        sh:name           "Teema, mille raames õpiväljundit või teemat käsitletakse"@et ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://schema.edu.ee/seotudTeema> .
+
+<https://astrea.linkeddata.es/shapes#f846f038a75612452423f9ce15d6da20>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Skill"@en , "Oskus"@et ;
+        sh:description    "Võime rakendada teadmisi ja kasutada neid ülesannete täitmisel ja probleemide lahendamisel."@et ;
+        sh:name           "Skill"@en , "Oskus"@et ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/Oskus> .
+
+<https://astrea.linkeddata.es/shapes#96c1e6f35161dc13e53d32672abc366e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Õpirada"@et ;
+        sh:description    "Õppija poolt läbitud tee, mis sisaldab (e-)õppe tegevusi, mis võimaldavad teadmiste, oskuste ja pädevuste järjepidevat omandamist."@et ;
+        sh:name           "Õpirada"@et ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/Opirada> .
+
+<https://astrea.linkeddata.es/shapes#c05051f5d602df000753184fc3edb360>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Õppematerjal"@et , "Learning material"@en ;
+        sh:description    "Nii digitaalsel kui muul kujul õppematerjal. Digitaalsel kujul avaldatud õppematerjal on nt: e-õpik, õpiotstarbeline veebivideo ja mobiilirakendus, õpimäng, e-tööleht, veebipõhine test, õpiobjekt."@et ;
+        sh:name           "Õppematerjal"@et , "Learning material"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/Oppematerjal> .
+
+<https://astrea.linkeddata.es/shapes#ce7cf54cee621bd072dc2a13f9d2c462>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Õppeasutuse õppekava"@et ;
+        sh:description    "Õppeasutuse õppekava on õppe- ja kasvatustegevuse alusdokument, milles kirjeldatakse õppe rõhuasetused ja tegevused õppekava täitmiseks."@et ;
+        sh:name           "Õppeasutuse õppekava"@et ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/OppeasutuseOppekava> .
+
+<https://astrea.linkeddata.es/shapes#310ba94d62835951e05d2ef430732c14>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Tasemetöö"@et ;
+        sh:description    "Kokkuvõttev test, kokkulepitud astme (kooliastme) lõpus saavutatud oskused ja teadmised; kooliastme lõpus teadmiste ja oskuste omandatust kontrolliv üleriigiline töö."@et ;
+        sh:name           "Tasemetöö"@et ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/Tasemetoo> .
+
+<https://astrea.linkeddata.es/shapes#273dad6f058c86860fd8afec9af43ad3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Õpiväljund on eelduseks"@et , "Õpiväljund on eelduseks teis(t)ele õpiväljundi(te)le."@et ;
+        sh:class          <https://schema.edu.ee/Opivaljund> ;
+        sh:description    "Õpiväljund on eelduseks teis(t)ele õpiväljundi(te)le."@et ;
+        sh:name           "Õpiväljund on eelduseks"@et ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://schema.edu.ee/onEelduseks> .
+
+<https://astrea.linkeddata.es/shapes#743b2bcea5ca0bb266b3a4c19b6bde9b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Educational audience"@en , "Sihtgrupp"@et ;
+        sh:description    "Elanikkonna rühm, mille vajadusi silmas pidades on õppematerjal loodud."@et ;
+        sh:name           "Educational audience"@en , "Sihtgrupp"@et ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/Sihtgrupp> , <https://schema.org/EducationalAudience> .
+
+<https://astrea.linkeddata.es/shapes#fe5bf7eb60f38a5f7b4aa834c913fb01>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Vanuseaste"@et , "Vanuse teatav alajaotus; selles vanuses inimesed."@et ;
+        sh:description    "Vanuse teatav alajaotus; selles vanuses inimesed."@et ;
+        sh:equals         <https://schema.org/typicalAgeRange> ;
+        sh:name           "Vanuseaste"@et ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <https://schema.edu.ee/vanuseaste> .
+
+<https://astrea.linkeddata.es/shapes#c7be0cddd19fdf961647576d9a19df76>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Pädevus"@et , "Competence"@en ;
+        sh:description    "Teadmiste, oskuste ja hoiakute kogum, mis tagab suutlikkuse teatud tegevusalal või -valdkonnas loovalt, ettevõtlikult ja paindlikult toimida."@et ;
+        sh:name           "Pädevus"@et , "Competence"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/Padevus> .
+
+<https://astrea.linkeddata.es/shapes#07787699fc0f144fda0225ecce822d69>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Ainekava"@et ;
+        sh:description    "Dokument, mis hõlmab ühe aine õppe-eesmärgid, õppesisu, metoodika ja hindamise põhimõtted."@et ;
+        sh:name           "Ainekava"@et ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/Ainekava> .
+
+<https://astrea.linkeddata.es/shapes#2f22d6cd87cc60ad1887c8ea7ea4d4e9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Tunnikontroll"@et ;
+        sh:description    "Väikesemahuline kirjalik töö tunnis õpitu kontrollimiseks ja hindamiseks."@et ;
+        sh:name           "Tunnikontroll"@et ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/Tunnikontroll> .
+
+<https://astrea.linkeddata.es/shapes#4e5224d7ec094243eb81a63ed9930b21>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Ainevaldkond, mille raames õpiväljundit või õppematerjali käsitletakse"@et , "Õpiväljundit võidakse kasutada erinevates ainevaldkondades riikliku õppekava kontekstis. Õpiväljund ei pea olema seotud ainevaldkonnaga. Õppematerjal võib olla seotud ainevaldkondadega."@et ;
+        sh:class          <https://schema.edu.ee/Ainevaldkond> ;
+        sh:description    "Õpiväljundit võidakse kasutada erinevates ainevaldkondades riikliku õppekava kontekstis. Õpiväljund ei pea olema seotud ainevaldkonnaga. Õppematerjal võib olla seotud ainevaldkondadega."@et ;
+        sh:name           "Ainevaldkond, mille raames õpiväljundit või õppematerjali käsitletakse"@et ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://schema.edu.ee/seotudAinevaldkond> .
+
+<https://astrea.linkeddata.es/shapes#24ea455ae6b362862fa26c6c88d74264>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Ainevaldkond"@et , "Subject area"@en ;
+        sh:description    "Lähedase eesmärgiseade ja õppesisuga õppeained moodustavad ainevaldkonna. Ainevaldkonnad on järgmised:\n  1) keel ja kirjandus;\n  2) võõrkeeled;\n  3) matemaatika;\n  4) loodusained;\n  5) sotsiaalained;\n  6) kunstiained;\n  7) kehaline kasvatus.\n\nAinevaldkonna õppeainete õpetamise peamine eesmärk on vastava valdkonnapädevuse kujundamine. Valdkonnapädevuste kujunemist ning gümnaasiumi õppe- ja kasvatuseesmärkide saavutamist toetavad ainekavades esitatud õpitulemused, lõiming teiste ainevaldkondade õppeainetega ning tunni- ja kooliväline tegevus. NB alignmentType = educationalSubjectArea."@et ;
+        sh:name           "Subject area"@en , "Ainevaldkond"@et ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#1a1c4f57751ba52d82c94bfad9babc1a> ;
+        sh:targetClass    <https://schema.edu.ee/Ainevaldkond> .
+
+<https://astrea.linkeddata.es/shapes#e896e7ec2c91e3d5b8ef46d252c4baef>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Hoiak"@et , "Attitude"@en ;
+        sh:description    "Inimese kalduvus hinnata objektide (näit. isikute, sündmuste, nähtuste) olemust teatud määral soosival või mittesoosival viisil. See hinnang väljendub tavaliselt tunnetusliku (kognitiivse), emotsionaalse (afektiivse) või käitumusliku (konatiivse) reageeringuna."@et ;
+        sh:name           "Hoiak"@et , "Attitude"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/Hoiak> .
+
+<https://astrea.linkeddata.es/shapes#168df75a6e687e530ff66354fadc0bec>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Küsimus"@et ;
+        sh:description    "Üksikküsimus testis."@et ;
+        sh:name           "Küsimus"@et ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/Kusimus> , <https://schema.org/Question> .
+
+<https://astrea.linkeddata.es/shapes#c9a846d641fd49bc6cf4182784fbf29c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Õpetaja töökava"@et ;
+        sh:description    "Töökava on õpetajale igapäevane abivahend, mis võimaldab tal õppeprotsessi kavandada ja analüüsida ning iseennast hinnata. Töökava on dokument, mille alusel toimub õppetöö tundides."@et ;
+        sh:name           "Õpetaja töökava"@et ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/OpetajaTookava> .
+
+<https://astrea.linkeddata.es/shapes#c85e9f95beb1be83673d7fc6541cb7de>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Learning outcome"@en , "Õpiväljund"@et ;
+        sh:description    "Õppimise tulemusena omandatavad teadmised, oskused ja hoiakud või nende kogumid (pädevused), mille olemasolu ja/või saavutatuse taset on võimalik tõendada ja hinnata. Nt \"oskab liita 10 piires\". NB alignmentType = teaches."@et ;
+        sh:name           "Õpiväljund"@et , "Learning outcome"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d3012d081f0c05daa6cecf22e16b8ac2> , <https://astrea.linkeddata.es/shapes#273dad6f058c86860fd8afec9af43ad3> ;
+        sh:targetClass    <https://schema.edu.ee/Opivaljund> .
+
+<https://astrea.linkeddata.es/shapes#bf35c036dfd1db11c6534b12d4f79e41>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Alateema"@et , "Teema alamosa, a'la \"Tasandilised kujundid\"."@et ;
+        sh:class          <https://schema.edu.ee/Teema> ;
+        sh:description    "Teema alamosa, a'la \"Tasandilised kujundid\"."@et ;
+        sh:name           "Alateema"@et ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://schema.edu.ee/alateema> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#edfba0c5f6e70368558cf29381beb44d> , <https://astrea.linkeddata.es/shapes#24ea455ae6b362862fa26c6c88d74264> , <https://astrea.linkeddata.es/shapes#2a44c05584fff46077a5cdfcc2482c8d> , <https://astrea.linkeddata.es/shapes#96fbbab40cf13c7684c5be12b4c85224> , <https://astrea.linkeddata.es/shapes#08d6a4254229a8d603f2938dc6caf316> , <https://astrea.linkeddata.es/shapes#afcdb5c17d1cc5b5f5c0a94cd88ee77e> , <https://astrea.linkeddata.es/shapes#bf35c036dfd1db11c6534b12d4f79e41> , <https://astrea.linkeddata.es/shapes#3143be2ba1c0ca0b36133c3f78011e17> , <https://astrea.linkeddata.es/shapes#18f59d71049fe3d8a3414a5091e40546> , <https://astrea.linkeddata.es/shapes#c7be0cddd19fdf961647576d9a19df76> , <https://astrea.linkeddata.es/shapes#e896e7ec2c91e3d5b8ef46d252c4baef> , <https://astrea.linkeddata.es/shapes#6191aac707f505f6887d665c72416b84> , <https://astrea.linkeddata.es/shapes#273dad6f058c86860fd8afec9af43ad3> , <https://astrea.linkeddata.es/shapes#fe5bf7eb60f38a5f7b4aa834c913fb01> , <https://astrea.linkeddata.es/shapes#2f22d6cd87cc60ad1887c8ea7ea4d4e9> , <https://astrea.linkeddata.es/shapes#c9a846d641fd49bc6cf4182784fbf29c> , <https://astrea.linkeddata.es/shapes#706347d288c5c3c27e6e4ef18eb219e0> , <https://astrea.linkeddata.es/shapes#f846f038a75612452423f9ce15d6da20> , <https://astrea.linkeddata.es/shapes#ceb56005d720fdbaf5362be7facecdce> , <https://astrea.linkeddata.es/shapes#07787699fc0f144fda0225ecce822d69> , <https://astrea.linkeddata.es/shapes#a83d410dc8bf1e3c7578354f759f202b> , <https://astrea.linkeddata.es/shapes#168df75a6e687e530ff66354fadc0bec> , <https://astrea.linkeddata.es/shapes#ce7cf54cee621bd072dc2a13f9d2c462> , <https://astrea.linkeddata.es/shapes#5972bd8a5c6311b038917e61ef11e7e9> , <https://astrea.linkeddata.es/shapes#4e5224d7ec094243eb81a63ed9930b21> , <https://astrea.linkeddata.es/shapes#6898a841939ffda11b6467120e39b54e> , <https://astrea.linkeddata.es/shapes#01dcc42d7c6394aed36c1029effc95a6> , <https://astrea.linkeddata.es/shapes#d8d438c51d735967f6b4d49c9d0cb1f7> , <https://astrea.linkeddata.es/shapes#dcf22e9eaa85df1683bda55d44684199> , <https://astrea.linkeddata.es/shapes#1a1c4f57751ba52d82c94bfad9babc1a> , <https://astrea.linkeddata.es/shapes#c8b607fa449cd06853245e46deecfb99> , <https://astrea.linkeddata.es/shapes#d3012d081f0c05daa6cecf22e16b8ac2> , <https://astrea.linkeddata.es/shapes#743b2bcea5ca0bb266b3a4c19b6bde9b> , <https://astrea.linkeddata.es/shapes#a5ef7cd5e8e7688f6effa4d6719b3731> , <https://astrea.linkeddata.es/shapes#10d92251ae97a2b18bc1aa52ae0d597c> , <https://astrea.linkeddata.es/shapes#bbaaf58b8d013e8f64addd77c6738c69> , <https://astrea.linkeddata.es/shapes#f140702168d593ab6d0369362fde857b> , <https://astrea.linkeddata.es/shapes#96c1e6f35161dc13e53d32672abc366e> , <https://astrea.linkeddata.es/shapes#8527bc040fcff4feb26ad7f62dba59ee> , <https://astrea.linkeddata.es/shapes#8f7c51bcb9ce51803e432e848e045068> , <https://astrea.linkeddata.es/shapes#c85e9f95beb1be83673d7fc6541cb7de> , <https://astrea.linkeddata.es/shapes#4ca425c001dabf103e700c6a674e8673> , <https://astrea.linkeddata.es/shapes#310ba94d62835951e05d2ef430732c14> , <https://astrea.linkeddata.es/shapes#c05051f5d602df000753184fc3edb360> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/1520982985> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#18f59d71049fe3d8a3414a5091e40546>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Koolitus"@et ;
+        sh:description    "Kavandatud süsteemne õpe, mille käigus antakse edasi kindlaid oskusi, teadmisi ja infot ning kujundatakse hoiakuid ja suhtumisi."@et ;
+        sh:name           "Koolitus"@et ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/Koolitus> , <https://schema.org/Course> .
+
+<https://astrea.linkeddata.es/shapes#d8d438c51d735967f6b4d49c9d0cb1f7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Haridusaste"@et ;
+        sh:description    "Hariduse omandamise järjestikune osa, selle iga (järgnev) osa (nt põhiharidus, keskharidus, kõrgharidus). NB alignmentType = educationalLevel."@et ;
+        sh:name           "Haridusaste"@et ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/Haridusaste> .
+
+<https://astrea.linkeddata.es/shapes#8f7c51bcb9ce51803e432e848e045068>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Ülesanne"@et ;
+        sh:description    "Kohustusena antud töö; harjutustöö koolis. Ülesanne koosneb tööjuhendist, (üksik)küsimustest ja vastustest. Kasutusel ka hindamisvahendina."@et ;
+        sh:name           "Ülesanne"@et ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#a83d410dc8bf1e3c7578354f759f202b> ;
+        sh:targetClass    <https://schema.edu.ee/Ulesanne> .
+
+<https://astrea.linkeddata.es/shapes#5972bd8a5c6311b038917e61ef11e7e9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Individuaalne õppekava"@et ;
+        sh:description    "Individuaalne õppekava on Individuaalse õppekava järgi õppimise korra kohaselt hariduslike erivajadustega õpilase jaoks koostatud õppekava, mis loob õpilasele tingimused võimetekohaseks õppimiseks ja arenemiseks. Individuaalne õppekava koostatakse õpilasele, kellel on raskusi oma klassikaaslastega samal ajal samas ruumis või vastavale klassile koostatud töökava alusel töötada. Hariduslikeks erivajadusteks võivad olla õpilase eriline andekus, õpi- ja käitumisraskused, terviserikked, puuded või pikemaaegne õpikeskkonnast eemal viibimine."@et ;
+        sh:name           "Individuaalne õppekava"@et ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/IndividuaalneOppekava> .
+
+<https://astrea.linkeddata.es/shapes#d3012d081f0c05daa6cecf22e16b8ac2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Õpiväljundi eeldus"@et , "Õpiväljundi omandamiseks on vajalik teine õpiväljund, nt oskuse jaoks on vajalik teadmine."@et ;
+        sh:class          <https://schema.edu.ee/Opivaljund> ;
+        sh:description    "Õpiväljundi omandamiseks on vajalik teine õpiväljund, nt oskuse jaoks on vajalik teadmine."@et ;
+        sh:name           "Õpiväljundi eeldus"@et ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://schema.edu.ee/eeldab> .
+
+<https://astrea.linkeddata.es/shapes#a83d410dc8bf1e3c7578354f759f202b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Ülesanne koosneb üksikküsimustest"@et , "Ülesanne koosneb vähemalt ühest üksikküsimusest."@et ;
+        sh:class          <https://schema.edu.ee/Kusimus> ;
+        sh:description    "Ülesanne koosneb vähemalt ühest üksikküsimusest."@et ;
+        sh:name           "Ülesanne koosneb üksikküsimustest"@et ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://schema.edu.ee/ulesanneKoosneb> .
+
+<https://astrea.linkeddata.es/shapes#2a44c05584fff46077a5cdfcc2482c8d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Test"@et , "Test"@en ;
+        sh:description    "Hindamisvahend kokkulepitud eesmärgi hindamiseks. Nt ülesannete kogum; standardiseeritud ülesannete või küsimuste kogum, millega uuritakse ja hinnatakse inimese võimeid ja omadusi või teadmisi ja oskusi."@et ;
+        sh:name           "Test"@en , "Test"@et ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#6898a841939ffda11b6467120e39b54e> , <https://astrea.linkeddata.es/shapes#c8b607fa449cd06853245e46deecfb99> ;
+        sh:targetClass    <https://schema.edu.ee/Test> .
+
+<https://astrea.linkeddata.es/shapes#a5ef7cd5e8e7688f6effa4d6719b3731>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Õppeaine, mille raames õpiväljundit või teemat käsitletekse"@et , "Õpiväljund ei pea olema seotud ühegi õppeainega ja võib olla seotud mitme õppeainega."@et ;
+        sh:class          <https://schema.edu.ee/Oppeaine> ;
+        sh:description    "Õpiväljund ei pea olema seotud ühegi õppeainega ja võib olla seotud mitme õppeainega."@et ;
+        sh:name           "Õppeaine, mille raames õpiväljundit või teemat käsitletekse"@et ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://schema.edu.ee/seotudOppeaine> .
+
+<https://astrea.linkeddata.es/shapes#01dcc42d7c6394aed36c1029effc95a6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Kontrolltöö"@et ;
+        sh:description    "Õppepäevas võib läbi viia ühe kontrolltöö. Kontrolltöö toimumise ajast teatatakse õpilastele vähemalt viis õppepäeva enne kontrolltöö toimumist. Õppenädalas võib läbi viia kuni kolm kontrolltööd. Kontrolltöid ei planeerita esmaspäevale ja reedele, samuti õppepäeva esimesele ning viimasele õppetunnile, v.a juhul, kui õppeaine on tunniplaanis esmaspäeval ja reedel või ainult ühel neist päevadest või esimese või viimase tunnina."@et ;
+        sh:name           "Kontrolltöö"@et ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/Kontrolltoo> .
+
+<https://astrea.linkeddata.es/shapes#dcf22e9eaa85df1683bda55d44684199>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Teemaga või õppematerjaliga seotud õpiväljund"@et , "Õpiväljundit võidakse kasutada erinevates ainevaldkondades riikliku õppekava kontekstis. Õpiväljund ei pea olema seotud ainevaldkonnaga. Õppematerjal on seotud konkreetsete õpiväljundite saavutamisega. Minimaalselt on õppematerjaliga seotud üks õpiväljund."@et ;
+        sh:class          <https://schema.edu.ee/Opivaljund> ;
+        sh:description    "Õpiväljundit võidakse kasutada erinevates ainevaldkondades riikliku õppekava kontekstis. Õpiväljund ei pea olema seotud ainevaldkonnaga. Õppematerjal on seotud konkreetsete õpiväljundite saavutamisega. Minimaalselt on õppematerjaliga seotud üks õpiväljund."@et ;
+        sh:name           "Teemaga või õppematerjaliga seotud õpiväljund"@et ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://schema.edu.ee/seotudOpivaljund> .
+
+<https://astrea.linkeddata.es/shapes#6191aac707f505f6887d665c72416b84>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Vastus"@et ;
+        sh:description    "Üksikküsimuse vastus testis."@et ;
+        sh:name           "Vastus"@et ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/Vastus> , <https://schema.org/Answer> .
+
+<https://astrea.linkeddata.es/shapes#3143be2ba1c0ca0b36133c3f78011e17>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Riiklik õppekava"@et , "National curriculum"@en ;
+        sh:description    "Hariduse eesmärkide elluviimise riiklik plaan, mis annab ülevaate sellest, milleks, mida, kuidas ja millise aja jooksul õpitakse ning õpetatakse."@et ;
+        sh:name           "Riiklik õppekava"@et , "National curriculum"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://schema.edu.ee/RiiklikOppekava> .
+
+<https://astrea.linkeddata.es/report/1520982985>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "https://schema.org/" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#1a1c4f57751ba52d82c94bfad9babc1a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://schema.edu.ee/> ;
+        rdfs:label        "Ainevaldkond sisaldab vähemalt ühte, kuid enamasti rohkemat, õppeainet."@et , "Ainevaldkond sisaldab õppeainet"@et , "Includes subject"@en ;
+        sh:class          <https://schema.edu.ee/Oppeaine> ;
+        sh:description    "Ainevaldkond sisaldab vähemalt ühte, kuid enamasti rohkemat, õppeainet."@et ;
+        sh:name           "Includes subject"@en , "Ainevaldkond sisaldab õppeainet"@et ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://schema.edu.ee/ainevaldkondKoosneb> .

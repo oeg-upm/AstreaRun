@@ -1,0 +1,614 @@
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix spin:  <http://spinrdf.org/spin#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sp:    <http://spinrdf.org/sp#> .
+@prefix spl:   <http://spinrdf.org/spl#> .
+
+<https://astrea.linkeddata.es/shapes#ae926c6b7375e9de010f948c7ee34c5b>
+        a               sh:NodeShape ;
+        rdfs:label      "Load" ;
+        sh:description  "A LOAD Update operation. The document to load is specified using sp:document, and the (optional) target graph using sp:into." ;
+        sh:name         "Load" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Load .
+
+<https://astrea.linkeddata.es/shapes#4ee28809653ada60f536de652e2014c8>
+        a               sh:NodeShape ;
+        rdfs:label      "Modify" ;
+        sh:description  "Represents a MODIFY (part of SPARQL UPDATE language). The graph IRIs are stored in sp:graphIRI. The template patterns are stored in sp:deletePattern and sp:insertPattern. The WHERE clause is represented using sp:where." ;
+        sh:name         "Modify" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Modify .
+
+<https://astrea.linkeddata.es/shapes#59e4705f14ae59fb1320ff6e90589abb>
+        a               sh:NodeShape ;
+        rdfs:label      "Delete where" ;
+        sh:description  "An Update operation where the triples matched by the WHERE clause (sp:where) will be the triples deleted." ;
+        sh:name         "Delete where" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:DeleteWhere .
+
+<https://astrea.linkeddata.es/shapes#97f464205ea513af941a82284d08cd9c>
+        a               sh:NodeShape ;
+        rdfs:label      "Insert" ;
+        sh:description  "Deprecated - use sp:Modify instead.\n\nRepresents a INSERT INTO (part of SPARQL UPDATE language). The graph IRIs are stored in sp:graphIRI. The template patterns to delete are stored in sp:insertPattern. The WHERE clause is represented using sp:where." ;
+        sh:name         "Insert" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Insert .
+
+<https://astrea.linkeddata.es/shapes#c9210cec85ee88cb58a3d05f1a8ac9c6>
+        a               sh:NodeShape ;
+        rdfs:label      "Desc" ;
+        sh:description  "Marker to indicate descending order." ;
+        sh:name         "Desc" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Desc .
+
+<https://astrea.linkeddata.es/shapes#285378b54daf9b8d3216481106d4b1f1>
+        a               sh:NodeShape ;
+        rdfs:label      "Template" ;
+        sh:description  "The metaclass of SPIN templates. Templates are classes that are instances of this class. A template represents a reusable SPARQL query or update request that can be parameterized with arguments. Templates can be instantiated in places where normally a SPARQL query or update request is used, in particular as spin:rules and spin:constraints." ;
+        sh:name         "Template" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:Template .
+
+<https://astrea.linkeddata.es/shapes#0ff7ca912b45dd8a265d0e1f9c3c2192>
+        a               sh:NodeShape ;
+        rdfs:label      "Describe" ;
+        sh:description  "A DESCRIBE-type Query." ;
+        sh:name         "Describe" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Describe .
+
+<https://astrea.linkeddata.es/shapes#20f2c430ab50688ef3b42e7e0a24c417>
+        a               sh:NodeShape ;
+        rdfs:label      "Column" ;
+        sh:description  "Provides metadata about a column in the result set of a (SPARQL) query, for example of the body queries of SPIN templates. Columns can define human-readable labels that serve as column titles, using rdfs:label." ;
+        sh:name         "Column" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:Column .
+
+<https://astrea.linkeddata.es/shapes#72a5dd16113368facab142e2eaa53b78>
+        a               sh:NodeShape ;
+        rdfs:label      "Reverse link path" ;
+        sh:name         "Reverse link path" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:ReverseLinkPath .
+
+<https://astrea.linkeddata.es/shapes#f51f40b27f411e09c16e9999fc3cf9d1>
+        a               sh:NodeShape ;
+        rdfs:label      "Optional" ;
+        sh:description  "An optional element in a query." ;
+        sh:name         "Optional" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Optional .
+
+<https://astrea.linkeddata.es/shapes#0ebb39f4a5fea452e54ecde9921064f1>
+        a               sh:NodeShape ;
+        rdfs:label      "Create" ;
+        sh:description  "An Update operation that creates a new empty graph with a name specified by sp:graphIRI. May have sp:silent set to true." ;
+        sh:name         "Create" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Create .
+
+<https://astrea.linkeddata.es/shapes#0e9541a83e26b43d44670c8e89acbacc>
+        a               sh:NodeShape ;
+        rdfs:label      "Module" ;
+        sh:description  "An abstract building block of a SPARQL system. A Module can take Arguments as input and applies them on an input RDF Graph. The Arguments should be declared as spin:constraints." ;
+        sh:name         "Module" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:Module .
+
+<https://astrea.linkeddata.es/shapes#7a7820fbaeb7c38b6c1da86106baf482>
+        a               sh:NodeShape ;
+        rdfs:label      "Triple path" ;
+        sh:description  "Similar to a TriplePattern, but with a path expression as its predicate. For example, this can be used to express transitive sub-class relationships (?subClass rdfs:subClassOf* ?superClass)." ;
+        sh:name         "Triple path" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:TriplePath .
+
+<https://astrea.linkeddata.es/shapes#bafbae452b3da44e74c47d1396dbe24d>
+        a               sh:NodeShape ;
+        rdfs:label      "Reverse path" ;
+        sh:description  "A path with reversed direction." ;
+        sh:name         "Reverse path" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:ReversePath .
+
+<https://astrea.linkeddata.es/shapes#094f0fa84c79c0ffc2b129345468a005>
+        a               sh:NodeShape ;
+        rdfs:label      "Library ontology" ;
+        sh:description  "A marker class that can be attached to base URIs (ontologies) to instruct SPIN engines that this ontology only contains a library of SPIN declarations. Library Ontologies should be ignored by SPIN inference engines even if they have been imported by a domain model. For example, a SPIN version of OWL RL may contain all the OWL RL axioms, attached to owl:Thing, but nothing else. However, when executed, these axioms should not be executed over themselves, because we don't want the system to reason about the SPIN triples to speed up things." ;
+        sh:name         "Library ontology" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:LibraryOntology .
+
+<https://astrea.linkeddata.es/shapes#0eff2a122774e5e215537eacfd8d3720>
+        a               sh:NodeShape ;
+        rdfs:label      "Bind" ;
+        sh:description  "A BIND element." ;
+        sh:name         "Bind" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Bind .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#0d7916681fa01b3d1168710c71434fea>
+        a               sh:NodeShape ;
+        rdfs:label      "Magic property" ;
+        sh:name         "Magic property" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:MagicProperty .
+
+<https://astrea.linkeddata.es/shapes#07555bcba74074bf478c42f30d10ac41>
+        a               sh:NodeShape ;
+        rdfs:label      "Insert data" ;
+        sh:description  "An Update operation to insert specific triples. The graph triples are represented using sp:data, which points to an rdf:List of sp:Triples or sp:NamedGraphs." ;
+        sh:name         "Insert data" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:InsertData .
+
+<https://astrea.linkeddata.es/shapes#b3209562dae5231332ab13cba8db686e>
+        a               sh:NodeShape ;
+        rdfs:label      "Triple pattern" ;
+        sh:description  "A triple pattern used in the body of a query." ;
+        sh:name         "Triple pattern" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:TriplePattern .
+
+<https://astrea.linkeddata.es/shapes#d3629be3f372186f3c74f3499e507b58>
+        a               sh:NodeShape ;
+        rdfs:label      "Delete" ;
+        sh:description  "Deprecated - use sp:Modify instead.\n\nRepresents a DELETE FROM (part of SPARQL UPDATE language). The graph IRIs are stored in sp:graphIRI. The template patterns to delete are stored in sp:deletePattern. The WHERE clause is represented using sp:where." ;
+        sh:name         "Delete" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Delete .
+
+<https://astrea.linkeddata.es/shapes#83a6e85a61abcfd7c0fdb4199b4b6fb7>
+        a               sh:NodeShape ;
+        rdfs:label      "AVG" ;
+        sh:description  "Represents AVG aggregations." ;
+        sh:name         "AVG" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Avg .
+
+<https://astrea.linkeddata.es/shapes#e070927542446211994480ea72372709>
+        a               sh:NodeShape ;
+        rdfs:label      "SUM" ;
+        sh:description  "Represents sum aggregations, e.g. SELECT SUM(?varName)..." ;
+        sh:name         "SUM" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Sum .
+
+<https://astrea.linkeddata.es/shapes#0c99ac78409be0119eaebcb0b723c590>
+        a               sh:NodeShape ;
+        rdfs:label      "Ask" ;
+        sh:description  "An ASK query that returns true if the condition in the body is met by at least one result set." ;
+        sh:name         "Ask" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Ask .
+
+<https://astrea.linkeddata.es/shapes#e28b1fb05c6af16a993271dbeb51d688>
+        a               sh:NodeShape ;
+        rdfs:label      "Mod path" ;
+        sh:description  "A modified path such as rdfs:subClassOf*." ;
+        sh:name         "Mod path" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:ModPath .
+
+<https://astrea.linkeddata.es/shapes#195982091707eb81d126ce68cb67fe62>
+        a               sh:NodeShape ;
+        rdfs:label      "Drop" ;
+        sh:description  "An Update operation that removes a specified graph from the Graph Store. Must specify the graph using sp:graphIRI, or sp:default, sp:named or sp:all. May have the SILENT flag, encoded using sp:silent." ;
+        sh:name         "Drop" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Drop .
+
+<https://astrea.linkeddata.es/shapes#ae5eec0af593a4175d104fba8985a6a3>
+        a               sh:NodeShape ;
+        rdfs:label      "Seq path" ;
+        sh:description  "A sequence of multiple paths." ;
+        sh:name         "Seq path" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:SeqPath .
+
+<https://astrea.linkeddata.es/shapes#5f0ae6aec4be6f532ed65038954f7dbd>
+        a               sh:NodeShape ;
+        rdfs:label      "Asc" ;
+        sh:description  "Marker to indicate ascending order." ;
+        sh:name         "Asc" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Asc .
+
+<https://astrea.linkeddata.es/shapes#fa3b983a9fc18fb409bd793fc44f7572>
+        a               sh:NodeShape ;
+        rdfs:label      "Tuple" ;
+        sh:description  "Abstract base class for things that have subject and object." ;
+        sh:name         "Tuple" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Tuple .
+
+<https://astrea.linkeddata.es/shapes#c6baf4cae63a15839bef5ab13f9eb10d>
+        a               sh:NodeShape ;
+        rdfs:label      "Named graph" ;
+        sh:description  "A named Graph element such as GRAPH <uri> {...}." ;
+        sh:name         "Named graph" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:NamedGraph .
+
+<https://astrea.linkeddata.es/shapes#e0daac1edb43341d40a1a431e2270130>
+        a               sh:NodeShape ;
+        rdfs:label      "Triple" ;
+        sh:description  "A base class for TriplePattern and TripleTemplate. This basically specifies that subject, predicate and object must be present." ;
+        sh:name         "Triple" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Triple .
+
+<https://astrea.linkeddata.es/shapes#c22fc344a2de706083c902f48cda6c7d>
+        a               sh:NodeShape ;
+        rdfs:label      "Aggregation" ;
+        sh:description  "Base class of aggregation types (not part of the SPARQL 1.0 standard but supported by ARQ and other engines)." ;
+        sh:name         "Aggregation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Aggregation .
+
+<https://astrea.linkeddata.es/shapes#07f9f0e5f7cc4f576a3ba9cbc2578a87>
+        a               sh:NodeShape ;
+        rdfs:label      "Service" ;
+        sh:description  "A SERVICE call that matches a nested sub-pattern against a SPARQL end point specified by a URI." ;
+        sh:name         "Service" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Service .
+
+<https://astrea.linkeddata.es/shapes#7d86801daccd7c7b245ac4a068e74aa8>
+        a               sh:NodeShape ;
+        rdfs:label      "Minus" ;
+        sh:description  "A MINUS element group." ;
+        sh:name         "Minus" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Minus .
+
+<https://astrea.linkeddata.es/shapes#0ffb52d8e77d9cf2d05d67511af035a5>
+        a               sh:NodeShape ;
+        rdfs:label      "Element list" ;
+        sh:description  "A list of Elements. This class is never instantiated directly as SPIN will use plain rdf:Lists to store element lists." ;
+        sh:name         "Element list" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:ElementList .
+
+<https://astrea.linkeddata.es/shapes#f1bdd702bf1240f7cf1a48f0245328b5>
+        a               sh:NodeShape ;
+        rdfs:label      "GROUP_CONCAT" ;
+        sh:description  "Represents GROUP_CONCAT aggregations." ;
+        sh:name         "GROUP_CONCAT" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:GroupConcat .
+
+<https://astrea.linkeddata.es/shapes#406948dc4ca7cc746eac5e55eb5490ab>
+        a               sh:NodeShape ;
+        rdfs:label      "Update template" ;
+        sh:description  "A SPIN template that has an UPDATE command as its body." ;
+        sh:name         "Update template" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:UpdateTemplate .
+
+<https://astrea.linkeddata.es/shapes#60626e73450c81d8b2f8a45f22d45f89>
+        a               sh:NodeShape ;
+        rdfs:label      "Constraint violation" ;
+        sh:description  "An object that can be created by spin:constraints to provide information about a constraint violation." ;
+        sh:name         "Constraint violation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:ConstraintViolation .
+
+<https://astrea.linkeddata.es/shapes#2e1763abe6856fdb07f0f3c24d71e858>
+        a               sh:NodeShape ;
+        rdfs:label      "Order by condition" ;
+        sh:description  "An abstract base class for ascending or descending order conditions. Instances of this class (typically bnodes) must have a value for expression to point to the actual values." ;
+        sh:name         "Order by condition" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:OrderByCondition .
+
+<https://astrea.linkeddata.es/report/01031214986>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://spinrdf.org/sp" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#f0ab516d39451145f89cc1fe74a2a7ba>
+        a               sh:NodeShape ;
+        rdfs:label      "Function" ;
+        sh:description  "Metaclass for functions that can be used in SPARQL expressions (e.g. FILTER or BIND). The function themselves are classes that are instances of this metaclass. Function calls are instances of the function classes, with property values for the arguments." ;
+        sh:name         "Function" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:Function .
+
+<https://astrea.linkeddata.es/shapes#5c2d6fc17c70951ab0d45613eb647b12>
+        a               sh:NodeShape ;
+        rdfs:label      "Alt path" ;
+        sh:description  "An alternative path with the union of sp:path1 and sp:path2." ;
+        sh:name         "Alt path" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:AltPath .
+
+<https://astrea.linkeddata.es/shapes#8d238a33bdfe206bb4309bd9fb29a679>
+        a               sh:NodeShape ;
+        rdfs:label      "Query" ;
+        sh:description  "Abstract base class of the various types of supported queries. Common to all types of queries is that they can have a body (\"WHERE clause\")." ;
+        sh:name         "Query" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Query .
+
+<https://astrea.linkeddata.es/shapes#9ea492854fd0ce1355ec51f40bb4dad2>
+        a               sh:NodeShape ;
+        rdfs:label      "Modules" ;
+        sh:description  "An \"artificial\" parent class for all Functions and Templates." ;
+        sh:name         "Modules" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:Modules .
+
+<https://astrea.linkeddata.es/shapes#d4f154a4ce29b3b82a161977ebae7ddb>
+        a               sh:NodeShape ;
+        rdfs:label      "Variable" ;
+        sh:description  "A variable mentioned in a Triple or expression. Variables are often blank nodes with the variable name stored in ts:name. Variables can also be supplied with a URI in which case the system will attempt to reuse the same variable instance across multiple query definitions." ;
+        sh:name         "Variable" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Variable .
+
+<https://astrea.linkeddata.es/shapes#c77bf6597c5fb1c43317871ecc923011>
+        a               sh:NodeShape ;
+        rdfs:label      "Let" ;
+        sh:description  "Deprecated: use sp:Bind instead.\n\nA variable assignment (LET (?<varName> := <expression>)). Not part of the SPARQL 1.0 standard, but (for example) ARQ." ;
+        sh:name         "Let" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Let .
+
+<https://astrea.linkeddata.es/shapes#20b957ff9d5e43dac462a56d1f435018>
+        a               sh:NodeShape ;
+        rdfs:label      "Constraint violation level" ;
+        sh:description  "The type of the supported levels of constraint violations, including spin:Error and spin:Warning." ;
+        sh:name         "Constraint violation level" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:ConstraintViolationLevel .
+
+<https://astrea.linkeddata.es/shapes#ed9d76bff027bd208fb3ac7229e4e166>
+        a               sh:NodeShape ;
+        rdfs:label      "Exists" ;
+        sh:description  "An EXISTS element group." ;
+        sh:name         "Exists" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Exists .
+
+<https://astrea.linkeddata.es/shapes#da4c5cc1eb603cdd6931b46147a5b412>
+        a               sh:NodeShape ;
+        rdfs:label      "Not exists" ;
+        sh:description  "A NOT EXISTS element group." ;
+        sh:name         "Not exists" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:NotExists .
+
+<https://astrea.linkeddata.es/shapes#5338bf2bc40565f4a1da51dc18a1411f>
+        a               sh:NodeShape ;
+        rdfs:label      "MIN" ;
+        sh:description  "Represents MIN aggregations." ;
+        sh:name         "MIN" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Min .
+
+<https://astrea.linkeddata.es/shapes#0e491afb7954eb50b16c28debcc78cc7>
+        a               sh:NodeShape ;
+        rdfs:label      "Construct template" ;
+        sh:name         "Construct template" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:ConstructTemplate .
+
+<https://astrea.linkeddata.es/shapes#f9f58585bb9d27368099c577a026f6be>
+        a               sh:NodeShape ;
+        rdfs:label      "Union" ;
+        sh:description  "A UNION group." ;
+        sh:name         "Union" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Union .
+
+<https://astrea.linkeddata.es/shapes#6bd2bf639ca63f9d670a016c8b826b8e>
+        a               sh:NodeShape ;
+        rdfs:label      "Add" ;
+        rdfs:seeAlso    <https://www.w3.org/TR/sparql11-update/#add> ;
+        sh:description  "A SPARQL UPDATE ADD operation. Uses sp:source and sp:target to represent \"from\" and \"to\" graphs, respectively. Also sp:silent may be true." ;
+        sh:name         "Add" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Add .
+
+<https://astrea.linkeddata.es/shapes#48d3f8d951fb48bd30fc04e06bf63566>
+        a               sh:NodeShape ;
+        rdfs:label      "MAX" ;
+        sh:description  "Represents MAX aggregations." ;
+        sh:name         "MAX" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Max .
+
+<https://astrea.linkeddata.es/shapes#350baac3e26c8bb3deb9f3fbca1e6ec9>
+        a               sh:NodeShape ;
+        rdfs:label      "Clear" ;
+        sh:description  "An Update operation that removes all triples from a specified graph. Must specify the graph using sp:graphIRI, or sp:default, sp:named or sp:all. May have the SILENT flag, encoded using sp:silent." ;
+        sh:name         "Clear" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Clear .
+
+<https://astrea.linkeddata.es/shapes#9da2ed903106d732067ac8f220e3a014>
+        a               sh:NodeShape ;
+        rdfs:label      "Element group" ;
+        sh:description  "Abstract base class of group patterns." ;
+        sh:name         "Element group" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:ElementGroup .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#4f2e8f833d45dc7b882d0dc4436e1b94> , <https://astrea.linkeddata.es/shapes#83a6e85a61abcfd7c0fdb4199b4b6fb7> , <https://astrea.linkeddata.es/shapes#dbec8ca8599b3b7deee7add4383cf277> , <https://astrea.linkeddata.es/shapes#c9210cec85ee88cb58a3d05f1a8ac9c6> , <https://astrea.linkeddata.es/shapes#c7ac9a22f6e8c8f5250c5750b363c4cd> , <https://astrea.linkeddata.es/shapes#355c67c1363ba4edb8be76b69b008823> , <https://astrea.linkeddata.es/shapes#5338bf2bc40565f4a1da51dc18a1411f> , <https://astrea.linkeddata.es/shapes#d3629be3f372186f3c74f3499e507b58> , <https://astrea.linkeddata.es/shapes#60626e73450c81d8b2f8a45f22d45f89> , <https://astrea.linkeddata.es/shapes#094f0fa84c79c0ffc2b129345468a005> , <https://astrea.linkeddata.es/shapes#4ba6fed2dd926293ce8afba593296f17> , <https://astrea.linkeddata.es/shapes#bafbae452b3da44e74c47d1396dbe24d> , <https://astrea.linkeddata.es/shapes#ae926c6b7375e9de010f948c7ee34c5b> , <https://astrea.linkeddata.es/shapes#3b8ae6fbeb7f6480b7f2a63fc20ffb71> , <https://astrea.linkeddata.es/shapes#da4c5cc1eb603cdd6931b46147a5b412> , <https://astrea.linkeddata.es/shapes#076cb066e865ea2c729d253ea47ff135> , <https://astrea.linkeddata.es/shapes#b3209562dae5231332ab13cba8db686e> , <https://astrea.linkeddata.es/shapes#84955a0b2afadaefb8fa0f48adfbccb0> , <https://astrea.linkeddata.es/shapes#0c99ac78409be0119eaebcb0b723c590> , <https://astrea.linkeddata.es/shapes#c6baf4cae63a15839bef5ab13f9eb10d> , <https://astrea.linkeddata.es/shapes#5e6084f94207f6ea7a8f016a422340a5> , <https://astrea.linkeddata.es/shapes#e0daac1edb43341d40a1a431e2270130> , <https://astrea.linkeddata.es/shapes#8d238a33bdfe206bb4309bd9fb29a679> , <https://astrea.linkeddata.es/shapes#f0ab516d39451145f89cc1fe74a2a7ba> , <https://astrea.linkeddata.es/shapes#0ff7ca912b45dd8a265d0e1f9c3c2192> , <https://astrea.linkeddata.es/shapes#f9f58585bb9d27368099c577a026f6be> , <https://astrea.linkeddata.es/shapes#0ebb39f4a5fea452e54ecde9921064f1> , <https://astrea.linkeddata.es/shapes#e28b1fb05c6af16a993271dbeb51d688> , <https://astrea.linkeddata.es/shapes#7a7820fbaeb7c38b6c1da86106baf482> , <https://astrea.linkeddata.es/shapes#97f464205ea513af941a82284d08cd9c> , <https://astrea.linkeddata.es/shapes#9ea492854fd0ce1355ec51f40bb4dad2> , <https://astrea.linkeddata.es/shapes#07555bcba74074bf478c42f30d10ac41> , <https://astrea.linkeddata.es/shapes#20f2c430ab50688ef3b42e7e0a24c417> , <https://astrea.linkeddata.es/shapes#f51f40b27f411e09c16e9999fc3cf9d1> , <https://astrea.linkeddata.es/shapes#0e9541a83e26b43d44670c8e89acbacc> , <https://astrea.linkeddata.es/shapes#73f23efdc1bdd3d6b94d9cdae601354f> , <https://astrea.linkeddata.es/shapes#c77bf6597c5fb1c43317871ecc923011> , <https://astrea.linkeddata.es/shapes#4a3e582a6d2bb2ce7d715da8ac008f3a> , <https://astrea.linkeddata.es/shapes#5f0ae6aec4be6f532ed65038954f7dbd> , <https://astrea.linkeddata.es/shapes#5c2d6fc17c70951ab0d45613eb647b12> , <https://astrea.linkeddata.es/shapes#ae5eec0af593a4175d104fba8985a6a3> , <https://astrea.linkeddata.es/shapes#c46992718ebd8bda1b5b83b83d385255> , <https://astrea.linkeddata.es/shapes#fa3b983a9fc18fb409bd793fc44f7572> , <https://astrea.linkeddata.es/shapes#4ee28809653ada60f536de652e2014c8> , <https://astrea.linkeddata.es/shapes#195982091707eb81d126ce68cb67fe62> , <https://astrea.linkeddata.es/shapes#9428beaf824afc358c683b812d651c59> , <https://astrea.linkeddata.es/shapes#f1bdd702bf1240f7cf1a48f0245328b5> , <https://astrea.linkeddata.es/shapes#0e491afb7954eb50b16c28debcc78cc7> , <https://astrea.linkeddata.es/shapes#0ffb52d8e77d9cf2d05d67511af035a5> , <https://astrea.linkeddata.es/shapes#2e1763abe6856fdb07f0f3c24d71e858> , <https://astrea.linkeddata.es/shapes#5c658afcbe06339810e6673e264fee21> , <https://astrea.linkeddata.es/shapes#ed9d76bff027bd208fb3ac7229e4e166> , <https://astrea.linkeddata.es/shapes#4875df0078f989c26ac5edd02e4fdc51> , <https://astrea.linkeddata.es/shapes#ddc154e1f1ec741cc4e9246f041389af> , <https://astrea.linkeddata.es/shapes#c22fc344a2de706083c902f48cda6c7d> , <https://astrea.linkeddata.es/shapes#72a5dd16113368facab142e2eaa53b78> , <https://astrea.linkeddata.es/shapes#20b957ff9d5e43dac462a56d1f435018> , <https://astrea.linkeddata.es/shapes#9da2ed903106d732067ac8f220e3a014> , <https://astrea.linkeddata.es/shapes#59e4705f14ae59fb1320ff6e90589abb> , <https://astrea.linkeddata.es/shapes#40222a87a74f80b7529101fb903d3cef> , <https://astrea.linkeddata.es/shapes#6bd2bf639ca63f9d670a016c8b826b8e> , <https://astrea.linkeddata.es/shapes#0d7916681fa01b3d1168710c71434fea> , <https://astrea.linkeddata.es/shapes#07f9f0e5f7cc4f576a3ba9cbc2578a87> , <https://astrea.linkeddata.es/shapes#285378b54daf9b8d3216481106d4b1f1> , <https://astrea.linkeddata.es/shapes#e070927542446211994480ea72372709> , <https://astrea.linkeddata.es/shapes#406948dc4ca7cc746eac5e55eb5490ab> , <https://astrea.linkeddata.es/shapes#dba48d72434e3a2b487b1b959f7e7c90> , <https://astrea.linkeddata.es/shapes#0eff2a122774e5e215537eacfd8d3720> , <https://astrea.linkeddata.es/shapes#48d3f8d951fb48bd30fc04e06bf63566> , <https://astrea.linkeddata.es/shapes#d4f154a4ce29b3b82a161977ebae7ddb> , <https://astrea.linkeddata.es/shapes#7d86801daccd7c7b245ac4a068e74aa8> , <https://astrea.linkeddata.es/shapes#350baac3e26c8bb3deb9f3fbca1e6ec9> , <https://astrea.linkeddata.es/shapes#fe2354fcc143976e552f106243d7ac52> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/01031214986> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#076cb066e865ea2c729d253ea47ff135>
+        a               sh:NodeShape ;
+        rdfs:label      "Construct" ;
+        sh:description  "A CONSTRUCT-type query that can be used to construct new triples from template triples (head) that use variable bindings from the match patterns (body)." ;
+        sh:name         "Construct" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Construct .
+
+<https://astrea.linkeddata.es/shapes#4ba6fed2dd926293ce8afba593296f17>
+        a               sh:NodeShape ;
+        rdfs:label      "Rule property" ;
+        sh:description  "The metaclass of spin:rule and its subproperties. spin:RuleProperties can have additional metadata attached to them." ;
+        sh:name         "Rule property" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:RuleProperty .
+
+<https://astrea.linkeddata.es/shapes#3b8ae6fbeb7f6480b7f2a63fc20ffb71>
+        a               sh:NodeShape ;
+        rdfs:label      "Triple template" ;
+        sh:description  "A prototypical triple used as template in the head of a Construct query. May contain variables." ;
+        sh:name         "Triple template" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:TripleTemplate .
+
+<https://astrea.linkeddata.es/shapes#73f23efdc1bdd3d6b94d9cdae601354f>
+        a               sh:NodeShape ;
+        rdfs:label      "Sub query" ;
+        sh:description  "A nested SELECT query inside of an element list. The query is stored in sp:query." ;
+        sh:name         "Sub query" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:SubQuery .
+
+<https://astrea.linkeddata.es/shapes#5e6084f94207f6ea7a8f016a422340a5>
+        a               sh:NodeShape ;
+        rdfs:label      "Delete data" ;
+        sh:description  "An Update operation to delete specific triples. The graph triples are represented using sp:data, which points to an rdf:List of sp:Triples or sp:NamedGraphs." ;
+        sh:name         "Delete data" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:DeleteData .
+
+<https://astrea.linkeddata.es/shapes#c7ac9a22f6e8c8f5250c5750b363c4cd>
+        a               sh:NodeShape ;
+        rdfs:label      "Update" ;
+        sh:description  "Abstract base class to group the various SPARQL UPDATE commands." ;
+        sh:name         "Update" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Update .
+
+<https://astrea.linkeddata.es/shapes#4a3e582a6d2bb2ce7d715da8ac008f3a>
+        a               sh:NodeShape ;
+        rdfs:label      "SP System class" ;
+        sh:description  "An \"artificial\" root class that groups all SP classes. This makes them look much less overwhelming in UI tools. Typical end users don't need to see those classes anyway." ;
+        sh:name         "SP System class" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:SystemClass .
+
+<https://astrea.linkeddata.es/shapes#9428beaf824afc358c683b812d651c59>
+        a               sh:NodeShape ;
+        rdfs:label      "Values" ;
+        sh:description  "A VALUES element. sp:varNames points to an rdf:List of strings for the variables, sp:values to an rdf:List of rdf:Lists with nodes for each variable, in the order defined by the variables list." ;
+        sh:name         "Values" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Values .
+
+<https://astrea.linkeddata.es/shapes#4f2e8f833d45dc7b882d0dc4436e1b94>
+        a               sh:NodeShape ;
+        rdfs:label      "COUNT" ;
+        sh:description  "Counts the number of times a variable is used. The variable is stored in the variable property. This might be left blank to indicate COUNT(*)." ;
+        sh:name         "COUNT" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Count .
+
+<https://astrea.linkeddata.es/shapes#5c658afcbe06339810e6673e264fee21>
+        a               sh:NodeShape ;
+        rdfs:label      "Filter" ;
+        sh:description  "A constraint element that evaluates a given expression to true or false." ;
+        sh:name         "Filter" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Filter .
+
+<https://astrea.linkeddata.es/shapes#dbec8ca8599b3b7deee7add4383cf277>
+        a               sh:NodeShape ;
+        rdfs:label      "Ask template" ;
+        sh:description  "A SPIN template that wraps an ASK query." ;
+        sh:name         "Ask template" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:AskTemplate .
+
+<https://astrea.linkeddata.es/shapes#40222a87a74f80b7529101fb903d3cef>
+        a               sh:NodeShape ;
+        rdfs:label      "SAMPLE" ;
+        sh:description  "Represents SAMPLE aggregations" ;
+        sh:name         "SAMPLE" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Sample .
+
+<https://astrea.linkeddata.es/shapes#fe2354fcc143976e552f106243d7ac52>
+        a               sh:NodeShape ;
+        rdfs:label      "Table data provider" ;
+        sh:description  "An abstraction of objects that can produce tabular data. This serves as a base class of spin:SelectTemplate, because SELECT queries can produce tables with columns for each result variable. However, other types of TableDataProviders are conceivable by other frameworks, and this class may prove as a useful shared foundation.\n\nTableDataProviders can link to definitions of columns via spin:column, and these definitions can inform rendering engines." ;
+        sh:name         "Table data provider" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:TableDataProvider .
+
+<https://astrea.linkeddata.es/shapes#dba48d72434e3a2b487b1b959f7e7c90>
+        a               sh:NodeShape ;
+        rdfs:label      "Command" ;
+        sh:description  "A shared superclass for sp:Query and sp:Update that can be used to specify that the range of property can be either one." ;
+        sh:name         "Command" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Command .
+
+<https://astrea.linkeddata.es/shapes#ddc154e1f1ec741cc4e9246f041389af>
+        a               sh:NodeShape ;
+        rdfs:label      "Path" ;
+        sh:description  "The base class of SPARQL property path expressions. Paths are used by sp:TriplePath triple paths." ;
+        sh:name         "Path" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Path .
+
+<https://astrea.linkeddata.es/shapes#84955a0b2afadaefb8fa0f48adfbccb0>
+        a               sh:NodeShape ;
+        rdfs:label      "Element" ;
+        sh:description  "An abstract base class for all pattern elements." ;
+        sh:name         "Element" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Element .
+
+<https://astrea.linkeddata.es/shapes#c46992718ebd8bda1b5b83b83d385255>
+        a               sh:NodeShape ;
+        rdfs:label      "Select template" ;
+        sh:description  "A SPIN template that wraps a SELECT query." ;
+        sh:name         "Select template" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:SelectTemplate .
+
+<https://astrea.linkeddata.es/shapes#355c67c1363ba4edb8be76b69b008823>
+        a               sh:NodeShape ;
+        rdfs:label      "Select query" ;
+        sh:description  "A SELECT-type query that returns variable bindings as its result." ;
+        sh:name         "Select query" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  sp:Select .
+
+<https://astrea.linkeddata.es/shapes#4875df0078f989c26ac5edd02e4fdc51>
+        a               sh:NodeShape ;
+        rdfs:label      "Rule" ;
+        sh:description  "Groups together the kinds of SPARQL commands that can appear as SPIN rules and constructors: CONSTRUCT, DELETE WHERE and DELETE/INSERT. This class is never to be instantiated directly." ;
+        sh:name         "Rule" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  spin:Rule .

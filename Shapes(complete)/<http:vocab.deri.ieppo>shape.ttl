@@ -1,0 +1,120 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#d140bcdc051701e47fe067025c5dd332> , <https://astrea.linkeddata.es/shapes#9c25afbfb20f0044bbc1f3de0e6dad0a> , <https://astrea.linkeddata.es/shapes#0562225a49db30675fff9346c7018776> , <https://astrea.linkeddata.es/shapes#d7b9d708d3bc3fe26a5bcbef8ef2520f> , <https://astrea.linkeddata.es/shapes#11a0bd3db52308930002ce83460c6d81> , <https://astrea.linkeddata.es/shapes#f72d5f959eb21dafa87a3b30e8802db4> , <https://astrea.linkeddata.es/shapes#02626b2f6e50a5e8f79bef46513e6224> , <https://astrea.linkeddata.es/shapes#43bfab5e3d99dc46ec00aa7fdd6e12d3> , <https://astrea.linkeddata.es/shapes#fe185e0a5bf1a260d41bbc66e15c353a> , <https://astrea.linkeddata.es/shapes#67809b6f51ac36c8933c9baed1ebabd9> , <https://astrea.linkeddata.es/shapes#2ce234ea6fd37ee7fee027ca7f2a0a91> , <https://astrea.linkeddata.es/shapes#1c45ecdd0b7db8b3aa3d42f9fe98e631> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#0562225a49db30675fff9346c7018776>
+        a               sh:NodeShape ;
+        rdfs:label      "Condition" ;
+        sh:description  "A condition contains properties that denote restrictions to the data being protected." ;
+        sh:name         "Condition" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1c45ecdd0b7db8b3aa3d42f9fe98e631> ;
+        sh:targetClass  <http://vocab.deri.ie/ppo#Condition> .
+
+<https://astrea.linkeddata.es/shapes#67809b6f51ac36c8933c9baed1ebabd9>
+        a               sh:NodeShape ;
+        rdfs:label      "Privacy Preference" ;
+        sh:description  "A privacy preference contains statements about restricting RDF data" ;
+        sh:name         "Privacy Preference" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://vocab.deri.ie/ppo#PrivacyPreference> .
+
+<https://astrea.linkeddata.es/shapes#1c45ecdd0b7db8b3aa3d42f9fe98e631>
+        a               sh:PropertyShape ;
+        rdfs:label      "has literal" , "A condition that applies to an rdfs:Literal." ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "A condition that applies to an rdfs:Literal." ;
+        sh:name         "has literal" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://vocab.deri.ie/ppo#hasLiteral> .
+
+<https://astrea.linkeddata.es/shapes#02626b2f6e50a5e8f79bef46513e6224>
+        a               sh:NodeShape ;
+        rdfs:label      "Delete" ;
+        sh:description  "The Delete access control privilege for deleting data elements" ;
+        sh:name         "Delete" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://vocab.deri.ie/ppo#Delete> .
+
+<https://astrea.linkeddata.es/shapes#d7b9d708d3bc3fe26a5bcbef8ef2520f>
+        a               sh:NodeShape ;
+        rdfs:label      "Update" ;
+        sh:description  "The Update access control privilege for updating data elements" ;
+        sh:name         "Update" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://vocab.deri.ie/ppo#Update> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#11a0bd3db52308930002ce83460c6d81>
+        a               sh:NodeShape ;
+        rdfs:label      "Not" ;
+        sh:description  "Logical Negation" ;
+        sh:name         "Not" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://vocab.deri.ie/ppo#Not> .
+
+<https://astrea.linkeddata.es/shapes#2ce234ea6fd37ee7fee027ca7f2a0a91>
+        a               sh:NodeShape ;
+        rdfs:label      "Operator" ;
+        sh:description  "The parent logical operator class" ;
+        sh:name         "Operator" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://vocab.deri.ie/ppo#Operator> .
+
+<https://astrea.linkeddata.es/shapes#d140bcdc051701e47fe067025c5dd332>
+        a               sh:NodeShape ;
+        rdfs:label      "Or" ;
+        sh:description  "Logical disjunction" ;
+        sh:name         "Or" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://vocab.deri.ie/ppo#Or> .
+
+<https://astrea.linkeddata.es/shapes#f72d5f959eb21dafa87a3b30e8802db4>
+        a               sh:NodeShape ;
+        rdfs:label      "Access Space" ;
+        sh:description  "A space which contains ASK queries that test certain requirements which a requester must have" ;
+        sh:name         "Access Space" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#43bfab5e3d99dc46ec00aa7fdd6e12d3> ;
+        sh:targetClass  <http://vocab.deri.ie/ppo#AccessSpace> .
+
+<https://astrea.linkeddata.es/shapes#fe185e0a5bf1a260d41bbc66e15c353a>
+        a               sh:NodeShape ;
+        rdfs:label      "And" ;
+        sh:description  "Logical conjuction" ;
+        sh:name         "And" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://vocab.deri.ie/ppo#And> .
+
+<https://astrea.linkeddata.es/shapes#43bfab5e3d99dc46ec00aa7fdd6e12d3>
+        a               sh:PropertyShape ;
+        rdfs:label      "access query" , "An ASK query that denotes a pattern which requesters must satisfy" ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "An ASK query that denotes a pattern which requesters must satisfy" ;
+        sh:name         "access query" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://vocab.deri.ie/ppo#hasAccessQuery> .
+
+<https://astrea.linkeddata.es/shapes#9c25afbfb20f0044bbc1f3de0e6dad0a>
+        a               sh:NodeShape ;
+        rdfs:label      "Create" ;
+        sh:description  "The Create access control privilege for creating new data elements" ;
+        sh:name         "Create" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://vocab.deri.ie/ppo#Create> .

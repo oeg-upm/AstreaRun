@@ -1,0 +1,734 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#2fa314a1488978e7d4dbf95cf3b7fe4e>
+        a            sh:PropertyShape ;
+        sh:class     <http://data.ign.fr/def/ignf#GeodeticCRS> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://data.ign.fr/def/ignf#baseCRS> .
+
+<https://astrea.linkeddata.es/shapes#28df81c614fdeb40e6da3ab44de1ac68>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "List of axes"@en , "Liste d'axes"@fr ;
+        sh:description    "Ordered list of coordinates system axes."@en , "Liste ordonnée d'axes de systèmes de coordonnées."@fr ;
+        sh:name           "Liste d'axes"@fr , "List of axes"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#AxesList> .
+
+<https://astrea.linkeddata.es/shapes#9319539d35ea98b8b1824e5c23f43f77>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Opération simple sur les coordonnées"@fr , "Single coordinate operation"@en ;
+        sh:description    "Opération non concaténée sur des coordonnées. Cf. ISO 19111:2007:2007-07, tableau 43."@fr , "A non concatenated coordinate operation. Cf. ISO 19111:2007:2007-07, table 43."@en ;
+        sh:name           "Single coordinate operation"@en , "Opération simple sur les coordonnées"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#SingleOperation> .
+
+<https://astrea.linkeddata.es/shapes#f73c07ed19388214bfa2cd4734d863f5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Désigne le cadre englobant géographique d'une région de validité. Cf. ISO 19115-1:2014:2014-04, partie 6.6.1 et tableau B.15 ligne 337."@fr , "élément géographique"@fr , "geographic element"@en , "The geographic bounding box used for defining a domain of validity. Cf. ISO 19115-1:2014:2014-04, part 6.6.1 and table B.15 line 337."@en ;
+        sh:class          <http://data.ign.fr/def/ignf#GeographicBoundingBox> ;
+        sh:description    "The geographic bounding box used for defining a domain of validity. Cf. ISO 19115-1:2014:2014-04, part 6.6.1 and table B.15 line 337."@en , "Désigne le cadre englobant géographique d'une région de validité. Cf. ISO 19115-1:2014:2014-04, partie 6.6.1 et tableau B.15 ligne 337."@fr ;
+        sh:name           "élément géographique"@fr , "geographic element"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#geographicElement> .
+
+<https://astrea.linkeddata.es/shapes#9cb0735aebf562a3ac9ae85f652e4371>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://data.ign.fr/def/ignf#axis> .
+
+<https://astrea.linkeddata.es/shapes#096073389fb56753141d87be317fd88f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "The coordinate reference system associated to the data obtained as output of a given operation. Cf. ISO 19111:2007:2007-07, table 42, named association Target."@en , "système de coordonnées de référence cible"@fr , "target coordinate reference system"@en , "Désigne le système de coordonnées de référence des données en sortie d'une opération. Cf. ISO 19111:2007:2007-07, tableau 42, association nommée Target."@fr ;
+        sh:class          <http://data.ign.fr/def/ignf#CRS> ;
+        sh:description    "Désigne le système de coordonnées de référence des données en sortie d'une opération. Cf. ISO 19111:2007:2007-07, tableau 42, association nommée Target."@fr , "The coordinate reference system associated to the data obtained as output of a given operation. Cf. ISO 19111:2007:2007-07, table 42, named association Target."@en ;
+        sh:name           "système de coordonnées de référence cible"@fr , "target coordinate reference system"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#targetCRS> .
+
+<https://astrea.linkeddata.es/shapes#b9018ce2fa5b181518f45aff2cf87139>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "dimension du système de coordonnées de référence source"@fr , "source coordinate reference system dimension"@en , "Indique la dimension du système de coordonnées de référence des données en entrée d'une opération. Cf. ISO 19111:2007:2007-07, tableau 48, attribut dimension du système de coordonnées de référence source."@fr , "The dimension of the coordinate reference system associated with the data used as input of an operation. Cf. ISO 19111:2007:2007-07, table 48, attribute dimension of source CRS."@en ;
+        sh:datatype       xsd:integer ;
+        sh:description    "Indique la dimension du système de coordonnées de référence des données en entrée d'une opération. Cf. ISO 19111:2007:2007-07, tableau 48, attribut dimension du système de coordonnées de référence source."@fr , "The dimension of the coordinate reference system associated with the data used as input of an operation. Cf. ISO 19111:2007:2007-07, table 48, attribute dimension of source CRS."@en ;
+        sh:name           "dimension du système de coordonnées de référence source"@fr , "source coordinate reference system dimension"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/ignf#sourceDimension> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#67feb2172b5e5b7e0a4c01e3ee1fb93a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Ellipsoidal coordinate system"@en , "Système de coordonnées ellipsoïdal"@fr ;
+        sh:description    "Système de coordonnées dans lequel la position est spécifiée par la latitude géodésique, la longitude géodésique et (dans le cas tridimensionnel) la hauteur ellipsoïdale. Cf. ISO 19111:2007:2007-07, tableaux 15 et 20."@fr , "Coordinate system which gives the position is specified by geodetic latitude, geodetic longitude and (in the three-dimensional case) ellipsoidal height. Cf. ISO 19111:2007:2007-07, tables 15 and 20."@en ;
+        sh:name           "Système de coordonnées ellipsoïdal"@fr , "Ellipsoidal coordinate system"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#1e47495bc13ab71d4efbc0632ba5e728> ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#EllipsoidalCS> .
+
+<https://astrea.linkeddata.es/shapes#ae47daa61a8679d842db3d2e3f1a06e2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Geodetic datum"@en , "Référentiel géodésique"@fr ;
+        sh:description    "Datum describing the relation of a two- or three-dimensional coordinate system to the Earth. Cf. ISO 19111:2007:2007-07, part 10.2, table 34 and annex B.3.2."@en , "Référentiel décrivant la relation entre un système de coordonnées à deux ou trois dimensions et la Terre. Cf. ISO 19111:2007:2007-07, partie 10.2, tableau 34 et annexe B.3.2."@fr ;
+        sh:name           "Référentiel géodésique"@fr , "Geodetic datum"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c8cf0c6f5992ab9b8f506fca98eb8dde> , <https://astrea.linkeddata.es/shapes#e54b326d10e399eecee09141f98519fe> ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#GeodeticDatum> .
+
+<https://astrea.linkeddata.es/shapes#a9a033b241db87fd593f0f7c878237e3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "The geodetic datum used by a geodetic coordinate reference system. Cf. ISO 19111:2007:2007-07, table 10, named association DefiningDatum."@en , "utilise le référentiel géodésique"@fr , "Désigne le référentiel géodésique utilisé par un système de coordonnées de référence géodésique. Cf. ISO 19111:2007:2007-07, tableau 10, association nommée DefiningDatum."@fr , "uses geodetic datum"@en ;
+        sh:class          <http://data.ign.fr/def/ignf#GeodeticDatum> ;
+        sh:description    "Désigne le référentiel géodésique utilisé par un système de coordonnées de référence géodésique. Cf. ISO 19111:2007:2007-07, tableau 10, association nommée DefiningDatum."@fr , "The geodetic datum used by a geodetic coordinate reference system. Cf. ISO 19111:2007:2007-07, table 10, named association DefiningDatum."@en ;
+        sh:name           "utilise le référentiel géodésique"@fr , "uses geodetic datum"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#geodeticDatum> .
+
+<https://astrea.linkeddata.es/shapes#d63d10a5c977d66d9684276922427a82>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "uses coordinate system"@en , "Désigne le système de coordonnées utilisé par un système de coordonnées de référence. Cf. ISO 19111:2007:2007-07, tableau 5, association nommée CoordinateSystem."@fr , "utilise le système de coordonnées"@fr , "The coordinate system used by a coordinate reference system. Cf. ISO 19111:2007:2007-07, table 5, named association CoordinateSystem."@en ;
+        sh:class          <http://data.ign.fr/def/ignf#CoordinateSystem> ;
+        sh:description    "The coordinate system used by a coordinate reference system. Cf. ISO 19111:2007:2007-07, table 5, named association CoordinateSystem."@en , "Désigne le système de coordonnées utilisé par un système de coordonnées de référence. Cf. ISO 19111:2007:2007-07, tableau 5, association nommée CoordinateSystem."@fr ;
+        sh:name           "uses coordinate system"@en , "utilise le système de coordonnées"@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#coordinateSystem> .
+
+<https://astrea.linkeddata.es/shapes#d1f77d75e744f5923827d4ae1fdf2d6f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Système de coordonnées de référence combiné"@fr , "Compound coordinate reference system"@en ;
+        sh:description    "Système de coordonnées de référence utilisant au moins deux systèmes de coordonnées de référence simples indépendants. Cf. ISO 19111:2007:2007-07, parties 8.2.3.c, 8.2.4, tableau 6 et annexe B.1.2.4."@fr , "Coordinate reference system using at least two independent single coordinate reference systems. Cf. ISO 19111:2007:2007-07, parts 8.2.3.c, 8.2.4, table 6 and annex B.1.2.4."@en ;
+        sh:name           "Compound coordinate reference system"@en , "Système de coordonnées de référence combiné"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#1e47495bc13ab71d4efbc0632ba5e728> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c2a6e3489ecc1280a70fd929e5780353> , <https://astrea.linkeddata.es/shapes#fa17ad7c0c82248800fc09d8975b2fc5> ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#CompoundCRS> .
+
+<https://astrea.linkeddata.es/shapes#144dc698c65cdb3c293930a34b5732ce>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Système de coordonnées de référence projeté"@fr , "Projected coordinate reference system"@en ;
+        sh:description    "Système de coordonnées de référence dérivé par projection cartographique d'un système de coordonnées de référence bidimentionnel. Cf. ISO 19111:2007:2007-07, partie 8.2.3.b, tableau 11 et annexe B.1.2.3."@fr , "Coordinate reference system derived from a two-dimensional geodetic coordinate reference system by applying a map projection. Cf. ISO 19111:2007:2007-07, part 8.2.3.b, table 11 and annex B.1.2.3."@en ;
+        sh:name           "Projected coordinate reference system"@en , "Système de coordonnées de référence projeté"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#8c7967a9bb5e839f728c811316d3b595> , <https://astrea.linkeddata.es/shapes#2fa314a1488978e7d4dbf95cf3b7fe4e> , <https://astrea.linkeddata.es/shapes#6ae9d9caa427dd70ea3239b9bfb837e4> , <https://astrea.linkeddata.es/shapes#cdb1e361eeff61f91b651314a265fe83> ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#ProjectedCRS> .
+
+<https://astrea.linkeddata.es/shapes#b7ee687ab15e54f93aa0bcba62bf296a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "method formula"@en , "The formula used by a method to perform an operation on coordinates. Cf. ISO 19111:2007:2007-07, table 48, attribute coordinate operation method formula reference."@en , "formule de la méthode"@fr , "Indique la formule utilisée par une méthode pour faire opération sur des coordonnées. Cf. ISO 19111:2007:2007-07, tableau 48, attribut référence de formule de la méthode d'opération sur les coordonnées."@fr ;
+        sh:datatype       xsd:string ;
+        sh:description    "The formula used by a method to perform an operation on coordinates. Cf. ISO 19111:2007:2007-07, table 48, attribute coordinate operation method formula reference."@en , "Indique la formule utilisée par une méthode pour faire opération sur des coordonnées. Cf. ISO 19111:2007:2007-07, tableau 48, attribut référence de formule de la méthode d'opération sur les coordonnées."@fr ;
+        sh:name           "method formula"@en , "formule de la méthode"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/ignf#methodFormula> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#ca196fa58b744df5693d484aeec6e537>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.ign.fr/def/ignf#CoordinateSystem> .
+
+<https://astrea.linkeddata.es/shapes#0953a5ce7a52db39dfd810b8f35ff771>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Système de coordonnées de référence"@fr , "Coordinate reference system (CRS)"@en ;
+        sh:description    "Métadonnées permettant de préciser, selon la dimension spatiale des coordonnées 1D, 2D ou 3D, les éléments de définition associés au jeu de coordonnées: le système de référence terrestre, l'ellipsoïde géodésique, le méridien origine, le type de coordonnées (cartésiennes géocentriques, planes, géographiques,...), les unités dans lesquelles sont exprimées les coordonnées, la projection cartographique, le référentiel altimétrique(http://geodesie.ign.fr/index.php?page=glossaire). Cf. ISO 19111:2007:2007-07, partie 8.2, tableau 4 et annexe B.1."@fr , "Depending on the spatial dimension of coordinates (1D, 2D, 3D), this piece of metadata is used for specifying the elements of definition associated to a given set of coordinates: its datum, its ellipsoid, its prime meridian, the type of coordinates (geocentric, geographic, projected,...), the coordinates units of measure, when appropriate the cartographic projection used, the vertical coordinate reference system. Definition translated from: http://geodesie.ign.fr/index.php?page=glossaire. Cf. ISO 19111:2007:2007-07, part 8.2, table 4 and annex B.1."@en ;
+        sh:name           "Système de coordonnées de référence"@fr , "Coordinate reference system (CRS)"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#ca196fa58b744df5693d484aeec6e537> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#a89074256fe207730c4f20b560634e8a> ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#CRS> .
+
+<https://astrea.linkeddata.es/shapes#3036aa36db835c12738c53d6e500e5d4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "greenwich longitude"@en , "Désigne la longitude par rapport au méridien de Greenwich. Cf. ISO 19111:2007:2007-07, tableau 35, attribut longitude du méridien d'origine."@fr , "longitude par rapport à Greenwich"@fr , "Indicates the longitude from Greenwich meridian. Cf. ISO 19111:2007:2007-07, table 35, attribute prime meridian Greenwich longitude."@en ;
+        sh:description    "Désigne la longitude par rapport au méridien de Greenwich. Cf. ISO 19111:2007:2007-07, tableau 35, attribut longitude du méridien d'origine."@fr , "Indicates the longitude from Greenwich meridian. Cf. ISO 19111:2007:2007-07, table 35, attribute prime meridian Greenwich longitude."@en ;
+        sh:name           "longitude par rapport à Greenwich"@fr , "greenwich longitude"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#aff34423b79dc757f1a2a93540b37833>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Datum"@en , "Référentiel"@fr ;
+        sh:description    "Paramètre ou ensemble de paramètres définissant la position de l'origine, l'échelle et l'orientation d'un système de coordonnées. Cf. ISO 19111:2007:2007-07, partie 10.1, tableau 33 et annexe B.3."@fr , "Parameter or set of parameters that define the position of the origin, the scale and the orientation of a coordinate system. Cf. ISO 19111:2007:2007-07, part 10.1, table 33 and annex B.3."@en ;
+        sh:name           "Datum"@en , "Référentiel"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#Datum> .
+
+<https://astrea.linkeddata.es/shapes#c2a6e3489ecc1280a70fd929e5780353>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://data.ign.fr/def/ignf#includesSingleCRS> .
+
+<https://astrea.linkeddata.es/shapes#25ce154bb90ab383b71779ae6f9a27de>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Cadre englobant géographique"@fr , "Geographic bounding box"@en ;
+        sh:description    "Cadre délimitant une zone d'intérêt. Cf. ISO 19115-1:2014:2014-04, partie 6.6.1 et tableau B.15.1 ligne 344."@fr , "Box bounding an area of interest. Cf. ISO 19115-1:2014:2014-04, part 6.6.1 and table B.15.1 line 344."@en ;
+        sh:name           "Cadre englobant géographique"@fr , "Geographic bounding box"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#6ef53dc663e506601d82339747d39822> , <https://astrea.linkeddata.es/shapes#c4fad4c8bc1f56f28c9e7a85534627af> , <https://astrea.linkeddata.es/shapes#2e1e636e02bb4f899ff8d706c05dbaa6> , <https://astrea.linkeddata.es/shapes#112ca349e4f3a1b4222b33a5f16e0e74> ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#GeographicBoundingBox> .
+
+<https://astrea.linkeddata.es/shapes#59d41104abba5fdd971303d643f3e7cd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "The direction of an axis. Cf. ISO 19111:2007:2007-07, table 27, attribute coordinate system axis direction."@en , "direction de l'axe"@fr , "axis direction"@en , "Désigne la direction de l'axe. Cf. ISO 19111:2007:2007-07, tableau 27, attribut direction de l'axe du système de coordonnées."@fr ;
+        sh:datatype       xsd:string ;
+        sh:description    "The direction of an axis. Cf. ISO 19111:2007:2007-07, table 27, attribute coordinate system axis direction."@en , "Désigne la direction de l'axe. Cf. ISO 19111:2007:2007-07, tableau 27, attribut direction de l'axe du système de coordonnées."@fr ;
+        sh:name           "direction de l'axe"@fr , "axis direction"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/ignf#axisDirection> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#46aa3384121ec3e492d74a98ac8b524d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "semi minor axis"@en , "demi petit axe"@fr , "Désigne la longueur du demi petit axe d'un ellipsoïde. Cf. ISO 19111:2007:2007-07, tableau 37, attribut longueur du demi-petit axe."@fr , "Indicates the length of the semi minor axis of an ellipsoid. Cf. ISO 19111:2007:2007-07, table 37, attribute length of semi-minor axis."@en ;
+        sh:description    "Indicates the length of the semi minor axis of an ellipsoid. Cf. ISO 19111:2007:2007-07, table 37, attribute length of semi-minor axis."@en , "Désigne la longueur du demi petit axe d'un ellipsoïde. Cf. ISO 19111:2007:2007-07, tableau 37, attribut longueur du demi-petit axe."@fr ;
+        sh:name           "semi minor axis"@en , "demi petit axe"@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#a302d607fd499dea9b329ff58f42e79e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Prime meridian"@en , "Méridien origine"@fr ;
+        sh:description    "Méridien à partir duquel les longitudes d'autres méridiens sont mesurées. Cf. ISO 19111:2007:2007-07, partie 10.2.1, tableau 35 et annexe B.3.2.2."@fr , "Meridian from which the longitudes of other meridians are quantified. Cf. ISO 19111:2007:2007-07, part 10.2.1, table 35 and annex B.3.2.2."@en ;
+        sh:name           "Prime meridian"@en , "Méridien origine"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#7ea89eff197bd4d24d8fbd60f9f4b2ae> ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#PrimeMeridian> .
+
+<https://astrea.linkeddata.es/shapes#c96a223ebc754611f223161528016ed4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Valeur de paramètre"@fr , "Operation parameter value"@en ;
+        sh:description    "Valeur d'un paramètre utilisé par une méthode pour faire une opération sur des coordonnées. Cf. ISO 19111:2007:2007-07, tableau 55."@fr , "Value of a parameter used by a method to perform some coordinate operation. Cf. ISO 19111:2007:2007-07, table 55."@en ;
+        sh:name           "Operation parameter value"@en , "Valeur de paramètre"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d3ea1d749f675aee787ea5e40324869f> ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#OperationParameterValue> .
+
+<https://astrea.linkeddata.es/shapes#3536baaa80ff04b3c4f7474332e53c5f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      rdf:first .
+
+<https://astrea.linkeddata.es/shapes#18b34a51514f46a73cb78ce900a282af>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "An axis used by some ellipsoidal or cartesian coordinate system. Cf. ISO 19111:2007:2007-07, table 17, association role axis."@en , "Désigne un axe utilisé par un système de coordonnées ellipsoïdal ou cartésien. Cf. ISO 19111:2007:2007-07, tableau 17, rôle d'association axis."@fr , "uses axis"@en , "utilise l'axe"@fr ;
+        sh:class          <http://data.ign.fr/def/ignf#AxesList> ;
+        sh:description    "An axis used by some ellipsoidal or cartesian coordinate system. Cf. ISO 19111:2007:2007-07, table 17, association role axis."@en , "Désigne un axe utilisé par un système de coordonnées ellipsoïdal ou cartésien. Cf. ISO 19111:2007:2007-07, tableau 17, rôle d'association axis."@fr ;
+        sh:name           "utilise l'axe"@fr , "uses axis"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#axis> .
+
+<https://astrea.linkeddata.es/shapes#49d9c38bacd8967257bed008ac024a2a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Méthode"@fr , "Operation method"@en ;
+        sh:description    "The method (algorithm or procedure) used to perform the coordinate operation. Cf. ISO 19111:2007:2007-07, table 48 and annex B.4.5."@en , "Méthode utilisée pour faire une opération sur des coordonnées. Cf. ISO 19111:2007:2007-07, tableau 48 et annexe B.4.5."@fr ;
+        sh:name           "Méthode"@fr , "Operation method"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c65ed0ec0be51c0c908e9b022acab57c> , <https://astrea.linkeddata.es/shapes#b7ee687ab15e54f93aa0bcba62bf296a> , <https://astrea.linkeddata.es/shapes#7f9ade4554144818df6b7ca23d6d875e> , <https://astrea.linkeddata.es/shapes#b9018ce2fa5b181518f45aff2cf87139> ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#OperationMethod> .
+
+<https://astrea.linkeddata.es/shapes#14c135d3c344d37e0ee136736a2f7ef6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "The abbreviation used to identify an axis. Cf. ISO 19111:2007:2007-07, table 27, attribute coordinate system axis abbreviation."@en , "Désigne l'abréviation utilisée pour désigner l'axe. Cf. ISO 19111:2007:2007-07, tableau 27, attribut abréviation de l'axe du système de coordonnées."@fr , "abréviation utilisée pour désigner l'axe"@fr , "axis abbreviation"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "Désigne l'abréviation utilisée pour désigner l'axe. Cf. ISO 19111:2007:2007-07, tableau 27, attribut abréviation de l'axe du système de coordonnées."@fr , "The abbreviation used to identify an axis. Cf. ISO 19111:2007:2007-07, table 27, attribute coordinate system axis abbreviation."@en ;
+        sh:name           "abréviation utilisée pour désigner l'axe"@fr , "axis abbreviation"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/ignf#axisAbbrev> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#efd6f4c270986f1ba63984a076ac1469>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "The version of an operation performed on coordinates. Cf. ISO 19111:2007:2007-07, table 42, attribute coordinate operation version."@en , "Indique la version d'une opération appliquée sur des coordonnées. Cf. ISO 19111:2007:2007-07, tableau 42, attribut version de l'opération sur les coordonnées."@fr , "operation version"@en , "version de l'opération"@fr ;
+        sh:datatype       xsd:string ;
+        sh:description    "Indique la version d'une opération appliquée sur des coordonnées. Cf. ISO 19111:2007:2007-07, tableau 42, attribut version de l'opération sur les coordonnées."@fr , "The version of an operation performed on coordinates. Cf. ISO 19111:2007:2007-07, table 42, attribute coordinate operation version."@en ;
+        sh:name           "operation version"@en , "version de l'opération"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/ignf#operationVersion> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#a89074256fe207730c4f20b560634e8a>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://data.ign.fr/def/ignf#domainOfValidity> .
+
+<https://astrea.linkeddata.es/shapes#bcb177e2e0b01502ceb0a31fb05e030a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Vertical datum"@en , "Référentiel vertical"@fr ;
+        sh:description    "Datum describing the relation of gravity-related heights or depths to the Earth. Cf. ISO 19111:2007:2007-07, table 41 and annex B.3.3."@en , "Référentiel décrivant la relation entre les hauteurs ou les profondeurs relatives à la gravité et la Terre. Cf. ISO 19111:2007:2007-07, tableau 41 et annexe B.3.3."@fr ;
+        sh:name           "Vertical datum"@en , "Référentiel vertical"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#VerticalDatum> .
+
+<https://astrea.linkeddata.es/shapes#7ea89eff197bd4d24d8fbd60f9f4b2ae>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.ign.fr/def/ignf#Ellipsoid> .
+
+<https://astrea.linkeddata.es/shapes#c9fa0e8aae992c7733cc0fd8fdfc83f9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "uses vertical coordinate system"@en , "utilise le système vertical de coordonnées"@fr , "Désigne le système de coordonnées vertical utilisé par un système de coordonnées de référence vertical. Cf. ISO 19111:2007:2007-07, tableau 14, association nommée CoordinateSystem."@fr , "The vertical coordinate system used by a vertical coordinate reference system. Cf. ISO 19111:2007:2007-07, table 14, named association CoordinateSystem."@en ;
+        sh:class          <http://data.ign.fr/def/ignf#VerticalCS> ;
+        sh:description    "Désigne le système de coordonnées vertical utilisé par un système de coordonnées de référence vertical. Cf. ISO 19111:2007:2007-07, tableau 14, association nommée CoordinateSystem."@fr , "The vertical coordinate system used by a vertical coordinate reference system. Cf. ISO 19111:2007:2007-07, table 14, named association CoordinateSystem."@en ;
+        sh:name           "utilise le système vertical de coordonnées"@fr , "uses vertical coordinate system"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#verticalCS> .
+
+<https://astrea.linkeddata.es/shapes#4ffa245708ed367ddb0d7e81ba3ded49>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Système de coordonnées"@fr , "Coordinate system"@en ;
+        sh:description    "Set of axes that spans a given coordinate space and of mathematical rules for specifying how coordinates are to be assigned to points. Cf. ISO 19111:2007:2007-07, part 9.2, table 17 and annex B.2."@en , "Ensemble d'axes couvrant un espace de coordonnées, et de règles mathématiques permettant l'affectation de coordonnées à un point. Cf. ISO 19111:2007:2007-07, partie 9.2, tableau 17 et annexe B.2."@fr ;
+        sh:name           "Système de coordonnées"@fr , "Coordinate system"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#9cb0735aebf562a3ac9ae85f652e4371> , <https://astrea.linkeddata.es/shapes#18b34a51514f46a73cb78ce900a282af> ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#CoordinateSystem> .
+
+<https://astrea.linkeddata.es/shapes#6a744d33889cef9e113293f07527191f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      rdf:rest .
+
+<https://astrea.linkeddata.es/shapes#100850164ebc00f2526044d464f9bf24>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Extent"@en , "Étendue"@fr ;
+        sh:description    "Geographic area or time interval in which the referring object is valid. Cf. ISO 19115-1:2014:2014-04, part 6.6.1 and table B.15 line 335."@en , "Zone géographique ou intervalle de temps dans lequel la référence est valide. Cf. ISO 19115-1:2014:2014-04, partie 6.6.1 et tableau B.15 ligne 335."@fr ;
+        sh:name           "Extent"@en , "Étendue"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#f73c07ed19388214bfa2cd4734d863f5> ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#Extent> .
+
+<https://astrea.linkeddata.es/shapes#8fa681077974072ad0ff971349defc5c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Opération sur les coordonnées"@fr , "Coordinate operation"@en ;
+        sh:description    "Mathematical operation on coordinates, based on one-to-one relationship, that changes coordinates from one coordinate reference system to another. Cf. ISO 19111:2007:2007-07, part 11.1, table 42 and annex B.4."@en , "Opération mathématique sur des coordonnées, basée sur une relation 1:1, qui change ces coordonnées d'une système de coordonnées de référence à un autre. Cf. ISO 19111:2007:2007-07, partie 11.1, tableau 42 et annexe B.4."@fr ;
+        sh:name           "Coordinate operation"@en , "Opération sur les coordonnées"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7c06a53bd99aee25d0c503b6ad552e4b> , <https://astrea.linkeddata.es/shapes#096073389fb56753141d87be317fd88f> , <https://astrea.linkeddata.es/shapes#efd6f4c270986f1ba63984a076ac1469> , <https://astrea.linkeddata.es/shapes#7515d44d75a73aa83ae1275087ba9bf0> , <https://astrea.linkeddata.es/shapes#c67997b1b00ffb781ecc3935121d66e6> ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#CoordinateOperation> .
+
+<https://astrea.linkeddata.es/shapes#0950c18b5477a61c4c4e859d84eebdee>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Conversion"@en , "Conversion"@fr ;
+        sh:description    "Coordinate operation in which both coordinate reference systems are based on the same datum. Cf. ISO 19111:2007:2007-07, table 45 and annex B.4.2."@en , "Opération sur les coordonnées dans laquelle les deux systèmes de coordonnées de référence sont basés sur le même référentiel (ex: projection cartographique). Cf. ISO 19111:2007:2007-07, tableau 45 et annexe B.4.2."@fr ;
+        sh:name           "Conversion"@en , "Conversion"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#Conversion> .
+
+<https://astrea.linkeddata.es/shapes#cc29fef9cc60d8c955b536e66f70df17>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Axe"@fr , "Axis"@en ;
+        sh:description    "Axe par rapport auquel une coordonnée d'un point est spécifiée dans un système de coordonnées. Cf. ISO 19111:2007:2007-07, partie 9.3, tableau 27 et annexe B.2.2."@fr , "Axis composing a coordinate system and used to specify one given coordinate in a coordinate tuple describing the position of a point. Cf. ISO 19111:2007:2007-07, part 9.3, table 27 and annex B.2.2."@en ;
+        sh:name           "Axe"@fr , "Axis"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#14c135d3c344d37e0ee136736a2f7ef6> , <https://astrea.linkeddata.es/shapes#59d41104abba5fdd971303d643f3e7cd> ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#CoordinateSystemAxis> .
+
+<https://astrea.linkeddata.es/shapes#c65ed0ec0be51c0c908e9b022acab57c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Indique la dimension du système de coordonnées de référence des données en sortie d'une opération. Cf. ISO 19111:2007:2007-07, tableau 48, attribut dimension du système de coordonnées de référence cible."@fr , "The dimension of the coordinate reference system associated with the data obtained as output of an operation. Cf. ISO 19111:2007:2007-07, table 48, attribute dimension of target CRS."@en , "target coordinate reference system dimension"@en , "dimension du système de coordonnées de référence cible"@fr ;
+        sh:datatype       xsd:integer ;
+        sh:description    "The dimension of the coordinate reference system associated with the data obtained as output of an operation. Cf. ISO 19111:2007:2007-07, table 48, attribute dimension of target CRS."@en , "Indique la dimension du système de coordonnées de référence des données en sortie d'une opération. Cf. ISO 19111:2007:2007-07, tableau 48, attribut dimension du système de coordonnées de référence cible."@fr ;
+        sh:name           "target coordinate reference system dimension"@en , "dimension du système de coordonnées de référence cible"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/ignf#targetDimension> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#c4fad4c8bc1f56f28c9e7a85534627af>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "south bound latitude"@en , "Indicates the south bound latitude of a bounding box. Cf. ISO 19115-1:2014:2014-04, part 6.6.1 and table B.15.1 line 347."@en , "latitude sud minimale"@fr , "Désigne la latitude sud minimale du cadre englobant. Cf. ISO 19115-1:2014:2014-04, partie 6.6.1 et tableau B.15.1 ligne 347."@fr ;
+        sh:datatype       xsd:double ;
+        sh:description    "Désigne la latitude sud minimale du cadre englobant. Cf. ISO 19115-1:2014:2014-04, partie 6.6.1 et tableau B.15.1 ligne 347."@fr , "Indicates the south bound latitude of a bounding box. Cf. ISO 19115-1:2014:2014-04, part 6.6.1 and table B.15.1 line 347."@en ;
+        sh:name           "latitude sud minimale"@fr , "south bound latitude"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/ignf#southBoundLatitude> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#48e40298c13f60123d4240c52ba9191e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Désigne la valeur d'aplatissement inverse d'un ellipsoïde, exprimée sous la forme d'un nombre ou d'un ratio (pourcentage, parties par million, etc.). Cf. ISO 19111:2007:2007-07, tableau 37, attribut aplatissement inverse."@fr , "inverse flattening"@en , "Indicates the inverse flattening value of an ellipsoid, expressed as a number or a ratio (percentage rate, parts per million, etc.). Cf. ISO 19111:2007:2007-07, table 37, attribute inverse flattening"@en , "aplatissement inverse"@fr ;
+        sh:description    "Désigne la valeur d'aplatissement inverse d'un ellipsoïde, exprimée sous la forme d'un nombre ou d'un ratio (pourcentage, parties par million, etc.). Cf. ISO 19111:2007:2007-07, tableau 37, attribut aplatissement inverse."@fr , "Indicates the inverse flattening value of an ellipsoid, expressed as a number or a ratio (percentage rate, parts per million, etc.). Cf. ISO 19111:2007:2007-07, table 37, attribute inverse flattening"@en ;
+        sh:name           "aplatissement inverse"@fr , "inverse flattening"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#0f96f4f9edc5267662f7796ad082249a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Transformation"@en , "Transformation"@fr ;
+        sh:description    "Coordinate operation in which the two coordinate reference systems are based on different datums. Cf. ISO 19111:2007:2007-07, table 44."@en , "Opération sur les coordonnées dans laquelle les deux systèmes de coordonnées de référence sont basés sur des référentiels distincts. Cf. ISO 19111:2007:2007-07, tableau 44."@fr ;
+        sh:name           "Transformation"@en , "Transformation"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#Transformation> .
+
+<https://astrea.linkeddata.es/shapes#90965cc14f469b0008e2e2ed62d46435>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Zone ou intervalle de temps dans lequel l'objet de référence est valide. Cf. ISO 19111:2007:2007-07, tableaux 4, 33 et 42, attribut domainOfValidity."@fr , "domain of validity"@en , "domaine de validité"@fr , "Geographic area or time interval in which the referring object is valid. Cf. ISO 19111:2007:2007-07, tables 4, 33 and 42, attribute domainOfValidity."@en ;
+        sh:class          <http://data.ign.fr/def/ignf#Extent> ;
+        sh:description    "Geographic area or time interval in which the referring object is valid. Cf. ISO 19111:2007:2007-07, tables 4, 33 and 42, attribute domainOfValidity."@en , "Zone ou intervalle de temps dans lequel l'objet de référence est valide. Cf. ISO 19111:2007:2007-07, tableaux 4, 33 et 42, attribut domainOfValidity."@fr ;
+        sh:name           "domaine de validité"@fr , "domain of validity"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#domainOfValidity> .
+
+<https://astrea.linkeddata.es/shapes#57561667203005c496dca7560f85395b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "uses vertical datum"@en , "utilise le référentiel vertical"@fr , "The vertical datum used by a vertical coordinate reference system. Cf. ISO 19111:2007:2007-07, table 14, named association DefiningDatum."@en , "Désigne le référentiel vertical utilisé par un système de coordonnées de référence vertical. Cf. ISO 19111:2007:2007-07, tableau 14, association nommée DefiningDatum."@fr ;
+        sh:class          <http://data.ign.fr/def/ignf#VerticalDatum> ;
+        sh:description    "The vertical datum used by a vertical coordinate reference system. Cf. ISO 19111:2007:2007-07, table 14, named association DefiningDatum."@en , "Désigne le référentiel vertical utilisé par un système de coordonnées de référence vertical. Cf. ISO 19111:2007:2007-07, tableau 14, association nommée DefiningDatum."@fr ;
+        sh:name           "utilise le référentiel vertical"@fr , "uses vertical datum"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#verticalDatum> .
+
+<https://astrea.linkeddata.es/shapes#8483bc8ffff8b51eb75f8694c99b7865>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Vertical coordinate reference system"@en , "Système de coordonnées de référence vertical"@fr ;
+        sh:description    "Système de coordonnées de référence à une dimension, associé à un référentiel vertical, et utilisé pour enregistrer des hauteurs ou des profondeurs. Les hauteurs ellipsoïdales ne sont pas enregistrées à l'aide d'un système de coordonnées de référence vertical, mais au sein d'un tuple de coordonnées 3D défini dans un système de coordonnées de référence géodésique 3D. Cf. ISO 19111:2007:2007-07, parties 8.2.2.b, tableau 14 et annexe B.1.2.1.b."@fr , "One-dimensional coordinate reference system associated with a vertical datum and used for recording heights or depths.Ellipsoidal heights are not captured in a vertical coordinate reference system but as part of a 3D coordinates tuple defined in a geodetic 3D coordinate reference system. Cf. ISO 19111:2007:2007-07, parts 8.2.2.b, table 14 and annex B.1.2.1.b."@en ;
+        sh:name           "Système de coordonnées de référence vertical"@fr , "Vertical coordinate reference system"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c9fa0e8aae992c7733cc0fd8fdfc83f9> , <https://astrea.linkeddata.es/shapes#57561667203005c496dca7560f85395b> ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#VerticalCRS> .
+
+<https://astrea.linkeddata.es/shapes#e4b3984dd09827e4d770162ca12bf76c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Désigne la longueur du demi grand axe d'un ellipsoïde. Cf. ISO 19111:2007:2007-07, tableau 36, attribut longueur du demi-grand axe."@fr , "demi grand axe"@fr , "Indicates the length of the semi major axis of an ellipsoid. Cf. ISO 19111:2007:2007-07, table 36, attribute length of semi-major axis."@en , "semi major axis"@en ;
+        sh:description    "Indicates the length of the semi major axis of an ellipsoid. Cf. ISO 19111:2007:2007-07, table 36, attribute length of semi-major axis."@en , "Désigne la longueur du demi grand axe d'un ellipsoïde. Cf. ISO 19111:2007:2007-07, tableau 36, attribut longueur du demi-grand axe."@fr ;
+        sh:name           "demi grand axe"@fr , "semi major axis"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#784186d74cea70ed504f59350b3ce231>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Liste de systèmes de coordonnées de référence simples"@fr , "List of single coordinate reference systems"@en ;
+        sh:description    "Ordered list of single coordinate reference systems."@en , "Liste ordonnée de systèmes de coordonnées de référence simples."@fr ;
+        sh:name           "Liste de systèmes de coordonnées de référence simples"@fr , "List of single coordinate reference systems"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#SingleCRSList> .
+
+<https://astrea.linkeddata.es/shapes#6ef53dc663e506601d82339747d39822>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Indicates the east bound longitude of a bounding box. Cf. ISO 19115-1:2014:2014-04, part 6.6.1 and table B.15.1 line 346."@en , "longitude est maximale"@fr , "Désigne la longitude est maximale du cadre englobant. Cf. ISO 19115-1:2014:2014-04, partie 6.6.1 et tableau B.15.1 ligne 346."@fr , "east bound longitude"@en ;
+        sh:datatype       xsd:double ;
+        sh:description    "Indicates the east bound longitude of a bounding box. Cf. ISO 19115-1:2014:2014-04, part 6.6.1 and table B.15.1 line 346."@en , "Désigne la longitude est maximale du cadre englobant. Cf. ISO 19115-1:2014:2014-04, partie 6.6.1 et tableau B.15.1 ligne 346."@fr ;
+        sh:name           "east bound longitude"@en , "longitude est maximale"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/ignf#eastBoundLongitude> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#7274ab61f5fe52ea156caa01bfe76156>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Système de coordonnées de référence geodésique"@fr , "Geodetic coordinate reference system"@en ;
+        sh:description    "Système de coordonnées de référence associé à un référentiel géodésique. Cf. ISO 19111:2007:2007-07, partie 8.2.2.a, tableau 10 et annexe B.1.2.1.a."@fr , "Coordinate reference system associated with a geodetic datum. Cf. ISO 19111:2007:2007-07, part 8.2.2.a, table 10 and annex B.1.2.1.a."@en ;
+        sh:name           "Geodetic coordinate reference system"@en , "Système de coordonnées de référence geodésique"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#491212bd7257fef38d5df3a2d2f893a9> , <https://astrea.linkeddata.es/shapes#a9a033b241db87fd593f0f7c878237e3> , <https://astrea.linkeddata.es/shapes#43b74a23b9b1e80eff0576210094b359> , <https://astrea.linkeddata.es/shapes#cdb1e361eeff61f91b651314a265fe83> ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#GeodeticCRS> .
+
+<https://astrea.linkeddata.es/shapes#3561337c99b01945de05d7366570fb2e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "is sphere"@en , "est une sphère"@fr , "Indique si l'ellipsoïde est une sphère. Cf. ISO 19111:2007:2007-07, tableau 37, attribut indicateur ellipsoïde=sphère."@fr , "Indicates whether the ellipsoid is a sphere. Cf. ISO 19111:2007:2007-07, table 37, attribute ellipsoid=sphere indicator."@en ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "Indique si l'ellipsoïde est une sphère. Cf. ISO 19111:2007:2007-07, tableau 37, attribut indicateur ellipsoïde=sphère."@fr , "Indicates whether the ellipsoid is a sphere. Cf. ISO 19111:2007:2007-07, table 37, attribute ellipsoid=sphere indicator."@en ;
+        sh:name           "est une sphère"@fr , "is sphere"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/ignf#isSphere> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#69dda5e9c5b3aec884f45db21ad0d343>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Système de coordonnées de référence simple"@fr , "Single coordinate reference system"@en ;
+        sh:description    "Système de coordonnées de référence composé d'un système de coordonnées et d'un référentiel. Cf. ISO 19111:2007:2007-07 tableau 5."@fr , "Coordinate reference system consisting of one coordinate system and one datum. Cf. ISO 19111:2007:2007-07, table 5."@en ;
+        sh:name           "Système de coordonnées de référence simple"@fr , "Single coordinate reference system"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3e3bfc217cd87dcd9d2cce73c8c4d617> , <https://astrea.linkeddata.es/shapes#d63d10a5c977d66d9684276922427a82> ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#SingleCRS> .
+
+<https://astrea.linkeddata.es/shapes#e54b326d10e399eecee09141f98519fe>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "The prime meridian used by a geodetic datum. Cf. ISO 19111:2007:2007-07, table 34, association role primeMeridian."@en , "uses prime meridian"@en , "Désigne le méridien origine d'un référentiel géodésique. Cf. ISO 19111:2007:2007-07, tableau 34, rôle d'association primeMeridian."@fr , "utilise le méridien origine"@fr ;
+        sh:class          <http://data.ign.fr/def/ignf#PrimeMeridian> ;
+        sh:description    "The prime meridian used by a geodetic datum. Cf. ISO 19111:2007:2007-07, table 34, association role primeMeridian."@en , "Désigne le méridien origine d'un référentiel géodésique. Cf. ISO 19111:2007:2007-07, tableau 34, rôle d'association primeMeridian."@fr ;
+        sh:name           "uses prime meridian"@en , "utilise le méridien origine"@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#primeMeridian> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#7515d44d75a73aa83ae1275087ba9bf0> , <https://astrea.linkeddata.es/shapes#52a093c90cb8a8cc9cd0227e904f0a25> , <https://astrea.linkeddata.es/shapes#90965cc14f469b0008e2e2ed62d46435> , <https://astrea.linkeddata.es/shapes#98f5df5c479a6640f4c815de3cf0334a> , <https://astrea.linkeddata.es/shapes#7f9ade4554144818df6b7ca23d6d875e> , <https://astrea.linkeddata.es/shapes#57561667203005c496dca7560f85395b> , <https://astrea.linkeddata.es/shapes#784186d74cea70ed504f59350b3ce231> , <https://astrea.linkeddata.es/shapes#7ea89eff197bd4d24d8fbd60f9f4b2ae> , <https://astrea.linkeddata.es/shapes#491212bd7257fef38d5df3a2d2f893a9> , <https://astrea.linkeddata.es/shapes#d3ea1d749f675aee787ea5e40324869f> , <https://astrea.linkeddata.es/shapes#67384aada5bed43b8ef31b2eecad0b7c> , <https://astrea.linkeddata.es/shapes#ac5184effe30ffd1e8e23a92693f4d52> , <https://astrea.linkeddata.es/shapes#59d41104abba5fdd971303d643f3e7cd> , <https://astrea.linkeddata.es/shapes#28df81c614fdeb40e6da3ab44de1ac68> , <https://astrea.linkeddata.es/shapes#a302d607fd499dea9b329ff58f42e79e> , <https://astrea.linkeddata.es/shapes#a89074256fe207730c4f20b560634e8a> , <https://astrea.linkeddata.es/shapes#ca196fa58b744df5693d484aeec6e537> , <https://astrea.linkeddata.es/shapes#2e1e636e02bb4f899ff8d706c05dbaa6> , <https://astrea.linkeddata.es/shapes#c2a6e3489ecc1280a70fd929e5780353> , <https://astrea.linkeddata.es/shapes#e4b3984dd09827e4d770162ca12bf76c> , <https://astrea.linkeddata.es/shapes#48e40298c13f60123d4240c52ba9191e> , <https://astrea.linkeddata.es/shapes#b9018ce2fa5b181518f45aff2cf87139> , <https://astrea.linkeddata.es/shapes#e54b326d10e399eecee09141f98519fe> , <https://astrea.linkeddata.es/shapes#d63d10a5c977d66d9684276922427a82> , <https://astrea.linkeddata.es/shapes#f73c07ed19388214bfa2cd4734d863f5> , <https://astrea.linkeddata.es/shapes#c96a223ebc754611f223161528016ed4> , <https://astrea.linkeddata.es/shapes#d1f77d75e744f5923827d4ae1fdf2d6f> , <https://astrea.linkeddata.es/shapes#6ae9d9caa427dd70ea3239b9bfb837e4> , <https://astrea.linkeddata.es/shapes#18b34a51514f46a73cb78ce900a282af> , <https://astrea.linkeddata.es/shapes#25ce154bb90ab383b71779ae6f9a27de> , <https://astrea.linkeddata.es/shapes#144dc698c65cdb3c293930a34b5732ce> , <https://astrea.linkeddata.es/shapes#8c7967a9bb5e839f728c811316d3b595> , <https://astrea.linkeddata.es/shapes#aff34423b79dc757f1a2a93540b37833> , <https://astrea.linkeddata.es/shapes#6ef53dc663e506601d82339747d39822> , <https://astrea.linkeddata.es/shapes#46aa3384121ec3e492d74a98ac8b524d> , <https://astrea.linkeddata.es/shapes#7c06a53bd99aee25d0c503b6ad552e4b> , <https://astrea.linkeddata.es/shapes#6766a6a9aa6b682a33ae057c9ffacac5> , <https://astrea.linkeddata.es/shapes#a9a033b241db87fd593f0f7c878237e3> , <https://astrea.linkeddata.es/shapes#0950c18b5477a61c4c4e859d84eebdee> , <https://astrea.linkeddata.es/shapes#b6dda725b644bf03f7cb92c6d4097bc2> , <https://astrea.linkeddata.es/shapes#cc29fef9cc60d8c955b536e66f70df17> , <https://astrea.linkeddata.es/shapes#c67997b1b00ffb781ecc3935121d66e6> , <https://astrea.linkeddata.es/shapes#bcb177e2e0b01502ceb0a31fb05e030a> , <https://astrea.linkeddata.es/shapes#efd6f4c270986f1ba63984a076ac1469> , <https://astrea.linkeddata.es/shapes#fa17ad7c0c82248800fc09d8975b2fc5> , <https://astrea.linkeddata.es/shapes#c9fa0e8aae992c7733cc0fd8fdfc83f9> , <https://astrea.linkeddata.es/shapes#1e47495bc13ab71d4efbc0632ba5e728> , <https://astrea.linkeddata.es/shapes#7274ab61f5fe52ea156caa01bfe76156> , <https://astrea.linkeddata.es/shapes#2fa314a1488978e7d4dbf95cf3b7fe4e> , <https://astrea.linkeddata.es/shapes#100850164ebc00f2526044d464f9bf24> , <https://astrea.linkeddata.es/shapes#3e3bfc217cd87dcd9d2cce73c8c4d617> , <https://astrea.linkeddata.es/shapes#4ffa245708ed367ddb0d7e81ba3ded49> , <https://astrea.linkeddata.es/shapes#8294fcd4477aab6be975568dc2019aa6> , <https://astrea.linkeddata.es/shapes#cdb1e361eeff61f91b651314a265fe83> , <https://astrea.linkeddata.es/shapes#6a744d33889cef9e113293f07527191f> , <https://astrea.linkeddata.es/shapes#096073389fb56753141d87be317fd88f> , <https://astrea.linkeddata.es/shapes#0953a5ce7a52db39dfd810b8f35ff771> , <https://astrea.linkeddata.es/shapes#8fa681077974072ad0ff971349defc5c> , <https://astrea.linkeddata.es/shapes#9cb0735aebf562a3ac9ae85f652e4371> , <https://astrea.linkeddata.es/shapes#69dda5e9c5b3aec884f45db21ad0d343> , <https://astrea.linkeddata.es/shapes#3536baaa80ff04b3c4f7474332e53c5f> , <https://astrea.linkeddata.es/shapes#b7ee687ab15e54f93aa0bcba62bf296a> , <https://astrea.linkeddata.es/shapes#43b74a23b9b1e80eff0576210094b359> , <https://astrea.linkeddata.es/shapes#49d9c38bacd8967257bed008ac024a2a> , <https://astrea.linkeddata.es/shapes#14c135d3c344d37e0ee136736a2f7ef6> , <https://astrea.linkeddata.es/shapes#67feb2172b5e5b7e0a4c01e3ee1fb93a> , <https://astrea.linkeddata.es/shapes#3561337c99b01945de05d7366570fb2e> , <https://astrea.linkeddata.es/shapes#ae47daa61a8679d842db3d2e3f1a06e2> , <https://astrea.linkeddata.es/shapes#8483bc8ffff8b51eb75f8694c99b7865> , <https://astrea.linkeddata.es/shapes#c36d55dd8a78709f30e7bd2ce7a26152> , <https://astrea.linkeddata.es/shapes#3036aa36db835c12738c53d6e500e5d4> , <https://astrea.linkeddata.es/shapes#c8cf0c6f5992ab9b8f506fca98eb8dde> , <https://astrea.linkeddata.es/shapes#c4fad4c8bc1f56f28c9e7a85534627af> , <https://astrea.linkeddata.es/shapes#112ca349e4f3a1b4222b33a5f16e0e74> , <https://astrea.linkeddata.es/shapes#9319539d35ea98b8b1824e5c23f43f77> , <https://astrea.linkeddata.es/shapes#c65ed0ec0be51c0c908e9b022acab57c> , <https://astrea.linkeddata.es/shapes#0f96f4f9edc5267662f7796ad082249a> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#491212bd7257fef38d5df3a2d2f893a9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Désigne le système de coordonnées ellipsoïdal utilisé par un système de coordonnées de référence géodésique. Cf. ISO 19111:2007:2007-07, tableau 10, association nommée CoordinateSystem."@fr , "The ellipsoidal coordinate system used by a geodetic coordinate reference system. Cf. ISO 19111:2007:2007-07, table 10, named association CoordinateSystem."@en , "utilise le système de coordonnées ellipsoïdal"@fr , "uses ellipsoidal coordinate system"@en ;
+        sh:class          <http://data.ign.fr/def/ignf#EllipsoidalCS> ;
+        sh:description    "The ellipsoidal coordinate system used by a geodetic coordinate reference system. Cf. ISO 19111:2007:2007-07, table 10, named association CoordinateSystem."@en , "Désigne le système de coordonnées ellipsoïdal utilisé par un système de coordonnées de référence géodésique. Cf. ISO 19111:2007:2007-07, tableau 10, association nommée CoordinateSystem."@fr ;
+        sh:name           "uses ellipsoidal coordinate system"@en , "utilise le système de coordonnées ellipsoïdal"@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#ellipsoidalCS> .
+
+<https://astrea.linkeddata.es/shapes#2e1e636e02bb4f899ff8d706c05dbaa6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "north bound longitude"@en , "latitude nord maximale"@fr , "Indicates the north bound longitude of a bounding box. Cf. ISO 19115-1:2014:2014-04, part 6.6.1 and table B.15.1 line 348."@en , "Désigne la latitude nord maximale du cadre englobant. Cf. ISO 19115-1:2014:2014-04, partie 6.6.1 et tableau B.15.1 ligne 348."@fr ;
+        sh:datatype       xsd:double ;
+        sh:description    "Indicates the north bound longitude of a bounding box. Cf. ISO 19115-1:2014:2014-04, part 6.6.1 and table B.15.1 line 348."@en , "Désigne la latitude nord maximale du cadre englobant. Cf. ISO 19115-1:2014:2014-04, partie 6.6.1 et tableau B.15.1 ligne 348."@fr ;
+        sh:name           "latitude nord maximale"@fr , "north bound longitude"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/ignf#northBoundLatitude> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#b6dda725b644bf03f7cb92c6d4097bc2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Vertical coordinate system"@en , "Système de coordonnées vertical"@fr ;
+        sh:description    "Système de coordonnées à une dimension utilisé pour les mesures de hauteur ou de profondeur relatives à la gravité. Cf. ISO 19111:2007:2007-07, tableaux 15 et 25."@fr , "One-dimensional coordinate system used for gravity related height or depth measurements. Cf. ISO 19111:2007:2007-07, tables 15 and 25."@en ;
+        sh:name           "Vertical coordinate system"@en , "Système de coordonnées vertical"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#6766a6a9aa6b682a33ae057c9ffacac5> ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#VerticalCS> .
+
+<https://astrea.linkeddata.es/shapes#3e3bfc217cd87dcd9d2cce73c8c4d617>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "utilise le référentiel"@fr , "uses datum"@en , "Désigne le référentiel utilisé par un système de coordonnées de référence simple. Cf. ISO 19111:2007:2007-07, tableau 5, association nommée DefiningDatum."@fr , "The datum used by a single coordinate reference system. Cf. ISO 19111:2007:2007-07, table 5, named association DefiningDatum."@en ;
+        sh:class          <http://data.ign.fr/def/ignf#Datum> ;
+        sh:description    "Désigne le référentiel utilisé par un système de coordonnées de référence simple. Cf. ISO 19111:2007:2007-07, tableau 5, association nommée DefiningDatum."@fr , "The datum used by a single coordinate reference system. Cf. ISO 19111:2007:2007-07, table 5, named association DefiningDatum."@en ;
+        sh:name           "uses datum"@en , "utilise le référentiel"@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#datum> .
+
+<https://astrea.linkeddata.es/shapes#7515d44d75a73aa83ae1275087ba9bf0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Désigne la méthode utilisée par une opération sur des coordonnées. Cf. ISO 19111:2007:2007-07, tableau 43, rôle d'association method."@fr , "The method used by an operation on coordinates. Cf. ISO 19111:2007:2007-07, table 43, association role method."@en , "uses method"@en , "utilise la méthode"@fr ;
+        sh:class          <http://data.ign.fr/def/ignf#OperationMethod> ;
+        sh:description    "Désigne la méthode utilisée par une opération sur des coordonnées. Cf. ISO 19111:2007:2007-07, tableau 43, rôle d'association method."@fr , "The method used by an operation on coordinates. Cf. ISO 19111:2007:2007-07, table 43, association role method."@en ;
+        sh:name           "uses method"@en , "utilise la méthode"@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#usesMethod> .
+
+<https://astrea.linkeddata.es/shapes#8c7967a9bb5e839f728c811316d3b595>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "defined by conversion"@en , "défini par conversion"@fr , "Désigne la conversion utilisée pour définir un système de coordonnées de référence projeté. Cf. ISO 19111:2007:2007-07, tableau 7, association nommée Definition."@fr , "The conversion used to define a projected coordinate reference system. Cf. ISO 19111:2007:2007-07, table 7, named association Definition."@en ;
+        sh:class          <http://data.ign.fr/def/ignf#Conversion> ;
+        sh:description    "Désigne la conversion utilisée pour définir un système de coordonnées de référence projeté. Cf. ISO 19111:2007:2007-07, tableau 7, association nommée Definition."@fr , "The conversion used to define a projected coordinate reference system. Cf. ISO 19111:2007:2007-07, table 7, named association Definition."@en ;
+        sh:name           "defined by conversion"@en , "défini par conversion"@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#conversion> .
+
+<https://astrea.linkeddata.es/shapes#1e47495bc13ab71d4efbc0632ba5e728>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.ign.fr/def/ignf#GeodeticCRS> .
+
+<https://astrea.linkeddata.es/shapes#cdb1e361eeff61f91b651314a265fe83>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "uses cartesian coordinate system"@en , "utilise le système de coordonnées cartesien"@fr , "Désigne le système de coordonnées cartésien utilisé par un système de coordonnées de référence géodésique ou projeté. Cf. ISO 19111:2007:2007-07, tableaux 10 et 11, association nommée CoordinateSystem."@fr , "The cartesian coordinate system used by some geodetic or projected coordinate reference system. Cf. ISO 19111:2007:2007-07, tables 10 et 11, association roles coordinateSystem."@en ;
+        sh:class          <http://data.ign.fr/def/ignf#CartesianCS> ;
+        sh:description    "Désigne le système de coordonnées cartésien utilisé par un système de coordonnées de référence géodésique ou projeté. Cf. ISO 19111:2007:2007-07, tableaux 10 et 11, association nommée CoordinateSystem."@fr , "The cartesian coordinate system used by some geodetic or projected coordinate reference system. Cf. ISO 19111:2007:2007-07, tables 10 et 11, association roles coordinateSystem."@en ;
+        sh:name           "utilise le système de coordonnées cartesien"@fr , "uses cartesian coordinate system"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#cartesianCS> .
+
+<https://astrea.linkeddata.es/shapes#6766a6a9aa6b682a33ae057c9ffacac5>
+        a         sh:PropertyShape ;
+        sh:class  <http://data.ign.fr/def/ignf#VerticalCRS> .
+
+<https://astrea.linkeddata.es/shapes#6ae9d9caa427dd70ea3239b9bfb837e4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Désigne le système de coordonnées de référence géodésique sur lequel repose un système de coordonnées de référence projeté. Cf. ISO 19111:2007:2007-07, tableau 11, rôle d'association baseCRS."@fr , "système de coordonnées de référence de base"@fr , "The geodetic coordinate reference system on which a projected coordinate reference system is based. Cf. ISO 19111:2007:2007-07, table 11, association role baseCRS."@en , "base coordinate reference system"@en ;
+        sh:class          <http://data.ign.fr/def/ignf#GeodeticCRS> ;
+        sh:description    "The geodetic coordinate reference system on which a projected coordinate reference system is based. Cf. ISO 19111:2007:2007-07, table 11, association role baseCRS."@en , "Désigne le système de coordonnées de référence géodésique sur lequel repose un système de coordonnées de référence projeté. Cf. ISO 19111:2007:2007-07, tableau 11, rôle d'association baseCRS."@fr ;
+        sh:name           "système de coordonnées de référence de base"@fr , "base coordinate reference system"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#baseCRS> .
+
+<https://astrea.linkeddata.es/shapes#c36d55dd8a78709f30e7bd2ce7a26152>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "identifiant epsg"@fr , "Indique l'identifiant EPSG de la ressource."@fr , "The EPSG identifier of the resource."@en , "espg identifier"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "The EPSG identifier of the resource."@en , "Indique l'identifiant EPSG de la ressource."@fr ;
+        sh:name           "espg identifier"@en , "identifiant epsg"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/ignf#epsgID> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#112ca349e4f3a1b4222b33a5f16e0e74>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "longitude ouest minimale"@fr , "Indicates the west bound longitude of a bounding box. Cf. ISO 19115-1:2014:2014-04, part 6.6.1 and table B.15.1 line 345."@en , "Désigne la longitude ouest minimale du cadre englobant. Cf. ISO 19115-1:2014:2014-04, partie 6.6.1 et tableau B.15.1 ligne 345."@fr , "west bound longitude"@en ;
+        sh:datatype       xsd:double ;
+        sh:description    "Désigne la longitude ouest minimale du cadre englobant. Cf. ISO 19115-1:2014:2014-04, partie 6.6.1 et tableau B.15.1 ligne 345."@fr , "Indicates the west bound longitude of a bounding box. Cf. ISO 19115-1:2014:2014-04, part 6.6.1 and table B.15.1 line 345."@en ;
+        sh:name           "west bound longitude"@en , "longitude ouest minimale"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/ignf#westBoundLongitude> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#8294fcd4477aab6be975568dc2019aa6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "espace de codage"@fr , "Désigne la règle ou l'autorité dont résulte la valeur de la référence."@fr , "code space"@en , "Rule or authority for a code, name, term or category."@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "Rule or authority for a code, name, term or category."@en , "Désigne la règle ou l'autorité dont résulte la valeur de la référence."@fr ;
+        sh:name           "espace de codage"@fr , "code space"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/ignf#codeSpace> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#43b74a23b9b1e80eff0576210094b359>
+        a            sh:PropertyShape ;
+        sh:class     <http://data.ign.fr/def/ignf#GeodeticDatum> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://data.ign.fr/def/ignf#datum> .
+
+<https://astrea.linkeddata.es/shapes#52a093c90cb8a8cc9cd0227e904f0a25>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Cartesian coordinate system"@en , "Système cartésien de coordonnées"@fr ;
+        sh:description    "Coordinate system which gives the position of points relative to n mutually perpendicular axes. Cf. ISO 19111:2007:2007-07, tables 15 and 18."@en , "Système de coordonnées donnant la position des points relativement à n axes perpendiculaires deux à deux. Cf. ISO 19111:2007:2007-07, tableaux 15 et 18."@fr ;
+        sh:name           "Système cartésien de coordonnées"@fr , "Cartesian coordinate system"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#1e47495bc13ab71d4efbc0632ba5e728> ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#CartesianCS> .
+
+<https://astrea.linkeddata.es/shapes#c8cf0c6f5992ab9b8f506fca98eb8dde>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "utilise l'ellipsoïde"@fr , "uses ellipsoid"@en , "Désigne l'ellipsoïde utilisé par un référentiel géodésique. Cf. ISO 19111:2007:2007-07, tableau 34, rôle d'association ellipsoid."@fr , "The ellipsoid used by a geodetic datum. Cf. ISO 19111:2007:2007-07, table 34, association role ellipsoid."@en ;
+        sh:class          <http://data.ign.fr/def/ignf#Ellipsoid> ;
+        sh:description    "The ellipsoid used by a geodetic datum. Cf. ISO 19111:2007:2007-07, table 34, association role ellipsoid."@en , "Désigne l'ellipsoïde utilisé par un référentiel géodésique. Cf. ISO 19111:2007:2007-07, tableau 34, rôle d'association ellipsoid."@fr ;
+        sh:name           "utilise l'ellipsoïde"@fr , "uses ellipsoid"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#ellipsoid> .
+
+<https://astrea.linkeddata.es/shapes#7c06a53bd99aee25d0c503b6ad552e4b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "source coordinate reference system"@en , "système de coordonnées de référence source"@fr , "Désigne le système de coordonnées de référence des données en entrée d'une opération. Cf. ISO 19111:2007:2007-07, tableau 42, association nommée Source."@fr , "The coordinate reference system associated to the data used as input of a given operation. Cf. ISO 19111:2007:2007-07, table 42, named association Source."@en ;
+        sh:class          <http://data.ign.fr/def/ignf#CRS> ;
+        sh:description    "The coordinate reference system associated to the data used as input of a given operation. Cf. ISO 19111:2007:2007-07, table 42, named association Source."@en , "Désigne le système de coordonnées de référence des données en entrée d'une opération. Cf. ISO 19111:2007:2007-07, tableau 42, association nommée Source."@fr ;
+        sh:name           "source coordinate reference system"@en , "système de coordonnées de référence source"@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#sourceCRS> .
+
+<https://astrea.linkeddata.es/shapes#fa17ad7c0c82248800fc09d8975b2fc5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Désigne les systèmes de coordonnées de référence simples qui composent un système de coordonnées de référence composé. Cf. ISO 19111:2007:2007-07, tableau 6, rôle d'association componentReferenceSystem."@fr , "Indicates the single coordinate reference systems used by a compound coordinate reference system. Cf. ISO 19111:2007:2007-07, table 6, association role componentReferenceSystem."@en , "inclut des systèmes de coordonnées de référence simples"@fr , "includes some single coordinate reference systems"@en ;
+        sh:class          <http://data.ign.fr/def/ignf#SingleCRSList> ;
+        sh:description    "Désigne les systèmes de coordonnées de référence simples qui composent un système de coordonnées de référence composé. Cf. ISO 19111:2007:2007-07, tableau 6, rôle d'association componentReferenceSystem."@fr , "Indicates the single coordinate reference systems used by a compound coordinate reference system. Cf. ISO 19111:2007:2007-07, table 6, association role componentReferenceSystem."@en ;
+        sh:name           "includes some single coordinate reference systems"@en , "inclut des systèmes de coordonnées de référence simples"@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#includesSingleCRS> .
+
+<https://astrea.linkeddata.es/shapes#7f9ade4554144818df6b7ca23d6d875e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "A parameter used by a method to perform an operation on coordinates. Cf. ISO 19111:2007:2007-07, table 48, association role parameter."@en , "Désigne un paramètre utilisé par une méthode pour faire une opération sur des coordonnées. Cf. ISO 19111:2007:2007-07, tableau 48, rôle d'association parameter."@fr , "utilise le paramètre"@fr , "uses parameter"@en ;
+        sh:class          <http://data.ign.fr/def/ignf#OperationParameter> ;
+        sh:description    "A parameter used by a method to perform an operation on coordinates. Cf. ISO 19111:2007:2007-07, table 48, association role parameter."@en , "Désigne un paramètre utilisé par une méthode pour faire une opération sur des coordonnées. Cf. ISO 19111:2007:2007-07, tableau 48, rôle d'association parameter."@fr ;
+        sh:name           "uses parameter"@en , "utilise le paramètre"@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#usesParameter> .
+
+<https://astrea.linkeddata.es/shapes#d3ea1d749f675aee787ea5e40324869f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "parameter"@en , "The parameter associated to a given value. Cf. ISO 19111:2007:2007-07, table 55, association role parameter."@en , "paramètre"@fr , "Désigne le paramètre auquel est associée une valeur. Cf. ISO 19111:2007:2007-07, tableau 55, rôle d'association parameter."@fr ;
+        sh:class          <http://data.ign.fr/def/ignf#OperationParameter> ;
+        sh:description    "Désigne le paramètre auquel est associée une valeur. Cf. ISO 19111:2007:2007-07, tableau 55, rôle d'association parameter."@fr , "The parameter associated to a given value. Cf. ISO 19111:2007:2007-07, table 55, association role parameter."@en ;
+        sh:name           "paramètre"@fr , "parameter"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#parameter> .
+
+<https://astrea.linkeddata.es/shapes#67384aada5bed43b8ef31b2eecad0b7c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "scope"@en , "Désigne la portée de la référence. Cf. ISO 19111:2007:2007-07, tableaux 4, 33 et 42, attribut scope."@fr , "portée"@fr , "The scope of the referring object. Cf. ISO 19111:2007:2007-07, tables 4, 33 et 42, attribute scope."@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "The scope of the referring object. Cf. ISO 19111:2007:2007-07, tables 4, 33 et 42, attribute scope."@en , "Désigne la portée de la référence. Cf. ISO 19111:2007:2007-07, tableaux 4, 33 et 42, attribut scope."@fr ;
+        sh:name           "scope"@en , "portée"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/ignf#scope> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#98f5df5c479a6640f4c815de3cf0334a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Ellipsoïde"@fr , "Ellipsoid"@en ;
+        sh:description    "Surface formed by the rotation of an ellipse about its minor axis, defined by a semi-major axis and a flattening parameter and fairly geocentric. NB : It is a mathematical model of the geoid, i.e. the Earth without its relief. Many geodetic ellipsoids exist. Cf. ISO 19111:2007:2007-07, part 10.2.2, table 36 and annex B.3.2.3."@en , "Surface de révolution engendrée par une ellipse tournant autour de son petit axe, définie par le rayon équatorial et un paramètre d'aplatissement, et sensiblement géocentrique. Note : Il s'agit d'un modèle mathématique du géoïde, c'est-à-dire de la Terre débarrassée de son relief. Il existe de nombreux ellipsoïdes géodésiques. Cf. ISO 19111:2007:2007-07, partie 10.2.2, tableau 36 et annexe B.3.2.3."@fr ;
+        sh:name           "Ellipsoid"@en , "Ellipsoïde"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3561337c99b01945de05d7366570fb2e> ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#Ellipsoid> .
+
+<https://astrea.linkeddata.es/shapes#ac5184effe30ffd1e8e23a92693f4d52>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "Paramètre"@fr , "Operation parameter"@en ;
+        sh:description    "Parameter used by a method to perform some coordinate operation. Cf. ISO 19111:2007:2007-07, table 52 and annex B.4.5."@en , "Paramètre utilisé par une méthode pour faire une opération sur des coordonnées. Cf. ISO 19111:2007:2007-07, tableau 52 et annexe B.4.5."@fr ;
+        sh:name           "Operation parameter"@en , "Paramètre"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/ignf#OperationParameter> .
+
+<https://astrea.linkeddata.es/shapes#c67997b1b00ffb781ecc3935121d66e6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/ignf> ;
+        rdfs:label        "utilise la valeur"@fr , "Désigne une valeur utilisée par une opération sur des coordonnées. Cf. ISO 19111:2007:2007-07, tableau 43, rôle d'association parameterValue."@fr , "uses value"@en , "A value used by an operation on coordinates. Cf. ISO 19111:2007:2007-07, table 43, association role parameterValue."@en ;
+        sh:class          <http://data.ign.fr/def/ignf#OperationParameterValue> ;
+        sh:description    "A value used by an operation on coordinates. Cf. ISO 19111:2007:2007-07, table 43, association role parameterValue."@en , "Désigne une valeur utilisée par une opération sur des coordonnées. Cf. ISO 19111:2007:2007-07, tableau 43, rôle d'association parameterValue."@fr ;
+        sh:name           "utilise la valeur"@fr , "uses value"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/ignf#usesValue> .

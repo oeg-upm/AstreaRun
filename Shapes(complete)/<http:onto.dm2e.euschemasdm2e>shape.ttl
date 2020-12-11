@@ -1,0 +1,183 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#6e0126933951c9ef4ddeba372d778786>
+        a               sh:NodeShape ;
+        rdfs:label      "Work" ;
+        sh:description  "A non-physical piece of work of an agent, e.g. the theoretical concept of a manuscript." ;
+        sh:name         "Work" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://onto.dm2e.eu/schemas/dm2e/Work> .
+
+<https://astrea.linkeddata.es/shapes#b38f86f758fe206b20b57c9516cbff15>
+        a               sh:NodeShape ;
+        rdfs:label      "Page" ;
+        sh:description  "One side of a sheet of paper. Can be part of another CHO, e.g. dm2e:Manuscript." ;
+        sh:name         "Page" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://onto.dm2e.eu/schemas/dm2e/Page> .
+
+<https://astrea.linkeddata.es/shapes#edd2cdb07f87870dde22a84684d97348>
+        a            sh:PropertyShape ;
+        rdfs:label   "watermark" ;
+        sh:datatype  rdfs:Literal ;
+        sh:name      "watermark" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://onto.dm2e.eu/schemas/dm2e/watermark> .
+
+<https://astrea.linkeddata.es/shapes#9c33b4a5f8c2627b0211eb0f19fa3489>
+        a            sh:PropertyShape ;
+        rdfs:label   "callNumber" ;
+        sh:datatype  rdfs:Literal ;
+        sh:name      "callNumber" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://onto.dm2e.eu/schemas/dm2e/callNumber> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#7f10514d269e8d64c5e9215b2c49c748> , <https://astrea.linkeddata.es/shapes#e9427fe8f1643cef51f156b485428902> , <https://astrea.linkeddata.es/shapes#ef3a0942b511b0f8c0159e9bba857341> , <https://astrea.linkeddata.es/shapes#4d4cda8bf7589b0b526a0374d3142966> , <https://astrea.linkeddata.es/shapes#edd2cdb07f87870dde22a84684d97348> , <https://astrea.linkeddata.es/shapes#bde95069e54503f25873d33b333da431> , <https://astrea.linkeddata.es/shapes#cb81c0a3774c4bb829830d1979a943cd> , <https://astrea.linkeddata.es/shapes#b38f86f758fe206b20b57c9516cbff15> , <https://astrea.linkeddata.es/shapes#9c33b4a5f8c2627b0211eb0f19fa3489> , <https://astrea.linkeddata.es/shapes#b749b88865190171c6a6ae88713eb2de> , <https://astrea.linkeddata.es/shapes#18a9d98ffb7e48579f7bf45840b9a7fe> , <https://astrea.linkeddata.es/shapes#3f24bb8d241361252d86680039a55f76> , <https://astrea.linkeddata.es/shapes#802660ce8d4ff3ad86e4dd811a1bb3a4> , <https://astrea.linkeddata.es/shapes#e8d309418a19145f52ca677bbf08e315> , <https://astrea.linkeddata.es/shapes#6e0126933951c9ef4ddeba372d778786> , <https://astrea.linkeddata.es/shapes#2e4a219dde7d2e88aefc19d38f3a708f> , <https://astrea.linkeddata.es/shapes#1a4a34210b49380cc4c368fe284e260d> , <https://astrea.linkeddata.es/shapes#bdbcab9be81bebb8d34e32008edbf8a2> , <https://astrea.linkeddata.es/shapes#548afea7fef64288482c9cca90230fa8> , <https://astrea.linkeddata.es/shapes#68639f54b8f1f3c6e73101fb71113d08> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#4d4cda8bf7589b0b526a0374d3142966>
+        a            sh:PropertyShape ;
+        rdfs:label   "page dimension" ;
+        sh:datatype  rdfs:Literal ;
+        sh:name      "page dimension" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://onto.dm2e.eu/schemas/dm2e/pageDimension> .
+
+<https://astrea.linkeddata.es/shapes#3f24bb8d241361252d86680039a55f76>
+        a               sh:NodeShape ;
+        rdfs:label      "Document" ;
+        sh:description  "ProvidedCHO of type document. Unlike foaf:Document, dm2e:Document refers to a physical document." ;
+        sh:name         "Document" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://onto.dm2e.eu/schemas/dm2e/Document> .
+
+<https://astrea.linkeddata.es/shapes#7f10514d269e8d64c5e9215b2c49c748>
+        a            sh:PropertyShape ;
+        rdfs:label   "displayLevel" ;
+        sh:datatype  xsd:boolean ;
+        sh:name      "displayLevel" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://onto.dm2e.eu/schemas/dm2e/displayLevel> ;
+        sh:pattern   "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#cb81c0a3774c4bb829830d1979a943cd>
+        a               sh:PropertyShape ;
+        rdfs:label      "explicit" , "Final words of a manuscript. A language tag in ISO 639-2 should be added to the Literal." ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "Final words of a manuscript. A language tag in ISO 639-2 should be added to the Literal." ;
+        sh:name         "explicit" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://onto.dm2e.eu/schemas/dm2e/explicit> .
+
+<https://astrea.linkeddata.es/shapes#bdbcab9be81bebb8d34e32008edbf8a2>
+        a               sh:NodeShape ;
+        rdfs:label      "Manuscript" ;
+        sh:description  "ProvidedCHO of type manuscript, e.g. Wittgensteins brown book. Not equivalent to bibo:Manuscript. Not equivalent to bibo:Manuscript." ;
+        sh:name         "Manuscript" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://onto.dm2e.eu/schemas/dm2e/Manuscript> .
+
+<https://astrea.linkeddata.es/shapes#bde95069e54503f25873d33b333da431>
+        a               sh:NodeShape ;
+        rdfs:label      "Photo" ;
+        sh:description  "ProvidedCHO of type photo." ;
+        sh:name         "Photo" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://onto.dm2e.eu/schemas/dm2e/Photo> .
+
+<https://astrea.linkeddata.es/shapes#ef3a0942b511b0f8c0159e9bba857341>
+        a               sh:NodeShape ;
+        rdfs:label      "Fragment" ;
+        sh:description  "A physical fragment of a document, e.g. a collection of pages of a manuscript." ;
+        sh:name         "Fragment" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://onto.dm2e.eu/schemas/dm2e/Fragment> .
+
+<https://astrea.linkeddata.es/shapes#e8d309418a19145f52ca677bbf08e315>
+        a            sh:PropertyShape ;
+        rdfs:label   "written area dimension" ;
+        sh:datatype  rdfs:Literal ;
+        sh:name      "written area dimension" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://onto.dm2e.eu/schemas/dm2e/writtenAreaDimension> .
+
+<https://astrea.linkeddata.es/shapes#802660ce8d4ff3ad86e4dd811a1bb3a4>
+        a            sh:PropertyShape ;
+        rdfs:label   "shelfmarkLocation" ;
+        sh:datatype  rdfs:Literal ;
+        sh:name      "shelfmarkLocation" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://onto.dm2e.eu/schemas/dm2e/shelfmarkLocation> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#548afea7fef64288482c9cca90230fa8>
+        a               sh:NodeShape ;
+        rdfs:label      "Collection" ;
+        sh:description  "The collection of CHOs as provided by a data provider." ;
+        sh:name         "Collection" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://onto.dm2e.eu/schemas/dm2e/Collection> .
+
+<https://astrea.linkeddata.es/shapes#18a9d98ffb7e48579f7bf45840b9a7fe>
+        a               sh:NodeShape ;
+        rdfs:label      "DataResource" ;
+        sh:description  "The dataset that contains the RDF statements provided in via this data resource." ;
+        sh:name         "DataResource" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://onto.dm2e.eu/schemas/dm2e/DataResource> .
+
+<https://astrea.linkeddata.es/shapes#68639f54b8f1f3c6e73101fb71113d08>
+        a            sh:PropertyShape ;
+        rdfs:label   "subtitle" ;
+        sh:datatype  rdfs:Literal ;
+        sh:name      "subtitle" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://onto.dm2e.eu/schemas/dm2e/subtitle> .
+
+<https://astrea.linkeddata.es/shapes#b749b88865190171c6a6ae88713eb2de>
+        a               sh:PropertyShape ;
+        rdfs:label      "incipit" , "Opening words of a manuscript. A language tag in ISO 639-2 should be added to the Literal." ;
+        sh:datatype     rdfs:Literal ;
+        sh:description  "Opening words of a manuscript. A language tag in ISO 639-2 should be added to the Literal." ;
+        sh:name         "incipit" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://onto.dm2e.eu/schemas/dm2e/incipit> .
+
+<https://astrea.linkeddata.es/shapes#1a4a34210b49380cc4c368fe284e260d>
+        a               sh:NodeShape ;
+        rdfs:label      "File" ;
+        sh:description  "Archival Item." ;
+        sh:name         "File" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://onto.dm2e.eu/schemas/dm2e/File> .
+
+<https://astrea.linkeddata.es/shapes#e9427fe8f1643cef51f156b485428902>
+        a               sh:NodeShape ;
+        rdfs:label      "Paragraph" ;
+        sh:description  "ProvidedCHO of type paragraph. Can be part of another (textual) CHO, e.g. dm2e:Manuscript." ;
+        sh:name         "Paragraph" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://onto.dm2e.eu/schemas/dm2e/Paragraph> .
+
+<https://astrea.linkeddata.es/shapes#2e4a219dde7d2e88aefc19d38f3a708f>
+        a               sh:NodeShape ;
+        rdfs:label      "Poster" ;
+        sh:description  "ProvidedCHO of type poster. Basically any piece of printed paper (often on a large sheet) that can be attached to a wall. dm2e:Poster does also include, but is not restricted to, conference posters." ;
+        sh:name         "Poster" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://onto.dm2e.eu/schemas/dm2e/Poster> .

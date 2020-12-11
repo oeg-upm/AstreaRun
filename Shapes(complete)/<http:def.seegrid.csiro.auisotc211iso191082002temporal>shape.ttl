@@ -1,0 +1,680 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#c85b509c4307da3caebe30d07e024e67>
+        a            sh:PropertyShape ;
+        sh:class     <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Period> ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#geometry> .
+
+<https://astrea.linkeddata.es/shapes#0ff508a0090aff6759d4f3ea3b67fac7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "ending instant or node" , "The value of this property defines the end of a time period" ;
+        sh:description    "The value of this property defines the end of a time period" ;
+        sh:name           "ending instant or node" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:or             ( [ sh:class  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Instant> ;
+                              sh:path   <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#end>
+                            ]
+                            [ sh:class  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Node> ;
+                              sh:path   <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#end>
+                            ]
+                          ) .
+
+<https://astrea.linkeddata.es/shapes#deb2fabee19605310f9e185a8ef47cb5>
+        a            sh:PropertyShape ;
+        sh:class     <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Instant> ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#end> .
+
+<https://astrea.linkeddata.es/shapes#e70c5ab41d14fb8a3ffa4232a03c56ff>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Clock" ;
+        sh:name           "Clock" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Clock> .
+
+<https://astrea.linkeddata.es/shapes#aabd9b12fe4711b9f9ac8e66ed5a2446>
+        a            sh:PropertyShape ;
+        sh:minCount  "0"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#nextEdge> .
+
+<https://astrea.linkeddata.es/shapes#4262ce3bae9e7268a4d4925ce9284586>
+        a            sh:PropertyShape ;
+        sh:class     <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#TopologicalPrimitive> ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#primitive> .
+
+<https://astrea.linkeddata.es/shapes#239ede2f9cf46f37e176d7b267d1ac1f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Calendar" ;
+        sh:name           "Calendar" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Calendar> .
+
+<https://astrea.linkeddata.es/shapes#a26897f4580734d9cb3a86bc1546bdad>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "domain of validity" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19115/2003/extent#Extent> ;
+        sh:name           "domain of validity" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#domainOfValidity> .
+
+<https://astrea.linkeddata.es/shapes#59a68cc7a73d2f13266711349bbf8844>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:time ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#value> .
+
+<https://astrea.linkeddata.es/shapes#842411fbaf81a9d67d1925a93708c985>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Temporal Coordinate System" ;
+        sh:name           "Temporal Coordinate System" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#CoordinateSystem> .
+
+<https://astrea.linkeddata.es/shapes#2d1c4cb07f111022f3501ff922e67c0e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Temporal Topological Primitive" ;
+        sh:name           "Temporal Topological Primitive" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#5fef7c3c7482fbfcdea1547588cab7a0> , <https://astrea.linkeddata.es/shapes#e3bd0a2fc983b76ea66b7f51b2bee8a1> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#TopologicalPrimitive> .
+
+<https://astrea.linkeddata.es/shapes#fe28d7e27b8f533347f52a9f4f15710f>
+        a            sh:PropertyShape ;
+        sh:class     <http://def.seegrid.csiro.au/isotc211/iso19115/2003/extent#Extent> ;
+        sh:minCount  "0"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#domainOfValidity> .
+
+<https://astrea.linkeddata.es/shapes#be268c27b486cf49a0b71a499c4f7e34>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "component era" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#OrdinalEra> ;
+        sh:name           "component era" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#component> .
+
+<https://astrea.linkeddata.es/shapes#35ffbf3128a3e1002769eb8a551be020>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "temporal position" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#TemporalPosition> ;
+        sh:name           "temporal position" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#temporalPosition> .
+
+<https://astrea.linkeddata.es/shapes#2488465ba2d1de2ed5e878c1c27cb881>
+        a            sh:PropertyShape ;
+        sh:class     <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Instant> ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#begin> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#c79b4d8ca2cfe0301c14754ba3845487>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Temporal Object" ;
+        sh:name           "Temporal Object" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Object> .
+
+<https://astrea.linkeddata.es/shapes#894a3a262250869828e290e6f1eb1a0e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "parent era" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#OrdinalEra> ;
+        sh:name           "parent era" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#group> .
+
+<https://astrea.linkeddata.es/shapes#e3bd0a2fc983b76ea66b7f51b2bee8a1>
+        a            sh:PropertyShape ;
+        sh:class     <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#TopologicalComplex> ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#complex> .
+
+<https://astrea.linkeddata.es/shapes#9b804d327e8dfc7e2af26c2e907c0a55>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Temporal topologic complex" ;
+        sh:name           "Temporal topologic complex" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#4262ce3bae9e7268a4d4925ce9284586> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#TopologicalComplex> .
+
+<https://astrea.linkeddata.es/shapes#fe366c0228e567c2d1c5cfc607326a68>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "next edge" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Edge> ;
+        sh:name           "next edge" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#nextEdge> .
+
+<https://astrea.linkeddata.es/shapes#f82bdb9e46772e8692cbcb1e29bb329c>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#group> .
+
+<https://astrea.linkeddata.es/shapes#1353cf7a7dd69de782472ad55c916af7>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:date ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#value> .
+
+<https://astrea.linkeddata.es/shapes#595c2e109402d5753962fca044cc4676>
+        a            sh:PropertyShape ;
+        sh:class     <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#CoordinateSystem> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#frame> .
+
+<https://astrea.linkeddata.es/shapes#932394b00eb1e0cbc3cc6fe1642c5901>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#name> .
+
+<https://astrea.linkeddata.es/shapes#f3f20b6224541045a9f1d269a673ff4f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "temporal topology" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#TopologicalPrimitive> ;
+        sh:name           "temporal topology" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#topology> .
+
+<https://astrea.linkeddata.es/shapes#d7274bb667df6077893183ca1de8e572>
+        a            sh:PropertyShape ;
+        sh:minCount  "0"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#endedBy> .
+
+<https://astrea.linkeddata.es/shapes#5e2e30196b3afa297c9d22124885e31b>
+        a            sh:PropertyShape ;
+        sh:class     <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Node> ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#begin> .
+
+<https://astrea.linkeddata.es/report/01133407348>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#80850be3e7fbaf5c8c24461d83db2db8>
+        a            sh:PropertyShape ;
+        sh:minCount  "0"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#begunBy> .
+
+<https://astrea.linkeddata.es/shapes#5676a465b8ef0b1c9d211c0dbe5f69a3>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#date> .
+
+<https://astrea.linkeddata.es/shapes#5b59ba5c1fece3931c772149fbdd8767>
+        a            sh:PropertyShape ;
+        sh:minCount  "0"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#previousEdge> .
+
+<https://astrea.linkeddata.es/shapes#ecb34150ca6cdebb194c3f2e21246da3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Temporal Instant" ;
+        sh:name           "Temporal Instant" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#80850be3e7fbaf5c8c24461d83db2db8> , <https://astrea.linkeddata.es/shapes#d7274bb667df6077893183ca1de8e572> , <https://astrea.linkeddata.es/shapes#e8f07607ea4ad85ab376b261b62bf1a7> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Instant> .
+
+<https://astrea.linkeddata.es/shapes#7f7a83f0ae63c553ce927371127d76eb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "name" ;
+        sh:name           "name" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#name> .
+
+<https://astrea.linkeddata.es/shapes#cfa25c77a466145cb2bda57116172cf7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "ended by" ;
+        sh:name           "ended by" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:or             ( [ sh:class  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Period> ;
+                              sh:path   <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#endedBy>
+                            ]
+                            [ sh:class  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Edge> ;
+                              sh:path   <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#endedBy>
+                            ]
+                          ) .
+
+<https://astrea.linkeddata.es/shapes#9a520fbdcfb46140ed83179128fd397c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "member era" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#OrdinalEra> ;
+        sh:name           "member era" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#member> .
+
+<https://astrea.linkeddata.es/shapes#32c54e1cbf029ea3d3c13684fdbdaa59>
+        a            sh:PropertyShape ;
+        sh:class     <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#GeometricPrimitive> ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#primitive> .
+
+<https://astrea.linkeddata.es/shapes#842d5ba68205a2c62f002e04206c1e52>
+        a            sh:PropertyShape ;
+        sh:class     <http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Number> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#value> .
+
+<https://astrea.linkeddata.es/shapes#3cff61016d05a46f2b80c26e35d97687>
+        a            sh:PropertyShape ;
+        sh:class     <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#OrdinalReferenceSystem> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#frame> .
+
+<https://astrea.linkeddata.es/shapes#d9ae1e3b5515b0f04e42f07fd246ed9c>
+        a            sh:PropertyShape ;
+        sh:class     <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Edge> ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#topology> .
+
+<https://astrea.linkeddata.es/shapes#93d8bb5b25bb0365057eaffe684297f7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "date or dateTime position" , "The value of this property is a time encoded as an xsd:dateTime" ;
+        sh:description    "The value of this property is a time encoded as an xsd:dateTime" ;
+        sh:name           "date or dateTime position" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#dateTimePosition> .
+
+<https://astrea.linkeddata.es/shapes#7210502096c6e2bd0cf50751ccd32599>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Temporal Ordinal Reference System" ;
+        sh:name           "Temporal Ordinal Reference System" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#be268c27b486cf49a0b71a499c4f7e34> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#OrdinalReferenceSystem> .
+
+<https://astrea.linkeddata.es/shapes#f7e454c08c9d8181c7115bfe531dcc4a>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#time> .
+
+<https://astrea.linkeddata.es/shapes#d8de36c123c6069b9dbe101f654667fe>
+        a            sh:PropertyShape ;
+        sh:class     <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Instant> ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#geometry> .
+
+<https://astrea.linkeddata.es/shapes#a2c600c8673dcd11ac0adea4d97810a9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "primitive member" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Primitive> ;
+        sh:name           "primitive member" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#primitive> .
+
+<https://astrea.linkeddata.es/shapes#17a2ec9d5259579ac631a01dc487da8f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Temporal Geometric Primitive" ;
+        sh:name           "Temporal Geometric Primitive" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#f3f20b6224541045a9f1d269a673ff4f> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#GeometricPrimitive> .
+
+<https://astrea.linkeddata.es/shapes#f5beb34f786cc7af8b136a87ea147393>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Temporal Primitive" ;
+        sh:name           "Temporal Primitive" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#142a1b0fa855506282769a97f87d8087> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Primitive> .
+
+<https://astrea.linkeddata.es/shapes#9ff00df7068a2de7a6c691f97658c805>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Temporal Node" ;
+        sh:name           "Temporal Node" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c88354166bf8c07ca2f690325840fe30> , <https://astrea.linkeddata.es/shapes#d8de36c123c6069b9dbe101f654667fe> , <https://astrea.linkeddata.es/shapes#fe366c0228e567c2d1c5cfc607326a68> , <https://astrea.linkeddata.es/shapes#5b59ba5c1fece3931c772149fbdd8767> , <https://astrea.linkeddata.es/shapes#aabd9b12fe4711b9f9ac8e66ed5a2446> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Node> .
+
+<https://astrea.linkeddata.es/shapes#4e78c82a5dac84616f29d3458552f2a1>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#frame> .
+
+<https://astrea.linkeddata.es/shapes#fd4d715854dcd0176a208321b2bf3b55>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "parent reference system" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#OrdinalReferenceSystem> ;
+        sh:maxCount       1 ;
+        sh:name           "parent reference system" ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#system> .
+
+<https://astrea.linkeddata.es/shapes#470e96d874f4f6a2e32566032322cabf>
+        a            sh:PropertyShape ;
+        sh:class     <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#OrdinalEra> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#ordinalValue> .
+
+<https://astrea.linkeddata.es/shapes#091230d1d73dea69c5e322f2e8022a89>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Temporal Complex" ;
+        sh:name           "Temporal Complex" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#a2c600c8673dcd11ac0adea4d97810a9> , <https://astrea.linkeddata.es/shapes#04f5d0a442c66ba5c3b2fe7ea3030005> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Complex> .
+
+<https://astrea.linkeddata.es/shapes#ca39a029bf253075b720b0b1a6a6f286>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Clock time" ;
+        sh:name           "Clock time" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e8c2a24a3b7c4005405c05c7bc8f9d52> , <https://astrea.linkeddata.es/shapes#59a68cc7a73d2f13266711349bbf8844> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#ClockTime> .
+
+<https://astrea.linkeddata.es/shapes#cefb484788b8971e42fb39058c38eea8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "temporal position value" ;
+        sh:name           "temporal position value" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#value> .
+
+<https://astrea.linkeddata.es/shapes#64be864424e668fced91b5082da89072>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "begun by" ;
+        sh:name           "begun by" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:or             ( [ sh:class  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Period> ;
+                              sh:path   <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#begunBy>
+                            ]
+                            [ sh:class  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Edge> ;
+                              sh:path   <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#begunBy>
+                            ]
+                          ) .
+
+<https://astrea.linkeddata.es/shapes#c88354166bf8c07ca2f690325840fe30>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "previous edge" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Edge> ;
+        sh:name           "previous edge" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#previousEdge> .
+
+<https://astrea.linkeddata.es/shapes#1308f7f056d8c4b144862a85171adeef>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Temporal ordinal position" ;
+        sh:name           "Temporal ordinal position" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#beaa7a078025f00d24147cfea349b102> , <https://astrea.linkeddata.es/shapes#470e96d874f4f6a2e32566032322cabf> , <https://astrea.linkeddata.es/shapes#3cff61016d05a46f2b80c26e35d97687> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#OrdinalPosition> .
+
+<https://astrea.linkeddata.es/shapes#15b92c6eea795f247e5fc0dcc3991200>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "clock time" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#ClockTime> ;
+        sh:name           "clock time" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#time> .
+
+<https://astrea.linkeddata.es/shapes#005ae8decbc063222794453ec0f4b5b4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Date and time" ;
+        sh:name           "Date and time" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#f7e454c08c9d8181c7115bfe531dcc4a> , <https://astrea.linkeddata.es/shapes#5676a465b8ef0b1c9d211c0dbe5f69a3> , <https://astrea.linkeddata.es/shapes#c7165b44ce430f5a084e7786b8474c26> , <https://astrea.linkeddata.es/shapes#15b92c6eea795f247e5fc0dcc3991200> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#DateAndTime> .
+
+<https://astrea.linkeddata.es/shapes#23ad12cdc985cf37254681c283f0ae6a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "temporal reference system or frame" , "The value of this property indicates the temporal reference system for a time position" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#ReferenceSystem> ;
+        sh:description    "The value of this property indicates the temporal reference system for a time position" ;
+        sh:name           "temporal reference system or frame" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#frame> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#932394b00eb1e0cbc3cc6fe1642c5901> , <https://astrea.linkeddata.es/shapes#fe28d7e27b8f533347f52a9f4f15710f> , <https://astrea.linkeddata.es/shapes#52d43bad5d6dc12d14093db30fea5d63> , <https://astrea.linkeddata.es/shapes#d7274bb667df6077893183ca1de8e572> , <https://astrea.linkeddata.es/shapes#c88f3878da0faa01cd8464579a21ffc8> , <https://astrea.linkeddata.es/shapes#a2c600c8673dcd11ac0adea4d97810a9> , <https://astrea.linkeddata.es/shapes#aabd9b12fe4711b9f9ac8e66ed5a2446> , <https://astrea.linkeddata.es/shapes#be268c27b486cf49a0b71a499c4f7e34> , <https://astrea.linkeddata.es/shapes#cfa25c77a466145cb2bda57116172cf7> , <https://astrea.linkeddata.es/shapes#a26897f4580734d9cb3a86bc1546bdad> , <https://astrea.linkeddata.es/shapes#c88354166bf8c07ca2f690325840fe30> , <https://astrea.linkeddata.es/shapes#9a520fbdcfb46140ed83179128fd397c> , <https://astrea.linkeddata.es/shapes#470e96d874f4f6a2e32566032322cabf> , <https://astrea.linkeddata.es/shapes#aa70d7f6195cbd68bf32cdfae8206315> , <https://astrea.linkeddata.es/shapes#65b703dda8d34b62032701642bb8e383> , <https://astrea.linkeddata.es/shapes#f7e454c08c9d8181c7115bfe531dcc4a> , <https://astrea.linkeddata.es/shapes#d8de36c123c6069b9dbe101f654667fe> , <https://astrea.linkeddata.es/shapes#cefb484788b8971e42fb39058c38eea8> , <https://astrea.linkeddata.es/shapes#239ede2f9cf46f37e176d7b267d1ac1f> , <https://astrea.linkeddata.es/shapes#842411fbaf81a9d67d1925a93708c985> , <https://astrea.linkeddata.es/shapes#f5beb34f786cc7af8b136a87ea147393> , <https://astrea.linkeddata.es/shapes#4262ce3bae9e7268a4d4925ce9284586> , <https://astrea.linkeddata.es/shapes#4e78c82a5dac84616f29d3458552f2a1> , <https://astrea.linkeddata.es/shapes#894a3a262250869828e290e6f1eb1a0e> , <https://astrea.linkeddata.es/shapes#0ff508a0090aff6759d4f3ea3b67fac7> , <https://astrea.linkeddata.es/shapes#9ff00df7068a2de7a6c691f97658c805> , <https://astrea.linkeddata.es/shapes#beaa7a078025f00d24147cfea349b102> , <https://astrea.linkeddata.es/shapes#e8f07607ea4ad85ab376b261b62bf1a7> , <https://astrea.linkeddata.es/shapes#f3f20b6224541045a9f1d269a673ff4f> , <https://astrea.linkeddata.es/shapes#595c2e109402d5753962fca044cc4676> , <https://astrea.linkeddata.es/shapes#80850be3e7fbaf5c8c24461d83db2db8> , <https://astrea.linkeddata.es/shapes#e8c2a24a3b7c4005405c05c7bc8f9d52> , <https://astrea.linkeddata.es/shapes#754d7de9c6e854d8afe4087a748da8cd> , <https://astrea.linkeddata.es/shapes#f82bdb9e46772e8692cbcb1e29bb329c> , <https://astrea.linkeddata.es/shapes#23ad12cdc985cf37254681c283f0ae6a> , <https://astrea.linkeddata.es/shapes#22fd65c78e3fbfdfdc7eb266203ff474> , <https://astrea.linkeddata.es/shapes#a016ad64f7b71e0ecd1fc7a0f1684072> , <https://astrea.linkeddata.es/shapes#091230d1d73dea69c5e322f2e8022a89> , <https://astrea.linkeddata.es/shapes#9916a07d363be2b4a76f712b768d1323> , <https://astrea.linkeddata.es/shapes#7210502096c6e2bd0cf50751ccd32599> , <https://astrea.linkeddata.es/shapes#5fef7c3c7482fbfcdea1547588cab7a0> , <https://astrea.linkeddata.es/shapes#842d5ba68205a2c62f002e04206c1e52> , <https://astrea.linkeddata.es/shapes#deb2fabee19605310f9e185a8ef47cb5> , <https://astrea.linkeddata.es/shapes#5b59ba5c1fece3931c772149fbdd8767> , <https://astrea.linkeddata.es/shapes#c7165b44ce430f5a084e7786b8474c26> , <https://astrea.linkeddata.es/shapes#7f7a83f0ae63c553ce927371127d76eb> , <https://astrea.linkeddata.es/shapes#64be864424e668fced91b5082da89072> , <https://astrea.linkeddata.es/shapes#c15fd51960ba560592974006197f5cea> , <https://astrea.linkeddata.es/shapes#e70c5ab41d14fb8a3ffa4232a03c56ff> , <https://astrea.linkeddata.es/shapes#1308f7f056d8c4b144862a85171adeef> , <https://astrea.linkeddata.es/shapes#fd4d715854dcd0176a208321b2bf3b55> , <https://astrea.linkeddata.es/shapes#142a1b0fa855506282769a97f87d8087> , <https://astrea.linkeddata.es/shapes#15b92c6eea795f247e5fc0dcc3991200> , <https://astrea.linkeddata.es/shapes#127ef7634f456ed2473928c112e8613d> , <https://astrea.linkeddata.es/shapes#fe366c0228e567c2d1c5cfc607326a68> , <https://astrea.linkeddata.es/shapes#2d1c4cb07f111022f3501ff922e67c0e> , <https://astrea.linkeddata.es/shapes#93d8bb5b25bb0365057eaffe684297f7> , <https://astrea.linkeddata.es/shapes#35ffbf3128a3e1002769eb8a551be020> , <https://astrea.linkeddata.es/shapes#17a2ec9d5259579ac631a01dc487da8f> , <https://astrea.linkeddata.es/shapes#59a68cc7a73d2f13266711349bbf8844> , <https://astrea.linkeddata.es/shapes#2488465ba2d1de2ed5e878c1c27cb881> , <https://astrea.linkeddata.es/shapes#9b804d327e8dfc7e2af26c2e907c0a55> , <https://astrea.linkeddata.es/shapes#e3bd0a2fc983b76ea66b7f51b2bee8a1> , <https://astrea.linkeddata.es/shapes#1353cf7a7dd69de782472ad55c916af7> , <https://astrea.linkeddata.es/shapes#5675acc52bbed76f95fde25a6f48dfa5> , <https://astrea.linkeddata.es/shapes#c85b509c4307da3caebe30d07e024e67> , <https://astrea.linkeddata.es/shapes#04f5d0a442c66ba5c3b2fe7ea3030005> , <https://astrea.linkeddata.es/shapes#32c54e1cbf029ea3d3c13684fdbdaa59> , <https://astrea.linkeddata.es/shapes#5e2e30196b3afa297c9d22124885e31b> , <https://astrea.linkeddata.es/shapes#d9ae1e3b5515b0f04e42f07fd246ed9c> , <https://astrea.linkeddata.es/shapes#ca39a029bf253075b720b0b1a6a6f286> , <https://astrea.linkeddata.es/shapes#005ae8decbc063222794453ec0f4b5b4> , <https://astrea.linkeddata.es/shapes#c79b4d8ca2cfe0301c14754ba3845487> , <https://astrea.linkeddata.es/shapes#ecb34150ca6cdebb194c3f2e21246da3> , <https://astrea.linkeddata.es/shapes#3cff61016d05a46f2b80c26e35d97687> , <https://astrea.linkeddata.es/shapes#5676a465b8ef0b1c9d211c0dbe5f69a3> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/01133407348> , <https://astrea.linkeddata.es/report/0951752593> , <https://astrea.linkeddata.es/report/1003882582> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#04f5d0a442c66ba5c3b2fe7ea3030005>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#primitive> .
+
+<https://astrea.linkeddata.es/shapes#c15fd51960ba560592974006197f5cea>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Temporal Coordinate" ;
+        sh:name           "Temporal Coordinate" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#842d5ba68205a2c62f002e04206c1e52> , <https://astrea.linkeddata.es/shapes#595c2e109402d5753962fca044cc4676> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Coordinate> .
+
+<https://astrea.linkeddata.es/shapes#754d7de9c6e854d8afe4087a748da8cd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Temporal position" ;
+        sh:name           "Temporal position" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#23ad12cdc985cf37254681c283f0ae6a> , <https://astrea.linkeddata.es/shapes#4e78c82a5dac84616f29d3458552f2a1> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#TemporalPosition> .
+
+<https://astrea.linkeddata.es/shapes#127ef7634f456ed2473928c112e8613d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "beginning instant or node" , "The value of this property defines the beginning of a time period" ;
+        sh:description    "The value of this property defines the beginning of a time period" ;
+        sh:name           "beginning instant or node" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:or             ( [ sh:class  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Instant> ;
+                              sh:path   <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#begin>
+                            ]
+                            [ sh:class  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Node> ;
+                              sh:path   <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#begin>
+                            ]
+                          ) .
+
+<https://astrea.linkeddata.es/shapes#65b703dda8d34b62032701642bb8e383>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Temporal ordinal era" ;
+        sh:name           "Temporal ordinal era" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#894a3a262250869828e290e6f1eb1a0e> , <https://astrea.linkeddata.es/shapes#9a520fbdcfb46140ed83179128fd397c> , <https://astrea.linkeddata.es/shapes#f82bdb9e46772e8692cbcb1e29bb329c> , <https://astrea.linkeddata.es/shapes#fd4d715854dcd0176a208321b2bf3b55> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#OrdinalEra> .
+
+<https://astrea.linkeddata.es/report/0951752593>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://def.seegrid.csiro.au/isotc211/iso19115/2003/extent" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#52d43bad5d6dc12d14093db30fea5d63>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Temporal geometric complex" ;
+        sh:name           "Temporal geometric complex" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#32c54e1cbf029ea3d3c13684fdbdaa59> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#GeometricComplex> .
+
+<https://astrea.linkeddata.es/shapes#a016ad64f7b71e0ecd1fc7a0f1684072>
+        a            sh:PropertyShape ;
+        sh:class     <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Node> ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#end> .
+
+<https://astrea.linkeddata.es/shapes#e8f07607ea4ad85ab376b261b62bf1a7>
+        a            sh:PropertyShape ;
+        sh:class     <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Node> ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#topology> .
+
+<https://astrea.linkeddata.es/shapes#9916a07d363be2b4a76f712b768d1323>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Temporal Reference System" ;
+        sh:name           "Temporal Reference System" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#a26897f4580734d9cb3a86bc1546bdad> , <https://astrea.linkeddata.es/shapes#932394b00eb1e0cbc3cc6fe1642c5901> , <https://astrea.linkeddata.es/shapes#fe28d7e27b8f533347f52a9f4f15710f> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#ReferenceSystem> .
+
+<https://astrea.linkeddata.es/report/1003882582>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#beaa7a078025f00d24147cfea349b102>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "ordinal time position" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#OrdinalEra> ;
+        sh:name           "ordinal time position" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#ordinalValue> .
+
+<https://astrea.linkeddata.es/shapes#e8c2a24a3b7c4005405c05c7bc8f9d52>
+        a            sh:PropertyShape ;
+        sh:class     <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Clock> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#frame> .
+
+<https://astrea.linkeddata.es/shapes#5fef7c3c7482fbfcdea1547588cab7a0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "temporal geometry" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#GeometricPrimitive> ;
+        sh:name           "temporal geometry" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#geometry> .
+
+<https://astrea.linkeddata.es/shapes#aa70d7f6195cbd68bf32cdfae8206315>
+        a            sh:PropertyShape ;
+        sh:class     <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Calendar> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#frame> .
+
+<https://astrea.linkeddata.es/shapes#5675acc52bbed76f95fde25a6f48dfa5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Temporal Period" ;
+        sh:name           "Temporal Period" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#deb2fabee19605310f9e185a8ef47cb5> , <https://astrea.linkeddata.es/shapes#2488465ba2d1de2ed5e878c1c27cb881> , <https://astrea.linkeddata.es/shapes#d9ae1e3b5515b0f04e42f07fd246ed9c> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Period> .
+
+<https://astrea.linkeddata.es/shapes#c7165b44ce430f5a084e7786b8474c26>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "calendar date" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#CalDate> ;
+        sh:name           "calendar date" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#date> .
+
+<https://astrea.linkeddata.es/shapes#142a1b0fa855506282769a97f87d8087>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "complex" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Complex> ;
+        sh:name           "complex" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#complex> .
+
+<https://astrea.linkeddata.es/shapes#22fd65c78e3fbfdfdc7eb266203ff474>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Calendar date" ;
+        sh:name           "Calendar date" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#aa70d7f6195cbd68bf32cdfae8206315> , <https://astrea.linkeddata.es/shapes#1353cf7a7dd69de782472ad55c916af7> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#CalDate> .
+
+<https://astrea.linkeddata.es/shapes#c88f3878da0faa01cd8464579a21ffc8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> ;
+        rdfs:label        "Temporal Edge" ;
+        sh:name           "Temporal Edge" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#c85b509c4307da3caebe30d07e024e67> , <https://astrea.linkeddata.es/shapes#a016ad64f7b71e0ecd1fc7a0f1684072> , <https://astrea.linkeddata.es/shapes#5e2e30196b3afa297c9d22124885e31b> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Edge> .

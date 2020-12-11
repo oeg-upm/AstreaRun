@@ -1,0 +1,226 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#9b53a72f4a786746d8882ed5aa67fc8f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "Permisos que dispone de un determinado rol" , "The permissions attribute" ;
+        sh:datatype       xsd:string ;
+        sh:description    "Permisos que dispone de un determinado rol" ;
+        sh:name           "The permissions attribute" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#permissions> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#8aa3262ca81e26628bff8f7b29d72b8b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "Horas trabajadas en una tarea" , "The elapsedHours attribute" ;
+        sh:datatype       xsd:float ;
+        sh:description    "Horas trabajadas en una tarea" ;
+        sh:name           "The elapsedHours attribute" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#elapsedHours> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#77612a3a28a6145147c633198df4285e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "Fecha de compleción de una tarea" , "The completedDate attribute" ;
+        sh:datatype       xsd:date ;
+        sh:description    "Fecha de compleción de una tarea" ;
+        sh:name           "The completedDate attribute" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#completedDate> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#4757b0c3c3ac7baf3a82db92a916150b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "The IssueTrackingDatabase entity" ;
+        sh:description    "Clase contenedora de todos los proyectos software\n   gestionados en la herramienta." ;
+        sh:name           "The IssueTrackingDatabase entity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueTrackingDatabase> .
+
+<https://astrea.linkeddata.es/shapes#fcb448ccec8226539480afa6bba7b5b1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "The IssueDependency entity" ;
+        sh:name           "The IssueDependency entity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueDependency> .
+
+<https://astrea.linkeddata.es/shapes#d4374b5c9985b7e83f062edbb0f9a0fc>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "The language attribute" , "Lenguaje de un usuario" ;
+        sh:datatype       xsd:string ;
+        sh:description    "Lenguaje de un usuario" ;
+        sh:name           "The language attribute" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#language> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#ffee525090b58af7091696ae1ea8ef3e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "The Member entity" ;
+        sh:description    "Clase utilizada para asociar un determinado usuario a un\n   proyecto, haciendo uso de un rol determinado." ;
+        sh:name           "The Member entity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Member> .
+
+<https://astrea.linkeddata.es/shapes#e43bf7525ffbbfd6921262af312811dd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "The IssueCategory entity" ;
+        sh:description    "Clase que permite realizar una clasificación específica\n   de los issues de un determinado proyecto." ;
+        sh:name           "The IssueCategory entity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ff08030e4e684f769ff928894141db88> ;
+        sh:targetClass    <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#IssueCategory> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#1326af4b084f95524134d28ae7dc846a> , <https://astrea.linkeddata.es/shapes#7c49c2c86bc980a8b714eee4320f5a19> , <https://astrea.linkeddata.es/shapes#fcb448ccec8226539480afa6bba7b5b1> , <https://astrea.linkeddata.es/shapes#f51b3a2ad23d5edc45843ef5cbf67562> , <https://astrea.linkeddata.es/shapes#9b53a72f4a786746d8882ed5aa67fc8f> , <https://astrea.linkeddata.es/shapes#8aa3262ca81e26628bff8f7b29d72b8b> , <https://astrea.linkeddata.es/shapes#6177067b122daff3ef738cb980f7e723> , <https://astrea.linkeddata.es/shapes#d4374b5c9985b7e83f062edbb0f9a0fc> , <https://astrea.linkeddata.es/shapes#8136a792655c645f003043b6ca11c5ea> , <https://astrea.linkeddata.es/shapes#ff08030e4e684f769ff928894141db88> , <https://astrea.linkeddata.es/shapes#4757b0c3c3ac7baf3a82db92a916150b> , <https://astrea.linkeddata.es/shapes#24e6f69485d5d5ec85c645105b598b09> , <https://astrea.linkeddata.es/shapes#ffee525090b58af7091696ae1ea8ef3e> , <https://astrea.linkeddata.es/shapes#77612a3a28a6145147c633198df4285e> , <https://astrea.linkeddata.es/shapes#e43bf7525ffbbfd6921262af312811dd> , <https://astrea.linkeddata.es/shapes#2e0a789cdc045d5c9666043253c61c1d> , <https://astrea.linkeddata.es/shapes#1a6ca1aac21a023947bde51d1433914d> , <https://astrea.linkeddata.es/shapes#db0cd968644973c0072bdfd80e0d82e7> , <https://astrea.linkeddata.es/shapes#1cfdf2b99fc7ee7476fe995ddf7423aa> , <https://astrea.linkeddata.es/shapes#f771793e772296135399c7ee30acc738> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#8136a792655c645f003043b6ca11c5ea>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "The User entity" ;
+        sh:description    "Clase que representa a un usuario registrado en la\n   herramienta." ;
+        sh:name           "The User entity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#f771793e772296135399c7ee30acc738> , <https://astrea.linkeddata.es/shapes#d4374b5c9985b7e83f062edbb0f9a0fc> ;
+        sh:targetClass    <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#User> .
+
+<https://astrea.linkeddata.es/shapes#ff08030e4e684f769ff928894141db88>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "Nombre del proyecto, versión, tarea, tracker, categoría de tarea o rol" , "The name attribute" ;
+        sh:datatype       xsd:string ;
+        sh:description    "Nombre del proyecto, versión, tarea, tracker, categoría de tarea o rol" ;
+        sh:name           "The name attribute" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#name> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#f771793e772296135399c7ee30acc738>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "The login attribute" , "Login de un usuario" ;
+        sh:datatype       xsd:string ;
+        sh:description    "Login de un usuario" ;
+        sh:name           "The login attribute" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#login> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#6177067b122daff3ef738cb980f7e723>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "Fecha estimada de finalización de una tarea" , "The dueDate attribute" ;
+        sh:datatype       xsd:date ;
+        sh:description    "Fecha estimada de finalización de una tarea" ;
+        sh:name           "The dueDate attribute" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#dueDate> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#2e0a789cdc045d5c9666043253c61c1d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "The Project entity" ;
+        sh:description    "Clase que representa a un proyecto software controlado\n   desde la herramienta." ;
+        sh:name           "The Project entity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#db0cd968644973c0072bdfd80e0d82e7> , <https://astrea.linkeddata.es/shapes#ff08030e4e684f769ff928894141db88> ;
+        sh:targetClass    <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Project> .
+
+<https://astrea.linkeddata.es/shapes#7c49c2c86bc980a8b714eee4320f5a19>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "The Role entity" ;
+        sh:description    "Clase que representa el rol que juega un usuario en los\n   proyectos." ;
+        sh:name           "The Role entity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#9b53a72f4a786746d8882ed5aa67fc8f> , <https://astrea.linkeddata.es/shapes#ff08030e4e684f769ff928894141db88> ;
+        sh:targetClass    <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Role> .
+
+<https://astrea.linkeddata.es/shapes#db0cd968644973c0072bdfd80e0d82e7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "Descripción de un proyecto, versión o tarea" , "The description attribute" ;
+        sh:datatype       xsd:string ;
+        sh:description    "Descripción de un proyecto, versión o tarea" ;
+        sh:name           "The description attribute" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#description> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#1a6ca1aac21a023947bde51d1433914d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "Porcentaje completado de la tarea" , "The doneRatio attribute" ;
+        sh:datatype       xsd:float ;
+        sh:description    "Porcentaje completado de la tarea" ;
+        sh:name           "The doneRatio attribute" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#doneRatio> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#24e6f69485d5d5ec85c645105b598b09>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "The Tracker entity" ;
+        sh:description    "Clase utilizada para identificar el listado de issues o\n   tareas de un determinado tipo, típicamente bugs, features, o patchs.\n  " ;
+        sh:name           "The Tracker entity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ff08030e4e684f769ff928894141db88> ;
+        sh:targetClass    <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Tracker> .
+
+<https://astrea.linkeddata.es/shapes#1cfdf2b99fc7ee7476fe995ddf7423aa>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "Número de horas estimadas para una tarea" , "The estimatedHours attribute" ;
+        sh:datatype       xsd:float ;
+        sh:description    "Número de horas estimadas para una tarea" ;
+        sh:name           "The estimatedHours attribute" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#estimatedHours> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#1326af4b084f95524134d28ae7dc846a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "The Issue entity" ;
+        sh:description    "Clase para describir una tarea o unidad concreta de\n   trabajo, necesaria para evolucionar un sistema informático, como\n   añadir una nueva característica, arreglo de un fallo, etc.\n  " ;
+        sh:name           "The Issue entity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#1cfdf2b99fc7ee7476fe995ddf7423aa> , <https://astrea.linkeddata.es/shapes#ff08030e4e684f769ff928894141db88> , <https://astrea.linkeddata.es/shapes#db0cd968644973c0072bdfd80e0d82e7> , <https://astrea.linkeddata.es/shapes#8aa3262ca81e26628bff8f7b29d72b8b> , <https://astrea.linkeddata.es/shapes#6177067b122daff3ef738cb980f7e723> , <https://astrea.linkeddata.es/shapes#77612a3a28a6145147c633198df4285e> , <https://astrea.linkeddata.es/shapes#1a6ca1aac21a023947bde51d1433914d> ;
+        sh:targetClass    <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Issue> .
+
+<https://astrea.linkeddata.es/shapes#f51b3a2ad23d5edc45843ef5cbf67562>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0> ;
+        rdfs:label        "The Version entity" ;
+        sh:description    "Clase que describe cada una de las versiones del\n   software objeto del proyecto gestionado en la herramienta.\n  " ;
+        sh:name           "The Version entity" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#77612a3a28a6145147c633198df4285e> , <https://astrea.linkeddata.es/shapes#ff08030e4e684f769ff928894141db88> , <https://astrea.linkeddata.es/shapes#db0cd968644973c0072bdfd80e0d82e7> ;
+        sh:targetClass    <http://spi-fm.uca.es/spdef/models/genericTools/itm/1.0#Version> .

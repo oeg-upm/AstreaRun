@@ -1,0 +1,108 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#61ad5ae0c67f0bcea2e4d09650c1ce26> , <https://astrea.linkeddata.es/shapes#cabd7c35788320b2a9db443a056eda46> , <https://astrea.linkeddata.es/shapes#9bfa5b2efcb2d3b488574c4a08caefa8> , <https://astrea.linkeddata.es/shapes#e1aea991a705d565af0825c8b6dd92cc> , <https://astrea.linkeddata.es/shapes#26cd61f9daf2bc70a5bbb6abc78689aa> , <https://astrea.linkeddata.es/shapes#7296d6da4dbee1da25e276fc54be81d3> , <https://astrea.linkeddata.es/shapes#813652423194dec3ccd78baf5c093135> , <https://astrea.linkeddata.es/shapes#a0b41b3032adffda5fa1f0671b45a5c9> , <https://astrea.linkeddata.es/shapes#99f026952464c0133874e0fdf05ec440> , <https://astrea.linkeddata.es/shapes#b00e659f3566620c03d12c711ce8e2ae> , <https://astrea.linkeddata.es/shapes#19b7b07a8b89fffca74eebd8e3f15454> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#26cd61f9daf2bc70a5bbb6abc78689aa>
+        a               sh:NodeShape ;
+        rdfs:label      "Version"@en ;
+        sh:description  "The Version concept describes one Version of a TSNComponent, valid for a period of time. A Version resource hold all the attributs of a TSNComponent that may vary, i.e., all attributs except those that hold the identity of the resource (i.e. Identifier of the TSNComponent). The Version concept is closed to the TimeSlice concept of ontologies of fluent. "@en ;
+        sh:name         "Version"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/net/tsn#Version> .
+
+<https://astrea.linkeddata.es/shapes#99f026952464c0133874e0fdf05ec440>
+        a               sh:NodeShape ;
+        rdfs:label      "Territory"@en ;
+        sh:description  "The Territory concept describes an abstract representation of a portion of geographic space that is claimed or occupied by a person or group of persons or by an institution (source http://www.oxfordbibliographies.com/view/document/obo-9780199874002/obo-9780199874002-0076.xml). For instance, the European Union is a territory, the Grenoble metropole is a territory, etc."@en ;
+        sh:name         "Territory"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/net/tsn#Territory> .
+
+<https://astrea.linkeddata.es/shapes#61ad5ae0c67f0bcea2e4d09650c1ce26>
+        a               sh:NodeShape ;
+        rdfs:label      "NomenclatureVersion"@en ;
+        sh:description  "The NomenclatureVersion concept describes a unique representation of a Nomenclature, stable for a period of time. Stability ensures that statistical data refer to the same territorial units for a certain period of time (source http://ec.europa.eu/eurostat/web/nuts/history) (i.e., the reference period of the NomenclatureVersion)."@en ;
+        sh:name         "NomenclatureVersion"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/net/tsn#NomenclatureVersion> .
+
+<https://astrea.linkeddata.es/shapes#e1aea991a705d565af0825c8b6dd92cc>
+        a               sh:NodeShape ;
+        rdfs:label      "LevelVersion"@en ;
+        sh:description  "The LevelVersion concept describes a unique representation of a Level, stable for a period of time. This period of time is inherited from the reference period of the NomenclatureVersion the LevelVersion belongs to."@en ;
+        sh:name         "LevelVersion"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/net/tsn#LevelVersion> .
+
+<https://astrea.linkeddata.es/shapes#cabd7c35788320b2a9db443a056eda46>
+        a               sh:NodeShape ;
+        rdfs:label      "TSNFeature"@en ;
+        sh:description  "The TSNFeature concept is the super class of features of a TSN (i.e., a geographic resource). The features of a TSN may be TerritoryVersion, LevelVersion and UnitVersion resources. The TSNFeature concept is a sub class of the geosparql:Feature concept of the OGC Geosparql ontology (please consult http://www.opengis.net/ont/geosparql#Feature for a definition of this concept)"@en ;
+        sh:name         "TSNFeature"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/net/tsn#TSNFeature> .
+
+<https://astrea.linkeddata.es/shapes#813652423194dec3ccd78baf5c093135>
+        a               sh:NodeShape ;
+        rdfs:label      "Level"@en ;
+        sh:description  "The Level concept describes a level of observation of the Territory defined within the Nomenclature. Several levels of observation may be defined (e.g., region or district levels)"@en ;
+        sh:name         "Level"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/net/tsn#Level> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#b00e659f3566620c03d12c711ce8e2ae>
+        a               sh:NodeShape ;
+        rdfs:label      "UnitVersion"@en ;
+        sh:description  "The UnitVersion concept describes a unique representation of a Unit, stable for a period of time. This period of time is inherited from the reference period of the NomenclatureVersion the UnitVersion belongs to."@en ;
+        sh:name         "UnitVersion"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/net/tsn#UnitVersion> .
+
+<https://astrea.linkeddata.es/shapes#7296d6da4dbee1da25e276fc54be81d3>
+        a               sh:NodeShape ;
+        rdfs:label      "Unit"@en ;
+        sh:description  "The Unit concept describes a piece of geographic space that belongs to one Level of a Nomenclature, and may in turn contain sub-units (or not, if the unit belongs to the lowest level of the nomenclature). Statistical observation are made on Unit."@en ;
+        sh:name         "Unit"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/net/tsn#Unit> .
+
+<https://astrea.linkeddata.es/shapes#9bfa5b2efcb2d3b488574c4a08caefa8>
+        a               sh:NodeShape ;
+        rdfs:label      "TSNComponent"@en ;
+        sh:description  "The TSNComponent concept is the super class of any Territorial Statistical Nomenclature components." ;
+        sh:name         "TSNComponent"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/net/tsn#TSNComponent> .
+
+<https://astrea.linkeddata.es/shapes#19b7b07a8b89fffca74eebd8e3f15454>
+        a               sh:NodeShape ;
+        rdfs:label      "Nomenclature"@en ;
+        sh:description  "The Nomenclature concept describes an abstract representation of the subdivisions of a territory into Levels and Territorial Units (i.e. also called 'Structure'). A Nomenclature can be seen as a hierarchy of sets of Units with at least one Level. It is designed to answer administrative, electoral and especially statistical needs. "@en ;
+        sh:name         "Nomenclature"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/net/tsn#Nomenclature> .
+
+<https://astrea.linkeddata.es/shapes#a0b41b3032adffda5fa1f0671b45a5c9>
+        a               sh:NodeShape ;
+        rdfs:label      "TerritoryVersion"@en ;
+        sh:description  "The TerritoryVersion concept describes a unique representation of a Territory at a specified period of time. As the boundaries of a territory may vary (e.g., fusion with another territory), it results succesives versions of it. A territory may have as many versions as it underwent modifications. For instance, the European Union of 27 and the European Union of 28 member states are two versions of the European Union territory."@en ;
+        sh:name         "TerritoryVersion"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/net/tsn#TerritoryVersion> .

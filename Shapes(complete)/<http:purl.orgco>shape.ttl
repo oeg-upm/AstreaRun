@@ -1,0 +1,270 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#f4d11089679a1415a4279d01f25b10cc>
+        a               sh:PropertyShape ;
+        rdfs:label      "is element of"@en , "The link to a collection in which the object is member."@en ;
+        sh:description  "The link to a collection in which the object is member."@en ;
+        sh:name         "is element of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/co/elementOf> .
+
+<https://astrea.linkeddata.es/shapes#613014d0cbdb5a6578250a2e56478376>
+        a                sh:PropertyShape ;
+        rdfs:label       "The number of item belonging to a collection."@en , "has size"@en ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "The number of item belonging to a collection."@en ;
+        sh:minInclusive  0 ;
+        sh:name          "has size"@en ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://purl.org/co/size> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#19d8a2d6bbe3f0ba83712919e0bf54f0>
+        a               sh:PropertyShape ;
+        rdfs:label      "has item"@en , "The link to every item of the bag"@en ;
+        sh:class        <http://purl.org/co/Item> ;
+        sh:description  "The link to every item of the bag"@en ;
+        sh:name         "has item"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/co/item> .
+
+<https://astrea.linkeddata.es/shapes#376e9b238cd35dc52011d6ae5b5d1a39>
+        a               sh:PropertyShape ;
+        rdfs:label      "has next item"@en , "The link to the next item in a list."@en ;
+        sh:description  "The link to the next item in a list."@en ;
+        sh:maxCount     1 ;
+        sh:name         "has next item"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/co/nextItem> .
+
+<https://astrea.linkeddata.es/report/1748690722>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.essepuntato.it/2009/10/error" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#c9a57b29f8d07f1f63e56a861eb0433e>
+        a               sh:PropertyShape ;
+        rdfs:label      "has previous item"@en , "The link to the previous item in a list."@en ;
+        sh:description  "The link to the previous item in a list."@en ;
+        sh:maxCount     1 ;
+        sh:name         "has previous item"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/co/previousItem> .
+
+<https://astrea.linkeddata.es/shapes#6df226ed902b525bd6e7e739271b8f4c>
+        a               sh:PropertyShape ;
+        rdfs:label      "has first item"@en , "The link to the first item of the list."@en ;
+        sh:description  "The link to the first item of the list."@en ;
+        sh:maxCount     1 ;
+        sh:name         "has first item"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#26387bd37e14bf446ecf36851eb78ec4>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.essepuntato.it/2009/10/error/hasError> .
+
+<https://astrea.linkeddata.es/shapes#c9b20bc0e8bfbce33965f52f7c0194ea>
+        a               sh:NodeShape ;
+        rdfs:label      "set"@en ;
+        sh:description  "A collection that cannot contain duplicate elements."@en ;
+        sh:name         "set"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/co/Set> .
+
+<https://astrea.linkeddata.es/shapes#8adb9847c806339a09e0cc8f37af22bc>
+        a               sh:PropertyShape ;
+        rdfs:label      "is item of"@en , "The link to a bag in which the item is member."@en ;
+        sh:description  "The link to a bag in which the item is member."@en ;
+        sh:name         "is item of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/co/itemOf> .
+
+<https://astrea.linkeddata.es/shapes#6a723a221dbe5850e36097aebeb0da16>
+        a               sh:PropertyShape ;
+        rdfs:label      "is last item of"@en , "The link to a list in which the item is last item."@en ;
+        sh:description  "The link to a list in which the item is last item."@en ;
+        sh:name         "is last item of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/co/lastItemOf> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#fb5e681cb127eb11d03a1c70c0ce03d1> , <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#0be04ac945718f9bde22534462b572ae> , <https://astrea.linkeddata.es/shapes#b1aa86cdfed32851c0104ebc55ff60bd> , <https://astrea.linkeddata.es/shapes#686f212ab840af72e7d32459eee84160> , <https://astrea.linkeddata.es/shapes#c9a57b29f8d07f1f63e56a861eb0433e> , <https://astrea.linkeddata.es/shapes#376e9b238cd35dc52011d6ae5b5d1a39> , <https://astrea.linkeddata.es/shapes#f4d11089679a1415a4279d01f25b10cc> , <https://astrea.linkeddata.es/shapes#a2aedf9ebbc116d5435e57b5c6649354> , <https://astrea.linkeddata.es/shapes#938d23a729292440904ae3c828cd8f35> , <https://astrea.linkeddata.es/shapes#6df226ed902b525bd6e7e739271b8f4c> , <https://astrea.linkeddata.es/shapes#c9b20bc0e8bfbce33965f52f7c0194ea> , <https://astrea.linkeddata.es/shapes#e47af6117ef295a415fbf7dcf3a641e8> , <https://astrea.linkeddata.es/shapes#73fbd509ea9408e51165a63dc31c9d4a> , <https://astrea.linkeddata.es/shapes#d30277c3c1dd1763c4af1dff680042ac> , <https://astrea.linkeddata.es/shapes#c7bb3c29f6186eaeae791a3e5d1ab2ba> , <https://astrea.linkeddata.es/shapes#3b001f3519615ba49806c415259589de> , <https://astrea.linkeddata.es/shapes#cf1df1cca17e8742f57fe94be2452567> , <https://astrea.linkeddata.es/shapes#33823b2c69e917c59810e8ef6db4db57> , <https://astrea.linkeddata.es/shapes#6a723a221dbe5850e36097aebeb0da16> , <https://astrea.linkeddata.es/shapes#e30f2cdf50194e7161bbbc2c8a4ce43f> , <https://astrea.linkeddata.es/shapes#41ae80d63943fbd64bd555ea94b0aa00> , <https://astrea.linkeddata.es/shapes#19d8a2d6bbe3f0ba83712919e0bf54f0> , <https://astrea.linkeddata.es/shapes#83b913d60f1625583c29a714e8911bab> , <https://astrea.linkeddata.es/shapes#2e25813f18565f312947bac9eb143301> , <https://astrea.linkeddata.es/shapes#26387bd37e14bf446ecf36851eb78ec4> , <https://astrea.linkeddata.es/shapes#6d5660d180a762ceefe1af7258d27fd5> , <https://astrea.linkeddata.es/shapes#b9b3bb6718edc71078cc5255932516f3> , <https://astrea.linkeddata.es/shapes#d854af00c8be6ef1a37045b6c7e4fb22> , <https://astrea.linkeddata.es/shapes#613014d0cbdb5a6578250a2e56478376> , <https://astrea.linkeddata.es/shapes#8adb9847c806339a09e0cc8f37af22bc> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/1748690722> .
+
+<https://astrea.linkeddata.es/shapes#c7bb3c29f6186eaeae791a3e5d1ab2ba>
+        a               sh:NodeShape ;
+        rdfs:label      "item"@en ;
+        sh:description  "Element belonging to a bag"@en ;
+        sh:name         "item"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/co/Item> .
+
+<https://astrea.linkeddata.es/shapes#0be04ac945718f9bde22534462b572ae>
+        a                sh:PropertyShape ;
+        rdfs:label       "has index"@en , "A number identifying the position, starting from 1, of a particular list item within a list."@en ;
+        sh:datatype      xsd:positiveInteger ;
+        sh:description   "A number identifying the position, starting from 1, of a particular list item within a list."@en ;
+        sh:minInclusive  1 ;
+        sh:name          "has index"@en ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://purl.org/co/index> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#e47af6117ef295a415fbf7dcf3a641e8>
+        a               sh:NodeShape ;
+        rdfs:label      "bag"@en ;
+        sh:description  "Collection that can have a number of copies of each object"@en ;
+        sh:name         "bag"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#b1aa86cdfed32851c0104ebc55ff60bd> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#19d8a2d6bbe3f0ba83712919e0bf54f0> ;
+        sh:targetClass  <http://purl.org/co/Bag> .
+
+<https://astrea.linkeddata.es/shapes#41ae80d63943fbd64bd555ea94b0aa00>
+        a            sh:PropertyShape ;
+        sh:class     owl:Thing ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/co/element> .
+
+<https://astrea.linkeddata.es/shapes#e30f2cdf50194e7161bbbc2c8a4ce43f>
+        a               sh:NodeShape ;
+        rdfs:label      "list item"@en ;
+        sh:description  "element belonging to a list"@en ;
+        sh:name         "list item"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#fb5e681cb127eb11d03a1c70c0ce03d1> , <https://astrea.linkeddata.es/shapes#0be04ac945718f9bde22534462b572ae> , <https://astrea.linkeddata.es/shapes#33823b2c69e917c59810e8ef6db4db57> ;
+        sh:targetClass  <http://purl.org/co/ListItem> .
+
+<https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  owl:Thing .
+
+<https://astrea.linkeddata.es/shapes#a2aedf9ebbc116d5435e57b5c6649354>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/co/Item> .
+
+<https://astrea.linkeddata.es/shapes#83b913d60f1625583c29a714e8911bab>
+        a               sh:NodeShape ;
+        rdfs:label      "collection"@en ;
+        sh:description  "A group of objects that can be considered as a whole."@en ;
+        sh:name         "collection"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#a2aedf9ebbc116d5435e57b5c6649354> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#613014d0cbdb5a6578250a2e56478376> , <https://astrea.linkeddata.es/shapes#41ae80d63943fbd64bd555ea94b0aa00> , <https://astrea.linkeddata.es/shapes#686f212ab840af72e7d32459eee84160> ;
+        sh:targetClass  <http://purl.org/co/Collection> .
+
+<https://astrea.linkeddata.es/shapes#6d5660d180a762ceefe1af7258d27fd5>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/co/lastItem> .
+
+<https://astrea.linkeddata.es/shapes#3b001f3519615ba49806c415259589de>
+        a               sh:PropertyShape ;
+        rdfs:label      "has element"@en , "The link to the members of a collection"@en ;
+        sh:description  "The link to the members of a collection"@en ;
+        sh:name         "has element"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#cf1df1cca17e8742f57fe94be2452567>
+        a               sh:PropertyShape ;
+        rdfs:label      "is item content of"@en , "The link to the item that refers to the resource."@en ;
+        sh:description  "The link to the item that refers to the resource."@en ;
+        sh:name         "is item content of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/co/itemContentOf> .
+
+<https://astrea.linkeddata.es/shapes#fb5e681cb127eb11d03a1c70c0ce03d1>
+        a               sh:PropertyShape ;
+        rdfs:label      "is followed by"@en , "The link to the following item in a list."@en ;
+        sh:class        <http://purl.org/co/ListItem> ;
+        sh:description  "The link to the following item in a list."@en ;
+        sh:name         "is followed by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/co/followedBy> .
+
+<https://astrea.linkeddata.es/shapes#938d23a729292440904ae3c828cd8f35>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/co/firstItem> .
+
+<https://astrea.linkeddata.es/shapes#b1aa86cdfed32851c0104ebc55ff60bd>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/co/Set> .
+
+<https://astrea.linkeddata.es/shapes#d30277c3c1dd1763c4af1dff680042ac>
+        a               sh:PropertyShape ;
+        rdfs:label      "is preceded by"@en , "The link to the preceding item in a list."@en ;
+        sh:description  "The link to the preceding item in a list."@en ;
+        sh:name         "is preceded by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/co/precededBy> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#d854af00c8be6ef1a37045b6c7e4fb22>
+        a               sh:PropertyShape ;
+        rdfs:label      "has last item"@en , "The link to the last item of the list."@en ;
+        sh:description  "The link to the last item of the list."@en ;
+        sh:maxCount     1 ;
+        sh:name         "has last item"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#33823b2c69e917c59810e8ef6db4db57>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/co/index> .
+
+<https://astrea.linkeddata.es/shapes#73fbd509ea9408e51165a63dc31c9d4a>
+        a               sh:PropertyShape ;
+        rdfs:label      "is first item of"@en , "The link to a list in which the item is first item."@en ;
+        sh:description  "The link to a list in which the item is first item."@en ;
+        sh:name         "is first item of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/co/firstItemOf> .
+
+<https://astrea.linkeddata.es/shapes#b9b3bb6718edc71078cc5255932516f3>
+        a               sh:PropertyShape ;
+        rdfs:label      "has item content"@en , "The link to the actual resource to which the item refers."@en ;
+        sh:description  "The link to the actual resource to which the item refers."@en ;
+        sh:maxCount     1 ;
+        sh:name         "has item content"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#2e25813f18565f312947bac9eb143301>
+        a               sh:NodeShape ;
+        rdfs:label      "list"@en ;
+        sh:description  "An ordered array of items, that can be present in multiple copies"@en ;
+        sh:name         "list"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#6d5660d180a762ceefe1af7258d27fd5> , <https://astrea.linkeddata.es/shapes#938d23a729292440904ae3c828cd8f35> ;
+        sh:targetClass  <http://purl.org/co/List> .
+
+<https://astrea.linkeddata.es/shapes#686f212ab840af72e7d32459eee84160>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/co/size> .

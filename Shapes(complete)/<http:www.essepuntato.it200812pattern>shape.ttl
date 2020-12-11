@@ -1,0 +1,416 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#361a7699cefc5fb6ba5118a078349b1a>
+        a               sh:NodeShape ;
+        rdfs:label      "meta element"@en ;
+        sh:description  "This class describes elements that contain neither other elements nor textual content. Contrarily to the pattern Milestone, which was meant to describe markup elements that impact the document because of their location, the main feature of its disjoint sibling is the mere existence, independently from the position it has within the document. Meta elements convey metadata information about the document or part of it, independently of where they are. Thus, meta elements can be contained only within container elements."@en ;
+        sh:name         "meta element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#ed4d70d66c24d3d3168d0c349b24d3ed> ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Meta> .
+
+<https://astrea.linkeddata.es/shapes#52b582d2ecf1884755a2fd73641d8235>
+        a               sh:NodeShape ;
+        rdfs:label      "atom element"@en ;
+        sh:description  "This class is defined to describe literal text that is part of the document body. Moreover, similarly to Inline, elements following the Atom pattern can only be contained within block or inline elements (and consequently they also cannot be used as root elements of documents). It can contain textual content and no other elements."@en ;
+        sh:name         "atom element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#33ab9085223005d9d48af4acd545f798> ;
+        sh:or           ( [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Block> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#isContainedBy>
+                          ]
+                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Inline> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#isContainedBy>
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#861b365a7aaf635192ed72240a6cd0af> ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Atom> .
+
+<https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  owl:Thing .
+
+<https://astrea.linkeddata.es/shapes#942650206ec6feeadff77dcb6a6db6de>
+        a               sh:NodeShape ;
+        rdfs:label      "flat element"@en ;
+        sh:description  "The class of elements that can contain text nodes but no elements."@en ;
+        sh:name         "flat element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#4a648e1b24bd67145d221b8d48b484f9> ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Flat> .
+
+<https://astrea.linkeddata.es/shapes#78ec909c47c89daa57b6402d185879a4>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.essepuntato.it/2008/12/pattern#contains> .
+
+<https://astrea.linkeddata.es/shapes#b7a9938074fb7682220636041baaf497>
+        a               sh:NodeShape ;
+        rdfs:label      "bucket element"@en ;
+        sh:description  "The class of elements that can contain other elements but no text nodes."@en ;
+        sh:name         "bucket element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#423e85a1480497b886fbff7b464761ed> ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Bucket> .
+
+<https://astrea.linkeddata.es/shapes#36d5cf1d366795d5c63607a227ad646c>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.essepuntato.it/2008/12/pattern#Textual> .
+
+<https://astrea.linkeddata.es/shapes#b15d345310b8be1cbcb5ce3c5cbbb192>
+        a               sh:PropertyShape ;
+        rdfs:label      "is contained by as header"@en , "An element is contained by another structured element as part of its header."@en ;
+        sh:description  "An element is contained by another structured element as part of its header."@en ;
+        sh:name         "is contained by as header"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.essepuntato.it/2008/12/pattern#isContainedByAsHeader> .
+
+<https://astrea.linkeddata.es/shapes#8cf4bab165b2938a1a01349e82e82851>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.essepuntato.it/2008/12/pattern#Structured> .
+
+<https://astrea.linkeddata.es/shapes#d0aed5c965d2b0ed76501eeb7fdeba61>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.essepuntato.it/2008/12/pattern#Popup> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#571aa114fbe22154f65a1b2aa9f99317>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.essepuntato.it/2008/12/pattern#contains> .
+
+<https://astrea.linkeddata.es/shapes#abac4ddf02620293a95cb93ec2b69733>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.essepuntato.it/2008/12/pattern#Inline> .
+
+<https://astrea.linkeddata.es/shapes#9d5870bb1deb28cbd0606d6200a98db2>
+        a               sh:NodeShape ;
+        rdfs:label      "record element"@en ;
+        sh:description  "This class describes container elements that can only contain heterogeneous and non repeatable elements."@en ;
+        sh:name         "record element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Record> .
+
+<https://astrea.linkeddata.es/shapes#c0e27bbcbd76c8fef311c1a8cea00f00>
+        a               sh:NodeShape ;
+        rdfs:label      "inline element"@en ;
+        sh:description  "This class has the same use and content model of the pattern Block, but differing primarily because a) inline elements can contain other elements compliant with the same pattern while block elements cannot, and b) inline elements must always be contained by other block or inline elements and by no other type of element.\n\nThese constraints also imply that inline elements cannot be used as root elements of documents and that the class Block is disjoint with the class Inline (i.e., a markup element cannot be a block and an inline at the same time)."@en ;
+        sh:name         "inline element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:or           ( [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Block> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#isContainedBy>
+                          ]
+                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Inline> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#isContainedBy>
+                          ]
+                        ) ;
+        sh:or           ( [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Atom> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
+                          ]
+                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Inline> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
+                          ]
+                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Milestone> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
+                          ]
+                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Popup> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#8a9a0d4a785cc15793be509b230c94ac> , <https://astrea.linkeddata.es/shapes#571aa114fbe22154f65a1b2aa9f99317> ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Inline> .
+
+<https://astrea.linkeddata.es/shapes#6f2ec3e5cc17c3d9b698e1495d49f741>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.essepuntato.it/2008/12/pattern#isContainedBy> .
+
+<https://astrea.linkeddata.es/shapes#e70c759db5415e631b25e0190db8edbb>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.essepuntato.it/2008/12/pattern#contains> .
+
+<https://astrea.linkeddata.es/shapes#4a648e1b24bd67145d221b8d48b484f9>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.essepuntato.it/2008/12/pattern#Mixed> .
+
+<https://astrea.linkeddata.es/shapes#8a9a0d4a785cc15793be509b230c94ac>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.essepuntato.it/2008/12/pattern#isContainedBy> .
+
+<https://astrea.linkeddata.es/shapes#c96ccd5e404147ec36f814e9171b0af4>
+        a               sh:NodeShape ;
+        rdfs:label      "marker element"@en ;
+        sh:description  "The class of elements that can contain neither text nodes nor elements."@en ;
+        sh:name         "marker element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Marker> .
+
+<https://astrea.linkeddata.es/shapes#a1a702d44e36ca6f717d6516b45fc85d>
+        a               sh:PropertyShape ;
+        rdfs:label      "contains"@en , "A structured element contains another generic element."@en ;
+        sh:description  "A structured element contains another generic element."@en ;
+        sh:name         "contains"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#9a23b2d90c0bfb9ff8dc704e7f36092a>
+        a               sh:NodeShape ;
+        rdfs:label      "structured element"@en ;
+        sh:description  "The class of elements that can contain other elements."@en ;
+        sh:name         "structured element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#756058b2d7aefcfab645004d30961fc9> , <https://astrea.linkeddata.es/shapes#00f6f11a4f94ac33507058e8daf5ef99> ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Structured> .
+
+<https://astrea.linkeddata.es/shapes#b4bce80ec0cbcf28c0ad0ac78eb6b9f3>
+        a               sh:NodeShape ;
+        rdfs:label      "non-textual element"@en ;
+        sh:description  "The class of elements that cannot have textual content in their content models."@en ;
+        sh:name         "non-textual element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#36d5cf1d366795d5c63607a227ad646c> ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#NonTextual> .
+
+<https://astrea.linkeddata.es/shapes#ed4d70d66c24d3d3168d0c349b24d3ed>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.essepuntato.it/2008/12/pattern#Milestone> .
+
+<https://astrea.linkeddata.es/shapes#16aa3da91bfc2c5c0eee5d2ce02358b2>
+        a               sh:PropertyShape ;
+        rdfs:label      "has name"@en , "The name of a particular element."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The name of a particular element."@en ;
+        sh:maxCount     1 ;
+        sh:name         "has name"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
+        sh:path         <http://www.essepuntato.it/2008/12/pattern#hasName> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#d5f28be688f5a6e5931b903a7aa1c044>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.essepuntato.it/2008/12/pattern#contains> .
+
+<https://astrea.linkeddata.es/shapes#861b365a7aaf635192ed72240a6cd0af>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.essepuntato.it/2008/12/pattern#isContainedBy> .
+
+<https://astrea.linkeddata.es/shapes#00f6f11a4f94ac33507058e8daf5ef99>
+        a               sh:PropertyShape ;
+        rdfs:label      "A hierarchical-based entity contains al least two entities having different names."@en , "can contain heteronymous elements"@en ;
+        sh:datatype     xsd:boolean ;
+        sh:description  "A hierarchical-based entity contains al least two entities having different names."@en ;
+        sh:maxCount     1 ;
+        sh:name         "can contain heteronymous elements"@en ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://www.essepuntato.it/2008/12/pattern#canContainHeteronymousElements> ;
+        sh:pattern      "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#33ab9085223005d9d48af4acd545f798>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.essepuntato.it/2008/12/pattern#Field> .
+
+<https://astrea.linkeddata.es/shapes#423e85a1480497b886fbff7b464761ed>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.essepuntato.it/2008/12/pattern#Marker> .
+
+<https://astrea.linkeddata.es/shapes#5ab927282f35b40c77f07df975adcb92>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.essepuntato.it/2008/12/pattern#isContainedBy> .
+
+<https://astrea.linkeddata.es/shapes#756058b2d7aefcfab645004d30961fc9>
+        a               sh:PropertyShape ;
+        rdfs:label      "can contain homonymous elements"@en , "A hierarchical-based entity contains al least two entities that share the same name."@en ;
+        sh:datatype     xsd:boolean ;
+        sh:description  "A hierarchical-based entity contains al least two entities that share the same name."@en ;
+        sh:maxCount     1 ;
+        sh:name         "can contain homonymous elements"@en ;
+        sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
+        sh:path         <http://www.essepuntato.it/2008/12/pattern#canContainHomonymousElements> ;
+        sh:pattern      "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#cc17e64fc84b0930e01126027d029e96>
+        a               sh:NodeShape ;
+        rdfs:label      "non-structured element"@en ;
+        sh:description  "The class of elements that cannot contain other elements."@en ;
+        sh:name         "non-structured element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#8cf4bab165b2938a1a01349e82e82851> ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#NonStructured> .
+
+<https://astrea.linkeddata.es/shapes#5c03ff1fed2d223df6df1299acaba0b3>
+        a               sh:PropertyShape ;
+        rdfs:label      "is contained by"@en , "An element that is contained by another structured element."@en ;
+        sh:description  "An element that is contained by another structured element."@en ;
+        sh:name         "is contained by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.essepuntato.it/2008/12/pattern#isContainedBy> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#abac4ddf02620293a95cb93ec2b69733> , <https://astrea.linkeddata.es/shapes#571aa114fbe22154f65a1b2aa9f99317> , <https://astrea.linkeddata.es/shapes#9a23b2d90c0bfb9ff8dc704e7f36092a> , <https://astrea.linkeddata.es/shapes#5c03ff1fed2d223df6df1299acaba0b3> , <https://astrea.linkeddata.es/shapes#a5ea1b6c1a8b29893c8bfddada0e61a8> , <https://astrea.linkeddata.es/shapes#00f6f11a4f94ac33507058e8daf5ef99> , <https://astrea.linkeddata.es/shapes#d5f28be688f5a6e5931b903a7aa1c044> , <https://astrea.linkeddata.es/shapes#361a7699cefc5fb6ba5118a078349b1a> , <https://astrea.linkeddata.es/shapes#b15d345310b8be1cbcb5ce3c5cbbb192> , <https://astrea.linkeddata.es/shapes#48f580ac330ed07654d06a22618edb90> , <https://astrea.linkeddata.es/shapes#0b0a5c5eede6b8dc7d80eeaa4cb8e2d0> , <https://astrea.linkeddata.es/shapes#8a9a0d4a785cc15793be509b230c94ac> , <https://astrea.linkeddata.es/shapes#78ec909c47c89daa57b6402d185879a4> , <https://astrea.linkeddata.es/shapes#942650206ec6feeadff77dcb6a6db6de> , <https://astrea.linkeddata.es/shapes#a1a702d44e36ca6f717d6516b45fc85d> , <https://astrea.linkeddata.es/shapes#8b23593106728904b1379d7709587354> , <https://astrea.linkeddata.es/shapes#c96ccd5e404147ec36f814e9171b0af4> , <https://astrea.linkeddata.es/shapes#756058b2d7aefcfab645004d30961fc9> , <https://astrea.linkeddata.es/shapes#0c5bd7fb802b92105288cb374af22c7d> , <https://astrea.linkeddata.es/shapes#5ab927282f35b40c77f07df975adcb92> , <https://astrea.linkeddata.es/shapes#2fad181cb301cac11cfcc97649229db6> , <https://astrea.linkeddata.es/shapes#b7a9938074fb7682220636041baaf497> , <https://astrea.linkeddata.es/shapes#e70c759db5415e631b25e0190db8edbb> , <https://astrea.linkeddata.es/shapes#8cf4bab165b2938a1a01349e82e82851> , <https://astrea.linkeddata.es/shapes#ed4d70d66c24d3d3168d0c349b24d3ed> , <https://astrea.linkeddata.es/shapes#cc17e64fc84b0930e01126027d029e96> , <https://astrea.linkeddata.es/shapes#33ab9085223005d9d48af4acd545f798> , <https://astrea.linkeddata.es/shapes#d0aed5c965d2b0ed76501eeb7fdeba61> , <https://astrea.linkeddata.es/shapes#36d5cf1d366795d5c63607a227ad646c> , <https://astrea.linkeddata.es/shapes#82e2023753dcfda887b002342d7d9d40> , <https://astrea.linkeddata.es/shapes#c0e27bbcbd76c8fef311c1a8cea00f00> , <https://astrea.linkeddata.es/shapes#423e85a1480497b886fbff7b464761ed> , <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#6f2ec3e5cc17c3d9b698e1495d49f741> , <https://astrea.linkeddata.es/shapes#b4bce80ec0cbcf28c0ad0ac78eb6b9f3> , <https://astrea.linkeddata.es/shapes#fd21b0b5fd6b6ea7e420119693f0cadc> , <https://astrea.linkeddata.es/shapes#4a648e1b24bd67145d221b8d48b484f9> , <https://astrea.linkeddata.es/shapes#16aa3da91bfc2c5c0eee5d2ce02358b2> , <https://astrea.linkeddata.es/shapes#52b582d2ecf1884755a2fd73641d8235> , <https://astrea.linkeddata.es/shapes#9d5870bb1deb28cbd0606d6200a98db2> , <https://astrea.linkeddata.es/shapes#6965b70c1e32ab35ab3efcf61e1102e3> , <https://astrea.linkeddata.es/shapes#861b365a7aaf635192ed72240a6cd0af> , <https://astrea.linkeddata.es/shapes#870a1f50c5d35047d2e0a51717b579c7> , <https://astrea.linkeddata.es/shapes#a15310677412ee66ff8aec3662157d9e> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#6965b70c1e32ab35ab3efcf61e1102e3>
+        a               sh:NodeShape ;
+        rdfs:label      "field element"@en ;
+        sh:description  "This class is defined to describe literal metadata or text that is not really part of the document body, contrarily to its disjointed sibling Atom. Its main difference with Meta is that Field can contain textual content."@en ;
+        sh:name         "field element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Field> .
+
+<https://astrea.linkeddata.es/shapes#0c5bd7fb802b92105288cb374af22c7d>
+        a               sh:PropertyShape ;
+        rdfs:label      "contains as header"@en , "A structured element contains another generic element as part of its header."@en ;
+        sh:description  "A structured element contains another generic element as part of its header."@en ;
+        sh:name         "contains as header"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://www.essepuntato.it/2008/12/pattern#containsAsHeader> .
+
+<https://astrea.linkeddata.es/shapes#a15310677412ee66ff8aec3662157d9e>
+        a               sh:NodeShape ;
+        rdfs:label      "milestone element"@en ;
+        sh:description  "This class describe elements that contain neither other elements nor textual content. Moreover, similarly to Inline, elements following the Milestone pattern can only be contained within block or inline elements (and consequently they also cannot be used as root elements of documents).\n\nThe distinctive characteristic of the pattern Milestone is the location it assumes within the document."@en ;
+        sh:name         "milestone element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:or           ( [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Block> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#isContainedBy>
+                          ]
+                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Inline> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#isContainedBy>
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5ab927282f35b40c77f07df975adcb92> ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Milestone> .
+
+<https://astrea.linkeddata.es/shapes#82e2023753dcfda887b002342d7d9d40>
+        a               sh:NodeShape ;
+        rdfs:label      "headed-container element"@en ;
+        sh:description  "This class describes container elements whose content model need to begin with one or more block elements (the heading), specified through the property containsAsHeader."@en ;
+        sh:name         "headed-container element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#HeadedContainer> .
+
+<https://astrea.linkeddata.es/shapes#0b0a5c5eede6b8dc7d80eeaa4cb8e2d0>
+        a               sh:NodeShape ;
+        rdfs:label      "pattern-based element"@en ;
+        sh:description  "A structural pattern is an atomic component of a document, that is able to capture a recurrent and well knwon structure of a document.\n\nAny entity belonging to this class is compliant with exactly one structural pattern."@en ;
+        sh:name         "pattern-based element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Pattern> .
+
+<https://astrea.linkeddata.es/shapes#8b23593106728904b1379d7709587354>
+        a               sh:NodeShape ;
+        rdfs:label      "mixed element"@en ;
+        sh:description  "The class of elements that can contain other elements and text nodes."@en ;
+        sh:name         "mixed element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Mixed> .
+
+<https://astrea.linkeddata.es/shapes#2fad181cb301cac11cfcc97649229db6>
+        a               sh:NodeShape ;
+        rdfs:label      "container element"@en ;
+        sh:description  "This class concerns the structural organization of a document. Elements following this pattern contain no textual content and contain only elements compliant with the patterns: Meta, Field, Block and any subtype of Container. It is disjointed with the pattern Popup, although they share the same content model."@en ;
+        sh:name         "container element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#d0aed5c965d2b0ed76501eeb7fdeba61> ;
+        sh:or           ( [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Block> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
+                          ]
+                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Container> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
+                          ]
+                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Field> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
+                          ]
+                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Meta> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#78ec909c47c89daa57b6402d185879a4> ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Container> .
+
+<https://astrea.linkeddata.es/shapes#870a1f50c5d35047d2e0a51717b579c7>
+        a               sh:NodeShape ;
+        rdfs:label      "block element"@en ;
+        sh:description  "This class organise the document content as a sequence of nestable elements and text nodes. In particular, elements following this pattern can contain text and other elements compliant with the patterns Inline, Atom, Milestones and Popup, which will be introduced in the following. Furthermore, it is a requirement that block elements are contained only by container and popup elements"@en ;
+        sh:name         "block element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:not          <https://astrea.linkeddata.es/shapes#abac4ddf02620293a95cb93ec2b69733> ;
+        sh:or           ( [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Atom> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
+                          ]
+                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Inline> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
+                          ]
+                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Milestone> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
+                          ]
+                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Popup> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e70c759db5415e631b25e0190db8edbb> ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Block> .
+
+<https://astrea.linkeddata.es/shapes#48f580ac330ed07654d06a22618edb90>
+        a               sh:NodeShape ;
+        rdfs:label      "popup element"@en ;
+        sh:description  "This class defines bucket elements that are only present within block and inline elements. Popup elements are used whenever complex structures need to be placed within content elements such as paragraphs. "@en ;
+        sh:name         "popup element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:or           ( [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Block> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#isContainedBy>
+                          ]
+                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Inline> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#isContainedBy>
+                          ]
+                        ) ;
+        sh:or           ( [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Block> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
+                          ]
+                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Container> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
+                          ]
+                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Field> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
+                          ]
+                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Meta> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
+                          ]
+                        ) ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d5f28be688f5a6e5931b903a7aa1c044> , <https://astrea.linkeddata.es/shapes#6f2ec3e5cc17c3d9b698e1495d49f741> ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Popup> .
+
+<https://astrea.linkeddata.es/shapes#a5ea1b6c1a8b29893c8bfddada0e61a8>
+        a               sh:NodeShape ;
+        rdfs:label      "textual element"@en ;
+        sh:description  "The class of elements that can have textual content in their content models."@en ;
+        sh:name         "textual element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Textual> .
+
+<https://astrea.linkeddata.es/shapes#fd21b0b5fd6b6ea7e420119693f0cadc>
+        a               sh:NodeShape ;
+        rdfs:label      "table element"@en ;
+        sh:description  "This class describes container elements that must contain only homogeneous elements (but they can be repeated)."@en ;
+        sh:name         "table element"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Table> .

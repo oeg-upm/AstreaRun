@@ -1,0 +1,62 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#12c2bfabc2510cbea85a6befe5f80daa>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.press.net/ontology/event/> ;
+        rdfs:label        "Associates an Event with an intangible theme"@en , "Property for expressing the theme of an event, its range is pns:Intangible"@en ;
+        sh:class          <http://data.press.net/ontology/stuff/Intangible> ;
+        sh:description    "Property for expressing the theme of an event, its range is pns:Intangible"@en ;
+        sh:name           "Associates an Event with an intangible theme"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.press.net/ontology/event/theme> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#12c2bfabc2510cbea85a6befe5f80daa> , <https://astrea.linkeddata.es/shapes#4909c874d0c62b420059a18d09e27f89> , <https://astrea.linkeddata.es/shapes#1f48040f4e1f785efa0ecbe0e5c5f138> , <https://astrea.linkeddata.es/shapes#d108a32580ce62f2914d0381b68fa110> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#1f48040f4e1f785efa0ecbe0e5c5f138>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.press.net/ontology/event/> ;
+        rdfs:label        "Property for expressing an event summary. Datatype is String"@en , "An Event summary"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "Property for expressing an event summary. Datatype is String"@en ;
+        sh:name           "An Event summary"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.press.net/ontology/event/summary> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#4909c874d0c62b420059a18d09e27f89>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.press.net/ontology/event/> ;
+        rdfs:label        "An Event title"@en , "Property for expressing an event title. Datatype is String"@en ;
+        sh:datatype       xsd:string ;
+        sh:description    "Property for expressing an event title. Datatype is String"@en ;
+        sh:name           "An Event title"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.press.net/ontology/event/title> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#d108a32580ce62f2914d0381b68fa110>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.press.net/ontology/event/> ;
+        rdfs:label        "Generic Event Class"@en ;
+        sh:description    "Generic Event Class, a subclass of event:Event. The Event class also subclasses pnt:Stuff as it is a Compound domain entity, this inheritance means news assets can be tagged with Events"@en ;
+        sh:name           "Generic Event Class"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#12c2bfabc2510cbea85a6befe5f80daa> , <https://astrea.linkeddata.es/shapes#1f48040f4e1f785efa0ecbe0e5c5f138> , <https://astrea.linkeddata.es/shapes#4909c874d0c62b420059a18d09e27f89> ;
+        sh:targetClass    <http://data.press.net/ontology/event/Event> .

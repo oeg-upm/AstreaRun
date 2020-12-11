@@ -1,0 +1,1182 @@
+@prefix cc:    <http://creativecommons.org/ns#> .
+@prefix :      <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-data.owl#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix resource: <http://semanticscience.org/resource/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns0:   <http://protege.stanford.edu/plugins/owl/protege#> .
+@prefix vann:  <http://purl.org/vocab/vann/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<https://astrea.linkeddata.es/shapes#61e89ad799eefa81dc26b43eb5177d5d>
+        a            sh:PropertyShape ;
+        rdfs:label   "has data band" ;
+        sh:class     :DataBand ;
+        sh:name      "has data band" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :hasDataBand .
+
+<https://astrea.linkeddata.es/shapes#9b7b2f89dcd3ed34dd42106d0b0a47c6>
+        a               sh:NodeShape ;
+        rdfs:label      "wcs raster response" ;
+        sh:description  "A specific raster dataset returned by calling a WCS service with specific parameters." ;
+        sh:name         "wcs raster response" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#7031c1fd376ffc514476751719b22b12> ;
+        sh:targetClass  :WCSResponse .
+
+<https://astrea.linkeddata.es/shapes#c7c22d793c1fc819d2c9a6e1bb15ac02>
+        a               sh:NodeShape ;
+        rdfs:label      "extract and reproject" ;
+        sh:name         "extract and reproject" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#be1569cf1ab77f8d6366986e028bf615> , <https://astrea.linkeddata.es/shapes#a87212c133840aa85da128d30932ec5a> ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#ExtractAndReproject> .
+
+<https://astrea.linkeddata.es/shapes#20ad47471b9942ec35dee2c79a3a850a>
+        a               sh:NodeShape ;
+        rdfs:label      "air" ;
+        sh:name         "air" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#Air> .
+
+<https://astrea.linkeddata.es/shapes#d9bb9ff1b797293011f56330236d720a>
+        a               sh:NodeShape ;
+        rdfs:label      "rgis data band" ;
+        sh:name         "rgis data band" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ac6870acca2814a3ab0d27f86806b1c3> , <https://astrea.linkeddata.es/shapes#e7a9aa9d67a1b58cf0d2ce8ad8847321> ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#RGISDataBand> ;
+        sh:targetClass  []  ;
+        sh:targetClass  []  .
+
+<https://astrea.linkeddata.es/shapes#cbcb432337ad64b39966334f1a967762>
+        a            sh:PropertyShape ;
+        rdfs:label   "has start date" ;
+        sh:class     :Date ;
+        sh:name      "has start date" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :hasStartDate .
+
+<https://astrea.linkeddata.es/shapes#2223d4013fba70e243859f6c1610ecab>
+        a               sh:NodeShape ;
+        rdfs:label      "publish" ;
+        sh:name         "publish" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#Publish> .
+
+<https://astrea.linkeddata.es/shapes#5539e2af72a62927aa5e4be8ea5e743d>
+        a            sh:PropertyShape ;
+        rdfs:label   "has file download url" ;
+        sh:datatype  rdfs:Literal ;
+        sh:name      "has file download url" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :hasFileDownloadURL .
+
+<https://astrea.linkeddata.es/shapes#b8bff3fc70781a4cbe581dbd37dfdfbe>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#wasAssociatedWith> .
+
+<https://astrea.linkeddata.es/shapes#bfcb22fa776384101002ae168ac7339c>
+        a            sh:PropertyShape ;
+        rdfs:label   "has processor name" ;
+        sh:datatype  rdfs:Literal ;
+        sh:name      "has processor name" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#hasProcessorName> .
+
+<https://astrea.linkeddata.es/shapes#a42f73503c7d8f42e8c08bc75c314559>
+        a               sh:NodeShape ;
+        rdfs:label      "raster dataset" ;
+        sh:description  "A raster dataset is a geospatial dataset that organizes information as the value of a single characteristic at every location in space, such as temperature. Multiple raster datasets can be combined into a single dataset as bands of information." ;
+        sh:name         "raster dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#61e89ad799eefa81dc26b43eb5177d5d> , <https://astrea.linkeddata.es/shapes#c6e2d8a928b3e47523a39eb2359e155d> ;
+        sh:targetClass  :RasterDataset .
+
+<https://astrea.linkeddata.es/shapes#f175854bfb159a8ef0148533d2a38c1a>
+        a            sh:PropertyShape ;
+        rdfs:label   "has units" ;
+        sh:class     :Unit ;
+        sh:name      "has units" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :hasUnits .
+
+<https://astrea.linkeddata.es/shapes#232f6c828d2ecb8b158b34fa6299b0f2>
+        a               sh:NodeShape ;
+        rdfs:label      "boxed geographic region" ;
+        sh:description  "A geographic region that is specified by left longitude, lower latitude, right longitude and upper latitude." ;
+        sh:name         "boxed geographic region" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#bf50b57ae336825f32746d02a3e9848e> , <https://astrea.linkeddata.es/shapes#e95cdfd616065e83f229f4f15df0d20d> , <https://astrea.linkeddata.es/shapes#465deef50d457f8f4349d8e12a558d7c> , <https://astrea.linkeddata.es/shapes#34d0b50b8da18665b3d5443010b3d8d7> ;
+        sh:targetClass  :BoxedGeographicRegion .
+
+<https://astrea.linkeddata.es/shapes#f6f6ecd69478dd5661e3a90b2a82cdde>
+        a               sh:NodeShape ;
+        rdfs:label      "date range" ;
+        sh:description  "Time period defined by an start and end date." ;
+        sh:name         "date range" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#cbcb432337ad64b39966334f1a967762> , <https://astrea.linkeddata.es/shapes#7d7ee1b58573323e5e4169cf4b8667db> ;
+        sh:targetClass  :DateRange .
+
+<https://astrea.linkeddata.es/shapes#18c00218b6c7131f10f65af5f37b3e2e>
+        a               sh:NodeShape ;
+        rdfs:label      "aggregate yearly" ;
+        sh:name         "aggregate yearly" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#AggregateYearly> .
+
+<https://astrea.linkeddata.es/shapes#465deef50d457f8f4349d8e12a558d7c>
+        a            sh:PropertyShape ;
+        rdfs:label   "has right longitude" ;
+        sh:datatype  xsd:double ;
+        sh:name      "has right longitude" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :hasRightLongitude ;
+        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#86a40bcb99021b93f4a578ae06239b03>
+        a            sh:PropertyShape ;
+        rdfs:label   "has band name" ;
+        sh:datatype  rdfs:Literal ;
+        sh:name      "has band name" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :hasBandName .
+
+<https://astrea.linkeddata.es/shapes#1762f070d684a46d4ac1c60ff1b61956>
+        a               sh:NodeShape ;
+        rdfs:label      "entity" ;
+        sh:description  "Following the definition of OBOE and SIO, an entity denotes a concrete or conceptual object that has been observed (e.g., a tree, a community, an ecological process). " ;
+        sh:name         "entity" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :Entity .
+
+<https://astrea.linkeddata.es/shapes#31b6763a7eaf8752ef24ac94d5c53594>
+        a               sh:NodeShape ;
+        rdfs:label      "wfs response manifestation" ;
+        sh:description  "Provides information about the file that is returned by a Web coverage service, including the format." ;
+        sh:name         "wfs response manifestation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :WFSResponseManifestation .
+
+<https://astrea.linkeddata.es/shapes#fb28ad51d766771592aef5ce905aad31>
+        a               sh:NodeShape ;
+        rdfs:label      "temperature" ;
+        sh:name         "temperature" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#Temperature> .
+
+<https://astrea.linkeddata.es/shapes#cb6a2b8c9bed59b4cc5a39c17c95726f>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 :hasManifestation ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  :WFSManifestation ] .
+
+<https://astrea.linkeddata.es/shapes#236906595a4d92c5c2bf43b7aa2f7968>
+        a               sh:NodeShape ;
+        rdfs:label      "complexed derived unit" ;
+        sh:description  "A unit that is calculated from defined operations." ;
+        sh:name         "complexed derived unit" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :ComplexDerivedUnit .
+
+<https://astrea.linkeddata.es/shapes#df448336e9a250e37ecbf5de042d08af>
+        a               sh:NodeShape ;
+        rdfs:label      "time period" ;
+        sh:name         "time period" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :TimePeriod .
+
+<https://astrea.linkeddata.es/shapes#4132f426934cd6d223813800f60b7a78>
+        a               sh:NodeShape ;
+        rdfs:label      "band identification" ;
+        sh:name         "band identification" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#86a40bcb99021b93f4a578ae06239b03> , <https://astrea.linkeddata.es/shapes#869100b78dce09d3e134108a77ceebc5> ;
+        sh:targetClass  :BandIdentification .
+
+<https://astrea.linkeddata.es/shapes#928c8980ff6a9c9e35f70abf78b3d9aa>
+        a            sh:PropertyShape ;
+        rdfs:label   "captures characteristic" ;
+        sh:class     :Characteristic ;
+        sh:name      "captures characteristic" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :capturesCharacteristic .
+
+<https://astrea.linkeddata.es/shapes#5494ed0e8bef2a871edbede729d4da24>
+        a               sh:NodeShape ;
+        rdfs:label      "mosaic" ;
+        sh:name         "mosaic" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#Mosaic> .
+
+<https://astrea.linkeddata.es/shapes#da6b761f966d4160cd865869a36aaea4>
+        a            sh:PropertyShape ;
+        rdfs:label   "was output by" ;
+        sh:class     <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#DatasetProcessing> ;
+        sh:name      "was output by" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#wasOutputBy> .
+
+<https://astrea.linkeddata.es/shapes#688fda38ce0f336de438e459558d9e5f>
+        a               sh:NodeShape ;
+        rdfs:label      "precipitation" ;
+        sh:name         "precipitation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#Precipitation> .
+
+<https://astrea.linkeddata.es/shapes#0278cb2004adc0880b1c1fac9459231a>
+        a            sh:PropertyShape ;
+        rdfs:label   "was associated with" ;
+        sh:class     <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#Processor> ;
+        sh:name      "was associated with" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#wasAssociatedWith> .
+
+<https://astrea.linkeddata.es/shapes#f8f4f119c1c6f262756513c845b66b4c>
+        a               sh:NodeShape ;
+        rdfs:label      "unit" ;
+        sh:description  "A subclass of SIO's class unit of measurement. A unit is a a definite magnitude of a physical quantity." ;
+        sh:name         "unit" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :Unit .
+
+<https://astrea.linkeddata.es/shapes#6a5074021f2d7d7d5a78e03c18f76c90>
+        a            sh:PropertyShape ;
+        rdfs:label   "has landing page url" ;
+        sh:datatype  rdfs:Literal ;
+        sh:name      "has landing page url" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :hasLandingPageURL .
+
+<https://astrea.linkeddata.es/shapes#2f1af8170ff7a296004e5c148a0a790e>
+        a               sh:NodeShape ;
+        rdfs:label      "wcs response manifestation" ;
+        sh:description  "Provides information about the file that is returned by a Web coverage service, including the format." ;
+        sh:name         "wcs response manifestation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :WCSResponseManifestation .
+
+<https://astrea.linkeddata.es/shapes#518e8bd0c0d42c7e3b671926a3041ca5>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :encodedInFormat .
+
+<https://astrea.linkeddata.es/shapes#64ad9a653a85a07b50e1170bc6286aeb>
+        a               sh:NodeShape ;
+        rdfs:label      "rgis prepublished raster dataset" ;
+        sh:name         "rgis prepublished raster dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#da6b761f966d4160cd865869a36aaea4> ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#RGISPrepublishedRasterDataset> .
+
+<https://astrea.linkeddata.es/shapes#6c42aafa5862394b24eaa7076466b759>
+        a               sh:NodeShape ;
+        rdfs:label      "wfs vector response" ;
+        sh:name         "wfs vector response" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#53b9adf5b29de6241826851b3889632f> ;
+        sh:targetClass  :WFSResponse .
+
+<https://astrea.linkeddata.es/shapes#3d0ecefc23a9b1559a82f089d2829917>
+        a            sh:PropertyShape ;
+        rdfs:label   "has json capabilities digest url" ;
+        sh:datatype  rdfs:Literal ;
+        sh:name      "has json capabilities digest url" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#hasJSONCapabilitiesDigestURL> .
+
+<https://astrea.linkeddata.es/shapes#7b670a4071c57860fb693f036dac9c48>
+        a               sh:NodeShape ;
+        rdfs:label      "theme" ;
+        sh:description  "Metadata describing the information captured in a dataset." ;
+        sh:name         "theme" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :Theme .
+
+<https://astrea.linkeddata.es/shapes#869100b78dce09d3e134108a77ceebc5>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 :hasBandName ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  rdfs:Literal ] .
+
+<https://astrea.linkeddata.es/shapes#05671f6c8bbab476e8b7870a1c31a06b>
+        a               sh:NodeShape ;
+        rdfs:label      "convert ASCII to TIFF" ;
+        sh:name         "convert ASCII to TIFF" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#ConvertASCIIToTIFF> .
+
+<https://astrea.linkeddata.es/shapes#796b0519737eb33bb4ae5142d5691119>
+        a               sh:NodeShape ;
+        rdfs:label      "atmospheric feature" ;
+        sh:name         "atmospheric feature" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#AtmosphericFeature> .
+
+<https://astrea.linkeddata.es/shapes#0961de4d571bafc709bbf72ec1118f86>
+        a                sh:PropertyShape ;
+        rdfs:label       "has epsg code" ;
+        sh:datatype      xsd:int ;
+        sh:maxInclusive  2147483647 ;
+        sh:minInclusive  -2147483648 ;
+        sh:name          "has epsg code" ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          :hasEPSGCode ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#8e8f81de82ebad22510a49d0acc09dfd>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 :hasLayer ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  :Layer ] .
+
+<https://astrea.linkeddata.es/shapes#71a2755f71cb4f32855d8fbe3081d62f>
+        a               sh:NodeShape ;
+        rdfs:label      "published prism dataset" ;
+        sh:name         "published prism dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#PublishedPRISMDataset> .
+
+<https://astrea.linkeddata.es/shapes#e45b9922a71ad3f952b7b02542c8cc08>
+        a               sh:NodeShape ;
+        rdfs:label      "dew point temperature" ;
+        sh:name         "dew point temperature" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#DewPointTemperature> .
+
+<https://astrea.linkeddata.es/shapes#b46b38e73b92f695b22c7945726fec43>
+        a               sh:NodeShape ;
+        rdfs:label      "prism dataset" ;
+        sh:name         "prism dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#PRISMDataset> .
+
+<https://astrea.linkeddata.es/shapes#4338b009bedc0f62de14942c3ad3cc44>
+        a               sh:NodeShape ;
+        rdfs:label      "terrestrial feature" ;
+        sh:name         "terrestrial feature" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#TerrestrialFeature> .
+
+<https://astrea.linkeddata.es/shapes#7d7ee1b58573323e5e4169cf4b8667db>
+        a            sh:PropertyShape ;
+        rdfs:label   "has end date" ;
+        sh:class     :Date ;
+        sh:name      "has end date" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :hasEndDate .
+
+<https://astrea.linkeddata.es/shapes#ecd8b8b36a992cc0203ac0f4964ee803>
+        a            sh:PropertyShape ;
+        rdfs:label   "has capabilities document url" ;
+        sh:datatype  rdfs:Literal ;
+        sh:name      "has capabilities document url" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :hasCapabilitiesDocumentURL .
+
+<https://astrea.linkeddata.es/shapes#b74e0409d94c5d0221bc8d26fcb034af>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#wasAssociatedWith> ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#Sensor> ] .
+
+<https://astrea.linkeddata.es/shapes#995c847eaf458a3b7f569b5cbb7b5060>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#wasAssociatedWith> .
+
+<https://astrea.linkeddata.es/shapes#35c43bad3080b20f540528c054af9e3c>
+        a               sh:NodeShape ;
+        rdfs:label      "service manifestation" ;
+        sh:description  "A service manifestation provides the information required to execute a service over the web. In particular, a service that will return a dataset." ;
+        sh:name         "service manifestation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :ServiceManifestation .
+
+<https://astrea.linkeddata.es/shapes#4f97f968576b7f67d651b722afea1cff>
+        a               sh:NodeShape ;
+        rdfs:label      "aggregate monthly" ;
+        sh:name         "aggregate monthly" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#AggregateMonthly> .
+
+<https://astrea.linkeddata.es/shapes#e5d27070436a653590a16963a84e2ca2>
+        a            sh:PropertyShape ;
+        rdfs:label   "enconded in format" ;
+        sh:class     :Format ;
+        sh:name      "enconded in format" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :encodedInFormat .
+
+<https://astrea.linkeddata.es/shapes#7fde97fd1874de2106d355d32be67b62>
+        a            sh:PropertyShape ;
+        rdfs:label   "has maximum value" ;
+        sh:datatype  xsd:double ;
+        sh:name      "has maximum value" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :hasMaximumValue ;
+        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#b8037b4999ea40ba8dc9d54de0ea130e>
+        a               sh:NodeShape ;
+        rdfs:label      "named geographic region" ;
+        sh:description  "A geographic region specified by a name." ;
+        sh:name         "named geographic region" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :NamedGeographicRegion .
+
+<https://astrea.linkeddata.es/shapes#f79144ba247a55e98a8a4617f95fbbe5>
+        a               sh:NodeShape ;
+        rdfs:label      "OGC  service manifestation" ;
+        sh:description  "Provides information about a service that can be executed over the web  using OGC standards, including the URL where the service is located." ;
+        sh:name         "OGC  service manifestation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ecd8b8b36a992cc0203ac0f4964ee803> , <https://astrea.linkeddata.es/shapes#b27639150e92de28d7e9915d90a25cfe> ;
+        sh:targetClass  :OGCServiceManifestation .
+
+<https://astrea.linkeddata.es/shapes#a50744cfce7dd9046c887250dcd5aaa5>
+        a               sh:NodeShape ;
+        rdfs:label      "feature set" ;
+        sh:description  "A set of geometric features or characteristics observed from an entity. This class is equivalent to the notion of an ArcGIS feature" ;
+        sh:name         "feature set" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c59b29796c19cd3ba02a199300ef6f0c> ;
+        sh:targetClass  :FeatureSet .
+
+<https://astrea.linkeddata.es/shapes#839ca5d7410d331b0117a237671b27a3>
+        a               sh:NodeShape ;
+        rdfs:label      "mosaic dataset" ;
+        sh:name         "mosaic dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#MosaicDataset> .
+
+<https://astrea.linkeddata.es/shapes#c6e2d8a928b3e47523a39eb2359e155d>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 :hasDataBand ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  :DataBand ] .
+
+<https://astrea.linkeddata.es/shapes#8db4b865d0e186e5a07371796a9fb5cf>
+        a            sh:PropertyShape ;
+        rdfs:label   "was published by" ;
+        sh:class     <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#Publish> ;
+        sh:name      "was published by" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#wasPublishedBy> .
+
+<https://astrea.linkeddata.es/shapes#151c7797be8e6a4f1370e593d2afe2ff>
+        a            sh:PropertyShape ;
+        rdfs:label   "covers time period" ;
+        sh:class     :TimePeriod ;
+        sh:name      "covers time period" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :coversTimePeriod .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#3ec112dcb2e48f6542028104159c3366>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasDateTime .
+
+<https://astrea.linkeddata.es/shapes#e7a9aa9d67a1b58cf0d2ce8ad8847321>
+        a            sh:PropertyShape ;
+        rdfs:label   "was modelled by" ;
+        sh:class     <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#PRISMModelling> ;
+        sh:name      "was modelled by" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#wasModelledBy> .
+
+<https://astrea.linkeddata.es/shapes#4e71ec40fa80a036898e2b3f020bd394>
+        a               sh:NodeShape ;
+        rdfs:label      "surface layer" ;
+        sh:name         "surface layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#SurfaceLayer> .
+
+<https://astrea.linkeddata.es/shapes#35718e536e59acf2fb5583a4fbc1b280>
+        a               sh:NodeShape ;
+        rdfs:label      "modelling" ;
+        sh:name         "modelling" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b49dc584d3b36fdd80375612f096108a> ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#Modelling> .
+
+<https://astrea.linkeddata.es/shapes#1841148729edc8856b34c02d2f7682a9>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 :hasBandIdentification ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  :BandIdentification ] .
+
+<https://astrea.linkeddata.es/shapes#a87212c133840aa85da128d30932ec5a>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#hadInputBandID> ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  :Band ] .
+
+<https://astrea.linkeddata.es/shapes#8159ba7e757c1b7dacdb6b62cc63c1e4>
+        a               sh:NodeShape ;
+        rdfs:label      "container format" ;
+        sh:description  "Describes how the data and metadata are included in a file." ;
+        sh:name         "container format" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#edc43a4c0a8e8e8fbc354e02b55e5603> , <https://astrea.linkeddata.es/shapes#10e07fb23f500f8c28c9036648f1cc0c> ;
+        sh:targetClass  :ContainerFormat .
+
+<https://astrea.linkeddata.es/shapes#83b74869c7e805af3c80103ce991aa6d>
+        a               sh:NodeShape ;
+        rdfs:label      "wcs service manifestation" ;
+        sh:description  "A WCS service, located in a specific URL, that will return a dataset." ;
+        sh:name         "wcs service manifestation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :WCSManifestation .
+
+<https://astrea.linkeddata.es/shapes#c750150b3b99c83bf68fafb5796a2949>
+        a               sh:NodeShape ;
+        rdfs:label      "dataset processing" ;
+        sh:name         "dataset processing" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#24d94592dbb1fb1dcd3ff060d74327f3> ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#DatasetProcessing> .
+
+<https://astrea.linkeddata.es/shapes#fffb611ccc983fd4434301db7620cb36>
+        a            sh:PropertyShape ;
+        rdfs:label   "has geospatial projection" ;
+        sh:class     :Projection ;
+        sh:name      "has geospatial projection" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :hasGeospatialProjection .
+
+<https://astrea.linkeddata.es/shapes#10e07fb23f500f8c28c9036648f1cc0c>
+        a            sh:PropertyShape ;
+        rdfs:label   "has payload format" ;
+        sh:class     :PayloadFormat ;
+        sh:name      "has payload format" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :hasPayloadFormat .
+
+<https://astrea.linkeddata.es/shapes#04354f3384e225e8d0fbe7afedef71f5>
+        a            sh:PropertyShape ;
+        rdfs:label   "has date time" ;
+        sh:datatype  xsd:dateTime ;
+        sh:name      "has date time" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :hasDateTime ;
+        sh:pattern   "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#2fe9c7926e4f8a27d41bc854f8ab5208>
+        a            sh:PropertyShape ;
+        rdfs:label   "has layer" ;
+        sh:class     :Layer ;
+        sh:name      "has layer" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :hasLayer .
+
+<https://astrea.linkeddata.es/shapes#2473e086ae9ad58d902adc9c47c7bab7>
+        a            sh:PropertyShape ;
+        rdfs:label   "has minimum value" ;
+        sh:datatype  xsd:double ;
+        sh:name      "has minimum value" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :hasMinimumValue ;
+        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#4d82691ca34ed8d3a6c3c4ed1d721e8b>
+        a               sh:NodeShape ;
+        rdfs:label      "rgis wcs dataset" ;
+        sh:name         "rgis wcs dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#8db4b865d0e186e5a07371796a9fb5cf> ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#RGISWCSDataset> .
+
+<https://astrea.linkeddata.es/shapes#07bed9cb319f2a0d66e7c5308a5fdeb2>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasEPSGCode .
+
+<https://astrea.linkeddata.es/shapes#7269c690ef3947352335057b1f26680c>
+        a               sh:NodeShape ;
+        rdfs:label      "vegetation" ;
+        sh:name         "vegetation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#Vegetation> .
+
+<https://astrea.linkeddata.es/shapes#edc43a4c0a8e8e8fbc354e02b55e5603>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :hasPayloadFormat .
+
+<https://astrea.linkeddata.es/shapes#ac6870acca2814a3ab0d27f86806b1c3>
+        a            sh:PropertyShape ;
+        rdfs:label   "was measured by" ;
+        sh:class     <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#MODISMeasurement> ;
+        sh:name      "was measured by" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#wasMeasuredBy> .
+
+<https://astrea.linkeddata.es/shapes#bf50b57ae336825f32746d02a3e9848e>
+        a            sh:PropertyShape ;
+        rdfs:label   "has left longitude" ;
+        sh:datatype  xsd:double ;
+        sh:name      "has left longitude" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :hasLeftLongitude ;
+        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#2b0f38d08b06b461c8e8ed35eb1d1906>
+        a            sh:PropertyShape ;
+        rdfs:label   "has date" ;
+        sh:name      "has date" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :hasDate .
+
+<https://astrea.linkeddata.es/shapes#b1c9d742bdc6c1108bbbbe4ee39b4d23>
+        a            sh:PropertyShape ;
+        rdfs:label   "has manifestation" ;
+        sh:class     :DatasetManifestation ;
+        sh:name      "has manifestation" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :hasManifestation .
+
+<https://astrea.linkeddata.es/report/01349412792>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-data.owl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#42002151d4bb509f9191ca8f94de8bc8>
+        a               sh:NodeShape ;
+        rdfs:label      "prism modelling" ;
+        sh:name         "prism modelling" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b8bff3fc70781a4cbe581dbd37dfdfbe> ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#PRISMModelling> .
+
+<https://astrea.linkeddata.es/shapes#3c50db311ea284d2adfa1bd6e5cc78a4>
+        a               sh:NodeShape ;
+        rdfs:label      "measurement" ;
+        sh:name         "measurement" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b74e0409d94c5d0221bc8d26fcb034af> ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#Measurement> .
+
+<https://astrea.linkeddata.es/shapes#22b984130c934ef06daf500ec5994868>
+        a               sh:NodeShape ;
+        rdfs:label      "modis dataset" ;
+        sh:name         "modis dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#MODISDataset> .
+
+<https://astrea.linkeddata.es/shapes#2e58753632ffbbaaaa91fe95a450d8d8>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 :hasManifestation ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  :WCSManifestation ] .
+
+<https://astrea.linkeddata.es/shapes#4df4c9c20b7b7eb5cb1a533c29a841ed>
+        a               sh:NodeShape ;
+        rdfs:label      "modelling agent" ;
+        sh:name         "modelling agent" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#ModellingAgent> .
+
+<https://astrea.linkeddata.es/shapes#c17a02a2c7c302aaa1c06254bbc5068d>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 :containsFeatureSet ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  :FeatureSet ] .
+
+<https://astrea.linkeddata.es/shapes#06d33f9cbddba61c63db91f9c05d54d9>
+        a               sh:NodeShape ;
+        rdfs:label      "payload format" ;
+        sh:name         "payload format" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :PayloadFormat .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#30ff04bb3e7b400304a481252bef04ee> , <https://astrea.linkeddata.es/shapes#01c29eb6974e3c7b6cd2a312a768b7ed> , <https://astrea.linkeddata.es/shapes#35d38c595064c14e655044a9bc126d56> , <https://astrea.linkeddata.es/shapes#0278cb2004adc0880b1c1fac9459231a> , <https://astrea.linkeddata.es/shapes#06d33f9cbddba61c63db91f9c05d54d9> , <https://astrea.linkeddata.es/shapes#2f1af8170ff7a296004e5c148a0a790e> , <https://astrea.linkeddata.es/shapes#fe0cd7c25fa22943139fec9686aa0904> , <https://astrea.linkeddata.es/shapes#8db4b865d0e186e5a07371796a9fb5cf> , <https://astrea.linkeddata.es/shapes#704b489e14a6bc2071ae7499ba8b500c> , <https://astrea.linkeddata.es/shapes#7b670a4071c57860fb693f036dac9c48> , <https://astrea.linkeddata.es/shapes#86a40bcb99021b93f4a578ae06239b03> , <https://astrea.linkeddata.es/shapes#e45b9922a71ad3f952b7b02542c8cc08> , <https://astrea.linkeddata.es/shapes#b49dc584d3b36fdd80375612f096108a> , <https://astrea.linkeddata.es/shapes#869100b78dce09d3e134108a77ceebc5> , <https://astrea.linkeddata.es/shapes#c59b29796c19cd3ba02a199300ef6f0c> , <https://astrea.linkeddata.es/shapes#4482163fa20a596604409e54ca14a312> , <https://astrea.linkeddata.es/shapes#8e8f81de82ebad22510a49d0acc09dfd> , <https://astrea.linkeddata.es/shapes#232f6c828d2ecb8b158b34fa6299b0f2> , <https://astrea.linkeddata.es/shapes#1ce07bc56e4ef5635c990f01302e4f80> , <https://astrea.linkeddata.es/shapes#05671f6c8bbab476e8b7870a1c31a06b> , <https://astrea.linkeddata.es/shapes#688fda38ce0f336de438e459558d9e5f> , <https://astrea.linkeddata.es/shapes#e7a9aa9d67a1b58cf0d2ce8ad8847321> , <https://astrea.linkeddata.es/shapes#3c50db311ea284d2adfa1bd6e5cc78a4> , <https://astrea.linkeddata.es/shapes#6a74fa88957837b03a51a5c2d035d235> , <https://astrea.linkeddata.es/shapes#8159ba7e757c1b7dacdb6b62cc63c1e4> , <https://astrea.linkeddata.es/shapes#18c00218b6c7131f10f65af5f37b3e2e> , <https://astrea.linkeddata.es/shapes#1b83e94c9525976b206f531db35e71c8> , <https://astrea.linkeddata.es/shapes#c76c576963fc63f0fb9a37f7c5fe8499> , <https://astrea.linkeddata.es/shapes#1762f070d684a46d4ac1c60ff1b61956> , <https://astrea.linkeddata.es/shapes#c750150b3b99c83bf68fafb5796a2949> , <https://astrea.linkeddata.es/shapes#fd391b88bae0645c6835b4ec0c4ccf6f> , <https://astrea.linkeddata.es/shapes#b46b38e73b92f695b22c7945726fec43> , <https://astrea.linkeddata.es/shapes#4e71ec40fa80a036898e2b3f020bd394> , <https://astrea.linkeddata.es/shapes#4f97f968576b7f67d651b722afea1cff> , <https://astrea.linkeddata.es/shapes#7031c1fd376ffc514476751719b22b12> , <https://astrea.linkeddata.es/shapes#928c8980ff6a9c9e35f70abf78b3d9aa> , <https://astrea.linkeddata.es/shapes#60325b258a6a0dd4734c68429e9d7c35> , <https://astrea.linkeddata.es/shapes#05a0a9b8cf6b964d891ee7c238eb9a2b> , <https://astrea.linkeddata.es/shapes#6c42aafa5862394b24eaa7076466b759> , <https://astrea.linkeddata.es/shapes#da6b761f966d4160cd865869a36aaea4> , <https://astrea.linkeddata.es/shapes#ba7b8456b732c86ee1a48b7954967387> , <https://astrea.linkeddata.es/shapes#b8037b4999ea40ba8dc9d54de0ea130e> , <https://astrea.linkeddata.es/shapes#4d82691ca34ed8d3a6c3c4ed1d721e8b> , <https://astrea.linkeddata.es/shapes#f175854bfb159a8ef0148533d2a38c1a> , <https://astrea.linkeddata.es/shapes#ac6870acca2814a3ab0d27f86806b1c3> , <https://astrea.linkeddata.es/shapes#42002151d4bb509f9191ca8f94de8bc8> , <https://astrea.linkeddata.es/shapes#c790aa9d6669cab56a9e22452ec1cbcb> , <https://astrea.linkeddata.es/shapes#be1569cf1ab77f8d6366986e028bf615> , <https://astrea.linkeddata.es/shapes#2223d4013fba70e243859f6c1610ecab> , <https://astrea.linkeddata.es/shapes#0fa005b2666ff151bb492c9aa3715a7b> , <https://astrea.linkeddata.es/shapes#223509bd054124ae297b4a3dc11fc6f0> , <https://astrea.linkeddata.es/shapes#c482cb7efffbcecf6fec4f9a053271c2> , <https://astrea.linkeddata.es/shapes#b8bff3fc70781a4cbe581dbd37dfdfbe> , <https://astrea.linkeddata.es/shapes#518e8bd0c0d42c7e3b671926a3041ca5> , <https://astrea.linkeddata.es/shapes#9b7b2f89dcd3ed34dd42106d0b0a47c6> , <https://astrea.linkeddata.es/shapes#1841148729edc8856b34c02d2f7682a9> , <https://astrea.linkeddata.es/shapes#b27639150e92de28d7e9915d90a25cfe> , <https://astrea.linkeddata.es/shapes#c7c22d793c1fc819d2c9a6e1bb15ac02> , <https://astrea.linkeddata.es/shapes#31b6763a7eaf8752ef24ac94d5c53594> , <https://astrea.linkeddata.es/shapes#236906595a4d92c5c2bf43b7aa2f7968> , <https://astrea.linkeddata.es/shapes#e5d27070436a653590a16963a84e2ca2> , <https://astrea.linkeddata.es/shapes#b1c9d742bdc6c1108bbbbe4ee39b4d23> , <https://astrea.linkeddata.es/shapes#10e07fb23f500f8c28c9036648f1cc0c> , <https://astrea.linkeddata.es/shapes#e0c5e8a2ef692eb2f7cf492aeae69445> , <https://astrea.linkeddata.es/shapes#35718e536e59acf2fb5583a4fbc1b280> , <https://astrea.linkeddata.es/shapes#bfcb22fa776384101002ae168ac7339c> , <https://astrea.linkeddata.es/shapes#2e58753632ffbbaaaa91fe95a450d8d8> , <https://astrea.linkeddata.es/shapes#3a293b32148013dfe07d318a0edc70d8> , <https://astrea.linkeddata.es/shapes#b74e0409d94c5d0221bc8d26fcb034af> , <https://astrea.linkeddata.es/shapes#fd978b12bdf28ff405c149383f42a18f> , <https://astrea.linkeddata.es/shapes#62631cd538b4c588ea8fbc7442feb676> , <https://astrea.linkeddata.es/shapes#839ca5d7410d331b0117a237671b27a3> , <https://astrea.linkeddata.es/shapes#64ad9a653a85a07b50e1170bc6286aeb> , <https://astrea.linkeddata.es/shapes#f8f4f119c1c6f262756513c845b66b4c> , <https://astrea.linkeddata.es/shapes#9da119520359f2f22a97ae82b9c819d7> , <https://astrea.linkeddata.es/shapes#6b6fd7cf4941c7e621033e1b020e6a30> , <https://astrea.linkeddata.es/shapes#a42f73503c7d8f42e8c08bc75c314559> , <https://astrea.linkeddata.es/shapes#53b9adf5b29de6241826851b3889632f> , <https://astrea.linkeddata.es/shapes#ecd8b8b36a992cc0203ac0f4964ee803> , <https://astrea.linkeddata.es/shapes#5539e2af72a62927aa5e4be8ea5e743d> , <https://astrea.linkeddata.es/shapes#20ad47471b9942ec35dee2c79a3a850a> , <https://astrea.linkeddata.es/shapes#a87212c133840aa85da128d30932ec5a> , <https://astrea.linkeddata.es/shapes#7269c690ef3947352335057b1f26680c> , <https://astrea.linkeddata.es/shapes#d9bb9ff1b797293011f56330236d720a> , <https://astrea.linkeddata.es/shapes#fb28ad51d766771592aef5ce905aad31> , <https://astrea.linkeddata.es/shapes#8a023edf4af4d8b46aeb1e37c9393fba> , <https://astrea.linkeddata.es/shapes#22b984130c934ef06daf500ec5994868> , <https://astrea.linkeddata.es/shapes#5f5231f5bfaab93a4df0f31bfa231c6e> , <https://astrea.linkeddata.es/shapes#34d0b50b8da18665b3d5443010b3d8d7> , <https://astrea.linkeddata.es/shapes#fffb611ccc983fd4434301db7620cb36> , <https://astrea.linkeddata.es/shapes#6e0b5e7bc71f81576824f120001394e9> , <https://astrea.linkeddata.es/shapes#f6f6ecd69478dd5661e3a90b2a82cdde> , <https://astrea.linkeddata.es/shapes#e77753a24ffcbb32d3d5eab9526f60eb> , <https://astrea.linkeddata.es/shapes#63858c40a87ef70f3f6cafcf6f6411d3> , <https://astrea.linkeddata.es/shapes#4df4c9c20b7b7eb5cb1a533c29a841ed> , <https://astrea.linkeddata.es/shapes#61d6e17c1fca4a23cb9372ee8a23a893> , <https://astrea.linkeddata.es/shapes#07bed9cb319f2a0d66e7c5308a5fdeb2> , <https://astrea.linkeddata.es/shapes#e4dcd9a4d9a97cf3b11b360bbadee202> , <https://astrea.linkeddata.es/shapes#04354f3384e225e8d0fbe7afedef71f5> , <https://astrea.linkeddata.es/shapes#6ba7c1a26d819cbca636a51367bf8898> , <https://astrea.linkeddata.es/shapes#796b0519737eb33bb4ae5142d5691119> , <https://astrea.linkeddata.es/shapes#cbcb432337ad64b39966334f1a967762> , <https://astrea.linkeddata.es/shapes#edc43a4c0a8e8e8fbc354e02b55e5603> , <https://astrea.linkeddata.es/shapes#e2251b69223630323f3b470771c3c65b> , <https://astrea.linkeddata.es/shapes#0961de4d571bafc709bbf72ec1118f86> , <https://astrea.linkeddata.es/shapes#3ec112dcb2e48f6542028104159c3366> , <https://astrea.linkeddata.es/shapes#11ee95f558988792f7c96a22627e1087> , <https://astrea.linkeddata.es/shapes#7fde97fd1874de2106d355d32be67b62> , <https://astrea.linkeddata.es/shapes#c34f86614dc013337b2020b418912958> , <https://astrea.linkeddata.es/shapes#c6e2d8a928b3e47523a39eb2359e155d> , <https://astrea.linkeddata.es/shapes#4338b009bedc0f62de14942c3ad3cc44> , <https://astrea.linkeddata.es/shapes#151c7797be8e6a4f1370e593d2afe2ff> , <https://astrea.linkeddata.es/shapes#2473e086ae9ad58d902adc9c47c7bab7> , <https://astrea.linkeddata.es/shapes#75abe764f87f466f4c2e605fb1f9adf7> , <https://astrea.linkeddata.es/shapes#7d7ee1b58573323e5e4169cf4b8667db> , <https://astrea.linkeddata.es/shapes#5a7eb7a550d2ad76b721a1158dbb2bd0> , <https://astrea.linkeddata.es/shapes#6a5074021f2d7d7d5a78e03c18f76c90> , <https://astrea.linkeddata.es/shapes#df448336e9a250e37ecbf5de042d08af> , <https://astrea.linkeddata.es/shapes#465deef50d457f8f4349d8e12a558d7c> , <https://astrea.linkeddata.es/shapes#71a2755f71cb4f32855d8fbe3081d62f> , <https://astrea.linkeddata.es/shapes#35c43bad3080b20f540528c054af9e3c> , <https://astrea.linkeddata.es/shapes#6f7cce658666359a6d03f7e15d71d2ca> , <https://astrea.linkeddata.es/shapes#b4d9866b84773e0be19987ea1b0b5add> , <https://astrea.linkeddata.es/shapes#f79144ba247a55e98a8a4617f95fbbe5> , <https://astrea.linkeddata.es/shapes#995c847eaf458a3b7f569b5cbb7b5060> , <https://astrea.linkeddata.es/shapes#bf50b57ae336825f32746d02a3e9848e> , <https://astrea.linkeddata.es/shapes#83b74869c7e805af3c80103ce991aa6d> , <https://astrea.linkeddata.es/shapes#ecdfb91ce7aa488059436c3230b470e0> , <https://astrea.linkeddata.es/shapes#5494ed0e8bef2a871edbede729d4da24> , <https://astrea.linkeddata.es/shapes#61e89ad799eefa81dc26b43eb5177d5d> , <https://astrea.linkeddata.es/shapes#4ba597f7ed56b7262687661a0e862c70> , <https://astrea.linkeddata.es/shapes#6a7539dbcfaaa17bcbfb75069660165d> , <https://astrea.linkeddata.es/shapes#cb6a2b8c9bed59b4cc5a39c17c95726f> , <https://astrea.linkeddata.es/shapes#99280e9674612ddac5ebb845069293b0> , <https://astrea.linkeddata.es/shapes#a50744cfce7dd9046c887250dcd5aaa5> , <https://astrea.linkeddata.es/shapes#6e3673b0b3162f58931ef892e114d608> , <https://astrea.linkeddata.es/shapes#24d94592dbb1fb1dcd3ff060d74327f3> , <https://astrea.linkeddata.es/shapes#3d0ecefc23a9b1559a82f089d2829917> , <https://astrea.linkeddata.es/shapes#b25b9cd675efbed5b0b87fbe635ade28> , <https://astrea.linkeddata.es/shapes#1f181d8d480eb0103d05abb662ebfdf6> , <https://astrea.linkeddata.es/shapes#4132f426934cd6d223813800f60b7a78> , <https://astrea.linkeddata.es/shapes#e95cdfd616065e83f229f4f15df0d20d> , <https://astrea.linkeddata.es/shapes#2fe9c7926e4f8a27d41bc854f8ab5208> , <https://astrea.linkeddata.es/shapes#2b0f38d08b06b461c8e8ed35eb1d1906> , <https://astrea.linkeddata.es/shapes#3d496ea79039d0ae84c30e57bd6bf945> , <https://astrea.linkeddata.es/shapes#c17a02a2c7c302aaa1c06254bbc5068d> , <https://astrea.linkeddata.es/shapes#97860a451164bff53a11f4e7c255540b> , <https://astrea.linkeddata.es/shapes#ce5f69e3c3d76bf335257f62a4a823a6> , <https://astrea.linkeddata.es/shapes#a435f20f8f5b9f8585270d4f14ea3c3c> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/01349412792> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#4ba597f7ed56b7262687661a0e862c70>
+        a               sh:NodeShape ;
+        rdfs:label      "reproject" ;
+        sh:name         "reproject" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#Reproject> .
+
+<https://astrea.linkeddata.es/shapes#be1569cf1ab77f8d6366986e028bf615>
+        a            sh:PropertyShape ;
+        rdfs:label   "had input band id" ;
+        sh:class     :BandIdentification ;
+        sh:name      "had input band id" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#hadInputBandID> .
+
+<https://astrea.linkeddata.es/shapes#fe0cd7c25fa22943139fec9686aa0904>
+        a               sh:NodeShape ;
+        rdfs:label      "sensor" ;
+        sh:name         "sensor" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#Sensor> .
+
+<https://astrea.linkeddata.es/shapes#fd978b12bdf28ff405c149383f42a18f>
+        a               sh:NodeShape ;
+        rdfs:label      "index" ;
+        sh:name         "index" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#Index> .
+
+<https://astrea.linkeddata.es/shapes#a435f20f8f5b9f8585270d4f14ea3c3c>
+        a               sh:NodeShape ;
+        rdfs:label      "data band" ;
+        sh:name         "data band" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2473e086ae9ad58d902adc9c47c7bab7> , <https://astrea.linkeddata.es/shapes#f175854bfb159a8ef0148533d2a38c1a> , <https://astrea.linkeddata.es/shapes#1f181d8d480eb0103d05abb662ebfdf6> , <https://astrea.linkeddata.es/shapes#7fde97fd1874de2106d355d32be67b62> , <https://astrea.linkeddata.es/shapes#928c8980ff6a9c9e35f70abf78b3d9aa> , <https://astrea.linkeddata.es/shapes#9da119520359f2f22a97ae82b9c819d7> , <https://astrea.linkeddata.es/shapes#c34f86614dc013337b2020b418912958> ;
+        sh:targetClass  :DataBand .
+
+<https://astrea.linkeddata.es/shapes#4482163fa20a596604409e54ca14a312>
+        a            sh:PropertyShape ;
+        rdfs:label   "has theme" ;
+        sh:name      "has theme" ;
+        sh:nodeKind  sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#6a7539dbcfaaa17bcbfb75069660165d>
+        a            sh:PropertyShape ;
+        rdfs:label   "contains feature set" ;
+        sh:class     :FeatureSet ;
+        sh:name      "contains feature set" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :containsFeatureSet .
+
+<https://astrea.linkeddata.es/shapes#e0c5e8a2ef692eb2f7cf492aeae69445>
+        a               sh:NodeShape ;
+        rdfs:label      "vector dataset" ;
+        sh:name         "vector dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2fe9c7926e4f8a27d41bc854f8ab5208> , <https://astrea.linkeddata.es/shapes#8e8f81de82ebad22510a49d0acc09dfd> ;
+        sh:targetClass  :VectorDataset .
+
+<https://astrea.linkeddata.es/shapes#9da119520359f2f22a97ae82b9c819d7>
+        a            sh:PropertyShape ;
+        rdfs:label   "represents entity" ;
+        sh:class     :Entity ;
+        sh:name      "represents entity" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :representsEntity .
+
+<https://astrea.linkeddata.es/shapes#97860a451164bff53a11f4e7c255540b>
+        a               sh:NodeShape ;
+        rdfs:label      "duration" ;
+        sh:description  "Time period defined by a start and end time." ;
+        sh:name         "duration" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :Duration .
+
+<https://astrea.linkeddata.es/shapes#b27639150e92de28d7e9915d90a25cfe>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 :hasCapabilitiesDocumentURL ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  rdfs:Literal ] .
+
+<https://astrea.linkeddata.es/shapes#b25b9cd675efbed5b0b87fbe635ade28>
+        a               sh:NodeShape ;
+        rdfs:label      "layer" ;
+        sh:description  "A layer is a set of environmental information quantifying the value of a single characteristic through space, used to compose a climate scenario to generate a model." ;
+        sh:name         "layer" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#6a7539dbcfaaa17bcbfb75069660165d> , <https://astrea.linkeddata.es/shapes#c17a02a2c7c302aaa1c06254bbc5068d> ;
+        sh:targetClass  :Layer .
+
+<https://astrea.linkeddata.es/shapes#1f181d8d480eb0103d05abb662ebfdf6>
+        a            sh:PropertyShape ;
+        rdfs:label   "has resolution" ;
+        sh:datatype  xsd:double ;
+        sh:name      "has resolution" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :hasResolution ;
+        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#704b489e14a6bc2071ae7499ba8b500c>
+        a               sh:NodeShape ;
+        rdfs:label      "dataset manifestation" ;
+        sh:description  "A dataset manifestation, that follows the description of a DCAT Distribution, provides the information to retrieve a dataset, including the fomat, endpoint, etc." ;
+        sh:name         "dataset manifestation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e5d27070436a653590a16963a84e2ca2> ;
+        sh:targetClass  :DatasetManifestation .
+
+<https://astrea.linkeddata.es/shapes#c34f86614dc013337b2020b418912958>
+        a            sh:PropertyShape ;
+        rdfs:label   "has no data value" ;
+        sh:datatype  xsd:double ;
+        sh:name      "has no data value" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :hasNoDataValue ;
+        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#e77753a24ffcbb32d3d5eab9526f60eb>
+        a               sh:NodeShape ;
+        rdfs:label      "format" ;
+        sh:description  "The arrangement of data for computer input or output." ;
+        sh:name         "format" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :Format .
+
+<https://astrea.linkeddata.es/shapes#99280e9674612ddac5ebb845069293b0>
+        a            sh:PropertyShape ;
+        rdfs:label   "covers region" ;
+        sh:class     :GeographicRegion ;
+        sh:name      "covers region" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :coversRegion .
+
+<https://astrea.linkeddata.es/shapes#ce5f69e3c3d76bf335257f62a4a823a6>
+        a            sh:PropertyShape ;
+        rdfs:label   "has longitude" ;
+        sh:name      "has longitude" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :hasLongitude .
+
+<https://astrea.linkeddata.es/shapes#05a0a9b8cf6b964d891ee7c238eb9a2b>
+        a               sh:NodeShape ;
+        rdfs:label      "converted dataset" ;
+        sh:name         "converted dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#ConvertedDataset> .
+
+<https://astrea.linkeddata.es/shapes#0fa005b2666ff151bb492c9aa3715a7b>
+        a               sh:NodeShape ;
+        rdfs:label      "geospatial dataset" ;
+        sh:description  "A geospatial dataset contains data that covers a specified geographic region and specifies how a measured characteristic varies across that region, for a specific date range. It has a specific manifestation, a theme, and a geospatial projection" ;
+        sh:name         "geospatial dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#151c7797be8e6a4f1370e593d2afe2ff> , <https://astrea.linkeddata.es/shapes#fffb611ccc983fd4434301db7620cb36> , <https://astrea.linkeddata.es/shapes#b1c9d742bdc6c1108bbbbe4ee39b4d23> , <https://astrea.linkeddata.es/shapes#99280e9674612ddac5ebb845069293b0> ;
+        sh:targetClass  :GeospatialDataset .
+
+<https://astrea.linkeddata.es/shapes#30ff04bb3e7b400304a481252bef04ee>
+        a            sh:PropertyShape ;
+        rdfs:label   "has band identification" ;
+        sh:class     :BandIdentification ;
+        sh:name      "has band identification" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      :hasBandIdentification .
+
+<https://astrea.linkeddata.es/shapes#6b6fd7cf4941c7e621033e1b020e6a30>
+        a            sh:PropertyShape ;
+        rdfs:label   "has latitude" ;
+        sh:name      "has latitude" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :hasLatitude .
+
+<https://astrea.linkeddata.es/shapes#63858c40a87ef70f3f6cafcf6f6411d3>
+        a               sh:NodeShape ;
+        rdfs:label      "band" ;
+        sh:description  "A band is one component of a multi-characteristic dataset." ;
+        sh:name         "band" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#30ff04bb3e7b400304a481252bef04ee> , <https://astrea.linkeddata.es/shapes#1841148729edc8856b34c02d2f7682a9> ;
+        sh:targetClass  :Band .
+
+<https://astrea.linkeddata.es/shapes#01c29eb6974e3c7b6cd2a312a768b7ed>
+        a               sh:NodeShape ;
+        rdfs:label      "rgis wcs manifestation" ;
+        sh:name         "rgis wcs manifestation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#3d0ecefc23a9b1559a82f089d2829917> , <https://astrea.linkeddata.es/shapes#5f5231f5bfaab93a4df0f31bfa231c6e> ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#RGISWCSManifestation> .
+
+<https://astrea.linkeddata.es/shapes#75abe764f87f466f4c2e605fb1f9adf7>
+        a               sh:NodeShape ;
+        rdfs:label      "downloaded modis dataset" ;
+        sh:description  "A MODIS dataset that has been obtained from a URL." ;
+        sh:name         "downloaded modis dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#DownloadedMODISDataset> .
+
+<https://astrea.linkeddata.es/shapes#6a74fa88957837b03a51a5c2d035d235>
+        a               sh:NodeShape ;
+        rdfs:label      "reprojected dataset" ;
+        sh:name         "reprojected dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#ReprojectedDataset> .
+
+<https://astrea.linkeddata.es/shapes#53b9adf5b29de6241826851b3889632f>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 :hasManifestation ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  :WFSResponseManifestation ] .
+
+<https://astrea.linkeddata.es/shapes#b49dc584d3b36fdd80375612f096108a>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#wasAssociatedWith> ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#ModellingAgent> ] .
+
+<https://astrea.linkeddata.es/shapes#3a293b32148013dfe07d318a0edc70d8>
+        a               sh:NodeShape ;
+        rdfs:label      "date" ;
+        sh:name         "date" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#3ec112dcb2e48f6542028104159c3366> , <https://astrea.linkeddata.es/shapes#04354f3384e225e8d0fbe7afedef71f5> ;
+        sh:targetClass  :Date .
+
+<https://astrea.linkeddata.es/shapes#c482cb7efffbcecf6fec4f9a053271c2>
+        a               sh:NodeShape ;
+        rdfs:label      "projection" ;
+        sh:description  "Processing of datasets, where a set of rules generated by a model are applied onto a climate scenario of related environmental layers." ;
+        sh:name         "projection" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#07bed9cb319f2a0d66e7c5308a5fdeb2> , <https://astrea.linkeddata.es/shapes#0961de4d571bafc709bbf72ec1118f86> ;
+        sh:targetClass  :Projection .
+
+<https://astrea.linkeddata.es/shapes#60325b258a6a0dd4734c68429e9d7c35>
+        a               sh:NodeShape ;
+        rdfs:label      "published modis dataset" ;
+        sh:name         "published modis dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#PublishedMODISDataset> .
+
+<https://astrea.linkeddata.es/shapes#fd391b88bae0645c6835b4ec0c4ccf6f>
+        a               sh:NodeShape ;
+        rdfs:label      "prism dataset processing" ;
+        sh:name         "prism dataset processing" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#PRISMDatasetProcessing> .
+
+<https://astrea.linkeddata.es/shapes#11ee95f558988792f7c96a22627e1087>
+        a               sh:NodeShape ;
+        rdfs:label      "characteristic" ;
+        sh:name         "characteristic" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :Characteristic .
+
+<https://astrea.linkeddata.es/shapes#c59b29796c19cd3ba02a199300ef6f0c>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 :representsEntity ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  :Entity ] .
+
+<https://astrea.linkeddata.es/shapes#61d6e17c1fca4a23cb9372ee8a23a893>
+        a               sh:NodeShape ;
+        rdfs:label      "extracted dataset" ;
+        sh:description  "A raster dataset that was output by an extraction processing, such as a payload extraction." ;
+        sh:name         "extracted dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#ExtractedDataset> .
+
+<https://astrea.linkeddata.es/shapes#e4dcd9a4d9a97cf3b11b360bbadee202>
+        a               sh:NodeShape ;
+        rdfs:label      "modis measurement" ;
+        sh:name         "modis measurement" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#995c847eaf458a3b7f569b5cbb7b5060> ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#MODISMeasurement> .
+
+<https://astrea.linkeddata.es/shapes#6e3673b0b3162f58931ef892e114d608>
+        a               sh:NodeShape ;
+        rdfs:label      "download" ;
+        sh:name         "download" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#Download> .
+
+<https://astrea.linkeddata.es/shapes#3d496ea79039d0ae84c30e57bd6bf945>
+        a               sh:NodeShape ;
+        rdfs:label      "processor" ;
+        sh:name         "processor" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#bfcb22fa776384101002ae168ac7339c> , <https://astrea.linkeddata.es/shapes#c790aa9d6669cab56a9e22452ec1cbcb> ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#Processor> .
+
+<https://astrea.linkeddata.es/shapes#ecdfb91ce7aa488059436c3230b470e0>
+        a               sh:NodeShape ;
+        rdfs:label      "metadata format" ;
+        sh:description  "Describes the format of the metadata included in a file." ;
+        sh:name         "metadata format" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :MetadataFormat .
+
+<https://astrea.linkeddata.es/shapes#b4d9866b84773e0be19987ea1b0b5add>
+        a               sh:NodeShape ;
+        rdfs:label      "downloaded prism dataset" ;
+        sh:name         "downloaded prism dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#DownloadedPRISMDataset> .
+
+<https://astrea.linkeddata.es/shapes#1ce07bc56e4ef5635c990f01302e4f80>
+        a               sh:NodeShape ;
+        rdfs:label      "amount" ;
+        sh:description  "A characteristic that can be measured as a quantity." ;
+        sh:name         "amount" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#Amount> .
+
+<https://astrea.linkeddata.es/shapes#ba7b8456b732c86ee1a48b7954967387>
+        a               sh:NodeShape ;
+        rdfs:label      "dataset manipulation software" ;
+        sh:name         "dataset manipulation software" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#DatasetManipulationSoftware> .
+
+<https://astrea.linkeddata.es/shapes#c76c576963fc63f0fb9a37f7c5fe8499>
+        a               sh:NodeShape ;
+        rdfs:label      "geographic region" ;
+        sh:name         "geographic region" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :GeographicRegion .
+
+<https://astrea.linkeddata.es/shapes#5a7eb7a550d2ad76b721a1158dbb2bd0>
+        a               sh:NodeShape ;
+        rdfs:label      "file manifestation" ;
+        sh:description  "A file manifestation provides the information required to retrieve a file over the web, including the format and the URL where the file is available." ;
+        sh:name         "file manifestation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5539e2af72a62927aa5e4be8ea5e743d> , <https://astrea.linkeddata.es/shapes#6a5074021f2d7d7d5a78e03c18f76c90> ;
+        sh:targetClass  :FileManifestation .
+
+<https://astrea.linkeddata.es/shapes#24d94592dbb1fb1dcd3ff060d74327f3>
+        a            sh:PropertyShape ;
+        rdfs:label   "had input" ;
+        sh:class     <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#RGISPrepublishedRasterDataset> ;
+        sh:name      "had input" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#hadInput> .
+
+<https://astrea.linkeddata.es/shapes#1b83e94c9525976b206f531db35e71c8>
+        a               sh:NodeShape ;
+        rdfs:label      "wcs raster dataset" ;
+        sh:description  "A WCS raster dataset is composed by all possible datasets provided by a WCS service manifestation depending on the parameters set in a service call. " ;
+        sh:name         "wcs raster dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2e58753632ffbbaaaa91fe95a450d8d8> ;
+        sh:targetClass  :WCSDataset .
+
+<https://astrea.linkeddata.es/shapes#6ba7c1a26d819cbca636a51367bf8898>
+        a               sh:NodeShape ;
+        rdfs:label      "aggregate over thirty years" ;
+        sh:name         "aggregate over thirty years" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#AggregateOverThirtyYears> .
+
+<https://astrea.linkeddata.es/shapes#c790aa9d6669cab56a9e22452ec1cbcb>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#hasProcessorName> ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  rdfs:Literal ] .
+
+<https://astrea.linkeddata.es/shapes#e2251b69223630323f3b470771c3c65b>
+        a               sh:NodeShape ;
+        rdfs:label      "wfs vector dataset" ;
+        sh:name         "wfs vector dataset" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#cb6a2b8c9bed59b4cc5a39c17c95726f> ;
+        sh:targetClass  :WFSDataset .
+
+<https://astrea.linkeddata.es/shapes#e95cdfd616065e83f229f4f15df0d20d>
+        a            sh:PropertyShape ;
+        rdfs:label   "has upper latitude" ;
+        sh:datatype  xsd:double ;
+        sh:name      "has upper latitude" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :hasUpperLatitude ;
+        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#7031c1fd376ffc514476751719b22b12>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 :hasManifestation ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  :WCSResponseManifestation ] .
+
+<https://astrea.linkeddata.es/shapes#6f7cce658666359a6d03f7e15d71d2ca>
+        a               sh:NodeShape ;
+        rdfs:label      "wfs service manifestation" ;
+        sh:description  "A WCS service, located in a specific URL, that will return a dataset." ;
+        sh:name         "wfs service manifestation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :WFSManifestation .
+
+<https://astrea.linkeddata.es/shapes#5f5231f5bfaab93a4df0f31bfa231c6e>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#hasJSONCapabilitiesDigestURL> ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  rdfs:Literal ] .
+
+<https://astrea.linkeddata.es/shapes#6e0b5e7bc71f81576824f120001394e9>
+        a               sh:NodeShape ;
+        rdfs:label      "instant" ;
+        sh:name         "instant" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  :Instant .
+
+<https://astrea.linkeddata.es/shapes#62631cd538b4c588ea8fbc7442feb676>
+        a               sh:NodeShape ;
+        rdfs:label      "ecological community" ;
+        sh:name         "ecological community" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#EcologicalCommunity> .
+
+<https://astrea.linkeddata.es/shapes#34d0b50b8da18665b3d5443010b3d8d7>
+        a            sh:PropertyShape ;
+        rdfs:label   "has lower latitude" ;
+        sh:datatype  xsd:double ;
+        sh:name      "has lower latitude" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      :hasLowerLatitude ;
+        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#8a023edf4af4d8b46aeb1e37c9393fba>
+        a               sh:NodeShape ;
+        rdfs:label      "processing" ;
+        sh:name         "processing" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#0278cb2004adc0880b1c1fac9459231a> ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#Processing> .
+
+<https://astrea.linkeddata.es/shapes#35d38c595064c14e655044a9bc126d56>
+        a               sh:NodeShape ;
+        rdfs:label      "databand processing" ;
+        sh:name         "databand processing" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl#DataBandProcessing> .
+
+<https://astrea.linkeddata.es/shapes#223509bd054124ae297b4a3dc11fc6f0>
+        a               sh:NodeShape ;
+        rdfs:label      "ogc response manifestation" ;
+        sh:description  "Provides information about a file that is returned from a web service using OGC standards, including the container format." ;
+        sh:name         "ogc response manifestation" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#518e8bd0c0d42c7e3b671926a3041ca5> ;
+        sh:targetClass  :OGCResponseManifestation .

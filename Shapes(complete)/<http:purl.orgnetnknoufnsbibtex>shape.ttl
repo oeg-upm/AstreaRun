@@ -1,0 +1,800 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#cf4823ef854c824e108576d08ae3a496>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasAuthor> .
+
+<https://astrea.linkeddata.es/shapes#15deefb1954a4d7b442f683e38a0fdb1>
+        a               sh:PropertyShape ;
+        rdfs:label      "has location"@en , "A location associated with the entry, such as the city in which a conference took place."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "A location associated with the entry, such as the city in which a conference took place."@en ;
+        sh:name         "has location"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasLocation> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#cc17aaff72dbb1a920cace35b52d29a1>
+        a               sh:PropertyShape ;
+        rdfs:label      "has URL"@en , "The WWW Universal Resource Locator that points to the item being referenced. This often is used for technical reports to point to the ftp or web site where the postscript source of the report is located."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The WWW Universal Resource Locator that points to the item being referenced. This often is used for technical reports to point to the ftp or web site where the postscript source of the report is located."@en ;
+        sh:name         "has URL"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasURL> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#095f6ac57fd17088df62bfdcac3b7f37>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasYear> .
+
+<https://astrea.linkeddata.es/shapes#2685ae73f5500a1cecbb94502051339f>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasTitle> .
+
+<https://astrea.linkeddata.es/shapes#35a6074dbb27f6562697540cff23f0d8>
+        a               sh:NodeShape ;
+        rdfs:label      "Misc"@en ;
+        sh:description  "Use this type when nothing else fits."@en ;
+        sh:name         "Misc"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/net/nknouf/ns/bibtex#Misc> .
+
+<https://astrea.linkeddata.es/shapes#654efd70ca7d8424459cdb06fa9c5133>
+        a               sh:NodeShape ;
+        rdfs:label      "Inbook"@en ;
+        sh:description  "A part of a book, which may be a chapter (or section or whatever) and/or a range of pages. "@en ;
+        sh:name         "Inbook"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b4bd9bbb607edacbba1c8958509f76ba> , <https://astrea.linkeddata.es/shapes#f3a21a3b1fea7f3e55f43b427b33bc19> , <https://astrea.linkeddata.es/shapes#6d9a3c12fa161abf16ad8c143a0589b2> , <https://astrea.linkeddata.es/shapes#f11c18120063d469ec2c8a3c74cc606f> , <https://astrea.linkeddata.es/shapes#94f814905db4d47dc440d0ae89d3f3ea> ;
+        sh:targetClass  <http://purl.org/net/nknouf/ns/bibtex#Inbook> .
+
+<https://astrea.linkeddata.es/shapes#8bf21fd32d002b67c8e81fbcbb07e253>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasYear> .
+
+<https://astrea.linkeddata.es/shapes#c6346b4e777f05f273569fb19b7984f8>
+        a                sh:PropertyShape ;
+        rdfs:label       "has volume"@en , "The volume of a journal or multivolume book."@en ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "The volume of a journal or multivolume book."@en ;
+        sh:minInclusive  0 ;
+        sh:name          "has volume"@en ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://purl.org/net/nknouf/ns/bibtex#hasVolume> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#8d0b0a088bedfcf89dd2d68a50d22f12>
+        a               sh:NodeShape ;
+        rdfs:label      "Booklet"@en ;
+        sh:description  "A work that is printed and bound, but without a named publisher or sponsoring institution."@en ;
+        sh:name         "Booklet"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1c93666e5af1b04095cf4828ed2b8936> ;
+        sh:targetClass  <http://purl.org/net/nknouf/ns/bibtex#Booklet> .
+
+<https://astrea.linkeddata.es/shapes#9cf3b482d19b48958497de717b66e9fd>
+        a               sh:PropertyShape ;
+        rdfs:label      "has type"@en , "The type of a technical report--for example, \"Research Note\"."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The type of a technical report--for example, \"Research Note\"."@en ;
+        sh:name         "has type"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasType> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#f3d8ee66d4c04de130825321fd3c87ee>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasTitle> .
+
+<https://astrea.linkeddata.es/shapes#720033fb174ea069205034248433fcca>
+        a               sh:NodeShape ;
+        rdfs:label      "Conference"@en ;
+        sh:description  "The same as INPROCEEDINGS, included for Scribe compatibility."@en ;
+        sh:name         "Conference"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/net/nknouf/ns/bibtex#Conference> , <http://purl.org/net/nknouf/ns/bibtex#Inproceedings> .
+
+<https://astrea.linkeddata.es/shapes#3fdd3b7a9c6cc5a8962e925d0d4497b5>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasTitle> .
+
+<https://astrea.linkeddata.es/shapes#f3a21a3b1fea7f3e55f43b427b33bc19>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasPublisher> .
+
+<https://astrea.linkeddata.es/shapes#1c93666e5af1b04095cf4828ed2b8936>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasTitle> .
+
+<https://astrea.linkeddata.es/shapes#a4b624def9c11d1dbbe6efd2bea2f8cd>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#humanCreator> .
+
+<https://astrea.linkeddata.es/shapes#939353ca900f903a0a0278c2438a7418>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasAuthor> .
+
+<https://astrea.linkeddata.es/shapes#39e69824fbe225cf0613142fbf6ede12>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasBooktitle> .
+
+<https://astrea.linkeddata.es/shapes#e4a61fdd1dff9fb7e979b492cac514f9>
+        a               sh:PropertyShape ;
+        rdfs:label      "has mrnumber"@en , "The Mathematical Reviews number."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The Mathematical Reviews number."@en ;
+        sh:name         "has mrnumber"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasMrnumber> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#b433f90315f14403f9f858c38b87f05f>
+        a               sh:PropertyShape ;
+        rdfs:label      "has publisher"@en , "The publisher's name."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The publisher's name."@en ;
+        sh:name         "has publisher"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasPublisher> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#5b29e69bac2876183d654906d7b22d77>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasSchool> .
+
+<https://astrea.linkeddata.es/shapes#75757e5f90e7322979929d429c84d84f>
+        a               sh:PropertyShape ;
+        rdfs:label      "has crossref"@en , "The database key of the entry being cross referenced."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The database key of the entry being cross referenced."@en ;
+        sh:name         "has crossref"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasCrossref> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#6a58b61ab39425ebff19e9b409fc58d0>
+        a               sh:NodeShape ;
+        rdfs:label      "Techreport"@en ;
+        sh:description  "A report published by a school or other institution, usually numbered within a series."@en ;
+        sh:name         "Techreport"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#939353ca900f903a0a0278c2438a7418> , <https://astrea.linkeddata.es/shapes#f3d8ee66d4c04de130825321fd3c87ee> , <https://astrea.linkeddata.es/shapes#d6cceebcec25d6fa7451f36388acb370> , <https://astrea.linkeddata.es/shapes#3f6ae1ce3aca64696f4e3e7d23547e31> ;
+        sh:targetClass  <http://purl.org/net/nknouf/ns/bibtex#Techreport> .
+
+<https://astrea.linkeddata.es/shapes#05cd01d7e612fad6f36ac4aa5f579d98>
+        a               sh:PropertyShape ;
+        rdfs:label      "page and/or chapter data"@en , "A generic property to hold page and/or chapter data."@en ;
+        sh:description  "A generic property to hold page and/or chapter data."@en ;
+        sh:name         "page and/or chapter data"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#pageChapterData> .
+
+<https://astrea.linkeddata.es/shapes#790459f4acac66a731e534a44e381035>
+        a               sh:PropertyShape ;
+        rdfs:label      "has price"@en , "The price of the document."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The price of the document."@en ;
+        sh:name         "has price"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasPrice> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#656a20866f7c6926906ce1a92480cd1d>
+        a               sh:PropertyShape ;
+        rdfs:label      "has ISSN"@en , "The International Standard Serial Number. Used to identify a journal."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The International Standard Serial Number. Used to identify a journal."@en ;
+        sh:name         "has ISSN"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasISSN> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#9a13157ee65f76210461a8580b26d7f6>
+        a               sh:PropertyShape ;
+        rdfs:label      "has abstract"@en , "An abstract of the work."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "An abstract of the work."@en ;
+        sh:name         "has abstract"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasAbstract> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#6644edc830f9a454499911234a11cac2>
+        a               sh:PropertyShape ;
+        rdfs:label      "has school"@en , "The name of the school where a thesis was written."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The name of the school where a thesis was written."@en ;
+        sh:name         "has school"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasSchool> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#84eb87b4cb298eee5f7d5462b41e00cc>
+        a               sh:PropertyShape ;
+        rdfs:label      "has month"@en , "The month in which the work was published or, for an unpublished work, in which it was written. You should use the standard three-letter abbreviation, as described in Appendix B.1.3 of the LaTeX book."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The month in which the work was published or, for an unpublished work, in which it was written. You should use the standard three-letter abbreviation, as described in Appendix B.1.3 of the LaTeX book."@en ;
+        sh:name         "has month"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasMonth> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#c398542ee1942fa85e0a50a5de438337>
+        a               sh:NodeShape ;
+        rdfs:label      "Entry"@en ;
+        sh:description  "Base class for all entries"@en ;
+        sh:name         "Entry"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d9111ed9d98528e9c4e41d9e2d9f5e15> , <https://astrea.linkeddata.es/shapes#d3d2358bd96e025621cad0ceca4be592> , <https://astrea.linkeddata.es/shapes#fd96694b09a32811dacb0eb40ab1658c> , <https://astrea.linkeddata.es/shapes#34be8807270f84171cec7d8c488be851> , <https://astrea.linkeddata.es/shapes#15deefb1954a4d7b442f683e38a0fdb1> , <https://astrea.linkeddata.es/shapes#b433f90315f14403f9f858c38b87f05f> , <https://astrea.linkeddata.es/shapes#702eb0253295922f27550d3da80fea10> , <https://astrea.linkeddata.es/shapes#c450ce24e327a38ea8158ea9f31d4c50> , <https://astrea.linkeddata.es/shapes#c24ad866d78e875fecce6e43be8eaea8> , <https://astrea.linkeddata.es/shapes#fc0dcac24b1a15cf81c71e43945422ea> , <https://astrea.linkeddata.es/shapes#f6aed648a51077aebd035ca2221b2ac9> , <https://astrea.linkeddata.es/shapes#531549e14a62d1687fcbb5a56d053eaa> , <https://astrea.linkeddata.es/shapes#6644edc830f9a454499911234a11cac2> , <https://astrea.linkeddata.es/shapes#8a18dc39c82da192afe8664928ecf3f6> , <https://astrea.linkeddata.es/shapes#75757e5f90e7322979929d429c84d84f> , <https://astrea.linkeddata.es/shapes#66508ba0f9b84170229bb3db09cbdfe5> , <https://astrea.linkeddata.es/shapes#edf577f710dd940a6ffb57a4f5a89f91> , <https://astrea.linkeddata.es/shapes#f08f4068fa9cb0c4e5684729f59db8e3> , <https://astrea.linkeddata.es/shapes#43030852b56fb5149856f79e20f4e2c6> , <https://astrea.linkeddata.es/shapes#413bbfa2d11a286a15c4ce95a27edfb3> , <https://astrea.linkeddata.es/shapes#c6346b4e777f05f273569fb19b7984f8> , <https://astrea.linkeddata.es/shapes#a002dc8a98a3f02ff7f9c393377a8372> , <https://astrea.linkeddata.es/shapes#9fbefcc6984d404d5e3854907b642047> , <https://astrea.linkeddata.es/shapes#5b874ebd0a1986a8a1012c45d2d7f26d> , <https://astrea.linkeddata.es/shapes#400b81e7fa407f26f76b9c7dcc644a93> , <https://astrea.linkeddata.es/shapes#9a13157ee65f76210461a8580b26d7f6> , <https://astrea.linkeddata.es/shapes#5e1dca3afea09d2fb9a71987a9da9ed0> , <https://astrea.linkeddata.es/shapes#9cf3b482d19b48958497de717b66e9fd> , <https://astrea.linkeddata.es/shapes#e4a61fdd1dff9fb7e979b492cac514f9> , <https://astrea.linkeddata.es/shapes#2f8fd8590d8f856be86568e371a09008> , <https://astrea.linkeddata.es/shapes#bb0a50a6fd081418a15ffe93d42c8c21> , <https://astrea.linkeddata.es/shapes#3f55ad0c56b799328d9042dc29179b9b> , <https://astrea.linkeddata.es/shapes#4cd8f1aa31cd34d1d38dc0c8bf70a004> , <https://astrea.linkeddata.es/shapes#656a20866f7c6926906ce1a92480cd1d> , <https://astrea.linkeddata.es/shapes#cc17aaff72dbb1a920cace35b52d29a1> , <https://astrea.linkeddata.es/shapes#790459f4acac66a731e534a44e381035> , <https://astrea.linkeddata.es/shapes#f1013d553eb892863170902f1d43fb0b> , <https://astrea.linkeddata.es/shapes#84eb87b4cb298eee5f7d5462b41e00cc> , <https://astrea.linkeddata.es/shapes#676e0378b0d943e6762ff23215a4119b> ;
+        sh:targetClass  <http://purl.org/net/nknouf/ns/bibtex#Entry> .
+
+<https://astrea.linkeddata.es/shapes#fc0dcac24b1a15cf81c71e43945422ea>
+        a               sh:PropertyShape ;
+        rdfs:label      "has ISBN"@en , "The International Standard Book Number."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The International Standard Book Number."@en ;
+        sh:name         "has ISBN"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasISBN> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#702eb0253295922f27550d3da80fea10>
+        a               sh:PropertyShape ;
+        rdfs:label      "has journal"@en , "A journal name. Abbreviations are provided for many journals; see the Local Guide"@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "A journal name. Abbreviations are provided for many journals; see the Local Guide"@en ;
+        sh:name         "has journal"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasJournal> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#0fff5a7ca484c26f52d524e2d40f78b1>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasJournal> .
+
+<https://astrea.linkeddata.es/shapes#43e0aa2ab486d7a2dbbec7783b5dda33>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasTitle> .
+
+<https://astrea.linkeddata.es/shapes#6a63420ff0e9546ba1f913b30aa977fe>
+        a               sh:NodeShape ;
+        rdfs:label      "Unpublished"@en ;
+        sh:description  "A document having an author and title, but not formally published."@en ;
+        sh:name         "Unpublished"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#7cc100b3418d69502e42219c5cda079e> , <https://astrea.linkeddata.es/shapes#fdff7672073b3cd559e6a588b3c692d4> , <https://astrea.linkeddata.es/shapes#7868faba0c543c02d352dd2d3e72c422> ;
+        sh:targetClass  <http://purl.org/net/nknouf/ns/bibtex#Unpublished> .
+
+<https://astrea.linkeddata.es/shapes#c3fae57b3fc307c2351d0dd785529c59>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasTitle> .
+
+<https://astrea.linkeddata.es/shapes#5fca0175488e3dfd8cc2e9763c771d58>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasAuthor> .
+
+<https://astrea.linkeddata.es/shapes#acc187688e16f5915689deb1734e9084>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasYear> .
+
+<https://astrea.linkeddata.es/shapes#ed2e44c31d16cc1aaf2a37c7c0f17aef>
+        a               sh:NodeShape ;
+        rdfs:label      "Article"@en ;
+        sh:description  "An article from a journal or magazine."@en ;
+        sh:name         "Article"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#1609d31afe0f68798c35c613994a0bce> , <https://astrea.linkeddata.es/shapes#0fff5a7ca484c26f52d524e2d40f78b1> , <https://astrea.linkeddata.es/shapes#e153daff0dd0265a950efe1a7a10d920> , <https://astrea.linkeddata.es/shapes#68e817978276e9c83e394508ec520e90> ;
+        sh:targetClass  <http://purl.org/net/nknouf/ns/bibtex#Article> .
+
+<https://astrea.linkeddata.es/shapes#413bbfa2d11a286a15c4ce95a27edfb3>
+        a               sh:PropertyShape ;
+        rdfs:label      "has contents"@en , "A Table of Contents."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "A Table of Contents."@en ;
+        sh:name         "has contents"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasContents> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#400b81e7fa407f26f76b9c7dcc644a93>
+        a               sh:PropertyShape ;
+        rdfs:label      "has affiliation"@en , "The authors affiliation."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The authors affiliation."@en ;
+        sh:name         "has affiliation"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasAffiliation> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#af2d3eb087cb455af4503e4f4c85101a>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasTitle> .
+
+<https://astrea.linkeddata.es/shapes#bb0a50a6fd081418a15ffe93d42c8c21>
+        a               sh:PropertyShape ;
+        rdfs:label      "has edition"@en , "The edition of a book--for example, \"Second\". This should be an ordinal, and should have the first letter capitalized, as shown here; the standard styles convert to lower case when necessary."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The edition of a book--for example, \"Second\". This should be an ordinal, and should have the first letter capitalized, as shown here; the standard styles convert to lower case when necessary."@en ;
+        sh:name         "has edition"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasEdition> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#c24ad866d78e875fecce6e43be8eaea8>
+        a               sh:PropertyShape ;
+        rdfs:label      "has size"@en , "The physical dimensions of a work."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The physical dimensions of a work."@en ;
+        sh:name         "has size"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasSize> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#fdff7672073b3cd559e6a588b3c692d4>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasTitle> .
+
+<https://astrea.linkeddata.es/shapes#c5112f35ff12a5893bc545051b01516f>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasTitle> .
+
+<https://astrea.linkeddata.es/shapes#fd96694b09a32811dacb0eb40ab1658c>
+        a               sh:PropertyShape ;
+        rdfs:label      "has booktitle"@en , "Title of a book, part of which is being cited. See the LaTeX book for how to type titles. For book entries, use the title field instead."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Title of a book, part of which is being cited. See the LaTeX book for how to type titles. For book entries, use the title field instead."@en ;
+        sh:name         "has booktitle"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasBooktitle> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#7868faba0c543c02d352dd2d3e72c422>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasAuthor> .
+
+<https://astrea.linkeddata.es/shapes#5e1dca3afea09d2fb9a71987a9da9ed0>
+        a               sh:PropertyShape ;
+        rdfs:label      "how published"@en , "How something strange has been published. The first word should be capitalized."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "How something strange has been published. The first word should be capitalized."@en ;
+        sh:name         "how published"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#howPublished> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#3f55ad0c56b799328d9042dc29179b9b>
+        a               sh:PropertyShape ;
+        rdfs:label      "has LCCN"@en , "The Library of Congress Call Number."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The Library of Congress Call Number."@en ;
+        sh:name         "has LCCN"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasLCCN> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#f08f4068fa9cb0c4e5684729f59db8e3>
+        a               sh:PropertyShape ;
+        rdfs:label      "has key"@en , "The key for a particular bibTeX entry.  Note that the rdf:ID for each Entry instance could be the bibTeX key as well, possibly making this property redundant."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The key for a particular bibTeX entry.  Note that the rdf:ID for each Entry instance could be the bibTeX key as well, possibly making this property redundant."@en ;
+        sh:name         "has key"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasKey> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#6d9a3c12fa161abf16ad8c143a0589b2>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasTitle> .
+
+<https://astrea.linkeddata.es/shapes#c5935b3cc99158c7b90a7bf72cbfbcd5>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasBooktitle> .
+
+<https://astrea.linkeddata.es/shapes#9fbefcc6984d404d5e3854907b642047>
+        a               sh:PropertyShape ;
+        rdfs:label      "has institution"@en , "The sponsoring institution of a technical report."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The sponsoring institution of a technical report."@en ;
+        sh:name         "has institution"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasInstitution> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#87e08d2661716166a12c0d4aa1078f0d>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasSchool> .
+
+<https://astrea.linkeddata.es/shapes#531549e14a62d1687fcbb5a56d053eaa>
+        a               sh:PropertyShape ;
+        rdfs:label      "has organization"@en , "The organization that sponsors a conference or that publishes a manual."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The organization that sponsors a conference or that publishes a manual."@en ;
+        sh:name         "has organization"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasOrganization> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#fa218107a677d7259243dc3f083961d8>
+        a               sh:NodeShape ;
+        rdfs:label      "Phdthesis"@en ;
+        sh:description  "A PhD thesis."@en ;
+        sh:name         "Phdthesis"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#cb5ef246dabf393a5eca54d10c5dea3b> , <https://astrea.linkeddata.es/shapes#87e08d2661716166a12c0d4aa1078f0d> , <https://astrea.linkeddata.es/shapes#faba187becb18bd5c9799f0edbaae1ce> , <https://astrea.linkeddata.es/shapes#c5112f35ff12a5893bc545051b01516f> ;
+        sh:targetClass  <http://purl.org/net/nknouf/ns/bibtex#Phdthesis> .
+
+<https://astrea.linkeddata.es/shapes#9f27122c3a2cda63b0bab1f99dedec7a>
+        a               sh:NodeShape ;
+        rdfs:label      "Inproceedings"@en ;
+        sh:description  "An article in a conference proceedings."@en ;
+        sh:name         "Inproceedings"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#af2d3eb087cb455af4503e4f4c85101a> , <https://astrea.linkeddata.es/shapes#095f6ac57fd17088df62bfdcac3b7f37> , <https://astrea.linkeddata.es/shapes#c5935b3cc99158c7b90a7bf72cbfbcd5> , <https://astrea.linkeddata.es/shapes#3a6b2493c4bf4d8632c68a64b6210b63> ;
+        sh:targetClass  <http://purl.org/net/nknouf/ns/bibtex#Inproceedings> .
+
+<https://astrea.linkeddata.es/shapes#f11c18120063d469ec2c8a3c74cc606f>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#humanCreator> .
+
+<https://astrea.linkeddata.es/shapes#a395fa9597871215367a74ca8280f339>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasPublisher> .
+
+<https://astrea.linkeddata.es/shapes#66508ba0f9b84170229bb3db09cbdfe5>
+        a               sh:PropertyShape ;
+        rdfs:label      "has editor"@en , "Name(s) of editor(s), typed as indicated in the LaTeX book. If there is also an author field, then the editor field gives the editor of the book or collection in which the reference appears."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Name(s) of editor(s), typed as indicated in the LaTeX book. If there is also an author field, then the editor field gives the editor of the book or collection in which the reference appears."@en ;
+        sh:name         "has editor"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasEditor> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#a002dc8a98a3f02ff7f9c393377a8372>
+        a               sh:PropertyShape ;
+        rdfs:label      "has title"@en , "The work's title, typed as explained in the LaTeX book."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The work's title, typed as explained in the LaTeX book."@en ;
+        sh:name         "has title"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasTitle> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#94f814905db4d47dc440d0ae89d3f3ea>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#pageChapterData> .
+
+<https://astrea.linkeddata.es/shapes#7cc100b3418d69502e42219c5cda079e>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasNote> .
+
+<https://astrea.linkeddata.es/shapes#8a18dc39c82da192afe8664928ecf3f6>
+        a               sh:PropertyShape ;
+        rdfs:label      "has number"@en , "The number of a journal, magazine, technical report, or of a work in a series. An issue of a journal or magazine is usually identified by its volume and number; the organization that issues a technical report usually gives it a number; and sometimes books are given numbers in a named series."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The number of a journal, magazine, technical report, or of a work in a series. An issue of a journal or magazine is usually identified by its volume and number; the organization that issues a technical report usually gives it a number; and sometimes books are given numbers in a named series."@en ;
+        sh:name         "has number"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasNumber> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#3f6ae1ce3aca64696f4e3e7d23547e31>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasInstitution> .
+
+<https://astrea.linkeddata.es/shapes#e497bccfe61b5531bea0f9564fdd5a86>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasPublisher> .
+
+<https://astrea.linkeddata.es/shapes#5b874ebd0a1986a8a1012c45d2d7f26d>
+        a               sh:PropertyShape ;
+        rdfs:label      "has language"@en , "The language the document is in."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The language the document is in."@en ;
+        sh:name         "has language"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasLanguage> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#f6aed648a51077aebd035ca2221b2ac9>
+        a                sh:PropertyShape ;
+        rdfs:label       "has year"@en , "The year of publication or, for an unpublished work, the year it was written. Generally it should consist of four numerals, such as 1984, although the standard styles can handle any year whose last four nonpunctuation characters are numerals, such as '(about 1984)'."@en ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "The year of publication or, for an unpublished work, the year it was written. Generally it should consist of four numerals, such as 1984, although the standard styles can handle any year whose last four nonpunctuation characters are numerals, such as '(about 1984)'."@en ;
+        sh:minInclusive  0 ;
+        sh:name          "has year"@en ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://purl.org/net/nknouf/ns/bibtex#hasYear> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#b4bd9bbb607edacbba1c8958509f76ba>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasYear> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#095f6ac57fd17088df62bfdcac3b7f37> , <https://astrea.linkeddata.es/shapes#7868faba0c543c02d352dd2d3e72c422> , <https://astrea.linkeddata.es/shapes#b433f90315f14403f9f858c38b87f05f> , <https://astrea.linkeddata.es/shapes#a002dc8a98a3f02ff7f9c393377a8372> , <https://astrea.linkeddata.es/shapes#6d9a3c12fa161abf16ad8c143a0589b2> , <https://astrea.linkeddata.es/shapes#702eb0253295922f27550d3da80fea10> , <https://astrea.linkeddata.es/shapes#acc187688e16f5915689deb1734e9084> , <https://astrea.linkeddata.es/shapes#f6aed648a51077aebd035ca2221b2ac9> , <https://astrea.linkeddata.es/shapes#9f27122c3a2cda63b0bab1f99dedec7a> , <https://astrea.linkeddata.es/shapes#f08f4068fa9cb0c4e5684729f59db8e3> , <https://astrea.linkeddata.es/shapes#43e0aa2ab486d7a2dbbec7783b5dda33> , <https://astrea.linkeddata.es/shapes#34be8807270f84171cec7d8c488be851> , <https://astrea.linkeddata.es/shapes#fdff7672073b3cd559e6a588b3c692d4> , <https://astrea.linkeddata.es/shapes#656a20866f7c6926906ce1a92480cd1d> , <https://astrea.linkeddata.es/shapes#e497bccfe61b5531bea0f9564fdd5a86> , <https://astrea.linkeddata.es/shapes#f1013d553eb892863170902f1d43fb0b> , <https://astrea.linkeddata.es/shapes#a4431cc85665d33292dfe32188423002> , <https://astrea.linkeddata.es/shapes#654efd70ca7d8424459cdb06fa9c5133> , <https://astrea.linkeddata.es/shapes#4cd8f1aa31cd34d1d38dc0c8bf70a004> , <https://astrea.linkeddata.es/shapes#d3d2358bd96e025621cad0ceca4be592> , <https://astrea.linkeddata.es/shapes#9cf3b482d19b48958497de717b66e9fd> , <https://astrea.linkeddata.es/shapes#5fca0175488e3dfd8cc2e9763c771d58> , <https://astrea.linkeddata.es/shapes#66508ba0f9b84170229bb3db09cbdfe5> , <https://astrea.linkeddata.es/shapes#68e817978276e9c83e394508ec520e90> , <https://astrea.linkeddata.es/shapes#89d12e433f394f98fe13b19a9f0901de> , <https://astrea.linkeddata.es/shapes#cf4823ef854c824e108576d08ae3a496> , <https://astrea.linkeddata.es/shapes#fa218107a677d7259243dc3f083961d8> , <https://astrea.linkeddata.es/shapes#413bbfa2d11a286a15c4ce95a27edfb3> , <https://astrea.linkeddata.es/shapes#af2d3eb087cb455af4503e4f4c85101a> , <https://astrea.linkeddata.es/shapes#cb5ef246dabf393a5eca54d10c5dea3b> , <https://astrea.linkeddata.es/shapes#3fdd3b7a9c6cc5a8962e925d0d4497b5> , <https://astrea.linkeddata.es/shapes#94f814905db4d47dc440d0ae89d3f3ea> , <https://astrea.linkeddata.es/shapes#400b81e7fa407f26f76b9c7dcc644a93> , <https://astrea.linkeddata.es/shapes#2f8fd8590d8f856be86568e371a09008> , <https://astrea.linkeddata.es/shapes#d9111ed9d98528e9c4e41d9e2d9f5e15> , <https://astrea.linkeddata.es/shapes#c5112f35ff12a5893bc545051b01516f> , <https://astrea.linkeddata.es/shapes#c3fae57b3fc307c2351d0dd785529c59> , <https://astrea.linkeddata.es/shapes#5b29e69bac2876183d654906d7b22d77> , <https://astrea.linkeddata.es/shapes#edf577f710dd940a6ffb57a4f5a89f91> , <https://astrea.linkeddata.es/shapes#2685ae73f5500a1cecbb94502051339f> , <https://astrea.linkeddata.es/shapes#de69e01f3bf1c6215bb0a32c9f1d033c> , <https://astrea.linkeddata.es/shapes#0fff5a7ca484c26f52d524e2d40f78b1> , <https://astrea.linkeddata.es/shapes#c398542ee1942fa85e0a50a5de438337> , <https://astrea.linkeddata.es/shapes#7cc100b3418d69502e42219c5cda079e> , <https://astrea.linkeddata.es/shapes#84eb87b4cb298eee5f7d5462b41e00cc> , <https://astrea.linkeddata.es/shapes#fd96694b09a32811dacb0eb40ab1658c> , <https://astrea.linkeddata.es/shapes#ed2e44c31d16cc1aaf2a37c7c0f17aef> , <https://astrea.linkeddata.es/shapes#1609d31afe0f68798c35c613994a0bce> , <https://astrea.linkeddata.es/shapes#766b2d8e47257a6ca84f693369d7a0ad> , <https://astrea.linkeddata.es/shapes#9fbefcc6984d404d5e3854907b642047> , <https://astrea.linkeddata.es/shapes#3a6b2493c4bf4d8632c68a64b6210b63> , <https://astrea.linkeddata.es/shapes#cc17aaff72dbb1a920cace35b52d29a1> , <https://astrea.linkeddata.es/shapes#f3a21a3b1fea7f3e55f43b427b33bc19> , <https://astrea.linkeddata.es/shapes#39e69824fbe225cf0613142fbf6ede12> , <https://astrea.linkeddata.es/shapes#8d0b0a088bedfcf89dd2d68a50d22f12> , <https://astrea.linkeddata.es/shapes#676e0378b0d943e6762ff23215a4119b> , <https://astrea.linkeddata.es/shapes#531549e14a62d1687fcbb5a56d053eaa> , <https://astrea.linkeddata.es/shapes#15deefb1954a4d7b442f683e38a0fdb1> , <https://astrea.linkeddata.es/shapes#1c93666e5af1b04095cf4828ed2b8936> , <https://astrea.linkeddata.es/shapes#e153daff0dd0265a950efe1a7a10d920> , <https://astrea.linkeddata.es/shapes#faba187becb18bd5c9799f0edbaae1ce> , <https://astrea.linkeddata.es/shapes#720033fb174ea069205034248433fcca> , <https://astrea.linkeddata.es/shapes#939353ca900f903a0a0278c2438a7418> , <https://astrea.linkeddata.es/shapes#578434727830eb83b61219899eebeac9> , <https://astrea.linkeddata.es/shapes#d6cceebcec25d6fa7451f36388acb370> , <https://astrea.linkeddata.es/shapes#9a13157ee65f76210461a8580b26d7f6> , <https://astrea.linkeddata.es/shapes#b4bd9bbb607edacbba1c8958509f76ba> , <https://astrea.linkeddata.es/shapes#f11c18120063d469ec2c8a3c74cc606f> , <https://astrea.linkeddata.es/shapes#8bf21fd32d002b67c8e81fbcbb07e253> , <https://astrea.linkeddata.es/shapes#c450ce24e327a38ea8158ea9f31d4c50> , <https://astrea.linkeddata.es/shapes#8a18dc39c82da192afe8664928ecf3f6> , <https://astrea.linkeddata.es/shapes#6a58b61ab39425ebff19e9b409fc58d0> , <https://astrea.linkeddata.es/shapes#c6346b4e777f05f273569fb19b7984f8> , <https://astrea.linkeddata.es/shapes#5b874ebd0a1986a8a1012c45d2d7f26d> , <https://astrea.linkeddata.es/shapes#fc0dcac24b1a15cf81c71e43945422ea> , <https://astrea.linkeddata.es/shapes#3773bca4a91e45b7aaacd55942b8c3a3> , <https://astrea.linkeddata.es/shapes#f3d8ee66d4c04de130825321fd3c87ee> , <https://astrea.linkeddata.es/shapes#3f6ae1ce3aca64696f4e3e7d23547e31> , <https://astrea.linkeddata.es/shapes#bb0a50a6fd081418a15ffe93d42c8c21> , <https://astrea.linkeddata.es/shapes#c5935b3cc99158c7b90a7bf72cbfbcd5> , <https://astrea.linkeddata.es/shapes#87e08d2661716166a12c0d4aa1078f0d> , <https://astrea.linkeddata.es/shapes#790459f4acac66a731e534a44e381035> , <https://astrea.linkeddata.es/shapes#6a63420ff0e9546ba1f913b30aa977fe> , <https://astrea.linkeddata.es/shapes#5e1dca3afea09d2fb9a71987a9da9ed0> , <https://astrea.linkeddata.es/shapes#a4b624def9c11d1dbbe6efd2bea2f8cd> , <https://astrea.linkeddata.es/shapes#43030852b56fb5149856f79e20f4e2c6> , <https://astrea.linkeddata.es/shapes#a395fa9597871215367a74ca8280f339> , <https://astrea.linkeddata.es/shapes#c24ad866d78e875fecce6e43be8eaea8> , <https://astrea.linkeddata.es/shapes#80d116c97d859f835f7645e7af194cd1> , <https://astrea.linkeddata.es/shapes#05cd01d7e612fad6f36ac4aa5f579d98> , <https://astrea.linkeddata.es/shapes#e4a61fdd1dff9fb7e979b492cac514f9> , <https://astrea.linkeddata.es/shapes#4d7330242ec7cdd155901d1771e48ca5> , <https://astrea.linkeddata.es/shapes#3f55ad0c56b799328d9042dc29179b9b> , <https://astrea.linkeddata.es/shapes#35a6074dbb27f6562697540cff23f0d8> , <https://astrea.linkeddata.es/shapes#75757e5f90e7322979929d429c84d84f> , <https://astrea.linkeddata.es/shapes#6644edc830f9a454499911234a11cac2> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#de69e01f3bf1c6215bb0a32c9f1d033c>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasYear> .
+
+<https://astrea.linkeddata.es/shapes#766b2d8e47257a6ca84f693369d7a0ad>
+        a               sh:NodeShape ;
+        rdfs:label      "Proceedings"@en ;
+        sh:description  "The proceedings of a conference."@en ;
+        sh:name         "Proceedings"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#de69e01f3bf1c6215bb0a32c9f1d033c> , <https://astrea.linkeddata.es/shapes#43e0aa2ab486d7a2dbbec7783b5dda33> ;
+        sh:targetClass  <http://purl.org/net/nknouf/ns/bibtex#Proceedings> .
+
+<https://astrea.linkeddata.es/shapes#c450ce24e327a38ea8158ea9f31d4c50>
+        a               sh:PropertyShape ;
+        rdfs:label      "has note"@en , "Any additional information that can help the reader. The first word should be capitalized."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Any additional information that can help the reader. The first word should be capitalized."@en ;
+        sh:name         "has note"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasNote> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#e153daff0dd0265a950efe1a7a10d920>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasYear> .
+
+<https://astrea.linkeddata.es/shapes#4d7330242ec7cdd155901d1771e48ca5>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasTitle> .
+
+<https://astrea.linkeddata.es/shapes#4cd8f1aa31cd34d1d38dc0c8bf70a004>
+        a               sh:PropertyShape ;
+        rdfs:label      "human creator"@en , "A generic human creator category, necessary in order to contain both author and editor."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "A generic human creator category, necessary in order to contain both author and editor."@en ;
+        sh:name         "human creator"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#humanCreator> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#d3d2358bd96e025621cad0ceca4be592>
+        a               sh:PropertyShape ;
+        rdfs:label      "has pages"@en , "One or more page numbers or range of numbers, such as 42-111 or 7,41,73-97 or 43+ (the `+' in this last example indicates pages following that don't form a simple range). To make it easier to maintain Scribe-compatible databases, the standard styles convert a single dash (as in 7-33) to the double dash used in TeX to denote number ranges (as in 7-33)."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "One or more page numbers or range of numbers, such as 42-111 or 7,41,73-97 or 43+ (the `+' in this last example indicates pages following that don't form a simple range). To make it easier to maintain Scribe-compatible databases, the standard styles convert a single dash (as in 7-33) to the double dash used in TeX to denote number ranges (as in 7-33)."@en ;
+        sh:name         "has pages"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasPages> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#68e817978276e9c83e394508ec520e90>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasTitle> .
+
+<https://astrea.linkeddata.es/shapes#faba187becb18bd5c9799f0edbaae1ce>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasAuthor> .
+
+<https://astrea.linkeddata.es/shapes#a4431cc85665d33292dfe32188423002>
+        a               sh:NodeShape ;
+        rdfs:label      "Mastersthesis"@en ;
+        sh:description  "A Master's thesis."@en ;
+        sh:name         "Mastersthesis"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5fca0175488e3dfd8cc2e9763c771d58> , <https://astrea.linkeddata.es/shapes#8bf21fd32d002b67c8e81fbcbb07e253> , <https://astrea.linkeddata.es/shapes#3fdd3b7a9c6cc5a8962e925d0d4497b5> , <https://astrea.linkeddata.es/shapes#5b29e69bac2876183d654906d7b22d77> ;
+        sh:targetClass  <http://purl.org/net/nknouf/ns/bibtex#Mastersthesis> .
+
+<https://astrea.linkeddata.es/shapes#578434727830eb83b61219899eebeac9>
+        a               sh:NodeShape ;
+        rdfs:label      "Incollection"@en ;
+        sh:description  "A part of a book having its own title."@en ;
+        sh:name         "Incollection"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2685ae73f5500a1cecbb94502051339f> , <https://astrea.linkeddata.es/shapes#39e69824fbe225cf0613142fbf6ede12> , <https://astrea.linkeddata.es/shapes#e497bccfe61b5531bea0f9564fdd5a86> , <https://astrea.linkeddata.es/shapes#cf4823ef854c824e108576d08ae3a496> , <https://astrea.linkeddata.es/shapes#acc187688e16f5915689deb1734e9084> ;
+        sh:targetClass  <http://purl.org/net/nknouf/ns/bibtex#Incollection> .
+
+<https://astrea.linkeddata.es/shapes#cb5ef246dabf393a5eca54d10c5dea3b>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasYear> .
+
+<https://astrea.linkeddata.es/shapes#d6cceebcec25d6fa7451f36388acb370>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasYear> .
+
+<https://astrea.linkeddata.es/shapes#f1013d553eb892863170902f1d43fb0b>
+        a               sh:PropertyShape ;
+        rdfs:label      "has keywords"@en , "Key words used for searching or possibly for annotation."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Key words used for searching or possibly for annotation."@en ;
+        sh:name         "has keywords"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasKeywords> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#1609d31afe0f68798c35c613994a0bce>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasAuthor> .
+
+<https://astrea.linkeddata.es/shapes#89d12e433f394f98fe13b19a9f0901de>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasYear> .
+
+<https://astrea.linkeddata.es/shapes#edf577f710dd940a6ffb57a4f5a89f91>
+        a                sh:PropertyShape ;
+        rdfs:label       "has chapter"@en , "A chapter (or section or whatever) number."@en ;
+        sh:datatype      xsd:nonNegativeInteger ;
+        sh:description   "A chapter (or section or whatever) number."@en ;
+        sh:minInclusive  0 ;
+        sh:name          "has chapter"@en ;
+        sh:nodeKind      sh:Literal ;
+        sh:path          <http://purl.org/net/nknouf/ns/bibtex#hasChapter> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#3a6b2493c4bf4d8632c68a64b6210b63>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/net/nknouf/ns/bibtex#hasAuthor> .
+
+<https://astrea.linkeddata.es/shapes#676e0378b0d943e6762ff23215a4119b>
+        a               sh:PropertyShape ;
+        rdfs:label      "has copyright"@en , "Copyright information."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Copyright information."@en ;
+        sh:name         "has copyright"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasCopyright> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#34be8807270f84171cec7d8c488be851>
+        a               sh:PropertyShape ;
+        rdfs:label      "has series"@en , "The name of a series or set of books. When citing an entire book, the the title field gives its title and an optional series field gives the name of a series or multi-volume set in which the book is published."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The name of a series or set of books. When citing an entire book, the the title field gives its title and an optional series field gives the name of a series or multi-volume set in which the book is published."@en ;
+        sh:name         "has series"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasSeries> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#d9111ed9d98528e9c4e41d9e2d9f5e15>
+        a               sh:PropertyShape ;
+        rdfs:label      "has address"@en , "Usually the address of the publisher or other type of institution. For major publishing houses, van Leunen recommends omitting the information entirely. For small publishers, on the other hand, you can help the reader by giving the complete address."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "Usually the address of the publisher or other type of institution. For major publishing houses, van Leunen recommends omitting the information entirely. For small publishers, on the other hand, you can help the reader by giving the complete address."@en ;
+        sh:name         "has address"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasAddress> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#3773bca4a91e45b7aaacd55942b8c3a3>
+        a               sh:NodeShape ;
+        rdfs:label      "Manual"@en ;
+        sh:description  "Technical documentation."@en ;
+        sh:name         "Manual"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#c3fae57b3fc307c2351d0dd785529c59> ;
+        sh:targetClass  <http://purl.org/net/nknouf/ns/bibtex#Manual> .
+
+<https://astrea.linkeddata.es/shapes#2f8fd8590d8f856be86568e371a09008>
+        a               sh:PropertyShape ;
+        rdfs:label      "has annotation"@en , "An annotation. It is not used by the standard bibliography styles, but may be used by others that produce an annotated bibliography."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "An annotation. It is not used by the standard bibliography styles, but may be used by others that produce an annotated bibliography."@en ;
+        sh:name         "has annotation"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasAnnotation> ;
+        sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#80d116c97d859f835f7645e7af194cd1>
+        a               sh:NodeShape ;
+        rdfs:label      "Book"@en ;
+        sh:description  "A book with an explicit publisher."@en ;
+        sh:name         "Book"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#a395fa9597871215367a74ca8280f339> , <https://astrea.linkeddata.es/shapes#89d12e433f394f98fe13b19a9f0901de> , <https://astrea.linkeddata.es/shapes#4d7330242ec7cdd155901d1771e48ca5> , <https://astrea.linkeddata.es/shapes#a4b624def9c11d1dbbe6efd2bea2f8cd> ;
+        sh:targetClass  <http://purl.org/net/nknouf/ns/bibtex#Book> .
+
+<https://astrea.linkeddata.es/shapes#43030852b56fb5149856f79e20f4e2c6>
+        a               sh:PropertyShape ;
+        rdfs:label      "has author"@en , "The name(s) of the author(s), in the format described in the LaTeX book."@en ;
+        sh:datatype     xsd:string ;
+        sh:description  "The name(s) of the author(s), in the format described in the LaTeX book."@en ;
+        sh:name         "has author"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/net/nknouf/ns/bibtex#hasAuthor> ;
+        sh:pattern      ".*" .

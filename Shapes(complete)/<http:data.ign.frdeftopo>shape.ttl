@@ -1,0 +1,976 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#c0ea6902cb6376a14e9d3999801d1c80>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "electrified"@en , "DÃ©signe le type d'Ã©nergie servant Ã  la propulsion des locomotives. Prends la valeur 'vrai' s'il s'agit d'une ligne Ã©lectrifiÃ©e."@fr , "Ã©lectrifiÃ©"@fr ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "DÃ©signe le type d'Ã©nergie servant Ã  la propulsion des locomotives. Prends la valeur 'vrai' s'il s'agit d'une ligne Ã©lectrifiÃ©e."@fr ;
+        sh:name           "electrified"@en , "Ã©lectrifiÃ©"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#electrifie> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#019abea2da1cfac682cc9f61b82a6515>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Canalisation d'eau"@fr , "Water pipe"@en ;
+        sh:description    "Canalisation d'eau aÃ©rienne."@fr ;
+        sh:name           "Canalisation d'eau"@fr , "Water pipe"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#CanalisationDEau> .
+
+<https://astrea.linkeddata.es/shapes#b0422fb038f9245efffd8fee30772b81>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "nombre de voies de circulation"@fr , "number of traffic lanes"@en , "Nombre total de voies dâ€™une route, dâ€™une rue ou dâ€™une chaussÃ©e de route Ã  chaussÃ©es sÃ©parÃ©es."@fr ;
+        sh:datatype       xsd:integer ;
+        sh:description    "Nombre total de voies dâ€™une route, dâ€™une rue ou dâ€™une chaussÃ©e de route Ã  chaussÃ©es sÃ©parÃ©es."@fr ;
+        sh:name           "nombre de voies de circulation"@fr , "number of traffic lanes"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#nbVoiesCirculation> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#777410ee0d134ae102c9de39a011b037>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/geofla#> ;
+        rdfs:label        "Commune"@fr , "Commune"@en ;
+        sh:name           "Commune"@fr , "Commune"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#e326e89d083eea42a9f15e2822ffd21a> ;
+        sh:targetClass    <http://data.ign.fr/def/geofla#Commune> .
+
+<https://astrea.linkeddata.es/shapes#1e8710ca6c6073c1484946cf535258e7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "type de laisse"@fr , "type of tide line"@en , "Relie une instance de laisse Ã  une instance de skos:Concept dÃ©finie dans la liste 'tdl' qui prÃ©cise sa nature."@fr ;
+        sh:description    "Relie une instance de laisse Ã  une instance de skos:Concept dÃ©finie dans la liste 'tdl' qui prÃ©cise sa nature."@fr ;
+        sh:name           "type de laisse"@fr , "type of tide line"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#330c1f75e42e2d5cdc4af4f16598ab80>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "numÃ©ro"@fr , "number"@en , "DÃ©signe le classement administratif d'un tronÃ§on routier."@fr ;
+        sh:datatype       xsd:string ;
+        sh:description    "DÃ©signe le classement administratif d'un tronÃ§on routier."@fr ;
+        sh:name           "numÃ©ro"@fr , "number"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#numero> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#589afc587cc35106d8c4d1203df55188>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "classement administratif"@fr , "administrative status"@en , "Classement administratif. Statut dâ€™une route numÃ©rotÃ©e ou nommÃ©e."@fr ;
+        sh:description    "Classement administratif. Statut dâ€™une route numÃ©rotÃ©e ou nommÃ©e."@fr ;
+        sh:name           "classement administratif"@fr , "administrative status"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#fbaeb46e9feb4b20efb32faaa39bb476>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Ã‰lÃ©ment du relief"@fr , "Relief feature"@en ;
+        sh:description    "EntitÃ© topographique correspondant Ã  une rupture de pente artificielle, ou Ã  un Ã©lÃ©ment remarquable du relief nommÃ©."@fr ;
+        sh:name           "Ã‰lÃ©ment du relief"@fr , "Relief feature"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#ElementDuRelief> .
+
+<https://astrea.linkeddata.es/shapes#7ed9cf28ffc0ca96b2aee7c20ce763a6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Railway track"@en , "Voie ferrÃ©e"@fr ;
+        sh:description    "Portion de voie ferrÃ©e homogÃ¨ne pour l'ensemble des attributs qui la concernent. Dans le cas dâ€™une ligne composÃ©e de deux Ã  quatre voies parallÃ¨les, lâ€™ensemble des voies est modÃ©lisÃ© par un seul objet."@fr ;
+        sh:name           "Voie ferrÃ©e"@fr , "Railway track"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3ff2ce5758cef97b34c7ba83f4d6d062> , <https://astrea.linkeddata.es/shapes#96f0e19239232bc5bdda2f6404c48bdb> , <https://astrea.linkeddata.es/shapes#c0ea6902cb6376a14e9d3999801d1c80> ;
+        sh:targetClass    <http://data.ign.fr/def/topo#VoieFerree> .
+
+<https://astrea.linkeddata.es/shapes#2be50f4a470839354e4c0d74c777400a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Type de rÃ©servoir"@fr , "Type of tank"@en ;
+        sh:description    "Regroupe l'ensemble des instances dÃ©signant des types de rÃ©servoirs."@fr ;
+        sh:name           "Type de rÃ©servoir"@fr , "Type of tank"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#TypeDeReservoir> .
+
+<https://astrea.linkeddata.es/shapes#090cd041025a922570a32f66103db995>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "DÃ©finit la date prÃ©vue ou la date effective de mise en service dâ€™un tronÃ§on de route. Cet attribut n'est rempli que pour les tronÃ§ons en construction, il est Ã  â€œNRâ€œ dans les autres cas. Les tronÃ§ons qui possÃ¨dent une date de mise en service sont complÃ¨tement fermÃ©s aux vÃ©hicules avant cette date."@fr , "in service date"@en , "date de mise en service"@fr ;
+        sh:datatype       xsd:string ;
+        sh:description    "DÃ©finit la date prÃ©vue ou la date effective de mise en service dâ€™un tronÃ§on de route. Cet attribut n'est rempli que pour les tronÃ§ons en construction, il est Ã  â€œNRâ€œ dans les autres cas. Les tronÃ§ons qui possÃ¨dent une date de mise en service sont complÃ¨tement fermÃ©s aux vÃ©hicules avant cette date."@fr ;
+        sh:name           "in service date"@en , "date de mise en service"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#miseEnService> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#132fd1084c4f94dd3c506839b9f6db63>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Renseigne sur le type dâ€™adressage du tronÃ§on."@fr , "type dâ€™adressage"@fr , "type of addressing"@en ;
+        sh:description    "Renseigne sur le type dâ€™adressage du tronÃ§on."@fr ;
+        sh:name           "type dâ€™adressage"@fr , "type of addressing"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#typAdres> .
+
+<https://astrea.linkeddata.es/shapes#ac2afee32f5d1545a5d4df288e643237>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "numÃ©ro de borne postale"@fr , "NumÃ©ro de borne postale."@fr , "civic number"@en ;
+        sh:datatype       xsd:integer ;
+        sh:description    "NumÃ©ro de borne postale."@fr ;
+        sh:name           "numÃ©ro de borne postale"@fr , "civic number"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#numeroBorne> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#92408eecbd4d4cc04b17ba816097d78d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Borne postale"@fr , "Civic number marker"@en ;
+        sh:description    "Borne postale situÃ©e Ã  l'extrÃ©mitÃ© d'un tronÃ§on de route."@fr ;
+        sh:name           "Civic number marker"@en , "Borne postale"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#1e9803c3df2f5d6620be2af8840f0fbe> , <https://astrea.linkeddata.es/shapes#ac2afee32f5d1545a5d4df288e643237> ;
+        sh:targetClass    <http://data.ign.fr/def/topo#BornePostale> .
+
+<https://astrea.linkeddata.es/shapes#ce0dc9df9adf975a27f104162d1f1ccc>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Type de vÃ©gÃ©tation"@fr , "Type of vegetation "@en ;
+        sh:description    "Regroupe l'ensemble des instances dÃ©signant des types de vÃ©gÃ©tation arborÃ©e."@fr ;
+        sh:name           "Type de vÃ©gÃ©tation"@fr , "Type of vegetation "@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#TypeDeVegetation> .
+
+<https://astrea.linkeddata.es/shapes#f2c7e0b812008caf08767b58b94b4d6b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Type de laisse"@fr , "Type of tide line"@en ;
+        sh:description    "Regroupe l'ensemble des instances dÃ©signant des types de laisses."@fr ;
+        sh:name           "Type de laisse"@fr , "Type of tide line"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#TypeDeLaisse> .
+
+<https://astrea.linkeddata.es/shapes#bb82ad5af6c2807f1fa17e1ae2999a6b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Piste d'aÃ©rodrome"@fr , "Taxiway"@en ;
+        sh:description    "Aire situÃ©e sur un aÃ©rodrome, amÃ©nagÃ©e afin de servir au roulement des aÃ©ronefs, au dÃ©collage et Ã  lâ€™atterrissage, en dur ou en herbe."@fr ;
+        sh:name           "Piste d'aÃ©rodrome"@fr , "Taxiway"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#PisteAerodrome> .
+
+<https://astrea.linkeddata.es/shapes#45720311a1359958390cb7485e48cf2f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "european itinerary"@en , "itinÃ©raire europÃ©en"@fr , "NumÃ©ro de route europÃ©enne : une route europÃ©enne emprunte en gÃ©nÃ©ral le rÃ©seau autoroutier ou national (exceptionnellement dÃ©partemental ou non classÃ©)."@fr ;
+        sh:datatype       xsd:string ;
+        sh:description    "NumÃ©ro de route europÃ©enne : une route europÃ©enne emprunte en gÃ©nÃ©ral le rÃ©seau autoroutier ou national (exceptionnellement dÃ©partemental ou non classÃ©)."@fr ;
+        sh:name           "itinÃ©raire europÃ©en"@fr , "european itinerary"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#itEurop> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#386f97375fd686d595f169692a7e5a27>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Aire de triage"@fr , "Marshalling yard"@en ;
+        sh:description    "Surface qui englobe lâ€™ensemble des tronÃ§ons de voies, voies de garage, aiguillages permettant le tri des wagons et la composition des trains. Aire de triage, faisceau de voies."@fr ;
+        sh:name           "Aire de triage"@fr , "Marshalling yard"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#AireDeTriage> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#b2761b4cf1ec8b893f7252dac7cd9c7b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Place"@fr , "Square"@en ;
+        sh:description    "Place ou carrefour revÃªtu de grande largeur."@fr ;
+        sh:name           "Place"@fr , "Square"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#Place> .
+
+<https://astrea.linkeddata.es/shapes#8bd1e5b28417c548aca0531a7843d422>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Type de terrain de sport"@fr , "Type of sports ground "@en ;
+        sh:description    "Regroupe l'ensemble des instances dÃ©signant des types de terrains de sports."@fr ;
+        sh:name           "Type de terrain de sport"@fr , "Type of sports ground "@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#TypeDeTerrainDeSport> .
+
+<https://astrea.linkeddata.es/shapes#ddf53123aff914a6fb9db514c1845816>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "type de bÃ¢timent"@fr , "type of building "@en , "Relie une instance de bÃ¢timent Ã  une instance de skos:Concept dÃ©finie dans la liste 'bati' qui prÃ©cise sa nature."@fr ;
+        sh:description    "Relie une instance de bÃ¢timent Ã  une instance de skos:Concept dÃ©finie dans la liste 'bati' qui prÃ©cise sa nature."@fr ;
+        sh:name           "type de bÃ¢timent"@fr , "type of building "@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#a531cffb348a1b9f6c4b8a4f14cd05e5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Attribut permettant de distinguer une entitÃ© topographique Ã  vocation militaire ou simplement gÃ©rÃ©e par le ministÃ¨re de la dÃ©fense d'une entitÃ© civile. La valeur Â« vrai Â» est Ã©galement affectÃ©e aux cimetiÃ¨res militaires gÃ©rÃ©s par le MinistÃ¨re des Anciens Combattants ou par des Ã©tats Ã©trangers."@fr , "military feature"@en , "entitÃ© Ã  vocation militaire"@fr ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "Attribut permettant de distinguer une entitÃ© topographique Ã  vocation militaire ou simplement gÃ©rÃ©e par le ministÃ¨re de la dÃ©fense d'une entitÃ© civile. La valeur Â« vrai Â» est Ã©galement affectÃ©e aux cimetiÃ¨res militaires gÃ©rÃ©s par le MinistÃ¨re des Anciens Combattants ou par des Ã©tats Ã©trangers."@fr ;
+        sh:name           "military feature"@en , "entitÃ© Ã  vocation militaire"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#militaire> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#a191cd9e293b02ea5198b51f2850bed8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Zone de vÃ©gÃ©tation"@fr , "Vegetation area"@en ;
+        sh:description    "Espace vÃ©gÃ©tal naturel ou non diffÃ©renciÃ© selon le couvert forestier."@fr ;
+        sh:name           "Zone de vÃ©gÃ©tation"@fr , "Vegetation area"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#ZoneDeVegetation> .
+
+<https://astrea.linkeddata.es/shapes#9e58ea7deb6a67002e31ba6b1984a200>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Importance du toponyme dans son environnement. Le toponyme de valeur 1 est plus important que le toponyme de valeur 2, lui-mÃªme plus important que le toponyme de valeur 3, etc."@fr , "importance"@fr , "importance"@en ;
+        sh:description    "Importance du toponyme dans son environnement. Le toponyme de valeur 1 est plus important que le toponyme de valeur 2, lui-mÃªme plus important que le toponyme de valeur 3, etc."@fr ;
+        sh:name           "importance"@en , "importance"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#importance> .
+
+<https://astrea.linkeddata.es/shapes#4a474e21e71d5959c19dac0269fd0e7c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "largeur de la voie ferrÃ©e"@fr , "Attribut permettant de distinguer les voies ferrÃ©es de largeur standard (normale) pour la France (1,435 m), des voies ferrÃ©es plus larges ou plus Ã©troites."@fr , "railway track width"@en ;
+        sh:description    "Attribut permettant de distinguer les voies ferrÃ©es de largeur standard (normale) pour la France (1,435 m), des voies ferrÃ©es plus larges ou plus Ã©troites."@fr ;
+        sh:name           "largeur de la voie ferrÃ©e"@fr , "railway track width"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#largeurVF> .
+
+<https://astrea.linkeddata.es/shapes#5813919df9f864e8b2453528507ba411>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Type d'Ã©lÃ©ment du relief"@fr , "Type of relief feature"@en ;
+        sh:description    "Regroupe l'ensemble des instances dÃ©signant des types de reliefs."@fr ;
+        sh:name           "Type d'Ã©lÃ©ment du relief"@fr , "Type of relief feature"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#TypeDeRelief> .
+
+<https://astrea.linkeddata.es/shapes#ba4c91b46453a03e2be7b0a28865bf0d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Hauteur du bÃ¢timent correspondant Ã  la diffÃ©rence entre le Z le plus Ã©levÃ© du pourtour du bÃ¢timent et un point situÃ© au pied du bÃ¢timent."@fr , "hauteur"@fr , "height"@en ;
+        sh:datatype       xsd:integer ;
+        sh:description    "Hauteur du bÃ¢timent correspondant Ã  la diffÃ©rence entre le Z le plus Ã©levÃ© du pourtour du bÃ¢timent et un point situÃ© au pied du bÃ¢timent."@fr ;
+        sh:name           "height"@en , "hauteur"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#hauteur> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#d63ac04c69487b16ac3a9a3ff020f472>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Topographic entity"@en , "EntitÃ© topographique"@fr ;
+        sh:description    "Un phÃ©nomÃ¨ne du monde rÃ©el qui est associÃ© Ã  une localisation sur la terre"@fr ;
+        sh:name           "Topographic entity"@en , "EntitÃ© topographique"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#cf7c01b5d2dd71951b78ef2c11f917fa> , <https://astrea.linkeddata.es/shapes#ac72ed54c366058517eb6fcbc4f23726> , <https://astrea.linkeddata.es/shapes#630a135c29e5e8956e1f2a7c7f9dde1d> , <https://astrea.linkeddata.es/shapes#d73116936d4099cfc8e241e6cffcb055> , <https://astrea.linkeddata.es/shapes#bbaa0b16104b71f2a064ed4a91ce8e49> , <https://astrea.linkeddata.es/shapes#acd36488f409d9747bf1190ead777280> , <https://astrea.linkeddata.es/shapes#5d9acc31ff685ca66948ece404ca3dd2> ;
+        sh:targetClass    <http://data.ign.fr/def/topo#EntiteTopographique> , <http://www.geonames.org/ontology#Feature> .
+
+<https://astrea.linkeddata.es/shapes#69e79db4d7dbdf0e76d1ad5fb4c91cd9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "type de ligne de transport par cÃ¢ble"@fr , "type of cableway transport line"@en , "Relie une instance d'infrastructure de transport par cÃ¢ble Ã  une instance de skos:Concept dÃ©finie dans la liste 'tpc' qui prÃ©cise sa nature."@fr ;
+        sh:description    "Relie une instance d'infrastructure de transport par cÃ¢ble Ã  une instance de skos:Concept dÃ©finie dans la liste 'tpc' qui prÃ©cise sa nature."@fr ;
+        sh:name           "type de ligne de transport par cÃ¢ble"@fr , "type of cableway transport line"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#5d9acc31ff685ca66948ece404ca3dd2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "PrÃ©cision gÃ©omÃ©trique altimÃ©trique."@fr , "altimetric accuracy"@en , "prÃ©cision altimÃ©trique"@fr ;
+        sh:datatype       xsd:double ;
+        sh:description    "PrÃ©cision gÃ©omÃ©trique altimÃ©trique."@fr ;
+        sh:name           "altimetric accuracy"@en , "prÃ©cision altimÃ©trique"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#precAlti> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#3ff2ce5758cef97b34c7ba83f4d6d062>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Indique l'Ã©tat d'une entitÃ© topographique artificielle. Renvoie 'vrai' si cette entitÃ© est en cours de construction."@fr , "under construction"@en , "en construction"@fr ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "Indique l'Ã©tat d'une entitÃ© topographique artificielle. Renvoie 'vrai' si cette entitÃ© est en cours de construction."@fr ;
+        sh:name           "en construction"@fr , "under construction"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#enConstruction> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#1ff29038125f24a7ba55098fe559e4f3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "initial civic number marker"@en , "borne initiale"@fr , "Relation entre un tronÃ§on de route et la borne postale correspondant Ã  son point initial."@fr ;
+        sh:class          <http://data.ign.fr/def/topo#BornePostale> ;
+        sh:description    "Relation entre un tronÃ§on de route et la borne postale correspondant Ã  son point initial."@fr ;
+        sh:name           "borne initiale"@fr , "initial civic number marker"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/topo#borneIni> .
+
+<https://astrea.linkeddata.es/shapes#96f0e19239232bc5bdda2f6404c48bdb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "nombre de voies ferrÃ©es"@fr , "number of tracks"@en , "Nombre de voies constituant cette portion de ligne de chemin de fer. La valeur 0 indique que le nombre de voies est inconnu."@fr ;
+        sh:datatype       xsd:integer ;
+        sh:description    "Nombre de voies constituant cette portion de ligne de chemin de fer. La valeur 0 indique que le nombre de voies est inconnu."@fr ;
+        sh:name           "number of tracks"@en , "nombre de voies ferrÃ©es"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#nbVoiesFerrees> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#bbaa0b16104b71f2a064ed4a91ce8e49>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "min z"@en , "Altitude minimale dâ€™un objet linÃ©aire ou surfacique. Cette information est issue de la saisie photogrammÃ©trique et concerne des objets dont les points initiaux et finaux ne sont pas caractÃ©ristiques de lâ€™altitude de lâ€™objet (objets surfaciques, objets linÃ©aires isolÃ©s). Pour des objets surfaciques comme les bÃ¢timents ou les rÃ©servoirs, il sâ€™agit de lâ€™altitude minimum du pourtour tel quâ€™il est dÃ©fini en planimÃ©trie (gÃ©nÃ©ralement lâ€™altitude aux gouttiÃ¨res) et non de lâ€™altitude minimum absolue. Dans le cas dâ€™un bÃ¢timent obtenu aprÃ¨s intÃ©gration du bÃ¢ti issu du cadastre, Z_MIN correspond Ã  une altitude toit mÃ©diane calculÃ©e, en prenant en compte les altitudes des contours des bÃ¢timents directement contigus sâ€™ils existent. Dans ce cas Z_MAX et Z_MIN prennent la mÃªme valeur. Lâ€™attribut peut prendre une valeur conventionnelle (9999) lorsque la gÃ©omÃ©trie de lâ€™objet nâ€™est pas issue dâ€™une saisie photogrammÃ©trique (ex. objets numÃ©risÃ©s sur la carte en service)."@fr , "z min"@fr ;
+        sh:datatype       xsd:double ;
+        sh:description    "Altitude minimale dâ€™un objet linÃ©aire ou surfacique. Cette information est issue de la saisie photogrammÃ©trique et concerne des objets dont les points initiaux et finaux ne sont pas caractÃ©ristiques de lâ€™altitude de lâ€™objet (objets surfaciques, objets linÃ©aires isolÃ©s). Pour des objets surfaciques comme les bÃ¢timents ou les rÃ©servoirs, il sâ€™agit de lâ€™altitude minimum du pourtour tel quâ€™il est dÃ©fini en planimÃ©trie (gÃ©nÃ©ralement lâ€™altitude aux gouttiÃ¨res) et non de lâ€™altitude minimum absolue. Dans le cas dâ€™un bÃ¢timent obtenu aprÃ¨s intÃ©gration du bÃ¢ti issu du cadastre, Z_MIN correspond Ã  une altitude toit mÃ©diane calculÃ©e, en prenant en compte les altitudes des contours des bÃ¢timents directement contigus sâ€™ils existent. Dans ce cas Z_MAX et Z_MIN prennent la mÃªme valeur. Lâ€™attribut peut prendre une valeur conventionnelle (9999) lorsque la gÃ©omÃ©trie de lâ€™objet nâ€™est pas issue dâ€™une saisie photogrammÃ©trique (ex. objets numÃ©risÃ©s sur la carte en service)."@fr ;
+        sh:name           "z min"@fr , "min z"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#zMin> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#0620b348a89ba33cd9af243569dfa580>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "type de vÃ©gÃ©tation"@fr , "type of vegetation "@en , "Relie une instance de zone de vÃ©gÃ©tation Ã  une instance de skos:Concept dÃ©finie dans la liste 'veg' qui prÃ©cise sa nature."@fr ;
+        sh:description    "Relie une instance de zone de vÃ©gÃ©tation Ã  une instance de skos:Concept dÃ©finie dans la liste 'veg' qui prÃ©cise sa nature."@fr ;
+        sh:name           "type de vÃ©gÃ©tation"@fr , "type of vegetation "@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#034232ff8d3ec1c3d2ffb610722f5477>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "type d'Ã©lÃ©ment du relief"@fr , "type of relief feature"@en , "Relie une instance d'Ã©lÃ©ment du relief Ã  une instance de skos:Concept dÃ©finie dans la liste 'rel' qui prÃ©cise sa nature."@fr ;
+        sh:description    "Relie une instance d'Ã©lÃ©ment du relief Ã  une instance de skos:Concept dÃ©finie dans la liste 'rel' qui prÃ©cise sa nature."@fr ;
+        sh:name           "type d'Ã©lÃ©ment du relief"@fr , "type of relief feature"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#5a9e1c184d12e11ab327fc055feff44c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Type de point d'eau"@fr , "Type of waterhole"@en ;
+        sh:description    "Regroupe l'ensemble des instances dÃ©signant des types de points d'eau."@fr ;
+        sh:name           "Type de point d'eau"@fr , "Type of waterhole"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#TypeDePointDEau> .
+
+<https://astrea.linkeddata.es/shapes#630a135c29e5e8956e1f2a7c7f9dde1d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "nature"@en , "nature"@fr , "Relie une entitÃ© topographique au concept qui prÃ©cise sa nature."@fr ;
+        sh:class          <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:description    "Relie une entitÃ© topographique au concept qui prÃ©cise sa nature."@fr ;
+        sh:name           "nature"@fr , "nature"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/topo#nature> .
+
+<https://astrea.linkeddata.es/shapes#44ad6c3c98ccdb18640c839cd760d36a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "dummy"@en , "La valeur 'oui' indique que la gÃ©omÃ©trie du tronÃ§on de rÃ©seau n'est pas significative."@fr , "fictif"@fr ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "La valeur 'oui' indique que la gÃ©omÃ©trie du tronÃ§on de rÃ©seau n'est pas significative."@fr ;
+        sh:name           "fictif"@fr , "dummy"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#fictif> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#b8231401bbdad2344a6d6a87dc4df221>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Relation entre un tronÃ§on de route et la borne postale correspondant Ã  son point final."@fr , "final civic number marker"@en , "borne finale"@fr ;
+        sh:class          <http://data.ign.fr/def/topo#BornePostale> ;
+        sh:description    "Relation entre un tronÃ§on de route et la borne postale correspondant Ã  son point final."@fr ;
+        sh:name           "borne finale"@fr , "final civic number marker"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/topo#borneFin> .
+
+<https://astrea.linkeddata.es/shapes#3294dbd28fa80d6b840945fb17dcfae6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Ligne Ã©lectrique"@fr , "Electricity transmission line"@en ;
+        sh:description    "Portion de ligne Ã©lectrique homogÃ¨ne pour l'ensemble des attributs qui la concernent."@fr ;
+        sh:name           "Ligne Ã©lectrique"@fr , "Electricity transmission line"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#LigneElectrique> .
+
+<https://astrea.linkeddata.es/shapes#9ae4c2b4323f3573612dfe8d186b29d9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Terrain de sport"@fr , "Sports ground"@en ;
+        sh:description    "Ã‰quipement sportif de plein air."@fr ;
+        sh:name           "Terrain de sport"@fr , "Sports ground"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#TerrainDeSport> .
+
+<https://astrea.linkeddata.es/shapes#37a72e552f78cc5b5248958f6eed6dfe>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Point d'eau"@fr , "Waterhole"@en ;
+        sh:description    "Source (captÃ©e ou non), point de production dâ€™eau (pompage, forage, puits,...) ou point de stockage dâ€™eau de petite dimension (citerne, abreuvoir, lavoir, bassin)."@fr ;
+        sh:name           "Point d'eau"@fr , "Waterhole"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#PointDEau> .
+
+<https://astrea.linkeddata.es/shapes#81d39a73be5315b63318b5ce30722b3c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "PylÃ´ne"@fr , "Pylon"@en ;
+        sh:description    "Support de ligne Ã©lectrique. PylÃ´ne, portique."@fr ;
+        sh:name           "PylÃ´ne"@fr , "Pylon"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#Pylone> .
+
+<https://astrea.linkeddata.es/shapes#3b1e13905a1b0b4d5343e1d38f834248>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "type de construction"@fr , "type of structure"@en , "Relie une instance de construction Ã  une instance de skos:Concept dÃ©finie dans la liste 'cnstr' qui prÃ©cise sa nature."@fr ;
+        sh:description    "Relie une instance de construction Ã  une instance de skos:Concept dÃ©finie dans la liste 'cnstr' qui prÃ©cise sa nature."@fr ;
+        sh:name           "type de construction"@fr , "type of structure"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#1b01a7a7c3372a6294a01c39a050eceb>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Type de voie ferrÃ©e"@fr , "Type of railway track"@en ;
+        sh:description    "Regroupe l'ensemble des instances dÃ©signant des types de voies ferrÃ©es."@fr ;
+        sh:name           "Type de voie ferrÃ©e"@fr , "Type of railway track"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#TypeDeVoieFerree> .
+
+<https://astrea.linkeddata.es/shapes#d8087247fd502345cda8c868d6c0ead9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Ã‰lÃ©ment du rÃ©seau routier"@fr , "Road transport feature"@en ;
+        sh:description    "Ã‰lÃ©ments du rÃ©seau de transport routier: voies de communication revÃªtues et non revÃªtues, rÃ©seau 'adressÃ©', et une sÃ©lection des chemins et sentiers."@fr ;
+        sh:name           "Ã‰lÃ©ment du rÃ©seau routier"@fr , "Road transport feature"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#ElementReseauRoutier> .
+
+<https://astrea.linkeddata.es/shapes#0747df169686d9f652727b91b671a607>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "commune gestionnaire de la voie nommÃ©e"@fr , "manager of the nammed street"@en , "Relation entre une voie nommÃ©e et la commune dont elle dÃ©pend."@fr ;
+        sh:class          <http://data.ign.fr/def/geofla#Commune> ;
+        sh:description    "Relation entre une voie nommÃ©e et la commune dont elle dÃ©pend."@fr ;
+        sh:name           "commune gestionnaire de la voie nommÃ©e"@fr , "manager of the nammed street"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/topo#gestionVoie> .
+
+<https://astrea.linkeddata.es/shapes#bb4fec55bd940276eb127a6dd936cb91>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "name of itinerary"@en , "DÃ©finit un parcours routier nommÃ©."@fr , "nom d'itinÃ©raire"@fr ;
+        sh:datatype       xsd:string ;
+        sh:description    "DÃ©finit un parcours routier nommÃ©."@fr ;
+        sh:name           "nom d'itinÃ©raire"@fr , "name of itinerary"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#nomIti> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#e326e89d083eea42a9f15e2822ffd21a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "code postal"@fr , "NumÃ©ro de code postal."@fr , "postal code"@en ;
+        sh:datatype       xsd:integer ;
+        sh:description    "NumÃ©ro de code postal."@fr ;
+        sh:name           "postal code"@en , "code postal"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#codePostal> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#4e78bcec26dc56f119695402f1ba0efc>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "final z"@en , "Altitude du sommet final d'une portion d'Ã©lÃ©ment linÃ©aire d'un rÃ©seau."@fr , "z final"@fr ;
+        sh:datatype       xsd:double ;
+        sh:description    "Altitude du sommet final d'une portion d'Ã©lÃ©ment linÃ©aire d'un rÃ©seau."@fr ;
+        sh:name           "final z"@en , "z final"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#zFin> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#7b0b9560f3075702a10c0c0c558333d8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "type de route"@fr , "type of road"@en , "Relie une instance de route Ã  une instance de skos:Concept dÃ©finie dans la liste 'rte' qui prÃ©cise sa nature."@fr ;
+        sh:description    "Relie une instance de route Ã  une instance de skos:Concept dÃ©finie dans la liste 'rte' qui prÃ©cise sa nature."@fr ;
+        sh:name           "type de route"@fr , "type of road"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#d7a64e95a8c9da3457691bd282e1ddf1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Laisse"@fr , "Tide line"@en ;
+        sh:description    "Limite supÃ©rieure ou infÃ©rieure de l'estran."@fr ;
+        sh:name           "Laisse"@fr , "Tide line"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#Laisse> .
+
+<https://astrea.linkeddata.es/shapes#ac72ed54c366058517eb6fcbc4f23726>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "origine"@en , "origine"@fr , "Source de l'information."@fr ;
+        sh:class          <http://www.w3.org/ns/prov#Entity> ;
+        sh:description    "Source de l'information."@fr ;
+        sh:name           "origine"@fr , "origine"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/topo#origine> .
+
+<https://astrea.linkeddata.es/shapes#9f0d86f026c8af13901382f2c4bc2f64>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "BÃ¢ti"@fr , "Buildings and structures"@en ;
+        sh:description    "BÃ¢timents (indiffÃ©renciÃ©s, industriels et remarquables) et autres constructions."@fr ;
+        sh:name           "BÃ¢ti"@fr , "Buildings and structures"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#Bati> .
+
+<https://astrea.linkeddata.es/shapes#2f5be17cad72b963ace41f30930fb259>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Aire de pÃ©age"@fr , "Toll-gate area"@en ;
+        sh:description    "Emprise de la chaussÃ©e d'une aire de pÃ©age."@fr ;
+        sh:name           "Aire de pÃ©age"@fr , "Toll-gate area"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#AireDePeage> .
+
+<https://astrea.linkeddata.es/shapes#6780f22de2f1e37e5024802c00f425df>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "CimetiÃ¨re"@fr , "Cemetery"@en ;
+        sh:description    "Lieu oÃ¹ lâ€™on enterre les morts."@fr ;
+        sh:name           "Cemetery"@en , "CimetiÃ¨re"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#a531cffb348a1b9f6c4b8a4f14cd05e5> ;
+        sh:targetClass    <http://data.ign.fr/def/topo#Cimetiere> .
+
+<https://astrea.linkeddata.es/shapes#6af63d83452ac6e7ef24ade3666d0da1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "type de ZAI"@fr , "type of Area Of Interest (AOI)"@en , "Relie une instance de zone d'activitÃ© et d'intÃ©rÃªt Ã  une instance de skos:Concept dÃ©finie dans la liste 'zai' qui prÃ©cise sa nature."@fr ;
+        sh:description    "Relie une instance de zone d'activitÃ© et d'intÃ©rÃªt Ã  une instance de skos:Concept dÃ©finie dans la liste 'zai' qui prÃ©cise sa nature."@fr ;
+        sh:name           "type de ZAI"@fr , "type of Area Of Interest (AOI)"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#a6926b1f52bba9a3a4437f34d17981c6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "artificial"@en , "artificiel"@fr , "Permet de distinguer les cours d'eau naturels des cours d'eau artificiels ou artificialisÃ©s."@fr ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "Permet de distinguer les cours d'eau naturels des cours d'eau artificiels ou artificialisÃ©s."@fr ;
+        sh:name           "artificial"@en , "artificiel"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#artif> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#4256e50a5b2e36583dbb9091d6328549>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "direction of traffic"@en , "sens de circulation"@fr , "Sens de circulation autorisÃ©e pour les automobiles sur les voies."@fr ;
+        sh:description    "Sens de circulation autorisÃ©e pour les automobiles sur les voies."@fr ;
+        sh:name           "direction of traffic"@en , "sens de circulation"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#sens> .
+
+<https://astrea.linkeddata.es/shapes#555f4653b9274c548a3c84862c35b7d2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Named street"@en , "Voie nommÃ©e"@fr ;
+        sh:description    "Une voie est un ensemble de tronÃ§ons de route associÃ©s Ã  un mÃªme nom. Une voie est identifiÃ©e par son nom dans une commune donnÃ©e. Le nom de voie est celui qui sert Ã  lâ€™adressage."@fr ;
+        sh:name           "Voie nommÃ©e"@fr , "Named street"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#0747df169686d9f652727b91b671a607> ;
+        sh:targetClass    <http://data.ign.fr/def/topo#Voie> .
+
+<https://astrea.linkeddata.es/shapes#a2d5aa1466c5444203c522a135152f17>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Conduite"@fr , "Pipeline"@en ;
+        sh:description    "Conduite (autre que canalisation dâ€™eau) ou tapis roulant utilisÃ©s pour le transport de matiÃ¨re premiÃ¨re (gaz, hydrocarbure, minerai, etc.) ou canalisation de nature inconnue."@fr ;
+        sh:name           "Pipeline"@en , "Conduite"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3d606eaaa0068a0c1aed3645e08388e9> ;
+        sh:targetClass    <http://data.ign.fr/def/topo#Conduite> .
+
+<https://astrea.linkeddata.es/shapes#9b92f2bef487759933e13991591b85a6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Type de ligne de transport par cÃ¢ble"@fr , "Type of cableway transport line"@en ;
+        sh:description    "Regroupe l'ensemble des instances dÃ©signant des types d'infrastructures de transport par cÃ¢ble."@fr ;
+        sh:name           "Type de ligne de transport par cÃ¢ble"@fr , "Type of cableway transport line"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#TypeDeTransportCable> .
+
+<https://astrea.linkeddata.es/shapes#0e950a7fc6e9ecb9be3adc04e042007d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Zone d'activitÃ© ou d'intÃ©rÃªt"@fr , "Working area or area of interest"@en ;
+        sh:description    "BÃ¢timent ou site ayant une vocation ou un caractÃ¨re particuliers (administratif, religieux, sportif, industriel, etc.)."@fr ;
+        sh:name           "Zone d'activitÃ© ou d'intÃ©rÃªt"@fr , "Working area or area of interest"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#ZoneActiviteInteret> .
+
+<https://astrea.linkeddata.es/shapes#44cbdca052e9962e7287eacf5e94cee9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "EntitÃ© hydrographique terrestre"@fr , "Inland hydrographic feature"@en ;
+        sh:description    "EntitÃ© topographique relative au rÃ©seau hydrographique terrestre, Ã  la production ou au stockage d'eau."@fr ;
+        sh:name           "EntitÃ© hydrographique terrestre"@fr , "Inland hydrographic feature"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#EntiteHydrographiqueTerrestre> .
+
+<https://astrea.linkeddata.es/shapes#acd36488f409d9747bf1190ead777280>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "z moyen"@fr , "average z"@en , "Altitude moyenne des points composants la gÃ©omÃ©trie de lâ€™objet telle quâ€™il a Ã©tÃ© saisi Ã  lâ€™origine lorsquâ€™il est issu dâ€™une saisie photogrammÃ©trique. Lâ€™attribut peut prendre une valeur conventionnelle (9999) lorsque la gÃ©omÃ©trie de lâ€™objet nâ€™est pas issue dâ€™une saisie photogrammÃ©trique (ex. objets numÃ©risÃ©s sur la carte en service). "@fr ;
+        sh:datatype       xsd:double ;
+        sh:description    "Altitude moyenne des points composants la gÃ©omÃ©trie de lâ€™objet telle quâ€™il a Ã©tÃ© saisi Ã  lâ€™origine lorsquâ€™il est issu dâ€™une saisie photogrammÃ©trique. Lâ€™attribut peut prendre une valeur conventionnelle (9999) lorsque la gÃ©omÃ©trie de lâ€™objet nâ€™est pas issue dâ€™une saisie photogrammÃ©trique (ex. objets numÃ©risÃ©s sur la carte en service). "@fr ;
+        sh:name           "average z"@en , "z moyen"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#zMoyen> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#ceb8ed967c826ae7c26e49120ffe8390>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Construction"@fr , "Structure"@en ;
+        sh:description    "Ouvrage de gÃ©nie civil."@fr ;
+        sh:name           "Construction"@fr , "Structure"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#Construction> .
+
+<https://astrea.linkeddata.es/shapes#d4c1af00d1c6615b8707504b6800c4e6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "type de voie ferrÃ©e"@fr , "type of railway track"@en , "Relie une instance de voie ferrÃ©e Ã  une instance de skos:Concept dÃ©finie dans la liste 'vfr' qui prÃ©cise sa nature."@fr ;
+        sh:description    "Relie une instance de voie ferrÃ©e Ã  une instance de skos:Concept dÃ©finie dans la liste 'vfr' qui prÃ©cise sa nature."@fr ;
+        sh:name           "type de voie ferrÃ©e"@fr , "type of railway track"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#a8d1e7440bc810ce5132a3f0c4bdcead>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "type de franchissement"@fr , "type of crossing"@en , "Relie les Ã©lÃ©ments de rÃ©seaux de transport au type d'ouvrage de franchissement auquel ils correspondent."@fr ;
+        sh:description    "Relie les Ã©lÃ©ments de rÃ©seaux de transport au type d'ouvrage de franchissement auquel ils correspondent."@fr ;
+        sh:name           "type de franchissement"@fr , "type of crossing"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#3d606eaaa0068a0c1aed3645e08388e9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "position par rapport au sol"@fr , "Position par rapport au sol. Donne le niveau de lâ€™objet par rapport Ã  la surface du sol (valeur nulle pour un objet au sol, nÃ©gative pour un objet situÃ© au-dessous du niveau du sol et positive pour un objet en sursol)."@fr , "position in relation to the ground"@en ;
+        sh:datatype       xsd:integer ;
+        sh:description    "Position par rapport au sol. Donne le niveau de lâ€™objet par rapport Ã  la surface du sol (valeur nulle pour un objet au sol, nÃ©gative pour un objet situÃ© au-dessous du niveau du sol et positive pour un objet en sursol)."@fr ;
+        sh:name           "position par rapport au sol"@fr , "position in relation to the ground"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#posSol> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#cf7c01b5d2dd71951b78ef2c11f917fa>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "max z"@en , "z max"@fr , "Altitude maximale dâ€™un objet linÃ©aire ou surfacique. Cette information est issue de la saisie photogrammÃ©trique et concerne des objets dont les points initiaux et finaux ne sont pas caractÃ©ristiques de lâ€™altitude de lâ€™objet (objets surfaciques, objets linÃ©aires isolÃ©s). Pour des objets surfaciques comme les bÃ¢timents ou les rÃ©servoirs, il sâ€™agit de lâ€™altitude maximum du pourtour tel quâ€™il est dÃ©fini en planimÃ©trie (gÃ©nÃ©ralement lâ€™altitude aux gouttiÃ¨res) et non de lâ€™altitude maximum absolue (voir schÃ©ma ci-dessus). Dans le cas dâ€™un bÃ¢timent obtenu aprÃ¨s intÃ©gration du bÃ¢ti issu du cadastre, Z_MAX correspond Ã  une altitude toit mÃ©diane calculÃ©e, en prenant en compte les altitudes des contours des bÃ¢timents directement contigus sâ€™ils existent. Dans ce cas Z_MAX et Z_MIN prennent la mÃªme valeur. Lâ€™attribut peut prendre une valeur conventionnelle (9999) lorsque la gÃ©omÃ©trie de lâ€™objet nâ€™est pas issue dâ€™une saisie photogrammÃ©trique (ex. objets numÃ©risÃ©s sur la carte en service). "@fr ;
+        sh:datatype       xsd:double ;
+        sh:description    "Altitude maximale dâ€™un objet linÃ©aire ou surfacique. Cette information est issue de la saisie photogrammÃ©trique et concerne des objets dont les points initiaux et finaux ne sont pas caractÃ©ristiques de lâ€™altitude de lâ€™objet (objets surfaciques, objets linÃ©aires isolÃ©s). Pour des objets surfaciques comme les bÃ¢timents ou les rÃ©servoirs, il sâ€™agit de lâ€™altitude maximum du pourtour tel quâ€™il est dÃ©fini en planimÃ©trie (gÃ©nÃ©ralement lâ€™altitude aux gouttiÃ¨res) et non de lâ€™altitude maximum absolue (voir schÃ©ma ci-dessus). Dans le cas dâ€™un bÃ¢timent obtenu aprÃ¨s intÃ©gration du bÃ¢ti issu du cadastre, Z_MAX correspond Ã  une altitude toit mÃ©diane calculÃ©e, en prenant en compte les altitudes des contours des bÃ¢timents directement contigus sâ€™ils existent. Dans ce cas Z_MAX et Z_MIN prennent la mÃªme valeur. Lâ€™attribut peut prendre une valeur conventionnelle (9999) lorsque la gÃ©omÃ©trie de lâ€™objet nâ€™est pas issue dâ€™une saisie photogrammÃ©trique (ex. objets numÃ©risÃ©s sur la carte en service). "@fr ;
+        sh:name           "max z"@en , "z max"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#zMax> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#7b0345edee394873003ec99e4b692b4c>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/dc/terms/isPartOf> .
+
+<https://astrea.linkeddata.es/shapes#71f84dad6c12ec99900b02652b6c39ee>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Infrastructure de transport d'Ã©nergie"@fr , "Energy transport infrastructure"@en ;
+        sh:description    "Ã‰lÃ©ments du rÃ©seau de transport d'Ã©lectricitÃ© Ã  une haute et trÃ¨s haute tension, et conduites utilisÃ©es pour le transport de matiÃ¨re premiÃ¨re."@fr ;
+        sh:name           "Infrastructure de transport d'Ã©nergie"@fr , "Energy transport infrastructure"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#InfrastructureTransportEnergie> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#acd36488f409d9747bf1190ead777280> , <https://astrea.linkeddata.es/shapes#fd884855fcb200a46153fcf374f9c834> , <https://astrea.linkeddata.es/shapes#07985b2d2473ef5a63d6b15bae455491> , <https://astrea.linkeddata.es/shapes#c2a5581ed77ce0f4a9b1d1ed07e30ea3> , <https://astrea.linkeddata.es/shapes#3ff2ce5758cef97b34c7ba83f4d6d062> , <https://astrea.linkeddata.es/shapes#5813919df9f864e8b2453528507ba411> , <https://astrea.linkeddata.es/shapes#ab919b61b9313f67cfa86f43a53ffadd> , <https://astrea.linkeddata.es/shapes#b2761b4cf1ec8b893f7252dac7cd9c7b> , <https://astrea.linkeddata.es/shapes#034232ff8d3ec1c3d2ffb610722f5477> , <https://astrea.linkeddata.es/shapes#4a474e21e71d5959c19dac0269fd0e7c> , <https://astrea.linkeddata.es/shapes#92408eecbd4d4cc04b17ba816097d78d> , <https://astrea.linkeddata.es/shapes#ac72ed54c366058517eb6fcbc4f23726> , <https://astrea.linkeddata.es/shapes#0e950a7fc6e9ecb9be3adc04e042007d> , <https://astrea.linkeddata.es/shapes#7ed9cf28ffc0ca96b2aee7c20ce763a6> , <https://astrea.linkeddata.es/shapes#ba4c91b46453a03e2be7b0a28865bf0d> , <https://astrea.linkeddata.es/shapes#3294dbd28fa80d6b840945fb17dcfae6> , <https://astrea.linkeddata.es/shapes#5d9acc31ff685ca66948ece404ca3dd2> , <https://astrea.linkeddata.es/shapes#a191cd9e293b02ea5198b51f2850bed8> , <https://astrea.linkeddata.es/shapes#e8e5eca74968847d5111d85f15c36070> , <https://astrea.linkeddata.es/shapes#7b0b9560f3075702a10c0c0c558333d8> , <https://astrea.linkeddata.es/shapes#4256e50a5b2e36583dbb9091d6328549> , <https://astrea.linkeddata.es/shapes#2be50f4a470839354e4c0d74c777400a> , <https://astrea.linkeddata.es/shapes#1e9803c3df2f5d6620be2af8840f0fbe> , <https://astrea.linkeddata.es/shapes#ceb8ed967c826ae7c26e49120ffe8390> , <https://astrea.linkeddata.es/shapes#5649eb96489d74f7e76c6c3e90c9d8ff> , <https://astrea.linkeddata.es/shapes#dcb5e46df08f5cc96c35351b8457f4d5> , <https://astrea.linkeddata.es/shapes#d4dcbad2ee859169ee32bf79fa462b6d> , <https://astrea.linkeddata.es/shapes#c82db249e393bfc72110bcb1d8a844eb> , <https://astrea.linkeddata.es/shapes#132fd1084c4f94dd3c506839b9f6db63> , <https://astrea.linkeddata.es/shapes#a2d5aa1466c5444203c522a135152f17> , <https://astrea.linkeddata.es/shapes#e326e89d083eea42a9f15e2822ffd21a> , <https://astrea.linkeddata.es/shapes#3b1e13905a1b0b4d5343e1d38f834248> , <https://astrea.linkeddata.es/shapes#d4c1af00d1c6615b8707504b6800c4e6> , <https://astrea.linkeddata.es/shapes#2ac3bb7ea13e8e485c839d12392698cf> , <https://astrea.linkeddata.es/shapes#37a72e552f78cc5b5248958f6eed6dfe> , <https://astrea.linkeddata.es/shapes#a18e9094bdd21753df192f361f9bb36a> , <https://astrea.linkeddata.es/shapes#d63ac04c69487b16ac3a9a3ff020f472> , <https://astrea.linkeddata.es/shapes#1ff29038125f24a7ba55098fe559e4f3> , <https://astrea.linkeddata.es/shapes#630a135c29e5e8956e1f2a7c7f9dde1d> , <https://astrea.linkeddata.es/shapes#c0ea6902cb6376a14e9d3999801d1c80> , <https://astrea.linkeddata.es/shapes#777410ee0d134ae102c9de39a011b037> , <https://astrea.linkeddata.es/shapes#d73116936d4099cfc8e241e6cffcb055> , <https://astrea.linkeddata.es/shapes#69e79db4d7dbdf0e76d1ad5fb4c91cd9> , <https://astrea.linkeddata.es/shapes#db8ca92a8e8ab8def2c351d2007f48de> , <https://astrea.linkeddata.es/shapes#1b01a7a7c3372a6294a01c39a050eceb> , <https://astrea.linkeddata.es/shapes#589afc587cc35106d8c4d1203df55188> , <https://astrea.linkeddata.es/shapes#bb82ad5af6c2807f1fa17e1ae2999a6b> , <https://astrea.linkeddata.es/shapes#ddf53123aff914a6fb9db514c1845816> , <https://astrea.linkeddata.es/shapes#bbaa0b16104b71f2a064ed4a91ce8e49> , <https://astrea.linkeddata.es/shapes#2f5be17cad72b963ace41f30930fb259> , <https://astrea.linkeddata.es/shapes#de2dbabb0d3bab065ad292b4c78b1e5c> , <https://astrea.linkeddata.es/shapes#cb59e00ed6d6dc0bdafd1aa50d406e1e> , <https://astrea.linkeddata.es/shapes#0620b348a89ba33cd9af243569dfa580> , <https://astrea.linkeddata.es/shapes#b8231401bbdad2344a6d6a87dc4df221> , <https://astrea.linkeddata.es/shapes#b0422fb038f9245efffd8fee30772b81> , <https://astrea.linkeddata.es/shapes#8bd1e5b28417c548aca0531a7843d422> , <https://astrea.linkeddata.es/shapes#6780f22de2f1e37e5024802c00f425df> , <https://astrea.linkeddata.es/shapes#e3614c620d78910c31a5f9788f0600c3> , <https://astrea.linkeddata.es/shapes#44ad6c3c98ccdb18640c839cd760d36a> , <https://astrea.linkeddata.es/shapes#9f0d86f026c8af13901382f2c4bc2f64> , <https://astrea.linkeddata.es/shapes#0747df169686d9f652727b91b671a607> , <https://astrea.linkeddata.es/shapes#d7a64e95a8c9da3457691bd282e1ddf1> , <https://astrea.linkeddata.es/shapes#9ae4c2b4323f3573612dfe8d186b29d9> , <https://astrea.linkeddata.es/shapes#434d92cf5f6ecdc532fbebdd5f8444e8> , <https://astrea.linkeddata.es/shapes#7625bb3d8dc80d08259f38c83fbb6fb6> , <https://astrea.linkeddata.es/shapes#10101de94c8df72ea1f635958ea82f7e> , <https://astrea.linkeddata.es/shapes#7307a45402b563eb4331810989c6db21> , <https://astrea.linkeddata.es/shapes#555f4653b9274c548a3c84862c35b7d2> , <https://astrea.linkeddata.es/shapes#ac2afee32f5d1545a5d4df288e643237> , <https://astrea.linkeddata.es/shapes#cf7c01b5d2dd71951b78ef2c11f917fa> , <https://astrea.linkeddata.es/shapes#06d7ce4cf90f30cdcb754fd8cef74fde> , <https://astrea.linkeddata.es/shapes#d8087247fd502345cda8c868d6c0ead9> , <https://astrea.linkeddata.es/shapes#5a9e1c184d12e11ab327fc055feff44c> , <https://astrea.linkeddata.es/shapes#4f90d21ea03adc10c6b761f4706a6d23> , <https://astrea.linkeddata.es/shapes#a531cffb348a1b9f6c4b8a4f14cd05e5> , <https://astrea.linkeddata.es/shapes#6af63d83452ac6e7ef24ade3666d0da1> , <https://astrea.linkeddata.es/shapes#066a0b50ac6ec7bb8e1e3d9f820a048e> , <https://astrea.linkeddata.es/shapes#3d606eaaa0068a0c1aed3645e08388e9> , <https://astrea.linkeddata.es/shapes#9e58ea7deb6a67002e31ba6b1984a200> , <https://astrea.linkeddata.es/shapes#44cbdca052e9962e7287eacf5e94cee9> , <https://astrea.linkeddata.es/shapes#96f0e19239232bc5bdda2f6404c48bdb> , <https://astrea.linkeddata.es/shapes#7a0a776b85d13b5fe592cc469a2e07a7> , <https://astrea.linkeddata.es/shapes#f2c7e0b812008caf08767b58b94b4d6b> , <https://astrea.linkeddata.es/shapes#ce0dc9df9adf975a27f104162d1f1ccc> , <https://astrea.linkeddata.es/shapes#330c1f75e42e2d5cdc4af4f16598ab80> , <https://astrea.linkeddata.es/shapes#1e8710ca6c6073c1484946cf535258e7> , <https://astrea.linkeddata.es/shapes#7b0345edee394873003ec99e4b692b4c> , <https://astrea.linkeddata.es/shapes#71f84dad6c12ec99900b02652b6c39ee> , <https://astrea.linkeddata.es/shapes#a8d1e7440bc810ce5132a3f0c4bdcead> , <https://astrea.linkeddata.es/shapes#15f8420f1e076c86060bc263d32e6797> , <https://astrea.linkeddata.es/shapes#81d39a73be5315b63318b5ce30722b3c> , <https://astrea.linkeddata.es/shapes#090cd041025a922570a32f66103db995> , <https://astrea.linkeddata.es/shapes#019abea2da1cfac682cc9f61b82a6515> , <https://astrea.linkeddata.es/shapes#159fbfda5bf2b9306e37aacb040c2e47> , <https://astrea.linkeddata.es/shapes#45720311a1359958390cb7485e48cf2f> , <https://astrea.linkeddata.es/shapes#386f97375fd686d595f169692a7e5a27> , <https://astrea.linkeddata.es/shapes#fbaeb46e9feb4b20efb32faaa39bb476> , <https://astrea.linkeddata.es/shapes#a6926b1f52bba9a3a4437f34d17981c6> , <https://astrea.linkeddata.es/shapes#9b92f2bef487759933e13991591b85a6> , <https://astrea.linkeddata.es/shapes#bb4fec55bd940276eb127a6dd936cb91> , <https://astrea.linkeddata.es/shapes#4e78bcec26dc56f119695402f1ba0efc> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#2ac3bb7ea13e8e485c839d12392698cf>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Ã‰lÃ©ment du rÃ©seau ferroviaire"@fr , "Transport by rail feature"@en ;
+        sh:description    "Ã‰lÃ©ments du rÃ©seau de transport ferroviaire: voies ferrÃ©es et aires de triage."@fr ;
+        sh:name           "Ã‰lÃ©ment du rÃ©seau ferroviaire"@fr , "Transport by rail feature"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#ElementReseauFerroviaire> .
+
+<https://astrea.linkeddata.es/shapes#07985b2d2473ef5a63d6b15bae455491>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Surface d'eau"@fr , "Water surface"@en ;
+        sh:description    "Surface d'eau non marine : large canal, Ã©tang, large fleuve, lac, mare, large riviÃ¨re."@fr ;
+        sh:name           "Surface d'eau"@fr , "Water surface"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#SurfaceDEau> .
+
+<https://astrea.linkeddata.es/shapes#e8e5eca74968847d5111d85f15c36070>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "type de terrain de sport"@fr , "type of sports ground"@en , "Relie une instance de terrain de sport Ã  une instance de skos:Concept dÃ©finie dans la liste 'tds' qui prÃ©cise sa nature."@fr ;
+        sh:description    "Relie une instance de terrain de sport Ã  une instance de skos:Concept dÃ©finie dans la liste 'tds' qui prÃ©cise sa nature."@fr ;
+        sh:name           "type de terrain de sport"@fr , "type of sports ground"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#c2a5581ed77ce0f4a9b1d1ed07e30ea3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "type of taxiway"@en , "Attribut permettant de distinguer diffÃ©rentes natures d'aÃ©rodrome."@fr , "type de piste"@fr ;
+        sh:description    "Attribut permettant de distinguer diffÃ©rentes natures d'aÃ©rodrome."@fr ;
+        sh:name           "type de piste"@fr , "type of taxiway"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#typeDePiste> .
+
+<https://astrea.linkeddata.es/shapes#06d7ce4cf90f30cdcb754fd8cef74fde>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Indique lâ€™appartenance ou non dâ€™un tronÃ§on routier au rÃ©seau vert. Le rÃ©seau vert, composÃ© de pÃ´les verts et de liaisons vertes, couvre lâ€™ensemble du territoire franÃ§ais. Les pÃ´les verts sont composÃ©s de communes de plus de 23.000 habitants en province et de 39.000 habitants en Ile-de-France, ainsi que certains pÃ´les dâ€™activitÃ©s administratifs, Ã©conomiques, touristiques ou industriels. On retient seulement le rÃ©seau vert de transit entre pÃ´les verts. Le rÃ©seau vert de rabattement, Ã  lâ€™intÃ©rieur des villes, et le rÃ©seau vert conseillÃ© aux poids lourds ne sont pas retenus."@fr , "itinÃ©raire vert"@fr , "green itinerary"@en ;
+        sh:datatype       xsd:boolean ;
+        sh:description    "Indique lâ€™appartenance ou non dâ€™un tronÃ§on routier au rÃ©seau vert. Le rÃ©seau vert, composÃ© de pÃ´les verts et de liaisons vertes, couvre lâ€™ensemble du territoire franÃ§ais. Les pÃ´les verts sont composÃ©s de communes de plus de 23.000 habitants en province et de 39.000 habitants en Ile-de-France, ainsi que certains pÃ´les dâ€™activitÃ©s administratifs, Ã©conomiques, touristiques ou industriels. On retient seulement le rÃ©seau vert de transit entre pÃ´les verts. Le rÃ©seau vert de rabattement, Ã  lâ€™intÃ©rieur des villes, et le rÃ©seau vert conseillÃ© aux poids lourds ne sont pas retenus."@fr ;
+        sh:name           "green itinerary"@en , "itinÃ©raire vert"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#itVert> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#db8ca92a8e8ab8def2c351d2007f48de>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "type de point d'eau"@fr , "type of waterhole"@en , "Relie une instance de point d'eau Ã  une instance de skos:Concept dÃ©finie dans la liste 'pte' qui prÃ©cise sa nature."@fr ;
+        sh:description    "Relie une instance de point d'eau Ã  une instance de skos:Concept dÃ©finie dans la liste 'pte' qui prÃ©cise sa nature."@fr ;
+        sh:name           "type de point d'eau"@fr , "type of waterhole"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#4f90d21ea03adc10c6b761f4706a6d23>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "z initial"@fr , "Altitude du sommet initial d'une portion d'Ã©lÃ©ment linÃ©aire d'un rÃ©seau."@fr , "initial z"@en ;
+        sh:datatype       xsd:double ;
+        sh:description    "Altitude du sommet initial d'une portion d'Ã©lÃ©ment linÃ©aire d'un rÃ©seau."@fr ;
+        sh:name           "initial z"@en , "z initial"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#zIni> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#7625bb3d8dc80d08259f38c83fbb6fb6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Type de bÃ¢timent"@fr , "Type of building "@en ;
+        sh:description    "Regroupe l'ensemble des instances dÃ©signant des types de bÃ¢timents."@fr ;
+        sh:name           "Type de bÃ¢timent"@fr , "Type of building "@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#TypeDeBatiment> .
+
+<https://astrea.linkeddata.es/shapes#d73116936d4099cfc8e241e6cffcb055>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "prÃ©cision planimÃ©trique"@fr , "PrÃ©cision gÃ©omÃ©trique planimÃ©trique."@fr , "planimetric accuracy"@en ;
+        sh:datatype       xsd:double ;
+        sh:description    "PrÃ©cision gÃ©omÃ©trique planimÃ©trique."@fr ;
+        sh:name           "prÃ©cision planimÃ©trique"@fr , "planimetric accuracy"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#precPlani> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
+
+<https://astrea.linkeddata.es/shapes#dcb5e46df08f5cc96c35351b8457f4d5>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "RÃ©servoir"@fr , "Tank"@en ;
+        sh:description    "RÃ©servoir (eau, matiÃ¨res industrielles,...) de plus de 10m de diamÃ¨tre."@fr ;
+        sh:name           "RÃ©servoir"@fr , "Tank"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#Reservoir> .
+
+<https://astrea.linkeddata.es/shapes#c82db249e393bfc72110bcb1d8a844eb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "manager"@en , "gestionnaire"@fr , "DÃ©finit le gestionnaire administratif dâ€™une route. Toutes les routes classÃ©es possÃ¨dent un â€˜Gestionnaireâ€™."@fr ;
+        sh:datatype       xsd:string ;
+        sh:description    "DÃ©finit le gestionnaire administratif dâ€™une route. Toutes les routes classÃ©es possÃ¨dent un â€˜Gestionnaireâ€™."@fr ;
+        sh:name           "gestionnaire"@fr , "manager"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#gestion> ;
+        sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#434d92cf5f6ecdc532fbebdd5f8444e8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Bassin"@fr , "Basin"@en ;
+        sh:description    "Construction non couverte destinÃ©e Ã  recevoir de l'eau temporairement ou de maniÃ¨re permanente."@fr ;
+        sh:name           "Bassin"@fr , "Basin"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#Bassin> .
+
+<https://astrea.linkeddata.es/shapes#159fbfda5bf2b9306e37aacb040c2e47>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "rÃ©gime des eaux"@fr , "water regime"@en , "Attribut permettant de caractÃ©riser un objet hydrographique en fonction du rÃ©gime des eaux."@fr ;
+        sh:description    "Attribut permettant de caractÃ©riser un objet hydrographique en fonction du rÃ©gime des eaux."@fr ;
+        sh:name           "rÃ©gime des eaux"@fr , "water regime"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#regime> .
+
+<https://astrea.linkeddata.es/shapes#de2dbabb0d3bab065ad292b4c78b1e5c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Type de route"@fr , "Type of road"@en ;
+        sh:description    "Regroupe l'ensemble des instances dÃ©signant des types de routes."@fr ;
+        sh:name           "Type de route"@fr , "Type of road"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#TypeDeRoute> .
+
+<https://astrea.linkeddata.es/shapes#1e9803c3df2f5d6620be2af8840f0fbe>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "related to"@en , "concerne"@fr , "Relation entre une borne postale et la voie Ã  laquelle elle se rapporte."@fr ;
+        sh:class          <http://data.ign.fr/def/topo#Voie> ;
+        sh:description    "Relation entre une borne postale et la voie Ã  laquelle elle se rapporte."@fr ;
+        sh:name           "related to"@en , "concerne"@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://data.ign.fr/def/topo#concerne> .
+
+<https://astrea.linkeddata.es/shapes#e3614c620d78910c31a5f9788f0600c3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Type de franchissement"@fr , "Type of crossing"@en ;
+        sh:description    "Regroupe l'ensemble des instances dÃ©signant des types d'ouvrages de franchissement."@fr ;
+        sh:name           "Type de franchissement"@fr , "Type of crossing"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#TypeDeFranchissement> .
+
+<https://astrea.linkeddata.es/shapes#5649eb96489d74f7e76c6c3e90c9d8ff>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Building"@en , "BÃ¢timent"@fr ;
+        sh:description    "Construction d'une certaine importance destinÃ©e Ã  abriter des personnes, des choses ou des animaux."@fr ;
+        sh:name           "BÃ¢timent"@fr , "Building"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ba4c91b46453a03e2be7b0a28865bf0d> ;
+        sh:targetClass    <http://data.ign.fr/def/topo#Batiment> .
+
+<https://astrea.linkeddata.es/shapes#066a0b50ac6ec7bb8e1e3d9f820a048e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Watercourse"@en , "Cours d'eau"@fr ;
+        sh:description    "Portion de cours d'eau, rÃ©el ou fictif, permanent ou temporaire, naturel ou artificiel, homogÃ¨ne pour l'ensemble des attributs qui la concernent, et qui n'inclut pas de confluent."@fr ;
+        sh:name           "Cours d'eau"@fr , "Watercourse"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#44ad6c3c98ccdb18640c839cd760d36a> , <https://astrea.linkeddata.es/shapes#a6926b1f52bba9a3a4437f34d17981c6> ;
+        sh:targetClass    <http://data.ign.fr/def/topo#CoursDEau> .
+
+<https://astrea.linkeddata.es/shapes#cb59e00ed6d6dc0bdafd1aa50d406e1e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Ligne de transport par cÃ¢ble"@fr , "Cableway transport line"@en ;
+        sh:description    "Moyen de transport constituÃ© d'un ou de plusieurs cÃ¢bles porteurs."@fr ;
+        sh:name           "Ligne de transport par cÃ¢ble"@fr , "Cableway transport line"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#LigneTransportCable> .
+
+<https://astrea.linkeddata.es/shapes#fd884855fcb200a46153fcf374f9c834>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Poste de transformation"@fr , "Transformation sub-station"@en ;
+        sh:description    "Enceinte Ã  l'intÃ©rieur de laquelle le courant transportÃ© par une ligne Ã©lectrique est transformÃ©."@fr ;
+        sh:name           "Poste de transformation"@fr , "Transformation sub-station"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#PosteTransformation> .
+
+<https://astrea.linkeddata.es/shapes#10101de94c8df72ea1f635958ea82f7e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Type de construction"@fr , "Type of structure"@en ;
+        sh:description    "Regroupe l'ensemble des instances dÃ©signant des types de constructions."@fr ;
+        sh:name           "Type de construction"@fr , "Type of structure"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#TypeDeConstruction> .
+
+<https://astrea.linkeddata.es/shapes#15f8420f1e076c86060bc263d32e6797>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Parking"@fr , "Car park"@en ;
+        sh:description    "Zone amÃ©nagÃ©e pour le parcage des automobiles. Parking non couvert, public ou privÃ©, aire de stationnement dâ€™environ un demi hectare et plus."@fr ;
+        sh:name           "Parking"@fr , "Car park"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#Parking> .
+
+<https://astrea.linkeddata.es/shapes#ab919b61b9313f67cfa86f43a53ffadd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "type de rÃ©servoir"@fr , "type of tank"@en , "Relie une instance de rÃ©servoir Ã  une instance de skos:Concept dÃ©finie dans la liste 'rsv' qui prÃ©cise sa nature."@fr ;
+        sh:description    "Relie une instance de rÃ©servoir Ã  une instance de skos:Concept dÃ©finie dans la liste 'rsv' qui prÃ©cise sa nature."@fr ;
+        sh:name           "type de rÃ©servoir"@fr , "type of tank"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#d4dcbad2ee859169ee32bf79fa462b6d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Type de ZAI"@fr , "Type of Area Of Interest (AOI)"@en ;
+        sh:description    "Regroupe l'ensemble des instances dÃ©signant des types de zones d'activitÃ©s et d'intÃ©rÃªt."@fr ;
+        sh:name           "Type de ZAI"@fr , "Type of Area Of Interest (AOI)"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://data.ign.fr/def/topo#TypeDeZAI> .
+
+<https://astrea.linkeddata.es/shapes#a18e9094bdd21753df192f361f9bb36a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Road"@en , "Route"@fr ;
+        sh:description    "Portion de voie de communication destinÃ©e aux automobiles, aux piÃ©tons, aux cycles ou aux animaux, homogÃ¨ne pour l'ensemble des attributs et des relations qui la concerne. Le tronÃ§on de route peut Ãªtre revÃªtu ou non revÃªtu (pas de revÃªtement de surface ou revÃªtement de surface fortement dÃ©gradÃ©)."@fr ;
+        sh:name           "Route"@fr , "Road"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#3ff2ce5758cef97b34c7ba83f4d6d062> , <https://astrea.linkeddata.es/shapes#45720311a1359958390cb7485e48cf2f> , <https://astrea.linkeddata.es/shapes#06d7ce4cf90f30cdcb754fd8cef74fde> , <https://astrea.linkeddata.es/shapes#7a0a776b85d13b5fe592cc469a2e07a7> , <https://astrea.linkeddata.es/shapes#330c1f75e42e2d5cdc4af4f16598ab80> , <https://astrea.linkeddata.es/shapes#090cd041025a922570a32f66103db995> , <https://astrea.linkeddata.es/shapes#7b0345edee394873003ec99e4b692b4c> , <https://astrea.linkeddata.es/shapes#44ad6c3c98ccdb18640c839cd760d36a> , <https://astrea.linkeddata.es/shapes#1ff29038125f24a7ba55098fe559e4f3> , <https://astrea.linkeddata.es/shapes#c82db249e393bfc72110bcb1d8a844eb> , <https://astrea.linkeddata.es/shapes#bb4fec55bd940276eb127a6dd936cb91> , <https://astrea.linkeddata.es/shapes#b0422fb038f9245efffd8fee30772b81> , <https://astrea.linkeddata.es/shapes#b8231401bbdad2344a6d6a87dc4df221> ;
+        sh:targetClass    <http://data.ign.fr/def/topo#Route> .
+
+<https://astrea.linkeddata.es/shapes#7307a45402b563eb4331810989c6db21>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "Tension de construction de la ligne Ã©lectrique en kV (kilo Volts)."@fr , "voltage"@fr , "voltage"@en ;
+        sh:description    "Tension de construction de la ligne Ã©lectrique en kV (kilo Volts)."@fr ;
+        sh:name           "voltage"@en , "voltage"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#voltage> .
+
+<https://astrea.linkeddata.es/shapes#7a0a776b85d13b5fe592cc469a2e07a7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://data.ign.fr/def/topo> ;
+        rdfs:label        "largeur de chaussÃ©e"@fr , "Largeur de chaussÃ©e (dâ€™accotement Ã  accotement) exprimÃ©e en mÃ¨tres."@fr , "carriageway width"@en ;
+        sh:datatype       xsd:double ;
+        sh:description    "Largeur de chaussÃ©e (dâ€™accotement Ã  accotement) exprimÃ©e en mÃ¨tres."@fr ;
+        sh:name           "carriageway width"@en , "largeur de chaussÃ©e"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://data.ign.fr/def/topo#largeurChaussee> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .

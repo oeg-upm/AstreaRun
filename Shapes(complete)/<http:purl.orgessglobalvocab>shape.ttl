@@ -1,0 +1,385 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#1f017e82fdbc1a9dd9ed220308f52e5f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Is Main"@en , "É o Principal"@pt ;
+        sh:datatype       xsd:boolean ;
+        sh:name           "Is Main"@en , "É o Principal"@pt ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/isMain> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#619d5d91a6d4041dcfdeb84e99b43ca6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Total de Mulheres"@pt , "Total of Women"@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:name           "Total de Mulheres"@pt , "Total of Women"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/totalWomen> .
+
+<https://astrea.linkeddata.es/shapes#3ee666c5ac7f9c802e0491a3a17e1fa3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.org/essglobal/vocab/" ;
+        rdfs:label        "Produto ou Serviço"@pt , "Product or Service"@en ;
+        sh:name           "Produto ou Serviço"@pt , "Product or Service"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#0093c9f455bb8b16e86daca783c33ebb> , <https://astrea.linkeddata.es/shapes#db0b6cb67c351940d7822ba92f8f14e3> , <https://astrea.linkeddata.es/shapes#c018940f3ccd2aa48dc2100e18bcd1c8> ;
+        sh:targetClass    <http://purl.org/essglobal/vocab/ProductOrService> .
+
+<https://astrea.linkeddata.es/shapes#c018940f3ccd2aa48dc2100e18bcd1c8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Qualificador"@pt , "Qualifier"@en ;
+        sh:datatype       <http://purl.org/essglobal/vocab/Qualifiers> ;
+        sh:name           "Qualificador"@pt , "Qualifier"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/qualifier> .
+
+<https://astrea.linkeddata.es/shapes#92c3c9b79c52b3dc2a9f6fa328f0a894>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Tem insumo"@pt , "Has input"@en ;
+        sh:class          <http://purl.org/essglobal/vocab/Input> ;
+        sh:name           "Tem insumo"@pt , "Has input"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/essglobal/vocab/hasInputCost> .
+
+<https://astrea.linkeddata.es/shapes#db0b6cb67c351940d7822ba92f8f14e3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Tem uma Opção de Venda"@pt , "Has a Sale Option"@en ;
+        sh:class          <http://purl.org/essglobal/vocab/SaleOption> ;
+        sh:name           "Tem uma Opção de Venda"@pt , "Has a Sale Option"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/essglobal/vocab/hasSaleOption> .
+
+<https://astrea.linkeddata.es/shapes#4a10485d705cebceb0732e9de1a93db3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.org/essglobal/vocab/" ;
+        rdfs:label        "Other Costs"@en , "Outros Custos"@pt ;
+        sh:name           "Other Costs"@en , "Outros Custos"@pt ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#51a1516cf07d89e962607d30d333569c> ;
+        sh:targetClass    <http://purl.org/essglobal/vocab/OtherCosts> .
+
+<https://astrea.linkeddata.es/shapes#fd3d2b0f13c742335c3ec38634f1dcec>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Quantidade por Unidade de Produto ou Serviço"@pt , "Quantity per Product or Service Unit"@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:name           "Quantidade por Unidade de Produto ou Serviço"@pt , "Quantity per Product or Service Unit"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/quantityPerProductOrServiceUnit> .
+
+<https://astrea.linkeddata.es/shapes#8906429f6ecf24e375fb9a6cf6402f64>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.org/essglobal/vocab/" ;
+        rdfs:label        "Input"@en , "Insumo"@pt ;
+        sh:name           "Input"@en , "Insumo"@pt ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#fd3d2b0f13c742335c3ec38634f1dcec> , <https://astrea.linkeddata.es/shapes#2afed7636a15abec8bb0a370daee4df6> , <https://astrea.linkeddata.es/shapes#51a1516cf07d89e962607d30d333569c> , <https://astrea.linkeddata.es/shapes#bc407c22c6f11729af5d84c6c5e3179b> , <https://astrea.linkeddata.es/shapes#c018940f3ccd2aa48dc2100e18bcd1c8> ;
+        sh:targetClass    <http://purl.org/essglobal/vocab/Input> .
+
+<https://astrea.linkeddata.es/shapes#b77a1b85c3ddd693837f1cc41960829a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Tem Trabalho"@pt , "Has Labour"@en ;
+        sh:class          <http://purl.org/essglobal/vocab/Labour> ;
+        sh:name           "Tem Trabalho"@pt , "Has Labour"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/essglobal/vocab/hasLabourCost> .
+
+<https://astrea.linkeddata.es/shapes#8520eccedc90eebae2d61983f1fb0663>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.org/essglobal/vocab/" ;
+        rdfs:label        "SSE Initiative"@en , "Iniciativa ESS"@pt ;
+        sh:name           "Iniciativa ESS"@pt , "SSE Initiative"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d645ff84d4b0aaab7871ded3a1381fa4> , <https://astrea.linkeddata.es/shapes#619d5d91a6d4041dcfdeb84e99b43ca6> , <https://astrea.linkeddata.es/shapes#95c8f9c9f82b253cc28da96a9ab17546> , <https://astrea.linkeddata.es/shapes#6ab94a90386ddc6c73f8091e4ae8804e> , <https://astrea.linkeddata.es/shapes#bb64c1f978cff25c67c4a7eb9ff259e2> , <https://astrea.linkeddata.es/shapes#7c3c055307c01755de623678c2afcade> , <https://astrea.linkeddata.es/shapes#dd6010579c0b32ae27dbdddb755ecc66> , <https://astrea.linkeddata.es/shapes#970d89d752b232a562a9094e01bfd3d9> ;
+        sh:targetClass    <http://purl.org/essglobal/vocab/SSEInitiative> .
+
+<https://astrea.linkeddata.es/shapes#b83e46da37a1260af2cc85b816e644ad>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Is Composed By"@en , "É Composto Por"@pt ;
+        sh:class          <http://purl.org/essglobal/vocab/CostComposition> ;
+        sh:name           "Is Composed By"@en , "É Composto Por"@pt ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/essglobal/vocab/isComposedBy> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#78f177bbdf299e8bf3dc3de0674fd00b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.org/essglobal/vocab/" ;
+        rdfs:label        "Cost"@en , "Custo"@pt ;
+        sh:name           "Cost"@en , "Custo"@pt ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#b83e46da37a1260af2cc85b816e644ad> ;
+        sh:targetClass    <http://purl.org/essglobal/vocab/Cost> .
+
+<https://astrea.linkeddata.es/shapes#95c8f9c9f82b253cc28da96a9ab17546>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Total of Men"@en , "Total de Homens"@pt ;
+        sh:datatype       rdfs:Literal ;
+        sh:name           "Total of Men"@en , "Total de Homens"@pt ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/totalMen> .
+
+<https://astrea.linkeddata.es/shapes#8cf7d998556bc2b44e019909d5eefd75>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Margem de Vendas (valor)"@pt , "Sales Margin (value)"@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:name           "Margem de Vendas (valor)"@pt , "Sales Margin (value)"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/salesMarginValue> .
+
+<https://astrea.linkeddata.es/shapes#d645ff84d4b0aaab7871ded3a1381fa4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Economic Sector"@en , "Setor Económico"@pt ;
+        sh:datatype       <http://purl.org/essglobal/vocab/Activities> ;
+        sh:name           "Economic Sector"@en , "Setor Económico"@pt ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/economicSector> .
+
+<https://astrea.linkeddata.es/shapes#dd6010579c0b32ae27dbdddb755ecc66>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Legal Form"@en , "Forma Jurídica"@pt ;
+        sh:datatype       <http://purl.org/essglobal/vocab/LegalForm> ;
+        sh:name           "Legal Form"@en , "Forma Jurídica"@pt ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/legalForm> .
+
+<https://astrea.linkeddata.es/shapes#8fac6f60acc410b0247c772695621f12>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Tipo de Trabalho"@pt , "Type of Labour"@en ;
+        sh:datatype       <http://purl.org/essglobal/vocab/TypeOfLabour> ;
+        sh:name           "Tipo de Trabalho"@pt , "Type of Labour"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/typeOfLabour> .
+
+<https://astrea.linkeddata.es/shapes#7dc8d9f13831272321f1777e582354fa>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.org/essglobal/vocab/" ;
+        rdfs:label        "Labour"@en , "Trabalho"@pt ;
+        sh:name           "Labour"@en , "Trabalho"@pt ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#8fac6f60acc410b0247c772695621f12> ;
+        sh:targetClass    <http://purl.org/essglobal/vocab/Labour> .
+
+<https://astrea.linkeddata.es/shapes#7c3c055307c01755de623678c2afcade>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Tem um endereço"@pt , "Has an address"@en ;
+        sh:class          <http://purl.org/essglobal/vocab/Address> ;
+        sh:name           "Tem um endereço"@pt , "Has an address"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/essglobal/vocab/hasAddress> .
+
+<https://astrea.linkeddata.es/shapes#970d89d752b232a562a9094e01bfd3d9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Total of Members"@en , "Total de Associados"@pt ;
+        sh:datatype       rdfs:Literal ;
+        sh:name           "Total of Members"@en , "Total de Associados"@pt ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/totalOfMembers> .
+
+<https://astrea.linkeddata.es/shapes#bda25174c5f1a5b1406793be8ad8a2f6>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.org/essglobal/vocab/" ;
+        rdfs:label        "Address"@en , "Endereço"@pt ;
+        sh:name           "Address"@en , "Endereço"@pt ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#eb2bd9fbdba893ac321f11b1ca260e23> ;
+        sh:targetClass    <http://purl.org/essglobal/vocab/Address> .
+
+<https://astrea.linkeddata.es/shapes#90580534305d87a7953f22426aedfa4d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.org/essglobal/vocab/" ;
+        rdfs:label        "Local de Venda"@pt , "Location of Sale"@en ;
+        sh:name           "Local de Venda"@pt , "Location of Sale"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#1f017e82fdbc1a9dd9ed220308f52e5f> , <https://astrea.linkeddata.es/shapes#c6dd9a6e1a8964b11b96bf9b6cb50ac9> , <https://astrea.linkeddata.es/shapes#85a61440b0dff2140a8370d6e0a053f7> , <https://astrea.linkeddata.es/shapes#7c3c055307c01755de623678c2afcade> ;
+        sh:targetClass    <http://purl.org/essglobal/vocab/LocationOfSale> .
+
+<https://astrea.linkeddata.es/shapes#3a250cff3c7c1c149c16e3808bea85ff>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Objective"@en , "Objetivo"@pt ;
+        sh:name           "Objective"@en , "Objetivo"@pt ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/objective> .
+
+<https://astrea.linkeddata.es/shapes#6ab94a90386ddc6c73f8091e4ae8804e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Missão"@pt , "Mission"@en ;
+        sh:datatype       rdfs:Literal ;
+        sh:name           "Missão"@pt , "Mission"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/mission> .
+
+<https://astrea.linkeddata.es/shapes#4c29f76ec368625306baae39e9af1058>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.org/essglobal/vocab/" ;
+        rdfs:label        "Cost Composition"@en , "Composição de Custos"@pt ;
+        sh:name           "Composição de Custos"@pt , "Cost Composition"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#b77a1b85c3ddd693837f1cc41960829a> , <https://astrea.linkeddata.es/shapes#92c3c9b79c52b3dc2a9f6fa328f0a894> , <https://astrea.linkeddata.es/shapes#83f14cde84f4fccfe0c5bb373fd63def> ;
+        sh:targetClass    <http://purl.org/essglobal/vocab/CostComposition> .
+
+<https://astrea.linkeddata.es/shapes#2afed7636a15abec8bb0a370daee4df6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Cost per Unit"@en , "Custo por Unidade"@pt ;
+        sh:datatype       rdfs:Literal ;
+        sh:name           "Cost per Unit"@en , "Custo por Unidade"@pt ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/costPerUnit> .
+
+<https://astrea.linkeddata.es/shapes#85a61440b0dff2140a8370d6e0a053f7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Delivery Range (distance)"@en , "Alcance da Entrega (distância)"@pt ;
+        sh:datatype       rdfs:Literal ;
+        sh:name           "Delivery Range (distance)"@en , "Alcance da Entrega (distância)"@pt ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/deliveryRangeDistance> .
+
+<https://astrea.linkeddata.es/shapes#b95507f77d612f31d143ce06ad298fe2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Sales Margin (percentage)"@en , "Margem de Vendas (percentagem)"@pt ;
+        sh:datatype       rdfs:Literal ;
+        sh:name           "Sales Margin (percentage)"@en , "Margem de Vendas (percentagem)"@pt ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/salesMarginPercentage> .
+
+<https://astrea.linkeddata.es/shapes#eb2bd9fbdba893ac321f11b1ca260e23>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "State"@en , "Estado"@pt ;
+        sh:datatype       rdfs:Literal ;
+        sh:name           "State"@en , "Estado"@pt ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/state> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#d645ff84d4b0aaab7871ded3a1381fa4> , <https://astrea.linkeddata.es/shapes#4c29f76ec368625306baae39e9af1058> , <https://astrea.linkeddata.es/shapes#95c8f9c9f82b253cc28da96a9ab17546> , <https://astrea.linkeddata.es/shapes#dd6010579c0b32ae27dbdddb755ecc66> , <https://astrea.linkeddata.es/shapes#bda25174c5f1a5b1406793be8ad8a2f6> , <https://astrea.linkeddata.es/shapes#92c3c9b79c52b3dc2a9f6fa328f0a894> , <https://astrea.linkeddata.es/shapes#51a1516cf07d89e962607d30d333569c> , <https://astrea.linkeddata.es/shapes#3a250cff3c7c1c149c16e3808bea85ff> , <https://astrea.linkeddata.es/shapes#970d89d752b232a562a9094e01bfd3d9> , <https://astrea.linkeddata.es/shapes#c018940f3ccd2aa48dc2100e18bcd1c8> , <https://astrea.linkeddata.es/shapes#8520eccedc90eebae2d61983f1fb0663> , <https://astrea.linkeddata.es/shapes#90580534305d87a7953f22426aedfa4d> , <https://astrea.linkeddata.es/shapes#0093c9f455bb8b16e86daca783c33ebb> , <https://astrea.linkeddata.es/shapes#824c4013997f1951333e090784377406> , <https://astrea.linkeddata.es/shapes#8fac6f60acc410b0247c772695621f12> , <https://astrea.linkeddata.es/shapes#685b6b00172878c09cbb3f1581e60098> , <https://astrea.linkeddata.es/shapes#4a10485d705cebceb0732e9de1a93db3> , <https://astrea.linkeddata.es/shapes#1f017e82fdbc1a9dd9ed220308f52e5f> , <https://astrea.linkeddata.es/shapes#c6dd9a6e1a8964b11b96bf9b6cb50ac9> , <https://astrea.linkeddata.es/shapes#b77a1b85c3ddd693837f1cc41960829a> , <https://astrea.linkeddata.es/shapes#83f14cde84f4fccfe0c5bb373fd63def> , <https://astrea.linkeddata.es/shapes#db0b6cb67c351940d7822ba92f8f14e3> , <https://astrea.linkeddata.es/shapes#619d5d91a6d4041dcfdeb84e99b43ca6> , <https://astrea.linkeddata.es/shapes#eb2bd9fbdba893ac321f11b1ca260e23> , <https://astrea.linkeddata.es/shapes#2afed7636a15abec8bb0a370daee4df6> , <https://astrea.linkeddata.es/shapes#6ab94a90386ddc6c73f8091e4ae8804e> , <https://astrea.linkeddata.es/shapes#3ee666c5ac7f9c802e0491a3a17e1fa3> , <https://astrea.linkeddata.es/shapes#fd3d2b0f13c742335c3ec38634f1dcec> , <https://astrea.linkeddata.es/shapes#b95507f77d612f31d143ce06ad298fe2> , <https://astrea.linkeddata.es/shapes#242c89aabd61464e82be1c52ff29242b> , <https://astrea.linkeddata.es/shapes#bb64c1f978cff25c67c4a7eb9ff259e2> , <https://astrea.linkeddata.es/shapes#2b6c346531767e5f00b3e1556f2bae99> , <https://astrea.linkeddata.es/shapes#8906429f6ecf24e375fb9a6cf6402f64> , <https://astrea.linkeddata.es/shapes#bc407c22c6f11729af5d84c6c5e3179b> , <https://astrea.linkeddata.es/shapes#85a61440b0dff2140a8370d6e0a053f7> , <https://astrea.linkeddata.es/shapes#78f177bbdf299e8bf3dc3de0674fd00b> , <https://astrea.linkeddata.es/shapes#b83e46da37a1260af2cc85b816e644ad> , <https://astrea.linkeddata.es/shapes#7dc8d9f13831272321f1777e582354fa> , <https://astrea.linkeddata.es/shapes#8cf7d998556bc2b44e019909d5eefd75> , <https://astrea.linkeddata.es/shapes#7c3c055307c01755de623678c2afcade> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#c6dd9a6e1a8964b11b96bf9b6cb50ac9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "É Iniciativa da ESS"@pt , "Is SSE Initiative"@en ;
+        sh:datatype       xsd:boolean ;
+        sh:name           "Is SSE Initiative"@en , "É Iniciativa da ESS"@pt ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/isSSE> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#685b6b00172878c09cbb3f1581e60098>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.org/essglobal/vocab/" ;
+        rdfs:label        "Network"@en , "Rede"@pt ;
+        sh:name           "Rede"@pt , "Network"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#7c3c055307c01755de623678c2afcade> , <https://astrea.linkeddata.es/shapes#dd6010579c0b32ae27dbdddb755ecc66> , <https://astrea.linkeddata.es/shapes#6ab94a90386ddc6c73f8091e4ae8804e> , <https://astrea.linkeddata.es/shapes#bb64c1f978cff25c67c4a7eb9ff259e2> ;
+        sh:targetClass    <http://purl.org/essglobal/vocab/Network> .
+
+<https://astrea.linkeddata.es/shapes#824c4013997f1951333e090784377406>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Is available"@en , "Está disponível"@pt ;
+        sh:datatype       xsd:boolean ;
+        sh:name           "Está disponível"@pt , "Is available"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/isAvailable> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#bb64c1f978cff25c67c4a7eb9ff259e2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Tem Produto ou Serviço"@pt , "Has Product or Service"@en ;
+        sh:class          <http://purl.org/essglobal/vocab/ProductOrService> ;
+        sh:equals         <http://purl.org/goodrelations/v1#offers> ;
+        sh:name           "Tem Produto ou Serviço"@pt , "Has Product or Service"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/essglobal/vocab/hasProductOrService> .
+
+<https://astrea.linkeddata.es/shapes#83f14cde84f4fccfe0c5bb373fd63def>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Has Other Costs"@en , "Tem Outros Custos"@pt ;
+        sh:class          <http://purl.org/essglobal/vocab/OtherCosts> ;
+        sh:name           "Has Other Costs"@en , "Tem Outros Custos"@pt ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/essglobal/vocab/hasOtherCosts> .
+
+<https://astrea.linkeddata.es/shapes#bc407c22c6f11729af5d84c6c5e3179b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Unit"@en , "Unidade"@pt ;
+        sh:datatype       rdfs:Literal ;
+        sh:name           "Unit"@en , "Unidade"@pt ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/unit> .
+
+<https://astrea.linkeddata.es/shapes#2b6c346531767e5f00b3e1556f2bae99>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.org/essglobal/vocab/" ;
+        rdfs:label        "Sale Option"@en , "Opção de Venda"@pt ;
+        sh:name           "Sale Option"@en , "Opção de Venda"@pt ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#b95507f77d612f31d143ce06ad298fe2> , <https://astrea.linkeddata.es/shapes#824c4013997f1951333e090784377406> , <https://astrea.linkeddata.es/shapes#8cf7d998556bc2b44e019909d5eefd75> , <https://astrea.linkeddata.es/shapes#242c89aabd61464e82be1c52ff29242b> ;
+        sh:targetClass    <http://purl.org/essglobal/vocab/SaleOption> .
+
+<https://astrea.linkeddata.es/shapes#242c89aabd61464e82be1c52ff29242b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Disponível Em"@pt , "Available At"@en ;
+        sh:class          <http://purl.org/essglobal/vocab/LocationOfSale> ;
+        sh:equals         <http://purl.org/goodrelations/v1#availableAtOrFrom> ;
+        sh:name           "Disponível Em"@pt , "Available At"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/essglobal/vocab/isAvailableAt> .
+
+<https://astrea.linkeddata.es/shapes#0093c9f455bb8b16e86daca783c33ebb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Has Cost"@en , "Tem Custo"@pt ;
+        sh:class          <http://purl.org/essglobal/vocab/Cost> ;
+        sh:name           "Has Cost"@en , "Tem Custo"@pt ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/essglobal/vocab/hasCost> .
+
+<https://astrea.linkeddata.es/shapes#51a1516cf07d89e962607d30d333569c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/essglobal/vocab/> ;
+        rdfs:label        "Tem impacto no custo"@pt , "Has impact on cost"@en ;
+        sh:datatype       xsd:boolean ;
+        sh:name           "Tem impacto no custo"@pt , "Has impact on cost"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/essglobal/vocab/hasImpactOnCost> ;
+        sh:pattern        "true|false|0|1" .

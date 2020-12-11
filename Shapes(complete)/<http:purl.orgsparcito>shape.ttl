@@ -1,0 +1,964 @@
+@prefix :      <http://www.ontologydesignpatterns.org/cp/owl/situation.owl#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix situation: <http://www.ontologydesignpatterns.org/cp/owl/situation.owl#> .
+
+<https://astrea.linkeddata.es/shapes#40657ead07f527687d595983553ca67b>
+        a               sh:NodeShape ;
+        rdfs:label      "affilation self citation"@en ;
+        sh:description  "A citation in which at least one author from each of the citing and the cited entities is affiliated with the same academic institution.\n\nIn particular, like the ancestor class cito:Citation, cito:AffiliationSelfCitation and its accompanying object properties cito:hasCitingEntity, cito:hasCitedEntity and cito:hasCitationCharacterization can be employed to reify direct citation statements made using the CiTO citation object property cito:cites or one of its sub-properties, accompanied by an additional statement using cito:sharesAuthorInstitutionWith for linking the citing paper and the cited paper. \n\nFor example, the following cito:AffiliationSelfCitation resource\n\n     :thisCitation a cito:AffiliationSelfCitation ; \n          cito:hasCitingEntity :paperA ;\n          cito:hasCitationCharacterization cito:extends ;\n          cito:hasCitedEntity :paperB .\n\ncan be alternatively described as follows\n\n     :paperA cito:extends :paperB .\n     :paperA cito:sharesAuthorInstitutionWith :paperB ."@en ;
+        sh:name         "affilation self citation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/spar/cito/AffilationSelfCitation> .
+
+<https://astrea.linkeddata.es/shapes#a9462c007da623185fe7d77500bb1a99>
+        a               sh:NodeShape ;
+        rdfs:label      "author network self citation"@en ;
+        sh:description  "A citation in which at least one author of the citing entity has direct or indirect co-authorship links with one of the authors of the cited entity."@en ;
+        sh:name         "author network self citation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#cee0801639c041b15a1cc6bed3216851> , <https://astrea.linkeddata.es/shapes#89ea2c4207c2b7a25655d409efcabeb0> ;
+        sh:targetClass  <http://purl.org/spar/cito/AuthorNetworkSelfCitation> .
+
+<https://astrea.linkeddata.es/shapes#719a7687debe405bf77ba29b9d2fd148>
+        a               sh:PropertyShape ;
+        rdfs:label      "cites as authority"@en , "The citing entity cites the cited entity as one that provides an authoritative description or definition of the subject under discussion."@en ;
+        sh:description  "The citing entity cites the cited entity as one that provides an authoritative description or definition of the subject under discussion."@en ;
+        sh:name         "cites as authority"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/citesAsAuthority> .
+
+<https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#b1502e0c6c93c5b900e8792ca26fc5b2> ;
+        sh:targetClass  owl:Thing .
+
+<https://astrea.linkeddata.es/shapes#65ede708a88895adaf8054f003d86b4a>
+        a               sh:PropertyShape ;
+        rdfs:label      "is credited by"@en , "The cited entity makes contributions that are acknowledged by the citing entity."@en ;
+        sh:description  "The cited entity makes contributions that are acknowledged by the citing entity."@en ;
+        sh:name         "is credited by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isCreditedBy> .
+
+<https://astrea.linkeddata.es/shapes#e990990fb71ced979c0b7ee69cfa5127>
+        a               sh:PropertyShape ;
+        rdfs:label      "has citation creation date"@en , "The date on which the citation was created. This has the same numerical value as the publication date of the citing bibliographic resource, but is a property of the citation itself.  When combined with the citation time span, it permits that citation to be located in history."@en ;
+        sh:description  "The date on which the citation was created. This has the same numerical value as the publication date of the citing bibliographic resource, but is a property of the citation itself.  When combined with the citation time span, it permits that citation to be located in history."@en ;
+        sh:name         "has citation creation date"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/spar/cito/hasCitationCreationDate> .
+
+<https://astrea.linkeddata.es/shapes#9e69068f086f0d446c6d7d207ce12d0b>
+        a               sh:PropertyShape ;
+        rdfs:label      "is documented by"@en , "Information about the cited entity is documented by the citing entity."@en ;
+        sh:description  "Information about the cited entity is documented by the citing entity."@en ;
+        sh:name         "is documented by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isDocumentedBy> .
+
+<https://astrea.linkeddata.es/shapes#e95028ec93362a237d8fb38cc07da3c5>
+        a               sh:PropertyShape ;
+        rdfs:label      "uses method in"@en , "The citing entity describes work that uses a method detailed in the cited entity."@en ;
+        sh:description  "The citing entity describes work that uses a method detailed in the cited entity."@en ;
+        sh:name         "uses method in"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/usesMethodIn> .
+
+<https://astrea.linkeddata.es/shapes#759bad13e4468b7d65f40ba6873c84ca>
+        a               sh:PropertyShape ;
+        rdfs:label      "refutes"@en , "The citing entity refutes statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:description  "The citing entity refutes statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:name         "refutes"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/refutes> .
+
+<https://astrea.linkeddata.es/shapes#b05af3d161aa7b1cbc624e43d5713970>
+        a               sh:PropertyShape ;
+        rdfs:label      "cites"@en , "The citing entity cites the cited entity, either directly and explicitly (as in the reference list of a journal article), indirectly (e.g. by citing a more recent paper by the same group on the same topic), or implicitly (e.g. as in artistic quotations or parodies, or in cases of plagiarism)."@en ;
+        sh:description  "The citing entity cites the cited entity, either directly and explicitly (as in the reference list of a journal article), indirectly (e.g. by citing a more recent paper by the same group on the same topic), or implicitly (e.g. as in artistic quotations or parodies, or in cases of plagiarism)."@en ;
+        sh:name         "cites"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/cites> .
+
+<https://astrea.linkeddata.es/shapes#f998cf25c91648a28a497ec0df6a5086>
+        a               sh:PropertyShape ;
+        rdfs:label      "links to"@en , "The citing entity provides a link, in the form of an HTTP Uniform Resource Locator (URL), to the cited entity."@en ;
+        sh:description  "The citing entity provides a link, in the form of an HTTP Uniform Resource Locator (URL), to the cited entity."@en ;
+        sh:name         "links to"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/linksTo> .
+
+<https://astrea.linkeddata.es/shapes#68e085538ee3e8ff541c77bc731ef110>
+        a               sh:PropertyShape ;
+        rdfs:label      "documents"@en , "The citing entity documents information about the cited entity." ;
+        sh:description  "The citing entity documents information about the cited entity." ;
+        sh:name         "documents"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/documents> .
+
+<https://astrea.linkeddata.es/shapes#da2f067b0a1e6ddbd6d9ce36a61bbdc9>
+        a               sh:PropertyShape ;
+        rdfs:label      "provides data for"@en , "The cited entity presents data that are used in work described in the citing entity."@en ;
+        sh:description  "The cited entity presents data that are used in work described in the citing entity."@en ;
+        sh:name         "provides data for"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/providesDataFor> .
+
+<https://astrea.linkeddata.es/shapes#12d16485043c6bd0fc99f9b5bcc4201b>
+        a               sh:PropertyShape ;
+        rdfs:label      "cites as potential solution"@en , "The citing entity cites the cited entity as providing or containing a possible solution to the issues being discussed."@en ;
+        sh:description  "The citing entity cites the cited entity as providing or containing a possible solution to the issues being discussed."@en ;
+        sh:name         "cites as potential solution"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/citesAsPotentialSolution> .
+
+<https://astrea.linkeddata.es/shapes#e1fa22e631f050f74b27a48cb18fd1ad>
+        a               sh:PropertyShape ;
+        rdfs:label      "is critiqued by"@en , "The cited entity presents statements, ideas or conclusions that are critiqued by the citing entity."@en ;
+        sh:description  "The cited entity presents statements, ideas or conclusions that are critiqued by the citing entity."@en ;
+        sh:name         "is critiqued by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isCritiquedBy> .
+
+<https://astrea.linkeddata.es/shapes#bf5736ad2e6316992ed0a51623a00a8d>
+        a               sh:PropertyShape ;
+        rdfs:label      "is cited as metadata document by"@en , "The cited entity is cited as being the container of metadata relating to the citing entity."@en ;
+        sh:description  "The cited entity is cited as being the container of metadata relating to the citing entity."@en ;
+        sh:name         "is cited as metadata document by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isCitedAsMetadataDocumentBy> .
+
+<https://astrea.linkeddata.es/shapes#7541cbbda3f04d28eac44f924dc03d07>
+        a               sh:PropertyShape ;
+        rdfs:label      "is ridiculed by"@en , "The cited entity or aspects of its contents are ridiculed by the citing entity."@en ;
+        sh:description  "The cited entity or aspects of its contents are ridiculed by the citing entity."@en ;
+        sh:name         "is ridiculed by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isRidiculedBy> .
+
+<https://astrea.linkeddata.es/shapes#92eecc59fdcc76d212530c53b244beec>
+        a               sh:NodeShape ;
+        rdfs:label      "self citation"@en ;
+        sh:description  "A citation in which the citing and the cited entities have something significant in common with one another, over and beyond their subject matter, for example authors, journal, institutional affiliation, or funding agency."@en ;
+        sh:name         "self citation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/spar/cito/SelfCitation> .
+
+<https://astrea.linkeddata.es/shapes#c60ad03589cdf703d8c0bb969239bbfb>
+        a               sh:PropertyShape ;
+        rdfs:label      "cites as data source"@en , "The citing entity cites the cited entity as source of data."@en ;
+        sh:description  "The citing entity cites the cited entity as source of data."@en ;
+        sh:name         "cites as data source"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/citesAsDataSource> .
+
+<https://astrea.linkeddata.es/shapes#faf52b0fb84ad50597c9c671e8ad0929>
+        a               sh:PropertyShape ;
+        rdfs:label      "has reply from"@en , "The cited entity evokes a reply from the citing entity."@en ;
+        sh:description  "The cited entity evokes a reply from the citing entity."@en ;
+        sh:name         "has reply from"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/hasReplyFrom> .
+
+<https://astrea.linkeddata.es/shapes#5d7ce2cdafd65e050b1832e6bceadd86>
+        a               sh:PropertyShape ;
+        rdfs:label      "obtains background from"@en , "The citing entity obtains background information from the cited entity."@en ;
+        sh:description  "The citing entity obtains background information from the cited entity."@en ;
+        sh:name         "obtains background from"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/obtainsBackgroundFrom> .
+
+<https://astrea.linkeddata.es/shapes#43ee3a4aa4c99ef87b2838e0bc43e264>
+        a               sh:PropertyShape ;
+        rdfs:label      "extends"@en , "The citing entity extends facts, ideas or understandings presented in the cited entity."@en ;
+        sh:description  "The citing entity extends facts, ideas or understandings presented in the cited entity."@en ;
+        sh:name         "extends"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/extends> .
+
+<https://astrea.linkeddata.es/report/0255126969>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.ontologydesignpatterns.org/cp/owl/situation.owl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#912184355b958e9e866968a1690ef4aa>
+        a               sh:PropertyShape ;
+        rdfs:label      "cites as recommended reading"@en , "The citing entity cites the cited entity as an item of recommended reading.  This property can be used, for example, to describe references in a lecture reading list, where the cited references are relevant to the general topic of the lecture, but might not be individually cited within the text of the lecture.  Similarly, it could be used to describe items in a 'Suggested further reading' list at the end of a book chapter."@en ;
+        sh:description  "The citing entity cites the cited entity as an item of recommended reading.  This property can be used, for example, to describe references in a lecture reading list, where the cited references are relevant to the general topic of the lecture, but might not be individually cited within the text of the lecture.  Similarly, it could be used to describe items in a 'Suggested further reading' list at the end of a book chapter."@en ;
+        sh:name         "cites as recommended reading"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/citesAsRecommendedReading> .
+
+<https://astrea.linkeddata.es/shapes#2148d0714bc09ae1f90706ed3b909ed3>
+        a               sh:PropertyShape ;
+        rdfs:label      "credits"@en , "The citing entity acknowledges contributions made by the cited entity."@en ;
+        sh:description  "The citing entity acknowledges contributions made by the cited entity."@en ;
+        sh:name         "credits"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/credits> .
+
+<https://astrea.linkeddata.es/shapes#fc3795e6a0d1708bc4dd5ecf12dc0231>
+        a               sh:PropertyShape ;
+        rdfs:label      "is refuted by"@en , "The cited entity presents statements, ideas or conclusions that are refuted by the citing entity."@en ;
+        sh:description  "The cited entity presents statements, ideas or conclusions that are refuted by the citing entity."@en ;
+        sh:name         "is refuted by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isRefutedBy> .
+
+<https://astrea.linkeddata.es/shapes#a1fd82cfc61d2e9f84eff93e919363ec>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/swan/2.0/discourse-relationships/refersTo> .
+
+<https://astrea.linkeddata.es/shapes#56ea143748030b3ae42eb83d7fa47abe>
+        a               sh:PropertyShape ;
+        rdfs:label      "shares journal with"@en , "The citing and cited bibliographic resources are published in the same journal."@en ;
+        sh:description  "The citing and cited bibliographic resources are published in the same journal."@en ;
+        sh:name         "shares journal with"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/sharesJournalWith> .
+
+<https://astrea.linkeddata.es/shapes#f6bbed6e128f4b12e5d5df04a4b32016>
+        a               sh:PropertyShape ;
+        rdfs:label      "is cited for information by"@en , "The cited entity is cited as a source of information on the subject under discussion in the citing entity."@en ;
+        sh:description  "The cited entity is cited as a source of information on the subject under discussion in the citing entity."@en ;
+        sh:name         "is cited for information by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isCitedForInformationBy> .
+
+<https://astrea.linkeddata.es/shapes#4827ac1d1e758e9207283c9bdc01fc6e>
+        a               sh:PropertyShape ;
+        rdfs:label      "agrees with"@en , "The citing entity agrees with statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:description  "The citing entity agrees with statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:name         "agrees with"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/agreesWith> .
+
+<https://astrea.linkeddata.es/shapes#09f817c849a4b6d304250b600348240c>
+        a               sh:PropertyShape ;
+        rdfs:label      "is supported by"@en , "The cited entity receives intellectual or factual support from the citing entity."@en ;
+        sh:description  "The cited entity receives intellectual or factual support from the citing entity."@en ;
+        sh:name         "is supported by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isSupportedBy> .
+
+<https://astrea.linkeddata.es/shapes#bb9d2dcc264c7472dee56e6d42b7835d>
+        a               sh:NodeShape ;
+        rdfs:label      "journal self citation"@en ;
+        sh:description  "A citation in which the citing and the cited entities are published in the same journal.\n\nIn particular, like the ancestor class cito:Citation, cito:JournalSelfCitation and its accompanying object properties cito:hasCitingEntity, cito:hasCitedEntity and cito:hasCitationCharacterization can be employed to reify direct citation statements made using the CiTO citation object property cito:cites or one of its sub-properties, accompanied by an additional statement using cito:sharesJournalWith for linking the citing paper and the cited paper. \n\nFor example, the following cito:JournalSelfCitation resource\n\n     :thisCitation a cito:JournalSelfCitation ; \n          cito:hasCitingEntity :paperA ;\n          cito:hasCitationCharacterization cito:extends ;\n          cito:hasCitedEntity :paperB .\n\ncan be alternatively described as follows\n\n     :paperA cito:extends :paperB .\n     :paperA cito:sharesJournalWith :paperB ."@en ;
+        sh:name         "journal self citation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/spar/cito/JournalSelfCitation> .
+
+<https://astrea.linkeddata.es/shapes#efcd6941795c688981e7143181344441>
+        a               sh:PropertyShape ;
+        rdfs:label      "discusses"@en , "The citing entity discusses statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:description  "The citing entity discusses statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:name         "discusses"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/discusses> .
+
+<https://astrea.linkeddata.es/shapes#9cea1756d5d193a8230f55ad59387c3c>
+        a               sh:PropertyShape ;
+        rdfs:label      "corrects"@en , "The citing entity corrects statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:description  "The citing entity corrects statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:name         "corrects"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/corrects> .
+
+<https://astrea.linkeddata.es/shapes#4c4158782286bd39bac58e932285fbbb>
+        a               sh:PropertyShape ;
+        rdfs:label      "parodies"@en , "The citing entity imitates the characteristic style or content of the cited entity for comic effect, usually without explicit citation."@en ;
+        sh:description  "The citing entity imitates the characteristic style or content of the cited entity for comic effect, usually without explicit citation."@en ;
+        sh:name         "parodies"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/parodies> .
+
+<https://astrea.linkeddata.es/shapes#4406a86ad06c8657e9c1e040ff988c0b>
+        a               sh:PropertyShape ;
+        rdfs:label      "compiles"@en , "The citing entity is used to create or compile the cited entity."@en ;
+        sh:description  "The citing entity is used to create or compile the cited entity."@en ;
+        sh:name         "compiles"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/compiles> .
+
+<https://astrea.linkeddata.es/shapes#cee0801639c041b15a1cc6bed3216851>
+        a                sh:PropertyShape ;
+        rdfs:label       "has co-authorship citation level"@en , "This property specifies the minimal distance that one of the authors of the citing entity has with regards to one of the authors of the cited entity, according to their co-authorship network.\n\nFor instance, a citation has a co-authorship citation level equal to 1 if at least one author of the citing entity has previously published as co-author with one of the authors of the cited entity. Similarly, we say that a citation has a co-authorship citation level equal to 2 if at least one author of the citing entity has previously published as co-author with someone who him/herself has previously published as co-author with one of the authors of the cited entity. And so on."@en ;
+        sh:datatype      xsd:positiveInteger ;
+        sh:description   "This property specifies the minimal distance that one of the authors of the citing entity has with regards to one of the authors of the cited entity, according to their co-authorship network.\n\nFor instance, a citation has a co-authorship citation level equal to 1 if at least one author of the citing entity has previously published as co-author with one of the authors of the cited entity. Similarly, we say that a citation has a co-authorship citation level equal to 2 if at least one author of the citing entity has previously published as co-author with someone who him/herself has previously published as co-author with one of the authors of the cited entity. And so on."@en ;
+        sh:maxCount      1 ;
+        sh:minInclusive  1 ;
+        sh:name          "has co-authorship citation level"@en ;
+        sh:nodeKind      sh:IRIOrLiteral , sh:Literal ;
+        sh:path          <http://purl.org/spar/cito/hasCoAuthorshipCitationLevel> ;
+        sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#3a76ac0b263cca97f77dd019c4c867cd>
+        a               sh:PropertyShape ;
+        rdfs:label      "shares publication venue with"@en , "The citing and cited bibliographic resources are published in same publication venue."@en ;
+        sh:description  "The citing and cited bibliographic resources are published in same publication venue."@en ;
+        sh:name         "shares publication venue with"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/sharesPublicationVenueWith> .
+
+<https://astrea.linkeddata.es/shapes#861ab8ff2c35fd17af2192f9afd9f6d1>
+        a               sh:PropertyShape ;
+        rdfs:label      "disagrees with"@en , "The citing entity disagrees with statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:description  "The citing entity disagrees with statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:name         "disagrees with"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/disagreesWith> .
+
+<https://astrea.linkeddata.es/shapes#c29d1296b4e3591849dcd2f27fb996b8>
+        a               sh:PropertyShape ;
+        rdfs:label      "is updated by"@en , "The cited entity presents statements, ideas, hypotheses or understanding that are updated by the cited entity."@en ;
+        sh:description  "The cited entity presents statements, ideas, hypotheses or understanding that are updated by the cited entity."@en ;
+        sh:name         "is updated by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isUpdatedBy> .
+
+<https://astrea.linkeddata.es/shapes#d8a51101a908e7ceb947f1219766ebca>
+        a               sh:PropertyShape ;
+        rdfs:label      "gives support to"@en , "The cited entity provides intellectual or factual support for the citing entity."@en ;
+        sh:description  "The cited entity provides intellectual or factual support for the citing entity."@en ;
+        sh:name         "gives support to"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/givesSupportTo> .
+
+<https://astrea.linkeddata.es/shapes#7fac8227f4aec9a62750237bde057130>
+        a               sh:PropertyShape ;
+        rdfs:label      "is cited as evidence by"@en , "The cited entity is cited for providing factual evidence to the citing entity."@en ;
+        sh:description  "The cited entity is cited for providing factual evidence to the citing entity."@en ;
+        sh:name         "is cited as evidence by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isCitedAsEvidenceBy> .
+
+<https://astrea.linkeddata.es/shapes#214954032cc72a7ff82d7e4e79b8732e>
+        a               sh:PropertyShape ;
+        rdfs:label      "contains assertion from"@en , "The citing entity contains a statement of fact or a logical assertion (or a collection of such facts and/or assertions) originally present in the cited entity.   This object property is designed to be used to relate a separate abstract, summary or nanopublication to the cited entity upon which it is based."@en ;
+        sh:description  "The citing entity contains a statement of fact or a logical assertion (or a collection of such facts and/or assertions) originally present in the cited entity.   This object property is designed to be used to relate a separate abstract, summary or nanopublication to the cited entity upon which it is based."@en ;
+        sh:name         "contains assertion from"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/containsAssertionFrom> .
+
+<https://astrea.linkeddata.es/shapes#0c81a52571dac9a378e00a12dade944a>
+        a               sh:PropertyShape ;
+        rdfs:label      "disputes"@en , "The citing entity disputes statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:description  "The citing entity disputes statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:name         "disputes"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/disputes> .
+
+<https://astrea.linkeddata.es/shapes#b3f3bcc4e92d26442ba1e11454f72487>
+        a               sh:PropertyShape ;
+        rdfs:label      "is cited as authority by"@en , "The cited entity is cited as providing an authoritative description or definition of the subject under discussion in the citing entity."@en ;
+        sh:description  "The cited entity is cited as providing an authoritative description or definition of the subject under discussion in the citing entity."@en ;
+        sh:name         "is cited as authority by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isCitedAsAuthorityBy> .
+
+<https://astrea.linkeddata.es/shapes#992921db1eff0692c2ac97a136a8811e>
+        a               sh:PropertyShape ;
+        rdfs:label      "is described by"@en , "The cited entity is described by the citing entity."@en ;
+        sh:description  "The cited entity is described by the citing entity."@en ;
+        sh:name         "is described by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isDescribedBy> .
+
+<https://astrea.linkeddata.es/shapes#42f136fa7bdd75e29313658463b76a92>
+        a               sh:NodeShape ;
+        rdfs:label      "distant citation"@en ;
+        sh:description  "A citation in which the citing and the cited entities have nothing significant in common with one another (for example authors, journal, institutional affiliation, or funding agency) over and beyond their subject matter."@en ;
+        sh:name         "distant citation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/spar/cito/DistantCitation> .
+
+<https://astrea.linkeddata.es/shapes#a564f7b6dd0dee2e226de07b6f780435>
+        a               sh:PropertyShape ;
+        rdfs:label      "is discussed by"@en , "The cited entity presents statements, ideas or conclusions that are discussed by the citing entity."@en ;
+        sh:description  "The cited entity presents statements, ideas or conclusions that are discussed by the citing entity."@en ;
+        sh:name         "is discussed by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isDiscussedBy> .
+
+<https://astrea.linkeddata.es/shapes#7ad6b0633abf3a963e68ad09e9e8eae5>
+        a               sh:PropertyShape ;
+        rdfs:label      "is extended by"@en , "The cited entity presents facts, ideas or understandings that are extended by the citing entity."@en ;
+        sh:description  "The cited entity presents facts, ideas or understandings that are extended by the citing entity."@en ;
+        sh:name         "is extended by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isExtendedBy> .
+
+<https://astrea.linkeddata.es/shapes#fbd22f81655c62dbd6621d8aea1636d4>
+        a               sh:PropertyShape ;
+        rdfs:label      "has citation time span"@en , "The temporal characteristic of a citation, namely the interval between the publication date of the cited entity and the publication date of the citing entity. Note that when one or both of the publication dates is given as just 'year', then the citation time span is rounded to the nearest year, and when one or both of the publication dates is given as just 'year and month', then the citation time span is rounded to the nearest month, with the inherent inaccuracies that such rounding involves."@en ;
+        sh:datatype     xsd:duration ;
+        sh:description  "The temporal characteristic of a citation, namely the interval between the publication date of the cited entity and the publication date of the citing entity. Note that when one or both of the publication dates is given as just 'year', then the citation time span is rounded to the nearest year, and when one or both of the publication dates is given as just 'year and month', then the citation time span is rounded to the nearest month, with the inherent inaccuracies that such rounding involves."@en ;
+        sh:name         "has citation time span"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/spar/cito/hasCitationTimeSpan> ;
+        sh:pattern      "-?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S))))" .
+
+<https://astrea.linkeddata.es/shapes#b9986893a888907631809393326c340e>
+        a               sh:PropertyShape ;
+        rdfs:label      "plagiarizes"@en , "A property indicating that the author of the citing entity plagiarizes the cited entity, by including textual or other elements from the cited entity without formal acknowledgement of their source.  The citing entity thus contains no explicit citation of the cited entity, according to the norms of scholarly practice, but cites it implicitly."@en ;
+        sh:description  "A property indicating that the author of the citing entity plagiarizes the cited entity, by including textual or other elements from the cited entity without formal acknowledgement of their source.  The citing entity thus contains no explicit citation of the cited entity, according to the norms of scholarly practice, but cites it implicitly."@en ;
+        sh:name         "plagiarizes"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/plagiarizes> .
+
+<https://astrea.linkeddata.es/shapes#2a34d93c27e800046a1fa4975cc34340>
+        a               sh:PropertyShape ;
+        rdfs:label      "qualifies"@en , "The citing entity qualifies or places conditions or restrictions upon statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:description  "The citing entity qualifies or places conditions or restrictions upon statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:name         "qualifies"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/qualifies> .
+
+<https://astrea.linkeddata.es/shapes#28f11e5df96ba8f07719a48639b1f6db>
+        a               sh:PropertyShape ;
+        rdfs:label      "derides"@en , "The citing entity express derision for the cited entity, or for ideas or conclusions contained within it."@en ;
+        sh:description  "The citing entity express derision for the cited entity, or for ideas or conclusions contained within it."@en ;
+        sh:name         "derides"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/derides> .
+
+<https://astrea.linkeddata.es/shapes#0059ca76bfaa5a5566e407c8d91d40da>
+        a               sh:PropertyShape ;
+        rdfs:label      "is cited as related by"@en , "The cited entity is cited as being related to the citing entity."@en ;
+        sh:description  "The cited entity is cited as being related to the citing entity."@en ;
+        sh:name         "is cited as related by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isCitedAsRelatedBy> .
+
+<https://astrea.linkeddata.es/shapes#606bb53242d4949d6f0c3b4e6a50fe7e>
+        a               sh:PropertyShape ;
+        rdfs:label      "shares author institution with"@en , "Each entity has at least one author that shares a common institutional affiliation with an author of the other entity."@en ;
+        sh:description  "Each entity has at least one author that shares a common institutional affiliation with an author of the other entity."@en ;
+        sh:name         "shares author institution with"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/sharesAuthorInstitutionWith> .
+
+<https://astrea.linkeddata.es/shapes#5f82dc19a496b8dc7381c14d2b22efac>
+        a               sh:PropertyShape ;
+        rdfs:label      "is compiled by"@en , "The cited entity is the result of a compile or creation event using the citing entity."@en ;
+        sh:description  "The cited entity is the result of a compile or creation event using the citing entity."@en ;
+        sh:name         "is compiled by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isCompiledBy> .
+
+<https://astrea.linkeddata.es/shapes#4c04b1bbe901f8ffff2798353b81147e>
+        a               sh:NodeShape ;
+        rdfs:label      "funder self citation"@en ;
+        sh:description  "A citation in which the works reported in the citing and the cited entities were funded by the same funding agency.\n\nIn particular, like the ancestor class cito:Citation, cito:FunderSelfCitation and its accompanying object properties cito:hasCitingEntity, cito:hasCitedEntity and cito:hasCitationCharacterization can be employed to reify direct citation statements made using the CiTO citation object property cito:cites or one of its sub-properties, accompanied by an additional statement using cito:sharesFundingAgencyWith for linking the citing paper and the cited paper. \n\nFor example, the following cito:FundingSelfCitation resource\n\n     :thisCitation a cito:FundingSelfCitation ; \n          cito:hasCitingEntity :paperA ;\n          cito:hasCitationCharacterization cito:extends ;\n          cito:hasCitedEntity :paperB .\n\ncan be alternatively described as follows\n\n     :paperA cito:extends :paperB .\n     :paperA cito:sharesFundingAgencyWith :paperB ."@en ;
+        sh:name         "funder self citation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/spar/cito/FunderSelfCitation> .
+
+<https://astrea.linkeddata.es/shapes#d544bef68535ef5fa81e8fe64da73d6f>
+        a               sh:PropertyShape ;
+        rdfs:label      "is cited as potential solution by"@en , "The cited entity is cited as providing or containing a possible solution to the issues being discussed in the citing entity."@en ;
+        sh:description  "The cited entity is cited as providing or containing a possible solution to the issues being discussed in the citing entity."@en ;
+        sh:name         "is cited as potential solution by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isCitedAsPontentialSolutionBy> .
+
+<https://astrea.linkeddata.es/shapes#73e8b0a625a2073b5302a1aac1b2bd61>
+        a               sh:PropertyShape ;
+        rdfs:label      "provides conclusions for"@en , "The cited entity presents conclusions that are used in work described in the citing entity."@en ;
+        sh:description  "The cited entity presents conclusions that are used in work described in the citing entity."@en ;
+        sh:name         "provides conclusions for"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/providesConclusionsFor> .
+
+<https://astrea.linkeddata.es/shapes#8dc726cc3498f004197dc2ae9c50e79d>
+        a               sh:PropertyShape ;
+        rdfs:label      "provides assertion for"@en , "The cited entity contains and is the original source of a statement of fact or a logical assertion (or a collection of such facts and/or assertions) that is to be found in the citing entity.   This inverse object property is designed to be used to relate a cited entity to a separate abstract, summary or nanopublication based upon it."@en ;
+        sh:description  "The cited entity contains and is the original source of a statement of fact or a logical assertion (or a collection of such facts and/or assertions) that is to be found in the citing entity.   This inverse object property is designed to be used to relate a cited entity to a separate abstract, summary or nanopublication based upon it."@en ;
+        sh:name         "provides assertion for"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/providesAssertionFor> .
+
+<https://astrea.linkeddata.es/shapes#e8be15469907ae3f269afadab8491d9e>
+        a               sh:PropertyShape ;
+        rdfs:label      "is derided by"@en , "The cited entity contains ideas or conclusions for which the citing entity express derision."@en ;
+        sh:description  "The cited entity contains ideas or conclusions for which the citing entity express derision."@en ;
+        sh:name         "is derided by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isDeridedBy> .
+
+<https://astrea.linkeddata.es/shapes#4c39b66a419694eae6e628180eb24cb2>
+        a               sh:PropertyShape ;
+        rdfs:label      "is linked to by"@en , "The cited entity is the target for an HTTP Uniform Resource Locator (URL) link within the citing entity."@en ;
+        sh:description  "The cited entity is the target for an HTTP Uniform Resource Locator (URL) link within the citing entity."@en ;
+        sh:name         "is linked to by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isLinkedToBy> .
+
+<https://astrea.linkeddata.es/shapes#5f0ac94e4eea8ddaf1c5d1a8bf97d226>
+        a               sh:PropertyShape ;
+        rdfs:label      "supports"@en , "The citing entity provides intellectual or factual support for statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:description  "The citing entity provides intellectual or factual support for statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:name         "supports"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/supports> .
+
+<https://astrea.linkeddata.es/shapes#820ba6ddcc03a9570c9eeda1239674e6>
+        a               sh:PropertyShape ;
+        rdfs:label      "is disputed by"@en , "The cited entity presents statements, ideas or conclusions that are disputed by the citing entity."@en ;
+        sh:description  "The cited entity presents statements, ideas or conclusions that are disputed by the citing entity."@en ;
+        sh:name         "is disputed by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isDisputedBy> .
+
+<https://astrea.linkeddata.es/shapes#64a656bf5b6783dd97479cda65130316>
+        a               sh:PropertyShape ;
+        rdfs:label      "describes"@en , "The citing entity describes the cited entity."@en ;
+        sh:description  "The citing entity describes the cited entity."@en ;
+        sh:name         "describes"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/describes> .
+
+<https://astrea.linkeddata.es/shapes#757d39640b6a3f90ee5bf9746c24693a>
+        a               sh:PropertyShape ;
+        rdfs:label      "uses conclusions from"@en , "The citing entity describes work that uses conclusions presented in the cited entity."@en ;
+        sh:description  "The citing entity describes work that uses conclusions presented in the cited entity."@en ;
+        sh:name         "uses conclusions from"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/usesConclusionsFrom> .
+
+<https://astrea.linkeddata.es/shapes#7f040dd1d51f0d483c1cec1d81f6983b>
+        a               sh:PropertyShape ;
+        rdfs:label      "is corrected by"@en , "The cited entity presents statements, ideas or conclusions that are corrected by the citing entity."@en ;
+        sh:description  "The cited entity presents statements, ideas or conclusions that are corrected by the citing entity."@en ;
+        sh:name         "is corrected by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isCorrectedBy> .
+
+<https://astrea.linkeddata.es/shapes#b8c244eb4a7eda4dbf63e818a06bd450>
+        a               sh:PropertyShape ;
+        rdfs:label      "is cited by"@en , "The cited entity (the subject of the RDF triple) is cited by the citing entity (the object of the triple)."@en ;
+        sh:description  "The cited entity (the subject of the RDF triple) is cited by the citing entity (the object of the triple)."@en ;
+        sh:name         "is cited by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isCitedBy> .
+
+<https://astrea.linkeddata.es/shapes#bb6fa74f44c1791a54076c58cdff9847>
+        a               sh:PropertyShape ;
+        rdfs:label      "has cited entity"@en , "A property that relates a citation to the cited entity."@en ;
+        sh:description  "A property that relates a citation to the cited entity."@en ;
+        sh:name         "has cited entity"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/hasCitedEntity> .
+
+<https://astrea.linkeddata.es/shapes#7b2fc0fec5f606b68f385615fedf7846>
+        a               sh:PropertyShape ;
+        rdfs:label      "cites for information"@en , "The citing entity cites the cited entity as a source of information on the subject under discussion."@en ;
+        sh:description  "The citing entity cites the cited entity as a source of information on the subject under discussion."@en ;
+        sh:name         "cites for information"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/citesForInformation> .
+
+<https://astrea.linkeddata.es/shapes#40d5a79be709a438757accd197686bde>
+        a               sh:PropertyShape ;
+        rdfs:label      "is reviewed by"@en , "The cited entity presents statements, ideas or conclusions that are reviewed by the citing entity."@en ;
+        sh:description  "The cited entity presents statements, ideas or conclusions that are reviewed by the citing entity."@en ;
+        sh:name         "is reviewed by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isReviewedBy> .
+
+<https://astrea.linkeddata.es/shapes#44e411007bb9df426ba8557e8e412a2d>
+        a               sh:PropertyShape ;
+        rdfs:label      "confirms"@en , "The citing entity confirms facts, ideas or statements presented in the cited entity."@en ;
+        sh:description  "The citing entity confirms facts, ideas or statements presented in the cited entity."@en ;
+        sh:name         "confirms"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/confirms> .
+
+<https://astrea.linkeddata.es/shapes#c1aea48e35ca868ed430f4f58ae78e2f>
+        a               sh:PropertyShape ;
+        rdfs:label      "is confirmed by"@en , "The cited entity presents facts, ideas or statements that are confirmed by the citing entity."@en ;
+        sh:description  "The cited entity presents facts, ideas or statements that are confirmed by the citing entity."@en ;
+        sh:name         "is confirmed by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isConfirmedBy> .
+
+<https://astrea.linkeddata.es/shapes#010554247447337669685a3ec311d6ea>
+        a               sh:PropertyShape ;
+        rdfs:label      "cites as evidence"@en , "The citing entity cites the cited entity as source of factual evidence for statements it contains."@en ;
+        sh:description  "The citing entity cites the cited entity as source of factual evidence for statements it contains."@en ;
+        sh:name         "cites as evidence"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/citesAsEvidence> .
+
+<https://astrea.linkeddata.es/shapes#11fc53bba603ca4c5b1e4580ae135a6e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.ontologydesignpatterns.org/cp/owl/situation.owl> ;
+        rdfs:label        "Situation"@en ;
+        sh:description    "A view on a set of entities. It can be seen as a 'relational context', reifying a relation.\nFor example, a PlanExecution is a context including some actions executed by agents according to certain parameters and expected tasks to be achieved from a Plan; a DiagnosedSituation is a context of observed entities that is interpreted on the basis of a Diagnosis, etc.\nSituation is also able to represent reified n-ary relations, where isSettingFor is the top-level relation for all binary projections of the n-ary relation. If used in a transformation pattern for n-ary relations, the designer should take care of:\n- creating only one situation for each instance of an n-ary relation, otherwise the 'identification constraint' (Calvanese et al., IJCAI 2001) could be violated\n- adding an 'exact cardinality' restriction corresponding to the arity of the n-ary relation, otherwise the designer would actually represent a polymorphic relation." ;
+        sh:name           "Situation"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#10be04de534155096d1c332a9f527f49> , <https://astrea.linkeddata.es/shapes#5644ead6a1b4019ea147ca5ee54aea55> ;
+        sh:targetClass    situation:Situation .
+
+<https://astrea.linkeddata.es/shapes#f9337dec4aa88ae6013a958b50c4e29a>
+        a               sh:NodeShape ;
+        rdfs:label      "author self citation"@en ;
+        sh:description  "A citation in which the citing and the cited entities have at least one author in common.\n\nIn particular, like the ancestor class cito:Citation, cito:AuthorSelfCitation and its accompanying object properties cito:hasCitingEntity, cito:hasCitedEntity and cito:hasCitationCharacterization can be employed to reify direct citation statements made using the CiTO citation object property cito:cites or one of its sub-properties, accompanied by an additional statement using cito:sharesAuthorWith for linking the citing paper and the cited paper. \n\nFor example, the following cito:AuthorSelfCitation resource\n\n     :thisCitation a cito:AuthorSelfCitation ; \n          cito:hasCitingEntity :paperA ;\n          cito:hasCitationCharacterization cito:extends ;\n          cito:hasCitedEntity :paperB .\n\ncan be alternatively described as follows\n\n     :paperA cito:extends :paperB .\n     :paperA cito:sharesAuthorWith :paperB ."@en ;
+        sh:name         "author self citation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/spar/cito/AuthorSelfCitation> .
+
+<https://astrea.linkeddata.es/shapes#10be04de534155096d1c332a9f527f49>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.ontologydesignpatterns.org/cp/owl/situation.owl> ;
+        rdfs:label        "is setting for"@en ;
+        sh:class          owl:Thing ;
+        sh:name           "is setting for"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           situation:isSettingFor .
+
+<https://astrea.linkeddata.es/shapes#19fcfe1d26e4172276ab0a322ac8dfb0>
+        a               sh:PropertyShape ;
+        rdfs:label      "uses data from"@en , "The citing entity describes work that uses data presented in the cited entity."@en ;
+        sh:description  "The citing entity describes work that uses data presented in the cited entity."@en ;
+        sh:name         "uses data from"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/usesDataFrom> .
+
+<https://astrea.linkeddata.es/shapes#24fff022353847a20ed6ffd5d015775a>
+        a               sh:PropertyShape ;
+        rdfs:label      "includes excerpt from"@en , "The citing entity includes one or more excerpts from the cited entity."@en ;
+        sh:description  "The citing entity includes one or more excerpts from the cited entity."@en ;
+        sh:name         "includes excerpt from"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/includesExcerptFrom> .
+
+<https://astrea.linkeddata.es/shapes#69c3b512152bcf0ad31f557dc516a970>
+        a               sh:PropertyShape ;
+        rdfs:label      "cites as related"@en , "The citing entity cites the cited entity as one that is related."@en ;
+        sh:description  "The citing entity cites the cited entity as one that is related."@en ;
+        sh:name         "cites as related"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/citesAsRelated> .
+
+<https://astrea.linkeddata.es/shapes#be0ebfa9cb8f29dc9561c3d020f98e30>
+        a               sh:PropertyShape ;
+        rdfs:label      "retracts"@en , "The citing entity constitutes a formal retraction of the cited entity."@en ;
+        sh:description  "The citing entity constitutes a formal retraction of the cited entity."@en ;
+        sh:name         "retracts"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/retracts> .
+
+<https://astrea.linkeddata.es/shapes#920745d3377511dae35caba28016540f>
+        a               sh:PropertyShape ;
+        rdfs:label      "shares author with"@en , "Each entity has at least one author in common with the other entity."@en ;
+        sh:description  "Each entity has at least one author in common with the other entity."@en ;
+        sh:name         "shares author with"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/sharesAuthorWith> .
+
+<https://astrea.linkeddata.es/shapes#89ea2c4207c2b7a25655d409efcabeb0>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://purl.org/spar/cito/hasCoAuthorshipCitationLevel> .
+
+<https://astrea.linkeddata.es/shapes#9624dec6c29d649c46d370c43a10439c>
+        a               sh:PropertyShape ;
+        rdfs:label      "is cited as data source by"@en , "The cited entity is cited as a data source by the citing entity."@en ;
+        sh:description  "The cited entity is cited as a data source by the citing entity."@en ;
+        sh:name         "is cited as data source by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isCitedAsDataSourceBy> .
+
+<https://astrea.linkeddata.es/shapes#c82f3f532234ea1eb5268eb6d9e9f1d8>
+        a               sh:PropertyShape ;
+        rdfs:label      "has citation characterization"@en , "A property that links a citation to its characterization made by using a CiTO citation characterization property such as cito:extends. This usage involved OWL2 punning, whenby a CiTO object property, such as the aforementioned cito:extends, is used as the object of an OWL assertion:\n\n     :thisCitation cito:hasCitationCharacterization cito:extends .\n\nIn such cases of OWL punning, the CiTO object properties are simultaneously considered both as normal object properties and also as proper named individuals of the class owl:Thing."@en ;
+        sh:description  "A property that links a citation to its characterization made by using a CiTO citation characterization property such as cito:extends. This usage involved OWL2 punning, whenby a CiTO object property, such as the aforementioned cito:extends, is used as the object of an OWL assertion:\n\n     :thisCitation cito:hasCitationCharacterization cito:extends .\n\nIn such cases of OWL punning, the CiTO object properties are simultaneously considered both as normal object properties and also as proper named individuals of the class owl:Thing."@en ;
+        sh:name         "has citation characterization"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/hasCitationCharacterization> .
+
+<https://astrea.linkeddata.es/shapes#9b1841de8e794fab4029bb60737407ee>
+        a               sh:PropertyShape ;
+        rdfs:label      "has citing entity"@en , "A property that relates a citation to the citing entity."@en ;
+        sh:description  "A property that relates a citation to the citing entity."@en ;
+        sh:name         "has citing entity"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/hasCitingEntity> .
+
+<https://astrea.linkeddata.es/shapes#d02fcf4d05902f8f7dc5d197eadd36d4>
+        a               sh:PropertyShape ;
+        rdfs:label      "provides quotation for"@en , "The cited entity contains information, usually of a textual nature, that is quoted by (used as a quotation within) the citing entity."@en ;
+        sh:description  "The cited entity contains information, usually of a textual nature, that is quoted by (used as a quotation within) the citing entity."@en ;
+        sh:name         "provides quotation for"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/providesQuotationFor> .
+
+<https://astrea.linkeddata.es/shapes#dd6818b36979a911a717283c1a9cd650>
+        a               sh:PropertyShape ;
+        rdfs:label      "provides method for"@en , "The cited entity details a method that is used in work described by the citing entity."@en ;
+        sh:description  "The cited entity details a method that is used in work described by the citing entity."@en ;
+        sh:name         "provides method for"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/providesMethodFor> .
+
+<https://astrea.linkeddata.es/shapes#8198c804379793fd952c7a9c81bbe659>
+        a               sh:PropertyShape ;
+        rdfs:label      "citation" , "This property is defined in schema.org and has been added here to align schema.org with CiTO. The object property schema:citation expresses similar semantics to cito:cites except for the explicit definition of domain and range classes, that are schema:CreativeWork according to schema.org. For that reason, it is here defined as a subproperty of cito:cites."@en ;
+        sh:description  "This property is defined in schema.org and has been added here to align schema.org with CiTO. The object property schema:citation expresses similar semantics to cito:cites except for the explicit definition of domain and range classes, that are schema:CreativeWork according to schema.org. For that reason, it is here defined as a subproperty of cito:cites."@en ;
+        sh:name         "citation" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://schema.org/citation> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#820890f4c5cc67b3c0baca892e2e040d> , <https://astrea.linkeddata.es/shapes#97a57c1dcd2bf5951d5603da291d2284> , <https://astrea.linkeddata.es/shapes#24fff022353847a20ed6ffd5d015775a> , <https://astrea.linkeddata.es/shapes#5644ead6a1b4019ea147ca5ee54aea55> , <https://astrea.linkeddata.es/shapes#8198c804379793fd952c7a9c81bbe659> , <https://astrea.linkeddata.es/shapes#4c4158782286bd39bac58e932285fbbb> , <https://astrea.linkeddata.es/shapes#e95028ec93362a237d8fb38cc07da3c5> , <https://astrea.linkeddata.es/shapes#010554247447337669685a3ec311d6ea> , <https://astrea.linkeddata.es/shapes#8718dc1d96f946b30e98c90c1266f2a7> , <https://astrea.linkeddata.es/shapes#ae2272870b5e1c7b13f4017e675b6625> , <https://astrea.linkeddata.es/shapes#757d39640b6a3f90ee5bf9746c24693a> , <https://astrea.linkeddata.es/shapes#9b1841de8e794fab4029bb60737407ee> , <https://astrea.linkeddata.es/shapes#7541cbbda3f04d28eac44f924dc03d07> , <https://astrea.linkeddata.es/shapes#2148d0714bc09ae1f90706ed3b909ed3> , <https://astrea.linkeddata.es/shapes#4406a86ad06c8657e9c1e040ff988c0b> , <https://astrea.linkeddata.es/shapes#4827ac1d1e758e9207283c9bdc01fc6e> , <https://astrea.linkeddata.es/shapes#f53a93d0e8ae38fa85adb6a951485dbe> , <https://astrea.linkeddata.es/shapes#28f11e5df96ba8f07719a48639b1f6db> , <https://astrea.linkeddata.es/shapes#0c81a52571dac9a378e00a12dade944a> , <https://astrea.linkeddata.es/shapes#5b4774da562ba09953807f354c08b0f0> , <https://astrea.linkeddata.es/shapes#442631adc342bbeab9bad9e1a5bb2d9f> , <https://astrea.linkeddata.es/shapes#f89d290d6901dfaa838cc9ff39fc06b8> , <https://astrea.linkeddata.es/shapes#c60ad03589cdf703d8c0bb969239bbfb> , <https://astrea.linkeddata.es/shapes#41940d3831e4e1bb15b7363417b5e806> , <https://astrea.linkeddata.es/shapes#11fc53bba603ca4c5b1e4580ae135a6e> , <https://astrea.linkeddata.es/shapes#d544bef68535ef5fa81e8fe64da73d6f> , <https://astrea.linkeddata.es/shapes#ad41da5218ad34b738a8f27233b4f215> , <https://astrea.linkeddata.es/shapes#e990990fb71ced979c0b7ee69cfa5127> , <https://astrea.linkeddata.es/shapes#a564f7b6dd0dee2e226de07b6f780435> , <https://astrea.linkeddata.es/shapes#efcd6941795c688981e7143181344441> , <https://astrea.linkeddata.es/shapes#fbd22f81655c62dbd6621d8aea1636d4> , <https://astrea.linkeddata.es/shapes#f9337dec4aa88ae6013a958b50c4e29a> , <https://astrea.linkeddata.es/shapes#f998cf25c91648a28a497ec0df6a5086> , <https://astrea.linkeddata.es/shapes#40657ead07f527687d595983553ca67b> , <https://astrea.linkeddata.es/shapes#10be04de534155096d1c332a9f527f49> , <https://astrea.linkeddata.es/shapes#f6bbed6e128f4b12e5d5df04a4b32016> , <https://astrea.linkeddata.es/shapes#7b2fc0fec5f606b68f385615fedf7846> , <https://astrea.linkeddata.es/shapes#9e69068f086f0d446c6d7d207ce12d0b> , <https://astrea.linkeddata.es/shapes#920745d3377511dae35caba28016540f> , <https://astrea.linkeddata.es/shapes#64a656bf5b6783dd97479cda65130316> , <https://astrea.linkeddata.es/shapes#42f136fa7bdd75e29313658463b76a92> , <https://astrea.linkeddata.es/shapes#7fac8227f4aec9a62750237bde057130> , <https://astrea.linkeddata.es/shapes#30479f6e8ce645a2873c0cfaba26caa1> , <https://astrea.linkeddata.es/shapes#2c8a516414843f408cac89b81d34fd07> , <https://astrea.linkeddata.es/shapes#b1502e0c6c93c5b900e8792ca26fc5b2> , <https://astrea.linkeddata.es/shapes#f25e54388b9cb00b89f6904f6c9f2406> , <https://astrea.linkeddata.es/shapes#9cea1756d5d193a8230f55ad59387c3c> , <https://astrea.linkeddata.es/shapes#372fcb047e5dff5312a7e8bc66c3114b> , <https://astrea.linkeddata.es/shapes#606bb53242d4949d6f0c3b4e6a50fe7e> , <https://astrea.linkeddata.es/shapes#9624dec6c29d649c46d370c43a10439c> , <https://astrea.linkeddata.es/shapes#992921db1eff0692c2ac97a136a8811e> , <https://astrea.linkeddata.es/shapes#3a76ac0b263cca97f77dd019c4c867cd> , <https://astrea.linkeddata.es/shapes#d8a51101a908e7ceb947f1219766ebca> , <https://astrea.linkeddata.es/shapes#e8be15469907ae3f269afadab8491d9e> , <https://astrea.linkeddata.es/shapes#8dc726cc3498f004197dc2ae9c50e79d> , <https://astrea.linkeddata.es/shapes#c29d1296b4e3591849dcd2f27fb996b8> , <https://astrea.linkeddata.es/shapes#bb9d2dcc264c7472dee56e6d42b7835d> , <https://astrea.linkeddata.es/shapes#b05af3d161aa7b1cbc624e43d5713970> , <https://astrea.linkeddata.es/shapes#b8c244eb4a7eda4dbf63e818a06bd450> , <https://astrea.linkeddata.es/shapes#25fe96698773559ec5498ad83230b630> , <https://astrea.linkeddata.es/shapes#68e085538ee3e8ff541c77bc731ef110> , <https://astrea.linkeddata.es/shapes#19fcfe1d26e4172276ab0a322ac8dfb0> , <https://astrea.linkeddata.es/shapes#759bad13e4468b7d65f40ba6873c84ca> , <https://astrea.linkeddata.es/shapes#da2f067b0a1e6ddbd6d9ce36a61bbdc9> , <https://astrea.linkeddata.es/shapes#f774b76c092e3cb8a23136905895e613> , <https://astrea.linkeddata.es/shapes#56ea143748030b3ae42eb83d7fa47abe> , <https://astrea.linkeddata.es/shapes#7d482eb871622dc4066b4b983184ab78> , <https://astrea.linkeddata.es/shapes#73e8b0a625a2073b5302a1aac1b2bd61> , <https://astrea.linkeddata.es/shapes#214954032cc72a7ff82d7e4e79b8732e> , <https://astrea.linkeddata.es/shapes#7ad6b0633abf3a963e68ad09e9e8eae5> , <https://astrea.linkeddata.es/shapes#861ab8ff2c35fd17af2192f9afd9f6d1> , <https://astrea.linkeddata.es/shapes#bb6fa74f44c1791a54076c58cdff9847> , <https://astrea.linkeddata.es/shapes#12d16485043c6bd0fc99f9b5bcc4201b> , <https://astrea.linkeddata.es/shapes#92eecc59fdcc76d212530c53b244beec> , <https://astrea.linkeddata.es/shapes#2a34d93c27e800046a1fa4975cc34340> , <https://astrea.linkeddata.es/shapes#820ba6ddcc03a9570c9eeda1239674e6> , <https://astrea.linkeddata.es/shapes#69c3b512152bcf0ad31f557dc516a970> , <https://astrea.linkeddata.es/shapes#bf5736ad2e6316992ed0a51623a00a8d> , <https://astrea.linkeddata.es/shapes#a846a4145de1fc510b3a990fb8182f4f> , <https://astrea.linkeddata.es/shapes#faf52b0fb84ad50597c9c671e8ad0929> , <https://astrea.linkeddata.es/shapes#09f817c849a4b6d304250b600348240c> , <https://astrea.linkeddata.es/shapes#a7c24ea8a82d0ccab01f2759da46e09f> , <https://astrea.linkeddata.es/shapes#b9986893a888907631809393326c340e> , <https://astrea.linkeddata.es/shapes#cee0801639c041b15a1cc6bed3216851> , <https://astrea.linkeddata.es/shapes#4c39b66a419694eae6e628180eb24cb2> , <https://astrea.linkeddata.es/shapes#40666bf72147d487e71ad155ec568ea8> , <https://astrea.linkeddata.es/shapes#7c1734ca1c7779aab41361b70050347a> , <https://astrea.linkeddata.es/shapes#fc3795e6a0d1708bc4dd5ecf12dc0231> , <https://astrea.linkeddata.es/shapes#65ede708a88895adaf8054f003d86b4a> , <https://astrea.linkeddata.es/shapes#c1aea48e35ca868ed430f4f58ae78e2f> , <https://astrea.linkeddata.es/shapes#43ee3a4aa4c99ef87b2838e0bc43e264> , <https://astrea.linkeddata.es/shapes#4c04b1bbe901f8ffff2798353b81147e> , <https://astrea.linkeddata.es/shapes#986287a3c34eb8d5be64130dfc44c589> , <https://astrea.linkeddata.es/shapes#912184355b958e9e866968a1690ef4aa> , <https://astrea.linkeddata.es/shapes#5d8d7b2654e10107de09e7646407caa5> , <https://astrea.linkeddata.es/shapes#a1fd82cfc61d2e9f84eff93e919363ec> , <https://astrea.linkeddata.es/shapes#ad9b3a3a45f361873417a698fe34ac31> , <https://astrea.linkeddata.es/shapes#7f040dd1d51f0d483c1cec1d81f6983b> , <https://astrea.linkeddata.es/shapes#a80191041bc733efb1ff43d5f4b81b52> , <https://astrea.linkeddata.es/shapes#89ea2c4207c2b7a25655d409efcabeb0> , <https://astrea.linkeddata.es/shapes#5cf27a0b88de0324432f73156ebd0c80> , <https://astrea.linkeddata.es/shapes#5f0ac94e4eea8ddaf1c5d1a8bf97d226> , <https://astrea.linkeddata.es/shapes#719a7687debe405bf77ba29b9d2fd148> , <https://astrea.linkeddata.es/shapes#dd6818b36979a911a717283c1a9cd650> , <https://astrea.linkeddata.es/shapes#3e1543c59d45240be215c70fc21b1b4a> , <https://astrea.linkeddata.es/shapes#f4c330b5fdbe2904520b7dc601ff10c8> , <https://astrea.linkeddata.es/shapes#5d7ce2cdafd65e050b1832e6bceadd86> , <https://astrea.linkeddata.es/shapes#e1fa22e631f050f74b27a48cb18fd1ad> , <https://astrea.linkeddata.es/shapes#b3f3bcc4e92d26442ba1e11454f72487> , <https://astrea.linkeddata.es/shapes#0059ca76bfaa5a5566e407c8d91d40da> , <https://astrea.linkeddata.es/shapes#d02fcf4d05902f8f7dc5d197eadd36d4> , <https://astrea.linkeddata.es/shapes#5f82dc19a496b8dc7381c14d2b22efac> , <https://astrea.linkeddata.es/shapes#40d5a79be709a438757accd197686bde> , <https://astrea.linkeddata.es/shapes#a9462c007da623185fe7d77500bb1a99> , <https://astrea.linkeddata.es/shapes#be0ebfa9cb8f29dc9561c3d020f98e30> , <https://astrea.linkeddata.es/shapes#44e411007bb9df426ba8557e8e412a2d> , <https://astrea.linkeddata.es/shapes#c82f3f532234ea1eb5268eb6d9e9f1d8> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/0255126969> .
+
+<https://astrea.linkeddata.es/shapes#a846a4145de1fc510b3a990fb8182f4f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      owl:topObjectProperty .
+
+<https://astrea.linkeddata.es/shapes#ad41da5218ad34b738a8f27233b4f215>
+        a               sh:PropertyShape ;
+        rdfs:label      "speculates on"@en , "The citing entity speculates on something within or related to the cited entity, without firm evidence."@en ;
+        sh:description  "The citing entity speculates on something within or related to the cited entity, without firm evidence."@en ;
+        sh:name         "speculates on"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/speculatesOn> .
+
+<https://astrea.linkeddata.es/shapes#a80191041bc733efb1ff43d5f4b81b52>
+        a               sh:PropertyShape ;
+        rdfs:label      "is parodied by"@en , "The characteristic style or content of the cited entity is imitated by the citing entity for comic effect, usually without explicit citation."@en ;
+        sh:description  "The characteristic style or content of the cited entity is imitated by the citing entity for comic effect, usually without explicit citation."@en ;
+        sh:name         "is parodied by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isParodiedBy> .
+
+<https://astrea.linkeddata.es/shapes#f774b76c092e3cb8a23136905895e613>
+        a               sh:PropertyShape ;
+        rdfs:label      "critiques"@en , "The citing entity critiques statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:description  "The citing entity critiques statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:name         "critiques"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/critiques> .
+
+<https://astrea.linkeddata.es/shapes#40666bf72147d487e71ad155ec568ea8>
+        a               sh:PropertyShape ;
+        rdfs:label      "replies to"@en , "The citing entity replies to statements, ideas or criticisms presented in the cited entity."@en ;
+        sh:description  "The citing entity replies to statements, ideas or criticisms presented in the cited entity."@en ;
+        sh:name         "replies to"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/repliesTo> .
+
+<https://astrea.linkeddata.es/shapes#b1502e0c6c93c5b900e8792ca26fc5b2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.ontologydesignpatterns.org/cp/owl/situation.owl> ;
+        rdfs:label        "has setting"@en , "A relation between entities and situations, e.g. 'this morning I've prepared my coffee with a new fantastic Arabica' (i.e.: (an amount of) a new fantastic Arabica hasSetting the preparation of my coffee this morning)." ;
+        sh:class          situation:Situation ;
+        sh:description    "A relation between entities and situations, e.g. 'this morning I've prepared my coffee with a new fantastic Arabica' (i.e.: (an amount of) a new fantastic Arabica hasSetting the preparation of my coffee this morning)." ;
+        sh:name           "has setting"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           situation:hasSetting .
+
+<https://astrea.linkeddata.es/shapes#97a57c1dcd2bf5951d5603da291d2284>
+        a               sh:PropertyShape ;
+        rdfs:label      "is qualified by"@en , "The cited entity presents statements, ideas or conclusions that are qualified or have conditions placed upon them by the citing entity."@en ;
+        sh:description  "The cited entity presents statements, ideas or conclusions that are qualified or have conditions placed upon them by the citing entity."@en ;
+        sh:name         "is qualified by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isQualifiedBy> .
+
+<https://astrea.linkeddata.es/shapes#ad9b3a3a45f361873417a698fe34ac31>
+        a               sh:NodeShape ;
+        rdfs:label      "journal cartel citation"@en ;
+        sh:description  "A citation from one journal to another journal which forms one of a very large number of citations from the citing journal to recent articles in the cited journal, possibly undertaken as part of a citation cartel for the purpose of gaming the impact factor of the cited journal."@en ;
+        sh:name         "journal cartel citation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/spar/cito/JournalCartelCitation> .
+
+<https://astrea.linkeddata.es/shapes#25fe96698773559ec5498ad83230b630>
+        a               sh:PropertyShape ;
+        rdfs:label      "ridicules"@en , "The citing entity ridicules the cited entity or aspects of its contents."@en ;
+        sh:description  "The citing entity ridicules the cited entity or aspects of its contents."@en ;
+        sh:name         "ridicules"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/ridicules> .
+
+<https://astrea.linkeddata.es/shapes#7c1734ca1c7779aab41361b70050347a>
+        a               sh:PropertyShape ;
+        rdfs:label      "is plagiarized by"@en , "The cited entity is plagiarized by the author of the citing entity, who includes within the citing entity textual or other elements from the cited entity without formal acknowledgement of their source. The cited entity is thus not explicitly cited from within the citing entity, according to the norms of scholarly practice, but is cited implicitly."@en ;
+        sh:description  "The cited entity is plagiarized by the author of the citing entity, who includes within the citing entity textual or other elements from the cited entity without formal acknowledgement of their source. The cited entity is thus not explicitly cited from within the citing entity, according to the norms of scholarly practice, but is cited implicitly."@en ;
+        sh:name         "is plagiarized by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isPlagiarizedBy> .
+
+<https://astrea.linkeddata.es/shapes#8718dc1d96f946b30e98c90c1266f2a7>
+        a               sh:PropertyShape ;
+        rdfs:label      "obtains support from"@en , "The citing entity obtains intellectual or factual support from the cited entity."@en ;
+        sh:description  "The citing entity obtains intellectual or factual support from the cited entity."@en ;
+        sh:name         "obtains support from"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/obtainsSupportFrom> .
+
+<https://astrea.linkeddata.es/shapes#30479f6e8ce645a2873c0cfaba26caa1>
+        a               sh:PropertyShape ;
+        rdfs:label      "reviews"@en , "The citing entity reviews statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:description  "The citing entity reviews statements, ideas or conclusions presented in the cited entity."@en ;
+        sh:name         "reviews"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/reviews> .
+
+<https://astrea.linkeddata.es/shapes#3e1543c59d45240be215c70fc21b1b4a>
+        a               sh:PropertyShape ;
+        rdfs:label      "likes"@en , "A property that permits you to express appreciation of or interest in something that is the object of the RDF triple, or to express that it is worth thinking about even if you do not agree with its content, enabling social media 'likes' statements to be encoded in RDF.  Use of this property does NOT imply the existence of a formal citation of the entity that is 'liked'."@en ;
+        sh:description  "A property that permits you to express appreciation of or interest in something that is the object of the RDF triple, or to express that it is worth thinking about even if you do not agree with its content, enabling social media 'likes' statements to be encoded in RDF.  Use of this property does NOT imply the existence of a formal citation of the entity that is 'liked'."@en ;
+        sh:name         "likes"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/likes> .
+
+<https://astrea.linkeddata.es/shapes#a7c24ea8a82d0ccab01f2759da46e09f>
+        a               sh:PropertyShape ;
+        rdfs:label      "is speculated on by"@en , "The cited entity is cited because the citing article contains speculations on its content or ideas."@en ;
+        sh:description  "The cited entity is cited because the citing article contains speculations on its content or ideas."@en ;
+        sh:name         "is speculated on by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isSpeculatedOnBy> .
+
+<https://astrea.linkeddata.es/shapes#5b4774da562ba09953807f354c08b0f0>
+        a               sh:PropertyShape ;
+        rdfs:label      "updates"@en , "The citing entity updates statements, ideas, hypotheses or understanding presented in the cited entity."@en ;
+        sh:description  "The citing entity updates statements, ideas, hypotheses or understanding presented in the cited entity."@en ;
+        sh:name         "updates"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/updates> .
+
+<https://astrea.linkeddata.es/shapes#f53a93d0e8ae38fa85adb6a951485dbe>
+        a               sh:PropertyShape ;
+        rdfs:label      "includes quotation from"@en , "The citing entity includes one or more quotations from the cited entity."@en ;
+        sh:description  "The citing entity includes one or more quotations from the cited entity."@en ;
+        sh:name         "includes quotation from"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/includesQuotationFrom> .
+
+<https://astrea.linkeddata.es/shapes#5cf27a0b88de0324432f73156ebd0c80>
+        a               sh:PropertyShape ;
+        rdfs:label      "shares funding agency with"@en , "The two entities result from activities that have been funded by the same funding agency."@en ;
+        sh:description  "The two entities result from activities that have been funded by the same funding agency."@en ;
+        sh:name         "shares funding agency with"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/sharesFundingAgencyWith> .
+
+<https://astrea.linkeddata.es/shapes#372fcb047e5dff5312a7e8bc66c3114b>
+        a               sh:PropertyShape ;
+        rdfs:label      "provides excerpt for"@en , "The cited entity contains information, usually of a textual nature, that is excerpted by (used as an excerpt within) the citing entity."@en ;
+        sh:description  "The cited entity contains information, usually of a textual nature, that is excerpted by (used as an excerpt within) the citing entity."@en ;
+        sh:name         "provides excerpt for"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/providesExcerptFor> .
+
+<https://astrea.linkeddata.es/shapes#ae2272870b5e1c7b13f4017e675b6625>
+        a               sh:PropertyShape ;
+        rdfs:label      "is disagreed with by"@en , "The cited entity presents statements, ideas or conclusions that are disagreed with by the citing entity."@en ;
+        sh:description  "The cited entity presents statements, ideas or conclusions that are disagreed with by the citing entity."@en ;
+        sh:name         "is disagreed with by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isDisagreedWithBy> .
+
+<https://astrea.linkeddata.es/shapes#2c8a516414843f408cac89b81d34fd07>
+        a               sh:PropertyShape ;
+        rdfs:label      "gives background to"@en , "The cited entity provides background information for the citing entity."@en ;
+        sh:description  "The cited entity provides background information for the citing entity."@en ;
+        sh:name         "gives background to"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/givesBackgroundTo> .
+
+<https://astrea.linkeddata.es/shapes#7d482eb871622dc4066b4b983184ab78>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal .
+
+<https://astrea.linkeddata.es/shapes#5644ead6a1b4019ea147ca5ee54aea55>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      situation:isSettingFor .
+
+<https://astrea.linkeddata.es/shapes#986287a3c34eb8d5be64130dfc44c589>
+        a               sh:PropertyShape ;
+        rdfs:label      "is retracted by"@en , "The cited entity is formally retracted by the citing entity."@en ;
+        sh:description  "The cited entity is formally retracted by the citing entity."@en ;
+        sh:name         "is retracted by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isRetractedBy> .
+
+<https://astrea.linkeddata.es/shapes#f4c330b5fdbe2904520b7dc601ff10c8>
+        a               sh:PropertyShape ;
+        rdfs:label      "cites as source document"@en , "The citing entity cites the cited entity as being the entity from which the citing entity is derived, or about which the citing entity contains metadata."@en ;
+        sh:description  "The citing entity cites the cited entity as being the entity from which the citing entity is derived, or about which the citing entity contains metadata."@en ;
+        sh:name         "cites as source document"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/citesAsSourceDocument> .
+
+<https://astrea.linkeddata.es/shapes#f25e54388b9cb00b89f6904f6c9f2406>
+        a               sh:NodeShape ;
+        rdfs:label      "citation"@en ;
+        sh:description  "A citation is a conceptual directional link from a citing entity to a cited entity, created by a human performative act of making a citation, typically instantiated by the inclusion of a bibliographic reference (biro:BibliographicReference) in the reference list of the citing entity, or by the inclusion within the citing entity of a link, in the form of an HTTP Uniform Resource Locator (URL), to a resource on the World Wide Web.\n\nThe time span of a citation, i.e. the interval between the publication year of the citing entity and the publication year of the cited entity, can be recorded using the data property cito:hasCitationTimeSpan.\n\nThe nature or type of a citation can be characterized by using CiTO object properties, e.g. http://purl.org/spar/cito/citesAsDataSource (definition: “The citing entity cites the cited entity as a source of data”).  \n\nThis CiTO class cito:Citation and its accompanying object properties cito:hasCitingEntity, cito:hasCitedEntity and cito:hasCitationCharacterization can be employed to reify direct citation statements made using the CiTO citation object property cito:cites or one of its sub-properties. \n\nFor example, the following RDF statement\n\n     :paperA cito:extends :paperB .\n\ncan be alternatively described as follows\n\n     :thisCitation a cito:Citation ; \n          cito:hasCitingEntity :paperA ;\n          cito:hasCitationCharacterization cito:extends ;\n          cito:hasCitedEntity :paperB .\n\nThis usage involved OWL2 punning, whereby a CiTO object property, such as the aforementioned cito:extends, is used as the object of the OWL assertion.\n\n     :thisCitation cito:hasCitationCharacterization cito:extends .\n\nUsing such OWL2 punning (described at http://www.w3.org/TR/2009/WD-owl2-new-features-20090611/#F12:_Punning), the CiTO object property is considered as a proper named individual of the class owl:Thing. \n\nSuch reification of citation acts can be very useful, since it permits one to combine these CiTO properties with other vocabularies, or to handle situations in which none of the citation characterizations available in CiTO are applicable.  \n\nSuch situations can be resolved by the creation of a user-defined citation characterization, for example by using the Open Annotation Data Model, as explained at http://semanticpublishing.wordpress.com/2013/07/03/extending-cito-for-open-annotations/."@en ;
+        sh:name         "citation"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#fbd22f81655c62dbd6621d8aea1636d4> ;
+        sh:targetClass  <http://purl.org/spar/cito/Citation> .
+
+<https://astrea.linkeddata.es/shapes#820890f4c5cc67b3c0baca892e2e040d>
+        a               sh:PropertyShape ;
+        rdfs:label      "is cited as recommended reading by"@en , "The cited entity is cited by the citing entity as an item of recommended reading.  This property can be used, for example, to describe references in a lecture reading list, where the cited references are relevant to the general topic of the lecture, but might not be individually cited within the text of the lecture.  Similarly, it could be used to describe items in a 'Suggested further reading' list at the end of a book chapter."@en ;
+        sh:description  "The cited entity is cited by the citing entity as an item of recommended reading.  This property can be used, for example, to describe references in a lecture reading list, where the cited references are relevant to the general topic of the lecture, but might not be individually cited within the text of the lecture.  Similarly, it could be used to describe items in a 'Suggested further reading' list at the end of a book chapter."@en ;
+        sh:name         "is cited as recommended reading by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isCitedAsRecommendedReadingBy> .
+
+<https://astrea.linkeddata.es/shapes#442631adc342bbeab9bad9e1a5bb2d9f>
+        a               sh:PropertyShape ;
+        rdfs:label      "cites as metadata document"@en , "The citing entity cites the cited entity as being the container of metadata describing the citing entity."@en ;
+        sh:description  "The citing entity cites the cited entity as being the container of metadata describing the citing entity."@en ;
+        sh:name         "cites as metadata document"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/citesAsMetadataDocument> .
+
+<https://astrea.linkeddata.es/shapes#f89d290d6901dfaa838cc9ff39fc06b8>
+        a               sh:PropertyShape ;
+        rdfs:label      "is agreed with by"@en , "The cited entity contains statements, ideas or conclusions with which the citing entity agrees."@en ;
+        sh:description  "The cited entity contains statements, ideas or conclusions with which the citing entity agrees."@en ;
+        sh:name         "is agreed with by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isAgreedWithBy> .
+
+<https://astrea.linkeddata.es/shapes#41940d3831e4e1bb15b7363417b5e806>
+        a               sh:PropertyShape ;
+        rdfs:label      "is cited as source document by"@en , "The cited entity is cited as being the entity from which the citing entity is derived, or about which the citing entity contains metadata."@en ;
+        sh:description  "The cited entity is cited as being the entity from which the citing entity is derived, or about which the citing entity contains metadata."@en ;
+        sh:name         "is cited as source document by"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/spar/cito/isCitedAsSourceDocumentBy> .

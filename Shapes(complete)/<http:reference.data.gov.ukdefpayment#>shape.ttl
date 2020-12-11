@@ -1,0 +1,250 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#fa2f867828cee0fb0cc608b621a42298>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "expenditure line"@en , "Links a payment to the individual expenditure lines associated with it."@en ;
+        sh:class          <http://reference.data.gov.uk/def/payment#ExpenditureLine> ;
+        sh:description    "Links a payment to the individual expenditure lines associated with it."@en ;
+        sh:name           "expenditure line"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/payment#expenditureLine> .
+
+<https://astrea.linkeddata.es/shapes#3114c8d8c147cf07cc09a6d4a17ed3e8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "Payment data set"@en ;
+        sh:description    "A set of payments or expenditures, laid out as a cube of data"@en ;
+        sh:name           "Payment data set"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/payment#PaymentDataset> .
+
+<https://astrea.linkeddata.es/shapes#c9db2a620d2401e4f86f18326828c4cb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "narrative"@en , "A narrative description of the goods or services that were supplied."@en ;
+        sh:description    "A narrative description of the goods or services that were supplied."@en ;
+        sh:name           "narrative"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://reference.data.gov.uk/def/payment#narrative> .
+
+<https://astrea.linkeddata.es/shapes#bb6b1daeaa84f4aa3a0ba9164a216ad8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "expenditure category"@en , "The category of expenditure in some appropriate categorization scheme (such as the Best Value Account Code of Practice categories). If the scheme is hierarchical then this should at least designate the narrowest (most fine grain) applicable code and can additionally designate the broader codes. Multiple code schemes can be used within the same dataset and consuming applications can use the skos:inScheme (and the rdf:type) of the code to determine the scheme."@en ;
+        sh:class          <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:description    "The category of expenditure in some appropriate categorization scheme (such as the Best Value Account Code of Practice categories). If the scheme is hierarchical then this should at least designate the narrowest (most fine grain) applicable code and can additionally designate the broader codes. Multiple code schemes can be used within the same dataset and consuming applications can use the skos:inScheme (and the rdf:type) of the code to determine the scheme."@en ;
+        sh:name           "expenditure category"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/payment#expenditureCategory> .
+
+<https://astrea.linkeddata.es/shapes#e4f6ba9d4396549c2e9b7f335897912c>
+        a               sh:PropertyShape ;
+        rdfs:label      "unit"@en , "Optionally indicates a particular organizational \nunit (Department, Directorate etc) of the payer organization associated with the payment.\nUse org:classification to link the unit to a categorization of types of units to \nsupport cross-comparison. For example, in the UK Local Authority spend application\nthen the ESDToolkit-maintained list of Department Types may be a suitable code list."@en ;
+        sh:class        <http://www.w3.org/ns/org#OrganizationalUnit> ;
+        sh:description  "Optionally indicates a particular organizational \nunit (Department, Directorate etc) of the payer organization associated with the payment.\nUse org:classification to link the unit to a categorization of types of units to \nsupport cross-comparison. For example, in the UK Local Authority spend application\nthen the ESDToolkit-maintained list of Department Types may be a suitable code list."@en ;
+        sh:name         "unit"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://reference.data.gov.uk/def/payment#unit> .
+
+<https://astrea.linkeddata.es/shapes#2914ed83fa2b970150ab218b4524eae6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "date"@en , "The date the payment is deemed to have occurred."@en ;
+        sh:class          <http://reference.data.gov.uk/def/intervals/Interval> ;
+        sh:description    "The date the payment is deemed to have occurred."@en ;
+        sh:name           "date"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/payment#date> .
+
+<https://astrea.linkeddata.es/shapes#0d3ef6feed59f597d372ec298bd56899>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "payee"@en , "The entity to which the payment was made."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description    "The entity to which the payment was made."@en ;
+        sh:name           "payee"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/payment#payee> .
+
+<https://astrea.linkeddata.es/shapes#51d506e077ffec2d5cf0d1493458d9ef>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "procurement category"@en , "A classification for the goods or services for which the payment was made."@en ;
+        sh:class          <http://www.w3.org/2004/02/skos/core#Concept> ;
+        sh:description    "A classification for the goods or services for which the payment was made."@en ;
+        sh:name           "procurement category"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/payment#procurementCategory> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#51d506e077ffec2d5cf0d1493458d9ef> , <https://astrea.linkeddata.es/shapes#6e86e7f61c771efca457ca28f4c4b2a4> , <https://astrea.linkeddata.es/shapes#6ff03740e65f6abeabab214821894c17> , <https://astrea.linkeddata.es/shapes#0d3ef6feed59f597d372ec298bd56899> , <https://astrea.linkeddata.es/shapes#da086c9f804db88d9ccb0297a70674cb> , <https://astrea.linkeddata.es/shapes#c9db2a620d2401e4f86f18326828c4cb> , <https://astrea.linkeddata.es/shapes#91d5b639ece6533ea52be5f5d092ff50> , <https://astrea.linkeddata.es/shapes#75d205d8643fbc128cbcf5da034aa956> , <https://astrea.linkeddata.es/shapes#6273e05a09ceacdb8e1e5dbc5e44d48d> , <https://astrea.linkeddata.es/shapes#66e40c49211fa032c737785aab0dcd19> , <https://astrea.linkeddata.es/shapes#3114c8d8c147cf07cc09a6d4a17ed3e8> , <https://astrea.linkeddata.es/shapes#72807a744a8cdf3641557d4128a3a04b> , <https://astrea.linkeddata.es/shapes#3ff4ff08449fef9927d2a75d59e881a0> , <https://astrea.linkeddata.es/shapes#0fba815bb0cc70dfddbe3dcb4c741aa7> , <https://astrea.linkeddata.es/shapes#977be03ace083565f417f6373c0e73b4> , <https://astrea.linkeddata.es/shapes#cb7014b29953b0943db6f712d8e5b848> , <https://astrea.linkeddata.es/shapes#e4f6ba9d4396549c2e9b7f335897912c> , <https://astrea.linkeddata.es/shapes#5e9011cfc61ccaf2ee438860da2f76cb> , <https://astrea.linkeddata.es/shapes#8d68e7f00693b409b3baaecbc803bc92> , <https://astrea.linkeddata.es/shapes#bb6b1daeaa84f4aa3a0ba9164a216ad8> , <https://astrea.linkeddata.es/shapes#fa2f867828cee0fb0cc608b621a42298> , <https://astrea.linkeddata.es/shapes#547219095a8cc267311ef2c66aeb87fd> , <https://astrea.linkeddata.es/shapes#2ea15fab44c6e30dd720d03f2ecc9956> , <https://astrea.linkeddata.es/shapes#2914ed83fa2b970150ab218b4524eae6> , <https://astrea.linkeddata.es/shapes#e3b83d5db292f6e787f08b53676578b9> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#91d5b639ece6533ea52be5f5d092ff50>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "Payment"@en ;
+        sh:description    "A payment to a supplier for some goods or services, may correspond to one or more expenditure lines"@en ;
+        sh:name           "Payment"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#977be03ace083565f417f6373c0e73b4> , <https://astrea.linkeddata.es/shapes#da086c9f804db88d9ccb0297a70674cb> , <https://astrea.linkeddata.es/shapes#75d205d8643fbc128cbcf5da034aa956> , <https://astrea.linkeddata.es/shapes#2914ed83fa2b970150ab218b4524eae6> , <https://astrea.linkeddata.es/shapes#fa2f867828cee0fb0cc608b621a42298> , <https://astrea.linkeddata.es/shapes#0d3ef6feed59f597d372ec298bd56899> , <https://astrea.linkeddata.es/shapes#cb7014b29953b0943db6f712d8e5b848> , <https://astrea.linkeddata.es/shapes#6e86e7f61c771efca457ca28f4c4b2a4> , <https://astrea.linkeddata.es/shapes#e4f6ba9d4396549c2e9b7f335897912c> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/payment#Payment> .
+
+<https://astrea.linkeddata.es/shapes#66e40c49211fa032c737785aab0dcd19>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "net amount"@en , "The net amount of the payment. This is the effective cost to the payer after any reclaimable tax has been deducted."@en ;
+        sh:datatype       xsd:decimal ;
+        sh:description    "The net amount of the payment. This is the effective cost to the payer after any reclaimable tax has been deducted."@en ;
+        sh:name           "net amount"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://reference.data.gov.uk/def/payment#netAmount> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#8d68e7f00693b409b3baaecbc803bc92>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "reference"@en , "A reference number, code or label which identifies the payment. Not unique across different suppliers."@en ;
+        sh:description    "A reference number, code or label which identifies the payment. Not unique across different suppliers."@en ;
+        sh:name           "reference"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://reference.data.gov.uk/def/payment#reference> .
+
+<https://astrea.linkeddata.es/shapes#2ea15fab44c6e30dd720d03f2ecc9956>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "Expenditure categories"@en ;
+        rdfs:seeAlso      <http://www.hmrc.gov.uk/manuals/bimmanual/bim35010.htm> ;
+        sh:description    "The set of expenditure categories in the expenditure-category scheme for capital/revenue."@en ;
+        sh:name           "Expenditure categories"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/payment#ExpenditureCategory> .
+
+<https://astrea.linkeddata.es/shapes#6e86e7f61c771efca457ca28f4c4b2a4>
+        a            sh:PropertyShape ;
+        sh:minCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://reference.data.gov.uk/def/payment#payee> .
+
+<https://astrea.linkeddata.es/shapes#977be03ace083565f417f6373c0e73b4>
+        a            sh:PropertyShape ;
+        sh:minCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://reference.data.gov.uk/def/payment#date> .
+
+<https://astrea.linkeddata.es/shapes#da086c9f804db88d9ccb0297a70674cb>
+        a            sh:PropertyShape ;
+        sh:minCount  1 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://reference.data.gov.uk/def/payment#payer> .
+
+<https://astrea.linkeddata.es/shapes#6ff03740e65f6abeabab214821894c17>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "Redaction"@en ;
+        sh:description    "An instance of Redaction can be used in place of the actual value \nin a dataset to indicate that this is a replacement for the true data value which has\nbeen redacted. Typically the Redaction resource will be a blank note. It is recommended \nthat it have an appropriate rdfs:label (e.g. REDACTED). If further information on the\nreaction is available then dcterms properties should be used to carry those, in partcular\ndct:description can be used to convey a description of the redaction and reasons"@en ;
+        sh:name           "Redaction"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://reference.data.gov.uk/def/payment#Redaction> .
+
+<https://astrea.linkeddata.es/shapes#e3b83d5db292f6e787f08b53676578b9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "gross amount"@en , "The amount paid, inclusive of any tax (whether reclaimable or not)"@en ;
+        sh:datatype       xsd:decimal ;
+        sh:description    "The amount paid, inclusive of any tax (whether reclaimable or not)"@en ;
+        sh:name           "gross amount"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://reference.data.gov.uk/def/payment#grossAmount> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#6273e05a09ceacdb8e1e5dbc5e44d48d>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "Purchase"@en ;
+        sh:description    "The overall goods or service for which the payment was made"@en ;
+        sh:name           "Purchase"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#51d506e077ffec2d5cf0d1493458d9ef> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/payment#Purchase> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#cb7014b29953b0943db6f712d8e5b848>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "purchase"@en , "Indicates the overall goods or service for which the payment was made."@en ;
+        sh:datatype       <http://reference.data.gov.uk/def/payment#Purchase> ;
+        sh:description    "Indicates the overall goods or service for which the payment was made."@en ;
+        sh:name           "purchase"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://reference.data.gov.uk/def/payment#purchase> .
+
+<https://astrea.linkeddata.es/shapes#0fba815bb0cc70dfddbe3dcb4c741aa7>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "Expenditure Line"@en ;
+        sh:description    "An item of expenditure that can be classified or assigned to a cost centre"@en ;
+        sh:name           "Expenditure Line"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#72807a744a8cdf3641557d4128a3a04b> , <https://astrea.linkeddata.es/shapes#66e40c49211fa032c737785aab0dcd19> , <https://astrea.linkeddata.es/shapes#e3b83d5db292f6e787f08b53676578b9> , <https://astrea.linkeddata.es/shapes#bb6b1daeaa84f4aa3a0ba9164a216ad8> ;
+        sh:targetClass    <http://reference.data.gov.uk/def/payment#ExpenditureLine> .
+
+<https://astrea.linkeddata.es/shapes#3ff4ff08449fef9927d2a75d59e881a0>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5e9011cfc61ccaf2ee438860da2f76cb> , <https://astrea.linkeddata.es/shapes#547219095a8cc267311ef2c66aeb87fd> ;
+        sh:targetClass  <http://purl.org/linked-data/cube#Slice> .
+
+<https://astrea.linkeddata.es/shapes#5e9011cfc61ccaf2ee438860da2f76cb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "total gross amount"@en ;
+        sh:datatype       xsd:decimal ;
+        sh:name           "total gross amount"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://reference.data.gov.uk/def/payment#totalGrossAmount> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#72807a744a8cdf3641557d4128a3a04b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "payment"@en , "Indicates the payment of which this expenditure line is a part."@en ;
+        sh:class          <http://reference.data.gov.uk/def/payment#Payment> ;
+        sh:description    "Indicates the payment of which this expenditure line is a part."@en ;
+        sh:name           "payment"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/payment#payment> .
+
+<https://astrea.linkeddata.es/shapes#547219095a8cc267311ef2c66aeb87fd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "total net amount"@en ;
+        sh:datatype       xsd:decimal ;
+        sh:name           "total net amount"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://reference.data.gov.uk/def/payment#totalNetAmount> ;
+        sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#75d205d8643fbc128cbcf5da034aa956>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://reference.data.gov.uk/def/payment#> ;
+        rdfs:label        "payer"@en , "The entity which made the payment."@en ;
+        sh:class          <http://xmlns.com/foaf/0.1/Agent> ;
+        sh:description    "The entity which made the payment."@en ;
+        sh:name           "payer"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://reference.data.gov.uk/def/payment#payer> .

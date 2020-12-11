@@ -1,0 +1,1019 @@
+@prefix :      <http://purl.org/olia/system.owl#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix olia_system: <http://purl.org/olia/system.owl#> .
+
+<https://astrea.linkeddata.es/shapes#ba2675f8f7ce3b1fe309d1700f5d45e5>
+        a               sh:PropertyShape ;
+        rdfs:label      "Assigns a Linguistic Annotation a String representation, e.g., a particular Part of Speech tag, the respective abbreviation of the grammatical cases used in an annotation scheme, etc.\nimplicit semantics: hasTag is to be used if the tag is equal to the string value, otherwise use hasTagContaining, hasTagStartingWith, hasTagEndingWith" ;
+        sh:description  "Assigns a Linguistic Annotation a String representation, e.g., a particular Part of Speech tag, the respective abbreviation of the grammatical cases used in an annotation scheme, etc.\nimplicit semantics: hasTag is to be used if the tag is equal to the string value, otherwise use hasTagContaining, hasTagStartingWith, hasTagEndingWith" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         olia_system:hasTag .
+
+<https://astrea.linkeddata.es/shapes#83d4be982ecdc3ee3c89bac75ebe069c>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/olia/ubyCat.owl#LexicalAnnotation> .
+
+<https://astrea.linkeddata.es/shapes#9cd8dd38aad9891557433694dc41035a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://uby.googlecode.com/files/UBY_LMF_0_2_0.dtd" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#Definition> , <http://www.monnet-project.eu/lemon#SenseDefinition> .
+
+<https://astrea.linkeddata.es/shapes#6c47b5ec63cc247a589313accd3768dd>
+        a               sh:PropertyShape ;
+        rdfs:label      "In UBY-LMF, relType is an attribute of the RelatedForm class which encodes links to derivationally related lexical entries or senses." ;
+        sh:class        <http://purl.org/olia/ubyCat.owl#DerivationType> ;
+        sh:description  "In UBY-LMF, relType is an attribute of the RelatedForm class which encodes links to derivationally related lexical entries or senses." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/olia/ubyCat.owl#hasDerivationType> .
+
+<https://astrea.linkeddata.es/shapes#02e3c586754b3b9eff03b7f9fe62781c>
+        a               sh:PropertyShape ;
+        rdfs:label      "Assigns a linguistic annotation a string representation of the annotation layer (\"tier\", \"level\") where it is to be found, e.g., \"pos\" for Part of Speech annotation, \"gloss\" for linguistic glosses, etc." ;
+        sh:description  "Assigns a linguistic annotation a string representation of the annotation layer (\"tier\", \"level\") where it is to be found, e.g., \"pos\" for Part of Speech annotation, \"gloss\" for linguistic glosses, etc." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         olia_system:hasTier .
+
+<https://astrea.linkeddata.es/shapes#1b60ec1697a4a37e9014bf248d9c1a26>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-1837" ;
+        rdfs:label        "phoneticForm" ;
+        sh:name           "phoneticForm" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#phoneticForm> .
+
+<https://astrea.linkeddata.es/shapes#5889bd157cc063344df0ded01a639354>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-4461" ;
+        rdfs:label        "coreType" ;
+        sh:name           "coreType" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#CoreType> .
+
+<https://astrea.linkeddata.es/shapes#b90f476c4b0d1bc7c394a58a212ad6c6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-4151" ;
+        rdfs:label        "isIncorporated" ;
+        sh:datatype       xsd:boolean ;
+        sh:name           "isIncorporated" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#isIncorporated> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#85a793b8d0668e91c327bce998bfdc5e>
+        a               sh:NodeShape ;
+        sh:description  "LexicalFeature groups different kinds of lexical feaures, which correspond to attributes of UBY-LMF classes." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/olia/ubyCat.owl#LexicalFeature> .
+
+<https://astrea.linkeddata.es/shapes#2a2ffda12337b3ad665820ecf15824d7>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-1848" ;
+        rdfs:label        "transliteration" ;
+        sh:name           "transliteration" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#transliteration> .
+
+<https://astrea.linkeddata.es/shapes#8b8e824b0eded3a729f060d10e5a3b50>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-3217" ;
+        rdfs:label        "grammaticalGender" ;
+        sh:name           "grammaticalGender" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#GrammaticalGender> .
+
+<https://astrea.linkeddata.es/shapes#2967b2e8f0f7457bf361d0a6d7c0806c>
+        a            sh:PropertyShape ;
+        rdfs:label   "verbForm" ;
+        sh:class     <http://purl.org/olia/ubyCat.owl#VerbForm> ;
+        sh:name      "verbForm" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#hasVerbForm> .
+
+<https://astrea.linkeddata.es/shapes#7e4842702cda63b4d9f1092e8034d3e3>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-1971" ;
+        rdfs:label        "type" , "Type is an attribute of the UBY-LMF class SemanticLabel. It encodes the name of a SemanticLabel type, e.g.\ntype=semanticField (from WordNet or GermaNet).\nThe label attribute of SemanticLabel holds the corresponding value of the SemanticLabel, e.g. \nlabel=animate (for type=semanticField)." ;
+        sh:description    "Type is an attribute of the UBY-LMF class SemanticLabel. It encodes the name of a SemanticLabel type, e.g.\ntype=semanticField (from WordNet or GermaNet).\nThe label attribute of SemanticLabel holds the corresponding value of the SemanticLabel, e.g. \nlabel=animate (for type=semanticField)." ;
+        sh:name           "type" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#hasType> .
+
+<https://astrea.linkeddata.es/shapes#6efb0cdb8b056cf1df0b49748ff5aae3>
+        a               sh:NodeShape ;
+        rdfs:label      "syntacticProperty" ;
+        sh:description  "Attribute of the UBY-LMF class SubcategorizationFrame." ;
+        sh:name         "syntacticProperty" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/olia/ubyCat.owl#SyntacticProperty> .
+
+<https://astrea.linkeddata.es/shapes#07488fbc58c3731e7493ffd91397765f>
+        a               sh:PropertyShape ;
+        rdfs:label      "As opposed to hasTag proper, the string representation defines a substring of a concrete annotation.\nThe respective linguistic annotation then applies to every element whose annotation (tag) contains this substring." ;
+        sh:description  "As opposed to hasTag proper, the string representation defines a substring of a concrete annotation.\nThe respective linguistic annotation then applies to every element whose annotation (tag) contains this substring." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         olia_system:hasTagContaining .
+
+<https://astrea.linkeddata.es/shapes#77fa7099d302841d17fdb6738e01f663>
+        a            sh:PropertyShape ;
+        rdfs:label   "relType" ;
+        sh:class     <http://purl.org/olia/ubyCat.owl#RelType> ;
+        sh:name      "relType" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#hasRelType> .
+
+<https://astrea.linkeddata.es/shapes#9d8b5718d52a090b2b2115f6b1443d1c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-3546" ;
+        rdfs:label        "separableParticle" ;
+        sh:name           "separableParticle" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#separableParticle> .
+
+<https://astrea.linkeddata.es/shapes#1f09093ec113c18d3b31add04a2ed90e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.org/olia/ubyCat.owl" ;
+        rdfs:label        "partOfSpeech" ;
+        sh:description    "As a convention, the relation is called has_partOfSpeech, partOfSpeech is the top-level *class* of parts of speech" ;
+        sh:name           "partOfSpeech" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#PartOfSpeech> .
+
+<https://astrea.linkeddata.es/shapes#9e3d0da0bd590ea82a2808fdb42a60c0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-2211" ;
+        rdfs:label        "quantification" , "In UBY-LMF, quantification is an attribute of the class SemanticLabel. It can be used, if the value of the semantic label is annotated with a score, e.g. type=sentiment, label=positive, quantification=strong.\n" ;
+        sh:description    "In UBY-LMF, quantification is an attribute of the class SemanticLabel. It can be used, if the value of the semantic label is annotated with a score, e.g. type=sentiment, label=positive, quantification=strong.\n" ;
+        sh:name           "quantification" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#hasQuantification> .
+
+<https://astrea.linkeddata.es/shapes#e19c958fd828b835f8c1ea1b44e70856>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-4390" ;
+        rdfs:label        "transparentMeaning" ;
+        sh:datatype       xsd:boolean ;
+        sh:name           "transparentMeaning" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#transparentMeaning> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#d63139cbf3189ba00345ea25904c240a>
+        a               sh:PropertyShape ;
+        rdfs:label      "A UnitOfAnnotation or a Relation can carry Features that express annotations attached to them. By convention, (tags that represent) Features can be linked with Feature individuals, as well. Because of this reflexivity, a predicate like hasDegree(positive) allows to retrieve the individual positive as well. (This is necessary if positive represents a tag on its own, rather than being a property of a complex tag.)" ;
+        sh:class        olia_system:Feature ;
+        sh:description  "A UnitOfAnnotation or a Relation can carry Features that express annotations attached to them. By convention, (tags that represent) Features can be linked with Feature individuals, as well. Because of this reflexivity, a predicate like hasDegree(positive) allows to retrieve the individual positive as well. (This is necessary if positive represents a tag on its own, rather than being a property of a complex tag.)" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         olia_system:hasFeature .
+
+<https://astrea.linkeddata.es/shapes#bbb3adda5476c8885753b272c95aff52>
+        a               sh:PropertyShape ;
+        rdfs:label      "As opposed to hasTag proper, the string representation defines the final subsequence of a concrete annotation.\nThe respective linguistic annotation then applies to every element whose annotation (tag) ends with this substring." ;
+        sh:description  "As opposed to hasTag proper, the string representation defines the final subsequence of a concrete annotation.\nThe respective linguistic annotation then applies to every element whose annotation (tag) ends with this substring." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         olia_system:hasTagEndingWith .
+
+<https://astrea.linkeddata.es/shapes#2cb6964f2923c806d79edd3d0ec6cbfa>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/olia/ubyCat.owl#DictionaryFeature> .
+
+<https://astrea.linkeddata.es/shapes#7b55e1bc396ffe5d93182d08c7493160>
+        a               sh:NodeShape ;
+        rdfs:label      "verbForm" ;
+        sh:description  "Specifies the verb form to be used in a verb phrase complement." ;
+        sh:name         "verbForm" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/olia/ubyCat.owl#VerbForm> .
+
+<https://astrea.linkeddata.es/shapes#44b3cf3a75d695c30a45cfdb8bfcfcb7>
+        a               sh:PropertyShape ;
+        rdfs:label      "This DatatypeProperty could also be named \"hasSimpleLexicalFeature\".\nThe current name \"hasUbyDatatypeProperty\" indicates that it groups Data Properties used in UBY-LMF." ;
+        sh:description  "This DatatypeProperty could also be named \"hasSimpleLexicalFeature\".\nThe current name \"hasUbyDatatypeProperty\" indicates that it groups Data Properties used in UBY-LMF." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://purl.org/olia/ubyCat.owl#hasUbyDatatypeProperty> .
+
+<https://astrea.linkeddata.es/shapes#add13a1137bb36761160b0a7c62890b5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-1836" ;
+        rdfs:label        "writtenForm" ;
+        sh:name           "writtenForm" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#writtenForm> .
+
+<https://astrea.linkeddata.es/shapes#bbf1da20d23763765d267eb161a14ed3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://uby.googlecode.com/files/UBY_LMF_0_2_0.dtd" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#LexicalEntry> , <http://www.monnet-project.eu/lemon#LexicalEntry> .
+
+<https://astrea.linkeddata.es/shapes#35dfae73716ba9517ca6662e96ea5ba5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-2176" ;
+        rdfs:label        "orthographyName" ;
+        sh:name           "orthographyName" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#orthographyName> .
+
+<https://astrea.linkeddata.es/shapes#8ee7b2cd1923558e26e275d864d547c4>
+        a               sh:NodeShape ;
+        sh:description  "This owl:Class corresponds to the LMF-class Frequency which has been introduced in UBY-LMF as an extension of ISO-LMF." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/olia/ubyCat.owl#Frequency> .
+
+<https://astrea.linkeddata.es/shapes#add54153926ea758f18c56dd6dff07f9>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://uby.googlecode.com/files/UBY_LMF_0_2_0.dtd" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#SemanticArgument> .
+
+<https://astrea.linkeddata.es/shapes#50df0c2e8c6dfe2f85e53cc02ef7f7b3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-3124" ;
+        rdfs:label        "complementizer" ;
+        sh:name           "complementizer" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#Complementizer> .
+
+<https://astrea.linkeddata.es/shapes#76873f15f0e3b091613877a8624abd71>
+        a            sh:PropertyShape ;
+        rdfs:label   "verbFormMood" ;
+        sh:class     <http://purl.org/olia/ubyCat.owl#VerbFormMood> ;
+        sh:name      "verbFormMood" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#has_verbFormMood> .
+
+<https://astrea.linkeddata.es/shapes#c0d986fe36bf1408d713abc2756a0e4c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-1851" ;
+        rdfs:label        "geographicalVariant" ;
+        sh:name           "geographicalVariant" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#geographicalVariant> .
+
+<https://astrea.linkeddata.es/shapes#bfa128f18dd158c7514b5972a017816d>
+        a            sh:PropertyShape ;
+        rdfs:label   "exampleType" ;
+        sh:class     <http://purl.org/olia/ubyCat.owl#ExampleType> ;
+        sh:name      "exampleType" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#hasExampleType> .
+
+<https://astrea.linkeddata.es/shapes#1188c9575214e7ffc6b447b19e719f66>
+        a               sh:PropertyShape ;
+        rdfs:label      "This ObjectProperty could also be named \"hasTypedLexicalFeature\".\nThe current name \"hasUbyObjectProperty\" indicates that it groups Object Properties used in UBY-LMF." ;
+        sh:description  "This ObjectProperty could also be named \"hasTypedLexicalFeature\".\nThe current name \"hasUbyObjectProperty\" indicates that it groups Object Properties used in UBY-LMF." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://purl.org/olia/ubyCat.owl#hasUbyObjectProperty> .
+
+<https://astrea.linkeddata.es/shapes#16fc4d3bb1408be4a8bdab51e6564d27>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://uby.googlecode.com/files/UBY_LMF_0_2_0.dtd" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#Lexicon> , <http://www.monnet-project.eu/lemon#Lexicon> .
+
+<https://astrea.linkeddata.es/report/051024228>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://www.monnet-project.eu/lemon" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#129714a73d40aa66047a60900e109c57>
+        a               sh:NodeShape ;
+        rdfs:label      "definitionType" ;
+        sh:name         "definitionType" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/olia/ubyCat.owl#DefinitionType> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#ce581f1cea7c6971268b46b4dc6b88cd>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.org/olia/ubyCat.owl" ;
+        rdfs:label        "WordFormAttribute" ;
+        sh:name           "WordFormAttribute" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#has_WordFormAttribute> .
+
+<https://astrea.linkeddata.es/shapes#0c6fe148196cf6358b69661f656fb8cd>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-1272" , "http://www.isocat.org/datcat/DC-3159" ;
+        rdfs:label        "determiner" ;
+        sh:description    "In UBY-LMF, determiner is an attribute of the LMF class SyntacticArgument. For noun phrase arguments, this attribute encodes specific constraints on the determiner to be used (possessive or indefinite).\n\nExample given in VerbNet (possessive): They allow our smoking.\nExample from VerbNet (indefinite): an indefinite determiner is required for the noun phrase complement of \"echo\" as in \nThere echoed voices through the hall. (verb class sound_existence-47.4)" ;
+        sh:name           "determiner" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#Determiner> .
+
+<https://astrea.linkeddata.es/shapes#f7409960b2502b4d06724e1393332cd4>
+        a            sh:PropertyShape ;
+        rdfs:label   "definitionType" ;
+        sh:class     <http://purl.org/olia/ubyCat.owl#DefinitionType> ;
+        sh:name      "definitionType" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#hasDefinitionType> .
+
+<https://astrea.linkeddata.es/shapes#5ead423ac5b55c80faf055feb7061a6b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-2211" ;
+        rdfs:label        "quantification" ;
+        sh:description    "In UBY-LMF, quantification is an attribute of the class SemanticLabel. It can be used, if the value of the semantic label is annotated with a score, e.g. type=sentiment, label=positive, quantification=strong.\n" ;
+        sh:name           "quantification" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#Quantification> .
+
+<https://astrea.linkeddata.es/shapes#287df71d4e8c5645f350e57bd9881d6c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-1975" ;
+        rdfs:label        "monolingualExternalRef" ;
+        sh:name           "monolingualExternalRef" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#MonolingualExternalRef> .
+
+<https://astrea.linkeddata.es/shapes#4c76f13e1549b16962ab8c8d4acf0c2e>
+        a               sh:NodeShape ;
+        sh:description  "This owl:Class corresponds to the LMF-class SemanticLabel which has been introduced in UBY-LMF as an extension of ISO-LMF." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/olia/ubyCat.owl#SemanticLabel> , <http://www.monnet-project.eu/lemon#SemanticLabel> .
+
+<https://astrea.linkeddata.es/shapes#03da601673af186b45dc62f17b1d574c>
+        a            sh:PropertyShape ;
+        rdfs:label   "person" ;
+        sh:class     <http://purl.org/olia/ubyCat.owl#Person> ;
+        sh:name      "person" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#has_person> .
+
+<https://astrea.linkeddata.es/shapes#cb96351e3b94fa323ee11c70ea4dc196>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-2237" ;
+        rdfs:label        "position" ;
+        sh:datatype       xsd:int ;
+        sh:maxInclusive   2147483647 ;
+        sh:minInclusive   -2147483648 ;
+        sh:name           "position" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#Position> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#674f445d57a8e16165aecc0b5fb62cb4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-1857" ;
+        rdfs:label        "label" , "Label encodes a name (short - like a tag) and is an attribute of the UBY-LMF class SemanticLabel, SemanticPredicate, " ;
+        sh:description    "Label encodes a name (short - like a tag) and is an attribute of the UBY-LMF class SemanticLabel, SemanticPredicate, " ;
+        sh:name           "label" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#label> .
+
+<https://astrea.linkeddata.es/shapes#cb0e6085c1fa932cb5df2252c396b02d>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#multiwordFeature> .
+
+<https://astrea.linkeddata.es/shapes#4c65a5c22f3ad73cdc5aa5b1724fcb71>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  olia_system:AnnotationProcess .
+
+<https://astrea.linkeddata.es/shapes#a6e1360e9eedd003c212e2dd1e203863>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-233" ;
+        rdfs:label        "Index is an attribute of the UBY-LMF class Sense.\nIt encodes a ranking of the senses according to their frequency which is provided, e.g., by WordNet." , "index" ;
+        sh:datatype       xsd:int ;
+        sh:description    "Index is an attribute of the UBY-LMF class Sense.\nIt encodes a ranking of the senses according to their frequency which is provided, e.g., by WordNet." ;
+        sh:maxInclusive   2147483647 ;
+        sh:minInclusive   -2147483648 ;
+        sh:name           "index" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#index> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#c37ee528ce8b66b266dfb3eea8f1925a>
+        a               sh:PropertyShape ;
+        rdfs:label      "As opposed to hasTag proper, the string representation specifies only the beginning of a concrete annotation.\nThe respective linguistic annotation then applies to every element whose annotation (tag) startsWith this substring." ;
+        sh:description  "As opposed to hasTag proper, the string representation specifies only the beginning of a concrete annotation.\nThe respective linguistic annotation then applies to every element whose annotation (tag) startsWith this substring." ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         olia_system:hasTagStartingWith .
+
+<https://astrea.linkeddata.es/shapes#c4c6df93b18eb3031b3ae06e5cc0f8db>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-4151" ;
+        rdfs:label        "incorporatedSemArg" ;
+        sh:name           "incorporatedSemArg" ;
+        sh:nodeKind       sh:Literal , sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#incorporatedSemArg> .
+
+<https://astrea.linkeddata.es/shapes#61210ec0a63c06e4c83103a523b72a06>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-3519" ;
+        rdfs:label        "tense" ;
+        sh:name           "tense" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#Tense> .
+
+<https://astrea.linkeddata.es/shapes#f21b5b851099b4ca986281da12e5ea6d>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-1975" ;
+        rdfs:label        "externalReference" ;
+        sh:name           "externalReference" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#externalReference> .
+
+<https://astrea.linkeddata.es/shapes#1872d82f96ec31fea23419100b131868>
+        a            sh:PropertyShape ;
+        rdfs:label   "complementizer" ;
+        sh:class     <http://purl.org/olia/ubyCat.owl#Complementizer> ;
+        sh:name      "complementizer" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#hasComplementizer> .
+
+<https://astrea.linkeddata.es/shapes#d6c37959d63f6bc63d9c2408d50b6a77>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://uby.googlecode.com/files/UBY_LMF_0_2_0.dtd" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#SyntacticArgument> .
+
+<https://astrea.linkeddata.es/shapes#d0488f624c183926ce9f3adfd737b1fe>
+        a               sh:PropertyShape ;
+        rdfs:label      "hasTagMatching is a subproperty of hasTag, so that results can be retrieved if the regular expression match is requested, but an exact value with reserved characters is defined\n\t" , "hasTagMatching allows to provide regular expressions as those used in XSLT and XPath, see http://www.w3.org/TR/xquery-operators/#func-matches" ;
+        sh:description  "hasTagMatching is a subproperty of hasTag, so that results can be retrieved if the regular expression match is requested, but an exact value with reserved characters is defined\n\t" , "hasTagMatching allows to provide regular expressions as those used in XSLT and XPath, see http://www.w3.org/TR/xquery-operators/#func-matches" ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         olia_system:hasTagMatching .
+
+<https://astrea.linkeddata.es/shapes#8356b72c08396472dfb2b14f3866bd69>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-4617" ;
+        rdfs:label        "isHead" ;
+        sh:datatype       xsd:boolean ;
+        sh:name           "isHead" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#isHead> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#14bd5fff5dca75589463215a75945da3>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/olia/ubyCat.owl#SemanticFeature> .
+
+<https://astrea.linkeddata.es/shapes#08afec2f64bf99f0147572ac4299d272>
+        a               sh:NodeShape ;
+        sh:description  "UnitsOfAnnotation and Relations can be described in a more detailed way by the features that are attached to them, e.g., case, number, or aspect. Features are, however, not subject to further annotations (by means of hasFeature), they are thus disjoint from Relations and UnitsOfAnnotation." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  olia_system:Feature .
+
+<https://astrea.linkeddata.es/shapes#bf1321f839e908d22b72f19087989ade>
+        a            sh:PropertyShape ;
+        rdfs:label   "tense" ;
+        sh:class     <http://purl.org/olia/ubyCat.owl#Tense> ;
+        sh:name      "tense" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#has_tense> .
+
+<https://astrea.linkeddata.es/shapes#6993b6568b019b01ede3074116561bde>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-2720" ;
+        rdfs:label        "case" ;
+        sh:name           "case" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#Case> .
+
+<https://astrea.linkeddata.es/shapes#05c2fbbe092b285b0831d58a94c28f69>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.monnet-project.eu/lemon#SemanticLabel> .
+
+<https://astrea.linkeddata.es/shapes#9ba5f716ed2ea63a9bd4a3c4787d4670>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-251" ;
+        rdfs:label        "grammaticalNumber" ;
+        sh:description    "In UBY-LMF, number is also an attribute of the UBY-LMF class SyntacticArgument and specifies the grammatical number of an argument.\nExample: These types of fish mix well together." ;
+        sh:name           "grammaticalNumber" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#GrammaticalNumber> .
+
+<https://astrea.linkeddata.es/shapes#74a239a4f1b18ba55b41b8d6cf2902a5>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-4391" ;
+        rdfs:label        "perspectivalized" ;
+        sh:datatype       xsd:boolean ;
+        sh:name           "perspectivalized" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#perspectivalized> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#a1d844436f228c17a9906ca33258de3a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://uby.googlecode.com/files/UBY_LMF_0_2_0.dtd" , "http://www.monnet-project.eu/lemon#sense" ;
+        sh:class          <http://purl.org/olia/ubyCat.owl#Sense> ;
+        sh:equals         <http://www.monnet-project.eu/lemon#sense> ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#sense> .
+
+<https://astrea.linkeddata.es/shapes#2aa46ead7b4306607e5ede3666c861a8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-1366" ;
+        rdfs:label        "preposition" , "Preposition is an attribute of the UBY-LMF class SyntacticArgument and specifies the particular preposition to be used in prepositional complements that can either be realized as PP or as preposition and subordinate clause.\nExample: That depends on who did it." ;
+        sh:description    "Preposition is an attribute of the UBY-LMF class SyntacticArgument and specifies the particular preposition to be used in prepositional complements that can either be realized as PP or as preposition and subordinate clause.\nExample: That depends on who did it." ;
+        sh:name           "preposition" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#preposition> .
+
+<https://astrea.linkeddata.es/shapes#aff723be3faf6b5cfc1e0136901569a2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-1296" ;
+        rdfs:label        "grammaticalFunction" ;
+        sh:name           "grammaticalFunction" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#GrammaticalFunction> .
+
+<https://astrea.linkeddata.es/shapes#e18d96945a42fb313bc5952926c0ce2a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-4361" ;
+        rdfs:label        "corpus" ;
+        sh:name           "corpus" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#corpus> .
+
+<https://astrea.linkeddata.es/shapes#cb530d40d9c4c59244a2e2afbd5c3e71>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-1971" ;
+        rdfs:label        "relType" ;
+        sh:name           "relType" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#RelType> .
+
+<https://astrea.linkeddata.es/shapes#b8f2b46b3bb2de0ef87d99e36ebdcee2>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://www.monnet-project.eu/lemon#LexicalSense" , "http://uby.googlecode.com/files/UBY_LMF_0_2_0.dtd" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#Sense> , <http://www.monnet-project.eu/lemon#LexicalSense> .
+
+<https://astrea.linkeddata.es/shapes#66a0259bc7c5944ad0aa47dc020f581f>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/olia/ubyCat.owl#MetaFeature> .
+
+<https://astrea.linkeddata.es/shapes#09f500fd72ba44f5d26773e99148760a>
+        a            sh:PropertyShape ;
+        rdfs:label   "coreType" ;
+        sh:class     <http://purl.org/olia/ubyCat.owl#CoreType> ;
+        sh:name      "coreType" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#hasCoreType> .
+
+<https://astrea.linkeddata.es/shapes#2639bb2c85bd9d48638b0ac4a6c68aee>
+        a            sh:PropertyShape ;
+        sh:class     <http://purl.org/olia/ubyCat.owl#SenseAxisType> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#hasSenseAxisType> .
+
+<https://astrea.linkeddata.es/shapes#d5a848eb4bd760b98703b97ec93a91ee>
+        a               sh:NodeShape ;
+        rdfs:label      "lexical data structure" , "complex lexical feature" , "lexical feature structure" ;
+        sh:description  "LexicalFeatureStructure is a complex lexical Feature Structure (with features and feature values) and corresponds to a class in LMF."@en ;
+        sh:name         "complex lexical feature" , "lexical data structure" , "lexical feature structure" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/olia/ubyCat.owl#LexicalFeatureStructure> .
+
+<https://astrea.linkeddata.es/shapes#235706608374b4aebe6a81c13a33e497>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-2211" ;
+        rdfs:label        "quantification" , "In UBY-LMF, quantification is an attribute of the class SemanticLabel. It can be used, if the value of the semantic label is annotated with a score, e.g. type=sentiment, label=positive, quantification=strong.\n" ;
+        sh:description    "In UBY-LMF, quantification is an attribute of the class SemanticLabel. It can be used, if the value of the semantic label is annotated with a score, e.g. type=sentiment, label=positive, quantification=strong.\n" ;
+        sh:name           "quantification" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#quantification> .
+
+<https://astrea.linkeddata.es/shapes#97d4e418ab0a172b03d61b170fc205d3>
+        a            sh:PropertyShape ;
+        rdfs:label   "grammaticalNumber" ;
+        sh:class     <http://purl.org/olia/ubyCat.owl#GrammaticalNumber> ;
+        sh:name      "grammaticalNumber" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#has_grammaticalNumber> .
+
+<https://astrea.linkeddata.es/shapes#ed16013545060a21d44c695ebd0c24f8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-4626" ;
+        rdfs:label        "isBreakBefore" ;
+        sh:datatype       xsd:boolean ;
+        sh:name           "isBreakBefore" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#isBreakBefore> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#1b847aa99996bbacc881bb5f0a03756f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-2511" ;
+        rdfs:label        "generator" ;
+        sh:name           "generator" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#generator> .
+
+<https://astrea.linkeddata.es/shapes#46eb47aa41663a6a719a8b8399f1bd5a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://uby.googlecode.com/files/UBY_LMF_0_2_0.dtd" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#SenseExample> , <http://www.monnet-project.eu/lemon#UsageExample> .
+
+<https://astrea.linkeddata.es/shapes#d97f41c559d5c8fcce1fc6d8e2f275ed>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-4622" ;
+        rdfs:label        "optional" ;
+        sh:datatype       xsd:boolean ;
+        sh:name           "optional" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#optionalArgument> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#14bb87553d2efbe17c96a871c6539268>
+        a            sh:PropertyShape ;
+        rdfs:label   "case" ;
+        sh:class     <http://purl.org/olia/ubyCat.owl#Case> ;
+        sh:name      "case" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#has_case> .
+
+<https://astrea.linkeddata.es/shapes#cff58f94c07cc1924eba6ee5a6418650>
+        a               sh:NodeShape ;
+        rdfs:label      "relType" ;
+        sh:description  "In UBY-LMF, relType is an attribute of the RelatedForm class which encodes links to derivationally related lexical entries or senses." ;
+        sh:name         "relType" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/olia/ubyCat.owl#DerivationType> .
+
+<https://astrea.linkeddata.es/shapes#af43290acf5c06ed77c64850fdaae18c>
+        a            sh:PropertyShape ;
+        rdfs:label   "monolingualExternalRef" ;
+        sh:class     <http://purl.org/olia/ubyCat.owl#MonolingualExternalRef> ;
+        sh:name      "monolingualExternalRef" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#monolingualExternalRef> .
+
+<https://astrea.linkeddata.es/shapes#7ae47a074e9e77ed862ccbe866d4a3ad>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://uby.googlecode.com/files/UBY_LMF_0_2_0.dtd" ;
+        rdfs:label        "SenseRelation" ;
+        sh:equals         <http://www.monnet-project.eu/lemon#senseRelation> ;
+        sh:name           "SenseRelation" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#senseRelation> .
+
+<https://astrea.linkeddata.es/shapes#f93f1f42466c9bb3a5766345ac4f5402>
+        a            sh:PropertyShape ;
+        rdfs:label   "position" ;
+        sh:name      "position" ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#hasPosition> .
+
+<https://astrea.linkeddata.es/shapes#7e596f2d29267599affd960f0ef0633a>
+        a               sh:NodeShape ;
+        rdfs:label      "senseAxisType" ;
+        sh:description  "In Uby-LMF, the attribute senseAxisType of the SenseAxis class indicates, whether the type of linking between to senses or between two synsets. Example values are monolingualSenseAlignment and crosslingualSenseAlignment" ;
+        sh:name         "senseAxisType" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/olia/ubyCat.owl#SenseAxisType> .
+
+<https://astrea.linkeddata.es/shapes#f5b6e9a50fac8b1cf284b25bd81242e4>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-4621" ;
+        rdfs:label        "prepositionType" , "PrepositionType is an attribute of the UBY-LMF class SyntacticArgument and specifies the particular preposition type (e.g. locative, directional) to be used in prepositional complements.\nThe preposition type is specified in VerbNet." ;
+        sh:description    "PrepositionType is an attribute of the UBY-LMF class SyntacticArgument and specifies the particular preposition type (e.g. locative, directional) to be used in prepositional complements.\nThe preposition type is specified in VerbNet." ;
+        sh:name           "prepositionType" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#prepositionType> .
+
+<https://astrea.linkeddata.es/shapes#cf8b6e3aa1a6dde11566320b8fe0a8e2>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-3764" ;
+        rdfs:label        "usage" ;
+        sh:name           "usage" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#usage> .
+
+<https://astrea.linkeddata.es/shapes#99703c8ce8ad78986feb3393b57493a1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-3385" ;
+        rdfs:label        "person" ;
+        sh:name           "person" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#Person> .
+
+<https://astrea.linkeddata.es/shapes#ee66a1cbc41d06634b0a4764768a181a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-264" ;
+        rdfs:label        "hyphenation" ;
+        sh:name           "hyphenation" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#hyphenation> .
+
+<https://astrea.linkeddata.es/shapes#a24113cfc3d212b05b95e006fd1e48ef>
+        a            sh:PropertyShape ;
+        rdfs:label   "degree" ;
+        sh:class     <http://purl.org/olia/ubyCat.owl#Degree> ;
+        sh:name      "degree" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#has_degree> .
+
+<https://astrea.linkeddata.es/shapes#6f4458b2ec5d61ad9dfe47ab6cbf2601>
+        a            sh:PropertyShape ;
+        rdfs:label   "syntacticCategory" ;
+        sh:class     <http://purl.org/olia/ubyCat.owl#SyntacticCategory> ;
+        sh:name      "syntacticCategory" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#hasSyntacticCategory> .
+
+<https://astrea.linkeddata.es/shapes#70217fed016b4533460cfe78d6964648>
+        a               sh:NodeShape ;
+        sh:description  "SyntacticFeature groups attributes of UBY-LMF classes from the ISO LMF Syntax extension package." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/olia/ubyCat.owl#SyntacticFeature> .
+
+<https://astrea.linkeddata.es/shapes#6082bd6c90875b90bda605f5868a5c26>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-1427" ;
+        rdfs:label        "verbFormMood" ;
+        sh:name           "verbFormMood" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#VerbFormMood> .
+
+<https://astrea.linkeddata.es/shapes#a7b4d01e9cf7e5f4c02fcb1844c3dbd0>
+        a               sh:NodeShape ;
+        sh:description  "This owl:Class corresponds to the ISO LMF-class Synset." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#af43290acf5c06ed77c64850fdaae18c> ;
+        sh:targetClass  <http://purl.org/olia/ubyCat.owl#Synset> .
+
+<https://astrea.linkeddata.es/shapes#4e216fe998d3169d77101810bf6cf900>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-396" ;
+        rdfs:label        "partOfSpeech" ;
+        sh:name           "partOfSpeech" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#has_partOfSpeech> .
+
+<https://astrea.linkeddata.es/shapes#0e17bf326fbead39dd2d560db20b96b3>
+        a               sh:PropertyShape ;
+        rdfs:label      "A Relation is a directed edge between a source and a target concept." ;
+        sh:class        olia_system:UnitOfAnnotation ;
+        sh:description  "A Relation is a directed edge between a source and a target concept." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         olia_system:hasTarget .
+
+<https://astrea.linkeddata.es/shapes#db2efd5ac421722be869ad3bee373f08>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-2250" ;
+        rdfs:label        "sound" ;
+        sh:name           "sound" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#sound> .
+
+<https://astrea.linkeddata.es/shapes#48954740da5c3ddf851e61aad99e7891>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://uby.googlecode.com/files/UBY_LMF_0_2_0.dtd" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#SemanticPredicate> .
+
+<https://astrea.linkeddata.es/shapes#0ebb2cb4e74c156c40f2d2cd161d0a80>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.org/olia/ubyCat.owl" ;
+        rdfs:label        "WordFormAttribute" ;
+        sh:name           "WordFormAttribute" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#WordFormAttribute> .
+
+<https://astrea.linkeddata.es/shapes#94cea30f4bd8c39e13b50bb356b692a9>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      olia_system:hasSource .
+
+<https://astrea.linkeddata.es/shapes#a9b96487bbb10a7a9c84a4cc9ab13c9a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-1857" ;
+        sh:description    "Linguistic annotations pertain to either structural entities (words, tokens, constituents, sentences => UnitOfAnnotation), relations between these (dependency, dominance, coreference, etc. => Relation), or grammatical features attached to these (case, gender, number, agreement, tense, mood, aspect, ... => Feature)." , "label: Text attached to an element" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#d63139cbf3189ba00345ea25904c240a> ;
+        sh:targetClass    olia_system:LinguisticAnnotation .
+
+<https://astrea.linkeddata.es/shapes#99afb825cb4b917941388f5ba6c7bc90>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-3466" ;
+        rdfs:label        "semanticRole" ;
+        sh:name           "semanticRole" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#semanticRole> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#69c4939928fef2c8e357421820219cdb> , <https://astrea.linkeddata.es/shapes#a24113cfc3d212b05b95e006fd1e48ef> , <https://astrea.linkeddata.es/shapes#287df71d4e8c5645f350e57bd9881d6c> , <https://astrea.linkeddata.es/shapes#c4c6df93b18eb3031b3ae06e5cc0f8db> , <https://astrea.linkeddata.es/shapes#d97f41c559d5c8fcce1fc6d8e2f275ed> , <https://astrea.linkeddata.es/shapes#85a793b8d0668e91c327bce998bfdc5e> , <https://astrea.linkeddata.es/shapes#ed563270c0f4cd89608aad78e656e43f> , <https://astrea.linkeddata.es/shapes#ed16013545060a21d44c695ebd0c24f8> , <https://astrea.linkeddata.es/shapes#f21b5b851099b4ca986281da12e5ea6d> , <https://astrea.linkeddata.es/shapes#b8f2b46b3bb2de0ef87d99e36ebdcee2> , <https://astrea.linkeddata.es/shapes#d325616d4aa82f2d48f05cdd2040a74b> , <https://astrea.linkeddata.es/shapes#07488fbc58c3731e7493ffd91397765f> , <https://astrea.linkeddata.es/shapes#add54153926ea758f18c56dd6dff07f9> , <https://astrea.linkeddata.es/shapes#add13a1137bb36761160b0a7c62890b5> , <https://astrea.linkeddata.es/shapes#6993b6568b019b01ede3074116561bde> , <https://astrea.linkeddata.es/shapes#db2efd5ac421722be869ad3bee373f08> , <https://astrea.linkeddata.es/shapes#bbf1da20d23763765d267eb161a14ed3> , <https://astrea.linkeddata.es/shapes#c37ee528ce8b66b266dfb3eea8f1925a> , <https://astrea.linkeddata.es/shapes#a9b96487bbb10a7a9c84a4cc9ab13c9a> , <https://astrea.linkeddata.es/shapes#4ab126d357f013fb5234cbc6fc61614e> , <https://astrea.linkeddata.es/shapes#cff58f94c07cc1924eba6ee5a6418650> , <https://astrea.linkeddata.es/shapes#a1d844436f228c17a9906ca33258de3a> , <https://astrea.linkeddata.es/shapes#50df0c2e8c6dfe2f85e53cc02ef7f7b3> , <https://astrea.linkeddata.es/shapes#e18d96945a42fb313bc5952926c0ce2a> , <https://astrea.linkeddata.es/shapes#f93f1f42466c9bb3a5766345ac4f5402> , <https://astrea.linkeddata.es/shapes#70217fed016b4533460cfe78d6964648> , <https://astrea.linkeddata.es/shapes#8ee7b2cd1923558e26e275d864d547c4> , <https://astrea.linkeddata.es/shapes#b90f476c4b0d1bc7c394a58a212ad6c6> , <https://astrea.linkeddata.es/shapes#83d4be982ecdc3ee3c89bac75ebe069c> , <https://astrea.linkeddata.es/shapes#2cb6964f2923c806d79edd3d0ec6cbfa> , <https://astrea.linkeddata.es/shapes#b9ced691783b43a313dbb515e7dbf950> , <https://astrea.linkeddata.es/shapes#4a7b3ec9bca8e3918321322163c77846> , <https://astrea.linkeddata.es/shapes#35dfae73716ba9517ca6662e96ea5ba5> , <https://astrea.linkeddata.es/shapes#cb530d40d9c4c59244a2e2afbd5c3e71> , <https://astrea.linkeddata.es/shapes#ba2675f8f7ce3b1fe309d1700f5d45e5> , <https://astrea.linkeddata.es/shapes#03da601673af186b45dc62f17b1d574c> , <https://astrea.linkeddata.es/shapes#0c6fe148196cf6358b69661f656fb8cd> , <https://astrea.linkeddata.es/shapes#14bd5fff5dca75589463215a75945da3> , <https://astrea.linkeddata.es/shapes#9d4819c87ce75e39d07a673b0f0cebad> , <https://astrea.linkeddata.es/shapes#d5a848eb4bd760b98703b97ec93a91ee> , <https://astrea.linkeddata.es/shapes#9ba5f716ed2ea63a9bd4a3c4787d4670> , <https://astrea.linkeddata.es/shapes#16fc4d3bb1408be4a8bdab51e6564d27> , <https://astrea.linkeddata.es/shapes#f5b6e9a50fac8b1cf284b25bd81242e4> , <https://astrea.linkeddata.es/shapes#bbb3adda5476c8885753b272c95aff52> , <https://astrea.linkeddata.es/shapes#1188c9575214e7ffc6b447b19e719f66> , <https://astrea.linkeddata.es/shapes#99afb825cb4b917941388f5ba6c7bc90> , <https://astrea.linkeddata.es/shapes#d6c37959d63f6bc63d9c2408d50b6a77> , <https://astrea.linkeddata.es/shapes#1e85b430028641e6ea31536eea131950> , <https://astrea.linkeddata.es/shapes#4c76f13e1549b16962ab8c8d4acf0c2e> , <https://astrea.linkeddata.es/shapes#d63139cbf3189ba00345ea25904c240a> , <https://astrea.linkeddata.es/shapes#4e216fe998d3169d77101810bf6cf900> , <https://astrea.linkeddata.es/shapes#1b60ec1697a4a37e9014bf248d9c1a26> , <https://astrea.linkeddata.es/shapes#1b847aa99996bbacc881bb5f0a03756f> , <https://astrea.linkeddata.es/shapes#77fa7099d302841d17fdb6738e01f663> , <https://astrea.linkeddata.es/shapes#66a0259bc7c5944ad0aa47dc020f581f> , <https://astrea.linkeddata.es/shapes#a3d07133022035c6139d60a983ec6b3b> , <https://astrea.linkeddata.es/shapes#1e682d331748591ad97395ad3dbc58f0> , <https://astrea.linkeddata.es/shapes#97d4e418ab0a172b03d61b170fc205d3> , <https://astrea.linkeddata.es/shapes#c0d986fe36bf1408d713abc2756a0e4c> , <https://astrea.linkeddata.es/shapes#7b55e1bc396ffe5d93182d08c7493160> , <https://astrea.linkeddata.es/shapes#129714a73d40aa66047a60900e109c57> , <https://astrea.linkeddata.es/shapes#235706608374b4aebe6a81c13a33e497> , <https://astrea.linkeddata.es/shapes#a7b4d01e9cf7e5f4c02fcb1844c3dbd0> , <https://astrea.linkeddata.es/shapes#7e596f2d29267599affd960f0ef0633a> , <https://astrea.linkeddata.es/shapes#7e4842702cda63b4d9f1092e8034d3e3> , <https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5> , <https://astrea.linkeddata.es/shapes#08afec2f64bf99f0147572ac4299d272> , <https://astrea.linkeddata.es/shapes#2a2ffda12337b3ad665820ecf15824d7> , <https://astrea.linkeddata.es/shapes#fbd6b242ad5343213192958081058b81> , <https://astrea.linkeddata.es/shapes#d4889e8f744e13ff412318c7ef536653> , <https://astrea.linkeddata.es/shapes#d92002880fcfd776222c05c5c2d486cc> , <https://astrea.linkeddata.es/shapes#94cea30f4bd8c39e13b50bb356b692a9> , <https://astrea.linkeddata.es/shapes#2967b2e8f0f7457bf361d0a6d7c0806c> , <https://astrea.linkeddata.es/shapes#48954740da5c3ddf851e61aad99e7891> , <https://astrea.linkeddata.es/shapes#44b3cf3a75d695c30a45cfdb8bfcfcb7> , <https://astrea.linkeddata.es/shapes#8356b72c08396472dfb2b14f3866bd69> , <https://astrea.linkeddata.es/shapes#bfa128f18dd158c7514b5972a017816d> , <https://astrea.linkeddata.es/shapes#9e3d0da0bd590ea82a2808fdb42a60c0> , <https://astrea.linkeddata.es/shapes#2aa46ead7b4306607e5ede3666c861a8> , <https://astrea.linkeddata.es/shapes#0e17bf326fbead39dd2d560db20b96b3> , <https://astrea.linkeddata.es/shapes#1872d82f96ec31fea23419100b131868> , <https://astrea.linkeddata.es/shapes#5889bd157cc063344df0ded01a639354> , <https://astrea.linkeddata.es/shapes#949591e2aba705fd85b9d4e5951ecba5> , <https://astrea.linkeddata.es/shapes#f60db76b46f83213b6c23c46f37d46d0> , <https://astrea.linkeddata.es/shapes#cb96351e3b94fa323ee11c70ea4dc196> , <https://astrea.linkeddata.es/shapes#74a239a4f1b18ba55b41b8d6cf2902a5> , <https://astrea.linkeddata.es/shapes#bf1321f839e908d22b72f19087989ade> , <https://astrea.linkeddata.es/shapes#9d8b5718d52a090b2b2115f6b1443d1c> , <https://astrea.linkeddata.es/shapes#6efb0cdb8b056cf1df0b49748ff5aae3> , <https://astrea.linkeddata.es/shapes#6efe591332a63cbe99bb7096e295c02b> , <https://astrea.linkeddata.es/shapes#8b8e824b0eded3a729f060d10e5a3b50> , <https://astrea.linkeddata.es/shapes#e19c958fd828b835f8c1ea1b44e70856> , <https://astrea.linkeddata.es/shapes#4c65a5c22f3ad73cdc5aa5b1724fcb71> , <https://astrea.linkeddata.es/shapes#7ae47a074e9e77ed862ccbe866d4a3ad> , <https://astrea.linkeddata.es/shapes#c46703c3a2f5ef9c79443d49053607d8> , <https://astrea.linkeddata.es/shapes#6082bd6c90875b90bda605f5868a5c26> , <https://astrea.linkeddata.es/shapes#e62b508155f2de7511ba1311921d2204> , <https://astrea.linkeddata.es/shapes#da5601e7e09113d9910ab75cace4eb6e> , <https://astrea.linkeddata.es/shapes#aff723be3faf6b5cfc1e0136901569a2> , <https://astrea.linkeddata.es/shapes#ee66a1cbc41d06634b0a4764768a181a> , <https://astrea.linkeddata.es/shapes#1f09093ec113c18d3b31add04a2ed90e> , <https://astrea.linkeddata.es/shapes#f7409960b2502b4d06724e1393332cd4> , <https://astrea.linkeddata.es/shapes#6f4458b2ec5d61ad9dfe47ab6cbf2601> , <https://astrea.linkeddata.es/shapes#99703c8ce8ad78986feb3393b57493a1> , <https://astrea.linkeddata.es/shapes#46eb47aa41663a6a719a8b8399f1bd5a> , <https://astrea.linkeddata.es/shapes#0ebb2cb4e74c156c40f2d2cd161d0a80> , <https://astrea.linkeddata.es/shapes#ad465dc9899d31a9854d440186327dd2> , <https://astrea.linkeddata.es/shapes#c94bbfcae04ba4d3331074b24c113a48> , <https://astrea.linkeddata.es/shapes#76873f15f0e3b091613877a8624abd71> , <https://astrea.linkeddata.es/shapes#cf8b6e3aa1a6dde11566320b8fe0a8e2> , <https://astrea.linkeddata.es/shapes#2639bb2c85bd9d48638b0ac4a6c68aee> , <https://astrea.linkeddata.es/shapes#d0488f624c183926ce9f3adfd737b1fe> , <https://astrea.linkeddata.es/shapes#ce581f1cea7c6971268b46b4dc6b88cd> , <https://astrea.linkeddata.es/shapes#affc2bd33ecfba6523fb1d647e09a575> , <https://astrea.linkeddata.es/shapes#af43290acf5c06ed77c64850fdaae18c> , <https://astrea.linkeddata.es/shapes#5ead423ac5b55c80faf055feb7061a6b> , <https://astrea.linkeddata.es/shapes#05c2fbbe092b285b0831d58a94c28f69> , <https://astrea.linkeddata.es/shapes#14bb87553d2efbe17c96a871c6539268> , <https://astrea.linkeddata.es/shapes#cb0e6085c1fa932cb5df2252c396b02d> , <https://astrea.linkeddata.es/shapes#09f500fd72ba44f5d26773e99148760a> , <https://astrea.linkeddata.es/shapes#a9808866313ca45e2015ece0d3709623> , <https://astrea.linkeddata.es/shapes#9cd8dd38aad9891557433694dc41035a> , <https://astrea.linkeddata.es/shapes#764a85ff13bbc177d248f1679eef874a> , <https://astrea.linkeddata.es/shapes#02e3c586754b3b9eff03b7f9fe62781c> , <https://astrea.linkeddata.es/shapes#61210ec0a63c06e4c83103a523b72a06> , <https://astrea.linkeddata.es/shapes#674f445d57a8e16165aecc0b5fb62cb4> , <https://astrea.linkeddata.es/shapes#6c47b5ec63cc247a589313accd3768dd> , <https://astrea.linkeddata.es/shapes#a6e1360e9eedd003c212e2dd1e203863> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/051024228> , <https://astrea.linkeddata.es/report/02028955817> , <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#4ab126d357f013fb5234cbc6fc61614e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-1971" ;
+        rdfs:label        "type" , "Type is an attribute of the UBY-LMF class SemanticLabel. It encodes the name of a SemanticLabel type, e.g.\ntype=semanticField (from WordNet or GermaNet).\nThe label attribute of SemanticLabel holds the corresponding value of the SemanticLabel, e.g. \nlabel=animate (for type=semanticField)." ;
+        sh:description    "Type is an attribute of the UBY-LMF class SemanticLabel. It encodes the name of a SemanticLabel type, e.g.\ntype=semanticField (from WordNet or GermaNet).\nThe label attribute of SemanticLabel holds the corresponding value of the SemanticLabel, e.g. \nlabel=animate (for type=semanticField)." ;
+        sh:name           "type" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#type> .
+
+<https://astrea.linkeddata.es/shapes#a3d07133022035c6139d60a983ec6b3b>
+        a            sh:PropertyShape ;
+        rdfs:label   "grammaticalFunction" ;
+        sh:class     <http://purl.org/olia/ubyCat.owl#GrammaticalFunction> ;
+        sh:name      "grammaticalFunction" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#hasGrammaticalFunction> .
+
+<https://astrea.linkeddata.es/shapes#e62b508155f2de7511ba1311921d2204>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://purl.org/olia/ubyCat.owl" ;
+        rdfs:label        "WordForm" ;
+        sh:name           "WordForm" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#WordForm> .
+
+<https://astrea.linkeddata.es/shapes#c46703c3a2f5ef9c79443d49053607d8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://uby.googlecode.com/files/UBY_LMF_0_2_0.dtd" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#Lemma> .
+
+<https://astrea.linkeddata.es/shapes#ffeaf0d3664c31215f614a64f5bb45a5>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.w3.org/2004/02/skos/core#Concept> .
+
+<https://astrea.linkeddata.es/shapes#949591e2aba705fd85b9d4e5951ecba5>
+        a               sh:NodeShape ;
+        sh:description  "A UnitOfAnnotation is a structural entity that can be annotated, e.g., a word, token, constituent, or another types of markable.\nWord classes, etc., are then modelled as indirect children of UnitOfAnnotation. The division between Features and classes of UnitsOfAnnotation follows conventional standards.\n    " ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  olia_system:UnitOfAnnotation .
+
+<https://astrea.linkeddata.es/shapes#9d4819c87ce75e39d07a673b0f0cebad>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-279" ;
+        rdfs:label        "languageIdentifier" ;
+        sh:name           "languageIdentifier" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#languageIdentifier> .
+
+<https://astrea.linkeddata.es/shapes#d4889e8f744e13ff412318c7ef536653>
+        a               sh:NodeShape ;
+        sh:description  "Between instances of two Categories, a Relation can be established that links these together, e.g., a dominance relation (constituent X is grammatical subject of sentence Y), a dependency relation (token X is a modifier of token Y), a discourse relation (discourse unit X is in contrast to discourse unit Y), an anaphoric relation (referring expression X is coreferent with referring expressing Y), an alignment relation (word X expresses the same meaning as word Y).\nNote that Relation and UnitOfAnnotation are not disjoint, because in some approaches, establishing a Relation between two concepts entails that a structural entity is formed, consisting of Relation and the Categories connected by the Relation, e.g., in Rhetorical Structure Theory (Mann and Thompson 1987)." ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#94cea30f4bd8c39e13b50bb356b692a9> , <https://astrea.linkeddata.es/shapes#0e17bf326fbead39dd2d560db20b96b3> , <https://astrea.linkeddata.es/shapes#f60db76b46f83213b6c23c46f37d46d0> , <https://astrea.linkeddata.es/shapes#b9ced691783b43a313dbb515e7dbf950> ;
+        sh:targetClass  olia_system:Relation ;
+        sh:targetClass  []  ;
+        sh:targetClass  []  .
+
+<https://astrea.linkeddata.es/shapes#ed563270c0f4cd89608aad78e656e43f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://uby.googlecode.com/files/UBY_LMF_0_2_0.dtd" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#SubcategorizationFrame> , <http://www.monnet-project.eu/lemon#Frame> .
+
+<https://astrea.linkeddata.es/shapes#ad465dc9899d31a9854d440186327dd2>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://www.monnet-project.eu/lemon#LexicalContext> .
+
+<https://astrea.linkeddata.es/shapes#da5601e7e09113d9910ab75cace4eb6e>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-1506" ;
+        rdfs:label        "syntacticCategory" ;
+        sh:name           "syntacticCategory" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#SyntacticCategory> .
+
+<https://astrea.linkeddata.es/shapes#1e85b430028641e6ea31536eea131950>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/olia/ubyCat.owl#DerivationalMorphology> .
+
+<https://astrea.linkeddata.es/shapes#69c4939928fef2c8e357421820219cdb>
+        a            sh:PropertyShape ;
+        rdfs:label   "grammaticalGender" ;
+        sh:class     <http://purl.org/olia/ubyCat.owl#GrammaticalGender> ;
+        sh:name      "grammaticalGender" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#has_grammaticalGender> .
+
+<https://astrea.linkeddata.es/shapes#1e682d331748591ad97395ad3dbc58f0>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-1325" ;
+        rdfs:label        "lexeme" , "Lexeme is an attribute of the UBY-LMF class SyntacticArgument and specifies a particular lexeme to be used in realizations of particular complements.\nExample (lexeme = es, ObjectComplement realized as zu-infinitive): Er schafft es, den Termin einzuhalten.\n* Er schafft, den Termin einzuhalten." ;
+        sh:description    "Lexeme is an attribute of the UBY-LMF class SyntacticArgument and specifies a particular lexeme to be used in realizations of particular complements.\nExample (lexeme = es, ObjectComplement realized as zu-infinitive): Er schafft es, den Termin einzuhalten.\n* Er schafft, den Termin einzuhalten." ;
+        sh:name           "lexeme" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#lexeme> .
+
+<https://astrea.linkeddata.es/report/02028955817>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/olia/system.owl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#764a85ff13bbc177d248f1679eef874a>
+        a               sh:NodeShape ;
+        rdfs:label      "exampleType" ;
+        sh:name         "exampleType" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/olia/ubyCat.owl#ExampleType> .
+
+<https://astrea.linkeddata.es/shapes#fbd6b242ad5343213192958081058b81>
+        a            sh:PropertyShape ;
+        rdfs:label   "determiner" ;
+        sh:class     <http://purl.org/olia/ubyCat.owl#Determiner> ;
+        sh:name      "determiner" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#hasDeterminer> .
+
+<https://astrea.linkeddata.es/shapes#affc2bd33ecfba6523fb1d647e09a575>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://purl.org/olia/ubyCat.owl#LinkingFeature> .
+
+<https://astrea.linkeddata.es/shapes#b9ced691783b43a313dbb515e7dbf950>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      olia_system:hasTarget .
+
+<https://astrea.linkeddata.es/shapes#d325616d4aa82f2d48f05cdd2040a74b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-1971" ;
+        rdfs:label        "type" ;
+        sh:description    "Type is an attribute of the UBY-LMF class SemanticLabel. It encodes the name of a SemanticLabel type, e.g.\ntype=semanticField (from WordNet or GermaNet).\nThe label attribute of SemanticLabel holds the corresponding value of the SemanticLabel, e.g. \nlabel=animate (for type=semanticField)." ;
+        sh:name           "type" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#Type> .
+
+<https://astrea.linkeddata.es/shapes#a9808866313ca45e2015ece0d3709623>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-3295" ;
+        rdfs:label        "lexicalized" ;
+        sh:datatype       xsd:boolean ;
+        sh:name           "lexicalized" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#lexicalized> ;
+        sh:pattern        "true|false|0|1" .
+
+<https://astrea.linkeddata.es/shapes#6efe591332a63cbe99bb7096e295c02b>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-1974" ;
+        rdfs:label        "externalSystem" ;
+        sh:name           "externalSystem" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/olia/ubyCat.owl#externalSystem> .
+
+<https://astrea.linkeddata.es/shapes#f60db76b46f83213b6c23c46f37d46d0>
+        a               sh:PropertyShape ;
+        rdfs:label      "A Relation is a directed edge between a source and a target concept." ;
+        sh:class        olia_system:UnitOfAnnotation ;
+        sh:description  "A Relation is a directed edge between a source and a target concept." ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         olia_system:hasSource .
+
+<https://astrea.linkeddata.es/shapes#4a7b3ec9bca8e3918321322163c77846>
+        a            sh:PropertyShape ;
+        rdfs:label   "syntacticProperty" ;
+        sh:class     <http://purl.org/olia/ubyCat.owl#SyntacticProperty> ;
+        sh:name      "syntacticProperty" ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://purl.org/olia/ubyCat.owl#hasSyntacticProperty> .
+
+<https://astrea.linkeddata.es/shapes#d92002880fcfd776222c05c5c2d486cc>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://uby.googlecode.com/files/UBY_LMF_0_2_0.dtd" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#Context> , <http://www.monnet-project.eu/lemon#LexicalContext> .
+
+<https://astrea.linkeddata.es/shapes#c94bbfcae04ba4d3331074b24c113a48>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  "http://www.isocat.org/datcat/DC-2779" ;
+        rdfs:label        "degree" ;
+        sh:name           "degree" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/olia/ubyCat.owl#Degree> .

@@ -1,0 +1,259 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#e209b2f543c0b06b5d0ac1a208f281a9>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#lowerCorner> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Position> ] .
+
+<https://astrea.linkeddata.es/shapes#b6d46cba7765af61c9caf415575522c6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> ;
+        rdfs:label        "upper corner" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Position> ;
+        sh:name           "upper corner" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#upperCorner> .
+
+<https://astrea.linkeddata.es/shapes#4156551e76a7761600c95fed0d6ce902>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> ;
+        rdfs:label        "Geometry object" ;
+        sh:description    "GM_Object (Figure 6) is the root class of the geometric object taxonomy and supports interfaces common to all geographically referenced geometric objects. GM_Object instances are sets of direct positions in a particular coordinate reference system. A GM_Object can be regarded as an infinite set of points that satisfies the set operation interfaces for a set of direct positions, TransfiniteSet<DirectPosition>. Since an infinite collection class cannot be implemented directly, a Boolean test for inclusion shall be provided by the GM_Object interface. This international standard concentrates on vector geometry classes, but future work may use GM_Object as a root class without modification.\nNOTE As a type, GM_Object does not have a well-defined default state or value representation as a data type. Instantiated subclasses of GM_Object will." ;
+        sh:name           "Geometry object" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#b59e32b855a3eb31b80d16e8b6b061da> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Object> , <http://www.opengis.net/ont/gml#AbstractGeometry> .
+
+<https://astrea.linkeddata.es/shapes#0b31d44f85e63ec60c945cae17c3dfcd>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#upperCorner> ;
+        sh:qualifiedMaxCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
+        sh:qualifiedValueShape  [ sh:class  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Position> ] .
+
+<https://astrea.linkeddata.es/shapes#e227a30b14e365798be8d70015fd83fe>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#srs> .
+
+<https://astrea.linkeddata.es/shapes#7c392cf58f162032b684acdb37340807>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> ;
+        rdfs:label        "spatial reference system" ;
+        sh:name           "spatial reference system" ;
+        sh:nodeKind       sh:BlankNodeOrIRI .
+
+<https://astrea.linkeddata.es/shapes#52fa7d5be2a13faabf244d9cfc3268c7>
+        a         sh:PropertyShape ;
+        sh:class  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Complex> .
+
+<https://astrea.linkeddata.es/shapes#7f3700865ffc0b867a4ef306b9ec1b39>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> ;
+        rdfs:label        "Geometry Complex" ;
+        sh:description    "geometric complex\nset of disjoint geometric primitives such that the boundary of each primitive can be represented as the union of other geometric primitives within the complex\n\nNOTE:  The geometric primitives in the set are mutually exclusive in the sense that no point is interior to more than one primitive.  The set is closed under boundary operations, meaning that for each element in the complex, there is a collection (also a complex) of geometric primitives that represents the boundary of that element." ;
+        sh:name           "Geometry Complex" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Complex> , <http://www.opengis.net/ont/gml#GeometricComplex> .
+
+<https://astrea.linkeddata.es/shapes#17fbf2a6bd5c562e01f3bfb7a01da78c>
+        a            sh:PropertyShape ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#coordinates> .
+
+<https://astrea.linkeddata.es/shapes#1e67e20dcdd509844278a76260e734a4>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#position> .
+
+<https://astrea.linkeddata.es/shapes#a9cad7f89330722d1e60279a9baadf60>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> ;
+        rdfs:label        "bounding box" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Envelope> ;
+        sh:name           "bounding box" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#boundingBox> .
+
+<https://astrea.linkeddata.es/shapes#53bc54c7d9023d1fd37ff35a21012f71>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#srs> .
+
+<https://astrea.linkeddata.es/shapes#80ef4eaff5a2926d322df593fbeb8905>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> ;
+        rdfs:label        "Orientable Curve" ;
+        sh:name           "Orientable Curve" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#OrientableCurve> , <http://www.opengis.net/ont/gml#OrientableCurve> .
+
+<https://astrea.linkeddata.es/shapes#b59e32b855a3eb31b80d16e8b6b061da>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#srs> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#17fbf2a6bd5c562e01f3bfb7a01da78c> , <https://astrea.linkeddata.es/shapes#7c392cf58f162032b684acdb37340807> , <https://astrea.linkeddata.es/shapes#7f3700865ffc0b867a4ef306b9ec1b39> , <https://astrea.linkeddata.es/shapes#52fa7d5be2a13faabf244d9cfc3268c7> , <https://astrea.linkeddata.es/shapes#4156551e76a7761600c95fed0d6ce902> , <https://astrea.linkeddata.es/shapes#fe8f86608abe128044eb6fb74441ead3> , <https://astrea.linkeddata.es/shapes#902cd1764831e82b676ceaa84f26491c> , <https://astrea.linkeddata.es/shapes#d862576cd71bc0f8964d9eea1e82c30a> , <https://astrea.linkeddata.es/shapes#8f63a47dda7f40e53ac193934d879adc> , <https://astrea.linkeddata.es/shapes#3c370e4e117f596e0c31de2423059e0f> , <https://astrea.linkeddata.es/shapes#26669dede9fef932742125a4e9b3c4b1> , <https://astrea.linkeddata.es/shapes#e605665641fc4f5316c65b13843d4118> , <https://astrea.linkeddata.es/shapes#141cc85d1ea5c6a6c91504b751018438> , <https://astrea.linkeddata.es/shapes#a9cad7f89330722d1e60279a9baadf60> , <https://astrea.linkeddata.es/shapes#80ef4eaff5a2926d322df593fbeb8905> , <https://astrea.linkeddata.es/shapes#4373b8bb769918035246cbcdfa75b2c4> , <https://astrea.linkeddata.es/shapes#6c54306c615062bfd8dd6ef2357bfde0> , <https://astrea.linkeddata.es/shapes#0b31d44f85e63ec60c945cae17c3dfcd> , <https://astrea.linkeddata.es/shapes#53bc54c7d9023d1fd37ff35a21012f71> , <https://astrea.linkeddata.es/shapes#1e83360631b4b5dc1eaf909a5aa13564> , <https://astrea.linkeddata.es/shapes#b6d46cba7765af61c9caf415575522c6> , <https://astrea.linkeddata.es/shapes#483103549757a198e47c01951640b78a> , <https://astrea.linkeddata.es/shapes#1e67e20dcdd509844278a76260e734a4> , <https://astrea.linkeddata.es/shapes#af711c220c4fb187f65e00bdcc25bfc8> , <https://astrea.linkeddata.es/shapes#e209b2f543c0b06b5d0ac1a208f281a9> , <https://astrea.linkeddata.es/shapes#b59e32b855a3eb31b80d16e8b6b061da> , <https://astrea.linkeddata.es/shapes#e227a30b14e365798be8d70015fd83fe> , <https://astrea.linkeddata.es/shapes#9c3d84db0106a43c4c4ccb2933800eab> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> , <https://astrea.linkeddata.es/report/01133407348> , <https://astrea.linkeddata.es/report/1003882582> .
+
+<https://astrea.linkeddata.es/shapes#af711c220c4fb187f65e00bdcc25bfc8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> ;
+        rdfs:label        "lower corner" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Position> ;
+        sh:name           "lower corner" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#lowerCorner> .
+
+<https://astrea.linkeddata.es/shapes#9c3d84db0106a43c4c4ccb2933800eab>
+        a         sh:PropertyShape ;
+        sh:class  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Aggregate> .
+
+<https://astrea.linkeddata.es/shapes#1e83360631b4b5dc1eaf909a5aa13564>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> ;
+        rdfs:label        "Geometry Aggregate" ;
+        sh:name           "Geometry Aggregate" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Aggregate> .
+
+<https://astrea.linkeddata.es/shapes#4373b8bb769918035246cbcdfa75b2c4>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> ;
+        rdfs:label        "Orientable primitive" ;
+        sh:name           "Orientable primitive" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#OrientablePrimitive> .
+
+<https://astrea.linkeddata.es/shapes#3c370e4e117f596e0c31de2423059e0f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> ;
+        rdfs:label        "Geometry position" ;
+        sh:description    "DirectPosition object data types (Figure 14) hold the coordinates for a position within some coordinate reference system. The coordinate reference system is described in ISO 19111. Since DirectPositions, as data types, will often be included in larger objects (such as GM_Objects) that have references to ISO19111::SC_CRS, the DirectPosition::cordinateReferenceSystem may be left NULL if this particular DirectPosition is included in a larger object with such a reference to a SC_CRS. In this case, the DirectPosition::coordinateReferenceSystem is implicitly assumed to take on the value of the containing object's SC_CRS." ;
+        sh:name           "Geometry position" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#53bc54c7d9023d1fd37ff35a21012f71> , <https://astrea.linkeddata.es/shapes#17fbf2a6bd5c562e01f3bfb7a01da78c> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Position> .
+
+<https://astrea.linkeddata.es/shapes#e605665641fc4f5316c65b13843d4118>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> ;
+        rdfs:label        "Solid" ;
+        sh:name           "Solid" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Solid> , <http://www.opengis.net/ont/gml#Solid> .
+
+<https://astrea.linkeddata.es/shapes#fe8f86608abe128044eb6fb74441ead3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> ;
+        rdfs:label        "Orientable Surface" ;
+        sh:name           "Orientable Surface" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#OrientableSurface> , <http://www.opengis.net/ont/gml#OrientableSurface> .
+
+<https://astrea.linkeddata.es/shapes#6c54306c615062bfd8dd6ef2357bfde0>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> ;
+        rdfs:label        "Surface" ;
+        sh:name           "Surface" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Surface> , <http://www.opengis.net/ont/gml#Surface> .
+
+<https://astrea.linkeddata.es/shapes#483103549757a198e47c01951640b78a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> ;
+        rdfs:label        "Geometry Primitive" ;
+        sh:description    "GM_Primitive (Figure 8) is the abstract root class of the geometric primitives. Its main purpose is to define the basic \"boundary\" operation that ties the primitives in each dimension together. A geometric primitive (GM_Primitive) is a geometric object that is not decomposed further into other primitives in the system. This includes curves and surfaces, even though they are composed of curve segments and surface patches, respectively. This composition is a strong aggregation: curve segments and surface patches cannot exist outside the context of a primitive.\nNOTE Most geometric primitives are decomposable infinitely many times. Adding a centre point to a line may split that line into two separate lines. A new curve drawn across a surface may divide that surface into two parts, each of which is a surface. This is the reason that the normal definition of primitive as \"non-decomposable\" is not plausible in a geometry model - the only non-decomposable object in geometry is a point.\nAny geometric object that is used to describe a feature is a collection of geometric primitives. A collection of geometric primitives may or may not be a geometric complex. Geometric complexes have additional properties such as closure by boundary operations and mutually exclusive component parts.\nGM_Primitive and GM_Complex share most semantics, in the meaning of operations, attributes and associations. There is an exception in that a GM_Primitive shall not contain its boundary (except in the trivial case of GM_Point where the boundary is empty), while a GM_Complex shall contain its boundary in all cases. This means that if an instantiated object implements GM_Object operations both as GM_Primitive and as a GM_Complex, the semantics of each set theoretic operation is determined by the its name resolution. Specifically, for a particular object such as GM_CompositeCurve, GM_Primitive::contains (returns FALSE for end points) is different from GM_Complex::contains (returns TRUE for end points). Further, if that object is cast as a GM_Primitive value and as a GM_Complex value, then the two values need not be equal as GM_Objects." ;
+        sh:name           "Geometry Primitive" ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#9c3d84db0106a43c4c4ccb2933800eab> , <https://astrea.linkeddata.es/shapes#52fa7d5be2a13faabf244d9cfc3268c7> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Primitive> , <http://www.opengis.net/ont/gml#AbstractGeometricPrimitive> .
+
+<https://astrea.linkeddata.es/report/1003882582>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#141cc85d1ea5c6a6c91504b751018438>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> ;
+        rdfs:label        "geometric position" ;
+        sh:class          <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Position> ;
+        sh:name           "geometric position" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#position> .
+
+<https://astrea.linkeddata.es/shapes#d862576cd71bc0f8964d9eea1e82c30a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> ;
+        rdfs:label        "Spatial point" ;
+        sh:name           "Spatial point" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#1e67e20dcdd509844278a76260e734a4> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Point> , <http://www.opengis.net/ont/gml#Point> .
+
+<https://astrea.linkeddata.es/shapes#26669dede9fef932742125a4e9b3c4b1>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> ;
+        rdfs:label        "Envelope" ;
+        sh:description    "GM_Envelope is often referred to as a minimum bounding box or rectangle. Regardless of dimension, a GM_Envelope can be represented without ambiguity as two direct positions (coordinate points). To encode a GM_Envelope, it is sufficient to encode these two points. This is consistent with all of the data types in this standard, their state is represented by their publicly accessible attributes." ;
+        sh:name           "Envelope" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#0b31d44f85e63ec60c945cae17c3dfcd> , <https://astrea.linkeddata.es/shapes#b6d46cba7765af61c9caf415575522c6> , <https://astrea.linkeddata.es/shapes#af711c220c4fb187f65e00bdcc25bfc8> , <https://astrea.linkeddata.es/shapes#e209b2f543c0b06b5d0ac1a208f281a9> , <https://astrea.linkeddata.es/shapes#e227a30b14e365798be8d70015fd83fe> ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Envelope> .
+
+<https://astrea.linkeddata.es/report/01133407348>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
+        <https://w3id.org/def/astrea#source>
+                "http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#902cd1764831e82b676ceaa84f26491c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> ;
+        rdfs:label        "Curve" ;
+        sh:name           "Curve" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Curve> , <http://www.opengis.net/ont/gml#Curve> .
+
+<https://astrea.linkeddata.es/shapes#8f63a47dda7f40e53ac193934d879adc>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> ;
+        rdfs:label        "coordinates" ;
+        sh:name           "coordinates" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#coordinates> .

@@ -1,0 +1,199 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#2a1219ccf20a3177359106ce33e4b587>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/opmv/ns> ;
+        rdfs:label        "wasPerformedBy"@en , "\n    wasPerformedBy is an object property to express that a process was performed by an agent. It is a sub-property of <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"#wasControlledBy\" xml:lang=\"en\">wasControlledBy</a>.\n  "^^rdf:XMLLiteral ;
+        sh:class          <http://purl.org/net/opmv/ns#Agent> ;
+        sh:description    "\n    wasPerformedBy is an object property to express that a process was performed by an agent. It is a sub-property of <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"#wasControlledBy\" xml:lang=\"en\">wasControlledBy</a>.\n  "^^rdf:XMLLiteral ;
+        sh:name           "wasPerformedBy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/opmv/ns#wasPerformedBy> .
+
+<https://astrea.linkeddata.es/shapes#f083ccef60d51ba53df8065e7a096ed8>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/opmv/ns> ;
+        rdfs:label        "wasUsedAt"@en , "\n    wasUsedAt is an object property to express that an artifact was used at a specific time <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"http://www.w3.org/2006/time#Instant\" xml:lang=\"en\">instant</a>. An artifact might not be used at the starting time of the process that actually consumed it. Hence, we provide a different time-related property to express when an artifact was used."^^rdf:XMLLiteral ;
+        sh:class          <http://www.w3.org/2006/time#Instant> ;
+        sh:description    "\n    wasUsedAt is an object property to express that an artifact was used at a specific time <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"http://www.w3.org/2006/time#Instant\" xml:lang=\"en\">instant</a>. An artifact might not be used at the starting time of the process that actually consumed it. Hence, we provide a different time-related property to express when an artifact was used."^^rdf:XMLLiteral ;
+        sh:name           "wasUsedAt"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/opmv/ns#wasUsedAt> .
+
+<https://astrea.linkeddata.es/shapes#31921518abf9b8867698f1fb5493edf8>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/net/opmv/ns#Agent> .
+
+<https://astrea.linkeddata.es/shapes#8a17bd52e805d8cd4626f9a86171d074>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/opmv/ns> ;
+        rdfs:label        "wasPerformedAt"@en , "\n      wasPerformedAt is an object property to express that a process was performed at a given time <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"http://www.w3.org/2006/time#Instant\" xml:lang=\"en\">instant</a> or during a given time <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"http://www.w3.org/2006/time#Interval\" xml:lang=\"en\">interval</a>.\n    "^^rdf:XMLLiteral ;
+        sh:class          <http://www.w3.org/2006/time#TemporalEntity> ;
+        sh:description    "\n      wasPerformedAt is an object property to express that a process was performed at a given time <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"http://www.w3.org/2006/time#Instant\" xml:lang=\"en\">instant</a> or during a given time <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"http://www.w3.org/2006/time#Interval\" xml:lang=\"en\">interval</a>.\n    "^^rdf:XMLLiteral ;
+        sh:name           "wasPerformedAt"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/opmv/ns#wasPerformedAt> .
+
+<https://astrea.linkeddata.es/shapes#8ee6070ecccae78157f5d2532984da11>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/opmv/ns> ;
+        rdfs:label        "used"@en , "used is an abstract property to express that an artifact was used by a process."@en ;
+        sh:class          <http://purl.org/net/opmv/ns#Artifact> ;
+        sh:description    "used is an abstract property to express that an artifact was used by a process."@en ;
+        sh:name           "used"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/opmv/ns#used> .
+
+<https://astrea.linkeddata.es/shapes#a739c38b654b09984a1f2a144d48c827>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/opmv/ns> ;
+        rdfs:label        "Process"@en ;
+        sh:description    "Process refers to an action or series of actions performed on or caused by artifacts, and resulting in new artifacts."@en ;
+        sh:name           "Process"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#31921518abf9b8867698f1fb5493edf8> , <https://astrea.linkeddata.es/shapes#dcb7915bd4735b53a007f3ba00efa2b5> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#03189ab83f716b0e8e770c0919609793> , <https://astrea.linkeddata.es/shapes#8ee6070ecccae78157f5d2532984da11> , <https://astrea.linkeddata.es/shapes#2a1219ccf20a3177359106ce33e4b587> , <https://astrea.linkeddata.es/shapes#e2fb8e590f01ff6ce19da7673bf5f888> , <https://astrea.linkeddata.es/shapes#5dc832a2986104e0c71c172c1020a374> , <https://astrea.linkeddata.es/shapes#665a27909ea1db90c9ea60a8bb24fd43> , <https://astrea.linkeddata.es/shapes#8a17bd52e805d8cd4626f9a86171d074> ;
+        sh:targetClass    <http://purl.org/net/opmv/ns#Process> .
+
+<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Agent> .
+
+<https://astrea.linkeddata.es/shapes#63cc68d7da47a9530c64d58d23f14f0b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/opmv/ns> ;
+        rdfs:label        "Agent"@en ;
+        sh:description    "Agent is a contextual entity acting as a catalyst of a process, enabling, facilitating, controlling, or affecting its execution."@en ;
+        sh:name           "Agent"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#eb631a2134547888b02925ae89914d82> ;
+        sh:targetClass    <http://purl.org/net/opmv/ns#Agent> , <http://xmlns.com/foaf/0.1/Agent> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#31921518abf9b8867698f1fb5493edf8> , <https://astrea.linkeddata.es/shapes#c4dc83f0ea71eca26e7fafcf2cea8d01> , <https://astrea.linkeddata.es/shapes#665a27909ea1db90c9ea60a8bb24fd43> , <https://astrea.linkeddata.es/shapes#5dc832a2986104e0c71c172c1020a374> , <https://astrea.linkeddata.es/shapes#03189ab83f716b0e8e770c0919609793> , <https://astrea.linkeddata.es/shapes#eb631a2134547888b02925ae89914d82> , <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> , <https://astrea.linkeddata.es/shapes#8ee6070ecccae78157f5d2532984da11> , <https://astrea.linkeddata.es/shapes#8a17bd52e805d8cd4626f9a86171d074> , <https://astrea.linkeddata.es/shapes#e2fb8e590f01ff6ce19da7673bf5f888> , <https://astrea.linkeddata.es/shapes#11adb9dbea6095dd7a55197ec7ccd837> , <https://astrea.linkeddata.es/shapes#c9f00d329b9142b7f262bffb2a9f05d6> , <https://astrea.linkeddata.es/shapes#a739c38b654b09984a1f2a144d48c827> , <https://astrea.linkeddata.es/shapes#6e43e4b7c00315560c35c39644eb5747> , <https://astrea.linkeddata.es/shapes#f083ccef60d51ba53df8065e7a096ed8> , <https://astrea.linkeddata.es/shapes#2a1219ccf20a3177359106ce33e4b587> , <https://astrea.linkeddata.es/shapes#63cc68d7da47a9530c64d58d23f14f0b> , <https://astrea.linkeddata.es/shapes#d3df01ef46cca77f21ed749b219e948f> , <https://astrea.linkeddata.es/shapes#dcb7915bd4735b53a007f3ba00efa2b5> , <https://astrea.linkeddata.es/shapes#5e9417baaeb7dd1b1a55c90b545f8a66> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#665a27909ea1db90c9ea60a8bb24fd43>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/opmv/ns> ;
+        rdfs:label        "wasControlledBy"@en , "wasControlledBy is an abstract property to express that a process was controlled an agent."@en ;
+        sh:class          <http://purl.org/net/opmv/ns#Agent> ;
+        sh:description    "wasControlledBy is an abstract property to express that a process was controlled an agent."@en ;
+        sh:name           "wasControlledBy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/opmv/ns#wasControlledBy> .
+
+<https://astrea.linkeddata.es/shapes#03189ab83f716b0e8e770c0919609793>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/opmv/ns> ;
+        rdfs:label        "wasStartedAt"@en , "\n      wasStartedAt is an object property to express that a process was started at a given time <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"http://www.w3.org/2006/time#Instant\" xml:lang=\"en\">instant</a>. The property chain defines that all processes, that were performed during a specific time period which began at a specific instant, were actually started at that specific time instant.\n    "^^rdf:XMLLiteral ;
+        sh:class          <http://www.w3.org/2006/time#Instant> ;
+        sh:description    "\n      wasStartedAt is an object property to express that a process was started at a given time <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"http://www.w3.org/2006/time#Instant\" xml:lang=\"en\">instant</a>. The property chain defines that all processes, that were performed during a specific time period which began at a specific instant, were actually started at that specific time instant.\n    "^^rdf:XMLLiteral ;
+        sh:name           "wasStartedAt"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/opmv/ns#wasStartedAt> .
+
+<https://astrea.linkeddata.es/shapes#c9f00d329b9142b7f262bffb2a9f05d6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/opmv/ns> ;
+        rdfs:label        "wasGeneratedAt"@en , "\n    wasGeneratedAt is an object property to express that an artifact was generated at a specific time <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"http://www.w3.org/2006/time#Instant\" xml:lang=\"en\">instant</a>. This property is very similar to <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"http://purl.org/dc/terms/created\" xml:lang=\"en\">dct:created</a>. Note that in a very fine-grained case the time when an artifact was generated might not be the same as the time when the process producing that artifact finished.\n    "^^rdf:XMLLiteral ;
+        sh:class          <http://www.w3.org/2006/time#Instant> ;
+        sh:description    "\n    wasGeneratedAt is an object property to express that an artifact was generated at a specific time <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"http://www.w3.org/2006/time#Instant\" xml:lang=\"en\">instant</a>. This property is very similar to <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"http://purl.org/dc/terms/created\" xml:lang=\"en\">dct:created</a>. Note that in a very fine-grained case the time when an artifact was generated might not be the same as the time when the process producing that artifact finished.\n    "^^rdf:XMLLiteral ;
+        sh:name           "wasGeneratedAt"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/opmv/ns#wasGeneratedAt> .
+
+<https://astrea.linkeddata.es/shapes#c4dc83f0ea71eca26e7fafcf2cea8d01>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/opmv/ns> ;
+        rdfs:label        "wasEncodedBy"@en , "wasEncodedBy is an object property to express that an artifact is encoded by another artifact. The property is useful for expressing the relationship between the data and the file encoding the data."@en ;
+        sh:class          <http://purl.org/net/opmv/ns#Artifact> ;
+        sh:description    "wasEncodedBy is an object property to express that an artifact is encoded by another artifact. The property is useful for expressing the relationship between the data and the file encoding the data."@en ;
+        sh:name           "wasEncodedBy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/opmv/ns#wasEncodedBy> .
+
+<https://astrea.linkeddata.es/shapes#6e43e4b7c00315560c35c39644eb5747>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/opmv/ns> ;
+        rdfs:label        "wasDerivedFrom"@en , "wasDerivedFrom is an abstract property to express that an artifact was derived from another artifact."@en ;
+        sh:class          <http://purl.org/net/opmv/ns#Artifact> ;
+        sh:description    "wasDerivedFrom is an abstract property to express that an artifact was derived from another artifact."@en ;
+        sh:name           "wasDerivedFrom"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/opmv/ns#wasDerivedFrom> .
+
+<https://astrea.linkeddata.es/shapes#eb631a2134547888b02925ae89914d82>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/net/opmv/ns#Process> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#11adb9dbea6095dd7a55197ec7ccd837>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/opmv/ns> ;
+        rdfs:label        "wasGeneratedBy"@en , "wasGeneratedBy is an abstract property to express that an artifact was generated by a process."@en ;
+        sh:class          <http://purl.org/net/opmv/ns#Process> ;
+        sh:description    "wasGeneratedBy is an abstract property to express that an artifact was generated by a process."@en ;
+        sh:name           "wasGeneratedBy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/opmv/ns#wasGeneratedBy> .
+
+<https://astrea.linkeddata.es/shapes#dcb7915bd4735b53a007f3ba00efa2b5>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/net/opmv/ns#Artifact> .
+
+<https://astrea.linkeddata.es/shapes#d3df01ef46cca77f21ed749b219e948f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/opmv/ns> ;
+        rdfs:label        "Artifact"@en ;
+        sh:description    "Artifact is a general concept that represents immutable piece of state, which may have a physical embodiment in a physical object, or a digital representation in a computer system."@en ;
+        sh:name           "Artifact"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:not            <https://astrea.linkeddata.es/shapes#eb631a2134547888b02925ae89914d82> ;
+        sh:property       <https://astrea.linkeddata.es/shapes#11adb9dbea6095dd7a55197ec7ccd837> , <https://astrea.linkeddata.es/shapes#c9f00d329b9142b7f262bffb2a9f05d6> , <https://astrea.linkeddata.es/shapes#6e43e4b7c00315560c35c39644eb5747> , <https://astrea.linkeddata.es/shapes#5e9417baaeb7dd1b1a55c90b545f8a66> , <https://astrea.linkeddata.es/shapes#c4dc83f0ea71eca26e7fafcf2cea8d01> , <https://astrea.linkeddata.es/shapes#f083ccef60d51ba53df8065e7a096ed8> ;
+        sh:targetClass    <http://purl.org/net/opmv/ns#Artifact> .
+
+<https://astrea.linkeddata.es/shapes#5dc832a2986104e0c71c172c1020a374>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/opmv/ns> ;
+        rdfs:label        "wasEndedAt"@en , "\n      wasEndedAt is an object property to express that a process was finished at a specific time <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"http://www.w3.org/2006/time#Instant\" xml:lang=\"en\">instant</a>. The property chain defines that all processes, that were performed during a specific time period which ended at a specific instant, were actually finished at that specific time instant.\n    "^^rdf:XMLLiteral ;
+        sh:class          <http://www.w3.org/2006/time#Instant> ;
+        sh:description    "\n      wasEndedAt is an object property to express that a process was finished at a specific time <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"http://www.w3.org/2006/time#Instant\" xml:lang=\"en\">instant</a>. The property chain defines that all processes, that were performed during a specific time period which ended at a specific instant, were actually finished at that specific time instant.\n    "^^rdf:XMLLiteral ;
+        sh:name           "wasEndedAt"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/opmv/ns#wasEndedAt> .
+
+<https://astrea.linkeddata.es/shapes#e2fb8e590f01ff6ce19da7673bf5f888>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/opmv/ns> ;
+        rdfs:label        "wasTriggeredBy"@en , "wasTriggeredBy is an abstract property to express that a process was triggered by another process."@en ;
+        sh:class          <http://purl.org/net/opmv/ns#Process> ;
+        sh:description    "wasTriggeredBy is an abstract property to express that a process was triggered by another process."@en ;
+        sh:name           "wasTriggeredBy"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/opmv/ns#wasTriggeredBy> .
+
+<https://astrea.linkeddata.es/shapes#5e9417baaeb7dd1b1a55c90b545f8a66>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/net/opmv/ns> ;
+        rdfs:label        "withRespectOf"@en , "\n    withRespectOf is an object property to associate a time instant at which an artifact was used or generated with the process that used or generated that artifact. At a very fine-grained distinction, the time when an artifact was used or generated might not be exactly the same as the starting or ending time of the process in which the artifact was involved. The related properties <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"#wasUsedAt\" xml:lang=\"en\">opmv:wasUsedAt</a> and <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"#wasGeneratedAt\" xml:lang=\"en\">opmv:wasGeneratedAt</a> can be used as shortcuts to express time-related information about an artifact. The property  <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"#wasUsedAt\" xml:lang=\"en\">opmv:wasUsedAt</a> is only used when users want to express precisely in which process an artifact was used or generated. It can be omitted in most cases."^^rdf:XMLLiteral ;
+        sh:class          <http://www.w3.org/2006/time#Instant> ;
+        sh:description    "\n    withRespectOf is an object property to associate a time instant at which an artifact was used or generated with the process that used or generated that artifact. At a very fine-grained distinction, the time when an artifact was used or generated might not be exactly the same as the starting or ending time of the process in which the artifact was involved. The related properties <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"#wasUsedAt\" xml:lang=\"en\">opmv:wasUsedAt</a> and <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"#wasGeneratedAt\" xml:lang=\"en\">opmv:wasGeneratedAt</a> can be used as shortcuts to express time-related information about an artifact. The property  <a xmlns=\"http://www.w3.org/1999/xhtml\" href=\"#wasUsedAt\" xml:lang=\"en\">opmv:wasUsedAt</a> is only used when users want to express precisely in which process an artifact was used or generated. It can be omitted in most cases."^^rdf:XMLLiteral ;
+        sh:name           "withRespectOf"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/net/opmv/ns#withRespectOf> .

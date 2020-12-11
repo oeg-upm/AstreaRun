@@ -1,0 +1,226 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://astrea.linkeddata.es/shapes#dbdecf8487f21c847b680873635b8089>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "InteractionAffordance" ;
+        sh:description    "Metadata of a Thing that shows the possible choices to Consumers, thereby suggesting how Consumers may interact with the Thing. There are many types of potential affordances, but W3C WoT defines three types of Interaction Affordances: Properties, Actions, and Events."@en ;
+        sh:name           "InteractionAffordance" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://www.w3.org/2019/wot/td#InteractionAffordance> .
+
+<https://astrea.linkeddata.es/shapes#d392605f2e9561b9b7d587fedf11eaad>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "hasLink" , "Provides Web links to arbitrary resources that relate to the specified Thing Description."@en ;
+        sh:description    "Provides Web links to arbitrary resources that relate to the specified Thing Description."@en ;
+        sh:name           "hasLink" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.w3.org/2019/wot/td#hasLink> .
+
+<https://astrea.linkeddata.es/shapes#8dd22c35cf844c043a33bbf565752433>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "hasOutputSchema" , "Used to define the output data schema of the action."@en ;
+        sh:description    "Used to define the output data schema of the action."@en ;
+        sh:name           "hasOutputSchema" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.w3.org/2019/wot/td#hasOutputSchema> .
+
+<https://astrea.linkeddata.es/shapes#4af49a40d95c087c64b79e0d8f6eecb8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "ActionAffordance" ;
+        sh:description    "An Interaction Affordance that allows to invoke a function of the Thing, which manipulates state (e.g., toggling a lamp on or off) or triggers a process on the Thing (e.g., dimm a lamp over time)."@en ;
+        sh:name           "ActionAffordance" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://www.w3.org/2019/wot/td#ActionAffordance> .
+
+<https://astrea.linkeddata.es/shapes#108ab3f928a068ff206245b21d805bfa>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "hasUriTemplateSchema" , "Define URI template variables as collection based on schema specifications."@en ;
+        sh:description    "Define URI template variables as collection based on schema specifications."@en ;
+        sh:name           "hasUriTemplateSchema" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.w3.org/2019/wot/td#hasUriTemplateSchema> .
+
+<https://astrea.linkeddata.es/shapes#6b9796aff8201fd6a21b0e6b91708120>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "Thing"@en ;
+        sh:description    "An abstraction of a physical or a virtual entity whose metadata and interfaces are described by a WoT Thing Description, whereas a virtual entity is the composition of one or more Things."@en ;
+        sh:name           "Thing"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://www.w3.org/2019/wot/td#Thing> .
+
+<https://astrea.linkeddata.es/shapes#ac861d3731350adfd5f90fb8ff510b26>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "hasEventAffordance" , "All Event-based interaction affordance of the Thing."@en ;
+        sh:description    "All Event-based interaction affordance of the Thing."@en ;
+        sh:name           "hasEventAffordance" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.w3.org/2019/wot/td#hasEventAffordance> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#9aa0300b9549d724ae4caf81ace37cdb> , <https://astrea.linkeddata.es/shapes#7be4eaddfcf488148bcedd547bda1ecb> , <https://astrea.linkeddata.es/shapes#5c098a372298951d4c93d88c91817fac> , <https://astrea.linkeddata.es/shapes#18e652b6f8a298c48425f5cc44779dba> , <https://astrea.linkeddata.es/shapes#d392605f2e9561b9b7d587fedf11eaad> , <https://astrea.linkeddata.es/shapes#f0d53c68b478860ee34985cfa8c91201> , <https://astrea.linkeddata.es/shapes#de28a7ead660e3c928539358e9319878> , <https://astrea.linkeddata.es/shapes#0862a8b8fd3c7e457748bdda22cb0485> , <https://astrea.linkeddata.es/shapes#e1173088dea7d5496e8db0fe50e87cc9> , <https://astrea.linkeddata.es/shapes#48f35a17035a58015e48141b083cda7a> , <https://astrea.linkeddata.es/shapes#6244ec7efe9ca92fb3d8ee02af1db672> , <https://astrea.linkeddata.es/shapes#7ddeb8a820861f4d9d6c81eadab75b8c> , <https://astrea.linkeddata.es/shapes#f8a94f6487e02e205028e0d2aa52d844> , <https://astrea.linkeddata.es/shapes#ac861d3731350adfd5f90fb8ff510b26> , <https://astrea.linkeddata.es/shapes#4af49a40d95c087c64b79e0d8f6eecb8> , <https://astrea.linkeddata.es/shapes#0847a9ed4fc090c2df1c0482da93d84f> , <https://astrea.linkeddata.es/shapes#6b9796aff8201fd6a21b0e6b91708120> , <https://astrea.linkeddata.es/shapes#8dd22c35cf844c043a33bbf565752433> , <https://astrea.linkeddata.es/shapes#4f67d16da5e1a562400996f3e15e649e> , <https://astrea.linkeddata.es/shapes#6633f6f9a681a2c4c8f51d232cf4501f> , <https://astrea.linkeddata.es/shapes#8a71e1ea5e5ef2b929564ce502ad0320> , <https://astrea.linkeddata.es/shapes#108ab3f928a068ff206245b21d805bfa> , <https://astrea.linkeddata.es/shapes#dbdecf8487f21c847b680873635b8089> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#e1173088dea7d5496e8db0fe50e87cc9>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "isSafe" , "Signals if the action is safe (=true) or not. Used to signal if there is no internal state (cf. resource state) is changed when invoking an Action. In that case responses can be cached as example."@en ;
+        sh:description    "Signals if the action is safe (=true) or not. Used to signal if there is no internal state (cf. resource state) is changed when invoking an Action. In that case responses can be cached as example."@en ;
+        sh:name           "isSafe" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <https://www.w3.org/2019/wot/td#isSafe> .
+
+<https://astrea.linkeddata.es/shapes#0847a9ed4fc090c2df1c0482da93d84f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "hasSecurityConfiguration" , "Set of security definition names, chosen from those defined in securityDefinitions.  These must all be satisfied for access to resources."@en ;
+        sh:description    "Set of security definition names, chosen from those defined in securityDefinitions.  These must all be satisfied for access to resources."@en ;
+        sh:name           "hasSecurityConfiguration" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.w3.org/2019/wot/td#hasSecurityConfiguration> .
+
+<https://astrea.linkeddata.es/shapes#7be4eaddfcf488148bcedd547bda1ecb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "hasInteractionAffordance" , "Offers an affordance to interact with the Thing"@en ;
+        sh:description    "Offers an affordance to interact with the Thing"@en ;
+        sh:name           "hasInteractionAffordance" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.w3.org/2019/wot/td#hasInteractionAffordance> .
+
+<https://astrea.linkeddata.es/shapes#5c098a372298951d4c93d88c91817fac>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "hasNotificationSchema" , "Defines the data schema of the Event instance messages pushed by the Thing."@en ;
+        sh:description    "Defines the data schema of the Event instance messages pushed by the Thing."@en ;
+        sh:name           "hasNotificationSchema" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.w3.org/2019/wot/td#hasNotificationSchema> .
+
+<https://astrea.linkeddata.es/shapes#6633f6f9a681a2c4c8f51d232cf4501f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "hasForm" , "Set of form hypermedia controls that describe how an operation can be performed. Forms are serializations of Protocol Bindings."@en ;
+        sh:description    "Set of form hypermedia controls that describe how an operation can be performed. Forms are serializations of Protocol Bindings."@en ;
+        sh:name           "hasForm" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.w3.org/2019/wot/td#hasForm> .
+
+<https://astrea.linkeddata.es/shapes#de28a7ead660e3c928539358e9319878>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "hasSubscriptionSchema" , "Defines data that needs to be passed upon subscription, e.g., filters or message format for setting up Webhooks."@en ;
+        sh:description    "Defines data that needs to be passed upon subscription, e.g., filters or message format for setting up Webhooks."@en ;
+        sh:name           "hasSubscriptionSchema" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.w3.org/2019/wot/td#hasSubscriptionSchema> .
+
+<https://astrea.linkeddata.es/shapes#7ddeb8a820861f4d9d6c81eadab75b8c>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "PropertyAffordance" ;
+        sh:description    "An Interaction Affordance that exposes state of the Thing. This state can then be retrieved (read) and optionally updated (write). Things can also choose to make Properties observable by pushing the new state after a change."@en ;
+        sh:name           "PropertyAffordance" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://www.w3.org/2019/wot/td#PropertyAffordance> .
+
+<https://astrea.linkeddata.es/shapes#9aa0300b9549d724ae4caf81ace37cdb>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "hasCancellationSchema" , "Defines any data that needs to be passed to cancel a subscription, e.g., a specific message to remove a Webhook"@en ;
+        sh:description    "Defines any data that needs to be passed to cancel a subscription, e.g., a specific message to remove a Webhook"@en ;
+        sh:name           "hasCancellationSchema" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.w3.org/2019/wot/td#hasCancellationSchema> .
+
+<https://astrea.linkeddata.es/shapes#8a71e1ea5e5ef2b929564ce502ad0320>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "isIdempotent" , "Indicates whether the action is idempotent (=true) or not. Informs whether the action can be called repeatedly with the same result, if present, based on the same input."@en ;
+        sh:description    "Indicates whether the action is idempotent (=true) or not. Informs whether the action can be called repeatedly with the same result, if present, based on the same input."@en ;
+        sh:name           "isIdempotent" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <https://www.w3.org/2019/wot/td#isIdempotent> .
+
+<https://astrea.linkeddata.es/shapes#0862a8b8fd3c7e457748bdda22cb0485>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "isObservable" , "A hint that indicates whether Servients hosting the Thing and Intermediaries should provide a Protocol Binding that supports the <code>observeproperty</code> operation for this Property."@en ;
+        sh:description    "A hint that indicates whether Servients hosting the Thing and Intermediaries should provide a Protocol Binding that supports the <code>observeproperty</code> operation for this Property."@en ;
+        sh:name           "isObservable" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <https://www.w3.org/2019/wot/td#isObservable> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#18e652b6f8a298c48425f5cc44779dba>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "hasInputSchema" , "Used to define the input data schema of the action."@en ;
+        sh:description    "Used to define the input data schema of the action."@en ;
+        sh:name           "hasInputSchema" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.w3.org/2019/wot/td#hasInputSchema> .
+
+<https://astrea.linkeddata.es/shapes#4f67d16da5e1a562400996f3e15e649e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "hasActionAffordance" , "All Action-based interaction affordance of the Thing."@en ;
+        sh:description    "All Action-based interaction affordance of the Thing."@en ;
+        sh:name           "hasActionAffordance" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.w3.org/2019/wot/td#hasActionAffordance> .
+
+<https://astrea.linkeddata.es/shapes#6244ec7efe9ca92fb3d8ee02af1db672>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "hasPropertyAffordance" , "All Property-based interaction affordance of the Thing."@en ;
+        sh:description    "All Property-based interaction affordance of the Thing."@en ;
+        sh:name           "hasPropertyAffordance" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <https://www.w3.org/2019/wot/td#hasPropertyAffordance> .
+
+<https://astrea.linkeddata.es/shapes#48f35a17035a58015e48141b083cda7a>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "EventAffordance" ;
+        sh:description    "An Interaction Affordance that describes an event source, which asynchronously pushes event data to Consumers (e.g., overheating alerts)."@en ;
+        sh:name           "EventAffordance" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <https://www.w3.org/2019/wot/td#EventAffordance> .
+
+<https://astrea.linkeddata.es/shapes#f0d53c68b478860ee34985cfa8c91201>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <https://www.w3.org/2019/wot/td#> ;
+        rdfs:label        "name" , "Indexing property to store entity names when serializing them in a JSON-LD @index container."@en ;
+        sh:description    "Indexing property to store entity names when serializing them in a JSON-LD @index container."@en ;
+        sh:name           "name" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <https://www.w3.org/2019/wot/td#name> .
+
+<https://astrea.linkeddata.es/shapes#f8a94f6487e02e205028e0d2aa52d844>
+        a               sh:NodeShape ;
+        rdfs:label      "OperationType" ;
+        sh:description  "Enumeration of well-known operation types necessary to implement the WoT interaction model"@en ;
+        sh:name         "OperationType" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://www.w3.org/2019/wot/td#OperationType> .

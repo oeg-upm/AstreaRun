@@ -1,0 +1,88 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix afn:   <http://jena.apache.org/ARQ/function#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://astrea.linkeddata.es/report>
+        a       <https://w3id.org/def/astrea#ShapeReport> ;
+        <https://w3id.org/def/astrea#contains>
+                <https://astrea.linkeddata.es/shapes#33982b40ee0a383b90214871529506ab> , <https://astrea.linkeddata.es/shapes#61b5d5073c6b874067b3586cfac08d4e> , <https://astrea.linkeddata.es/shapes#5a7b7bf906e570c0641fb1c0f6bfd395> , <https://astrea.linkeddata.es/shapes#5ab712cc881dd8a17daad0a454829792> , <https://astrea.linkeddata.es/shapes#61f1d3e10b7c6e09d670504f93e93b40> , <https://astrea.linkeddata.es/shapes#f7da9e508eb8e02d248d03c1a48af507> , <https://astrea.linkeddata.es/shapes#574605292996b27414259497e4899efd> ;
+        <https://w3id.org/def/astrea#generatedShapesFrom>
+                <https://astrea.linkeddata.es/report/0620946147> .
+
+<https://astrea.linkeddata.es/shapes#61b5d5073c6b874067b3586cfac08d4e>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf.insee.fr/def/demo> ;
+        rdfs:label        "population totale"@fr ;
+        sh:datatype       xsd:nonNegativeInteger ;
+        sh:minInclusive   0 ;
+        sh:name           "population totale"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdf.insee.fr/def/demo#populationTotale> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#33982b40ee0a383b90214871529506ab>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf.insee.fr/def/demo> ;
+        rdfs:label        "population comptée à part"@fr ;
+        sh:datatype       xsd:nonNegativeInteger ;
+        sh:minInclusive   0 ;
+        sh:name           "population comptée à part"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdf.insee.fr/def/demo#populationCompteeAPart> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#f7da9e508eb8e02d248d03c1a48af507>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://rdf.insee.fr/def/demo> ;
+        rdfs:label        "Population légale"@fr ;
+        sh:description    "Population légale datée et déclinée en 'municipale', 'comptée à part' et 'totale'"@fr ;
+        sh:name           "Population légale"@fr ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#61b5d5073c6b874067b3586cfac08d4e> , <https://astrea.linkeddata.es/shapes#33982b40ee0a383b90214871529506ab> , <https://astrea.linkeddata.es/shapes#5ab712cc881dd8a17daad0a454829792> , <https://astrea.linkeddata.es/shapes#61f1d3e10b7c6e09d670504f93e93b40> ;
+        sh:targetClass    <http://rdf.insee.fr/def/demo#PopulationLegale> .
+
+<https://astrea.linkeddata.es/shapes#5ab712cc881dd8a17daad0a454829792>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf.insee.fr/def/demo> ;
+        rdfs:label        "population municipale"@fr ;
+        sh:datatype       xsd:nonNegativeInteger ;
+        sh:minInclusive   0 ;
+        sh:name           "population municipale"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdf.insee.fr/def/demo#populationMunicipale> ;
+        sh:pattern        "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#61f1d3e10b7c6e09d670504f93e93b40>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf.insee.fr/def/demo> ;
+        rdfs:label        "date de référence"@fr ;
+        sh:datatype       xsd:date ;
+        sh:name           "date de référence"@fr ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://rdf.insee.fr/def/demo#date> ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#5a7b7bf906e570c0641fb1c0f6bfd395>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://rdf.insee.fr/def/demo> ;
+        rdfs:label        "population"@fr ;
+        sh:class          <http://rdf.insee.fr/def/demo#PopulationLegale> ;
+        sh:name           "population"@fr ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://rdf.insee.fr/def/demo#population> .
+
+<https://astrea.linkeddata.es/shapes#574605292996b27414259497e4899efd>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#5a7b7bf906e570c0641fb1c0f6bfd395> ;
+        sh:targetClass  <http://rdf.insee.fr/def/geo#TerritoireFrancais> .
