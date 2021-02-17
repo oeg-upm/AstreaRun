@@ -167,6 +167,10 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           gr:hasPrevious .
 
+<https://astrea.linkeddata.es/shapes#85ad9aecba7026a9c21d92fae33a478e>
+        a         sh:PropertyShape ;
+        sh:class  gr:BusinessEntity .
+
 <https://astrea.linkeddata.es/shapes#8dedc423d60444d156627ba793cfeaa0>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://purl.org/tio/ns#> ;
@@ -196,10 +200,6 @@
         sh:nodeKind       sh:Literal ;
         sh:path           gr:validThrough ;
         sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
-
-<https://astrea.linkeddata.es/shapes#85ad9aecba7026a9c21d92fae33a478e>
-        a         sh:PropertyShape ;
-        sh:class  gr:BusinessEntity .
 
 <https://astrea.linkeddata.es/shapes#ff3ffc8686e31dfe4c8c867c5077a712>
         a               sh:NodeShape ;
@@ -600,6 +600,16 @@
         sh:property       <https://astrea.linkeddata.es/shapes#443e7b17b342e63b72e88dd6c3ba3032> , <https://astrea.linkeddata.es/shapes#2d8eda08d69a52d8e74a19a817348b87> ;
         sh:targetClass    gr:BusinessFunction .
 
+<https://astrea.linkeddata.es/shapes#a82a17d05edbe65f582a6d803eb73cb1>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/goodrelations/v1> ;
+        rdfs:label        "applies to payment method (1..*)"@en , "This property specifies the gr:PaymentMethod to which the gr:PaymentChargeSpecification applies."@en ;
+        sh:class          gr:PaymentMethod ;
+        sh:description    "This property specifies the gr:PaymentMethod to which the gr:PaymentChargeSpecification applies."@en ;
+        sh:name           "applies to payment method (1..*)"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           gr:appliesToPaymentMethod .
+
 <https://astrea.linkeddata.es/shapes#8eec14a9dea9710049e75513e54e3e8a>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://purl.org/goodrelations/v1> ;
@@ -620,16 +630,6 @@
         sh:nodeKind       sh:IRI ;
         sh:not            <https://astrea.linkeddata.es/shapes#1a1c0ce7a480359b67abb568a9b33f98> , <https://astrea.linkeddata.es/shapes#c07bf739374fb2a710713ffaa1bd77d6> , <https://astrea.linkeddata.es/shapes#25b9c23b675c31ec6c79a26a6c85bdb9> , <https://astrea.linkeddata.es/shapes#79bbd5a4cf32ed0773cde04dd1f2d0ac> ;
         sh:targetClass    <http://purl.org/tio/ns#DiscountType> .
-
-<https://astrea.linkeddata.es/shapes#a82a17d05edbe65f582a6d803eb73cb1>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://purl.org/goodrelations/v1> ;
-        rdfs:label        "applies to payment method (1..*)"@en , "This property specifies the gr:PaymentMethod to which the gr:PaymentChargeSpecification applies."@en ;
-        sh:class          gr:PaymentMethod ;
-        sh:description    "This property specifies the gr:PaymentMethod to which the gr:PaymentChargeSpecification applies."@en ;
-        sh:name           "applies to payment method (1..*)"@en ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           gr:appliesToPaymentMethod .
 
 <https://astrea.linkeddata.es/shapes#48efe2bb5685e350129209ef35413c3c>
         a                 sh:NodeShape ;
@@ -1278,17 +1278,6 @@
         sh:path           gr:hasMinValueFloat ;
         sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
 
-<https://astrea.linkeddata.es/shapes#d6503fcbd5cb40045c54884311110c3f>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://purl.org/goodrelations/v1> ;
-        rdfs:label        "valid from (0..1)"@en , "This property specifies the beginning of the validity of the gr:Offering, gr:PriceSpecification, gr:License, or gr:OpeningHoursSpecification.\nA time-zone should be specified. For a time in GMT/UTC, simply add a \"Z\" following the time:\n\n2008-05-30T09:30:10Z.\n\nAlternatively, you can specify an offset from the UTC time by adding a positive or negative time following the time:\n\n2008-05-30T09:30:10-09:00\n\nor\n\n2008-05-30T09:30:10+09:00.\n\nNote: If multiple contradicting instances of a gr:Offering, gr:PriceSpecification, or gr:OpeningHoursSpecification exist, it is a good heuristics to assume that\n1. Information with validity information for the respective period of time ranks higher than information without validity information.\n2. Among conflicting nodes both having validity information, the one with the shorter validity span ranks higher."@en ;
-        sh:datatype       xsd:dateTime ;
-        sh:description    "This property specifies the beginning of the validity of the gr:Offering, gr:PriceSpecification, gr:License, or gr:OpeningHoursSpecification.\nA time-zone should be specified. For a time in GMT/UTC, simply add a \"Z\" following the time:\n\n2008-05-30T09:30:10Z.\n\nAlternatively, you can specify an offset from the UTC time by adding a positive or negative time following the time:\n\n2008-05-30T09:30:10-09:00\n\nor\n\n2008-05-30T09:30:10+09:00.\n\nNote: If multiple contradicting instances of a gr:Offering, gr:PriceSpecification, or gr:OpeningHoursSpecification exist, it is a good heuristics to assume that\n1. Information with validity information for the respective period of time ranks higher than information without validity information.\n2. Among conflicting nodes both having validity information, the one with the shorter validity span ranks higher."@en ;
-        sh:name           "valid from (0..1)"@en ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           gr:validFrom ;
-        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
-
 <https://astrea.linkeddata.es/shapes#e83848e4e89d31ca092cb93f729cf8b6>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://purl.org/goodrelations/v1> ;
@@ -1299,6 +1288,17 @@
         sh:nodeKind       sh:Literal ;
         sh:path           gr:hasGTIN-14 ;
         sh:pattern        ".*" .
+
+<https://astrea.linkeddata.es/shapes#d6503fcbd5cb40045c54884311110c3f>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/goodrelations/v1> ;
+        rdfs:label        "valid from (0..1)"@en , "This property specifies the beginning of the validity of the gr:Offering, gr:PriceSpecification, gr:License, or gr:OpeningHoursSpecification.\nA time-zone should be specified. For a time in GMT/UTC, simply add a \"Z\" following the time:\n\n2008-05-30T09:30:10Z.\n\nAlternatively, you can specify an offset from the UTC time by adding a positive or negative time following the time:\n\n2008-05-30T09:30:10-09:00\n\nor\n\n2008-05-30T09:30:10+09:00.\n\nNote: If multiple contradicting instances of a gr:Offering, gr:PriceSpecification, or gr:OpeningHoursSpecification exist, it is a good heuristics to assume that\n1. Information with validity information for the respective period of time ranks higher than information without validity information.\n2. Among conflicting nodes both having validity information, the one with the shorter validity span ranks higher."@en ;
+        sh:datatype       xsd:dateTime ;
+        sh:description    "This property specifies the beginning of the validity of the gr:Offering, gr:PriceSpecification, gr:License, or gr:OpeningHoursSpecification.\nA time-zone should be specified. For a time in GMT/UTC, simply add a \"Z\" following the time:\n\n2008-05-30T09:30:10Z.\n\nAlternatively, you can specify an offset from the UTC time by adding a positive or negative time following the time:\n\n2008-05-30T09:30:10-09:00\n\nor\n\n2008-05-30T09:30:10+09:00.\n\nNote: If multiple contradicting instances of a gr:Offering, gr:PriceSpecification, or gr:OpeningHoursSpecification exist, it is a good heuristics to assume that\n1. Information with validity information for the respective period of time ranks higher than information without validity information.\n2. Among conflicting nodes both having validity information, the one with the shorter validity span ranks higher."@en ;
+        sh:name           "valid from (0..1)"@en ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           gr:validFrom ;
+        sh:pattern        "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?|(24:00:00(\\.0+)?))(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
 
 <https://astrea.linkeddata.es/shapes#17790ee25a1fe29855c6df308eb1f5ed>
         a               sh:NodeShape ;
@@ -1527,10 +1527,6 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           gr:nonEqual .
 
-<https://astrea.linkeddata.es/shapes#25b9c23b675c31ec6c79a26a6c85bdb9>
-        a         sh:PropertyShape ;
-        sh:class  <http://purl.org/tio/ns#Event> .
-
 <https://astrea.linkeddata.es/shapes#a28f1fd271c43a2651b620920832d5db>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://purl.org/goodrelations/v1> ;
@@ -1553,6 +1549,10 @@
         sh:name           "eligible customer types (0..*)"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           gr:eligibleCustomerTypes .
+
+<https://astrea.linkeddata.es/shapes#25b9c23b675c31ec6c79a26a6c85bdb9>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/tio/ns#Event> .
 
 <https://astrea.linkeddata.es/shapes#8af24745891a4d7663676b201485e335>
         a               sh:NodeShape ;
@@ -2128,6 +2128,10 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    gr:ActualProductOrServiceInstance , gr:Individual .
 
+<https://astrea.linkeddata.es/shapes#58b82d67cbc572568c029bdd20e12a77>
+        a         sh:PropertyShape ;
+        sh:class  <http://purl.org/tio/ns#Taxi> .
+
 <https://astrea.linkeddata.es/shapes#74a95fdcccb51eb19377986aa8eaa5f2>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://purl.org/goodrelations/v1> ;
@@ -2141,7 +2145,3 @@
 <https://astrea.linkeddata.es/shapes#354372641b95afa56968db0a2880d59f>
         a         sh:PropertyShape ;
         sh:class  gr:QuantitativeValueInteger .
-
-<https://astrea.linkeddata.es/shapes#58b82d67cbc572568c029bdd20e12a77>
-        a         sh:PropertyShape ;
-        sh:class  <http://purl.org/tio/ns#Taxi> .

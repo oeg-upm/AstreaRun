@@ -1135,6 +1135,35 @@
         sh:property     <https://astrea.linkeddata.es/shapes#6aa33b15e7fe371c1c9f59c92c9c265a> , <https://astrea.linkeddata.es/shapes#99353e91dda760f245e7ddc669d6b90e> ;
         sh:targetClass  time:DateTimeInterval .
 
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:before
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:hasTime
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:after
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   seas:hasTemporalContext
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:before
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:hasTime
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:after
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   seas:hasTemporalContext
+                                ] ;
+                     rdf:rest   ()
+                   ] .
+
 <https://astrea.linkeddata.es/shapes#7704e1a78a2f350b6e341585cadec0e9>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:nonNegativeInteger ;
@@ -1196,35 +1225,6 @@
         sh:name           "time derivative"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
         sh:path           seas:timeDerivative .
-
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:before
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:hasTime
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:after
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   seas:hasTemporalContext
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:before
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:hasTime
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:after
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   seas:hasTemporalContext
-                                ] ;
-                     rdf:rest   ()
-                   ] .
 
 <https://astrea.linkeddata.es/shapes#e00887eb7b2f63ee7d5071cdd765ba12>
         a            sh:PropertyShape ;

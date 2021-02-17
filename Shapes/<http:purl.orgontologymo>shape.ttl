@@ -233,6 +233,41 @@
         sh:path         time:seconds ;
         sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
 
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:hasTime
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   <http://purl.org/ontology/mo/time>
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:before
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:after
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   event:time
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:hasTime
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   <http://purl.org/ontology/mo/time>
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:before
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:after
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   event:time
+                                ] ;
+                     rdf:rest   ()
+                   ] .
+
 <https://astrea.linkeddata.es/shapes#bef93efc004fe1bdb3ecf03472336d7a>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  foaf: ;
@@ -724,41 +759,6 @@
         sh:property     <https://astrea.linkeddata.es/shapes#0bf9a398485caa648ac1051d53c2d892> , <https://astrea.linkeddata.es/shapes#a06d7d97a09b3981bdafd6bed5e161e0> ;
         sh:targetClass  sim:Association .
 
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:hasTime
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   <http://purl.org/ontology/mo/time>
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:before
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:after
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   event:time
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:hasTime
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   <http://purl.org/ontology/mo/time>
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:before
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:after
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   event:time
-                                ] ;
-                     rdf:rest   ()
-                   ] .
-
 <https://astrea.linkeddata.es/shapes#55a05e88e2f1bdf8b52fa7d0eb1efeca>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  foaf: ;
@@ -1216,6 +1216,13 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           <http://purl.org/ontology/mo/djmixed_by> .
 
+<https://astrea.linkeddata.es/shapes#db0f947218a0dfeb541d00a536cc7dfa>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 event:isAgentIn ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  <http://purl.org/ontology/mo/Arrangement> ] .
+
 <https://astrea.linkeddata.es/shapes#31ec11b90fe32f48b507b44e32723b6b>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://purl.org/ontology/mo/> ;
@@ -1238,13 +1245,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:datatype  xsd:decimal ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      time:years .
-
-<https://astrea.linkeddata.es/shapes#db0f947218a0dfeb541d00a536cc7dfa>
-        a                       sh:PropertyShape ;
-        sh:nodeKind             sh:IRIOrLiteral ;
-        sh:path                 event:isAgentIn ;
-        sh:qualifiedMinCount    1 ;
-        sh:qualifiedValueShape  [ sh:class  <http://purl.org/ontology/mo/Arrangement> ] .
 
 <https://astrea.linkeddata.es/shapes#0b1092eaff77d3ef8f17602f6844b85e>
         a                 sh:NodeShape ;
@@ -1400,15 +1400,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      time:weeks .
 
-<https://astrea.linkeddata.es/report/800486709>
-        a       <https://w3id.org/def/astrea#ReportEntry> ;
-        <https://w3id.org/def/astrea#message>
-                "Shapes generated with no errors" ;
-        <https://w3id.org/def/astrea#source>
-                "http://purl.org/NET/c4dm/event.owl" ;
-        <https://w3id.org/def/astrea#statusCode>
-                "200"^^xsd:int .
-
 <https://astrea.linkeddata.es/shapes#75b684fc1c2b1d96cee32ddf1e4e2934>
         a               sh:PropertyShape ;
         rdfs:label      "tiene duración XSD"@es , "Extent of a temporal entity, expressed using xsd:duration"@en , "Extensión de una entidad temporal, expresada utilizando xsd:duration."@es , "has XSD duration"@en ;
@@ -1418,6 +1409,15 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind     sh:Literal ;
         sh:path         time:hasXSDDuration ;
         sh:pattern      "-?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S))))" .
+
+<https://astrea.linkeddata.es/report/800486709>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#source>
+                "http://purl.org/NET/c4dm/event.owl" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#857e81022c8284772d42a6dd68ae1831>
         a                 sh:PropertyShape ;
@@ -1439,6 +1439,12 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind       sh:IRI ;
         sh:targetClass    foaf:LabelProperty .
 
+<https://astrea.linkeddata.es/shapes#26ac97ba65e5786c94352d3eb5b7507e>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      time:dayOfWeek .
+
 <https://astrea.linkeddata.es/shapes#b867572dae6dd3aa1e1fdd1eab65a744>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://purl.org/ontology/mo/> ;
@@ -1447,21 +1453,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:name           "text" ;
         sh:nodeKind       sh:Literal ;
         sh:path           <http://purl.org/ontology/mo/text> .
-
-<https://astrea.linkeddata.es/shapes#26ac97ba65e5786c94352d3eb5b7507e>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      time:dayOfWeek .
-
-<https://astrea.linkeddata.es/shapes#792dbeb40e89099142f53d11771fdabb>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://purl.org/ontology/mo/> ;
-        rdfs:label        "Show" ;
-        sh:description    "\n        A show - a musical event lasting several days, in a particular venue. Examples can be\n        \"The Magic Flute\" at the Opera Bastille, August 2005, or a musical in the west end...\n    " ;
-        sh:name           "Show" ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    <http://purl.org/ontology/mo/Show> .
 
 <https://astrea.linkeddata.es/shapes#8f902cc14a9a7e92a0f45e59fd60e742>
         a                 sh:NodeShape ;
@@ -1500,6 +1491,15 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:name           "orchestration" ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    <http://purl.org/ontology/mo/Orchestration> .
+
+<https://astrea.linkeddata.es/shapes#792dbeb40e89099142f53d11771fdabb>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/mo/> ;
+        rdfs:label        "Show" ;
+        sh:description    "\n        A show - a musical event lasting several days, in a particular venue. Examples can be\n        \"The Magic Flute\" at the Opera Bastille, August 2005, or a musical in the west end...\n    " ;
+        sh:name           "Show" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/mo/Show> .
 
 <https://astrea.linkeddata.es/shapes#08d83502c5d6405b7401fbcd276eaae8>
         a               sh:PropertyShape ;
@@ -2022,11 +2022,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      time:unitType .
 
-<https://astrea.linkeddata.es/shapes#3bd02ffd0b63fd4f2c812c0fccdb4143>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:path      event:hasFactor .
-
 <https://astrea.linkeddata.es/report/01034086778>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
@@ -2035,6 +2030,11 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
                 "http://purl.org/vocab/frbr/core" ;
         <https://w3id.org/def/astrea#statusCode>
                 "400"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#3bd02ffd0b63fd4f2c812c0fccdb4143>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      event:hasFactor .
 
 <https://astrea.linkeddata.es/shapes#f1c39c4aefc4e8f4c767a7259dd1c5cb>
         a                 sh:PropertyShape ;
@@ -2090,6 +2090,17 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         a         sh:PropertyShape ;
         sh:class  <http://purl.org/ontology/mo/DigitalSignal> .
 
+<https://astrea.linkeddata.es/shapes#a682f3aba4dee74a5805d54a312bd3ec>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/mo/> ;
+        rdfs:label        "isrc" , "\n    The ISRC (International Standard Recording Code) is the international identification system for sound recordings and music videorecordings. \n    Each ISRC is a unique and permanent identifier for a specific recording which can be permanently encoded into a product as its digital fingerprint. \n    Encoded ISRC provide the means to automatically identify recordings for royalty payments.\n    " ;
+        sh:datatype       xsd:string ;
+        sh:description    "\n    The ISRC (International Standard Recording Code) is the international identification system for sound recordings and music videorecordings. \n    Each ISRC is a unique and permanent identifier for a specific recording which can be permanently encoded into a product as its digital fingerprint. \n    Encoded ISRC provide the means to automatically identify recordings for royalty payments.\n    " ;
+        sh:name           "isrc" ;
+        sh:nodeKind       sh:Literal ;
+        sh:path           <http://purl.org/ontology/mo/isrc> ;
+        sh:pattern        ".*" .
+
 <https://astrea.linkeddata.es/shapes#203c6db8a73c7732f2bbe00ba1273a34>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  foaf: ;
@@ -2120,17 +2131,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind       sh:Literal , sh:IRIOrLiteral ;
         sh:path           <http://purl.org/ontology/mo/sample_rate> ;
         sh:pattern        "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
-
-<https://astrea.linkeddata.es/shapes#a682f3aba4dee74a5805d54a312bd3ec>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://purl.org/ontology/mo/> ;
-        rdfs:label        "isrc" , "\n    The ISRC (International Standard Recording Code) is the international identification system for sound recordings and music videorecordings. \n    Each ISRC is a unique and permanent identifier for a specific recording which can be permanently encoded into a product as its digital fingerprint. \n    Encoded ISRC provide the means to automatically identify recordings for royalty payments.\n    " ;
-        sh:datatype       xsd:string ;
-        sh:description    "\n    The ISRC (International Standard Recording Code) is the international identification system for sound recordings and music videorecordings. \n    Each ISRC is a unique and permanent identifier for a specific recording which can be permanently encoded into a product as its digital fingerprint. \n    Encoded ISRC provide the means to automatically identify recordings for royalty payments.\n    " ;
-        sh:name           "isrc" ;
-        sh:nodeKind       sh:Literal ;
-        sh:path           <http://purl.org/ontology/mo/isrc> ;
-        sh:pattern        ".*" .
 
 <https://astrea.linkeddata.es/shapes#a0f28c63f3e2ab0798404560c43d3ada>
         a                 sh:PropertyShape ;
@@ -2598,13 +2598,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind  sh:BlankNodeOrIRI ;
         sh:path      <http://purl.org/ontology/mo/publicationOf> .
 
-<https://astrea.linkeddata.es/shapes#62b0ff2adb380366aba593c46dae4c0b>
-        a                       sh:PropertyShape ;
-        sh:nodeKind             sh:IRIOrLiteral ;
-        sh:path                 event:factor_of ;
-        sh:qualifiedMinCount    1 ;
-        sh:qualifiedValueShape  [ sh:class  event:Event ] .
-
 <https://astrea.linkeddata.es/shapes#fa10e315094df89ca2c74627e940e474>
         a               sh:PropertyShape ;
         rdfs:label      "agent" , "\n\t\tRelates an event to an active agent (a person, a computer, ... :-) )\n\t\t" ;
@@ -2624,6 +2617,13 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:name           "produced work" ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           <http://purl.org/ontology/mo/produced_work> .
+
+<https://astrea.linkeddata.es/shapes#62b0ff2adb380366aba593c46dae4c0b>
+        a                       sh:PropertyShape ;
+        sh:nodeKind             sh:IRIOrLiteral ;
+        sh:path                 event:factor_of ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  event:Event ] .
 
 <https://astrea.linkeddata.es/shapes#cb47ae4bdec3e4bc50afe12479911c32>
         a               sh:PropertyShape ;
@@ -2746,12 +2746,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      time:years .
 
-<https://astrea.linkeddata.es/shapes#a4ea75b59108a12eb951878bc6832cff>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      time:minutes .
-
 <https://astrea.linkeddata.es/shapes#a16265634ac997240a1878dfd5416e61>
         a                sh:PropertyShape ;
         rdfs:label       "Posición de minuto en un sistema calendario-reloj."@es , "Minute position in a calendar-clock system."@en , "minute"@en , "minuto"@es ;
@@ -2762,6 +2756,12 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind      sh:Literal ;
         sh:path          time:minute ;
         sh:pattern       "[\\-+]?[0-9]+" .
+
+<https://astrea.linkeddata.es/shapes#a4ea75b59108a12eb951878bc6832cff>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      time:minutes .
 
 <https://astrea.linkeddata.es/shapes#e1e039d66a4437ff48c652da80b8c17a>
         a                 sh:NodeShape ;
@@ -3239,6 +3239,12 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind  sh:BlankNodeOrIRI ;
         sh:path      <http://purl.org/ontology/mo/producesWork> .
 
+<https://astrea.linkeddata.es/shapes#519bf5caf76eca755fb72c72537c3e10>
+        a            sh:PropertyShape ;
+        sh:equals    <http://purl.org/ontology/mo/movement_number> ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://purl.org/ontology/mo/movementNum> .
+
 <https://astrea.linkeddata.es/shapes#21ddcd1406ba873d28fafc724fdb6de9>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  foaf: ;
@@ -3254,12 +3260,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:minCount  0 ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      time:weeks .
-
-<https://astrea.linkeddata.es/shapes#519bf5caf76eca755fb72c72537c3e10>
-        a            sh:PropertyShape ;
-        sh:equals    <http://purl.org/ontology/mo/movement_number> ;
-        sh:nodeKind  sh:Literal ;
-        sh:path      <http://purl.org/ontology/mo/movementNum> .
 
 <https://astrea.linkeddata.es/shapes#8d26f56ec9e75266434f08dc7f5c2047>
         a               sh:PropertyShape ;
@@ -4473,6 +4473,16 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foaf:topic .
 
+<https://astrea.linkeddata.es/shapes#8b93bca7fdc9007e0b2485a2d04d4b84>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/mo/> ;
+        rdfs:label        "supporting_musician" , "Used to relate an artist doing long-time instrumental or vocal support for another artist." ;
+        sh:class          <http://purl.org/ontology/mo/MusicArtist> ;
+        sh:description    "Used to relate an artist doing long-time instrumental or vocal support for another artist." ;
+        sh:name           "supporting_musician" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           <http://purl.org/ontology/mo/supporting_musician> .
+
 <https://astrea.linkeddata.es/shapes#4867b27706b1ad61e7b534678f3ddb91>
         a            sh:PropertyShape ;
         sh:hasValue  time:unitMonth ;
@@ -4508,16 +4518,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:name           "has_movement" ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           <http://purl.org/ontology/mo/movement> .
-
-<https://astrea.linkeddata.es/shapes#8b93bca7fdc9007e0b2485a2d04d4b84>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://purl.org/ontology/mo/> ;
-        rdfs:label        "supporting_musician" , "Used to relate an artist doing long-time instrumental or vocal support for another artist." ;
-        sh:class          <http://purl.org/ontology/mo/MusicArtist> ;
-        sh:description    "Used to relate an artist doing long-time instrumental or vocal support for another artist." ;
-        sh:name           "supporting_musician" ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           <http://purl.org/ontology/mo/supporting_musician> .
 
 <https://astrea.linkeddata.es/shapes#65062106a0b456d9b97c5b283ce6687f>
         a                 sh:PropertyShape ;

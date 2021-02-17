@@ -356,11 +356,11 @@
 <https://astrea.linkeddata.es/report/0230555842>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
-                "Shapes generated with no errors" ;
+                "2021-02-13 02:58:45.361  INFO 1 --- [nio-8080-exec-5] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://www.w3.org:80: The target server failed to respond2021-02-13 02:58:45.361  INFO 1 --- [nio-8080-exec-5] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://www.w3.org:80\n" ;
         <https://w3id.org/def/astrea#source>
                 "http://www.w3.org/2004/02/skos/core" ;
         <https://w3id.org/def/astrea#statusCode>
-                "200"^^xsd:int .
+                "206"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#fa70fa558e4095f44370cf48ce11fb80>
         a                 sh:PropertyShape ;
@@ -581,6 +581,13 @@
                           ]
                         ) .
 
+<https://astrea.linkeddata.es/shapes#93d0519bf3931e9c566381bca0e6f5af>
+        a            sh:PropertyShape ;
+        rdfs:label   "has exemplar of manifestation"@en ;
+        sh:name      "has exemplar of manifestation"@en ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://rdaregistry.info/Elements/m/P30103> .
+
 <https://astrea.linkeddata.es/shapes#4eab89e129fe009ef9271f43cbe1abfe>
         a               sh:PropertyShape ;
         rdfs:label      "publishes"@en , "Inverse of \"published_in_format\". Note this property does not link a publisher with a resource, but rather a specific Format of a resource with a specific Format of another resource, indicating that the subject Format publishes the object Format."@en ;
@@ -589,13 +596,6 @@
         sh:name         "publishes"@en ;
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         <http://data.europa.eu/eli/ontology#publishes> .
-
-<https://astrea.linkeddata.es/shapes#93d0519bf3931e9c566381bca0e6f5af>
-        a            sh:PropertyShape ;
-        rdfs:label   "has exemplar of manifestation"@en ;
-        sh:name      "has exemplar of manifestation"@en ;
-        sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:path      <http://rdaregistry.info/Elements/m/P30103> .
 
 <https://astrea.linkeddata.es/shapes#b759a41907301fcdd1ab84134f9cb51b>
         a               sh:NodeShape ;
@@ -803,6 +803,14 @@
         a         sh:PropertyShape ;
         sh:class  skos:ConceptScheme .
 
+<https://astrea.linkeddata.es/shapes#1fbd7080a30e5cdb927c41a47be45d1a>
+        a               sh:NodeShape ;
+        rdfs:label      "In force"@en ;
+        sh:description  "Formally defined as the set of skos:Concept in concept scheme eli:InForceTable"@en ;
+        sh:name         "In force"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.europa.eu/eli/ontology#InForce> .
+
 <https://astrea.linkeddata.es/shapes#88db9cf73143ab5a7b2a45d33ff35ff9>
         a               sh:PropertyShape ;
         rdfs:label      "based on"@en , "Inverse of \"basis_for\". Indicates that this legal resource is empowered by another one, typically a constitution, a treaty or an enabling act."@en ;
@@ -816,14 +824,6 @@
                             sh:path   <http://data.europa.eu/eli/ontology#based_on>
                           ]
                         ) .
-
-<https://astrea.linkeddata.es/shapes#1fbd7080a30e5cdb927c41a47be45d1a>
-        a               sh:NodeShape ;
-        rdfs:label      "In force"@en ;
-        sh:description  "Formally defined as the set of skos:Concept in concept scheme eli:InForceTable"@en ;
-        sh:name         "In force"@en ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://data.europa.eu/eli/ontology#InForce> .
 
 <https://astrea.linkeddata.es/shapes#16e62abf7e63c5b29e9eeff7511eba68>
         a               sh:PropertyShape ;
@@ -911,16 +911,6 @@
         sh:path         <http://data.europa.eu/eli/ontology#date_document> ;
         sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
 
-<https://astrea.linkeddata.es/shapes#c95c0f36e1fa0742d38c4d56319bb0df>
-        a               sh:PropertyShape ;
-        rdfs:label      "licence"@en , "A legal document giving official permission to do something with the resource (Definition from Dublin Core)"@en ;
-        sh:class        owl:Thing ;
-        sh:description  "A legal document giving official permission to do something with the resource (Definition from Dublin Core)"@en ;
-        sh:maxCount     1 ;
-        sh:name         "licence"@en ;
-        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
-        sh:path         <http://data.europa.eu/eli/ontology#licence> .
-
 <https://astrea.linkeddata.es/shapes#69fc41ff00e7ef2408715bb6d9cf5228>
         a               sh:PropertyShape ;
         rdfs:label      "rightsholder agent"@en , "A person or organisation owning or managing rights over the resource (definition from Dublin Core).\nThis property should be used when the value can be identified by a suitable URI; in the absence of such a URI, the property \"rightsholder\" should be used with a string value."@en ;
@@ -930,6 +920,16 @@
         sh:name         "rightsholder agent"@en ;
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         <http://data.europa.eu/eli/ontology#rightsholder_agent> .
+
+<https://astrea.linkeddata.es/shapes#c95c0f36e1fa0742d38c4d56319bb0df>
+        a               sh:PropertyShape ;
+        rdfs:label      "licence"@en , "A legal document giving official permission to do something with the resource (Definition from Dublin Core)"@en ;
+        sh:class        owl:Thing ;
+        sh:description  "A legal document giving official permission to do something with the resource (Definition from Dublin Core)"@en ;
+        sh:maxCount     1 ;
+        sh:name         "licence"@en ;
+        sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path         <http://data.europa.eu/eli/ontology#licence> .
 
 <https://astrea.linkeddata.es/shapes#1cc715a992257653694f5afdafb42f7d>
         a               sh:PropertyShape ;

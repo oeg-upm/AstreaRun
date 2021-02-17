@@ -333,21 +333,6 @@
         sh:path         <http://www.w3.org/2006/time#years> ;
         sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
 
-<https://astrea.linkeddata.es/shapes#52f128cdcfef8aa1c487b4073ecd44bd>
-        a               sh:PropertyShape ;
-        rdfs:label      "month"@en , "Month position in a calendar-clock system.\n\nThe range of this property is not specified, so can be replaced by any specific representation of a calendar month from any calendar. "@en ;
-        sh:description  "Month position in a calendar-clock system.\n\nThe range of this property is not specified, so can be replaced by any specific representation of a calendar month from any calendar. "@en ;
-        sh:name         "month"@en ;
-        sh:nodeKind     sh:Literal ;
-        sh:path         <http://www.w3.org/2006/time#month> .
-
-<https://astrea.linkeddata.es/shapes#d5721dbd27a11084227205da6fe2fc31>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-        sh:minCount  "1"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://www.w3.org/2006/time#numericDuration> .
-
 <https://astrea.linkeddata.es/shapes#99e9ff3473fd6c306e4f6718173c9137>
         a               sh:PropertyShape ;
         rdfs:label      "Generalized year"@en , "Year number - formulated as a text string with a pattern constraint to reproduce the same lexical form as gYear, but not restricted to values from the Gregorian calendar. \nNote that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type."@en ;
@@ -355,6 +340,13 @@
         sh:name         "Generalized year"@en ;
         sh:nodeKind     sh:Literal ;
         sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#d5721dbd27a11084227205da6fe2fc31>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.w3.org/2006/time#numericDuration> .
 
 <https://astrea.linkeddata.es/shapes#3f59f1b6c34ba4ed74f02d3eeb279ca7>
         a               sh:PropertyShape ;
@@ -366,6 +358,14 @@
         sh:path         <http://www.w3.org/2006/time#inXSDgYear> ;
         sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
 
+<https://astrea.linkeddata.es/shapes#52f128cdcfef8aa1c487b4073ecd44bd>
+        a               sh:PropertyShape ;
+        rdfs:label      "month"@en , "Month position in a calendar-clock system.\n\nThe range of this property is not specified, so can be replaced by any specific representation of a calendar month from any calendar. "@en ;
+        sh:description  "Month position in a calendar-clock system.\n\nThe range of this property is not specified, so can be replaced by any specific representation of a calendar month from any calendar. "@en ;
+        sh:name         "month"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         <http://www.w3.org/2006/time#month> .
+
 <https://astrea.linkeddata.es/shapes#f5534cfec3ede7c92e42f0f7a6f44f4a>
         a               sh:PropertyShape ;
         rdfs:label      "weeks duration"@en , "length of, or element of the length of, a temporal extent expressed in weeks"@en ;
@@ -375,29 +375,6 @@
         sh:nodeKind     sh:Literal ;
         sh:path         <http://www.w3.org/2006/time#weeks> ;
         sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
-
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
-        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
-                     sh:path   <http://www.w3.org/2006/time#hasTime>
-                   ] ;
-        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
-                     sh:path   <http://www.w3.org/2006/time#after>
-                   ] ;
-        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
-                     sh:path   <http://www.w3.org/2006/time#before>
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
-                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
-                                  sh:path   <http://www.w3.org/2006/time#hasTime>
-                                ] ;
-                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
-                                  sh:path   <http://www.w3.org/2006/time#after>
-                                ] ;
-                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
-                                  sh:path   <http://www.w3.org/2006/time#before>
-                                ] ;
-                     rdf:rest   ()
-                   ] .
 
 <https://astrea.linkeddata.es/shapes#9c26e561e4f0c6832edf255896280e30>
         a            sh:PropertyShape ;
@@ -588,6 +565,29 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:name         "interval started by"@en ;
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         <http://www.w3.org/2006/time#intervalStartedBy> .
+
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
+        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
+                     sh:path   <http://www.w3.org/2006/time#hasTime>
+                   ] ;
+        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
+                     sh:path   <http://www.w3.org/2006/time#after>
+                   ] ;
+        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
+                     sh:path   <http://www.w3.org/2006/time#before>
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
+                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
+                                  sh:path   <http://www.w3.org/2006/time#hasTime>
+                                ] ;
+                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
+                                  sh:path   <http://www.w3.org/2006/time#after>
+                                ] ;
+                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
+                                  sh:path   <http://www.w3.org/2006/time#before>
+                                ] ;
+                     rdf:rest   ()
+                   ] .
 
 <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c>
         a               sh:NodeShape ;

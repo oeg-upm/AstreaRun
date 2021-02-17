@@ -248,15 +248,6 @@
         sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
         sh:path           seas:midToNegativeVoltage .
 
-<https://astrea.linkeddata.es/shapes#1771f48b74787d78313b82675b7e6e00>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  seas:PlayerOntology ;
-        rdfs:label        "Data Management System"@en ;
-        sh:description    "The class of DataManagementSystem SEAS players. Retrieves, processes and recovers data."@en ;
-        sh:name           "Data Management System"@en ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    seas:DataManagementSystem .
-
 <https://astrea.linkeddata.es/shapes#4f43a5dc1e7954ca6b5feec68af9cbd2>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  seas:ArchitectureOntology ;
@@ -284,6 +275,15 @@
         sh:name           "Nominal"@en ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    seas:NominalOperatingEvaluation .
+
+<https://astrea.linkeddata.es/shapes#1771f48b74787d78313b82675b7e6e00>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:PlayerOntology ;
+        rdfs:label        "Data Management System"@en ;
+        sh:description    "The class of DataManagementSystem SEAS players. Retrieves, processes and recovers data."@en ;
+        sh:name           "Data Management System"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:DataManagementSystem .
 
 <https://astrea.linkeddata.es/shapes#f1a861204bf50967e1f193f0983f3c5a>
         a                 sh:NodeShape ;
@@ -931,15 +931,6 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           seas:voltage .
 
-<https://astrea.linkeddata.es/shapes#127181c1ba4769dcef1556a1ce744df3>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  seas:ArchitectureOntology ;
-        rdfs:label        "End User"@en ;
-        sh:description    "The class of end user entities, that own SEAS field entities."@en ;
-        sh:name           "End User"@en ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    seas:EndUser .
-
 <https://astrea.linkeddata.es/shapes#de77af30ec04bd2c28f756c23937f532>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
@@ -950,6 +941,15 @@
         sh:name           "consumed electric energy" ;
         sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
         sh:path           seas:consumedElectricEnergy .
+
+<https://astrea.linkeddata.es/shapes#127181c1ba4769dcef1556a1ce744df3>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ArchitectureOntology ;
+        rdfs:label        "End User"@en ;
+        sh:description    "The class of end user entities, that own SEAS field entities."@en ;
+        sh:name           "End User"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:EndUser .
 
 <https://astrea.linkeddata.es/shapes#1a8c0c66516948535a3c476ee382d39e>
         a                 sh:PropertyShape ;
@@ -2869,6 +2869,15 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    seas:ComplexProperty .
 
+<https://astrea.linkeddata.es/shapes#9daa4a207f9f5605dc42e73e74cbd167>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Efficiency Property" ;
+        sh:description    "Efficiency signifies a level of performance that describes a process that uses the lowest amount of inputs to create the greatest \r\n                amount of outputs. Efficiency relates to the use of all inputs in producing any given \r\n                output, including personal time and energy. Efficiency is a measurable concept that can be \r\n                determined by determining the ratio of useful output to total input. It minimizes the waste \r\n                of resources such as physical materials, energy and time, while successfully achieving the \r\n                desired output."@en ;
+        sh:name           "Efficiency Property" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:EfficiencyProperty .
+
 <https://astrea.linkeddata.es/shapes#0189a0ab0643ebdf647c58ded6462e8d>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
@@ -2878,15 +2887,6 @@
         sh:name           "connected in RN through"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           seas:connectedInRNThrough .
-
-<https://astrea.linkeddata.es/shapes#9daa4a207f9f5605dc42e73e74cbd167>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
-        rdfs:label        "Efficiency Property" ;
-        sh:description    "Efficiency signifies a level of performance that describes a process that uses the lowest amount of inputs to create the greatest \r\n                amount of outputs. Efficiency relates to the use of all inputs in producing any given \r\n                output, including personal time and energy. Efficiency is a measurable concept that can be \r\n                determined by determining the ratio of useful output to total input. It minimizes the waste \r\n                of resources such as physical materials, energy and time, while successfully achieving the \r\n                desired output."@en ;
-        sh:name           "Efficiency Property" ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    seas:EfficiencyProperty .
 
 <https://astrea.linkeddata.es/shapes#407f45a2b968d198099e40c089daac3a>
         a                 sh:NodeShape ;
@@ -3010,6 +3010,17 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           seas:connectsSystemInHot2N .
 
+<https://astrea.linkeddata.es/shapes#03c61adb3bdabe5002db5cfd138b0347>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase connection point to the resistance between its T and its R wires."@en , "T-to-R resistance"@en ;
+        sh:class          seas:ElectricResistanceProperty ;
+        sh:description    "Links a three-phase connection point to the resistance between its T and its R wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "T-to-R resistance"@en ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           seas:TRResistance .
+
 <https://astrea.linkeddata.es/shapes#0a72319b6a1f719998975a5ddfeeb284>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  seas:GreenKPIVocabulary ;
@@ -3038,17 +3049,6 @@
         sh:name           "voltage angle" ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           seas:voltageAngle .
-
-<https://astrea.linkeddata.es/shapes#03c61adb3bdabe5002db5cfd138b0347>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
-        rdfs:label        "Links a three-phase connection point to the resistance between its T and its R wires."@en , "T-to-R resistance"@en ;
-        sh:class          seas:ElectricResistanceProperty ;
-        sh:description    "Links a three-phase connection point to the resistance between its T and its R wires."@en ;
-        sh:maxCount       1 ;
-        sh:name           "T-to-R resistance"@en ;
-        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
-        sh:path           seas:TRResistance .
 
 <https://astrea.linkeddata.es/shapes#027dfbfa411d2112265d6817574c90eb>
         sh:path                 pep:methodUsed ;
@@ -3610,17 +3610,6 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    seas:NonResidentalBuilding .
 
-<https://astrea.linkeddata.es/shapes#a40b15efc7b38b5cd91586367b3fadd6>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
-        rdfs:label        "S-to-T conductance"@en , "Links a three-phase connection point to the conductance between its S and its T wires."@en ;
-        sh:class          seas:ElectricConductanceProperty ;
-        sh:description    "Links a three-phase connection point to the conductance between its S and its T wires."@en ;
-        sh:maxCount       1 ;
-        sh:name           "S-to-T conductance"@en ;
-        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
-        sh:path           seas:STConductance .
-
 <https://astrea.linkeddata.es/shapes#89937f20008e773ba2731134f966b01c>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  seas:TimeOntology ;
@@ -3640,10 +3629,16 @@
         sh:property       <https://astrea.linkeddata.es/shapes#c70702eec6fe457dba32cdf56978b64d> ;
         sh:targetClass    seas:LoadShiftingExecution .
 
-<https://astrea.linkeddata.es/shapes#137b6b24d99eb2257376f6f87f05820c>
-        sh:path                 seas:evaluationOf ;
-        sh:qualifiedMinCount    1 ;
-        sh:qualifiedValueShape  [ sh:class  seas:ElectricConductanceProperty ] .
+<https://astrea.linkeddata.es/shapes#a40b15efc7b38b5cd91586367b3fadd6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "S-to-T conductance"@en , "Links a three-phase connection point to the conductance between its S and its T wires."@en ;
+        sh:class          seas:ElectricConductanceProperty ;
+        sh:description    "Links a three-phase connection point to the conductance between its S and its T wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "S-to-T conductance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:STConductance .
 
 <https://astrea.linkeddata.es/shapes#9db3f0f302af150a8daf2033ff67cc2e>
         a                 sh:NodeShape ;
@@ -3653,6 +3648,11 @@
         sh:name           "High Voltage Evaluation"@en ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    seas:HighVoltageEvaluation .
+
+<https://astrea.linkeddata.es/shapes#137b6b24d99eb2257376f6f87f05820c>
+        sh:path                 seas:evaluationOf ;
+        sh:qualifiedMinCount    1 ;
+        sh:qualifiedValueShape  [ sh:class  seas:ElectricConductanceProperty ] .
 
 <https://astrea.linkeddata.es/shapes#b577324aa4637f10295d04e8ac1aa191>
         a                 sh:NodeShape ;
@@ -4985,6 +4985,15 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    seas:DistributionMinimumEvaluation .
 
+<https://astrea.linkeddata.es/shapes#875d941cf3173807a6ec7e81bef79284>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  seas:ComfortOntology ;
+        rdfs:label        "Maximum Critically Uncomfortable Evaluation"@en ;
+        sh:description    "A maximum critically uncomfortable evaluation is an evaluation of the maximum value for a property that is considered critically uncomfortable for the associated agent."@en ;
+        sh:name           "Maximum Critically Uncomfortable Evaluation"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    seas:MaximumCriticallyUncomfortableEvaluation .
+
 <https://astrea.linkeddata.es/shapes#4605344932c343bdee70fa31651ad009>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  seas:StatisticsOntology ;
@@ -4996,15 +5005,6 @@
         sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
         sh:path           seas:rank ;
         sh:pattern        "[\\-+]?[0-9]+" .
-
-<https://astrea.linkeddata.es/shapes#875d941cf3173807a6ec7e81bef79284>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  seas:ComfortOntology ;
-        rdfs:label        "Maximum Critically Uncomfortable Evaluation"@en ;
-        sh:description    "A maximum critically uncomfortable evaluation is an evaluation of the maximum value for a property that is considered critically uncomfortable for the associated agent."@en ;
-        sh:name           "Maximum Critically Uncomfortable Evaluation"@en ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    seas:MaximumCriticallyUncomfortableEvaluation .
 
 <https://astrea.linkeddata.es/shapes#cb8c4b946448caa65a3c39c344eb5c81>
         a                 sh:NodeShape ;
@@ -5335,6 +5335,17 @@
         sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
         sh:path           seas:SNConductance .
 
+<https://astrea.linkeddata.es/shapes#2f2439d3c7c53e22b4d6cffa63b244b6>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
+        rdfs:label        "Links a three-phase connection point to the susceptance between its T and its R wires."@en , "T-to-R susceptance"@en ;
+        sh:class          seas:ElectricSusceptanceProperty ;
+        sh:description    "Links a three-phase connection point to the susceptance between its T and its R wires."@en ;
+        sh:maxCount       1 ;
+        sh:name           "T-to-R susceptance"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
+        sh:path           seas:TRSusceptance .
+
 <https://astrea.linkeddata.es/shapes#8b12275136da53eaa8f99c04c824309c>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  seas:OperatingOntology ;
@@ -5352,17 +5363,6 @@
         sh:name           "Swimming Pool"@en ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    seas:SwimmingPool .
-
-<https://astrea.linkeddata.es/shapes#2f2439d3c7c53e22b4d6cffa63b244b6>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  seas:ElectricPowerSystemOntology ;
-        rdfs:label        "Links a three-phase connection point to the susceptance between its T and its R wires."@en , "T-to-R susceptance"@en ;
-        sh:class          seas:ElectricSusceptanceProperty ;
-        sh:description    "Links a three-phase connection point to the susceptance between its T and its R wires."@en ;
-        sh:maxCount       1 ;
-        sh:name           "T-to-R susceptance"@en ;
-        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
-        sh:path           seas:TRSusceptance .
 
 <https://astrea.linkeddata.es/shapes#d36e3932e934afd734fb648420edd27d>
         a                 sh:NodeShape ;

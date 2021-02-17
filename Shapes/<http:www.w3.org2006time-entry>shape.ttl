@@ -82,6 +82,12 @@
         sh:path      <http://www.w3.org/2006/time-entry#day> ;
         sh:pattern   "---(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
 
+<https://astrea.linkeddata.es/shapes#deebb8cd8e5362facccb6a4cd1dce290>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.w3.org/2006/time-entry#years> .
+
 <https://astrea.linkeddata.es/shapes#9197b250dedf598633974441d960cb47>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
@@ -94,28 +100,11 @@
         sh:nodeKind  sh:BlankNodeOrIRI ;
         sh:path      <http://www.w3.org/2006/time-entry#unitType> .
 
-<https://astrea.linkeddata.es/shapes#deebb8cd8e5362facccb6a4cd1dce290>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://www.w3.org/2006/time-entry#years> .
-
 <https://astrea.linkeddata.es/shapes#406c5f8747ad128e6ff0195f1d8522ee>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:nonNegativeInteger ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.w3.org/2006/time-entry#secondInstantThing> .
-
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#6141ed68fc18035c7265c93a3289cd0d> ;
-        rdf:first  [ sh:class  <http://www.w3.org/2006/time-entry#InstantThing> ;
-                     sh:path   <http://www.w3.org/2006/time-entry#before>
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#8f05dcd84581f59c2ca0c879a7c317da> ;
-                     rdf:first  [ sh:class  <http://www.w3.org/2006/time-entry#IntervalThing> ;
-                                  sh:path   <http://www.w3.org/2006/time-entry#before>
-                                ] ;
-                     rdf:rest   ()
-                   ] .
 
 <https://astrea.linkeddata.es/shapes#e30b14d2ba21c806ce7122f6339428dd>
         a            sh:PropertyShape ;
@@ -158,7 +147,7 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#6141ed68fc18035c7265c93a
         a            sh:PropertyShape ;
         sh:class     <http://www.w3.org/2006/time-entry#InstantThing> ;
         sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:or        _:b1 , _:b2 ;
+        sh:or        _:b0 , _:b1 ;
         sh:path      <http://www.w3.org/2006/time-entry#inside> .
 
 <https://astrea.linkeddata.es/shapes#7f8d4d6d4a839f307488cb45cc768d7c>
@@ -180,18 +169,18 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#6141ed68fc18035c7265c93a
         sh:property     <https://astrea.linkeddata.es/shapes#cb18697d87499fdc3baad7e3b0399eef> , <https://astrea.linkeddata.es/shapes#4baa04a543ce959c30080f375dce146f> , <https://astrea.linkeddata.es/shapes#2e0302e70efe7f450008f94dc6e2601f> , <https://astrea.linkeddata.es/shapes#576fb39d51feb3dd1d082d8fc604b1d5> , <https://astrea.linkeddata.es/shapes#f72d696328bfb26a374306362bbd8049> , <https://astrea.linkeddata.es/shapes#406c5f8747ad128e6ff0195f1d8522ee> ;
         sh:targetClass  <http://www.w3.org/2006/time-entry#InstantThingPair> .
 
+<https://astrea.linkeddata.es/shapes#4537d611e3f8ab070af6570b7359ab7a>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.w3.org/2006/time-entry#months> .
+
 <https://astrea.linkeddata.es/shapes#576fb39d51feb3dd1d082d8fc604b1d5>
         a            sh:PropertyShape ;
         sh:datatype  xsd:duration ;
         sh:nodeKind  sh:Literal ;
         sh:path      <http://www.w3.org/2006/time-entry#instantPairDurationDescriptionDataType> ;
         sh:pattern   "-?P((([0-9]+Y([0-9]+M)?([0-9]+D)?|([0-9]+M)([0-9]+D)?|([0-9]+D))(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S)))?)|(T(([0-9]+H)([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?|([0-9]+M)([0-9]+(\\.[0-9]+)?S)?|([0-9]+(\\.[0-9]+)?S))))" .
-
-<https://astrea.linkeddata.es/shapes#4537d611e3f8ab070af6570b7359ab7a>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://www.w3.org/2006/time-entry#months> .
 
 <https://astrea.linkeddata.es/shapes#8592840805515e7014762cb213777260>
         a            sh:PropertyShape ;
@@ -205,7 +194,33 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#6141ed68fc18035c7265c93a
         sh:nodeKind  sh:BlankNodeOrIRI ;
         sh:path      <http://www.w3.org/2006/time-entry#intFinishes> .
 
-_:b2    rdf:first  <https://astrea.linkeddata.es/shapes#7488b0c66e5902ee62b22b731bfaa370> ;
+<https://astrea.linkeddata.es/shapes#ecc9998cd175e7a9a067bdec58ed6702>
+        a            sh:PropertyShape ;
+        sh:class     <http://www.w3.org/2006/time-entry#CalendarClockDescription> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/2006/time-entry#inCalendarClock> .
+
+<https://astrea.linkeddata.es/shapes#a4744f02126dd71056e599a794853477>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.w3.org/2006/time-entry#days> .
+
+<https://astrea.linkeddata.es/shapes#e81d520ecd2fd3b9a2e1516578958f28>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:decimal ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      <http://www.w3.org/2006/time-entry#minutes> ;
+        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#2e0302e70efe7f450008f94dc6e2601f>
+        a            sh:PropertyShape ;
+        sh:class     <http://www.w3.org/2006/time-entry#InstantThing> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:or        _:b0 , _:b1 ;
+        sh:path      <http://www.w3.org/2006/time-entry#secondInstantThing> .
+
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#7488b0c66e5902ee62b22b731bfaa370> ;
         rdf:first  [ sh:class  <http://www.w3.org/2006/time-entry#Instant> ;
                      sh:path   <http://www.w3.org/2006/time-entry#begins>
                    ] ;
@@ -239,32 +254,6 @@ _:b2    rdf:first  <https://astrea.linkeddata.es/shapes#7488b0c66e5902ee62b22b73
                                 ] ;
                      rdf:rest   ()
                    ] .
-
-<https://astrea.linkeddata.es/shapes#ecc9998cd175e7a9a067bdec58ed6702>
-        a            sh:PropertyShape ;
-        sh:class     <http://www.w3.org/2006/time-entry#CalendarClockDescription> ;
-        sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:path      <http://www.w3.org/2006/time-entry#inCalendarClock> .
-
-<https://astrea.linkeddata.es/shapes#a4744f02126dd71056e599a794853477>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://www.w3.org/2006/time-entry#days> .
-
-<https://astrea.linkeddata.es/shapes#e81d520ecd2fd3b9a2e1516578958f28>
-        a            sh:PropertyShape ;
-        sh:datatype  xsd:decimal ;
-        sh:nodeKind  sh:Literal ;
-        sh:path      <http://www.w3.org/2006/time-entry#minutes> ;
-        sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
-
-<https://astrea.linkeddata.es/shapes#2e0302e70efe7f450008f94dc6e2601f>
-        a            sh:PropertyShape ;
-        sh:class     <http://www.w3.org/2006/time-entry#InstantThing> ;
-        sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:or        _:b1 , _:b2 ;
-        sh:path      <http://www.w3.org/2006/time-entry#secondInstantThing> .
 
 <https://astrea.linkeddata.es/shapes#e35557a848061e7507ca8eb1e2948ec2>
         a         sh:PropertyShape ;
@@ -313,7 +302,7 @@ _:b2    rdf:first  <https://astrea.linkeddata.es/shapes#7488b0c66e5902ee62b22b73
 <https://astrea.linkeddata.es/shapes#b2c8e160aea98f6462be4dc0df877d4a>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
-        sh:or           _:b3 , _:b0 ;
+        sh:or           _:b2 , _:b3 ;
         sh:property     <https://astrea.linkeddata.es/shapes#ef48c08844e17cf6206be1720ed58e13> , <https://astrea.linkeddata.es/shapes#9885adbf240ffc85afc9b285f4da64e0> , <https://astrea.linkeddata.es/shapes#1fe3b1820b8b35dcdd3d3309becf7e7a> , <https://astrea.linkeddata.es/shapes#c0a2a1e5b8d2ca29bb8a11af7b69428c> , <https://astrea.linkeddata.es/shapes#3935aae94f020c13dc5bcd74c014666e> ;
         sh:targetClass  <http://www.w3.org/2006/time-entry#TemporalThing> .
 
@@ -350,7 +339,7 @@ _:b2    rdf:first  <https://astrea.linkeddata.es/shapes#7488b0c66e5902ee62b22b73
         sh:class     <http://www.w3.org/2006/time-entry#InstantThing> ;
         sh:maxCount  1 ;
         sh:nodeKind  sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
-        sh:or        _:b1 , _:b2 ;
+        sh:or        _:b0 , _:b1 ;
         sh:path      <http://www.w3.org/2006/time-entry#ends> .
 
 <https://astrea.linkeddata.es/shapes#557bc124848ec14bf023f029b7d1313b>
@@ -385,7 +374,7 @@ _:b2    rdf:first  <https://astrea.linkeddata.es/shapes#7488b0c66e5902ee62b22b73
         a            sh:PropertyShape ;
         sh:class     <http://www.w3.org/2006/time-entry#InstantThing> ;
         sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:or        _:b1 , _:b2 ;
+        sh:or        _:b0 , _:b1 ;
         sh:path      <http://www.w3.org/2006/time-entry#firstInstantThing> .
 
 <https://astrea.linkeddata.es/shapes#65d3fe3383ff49885925ad932760072b>
@@ -413,41 +402,6 @@ _:b2    rdf:first  <https://astrea.linkeddata.es/shapes#7488b0c66e5902ee62b22b73
         a            sh:PropertyShape ;
         sh:nodeKind  sh:BlankNodeOrIRI ;
         sh:path      <http://www.w3.org/2006/time-entry#after> .
-
-<https://astrea.linkeddata.es/shapes#9885adbf240ffc85afc9b285f4da64e0>
-        a            sh:PropertyShape ;
-        sh:class     <http://www.w3.org/2006/time-entry#DurationDescription> ;
-        sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:path      <http://www.w3.org/2006/time-entry#durationDescriptionOf> .
-
-<https://astrea.linkeddata.es/shapes#36efce2ef449e9f10d4594a45f3f311e>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:path      <http://www.w3.org/2006/time-entry#intFinishedBy> .
-
-<https://astrea.linkeddata.es/shapes#0663d1b88fb32ca17c38a1672373864f>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://www.w3.org/2006/time-entry#dayOfWeekField> .
-
-<https://astrea.linkeddata.es/shapes#f33debb0b874f4f2f04da0aaed5503d1>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://www.w3.org/2006/time-entry#day> .
-
-<https://astrea.linkeddata.es/shapes#90809c231bea2aa9546aad5ec103b24e>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:property     <https://astrea.linkeddata.es/shapes#e45a73a2cd96ffcc37b96498394ad650> , <https://astrea.linkeddata.es/shapes#60522e1665e9a184879b54a211e2f0d1> , <https://astrea.linkeddata.es/shapes#6222830cf5796186a1a6a57b66eb2ccf> , <https://astrea.linkeddata.es/shapes#a1244bcd918a3ac1f18967a9db2b325c> , <https://astrea.linkeddata.es/shapes#3b341abf2881a09d65775d76b7bab3ad> , <https://astrea.linkeddata.es/shapes#65abebd677c4fae28362ed36c63f3261> , <https://astrea.linkeddata.es/shapes#b2e498c25c211d26ca76656bc920d05d> , <https://astrea.linkeddata.es/shapes#9b3c730b2262f6353ccaae0a52dbb307> , <https://astrea.linkeddata.es/shapes#01b3f21525d82844460d5f584b318466> , <https://astrea.linkeddata.es/shapes#5ed265d19ce04e2b41803c77054495a7> , <https://astrea.linkeddata.es/shapes#3cdc6cad850014c893c08699cc0315d1> , <https://astrea.linkeddata.es/shapes#2021c060f809cf4dc59465bf6ba1b89d> , <https://astrea.linkeddata.es/shapes#881a35a67b987702d7d2390a304b2826> , <https://astrea.linkeddata.es/shapes#0663d1b88fb32ca17c38a1672373864f> , <https://astrea.linkeddata.es/shapes#e67a9acf4f3fa33b581535d0d9b5bf30> , <https://astrea.linkeddata.es/shapes#14445e09a08162f6021561a9ee70928d> , <https://astrea.linkeddata.es/shapes#fc1e2e58236224067f60c83df7947ebb> , <https://astrea.linkeddata.es/shapes#f33debb0b874f4f2f04da0aaed5503d1> , <https://astrea.linkeddata.es/shapes#f9d17ae2f7d4556db3df5b9246b7e29e> , <https://astrea.linkeddata.es/shapes#1a99f04b6b7ed890162ed81b71a95dd8> , <https://astrea.linkeddata.es/shapes#7f8d4d6d4a839f307488cb45cc768d7c> , <https://astrea.linkeddata.es/shapes#91db7bd810d0474f5384a995e95d28cf> ;
-        sh:targetClass  <http://www.w3.org/2006/time-entry#CalendarClockDescription> .
-
-<https://astrea.linkeddata.es/shapes#b046fca0f25bdf89bcc0bcc03daf3b34>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:property     <https://astrea.linkeddata.es/shapes#fc91f16c5d97dce0b5f9bb0751e8dd72> ;
-        sh:targetClass  <http://www.w3.org/2006/time-entry#Interval> .
 
 _:b1    rdf:first  <https://astrea.linkeddata.es/shapes#7488b0c66e5902ee62b22b731bfaa370> ;
         rdf:first  [ sh:class  <http://www.w3.org/2006/time-entry#Instant> ;
@@ -484,17 +438,63 @@ _:b1    rdf:first  <https://astrea.linkeddata.es/shapes#7488b0c66e5902ee62b22b73
                      rdf:rest   ()
                    ] .
 
-<https://astrea.linkeddata.es/shapes#0122fa2d980d2fc8bed0b711c94654b6>
+<https://astrea.linkeddata.es/shapes#9885adbf240ffc85afc9b285f4da64e0>
+        a            sh:PropertyShape ;
+        sh:class     <http://www.w3.org/2006/time-entry#DurationDescription> ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/2006/time-entry#durationDescriptionOf> .
+
+<https://astrea.linkeddata.es/shapes#36efce2ef449e9f10d4594a45f3f311e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      <http://www.w3.org/2006/time-entry#intFinishedBy> .
+
+<https://astrea.linkeddata.es/shapes#0663d1b88fb32ca17c38a1672373864f>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:nonNegativeInteger ;
         sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://www.w3.org/2006/time-entry#seconds> .
+        sh:path      <http://www.w3.org/2006/time-entry#dayOfWeekField> .
+
+<https://astrea.linkeddata.es/shapes#f33debb0b874f4f2f04da0aaed5503d1>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.w3.org/2006/time-entry#day> .
+
+<https://astrea.linkeddata.es/shapes#90809c231bea2aa9546aad5ec103b24e>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#e45a73a2cd96ffcc37b96498394ad650> , <https://astrea.linkeddata.es/shapes#60522e1665e9a184879b54a211e2f0d1> , <https://astrea.linkeddata.es/shapes#6222830cf5796186a1a6a57b66eb2ccf> , <https://astrea.linkeddata.es/shapes#a1244bcd918a3ac1f18967a9db2b325c> , <https://astrea.linkeddata.es/shapes#3b341abf2881a09d65775d76b7bab3ad> , <https://astrea.linkeddata.es/shapes#65abebd677c4fae28362ed36c63f3261> , <https://astrea.linkeddata.es/shapes#b2e498c25c211d26ca76656bc920d05d> , <https://astrea.linkeddata.es/shapes#9b3c730b2262f6353ccaae0a52dbb307> , <https://astrea.linkeddata.es/shapes#01b3f21525d82844460d5f584b318466> , <https://astrea.linkeddata.es/shapes#5ed265d19ce04e2b41803c77054495a7> , <https://astrea.linkeddata.es/shapes#3cdc6cad850014c893c08699cc0315d1> , <https://astrea.linkeddata.es/shapes#2021c060f809cf4dc59465bf6ba1b89d> , <https://astrea.linkeddata.es/shapes#881a35a67b987702d7d2390a304b2826> , <https://astrea.linkeddata.es/shapes#0663d1b88fb32ca17c38a1672373864f> , <https://astrea.linkeddata.es/shapes#e67a9acf4f3fa33b581535d0d9b5bf30> , <https://astrea.linkeddata.es/shapes#14445e09a08162f6021561a9ee70928d> , <https://astrea.linkeddata.es/shapes#fc1e2e58236224067f60c83df7947ebb> , <https://astrea.linkeddata.es/shapes#f33debb0b874f4f2f04da0aaed5503d1> , <https://astrea.linkeddata.es/shapes#f9d17ae2f7d4556db3df5b9246b7e29e> , <https://astrea.linkeddata.es/shapes#1a99f04b6b7ed890162ed81b71a95dd8> , <https://astrea.linkeddata.es/shapes#7f8d4d6d4a839f307488cb45cc768d7c> , <https://astrea.linkeddata.es/shapes#91db7bd810d0474f5384a995e95d28cf> ;
+        sh:targetClass  <http://www.w3.org/2006/time-entry#CalendarClockDescription> .
+
+<https://astrea.linkeddata.es/shapes#b046fca0f25bdf89bcc0bcc03daf3b34>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#fc91f16c5d97dce0b5f9bb0751e8dd72> ;
+        sh:targetClass  <http://www.w3.org/2006/time-entry#Interval> .
 
 <https://astrea.linkeddata.es/shapes#e67a9acf4f3fa33b581535d0d9b5bf30>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:nonNegativeInteger ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.w3.org/2006/time-entry#month> .
+
+<https://astrea.linkeddata.es/shapes#0122fa2d980d2fc8bed0b711c94654b6>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.w3.org/2006/time-entry#seconds> .
+
+_:b2    rdf:first  <https://astrea.linkeddata.es/shapes#6141ed68fc18035c7265c93a3289cd0d> ;
+        rdf:first  [ sh:class  <http://www.w3.org/2006/time-entry#InstantThing> ;
+                     sh:path   <http://www.w3.org/2006/time-entry#before>
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#8f05dcd84581f59c2ca0c879a7c317da> ;
+                     rdf:first  [ sh:class  <http://www.w3.org/2006/time-entry#IntervalThing> ;
+                                  sh:path   <http://www.w3.org/2006/time-entry#before>
+                                ] ;
+                     rdf:rest   ()
+                   ] .
 
 <https://astrea.linkeddata.es/shapes#92cdf40087bf640d9a556b3930b524b7>
         a            sh:PropertyShape ;
@@ -525,7 +525,7 @@ _:b1    rdf:first  <https://astrea.linkeddata.es/shapes#7488b0c66e5902ee62b22b73
 <https://astrea.linkeddata.es/shapes#6141ed68fc18035c7265c93a3289cd0d>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
-        sh:or           _:b1 , _:b2 ;
+        sh:or           _:b1 , _:b0 ;
         sh:property     <https://astrea.linkeddata.es/shapes#9885adbf240ffc85afc9b285f4da64e0> , <https://astrea.linkeddata.es/shapes#ef48c08844e17cf6206be1720ed58e13> , <https://astrea.linkeddata.es/shapes#cfc25836ecc8523f35167a65349f3c6a> , <https://astrea.linkeddata.es/shapes#1fe3b1820b8b35dcdd3d3309becf7e7a> , <https://astrea.linkeddata.es/shapes#c0a2a1e5b8d2ca29bb8a11af7b69428c> , <https://astrea.linkeddata.es/shapes#3935aae94f020c13dc5bcd74c014666e> , <https://astrea.linkeddata.es/shapes#ecc9998cd175e7a9a067bdec58ed6702> ;
         sh:targetClass  <http://www.w3.org/2006/time-entry#InstantThing> .
 
@@ -565,17 +565,6 @@ _:b1    rdf:first  <https://astrea.linkeddata.es/shapes#7488b0c66e5902ee62b22b73
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.w3.org/2006/time-entry#year> .
 
-_:b3    rdf:first  <https://astrea.linkeddata.es/shapes#6141ed68fc18035c7265c93a3289cd0d> ;
-        rdf:first  [ sh:class  <http://www.w3.org/2006/time-entry#InstantThing> ;
-                     sh:path   <http://www.w3.org/2006/time-entry#before>
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#8f05dcd84581f59c2ca0c879a7c317da> ;
-                     rdf:first  [ sh:class  <http://www.w3.org/2006/time-entry#IntervalThing> ;
-                                  sh:path   <http://www.w3.org/2006/time-entry#before>
-                                ] ;
-                     rdf:rest   ()
-                   ] .
-
 <https://astrea.linkeddata.es/shapes#91210778320752edaea1b60f08599f8e>
         a         sh:PropertyShape ;
         sh:class  <http://www.w3.org/2006/time-entry#InstantThing> .
@@ -584,7 +573,7 @@ _:b3    rdf:first  <https://astrea.linkeddata.es/shapes#6141ed68fc18035c7265c93a
         a            sh:PropertyShape ;
         sh:class     <http://www.w3.org/2006/time-entry#TemporalThing> ;
         sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:or        _:b3 , _:b0 ;
+        sh:or        _:b3 , _:b2 ;
         sh:path      <http://www.w3.org/2006/time-entry#before> .
 
 <https://astrea.linkeddata.es/shapes#60522e1665e9a184879b54a211e2f0d1>
@@ -616,7 +605,7 @@ _:b3    rdf:first  <https://astrea.linkeddata.es/shapes#6141ed68fc18035c7265c93a
         sh:class     <http://www.w3.org/2006/time-entry#InstantThing> ;
         sh:maxCount  1 ;
         sh:nodeKind  sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
-        sh:or        _:b1 , _:b2 ;
+        sh:or        _:b0 , _:b1 ;
         sh:path      <http://www.w3.org/2006/time-entry#begins> .
 
 <https://astrea.linkeddata.es/shapes#3400b424adcd64f4c5984d0a06079de4>
@@ -643,6 +632,17 @@ _:b3    rdf:first  <https://astrea.linkeddata.es/shapes#6141ed68fc18035c7265c93a
         sh:maxCount  "1"^^xsd:nonNegativeInteger ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.w3.org/2006/time-entry#weeks> .
+
+_:b3    rdf:first  <https://astrea.linkeddata.es/shapes#6141ed68fc18035c7265c93a3289cd0d> ;
+        rdf:first  [ sh:class  <http://www.w3.org/2006/time-entry#InstantThing> ;
+                     sh:path   <http://www.w3.org/2006/time-entry#before>
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#8f05dcd84581f59c2ca0c879a7c317da> ;
+                     rdf:first  [ sh:class  <http://www.w3.org/2006/time-entry#IntervalThing> ;
+                                  sh:path   <http://www.w3.org/2006/time-entry#before>
+                                ] ;
+                     rdf:rest   ()
+                   ] .
 
 <https://astrea.linkeddata.es/shapes#f0b82a79c6c79b5fbcbe703f4b82738e>
         a               sh:NodeShape ;

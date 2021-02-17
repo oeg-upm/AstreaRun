@@ -5,10 +5,6 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 
-_:b0    a               sh:NodeShape ;
-        sh:property     <https://astrea.linkeddata.es/shapes#dfdfc523cd73fd1c7334ce9d006363f3> , <https://astrea.linkeddata.es/shapes#7a5449fc13733162666bb332321778c8> , <https://astrea.linkeddata.es/shapes#9b42a466083b0e4bcea298193006d281> , <https://astrea.linkeddata.es/shapes#68c8e4d1b91c3aacf375ae6416ef1170> , <https://astrea.linkeddata.es/shapes#efe83f3f3bd19efdf4889ce294f4fe2f> , <https://astrea.linkeddata.es/shapes#a4d7e5a895a345bff751e4a2d57bd5b5> , <https://astrea.linkeddata.es/shapes#2c5b686da149005c733da9d31a8df46c> , <https://astrea.linkeddata.es/shapes#d5dea828a7747f1dd9e522d802edc3ec> , <https://astrea.linkeddata.es/shapes#3040464d565f6a1785bf2f3e617be1a9> , <https://astrea.linkeddata.es/shapes#2d16a2eef3bbecc9530ea82bd2c7de58> , <https://astrea.linkeddata.es/shapes#09fdb75c01580e62de3c560e943cd261> , <https://astrea.linkeddata.es/shapes#6c4f2cd23a0de996a3cc336ac561a54a> , <https://astrea.linkeddata.es/shapes#71964275507948d9fd1d073f1f607588> ;
-        sh:targetClass  _:b0 .
-
 <https://astrea.linkeddata.es/shapes#9b42a466083b0e4bcea298193006d281>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://purl.org/vocommons/voaf> ;
@@ -17,7 +13,7 @@ _:b0    a               sh:NodeShape ;
         sh:description    "Indicates that the subject vocabulary defines some subclasses or subproperties of the object vocabulary, or local restrictions on those."@en , "Indique que le vocabulaire sujet définit des sous-classes ou sous-propriétés du vocabulaire objet"@fr ;
         sh:name           "specializes"@en , "spécialise"@fr ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:or             _:b1 , _:b2 ;
+        sh:or             _:b0 , _:b1 ;
         sh:path           <http://purl.org/vocommons/voaf#specializes> .
 
 <https://astrea.linkeddata.es/shapes#dfdfc523cd73fd1c7334ce9d006363f3>
@@ -28,7 +24,7 @@ _:b0    a               sh:NodeShape ;
         sh:description    "Indique que le vocabulaire sujet étend l'expressivité du vocabulaire objet en déclarant des relations de subsomption avec ce dernier, ou en utilisant ses classes comme domaine ou co-domaine d'un propriété du vocabulaire sujet, ou en définissant des contraintes locales etc."@fr , "Indicates that the subject vocabulary extends the expressivity of the object vocabulary by declaring subsumption relationships, using object vocabulary class as domain or range of a subject vocabulary property, defining local restrictions etc ..."@en ;
         sh:name           "extends"@en , "étend"@fr ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:or             _:b1 , _:b2 ;
+        sh:or             _:b1 , _:b0 ;
         sh:path           <http://purl.org/vocommons/voaf#extends> .
 
 <https://astrea.linkeddata.es/shapes#2ce1844fb2a9383799b08b055bb0fb42>
@@ -49,7 +45,7 @@ _:b0    a               sh:NodeShape ;
         sh:description    "Indicates that the subject vocabulary contains some declaration of disjoint classes with the object vocabulary."@en , "Indique que le vocabulaire sujet contient des déclarations de classes disjointes avec le vocabulaire objet"@fr ;
         sh:name           "has disjunctions with"@en , "a des disjonctions avec"@fr ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:or             _:b1 , _:b2 ;
+        sh:or             _:b1 , _:b0 ;
         sh:path           <http://purl.org/vocommons/voaf#hasDisjunctionsWith> .
 
 <https://astrea.linkeddata.es/shapes#68c8e4d1b91c3aacf375ae6416ef1170>
@@ -60,7 +56,7 @@ _:b0    a               sh:NodeShape ;
         sh:description    "Indique que le vocabulaire sujet utilise ou étend au moins une classe ou propriété du vocabulaire objet"@fr , "Indicates that the subject vocabulary uses or extends some class or property of the object vocabulary"@en ;
         sh:name           "relies on"@en , "réutilise"@fr ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:or             _:b1 , _:b2 ;
+        sh:or             _:b1 , _:b0 ;
         sh:path           <http://purl.org/vocommons/voaf#reliesOn> .
 
 <https://astrea.linkeddata.es/shapes#d91a2701db3e96aaf6dbd063b8f5f8e1>
@@ -73,6 +69,65 @@ _:b0    a               sh:NodeShape ;
         sh:nodeKind       sh:Literal ;
         sh:path           <http://purl.org/vocommons/voaf#occurrencesInVocabularies> ;
         sh:pattern        "[\\-+]?[0-9]+" .
+
+_:b1    rdf:first  _:b2 ;
+        rdf:first  [ sh:class  _:b2 ;
+                     sh:path   <http://purl.org/vocommons/voaf#reliesOn>
+                   ] ;
+        rdf:first  [ sh:class  _:b2 ;
+                     sh:path   <http://purl.org/vocommons/voaf#usedBy>
+                   ] ;
+        rdf:first  [ sh:class  _:b2 ;
+                     sh:path   <http://purl.org/vocommons/voaf#metadataVoc>
+                   ] ;
+        rdf:first  [ sh:class  _:b2 ;
+                     sh:path   <http://purl.org/vocommons/voaf#specializes>
+                   ] ;
+        rdf:first  [ sh:class  _:b2 ;
+                     sh:path   <http://purl.org/vocommons/voaf#similar>
+                   ] ;
+        rdf:first  [ sh:class  _:b2 ;
+                     sh:path   <http://purl.org/vocommons/voaf#hasEquivalencesWith>
+                   ] ;
+        rdf:first  [ sh:class  _:b2 ;
+                     sh:path   <http://purl.org/vocommons/voaf#extends>
+                   ] ;
+        rdf:first  [ sh:class  _:b2 ;
+                     sh:path   <http://purl.org/vocommons/voaf#hasDisjunctionsWith>
+                   ] ;
+        rdf:first  [ sh:class  _:b2 ;
+                     sh:path   <http://purl.org/vocommons/voaf#generalizes>
+                   ] ;
+        rdf:rest   [ rdf:first  _:b3 ;
+                     rdf:first  [ sh:class  _:b3 ;
+                                  sh:path   <http://purl.org/vocommons/voaf#usedBy>
+                                ] ;
+                     rdf:first  [ sh:class  _:b3 ;
+                                  sh:path   <http://purl.org/vocommons/voaf#reliesOn>
+                                ] ;
+                     rdf:first  [ sh:class  _:b3 ;
+                                  sh:path   <http://purl.org/vocommons/voaf#metadataVoc>
+                                ] ;
+                     rdf:first  [ sh:class  _:b3 ;
+                                  sh:path   <http://purl.org/vocommons/voaf#specializes>
+                                ] ;
+                     rdf:first  [ sh:class  _:b3 ;
+                                  sh:path   <http://purl.org/vocommons/voaf#extends>
+                                ] ;
+                     rdf:first  [ sh:class  _:b3 ;
+                                  sh:path   <http://purl.org/vocommons/voaf#hasDisjunctionsWith>
+                                ] ;
+                     rdf:first  [ sh:class  _:b3 ;
+                                  sh:path   <http://purl.org/vocommons/voaf#hasEquivalencesWith>
+                                ] ;
+                     rdf:first  [ sh:class  _:b3 ;
+                                  sh:path   <http://purl.org/vocommons/voaf#similar>
+                                ] ;
+                     rdf:first  [ sh:class  _:b3 ;
+                                  sh:path   <http://purl.org/vocommons/voaf#generalizes>
+                                ] ;
+                     rdf:rest   ()
+                   ] .
 
 <https://astrea.linkeddata.es/shapes#c20d2c72801eb1aba7d78a68a324e998>
         a                 sh:PropertyShape ;
@@ -110,7 +165,7 @@ _:b0    a               sh:NodeShape ;
         sh:description    "A vocabulary used in the linked data cloud. An instance of voaf:Vocabulary relies on or is used by at least another instance of voaf:Vocabulary"@en , "Un vocabulaire utilisé ou utilisable dans le Web des données. Une instance de voaf:Vocabulary s'appuie at/ou est utilisée par au moins une autre instance of voaf:Vocabulary"@fr ;
         sh:name           "Vocabulary"@en , "Vocabulaire"@fr ;
         sh:nodeKind       sh:IRI ;
-        sh:or             _:b1 , _:b2 ;
+        sh:or             _:b1 , _:b0 ;
         sh:property       <https://astrea.linkeddata.es/shapes#a4d7e5a895a345bff751e4a2d57bd5b5> , <https://astrea.linkeddata.es/shapes#6c4f2cd23a0de996a3cc336ac561a54a> , <https://astrea.linkeddata.es/shapes#2d16a2eef3bbecc9530ea82bd2c7de58> , <https://astrea.linkeddata.es/shapes#71964275507948d9fd1d073f1f607588> , <https://astrea.linkeddata.es/shapes#09fdb75c01580e62de3c560e943cd261> , <https://astrea.linkeddata.es/shapes#d5dea828a7747f1dd9e522d802edc3ec> , <https://astrea.linkeddata.es/shapes#dfdfc523cd73fd1c7334ce9d006363f3> , <https://astrea.linkeddata.es/shapes#9b42a466083b0e4bcea298193006d281> , <https://astrea.linkeddata.es/shapes#2c5b686da149005c733da9d31a8df46c> , <https://astrea.linkeddata.es/shapes#efe83f3f3bd19efdf4889ce294f4fe2f> , <https://astrea.linkeddata.es/shapes#7a5449fc13733162666bb332321778c8> , <https://astrea.linkeddata.es/shapes#68c8e4d1b91c3aacf375ae6416ef1170> , <https://astrea.linkeddata.es/shapes#3040464d565f6a1785bf2f3e617be1a9> ;
         sh:targetClass    <http://purl.org/vocommons/voaf#Vocabulary> .
 
@@ -166,10 +221,6 @@ _:b0    a               sh:NodeShape ;
         sh:property       <https://astrea.linkeddata.es/shapes#2ce1844fb2a9383799b08b055bb0fb42> , <https://astrea.linkeddata.es/shapes#f7eb3dbaa50caea2ce5456ec8151aaed> ;
         sh:targetClass    <http://purl.org/vocommons/voaf#DatasetOccurrences> .
 
-_:b3    a               sh:NodeShape ;
-        sh:property     <https://astrea.linkeddata.es/shapes#09fdb75c01580e62de3c560e943cd261> , <https://astrea.linkeddata.es/shapes#2c5b686da149005c733da9d31a8df46c> , <https://astrea.linkeddata.es/shapes#9b42a466083b0e4bcea298193006d281> , <https://astrea.linkeddata.es/shapes#2d16a2eef3bbecc9530ea82bd2c7de58> , <https://astrea.linkeddata.es/shapes#efe83f3f3bd19efdf4889ce294f4fe2f> , <https://astrea.linkeddata.es/shapes#68c8e4d1b91c3aacf375ae6416ef1170> , <https://astrea.linkeddata.es/shapes#71964275507948d9fd1d073f1f607588> , <https://astrea.linkeddata.es/shapes#dfdfc523cd73fd1c7334ce9d006363f3> , <https://astrea.linkeddata.es/shapes#a4d7e5a895a345bff751e4a2d57bd5b5> , <https://astrea.linkeddata.es/shapes#3040464d565f6a1785bf2f3e617be1a9> , <https://astrea.linkeddata.es/shapes#7a5449fc13733162666bb332321778c8> , <https://astrea.linkeddata.es/shapes#6c4f2cd23a0de996a3cc336ac561a54a> , <https://astrea.linkeddata.es/shapes#d5dea828a7747f1dd9e522d802edc3ec> ;
-        sh:targetClass  _:b3 .
-
 <https://astrea.linkeddata.es/shapes#71964275507948d9fd1d073f1f607588>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://purl.org/vocommons/voaf> ;
@@ -178,7 +229,7 @@ _:b3    a               sh:NodeShape ;
         sh:description    "Indicates that the subject vocabulary uses the object vocabulary in metadata at global vocabulary level or at element level"@en , "Indique que le vocabulaire sujet utilise le vocabulaire objet pour décrire ses métadonnées, au niveau global du vocabulaire ou au niveau des éléments"@fr ;
         sh:name           "metadata vocabulary"@en , "vocabulaire de métadonnées"@fr ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:or             _:b1 , _:b2 ;
+        sh:or             _:b0 , _:b1 ;
         sh:path           <http://purl.org/vocommons/voaf#metadataVoc> .
 
 <https://astrea.linkeddata.es/shapes#b10101a14b77d5f34158ae25a4ef8372>
@@ -191,10 +242,6 @@ _:b3    a               sh:NodeShape ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           <http://purl.org/vocommons/voaf#toDoList> .
 
-_:b4    a               sh:NodeShape ;
-        sh:property     <https://astrea.linkeddata.es/shapes#6c4f2cd23a0de996a3cc336ac561a54a> , <https://astrea.linkeddata.es/shapes#7a5449fc13733162666bb332321778c8> , <https://astrea.linkeddata.es/shapes#68c8e4d1b91c3aacf375ae6416ef1170> , <https://astrea.linkeddata.es/shapes#9b42a466083b0e4bcea298193006d281> , <https://astrea.linkeddata.es/shapes#2d16a2eef3bbecc9530ea82bd2c7de58> , <https://astrea.linkeddata.es/shapes#d5dea828a7747f1dd9e522d802edc3ec> , <https://astrea.linkeddata.es/shapes#2c5b686da149005c733da9d31a8df46c> , <https://astrea.linkeddata.es/shapes#dfdfc523cd73fd1c7334ce9d006363f3> , <https://astrea.linkeddata.es/shapes#71964275507948d9fd1d073f1f607588> , <https://astrea.linkeddata.es/shapes#09fdb75c01580e62de3c560e943cd261> , <https://astrea.linkeddata.es/shapes#a4d7e5a895a345bff751e4a2d57bd5b5> , <https://astrea.linkeddata.es/shapes#efe83f3f3bd19efdf4889ce294f4fe2f> , <https://astrea.linkeddata.es/shapes#3040464d565f6a1785bf2f3e617be1a9> ;
-        sh:targetClass  _:b4 .
-
 <https://astrea.linkeddata.es/shapes#3c5c58b238a8b829db4404b300263474>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://purl.org/vocommons/voaf> ;
@@ -206,9 +253,17 @@ _:b4    a               sh:NodeShape ;
         sh:path           <http://purl.org/vocommons/voaf#occurrencesInDatasets> ;
         sh:pattern        "[\\-+]?[0-9]+" .
 
-_:b5    a               sh:NodeShape ;
-        sh:property     <https://astrea.linkeddata.es/shapes#efe83f3f3bd19efdf4889ce294f4fe2f> , <https://astrea.linkeddata.es/shapes#68c8e4d1b91c3aacf375ae6416ef1170> , <https://astrea.linkeddata.es/shapes#9b42a466083b0e4bcea298193006d281> , <https://astrea.linkeddata.es/shapes#6c4f2cd23a0de996a3cc336ac561a54a> , <https://astrea.linkeddata.es/shapes#2d16a2eef3bbecc9530ea82bd2c7de58> , <https://astrea.linkeddata.es/shapes#a4d7e5a895a345bff751e4a2d57bd5b5> , <https://astrea.linkeddata.es/shapes#dfdfc523cd73fd1c7334ce9d006363f3> , <https://astrea.linkeddata.es/shapes#d5dea828a7747f1dd9e522d802edc3ec> , <https://astrea.linkeddata.es/shapes#3040464d565f6a1785bf2f3e617be1a9> , <https://astrea.linkeddata.es/shapes#09fdb75c01580e62de3c560e943cd261> , <https://astrea.linkeddata.es/shapes#2c5b686da149005c733da9d31a8df46c> , <https://astrea.linkeddata.es/shapes#7a5449fc13733162666bb332321778c8> , <https://astrea.linkeddata.es/shapes#71964275507948d9fd1d073f1f607588> ;
-        sh:targetClass  _:b5 .
+_:b4    a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#71964275507948d9fd1d073f1f607588> , <https://astrea.linkeddata.es/shapes#2c5b686da149005c733da9d31a8df46c> , <https://astrea.linkeddata.es/shapes#68c8e4d1b91c3aacf375ae6416ef1170> , <https://astrea.linkeddata.es/shapes#9b42a466083b0e4bcea298193006d281> , <https://astrea.linkeddata.es/shapes#dfdfc523cd73fd1c7334ce9d006363f3> , <https://astrea.linkeddata.es/shapes#a4d7e5a895a345bff751e4a2d57bd5b5> , <https://astrea.linkeddata.es/shapes#6c4f2cd23a0de996a3cc336ac561a54a> , <https://astrea.linkeddata.es/shapes#d5dea828a7747f1dd9e522d802edc3ec> , <https://astrea.linkeddata.es/shapes#efe83f3f3bd19efdf4889ce294f4fe2f> , <https://astrea.linkeddata.es/shapes#3040464d565f6a1785bf2f3e617be1a9> , <https://astrea.linkeddata.es/shapes#2d16a2eef3bbecc9530ea82bd2c7de58> , <https://astrea.linkeddata.es/shapes#7a5449fc13733162666bb332321778c8> , <https://astrea.linkeddata.es/shapes#09fdb75c01580e62de3c560e943cd261> ;
+        sh:targetClass  _:b4 .
+
+_:b3    a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#68c8e4d1b91c3aacf375ae6416ef1170> , <https://astrea.linkeddata.es/shapes#2c5b686da149005c733da9d31a8df46c> , <https://astrea.linkeddata.es/shapes#efe83f3f3bd19efdf4889ce294f4fe2f> , <https://astrea.linkeddata.es/shapes#2d16a2eef3bbecc9530ea82bd2c7de58> , <https://astrea.linkeddata.es/shapes#6c4f2cd23a0de996a3cc336ac561a54a> , <https://astrea.linkeddata.es/shapes#7a5449fc13733162666bb332321778c8> , <https://astrea.linkeddata.es/shapes#a4d7e5a895a345bff751e4a2d57bd5b5> , <https://astrea.linkeddata.es/shapes#9b42a466083b0e4bcea298193006d281> , <https://astrea.linkeddata.es/shapes#09fdb75c01580e62de3c560e943cd261> , <https://astrea.linkeddata.es/shapes#dfdfc523cd73fd1c7334ce9d006363f3> , <https://astrea.linkeddata.es/shapes#3040464d565f6a1785bf2f3e617be1a9> , <https://astrea.linkeddata.es/shapes#71964275507948d9fd1d073f1f607588> , <https://astrea.linkeddata.es/shapes#d5dea828a7747f1dd9e522d802edc3ec> ;
+        sh:targetClass  _:b3 .
+
+_:b2    a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#efe83f3f3bd19efdf4889ce294f4fe2f> , <https://astrea.linkeddata.es/shapes#dfdfc523cd73fd1c7334ce9d006363f3> , <https://astrea.linkeddata.es/shapes#d5dea828a7747f1dd9e522d802edc3ec> , <https://astrea.linkeddata.es/shapes#2c5b686da149005c733da9d31a8df46c> , <https://astrea.linkeddata.es/shapes#7a5449fc13733162666bb332321778c8> , <https://astrea.linkeddata.es/shapes#a4d7e5a895a345bff751e4a2d57bd5b5> , <https://astrea.linkeddata.es/shapes#9b42a466083b0e4bcea298193006d281> , <https://astrea.linkeddata.es/shapes#2d16a2eef3bbecc9530ea82bd2c7de58> , <https://astrea.linkeddata.es/shapes#09fdb75c01580e62de3c560e943cd261> , <https://astrea.linkeddata.es/shapes#3040464d565f6a1785bf2f3e617be1a9> , <https://astrea.linkeddata.es/shapes#68c8e4d1b91c3aacf375ae6416ef1170> , <https://astrea.linkeddata.es/shapes#6c4f2cd23a0de996a3cc336ac561a54a> , <https://astrea.linkeddata.es/shapes#71964275507948d9fd1d073f1f607588> ;
+        sh:targetClass  _:b2 .
 
 <https://astrea.linkeddata.es/shapes#c86da2af9032674cd2ba69ee2fc60857>
         a                 sh:NodeShape ;
@@ -235,64 +290,68 @@ _:b5    a               sh:NodeShape ;
         <https://w3id.org/def/astrea#generatedShapesFrom>
                 <https://astrea.linkeddata.es/report/0620946147> .
 
-_:b2    rdf:first  _:b3 ;
-        rdf:first  [ sh:class  _:b3 ;
-                     sh:path   <http://purl.org/vocommons/voaf#metadataVoc>
-                   ] ;
-        rdf:first  [ sh:class  _:b3 ;
-                     sh:path   <http://purl.org/vocommons/voaf#hasDisjunctionsWith>
-                   ] ;
-        rdf:first  [ sh:class  _:b3 ;
-                     sh:path   <http://purl.org/vocommons/voaf#reliesOn>
-                   ] ;
-        rdf:first  [ sh:class  _:b3 ;
-                     sh:path   <http://purl.org/vocommons/voaf#generalizes>
-                   ] ;
-        rdf:first  [ sh:class  _:b3 ;
-                     sh:path   <http://purl.org/vocommons/voaf#extends>
-                   ] ;
-        rdf:first  [ sh:class  _:b3 ;
+_:b0    rdf:first  _:b5 ;
+        rdf:first  [ sh:class  _:b5 ;
                      sh:path   <http://purl.org/vocommons/voaf#similar>
                    ] ;
-        rdf:first  [ sh:class  _:b3 ;
+        rdf:first  [ sh:class  _:b5 ;
+                     sh:path   <http://purl.org/vocommons/voaf#hasDisjunctionsWith>
+                   ] ;
+        rdf:first  [ sh:class  _:b5 ;
+                     sh:path   <http://purl.org/vocommons/voaf#extends>
+                   ] ;
+        rdf:first  [ sh:class  _:b5 ;
+                     sh:path   <http://purl.org/vocommons/voaf#metadataVoc>
+                   ] ;
+        rdf:first  [ sh:class  _:b5 ;
                      sh:path   <http://purl.org/vocommons/voaf#specializes>
                    ] ;
-        rdf:first  [ sh:class  _:b3 ;
+        rdf:first  [ sh:class  _:b5 ;
+                     sh:path   <http://purl.org/vocommons/voaf#generalizes>
+                   ] ;
+        rdf:first  [ sh:class  _:b5 ;
+                     sh:path   <http://purl.org/vocommons/voaf#reliesOn>
+                   ] ;
+        rdf:first  [ sh:class  _:b5 ;
                      sh:path   <http://purl.org/vocommons/voaf#usedBy>
                    ] ;
-        rdf:first  [ sh:class  _:b3 ;
+        rdf:first  [ sh:class  _:b5 ;
                      sh:path   <http://purl.org/vocommons/voaf#hasEquivalencesWith>
                    ] ;
         rdf:rest   [ rdf:first  _:b4 ;
                      rdf:first  [ sh:class  _:b4 ;
-                                  sh:path   <http://purl.org/vocommons/voaf#extends>
-                                ] ;
-                     rdf:first  [ sh:class  _:b4 ;
-                                  sh:path   <http://purl.org/vocommons/voaf#hasDisjunctionsWith>
-                                ] ;
-                     rdf:first  [ sh:class  _:b4 ;
-                                  sh:path   <http://purl.org/vocommons/voaf#generalizes>
-                                ] ;
-                     rdf:first  [ sh:class  _:b4 ;
-                                  sh:path   <http://purl.org/vocommons/voaf#hasEquivalencesWith>
-                                ] ;
-                     rdf:first  [ sh:class  _:b4 ;
-                                  sh:path   <http://purl.org/vocommons/voaf#metadataVoc>
+                                  sh:path   <http://purl.org/vocommons/voaf#similar>
                                 ] ;
                      rdf:first  [ sh:class  _:b4 ;
                                   sh:path   <http://purl.org/vocommons/voaf#specializes>
                                 ] ;
                      rdf:first  [ sh:class  _:b4 ;
-                                  sh:path   <http://purl.org/vocommons/voaf#similar>
-                                ] ;
-                     rdf:first  [ sh:class  _:b4 ;
-                                  sh:path   <http://purl.org/vocommons/voaf#reliesOn>
+                                  sh:path   <http://purl.org/vocommons/voaf#hasEquivalencesWith>
                                 ] ;
                      rdf:first  [ sh:class  _:b4 ;
                                   sh:path   <http://purl.org/vocommons/voaf#usedBy>
                                 ] ;
+                     rdf:first  [ sh:class  _:b4 ;
+                                  sh:path   <http://purl.org/vocommons/voaf#generalizes>
+                                ] ;
+                     rdf:first  [ sh:class  _:b4 ;
+                                  sh:path   <http://purl.org/vocommons/voaf#hasDisjunctionsWith>
+                                ] ;
+                     rdf:first  [ sh:class  _:b4 ;
+                                  sh:path   <http://purl.org/vocommons/voaf#metadataVoc>
+                                ] ;
+                     rdf:first  [ sh:class  _:b4 ;
+                                  sh:path   <http://purl.org/vocommons/voaf#extends>
+                                ] ;
+                     rdf:first  [ sh:class  _:b4 ;
+                                  sh:path   <http://purl.org/vocommons/voaf#reliesOn>
+                                ] ;
                      rdf:rest   ()
                    ] .
+
+_:b5    a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#efe83f3f3bd19efdf4889ce294f4fe2f> , <https://astrea.linkeddata.es/shapes#dfdfc523cd73fd1c7334ce9d006363f3> , <https://astrea.linkeddata.es/shapes#9b42a466083b0e4bcea298193006d281> , <https://astrea.linkeddata.es/shapes#a4d7e5a895a345bff751e4a2d57bd5b5> , <https://astrea.linkeddata.es/shapes#7a5449fc13733162666bb332321778c8> , <https://astrea.linkeddata.es/shapes#d5dea828a7747f1dd9e522d802edc3ec> , <https://astrea.linkeddata.es/shapes#2c5b686da149005c733da9d31a8df46c> , <https://astrea.linkeddata.es/shapes#09fdb75c01580e62de3c560e943cd261> , <https://astrea.linkeddata.es/shapes#2d16a2eef3bbecc9530ea82bd2c7de58> , <https://astrea.linkeddata.es/shapes#68c8e4d1b91c3aacf375ae6416ef1170> , <https://astrea.linkeddata.es/shapes#71964275507948d9fd1d073f1f607588> , <https://astrea.linkeddata.es/shapes#3040464d565f6a1785bf2f3e617be1a9> , <https://astrea.linkeddata.es/shapes#6c4f2cd23a0de996a3cc336ac561a54a> ;
+        sh:targetClass  _:b5 .
 
 <https://astrea.linkeddata.es/shapes#2d16a2eef3bbecc9530ea82bd2c7de58>
         a                 sh:PropertyShape ;
@@ -302,67 +361,8 @@ _:b2    rdf:first  _:b3 ;
         sh:description    "Indicates that the subject vocabulary is used by the object vocabulary"@en , "Indique que le vocabulaire sujet est utilisé par le vocabulaire objet"@fr ;
         sh:name           "utilisé par"@fr , "used by"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:or             _:b1 , _:b2 ;
+        sh:or             _:b0 , _:b1 ;
         sh:path           <http://purl.org/vocommons/voaf#usedBy> .
-
-_:b1    rdf:first  _:b5 ;
-        rdf:first  [ sh:class  _:b5 ;
-                     sh:path   <http://purl.org/vocommons/voaf#metadataVoc>
-                   ] ;
-        rdf:first  [ sh:class  _:b5 ;
-                     sh:path   <http://purl.org/vocommons/voaf#usedBy>
-                   ] ;
-        rdf:first  [ sh:class  _:b5 ;
-                     sh:path   <http://purl.org/vocommons/voaf#reliesOn>
-                   ] ;
-        rdf:first  [ sh:class  _:b5 ;
-                     sh:path   <http://purl.org/vocommons/voaf#specializes>
-                   ] ;
-        rdf:first  [ sh:class  _:b5 ;
-                     sh:path   <http://purl.org/vocommons/voaf#generalizes>
-                   ] ;
-        rdf:first  [ sh:class  _:b5 ;
-                     sh:path   <http://purl.org/vocommons/voaf#similar>
-                   ] ;
-        rdf:first  [ sh:class  _:b5 ;
-                     sh:path   <http://purl.org/vocommons/voaf#hasEquivalencesWith>
-                   ] ;
-        rdf:first  [ sh:class  _:b5 ;
-                     sh:path   <http://purl.org/vocommons/voaf#extends>
-                   ] ;
-        rdf:first  [ sh:class  _:b5 ;
-                     sh:path   <http://purl.org/vocommons/voaf#hasDisjunctionsWith>
-                   ] ;
-        rdf:rest   [ rdf:first  _:b0 ;
-                     rdf:first  [ sh:class  _:b0 ;
-                                  sh:path   <http://purl.org/vocommons/voaf#specializes>
-                                ] ;
-                     rdf:first  [ sh:class  _:b0 ;
-                                  sh:path   <http://purl.org/vocommons/voaf#generalizes>
-                                ] ;
-                     rdf:first  [ sh:class  _:b0 ;
-                                  sh:path   <http://purl.org/vocommons/voaf#usedBy>
-                                ] ;
-                     rdf:first  [ sh:class  _:b0 ;
-                                  sh:path   <http://purl.org/vocommons/voaf#hasDisjunctionsWith>
-                                ] ;
-                     rdf:first  [ sh:class  _:b0 ;
-                                  sh:path   <http://purl.org/vocommons/voaf#similar>
-                                ] ;
-                     rdf:first  [ sh:class  _:b0 ;
-                                  sh:path   <http://purl.org/vocommons/voaf#metadataVoc>
-                                ] ;
-                     rdf:first  [ sh:class  _:b0 ;
-                                  sh:path   <http://purl.org/vocommons/voaf#hasEquivalencesWith>
-                                ] ;
-                     rdf:first  [ sh:class  _:b0 ;
-                                  sh:path   <http://purl.org/vocommons/voaf#extends>
-                                ] ;
-                     rdf:first  [ sh:class  _:b0 ;
-                                  sh:path   <http://purl.org/vocommons/voaf#reliesOn>
-                                ] ;
-                     rdf:rest   ()
-                   ] .
 
 <https://astrea.linkeddata.es/shapes#7a5449fc13733162666bb332321778c8>
         a                 sh:PropertyShape ;
@@ -372,7 +372,7 @@ _:b1    rdf:first  _:b5 ;
         sh:description    "Indique que deux vocabulaires sont similaires dans leur domaine et/ou leurs objectifs, sans être nécessairement reliés par des références."@fr , "Used to assert that two vocabularies are similar in scope and objectives, independently of the fact that they otherwise refer to each other."@en ;
         sh:name           "similaire"@fr , "similar"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:or             _:b1 , _:b2 ;
+        sh:or             _:b0 , _:b1 ;
         sh:path           <http://purl.org/vocommons/voaf#similar> .
 
 <https://astrea.linkeddata.es/shapes#f7eb3dbaa50caea2ce5456ec8151aaed>
@@ -393,7 +393,7 @@ _:b1    rdf:first  _:b5 ;
         sh:description    "Indicates that the subject vocabulary generalizes by some superclasses or superproperties the object vocabulary."@en , "Indique que le vocabulaire sujet définit des super-classes ou super-propriétés du vocabulaire objet"@fr ;
         sh:name           "généralise"@fr , "generalizes"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:or             _:b2 , _:b1 ;
+        sh:or             _:b1 , _:b0 ;
         sh:path           <http://purl.org/vocommons/voaf#generalizes> .
 
 <https://astrea.linkeddata.es/shapes#09fdb75c01580e62de3c560e943cd261>
@@ -404,5 +404,5 @@ _:b1    rdf:first  _:b5 ;
         sh:description    "Indicates that the subject vocabulary declares some equivalent classes or properties with the object vocabulary."@en , "Indique que le vocabulaire sujet déclare des équivalences de classes ou de propriétés avec le vocabulaire objet"@fr ;
         sh:name           "a des équivalences avec"@fr , "has equivalences with"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:or             _:b2 , _:b1 ;
+        sh:or             _:b0 , _:b1 ;
         sh:path           <http://purl.org/vocommons/voaf#hasEquivalencesWith> .

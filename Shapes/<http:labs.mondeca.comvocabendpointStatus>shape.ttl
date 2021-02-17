@@ -16,16 +16,20 @@
         sh:or             _:b0 ;
         sh:path           <http://labs.mondeca.com/vocab/endpointStatus#status> .
 
-_:b0    rdf:first  _:b1 ;
-        rdf:first  [ sh:class  _:b1 ;
+_:b1    a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d3aad716e375c700d7535de837d36bed> , <https://astrea.linkeddata.es/shapes#1c9adc6a70e77f13d3a0940d4ab9cb2b> ;
+        sh:targetClass  _:b1 .
+
+_:b0    rdf:first  _:b2 ;
+        rdf:first  [ sh:class  _:b2 ;
                      sh:path   <http://labs.mondeca.com/vocab/endpointStatus#status>
                    ] ;
-        rdf:rest   [ rdf:first  _:b2 ;
-                     rdf:first  [ sh:class  _:b2 ;
+        rdf:rest   [ rdf:first  _:b3 ;
+                     rdf:first  [ sh:class  _:b3 ;
                                   sh:path   <http://labs.mondeca.com/vocab/endpointStatus#status>
                                 ] ;
-                     rdf:rest   [ rdf:first  _:b3 ;
-                                  rdf:first  [ sh:class  _:b3 ;
+                     rdf:rest   [ rdf:first  _:b1 ;
+                                  rdf:first  [ sh:class  _:b1 ;
                                                sh:path   <http://labs.mondeca.com/vocab/endpointStatus#status>
                                              ] ;
                                   rdf:rest   [ rdf:first  _:b4 ;
@@ -36,10 +40,6 @@ _:b0    rdf:first  _:b1 ;
                                              ]
                                 ]
                    ] .
-
-_:b1    a               sh:NodeShape ;
-        sh:property     <https://astrea.linkeddata.es/shapes#d3aad716e375c700d7535de837d36bed> , <https://astrea.linkeddata.es/shapes#1c9adc6a70e77f13d3a0940d4ab9cb2b> ;
-        sh:targetClass  _:b1 .
 
 _:b2    a               sh:NodeShape ;
         sh:property     <https://astrea.linkeddata.es/shapes#d3aad716e375c700d7535de837d36bed> , <https://astrea.linkeddata.es/shapes#1c9adc6a70e77f13d3a0940d4ab9cb2b> ;

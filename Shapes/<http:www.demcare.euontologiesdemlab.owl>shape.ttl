@@ -408,6 +408,12 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         :intervalDuring .
 
+<https://astrea.linkeddata.es/shapes#9faee879f5c6fb2805dd49d88da5dd8f>
+        a            sh:PropertyShape ;
+        sh:datatype  xsd:decimal ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :seconds .
+
 <https://astrea.linkeddata.es/shapes#d105e7f7ceff3bf16cdbfa183899eb58>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  dcterms: ;
@@ -417,12 +423,6 @@
         sh:name           "Language"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           dcterms:language .
-
-<https://astrea.linkeddata.es/shapes#9faee879f5c6fb2805dd49d88da5dd8f>
-        a            sh:PropertyShape ;
-        sh:datatype  xsd:decimal ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      :seconds .
 
 <https://astrea.linkeddata.es/shapes#7b9da1bc411e45203591d233a6f9cde7>
         a               sh:NodeShape ;
@@ -554,6 +554,11 @@
         sh:property     <https://astrea.linkeddata.es/shapes#ccbff3c6394b661041f433f24540ff88> ;
         sh:targetClass  <http://www.demcare.eu/ontologies/demlab.owl#PersonWithDementia> .
 
+<https://astrea.linkeddata.es/shapes#4d5fe21b053837ad686b21b9c0bddfaa>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.demcare.eu/ontologies/demlab.owl#areasOfInterestExplored> .
+
 <https://astrea.linkeddata.es/shapes#d3214d45e53b688710e4d064c0d2a4d7>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  dcterms: ;
@@ -562,11 +567,6 @@
         sh:name           "Physical Medium"@en ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    dcterms:PhysicalMedium .
-
-<https://astrea.linkeddata.es/shapes#4d5fe21b053837ad686b21b9c0bddfaa>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://www.demcare.eu/ontologies/demlab.owl#areasOfInterestExplored> .
 
 <https://astrea.linkeddata.es/shapes#e9f980bf68983b9209e8d178893f125b>
         a               sh:NodeShape ;
@@ -1301,7 +1301,7 @@
         a               sh:NodeShape ;
         sh:description  "Gait assessment and impact of a cognitive activity on gait performance"@en ;
         sh:nodeKind     sh:IRI ;
-        sh:property     <https://astrea.linkeddata.es/shapes#322c638a7447eea5728f56ddb908ca00> , <https://astrea.linkeddata.es/shapes#e146f62ae77e9e86e2f4fb76ddbcf6fa> , <https://astrea.linkeddata.es/shapes#c8d5e76eb02bd18cbb6d3e439b7dbe16> , <https://astrea.linkeddata.es/shapes#cb66b86b2f62fe7b4f4d38bea81e100b> , <https://astrea.linkeddata.es/shapes#d0a92c5469a19a0555b07fddcc8e9bd1> ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d0a92c5469a19a0555b07fddcc8e9bd1> , <https://astrea.linkeddata.es/shapes#cb66b86b2f62fe7b4f4d38bea81e100b> , <https://astrea.linkeddata.es/shapes#c8d5e76eb02bd18cbb6d3e439b7dbe16> , <https://astrea.linkeddata.es/shapes#322c638a7447eea5728f56ddb908ca00> , <https://astrea.linkeddata.es/shapes#e146f62ae77e9e86e2f4fb76ddbcf6fa> ;
         sh:targetClass  <http://www.demcare.eu/ontologies/demlab.owl#GaitData> .
 
 <https://astrea.linkeddata.es/shapes#203c6db8a73c7732f2bbe00ba1273a34>
@@ -1994,6 +1994,29 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.demcare.eu/ontologies/demlab.owl#measuredData> .
 
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   :before
+                   ] ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   :hasTime
+                   ] ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   :after
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   :before
+                                ] ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   :hasTime
+                                ] ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   :after
+                                ] ;
+                     rdf:rest   ()
+                   ] .
+
 <https://astrea.linkeddata.es/shapes#7dc8fd3a0404e02b3dc34d6d1a444872>
         a               sh:PropertyShape ;
         rdfs:label      "intervalo se encuentra"@es , "Si un intervalo propio T1 se encuentra con otro intervalo propio T2, entonces el final de T1 coincide con el principio de T2."@es , "If a proper interval T1 is intervalMeets another proper interval T2, then the end of T1 is coincident with the beginning of T2."@en , "interval meets"@en ;
@@ -2137,18 +2160,18 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.demcare.eu/ontologies/demlab.owl#involvesTask> .
 
+<https://astrea.linkeddata.es/shapes#4867b27706b1ad61e7b534678f3ddb91>
+        a            sh:PropertyShape ;
+        sh:hasValue  :unitMonth ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :unitType .
+
 <https://astrea.linkeddata.es/shapes#f2bca439737a217a5a883cd9d2a7cd6f>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:nonNegativeInteger ;
         sh:minCount  "1"^^xsd:nonNegativeInteger ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.demcare.eu/ontologies/demlab.owl#fabScore> .
-
-<https://astrea.linkeddata.es/shapes#4867b27706b1ad61e7b534678f3ddb91>
-        a            sh:PropertyShape ;
-        sh:hasValue  :unitMonth ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      :unitType .
 
 <https://astrea.linkeddata.es/report/0620946147>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
@@ -3080,6 +3103,16 @@
         sh:property       <https://astrea.linkeddata.es/shapes#0e5a01b85467fe09b1de26dea227d646> , <https://astrea.linkeddata.es/shapes#bef93efc004fe1bdb3ecf03472336d7a> , <https://astrea.linkeddata.es/shapes#d11dcd6bf65ac8f3a8ba70dceaf23477> , <https://astrea.linkeddata.es/shapes#febd2c1781966d53f8c50918bc225cbf> , <https://astrea.linkeddata.es/shapes#babfcfb6122a5c6e76b0340506699655> , <https://astrea.linkeddata.es/shapes#1849d2cdd7d07570c087ad1ef520a285> , <https://astrea.linkeddata.es/shapes#147c715eadc8092c3ea626a8d4488d35> , <https://astrea.linkeddata.es/shapes#a0a1b20d2fffb49af882535b54f99030> , <https://astrea.linkeddata.es/shapes#32168390c516969176ea3e8234e15da1> , <https://astrea.linkeddata.es/shapes#b318c7a4946bc3e902d052a8ea3fc03c> , <https://astrea.linkeddata.es/shapes#4eb43d9410145665da6b9c1af911e893> ;
         sh:targetClass    foaf:Agent , dcterms:Agent .
 
+<https://astrea.linkeddata.es/shapes#f261e4284859ee052913244bf04cb23a>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  foaf: ;
+        rdfs:label        "focus" , "The underlying or 'focal' entity associated with some SKOS-described concept." ;
+        sh:class          owl:Thing ;
+        sh:description    "The underlying or 'focal' entity associated with some SKOS-described concept." ;
+        sh:name           "focus" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           foaf:focus .
+
 <https://astrea.linkeddata.es/shapes#4c2452e1fd79d252bb94ad3ca839741d>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  foaf: ;
@@ -3091,16 +3124,6 @@
         sh:name           "jabber ID" ;
         sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
         sh:path           foaf:jabberID .
-
-<https://astrea.linkeddata.es/shapes#f261e4284859ee052913244bf04cb23a>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  foaf: ;
-        rdfs:label        "focus" , "The underlying or 'focal' entity associated with some SKOS-described concept." ;
-        sh:class          owl:Thing ;
-        sh:description    "The underlying or 'focal' entity associated with some SKOS-described concept." ;
-        sh:name           "focus" ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           foaf:focus .
 
 <https://astrea.linkeddata.es/shapes#6ace7559c09873d57bb26d2909a563c6>
         a               sh:NodeShape ;
@@ -3219,29 +3242,6 @@
         sh:name         "interval before"@en , "intervalo anterior"@es ;
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         :intervalBefore .
-
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   :before
-                   ] ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   :hasTime
-                   ] ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   :after
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   :before
-                                ] ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   :hasTime
-                                ] ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   :after
-                                ] ;
-                     rdf:rest   ()
-                   ] .
 
 <https://astrea.linkeddata.es/shapes#254bf0f7cb396fa2d84e9e6a8adafb9c>
         a               sh:NodeShape ;
