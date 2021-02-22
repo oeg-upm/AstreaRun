@@ -150,12 +150,23 @@ def analysis(shape):
     objectslist = []
     count_total_class = 0
     count_total_class_node = 0
+    count_total_class_node_nested = 0
     count_total_class_property = 0
+    count_total_class_property_nested = 0
     count_total_datatype = 0
     count_total_datatype_node = 0
     count_total_datatype_property = 0
     count_total_nodekind = 0
+    nodekind_list = []
     count_total_nodekind_node = 0
+    count_total_nodekind_node_iri = 0
+    count_total_nodekind_node_literal = 0
+    count_total_nodekind_node_blanknodeoriri = 0
+    count_total_nodekind_node_iriorliteral = 0
+    count_total_nodekind_property_iri = 0
+    count_total_nodekind_property_literal = 0
+    count_total_nodekind_property_blanknodeoriri = 0
+    count_total_nodekind_property_iriorliteral = 0
     count_total_nodekind_property = 0
     count_total_mincount = 0
     count_total_mincount_node = 0
@@ -249,7 +260,9 @@ def analysis(shape):
     count_total_name_property = 0
     count_total_path = 0
     count_total_path_node = 0
+    count_total_path_node_nested = 0
     count_total_path_property = 0
+    count_total_path_property_nested = 0
     count_total_inversepath = 0
     count_total_inversepath_node = 0
     count_total_inversepath_property = 0
@@ -601,6 +614,19 @@ def analysis(shape):
                 count_class_node = "%s" % row
                 count_total_class_node += int(count_class_node)
 
+            count_class_node_nested = g.query("""
+                            SELECT (COUNT (?s) AS ?count)
+                            WHERE {
+                            ?s a sh:NodeShape .
+                            ?s sh:or ?typesList .
+                            ?typesList rdf:rest* ?typesListRest .
+                            ?typesListRest rdf:first [ sh:class ?o] .
+                            }
+                        """)
+            for row in count_class_node_nested:
+                count_class_node_nested = "%s" % row
+                count_total_class_node_nested += int(count_class_node_nested)
+
             count_class_property = g.query("""
                             SELECT (COUNT (?s) AS ?count)
                             WHERE {
@@ -611,6 +637,19 @@ def analysis(shape):
             for row in count_class_property:
                 count_class_property = "%s" % row
                 count_total_class_property += int(count_class_property)
+
+            count_class_property_nested = g.query("""
+                            SELECT (COUNT (?s) AS ?count)
+                            WHERE {
+                            ?s a sh:PropertyShape .
+                            ?s sh:or ?typesList .
+                            ?typesList rdf:rest* ?typesListRest .
+                            ?typesListRest rdf:first [ sh:class ?o] .
+                            }
+                        """)
+            for row in count_class_property_nested:
+                count_class_property_nested = "%s" % row
+                count_total_class_property_nested += int(count_class_property_nested)
 
             count_datatype = g.query("""
                             SELECT (COUNT (?s) AS ?count)
@@ -654,6 +693,15 @@ def analysis(shape):
                 count_nodekind = "%s" % row
                 count_total_nodekind += int(count_nodekind)
 
+            nodekind = g.query("""
+                            SELECT DISTINCT ?o
+                            WHERE {
+                            ?s sh:nodeKind ?o .
+                            }
+                        """)
+            for row in nodekind:
+                nodekind_list.append("%s" % row)
+
             count_nodekind_node = g.query("""
                             SELECT (COUNT (?s) AS ?count)
                             WHERE {
@@ -665,6 +713,50 @@ def analysis(shape):
                 count_nodekind_node = "%s" % row
                 count_total_nodekind_node += int(count_nodekind_node)
 
+            count_nodekind_node_iri = g.query("""
+                            SELECT (COUNT (?s) AS ?count)
+                            WHERE {
+                            ?s a sh:NodeShape .
+                            ?s sh:nodeKind sh:IRI .
+                            }
+                        """)
+            for row in count_nodekind_node_iri:
+                count_nodekind_node_iri = "%s" % row
+                count_total_nodekind_node_iri += int(count_nodekind_node_iri)
+
+            count_nodekind_node_literal = g.query("""
+                            SELECT (COUNT (?s) AS ?count)
+                            WHERE {
+                            ?s a sh:NodeShape .
+                            ?s sh:nodeKind sh:Literal .
+                            }
+                        """)
+            for row in count_nodekind_node_literal:
+                count_nodekind_node_literal = "%s" % row
+                count_total_nodekind_node_literal += int(count_nodekind_node_literal)
+
+            count_nodekind_node_blanknodeoriri = g.query("""
+                            SELECT (COUNT (?s) AS ?count)
+                            WHERE {
+                            ?s a sh:NodeShape .
+                            ?s sh:nodeKind sh:BlankNodeOrIRI .
+                            }
+                        """)
+            for row in count_nodekind_node_blanknodeoriri:
+                count_nodekind_node_blanknodeoriri = "%s" % row
+                count_total_nodekind_node_blanknodeoriri += int(count_nodekind_node_blanknodeoriri)
+
+            count_nodekind_node_iriorliteral = g.query("""
+                            SELECT (COUNT (?s) AS ?count)
+                            WHERE {
+                            ?s a sh:NodeShape .
+                            ?s sh:nodeKind sh:IRIOrLiteral .
+                            }
+                        """)
+            for row in count_nodekind_node_iriorliteral:
+                count_nodekind_node_iriorliteral = "%s" % row
+                count_total_nodekind_node_iriorliteral += int(count_nodekind_node_iriorliteral)
+
             count_nodekind_property = g.query("""
                             SELECT (COUNT (?s) AS ?count)
                             WHERE {
@@ -675,6 +767,50 @@ def analysis(shape):
             for row in count_nodekind_property:
                 count_nodekind_property = "%s" % row
                 count_total_nodekind_property += int(count_nodekind_property)
+
+            count_nodekind_property_iri = g.query("""
+                            SELECT (COUNT (?s) AS ?count)
+                            WHERE {
+                            ?s a sh:PropertyShape .
+                            ?s sh:nodeKind sh:IRI .
+                            }
+                        """)
+            for row in count_nodekind_property_iri:
+                count_nodekind_property_iri = "%s" % row
+                count_total_nodekind_property_iri += int(count_nodekind_property_iri)
+
+            count_nodekind_property_literal = g.query("""
+                            SELECT (COUNT (?s) AS ?count)
+                            WHERE {
+                            ?s a sh:PropertyShape .
+                            ?s sh:nodeKind sh:Literal .
+                            }
+                        """)
+            for row in count_nodekind_property_literal:
+                count_nodekind_property_literal = "%s" % row
+                count_total_nodekind_property_literal += int(count_nodekind_property_literal)
+
+            count_nodekind_property_blanknodeoriri = g.query("""
+                            SELECT (COUNT (?s) AS ?count)
+                            WHERE {
+                            ?s a sh:PropertyShape .
+                            ?s sh:nodeKind sh:BlankNodeOrIRI .
+                            }
+                        """)
+            for row in count_nodekind_property_blanknodeoriri:
+                count_nodekind_property_blanknodeoriri = "%s" % row
+                count_total_nodekind_property_blanknodeoriri += int(count_nodekind_property_blanknodeoriri)
+
+            count_nodekind_property_iriorliteral = g.query("""
+                            SELECT (COUNT (?s) AS ?count)
+                            WHERE {
+                            ?s a sh:PropertyShape .
+                            ?s sh:nodeKind sh:IRIOrLiteral .
+                            }
+                        """)
+            for row in count_nodekind_property_iriorliteral:
+                count_nodekind_property_iriorliteral = "%s" % row
+                count_total_nodekind_property_iriorliteral += int(count_nodekind_property_iriorliteral)
 
             count_mincount = g.query("""
                             SELECT (COUNT (?s) AS ?count)
@@ -1657,6 +1793,19 @@ def analysis(shape):
                 count_path_node = "%s" % row
                 count_total_path_node += int(count_path_node)
 
+            count_path_node_nested = g.query("""
+                SELECT (COUNT (?s) AS ?count)
+                WHERE {
+                ?s a sh:NodeShape .
+                ?s sh:or ?typesList .
+                ?typesList rdf:rest* ?typesListRest .
+                ?typesListRest rdf:first [ sh:path ?o] .
+                }
+            """)
+            for row in count_path_node_nested:
+                count_path_node_nested = "%s" % row
+                count_total_path_node_nested += int(count_path_node_nested)
+
             count_path_property = g.query("""
                 SELECT (COUNT (?s) AS ?count)
                 WHERE {
@@ -1667,6 +1816,19 @@ def analysis(shape):
             for row in count_path_property:
                 count_path_property = "%s" % row
                 count_total_path_property += int(count_path_property)
+
+            count_path_property_nested = g.query("""
+                SELECT (COUNT (?s) AS ?count)
+                WHERE {
+                ?s a sh:PropertyShape .
+                ?s sh:or ?typesList .
+                ?typesList rdf:rest* ?typesListRest .
+                ?typesListRest rdf:first [ sh:path ?o] .
+                }
+            """)
+            for row in count_path_property_nested:
+                count_path_property_nested = "%s" % row
+                count_total_path_property_nested += int(count_path_property_nested)
 
             count_inversepath = g.query("""
                 SELECT (COUNT (?s) AS ?count)
@@ -2102,13 +2264,24 @@ def analysis(shape):
                            "Present constraint components list: " + str(list(dict.fromkeys(predicateslist))) + "\n" +
                            "Total sh:class " + str(count_total_class) + "\n" +
                            "Total sh:class node " + str(count_total_class_node) + "\n" +
+                           "Total sh:class node nested " + str(count_total_class_node_nested) + "\n" +
                            "Total sh:class property " + str(count_total_class_property) + "\n" +
+                           "Total sh:class property nested " + str(count_total_class_property_nested) + "\n" +
                            "Total sh:datatype " + str(count_total_datatype) + "\n" +
                            "Total sh:datatype node " + str(count_total_datatype_node) + "\n" +
                            "Total sh:datatype property " + str(count_total_datatype_property) + "\n" +
                            "Total sh:nodeKind " + str(count_total_nodekind) + "\n" +
+                           "sh:nodeKind types list " + str(list(dict.fromkeys(nodekind_list))) + "\n" +
                            "Total sh:nodeKind node " + str(count_total_nodekind_node) + "\n" +
+                           "Total sh:nodeKind node IRI " + str(count_total_nodekind_node_iri) + "\n" +
+                           "Total sh:nodeKind node Literal " + str(count_total_nodekind_node_literal) + "\n" +
+                           "Total sh:nodeKind node Blank node or IRI " + str(count_total_nodekind_node_blanknodeoriri) + "\n" +
+                           "Total sh:nodeKind node IRI or literal  " + str(count_total_nodekind_node_iriorliteral) + "\n" +
                            "Total sh:nodeKind property " + str(count_total_nodekind_property) + "\n" +
+                           "Total sh:nodeKind property IRI " + str(count_total_nodekind_property_iri) + "\n" +
+                           "Total sh:nodeKind property Literal " + str(count_total_nodekind_property_literal) + "\n" +
+                           "Total sh:nodeKind property Blank node or IRI " + str(count_total_nodekind_property_blanknodeoriri) + "\n" +
+                           "Total sh:nodeKind property IRI or literal  " + str(count_total_nodekind_property_iriorliteral) + "\n" +
                            "Total sh:minCount " + str(count_total_mincount) + "\n" +
                            "Total sh:minCount node " + str(count_total_mincount_node) + "\n" +
                            "Total sh:minCount property " + str(count_total_mincount_property) + "\n" +
@@ -2201,7 +2374,9 @@ def analysis(shape):
                            "Total sh:name property " + str(count_total_name_property) + "\n" +
                            "Total sh:path " + str(count_total_path) + "\n" +
                            "Total sh:path node " + str(count_total_path_node) + "\n" +
+                           "Total sh:path node nested " + str(count_total_path_node_nested) + "\n" +
                            "Total sh:path property " + str(count_total_path_property) + "\n" +
+                           "Total sh:path property nested " + str(count_total_path_property_nested) + "\n" +
                            "Total sh:inversePath " + str(count_total_inversepath) + "\n" +
                            "Total sh:inversePath node " + str(count_total_inversepath_node) + "\n" +
                            "Total sh:inversePath property " + str(count_total_inversepath_property) + "\n" +
@@ -2243,155 +2418,6 @@ def analysis(shape):
                            "Total https://w3id.org/def/astrea#source property " + str(count_total_source_property))
             path_parent = os.path.dirname(os.getcwd())
             os.chdir(path_parent)
-
-    # print("Total Axioms " + str(count_total_shapeaxioms))
-    # print("Total Subjects " + str(count_different_subjects))
-    # print("Total Predicates " + str(count_different_predicates))
-    # print("Total Objects " + str(count_different_objects))
-    # print("Total Node Shapes " + str(count_total_nodeshape))
-    # print("Total Property Shapes " + str(count_total_propertyshape))
-    # print("Present constraint components list: " + str(list(dict.fromkeys(predicateslist))))
-    # print("Total sh:class " + str(count_total_class))
-    # print("Total sh:class node " + str(count_total_class_node))
-    # print("Total sh:class property " + str(count_total_class_property))
-    # print("Total sh:datatype " + str(count_total_datatype))
-    # print("Total sh:datatype node " + str(count_total_datatype_node))
-    # print("Total sh:datatype property " + str(count_total_datatype_property))
-    # print("Total sh:nodeKind " + str(count_total_nodekind))
-    # print("Total sh:nodeKind node " + str(count_total_nodekind_node))
-    # print("Total sh:nodeKind property " + str(count_total_nodekind_property))
-    # print("Total sh:minCount " + str(count_total_mincount))
-    # print("Total sh:minCount node " + str(count_total_mincount_node))
-    # print("Total sh:minCount property " + str(count_total_mincount_property))
-    # print("Total sh:maxCount " + str(count_total_maxcount))
-    # print("Total sh:maxCount node " + str(count_total_maxcount_node))
-    # print("Total sh:maxCount property " + str(count_total_maxcount_property))
-    # print("Total sh:minExclusive " + str(count_total_minexclusive))
-    # print("Total sh:minExclusive node " + str(count_total_minexclusive_node))
-    # print("Total sh:minExclusive property " + str(count_total_minexclusive_property))
-    # print("Total sh:minInclusive " + str(count_total_mininclusive))
-    # print("Total sh:minInclusive node " + str(count_total_mininclusive_node))
-    # print("Total sh:minInclusive property " + str(count_total_mininclusive_property))
-    # print("Total sh:maxExclusive " + str(count_total_maxexclusive))
-    # print("Total sh:maxExclusive node " + str(count_total_maxexclusive_node))
-    # print("Total sh:maxExclusive property " + str(count_total_maxexclusive_property))
-    # print("Total sh:maxInclusive " + str(count_total_maxinclusive))
-    # print("Total sh:maxInclusive node " + str(count_total_maxinclusive_node))
-    # print("Total sh:maxInclusive property " + str(count_total_maxinclusive_property))
-    # print("Total sh:minLength " + str(count_total_minlength))
-    # print("Total sh:minLength node " + str(count_total_minlength_node))
-    # print("Total sh:minLength property " + str(count_total_minlength_property))
-    # print("Total sh:maxLength " + str(count_total_maxlength))
-    # print("Total sh:maxLength node " + str(count_total_maxlength_node))
-    # print("Total sh:maxLength property " + str(count_total_maxlength_property))
-    # print("Total sh:pattern " + str(count_total_pattern))
-    # print("Total sh:pattern node " + str(count_total_pattern_node))
-    # print("Total sh:pattern property " + str(count_total_pattern_property))
-    # print("Total sh:languageIn " + str(count_total_languagein))
-    # print("Total sh:languageIn node " + str(count_total_languagein_node))
-    # print("Total sh:languageIn property " + str(count_total_languagein_property))
-    # print("Total sh:uniqueLang " + str(count_total_uniquelang))
-    # print("Total sh:uniqueLang node " + str(count_total_uniquelang_node))
-    # print("Total sh:uniqueLang property " + str(count_total_uniquelang_property))
-    # print("Total sh:equals " + str(count_total_equals))
-    # print("Total sh:equals node " + str(count_total_equals_node))
-    # print("Total sh:equals property " + str(count_total_equals_property))
-    # print("Total sh:disjoint " + str(count_total_disjoint))
-    # print("Total sh:disjoint node " + str(count_total_disjoint_node))
-    # print("Total sh:disjoint property " + str(count_total_disjoint_property))
-    # print("Total sh:lessThan " + str(count_total_lessthan))
-    # print("Total sh:lessThan node " + str(count_total_lessthan_node))
-    # print("Total sh:lessThan property " + str(count_total_lessthan_property))
-    # print("Total sh:lessThanOrEqual " + str(count_total_lessthanorequal))
-    # print("Total sh:lessThanOrEqual node " + str(count_total_lessthanorequal_node))
-    # print("Total sh:lessThanOrEqual property " + str(count_total_lessthanorequal_property))
-    # print("Total sh:not " + str(count_total_not))
-    # print("Total sh:not node " + str(count_total_not_node))
-    # print("Total sh:not property " + str(count_total_not_property))
-    # print("Total sh:and " + str(count_total_and))
-    # print("Total sh:and node " + str(count_total_and_node))
-    # print("Total sh:and property " + str(count_total_and_property))
-    # print("Total sh:or " + str(count_total_or))
-    # print("Total sh:or node " + str(count_total_or_node))
-    # print("Total sh:or property " + str(count_total_or_property))
-    # print("Total sh:xone " + str(count_total_xone))
-    # print("Total sh:xone node " + str(count_total_xone_node))
-    # print("Total sh:xone property " + str(count_total_xone_property))
-    # print("Total sh:node " + str(count_total_node))
-    # print("Total sh:node node " + str(count_total_node_node))
-    # print("Total sh:node property " + str(count_total_node_property))
-    # print("Total sh:property " + str(count_total_property))
-    # print("Total sh:property node " + str(count_total_property_node))
-    # print("Total sh:property property " + str(count_total_property_property))
-    # print("Total sh:qualifiedValueShape " + str(count_total_qualifiedvalueshape))
-    # print("Total sh:qualifiedValueShape node " + str(count_total_qualifiedvalueshape_node))
-    # print("Total sh:qualifiedValueShape property " + str(count_total_qualifiedvalueshape_property))
-    # print("Total sh:qualifiedMinCount " + str(count_total_qualifiedmincount))
-    # print("Total sh:qualifiedMinCount node " + str(count_total_qualifiedmincount_node))
-    # print("Total sh:qualifiedMinCount property " + str(count_total_qualifiedmincount_property))
-    # print("Total sh:qualifiedMaxCount " + str(count_total_qualifiedmaxcount))
-    # print("Total sh:qualifiedMaxCount node " + str(count_total_qualifiedmaxcount_node))
-    # print("Total sh:qualifiedMaxCount property " + str(count_total_qualifiedmaxcount_property))
-    # print("Total sh:closed " + str(count_total_closed))
-    # print("Total sh:closed node " + str(count_total_closed_node))
-    # print("Total sh:closed property " + str(count_total_closed_property))
-    # print("Total sh:ignoredProperties " + str(count_total_ignoredproperties))
-    # print("Total sh:ignoredProperties node " + str(count_total_ignoredproperties_node))
-    # print("Total sh:ignoredProperties property " + str(count_total_ignoredproperties_property))
-    # print("Total sh:hasValue " + str(count_total_hasvalue))
-    # print("Total sh:hasValue node " + str(count_total_hasvalue_node))
-    # print("Total sh:hasValue property " + str(count_total_hasvalue_property))
-    # print("Total sh:in " + str(count_total_in))
-    # print("Total sh:in node " + str(count_total_in_node))
-    # print("Total sh:in property " + str(count_total_in_property))
-    # print("Total sh:targetclass " + str(count_total_targetclass))
-    # print("Total sh:targetclass node " + str(count_total_targetclass_node))
-    # print("Total sh:targetclass property " + str(count_total_targetclass_property))
-    # print("Total sh:name " + str(count_total_name))
-    # print("Total sh:name node " + str(count_total_name_node))
-    # print("Total sh:name property " + str(count_total_name_property))
-    # print("Total sh:path " + str(count_total_path))
-    # print("Total sh:path node " + str(count_total_path_node))
-    # print("Total sh:path property " + str(count_total_path_property))
-    # print("Total sh:inversePath " + str(count_total_inversepath))
-    # print("Total sh:inversePath node " + str(count_total_inversepath_node))
-    # print("Total sh:inversePath property " + str(count_total_inversepath_property))
-    # print("Total sh:description " + str(count_total_description))
-    # print("Total sh:description node " + str(count_total_description_node))
-    # print("Total sh:description property " + str(count_total_description_property))
-    # print("Total rdfs:label " + str(count_total_label))
-    # print("Total rdfs:label node " + str(count_total_label_node))
-    # print("Total rdfs:label property " + str(count_total_label_property))
-    # print("Total rdfs:seeAlso " + str(count_total_seealso))
-    # print("Total rdfs:seeAlso node " + str(count_total_seealso_node))
-    # print("Total rdfs:seeAlso property " + str(count_total_seealso_property))
-    # print("Total rdfs:isDefinedBy " + str(count_total_isdefinedby))
-    # print("Total rdfs:isDefinedBy node " + str(count_total_isdefinedby_node))
-    # print("Total rdfs:isDefinedBy property " + str(count_total_isdefinedby_property))
-    # print("Total rdf:type " + str(count_total_type))
-    # print("Total rdf:type node " + str(count_total_type_node))
-    # print("Total rdf:type property " + str(count_total_type_property))
-    # print("Total rdf:first " + str(count_total_first))
-    # print("Total rdf:first node " + str(count_total_first_node))
-    # print("Total rdf:first property " + str(count_total_first_property))
-    # print("Total rdf:rest " + str(count_total_rest))
-    # print("Total rdf:rest node " + str(count_total_rest_node))
-    # print("Total rdf:rest property " + str(count_total_rest_property))
-    # print("Total https://w3id.org/def/astrea#contains " + str(count_total_contains))
-    # print("Total https://w3id.org/def/astrea#contains node " + str(count_total_contains_node))
-    # print("Total https://w3id.org/def/astrea#contains property " + str(count_total_contains_property))
-    # print("Total https://w3id.org/def/astrea#generatedShapesFrom " + str(count_total_generatedshapesfrom))
-    # print("Total https://w3id.org/def/astrea#generatedShapesFrom node " + str(count_total_generatedshapesfrom_node))
-    # print("Total https://w3id.org/def/astrea#generatedShapesFrom property " + str(count_total_generatedshapesfrom_property))
-    # print("Total https://w3id.org/def/astrea#message " + str(count_total_message))
-    # print("Total https://w3id.org/def/astrea#message node " + str(count_total_message_node))
-    # print("Total https://w3id.org/def/astrea#message property " + str(count_total_message_property))
-    # print("Total https://w3id.org/def/astrea#statusCode " + str(count_total_statuscode))
-    # print("Total https://w3id.org/def/astrea#statusCode node " + str(count_total_statuscode_node))
-    # print("Total https://w3id.org/def/astrea#statusCode property " + str(count_total_statuscode_property))
-    # print("Total https://w3id.org/def/astrea#source " + str(count_total_source))
-    # print("Total https://w3id.org/def/astrea#source node " + str(count_total_source_node))
-    # print("Total https://w3id.org/def/astrea#source property " + str(count_total_source_property))
     print("Analysis successfully concluded")
 
 
