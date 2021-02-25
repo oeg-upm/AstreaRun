@@ -116,15 +116,6 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    sf:Geometry .
 
-<https://astrea.linkeddata.es/shapes#163744438032c52e32bf3c7c8bb195e8>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
-        rdfs:label        "Point"@en ;
-        sh:description    "\nA Point is a 0-dimensional geometric object and represents a single location in coordinate space. \nA Point has an x-coordinate value, a y-coordinate value. If called for by the associated Spatial Reference System, it may also have coordinate values for z and m.\nThe boundary of a Point is the empty set.\n    "@en ;
-        sh:name           "Point"@en ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    sf:Point .
-
 <https://astrea.linkeddata.es/shapes#6aa373a22d028ce72038972958b41a8d>
         a            sh:PropertyShape ;
         sh:maxCount  0 ;
@@ -147,6 +138,15 @@
         sh:name           "wasAssociatedWith" ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           prov:wasAssociatedWith .
+
+<https://astrea.linkeddata.es/shapes#163744438032c52e32bf3c7c8bb195e8>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.opengis.net/ont/sf> ;
+        rdfs:label        "Point"@en ;
+        sh:description    "\nA Point is a 0-dimensional geometric object and represents a single location in coordinate space. \nA Point has an x-coordinate value, a y-coordinate value. If called for by the associated Spatial Reference System, it may also have coordinate values for z and m.\nThe boundary of a Point is the empty set.\n    "@en ;
+        sh:name           "Point"@en ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    sf:Point .
 
 <https://astrea.linkeddata.es/shapes#bbd81b2a447a4f83adb7050dd5ef40f9>
         a               sh:PropertyShape ;
@@ -1654,6 +1654,13 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    gml:OrientableSurface .
 
+<https://astrea.linkeddata.es/shapes#00f5e7f48c6db74458157324be135285>
+        a               sh:NodeShape ;
+        rdfs:label      "Creator"@en ;
+        sh:name         "Creator"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  prov:Creator .
+
 <https://astrea.linkeddata.es/shapes#564c4f38e42665fd1f1febce682c48f7>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
@@ -1682,13 +1689,6 @@
         sh:name           "refers" ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           <http://streamreasoning.org/ontologies/frappe#refers> .
-
-<https://astrea.linkeddata.es/shapes#00f5e7f48c6db74458157324be135285>
-        a               sh:NodeShape ;
-        rdfs:label      "Creator"@en ;
-        sh:name         "Creator"@en ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  prov:Creator .
 
 <https://astrea.linkeddata.es/shapes#087c3933902667781b7047d30dbafd10>
         a                 sh:NodeShape ;
@@ -2177,6 +2177,35 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           prov:wasQuotedFrom .
 
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:before
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   event:time
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:hasTime
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:after
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:before
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   event:time
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:hasTime
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:after
+                                ] ;
+                     rdf:rest   ()
+                   ] .
+
 <https://astrea.linkeddata.es/shapes#b42daad3d3872a17a8aaaf1adecb416b>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o-inverses#> , <http://www.w3.org/ns/prov-o#> ;
@@ -2509,12 +2538,15 @@
         sh:path         time:months ;
         sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
 
-<https://astrea.linkeddata.es/shapes#636d318faa5df72a83229832551f4b2f>
-        a               sh:NodeShape ;
-        rdfs:label      "Accept"@en ;
-        sh:name         "Accept"@en ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  prov:Accept .
+<https://astrea.linkeddata.es/shapes#f22ce93d0249c47b1cfa20098aa89e23>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "qualifiedStart" , "If this Activity prov:wasStartedBy Entity :e1, then it can qualify how it was started using prov:qualifiedStart [ a prov:Start;  prov:entity :e1; :foo :bar ]."@en ;
+        sh:class          prov:Start ;
+        sh:description    "If this Activity prov:wasStartedBy Entity :e1, then it can qualify how it was started using prov:qualifiedStart [ a prov:Start;  prov:entity :e1; :foo :bar ]."@en ;
+        sh:name           "qualifiedStart" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           prov:qualifiedStart .
 
 <https://astrea.linkeddata.es/shapes#c6f53d10d323d929a8e9e365b3616ebd>
         a                 sh:NodeShape ;
@@ -2535,15 +2567,12 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           prov:wasAttributedTo .
 
-<https://astrea.linkeddata.es/shapes#f22ce93d0249c47b1cfa20098aa89e23>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
-        rdfs:label        "qualifiedStart" , "If this Activity prov:wasStartedBy Entity :e1, then it can qualify how it was started using prov:qualifiedStart [ a prov:Start;  prov:entity :e1; :foo :bar ]."@en ;
-        sh:class          prov:Start ;
-        sh:description    "If this Activity prov:wasStartedBy Entity :e1, then it can qualify how it was started using prov:qualifiedStart [ a prov:Start;  prov:entity :e1; :foo :bar ]."@en ;
-        sh:name           "qualifiedStart" ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           prov:qualifiedStart .
+<https://astrea.linkeddata.es/shapes#636d318faa5df72a83229832551f4b2f>
+        a               sh:NodeShape ;
+        rdfs:label      "Accept"@en ;
+        sh:name         "Accept"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  prov:Accept .
 
 <https://astrea.linkeddata.es/shapes#6b9038cdae642483bf87853d93c46b60>
         a                 sh:PropertyShape ;
@@ -3463,35 +3492,6 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         time:intervalMeets .
 
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:before
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   event:time
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:hasTime
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:after
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:before
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   event:time
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:hasTime
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:after
-                                ] ;
-                     rdf:rest   ()
-                   ] .
-
 <https://astrea.linkeddata.es/report/827942890>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
@@ -3520,19 +3520,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind       sh:Literal ;
         sh:path           geo:hasSerialization .
 
-<https://astrea.linkeddata.es/shapes#47427181ba878100c93867a4606fafbb>
-        a            sh:PropertyShape ;
-        sh:maxCount  "0"^^xsd:nonNegativeInteger ;
-        sh:minCount  "0"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      time:week .
-
-<https://astrea.linkeddata.es/shapes#9c26e561e4f0c6832edf255896280e30>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      time:dayOfYear .
-
 <https://astrea.linkeddata.es/shapes#2e70e31582812d3483dd510052d3eadb>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://www.opengis.net/ont/gml> ;
@@ -3540,6 +3527,13 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:name           "Sphere"@en ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    gml:Sphere .
+
+<https://astrea.linkeddata.es/shapes#47427181ba878100c93867a4606fafbb>
+        a            sh:PropertyShape ;
+        sh:maxCount  "0"^^xsd:nonNegativeInteger ;
+        sh:minCount  "0"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      time:week .
 
 <https://astrea.linkeddata.es/shapes#13f9476a0c7ae2f5dcc4e00710373e41>
         a               sh:PropertyShape ;
@@ -3582,6 +3576,12 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind     sh:Literal ;
         sh:path         time:numericDuration ;
         sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#9c26e561e4f0c6832edf255896280e30>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      time:dayOfYear .
 
 <https://astrea.linkeddata.es/shapes#a846a4145de1fc510b3a990fb8182f4f>
         a            sh:PropertyShape ;

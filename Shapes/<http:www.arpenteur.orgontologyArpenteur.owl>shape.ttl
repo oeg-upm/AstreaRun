@@ -2576,14 +2576,6 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         ecrm:P1_is_identified_by .
 
-<https://astrea.linkeddata.es/shapes#7b5e4d725cc8387670c0b742b66bfe03>
-        a               sh:NodeShape ;
-        rdfs:label      "transport recipient"@en ;
-        sh:name         "transport recipient"@en ;
-        sh:nodeKind     sh:IRI ;
-        sh:property     <https://astrea.linkeddata.es/shapes#3d7ac7df7cd08396b4c267fddf1b0acc> , <https://astrea.linkeddata.es/shapes#88bb10100879d192071aa7a265c81eaf> ;
-        sh:targetClass  Arpenteur:RecipientTransport .
-
 <https://astrea.linkeddata.es/shapes#985649f71ce13846dbd225863248db42>
         a            sh:PropertyShape ;
         rdfs:label   "has photo manager"@en ;
@@ -2591,6 +2583,14 @@
         sh:name      "has photo manager"@en ;
         sh:nodeKind  sh:BlankNodeOrIRI ;
         sh:path      Arpenteur:hasPhotoManager .
+
+<https://astrea.linkeddata.es/shapes#7b5e4d725cc8387670c0b742b66bfe03>
+        a               sh:NodeShape ;
+        rdfs:label      "transport recipient"@en ;
+        sh:name         "transport recipient"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#3d7ac7df7cd08396b4c267fddf1b0acc> , <https://astrea.linkeddata.es/shapes#88bb10100879d192071aa7a265c81eaf> ;
+        sh:targetClass  Arpenteur:RecipientTransport .
 
 <https://astrea.linkeddata.es/shapes#ba5d0f3d8443d1e40ed6f27ba687d487>
         a            sh:PropertyShape ;
@@ -2826,6 +2826,13 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      ecrm:P144_joined_with .
 
+<https://astrea.linkeddata.es/shapes#4fd8496744a1db1fdf9a435bc432b9c5>
+        a               sh:NodeShape ;
+        sh:description  "Scope note:\nThis class comprises transfers of legal ownership from one or more instances of E39 Actor to one or more different instances of E39 Actor, where the transferring party is completely compensated by the payment of a monetary amount. In more detail, a purchase agreement establishes a fixed monetary obligation at its initialization on the receiving party, to the giving party. An instance of E96 Purchase begins with the contract or equivalent agreement and ends with the fulfilment of all contractual obligations. In the case that the activity is abandoned before both parties have fulfilled these obligations, the activity is not regarded as an instance of E96 Purchase.\n\nThis class is a very specific case of the much more complex social business practices of exchange of goods and the creation and satisfaction of related social obligations. Purchase activities which define individual sales prices per object can be modelled by instantiating E96 Purchase for each object individually and as part of an overall instance of E96 Purchase transaction.\n\n\nIn First Order Logic:\nE96(x) ⊃ E8(x)" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2e3df60401a05f6d043406f460bf074f> ;
+        sh:targetClass  ecrm:E96_Purchase .
+
 <https://astrea.linkeddata.es/shapes#4e1ce01fc4d594fe0b017a76e0d91cfc>
         a            sh:PropertyShape ;
         rdfs:label   "has height"@en ;
@@ -2834,13 +2841,6 @@
         sh:nodeKind  sh:Literal ;
         sh:path      Arpenteur:hasHeight ;
         sh:pattern   "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)([Ee](\\+|-)?[0-9]+)?|(\\+|-)?INF|NaN" .
-
-<https://astrea.linkeddata.es/shapes#4fd8496744a1db1fdf9a435bc432b9c5>
-        a               sh:NodeShape ;
-        sh:description  "Scope note:\nThis class comprises transfers of legal ownership from one or more instances of E39 Actor to one or more different instances of E39 Actor, where the transferring party is completely compensated by the payment of a monetary amount. In more detail, a purchase agreement establishes a fixed monetary obligation at its initialization on the receiving party, to the giving party. An instance of E96 Purchase begins with the contract or equivalent agreement and ends with the fulfilment of all contractual obligations. In the case that the activity is abandoned before both parties have fulfilled these obligations, the activity is not regarded as an instance of E96 Purchase.\n\nThis class is a very specific case of the much more complex social business practices of exchange of goods and the creation and satisfaction of related social obligations. Purchase activities which define individual sales prices per object can be modelled by instantiating E96 Purchase for each object individually and as part of an overall instance of E96 Purchase transaction.\n\n\nIn First Order Logic:\nE96(x) ⊃ E8(x)" ;
-        sh:nodeKind     sh:IRI ;
-        sh:property     <https://astrea.linkeddata.es/shapes#2e3df60401a05f6d043406f460bf074f> ;
-        sh:targetClass  ecrm:E96_Purchase .
 
 <https://astrea.linkeddata.es/shapes#10995c99e840c9a466cec205426fa099>
         a               sh:NodeShape ;
@@ -4166,6 +4166,11 @@
         a         sh:PropertyShape ;
         sh:class  nadlShip:Strake .
 
+<https://astrea.linkeddata.es/shapes#41105b35ae42189e0790e52e8ee8ab27>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      ecrm:P14_carried_out_by .
+
 <https://astrea.linkeddata.es/shapes#a90b21ca5c4db9dc06ed17d1b86b6a52>
         a               sh:PropertyShape ;
         rdfs:label      "P11 had participant"@en , "Scope note:\nThis property describes the active or passive participation of instances of E39 Actors in an instance of E5 Event.\n\nIt documents known events in which an instance of E39 Actor has participated during the course of that actor’s life or history. The instances of E53 Place and E52 Time-Span where and when these events happened provide us with constraints about the presence of the related instances of E39 Actor in the past. Collective actors, i.e., instances of E74 Group, may physically participate in events via their representing instances of E21 Persons only. The participation of multiple actors in an event is most likely an indication of their acquaintance and interaction.\nThe property implies that the actor was involved in the event but does not imply any causal relationship. For instance, someone having been portrayed can be said to have participated in the creation of the portrait.\n\n\nExamples:\n- Napoleon (E21) participated in The Battle of Waterloo (E7)\n- Maria (E21) participated in Photographing of Maria (E7)\n\n\nIn First Order Logic:\nP11(x,y) ⊃ E5(x)\nP11(x,y) ⊃ E39(y)\nP11(x,y) ⊃ P12(x,y)"@en ;
@@ -4174,11 +4179,6 @@
         sh:name         "P11 had participant"@en ;
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         ecrm:P11_had_participant .
-
-<https://astrea.linkeddata.es/shapes#41105b35ae42189e0790e52e8ee8ab27>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      ecrm:P14_carried_out_by .
 
 <https://astrea.linkeddata.es/shapes#f0f68f05f4e58ba0f570a27b03c2d6c7>
         a            sh:PropertyShape ;
@@ -5716,11 +5716,6 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         ecrm:P180_has_currency .
 
-<https://astrea.linkeddata.es/shapes#c27bd964ea8d29f8dea6b9908f2783c1>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:Literal ;
-        sh:path      nadlShip:hasAverageCenterToCenterSpacingCentimeters .
-
 <https://astrea.linkeddata.es/shapes#7881024d5e8835ea2b052bb45479585d>
         a               sh:PropertyShape ;
         rdfs:label      "P68 foresees use of"@en , "Scope note:\nThis property identifies an instance of E57 Material foreseen to be used by an instance of E29 Design or Procedure.\n\nE29 Designs and procedures commonly foresee the use of particular instances of E57 Material. The fabrication of adobe bricks, for example, requires straw, clay and water. This property enables this to be documented.\n\nThis property is not intended for the documentation of instances of E57 Materials that were used on a particular occasion when an instance of E29 Design or Procedure was executed.\n\n\nExamples:\n- procedure for soda glass manufacture (E29) foresees use of soda (E57)\n\n\nIn First Order Logic:\nP68(x,y) ⊃ E29(x)\nP68(x,y) ⊃ E57(y)\nP68(x,y) ⊃ P67(x,y)"@en ;
@@ -5729,6 +5724,11 @@
         sh:name         "P68 foresees use of"@en ;
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         ecrm:P68_foresees_use_of .
+
+<https://astrea.linkeddata.es/shapes#c27bd964ea8d29f8dea6b9908f2783c1>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:Literal ;
+        sh:path      nadlShip:hasAverageCenterToCenterSpacingCentimeters .
 
 <https://astrea.linkeddata.es/shapes#3d7ac7df7cd08396b4c267fddf1b0acc>
         a               sh:PropertyShape ;

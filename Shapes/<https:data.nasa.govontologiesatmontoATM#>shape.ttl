@@ -681,14 +681,6 @@
         sh:path         atm:fixName ;
         sh:pattern      ".*" .
 
-<https://astrea.linkeddata.es/shapes#6b7ea1f0d87a9b3a9f0b87d7646a2151>
-        a               sh:NodeShape ;
-        rdfs:label      "Intersection fix" ;
-        sh:description  "A navigation fix defined by the intersection of two airspace routes." ;
-        sh:name         "Intersection fix" ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  atm:IntersectionFix .
-
 <https://astrea.linkeddata.es/shapes#8088fb2a310af3a2804a74a83e54bee9>
         a               sh:NodeShape ;
         rdfs:label      "Deicing queue" ;
@@ -697,6 +689,14 @@
         sh:nodeKind     sh:IRI ;
         sh:property     <https://astrea.linkeddata.es/shapes#f56a70249665aefa276578cacafd9d97> , <https://astrea.linkeddata.es/shapes#ee93c3fa4b66c9b8cc251061f79376d8> , <https://astrea.linkeddata.es/shapes#f7a3025a419b8e9ca1a06975a344cd3d> ;
         sh:targetClass  nas:DeicingQueue .
+
+<https://astrea.linkeddata.es/shapes#6b7ea1f0d87a9b3a9f0b87d7646a2151>
+        a               sh:NodeShape ;
+        rdfs:label      "Intersection fix" ;
+        sh:description  "A navigation fix defined by the intersection of two airspace routes." ;
+        sh:name         "Intersection fix" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  atm:IntersectionFix .
 
 <https://astrea.linkeddata.es/shapes#a241acfbbd1d5e7666e6ca841cd6f404>
         a               sh:NodeShape ;
@@ -2543,6 +2543,15 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         atm:radialFix .
 
+<https://astrea.linkeddata.es/shapes#51acdcda8f9f65d9b8633b8301caa5dc>
+        a               sh:PropertyShape ;
+        rdfs:label      "operating carrier" , "Links a flight specification to one or more carrier airline(s). Each flight covered by the specification must be operated by one of these carriers." ;
+        sh:class        nas:AirCarrier ;
+        sh:description  "Links a flight specification to one or more carrier airline(s). Each flight covered by the specification must be operated by one of these carriers." ;
+        sh:name         "operating carrier" ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         atm:operatingCarrier .
+
 <https://astrea.linkeddata.es/shapes#c2095133dcaa259d2f45e10fbfcfc023>
         a               sh:PropertyShape ;
         rdfs:label      "has queue" , "Links a deicing pad to its queue of aircraft waiting to be deiced." ;
@@ -2563,15 +2572,6 @@
         sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
         sh:path         atm:advisoryNumber ;
         sh:pattern      "[\\-+]?[0-9]+" .
-
-<https://astrea.linkeddata.es/shapes#51acdcda8f9f65d9b8633b8301caa5dc>
-        a               sh:PropertyShape ;
-        rdfs:label      "operating carrier" , "Links a flight specification to one or more carrier airline(s). Each flight covered by the specification must be operated by one of these carriers." ;
-        sh:class        nas:AirCarrier ;
-        sh:description  "Links a flight specification to one or more carrier airline(s). Each flight covered by the specification must be operated by one of these carriers." ;
-        sh:name         "operating carrier" ;
-        sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:path         atm:operatingCarrier .
 
 <https://astrea.linkeddata.es/shapes#c580577757ba61ff7989226cb95efa7b>
         a               sh:PropertyShape ;
@@ -2763,6 +2763,15 @@
         sh:path         atm:reRouteReason ;
         sh:pattern      ".*" .
 
+<https://astrea.linkeddata.es/shapes#89d748dfde3e5fdff84ea4c533bebde9>
+        a               sh:NodeShape ;
+        rdfs:label      "Ground Stop (GS)" ;
+        sh:description  "A Ground Stop (GS) traffic management initiative (TMI). A ground stop is a procedure requiring aircraft that meet specific criteria to remain on the ground. The GS may be airport specific, related to a geographical area, or equipment related." ;
+        sh:name         "Ground Stop (GS)" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#011338be8c3538b69021a1af61785cf7> , <https://astrea.linkeddata.es/shapes#ad1cc19547795cfff1bac1e8fc244f60> , <https://astrea.linkeddata.es/shapes#5b49190036b942841905f428c5633387> , <https://astrea.linkeddata.es/shapes#f1f92cb07765e475fdd320d20b59728b> , <https://astrea.linkeddata.es/shapes#89cf843b4c8454152b40ccf82c16522b> , <https://astrea.linkeddata.es/shapes#8919ecfdb189ad02d98ce0d803c22625> ;
+        sh:targetClass  atm:GroundStopTMI .
+
 <https://astrea.linkeddata.es/shapes#9b1762cf486994ac1eecbda214870952>
         a               sh:PropertyShape ;
         rdfs:label      "ICAO airport code" , "The four-letter ICAO code assignied to the airport. Contrast with the IATA and FAA airport codes." ;
@@ -2773,15 +2782,6 @@
         sh:nodeKind     sh:IRIOrLiteral , sh:Literal ;
         sh:path         nas:icaoAirportCode ;
         sh:pattern      ".*" .
-
-<https://astrea.linkeddata.es/shapes#89d748dfde3e5fdff84ea4c533bebde9>
-        a               sh:NodeShape ;
-        rdfs:label      "Ground Stop (GS)" ;
-        sh:description  "A Ground Stop (GS) traffic management initiative (TMI). A ground stop is a procedure requiring aircraft that meet specific criteria to remain on the ground. The GS may be airport specific, related to a geographical area, or equipment related." ;
-        sh:name         "Ground Stop (GS)" ;
-        sh:nodeKind     sh:IRI ;
-        sh:property     <https://astrea.linkeddata.es/shapes#011338be8c3538b69021a1af61785cf7> , <https://astrea.linkeddata.es/shapes#ad1cc19547795cfff1bac1e8fc244f60> , <https://astrea.linkeddata.es/shapes#5b49190036b942841905f428c5633387> , <https://astrea.linkeddata.es/shapes#f1f92cb07765e475fdd320d20b59728b> , <https://astrea.linkeddata.es/shapes#89cf843b4c8454152b40ccf82c16522b> , <https://astrea.linkeddata.es/shapes#8919ecfdb189ad02d98ce0d803c22625> ;
-        sh:targetClass  atm:GroundStopTMI .
 
 <https://astrea.linkeddata.es/shapes#ec9ffb9159c63f74e8b8b5363b6a06de>
         a            sh:PropertyShape ;

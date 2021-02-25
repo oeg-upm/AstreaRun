@@ -467,17 +467,6 @@
         sh:name         "medium"@en ;
         sh:nodeKind     sh:BlankNodeOrIRI .
 
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#b7b4701711823fef9ed44b7b2cd8c0fb> ;
-        rdf:first  [ sh:class  <http://schema.org/Action> ;
-                     sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#aim>
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#31aa0b03c84e95a72932e0aef7b7ad53> ;
-                     rdf:first  [ sh:class  <http://rhizomik.net/ontologies/copyrightonto.owl#Aim> ;
-                                  sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#aim>
-                                ] ;
-                     rdf:rest   ()
-                   ] .
-
 <https://astrea.linkeddata.es/shapes#5cc9e204435906e843eda25423830b81>
         a               sh:PropertyShape ;
         rdfs:label      "manner"@en , "The way an event develops.\nExample: The car moved [slowly]."@en ;
@@ -613,10 +602,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#b7b4701711823fef9ed44b7b
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://rhizomik.net/ontologies/copyrightonto.owl#theme> .
 
-<https://astrea.linkeddata.es/shapes#d091dcb8a4213d349c99f96f2b01438a>
-        a         sh:PropertyShape ;
-        sh:class  <http://schema.org/Person> .
-
 <https://astrea.linkeddata.es/shapes#e81321486bb02d05b0baab8b5516162f>
         a            sh:PropertyShape ;
         sh:class     <http://rhizomik.net/ontologies/copyrightonto.owl#Work> ;
@@ -624,6 +609,10 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#b7b4701711823fef9ed44b7b
         sh:minCount  "1"^^xsd:int ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://rhizomik.net/ontologies/copyrightonto.owl#theme> .
+
+<https://astrea.linkeddata.es/shapes#d091dcb8a4213d349c99f96f2b01438a>
+        a         sh:PropertyShape ;
+        sh:class  <http://schema.org/Person> .
 
 <https://astrea.linkeddata.es/shapes#423b2c5075b181dd9b47be9385f0e532>
         a            sh:PropertyShape ;
@@ -1077,6 +1066,29 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#b7b4701711823fef9ed44b7b
         sh:nodeKind     sh:IRI ;
         sh:targetClass  <http://rhizomik.net/ontologies/copyrightonto.owl#MotionPicture> .
 
+_:b1    rdf:first  <https://astrea.linkeddata.es/shapes#ab607ff6a179f2f896fe1d83d58e467c> ;
+        rdf:first  [ sh:class  <http://rhizomik.net/ontologies/copyrightonto.owl#Recording> ;
+                     sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#isCommunicationOf>
+                   ] ;
+        rdf:first  [ sh:class  <http://rhizomik.net/ontologies/copyrightonto.owl#Recording> ;
+                     sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#theme>
+                   ] ;
+        rdf:first  [ sh:class  <http://rhizomik.net/ontologies/copyrightonto.owl#Recording> ;
+                     sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#theme>
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#9dccc020773c742667ef477106cea05a> ;
+                     rdf:first  [ sh:class  <http://rhizomik.net/ontologies/copyrightonto.owl#Performance> ;
+                                  sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#isCommunicationOf>
+                                ] ;
+                     rdf:first  [ sh:class  <http://rhizomik.net/ontologies/copyrightonto.owl#Performance> ;
+                                  sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#theme>
+                                ] ;
+                     rdf:first  [ sh:class  <http://rhizomik.net/ontologies/copyrightonto.owl#Performance> ;
+                                  sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#theme>
+                                ] ;
+                     rdf:rest   ()
+                   ] .
+
 <https://astrea.linkeddata.es/shapes#17790ee25a1fe29855c6df308eb1f5ed>
         a               sh:NodeShape ;
         rdfs:label      "Person"@en ;
@@ -1138,6 +1150,13 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#b7b4701711823fef9ed44b7b
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://rhizomik.net/ontologies/copyrightonto.owl#condition> .
 
+<https://astrea.linkeddata.es/shapes#5625fb1580e9ab9300b3c01ca1ca1252>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:int ;
+        sh:minCount  "1"^^xsd:int ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://rhizomik.net/ontologies/copyrightonto.owl#location> .
+
 <https://astrea.linkeddata.es/shapes#3e42a84427a6ba3defc0b13a953f670e>
         a               sh:NodeShape ;
         rdfs:label      "Derive"@en ;
@@ -1153,13 +1172,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#b7b4701711823fef9ed44b7b
         sh:minCount  "0"^^xsd:int ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://rhizomik.net/ontologies/copyrightonto.owl#duration> .
-
-<https://astrea.linkeddata.es/shapes#5625fb1580e9ab9300b3c01ca1ca1252>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:int ;
-        sh:minCount  "1"^^xsd:int ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://rhizomik.net/ontologies/copyrightonto.owl#location> .
 
 <https://astrea.linkeddata.es/shapes#301ccc40c84370e45613cfd3a6dd5418>
         a               sh:NodeShape ;
@@ -1254,6 +1266,17 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#b7b4701711823fef9ed44b7b
         sh:name         "Withdrawal Right"@en ;
         sh:nodeKind     sh:IRI ;
         sh:targetClass  <http://rhizomik.net/ontologies/copyrightonto.owl#WithdrawalRight> .
+
+_:b2    rdf:first  <https://astrea.linkeddata.es/shapes#9a972ff0a56467bb21fa8cc9cc8cc192> ;
+        rdf:first  [ sh:class  <http://rhizomik.net/ontologies/copyrightonto.owl#Manifestation> ;
+                     sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#isInstanceOf>
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#ab607ff6a179f2f896fe1d83d58e467c> ;
+                     rdf:first  [ sh:class  <http://rhizomik.net/ontologies/copyrightonto.owl#Recording> ;
+                                  sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#isInstanceOf>
+                                ] ;
+                     rdf:rest   ()
+                   ] .
 
 <https://astrea.linkeddata.es/shapes#0b16ad25a0468d37655656f878167cf9>
         a            sh:PropertyShape ;
@@ -1551,17 +1574,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#b7b4701711823fef9ed44b7b
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://rhizomik.net/ontologies/copyrightonto.owl#theme> .
 
-_:b2    rdf:first  <https://astrea.linkeddata.es/shapes#9a972ff0a56467bb21fa8cc9cc8cc192> ;
-        rdf:first  [ sh:class  <http://rhizomik.net/ontologies/copyrightonto.owl#Manifestation> ;
-                     sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#isInstanceOf>
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#ab607ff6a179f2f896fe1d83d58e467c> ;
-                     rdf:first  [ sh:class  <http://rhizomik.net/ontologies/copyrightonto.owl#Recording> ;
-                                  sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#isInstanceOf>
-                                ] ;
-                     rdf:rest   ()
-                   ] .
-
 <https://astrea.linkeddata.es/shapes#70d114ac351a67243a6c43ecd597040a>
         a               sh:NodeShape ;
         rdfs:label      "Copyright" ;
@@ -1624,11 +1636,6 @@ _:b2    rdf:first  <https://astrea.linkeddata.es/shapes#9a972ff0a56467bb21fa8cc9
         sh:property     <https://astrea.linkeddata.es/shapes#5124d078b25dcda2505a425277986ea9> , <https://astrea.linkeddata.es/shapes#62004e0716cd9a52bf7ce8a052df9160> ;
         sh:targetClass  <http://rhizomik.net/ontologies/copyrightonto.owl#Lend> .
 
-<https://astrea.linkeddata.es/shapes#0ab069d0bd4616e43b20828cbe07911e>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://rhizomik.net/ontologies/copyrightonto.owl#aim> .
-
 <https://astrea.linkeddata.es/shapes#84dd705042a734f0135b96e034c64f38>
         a               sh:NodeShape ;
         rdfs:label      "Related Rights"@en ;
@@ -1637,28 +1644,10 @@ _:b2    rdf:first  <https://astrea.linkeddata.es/shapes#9a972ff0a56467bb21fa8cc9
         sh:nodeKind     sh:IRI ;
         sh:targetClass  <http://rhizomik.net/ontologies/copyrightonto.owl#RelatedRights> .
 
-_:b1    rdf:first  <https://astrea.linkeddata.es/shapes#ab607ff6a179f2f896fe1d83d58e467c> ;
-        rdf:first  [ sh:class  <http://rhizomik.net/ontologies/copyrightonto.owl#Recording> ;
-                     sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#isCommunicationOf>
-                   ] ;
-        rdf:first  [ sh:class  <http://rhizomik.net/ontologies/copyrightonto.owl#Recording> ;
-                     sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#theme>
-                   ] ;
-        rdf:first  [ sh:class  <http://rhizomik.net/ontologies/copyrightonto.owl#Recording> ;
-                     sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#theme>
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#9dccc020773c742667ef477106cea05a> ;
-                     rdf:first  [ sh:class  <http://rhizomik.net/ontologies/copyrightonto.owl#Performance> ;
-                                  sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#isCommunicationOf>
-                                ] ;
-                     rdf:first  [ sh:class  <http://rhizomik.net/ontologies/copyrightonto.owl#Performance> ;
-                                  sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#theme>
-                                ] ;
-                     rdf:first  [ sh:class  <http://rhizomik.net/ontologies/copyrightonto.owl#Performance> ;
-                                  sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#theme>
-                                ] ;
-                     rdf:rest   ()
-                   ] .
+<https://astrea.linkeddata.es/shapes#0ab069d0bd4616e43b20828cbe07911e>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://rhizomik.net/ontologies/copyrightonto.owl#aim> .
 
 <https://astrea.linkeddata.es/shapes#9bf8c1e1623c0e946ba282474074afb9>
         a               sh:NodeShape ;
@@ -1778,6 +1767,17 @@ _:b1    rdf:first  <https://astrea.linkeddata.es/shapes#ab607ff6a179f2f896fe1d83
         sh:minCount  "1"^^xsd:int ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://rhizomik.net/ontologies/copyrightonto.owl#aim> .
+
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#b7b4701711823fef9ed44b7b2cd8c0fb> ;
+        rdf:first  [ sh:class  <http://schema.org/Action> ;
+                     sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#aim>
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#31aa0b03c84e95a72932e0aef7b7ad53> ;
+                     rdf:first  [ sh:class  <http://rhizomik.net/ontologies/copyrightonto.owl#Aim> ;
+                                  sh:path   <http://rhizomik.net/ontologies/copyrightonto.owl#aim>
+                                ] ;
+                     rdf:rest   ()
+                   ] .
 
 <https://astrea.linkeddata.es/shapes#97c565000451b722081cf88a8d7e4943>
         a               sh:NodeShape ;

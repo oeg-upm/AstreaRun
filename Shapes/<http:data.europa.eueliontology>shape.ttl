@@ -356,11 +356,11 @@
 <https://astrea.linkeddata.es/report/0230555842>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
-                "2021-02-13 02:58:45.361  INFO 1 --- [nio-8080-exec-5] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://www.w3.org:80: The target server failed to respond2021-02-13 02:58:45.361  INFO 1 --- [nio-8080-exec-5] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://www.w3.org:80\n" ;
+                "Shapes generated with no errors" ;
         <https://w3id.org/def/astrea#source>
                 "http://www.w3.org/2004/02/skos/core" ;
         <https://w3id.org/def/astrea#statusCode>
-                "206"^^xsd:int .
+                "200"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#fa70fa558e4095f44370cf48ce11fb80>
         a                 sh:PropertyShape ;
@@ -803,14 +803,6 @@
         a         sh:PropertyShape ;
         sh:class  skos:ConceptScheme .
 
-<https://astrea.linkeddata.es/shapes#1fbd7080a30e5cdb927c41a47be45d1a>
-        a               sh:NodeShape ;
-        rdfs:label      "In force"@en ;
-        sh:description  "Formally defined as the set of skos:Concept in concept scheme eli:InForceTable"@en ;
-        sh:name         "In force"@en ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://data.europa.eu/eli/ontology#InForce> .
-
 <https://astrea.linkeddata.es/shapes#88db9cf73143ab5a7b2a45d33ff35ff9>
         a               sh:PropertyShape ;
         rdfs:label      "based on"@en , "Inverse of \"basis_for\". Indicates that this legal resource is empowered by another one, typically a constitution, a treaty or an enabling act."@en ;
@@ -824,6 +816,14 @@
                             sh:path   <http://data.europa.eu/eli/ontology#based_on>
                           ]
                         ) .
+
+<https://astrea.linkeddata.es/shapes#1fbd7080a30e5cdb927c41a47be45d1a>
+        a               sh:NodeShape ;
+        rdfs:label      "In force"@en ;
+        sh:description  "Formally defined as the set of skos:Concept in concept scheme eli:InForceTable"@en ;
+        sh:name         "In force"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://data.europa.eu/eli/ontology#InForce> .
 
 <https://astrea.linkeddata.es/shapes#16e62abf7e63c5b29e9eeff7511eba68>
         a               sh:PropertyShape ;
@@ -911,16 +911,6 @@
         sh:path         <http://data.europa.eu/eli/ontology#date_document> ;
         sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
 
-<https://astrea.linkeddata.es/shapes#69fc41ff00e7ef2408715bb6d9cf5228>
-        a               sh:PropertyShape ;
-        rdfs:label      "rightsholder agent"@en , "A person or organisation owning or managing rights over the resource (definition from Dublin Core).\nThis property should be used when the value can be identified by a suitable URI; in the absence of such a URI, the property \"rightsholder\" should be used with a string value."@en ;
-        rdfs:seeAlso    <http://data.europa.eu/eli/ontology#rightsholder> ;
-        sh:class        <http://data.europa.eu/eli/ontology#Agent> ;
-        sh:description  "A person or organisation owning or managing rights over the resource (definition from Dublin Core).\nThis property should be used when the value can be identified by a suitable URI; in the absence of such a URI, the property \"rightsholder\" should be used with a string value."@en ;
-        sh:name         "rightsholder agent"@en ;
-        sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:path         <http://data.europa.eu/eli/ontology#rightsholder_agent> .
-
 <https://astrea.linkeddata.es/shapes#c95c0f36e1fa0742d38c4d56319bb0df>
         a               sh:PropertyShape ;
         rdfs:label      "licence"@en , "A legal document giving official permission to do something with the resource (Definition from Dublin Core)"@en ;
@@ -930,6 +920,16 @@
         sh:name         "licence"@en ;
         sh:nodeKind     sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
         sh:path         <http://data.europa.eu/eli/ontology#licence> .
+
+<https://astrea.linkeddata.es/shapes#69fc41ff00e7ef2408715bb6d9cf5228>
+        a               sh:PropertyShape ;
+        rdfs:label      "rightsholder agent"@en , "A person or organisation owning or managing rights over the resource (definition from Dublin Core).\nThis property should be used when the value can be identified by a suitable URI; in the absence of such a URI, the property \"rightsholder\" should be used with a string value."@en ;
+        rdfs:seeAlso    <http://data.europa.eu/eli/ontology#rightsholder> ;
+        sh:class        <http://data.europa.eu/eli/ontology#Agent> ;
+        sh:description  "A person or organisation owning or managing rights over the resource (definition from Dublin Core).\nThis property should be used when the value can be identified by a suitable URI; in the absence of such a URI, the property \"rightsholder\" should be used with a string value."@en ;
+        sh:name         "rightsholder agent"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.europa.eu/eli/ontology#rightsholder_agent> .
 
 <https://astrea.linkeddata.es/shapes#1cc715a992257653694f5afdafb42f7d>
         a               sh:PropertyShape ;
@@ -956,16 +956,6 @@
         sh:path         <http://data.europa.eu/eli/ontology#title_alternative> ;
         sh:pattern      ".*" .
 
-<https://astrea.linkeddata.es/shapes#4598f02c984f7951da789d7cef8f176a>
-        a               sh:PropertyShape ;
-        rdfs:label      "type document"@en , "The type of a legal resource (e.g. \"Directive\", \"Règlement grand ducal\", \"law\", \"règlement ministeriel\", \"draft proposition\", \"Parliamentary act\", etc.). \nMember states are encouraged to make their own list of values in the corresponding concept scheme. EU Publications Office provides a list of values for EU resource types at http://publications.europa.eu/mdr/authority/resource-type"@en ;
-        rdfs:seeAlso    <http://data.europa.eu/eli/ontology#ResourceTypeTable> ;
-        sh:class        <http://data.europa.eu/eli/ontology#ResourceType> ;
-        sh:description  "The type of a legal resource (e.g. \"Directive\", \"Règlement grand ducal\", \"law\", \"règlement ministeriel\", \"draft proposition\", \"Parliamentary act\", etc.). \nMember states are encouraged to make their own list of values in the corresponding concept scheme. EU Publications Office provides a list of values for EU resource types at http://publications.europa.eu/mdr/authority/resource-type"@en ;
-        sh:name         "type document"@en ;
-        sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:path         <http://data.europa.eu/eli/ontology#type_document> .
-
 <https://astrea.linkeddata.es/shapes#7ac0478bfef785ec2f568be50e6d44ac>
         a               sh:PropertyShape ;
         rdfs:label      "transposes"@en , "Indicates that this legislation (or part of legislation) fulfills the objectives set by another legislation, by passing appropriate implementation measures. Typically, some legislations of European Union's member states or regions transpose European Directives. This indicates a legally binding link between the 2 legislations, at act or article level, from the original version of a national implementing measure to the legal resource Directive as published in the EU Official Journal. Can be used for transposition tables, once EU Publication Office has introduced ELI support down to the article level.\n\nNote that this should point to the legal resource of the Directive itself, not to one of its language-specific legal expression."@en ;
@@ -975,6 +965,16 @@
         sh:name         "transposes"@en ;
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         <http://data.europa.eu/eli/ontology#transposes> .
+
+<https://astrea.linkeddata.es/shapes#4598f02c984f7951da789d7cef8f176a>
+        a               sh:PropertyShape ;
+        rdfs:label      "type document"@en , "The type of a legal resource (e.g. \"Directive\", \"Règlement grand ducal\", \"law\", \"règlement ministeriel\", \"draft proposition\", \"Parliamentary act\", etc.). \nMember states are encouraged to make their own list of values in the corresponding concept scheme. EU Publications Office provides a list of values for EU resource types at http://publications.europa.eu/mdr/authority/resource-type"@en ;
+        rdfs:seeAlso    <http://data.europa.eu/eli/ontology#ResourceTypeTable> ;
+        sh:class        <http://data.europa.eu/eli/ontology#ResourceType> ;
+        sh:description  "The type of a legal resource (e.g. \"Directive\", \"Règlement grand ducal\", \"law\", \"règlement ministeriel\", \"draft proposition\", \"Parliamentary act\", etc.). \nMember states are encouraged to make their own list of values in the corresponding concept scheme. EU Publications Office provides a list of values for EU resource types at http://publications.europa.eu/mdr/authority/resource-type"@en ;
+        sh:name         "type document"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         <http://data.europa.eu/eli/ontology#type_document> .
 
 <https://astrea.linkeddata.es/shapes#6e3f08d1c809f7114ea2610f6d11c376>
         a               sh:PropertyShape ;

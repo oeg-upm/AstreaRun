@@ -310,11 +310,6 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <https://w3id.org/saref#controlsProperty> .
 
-<https://astrea.linkeddata.es/shapes#b011747329f202f73cb847724acf4cca>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <https://w3id.org/saref#consistsOf> .
-
 <https://astrea.linkeddata.es/shapes#a631c84768ff3e5f04fb1d6567ba75be>
         a               sh:PropertyShape ;
         rdfs:label      "in XSD g-YearMonth"@en , "Posición de un instante, expresado utilizando xsd:gYearMonth."@es , "Position of an instant, expressed using xsd:gYearMonth"@en , "en año-mes gregoriano XSD"@es ;
@@ -324,6 +319,11 @@
         sh:nodeKind     sh:Literal ;
         sh:path         :inXSDgYearMonth ;
         sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#b011747329f202f73cb847724acf4cca>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://w3id.org/saref#consistsOf> .
 
 <https://astrea.linkeddata.es/shapes#5aaaac2c509407252e1feafc2a9daf4c>
         a            sh:PropertyShape ;
@@ -804,6 +804,14 @@
         sh:path         <https://w3id.org/saref#hasDescription> ;
         sh:pattern      ".*" .
 
+<https://astrea.linkeddata.es/shapes#1f110dda595949f70c66acd4e0e254d3>
+        a               sh:NodeShape ;
+        rdfs:label      "Energy related" ;
+        sh:description  "A category that considers devices based on energy consumption information and profiles to optimize energy efficiency." ;
+        sh:name         "Energy related" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/saref#EnergyRelated> .
+
 <https://astrea.linkeddata.es/shapes#38a7f272cc51d62974ed68d2627832e4>
         a                       sh:PropertyShape ;
         sh:class                <https://w3id.org/saref#Property> ;
@@ -821,14 +829,6 @@
         sh:nodeKind     sh:IRI ;
         sh:property     <https://astrea.linkeddata.es/shapes#e7eacd32f5fbadbcf429982536da1cdc> , <https://astrea.linkeddata.es/shapes#e4f82017b8b17d08ed7612a5ee150437> ;
         sh:targetClass  <https://w3id.org/saref#Service> .
-
-<https://astrea.linkeddata.es/shapes#1f110dda595949f70c66acd4e0e254d3>
-        a               sh:NodeShape ;
-        rdfs:label      "Energy related" ;
-        sh:description  "A category that considers devices based on energy consumption information and profiles to optimize energy efficiency." ;
-        sh:name         "Energy related" ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  <https://w3id.org/saref#EnergyRelated> .
 
 <https://astrea.linkeddata.es/shapes#33add06877b24887ea23cde64400f0c4>
         a            sh:PropertyShape ;
@@ -896,6 +896,11 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      :minutes .
 
+<https://astrea.linkeddata.es/shapes#d4eb42a3214d2e6288bf7e4ed9acc398>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://w3id.org/saref#hasMeterReadingType> .
+
 _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
         rdf:first  [ sh:class  :Instant ;
                      sh:path   :before
@@ -924,11 +929,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
                                 ] ;
                      rdf:rest   ()
                    ] .
-
-<https://astrea.linkeddata.es/shapes#d4eb42a3214d2e6288bf7e4ed9acc398>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <https://w3id.org/saref#hasMeterReadingType> .
 
 <https://astrea.linkeddata.es/shapes#82caee242ef256c679f7c3bdd4bfc395>
         a               sh:NodeShape ;
@@ -1014,6 +1014,15 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <https://w3id.org/saref#actsUpon> .
 
+<https://astrea.linkeddata.es/shapes#c955bb6c63c6bc2aa62af1a203aa7507>
+        a               sh:NodeShape ;
+        rdfs:label      "Command" ;
+        sh:description  "A directive that a device must support to perform a certain function. A command may act upon a state, but does not necessarily act upon a state. For example, the ON command acts upon the ON/OFF state, but the GET command does not act upon any state, it simply gives a directive to retrieve a certain value. We propose here a list of commands that are relevant for the purpose of SAREF, but this list can be extended." ;
+        sh:name         "Command" ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#db1e73518bc80255e9e0f11ecfe948bb> , <https://astrea.linkeddata.es/shapes#595adf0af2e65af0e92e8fbc57687966> , <https://astrea.linkeddata.es/shapes#8462c23f6dc48c6a6045e96b9170a9d3> ;
+        sh:targetClass  <https://w3id.org/saref#Command> .
+
 <https://astrea.linkeddata.es/shapes#fec126fd6a63d4b5cdce4daa1563be69>
         a            sh:PropertyShape ;
         sh:hasValue  <https://w3id.org/saref#Lighting> ;
@@ -1028,15 +1037,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:name         "tiene instante de tiempo dentro"@es , "has time instant inside"@en ;
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         :inside .
-
-<https://astrea.linkeddata.es/shapes#c955bb6c63c6bc2aa62af1a203aa7507>
-        a               sh:NodeShape ;
-        rdfs:label      "Command" ;
-        sh:description  "A directive that a device must support to perform a certain function. A command may act upon a state, but does not necessarily act upon a state. For example, the ON command acts upon the ON/OFF state, but the GET command does not act upon any state, it simply gives a directive to retrieve a certain value. We propose here a list of commands that are relevant for the purpose of SAREF, but this list can be extended." ;
-        sh:name         "Command" ;
-        sh:nodeKind     sh:IRI ;
-        sh:property     <https://astrea.linkeddata.es/shapes#db1e73518bc80255e9e0f11ecfe948bb> , <https://astrea.linkeddata.es/shapes#595adf0af2e65af0e92e8fbc57687966> , <https://astrea.linkeddata.es/shapes#8462c23f6dc48c6a6045e96b9170a9d3> ;
-        sh:targetClass  <https://w3id.org/saref#Command> .
 
 <https://astrea.linkeddata.es/shapes#b19452b0b8bd7434c87b8c11ba30fb3d>
         a               sh:NodeShape ;
@@ -1095,12 +1095,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:property     <https://astrea.linkeddata.es/shapes#fe4b23a836e2b99e7e2855b46819502d> ;
         sh:targetClass  <https://w3id.org/saref#StartCommand> .
 
-<https://astrea.linkeddata.es/shapes#643862ab34e4b9e4ea63a3bcf0519803>
-        a            sh:PropertyShape ;
-        sh:class     <https://w3id.org/saref#Device> ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <https://w3id.org/saref#consistsOf> .
-
 <https://astrea.linkeddata.es/shapes#3f59f1b6c34ba4ed74f02d3eeb279ca7>
         a               sh:PropertyShape ;
         rdfs:label      "en año gregoriano XSD"@es , "Posición de un instante, expresado utilizando xsd:gYear."@es , "Position of an instant, expressed using xsd:gYear"@en , "in XSD g-Year"@en ;
@@ -1110,6 +1104,12 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind     sh:Literal ;
         sh:path         :inXSDgYear ;
         sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
+<https://astrea.linkeddata.es/shapes#643862ab34e4b9e4ea63a3bcf0519803>
+        a            sh:PropertyShape ;
+        sh:class     <https://w3id.org/saref#Device> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://w3id.org/saref#consistsOf> .
 
 <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c>
         a               sh:NodeShape ;
@@ -1225,13 +1225,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:description  "A function that allows to get data from a meter, such as current meter reading or instantaneous demand" ;
         sh:name         "Metering function" ;
         sh:nodeKind     sh:IRI ;
-        sh:or           ( [ sh:class  <https://w3id.org/saref#Commodity> ;
-                            sh:path   <https://w3id.org/saref#hasMeterReadingType>
-                          ]
-                          [ sh:class  <https://w3id.org/saref#Property> ;
-                            sh:path   <https://w3id.org/saref#hasMeterReadingType>
-                          ]
-                        ) ;
         sh:or           ( [ sh:class  <https://w3id.org/saref#GetCurrentMeterValueCommand> ;
                             sh:path   <https://w3id.org/saref#hasCommand>
                           ]
@@ -1240,6 +1233,13 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
                           ]
                           [ sh:class  <https://w3id.org/saref#GetMeterHistoryCommand> ;
                             sh:path   <https://w3id.org/saref#hasCommand>
+                          ]
+                        ) ;
+        sh:or           ( [ sh:class  <https://w3id.org/saref#Commodity> ;
+                            sh:path   <https://w3id.org/saref#hasMeterReadingType>
+                          ]
+                          [ sh:class  <https://w3id.org/saref#Property> ;
+                            sh:path   <https://w3id.org/saref#hasMeterReadingType>
                           ]
                         ) ;
         sh:property     <https://astrea.linkeddata.es/shapes#d4eb42a3214d2e6288bf7e4ed9acc398> , <https://astrea.linkeddata.es/shapes#54d78d2ef08bbece51ef04d5edd58ffe> , <https://astrea.linkeddata.es/shapes#3bf1ed481b0d98867f9c7ad060c9301b> ;
@@ -1386,12 +1386,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <https://w3id.org/saref#hasTime> .
 
-<https://astrea.linkeddata.es/shapes#fe4b23a836e2b99e7e2855b46819502d>
-        a            sh:PropertyShape ;
-        sh:class     <https://w3id.org/saref#StartStopState> ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <https://w3id.org/saref#actsUpon> .
-
 <https://astrea.linkeddata.es/shapes#30ab1a291b0aed26d808710625b09ecc>
         a               sh:PropertyShape ;
         rdfs:label      "has name" , "A relationship providing the name of an entity (e.g., device)" ;
@@ -1401,6 +1395,12 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind     sh:Literal ;
         sh:path         <https://w3id.org/saref#hasName> ;
         sh:pattern      ".*" .
+
+<https://astrea.linkeddata.es/shapes#fe4b23a836e2b99e7e2855b46819502d>
+        a            sh:PropertyShape ;
+        sh:class     <https://w3id.org/saref#StartStopState> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://w3id.org/saref#actsUpon> .
 
 <https://astrea.linkeddata.es/shapes#3d3a2a5399ff93e4975e9d961e641968>
         a            sh:PropertyShape ;
@@ -1799,11 +1799,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind     sh:IRI ;
         sh:targetClass  <https://w3id.org/saref#FunctionRelated> .
 
-<https://astrea.linkeddata.es/shapes#580893e949e91f23eb11d852d33b5700>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <https://w3id.org/saref#represents> .
-
 <https://astrea.linkeddata.es/shapes#22d75286767ff927dec284ee9c13b57a>
         a               sh:NodeShape ;
         rdfs:label      "Coal" ;
@@ -1835,6 +1830,11 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind     sh:Literal ;
         sh:path         :months ;
         sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+<https://astrea.linkeddata.es/shapes#580893e949e91f23eb11d852d33b5700>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://w3id.org/saref#represents> .
 
 <https://astrea.linkeddata.es/shapes#1b8b9c358950ec54ad252e3bcb16598f>
         a            sh:PropertyShape ;
@@ -1965,17 +1965,17 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind     sh:IRI ;
         sh:targetClass  <https://w3id.org/saref#OpenState> .
 
-<https://astrea.linkeddata.es/shapes#636d1bfe1946c777bf2e0fe2fbaac905>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <https://w3id.org/saref#hasFunction> .
-
 <https://astrea.linkeddata.es/shapes#8b82278178b01acfed6d902b883dd791>
         a            sh:PropertyShape ;
         sh:maxCount  "0"^^xsd:nonNegativeInteger ;
         sh:minCount  "0"^^xsd:nonNegativeInteger ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      :day .
+
+<https://astrea.linkeddata.es/shapes#636d1bfe1946c777bf2e0fe2fbaac905>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <https://w3id.org/saref#hasFunction> .
 
 <https://astrea.linkeddata.es/shapes#e6e6154c2f0e3fe47bbdafd881aa55fd>
         a               sh:NodeShape ;
@@ -2004,6 +2004,13 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         :intervalOverlaps .
 
+<https://astrea.linkeddata.es/shapes#036cae4cc17fbcc9a288fd37f47658ff>
+        a            sh:PropertyShape ;
+        sh:maxCount  0 ;
+        sh:minCount  0 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      :weeks .
+
 <https://astrea.linkeddata.es/shapes#f47f83cfc80f60f1cbef92d413b7fac3>
         a               sh:NodeShape ;
         rdfs:label      "Illuminance unit" ;
@@ -2012,24 +2019,17 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind     sh:IRI ;
         sh:targetClass  <https://w3id.org/saref#IlluminanceUnit> .
 
-<https://astrea.linkeddata.es/shapes#5c17a4f48dda67c3c2bc1e14ede84a57>
+<https://astrea.linkeddata.es/shapes#fd054ffa837be3f7ac861e3ae4b26dc6>
         a                       sh:PropertyShape ;
         sh:nodeKind             sh:IRIOrLiteral ;
-        sh:path                 <https://w3id.org/saref#hasThresholdMeasurement> ;
+        sh:path                 <https://w3id.org/saref#accomplishes> ;
         sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
-        sh:qualifiedValueShape  [ sh:class  <https://w3id.org/saref#Measurement> ] .
+        sh:qualifiedValueShape  [ sh:class  <https://w3id.org/saref#Task> ] .
 
 <https://astrea.linkeddata.es/shapes#5f8e1e862d26021410f9dbfe65685f66>
         a            sh:PropertyShape ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <https://w3id.org/saref#hasFunction> .
-
-<https://astrea.linkeddata.es/shapes#036cae4cc17fbcc9a288fd37f47658ff>
-        a            sh:PropertyShape ;
-        sh:maxCount  0 ;
-        sh:minCount  0 ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      :weeks .
 
 <https://astrea.linkeddata.es/shapes#961eb491cb7a752046d004275a41621c>
         a               sh:NodeShape ;
@@ -2039,12 +2039,12 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind     sh:IRI ;
         sh:targetClass  <https://w3id.org/saref#OnState> .
 
-<https://astrea.linkeddata.es/shapes#fd054ffa837be3f7ac861e3ae4b26dc6>
+<https://astrea.linkeddata.es/shapes#5c17a4f48dda67c3c2bc1e14ede84a57>
         a                       sh:PropertyShape ;
         sh:nodeKind             sh:IRIOrLiteral ;
-        sh:path                 <https://w3id.org/saref#accomplishes> ;
+        sh:path                 <https://w3id.org/saref#hasThresholdMeasurement> ;
         sh:qualifiedMinCount    "1"^^xsd:nonNegativeInteger ;
-        sh:qualifiedValueShape  [ sh:class  <https://w3id.org/saref#Task> ] .
+        sh:qualifiedValueShape  [ sh:class  <https://w3id.org/saref#Measurement> ] .
 
 <https://astrea.linkeddata.es/shapes#8d26f56ec9e75266434f08dc7f5c2047>
         a               sh:PropertyShape ;
@@ -2440,6 +2440,10 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind     sh:IRI ;
         sh:targetClass  :TimeZone .
 
+<https://astrea.linkeddata.es/shapes#56688339943b44aed052d0489ea144d8>
+        a         sh:PropertyShape ;
+        sh:class  <https://w3id.org/saref#OnCommand> .
+
 <https://astrea.linkeddata.es/shapes#8a1d05066209db0b729f71ffd7415c55>
         a               sh:PropertyShape ;
         rdfs:label      "mes del año"@es , "month of year"@en , "El mes del año, cuyo valor es un miembro de la clase 'mes del año'."@es , "The month of the year, whose value is a member of the class time:MonthOfYear"@en ;
@@ -2458,10 +2462,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:or           _:b0 ;
         sh:path         :after .
-
-<https://astrea.linkeddata.es/shapes#56688339943b44aed052d0489ea144d8>
-        a         sh:PropertyShape ;
-        sh:class  <https://w3id.org/saref#OnCommand> .
 
 <https://astrea.linkeddata.es/shapes#10ea40f0e1046a0e064489a86081f0a8>
         a               sh:NodeShape ;

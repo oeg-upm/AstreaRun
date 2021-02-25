@@ -1135,35 +1135,6 @@
         sh:property     <https://astrea.linkeddata.es/shapes#6aa33b15e7fe371c1c9f59c92c9c265a> , <https://astrea.linkeddata.es/shapes#99353e91dda760f245e7ddc669d6b90e> ;
         sh:targetClass  time:DateTimeInterval .
 
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:before
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:hasTime
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:after
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   seas:hasTemporalContext
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:before
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:hasTime
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:after
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   seas:hasTemporalContext
-                                ] ;
-                     rdf:rest   ()
-                   ] .
-
 <https://astrea.linkeddata.es/shapes#7704e1a78a2f350b6e341585cadec0e9>
         a            sh:PropertyShape ;
         sh:maxCount  "1"^^xsd:nonNegativeInteger ;
@@ -1232,6 +1203,16 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      time:day .
 
+<https://astrea.linkeddata.es/shapes#992bd07b229ef8b467c2a8f390d8629e>
+        a               sh:PropertyShape ;
+        rdfs:label      "en fecha XSD"@es , "Posición de un instante, expresado utilizando xsd:date."@es , "Position of an instant, expressed using xsd:date"@en , "in XSD date"@en ;
+        sh:datatype     xsd:date ;
+        sh:description  "Position of an instant, expressed using xsd:date"@en , "Posición de un instante, expresado utilizando xsd:date."@es ;
+        sh:name         "in XSD date"@en , "en fecha XSD"@es ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         time:inXSDDate ;
+        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
+
 <https://astrea.linkeddata.es/shapes#ec7c15f21cea05de5dddfd19767b6af8>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  seas:EvaluationOntology ;
@@ -1242,16 +1223,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:not            <https://astrea.linkeddata.es/shapes#b49aac2e316cd6b82945585a51a36349> , <https://astrea.linkeddata.es/shapes#ac136718d89165348b5263dd6376b6de> ;
         sh:property       <https://astrea.linkeddata.es/shapes#3789c15010c6c3b4bcc3903a269cd868> ;
         sh:targetClass    seas:Evaluation .
-
-<https://astrea.linkeddata.es/shapes#992bd07b229ef8b467c2a8f390d8629e>
-        a               sh:PropertyShape ;
-        rdfs:label      "en fecha XSD"@es , "Posición de un instante, expresado utilizando xsd:date."@es , "Position of an instant, expressed using xsd:date"@en , "in XSD date"@en ;
-        sh:datatype     xsd:date ;
-        sh:description  "Position of an instant, expressed using xsd:date"@en , "Posición de un instante, expresado utilizando xsd:date."@es ;
-        sh:name         "in XSD date"@en , "en fecha XSD"@es ;
-        sh:nodeKind     sh:Literal ;
-        sh:path         time:inXSDDate ;
-        sh:pattern      "-?([1-9][0-9]{3,}|0[0-9]{3})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?" .
 
 <https://astrea.linkeddata.es/shapes#13f9476a0c7ae2f5dcc4e00710373e41>
         a               sh:PropertyShape ;
@@ -1415,6 +1386,35 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind     sh:Literal ;
         sh:path         time:hours ;
         sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:before
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:hasTime
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:after
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   seas:hasTemporalContext
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:before
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:hasTime
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:after
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   seas:hasTemporalContext
+                                ] ;
+                     rdf:rest   ()
+                   ] .
 
 <https://astrea.linkeddata.es/shapes#9884dba3e44bfae2b0e2dfc9032c8bfd>
         a               sh:PropertyShape ;

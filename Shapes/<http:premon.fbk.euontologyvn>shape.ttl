@@ -210,6 +210,8 @@
         sh:property     <https://astrea.linkeddata.es/shapes#b36290d17e6b73d5a3197cbb7fb52d53> , <https://astrea.linkeddata.es/shapes#df7c1039e40075851eca876cfb20bf10> , <https://astrea.linkeddata.es/shapes#a6b9f005371f32b6a4fc5e479f65437e> ;
         sh:targetClass  pmovn:NpSynItem .
 
+[ sh:class  pmo:AnnotationSet ] .
+
 <https://astrea.linkeddata.es/shapes#c7cae1b85ac5ecf0122b8e9a84dc89ee>
         a            sh:PropertyShape ;
         rdfs:label   "frame description number"@en ;
@@ -668,8 +670,6 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      pmo:valueObj .
 
-[ sh:class  pmo:AnnotationSet ] .
-
 <https://astrea.linkeddata.es/shapes#dced09f9c4dde5586d946a89091e16de>
         a               sh:NodeShape ;
         rdfs:label      "Role Selectional Restriction"@en ;
@@ -772,10 +772,10 @@
 <https://astrea.linkeddata.es/shapes#664bd80c6ac84edbf5e8f3b7809677af>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://www.w3.org/ns/lemon/ontolex> ;
-        rdfs:label        "lokt uit"@nl , "Свойство 'порождает' связывает словарную единицу с одним из лексических понятий, которую она порождает, то есть мыслительное понятие, которое возникает в сознании говорящих, когда они слышат данную словарную единицу."@ru , "roep op"@af , "evoca"@it , "evoca"@pt , "evoca"@es , "evocă"@ro , "evokes"@en , "framkallar"@sv , "порождает"@ru , "The 'evokes' property relates a lexical entry to one of the lexical concepts it evokes, i.e. the mental concept that speakers of a language might associate when hearing the lexical entry."@en , "évoque"@fr , "ruft hervor"@de ;
+        rdfs:label        "lokt uit"@nl , "Свойство 'порождает' связывает словарную единицу с одним из лексических понятий, которую она порождает, то есть мыслительное понятие, которое возникает в сознании говорящих, когда они слышат данную словарную единицу."@ru , "roep op"@af , "evoca"@es , "evoca"@it , "evoca"@pt , "evocă"@ro , "evokes"@en , "framkallar"@sv , "порождает"@ru , "The 'evokes' property relates a lexical entry to one of the lexical concepts it evokes, i.e. the mental concept that speakers of a language might associate when hearing the lexical entry."@en , "évoque"@fr , "ruft hervor"@de ;
         sh:class          ontolex:LexicalConcept ;
         sh:description    "The 'evokes' property relates a lexical entry to one of the lexical concepts it evokes, i.e. the mental concept that speakers of a language might associate when hearing the lexical entry."@en , "Свойство 'порождает' связывает словарную единицу с одним из лексических понятий, которую она порождает, то есть мыслительное понятие, которое возникает в сознании говорящих, когда они слышат данную словарную единицу."@ru ;
-        sh:name           "evoca"@it , "roep op"@af , "порождает"@ru , "evoca"@pt , "framkallar"@sv , "evoca"@es , "lokt uit"@nl , "evocă"@ro , "evokes"@en , "ruft hervor"@de , "évoque"@fr ;
+        sh:name           "evoca"@es , "roep op"@af , "порождает"@ru , "evoca"@it , "framkallar"@sv , "evoca"@pt , "lokt uit"@nl , "evocă"@ro , "evokes"@en , "ruft hervor"@de , "évoque"@fr ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           ontolex:evokes .
 
@@ -1054,16 +1054,14 @@
         sh:property     <https://astrea.linkeddata.es/shapes#1664ff6f36882bdfec6d200f92f276cf> , <https://astrea.linkeddata.es/shapes#548f61011a062e6c3bb4400ab93b7c0a> , <https://astrea.linkeddata.es/shapes#a7c7ccfbcdafe5d8c24dc9cb51f39969> ;
         sh:targetClass  pmovn:Pred .
 
-<https://astrea.linkeddata.es/shapes#a2dd910a418adc44843f339d1bfa2224>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://www.w3.org/ns/lemon/ontolex> ;
-        rdfs:label        "forma canónica"@es , "Свойство 'каноническая форма' связывает словарную единицу с ее канонической или словарной формой. Она обычно обозначает \"лемму\" словарной единицы."@ru , "formă canonică"@ro , "forma canonica"@pt , "forma canonica"@it , "The 'canonical form' property relates a lexical entry to its canoncical or dictionary form. This usually indicates the \"lemma\" form of a lexical entry. "@en , "forme canonique"@fr , "canonical form"@en , "kanonische Form"@de , "kanoniese vorm"@af , "canonieke vorm"@nl , "kanonisk form "@sv , "каноническая форма"@ru ;
-        sh:class          ontolex:Form ;
-        sh:description    "The 'canonical form' property relates a lexical entry to its canoncical or dictionary form. This usually indicates the \"lemma\" form of a lexical entry. "@en , "Свойство 'каноническая форма' связывает словарную единицу с ее канонической или словарной формой. Она обычно обозначает \"лемму\" словарной единицы."@ru ;
-        sh:maxCount       1 ;
-        sh:name           "canonical form"@en , "canonieke vorm"@nl , "каноническая форма"@ru , "forme canonique"@fr , "kanonisk form "@sv , "formă canonică"@ro , "kanonische Form"@de , "forma canónica"@es , "kanoniese vorm"@af , "forma canonica"@pt , "forma canonica"@it ;
-        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
-        sh:path           ontolex:canonicalForm .
+<https://astrea.linkeddata.es/shapes#119e77a25cfd76a6b654cf8608d9eca9>
+        a            sh:PropertyShape ;
+        rdfs:label   "evoked concept"@en ;
+        sh:class     ontolex:LexicalConcept ;
+        sh:maxCount  1 ;
+        sh:name      "evoked concept"@en ;
+        sh:nodeKind  sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path      pmo:evokedConcept .
 
 <https://astrea.linkeddata.es/shapes#bf13b8017a71cda0e83176eeb1c9274f>
         a               sh:PropertyShape ;
@@ -1075,14 +1073,16 @@
         sh:path         pmovn:frameSemanticsDescription ;
         sh:pattern      ".*" .
 
-<https://astrea.linkeddata.es/shapes#119e77a25cfd76a6b654cf8608d9eca9>
-        a            sh:PropertyShape ;
-        rdfs:label   "evoked concept"@en ;
-        sh:class     ontolex:LexicalConcept ;
-        sh:maxCount  1 ;
-        sh:name      "evoked concept"@en ;
-        sh:nodeKind  sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
-        sh:path      pmo:evokedConcept .
+<https://astrea.linkeddata.es/shapes#a2dd910a418adc44843f339d1bfa2224>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/lemon/ontolex> ;
+        rdfs:label        "forma canónica"@es , "Свойство 'каноническая форма' связывает словарную единицу с ее канонической или словарной формой. Она обычно обозначает \"лемму\" словарной единицы."@ru , "formă canonică"@ro , "forma canonica"@pt , "forma canonica"@it , "The 'canonical form' property relates a lexical entry to its canoncical or dictionary form. This usually indicates the \"lemma\" form of a lexical entry. "@en , "forme canonique"@fr , "canonical form"@en , "kanonische Form"@de , "kanoniese vorm"@af , "canonieke vorm"@nl , "kanonisk form "@sv , "каноническая форма"@ru ;
+        sh:class          ontolex:Form ;
+        sh:description    "The 'canonical form' property relates a lexical entry to its canoncical or dictionary form. This usually indicates the \"lemma\" form of a lexical entry. "@en , "Свойство 'каноническая форма' связывает словарную единицу с ее канонической или словарной формой. Она обычно обозначает \"лемму\" словарной единицы."@ru ;
+        sh:maxCount       1 ;
+        sh:name           "canonical form"@en , "canonieke vorm"@nl , "каноническая форма"@ru , "forme canonique"@fr , "kanonisk form "@sv , "formă canonică"@ro , "kanonische Form"@de , "forma canónica"@es , "kanoniese vorm"@af , "forma canonica"@pt , "forma canonica"@it ;
+        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
+        sh:path           ontolex:canonicalForm .
 
 <https://astrea.linkeddata.es/shapes#6144b76af5bd865e36941d5edca5c340>
         a            sh:PropertyShape ;
@@ -1212,15 +1212,6 @@
         sh:property     <https://astrea.linkeddata.es/shapes#253090e01b093180fd44c34d3595c130> , <https://astrea.linkeddata.es/shapes#d88b28619201b6b55ac9f9bd3d8d31c6> , <https://astrea.linkeddata.es/shapes#a6b9f005371f32b6a4fc5e479f65437e> , <https://astrea.linkeddata.es/shapes#cbb524c1fd0a278e68fe7e8bd1932ce5> ;
         sh:targetClass  pmovn:SemanticRole .
 
-<https://astrea.linkeddata.es/shapes#1ec8618902ed358c3e0ef8e8de66b01f>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://www.w3.org/ns/lemon/ontolex> ;
-        rdfs:label        "affix"@sv , "affix"@en , "аффикс"@ru , "affix"@nl , "afijo"@es , "aplică"@ro , "affixe"@fr , "Affix"@de , "affiks"@af , "affisso"@it ;
-        sh:description    "An affix is a lexical entry that represents a morpheme (suffix, prefix, infix, circumfix) that is attached to a word stem to form a new word."@en , "'Аффикс' - это словарная единица, которая представляет морфему (суффикс, префикс, инфикс, циркумфикс), добавляемую к основе слова для образования нового слова."@ru ;
-        sh:name           "affisso"@it , "аффикс"@ru , "afijo"@es , "aplică"@ro , "Affix"@de , "affixe"@fr , "affiks"@af , "affix"@sv , "affix"@en , "affix"@nl ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    ontolex:Affix .
-
 <https://astrea.linkeddata.es/shapes#cf2a1fd15bf4f804ed6b57974f0e0bc2>
         a               sh:NodeShape ;
         rdfs:label      "Constant Predicate Argument"@en ;
@@ -1237,23 +1228,14 @@
         sh:property     <https://astrea.linkeddata.es/shapes#d408dea1421ce2d9fe2d81cc97f72afc> ;
         sh:targetClass  pmo:SemanticRole .
 
-<https://astrea.linkeddata.es/shapes#a846a4145de1fc510b3a990fb8182f4f>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:BlankNodeOrIRI ;
-        sh:path      owl:topObjectProperty .
-
-<https://astrea.linkeddata.es/shapes#554af53c548b11a8ced2cace82c35a17>
-        a            sh:PropertyShape ;
-        sh:class     pmovn:RoleSelectionalRestriction ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      pmo:item .
-
-<https://astrea.linkeddata.es/shapes#aef1a78016b3598e01dd7671934b50b4>
-        a               sh:NodeShape ;
-        rdfs:label      "concept scheme"@en ;
-        sh:name         "concept scheme"@en ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  skos:ConceptScheme .
+<https://astrea.linkeddata.es/shapes#1ec8618902ed358c3e0ef8e8de66b01f>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/lemon/ontolex> ;
+        rdfs:label        "affix"@sv , "affix"@en , "аффикс"@ru , "affix"@nl , "afijo"@es , "aplică"@ro , "affixe"@fr , "Affix"@de , "affiks"@af , "affisso"@it ;
+        sh:description    "An affix is a lexical entry that represents a morpheme (suffix, prefix, infix, circumfix) that is attached to a word stem to form a new word."@en , "'Аффикс' - это словарная единица, которая представляет морфему (суффикс, префикс, инфикс, циркумфикс), добавляемую к основе слова для образования нового слова."@ru ;
+        sh:name           "affisso"@it , "аффикс"@ru , "afijo"@es , "aplică"@ro , "Affix"@de , "affixe"@fr , "affiks"@af , "affix"@sv , "affix"@en , "affix"@nl ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    ontolex:Affix .
 
 <https://astrea.linkeddata.es/shapes#d1f48fb7fe34d8e91028e21fea59d9b2>
         a               sh:PropertyShape ;
@@ -1270,6 +1252,18 @@
         sh:property     <https://astrea.linkeddata.es/shapes#fb2f56bf400053e99636b720207f3d74> , <https://astrea.linkeddata.es/shapes#f75cda54d0948eb7cd6501bb56f27e27> ;
         sh:targetClass  pmovn:PrepositionSelectionalRestriction .
 
+<https://astrea.linkeddata.es/shapes#a846a4145de1fc510b3a990fb8182f4f>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:BlankNodeOrIRI ;
+        sh:path      owl:topObjectProperty .
+
+<https://astrea.linkeddata.es/shapes#aef1a78016b3598e01dd7671934b50b4>
+        a               sh:NodeShape ;
+        rdfs:label      "concept scheme"@en ;
+        sh:name         "concept scheme"@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  skos:ConceptScheme .
+
 <https://astrea.linkeddata.es/shapes#5ca818b854240172c32e099f2a356d86>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://www.w3.org/ns/lemon/ontolex> ;
@@ -1277,7 +1271,7 @@
         sh:description    "The object property isReferenceOf is the inverse property of reference."@en , "Свойство объекта 'является референцией' представляет собой свойство, обратное к свойству 'референция'."@ru ;
         sh:inversePath    ontolex:isReferenceOf ;
         sh:maxCount       1 ;
-        sh:name           "è riferimento di"@it , "является референцией"@ru , "é referência de"@pt , "is reference of"@en , "är referens för"@sv , "ist Referenz von"@de , "este referință a(l)"@ro , "est référence de"@fr , "is referentie van"@nl , "is verwysing van"@af , "es referencia de"@es ;
+        sh:name           "è riferimento di"@it , "является референцией"@ru , "é referência de"@pt , "is reference of"@en , "är referens för"@sv , "ist Referenz von"@de , "este referință a(l)"@ro , "est référence de"@fr , "is referentie van"@nl , "es referencia de"@es , "is verwysing van"@af ;
         sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
         sh:or             ( [ sh:class  ontolex:LexicalSense ;
                               sh:path   ontolex:isReferenceOf
@@ -1312,6 +1306,12 @@
         sh:name         "semantic role mapping"@en ;
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         pmo:semRoleMapping .
+
+<https://astrea.linkeddata.es/shapes#554af53c548b11a8ced2cace82c35a17>
+        a            sh:PropertyShape ;
+        sh:class     pmovn:RoleSelectionalRestriction ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      pmo:item .
 
 <https://astrea.linkeddata.es/shapes#8ef8743c61cfd539163f2db475eb41b2>
         a               sh:NodeShape ;

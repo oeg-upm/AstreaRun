@@ -149,6 +149,7 @@ def analysis(shape):
     predicateslist = []
     objectslist = []
     count_total_class = 0
+    count_total_class_nested = 0
     count_total_class_node = 0
     count_total_class_node_nested = 0
     count_total_class_property = 0
@@ -259,6 +260,7 @@ def analysis(shape):
     count_total_name_node = 0
     count_total_name_property = 0
     count_total_path = 0
+    count_total_path_nested = 0
     count_total_path_node = 0
     count_total_path_node_nested = 0
     count_total_path_property = 0
@@ -602,6 +604,18 @@ def analysis(shape):
             for row in count_class:
                 count_class = "%s" % row
                 count_total_class += int(count_class)
+
+            count_class_nested = g.query("""
+                            SELECT (COUNT (?s) AS ?count)
+                            WHERE {
+                            ?s sh:or ?typesList .
+                            ?typesList rdf:rest* ?typesListRest .
+                            ?typesListRest rdf:first [ sh:class ?o] .
+                            }
+                        """)
+            for row in count_class_nested:
+                count_class_nested = "%s" % row
+                count_total_class_nested += int(count_class_nested)
 
             count_class_node = g.query("""
                             SELECT (COUNT (?s) AS ?count)
@@ -1782,6 +1796,18 @@ def analysis(shape):
                 count_path = "%s" % row
                 count_total_path += int(count_path)
 
+            count_path_nested = g.query("""
+                            SELECT (COUNT (?s) AS ?count)
+                            WHERE {
+                            ?s sh:or ?typesList .
+                            ?typesList rdf:rest* ?typesListRest .
+                            ?typesListRest rdf:first [ sh:path ?o] .
+                            }
+                        """)
+            for row in count_path_nested:
+                count_path_nested = "%s" % row
+                count_total_path_nested += int(count_path_nested)
+
             count_path_node = g.query("""
                 SELECT (COUNT (?s) AS ?count)
                 WHERE {
@@ -2263,6 +2289,7 @@ def analysis(shape):
                            "Total Property Shapes " + str(count_total_propertyshape) + "\n" +
                            "Present constraint components list: " + str(list(dict.fromkeys(predicateslist))) + "\n" +
                            "Total sh:class " + str(count_total_class) + "\n" +
+                           "Total sh:class nested " + str(count_total_class_nested) + "\n" +
                            "Total sh:class node " + str(count_total_class_node) + "\n" +
                            "Total sh:class node nested " + str(count_total_class_node_nested) + "\n" +
                            "Total sh:class property " + str(count_total_class_property) + "\n" +
@@ -2373,6 +2400,7 @@ def analysis(shape):
                            "Total sh:name node " + str(count_total_name_node) + "\n" +
                            "Total sh:name property " + str(count_total_name_property) + "\n" +
                            "Total sh:path " + str(count_total_path) + "\n" +
+                           "Total sh:path nested " + str(count_total_path_nested) + "\n" +
                            "Total sh:path node " + str(count_total_path_node) + "\n" +
                            "Total sh:path node nested " + str(count_total_path_node_nested) + "\n" +
                            "Total sh:path property " + str(count_total_path_property) + "\n" +

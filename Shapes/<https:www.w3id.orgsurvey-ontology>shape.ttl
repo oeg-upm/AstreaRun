@@ -346,13 +346,6 @@
         sh:property     <https://astrea.linkeddata.es/shapes#f4a00b06ffad96e244eb3bb82ead9b3e> ;
         sh:targetClass  <http://w3id.org/rv-ontology#Dataset> .
 
-<https://astrea.linkeddata.es/shapes#d953b4fe6f4ae56e68b1f845a005c461>
-        a               sh:NodeShape ;
-        rdfs:label      "Closed Question" ;
-        sh:name         "Closed Question" ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  <https://w3id.org/survey-ontology#ClosedQuestion> .
-
 <https://astrea.linkeddata.es/shapes#0d2a50249824adf90e145296dd05fce8>
         a               sh:NodeShape ;
         rdfs:label      "Publish"@en ;
@@ -360,15 +353,12 @@
         sh:nodeKind     sh:IRI ;
         sh:targetClass  prov:Publish .
 
-<https://astrea.linkeddata.es/shapes#f1569d82a24734f2d5df36acdacf01bc>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
-        rdfs:label        "InstantaneousEvent" ;
-        sh:description    "An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term 'event' is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous."@en ;
-        sh:name           "InstantaneousEvent" ;
-        sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#50ee12d03373a78308e5484bd860ad98> , <https://astrea.linkeddata.es/shapes#196ea8d0591502158fa42bcdeb09377d> , <https://astrea.linkeddata.es/shapes#ad37c34a735811937bada118cc65cc69> ;
-        sh:targetClass    prov:InstantaneousEvent .
+<https://astrea.linkeddata.es/shapes#d953b4fe6f4ae56e68b1f845a005c461>
+        a               sh:NodeShape ;
+        rdfs:label      "Closed Question" ;
+        sh:name         "Closed Question" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/survey-ontology#ClosedQuestion> .
 
 <https://astrea.linkeddata.es/shapes#46354dfb3c12c2efeed509b8dafdc1c0>
         a                 sh:PropertyShape ;
@@ -387,6 +377,16 @@
         sh:name      "has visualization" ;
         sh:nodeKind  sh:BlankNodeOrIRI ;
         sh:path      <https://w3id.org/survey-ontology#hasVisualization> .
+
+<https://astrea.linkeddata.es/shapes#f1569d82a24734f2d5df36acdacf01bc>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "InstantaneousEvent" ;
+        sh:description    "An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term 'event' is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous."@en ;
+        sh:name           "InstantaneousEvent" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#50ee12d03373a78308e5484bd860ad98> , <https://astrea.linkeddata.es/shapes#196ea8d0591502158fa42bcdeb09377d> , <https://astrea.linkeddata.es/shapes#ad37c34a735811937bada118cc65cc69> ;
+        sh:targetClass    prov:InstantaneousEvent .
 
 <https://astrea.linkeddata.es/shapes#a6b54f016008b522f7138fdc3d6247f9>
         a                 sh:PropertyShape ;
@@ -691,7 +691,7 @@
 <https://astrea.linkeddata.es/report/01295346249>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
-                "2021-02-13 02:40:33.271  INFO 1 --- [nio-8080-exec-8] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.org:80: The target server failed to respond2021-02-13 02:40:33.271  INFO 1 --- [nio-8080-exec-8] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.org:80\n" ;
+                "2021-02-24 20:14:50.608  INFO 1 --- [nio-8080-exec-3] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.org:80: The target server failed to respond2021-02-24 20:14:50.608  INFO 1 --- [nio-8080-exec-3] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.org:80\n" ;
         <https://w3id.org/def/astrea#source>
                 "http://purl.org/wf4ever/wfprov#" ;
         <https://w3id.org/def/astrea#statusCode>
@@ -1143,12 +1143,13 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://purl.org/ao/annotatesResource> .
 
-<https://astrea.linkeddata.es/shapes#19263ef19ae67c06e6f7ae11ac10d3c2>
-        a               sh:NodeShape ;
-        rdfs:label      "Survey" ;
-        sh:name         "Survey" ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  <https://w3id.org/survey-ontology#Survey> .
+<https://astrea.linkeddata.es/shapes#1525d686c1caefc0c00d5da44b142f6e>
+        a               sh:PropertyShape ;
+        rdfs:label      "This property specifies that a wfprov:Artifact was generated as an output from a wfprov:ProcessRun"@en ;
+        sh:class        wfprov:ProcessRun ;
+        sh:description  "This property specifies that a wfprov:Artifact was generated as an output from a wfprov:ProcessRun"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:path         wfprov:wasOutputFrom .
 
 <https://astrea.linkeddata.es/shapes#ee8566cf23b83ab3fc20aa78e270762d>
         a               sh:NodeShape ;
@@ -1158,13 +1159,12 @@
         sh:property     <https://astrea.linkeddata.es/shapes#a6425b9cb9275dbdd996c7dd379879f9> , <https://astrea.linkeddata.es/shapes#bf3fbc3114923f0359cecddb721b20b5> , <https://astrea.linkeddata.es/shapes#7188caed13d0d41eb1ab65ae01865387> , <https://astrea.linkeddata.es/shapes#7a641340bc9a4de3d988688b7df4f21d> , <https://astrea.linkeddata.es/shapes#828115c69b9465b4f55ce3a6a26fcccd> ;
         sh:targetClass  <https://w3id.org/survey-ontology#CompletedQuestion> .
 
-<https://astrea.linkeddata.es/shapes#1525d686c1caefc0c00d5da44b142f6e>
-        a               sh:PropertyShape ;
-        rdfs:label      "This property specifies that a wfprov:Artifact was generated as an output from a wfprov:ProcessRun"@en ;
-        sh:class        wfprov:ProcessRun ;
-        sh:description  "This property specifies that a wfprov:Artifact was generated as an output from a wfprov:ProcessRun"@en ;
-        sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:path         wfprov:wasOutputFrom .
+<https://astrea.linkeddata.es/shapes#19263ef19ae67c06e6f7ae11ac10d3c2>
+        a               sh:NodeShape ;
+        rdfs:label      "Survey" ;
+        sh:name         "Survey" ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <https://w3id.org/survey-ontology#Survey> .
 
 <https://astrea.linkeddata.es/shapes#333269e95b74fe277c6479e44d8c0d11>
         a            sh:PropertyShape ;
@@ -1745,6 +1745,24 @@
         sh:nodeKind  sh:BlankNodeOrIRI ;
         sh:path      <https://w3id.org/survey-ontology#hasLatentVariable> .
 
+<https://astrea.linkeddata.es/shapes#d797577eeedbbe38c6d0bc2da064e813>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o-inverses#> , <http://www.w3.org/ns/prov-o#> ;
+        rdfs:label        "Because prov:wasInfluencedBy is a broad relation, its more specific subproperties (e.g. prov:wasInformedBy, prov:actedOnBehalfOf, prov:wasEndedBy, etc.) should be used when applicable."@en , "wasInfluencedBy" , "This property has multiple RDFS domains to suit multiple OWL Profiles. See <a href=\"#owl-profile\">PROV-O OWL Profile</a>." ;
+        sh:description    "This property has multiple RDFS domains to suit multiple OWL Profiles. See <a href=\"#owl-profile\">PROV-O OWL Profile</a>." , "Because prov:wasInfluencedBy is a broad relation, its more specific subproperties (e.g. prov:wasInformedBy, prov:actedOnBehalfOf, prov:wasEndedBy, etc.) should be used when applicable."@en ;
+        sh:name           "wasInfluencedBy" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:or             ( [ sh:class  prov:Activity ;
+                              sh:path   prov:wasInfluencedBy
+                            ]
+                            [ sh:class  prov:Agent ;
+                              sh:path   prov:wasInfluencedBy
+                            ]
+                            [ sh:class  prov:Entity ;
+                              sh:path   prov:wasInfluencedBy
+                            ]
+                          ) .
+
 <https://astrea.linkeddata.es/shapes#88797b557ec0a33ea8a42c1c6b1c7008>
         a               sh:PropertyShape ;
         rdfs:label      "This property specifies that a wfprov:ProcessRun used an wfprov:Artifact as an input"@en ;
@@ -1777,24 +1795,6 @@
         sh:name           "generated" ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           prov:generated .
-
-<https://astrea.linkeddata.es/shapes#d797577eeedbbe38c6d0bc2da064e813>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o-inverses#> , <http://www.w3.org/ns/prov-o#> ;
-        rdfs:label        "Because prov:wasInfluencedBy is a broad relation, its more specific subproperties (e.g. prov:wasInformedBy, prov:actedOnBehalfOf, prov:wasEndedBy, etc.) should be used when applicable."@en , "wasInfluencedBy" , "This property has multiple RDFS domains to suit multiple OWL Profiles. See <a href=\"#owl-profile\">PROV-O OWL Profile</a>." ;
-        sh:description    "This property has multiple RDFS domains to suit multiple OWL Profiles. See <a href=\"#owl-profile\">PROV-O OWL Profile</a>." , "Because prov:wasInfluencedBy is a broad relation, its more specific subproperties (e.g. prov:wasInformedBy, prov:actedOnBehalfOf, prov:wasEndedBy, etc.) should be used when applicable."@en ;
-        sh:name           "wasInfluencedBy" ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:or             ( [ sh:class  prov:Activity ;
-                              sh:path   prov:wasInfluencedBy
-                            ]
-                            [ sh:class  prov:Agent ;
-                              sh:path   prov:wasInfluencedBy
-                            ]
-                            [ sh:class  prov:Entity ;
-                              sh:path   prov:wasInfluencedBy
-                            ]
-                          ) .
 
 <https://astrea.linkeddata.es/shapes#b05cc576efd2431a32d0bffa5fcbecaa>
         a                 sh:PropertyShape ;
@@ -1924,6 +1924,10 @@
         sh:nodeKind     sh:IRI ;
         sh:targetClass  <http://w3id.org/rv-ontology#LinkType> .
 
+<https://astrea.linkeddata.es/shapes#38d2b22e0b5e00b3f0400161454df4f6>
+        a         sh:PropertyShape ;
+        sh:class  prov:EntityInfluence .
+
 <https://astrea.linkeddata.es/shapes#6ca4480095c83f9268c312e1feb1197c>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://www.w3.org/ns/prov-o#> ;
@@ -1942,10 +1946,6 @@
         sh:name           "qualifiedInsertion" ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           prov:qualifiedInsertion .
-
-<https://astrea.linkeddata.es/shapes#38d2b22e0b5e00b3f0400161454df4f6>
-        a         sh:PropertyShape ;
-        sh:class  prov:EntityInfluence .
 
 <https://astrea.linkeddata.es/shapes#57fc012ee9dd507b1f7da424f8c4c5bb>
         a                 sh:PropertyShape ;
@@ -2068,6 +2068,12 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           prov:describesService .
 
+<https://astrea.linkeddata.es/shapes#0875d137ae51b6e04882fd1e6ab538c5>
+        a               sh:NodeShape ;
+        sh:description  "wfdesc:Artifact is used to provide information about a class of artifacts. For example, it can be used to specify the datatype of a dataset or the structure of a document.\n\nAn wfdesc:Artifact is associated with a wfdesc:Parameter using wfdesc:hasArtifact.\n\nThe distinction between a parameter and artifact is that the parameter can be customized to describe the particular role the artifact plays with regards to the process (and can be linked using wfdesc:DataLink) - while the wfdesc:Artifact can describe the syntactic and semantic datatype."@en ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  wfdesc:Artifact .
+
 <https://astrea.linkeddata.es/shapes#3379a27d60fe0552d716a444dcaf29ba>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  prov: ;
@@ -2082,12 +2088,6 @@
         sh:class     foaf:Person ;
         sh:nodeKind  sh:BlankNodeOrIRI ;
         sh:path      <http://w3id.org/rv-ontology#fromExpert> .
-
-<https://astrea.linkeddata.es/shapes#0875d137ae51b6e04882fd1e6ab538c5>
-        a               sh:NodeShape ;
-        sh:description  "wfdesc:Artifact is used to provide information about a class of artifacts. For example, it can be used to specify the datatype of a dataset or the structure of a document.\n\nAn wfdesc:Artifact is associated with a wfdesc:Parameter using wfdesc:hasArtifact.\n\nThe distinction between a parameter and artifact is that the parameter can be customized to describe the particular role the artifact plays with regards to the process (and can be linked using wfdesc:DataLink) - while the wfdesc:Artifact can describe the syntactic and semantic datatype."@en ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  wfdesc:Artifact .
 
 <https://astrea.linkeddata.es/shapes#e490b460b1136eae6fa76eafec5c3475>
         a               sh:NodeShape ;

@@ -280,7 +280,7 @@
 <https://astrea.linkeddata.es/report/1964147564>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
-                "2021-02-13 02:41:01.232  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.oclc.org:80: The target server failed to respond2021-02-13 02:41:01.232  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.oclc.org:80\n2021-02-13 02:41:01.820  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://www.w3.org:80: The target server failed to respond\n2021-02-13 02:41:01.820  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://www.w3.org:80\n" ;
+                "2021-02-24 20:15:31.302  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.oclc.org:80: The target server failed to respond2021-02-24 20:15:31.302  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.oclc.org:80\n2021-02-24 20:15:31.969  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://www.w3.org:80: The target server failed to respond\n2021-02-24 20:15:31.969  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://www.w3.org:80\n" ;
         <https://w3id.org/def/astrea#source>
                 "http://purl.oclc.org/NET/ssnx/ssn" ;
         <https://w3id.org/def/astrea#statusCode>
@@ -1045,6 +1045,12 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      qu:unitKind .
 
+<https://astrea.linkeddata.es/shapes#8c647f6967493d8edb1dffa2a3bc351e>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#67fbad44217ddb91d9c516406ef6c17f> ;
+        sh:targetClass  dim:SecondMomentOfArea .
+
 <https://astrea.linkeddata.es/shapes#67c672a72f50dc40933c1fcea7499ed2>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
@@ -1057,11 +1063,14 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      ssn:isProxyFor .
 
-<https://astrea.linkeddata.es/shapes#8c647f6967493d8edb1dffa2a3bc351e>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:property     <https://astrea.linkeddata.es/shapes#67fbad44217ddb91d9c516406ef6c17f> ;
-        sh:targetClass  dim:SecondMomentOfArea .
+<https://astrea.linkeddata.es/shapes#f8d73be80f62532ee3b83a41c7f6745c>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
+        rdfs:label        "end time" ;
+        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Base#Time" ;
+        sh:name           "end time" ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           ssn:endTime .
 
 <https://astrea.linkeddata.es/shapes#29acf4a7a11740f7103ff2723ee56ed7>
         a               sh:NodeShape ;
@@ -1079,15 +1088,6 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    ssn:ResponseTime .
 
-<https://astrea.linkeddata.es/shapes#f8d73be80f62532ee3b83a41c7f6745c>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/ssn" ;
-        rdfs:label        "end time" ;
-        rdfs:seeAlso      "http://www.w3.org/2005/Incubator/ssn/wiki/SSN_Base#Time" ;
-        sh:name           "end time" ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           ssn:endTime .
-
 <https://astrea.linkeddata.es/shapes#41a8155d9eb158f2643e3bd1479e13d3>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  "http://purl.oclc.org/NET/ssnx/qu" ;
@@ -1099,15 +1099,15 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           qu:baseDimension .
 
-<https://astrea.linkeddata.es/shapes#b7f30d82a8b38f0ea674e840d244c8b5>
-        a            sh:PropertyShape ;
-        sh:class     dim:InverseAmountUnit ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      qu:unitKind .
-
 <https://astrea.linkeddata.es/shapes#0b2d1b65c4f8546150b5a1f139ccdc54>
         a            sh:PropertyShape ;
         sh:class     dim:ThermalConductivityUnit ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      qu:unitKind .
+
+<https://astrea.linkeddata.es/shapes#b7f30d82a8b38f0ea674e840d244c8b5>
+        a            sh:PropertyShape ;
+        sh:class     dim:InverseAmountUnit ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      qu:unitKind .
 
@@ -1765,6 +1765,11 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           ssn:hasSurvivalRange .
 
+<https://astrea.linkeddata.es/shapes#efe86bb052d06b51a2d5f5115334a64b>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  dim:InductanceUnit .
+
 <https://astrea.linkeddata.es/shapes#b78c97776c235e249e82be659a907a95>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
@@ -1775,25 +1780,20 @@
         sh:nodeKind     sh:IRI ;
         sh:targetClass  dim:DimensionlessUnit .
 
-<https://astrea.linkeddata.es/shapes#efe86bb052d06b51a2d5f5115334a64b>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  dim:InductanceUnit .
-
 <https://astrea.linkeddata.es/shapes#05d75a055118dfcf023cd019ef604cc1>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
         sh:targetClass  dim:StressOrPressureUnit .
 
-<https://astrea.linkeddata.es/shapes#7d35e85cd0f6c9fac40a8d9ba02cb2d6>
-        a            sh:PropertyShape ;
-        sh:class     dim:ThicknessFrequencyProductUnit ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      qu:unitKind .
-
 <https://astrea.linkeddata.es/shapes#94bb33b116a06d6b29219e334bcda2a5>
         a            sh:PropertyShape ;
         sh:class     dim:StressOrPressureUnit ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      qu:unitKind .
+
+<https://astrea.linkeddata.es/shapes#7d35e85cd0f6c9fac40a8d9ba02cb2d6>
+        a            sh:PropertyShape ;
+        sh:class     dim:ThicknessFrequencyProductUnit ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      qu:unitKind .
 
@@ -1979,7 +1979,7 @@
 <https://astrea.linkeddata.es/report/1105901718>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
-                "2021-02-13 02:41:00.323  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://www.w3.org:80: The target server failed to respond2021-02-13 02:41:00.323  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://www.w3.org:80\n" ;
+                "2021-02-24 20:15:29.611  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.oclc.org:80: The target server failed to respond2021-02-24 20:15:29.611  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.oclc.org:80\n2021-02-24 20:15:30.338  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://www.w3.org:80: The target server failed to respond\n2021-02-24 20:15:30.338  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://www.w3.org:80\n" ;
         <https://w3id.org/def/astrea#source>
                 "http://purl.oclc.org/NET/ssnx/cf/cf-feature" ;
         <https://w3id.org/def/astrea#statusCode>
@@ -2101,15 +2101,15 @@
         sh:nodeKind     sh:IRI ;
         sh:targetClass  cf-feature:SurfaceMedium .
 
-<https://astrea.linkeddata.es/shapes#253af1af92a35747c3d5a62a33152bc9>
-        a            sh:PropertyShape ;
-        sh:class     dim:EnergyUnit ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      qu:unitKind .
-
 <https://astrea.linkeddata.es/shapes#03515fe0412e8725fbb13e4e4f3a1e79>
         a            sh:PropertyShape ;
         sh:class     dim:PowerUnit ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      qu:unitKind .
+
+<https://astrea.linkeddata.es/shapes#253af1af92a35747c3d5a62a33152bc9>
+        a            sh:PropertyShape ;
+        sh:class     dim:EnergyUnit ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      qu:unitKind .
 
@@ -3056,7 +3056,7 @@
 <https://astrea.linkeddata.es/report/1905153230>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
-                "2021-02-13 02:41:02.899  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://www.w3.org:80: The target server failed to respond2021-02-13 02:41:02.899  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://www.w3.org:80\n" ;
+                "2021-02-24 20:15:33.096  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://www.w3.org:80: The target server failed to respond2021-02-24 20:15:33.096  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://www.w3.org:80\n" ;
         <https://w3id.org/def/astrea#source>
                 "http://purl.oclc.org/NET/ssnx/qu/qu-rec20" ;
         <https://w3id.org/def/astrea#statusCode>
@@ -3359,11 +3359,11 @@
 <https://astrea.linkeddata.es/report/2053321677>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
-                "2021-02-13 02:40:58.135  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://www.w3.org:80: The target server failed to respond2021-02-13 02:40:58.135  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://www.w3.org:80\n" ;
+                "Shapes generated with no errors" ;
         <https://w3id.org/def/astrea#source>
                 "http://purl.oclc.org/NET/ssnx/qu/qu" ;
         <https://w3id.org/def/astrea#statusCode>
-                "206"^^xsd:int .
+                "200"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#655a3db685e6aab898bb4b5a74997a85>
         a                 sh:PropertyShape ;

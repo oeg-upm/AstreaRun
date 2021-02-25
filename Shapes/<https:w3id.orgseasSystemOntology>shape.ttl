@@ -2,18 +2,16 @@
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix afn:   <http://jena.apache.org/ARQ/function#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfp:  <https://w3id.org/rdfp/> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix voaf:  <http://purl.org/vocommons/voaf#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix ssn:   <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix ssn:   <https://www.w3.org/ns/ssn/> .
 @prefix geo:   <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix qb:    <http://purl.org/linked-data/cube#> .
 @prefix seas:  <https://w3id.org/seas/> .
 @prefix sh:    <http://www.w3.org/ns/shacl#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix pep:   <https://w3id.org/pep/> .
 @prefix dul:   <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 @prefix time:  <http://www.w3.org/2006/time#> .
 @prefix vann:  <http://purl.org/vocab/vann/> .
@@ -32,16 +30,6 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           seas:derivesFrom .
 
-<https://astrea.linkeddata.es/shapes#14f028ded1f26cf74d3da048e8828388>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  pep: ;
-        rdfs:label        "has simple command" , "Links a Procedure Execution to its unique simple command (a RDFS literal)."@en ;
-        sh:description    "Links a Procedure Execution to its unique simple command (a RDFS literal)."@en ;
-        sh:maxCount       1 ;
-        sh:name           "has simple command" ;
-        sh:nodeKind       sh:Literal , sh:IRIOrLiteral ;
-        sh:path           pep:hasSimpleCommand .
-
 <https://astrea.linkeddata.es/shapes#928bd34b97c803bec63e42ac014d720d>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  seas:FeatureOfInterestOntology ;
@@ -51,17 +39,6 @@
         sh:nodeKind       sh:IRI ;
         sh:property       <https://astrea.linkeddata.es/shapes#87a6780c02999d6bc329b0ede79433e3> ;
         sh:targetClass    seas:FeatureOfInterest .
-
-<https://astrea.linkeddata.es/shapes#a34d1746088aa4c1ccedf29b7034d733>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  pep: ;
-        rdfs:label        "used procedure" , "Relation between a Procedure Execution and the Procedure it used."@en ;
-        sh:class          pep:Procedure ;
-        sh:description    "Relation between a Procedure Execution and the Procedure it used."@en ;
-        sh:maxCount       1 ;
-        sh:name           "used procedure" ;
-        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
-        sh:path           pep:usedProcedure .
 
 <https://astrea.linkeddata.es/shapes#b8d008c99f19f9ef6b3451720c17b763>
         a                 sh:PropertyShape ;
@@ -73,17 +50,6 @@
         sh:name           "has spatial context"@en ;
         sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
         sh:path           seas:hasSpatialContext .
-
-<https://astrea.linkeddata.es/shapes#6e994965f5ea839645a520b47e4fec9e>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  pep: ;
-        rdfs:label        "Links a Procedure Execution Container to the Procedure Executor that makes the executions it contains."@en , "for executor" ;
-        sh:class          pep:ProcedureExecutor ;
-        sh:description    "Links a Procedure Execution Container to the Procedure Executor that makes the executions it contains."@en ;
-        sh:maxCount       1 ;
-        sh:name           "for executor" ;
-        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
-        sh:path           pep:forExecutor .
 
 <https://astrea.linkeddata.es/shapes#ec7c15f21cea05de5dddfd19767b6af8>
         a                 sh:NodeShape ;
@@ -147,10 +113,6 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           seas:hasValidityContext .
 
-<https://astrea.linkeddata.es/shapes#dffd0212637d4583d11cee3ad7656e37>
-        a         sh:PropertyShape ;
-        sh:class  pep:ProcedureExecutor .
-
 <https://astrea.linkeddata.es/shapes#85991995f7b354ce799a74701a789464>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  seas:SystemOntology ;
@@ -179,16 +141,6 @@
         sh:name           "Average Evaluation"@en ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    seas:AverageEvaluation .
-
-<https://astrea.linkeddata.es/shapes#f3534318a2af2e1ff5fc716a9c0d8790>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  pep: ;
-        rdfs:label        "has command" , "Links a Procedure Execution to its unique command (a OWL individual)."@en ;
-        sh:description    "Links a Procedure Execution to its unique command (a OWL individual)."@en ;
-        sh:maxCount       1 ;
-        sh:name           "has command" ;
-        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
-        sh:path           pep:hasCommand .
 
 <https://astrea.linkeddata.es/shapes#d3dadd58adaf71426830ad280fb444f2>
         a                 sh:NodeShape ;
@@ -234,26 +186,6 @@
         <https://w3id.org/def/astrea#statusCode>
                 "200"^^xsd:int .
 
-<https://astrea.linkeddata.es/shapes#b95a7a4cf0630faf321865f8228fbdb0>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  pep: ;
-        rdfs:label        "Links a Procedure Execution to its unique simple result (a RDFS literal)."@en , "has simple result" ;
-        sh:description    "Links a Procedure Execution to its unique simple result (a RDFS literal)."@en ;
-        sh:maxCount       1 ;
-        sh:name           "has simple result" ;
-        sh:nodeKind       sh:Literal , sh:IRIOrLiteral ;
-        sh:path           pep:hasSimpleResult .
-
-<https://astrea.linkeddata.es/shapes#7541748c1c32407aa3b77dbdcf5363b2>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  pep: ;
-        rdfs:label        "Procedure Execution Container" ;
-        sh:description    "The class of containers of Procedure Executions made by a specific Procedure Executor using a specific Procedure. \r\n\r\nA Procedure Executor Container can be for example a Web container of Procedure Execution resources, where one may operate HTTP POST requests to execute a given procedure."@en ;
-        sh:name           "Procedure Execution Container" ;
-        sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#76e82f81616afb45a31ee306b745a38b> , <https://astrea.linkeddata.es/shapes#6e994965f5ea839645a520b47e4fec9e> ;
-        sh:targetClass    pep:ProcedureExecutionContainer .
-
 <https://astrea.linkeddata.es/shapes#893797ba8898177df5b817ba86554a38>
         a            sh:PropertyShape ;
         sh:nodeKind  sh:Literal ;
@@ -263,26 +195,6 @@
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
         sh:targetClass  voaf:Vocabulary .
-
-<https://astrea.linkeddata.es/shapes#3dace43f5fa1811992381b27c58325cb>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  pep: ;
-        rdfs:label        "has input" , "Links a Procedure to the (unique) description of its input."@en ;
-        sh:description    "Links a Procedure to the (unique) description of its input."@en ;
-        sh:maxCount       1 ;
-        sh:name           "has input" ;
-        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
-        sh:path           pep:hasInput .
-
-<https://astrea.linkeddata.es/shapes#33f1fd983c1b4c87622c120da662914a>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  pep: ;
-        rdfs:label        "implements" , "A relation between a Procedure Executor and a Procedure it implements."@en ;
-        sh:class          pep:Procedure ;
-        sh:description    "A relation between a Procedure Executor and a Procedure it implements."@en ;
-        sh:name           "implements" ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           pep:implements .
 
 <https://astrea.linkeddata.es/shapes#e95fbb93f904c6729282fc4c46364e07>
         a                 sh:PropertyShape ;
@@ -305,11 +217,11 @@
 <https://astrea.linkeddata.es/report/1755827111>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
-                "Shapes generated with no errors" ;
+                "Provided content belongs to no ontology (maybe check that it contains the mandatory statement rdf:type owl:Ontology)" ;
         <https://w3id.org/def/astrea#source>
                 "https://w3id.org/pep/" ;
         <https://w3id.org/def/astrea#statusCode>
-                "200"^^xsd:int .
+                "400"^^xsd:int .
 
 <https://astrea.linkeddata.es/shapes#c92996f282f1178e15f64aed2d3b7bb3>
         a                 sh:NodeShape ;
@@ -323,17 +235,6 @@
 <https://astrea.linkeddata.es/shapes#ac136718d89165348b5263dd6376b6de>
         a         sh:PropertyShape ;
         sh:class  seas:Property .
-
-<https://astrea.linkeddata.es/shapes#ecde7734c40d7b973ca3e5eec2085fb2>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  pep: ;
-        rdfs:label        "made by" , "Relation between a Procedure Execution and what made it."@en ;
-        sh:class          pep:ProcedureExecutor ;
-        sh:description    "Relation between a Procedure Execution and what made it."@en ;
-        sh:maxCount       1 ;
-        sh:name           "made by" ;
-        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
-        sh:path           pep:madeBy .
 
 <https://astrea.linkeddata.es/shapes#e636a81d5b8700d631eaf13114c868b4>
         a                 sh:PropertyShape ;
@@ -356,10 +257,6 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           seas:connectsSystemAt .
 
-<https://astrea.linkeddata.es/shapes#7ba0889be0ca0c87645a2c7cee6e0b0e>
-        a         sh:PropertyShape ;
-        sh:class  pep:Procedure .
-
 <https://astrea.linkeddata.es/shapes#d66c3ce46d53deef8c175dd2adf29888>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  seas:SystemOntology ;
@@ -372,6 +269,16 @@
         sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
         sh:path           seas:connectsAt .
 
+<https://astrea.linkeddata.es/shapes#988cba7f0d0616ff83e0f9ef53dcc486>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  seas:SystemOntology ;
+        rdfs:label        "connected through"@en , "Links a system to one of its connections to other systems."@en ;
+        sh:class          seas:Connection ;
+        sh:description    "Links a system to one of its connections to other systems."@en ;
+        sh:name           "connected through"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           seas:connectedThrough .
+
 <https://astrea.linkeddata.es/shapes#3814b7d76a4dc9345891c92f5fdf55db>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  seas:EvaluationOntology ;
@@ -383,16 +290,6 @@
         sh:name           "evaluation"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
         sh:path           seas:evaluation .
-
-<https://astrea.linkeddata.es/shapes#988cba7f0d0616ff83e0f9ef53dcc486>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  seas:SystemOntology ;
-        rdfs:label        "connected through"@en , "Links a system to one of its connections to other systems."@en ;
-        sh:class          seas:Connection ;
-        sh:description    "Links a system to one of its connections to other systems."@en ;
-        sh:name           "connected through"@en ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           seas:connectedThrough .
 
 <https://astrea.linkeddata.es/shapes#f867410023dfcf911c287841b46ad3e7>
         a                 sh:NodeShape ;
@@ -413,27 +310,6 @@
         <https://w3id.org/def/astrea#statusCode>
                 "200"^^xsd:int .
 
-<https://astrea.linkeddata.es/shapes#40351ec0104f178ebf1dae47e679ba32>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  pep: ;
-        rdfs:label        "Procedure Execution" ;
-        sh:description    "Act of carrying out a Procedure. Links to:\r\n\r\n- a Procedure Executor to describe what made it and how; \r\n- the used procedure;\r\n- the command and the result of the procedure execution (simple or complex).\r\n"@en ;
-        sh:name           "Procedure Execution" ;
-        sh:nodeKind       sh:IRI ;
-        sh:not            <https://astrea.linkeddata.es/shapes#7ba0889be0ca0c87645a2c7cee6e0b0e> , <https://astrea.linkeddata.es/shapes#dffd0212637d4583d11cee3ad7656e37> ;
-        sh:property       <https://astrea.linkeddata.es/shapes#a34d1746088aa4c1ccedf29b7034d733> , <https://astrea.linkeddata.es/shapes#ecde7734c40d7b973ca3e5eec2085fb2> ;
-        sh:targetClass    pep:ProcedureExecution .
-
-<https://astrea.linkeddata.es/shapes#5c4853c956f1f6fef4acaa4f1fbebb04>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  pep: ;
-        rdfs:label        "has output" , "Links a Procedure to the (unique) description of its output."@en ;
-        sh:description    "Links a Procedure to the (unique) description of its output."@en ;
-        sh:maxCount       1 ;
-        sh:name           "has output" ;
-        sh:nodeKind       sh:IRIOrLiteral , sh:BlankNodeOrIRI ;
-        sh:path           pep:hasOutput .
-
 <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e>
         a               sh:NodeShape ;
         sh:nodeKind     sh:IRI ;
@@ -446,17 +322,6 @@
 <https://astrea.linkeddata.es/shapes#6b7d20f990303e6eb9ddbc1f540c45b6>
         a         sh:PropertyShape ;
         sh:class  seas:Connection .
-
-<https://astrea.linkeddata.es/shapes#cc83a03e1058c17db8479734b3f2b00b>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  pep: ;
-        rdfs:label        "Procedure Executor" ;
-        sh:description    "Device, agent (including humans), or software (simulation, web service) involved in, or implementing, a `Procedure`. Examples of sub-classes of Procedure Executor are Sensor, Actuator, Estimator.\r\n\r\nA Procedure Executor can be linked to the executions that it made using property `made`. Also, it can be linked to one or more `Procedure`s it implements using property `implements`. A Procedure Executor implements each of the methods used by the `Execution`s it made. \r\n\r\nOther metadata may detail geolocation, vendor, operator, consumed power, etc."@en ;
-        sh:name           "Procedure Executor" ;
-        sh:nodeKind       sh:IRI ;
-        sh:not            <https://astrea.linkeddata.es/shapes#7ba0889be0ca0c87645a2c7cee6e0b0e> ;
-        sh:property       <https://astrea.linkeddata.es/shapes#33f1fd983c1b4c87622c120da662914a> , <https://astrea.linkeddata.es/shapes#f8f3513e482822584b703ef35c0eebff> ;
-        sh:targetClass    pep:ProcedureExecutor .
 
 <https://astrea.linkeddata.es/shapes#0cd161191a5989993186f70a3b716856>
         a                 sh:PropertyShape ;
@@ -472,33 +337,12 @@
         a         sh:PropertyShape ;
         sh:class  seas:System .
 
-<https://astrea.linkeddata.es/shapes#76e82f81616afb45a31ee306b745a38b>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  pep: ;
-        rdfs:label        "Links a Procedure Execution Container to the Procedure that the executions it contains used."@en , "for procedure" ;
-        sh:class          pep:Procedure ;
-        sh:description    "Links a Procedure Execution Container to the Procedure that the executions it contains used."@en ;
-        sh:maxCount       1 ;
-        sh:name           "for procedure" ;
-        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
-        sh:path           pep:forProcedure .
-
 <http://astrea.linkeddata.es/report>
         a       <https://w3id.org/def/astrea#ShapeReport> ;
         <https://w3id.org/def/astrea#contains>
-                <https://astrea.linkeddata.es/shapes#f3534318a2af2e1ff5fc716a9c0d8790> , <https://astrea.linkeddata.es/shapes#bb536a12b429debfe02c1133a38ad53e> , <https://astrea.linkeddata.es/shapes#e43305d139ae7b345918f7e3d32811b3> , <https://astrea.linkeddata.es/shapes#18e575a5bf1aff586780bd7f0bacbdfa> , <https://astrea.linkeddata.es/shapes#4bde918d3422231200ff813226d2fba5> , <https://astrea.linkeddata.es/shapes#23b73f094038b2a7b3e86eaceb894d35> , <https://astrea.linkeddata.es/shapes#ecde7734c40d7b973ca3e5eec2085fb2> , <https://astrea.linkeddata.es/shapes#7ba0889be0ca0c87645a2c7cee6e0b0e> , <https://astrea.linkeddata.es/shapes#5c4853c956f1f6fef4acaa4f1fbebb04> , <https://astrea.linkeddata.es/shapes#0abb68fa3cb75bd8ca727c50d887951f> , <https://astrea.linkeddata.es/shapes#cc83a03e1058c17db8479734b3f2b00b> , <https://astrea.linkeddata.es/shapes#0dd369e92460fc500a29df4b34030a26> , <https://astrea.linkeddata.es/shapes#3814b7d76a4dc9345891c92f5fdf55db> , <https://astrea.linkeddata.es/shapes#a9821827798e9995ae56b4ef93203a4b> , <https://astrea.linkeddata.es/shapes#f867410023dfcf911c287841b46ad3e7> , <https://astrea.linkeddata.es/shapes#0cd161191a5989993186f70a3b716856> , <https://astrea.linkeddata.es/shapes#0143b31483a258ed420c70c88c24f886> , <https://astrea.linkeddata.es/shapes#beb9d3f784617f23b1b814ae21866ebe> , <https://astrea.linkeddata.es/shapes#1866f6f95fcf8b598e59ae2655da8136> , <https://astrea.linkeddata.es/shapes#40351ec0104f178ebf1dae47e679ba32> , <https://astrea.linkeddata.es/shapes#c92996f282f1178e15f64aed2d3b7bb3> , <https://astrea.linkeddata.es/shapes#ec67331a4ef4838ff23a0e5187c1936d> , <https://astrea.linkeddata.es/shapes#f8f3513e482822584b703ef35c0eebff> , <https://astrea.linkeddata.es/shapes#d3dadd58adaf71426830ad280fb444f2> , <https://astrea.linkeddata.es/shapes#b086f8b88175dd0d699ff46b3500b5f4> , <https://astrea.linkeddata.es/shapes#85991995f7b354ce799a74701a789464> , <https://astrea.linkeddata.es/shapes#b8d008c99f19f9ef6b3451720c17b763> , <https://astrea.linkeddata.es/shapes#a33d6f27b501aa52b53f51af886374b1> , <https://astrea.linkeddata.es/shapes#1bd16a93758d6778e243f07c8431c80d> , <https://astrea.linkeddata.es/shapes#14940e232a487b79039cd7f485ccca1f> , <https://astrea.linkeddata.es/shapes#271777936d66d37883ec48049f9d99ed> , <https://astrea.linkeddata.es/shapes#e636a81d5b8700d631eaf13114c868b4> , <https://astrea.linkeddata.es/shapes#7541748c1c32407aa3b77dbdcf5363b2> , <https://astrea.linkeddata.es/shapes#3789c15010c6c3b4bcc3903a269cd868> , <https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f> , <https://astrea.linkeddata.es/shapes#b49aac2e316cd6b82945585a51a36349> , <https://astrea.linkeddata.es/shapes#ac136718d89165348b5263dd6376b6de> , <https://astrea.linkeddata.es/shapes#3a9e3080591d33fa6b0f0537921e60b0> , <https://astrea.linkeddata.es/shapes#14f028ded1f26cf74d3da048e8828388> , <https://astrea.linkeddata.es/shapes#e95fbb93f904c6729282fc4c46364e07> , <https://astrea.linkeddata.es/shapes#76e82f81616afb45a31ee306b745a38b> , <https://astrea.linkeddata.es/shapes#783c68342bf586fe2f0493752ebb0e86> , <https://astrea.linkeddata.es/shapes#d66c3ce46d53deef8c175dd2adf29888> , <https://astrea.linkeddata.es/shapes#988cba7f0d0616ff83e0f9ef53dcc486> , <https://astrea.linkeddata.es/shapes#e1f4923423b98617b1cd49e6919a8a45> , <https://astrea.linkeddata.es/shapes#6e994965f5ea839645a520b47e4fec9e> , <https://astrea.linkeddata.es/shapes#a34d1746088aa4c1ccedf29b7034d733> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#ec7c15f21cea05de5dddfd19767b6af8> , <https://astrea.linkeddata.es/shapes#b95a7a4cf0630faf321865f8228fbdb0> , <https://astrea.linkeddata.es/shapes#33f1fd983c1b4c87622c120da662914a> , <https://astrea.linkeddata.es/shapes#c601ad2d0f3a89863502ca503b8c1457> , <https://astrea.linkeddata.es/shapes#6b7d20f990303e6eb9ddbc1f540c45b6> , <https://astrea.linkeddata.es/shapes#928bd34b97c803bec63e42ac014d720d> , <https://astrea.linkeddata.es/shapes#87a6780c02999d6bc329b0ede79433e3> , <https://astrea.linkeddata.es/shapes#dffd0212637d4583d11cee3ad7656e37> , <https://astrea.linkeddata.es/shapes#e3b6c8b77d13a3c7315f2a4a99d76667> , <https://astrea.linkeddata.es/shapes#3dace43f5fa1811992381b27c58325cb> , <https://astrea.linkeddata.es/shapes#893797ba8898177df5b817ba86554a38> ;
+                <https://astrea.linkeddata.es/shapes#bb536a12b429debfe02c1133a38ad53e> , <https://astrea.linkeddata.es/shapes#4bde918d3422231200ff813226d2fba5> , <https://astrea.linkeddata.es/shapes#18e575a5bf1aff586780bd7f0bacbdfa> , <https://astrea.linkeddata.es/shapes#23b73f094038b2a7b3e86eaceb894d35> , <https://astrea.linkeddata.es/shapes#0abb68fa3cb75bd8ca727c50d887951f> , <https://astrea.linkeddata.es/shapes#0dd369e92460fc500a29df4b34030a26> , <https://astrea.linkeddata.es/shapes#3814b7d76a4dc9345891c92f5fdf55db> , <https://astrea.linkeddata.es/shapes#a9821827798e9995ae56b4ef93203a4b> , <https://astrea.linkeddata.es/shapes#f867410023dfcf911c287841b46ad3e7> , <https://astrea.linkeddata.es/shapes#0cd161191a5989993186f70a3b716856> , <https://astrea.linkeddata.es/shapes#0143b31483a258ed420c70c88c24f886> , <https://astrea.linkeddata.es/shapes#beb9d3f784617f23b1b814ae21866ebe> , <https://astrea.linkeddata.es/shapes#1866f6f95fcf8b598e59ae2655da8136> , <https://astrea.linkeddata.es/shapes#c92996f282f1178e15f64aed2d3b7bb3> , <https://astrea.linkeddata.es/shapes#ec67331a4ef4838ff23a0e5187c1936d> , <https://astrea.linkeddata.es/shapes#d3dadd58adaf71426830ad280fb444f2> , <https://astrea.linkeddata.es/shapes#b086f8b88175dd0d699ff46b3500b5f4> , <https://astrea.linkeddata.es/shapes#85991995f7b354ce799a74701a789464> , <https://astrea.linkeddata.es/shapes#b8d008c99f19f9ef6b3451720c17b763> , <https://astrea.linkeddata.es/shapes#a33d6f27b501aa52b53f51af886374b1> , <https://astrea.linkeddata.es/shapes#1bd16a93758d6778e243f07c8431c80d> , <https://astrea.linkeddata.es/shapes#14940e232a487b79039cd7f485ccca1f> , <https://astrea.linkeddata.es/shapes#271777936d66d37883ec48049f9d99ed> , <https://astrea.linkeddata.es/shapes#e636a81d5b8700d631eaf13114c868b4> , <https://astrea.linkeddata.es/shapes#3789c15010c6c3b4bcc3903a269cd868> , <https://astrea.linkeddata.es/shapes#a90e6282ef030f7595c3a9f1a2b8c09f> , <https://astrea.linkeddata.es/shapes#b49aac2e316cd6b82945585a51a36349> , <https://astrea.linkeddata.es/shapes#ac136718d89165348b5263dd6376b6de> , <https://astrea.linkeddata.es/shapes#e95fbb93f904c6729282fc4c46364e07> , <https://astrea.linkeddata.es/shapes#783c68342bf586fe2f0493752ebb0e86> , <https://astrea.linkeddata.es/shapes#d66c3ce46d53deef8c175dd2adf29888> , <https://astrea.linkeddata.es/shapes#988cba7f0d0616ff83e0f9ef53dcc486> , <https://astrea.linkeddata.es/shapes#e1f4923423b98617b1cd49e6919a8a45> , <https://astrea.linkeddata.es/shapes#b146f25348b90d3405d93c2555dfc85e> , <https://astrea.linkeddata.es/shapes#ec7c15f21cea05de5dddfd19767b6af8> , <https://astrea.linkeddata.es/shapes#c601ad2d0f3a89863502ca503b8c1457> , <https://astrea.linkeddata.es/shapes#6b7d20f990303e6eb9ddbc1f540c45b6> , <https://astrea.linkeddata.es/shapes#928bd34b97c803bec63e42ac014d720d> , <https://astrea.linkeddata.es/shapes#87a6780c02999d6bc329b0ede79433e3> , <https://astrea.linkeddata.es/shapes#e3b6c8b77d13a3c7315f2a4a99d76667> , <https://astrea.linkeddata.es/shapes#893797ba8898177df5b817ba86554a38> ;
         <https://w3id.org/def/astrea#generatedShapesFrom>
                 <https://astrea.linkeddata.es/report/874163875> , <https://astrea.linkeddata.es/report/41244462> , <https://astrea.linkeddata.es/report/1755827111> , <https://astrea.linkeddata.es/report/0620946147> .
-
-<https://astrea.linkeddata.es/shapes#f8f3513e482822584b703ef35c0eebff>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  pep: ;
-        rdfs:label        "made" , "Relation between a procedure executor and an execution it made."@en ;
-        sh:class          pep:ProcedureExecution ;
-        sh:description    "Relation between a procedure executor and an execution it made."@en ;
-        sh:name           "made" ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           pep:made .
 
 <https://astrea.linkeddata.es/shapes#0abb68fa3cb75bd8ca727c50d887951f>
         a                 sh:NodeShape ;
@@ -573,15 +417,6 @@
         sh:nodeKind       sh:IRI ;
         sh:targetClass    seas:MinimumEvaluation .
 
-<https://astrea.linkeddata.es/shapes#3a9e3080591d33fa6b0f0537921e60b0>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  pep: ;
-        rdfs:label        "Procedure"@en ;
-        sh:description    "A workflow, protocol, plan, algorithm, or computational method. It explains the steps to be carried out to arrive at reproducible results. A Procedure is re-usable, and might be implemented by several Procedure Executors and used for several Procedure Executions. \r\n\r\nExamples of sub-classes of Procedure include Sensing, Actuating, Planning, Forecasting."@en ;
-        sh:name           "Procedure"@en ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    pep:Procedure .
-
 <https://astrea.linkeddata.es/shapes#e1f4923423b98617b1cd49e6919a8a45>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  seas:FeatureOfInterestOntology ;
@@ -590,16 +425,6 @@
         sh:name           "Percentage Property"@en ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    seas:PercentageProperty .
-
-<https://astrea.linkeddata.es/shapes#e43305d139ae7b345918f7e3d32811b3>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  pep: ;
-        rdfs:label        "has result" , "Links a Procedure Execution to its unique result (a OWL individual)."@en ;
-        sh:description    "Links a Procedure Execution to its unique result (a OWL individual)."@en ;
-        sh:maxCount       1 ;
-        sh:name           "has result" ;
-        sh:nodeKind       sh:BlankNodeOrIRI , sh:IRIOrLiteral ;
-        sh:path           pep:hasResult .
 
 <https://astrea.linkeddata.es/shapes#14940e232a487b79039cd7f485ccca1f>
         a         sh:PropertyShape ;

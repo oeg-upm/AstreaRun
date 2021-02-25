@@ -122,6 +122,10 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://qudt.org/schema/qudt/siUnitsExpression> .
 
+<https://astrea.linkeddata.es/shapes#f5d3515f8cfa02fe182d61cb4248572c>
+        a         sh:PropertyShape ;
+        sh:class  skos:ConceptScheme .
+
 <https://astrea.linkeddata.es/shapes#fe0a418d205f0cbf8e554b3d6b45432f>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://www.linkedmodel.org/1.1/schema/dtype> , <http://www.linkedmodel.org/schema/dtype> ;
@@ -131,10 +135,6 @@
         sh:not            <https://astrea.linkeddata.es/shapes#ced5553e5c07c40da303080f1086b922> , <https://astrea.linkeddata.es/shapes#19fd3b3cc5729230274d1c01e81eb7f3> ;
         sh:property       <https://astrea.linkeddata.es/shapes#64f455165358e8f5adca7c25d1ee7a2f> , <https://astrea.linkeddata.es/shapes#6764c93f33862cc83ada598ffd96166d> ;
         sh:targetClass    dtype:DerivedCodeList .
-
-<https://astrea.linkeddata.es/shapes#f5d3515f8cfa02fe182d61cb4248572c>
-        a         sh:PropertyShape ;
-        sh:class  skos:ConceptScheme .
 
 <https://astrea.linkeddata.es/shapes#6eb96a3d9f4aeed62414ab53a4d9e516>
         a                 sh:PropertyShape ;
@@ -718,6 +718,13 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://qudt.org/schema/qudt/latexSymbol> .
 
+<https://astrea.linkeddata.es/shapes#669c3b65fe1cab3530ea84632a77bb33>
+        a            sh:PropertyShape ;
+        sh:class     <http://qudt.org/schema/qudt/EnumeratedValue> ;
+        sh:minCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://qudt.org/schema/qudt/element> .
+
 <https://astrea.linkeddata.es/shapes#061414c2f75686e9df4e437dd9bd8b9b>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://www.w3.org/2004/02/skos/core> ;
@@ -726,13 +733,6 @@
         sh:name           "has exact match"@en ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           skos:exactMatch .
-
-<https://astrea.linkeddata.es/shapes#669c3b65fe1cab3530ea84632a77bb33>
-        a            sh:PropertyShape ;
-        sh:class     <http://qudt.org/schema/qudt/EnumeratedValue> ;
-        sh:minCount  "1"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://qudt.org/schema/qudt/element> .
 
 <https://astrea.linkeddata.es/shapes#d3c302bda1f5da8501bdc77f8881309a>
         a                 sh:PropertyShape ;
@@ -3037,12 +3037,6 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://qudt.org/schema/qudt/baseSIUnitDimensions> .
 
-<https://astrea.linkeddata.es/shapes#496c8464a4da21095e138f5bb4bc32bc>
-        a            sh:PropertyShape ;
-        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      dtype:code .
-
 <https://astrea.linkeddata.es/shapes#7ba9b4199496866fa1053ee482c2e1da>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://qudt.org/2.1/schema/qudt> , <http://qudt.org/schema/qudt> ;
@@ -3077,6 +3071,12 @@
         sh:name           "Base Unit" ;
         sh:nodeKind       sh:IRI ;
         sh:targetClass    <http://qudt.org/schema/qudt/BaseUnit> .
+
+<https://astrea.linkeddata.es/shapes#496c8464a4da21095e138f5bb4bc32bc>
+        a            sh:PropertyShape ;
+        sh:maxCount  "1"^^xsd:nonNegativeInteger ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      dtype:code .
 
 <https://astrea.linkeddata.es/shapes#d5c5f7f44f313b1cd2a43a40e09f2ad5>
         a                 sh:PropertyShape ;
@@ -3372,15 +3372,6 @@
         sh:name           "integer percentage" ;
         sh:nodeKind       sh:Literal .
 
-<https://astrea.linkeddata.es/shapes#e12c22c154eb00a1893ff51ed7161743>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://qudt.org/2.1/schema/qudt> , <http://qudt.org/schema/qudt> ;
-        rdfs:label        "Scale type" ;
-        sh:name           "Scale type" ;
-        sh:nodeKind       sh:IRI ;
-        sh:property       <https://astrea.linkeddata.es/shapes#ddbc3781d830888862fa12cc9ea8b540> , <https://astrea.linkeddata.es/shapes#b89c7541d50a90e1095122b168f7671b> , <https://astrea.linkeddata.es/shapes#538290a25514c29c52117dffd41b8852> ;
-        sh:targetClass    <http://qudt.org/schema/qudt/ScaleType> .
-
 <https://astrea.linkeddata.es/shapes#401457376f5a9dd97031f67d3a0bfd77>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://qudt.org/2.1/schema/qudt> , <http://qudt.org/schema/qudt> ;
@@ -3401,6 +3392,15 @@
         sh:maxCount  "1"^^xsd:int ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://qudt.org/schema/qudt/plainTextDescription> .
+
+<https://astrea.linkeddata.es/shapes#e12c22c154eb00a1893ff51ed7161743>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://qudt.org/2.1/schema/qudt> , <http://qudt.org/schema/qudt> ;
+        rdfs:label        "Scale type" ;
+        sh:name           "Scale type" ;
+        sh:nodeKind       sh:IRI ;
+        sh:property       <https://astrea.linkeddata.es/shapes#ddbc3781d830888862fa12cc9ea8b540> , <https://astrea.linkeddata.es/shapes#b89c7541d50a90e1095122b168f7671b> , <https://astrea.linkeddata.es/shapes#538290a25514c29c52117dffd41b8852> ;
+        sh:targetClass    <http://qudt.org/schema/qudt/ScaleType> .
 
 <https://astrea.linkeddata.es/report/510864770>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
@@ -3512,15 +3512,13 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://qudt.org/schema/qudt/latexDefinition> .
 
-<https://astrea.linkeddata.es/shapes#cb88931206f4d31dbcbc53b27f72ae9e>
+<https://astrea.linkeddata.es/shapes#abb8e9651b2983d856dad4d4817fc343>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://qudt.org/2.1/schema/qudt> , <http://qudt.org/schema/qudt> ;
-        rdfs:label        "figure label" ;
-        sh:datatype       xsd:string ;
-        sh:name           "figure label" ;
+        rdfs:label        "min inclusive" ;
+        sh:name           "min inclusive" ;
         sh:nodeKind       sh:Literal ;
-        sh:path           <http://qudt.org/schema/qudt/figureLabel> ;
-        sh:pattern        ".*" .
+        sh:path           <http://qudt.org/schema/qudt/minInclusive> .
 
 <https://astrea.linkeddata.es/shapes#1390566a2c9ef94d7e43937027bb259c>
         a            sh:PropertyShape ;
@@ -3544,13 +3542,15 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://qudt.org/schema/qudt/bitOrder> .
 
-<https://astrea.linkeddata.es/shapes#abb8e9651b2983d856dad4d4817fc343>
+<https://astrea.linkeddata.es/shapes#cb88931206f4d31dbcbc53b27f72ae9e>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  <http://qudt.org/2.1/schema/qudt> , <http://qudt.org/schema/qudt> ;
-        rdfs:label        "min inclusive" ;
-        sh:name           "min inclusive" ;
+        rdfs:label        "figure label" ;
+        sh:datatype       xsd:string ;
+        sh:name           "figure label" ;
         sh:nodeKind       sh:Literal ;
-        sh:path           <http://qudt.org/schema/qudt/minInclusive> .
+        sh:path           <http://qudt.org/schema/qudt/figureLabel> ;
+        sh:pattern        ".*" .
 
 <https://astrea.linkeddata.es/shapes#e5fe7cc8f074eab8dbabb2f01fc2b6d0>
         a                 sh:PropertyShape ;
@@ -4080,17 +4080,17 @@
         sh:nodeKind       sh:Literal ;
         sh:path           <http://qudt.org/schema/qudt/dimensionExponentForAmountOfSubstance> .
 
-<https://astrea.linkeddata.es/shapes#f6dcf2fafe0eea9bdfa7ddb6a3c0e33f>
-        a            sh:PropertyShape ;
-        sh:class     <http://qudt.org/schema/qudt/DerivedUnit> ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://qudt.org/schema/qudt/hasDerivedCoherentUnit> .
-
 <https://astrea.linkeddata.es/shapes#bb3aaf606e84358d3bc2a1e84e96a640>
         a            sh:PropertyShape ;
         sh:maxCount  1 ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://qudt.org/schema/qudt/ansiSQLName> .
+
+<https://astrea.linkeddata.es/shapes#f6dcf2fafe0eea9bdfa7ddb6a3c0e33f>
+        a            sh:PropertyShape ;
+        sh:class     <http://qudt.org/schema/qudt/DerivedUnit> ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://qudt.org/schema/qudt/hasDerivedCoherentUnit> .
 
 <https://astrea.linkeddata.es/shapes#485ed184ba924a6b5ec774ec61ea22ff>
         a                 sh:PropertyShape ;

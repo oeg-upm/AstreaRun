@@ -964,6 +964,29 @@
         <https://w3id.org/def/astrea#statusCode>
                 "200"^^xsd:int .
 
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   :before
+                   ] ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   :hasTime
+                   ] ;
+        rdf:first  [ sh:class  :Instant ;
+                     sh:path   :after
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   :before
+                                ] ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   :hasTime
+                                ] ;
+                     rdf:first  [ sh:class  :Interval ;
+                                  sh:path   :after
+                                ] ;
+                     rdf:rest   ()
+                   ] .
+
 <https://astrea.linkeddata.es/shapes#2d30aef6f4782c405ffc925d881d09d4>
         a               sh:PropertyShape ;
         rdfs:label      "Posición de día en un sistema calendario-reloj."@es , "day"@en , "Day position in a calendar-clock system.\n\nThe range of this property is not specified, so can be replaced by any specific representation of a calendar day from any calendar. "@en , "día"@es ;
@@ -990,19 +1013,19 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         :intervalStarts .
 
-<https://astrea.linkeddata.es/shapes#82fac92baf7a2660812840ab799ea4bd>
-        a               sh:NodeShape ;
-        rdfs:seeAlso    <http://paul.staroch.name/thesis/SmartHomeWeather.owl#Precipitation> , <http://paul.staroch.name/thesis/SmartHomeWeather.owl#WeatherPhenomenon> , <http://paul.staroch.name/thesis/SmartHomeWeather.owl#hasPrecipitationProbability> , <http://paul.staroch.name/thesis/SmartHomeWeather.owl#hasPrecipitationValue> ;
-        sh:description  "A WeatherPhenomenon describing the absence of precipitation, either because the probability for precipitation is 0 (specified by the property hasPrecipitationProbability) or because the amount of precipitation per hour is 0 (specified by the property hasPrecipitationValue) or both." ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://paul.staroch.name/thesis/SmartHomeWeather.owl#NoRain> .
-
 <https://astrea.linkeddata.es/shapes#47427181ba878100c93867a4606fafbb>
         a            sh:PropertyShape ;
         sh:maxCount  "0"^^xsd:nonNegativeInteger ;
         sh:minCount  "0"^^xsd:nonNegativeInteger ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      :week .
+
+<https://astrea.linkeddata.es/shapes#82fac92baf7a2660812840ab799ea4bd>
+        a               sh:NodeShape ;
+        rdfs:seeAlso    <http://paul.staroch.name/thesis/SmartHomeWeather.owl#Precipitation> , <http://paul.staroch.name/thesis/SmartHomeWeather.owl#WeatherPhenomenon> , <http://paul.staroch.name/thesis/SmartHomeWeather.owl#hasPrecipitationProbability> , <http://paul.staroch.name/thesis/SmartHomeWeather.owl#hasPrecipitationValue> ;
+        sh:description  "A WeatherPhenomenon describing the absence of precipitation, either because the probability for precipitation is 0 (specified by the property hasPrecipitationProbability) or because the amount of precipitation per hour is 0 (specified by the property hasPrecipitationValue) or both." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://paul.staroch.name/thesis/SmartHomeWeather.owl#NoRain> .
 
 <https://astrea.linkeddata.es/shapes#ad361356f94325106c2581448f2ccc15>
         a            sh:PropertyShape ;
@@ -1064,16 +1087,16 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      :hour .
 
-<https://astrea.linkeddata.es/shapes#d8eaef513d0e8ec0725730b67fb639ea>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://paul.staroch.name/thesis/SmartHomeWeather.owl#StormyWeather> .
-
 <https://astrea.linkeddata.es/shapes#172382a059e61f60b739a6e8d904fff3>
         a            sh:PropertyShape ;
         sh:maxCount  1 ;
         sh:nodeKind  sh:Literal , sh:IRIOrLiteral ;
         sh:path      <http://www.w3.org/2003/01/geo/wgs84_pos#lat> .
+
+<https://astrea.linkeddata.es/shapes#d8eaef513d0e8ec0725730b67fb639ea>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://paul.staroch.name/thesis/SmartHomeWeather.owl#StormyWeather> .
 
 <https://astrea.linkeddata.es/shapes#fd7177546235bf137596779a94c31bff>
         a            sh:PropertyShape ;
@@ -1599,6 +1622,13 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         :timeZone .
 
+<https://astrea.linkeddata.es/shapes#6276ea9bc210d78146dede412d605b01>
+        a               sh:NodeShape ;
+        rdfs:seeAlso    <http://paul.staroch.name/thesis/SmartHomeWeather.owl#WeatherPhenomenon> , <http://paul.staroch.name/thesis/SmartHomeWeather.owl#hasCloudAltitude> , <http://paul.staroch.name/thesis/SmartHomeWeather.owl#hasCloudCover> ;
+        sh:description  "A WeatherPhenomenon giving information about a cloud layer. There are two properties: hasCloudCover gives the cloud cover of this layer in okta (an integer in the interval [0-9] where 0 is clear sky, 8 is overcast and 9 is unknown). hasCloudAltitude gives the altitude of that cloud layer.\n\nIf there is more than one cloud layer, for each cloud layer another WeatherPhenomenon must be created and linked to the appropriate WeatherState." ;
+        sh:nodeKind     sh:IRI ;
+        sh:targetClass  <http://paul.staroch.name/thesis/SmartHomeWeather.owl#CloudCover> .
+
 <https://astrea.linkeddata.es/shapes#3e9967331f86ce1d8f93369975788b02>
         a                sh:PropertyShape ;
         rdfs:label       "Specifies the priority of a WeatherState (a positive integer). The higher this value is compared to another WeatherState's priority, the more the WeatherState takes precedence over the other WeatherState." ;
@@ -1731,13 +1761,6 @@
         a            sh:PropertyShape ;
         sh:maxCount  1 ;
         sh:nodeKind  sh:IRIOrLiteral , sh:BlankNodeOrIRI .
-
-<https://astrea.linkeddata.es/shapes#6276ea9bc210d78146dede412d605b01>
-        a               sh:NodeShape ;
-        rdfs:seeAlso    <http://paul.staroch.name/thesis/SmartHomeWeather.owl#WeatherPhenomenon> , <http://paul.staroch.name/thesis/SmartHomeWeather.owl#hasCloudAltitude> , <http://paul.staroch.name/thesis/SmartHomeWeather.owl#hasCloudCover> ;
-        sh:description  "A WeatherPhenomenon giving information about a cloud layer. There are two properties: hasCloudCover gives the cloud cover of this layer in okta (an integer in the interval [0-9] where 0 is clear sky, 8 is overcast and 9 is unknown). hasCloudAltitude gives the altitude of that cloud layer.\n\nIf there is more than one cloud layer, for each cloud layer another WeatherPhenomenon must be created and linked to the appropriate WeatherState." ;
-        sh:nodeKind     sh:IRI ;
-        sh:targetClass  <http://paul.staroch.name/thesis/SmartHomeWeather.owl#CloudCover> .
 
 <https://astrea.linkeddata.es/shapes#7527dd224a804cfc687066273d142469>
         a               sh:NodeShape ;
@@ -2099,29 +2122,6 @@
         a            sh:PropertyShape ;
         sh:maxCount  1 ;
         sh:nodeKind  sh:IRIOrLiteral , sh:BlankNodeOrIRI .
-
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   :before
-                   ] ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   :hasTime
-                   ] ;
-        rdf:first  [ sh:class  :Instant ;
-                     sh:path   :after
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   :before
-                                ] ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   :hasTime
-                                ] ;
-                     rdf:first  [ sh:class  :Interval ;
-                                  sh:path   :after
-                                ] ;
-                     rdf:rest   ()
-                   ] .
 
 <https://astrea.linkeddata.es/shapes#b9cb55323b8221c472524244d8de421a>
         a               sh:NodeShape ;

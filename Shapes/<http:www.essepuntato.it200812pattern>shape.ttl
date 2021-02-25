@@ -109,13 +109,6 @@
         sh:description  "This class has the same use and content model of the pattern Block, but differing primarily because a) inline elements can contain other elements compliant with the same pattern while block elements cannot, and b) inline elements must always be contained by other block or inline elements and by no other type of element.\n\nThese constraints also imply that inline elements cannot be used as root elements of documents and that the class Block is disjoint with the class Inline (i.e., a markup element cannot be a block and an inline at the same time)."@en ;
         sh:name         "inline element"@en ;
         sh:nodeKind     sh:IRI ;
-        sh:or           ( [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Block> ;
-                            sh:path   <http://www.essepuntato.it/2008/12/pattern#isContainedBy>
-                          ]
-                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Inline> ;
-                            sh:path   <http://www.essepuntato.it/2008/12/pattern#isContainedBy>
-                          ]
-                        ) ;
         sh:or           ( [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Atom> ;
                             sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
                           ]
@@ -129,18 +122,25 @@
                             sh:path   <http://www.essepuntato.it/2008/12/pattern#contains>
                           ]
                         ) ;
+        sh:or           ( [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Block> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#isContainedBy>
+                          ]
+                          [ sh:class  <http://www.essepuntato.it/2008/12/pattern#Inline> ;
+                            sh:path   <http://www.essepuntato.it/2008/12/pattern#isContainedBy>
+                          ]
+                        ) ;
         sh:property     <https://astrea.linkeddata.es/shapes#8a9a0d4a785cc15793be509b230c94ac> , <https://astrea.linkeddata.es/shapes#571aa114fbe22154f65a1b2aa9f99317> ;
         sh:targetClass  <http://www.essepuntato.it/2008/12/pattern#Inline> .
-
-<https://astrea.linkeddata.es/shapes#6f2ec3e5cc17c3d9b698e1495d49f741>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://www.essepuntato.it/2008/12/pattern#isContainedBy> .
 
 <https://astrea.linkeddata.es/shapes#e70c759db5415e631b25e0190db8edbb>
         a            sh:PropertyShape ;
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.essepuntato.it/2008/12/pattern#contains> .
+
+<https://astrea.linkeddata.es/shapes#6f2ec3e5cc17c3d9b698e1495d49f741>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.essepuntato.it/2008/12/pattern#isContainedBy> .
 
 <https://astrea.linkeddata.es/shapes#4a648e1b24bd67145d221b8d48b484f9>
         a         sh:PropertyShape ;
@@ -188,6 +188,11 @@
         a         sh:PropertyShape ;
         sh:class  <http://www.essepuntato.it/2008/12/pattern#Milestone> .
 
+<https://astrea.linkeddata.es/shapes#861b365a7aaf635192ed72240a6cd0af>
+        a            sh:PropertyShape ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.essepuntato.it/2008/12/pattern#isContainedBy> .
+
 <https://astrea.linkeddata.es/shapes#16aa3da91bfc2c5c0eee5d2ce02358b2>
         a               sh:PropertyShape ;
         rdfs:label      "has name"@en , "The name of a particular element."@en ;
@@ -204,11 +209,6 @@
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.essepuntato.it/2008/12/pattern#contains> .
 
-<https://astrea.linkeddata.es/shapes#861b365a7aaf635192ed72240a6cd0af>
-        a            sh:PropertyShape ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://www.essepuntato.it/2008/12/pattern#isContainedBy> .
-
 <https://astrea.linkeddata.es/shapes#00f6f11a4f94ac33507058e8daf5ef99>
         a               sh:PropertyShape ;
         rdfs:label      "A hierarchical-based entity contains al least two entities having different names."@en , "can contain heteronymous elements"@en ;
@@ -220,6 +220,10 @@
         sh:path         <http://www.essepuntato.it/2008/12/pattern#canContainHeteronymousElements> ;
         sh:pattern      "true|false|0|1" .
 
+<https://astrea.linkeddata.es/shapes#33ab9085223005d9d48af4acd545f798>
+        a         sh:PropertyShape ;
+        sh:class  <http://www.essepuntato.it/2008/12/pattern#Field> .
+
 <https://astrea.linkeddata.es/shapes#756058b2d7aefcfab645004d30961fc9>
         a               sh:PropertyShape ;
         rdfs:label      "can contain homonymous elements"@en , "A hierarchical-based entity contains al least two entities that share the same name."@en ;
@@ -230,10 +234,6 @@
         sh:nodeKind     sh:Literal , sh:IRIOrLiteral ;
         sh:path         <http://www.essepuntato.it/2008/12/pattern#canContainHomonymousElements> ;
         sh:pattern      "true|false|0|1" .
-
-<https://astrea.linkeddata.es/shapes#33ab9085223005d9d48af4acd545f798>
-        a         sh:PropertyShape ;
-        sh:class  <http://www.essepuntato.it/2008/12/pattern#Field> .
 
 <https://astrea.linkeddata.es/shapes#5ab927282f35b40c77f07df975adcb92>
         a            sh:PropertyShape ;

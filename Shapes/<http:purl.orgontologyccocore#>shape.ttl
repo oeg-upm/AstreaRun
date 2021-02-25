@@ -854,6 +854,16 @@
         sh:nodeKind     sh:Literal ;
         sh:path         time:inXSDDateTimeStamp .
 
+<https://astrea.linkeddata.es/shapes#5580a9301e2d7a6ab2e5bb7e3243a9d1>
+        a               sh:PropertyShape ;
+        rdfs:label      "Longitud de, o elemento de la longitud de, una extensión temporal expresada en años."@es , "length of, or element of the length of, a temporal extent expressed in years"@en , "years duration"@en , "duración en años"@es ;
+        sh:datatype     xsd:decimal ;
+        sh:description  "length of, or element of the length of, a temporal extent expressed in years"@en , "Longitud de, o elemento de la longitud de, una extensión temporal expresada en años."@es ;
+        sh:name         "duración en años"@es , "years duration"@en ;
+        sh:nodeKind     sh:Literal ;
+        sh:path         time:years ;
+        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
+
 <https://astrea.linkeddata.es/shapes#f916ec82c7f195a468b0f73d548712d5>
         a                 sh:PropertyShape ;
         rdfs:isDefinedBy  foaf: ;
@@ -865,16 +875,6 @@
         sh:name           "AIM chat ID" ;
         sh:nodeKind       sh:IRIOrLiteral , sh:Literal ;
         sh:path           foaf:aimChatID .
-
-<https://astrea.linkeddata.es/shapes#5580a9301e2d7a6ab2e5bb7e3243a9d1>
-        a               sh:PropertyShape ;
-        rdfs:label      "Longitud de, o elemento de la longitud de, una extensión temporal expresada en años."@es , "length of, or element of the length of, a temporal extent expressed in years"@en , "years duration"@en , "duración en años"@es ;
-        sh:datatype     xsd:decimal ;
-        sh:description  "length of, or element of the length of, a temporal extent expressed in years"@en , "Longitud de, o elemento de la longitud de, una extensión temporal expresada en años."@es ;
-        sh:name         "duración en años"@es , "years duration"@en ;
-        sh:nodeKind     sh:Literal ;
-        sh:path         time:years ;
-        sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
 
 <https://astrea.linkeddata.es/shapes#0a5669f09c8114428ec27cd377fa3636>
         a               sh:PropertyShape ;
@@ -893,6 +893,35 @@
         sh:name           "Given name" ;
         sh:nodeKind       sh:Literal ;
         sh:path           foaf:givenName .
+
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:before
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   event:time
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:hasTime
+                   ] ;
+        rdf:first  [ sh:class  time:Instant ;
+                     sh:path   time:after
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:before
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   event:time
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:hasTime
+                                ] ;
+                     rdf:first  [ sh:class  time:Interval ;
+                                  sh:path   time:after
+                                ] ;
+                     rdf:rest   ()
+                   ] .
 
 <https://astrea.linkeddata.es/shapes#b88fb6d8e93bd7f9ee36f24b5217f709>
         a               sh:PropertyShape ;
@@ -1370,7 +1399,7 @@
 <https://astrea.linkeddata.es/report/1485748542>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
-                "2021-02-13 02:21:33.696  INFO 1 --- [nio-8080-exec-3] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.org:80: The target server failed to respond2021-02-13 02:21:33.697  INFO 1 --- [nio-8080-exec-3] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.org:80\n" ;
+                "2021-02-24 19:55:02.221  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://purl.org:80: The target server failed to respond2021-02-24 19:55:02.221  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://purl.org:80\n" ;
         <https://w3id.org/def/astrea#source>
                 "http://purl.org/ontology/wo/core" ;
         <https://w3id.org/def/astrea#statusCode>
@@ -1485,35 +1514,6 @@
         sh:name           "phone" ;
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           foaf:phone .
-
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:before
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   event:time
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:hasTime
-                   ] ;
-        rdf:first  [ sh:class  time:Instant ;
-                     sh:path   time:after
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:before
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   event:time
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:hasTime
-                                ] ;
-                     rdf:first  [ sh:class  time:Interval ;
-                                  sh:path   time:after
-                                ] ;
-                     rdf:rest   ()
-                   ] .
 
 <https://astrea.linkeddata.es/shapes#7c50b4631a0dfeb2244f3207f1c00cb6>
         a            sh:PropertyShape ;
@@ -1712,6 +1712,12 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind       sh:Literal ;
         sh:path           foaf:surname .
 
+<https://astrea.linkeddata.es/shapes#4867b27706b1ad61e7b534678f3ddb91>
+        a            sh:PropertyShape ;
+        sh:hasValue  time:unitMonth ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      time:unitType .
+
 <https://astrea.linkeddata.es/shapes#66ace442617e5b3218217619092aeea8>
         a               sh:PropertyShape ;
         rdfs:label      "literal factor" , "\n\t\tRelates an event to a factor which can be described as a literal. This property\n\t\tshould not be used as-is, but should be subsumed by other, more specific, properties\n\t\t(like an hypothetic :weatherCelsius, linking an event to a temperature).\n\t\t" ;
@@ -1720,12 +1726,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:name         "literal factor" ;
         sh:nodeKind     sh:Literal ;
         sh:path         event:literal_factor .
-
-<https://astrea.linkeddata.es/shapes#4867b27706b1ad61e7b534678f3ddb91>
-        a            sh:PropertyShape ;
-        sh:hasValue  time:unitMonth ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      time:unitType .
 
 <https://astrea.linkeddata.es/shapes#e3fac37e893a8f3ab5ed7a1eced402c4>
         a            sh:PropertyShape ;
@@ -1988,7 +1988,7 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
 <https://astrea.linkeddata.es/report/0417710972>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
-                "2021-02-13 02:20:10.707  INFO 1 --- [nio-8080-exec-3] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://www.w3.org:80: The target server failed to respond2021-02-13 02:20:10.708  INFO 1 --- [nio-8080-exec-3] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://www.w3.org:80\n" ;
+                "2021-02-24 19:53:35.084  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://www.w3.org:80: The target server failed to respond2021-02-24 19:53:35.084  INFO 1 --- [nio-8080-exec-7] o.apache.http.impl.execchain.RetryExec   : Retrying request to {}->http://www.w3.org:80\n" ;
         <https://w3id.org/def/astrea#source>
                 "http://www.w3.org/2006/time" ;
         <https://w3id.org/def/astrea#statusCode>

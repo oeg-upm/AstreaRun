@@ -891,6 +891,13 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         <http://www.essepuntato.it/2012/04/tvc/withValue> .
 
+<https://astrea.linkeddata.es/shapes#6aa373a22d028ce72038972958b41a8d>
+        a            sh:PropertyShape ;
+        sh:maxCount  0 ;
+        sh:minCount  0 ;
+        sh:nodeKind  sh:IRIOrLiteral ;
+        sh:path      <http://www.w3.org/2006/time#hours> .
+
 <https://astrea.linkeddata.es/shapes#8a1d05066209db0b729f71ffd7415c55>
         a               sh:PropertyShape ;
         rdfs:label      "mes del año"@es , "month of year"@en , "El mes del año, cuyo valor es un miembro de la clase 'mes del año'."@es , "The month of the year, whose value is a member of the class time:MonthOfYear"@en ;
@@ -899,13 +906,6 @@
         sh:name         "mes del año"@es , "month of year"@en ;
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         <http://www.w3.org/2006/time#monthOfYear> .
-
-<https://astrea.linkeddata.es/shapes#6aa373a22d028ce72038972958b41a8d>
-        a            sh:PropertyShape ;
-        sh:maxCount  0 ;
-        sh:minCount  0 ;
-        sh:nodeKind  sh:IRIOrLiteral ;
-        sh:path      <http://www.w3.org/2006/time#hours> .
 
 <https://astrea.linkeddata.es/shapes#54d31883388335bc143215bf49c965ea>
         a               sh:PropertyShape ;
@@ -1000,6 +1000,35 @@
         sh:nodeKind       sh:BlankNodeOrIRI ;
         sh:path           timeindexedsituation:isTimeIndexFor .
 
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
+        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
+                     sh:path   <http://www.w3.org/2006/time#before>
+                   ] ;
+        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
+                     sh:path   <http://www.w3.org/2006/time#hasTime>
+                   ] ;
+        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
+                     sh:path   <http://www.w3.org/2006/time#after>
+                   ] ;
+        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
+                     sh:path   <http://www.essepuntato.it/2012/04/tvc/atTime>
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
+                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
+                                  sh:path   <http://www.w3.org/2006/time#before>
+                                ] ;
+                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
+                                  sh:path   <http://www.w3.org/2006/time#hasTime>
+                                ] ;
+                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
+                                  sh:path   <http://www.w3.org/2006/time#after>
+                                ] ;
+                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
+                                  sh:path   <http://www.essepuntato.it/2012/04/tvc/atTime>
+                                ] ;
+                     rdf:rest   ()
+                   ] .
+
 <https://astrea.linkeddata.es/report/0417710972>
         a       <https://w3id.org/def/astrea#ReportEntry> ;
         <https://w3id.org/def/astrea#message>
@@ -1056,35 +1085,6 @@
         sh:nodeKind     sh:BlankNodeOrIRI ;
         sh:path         <http://www.w3.org/2006/time#intervalIn> .
 
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171d6155a1b> ;
-        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
-                     sh:path   <http://www.w3.org/2006/time#before>
-                   ] ;
-        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
-                     sh:path   <http://www.w3.org/2006/time#hasTime>
-                   ] ;
-        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
-                     sh:path   <http://www.w3.org/2006/time#after>
-                   ] ;
-        rdf:first  [ sh:class  <http://www.w3.org/2006/time#Instant> ;
-                     sh:path   <http://www.essepuntato.it/2012/04/tvc/atTime>
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#f1ed01ff4ad7e0110c28d4231cd9616c> ;
-                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
-                                  sh:path   <http://www.w3.org/2006/time#before>
-                                ] ;
-                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
-                                  sh:path   <http://www.w3.org/2006/time#hasTime>
-                                ] ;
-                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
-                                  sh:path   <http://www.w3.org/2006/time#after>
-                                ] ;
-                     rdf:first  [ sh:class  <http://www.w3.org/2006/time#Interval> ;
-                                  sh:path   <http://www.essepuntato.it/2012/04/tvc/atTime>
-                                ] ;
-                     rdf:rest   ()
-                   ] .
-
 <https://astrea.linkeddata.es/shapes#e00887eb7b2f63ee7d5071cdd765ba12>
         a            sh:PropertyShape ;
         sh:datatype  xsd:gDay ;
@@ -1137,11 +1137,14 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:nodeKind  sh:IRIOrLiteral ;
         sh:path      <http://www.w3.org/2006/time#hasTRS> .
 
-<https://astrea.linkeddata.es/shapes#49f47577666a276f525bf77d1e3b2219>
-        a               sh:NodeShape ;
-        sh:nodeKind     sh:IRI ;
-        sh:property     <https://astrea.linkeddata.es/shapes#d76f8b533d23d1386cc197639cd98229> ;
-        sh:targetClass  timeinterval:TimeInterval , <http://www.w3.org/2006/time#Interval> .
+<https://astrea.linkeddata.es/shapes#59f4ebe50bbc6531a29f136f224e4a55>
+        a                 sh:PropertyShape ;
+        rdfs:isDefinedBy  <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl> ;
+        rdfs:label        "at time"@en ;
+        sh:class          timeinterval:TimeInterval ;
+        sh:name           "at time"@en ;
+        sh:nodeKind       sh:BlankNodeOrIRI ;
+        sh:path           timeindexedsituation:atTime .
 
 <https://astrea.linkeddata.es/shapes#bca921e601d6ae30d612ecd793bccd83>
         a               sh:PropertyShape ;
@@ -1154,14 +1157,11 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#1277b387effe1ea8b7cf6171
         sh:path         <http://www.w3.org/2006/time#seconds> ;
         sh:pattern      "(\\+|-)?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)" .
 
-<https://astrea.linkeddata.es/shapes#59f4ebe50bbc6531a29f136f224e4a55>
-        a                 sh:PropertyShape ;
-        rdfs:isDefinedBy  <http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl> ;
-        rdfs:label        "at time"@en ;
-        sh:class          timeinterval:TimeInterval ;
-        sh:name           "at time"@en ;
-        sh:nodeKind       sh:BlankNodeOrIRI ;
-        sh:path           timeindexedsituation:atTime .
+<https://astrea.linkeddata.es/shapes#49f47577666a276f525bf77d1e3b2219>
+        a               sh:NodeShape ;
+        sh:nodeKind     sh:IRI ;
+        sh:property     <https://astrea.linkeddata.es/shapes#d76f8b533d23d1386cc197639cd98229> ;
+        sh:targetClass  timeinterval:TimeInterval , <http://www.w3.org/2006/time#Interval> .
 
 <https://astrea.linkeddata.es/shapes#1598ecd871ffeae5f499211f247246f6>
         a            sh:PropertyShape ;

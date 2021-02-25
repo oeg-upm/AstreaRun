@@ -5,6 +5,47 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 
+_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#b684eb9844ed5dee74a710f25df0d16e> ;
+        rdf:first  [ sh:class  <http://bibframe.org/vocab/Agent> ;
+                     sh:path   <http://purl.org/ontology/holding#collectedBy>
+                   ] ;
+        rdf:first  [ sh:class  <http://bibframe.org/vocab/Agent> ;
+                     sh:path   <http://purl.org/ontology/holding#heldBy>
+                   ] ;
+        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> ;
+                     rdf:first  [ sh:class  <http://xmlns.com/foaf/0.1/Agent> ;
+                                  sh:path   <http://purl.org/ontology/holding#collectedBy>
+                                ] ;
+                     rdf:first  [ sh:class  <http://xmlns.com/foaf/0.1/Agent> ;
+                                  sh:path   <http://purl.org/ontology/holding#heldBy>
+                                ] ;
+                     rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#ff3ffc8686e31dfe4c8c867c5077a712> ;
+                                  rdf:first  [ sh:class  <http://schema.org/Organization> ;
+                                               sh:path   <http://purl.org/ontology/holding#collectedBy>
+                                             ] ;
+                                  rdf:first  [ sh:class  <http://schema.org/Organization> ;
+                                               sh:path   <http://purl.org/ontology/holding#heldBy>
+                                             ] ;
+                                  rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#17790ee25a1fe29855c6df308eb1f5ed> ;
+                                               rdf:first  [ sh:class  <http://schema.org/Person> ;
+                                                            sh:path   <http://purl.org/ontology/holding#collectedBy>
+                                                          ] ;
+                                               rdf:first  [ sh:class  <http://schema.org/Person> ;
+                                                            sh:path   <http://purl.org/ontology/holding#heldBy>
+                                                          ] ;
+                                               rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#b31987ab957ad1c8f73307546cbc1486> ;
+                                                            rdf:first  [ sh:class  <http://rdaregistry.info/Elements/c/Agent> ;
+                                                                         sh:path   <http://purl.org/ontology/holding#collectedBy>
+                                                                       ] ;
+                                                            rdf:first  [ sh:class  <http://rdaregistry.info/Elements/c/Agent> ;
+                                                                         sh:path   <http://purl.org/ontology/holding#heldBy>
+                                                                       ] ;
+                                                            rdf:rest   ()
+                                                          ]
+                                             ]
+                                ]
+                   ] .
+
 <https://astrea.linkeddata.es/shapes#b31987ab957ad1c8f73307546cbc1486>
         a               sh:NodeShape ;
         sh:property     <https://astrea.linkeddata.es/shapes#ed496702bff2e1b91869d2f136f3b665> , <https://astrea.linkeddata.es/shapes#2266f8dfd1043b1c8aeee816574c43d4> ;
@@ -18,7 +59,7 @@
         sh:description  "Relates an item to the document that is exemplified by the item."@en ;
         sh:name         "is examplar of"@en ;
         sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:or           _:b0 ;
+        sh:or           _:b1 ;
         sh:path         <http://purl.org/ontology/holding#exemplarOf> .
 
 <https://astrea.linkeddata.es/shapes#e5cd2d42fc49caf57be41b7503b6d6e9>
@@ -36,7 +77,49 @@
         sh:property     <https://astrea.linkeddata.es/shapes#2266f8dfd1043b1c8aeee816574c43d4> , <https://astrea.linkeddata.es/shapes#7581f4daa0b6c8dba141501d66f2aec0> , <https://astrea.linkeddata.es/shapes#025b6b1a0375b3d52fab80f69184f815> , <https://astrea.linkeddata.es/shapes#e5a3887a370fd9e70266802ceca96b6b> , <https://astrea.linkeddata.es/shapes#ef9ea09e9d2ff12e355b991fd5eead95> , <https://astrea.linkeddata.es/shapes#e5cd2d42fc49caf57be41b7503b6d6e9> ;
         sh:targetClass  <http://rdaregistry.info/Elements/c/Item> .
 
-_:b1    rdf:first  <https://astrea.linkeddata.es/shapes#1ff318f82a906000eca0705c4a9dc449> ;
+<https://astrea.linkeddata.es/shapes#17790ee25a1fe29855c6df308eb1f5ed>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ed496702bff2e1b91869d2f136f3b665> , <https://astrea.linkeddata.es/shapes#2266f8dfd1043b1c8aeee816574c43d4> ;
+        sh:targetClass  <http://schema.org/Person> .
+
+<https://astrea.linkeddata.es/report/0620946147>
+        a       <https://w3id.org/def/astrea#ReportEntry> ;
+        <https://w3id.org/def/astrea#message>
+                "Shapes generated with no errors" ;
+        <https://w3id.org/def/astrea#statusCode>
+                "200"^^xsd:int .
+
+<https://astrea.linkeddata.es/shapes#fd135b1ea30a92f44e803aa2a66a441b>
+        a                 sh:NodeShape ;
+        rdfs:isDefinedBy  <http://purl.org/ontology/dso> ;
+        rdfs:label        "DocumentService" ;
+        sh:name           "DocumentService" ;
+        sh:nodeKind       sh:IRI ;
+        sh:targetClass    <http://purl.org/ontology/dso#DocumentService> .
+
+<https://astrea.linkeddata.es/shapes#ef9ea09e9d2ff12e355b991fd5eead95>
+        a               sh:PropertyShape ;
+        rdfs:label      "Relates an item to a document which is partly exemplified by the item."@en , "broader exemplar of"@en ;
+        rdfs:seeAlso    <http://rdaregistry.info/Elements/i/containsItem> ;
+        sh:class        <http://purl.org/ontology/holding#Document> ;
+        sh:description  "Relates an item to a document which is partly exemplified by the item."@en ;
+        sh:name         "broader exemplar of"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           _:b1 ;
+        sh:path         <http://purl.org/ontology/holding#broaderExemplarOf> .
+
+<https://astrea.linkeddata.es/shapes#2266f8dfd1043b1c8aeee816574c43d4>
+        a               sh:PropertyShape ;
+        rdfs:label      "collects"@en , "Relates an agent to a document and/or item that is collected by the agent."@en , "collected by"@en , "Relates a document and/or item to an agent who collects it."@en ;
+        rdfs:seeAlso    <http://rdaregistry.info/Elements/i/collector> , <http://rdaregistry.info/Elements/i/collectorOf> ;
+        sh:class        <http://purl.org/ontology/holding#Agent> , <http://purl.org/ontology/holding#Document> , <http://purl.org/ontology/holding#Item> ;
+        sh:description  "Relates an agent to a document and/or item that is collected by the agent."@en , "Relates a document and/or item to an agent who collects it."@en ;
+        sh:name         "collected by"@en , "collects"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           _:b1 , _:b2 , _:b0 ;
+        sh:path         <http://purl.org/ontology/holding#collectedBy> .
+
+_:b2    rdf:first  <https://astrea.linkeddata.es/shapes#1ff318f82a906000eca0705c4a9dc449> ;
         rdf:first  [ sh:class  <http://bibframe.org/vocab/HeldItem> ;
                      sh:path   <http://purl.org/ontology/holding#holds>
                    ] ;
@@ -88,48 +171,6 @@ _:b1    rdf:first  <https://astrea.linkeddata.es/shapes#1ff318f82a906000eca0705c
                                 ]
                    ] .
 
-<https://astrea.linkeddata.es/shapes#17790ee25a1fe29855c6df308eb1f5ed>
-        a               sh:NodeShape ;
-        sh:property     <https://astrea.linkeddata.es/shapes#ed496702bff2e1b91869d2f136f3b665> , <https://astrea.linkeddata.es/shapes#2266f8dfd1043b1c8aeee816574c43d4> ;
-        sh:targetClass  <http://schema.org/Person> .
-
-<https://astrea.linkeddata.es/report/0620946147>
-        a       <https://w3id.org/def/astrea#ReportEntry> ;
-        <https://w3id.org/def/astrea#message>
-                "Shapes generated with no errors" ;
-        <https://w3id.org/def/astrea#statusCode>
-                "200"^^xsd:int .
-
-<https://astrea.linkeddata.es/shapes#fd135b1ea30a92f44e803aa2a66a441b>
-        a                 sh:NodeShape ;
-        rdfs:isDefinedBy  <http://purl.org/ontology/dso> ;
-        rdfs:label        "DocumentService" ;
-        sh:name           "DocumentService" ;
-        sh:nodeKind       sh:IRI ;
-        sh:targetClass    <http://purl.org/ontology/dso#DocumentService> .
-
-<https://astrea.linkeddata.es/shapes#ef9ea09e9d2ff12e355b991fd5eead95>
-        a               sh:PropertyShape ;
-        rdfs:label      "Relates an item to a document which is partly exemplified by the item."@en , "broader exemplar of"@en ;
-        rdfs:seeAlso    <http://rdaregistry.info/Elements/i/containsItem> ;
-        sh:class        <http://purl.org/ontology/holding#Document> ;
-        sh:description  "Relates an item to a document which is partly exemplified by the item."@en ;
-        sh:name         "broader exemplar of"@en ;
-        sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:or           _:b0 ;
-        sh:path         <http://purl.org/ontology/holding#broaderExemplarOf> .
-
-<https://astrea.linkeddata.es/shapes#2266f8dfd1043b1c8aeee816574c43d4>
-        a               sh:PropertyShape ;
-        rdfs:label      "collects"@en , "Relates an agent to a document and/or item that is collected by the agent."@en , "collected by"@en , "Relates a document and/or item to an agent who collects it."@en ;
-        rdfs:seeAlso    <http://rdaregistry.info/Elements/i/collector> , <http://rdaregistry.info/Elements/i/collectorOf> ;
-        sh:class        <http://purl.org/ontology/holding#Agent> , <http://purl.org/ontology/holding#Document> , <http://purl.org/ontology/holding#Item> ;
-        sh:description  "Relates an agent to a document and/or item that is collected by the agent."@en , "Relates a document and/or item to an agent who collects it."@en ;
-        sh:name         "collected by"@en , "collects"@en ;
-        sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:or           _:b0 , _:b1 , _:b2 ;
-        sh:path         <http://purl.org/ontology/holding#collectedBy> .
-
 <https://astrea.linkeddata.es/shapes#9c8f0444c42a6ff75c8bcb1b0605c211>
         a                 sh:NodeShape ;
         rdfs:isDefinedBy  <http://purl.org/ontology/ecpo> ;
@@ -146,7 +187,7 @@ _:b1    rdf:first  <https://astrea.linkeddata.es/shapes#1ff318f82a906000eca0705c
         sh:description  "Relates an agent to an item which the agent holds."@en ;
         sh:name         "holds"@en ;
         sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:or           _:b1 ;
+        sh:or           _:b2 ;
         sh:path         <http://purl.org/ontology/holding#holds> .
 
 <https://astrea.linkeddata.es/shapes#b684eb9844ed5dee74a710f25df0d16e>
@@ -160,7 +201,7 @@ _:b1    rdf:first  <https://astrea.linkeddata.es/shapes#1ff318f82a906000eca0705c
         sh:description  "Use one of bf:HeldItem frbr:Item rdac:Item"@en ;
         sh:name         "Item"@en ;
         sh:nodeKind     sh:IRI ;
-        sh:or           _:b1 ;
+        sh:or           _:b2 ;
         sh:property     <https://astrea.linkeddata.es/shapes#2266f8dfd1043b1c8aeee816574c43d4> , <https://astrea.linkeddata.es/shapes#7581f4daa0b6c8dba141501d66f2aec0> , <https://astrea.linkeddata.es/shapes#ef9ea09e9d2ff12e355b991fd5eead95> , <https://astrea.linkeddata.es/shapes#e5cd2d42fc49caf57be41b7503b6d6e9> , <https://astrea.linkeddata.es/shapes#025b6b1a0375b3d52fab80f69184f815> , <https://astrea.linkeddata.es/shapes#e5a3887a370fd9e70266802ceca96b6b> ;
         sh:targetClass  <http://purl.org/ontology/holding#Item> .
 
@@ -188,7 +229,7 @@ _:b1    rdf:first  <https://astrea.linkeddata.es/shapes#1ff318f82a906000eca0705c
         sh:description  "Use one of bf:Agent or foaf:Agent"@en ;
         sh:name         "Agent"@en ;
         sh:nodeKind     sh:IRI ;
-        sh:or           _:b2 ;
+        sh:or           _:b0 ;
         sh:property     <https://astrea.linkeddata.es/shapes#ed496702bff2e1b91869d2f136f3b665> , <https://astrea.linkeddata.es/shapes#2266f8dfd1043b1c8aeee816574c43d4> ;
         sh:targetClass  <http://purl.org/ontology/holding#Agent> .
 
@@ -200,7 +241,7 @@ _:b1    rdf:first  <https://astrea.linkeddata.es/shapes#1ff318f82a906000eca0705c
         sh:description  "Relates a document to an item that is an exemplar of the document."@en ;
         sh:name         "has exemplar"@en ;
         sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:or           _:b1 ;
+        sh:or           _:b2 ;
         sh:path         <http://purl.org/ontology/holding#exemplar> .
 
 <https://astrea.linkeddata.es/shapes#243a6fef650ffe66d349d33dab497039>
@@ -223,7 +264,7 @@ _:b1    rdf:first  <https://astrea.linkeddata.es/shapes#1ff318f82a906000eca0705c
         sh:description  "Relates a document to an item that contains an exemplar of the document as part."@en ;
         sh:name         "broader exemplar"@en ;
         sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:or           _:b1 ;
+        sh:or           _:b2 ;
         sh:path         <http://purl.org/ontology/holding#broaderExemplar> .
 
 <https://astrea.linkeddata.es/shapes#055b02e300ddc4640f57db053c3e3d93>
@@ -242,11 +283,37 @@ _:b1    rdf:first  <https://astrea.linkeddata.es/shapes#1ff318f82a906000eca0705c
         sh:description  "Use one of bibo:Document, foaf:Document, bf:Work or bf:Instance"@en ;
         sh:name         "Document"@en ;
         sh:nodeKind     sh:IRI ;
-        sh:or           _:b0 ;
+        sh:or           _:b1 ;
         sh:property     <https://astrea.linkeddata.es/shapes#2266f8dfd1043b1c8aeee816574c43d4> , <https://astrea.linkeddata.es/shapes#53cc0dce36f72ced708deb9e588694ce> , <https://astrea.linkeddata.es/shapes#edbbd3f7f5c1c57b7926b9f5e34a2742> , <https://astrea.linkeddata.es/shapes#906f8befaa0f787533af36e242854d33> ;
         sh:targetClass  <http://purl.org/ontology/holding#Document> .
 
-_:b0    rdf:first  <https://astrea.linkeddata.es/shapes#055b02e300ddc4640f57db053c3e3d93> ;
+<https://astrea.linkeddata.es/shapes#1ff318f82a906000eca0705c4a9dc449>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2266f8dfd1043b1c8aeee816574c43d4> , <https://astrea.linkeddata.es/shapes#7581f4daa0b6c8dba141501d66f2aec0> , <https://astrea.linkeddata.es/shapes#025b6b1a0375b3d52fab80f69184f815> , <https://astrea.linkeddata.es/shapes#e5a3887a370fd9e70266802ceca96b6b> , <https://astrea.linkeddata.es/shapes#ef9ea09e9d2ff12e355b991fd5eead95> , <https://astrea.linkeddata.es/shapes#e5cd2d42fc49caf57be41b7503b6d6e9> ;
+        sh:targetClass  <http://bibframe.org/vocab/HeldItem> .
+
+<https://astrea.linkeddata.es/shapes#edbbd3f7f5c1c57b7926b9f5e34a2742>
+        a               sh:PropertyShape ;
+        rdfs:label      "narrower exemplar"@en , "Relates a document to an item that is an exemplar of a part of the document."@en ;
+        rdfs:seeAlso    <http://rdaregistry.info/Elements/i/containsItem> ;
+        sh:class        <http://purl.org/ontology/holding#Item> ;
+        sh:description  "Relates a document to an item that is an exemplar of a part of the document."@en ;
+        sh:name         "narrower exemplar"@en ;
+        sh:nodeKind     sh:BlankNodeOrIRI ;
+        sh:or           _:b2 ;
+        sh:path         <http://purl.org/ontology/holding#narrowerExemplar> .
+
+<https://astrea.linkeddata.es/shapes#a9d680d81e558fbfae158e2978270f11>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#2266f8dfd1043b1c8aeee816574c43d4> , <https://astrea.linkeddata.es/shapes#906f8befaa0f787533af36e242854d33> , <https://astrea.linkeddata.es/shapes#edbbd3f7f5c1c57b7926b9f5e34a2742> , <https://astrea.linkeddata.es/shapes#53cc0dce36f72ced708deb9e588694ce> ;
+        sh:targetClass  <http://bibframe.org/vocab/Instance> .
+
+<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
+        a               sh:NodeShape ;
+        sh:property     <https://astrea.linkeddata.es/shapes#ed496702bff2e1b91869d2f136f3b665> , <https://astrea.linkeddata.es/shapes#2266f8dfd1043b1c8aeee816574c43d4> ;
+        sh:targetClass  <http://xmlns.com/foaf/0.1/Agent> .
+
+_:b1    rdf:first  <https://astrea.linkeddata.es/shapes#055b02e300ddc4640f57db053c3e3d93> ;
         rdf:first  [ sh:class  <http://purl.org/ontology/bibo/Document> ;
                      sh:path   <http://purl.org/ontology/holding#collectedBy>
                    ] ;
@@ -317,27 +384,6 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#055b02e300ddc4640f57db05
                                 ]
                    ] .
 
-<https://astrea.linkeddata.es/shapes#1ff318f82a906000eca0705c4a9dc449>
-        a               sh:NodeShape ;
-        sh:property     <https://astrea.linkeddata.es/shapes#2266f8dfd1043b1c8aeee816574c43d4> , <https://astrea.linkeddata.es/shapes#7581f4daa0b6c8dba141501d66f2aec0> , <https://astrea.linkeddata.es/shapes#025b6b1a0375b3d52fab80f69184f815> , <https://astrea.linkeddata.es/shapes#e5a3887a370fd9e70266802ceca96b6b> , <https://astrea.linkeddata.es/shapes#ef9ea09e9d2ff12e355b991fd5eead95> , <https://astrea.linkeddata.es/shapes#e5cd2d42fc49caf57be41b7503b6d6e9> ;
-        sh:targetClass  <http://bibframe.org/vocab/HeldItem> .
-
-<https://astrea.linkeddata.es/shapes#edbbd3f7f5c1c57b7926b9f5e34a2742>
-        a               sh:PropertyShape ;
-        rdfs:label      "narrower exemplar"@en , "Relates a document to an item that is an exemplar of a part of the document."@en ;
-        rdfs:seeAlso    <http://rdaregistry.info/Elements/i/containsItem> ;
-        sh:class        <http://purl.org/ontology/holding#Item> ;
-        sh:description  "Relates a document to an item that is an exemplar of a part of the document."@en ;
-        sh:name         "narrower exemplar"@en ;
-        sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:or           _:b1 ;
-        sh:path         <http://purl.org/ontology/holding#narrowerExemplar> .
-
-<https://astrea.linkeddata.es/shapes#a9d680d81e558fbfae158e2978270f11>
-        a               sh:NodeShape ;
-        sh:property     <https://astrea.linkeddata.es/shapes#2266f8dfd1043b1c8aeee816574c43d4> , <https://astrea.linkeddata.es/shapes#906f8befaa0f787533af36e242854d33> , <https://astrea.linkeddata.es/shapes#edbbd3f7f5c1c57b7926b9f5e34a2742> , <https://astrea.linkeddata.es/shapes#53cc0dce36f72ced708deb9e588694ce> ;
-        sh:targetClass  <http://bibframe.org/vocab/Instance> .
-
 <https://astrea.linkeddata.es/shapes#025b6b1a0375b3d52fab80f69184f815>
         a               sh:PropertyShape ;
         rdfs:label      "Relates an item to a document which is partly exemplified by the item."@en , "narrower exemplar of"@en ;
@@ -346,13 +392,8 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#055b02e300ddc4640f57db05
         sh:description  "Relates an item to a document which is partly exemplified by the item."@en ;
         sh:name         "narrower exemplar of"@en ;
         sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:or           _:b0 ;
+        sh:or           _:b1 ;
         sh:path         <http://purl.org/ontology/holding#narrowerExemplarOf> .
-
-<https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513>
-        a               sh:NodeShape ;
-        sh:property     <https://astrea.linkeddata.es/shapes#ed496702bff2e1b91869d2f136f3b665> , <https://astrea.linkeddata.es/shapes#2266f8dfd1043b1c8aeee816574c43d4> ;
-        sh:targetClass  <http://xmlns.com/foaf/0.1/Agent> .
 
 <https://astrea.linkeddata.es/shapes#55a05e88e2f1bdf8b52fa7d0eb1efeca>
         a               sh:NodeShape ;
@@ -367,46 +408,5 @@ _:b0    rdf:first  <https://astrea.linkeddata.es/shapes#055b02e300ddc4640f57db05
         sh:description  "Relates an item to an agent who holds the item."@en ;
         sh:name         "held by"@en ;
         sh:nodeKind     sh:BlankNodeOrIRI ;
-        sh:or           _:b2 ;
+        sh:or           _:b0 ;
         sh:path         <http://purl.org/ontology/holding#heldBy> .
-
-_:b2    rdf:first  <https://astrea.linkeddata.es/shapes#b684eb9844ed5dee74a710f25df0d16e> ;
-        rdf:first  [ sh:class  <http://bibframe.org/vocab/Agent> ;
-                     sh:path   <http://purl.org/ontology/holding#collectedBy>
-                   ] ;
-        rdf:first  [ sh:class  <http://bibframe.org/vocab/Agent> ;
-                     sh:path   <http://purl.org/ontology/holding#heldBy>
-                   ] ;
-        rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#3b1fed4016ea3410e7b39f0cf0331513> ;
-                     rdf:first  [ sh:class  <http://xmlns.com/foaf/0.1/Agent> ;
-                                  sh:path   <http://purl.org/ontology/holding#collectedBy>
-                                ] ;
-                     rdf:first  [ sh:class  <http://xmlns.com/foaf/0.1/Agent> ;
-                                  sh:path   <http://purl.org/ontology/holding#heldBy>
-                                ] ;
-                     rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#ff3ffc8686e31dfe4c8c867c5077a712> ;
-                                  rdf:first  [ sh:class  <http://schema.org/Organization> ;
-                                               sh:path   <http://purl.org/ontology/holding#collectedBy>
-                                             ] ;
-                                  rdf:first  [ sh:class  <http://schema.org/Organization> ;
-                                               sh:path   <http://purl.org/ontology/holding#heldBy>
-                                             ] ;
-                                  rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#17790ee25a1fe29855c6df308eb1f5ed> ;
-                                               rdf:first  [ sh:class  <http://schema.org/Person> ;
-                                                            sh:path   <http://purl.org/ontology/holding#collectedBy>
-                                                          ] ;
-                                               rdf:first  [ sh:class  <http://schema.org/Person> ;
-                                                            sh:path   <http://purl.org/ontology/holding#heldBy>
-                                                          ] ;
-                                               rdf:rest   [ rdf:first  <https://astrea.linkeddata.es/shapes#b31987ab957ad1c8f73307546cbc1486> ;
-                                                            rdf:first  [ sh:class  <http://rdaregistry.info/Elements/c/Agent> ;
-                                                                         sh:path   <http://purl.org/ontology/holding#collectedBy>
-                                                                       ] ;
-                                                            rdf:first  [ sh:class  <http://rdaregistry.info/Elements/c/Agent> ;
-                                                                         sh:path   <http://purl.org/ontology/holding#heldBy>
-                                                                       ] ;
-                                                            rdf:rest   ()
-                                                          ]
-                                             ]
-                                ]
-                   ] .
