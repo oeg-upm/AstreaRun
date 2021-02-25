@@ -2277,7 +2277,8 @@ def analysis(shape):
 
             os.chdir(results_dir)
             with open('results', 'w') as file:
-                file.write("(1): Excluding repeated elements from a same shape" + "\n" +
+                file.write("(1): Excluding repeated elements from a same shape " + "\n" +
+                           "(2): Only unnested " + "\n" +
                            "Total Axioms " + str(count_total_shapeaxioms) + "\n" +
                            "Total Subjects (1) " + str(count_different_subjects) + "\n" +
                            "Total different Subjects " + str(len(dict.fromkeys(subjectslist))) + "\n" +
@@ -2423,12 +2424,12 @@ def analysis(shape):
                            "Total rdf:type " + str(count_total_type) + "\n" +
                            "Total rdf:type node " + str(count_total_type_node) + "\n" +
                            "Total rdf:type property " + str(count_total_type_property) + "\n" +
-                           "Total rdf:first " + str(count_total_first) + "\n" +
-                           "Total rdf:first node " + str(count_total_first_node) + "\n" +
-                           "Total rdf:first property " + str(count_total_first_property) + "\n" +
-                           "Total rdf:rest " + str(count_total_rest) + "\n" +
-                           "Total rdf:rest node " + str(count_total_rest_node) + "\n" +
-                           "Total rdf:rest property " + str(count_total_rest_property) + "\n" +
+                           "Total rdf:first (2) " + str(count_total_first) + "\n" +
+                           "Total rdf:first node (2) " + str(count_total_first_node) + "\n" +
+                           "Total rdf:first property (2) " + str(count_total_first_property) + "\n" +
+                           "Total rdf:rest (2) " + str(count_total_rest) + "\n" +
+                           "Total rdf:rest node (2) " + str(count_total_rest_node) + "\n" +
+                           "Total rdf:rest property (2) " + str(count_total_rest_property) + "\n" +
                            "Total https://w3id.org/def/astrea#contains " + str(count_total_contains) + "\n" +
                            "Total https://w3id.org/def/astrea#contains node " + str(count_total_contains_node) + "\n" +
                            "Total https://w3id.org/def/astrea#contains property " + str(count_total_contains_property) + "\n" +
