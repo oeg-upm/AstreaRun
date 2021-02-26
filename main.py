@@ -2300,11 +2300,11 @@ def analysis(shape):
                            "Total Node Shapes " + str(count_total_nodeshape) + "\n" +
                            "Total Property Shapes " + str(count_total_propertyshape) + "\n" +
                            "Present constraint components list: " + str(list(dict.fromkeys(predicateslist))) + "\n" +
-                           "Total sh:class " + str(count_total_class) + "\n" +
+                           "Total sh:class (2) " + str(count_total_class) + "\n" +
                            "Total sh:class nested " + str(count_total_class_nested) + "\n" +
-                           "Total sh:class node " + str(count_total_class_node) + "\n" +
+                           "Total sh:class node (2) " + str(count_total_class_node) + "\n" +
                            "Total sh:class node nested " + str(count_total_class_node_nested) + "\n" +
-                           "Total sh:class property " + str(count_total_class_property) + "\n" +
+                           "Total sh:class property (2) " + str(count_total_class_property) + "\n" +
                            "Total sh:class property nested " + str(count_total_class_property_nested) + "\n" +
                            "Total sh:datatype " + str(count_total_datatype) + "\n" +
                            "Total sh:datatype node " + str(count_total_datatype_node) + "\n" +
@@ -2411,11 +2411,11 @@ def analysis(shape):
                            "Total sh:name " + str(count_total_name) + "\n" +
                            "Total sh:name node " + str(count_total_name_node) + "\n" +
                            "Total sh:name property " + str(count_total_name_property) + "\n" +
-                           "Total sh:path " + str(count_total_path) + "\n" +
+                           "Total sh:path (2) " + str(count_total_path) + "\n" +
                            "Total sh:path nested " + str(count_total_path_nested) + "\n" +
-                           "Total sh:path node " + str(count_total_path_node) + "\n" +
+                           "Total sh:path node (2) " + str(count_total_path_node) + "\n" +
                            "Total sh:path node nested " + str(count_total_path_node_nested) + "\n" +
-                           "Total sh:path property " + str(count_total_path_property) + "\n" +
+                           "Total sh:path property (2) " + str(count_total_path_property) + "\n" +
                            "Total sh:path property nested " + str(count_total_path_property_nested) + "\n" +
                            "Total sh:inversePath " + str(count_total_inversepath) + "\n" +
                            "Total sh:inversePath node " + str(count_total_inversepath_node) + "\n" +
@@ -2463,16 +2463,16 @@ def analysis(shape):
 
 def main():
 
-    # create_folders(clean=True)
+    create_folders(clean=True)
     # input value clean = True to erase previous ontology and shapes folder before creating the new ones
 
-    # divide('lov.nq')
+    divide('lov.nq')
     # input filename to divide into ontologies = "lov.nq" or "test.nq"...
 
-    # convert_triple(filename='all')
+    convert_triple(filename='all')
     # converts input file .nq to .nt (main.py folder level) or all files with ='all' (Ontologies folder)
 
-    # run_astrea(ontofile='all')
+    run_astrea(ontofile='all')
     # automatically generate shape files from filename or 'all' vocabularies with Astrea (same folder logic as above)
 
     analysis(shape='all')
