@@ -140,14 +140,15 @@ def analysis(shape):
 
     shape_number = 0
     count_total_shapeaxioms = 0
-    count_different_subjects = 0
-    count_different_predicates = 0
-    count_different_objects = 0
-    count_total_nodeshape = 0
-    count_total_propertyshape = 0
     subjectslist = []
     predicateslist = []
     objectslist = []
+    count_different_subjects = 0
+    count_different_predicates = 0
+    count_different_objects = 0
+    category_list = []
+    count_total_nodeshape = 0
+    count_total_propertyshape = 0
     count_total_class = 0
     count_total_class_nested = 0
     count_total_class_node = 0
@@ -574,6 +575,15 @@ def analysis(shape):
                 count_different_objects += 1
                 objectslist.append("%s" % row)
             # print("Objects " + str(count_objects))
+
+            category = g.query("""
+                            SELECT DISTINCT ?o
+                            WHERE {
+                            ?s a ?o .
+                            }
+                        """)
+            for row in category:
+                category_list.append("%s" % row)
 
             count_nodeshape = g.query("""
                             SELECT (COUNT (?s) AS ?count)
@@ -2286,6 +2296,7 @@ def analysis(shape):
                            "Total different Predicates " + str(len(dict.fromkeys(predicateslist))) + "\n" +
                            "Total Objects (1) " + str(count_different_objects) + "\n" +
                            "Total different Objects " + str(len(dict.fromkeys(objectslist))) + "\n" +
+                           "List total different categories " + str(list(dict.fromkeys(category_list))) + "\n" +
                            "Total Node Shapes " + str(count_total_nodeshape) + "\n" +
                            "Total Property Shapes " + str(count_total_propertyshape) + "\n" +
                            "Present constraint components list: " + str(list(dict.fromkeys(predicateslist))) + "\n" +
@@ -2452,16 +2463,16 @@ def analysis(shape):
 
 def main():
 
-    create_folders(clean=True)
+    # create_folders(clean=True)
     # input value clean = True to erase previous ontology and shapes folder before creating the new ones
 
-    divide('lov.nq')
+    # divide('lov.nq')
     # input filename to divide into ontologies = "lov.nq" or "test.nq"...
 
-    convert_triple(filename='all')
+    # convert_triple(filename='all')
     # converts input file .nq to .nt (main.py folder level) or all files with ='all' (Ontologies folder)
 
-    run_astrea(ontofile='all')
+    # run_astrea(ontofile='all')
     # automatically generate shape files from filename or 'all' vocabularies with Astrea (same folder logic as above)
 
     analysis(shape='all')
